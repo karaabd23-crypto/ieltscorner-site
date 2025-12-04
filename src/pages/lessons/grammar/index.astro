@@ -1,0 +1,53 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+
+const title = "Grammar Lessons – IELTS & CELPIP";
+const description =
+  "Advanced grammar lessons for IELTS and CELPIP candidates aiming for Band 7 / Level 9 and above.";
+---
+
+<Layout title={title} description={description}>
+  <section class="section">
+    <div class="section-heading">
+      <h1>Grammar for IELTS &amp; CELPIP</h1>
+      <p>
+        High-level grammar lessons that focus on accuracy, complexity, and clarity in
+        writing and speaking. No beginner content – this is for serious exam preparation.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <h2>IELTS grammar</h2>
+        <div class="lesson-grid">
+          <a href="/lessons/advanced-use-of-would" class="card lesson-card">
+            <span class="lesson-level-tag">C1 · Grammar</span>
+            <div class="card-meta">IELTS</div>
+            <h3 class="lesson-title">The Advanced Uses of “Would”</h3>
+            <p class="lesson-desc">
+              Master “would” in conditionals, habits, politeness, and speculation for
+              high-scoring IELTS Writing and Speaking.
+            </p>
+          </a>
+          <!-- Add more IELTS grammar lessons here later -->
+        </div>
+      </div>
+
+      <div>
+        <h2>CELPIP grammar</h2>
+        <div class="lesson-grid">
+          <!-- Placeholder CELPIP grammar lesson cards -->
+          <a href="#" class="card lesson-card">
+            <span class="lesson-level-tag">CELPIP · Grammar</span>
+            <div class="card-meta">Coming soon</div>
+            <h3 class="lesson-title">Grammar patterns that block Level 9+</h3>
+            <p class="lesson-desc">
+              Future lesson: typical tense, aspect, and sentence-structure issues that
+              hold CELPIP candidates at Level 7–8.
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
