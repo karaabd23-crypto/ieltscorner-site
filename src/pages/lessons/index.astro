@@ -1,51 +1,84 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 
-const pageTitle = "Lessons – IELTS Corner";
-const pageDescription =
-  "Browse focused grammar, vocabulary, and exam skills lessons for advanced IELTS and CELPIP learners aiming for Band 7 or higher.";
+const title =
+  "Lessons – IELTS & CELPIP Grammar, Vocabulary, Writing, Speaking";
+const description =
+  "Browse advanced IELTS and CELPIP lessons by category: grammar, vocabulary, writing, and speaking.";
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
+<Layout title={title} description={description}>
   <section class="section">
     <div class="section-heading">
-      <h1>All lessons</h1>
+      <h1>📚 Lessons</h1>
       <p>
-        Start with high-impact grammar and vocabulary lessons that directly influence your
-        writing and speaking scores in IELTS and CELPIP.
+        Choose a category to explore high-level lessons for IELTS &amp; CELPIP.
+        Each lesson includes clear explanations and practice tasks.
       </p>
     </div>
 
-    <div class="lesson-grid">
-      <a href="/lessons/advanced-use-of-would" class="card lesson-card">
-        <span class="lesson-level-tag">C1 · Grammar</span>
-        <div class="card-meta">Grammar</div>
-        <h2 class="lesson-title">The Advanced Uses of “Would”</h2>
-        <p class="lesson-desc">
-          Learn all major functions of “would”: conditionals, habits, politeness,
-          imagined situations, and more.
+    <div class="lesson-grid-4">
+      <a href="/lessons/grammar" class="card lesson-cat-card">
+        <h2>🔤 Grammar</h2>
+        <p>
+          Detailed explanations of complex structures and usage, modelled on
+          descriptive reference grammars.
         </p>
       </a>
 
-      <a href="/lessons/ielts-band-7-writing-criteria" class="card lesson-card">
-        <span class="lesson-level-tag">IELTS · Writing</span>
-        <div class="card-meta">Writing</div>
-        <h2 class="lesson-title">IELTS Band 7+ Writing Criteria Explained</h2>
-        <p class="lesson-desc">
-          A teacher-friendly explanation of the band descriptors with real-world
-          implications for your essays.
+      <a href="/lessons/vocabulary" class="card lesson-cat-card">
+        <h2>🧠 Vocabulary</h2>
+        <p>
+          High-level lexis for arguments, opinions, and everyday Canadian contexts.
         </p>
       </a>
 
-      <a href="/lessons/high-level-vocabulary-for-arguments" class="card lesson-card">
-        <span class="lesson-level-tag">C1 · Vocabulary</span>
-        <div class="card-meta">Vocabulary</div>
-        <h2 class="lesson-title">High-level Vocabulary for Arguments</h2>
-        <p class="lesson-desc">
-          Upgrade your opinion language with precise, flexible words and phrases for
-          complex arguments.
+      <a href="/lessons/writing" class="card lesson-cat-card">
+        <h2>✍️ Writing</h2>
+        <p>
+          Task structures, cohesion, and examiner-focused strategies for essays and
+          formal messages.
+        </p>
+      </a>
+
+      <a href="/lessons/speaking" class="card lesson-cat-card">
+        <h2>🎤 Speaking</h2>
+        <p>
+          Fluency, discourse management, and flexible templates for spoken tasks.
         </p>
       </a>
     </div>
   </section>
+
+  <style>
+    .lesson-grid-4 {
+      margin-top: var(--space-4);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--space-4);
+    }
+
+    .lesson-cat-card {
+      padding: var(--space-4);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      transition: border-color 0.15s ease, transform 0.15s ease;
+      text-decoration: none;
+    }
+
+    .lesson-cat-card h2 {
+      margin-bottom: var(--space-2);
+    }
+
+    .lesson-cat-card p {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+    }
+
+    .lesson-cat-card:hover {
+      border-color: var(--color-primary);
+      transform: translateY(-3px);
+    }
+  </style>
 </Layout>

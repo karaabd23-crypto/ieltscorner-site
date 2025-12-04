@@ -3,51 +3,124 @@ import Layout from "../../../layouts/Layout.astro";
 
 const title = "Grammar Lessons – IELTS & CELPIP";
 const description =
-  "Advanced grammar lessons for IELTS and CELPIP candidates aiming for Band 7 / Level 9 and above.";
+  "Advanced grammar lessons for IELTS and CELPIP candidates aiming for Band 7+ / Level 9+, including modality, tense, and discourse-level patterns.";
 ---
 
 <Layout title={title} description={description}>
   <section class="section">
     <div class="section-heading">
-      <h1>Grammar for IELTS &amp; CELPIP</h1>
+      <h1>🔤 Grammar Lessons</h1>
       <p>
-        High-level grammar lessons that focus on accuracy, complexity, and clarity in
-        writing and speaking. No beginner content – this is for serious exam preparation.
+        High-precision grammar for serious IELTS &amp; CELPIP candidates. These
+        lessons focus on meaning and use, not just rules.
       </p>
     </div>
 
-    <div class="grid-2">
-      <div>
-        <h2>IELTS grammar</h2>
-        <div class="lesson-grid">
-          <a href="/lessons/advanced-use-of-would" class="card lesson-card">
-            <span class="lesson-level-tag">C1 · Grammar</span>
-            <div class="card-meta">IELTS</div>
-            <h3 class="lesson-title">The Advanced Uses of “Would”</h3>
-            <p class="lesson-desc">
-              Master “would” in conditionals, habits, politeness, and speculation for
-              high-scoring IELTS Writing and Speaking.
-            </p>
-          </a>
-          <!-- Add more IELTS grammar lessons here later -->
-        </div>
-      </div>
+    <div class="grammar-meta">
+      <span class="badge badge-level">C1 focus</span>
+      <span class="badge badge-exams">IELTS &amp; CELPIP</span>
+    </div>
 
-      <div>
-        <h2>CELPIP grammar</h2>
-        <div class="lesson-grid">
-          <!-- Placeholder CELPIP grammar lesson cards -->
-          <a href="#" class="card lesson-card">
-            <span class="lesson-level-tag">CELPIP · Grammar</span>
-            <div class="card-meta">Coming soon</div>
-            <h3 class="lesson-title">Grammar patterns that block Level 9+</h3>
-            <p class="lesson-desc">
-              Future lesson: typical tense, aspect, and sentence-structure issues that
-              hold CELPIP candidates at Level 7–8.
-            </p>
-          </a>
-        </div>
+    <div class="lesson-grid">
+      <!-- Advanced Uses of Would -->
+      <a
+        href="/lessons/grammar/advanced-use-of-would"
+        class="card lesson-card"
+      >
+        <span class="lesson-level-tag">C1 · Modality</span>
+        <h3 class="lesson-title">The Advanced Uses of “Would”</h3>
+        <p class="lesson-desc">
+          Seven functions of <strong>would</strong> (past habit, tentativeness,
+          hypotheticality, politeness, volition, narrative displacement, reported
+          speech) with interactive practice.
+        </p>
+      </a>
+
+      <!-- Placeholder for future grammar lessons -->
+      <div class="card lesson-card lesson-card--placeholder">
+        <span class="lesson-level-tag">Coming soon</span>
+        <h3 class="lesson-title">Future grammar lessons</h3>
+        <p class="lesson-desc">
+          Space for upcoming lessons on conditionals, aspect, clause packaging, and
+          other exam-relevant structures.
+        </p>
       </div>
     </div>
   </section>
+
+  <style>
+    .grammar-meta {
+      margin-top: var(--space-3);
+      display: flex;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+    }
+
+    .badge-level {
+      background: rgba(124, 58, 237, 0.18);
+      border-color: rgba(167, 139, 250, 0.7);
+      color: var(--color-primary-soft);
+      border-radius: var(--radius-pill);
+      padding: 0.2rem 0.6rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .badge-exams {
+      background: rgba(14, 116, 144, 0.18);
+      border-color: rgba(45, 212, 191, 0.6);
+      color: #a5f3fc;
+      border-radius: var(--radius-pill);
+      padding: 0.2rem 0.6rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .lesson-grid {
+      margin-top: var(--space-4);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--space-4);
+    }
+
+    .lesson-card {
+      padding: var(--space-4);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      transition: border-color 0.15s ease, transform 0.15s ease;
+      text-decoration: none;
+    }
+
+    .lesson-card:hover {
+      border-color: var(--color-primary);
+      transform: translateY(-3px);
+    }
+
+    .lesson-card--placeholder {
+      opacity: 0.75;
+    }
+
+    .lesson-level-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      opacity: 0.7;
+      margin-bottom: 0.3rem;
+      display: inline-block;
+    }
+
+    .lesson-title {
+      margin-bottom: var(--space-2);
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .lesson-desc {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+    }
+  </style>
 </Layout>
