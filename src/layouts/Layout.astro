@@ -1,0 +1,88 @@
+---
+import "../styles/global.css";
+
+interface LayoutProps {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "IELTS Corner",
+  description = "High-band IELTS and CELPIP lessons and grammar",
+} = Astro.props as LayoutProps;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body class="page">
+    <!-- SITE HEADER -->
+    <header class="site-header">
+      <div class="container site-header-inner">
+        <a href="/" class="brand">
+          <div class="brand-mark"></div>
+          <div>
+            <div class="brand-text-main">IELTS Corner</div>
+            <div class="brand-text-sub">IELTS &amp; CELPIP Training</div>
+          </div>
+        </a>
+        <nav class="site-nav">
+          <a href="/ielts">IELTS</a>
+          <a href="/celpip">CELPIP</a>
+          <a href="/lessons">Lessons</a>
+          <a href="/tutoring">Tutoring</a>
+          <a href="/essay-correction">Essay Correction</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- TOP AD SLOT (e.g. leaderboard, banner) -->
+    <div class="ad-slot ad-top"></div>
+
+    <!-- MAIN CONTENT + MID AD SLOT -->
+    <main>
+      <div class="container">
+        <slot />
+      </div>
+
+      <!-- MID-CONTENT AD SLOT (e.g. in-article) -->
+      <div class="ad-slot ad-mid"></div>
+    </main>
+
+    <!-- BOTTOM AD SLOT (e.g. footer banner) -->
+    <div class="ad-slot ad-bottom"></div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container site-footer-inner">
+        <div class="footer-col">
+          <h4 class="footer-heading">IELTS Corner</h4>
+          <p>
+            Focused, high-level training for IELTS &amp; CELPIP test-takers who are
+            serious about reaching Band 7+.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Explore</h4>
+          <div class="footer-links">
+            <a href="/lessons">All lessons</a>
+            <a href="/ielts">IELTS section</a>
+            <a href="/celpip">CELPIP section</a>
+            <a href="/ebook">CELPIP eBook (coming soon)</a>
+          </div>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>
+          &copy; {new Date().getFullYear()} IELTS Corner. All rights reserved.
+        </span>
+        <span>Built with Astro.</span>
+      </div>
+    </footer>
+  </body>
+</html>

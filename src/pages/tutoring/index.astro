@@ -1,0 +1,75 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const title = "Tutoring – 1:1 IELTS & CELPIP Coaching with Kay";
+const description =
+  "Book 1:1 IELTS or CELPIP coaching focused on Band 7+ (IELTS) and Level 9+ (CELPIP). Targeted feedback, strategy, and high-level language development.";
+---
+
+<Layout title={title} description={description}>
+  <section class="section">
+    <div class="section-heading">
+      <h1>1:1 IELTS &amp; CELPIP Tutoring</h1>
+      <p>
+        Work directly with an experienced instructor to target exactly what is holding
+        your score back. No generic lessons – just focused, personalised work on your
+        writing, speaking, grammar, and vocabulary.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <h2>How tutoring works</h2>
+        <ul>
+          <li>• Online sessions (video) focused on IELTS or CELPIP.</li>
+          <li>• Detailed feedback on your speaking and writing.</li>
+          <li>• Homework tasks designed for Band 7+/Level 9+.</li>
+          <li>• Focus on grammar, cohesion, vocabulary, and task achievement.</li>
+        </ul>
+
+        <h3 class="mt-4">Who this is for</h3>
+        <ul>
+          <li>• IELTS candidates stuck at 6.0–6.5 who need 7.0 or higher.</li>
+          <li>• CELPIP candidates aiming for Level 9–12.</li>
+          <li>• Learners who want direct, honest feedback – not “feel good” classes.</li>
+        </ul>
+      </div>
+
+      <div class="card card--compact">
+        <h3 class="mb-4">Tutoring options &amp; pricing</h3>
+        <p class="text-muted">
+          This section is a placeholder. You will plug in your real prices and Stripe
+          payment buttons/forms here.
+        </p>
+        <ul>
+          <li>• Option A – Single trial session (1 x 60 minutes)</li>
+          <li>• Option B – Package of 4 sessions</li>
+          <li>• Option C – Intensive package (8+ sessions)</li>
+        </ul>
+
+        <div class="mt-4">
+          <!-- TODO: Replace with real Stripe buttons/forms -->
+          <a href="#booking" class="btn btn-primary">
+            View pricing &amp; booking (coming soon)
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <section id="booking" class="section section--tight">
+      <div class="card card--compact">
+        <h2>Booking &amp; availability</h2>
+        <p>
+          Here you can embed your booking form or calendar later. For now, this section
+          simply explains how students will contact you.
+        </p>
+        <ul>
+          <li>• Step 1 – Choose IELTS or CELPIP.</li>
+          <li>• Step 2 – Select a package.</li>
+          <li>• Step 3 – Complete payment via Stripe.</li>
+          <li>• Step 4 – Receive confirmation and Zoom/meeting details by email.</li>
+        </ul>
+      </div>
+    </section>
+  </section>
+</Layout>

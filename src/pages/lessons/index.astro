@@ -1,0 +1,51 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const pageTitle = "Lessons – IELTS Corner";
+const pageDescription =
+  "Browse focused grammar, vocabulary, and exam skills lessons for advanced IELTS and CELPIP learners aiming for Band 7 or higher.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <section class="section">
+    <div class="section-heading">
+      <h1>All lessons</h1>
+      <p>
+        Start with high-impact grammar and vocabulary lessons that directly influence your
+        writing and speaking scores in IELTS and CELPIP.
+      </p>
+    </div>
+
+    <div class="lesson-grid">
+      <a href="/lessons/advanced-use-of-would" class="card lesson-card">
+        <span class="lesson-level-tag">C1 · Grammar</span>
+        <div class="card-meta">Grammar</div>
+        <h2 class="lesson-title">The Advanced Uses of “Would”</h2>
+        <p class="lesson-desc">
+          Learn all major functions of “would”: conditionals, habits, politeness,
+          imagined situations, and more.
+        </p>
+      </a>
+
+      <a href="/lessons/ielts-band-7-writing-criteria" class="card lesson-card">
+        <span class="lesson-level-tag">IELTS · Writing</span>
+        <div class="card-meta">Writing</div>
+        <h2 class="lesson-title">IELTS Band 7+ Writing Criteria Explained</h2>
+        <p class="lesson-desc">
+          A teacher-friendly explanation of the band descriptors with real-world
+          implications for your essays.
+        </p>
+      </a>
+
+      <a href="/lessons/high-level-vocabulary-for-arguments" class="card lesson-card">
+        <span class="lesson-level-tag">C1 · Vocabulary</span>
+        <div class="card-meta">Vocabulary</div>
+        <h2 class="lesson-title">High-level Vocabulary for Arguments</h2>
+        <p class="lesson-desc">
+          Upgrade your opinion language with precise, flexible words and phrases for
+          complex arguments.
+        </p>
+      </a>
+    </div>
+  </section>
+</Layout>
