@@ -1,0 +1,64 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const title = "CELPIP Ebook – High-Scoring Speaking & Writing Strategies";
+const description =
+  "A practical CELPIP ebook for candidates aiming for Level 9–12, with templates, model answers, and language upgrades for speaking and writing.";
+---
+
+<Layout title={title} description={description}>
+  <section class="section">
+    <div class="section-heading">
+      <h1>CELPIP Ebook (coming soon)</h1>
+      <p>
+        A complete, practical guide to CELPIP Speaking and Writing for serious candidates
+        aiming for Level 9–12. Clear templates, upgraded vocabulary, and realistic
+        model answers – not generic advice.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card card--compact">
+        <h2>What you’ll get</h2>
+        <ul>
+          <li>• Speaking templates that feel natural, not robotic.</li>
+          <li>• Writing frameworks for Task 1 (email) and Task 2 (survey response).</li>
+          <li>• High-level vocabulary tailored to Canadian contexts.</li>
+          <li>• Fully annotated model answers with comments.</li>
+          <li>• Checklists you can use the night before the test.</li>
+        </ul>
+      </div>
+
+      <div class="card card--compact">
+        <h2>Who this ebook is for</h2>
+        <ul>
+          <li>• Candidates stuck at Level 7–8 who need Level 9+.</li>
+          <li>• People applying for PR, citizenship, or licensing.</li>
+          <li>• Learners who want structure, not random YouTube tips.</li>
+        </ul>
+
+        <div class="mt-4">
+          <!-- TODO: Replace with Stripe checkout when ready -->
+          <a href="#notify" class="btn btn-primary">
+            Get notified when it’s ready
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <section id="notify" class="section section--tight">
+      <div class="card card--compact">
+        <h2>Early-bird list</h2>
+        <p>
+          Here you’ll later embed your email form (MailerLite, ConvertKit, etc.). For now
+          this section just explains that early subscribers will get bonuses.
+        </p>
+        <ul>
+          <li>• Launch discount.</li>
+          <li>• Extra sample answers or worksheets.</li>
+          <li>• Priority access to future CELPIP courses.</li>
+        </ul>
+      </div>
+    </section>
+  </section>
+</Layout>
