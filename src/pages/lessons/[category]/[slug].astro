@@ -1,0 +1,39 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+type LessonEntry = CollectionEntry<"lessons">;
+
+export async function getStaticPaths() {
+  const items = await getCollection(
+    "lessons",
+    ({ data }: { data: LessonEntry["data"] }) => !data.draft
+  );
+
+  return items.map((item: LessonEntry) => ({
+    params: { category: item.data.category, slug: item.slug },
+    props: { item },
+  }));
+}
+
+const { item } = Astro.props as { item: LessonEntry };
+const { Content } = await item.render();
+---
+
+
+
+<Layout title={`${item.data.title} | IELTS Corner`} description={item.data.excerpt}>
+  <section class="section">
+    <div class="stack">
+      <span class="pill">{item.data.level} • {item.data.exam.join(" & ")}</span>
+      <h1>{item.data.title}</h1>
+      <p class="muted" style="max-width: 75ch;">{item.data.excerpt}</p>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <article class="surface" style="padding: var(--s-6);">
+      <Content />
+    </article>
+  </section>
+</Layout>
