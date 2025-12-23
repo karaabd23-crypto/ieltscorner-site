@@ -1,70 +1,56 @@
 ---
+/* src/layouts/Layout.astro */
 import "../styles/global.css";
 
-interface LayoutProps {
+type Props = {
   title?: string;
   description?: string;
-}
+};
 
 const {
   title = "IELTS Corner",
-  description = "High-band IELTS and CELPIP lessons and grammar",
-} = Astro.props as LayoutProps;
+  description = "High-level IELTS & CELPIP training: clear explanations, real practice, and frameworks that match scoring.",
+} = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
   </head>
-  <body class="page">
-    <!-- SITE HEADER -->
+
+  <body>
     <header class="site-header">
-      <div class="container site-header-inner">
-        <a href="/" class="brand">
-          <div class="brand-mark"></div>
-          <div>
-            <div class="brand-text-main">IELTS Corner</div>
-            <div class="brand-text-sub">IELTS &amp; CELPIP Training</div>
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="IELTS Corner home">
+          <img src="/logo.gif" alt="IELTS Corner logo" width="40" height="40" loading="eager" />
+          <div class="brand-title">
+            <strong>IELTS Corner</strong>
+            <span>IELTS &amp; CELPIP Training</span>
           </div>
         </a>
 
-        <div class="site-header-right">
-          <nav class="site-nav">
-            <a href="/ielts">IELTS</a>
-            <a href="/celpip">CELPIP</a>
-            <a href="/lessons">Lessons</a>
-            <a href="/tutoring">Tutoring</a>
-            <a href="/essay-correction">Essay Correction</a>
-            <a href="/ebook">CELPIP eBook</a>
-          </nav>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="/ielts">IELTS</a>
+          <a href="/celpip">CELPIP</a>
+          <a href="/lessons">Lessons</a>
+          <a href="/tutoring">Tutoring</a>
+          <a href="/essay-correction">Essay Correction</a>
+          <a href="/ebook">CELPIP eBook</a>
+        </nav>
 
-          <div class="site-social">
-            <a
-              href="https://www.instagram.com/ieltscorner.ca"
-              class="social-link"
-              target="_blank"
-              rel="noreferrer"
-            >
+        <div class="header-right">
+          <div class="social" aria-label="Social links">
+            <a href="https://www.instagram.com/ieltscorner.ca" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               IG
             </a>
-            <a
-              href="https://www.youtube.com/@KaraAbdolmaleki"
-              class="social-link"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://www.youtube.com/@KaraAbdolmaleki" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
               YT
             </a>
-            <a
-              href="https://t.me/Kaysenglishcorner"
-              class="social-link"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://t.me/Kaysenglishcorner" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
               TG
             </a>
           </div>
@@ -72,34 +58,29 @@ const {
       </div>
     </header>
 
-    <!-- TOP AD SLOT (e.g. leaderboard, banner) -->
-    <div class="ad-slot ad-top"></div>
-
-    <!-- MAIN CONTENT + MID AD SLOT -->
     <main>
-      <div class="container">
-        <slot />
-      </div>
+  <div class="container">
+    <div class="ad-slot">Ad space (future Google AdSense)</div>
+  </div>
 
-      <!-- MID-CONTENT AD SLOT (e.g. in-article) -->
-      <div class="ad-slot ad-mid"></div>
-    </main>
+  <!-- ✅ This is the missing piece -->
+  <div class="container">
+    <slot />
+  </div>
+</main>
 
-    <!-- BOTTOM AD SLOT (e.g. footer banner) -->
-    <div class="ad-slot ad-bottom"></div>
 
-    <!-- FOOTER -->
     <footer class="site-footer">
-      <div class="container site-footer-inner">
-        <div class="footer-col">
-          <h4 class="footer-heading">IELTS Corner</h4>
-          <p>
-            Focused, high-level training for IELTS &amp; CELPIP test-takers who are
-            serious about reaching Band 7+ and Level 9+.
+      <div class="container footer-inner">
+        <div>
+          <h3>IELTS Corner</h3>
+          <p class="muted">
+            Focused, high-level training for IELTS &amp; CELPIP test-takers aiming for strong results.
           </p>
         </div>
-        <div class="footer-col">
-          <h4 class="footer-heading">Explore</h4>
+
+        <div>
+          <h3>Explore</h3>
           <div class="footer-links">
             <a href="/lessons">All lessons</a>
             <a href="/ielts">IELTS section</a>
@@ -109,38 +90,20 @@ const {
             <a href="/essay-correction">Essay correction</a>
           </div>
         </div>
-        <div class="footer-col">
-          <h4 class="footer-heading">Follow</h4>
+
+        <div>
+          <h3>Follow</h3>
           <div class="footer-links">
-            <a
-              href="https://www.instagram.com/ieltscorner.ca"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Instagram @ieltscorner.ca
-            </a>
-            <a
-              href="https://www.youtube.com/@KaraAbdolmaleki"
-              target="_blank"
-              rel="noreferrer"
-            >
-              YouTube – Kara Abdolmaleki
-            </a>
-            <a
-              href="https://t.me/Kaysenglishcorner"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Telegram – Kay's English Corner
-            </a>
+            <a href="https://www.instagram.com/ieltscorner.ca" target="_blank" rel="noopener noreferrer">Instagram @ieltscorner.ca</a>
+            <a href="https://www.youtube.com/@KaraAbdolmaleki" target="_blank" rel="noopener noreferrer">YouTube — Kara Abdolmaleki</a>
+            <a href="https://t.me/Kaysenglishcorner" target="_blank" rel="noopener noreferrer">Telegram — Kay’s English Corner</a>
           </div>
         </div>
       </div>
+
       <div class="container footer-bottom">
-        <span>
-          &copy; {new Date().getFullYear()} IELTS Corner. All rights reserved.
-        </span>
-        <span>Built with Astro.</span>
+        <span>© {new Date().getFullYear()} IELTS Corner. All rights reserved.</span>
+        <span class="muted-2">Built with Astro.</span>
       </div>
     </footer>
   </body>

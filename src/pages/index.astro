@@ -1,83 +1,96 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-const pageTitle = "IELTS Corner – Advanced English & IELTS & CELPIP 7+ Lessons";
-const pageDescription =
-  "High-impact IELTS and CELPIP English lessons designed to take you from stuck at 6.5 to confident 7.0+.";
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
-  <section class="hero">
-    <div class="hero-inner">
-      <!-- LEFT: Hero text -->
-      <div>
-        <div class="hero-eyebrow">
-          🎯 Band 7+ Focus · IELTS &amp; CELPIP
-        </div>
+<Layout
+  title="IELTS Corner — Band 7+ IELTS & CELPIP Lessons"
+  description="High-level IELTS & CELPIP training for Band 7+ learners. Clear explanations, real practice, and scoring-aligned frameworks."
+>
+  <section class="section">
+    <div class="stack">
+      <span class="pill">🎯 Band 7+ • Focus: IELTS &amp; CELPIP</span>
 
-        <h1 class="hero-title">
-          Precision English for high-scoring IELTS &amp; CELPIP candidates.
-        </h1>
+      <h1>Precision English for high-scoring IELTS &amp; CELPIP candidates.</h1>
 
-        <p class="hero-subtitle">
-          Carefully designed lessons that go beyond “exam tips.” Build the grammar,
-          vocabulary, and discourse skills you actually need for Band 7 and above –
-          without wasting time on generic advice.
+      <p class="muted" style="max-width: 62ch;">
+        Carefully designed lessons that go beyond “exam tips.” Build the grammar, vocabulary, and discourse skills you
+        actually need for Band 7+ — without wasting time on generic advice.
+      </p>
+
+      <div class="cluster">
+        <a class="btn btn-primary" href="/lessons">Browse free lessons →</a>
+        <a class="btn btn-ghost" href="/tutoring">1:1 coaching details</a>
+      </div>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+
+    <div class="grid grid-3">
+      <article class="card">
+        <h3>Grammar</h3>
+        <p class="muted">
+          Advanced structures explained clearly, with examples that sound like real English.
         </p>
+        <div style="height: var(--s-3);"></div>
+        <a class="btn" href="/lessons/grammar">Explore grammar →</a>
+      </article>
 
-        <div class="hero-actions">
-          <a href="/lessons" class="btn btn-primary">
-            Browse free lessons →
-          </a>
-          <a href="/tutoring" class="btn btn-secondary">
-            1:1 coaching details
-          </a>
+      <article class="card">
+        <h3>Vocabulary</h3>
+        <p class="muted">
+          High-value vocabulary and collocations for formal writing, speaking fluency, and clarity.
+        </p>
+        <div style="height: var(--s-3);"></div>
+        <a class="btn" href="/lessons/vocabulary">Explore vocabulary →</a>
+      </article>
+
+      <article class="card">
+        <h3>Writing &amp; Speaking</h3>
+        <p class="muted">
+          Scoring-aligned frameworks: coherence, tone control, task response, and natural delivery.
+        </p>
+        <div style="height: var(--s-3);"></div>
+        <div class="cluster">
+          <a class="btn" href="/lessons/writing">Writing →</a>
+          <a class="btn" href="/lessons/speaking">Speaking →</a>
+        </div>
+      </article>
+    </div>
+
+    <div style="height: var(--s-7);"></div>
+
+    <div class="surface" style="padding: var(--s-6);">
+      <div class="grid grid-2" style="align-items: start;">
+        <div class="stack">
+          <h2>Built for serious learners (not “tips hunters”).</h2>
+          <p class="muted" style="max-width: 62ch;">
+            If you’re stuck at Band 6.5–7.0, it’s rarely effort. It’s usually missing structures: how you organize ideas,
+            control tone, and produce accurate language under time pressure.
+          </p>
+          <div class="cluster">
+            <a class="btn btn-primary" href="/celpip">CELPIP course →</a>
+            <a class="btn" href="/ielts">IELTS guide →</a>
+          </div>
         </div>
 
-        <div class="hero-pill-list">
-          <span class="hero-pill">IELTS &amp; CELPIP focus</span>
-          <span class="hero-pill">Advanced grammar &amp; lexis</span>
-          <span class="hero-pill">Writing &amp; speaking centred</span>
+        <div class="stack">
+          <h3 style="margin-bottom: var(--s-2);">What you’ll see here</h3>
+          <div class="grid" style="gap: var(--s-3);">
+            <div class="card" style="padding: var(--s-4); box-shadow: none;">
+              <strong>✅ Clear explanations</strong>
+              <div class="muted">Short, direct, and test-relevant.</div>
+            </div>
+            <div class="card" style="padding: var(--s-4); box-shadow: none;">
+              <strong>✅ Practice that matches scoring</strong>
+              <div class="muted">Tasks that reward coherence and control.</div>
+            </div>
+            <div class="card" style="padding: var(--s-4); box-shadow: none;">
+              <strong>✅ Templates and reusable frameworks</strong>
+              <div class="muted">Especially for CELPIP speaking + writing.</div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <!-- RIGHT: Hero card -->
-      <aside class="hero-card">
-        <div class="hero-card-title">
-          What you’ll find here
-        </div>
-
-        <div class="hero-metrics">
-          <div class="metric">
-            <div class="metric-label">Grammar</div>
-            <div class="metric-value">Advanced</div>
-            <p class="text-muted">
-              Lessons written for advanced learners, not beginners.
-            </p>
-          </div>
-          <div class="metric">
-            <div class="metric-label">Focus</div>
-            <div class="metric-value">Clarity</div>
-            <p class="text-muted">
-              Emphasis on cohesion, accuracy, and natural-sounding English.
-            </p>
-          </div>
-          <div class="metric">
-            <div class="metric-label">Exams</div>
-            <div class="metric-value">IELTS + CELPIP</div>
-            <p class="text-muted">
-              Examples designed around real IELTS &amp; CELPIP tasks.
-            </p>
-          </div>
-          <div class="metric">
-            <div class="metric-label">Platform</div>
-            <div class="metric-value">Fast</div>
-            <p class="text-muted">
-              Built as a static site. No popups. No distractions.
-            </p>
-          </div>
-        </div>
-      </aside>
     </div>
   </section>
 </Layout>
