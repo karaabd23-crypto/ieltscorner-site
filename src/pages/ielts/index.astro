@@ -1,47 +1,99 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-
-const title = "IELTS – Lessons, Tutoring, and Exam Preparation";
-const description =
-  "IELTS preparation resources: grammar, vocabulary, writing, speaking, tutoring, and exam-focused lessons.";
 ---
 
-<Layout title={title} description={description}>
+<Layout
+  title="IELTS — IELTS Corner"
+  description="Band 7+ IELTS support with clear structure for Writing, Speaking, Reading, and Listening."
+>
   <section class="section">
-    <article class="card">
-      <h1>IELTS Preparation</h1>
+    <div class="hero" style={`--hero-bg: url('/heroes/IELTS.png');`}>
+      <div class="hero-content">
+        <span class="pill">🎯 IELTS • Band 7+</span>
 
-      <p>
-        This section is currently under development.
-        It will soon include structured IELTS lessons, exam strategies,
-        and guided practice for Writing, Speaking, Grammar, and Vocabulary.
-      </p>
+        <h1>IELTS help that focuses on structure, not “tips.”</h1>
 
-      <p>
-        For now, you can:
-      </p>
+        <p class="muted" style="max-width: 58ch;">
+          For now, IELTS support is mainly through tutoring (faster results, direct feedback).
+          If you’re self-studying, start with IELTS lessons.
+        </p>
 
-      <ul>
-        <li>
-          Explore shared lessons in the
-          <a href="/lessons">Lessons section</a>
-        </li>
-        <li>
-          Book <a href="/tutoring">1:1 IELTS tutoring</a>
-        </li>
-        <li>
-          Use <a href="/essay-correction">IELTS writing correction</a>
-        </li>
-      </ul>
-
-      <div style="margin-top: 1.5rem;">
-        <a class="btn btn-primary" href="/lessons">
-          View Lessons
-        </a>
-        <a class="btn btn-secondary" href="/tutoring">
-          Book Tutoring
-        </a>
+        <div class="cluster">
+          <a class="btn btn-primary" href="/lessons/ielts">Browse IELTS lessons →</a>
+          <a class="btn btn-ghost" href="/lessons">All lessons →</a>
+        </div>
       </div>
-    </article>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <div class="grid grid-2">
+      <article class="card">
+        <h3>Writing</h3>
+        <p class="muted">Band 7+ structure: clarity, coherence, tone control.</p>
+        <a class="btn" href="/lessons/ielts/writing">Open →</a>
+      </article>
+
+      <article class="card">
+        <h3>Speaking</h3>
+        <p class="muted">Natural answers with strong structure and better vocabulary.</p>
+        <a class="btn" href="/lessons/ielts/speaking">Open →</a>
+      </article>
+
+      <article class="card">
+        <h3>Reading</h3>
+        <p class="muted">Strategy + time control + trap detection.</p>
+        <a class="btn" href="/lessons/ielts/reading">Open →</a>
+      </article>
+
+      <article class="card">
+        <h3>Listening</h3>
+        <p class="muted">Prediction + signposts + accuracy drills.</p>
+        <a class="btn" href="/lessons/ielts/listening">Open →</a>
+      </article>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <div class="surface feature">
+      <div class="feature-grid">
+        <div class="stack">
+          <h2>Want faster improvement?</h2>
+          <p class="muted" style="max-width: 58ch;">
+            Most students don’t need more advice. They need feedback, corrections, and a plan.
+          </p>
+          <div class="cluster">
+            <a class="btn btn-primary" href="/tutoring">See tutoring →</a>
+            <a class="btn" href="/essay-correction">Essay correction →</a>
+          </div>
+        </div>
+
+        <div class="checklist">
+          <div class="check">
+            <div class="icon">✓</div>
+            <div>
+              <strong>Clear structure</strong>
+              <span>Know what to write / say first, next, and last.</span>
+            </div>
+          </div>
+
+          <div class="check">
+            <div class="icon">✓</div>
+            <div>
+              <strong>Direct feedback</strong>
+              <span>Fix the real problems, not random ones.</span>
+            </div>
+          </div>
+
+          <div class="check">
+            <div class="icon">✓</div>
+            <div>
+              <strong>Band 7+ focus</strong>
+              <span>Coherence, tone, grammar control.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </Layout>

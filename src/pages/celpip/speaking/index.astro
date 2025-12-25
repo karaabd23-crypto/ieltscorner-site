@@ -1,0 +1,39 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+const PAYHIP_CELPIP_URL = "https://payhip.com/b/REPLACE_ME";
+---
+
+<Layout title="CELPIP Speaking — IELTS Corner" description="CELPIP Speaking templates, clear structure, and course support.">
+  <section class="section">
+    <div class="hero" style={`--hero-bg: url('/heroes/IELTS.png');`}>
+      <div class="hero-content">
+        <span class="pill">🗣️ CELPIP Speaking</span>
+        <h1>Know what to say. Speak clearly and confidently.</h1>
+        <p class="muted" style="max-width: 56ch;">
+          Get simple templates for each speaking task, plus practice and feedback so you improve fast.
+        </p>
+        <div class="cluster">
+          <a class="btn btn-primary" href={PAYHIP_CELPIP_URL} target="_blank" rel="noreferrer">Get the course →</a>
+          <a class="btn btn-ghost" href="/tutoring">Private / group lessons →</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <div class="grid grid-3">
+      <article class="card">
+        <h3>What you learn</h3>
+        <p class="muted">Templates, timing, and useful phrases.</p>
+      </article>
+      <article class="card">
+        <h3>Common problems</h3>
+        <p class="muted">Not enough ideas, pauses, unclear structure.</p>
+      </article>
+      <article class="card">
+        <h3>How we fix it</h3>
+        <p class="muted">Step-by-step answers + guided practice.</p>
+      </article>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,121 @@
+---
+import Layout from "./Layout.astro";
+
+/* ---------- Types ---------- */
+type NavItem = {
+  href: string;
+  label: string;
+};
+
+type Props = {
+  title: string;
+  description?: string;
+  pill?: string;
+  meta?: string[];
+  nav?: NavItem[];
+  videoEmbed?: string;
+
+  /* quickCheck is typically Astro/JSX content or null.
+     Type it loosely to avoid TS config differences. */
+  quickCheck?: any;
+
+  progressPct?: number;
+};
+
+/* ---------- Props ---------- */
+const {
+  title,
+  description,
+  pill = "📘 Lesson",
+  meta = [],
+  nav = [],
+  videoEmbed = "",
+  quickCheck = null,
+  progressPct = 0,
+} = Astro.props as Props;
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero -->
+  <section class="section">
+    <div class="shell">
+      <div class="stack">
+        <span class="pill">{pill}</span>
+        <h1 style="margin-bottom:0.2em;">{title}</h1>
+
+        {meta.length > 0 && (
+          <div class="lesson-meta">
+            {meta.map((m) => (
+              <span class="pill">{m}</span>
+            ))}
+          </div>
+        )}
+
+        <div
+          class="progress"
+          style={`--pct:${progressPct}%; margin-top: var(--s-3);`}
+          aria-label="Lesson progress"
+        >
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="section-sm">
+    <div class="shell split">
+      <!-- Left nav -->
+      <aside class="sidebar">
+        <div class="panel">
+          <h3 class="panel-title">Lesson sections</h3>
+
+          {nav.length > 0 ? (
+            <ul class="list">
+              {nav.map((n) => (
+                <li>
+                  <a href={n.href}>{n.label}</a>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p class="muted" style="margin:0;">Sections coming soon.</p>
+          )}
+        </div>
+
+        <div class="panel">
+          <h3 class="panel-title">Next step</h3>
+          <a class="btn btn-primary" href="/celpip">
+            Continue CELPIP course →
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <main class="stack">
+        {videoEmbed && <div class="video-frame" set:html={videoEmbed}></div>}
+
+        <div class="panel">
+          <slot />
+        </div>
+      </main>
+
+      <!-- Right rail -->
+      <aside class="sidebar">
+        <div class="panel">
+          <h3 class="panel-title">Quick check</h3>
+          {quickCheck ? (
+            quickCheck
+          ) : (
+            <p class="muted" style="margin:0;">Quiz coming soon.</p>
+          )}
+        </div>
+
+        <div class="panel">
+          <h3 class="panel-title">Download</h3>
+          <p class="muted" style="margin:0;">PDF worksheet coming soon.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+</Layout>

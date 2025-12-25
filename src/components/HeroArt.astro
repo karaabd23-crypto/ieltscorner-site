@@ -1,0 +1,107 @@
+---
+const {
+  image,
+  alt = "",
+  height = 440,        // px
+  align = "right",     // "left" | "right"
+} = Astro.props;
+
+if (!image) throw new Error("HeroArt requires an `image` prop.");
+---
+
+<section class="heroArt" data-align={align} style={`--hero-h:${height}px;`}>
+  <div class="heroGrid">
+    <div class="heroContent">
+      <div class="heroCard">
+        <slot />
+      </div>
+    </div>
+
+    <div class="heroMedia" aria-hidden="true">
+      <img class="heroImg" src={image} alt={alt} loading="eager" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .heroArt{
+    border-radius: 22px;
+    overflow: hidden;
+    border: 1px solid var(--border-strong);
+    background: rgba(255,255,255,0.82);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .heroGrid{
+    min-height: var(--hero-h);
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: stretch;
+  }
+
+  .heroContent{
+    padding: 26px;
+    display:flex;
+    align-items:center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Premium “glass” text panel */
+  .heroCard{
+    width: 100%;
+    max-width: 60ch;
+    padding: 18px 18px 16px;
+    border-radius: 18px;
+    border: 1px solid rgba(20,22,23,0.12);
+    background: rgba(251,248,244,0.86);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 22px rgba(20,22,23,0.06);
+  }
+
+  .heroMedia{
+    position: relative;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    padding: 18px 18px 18px 0;
+    z-index: 1;
+    background:
+      radial-gradient(900px 320px at 70% 35%, rgba(217,72,72,0.10), transparent 60%),
+      radial-gradient(900px 320px at 85% 70%, rgba(20,22,23,0.08), transparent 65%);
+  }
+
+  .heroImg{
+    width: 100%;
+    height: calc(var(--hero-h) - 36px);
+    object-fit: contain;            /* keeps whitespace in the illustrations */
+    object-position: right center;
+    filter: saturate(0.98);
+  }
+
+  /* Left aligned variant */
+  .heroArt[data-align="left"] .heroGrid{
+    grid-template-columns: 0.95fr 1.05fr;
+  }
+  .heroArt[data-align="left"] .heroMedia{
+    justify-content:flex-start;
+    padding: 18px 0 18px 18px;
+  }
+  .heroArt[data-align="left"] .heroImg{
+    object-position: left center;
+  }
+
+  @media (max-width: 900px){
+    .heroGrid{ grid-template-columns: 1fr; }
+    .heroContent{ padding: 18px; }
+    .heroCard{ max-width: 100%; }
+    .heroMedia{
+      padding: 0 18px 18px;
+      justify-content:center;
+    }
+    .heroImg{
+      height: 220px;
+      object-position: center;
+    }
+  }
+</style>

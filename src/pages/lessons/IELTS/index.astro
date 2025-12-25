@@ -1,0 +1,72 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+---
+
+<Layout
+  title="IELTS Lessons — IELTS Corner"
+  description="IELTS-only lessons for Listening, Reading, Speaking, and Writing. Band 7+ focused and strategy-based."
+>
+  <section class="section">
+    <div class="hero" style={`--hero-bg: url('/heroes/lesson.png');`}>
+      <div class="hero-content">
+        <span class="pill">🎯 IELTS Lessons</span>
+
+        <h1>Pick a skill. Train it properly.</h1>
+
+        <p class="muted" style="max-width: 58ch;">
+          These are IELTS-only lessons. Simple systems, clear structure, and practice that targets Band 7+ weaknesses.
+        </p>
+
+        <div class="cluster">
+          <a class="btn btn-primary" href="/lessons">← Back to Lessons hub</a>
+          <a class="btn btn-ghost" href="/tutoring">Tutoring →</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <div class="grid grid-2">
+      <article class="card">
+        <h3>Listening</h3>
+        <p class="muted">Traps, prediction, signposts, accuracy drills.</p>
+        <a class="btn btn-primary" href="/lessons/ielts/listening">Open →</a>
+      </article>
+
+      <article class="card">
+        <h3>Reading</h3>
+        <p class="muted">Mapping, scanning, proof-based answering.</p>
+        <a class="btn btn-primary" href="/lessons/ielts/reading">Open →</a>
+      </article>
+
+      <article class="card">
+        <h3>Speaking</h3>
+        <p class="muted">Structure for Parts 1–3 + natural extension.</p>
+        <a class="btn btn-primary" href="/lessons/ielts/speaking">Open →</a>
+      </article>
+
+      <article class="card">
+        <h3>Writing</h3>
+        <p class="muted">Band 7+ coherence, paragraph logic, precision.</p>
+        <a class="btn btn-primary" href="/lessons/ielts/writing">Open →</a>
+      </article>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <div class="surface feature">
+      <div class="feature-grid">
+        <div class="stack">
+          <h2>Want faster improvement?</h2>
+          <p class="muted" style="max-width: 58ch;">
+            Lessons help — but feedback is what makes the jump to Band 7+ predictable.
+          </p>
+          <div class="cluster">
+            <a class="btn btn-primary" href="/tutoring">See tutoring →</a>
+            <a class="btn" href="/essay-correction">Essay correction →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

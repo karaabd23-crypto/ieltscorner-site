@@ -1,0 +1,39 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+const PAYHIP_CELPIP_URL = "https://payhip.com/b/REPLACE_ME";
+---
+
+<Layout title="CELPIP Listening — IELTS Corner" description="CELPIP Listening: simple strategies, clear practice, and course support.">
+  <section class="section">
+    <div class="hero" style={`--hero-bg: url('/heroes/spare.png');`}>
+      <div class="hero-content">
+        <span class="pill">🎧 CELPIP Listening</span>
+        <h1>Understand the question. Choose the right answer faster.</h1>
+        <p class="muted" style="max-width: 56ch;">
+          We train the most common listening patterns, key words, and “traps” — with practice that feels like the test.
+        </p>
+        <div class="cluster">
+          <a class="btn btn-primary" href={PAYHIP_CELPIP_URL} target="_blank" rel="noreferrer">Get the course →</a>
+          <a class="btn btn-ghost" href="/tutoring">Private / group lessons →</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <div class="grid grid-3">
+      <article class="card">
+        <h3>What you learn</h3>
+        <p class="muted">How to listen for the right detail, not every word.</p>
+      </article>
+      <article class="card">
+        <h3>Common problems</h3>
+        <p class="muted">Fast speech, similar options, losing focus.</p>
+      </article>
+      <article class="card">
+        <h3>How we fix it</h3>
+        <p class="muted">Clear steps + timed practice + review.</p>
+      </article>
+    </div>
+  </section>
+</Layout>

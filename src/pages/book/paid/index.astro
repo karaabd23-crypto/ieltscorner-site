@@ -1,0 +1,61 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+
+const CALENDAR_BOOKING_URL = "https://calendar.app.google/NfJw5p7m14rMGTYe8";
+---
+
+<Layout
+  title="Booking — IELTS Corner"
+  description="Thanks for your payment. Book your lesson time here."
+>
+  <section class="section">
+    <div class="hero" style={`--hero-bg: url('/heroes/tutoring.png');`}>
+      <div class="hero-content">
+        <span class="pill">✅ Payment received</span>
+
+        <h1>Now book your lesson time.</h1>
+
+        <p class="muted" style="max-width: 58ch;">
+          Please book your time using the calendar link below. Lessons are on Google Meet
+          (kara.abdolmaleki@gmail.com).
+        </p>
+
+        <div class="cluster">
+          <a class="btn btn-primary" href={CALENDAR_BOOKING_URL} target="_blank" rel="noreferrer">
+            Open booking calendar →
+          </a>
+          <a class="btn btn-ghost" href="/tutoring">
+            Back to tutoring →
+          </a>
+        </div>
+
+        <div style="height: var(--s-3);"></div>
+
+        <p class="muted" style="max-width: 60ch; font-size: 14px; margin: 0;">
+          Note: This page is meant for students who have paid. If you haven’t paid yet, go back to the tutoring page.
+        </p>
+      </div>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <div class="grid grid-2" style="align-items:start;">
+      <div class="card">
+        <h3>Before you book</h3>
+        <p class="muted">
+          Use the same name and email you used for payment. This helps me match your booking with your payment.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>After you book</h3>
+        <p class="muted">
+          You will receive confirmation. The lesson will be on Google Meet.
+        </p>
+        <p class="muted" style="margin:0;">
+          Instructor account: <strong>kara.abdolmaleki@gmail.com</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,39 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+const PAYHIP_CELPIP_URL = "https://payhip.com/b/REPLACE_ME";
+---
+
+<Layout title="CELPIP Reading — IELTS Corner" description="CELPIP Reading: clear strategies and course support.">
+  <section class="section">
+    <div class="hero" style={`--hero-bg: url('/heroes/tutoring.png');`}>
+      <div class="hero-content">
+        <span class="pill">📖 CELPIP Reading</span>
+        <h1>Read faster. Find answers with less stress.</h1>
+        <p class="muted" style="max-width: 56ch;">
+          Learn scanning, keywords, and how to avoid wrong options — with real CELPIP-style practice.
+        </p>
+        <div class="cluster">
+          <a class="btn btn-primary" href={PAYHIP_CELPIP_URL} target="_blank" rel="noreferrer">Get the course →</a>
+          <a class="btn btn-ghost" href="/tutoring">Private / group lessons →</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <div class="grid grid-3">
+      <article class="card">
+        <h3>What you learn</h3>
+        <p class="muted">How to find answers quickly without reading everything.</p>
+      </article>
+      <article class="card">
+        <h3>Common problems</h3>
+        <p class="muted">Running out of time, confusing similar choices.</p>
+      </article>
+      <article class="card">
+        <h3>How we fix it</h3>
+        <p class="muted">Strategy + timed practice + review.</p>
+      </article>
+    </div>
+  </section>
+</Layout>

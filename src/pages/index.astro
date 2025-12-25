@@ -4,89 +4,101 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout
   title="IELTS Corner — Band 7+ IELTS & CELPIP Lessons"
-  description="High-level IELTS & CELPIP training for Band 7+ learners. Clear explanations, real practice, and scoring-aligned frameworks."
+  description="Band 7+ IELTS & CELPIP training. Clear explanations, scoring-aligned practice, and reusable frameworks."
 >
-  <section class="section">
-    <div class="stack">
-      <span class="pill">🎯 Band 7+ • Focus: IELTS &amp; CELPIP</span>
+  <section class="section" style="padding-top: var(--s-6);">
+    <!-- HERO (background image) -->
+    <div
+      class="hero"
+      style={`--hero-bg: url('/heroes/home.png');`}
+    >
+      <div class="hero-content">
+        <span class="pill">🎯 Band 7+ • IELTS &amp; CELPIP</span>
 
-      <h1>Precision English for high-scoring IELTS &amp; CELPIP candidates.</h1>
+        <h1>Precision English that actually moves your score.</h1>
 
-      <p class="muted" style="max-width: 62ch;">
-        Carefully designed lessons that go beyond “exam tips.” Build the grammar, vocabulary, and discourse skills you
-        actually need for Band 7+ — without wasting time on generic advice.
-      </p>
+        <p>
+          Grammar, vocabulary, coherence, and tone — focused and test-relevant.
+        </p>
 
-      <div class="cluster">
-        <a class="btn btn-primary" href="/lessons">Browse free lessons →</a>
-        <a class="btn btn-ghost" href="/tutoring">1:1 coaching details</a>
+        <div class="cluster" style="margin-top: var(--s-2);">
+          <a class="btn btn-primary" href="/lessons">Free lessons →</a>
+          <a class="btn btn-ghost" href="/tutoring">1:1 coaching</a>
+        </div>
       </div>
     </div>
 
-    <div style="height: var(--s-6);"></div>
+    <!-- breathing room -->
+    <div style="height: var(--s-8);"></div>
 
-    <div class="grid grid-3">
+    <!-- TOP CATEGORY CARDS -->
+    <div class="grid grid-4">
       <article class="card">
         <h3>Grammar</h3>
-        <p class="muted">
-          Advanced structures explained clearly, with examples that sound like real English.
-        </p>
-        <div style="height: var(--s-3);"></div>
-        <a class="btn" href="/lessons/grammar">Explore grammar →</a>
+        <p>Advanced structures, explained simply.</p>
+        <a class="btn" href="/lessons/grammar">Explore →</a>
       </article>
 
       <article class="card">
         <h3>Vocabulary</h3>
-        <p class="muted">
-          High-value vocabulary and collocations for formal writing, speaking fluency, and clarity.
-        </p>
-        <div style="height: var(--s-3);"></div>
-        <a class="btn" href="/lessons/vocabulary">Explore vocabulary →</a>
+        <p>High-value words + collocations that score.</p>
+        <a class="btn" href="/lessons/vocabulary">Explore →</a>
       </article>
 
       <article class="card">
-        <h3>Writing &amp; Speaking</h3>
-        <p class="muted">
-          Scoring-aligned frameworks: coherence, tone control, task response, and natural delivery.
-        </p>
-        <div style="height: var(--s-3);"></div>
-        <div class="cluster">
-          <a class="btn" href="/lessons/writing">Writing →</a>
-          <a class="btn" href="/lessons/speaking">Speaking →</a>
-        </div>
+        <h3>Writing</h3>
+        <p>Task response, coherence, tone control.</p>
+        <a class="btn" href="/lessons/writing">Explore →</a>
+      </article>
+
+      <article class="card">
+        <h3>Speaking</h3>
+        <p>Natural delivery + structured answers.</p>
+        <a class="btn" href="/lessons/speaking">Explore →</a>
       </article>
     </div>
 
-    <div style="height: var(--s-7);"></div>
+    <div style="height: var(--s-8);"></div>
 
-    <div class="surface" style="padding: var(--s-6);">
-      <div class="grid grid-2" style="align-items: start;">
+    <!-- FEATURE SECTION -->
+    <div class="surface feature">
+      <div class="feature-grid">
         <div class="stack">
-          <h2>Built for serious learners (not “tips hunters”).</h2>
-          <p class="muted" style="max-width: 62ch;">
-            If you’re stuck at Band 6.5–7.0, it’s rarely effort. It’s usually missing structures: how you organize ideas,
-            control tone, and produce accurate language under time pressure.
-          </p>
-          <div class="cluster">
+          <h2>Built for serious learners.</h2>
+          <p>Most plateaus are structure problems — not effort.</p>
+
+          <div class="cluster" style="margin-top: var(--s-2);">
             <a class="btn btn-primary" href="/celpip">CELPIP course →</a>
             <a class="btn" href="/ielts">IELTS guide →</a>
           </div>
         </div>
 
-        <div class="stack">
-          <h3 style="margin-bottom: var(--s-2);">What you’ll see here</h3>
-          <div class="grid" style="gap: var(--s-3);">
-            <div class="card" style="padding: var(--s-4); box-shadow: none;">
-              <strong>✅ Clear explanations</strong>
-              <div class="muted">Short, direct, and test-relevant.</div>
+        <div>
+          <h3 style="margin: 0 0 var(--s-4);">What you’ll get</h3>
+
+          <div class="checklist">
+            <div class="check">
+              <div class="icon">✓</div>
+              <div>
+                <strong>Clear explanations</strong>
+                <span>Short. Direct. Test-relevant.</span>
+              </div>
             </div>
-            <div class="card" style="padding: var(--s-4); box-shadow: none;">
-              <strong>✅ Practice that matches scoring</strong>
-              <div class="muted">Tasks that reward coherence and control.</div>
+
+            <div class="check">
+              <div class="icon">✓</div>
+              <div>
+                <strong>Scoring-aligned practice</strong>
+                <span>Coherence + control first.</span>
+              </div>
             </div>
-            <div class="card" style="padding: var(--s-4); box-shadow: none;">
-              <strong>✅ Templates and reusable frameworks</strong>
-              <div class="muted">Especially for CELPIP speaking + writing.</div>
+
+            <div class="check">
+              <div class="icon">✓</div>
+              <div>
+                <strong>Reusable frameworks</strong>
+                <span>Templates you can repeat.</span>
+              </div>
             </div>
           </div>
         </div>

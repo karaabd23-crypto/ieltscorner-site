@@ -1,103 +1,144 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-
-const categories = [
-  {
-    title: "Grammar",
-    icon: "🧩",
-    desc:
-      "Advanced structures, accuracy upgrades, and clear explanations with examples that sound like real English.",
-    href: "/lessons/grammar",
-  },
-  {
-    title: "Vocabulary",
-    icon: "🧠",
-    desc:
-      "High-value words and collocations for arguments, clarity, tone control, and everyday Canadian contexts.",
-    href: "/lessons/vocabulary",
-  },
-  {
-    title: "Writing",
-    icon: "✍️",
-    desc:
-      "Task structures, coherence, examiner-friendly phrasing, and focused strategies for essays and formal messages.",
-    href: "/lessons/writing",
-  },
-  {
-    title: "Speaking",
-    icon: "🎤",
-    desc:
-      "Fluency, discourse management, and flexible templates for spoken tasks that sound natural under pressure.",
-    href: "/lessons/speaking",
-  },
-];
 ---
 
 <Layout
   title="Lessons — IELTS Corner"
-  description="Browse high-level IELTS & CELPIP lessons: grammar, vocabulary, writing, and speaking. Clear explanations plus practice tasks."
+  description="Free lessons for IELTS & CELPIP: Grammar, Vocabulary, and skill-specific training for Listening, Reading, Speaking, and Writing."
 >
   <section class="section">
-    <div class="stack">
-      <span class="pill">📚 Lessons • Band 7+ Focus</span>
-      <h1>Lessons</h1>
-      <p class="muted" style="max-width: 70ch;">
-        Choose a category to explore high-level lessons for IELTS &amp; CELPIP. Each lesson includes clear explanations and
-        practice tasks.
-      </p>
+    <div class="hero" style={`--hero-bg: url('/heroes/lesson.png');`}>
+      <div class="hero-content">
+        <span class="pill">📚 Lessons</span>
 
-      <div class="cluster">
-        <a class="btn btn-primary" href="/tutoring">Need a plan? 1:1 tutoring →</a>
-        <a class="btn" href="/celpip">CELPIP course →</a>
+        <h1>Pick your test. Pick your skill. Practice properly.</h1>
+
+        <p class="muted" style="max-width: 58ch;">
+          Free lessons for IELTS and CELPIP — clear steps, good examples, and practice that makes sense.
+        </p>
+
+        <div class="cluster">
+          <a class="btn btn-primary" href="/lessons/ielts">IELTS lessons →</a>
+          <a class="btn btn-ghost" href="/lessons/celpip">CELPIP lessons →</a>
+        </div>
       </div>
     </div>
 
-    <div style="height: var(--s-6);"></div>
+    <div style="height: var(--s-8);"></div>
 
+    <!-- Core language categories -->
     <div class="grid grid-2">
-      {categories.map((c) => (
-        <a class="card" href={c.href} style="display:block;">
-          <div class="cluster" style="justify-content: space-between;">
-            <h2 style="margin:0; font-size: 1.45rem;">
-              <span style="margin-right: 10px;">{c.icon}</span>
-              {c.title}
-            </h2>
-            <span class="pill">Explore →</span>
-          </div>
+      <div class="card">
+        <h3>Grammar</h3>
+        <p class="muted">High-impact structures for accuracy and higher scores.</p>
+        <div class="cluster">
+          <a class="btn btn-primary" href="/lessons/grammar">Open grammar →</a>
+        </div>
+      </div>
 
-          <p class="muted" style="margin-top: var(--s-3); margin-bottom: 0; max-width: 68ch;">
-            {c.desc}
-          </p>
-        </a>
-      ))}
+      <div class="card">
+        <h3>Vocabulary</h3>
+        <p class="muted">Useful words and collocations for real English and test tasks.</p>
+        <div class="cluster">
+          <a class="btn btn-primary" href="/lessons/vocabulary">Open vocabulary →</a>
+        </div>
+      </div>
     </div>
 
-    <div style="height: var(--s-7);"></div>
+    <div style="height: var(--s-8);"></div>
 
-    <div class="surface" style="padding: var(--s-6);">
-      <div class="grid grid-2" style="align-items: start;">
+    <!-- CELPIP lessons block -->
+    <div class="surface feature">
+      <div class="feature-grid">
         <div class="stack">
-          <h2 style="margin-bottom: var(--s-2);">How to use the lessons</h2>
-          <p class="muted" style="max-width: 70ch;">
-            Don’t binge. Pick one skill, work through one lesson, do the practice, then repeat. Consistency beats
-            intensity.
+          <h2>CELPIP lessons</h2>
+          <p class="muted" style="max-width: 58ch;">
+            Practice each CELPIP skill with simple steps, templates, and examples.
           </p>
+          <div class="cluster">
+            <a class="btn btn-primary" href="/celpip">CELPIP course page →</a>
+            <a class="btn" href="/tutoring">Private / group lessons →</a>
+          </div>
         </div>
 
-        <div class="grid" style="gap: var(--s-3);">
-          <div class="card" style="padding: var(--s-4); box-shadow: none;">
-            <strong>1) Choose a category</strong>
-            <div class="muted">Start with your weakest scoring area.</div>
-          </div>
-          <div class="card" style="padding: var(--s-4); box-shadow: none;">
-            <strong>2) Do one lesson properly</strong>
-            <div class="muted">Read → apply → practice → check.</div>
-          </div>
-          <div class="card" style="padding: var(--s-4); box-shadow: none;">
-            <strong>3) Track recurring mistakes</strong>
-            <div class="muted">Fix patterns, not single errors.</div>
+        <div class="grid grid-2" style="gap: var(--s-4);">
+          <a class="card" href="/celpip/listening" style="text-decoration:none;">
+            <h3>Listening</h3>
+            <p class="muted">Understand questions and choose answers faster.</p>
+          </a>
+
+          <a class="card" href="/celpip/reading" style="text-decoration:none;">
+            <h3>Reading</h3>
+            <p class="muted">Scan, find keywords, and avoid wrong options.</p>
+          </a>
+
+          <a class="card" href="/celpip/speaking" style="text-decoration:none;">
+            <h3>Speaking</h3>
+            <p class="muted">Templates for each task + natural delivery.</p>
+          </a>
+
+          <a class="card" href="/celpip/writing" style="text-decoration:none;">
+            <h3>Writing</h3>
+            <p class="muted">Email + survey structure you can reuse.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <!-- IELTS lessons block -->
+    <div class="surface feature">
+      <div class="feature-grid">
+        <div class="stack">
+          <h2>IELTS lessons</h2>
+          <p class="muted" style="max-width: 58ch;">
+            IELTS lessons are here — but for now, the main path is coaching (to get to Band 7+ faster).
+          </p>
+          <div class="cluster">
+            <a class="btn btn-primary" href="/tutoring">Go to tutoring →</a>
+            <a class="btn" href="/ielts">IELTS page →</a>
           </div>
         </div>
+
+        <div class="grid grid-2" style="gap: var(--s-4);">
+          <a class="card" href="/lessons/ielts/listening" style="text-decoration:none;">
+            <h3>Listening</h3>
+            <p class="muted">Improve accuracy and avoid common traps.</p>
+          </a>
+
+          <a class="card" href="/lessons/ielts/reading" style="text-decoration:none;">
+            <h3>Reading</h3>
+            <p class="muted">Time control, keywords, and answer strategy.</p>
+          </a>
+
+          <a class="card" href="/lessons/ielts/speaking" style="text-decoration:none;">
+            <h3>Speaking</h3>
+            <p class="muted">Natural answers with strong structure.</p>
+          </a>
+
+          <a class="card" href="/lessons/ielts/writing" style="text-decoration:none;">
+            <h3>Writing</h3>
+            <p class="muted">Band 7+ structure: coherence, tone, precision.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <!-- gentle conversion -->
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Want faster progress?</h3>
+        <p class="muted">One lesson can save you weeks of guessing.</p>
+        <a class="btn btn-primary" href="/tutoring">View pricing →</a>
+      </div>
+
+      <div class="card">
+        <h3>CELPIP course</h3>
+        <p class="muted">Start now with a guided plan and templates.</p>
+        <a class="btn" href="/celpip">Go to course page →</a>
       </div>
     </div>
   </section>

@@ -1,75 +1,128 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 
-const title = "Tutoring – 1:1 IELTS & CELPIP Coaching with Kay";
-const description =
-  "Book 1:1 IELTS or CELPIP coaching focused on Band 7+ (IELTS) and Level 9+ (CELPIP). Targeted feedback, strategy, and high-level language development.";
+const STRIPE_PRIVATE_PAY_URL = "https://buy.stripe.com/7sYfZg90GcK826lgYsgMw00";
+const WHATSAPP_GROUP_URL = "https://wa.me/17789942315";
 ---
 
-<Layout title={title} description={description}>
+<Layout
+  title="Tutoring — IELTS & CELPIP (Online)"
+  description="Private IELTS/CELPIP lessons on Google Meet. CA$30/hour. Pay first, then book your time."
+>
   <section class="section">
-    <div class="section-heading">
-      <h1>1:1 IELTS &amp; CELPIP Tutoring</h1>
-      <p>
-        Work directly with an experienced instructor to target exactly what is holding
-        your score back. No generic lessons – just focused, personalised work on your
-        writing, speaking, grammar, and vocabulary.
-      </p>
+    <div class="hero" style={`--hero-bg: url('/heroes/tutoring.png');`}>
+      <div class="hero-content">
+        <span class="pill">🎓 Tutoring • Google Meet</span>
+
+        <h1>Pay first. Then book. Simple.</h1>
+
+        <p class="muted" style="max-width: 60ch;">
+          Private lessons are <strong>CA$30/hour</strong>. After payment, Stripe will send you to the booking calendar.
+        </p>
+
+        <div class="cluster">
+          <a class="btn btn-primary" href={STRIPE_PRIVATE_PAY_URL} target="_blank" rel="noreferrer">
+            Pay CA$30 → then book
+          </a>
+          <a class="btn btn-ghost" href={WHATSAPP_GROUP_URL} target="_blank" rel="noreferrer">
+            Group classes (min 3) — WhatsApp →
+          </a>
+        </div>
+
+        <p class="muted" style="max-width: 60ch; font-size:14px; margin: 0;">
+          Lessons are on Google Meet from <strong>kara.abdolmaleki@gmail.com</strong>.
+        </p>
+      </div>
     </div>
 
-    <div class="grid-2">
-      <div>
-        <h2>How tutoring works</h2>
-        <ul>
-          <li>• Online sessions (video) focused on IELTS or CELPIP.</li>
-          <li>• Detailed feedback on your speaking and writing.</li>
-          <li>• Homework tasks designed for Band 7+/Level 9+.</li>
-          <li>• Focus on grammar, cohesion, vocabulary, and task achievement.</li>
-        </ul>
+    <div style="height: var(--s-8);"></div>
 
-        <h3 class="mt-4">Who this is for</h3>
-        <ul>
-          <li>• IELTS candidates stuck at 6.0–6.5 who need 7.0 or higher.</li>
-          <li>• CELPIP candidates aiming for Level 9–12.</li>
-          <li>• Learners who want direct, honest feedback – not “feel good” classes.</li>
-        </ul>
+    <div class="grid grid-2" style="align-items:start;">
+      <div class="card">
+        <h3>Private lesson — CA$30 (60 minutes)</h3>
+        <p class="muted">
+          Focused tutoring for IELTS or CELPIP. We fix what is actually lowering your score.
+        </p>
+
+        <div class="checklist">
+          <div class="check">
+            <div class="icon">✓</div>
+            <div>
+              <strong>Targeted feedback</strong>
+              <span>Clear corrections you can apply immediately.</span>
+            </div>
+          </div>
+          <div class="check">
+            <div class="icon">✓</div>
+            <div>
+              <strong>Simple weekly plan</strong>
+              <span>You’ll know exactly what to practice next.</span>
+            </div>
+          </div>
+          <div class="check">
+            <div class="icon">✓</div>
+            <div>
+              <strong>Exam-style practice</strong>
+              <span>Speaking & writing tasks that match the test.</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="height: var(--s-4);"></div>
+
+        <a class="btn btn-primary" href={STRIPE_PRIVATE_PAY_URL} target="_blank" rel="noreferrer">
+          Pay CA$30 → then book
+        </a>
+
+        <p class="muted" style="font-size: 13px; margin: 12px 0 0;">
+          After payment, Stripe redirects you to the booking calendar automatically.
+        </p>
       </div>
 
-      <div class="card card--compact">
-        <h3 class="mb-4">Tutoring options &amp; pricing</h3>
-        <p class="text-muted">
-          This section is a placeholder. You will plug in your real prices and Stripe
-          payment buttons/forms here.
+      <div class="card">
+        <h3>How booking works</h3>
+        <p class="muted" style="margin-bottom: 12px;">
+          Payment comes first, so unpaid bookings are impossible.
         </p>
-        <ul>
-          <li>• Option A – Single trial session (1 x 60 minutes)</li>
-          <li>• Option B – Package of 4 sessions</li>
-          <li>• Option C – Intensive package (8+ sessions)</li>
-        </ul>
 
-        <div class="mt-4">
-          <!-- TODO: Replace with real Stripe buttons/forms -->
-          <a href="#booking" class="btn btn-primary">
-            View pricing &amp; booking (coming soon)
+        <div class="checklist">
+          <div class="check">
+            <div class="icon">1</div>
+            <div>
+              <strong>Pay securely on Stripe</strong>
+              <span>Use the “Pay CA$30” button.</span>
+            </div>
+          </div>
+          <div class="check">
+            <div class="icon">2</div>
+            <div>
+              <strong>Choose your time</strong>
+              <span>After payment, you’ll be sent to the booking calendar.</span>
+            </div>
+          </div>
+          <div class="check">
+            <div class="icon">3</div>
+            <div>
+              <strong>Get your Meet link by email</strong>
+              <span>Google Calendar sends the confirmation + Google Meet link.</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="height: var(--s-5);"></div>
+
+        <div class="surface" style="padding: var(--s-5);">
+          <h3 style="margin-top:0;">Group classes</h3>
+          <p class="muted" style="margin-bottom: 12px;">
+            Group lessons are <strong>CA$10 per student</strong> (minimum <strong>3 students</strong>). Message me on WhatsApp to set a time.
+          </p>
+          <a class="btn" href={WHATSAPP_GROUP_URL} target="_blank" rel="noreferrer">
+            WhatsApp: +1 (778) 994-2315 →
           </a>
         </div>
       </div>
     </div>
 
-    <section id="booking" class="section section--tight">
-      <div class="card card--compact">
-        <h2>Booking &amp; availability</h2>
-        <p>
-          Here you can embed your booking form or calendar later. For now, this section
-          simply explains how students will contact you.
-        </p>
-        <ul>
-          <li>• Step 1 – Choose IELTS or CELPIP.</li>
-          <li>• Step 2 – Select a package.</li>
-          <li>• Step 3 – Complete payment via Stripe.</li>
-          <li>• Step 4 – Receive confirmation and Zoom/meeting details by email.</li>
-        </ul>
-      </div>
-    </section>
+    <div style="height: var(--s-8);"></div>
   </section>
 </Layout>

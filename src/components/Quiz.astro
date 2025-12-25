@@ -1,0 +1,118 @@
+---
+type QuizQuestion = {
+  prompt: string;
+  options: string[];
+  correctIndex: number;
+  explanation?: string;
+};
+
+type QuizProps = {
+  title?: string;
+  questions?: QuizQuestion[];
+};
+
+const { title = "Quick quiz", questions = [] } = Astro.props as QuizProps;
+
+const quizId = `quiz-${Math.random().toString(36).slice(2)}`;
+---
+
+
+<section class="surface" style="padding: var(--s-6);" id={quizId} data-quiz>
+  <div class="cluster" style="justify-content: space-between; align-items: baseline;">
+    <h2 style="margin:0;">{title}</h2>
+    <span class="pill" data-score>Answer → Check</span>
+  </div>
+
+  <div style="height: var(--s-4)"></div>
+
+  <div class="stack" style="gap: var(--s-5);">
+    {questions.map((q, idx) => (
+      <div class="card" style="box-shadow:none;" data-question data-correct={q.correctIndex} data-index={idx}>
+        <strong>{idx + 1}) {q.prompt}</strong>
+
+        <div style="height: var(--s-3)"></div>
+
+        <div class="stack" style="gap: var(--s-2);">
+          {q.options.map((opt, optIdx) => (
+            <label style="display:flex; gap:10px; align-items:flex-start;">
+              <input type="radio" name={`${quizId}-q-${idx}`} value={optIdx} style="margin-top:4px;" />
+              <span>{opt}</span>
+            </label>
+          ))}
+        </div>
+
+        <div style="height: var(--s-3)"></div>
+
+        <div class="muted" data-feedback style="display:none;">
+          <span class="pill" data-result style="display:inline-block;"></span>
+          {q.explanation ? <p class="muted" style="margin: var(--s-3) 0 0 0;">{q.explanation}</p> : null}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div style="height: var(--s-5)"></div>
+
+  <div class="cluster">
+    <button class="btn btn-primary" type="button" data-check>Check answers</button>
+    <button class="btn" type="button" data-reset>Reset</button>
+  </div>
+
+  <script define:vars={{ quizId }}>
+    (() => {
+      const root = document.getElementById(quizId);
+      if (!root) return;
+
+      const scoreEl = root.querySelector("[data-score]");
+      const checkBtn = root.querySelector("[data-check]");
+      const resetBtn = root.querySelector("[data-reset]");
+      const questions = Array.from(root.querySelectorAll("[data-question]"));
+
+      const setSubmitted = (submitted) => {
+        questions.forEach((q) => {
+          const inputs = q.querySelectorAll('input[type="radio"]');
+          inputs.forEach((i) => (i.disabled = submitted));
+        });
+      };
+
+      const reset = () => {
+        questions.forEach((q) => {
+          const inputs = q.querySelectorAll('input[type="radio"]');
+          inputs.forEach((i) => (i.checked = false));
+
+          const feedback = q.querySelector("[data-feedback]");
+          if (feedback) feedback.style.display = "none";
+        });
+        setSubmitted(false);
+        if (scoreEl) scoreEl.textContent = "Answer → Check";
+      };
+
+      const check = () => {
+        let correct = 0;
+
+        questions.forEach((q) => {
+          const correctIndex = Number(q.getAttribute("data-correct"));
+          const chosen = q.querySelector('input[type="radio"]:checked');
+          const feedback = q.querySelector("[data-feedback]");
+          const resultPill = q.querySelector("[data-result]");
+
+          if (!feedback || !resultPill) return;
+
+          const chosenIndex = chosen ? Number(chosen.value) : -1;
+
+          const ok = chosenIndex === correctIndex;
+          if (ok) correct++;
+
+          feedback.style.display = "block";
+          resultPill.textContent = ok ? "✅ Correct" : `❌ Correct option: ${correctIndex + 1}`;
+        });
+
+        setSubmitted(true);
+        if (scoreEl) scoreEl.textContent = `✅ Score: ${correct}/${questions.length}`;
+      };
+
+      checkBtn?.addEventListener("click", check);
+      resetBtn?.addEventListener("click", reset);
+    })();
+  </script>
+</section>

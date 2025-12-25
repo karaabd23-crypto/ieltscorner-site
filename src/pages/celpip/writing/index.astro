@@ -1,0 +1,39 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+const PAYHIP_CELPIP_URL = "https://payhip.com/b/REPLACE_ME";
+---
+
+<Layout title="CELPIP Writing — IELTS Corner" description="CELPIP Writing: email and survey templates, clear steps, and course support.">
+  <section class="section">
+    <div class="hero" style={`--hero-bg: url('/heroes/essay-correction.png');`}>
+      <div class="hero-content">
+        <span class="pill">✍️ CELPIP Writing</span>
+        <h1>Write faster with clear templates.</h1>
+        <p class="muted" style="max-width: 56ch;">
+          Learn easy structure for email + survey tasks so you can write quickly and clearly.
+        </p>
+        <div class="cluster">
+          <a class="btn btn-primary" href={PAYHIP_CELPIP_URL} target="_blank" rel="noreferrer">Get the course →</a>
+          <a class="btn btn-ghost" href="/tutoring">Private / group lessons →</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <div class="grid grid-3">
+      <article class="card">
+        <h3>What you learn</h3>
+        <p class="muted">Email structure, tone, and clarity.</p>
+      </article>
+      <article class="card">
+        <h3>Common problems</h3>
+        <p class="muted">Too short, unclear, wrong tone.</p>
+      </article>
+      <article class="card">
+        <h3>How we fix it</h3>
+        <p class="muted">Templates + practice + feedback.</p>
+      </article>
+    </div>
+  </section>
+</Layout>

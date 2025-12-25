@@ -1,0 +1,99 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+type LessonEntry = CollectionEntry<"lessons">;
+type Category = LessonEntry["data"]["category"];
+
+const categories: Category[] = ["grammar", "vocabulary", "writing", "speaking"];
+
+export const getStaticPaths = () => {
+  return [
+    { params: { category: "grammar" } },
+    { params: { category: "vocabulary" } },
+    { params: { category: "writing" } },
+    { params: { category: "speaking" } },
+  ];
+};
+
+const category = Astro.params.category as Category;
+
+const lessons = (
+  await getCollection("lessons", ({ data }) => !data.draft && data.category === category)
+).sort((a: LessonEntry, b: LessonEntry) => (a.data.date < b.data.date ? 1 : -1));
+
+const metaMap: Record<Category, { pill: string; h1: string; blurb: string }> = {
+  grammar: {
+    pill: "🧩 Grammar • C1 / Band 7+ Focus",
+    h1: "Grammar lessons that actually change scores.",
+    blurb:
+      "Meaning-first grammar for IELTS & CELPIP: control, accuracy, and scoring impact (not rule memorization).",
+  },
+  vocabulary: {
+    pill: "🧠 Vocabulary • C1 / Band 7+ Focus",
+    h1: "Vocabulary lessons that actually change scores.",
+    blurb:
+      "C1-level vocabulary for IELTS & CELPIP: collocations, nuance, register, and natural phrasing.",
+  },
+  writing: {
+    pill: "✍️ Writing • Band 7+ / CLB 9+",
+    h1: "Writing lessons built for clarity, structure, and scores.",
+    blurb:
+      "Task achievement, coherence, tone control, and examiner-friendly phrasing for IELTS & CELPIP.",
+  },
+  speaking: {
+    pill: "🎤 Speaking • Band 7+ / CLB 9+",
+    h1: "Speaking lessons that make you sound natural under pressure.",
+    blurb:
+      "Structure, fluency control, discourse markers, and natural delivery for IELTS & CELPIP.",
+  },
+};
+
+const meta = metaMap[category];
+---
+<Layout
+  title={`${category[0].toUpperCase() + category.slice(1)} Lessons — IELTS & CELPIP | IELTS Corner`}
+  description={meta.blurb}
+>
+  <section class="section">
+    <div class="stack">
+      <span class="pill">{meta.pill}</span>
+      <h1>{meta.h1}</h1>
+      <p class="muted" style="max-width: 75ch;">{meta.blurb}</p>
+
+      <div class="cluster">
+        <a class="btn btn-primary" href="/celpip">CELPIP course →</a>
+        <a class="btn" href="/lessons">All lessons →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="stack">
+      <h2>Available lessons</h2>
+
+      {lessons.length === 0 ? (
+        <div class="surface" style="padding: var(--s-6);">
+          <p class="muted" style="margin:0;">No lessons published yet.</p>
+        </div>
+      ) : (
+        <div class="grid grid-2" style="margin-top: var(--s-5);">
+          {lessons.map((l: LessonEntry) => (
+            <a class="card" href={`/lessons/${l.data.category}/${l.slug}/`} style="display:block;">
+              <div class="cluster" style="justify-content: space-between;">
+                <div class="cluster">
+                  <span class="pill">{l.data.level} • {l.data.exam.join(" & ")}</span>
+                  {l.data.tags?.length ? <span class="pill">{l.data.tags[0]}</span> : null}
+                </div>
+                <span class="pill">Open →</span>
+              </div>
+
+              <h3 style="margin-top: var(--s-3);">{l.data.title}</h3>
+              <p class="muted" style="margin-bottom: 0;">{l.data.excerpt}</p>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</Layout>
