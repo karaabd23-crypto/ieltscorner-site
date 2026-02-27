@@ -1,39 +1,99 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-const PAYHIP_CELPIP_URL = "https://payhip.com/b/REPLACE_ME";
+import { getCollection } from "astro:content";
+
+const skillLessons = (
+  await getCollection("lessons", ({ data }) => !data.draft && data.category === "speaking")
+).sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
 ---
 
-<Layout title="CELPIP Speaking — IELTS Corner" description="CELPIP Speaking templates, clear structure, and course support.">
+<Layout
+  title="CELPIP Speaking | Fluency & Task Response Strategies | IELTS Corner"
+  description="CELPIP speaking strategies for all tasks. Learn delivery techniques, templates, and how to manage time under pressure."
+>
   <section class="section">
-    <div class="hero" style={`--hero-bg: url('/heroes/IELTS.png');`}>
+    <div class="hero" style={`--hero-bg: url('/heroes/speaking.png');`}>
       <div class="hero-content">
         <span class="pill">🗣️ CELPIP Speaking</span>
-        <h1>Know what to say. Speak clearly and confidently.</h1>
-        <p class="muted" style="max-width: 56ch;">
-          Get simple templates for each speaking task, plus practice and feedback so you improve fast.
+        <h1>Know what to say, speak clearly, score higher</h1>
+        <p class="muted" style="max-width: 65ch;">
+          Master CELPIP speaking with task templates, fluency strategies, and confidence-building techniques. Record, practice, and improve.
         </p>
-        <div class="cluster">
-          <a class="btn btn-primary" href={PAYHIP_CELPIP_URL} target="_blank" rel="noreferrer">Get the course →</a>
-          <a class="btn btn-ghost" href="/tutoring">Private / group lessons →</a>
-        </div>
       </div>
     </div>
+  </section>
 
-    <div style="height: var(--s-8);"></div>
+  <section class="section-sm">
+    <div class="stack" style="gap: var(--s-8);">
+      <!-- Format breakdown -->
+      <div class="surface" style="padding: var(--s-6);">
+        <h2>CELPIP Speaking format (15–20 minutes, 4 tasks)</h2>
+        <div class="grid grid-2">
+          <div>
+            <h3>Task 1: Warm-up (1 min, personal questions)</h3>
+            <p>Answer 2 questions about yourself, family, or routine.</p>
+            <p><strong>Tests:</strong> Fluency, basic communication, pronunciation.</p>
+          </div>
+          <div>
+            <h3>Task 2: Picture description (1.5 mins, describe a photo)</h3>
+            <p>Describe what you see in a picture (40-second prep time).</p>
+            <p><strong>Tests:</strong> Organization, vocabulary, ability to extend ideas.</p>
+          </div>
+          <div>
+            <h3>Task 3: Problem-solving (2 mins, interactive conversation)</h3>
+            <p>Discuss a scenario with the examiner. Propose solutions and explain.</p>
+            <p><strong>Tests:</strong> Fluency, interactive communication, reasoning.</p>
+          </div>
+          <div>
+            <h3>Task 4: Opinion/explanation (2 mins, topical discussion)</h3>
+            <p>Discuss a topic: agree/disagree, explain opinions, support with examples.</p>
+            <p><strong>Tests:</strong> Fluency, vocabulary range, extended discourse.</p>
+          </div>
+        </div>
+      </div>
 
-    <div class="grid grid-3">
-      <article class="card">
-        <h3>What you learn</h3>
-        <p class="muted">Templates, timing, and useful phrases.</p>
-      </article>
-      <article class="card">
-        <h3>Common problems</h3>
-        <p class="muted">Not enough ideas, pauses, unclear structure.</p>
-      </article>
-      <article class="card">
-        <h3>How we fix it</h3>
-        <p class="muted">Step-by-step answers + guided practice.</p>
-      </article>
+      <!-- Pro strategies -->
+      <div class="surface" style="padding: var(--s-6);">
+        <h2>CELPIP speaking pro strategies</h2>
+        <div class="stack" style="gap: var(--s-4);">
+          <div>
+            <h4>✓ Use the prep time wisely in Task 2</h4>
+            <p>Spend 40 seconds writing 3–4 key points (location, colors, actions, emotions). Read them quickly, don't memorize a script.</p>
+          </div>
+          <div>
+            <h4>✓ Extend your ideas with examples</h4>
+            <p>In Tasks 3 & 4, don't give one-sentence answers. Add "because," "for example," or "this is important because..." to fill the time.</p>
+          </div>
+          <div>
+            <h4>✓ Don't panic about pauses</h4>
+            <p>A 2–3 second pause is normal. Use it to think. Saying "ummm" or "like" too much hurts fluency more than silence does.</p>
+          </div>
+          <div>
+            <h4>✓ Speak at natural pace, not too fast</h4>
+            <p>Clear pronunciation matters more than speed. Slow down if you're nervous. The examiner can understand you better.</p>
+          </div>
+          <div>
+            <h4>✓ Listen to the question carefully</h4>
+            <p>If the examiner asks "Why do you think...?" answer the "why," not just "I agree/disagree." Match the question structure.</p>
+          </div>
+          <div>
+            <h4>✓ Use transition phrases for fluency</h4>
+            <p>Words like "First of all," "In addition," "However," "That's why" connect your ideas and make you sound more fluent.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="surface" style="padding: var(--s-6);">
+        <div class="stack" style="gap: var(--s-4); text-align: center;">
+          <h2>Ready to boost your speaking confidence?</h2>
+          <p class="muted">Practice with real CELPIP speaking tasks and get feedback on fluency and clarity.</p>
+          <div class="cluster" style="justify-content: center;">
+            <a class="btn btn-primary" href="/lessons">Free speaking lessons →</a>
+            <a class="btn" href="/tutoring">Book speaking coaching →</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </Layout>
