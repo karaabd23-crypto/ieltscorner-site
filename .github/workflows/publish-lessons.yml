@@ -1,0 +1,54 @@
+name: Publish AI lessons
+
+on:
+  schedule:
+    - cron: "30 13 * * 1"
+    - cron: "30 15 * * 3"
+    - cron: "30 17 * * 5"
+    - cron: "30 14 * * 0"
+  workflow_dispatch:
+    inputs:
+      count:
+        description: "How many lessons to generate"
+        required: false
+        default: "1"
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate lessons
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: gpt-4.1-mini
+        run: |
+          COUNT="${{ github.event.inputs.count || '1' }}"
+          node scripts/generate-lessons.mjs --count "$COUNT"
+
+      - name: Commit and push generated lessons
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git config user.name "ieltscorner-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add src/content/lessons/*.md
+          git commit -m "chore: publish generated lesson"
+          git push
