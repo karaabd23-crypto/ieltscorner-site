@@ -38,46 +38,63 @@ draft: false
 
 ## Upper Intermediate: Essential Grammar
 
-### Visual warm-up: spot the difference
+### 🎯 What you will learn today
 
-| Weak sentence | Strong exam sentence | Why it scores better |
+At B2 level, your grammar should sound accurate and flexible, but still easy to follow. In this lesson, you will learn how to write clear sentences with stronger detail and smoother flow. We will keep the language practical so you can use it in your next test.
+
+### 👀 Real examples: weak vs strong
+
+| ❌ Weak sentence | ✅ Better sentence | Why it is better |
 |---|---|---|
-| People are bad at money. | Many people struggle with long-term financial planning. | More precise and formal |
-| This is very bad. | This may lead to several avoidable outcomes. | Better hedging and clarity |
+| People are bad at money. | Many people struggle with money management. | The wording is more natural and specific. |
+| This is very bad. | This can create serious social problems. | The message is clearer and more formal. |
+| I think good is here. | I think this approach is useful. | Grammar and word choice are correct. |
 
-### Core explanation
-- Use clear sentence frames first, then add range.
-- Keep grammar and vocabulary tied to task purpose.
-- Build one paragraph around one main point.
+Clear writing is not about difficult words. It is about clear meaning and controlled grammar.
 
-### Common mistakes radar
-1. Over-general statements with no support.
-2. Forced “advanced” words used incorrectly.
-3. Unclear pronoun references.
-4. Repetition of the same sentence pattern.
+### 🧠 How this works
 
-### Guided practice (self-study)
-1. Rewrite one weak sentence into a formal exam sentence.
-2. Add a hedging phrase to a strong opinion.
-3. Build one topic sentence + one support sentence.
-4. Replace two weak verbs with precise verbs.
-5. Add one linking phrase to improve flow.
-6. Fix one grammar accuracy issue.
-7. Convert one spoken idea into formal writing.
-8. Record a 45-second spoken answer using two target phrases.
+Use a simple structure in each paragraph: **point → reason → example**. This helps your ideas stay organized, and it helps you avoid grammar problems when writing under time pressure.
 
-### Answer key (sample)
-1. Many residents face rising housing costs in urban centers.
-2. This may be partly explained by higher living expenses.
-3. Public transit investment improves access to employment.
-4. “get better” → “improve”; “do effect” → “influence”.
-5. “As a result,” / “In addition,” depending on meaning.
-6. Subject-verb agreement and article use.
-7. “I think it’s good” → “I believe this policy is beneficial.”
-8. Include one example and one reason.
+Before you move to the next sentence, ask:
+1. Is my main point clear?
+2. Is my verb tense correct?
+3. Does this sentence connect logically to the previous one?
 
-### IELTS + CELPIP strategy note
-In IELTS writing and CELPIP writing, build control first: clear structure + accurate language beats risky complexity.
+### ❌ Common mistakes and easy fixes
 
-### Next step
-Use the quiz above to check retention, then continue with the next level lesson on ieltscorner.ca.
+| Mistake | Better version | Why this fix works |
+|---|---|---|
+| Overly general claims | Add one specific fact or example | Specificity improves credibility. |
+| Uncontrolled long sentences | Split into two clear sentences | Clear structure improves readability. |
+| Repeating one pattern | Mix simple and complex structures carefully | Controlled variety raises quality. |
+| Word-choice risk | Choose precise familiar words | Accuracy is safer in exams. |
+
+### ✍️ Guided practice
+
+1. Rewrite: **"This is bad for people and bad for money."**
+2. Choose the correct sentence:
+  - A) I do a decision
+  - B) I make a decision
+  - C) I making a decision
+3. Fix this: **"The student is have a test today."**
+4. Improve this claim by adding a reason: **"Public transport is good."**
+
+### ✅ Suggested answers
+
+1. **This causes financial and social problems for many families.**
+2. **B) I make a decision.**
+3. **The student has a test today.**
+4. **Public transport is useful because it reduces traffic and supports lower-income workers.**
+
+### 🇬🇧 For IELTS
+
+Use clear paragraph control. Give one central idea in each body paragraph, then support it with a relevant explanation and example.
+
+### 🇨🇦 For CELPIP
+
+Be direct and organized. In writing and speaking tasks, present your main point early and support it with one clear reason.
+
+### 🚀 Next step
+
+Take one paragraph from your recent practice and revise it using **point → reason → example**. Compare the old version and new version. You will notice the new version is easier to read and easier to score.

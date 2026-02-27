@@ -38,84 +38,63 @@ draft: false
 
 ## Expert: Essential Grammar
 
-### Look at examples - RIGHT and WRONG
+### 🎯 What you will learn today
 
-| WRONG | RIGHT | Why? |
+At C2 level, grammar is not just about being correct. It is about sounding precise, natural, and intentional. In this lesson, you will learn how to keep advanced grammar readable, so your ideas stay strong in both IELTS and CELPIP responses.
+
+### 👀 Real examples: weak vs strong
+
+| ❌ Weak sentence | ✅ Better sentence | Why it is better |
 |---|---|---|
-| People are bad at money. | Many people have money problems. | More clear and simple |
-| This is very bad. | This causes problems. | More serious and test-ready |
-| I think good is here. | I think this is good. | Grammar is correct |
+| People are bad at money. | Many people struggle with financial decision-making. | Lexical choice is precise and natural. |
+| This is very bad. | This can produce avoidable long-term consequences. | The effect is clear and academically appropriate. |
+| I think good is here. | I consider this approach effective in practice. | Grammar and register are accurate. |
 
-### How it works - 3 simple steps
+At expert level, small choices change quality. A clearer verb or noun often improves your sentence more than adding difficult vocabulary.
 
-**Step 1: Understand the rule**
-- Read the examples above
-- Do not memorize rules - just understand them
-- Think: Why is the RIGHT one better?
+### 🧠 How this works
 
-**Step 2: Practice with YOUR words**
-- Take the WRONG sentences
-- Rewrite them in the RIGHT way
-- Ask yourself: Does it sound like me? Can I say this?
+Use controlled sophistication. Keep one clear claim per sentence, and build complexity only when it supports meaning. If a sentence becomes hard to read, simplify it and preserve precision.
 
-**Step 3: Use it in writing or speaking**
-- Find a place to use this rule in a real test
-- Check your answer - is it correct?
-- You are ready!
+Expert-level check:
+1. **Meaning first:** Is the point immediately understandable?
+2. **Form control:** Are grammar and punctuation stable throughout the sentence?
+3. **Stylistic fit:** Does the register match an exam context?
 
-### Common mistakes - Do not do this!
+### ❌ Common mistakes and easy fixes
 
-1. **Too general** - Do not write "People are bad." Write "Many people struggle with money."
-2. **Wrong words** - Do not use words you do not know. Use simple words you are sure about.
-3. **Confusing** - Every sentence should be clear. If it is confusing to you, the test reader will not understand it.
-4. **Same pattern** - Do not write 5 sentences that all start the same way. Change how you start sentences.
+| Mistake | Better version | Why this fix works |
+|---|---|---|
+| Dense sentence with multiple claims | Separate into two linked sentences | Improves readability without reducing depth. |
+| Advanced word used inaccurately | Use a precise alternative | Accuracy signals higher control. |
+| Abstract claim with no support | Add one concrete qualification | Stronger argument quality. |
+| Unnatural phrasing copied from memory | Rewrite in your own natural formal style | Improves authenticity and fluency. |
 
-### Practice - Try these now!
+### ✍️ Guided practice
 
-**Question 1:** Rewrite this to make it better:
-"This is bad for people and bad for money."
-Your answer: ___________
+1. Refine this sentence: **"This is bad for people and bad for money."**
+2. Choose the correct sentence:
+  - A) I do a decision
+  - B) I make a decision
+  - C) I making a decision
+3. Correct this: **"The student is have a test today."**
+4. Strengthen this claim with one precise condition: **"Public transport is useful."**
 
-**Question 2:** Which is correct?
-A) I make a decision
-B) I do a decision
-C) I making a decision
-Your answer: ___________
+### ✅ Suggested answers
 
-**Question 3:** Fix this:
-"The student is have a test today."
-Your answer: ___________
+1. **This can impose long-term social and financial pressure on many households.**
+2. **B) I make a decision.**
+3. **The student has a test today.**
+4. **Public transport is particularly useful in high-density cities where commuting costs are high.**
 
-### Answers
+### 🇬🇧 For IELTS
 
-**Answer 1:** "This harms people and the economy." OR "This causes money and social problems."
+Examiners reward controlled complexity, not complexity by itself. Prioritize precise grammar and logical progression across the paragraph.
 
-**Answer 2:** A) I make a decision
+### 🇨🇦 For CELPIP
 
-**Answer 3:** "The student is having a test today." OR "The student has a test today."
+CELPIP still values natural communication at high levels. Keep your response direct, logically staged, and easy to follow when spoken aloud.
 
-### For IELTS exams
+### 🚀 Next step
 
-In IELTS, the test reader wants:
-- Clear, simple sentences
-- Grammar is correct (no mistakes)
-- You use the right words
-- Good organization (first paragraph, middle, last paragraph)
-
-### For CELPIP exams
-
-In CELPIP, the test reader wants:
-- You can explain your ideas
-- Grammar is mostly correct
-- Natural way of speaking (or writing)
-- Connect your ideas - do not jump around
-
-### Your next steps
-
-1. **Review** - Read the examples 2-3 times
-2. **Practice** - Do the practice questions today
-3. **Use it** - Find one place to use this in your practice test
-4. **Check** - Compare with the answer key
-5. **Repeat** - Do it again tomorrow!
-
-You are making progress! Keep going!
+Choose one past response and edit only sentence control and lexical precision. This focused revision shows you how much grammar quality can improve your final score.

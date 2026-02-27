@@ -115,6 +115,9 @@ LESSON STRUCTURE (must include all sections):
 
 LANGUAGE RULES:
 - Use short, simple sentences
+- Write in natural teaching paragraphs (2-4 sentences), not only bullet lists
+- Use warm, encouraging teacher tone and clear transitions between sections
+- Avoid telegraphic style (do not write choppy one-line fragments)
 - Explain every grammar term (example: say "verb form" not just "conjugation")
 - Use real, everyday examples (work, school, hobbies)
 - Never use: "collocation", "hedging", "nuanced", "coherence", "cohesion"
@@ -280,89 +283,72 @@ function fallbackLesson({ level, category }) {
     ],
     body: `## ${title}
 
-(Use colours, emojis, or simple interactive ideas like drag‑and‑drop to make this fun.)
+### 🎯 What you will learn today
 
-### Look at examples - RIGHT and WRONG
+In this lesson, you will learn how to write and speak in a way that sounds clear, accurate, and natural. We will start with simple examples, then we will fix common mistakes step by step. By the end, you will know exactly what to do in your next IELTS or CELPIP practice task.
 
-| WRONG | RIGHT | Why? |
+### 👀 Real examples: weak vs strong
+
+Look at the difference between unclear language and clear exam-ready language.
+
+| ❌ Weak sentence | ✅ Better sentence | Why it is better |
 |---|---|---|
-| People are bad at money. | Many people have money problems. | More clear and simple |
-| This is very bad. | This causes problems. | More serious and test-ready |
-| I think good is here. | I think this is good. | Grammar is correct |
+| People are bad at money. | Many people struggle with money management. | The meaning is specific and professional. |
+| This is very bad. | This can cause serious problems for families. | The reader can understand the real impact. |
+| I think good is here. | I think this policy is useful. | Grammar and word choice are correct. |
 
-### How it works - 3 simple steps
+When your sentence is specific, the examiner can follow your idea easily. Because your message is clear, your score can improve.
 
-**Step 1: Understand the rule**
-- Read the examples above
-- Do not memorize rules - just understand them
-- Think: Why is the RIGHT one better?
+### 🧠 How the rule works (simple explanation)
 
-**Step 2: Practice with YOUR words**
-- Take the WRONG sentences
-- Rewrite them in the RIGHT way
-- Ask yourself: Does it sound like me? Can I say this?
+Good grammar lessons are not about memorizing difficult words. They are about building clear meaning. First, choose one clear idea. Then choose words you are confident with. After that, check your sentence and ask: "Can another person understand this quickly?"
 
-**Step 3: Use it in writing or speaking**
-- Find a place to use this rule in a real test
-- Check your answer - is it correct?
-- You are ready!
+Use this 3-step check:
+1. **Clear idea:** Can you explain your point in one sentence?
+2. **Correct form:** Is your verb form and sentence structure correct?
+3. **Natural style:** Does it sound like real English, not a translated sentence?
 
-### Common mistakes - Do not do this!
+### ❌ Common mistakes and easy fixes
 
-1. **Too general** - Do not write "People are bad." Write "Many people struggle with money."
-2. **Wrong words** - Do not use words you do not know. Use simple words you are sure about.
-3. **Confusing** - Every sentence should be clear. If it is confusing to you, the test reader will not understand it.
-4. **Same pattern** - Do not write 5 sentences that all start the same way. Change how you start sentences.
+| Mistake | Better version | Why this fix works |
+|---|---|---|
+| Very general sentence | Add one specific detail | Specific details make ideas stronger. |
+| Wrong verb form | Use the correct tense | Correct tense improves clarity. |
+| Repeating the same sentence pattern | Vary sentence openings | Variety makes writing easier to read. |
+| Fancy word used incorrectly | Use a simpler correct word | Accuracy is better than risky vocabulary. |
 
-### Practice - Try these now!
+### ✍️ Guided practice
 
-**Question 1:** Rewrite this to make it better:
-"This is bad for people and bad for money."
-Your answer: ___________
+Now try these short tasks. Write your answers before looking at the key.
 
-**Question 2:** Which is correct?
-A) I make a decision
-B) I do a decision
-C) I making a decision
-Your answer: ___________
+1. Rewrite: **"This is bad for people and bad for money."**
+2. Choose the correct sentence:
+   - A) I do a decision
+   - B) I make a decision
+   - C) I making a decision
+3. Fix the grammar: **"The student is have a test today."**
+4. Improve this opinion sentence: **"Public transport is good."** Add one reason.
 
-**Question 3:** Fix this:
-"The student is have a test today."
-Your answer: ___________
+### ✅ Suggested answers
 
-### Answers
+1. **This causes financial and social problems for many families.**
+2. **B) I make a decision.**
+3. **The student has a test today.** / **The student is having a test today.**
+4. **Public transport is useful because it reduces traffic and saves money.**
 
-**Answer 1:** "This harms people and the economy." OR "This causes money and social problems."
+### 🇬🇧 For IELTS
 
-**Answer 2:** A) I make a decision
+In IELTS, clear organization and accurate grammar matter a lot. Start with a direct answer, support it with one clear reason, and add a simple example. Keep your language natural and controlled.
 
-**Answer 3:** "The student is having a test today." OR "The student has a test today."
+### 🇨🇦 For CELPIP
 
-### For IELTS exams
+In CELPIP, you also need clear structure, but speed and clarity are very important. Give your point early, support it quickly, and avoid long confusing sentences. Short, correct sentences are better than long risky ones.
 
-In IELTS, the test reader wants:
-- Clear, simple sentences
-- Grammar is correct (no mistakes)
-- You use the right words
-- Good organization (first paragraph, middle, last paragraph)
+### 🚀 Your next step
 
-### For CELPIP exams
+Use one sentence pattern from this lesson in your next practice response today. After writing, read your answer out loud once. If it sounds clear when you speak it, it will usually read clearly too.
 
-In CELPIP, the test reader wants:
-- You can explain your ideas
-- Grammar is mostly correct
-- Natural way of speaking (or writing)
-- Connect your ideas - do not jump around
-
-### Your next steps
-
-1. **Review** - Read the examples 2-3 times
-2. **Practice** - Do the practice questions today
-3. **Use it** - Find one place to use this in your practice test
-4. **Check** - Compare with the answer key
-5. **Repeat** - Do it again tomorrow!
-
-You are making progress! Keep going!`,
+You are improving every time you practice with feedback. Keep going—you are closer than you think.`,
   };
 }
 

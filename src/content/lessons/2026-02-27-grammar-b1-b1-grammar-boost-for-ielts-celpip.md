@@ -38,46 +38,63 @@ draft: false
 
 ## Intermediate: Essential Grammar
 
-### Visual warm-up: spot the difference
+### 🎯 What you will learn today
 
-| Weak sentence | Strong exam sentence | Why it scores better |
+This lesson helps you write and speak in a clearer way for IELTS and CELPIP. You will see exactly how to turn weak sentences into strong, natural English. We will use simple steps, then practice together.
+
+### 👀 Real examples: weak vs strong
+
+| ❌ Weak sentence | ✅ Better sentence | Why it is better |
 |---|---|---|
-| People are bad at money. | Many people struggle with long-term financial planning. | More precise and formal |
-| This is very bad. | This may lead to several avoidable outcomes. | Better hedging and clarity |
+| People are bad at money. | Many people struggle with money management. | The idea is more specific and clear. |
+| This is very bad. | This can create serious problems for families. | The impact is clear and easy to understand. |
+| I think good is here. | I think this plan is useful. | Grammar and word order are correct. |
 
-### Core explanation
-- Use clear sentence frames first, then add range.
-- Keep grammar and vocabulary tied to task purpose.
-- Build one paragraph around one main point.
+When your sentence is specific, your reader can follow your point quickly. Because your meaning is clear, your response sounds more confident.
 
-### Common mistakes radar
-1. Over-general statements with no support.
-2. Forced “advanced” words used incorrectly.
-3. Unclear pronoun references.
-4. Repetition of the same sentence pattern.
+### 🧠 How this works
 
-### Guided practice (self-study)
-1. Rewrite one weak sentence into a formal exam sentence.
-2. Add a hedging phrase to a strong opinion.
-3. Build one topic sentence + one support sentence.
-4. Replace two weak verbs with precise verbs.
-5. Add one linking phrase to improve flow.
-6. Fix one grammar accuracy issue.
-7. Convert one spoken idea into formal writing.
-8. Record a 45-second spoken answer using two target phrases.
+Start with one clear idea. Then write one sentence that explains that idea. After that, add a short reason or example. This simple structure is easier to control, and it prevents grammar mistakes.
 
-### Answer key (sample)
-1. Many residents face rising housing costs in urban centers.
-2. This may be partly explained by higher living expenses.
-3. Public transit investment improves access to employment.
-4. “get better” → “improve”; “do effect” → “influence”.
-5. “As a result,” / “In addition,” depending on meaning.
-6. Subject-verb agreement and article use.
-7. “I think it’s good” → “I believe this policy is beneficial.”
-8. Include one example and one reason.
+Try this 3-step check:
+1. **Clear point:** Can you explain your idea in one sentence?
+2. **Correct grammar:** Is your verb form correct?
+3. **Natural English:** Does it sound like real English, not a translation?
 
-### IELTS + CELPIP strategy note
-In IELTS writing and CELPIP writing, build control first: clear structure + accurate language beats risky complexity.
+### ❌ Common mistakes and easy fixes
 
-### Next step
-Use the quiz above to check retention, then continue with the next level lesson on ieltscorner.ca.
+| Mistake | Better version | Why this fix works |
+|---|---|---|
+| Too general | Add one concrete detail | Details make your answer stronger. |
+| Wrong verb form | Check tense before submitting | Tense errors reduce clarity. |
+| Same sentence pattern every line | Change sentence openings | Your writing becomes easier to read. |
+| Risky vocabulary | Use simpler correct words | Accuracy scores better than guessing. |
+
+### ✍️ Guided practice
+
+1. Rewrite: **"This is bad for people and bad for money."**
+2. Choose the correct sentence:
+  - A) I do a decision
+  - B) I make a decision
+  - C) I making a decision
+3. Fix this: **"The student is have a test today."**
+4. Improve this: **"Public transport is good."** Add one reason.
+
+### ✅ Suggested answers
+
+1. **This causes financial and social problems for many families.**
+2. **B) I make a decision.**
+3. **The student has a test today.**
+4. **Public transport is useful because it reduces traffic and saves money.**
+
+### 🇬🇧 For IELTS
+
+Give a direct answer early. Then add one reason and one clear example. Keep your grammar controlled and avoid very long risky sentences.
+
+### 🇨🇦 For CELPIP
+
+Focus on clarity and speed. Say your main idea first, then support it with one short reason. In speaking, clear structure is more important than fancy vocabulary.
+
+### 🚀 Next step
+
+Use one pattern from this lesson in your next practice response today. Read your answer out loud once before you submit. If it sounds clear, it is usually clear for the examiner too.

@@ -38,46 +38,63 @@ draft: false
 
 ## Advanced: Essential Grammar
 
-### Visual warm-up: spot the difference
+### 🎯 What you will learn today
 
-| Weak sentence | Strong exam sentence | Why it scores better |
+At C1 level, strong grammar means control, clarity, and precision. In this lesson, you will practice building sentences that sound confident without becoming complicated or unnatural. The goal is to make your ideas easy to follow while keeping an advanced tone.
+
+### 👀 Real examples: weak vs strong
+
+| ❌ Weak sentence | ✅ Better sentence | Why it is better |
 |---|---|---|
-| People are bad at money. | Many people struggle with long-term financial planning. | More precise and formal |
-| This is very bad. | This may lead to several avoidable outcomes. | Better hedging and clarity |
+| People are bad at money. | Many people struggle with long-term financial planning. | The expression is accurate and formal. |
+| This is very bad. | This can lead to avoidable social and economic problems. | The sentence is specific and meaningful. |
+| I think good is here. | I believe this approach is effective in practice. | Grammar and register are controlled. |
 
-### Core explanation
-- Use clear sentence frames first, then add range.
-- Keep grammar and vocabulary tied to task purpose.
-- Build one paragraph around one main point.
+Notice that the better versions are not longer for no reason. They are clearer because each sentence carries one strong idea.
 
-### Common mistakes radar
-1. Over-general statements with no support.
-2. Forced “advanced” words used incorrectly.
-3. Unclear pronoun references.
-4. Repetition of the same sentence pattern.
+### 🧠 How this works
 
-### Guided practice (self-study)
-1. Rewrite one weak sentence into a formal exam sentence.
-2. Add a hedging phrase to a strong opinion.
-3. Build one topic sentence + one support sentence.
-4. Replace two weak verbs with precise verbs.
-5. Add one linking phrase to improve flow.
-6. Fix one grammar accuracy issue.
-7. Convert one spoken idea into formal writing.
-8. Record a 45-second spoken answer using two target phrases.
+At advanced levels, avoid writing dense sentences that hide your meaning. Instead, use controlled complexity: one central idea, one clear explanation, and one relevant example.
 
-### Answer key (sample)
-1. Many residents face rising housing costs in urban centers.
-2. This may be partly explained by higher living expenses.
-3. Public transit investment improves access to employment.
-4. “get better” → “improve”; “do effect” → “influence”.
-5. “As a result,” / “In addition,” depending on meaning.
-6. Subject-verb agreement and article use.
-7. “I think it’s good” → “I believe this policy is beneficial.”
-8. Include one example and one reason.
+Use this quality check before you submit:
+1. **Precision:** Is my claim specific?
+2. **Control:** Is grammar accurate from start to finish?
+3. **Flow:** Does each sentence connect logically to the next one?
 
-### IELTS + CELPIP strategy note
-In IELTS writing and CELPIP writing, build control first: clear structure + accurate language beats risky complexity.
+### ❌ Common mistakes and easy fixes
 
-### Next step
-Use the quiz above to check retention, then continue with the next level lesson on ieltscorner.ca.
+| Mistake | Better version | Why this fix works |
+|---|---|---|
+| Over-complex sentence with mixed ideas | Break into two linked sentences | Clarity improves without losing sophistication. |
+| Formal word used incorrectly | Replace with a precise familiar word | Better lexical control. |
+| Vague claim | Add a concrete detail or condition | Improves argument quality. |
+| Forced style | Use natural formal phrasing | Natural language reads as higher quality. |
+
+### ✍️ Guided practice
+
+1. Upgrade this sentence: **"This is bad for people and bad for money."**
+2. Choose the correct option:
+  - A) I do a decision
+  - B) I make a decision
+  - C) I making a decision
+3. Fix the error: **"The student is have a test today."**
+4. Improve this claim with a condition: **"Public transport is useful."**
+
+### ✅ Suggested answers
+
+1. **This can create significant social and economic pressure for many households.**
+2. **B) I make a decision.**
+3. **The student has a test today.**
+4. **Public transport is especially useful in large cities where congestion is a daily problem.**
+
+### 🇬🇧 For IELTS
+
+Use advanced grammar with control, not risk. A clear argument with accurate language scores better than a complex paragraph full of errors.
+
+### 🇨🇦 For CELPIP
+
+Be concise and precise. Even at high levels, CELPIP rewards clear communication and logical structure over decorative language.
+
+### 🚀 Next step
+
+Take one of your previous responses and revise only the grammar and sentence control. Keep your ideas the same. This helps you see exactly how grammar quality changes your score.
