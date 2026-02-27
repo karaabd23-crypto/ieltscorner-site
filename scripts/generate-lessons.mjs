@@ -99,7 +99,7 @@ CONTENT REQUIREMENTS:
 - heroTip: Short, encouraging tip starting with emoji (example: "👉 Start with examples")
 - Body: Markdown, starting with "##" heading
 - Keep it 1000-1400 words
-- Use EMOJI and VISUAL MARKERS (✅, ❌, 📝, 🎓) to break up text
+- Use EMOJI and VISUAL MARKERS (✅, ❌, 📝, 🎓) and even colour coding or H5P-style interactive ideas (drag‑and‑drop, fill‑in‑blank) to break up text
 - Tags: 5-7 lowercase tags (include: "${category}", "${level.toLowerCase()}", "beginner-friendly", "esl", "examples")
 - visualAids: 3 short strings (example: ["Simple example table", "Right and wrong list", "Real test examples"])
 
@@ -235,7 +235,7 @@ function fallbackLesson({ level, category }) {
   return {
     title,
     excerpt: `Learn ${category} with simple examples. Perfect for IELTS and CELPIP preparation.`,
-    heroTip: '👉 Start with the examples. Try the practice questions. Check answers at the bottom.',
+    heroTip: '👉 Start with the examples. Try the practice questions. Check answers at the bottom. Use emojis or colours to guide you!',
     tags: [category, level.toLowerCase(), 'beginner-friendly', 'esl', 'examples', 'practice', 'exam-prep'],
     visualAids: ['Simple example table', 'Right and wrong list', 'Real test examples'],
     quiz: [

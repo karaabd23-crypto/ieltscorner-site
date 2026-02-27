@@ -24,8 +24,7 @@ quiz:
     correctIndex: 1
     explanation: "Good grammar helps you get better marks on tests."
   - prompt: "Which sentence is more polite?"
-    options: ["This always happens.", "This might happen.", "This happen maybe."
-],
+    options: ["This always happens.", "This might happen.", "This happen maybe."]
     correctIndex: 1
     explanation: "Option 2 is more careful and polite. Better for tests."
   - prompt: "What helps you speak more smoothly?"
