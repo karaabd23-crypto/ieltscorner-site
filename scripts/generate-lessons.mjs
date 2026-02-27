@@ -94,7 +94,7 @@ Return valid JSON:
 }
 
 CONTENT REQUIREMENTS:
-- Title: Simple and clear (example: "Beginner: How to Use Present Tense")
+- Title: Simple, very very clear and easy to understand (example: "Beginner: How to Use Present Tense")
 - Excerpt: One sentence, beginner-friendly
 - heroTip: Short, encouraging tip starting with emoji (example: "👉 Start with examples")
 - Body: Markdown, starting with "##" heading

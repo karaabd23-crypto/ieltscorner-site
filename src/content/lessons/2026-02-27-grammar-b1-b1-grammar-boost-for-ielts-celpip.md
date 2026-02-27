@@ -1,5 +1,5 @@
 ---
-title: "B1 Grammar Boost for IELTS & CELPIP"
+title: "Intermediate: Essential Grammar"
 category: "grammar"
 level: "B1"
 ieltsBand: "5.0-6.0"
@@ -11,32 +11,32 @@ tags: ["grammar", "b1", "ielts", "celpip", "self-study"]
 heroTip: "Start with the visual summary, then test yourself in the quiz before you read the full answer key."
 visualAids: ["before/after sentence board", "mistake radar checklist", "score-boost strategy map"]
 quiz:
-  - prompt: "Choose the sentence with the best exam tone."
-    options: ["Very bad policy.", "This policy may create avoidable delays.", "Policy delay"]
+  - prompt: "Which sentence is better for a test?"
+    options: ["Very bad.", "This is not helpful.", "This creates problems."]
     correctIndex: 1
-    explanation: "Option 2 is precise and appropriately formal for test writing."
-  - prompt: "Pick the strongest collocation for a formal essay."
-    options: ["do a decision", "make a decision", "build a decision"]
+    explanation: "Option 2 is clear and serious. Good for tests."
+  - prompt: "How do you say \"to choose\"?"
+    options: ["do a decision", "make a decision", "get a decision"]
     correctIndex: 1
-    explanation: "“Make a decision” is the correct collocation."
-  - prompt: "What should you check first after writing a paragraph?"
-    options: ["Word count only", "Cohesion and grammar accuracy", "Font style"]
+    explanation: "We say \"make a decision\". \"Do a decision\" is wrong."
+  - prompt: "After you write, what should you check first?"
+    options: ["Only the length", "Grammar and spelling", "Only adjectives"]
     correctIndex: 1
-    explanation: "Cohesion and grammar directly affect scoring criteria."
-  - prompt: "Which option shows controlled hedging?"
-    options: ["This always happens.", "This may be partly due to cost.", "This happen maybe."]
+    explanation: "Good grammar helps you get better marks on tests."
+  - prompt: "Which sentence is more polite?"
+    options: ["This always happens.", "This might happen.", "This happen maybe."]
     correctIndex: 1
-    explanation: "Option 2 is grammatically accurate and nuanced."
-  - prompt: "For speaking fluency, what helps most?"
-    options: ["Memorizing one long script", "Using flexible linking phrases", "Avoiding all pauses"]
+    explanation: "Option 2 is more careful and polite. Better for tests."
+  - prompt: "What helps you speak more smoothly?"
+    options: ["Memorize everything", "Use connecting words like also and then", "Never stop talking"]
     correctIndex: 1
-    explanation: "Flexible phrases support natural fluency under pressure."
+    explanation: "Connecting words help your speaking sound natural."
 premium: false
 priceCAD: 0
 draft: false
 ---
 
-## B1 Grammar Boost for IELTS & CELPIP
+## Intermediate: Essential Grammar
 
 ### Visual warm-up: spot the difference
 

@@ -1,15 +1,15 @@
 ---
-title: "Upper Intermediate: Essential Grammar"
+title: "Advanced: Essential Grammar"
 category: "grammar"
-level: "B2"
-ieltsBand: "6.0-6.5"
-clb: "7-8"
+level: "C1"
+ieltsBand: "7.0-8.0"
+clb: "9-10"
 exam: ["IELTS", "CELPIP"]
-excerpt: "A practical B2 grammar lesson with visual supports, self-marking quiz, and exam-focused practice."
+excerpt: "Learn grammar with simple examples. Perfect for IELTS and CELPIP preparation."
 date: "2026-02-27"
-tags: ["grammar", "b2", "ielts", "celpip", "self-study"]
-heroTip: "Start with the visual summary, then test yourself in the quiz before you read the full answer key."
-visualAids: ["before/after sentence board", "mistake radar checklist", "score-boost strategy map"]
+tags: ["grammar", "c1", "beginner-friendly", "esl", "examples", "practice", "exam-prep"]
+heroTip: "👉 Start with the examples. Try the practice questions. Check answers at the bottom."
+visualAids: ["Simple example table", "Right and wrong list", "Real test examples"]
 quiz:
   - prompt: "Which sentence is better for a test?"
     options: ["Very bad.", "This is not helpful.", "This creates problems."]
@@ -24,20 +24,19 @@ quiz:
     correctIndex: 1
     explanation: "Good grammar helps you get better marks on tests."
   - prompt: "Which sentence is more polite?"
-    options: ["This always happens.", "This might happen.", "This happen maybe."
-],
+    options: ["This always happens.", "This might happen.", "This happen maybe."]
     correctIndex: 1
     explanation: "Option 2 is more careful and polite. Better for tests."
   - prompt: "What helps you speak more smoothly?"
     options: ["Memorize everything", "Use connecting words like also and then", "Never stop talking"]
     correctIndex: 1
     explanation: "Connecting words help your speaking sound natural."
-premium: false
-priceCAD: 0
+premium: true
+priceCAD: 12
 draft: false
 ---
 
-## Upper Intermediate: Essential Grammar
+## Advanced: Essential Grammar
 
 ### Visual warm-up: spot the difference
 
