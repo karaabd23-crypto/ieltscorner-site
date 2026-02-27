@@ -127,6 +127,14 @@ QUIZ (5-7 questions):
 - Explanations should say WHY the answer is right
 - First question should be EASY to build confidence
 
+CELPIP ACCURACY RULES (must follow):
+- Speaking = 8 tasks total (not 4)
+- Writing = 2 tasks: Writing an Email + Responding to Survey Questions
+- Writing task target length = about 150-200 words each
+- Listening timing = 47-55 minutes (6 parts, plus possible unscored items)
+- Reading timing = 55-60 minutes (4 parts, plus possible unscored items)
+- Do not invent CELPIP task names or numbers
+
 ${premium ? 'PREMIUM LEVEL: Make content more challenging, include advanced examples and strategies.' : 'FREE LEVEL: Make content motivating, include lots of examples, encourage practice.'}
 
 Never mention AI, models, or automation.`;
@@ -271,6 +279,8 @@ function fallbackLesson({ level, category }) {
       },
     ],
     body: `## ${title}
+
+(Use colours, emojis, or simple interactive ideas like drag‑and‑drop to make this fun.)
 
 ### Look at examples - RIGHT and WRONG
 
