@@ -1,0 +1,31 @@
+name: Deploy live site
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "src/**"
+      - "public/**"
+      - "astro.config.mjs"
+      - "package.json"
+      - "package-lock.json"
+      - "netlify.toml"
+      - ".github/workflows/deploy-live.yml"
+  workflow_dispatch:
+
+jobs:
+  trigger-netlify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate build hook configuration
+        run: |
+          if [ -z "${{ secrets.NETLIFY_BUILD_HOOK }}" ]; then
+            echo "Missing NETLIFY_BUILD_HOOK secret."
+            echo "Set it in GitHub > Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+
+      - name: Trigger Netlify deploy
+        run: |
+          curl -sS -X POST -d '{}' "${{ secrets.NETLIFY_BUILD_HOOK }}"
+          echo "Triggered Netlify deploy via build hook."
