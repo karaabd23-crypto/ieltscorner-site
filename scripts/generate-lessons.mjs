@@ -8,8 +8,153 @@ const CATEGORIES = ['grammar', 'vocabulary'];
 const DEFAULT_MODEL = process.env.OPENAI_MODEL ?? 'gpt-4.1-mini';
 const LESSON_DIR = path.resolve('src/content/lessons');
 
+const TOPIC_BANK = {
+  grammar: {
+    A1: [
+      'to be in simple sentences',
+      'subject pronouns and basic verbs',
+      'a, an, and the',
+      'this, that, these, and those',
+      'have got for personal information',
+      'there is and there are',
+      'present simple for daily routines',
+      'question words: who, what, where',
+      'can and cannot for ability',
+      'prepositions of place',
+      'possessive adjectives: my, your, his, her',
+      'like and would like',
+      'countable and uncountable nouns',
+      'some and any in basic sentences',
+      'imperatives for instructions',
+      'adjectives in simple descriptions',
+      'basic adverbs: very, really, quite',
+      'present continuous for now',
+      'simple past of to be',
+      'time expressions: today, yesterday, tomorrow'
+    ],
+    A2: [
+      'present simple vs present continuous',
+      'past simple regular verbs',
+      'past simple irregular verbs',
+      'future with going to',
+      'will for quick decisions',
+      'comparatives and superlatives',
+      'too and enough',
+      'must and have to',
+      'should for advice',
+      'adverbs of frequency',
+      'object pronouns and possessive pronouns',
+      'first conditional',
+      'verb + to infinitive',
+      'verb + gerund (ing form)',
+      'question tags in conversation',
+      'used to for past habits',
+      'relative clauses with who and which',
+      'present perfect with ever and never',
+      'for and since with present perfect',
+      'basic passive voice'
+    ],
+    B1: [
+      'present perfect vs past simple',
+      'second conditional for unreal situations',
+      'modals for possibility: may, might, could',
+      'modals of obligation and prohibition',
+      'reported speech basics',
+      'defining relative clauses',
+      'non-defining relative clauses',
+      'passive voice in common contexts',
+      'gerunds and infinitives after common verbs',
+      'linking words for contrast and result',
+      'articles in general and specific meaning',
+      'quantifiers: much, many, a lot of, plenty of',
+      'past continuous and past simple together',
+      'present perfect continuous',
+      'too, enough, and so...that',
+      'countable vs uncountable accuracy',
+      'phrasal verbs in everyday situations',
+      'adjective order in descriptions',
+      'conditionals in advice and plans',
+      'common sentence errors and quick fixes'
+    ],
+    B2: [
+      'advanced conditionals in discussion tasks',
+      'future forms for prediction and planning',
+      'mixed conditionals in arguments',
+      'modal verbs for deduction',
+      'modal verbs in past contexts',
+      'cleft sentences for emphasis',
+      'relative clauses with prepositions',
+      'participle clauses',
+      'passive reporting structures',
+      'noun clauses with that and whether',
+      'inversion after negative adverbs',
+      'discourse markers for formal writing',
+      'parallel structure in complex sentences',
+      'hedged claims with accurate grammar',
+      'advanced article usage',
+      'complex noun phrases',
+      'subordination for clear paragraph flow',
+      'reduced relative clauses',
+      'formal and neutral register control',
+      'error correction for high-band writing'
+    ],
+    C1: [
+      'subtle tense shifts in argument writing',
+      'complex conditionals with nuance',
+      'inversion for formal emphasis',
+      'advanced passive structures',
+      'nominalisation in academic style',
+      'reporting verbs with precise grammar',
+      'stance expressions in formal writing',
+      'advanced clause combinations',
+      'ellipsis and substitution for coherence',
+      'precision with determiners',
+      'advanced punctuation and sentence control',
+      'grammar for critical evaluation language',
+      'advanced comparison structures',
+      'fronting and emphasis patterns',
+      'complex referencing with pronouns',
+      'avoiding ambiguity in long sentences',
+      'controlled complexity in IELTS essays',
+      'high-accuracy grammar for CELPIP responses',
+      'editing advanced writing for clarity',
+      'common C1 grammar slips and repairs'
+    ],
+    C2: [
+      'expert-level sentence control',
+      'precision in complex argument structures',
+      'advanced inversion and emphasis',
+      'register shifts without grammar errors',
+      'sophisticated clause architecture',
+      'subtle modal meanings in formal texts',
+      'advanced discourse grammar',
+      'concise high-level phrasing',
+      'parallelism for rhetorical clarity',
+      'advanced cohesion through grammar',
+      'abstract noun structures with accuracy',
+      'grammar choices for persuasive force',
+      'high-level error diagnosis and revision',
+      'tone control in expert responses',
+      'precision under timed exam conditions',
+      'complex syntax without loss of clarity',
+      'advanced reformulation techniques',
+      'grammar for evaluator-friendly writing',
+      'micro-editing for top-band accuracy',
+      'final-stage grammar refinement for C2'
+    ],
+  },
+  vocabulary: {
+    A1: ['everyday classroom words', 'family and home words', 'food and shopping words', 'time and routine words'],
+    A2: ['travel and transport words', 'health and body words', 'work and study words', 'weather and seasons words'],
+    B1: ['problem and solution vocabulary', 'cause and effect vocabulary', 'opinions and reasons vocabulary', 'communication vocabulary'],
+    B2: ['formal writing vocabulary', 'argument and evidence vocabulary', 'social issues vocabulary', 'education and work vocabulary'],
+    C1: ['precise evaluation vocabulary', 'policy and society vocabulary', 'academic discussion vocabulary', 'advanced stance vocabulary'],
+    C2: ['expert-level nuance vocabulary', 'high-precision argument vocabulary', 'advanced formal expression vocabulary', 'top-band lexical control vocabulary'],
+  },
+};
+
 function parseArgs(argv) {
-  const opts = { count: 1, dryRun: false, model: DEFAULT_MODEL };
+  const opts = { count: 1, dryRun: false, model: DEFAULT_MODEL, category: 'all' };
   for (let i = 2; i < argv.length; i += 1) {
     const arg = argv[i];
     if (arg === '--count') {
@@ -20,13 +165,20 @@ function parseArgs(argv) {
     } else if (arg === '--model') {
       opts.model = argv[i + 1];
       i += 1;
+    } else if (arg === '--category') {
+      opts.category = String(argv[i + 1] ?? '').toLowerCase();
+      i += 1;
     } else {
       throw new Error(`Unknown argument: ${arg}`);
     }
   }
 
-  if (!Number.isInteger(opts.count) || opts.count < 1 || opts.count > 12) {
-    throw new Error('--count must be an integer between 1 and 12');
+  if (!Number.isInteger(opts.count) || opts.count < 1 || opts.count > 200) {
+    throw new Error('--count must be an integer between 1 and 200');
+  }
+
+  if (opts.category !== 'all' && !CATEGORIES.includes(opts.category)) {
+    throw new Error('--category must be one of: all, grammar, vocabulary');
   }
 
   return opts;
@@ -52,11 +204,42 @@ async function existingLessonFiles() {
     .map((entry) => entry.name);
 }
 
-function pickLevelAndCategory(existingCount, index) {
+function pickLevelAndCategory(existingCount, index, categories = CATEGORIES) {
   const total = existingCount + index;
   const level = LEVELS[total % LEVELS.length];
-  const category = CATEGORIES[Math.floor(total / LEVELS.length) % CATEGORIES.length];
+  const category = categories[Math.floor(total / LEVELS.length) % categories.length];
   return { level, category, seed: total };
+}
+
+function pickTopic({ level, category, seed }) {
+  const byCategory = TOPIC_BANK[category] ?? TOPIC_BANK.grammar;
+  const topics = byCategory[level] ?? byCategory.B1;
+  const topicIndex = Math.floor(seed / LEVELS.length);
+  return topics[topicIndex % topics.length];
+}
+
+function buildClearTitle({ level, category, topic }) {
+  const levelNames = {
+    A1: 'Beginner',
+    A2: 'Elementary',
+    B1: 'Intermediate',
+    B2: 'Upper-Intermediate',
+    C1: 'Advanced',
+    C2: 'Expert',
+  };
+  const levelName = levelNames[level] ?? 'Intermediate';
+  const kind = category === 'grammar' ? 'Grammar' : 'Vocabulary';
+  return `${levelName} ${kind}: ${topic[0].toUpperCase()}${topic.slice(1)}`;
+}
+
+function ensureClearTitle({ title, level, category, topic }) {
+  const fallbackTitle = buildClearTitle({ level, category, topic });
+  if (!title || typeof title !== 'string') return fallbackTitle;
+  const cleaned = title.trim();
+  if (!cleaned) return fallbackTitle;
+  if (/essential|boost|lesson\s*\d*$/i.test(cleaned)) return fallbackTitle;
+  if (!cleaned.includes(':')) return `${fallbackTitle}`;
+  return cleaned;
 }
 
 function scoreMap(level) {
@@ -76,9 +259,10 @@ function shouldBePremium(level, seed) {
   return seed % 2 === 0;
 }
 
-function buildPrompt({ level, category, premium }) {
+function buildPrompt({ level, category, premium, topic }) {
   return `You are an expert ESL teacher writing lessons for IELTS and CELPIP learners.
 Create ONE high-quality ${category.toUpperCase()} lesson at CEFR level ${level}.
+Target topic: ${topic}
 
 WRITE FOR ESL STUDENTS - use simple, clear language. Explain everything.
 
@@ -94,7 +278,7 @@ Return valid JSON:
 }
 
 CONTENT REQUIREMENTS:
-- Title: Simple, very very clear and easy to understand (example: "Beginner: How to Use Present Tense")
+- Title: Simple, specific, and useful. Include the topic clearly (example: "Beginner Grammar: Present Simple for Daily Routines")
 - Excerpt: One sentence, beginner-friendly
 - heroTip: Short, encouraging tip starting with emoji (example: "👉 Start with examples")
 - Body: Markdown, starting with "##" heading
@@ -143,7 +327,7 @@ ${premium ? 'PREMIUM LEVEL: Make content more challenging, include advanced exam
 Never mention AI, models, or automation.`;
 }
 
-async function generateLessonWithOpenAI({ apiKey, model, level, category, premium }) {
+async function generateLessonWithOpenAI({ apiKey, model, level, category, premium, topic }) {
   const response = await fetch('https://api.openai.com/v1/responses', {
     method: 'POST',
     headers: {
@@ -152,7 +336,7 @@ async function generateLessonWithOpenAI({ apiKey, model, level, category, premiu
     },
     body: JSON.stringify({
       model,
-      input: buildPrompt({ level, category, premium }),
+      input: buildPrompt({ level, category, premium, topic }),
       text: {
         format: {
           type: 'json_schema',
@@ -231,21 +415,12 @@ async function generateLessonWithOpenAI({ apiKey, model, level, category, premiu
   return parsed;
 }
 
-function fallbackLesson({ level, category }) {
-  const levelNames = {
-    A1: 'Beginner',
-    A2: 'Easy',
-    B1: 'Intermediate',
-    B2: 'Upper Intermediate',
-    C1: 'Advanced',
-    C2: 'Expert'
-  };
-  const levelName = levelNames[level] || 'Intermediate';
-  const title = `${levelName}: Essential ${category === 'grammar' ? 'Grammar' : 'Vocabulary'}`;
+function fallbackLesson({ level, category, topic }) {
+  const title = buildClearTitle({ level, category, topic });
   
   return {
     title,
-    excerpt: `Learn ${category} with simple examples. Perfect for IELTS and CELPIP preparation.`,
+    excerpt: `Learn ${topic} with clear examples and guided practice for IELTS and CELPIP.`,
     heroTip: '👉 Start with the examples. Try the practice questions. Check answers at the bottom. Use emojis or colours to guide you!',
     tags: [category, level.toLowerCase(), 'beginner-friendly', 'esl', 'examples', 'practice', 'exam-prep'],
     visualAids: ['Simple example table', 'Right and wrong list', 'Real test examples'],
@@ -405,20 +580,24 @@ async function main() {
   const opts = parseArgs(process.argv);
   await mkdir(LESSON_DIR, { recursive: true });
   const currentFiles = await existingLessonFiles();
+  const selectedCategories = opts.category === 'all' ? CATEGORIES : [opts.category];
 
   const apiKey = process.env.OPENAI_API_KEY;
   const today = new Date().toISOString().slice(0, 10);
 
   const created = [];
   for (let i = 0; i < opts.count; i += 1) {
-    const { level, category, seed } = pickLevelAndCategory(currentFiles.length, i);
+    const { level, category, seed } = pickLevelAndCategory(currentFiles.length, i, selectedCategories);
+    const topic = pickTopic({ level, category, seed });
     const premium = shouldBePremium(level, seed);
     const priceCAD = premium ? 12 : 0;
     const score = scoreMap(level);
 
     const lessonData = apiKey
-      ? await generateLessonWithOpenAI({ apiKey, model: opts.model, level, category, premium })
-      : fallbackLesson({ level, category });
+      ? await generateLessonWithOpenAI({ apiKey, model: opts.model, level, category, premium, topic })
+      : fallbackLesson({ level, category, topic });
+
+    lessonData.title = ensureClearTitle({ title: lessonData.title, level, category, topic });
 
     const baseSlug = slugify(lessonData.title);
     const filename = `${today}-${category}-${level.toLowerCase()}-${baseSlug}.md`;
