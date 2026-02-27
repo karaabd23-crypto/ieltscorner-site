@@ -1,39 +1,89 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-const PAYHIP_CELPIP_URL = "https://payhip.com/b/REPLACE_ME";
+import { getCollection } from "astro:content";
+
+const skillLessons = (
+  await getCollection("lessons", ({ data }) => !data.draft && data.category === "writing")
+).sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
 ---
 
-<Layout title="CELPIP Writing — IELTS Corner" description="CELPIP Writing: email and survey templates, clear steps, and course support.">
+<Layout
+  title="CELPIP Writing | Essay & Paragraph Strategies | IELTS Corner"
+  description="CELPIP writing strategies for task response, organization, and grammar. Master task 1 and task 2 with clear templates and examples."
+>
   <section class="section">
-    <div class="hero" style={`--hero-bg: url('/heroes/essay-correction.png');`}>
+    <div class="hero" style={`--hero-bg: url('/heroes/writing.png');`}>
       <div class="hero-content">
         <span class="pill">✍️ CELPIP Writing</span>
-        <h1>Write faster with clear templates.</h1>
-        <p class="muted" style="max-width: 56ch;">
-          Learn easy structure for email + survey tasks so you can write quickly and clearly.
+        <h1>Organize your ideas, express clearly, score higher</h1>
+        <p class="muted" style="max-width: 65ch;">
+          Master CELPIP writing with templates, organization strategies, and grammar focus. Task 1 and Task 2 explained.
         </p>
-        <div class="cluster">
-          <a class="btn btn-primary" href={PAYHIP_CELPIP_URL} target="_blank" rel="noreferrer">Get the course →</a>
-          <a class="btn btn-ghost" href="/tutoring">Private / group lessons →</a>
-        </div>
       </div>
     </div>
+  </section>
 
-    <div style="height: var(--s-8);"></div>
+  <section class="section-sm">
+    <div class="stack" style="gap: var(--s-8);">
+      <!-- Format breakdown -->
+      <div class="surface" style="padding: var(--s-6);">
+        <h2>CELPIP Writing format (60 minutes, 2 tasks)</h2>
+        <div class="grid grid-2">
+          <div>
+            <h3>Task 1: Email (2 emails, ~150 words total)</h3>
+            <p>Write friendly, professional, or persuasive emails to different recipients.</p>
+            <p><strong>Tests:</strong> Tone, register, purpose clarity, conciseness.</p>
+          </div>
+          <div>
+            <h3>Task 2: Essay (1 essay, ~300 words)</h3>
+            <p>Respond to a prompt: agree/disagree, explain, suggest, or describe.</p>
+            <p><strong>Tests:</strong> Task response, organization, grammar, vocabulary range.</p>
+          </div>
+        </div>
+      </div>
 
-    <div class="grid grid-3">
-      <article class="card">
-        <h3>What you learn</h3>
-        <p class="muted">Email structure, tone, and clarity.</p>
-      </article>
-      <article class="card">
-        <h3>Common problems</h3>
-        <p class="muted">Too short, unclear, wrong tone.</p>
-      </article>
-      <article class="card">
-        <h3>How we fix it</h3>
-        <p class="muted">Templates + practice + feedback.</p>
-      </article>
+      <!-- Pro strategies -->
+      <div class="surface" style="padding: var(--s-6);">
+        <h2>CELPIP writing pro strategies</h2>
+        <div class="stack" style="gap: var(--s-4);">
+          <div>
+            <h4>✓ Plan your essay in 2 minutes</h4>
+            <p>Write a quick outline: intro (1 sentence), body ideas (3–4 points), conclusion (1 sentence). This saves time and avoids rambling.</p>
+          </div>
+          <div>
+            <h4>✓ Use clear transitions between ideas</h4>
+            <p>Words like "Firstly," "In addition," "However," "Therefore" guide the reader and show your organization.</p>
+          </div>
+          <div>
+            <h4>✓ Match your tone to the task</h4>
+            <p>Friendly emails use contractions and casual phrases. Formal emails use complete structures. Essays stay neutral and formal.</p>
+          </div>
+          <div>
+            <h4>✓ Write topic sentences for each paragraph</h4>
+            <p>The first sentence of each body paragraph should state one main idea. Supporting sentences follow with examples and explanations.</p>
+          </div>
+          <div>
+            <h4>✓ Avoid repetition with synonyms and pronouns</h4>
+            <p>Instead of repeating "writing," use "it," "this skill," or "the task." Vary your sentence structure too.</p>
+          </div>
+          <div>
+            <h4>✓ Leave 5 minutes to proofread</h4>
+            <p>Check spelling, verb forms (past tense consistency), and sentence structure. Small corrections improve your score.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="surface" style="padding: var(--s-6);">
+        <div class="stack" style="gap: var(--s-4); text-align: center;">
+          <h2>Ready to improve your writing?</h2>
+          <p class="muted">Practice with real CELPIP writing tasks and get structured feedback.</p>
+          <div class="cluster" style="justify-content: center;">
+            <a class="btn btn-primary" href="/lessons">Free writing lessons →</a>
+            <a class="btn" href="/essay-correction">Essay feedback service →</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </Layout>

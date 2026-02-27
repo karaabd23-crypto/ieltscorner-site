@@ -1,39 +1,99 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-const PAYHIP_CELPIP_URL = "https://payhip.com/b/REPLACE_ME";
+import { getCollection } from "astro:content";
+
+const skillLessons = (
+  await getCollection("lessons", ({ data }) => !data.draft && data.category === "vocabulary")
+).sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
 ---
 
-<Layout title="CELPIP Reading — IELTS Corner" description="CELPIP Reading: clear strategies and course support.">
+<Layout
+  title="CELPIP Reading | Comprehension Strategies & Vocabulary | IELTS Corner"
+  description="CELPIP reading strategies for multiple choice, matching, and fill-in questions. Learn scanning, inference, and vocabulary in context."
+>
   <section class="section">
-    <div class="hero" style={`--hero-bg: url('/heroes/tutoring.png');`}>
+    <div class="hero" style={`--hero-bg: url('/heroes/reading.png');`}>
       <div class="hero-content">
         <span class="pill">📖 CELPIP Reading</span>
-        <h1>Read faster. Find answers with less stress.</h1>
-        <p class="muted" style="max-width: 56ch;">
-          Learn scanning, keywords, and how to avoid wrong options — with real CELPIP-style practice.
+        <h1>Read faster, understand deeper, score higher</h1>
+        <p class="muted" style="max-width: 65ch;">
+          Master CELPIP reading question types: multiple choice, matching, and fill-in-the-blank. Strategy-based lessons with timed practice.
         </p>
-        <div class="cluster">
-          <a class="btn btn-primary" href={PAYHIP_CELPIP_URL} target="_blank" rel="noreferrer">Get the course →</a>
-          <a class="btn btn-ghost" href="/tutoring">Private / group lessons →</a>
-        </div>
       </div>
     </div>
+  </section>
 
-    <div style="height: var(--s-8);"></div>
+  <section class="section-sm">
+    <div class="stack" style="gap: var(--s-8);">
+      <!-- Format breakdown -->
+      <div class="surface" style="padding: var(--s-6);">
+        <h2>CELPIP Reading format (15–20 minutes, ~350 words per passage)</h2>
+        <div class="grid grid-2">
+          <div>
+            <h3>Part 1: Multiple choice (5 Qs)</h3>
+            <p>Choose the best answer (A, B, C, or D) based on the passage.</p>
+            <p><strong>Tests:</strong> Detail recognition, inference, vocabulary in context.</p>
+          </div>
+          <div>
+            <h3>Part 2: Matching (5 Qs)</h3>
+            <p>Match statements or phrases to sections of text.</p>
+            <p><strong>Tests:</strong> Main idea, author's tone, purpose recognition.</p>
+          </div>
+          <div>
+            <h3>Part 3: Fill-in-the-blank (5 Qs)</h3>
+            <p>Complete a sentence using one correct word from a list.</p>
+            <p><strong>Tests:</strong> Grammar, collocation, and context understanding.</p>
+          </div>
+          <div>
+            <h3>Part 4: Short answer (5 Qs)</h3>
+            <p>Answer questions about the passage in your own words (1–3 words).</p>
+            <p><strong>Tests:</strong> Comprehension, paraphrasing, and inference.</p>
+          </div>
+        </div>
+      </div>
 
-    <div class="grid grid-3">
-      <article class="card">
-        <h3>What you learn</h3>
-        <p class="muted">How to find answers quickly without reading everything.</p>
-      </article>
-      <article class="card">
-        <h3>Common problems</h3>
-        <p class="muted">Running out of time, confusing similar choices.</p>
-      </article>
-      <article class="card">
-        <h3>How we fix it</h3>
-        <p class="muted">Strategy + timed practice + review.</p>
-      </article>
+      <!-- Pro strategies -->
+      <div class="surface" style="padding: var(--s-6);">
+        <h2>CELPIP reading pro strategies</h2>
+        <div class="stack" style="gap: var(--s-4);">
+          <div>
+            <h4>✓ Skim for main idea first (30 seconds)</h4>
+            <p>Read the first sentence of each paragraph. Understand the topic and organization before diving into details.</p>
+          </div>
+          <div>
+            <h4>✓ Read the question before re-reading the passage</h4>
+            <p>Know what to look for. This saves time and focuses your attention on relevant parts.</p>
+          </div>
+          <div>
+            <h4>✓ Look for keyword matches (but not always)</h4>
+            <p>Right answers sometimes paraphrase the passage, not repeat it exactly. Look for synonyms and rephrased ideas.</p>
+          </div>
+          <div>
+            <h4>✓ Use context for unknown vocabulary</h4>
+            <p>If you don't know a word, read the surrounding sentence. Often the meaning becomes clear.</p>
+          </div>
+          <div>
+            <h4>✓ Watch for opinion vs. fact</h4>
+            <p>Passages often mix facts and opinions. Words like "think," "believe," "seems" signal opinion; this matters for inference questions.</p>
+          </div>
+          <div>
+            <h4>✓ Don't over-read for inference</h4>
+            <p>Inference questions have answers that logically follow from the text. Don't add your own world knowledge.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="surface" style="padding: var(--s-6);">
+        <div class="stack" style="gap: var(--s-4); text-align: center;">
+          <h2>Ready to boost your reading score?</h2>
+          <p class="muted">Practice with real CELPIP-style passages and timed question sets.</p>
+          <div class="cluster" style="justify-content: center;">
+            <a class="btn btn-primary" href="/lessons">Free reading lessons →</a>
+            <a class="btn" href="/lessons/pro">Premium practice sets →</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </Layout>

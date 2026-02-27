@@ -1,39 +1,99 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-const PAYHIP_CELPIP_URL = "https://payhip.com/b/REPLACE_ME";
+import { getCollection } from "astro:content";
+
+const skillLessons = (
+  await getCollection("lessons", ({ data }) => !data.draft && data.category === "grammar")
+).sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
 ---
 
-<Layout title="CELPIP Listening — IELTS Corner" description="CELPIP Listening: simple strategies, clear practice, and course support.">
+<Layout
+  title="CELPIP Listening | Comprehension & Note-Taking Strategies | IELTS Corner"
+  description="CELPIP listening strategies for multiple choice and matching questions. Learn active listening, prediction, and note-taking techniques."
+>
   <section class="section">
-    <div class="hero" style={`--hero-bg: url('/heroes/spare.png');`}>
+    <div class="hero" style={`--hero-bg: url('/heroes/listening.png');`}>
       <div class="hero-content">
         <span class="pill">🎧 CELPIP Listening</span>
-        <h1>Understand the question. Choose the right answer faster.</h1>
-        <p class="muted" style="max-width: 56ch;">
-          We train the most common listening patterns, key words, and “traps” — with practice that feels like the test.
+        <h1>Understand clearly, catch every detail, score higher</h1>
+        <p class="muted" style="max-width: 65ch;">
+          Master CELPIP listening: multiple choice, matching, and note-taking. Learn prediction, active listening, and distraction recovery.
         </p>
-        <div class="cluster">
-          <a class="btn btn-primary" href={PAYHIP_CELPIP_URL} target="_blank" rel="noreferrer">Get the course →</a>
-          <a class="btn btn-ghost" href="/tutoring">Private / group lessons →</a>
-        </div>
       </div>
     </div>
+  </section>
 
-    <div style="height: var(--s-8);"></div>
+  <section class="section-sm">
+    <div class="stack" style="gap: var(--s-8);">
+      <!-- Format breakdown -->
+      <div class="surface" style="padding: var(--s-6);">
+        <h2>CELPIP Listening format (30–40 minutes)</h2>
+        <div class="grid grid-2">
+          <div>
+            <h3>Part 1: Multiple choice (8 Qs, 1–2 min audio clips)</h3>
+            <p>Listen once. Choose the best answer (A, B, or C).</p>
+            <p><strong>Tests:</strong> Specific detail, main idea, inference.</p>
+          </div>
+          <div>
+            <h3>Part 2: Matching (6 Qs, ~3 min audio)</h3>
+            <p>Match speakers or topics to statements or descriptions.</p>
+            <p><strong>Tests:</strong> Speaker identification, attitude, main points.</p>
+          </div>
+          <div>
+            <h3>Part 3: Note-taking (5 Qs, ~4 min lecture or talk)</h3>
+            <p>Take notes then answer 5 questions about the content.</p>
+            <p><strong>Tests:</strong> Understanding flow, supporting detail, organization.</p>
+          </div>
+          <div>
+            <h3>Part 4: Listening fill-in (5 Qs, ~3–4 min conversation or monologue)</h3>
+            <p>Complete sentences with missing words heard in the audio.</p>
+            <p><strong>Tests:</strong> Detail accuracy, word recognition, context.</p>
+          </div>
+        </div>
+      </div>
 
-    <div class="grid grid-3">
-      <article class="card">
-        <h3>What you learn</h3>
-        <p class="muted">How to listen for the right detail, not every word.</p>
-      </article>
-      <article class="card">
-        <h3>Common problems</h3>
-        <p class="muted">Fast speech, similar options, losing focus.</p>
-      </article>
-      <article class="card">
-        <h3>How we fix it</h3>
-        <p class="muted">Clear steps + timed practice + review.</p>
-      </article>
+      <!-- Pro strategies -->
+      <div class="surface" style="padding: var(--s-6);">
+        <h2>CELPIP listening pro strategies</h2>
+        <div class="stack" style="gap: var(--s-4);">
+          <div>
+            <h4>✓ Predict before you hear</h4>
+            <p>Read the question + answer choices BEFORE the audio plays. Predict what kind of information to listen for.</p>
+          </div>
+          <div>
+            <h4>✓ Don't write full sentences — use keywords</h4>
+            <p>In Part 3, write fast: abbreviations, symbols, arrows. You only have 40 seconds to write notes after.</p>
+          </div>
+          <div>
+            <h4>✓ Focus on the first and last sentence of each section</h4>
+            <p>Main ideas and conclusions are often there. Don't miss them by focusing on details.</p>
+          </div>
+          <div>
+            <h4>✓ If you miss something, let it go</h4>
+            <p>Don't panic or replay in your head. Move on to the next question. One wrong answer isn't the end.</p>
+          </div>
+          <div>
+            <h4>✓ Listen for signpost words</h4>
+            <p>Words like "first," "however," "as a result," "in conclusion" help you follow the speaker's organization.</p>
+          </div>
+          <div>
+            <h4>✓ Pay attention to tone and emphasis</h4>
+            <p>Speakers stress important information. Listen for changes in pace, volume, or tone.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="surface" style="padding: var(--s-6);">
+        <div class="stack" style="gap: var(--s-4); text-align: center;">
+          <h2>Ready to train your ear?</h2>
+          <p class="muted">Start with guided listening lessons and active note-taking practice.</p>
+          <div class="cluster" style="justify-content: center;">
+            <a class="btn btn-primary" href="/lessons">Free listening lessons →</a>
+            <a class="btn" href="/tutoring">Book listening coaching →</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </Layout>
