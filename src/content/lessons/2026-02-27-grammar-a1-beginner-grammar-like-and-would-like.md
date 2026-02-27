@@ -1,5 +1,5 @@
 ---
-title: "Beginner Grammar: Like and would like"
+title: "How to Use Like and would like"
 category: "grammar"
 level: "A1"
 ieltsBand: "3.0-4.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Beginner Grammar: Like and would like
+## How to Use Like and would like
 
 ### 🎯 What you will learn today
 

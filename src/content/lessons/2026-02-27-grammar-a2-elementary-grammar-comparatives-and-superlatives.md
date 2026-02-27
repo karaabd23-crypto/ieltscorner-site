@@ -1,5 +1,5 @@
 ---
-title: "Elementary Grammar: Comparatives and superlatives"
+title: "How to Use Comparatives and superlatives"
 category: "grammar"
 level: "A2"
 ieltsBand: "4.0-5.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Elementary Grammar: Comparatives and superlatives
+## How to Use Comparatives and superlatives
 
 ### 🎯 What you will learn today
 

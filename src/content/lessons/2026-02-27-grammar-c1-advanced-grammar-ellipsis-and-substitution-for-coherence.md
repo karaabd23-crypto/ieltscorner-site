@@ -1,5 +1,5 @@
 ---
-title: "Advanced Grammar: Ellipsis and substitution for coherence"
+title: "How to Use Ellipsis and substitution for coherence"
 category: "grammar"
 level: "C1"
 ieltsBand: "7.0-8.0"
@@ -36,7 +36,7 @@ priceCAD: 12
 draft: false
 ---
 
-## Advanced Grammar: Ellipsis and substitution for coherence
+## How to Use Ellipsis and substitution for coherence
 
 ### 🎯 What you will learn today
 

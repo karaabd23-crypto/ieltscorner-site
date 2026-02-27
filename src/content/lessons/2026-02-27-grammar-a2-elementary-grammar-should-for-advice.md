@@ -1,5 +1,5 @@
 ---
-title: "Elementary Grammar: Should for advice"
+title: "How to Use Should for advice"
 category: "grammar"
 level: "A2"
 ieltsBand: "4.0-5.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Elementary Grammar: Should for advice
+## How to Use Should for advice
 
 ### 🎯 What you will learn today
 

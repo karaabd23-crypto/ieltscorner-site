@@ -1,5 +1,5 @@
 ---
-title: "Upper-Intermediate Grammar: Reduced relative clauses"
+title: "How to Use Reduced relative clauses"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-6.5"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Upper-Intermediate Grammar: Reduced relative clauses
+## How to Use Reduced relative clauses
 
 ### 🎯 What you will learn today
 

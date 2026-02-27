@@ -1,5 +1,5 @@
 ---
-title: "Beginner Grammar: Present simple for daily routines"
+title: "How to Use Present simple for daily routines"
 category: "grammar"
 level: "A1"
 ieltsBand: "3.0-4.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Beginner Grammar: Present simple for daily routines
+## How to Use Present simple for daily routines
 
 ### 🎯 What you will learn today
 

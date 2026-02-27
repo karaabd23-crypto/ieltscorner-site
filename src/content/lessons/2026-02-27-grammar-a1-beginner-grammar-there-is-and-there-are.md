@@ -1,5 +1,5 @@
 ---
-title: "Beginner Grammar: There is and there are"
+title: "How to Use There is and there are"
 category: "grammar"
 level: "A1"
 ieltsBand: "3.0-4.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Beginner Grammar: There is and there are
+## How to Use There is and there are
 
 ### 🎯 What you will learn today
 

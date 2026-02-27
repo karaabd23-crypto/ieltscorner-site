@@ -1,5 +1,5 @@
 ---
-title: "Expert Grammar: Precision under timed exam conditions"
+title: "How to Use Precision under timed exam conditions"
 category: "grammar"
 level: "C2"
 ieltsBand: "8.5-9.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Expert Grammar: Precision under timed exam conditions
+## How to Use Precision under timed exam conditions
 
 ### 🎯 What you will learn today
 

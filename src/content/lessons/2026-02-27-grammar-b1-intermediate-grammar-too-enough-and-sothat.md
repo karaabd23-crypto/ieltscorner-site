@@ -1,5 +1,5 @@
 ---
-title: "Intermediate Grammar: Too, enough, and so...that"
+title: "How to Use Too, enough, and so...that"
 category: "grammar"
 level: "B1"
 ieltsBand: "5.0-6.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Intermediate Grammar: Too, enough, and so...that
+## How to Use Too, enough, and so...that
 
 ### 🎯 What you will learn today
 

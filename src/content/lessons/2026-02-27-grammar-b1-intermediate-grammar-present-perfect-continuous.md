@@ -1,5 +1,5 @@
 ---
-title: "Intermediate Grammar: Present perfect continuous"
+title: "How to Use Present perfect continuous"
 category: "grammar"
 level: "B1"
 ieltsBand: "5.0-6.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Intermediate Grammar: Present perfect continuous
+## How to Use Present perfect continuous
 
 ### 🎯 What you will learn today
 

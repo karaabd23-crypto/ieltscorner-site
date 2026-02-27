@@ -1,5 +1,5 @@
 ---
-title: "Advanced Grammar: Controlled complexity in IELTS essays"
+title: "How to Use Controlled complexity in IELTS essays"
 category: "grammar"
 level: "C1"
 ieltsBand: "7.0-8.0"
@@ -36,7 +36,7 @@ priceCAD: 12
 draft: false
 ---
 
-## Advanced Grammar: Controlled complexity in IELTS essays
+## How to Use Controlled complexity in IELTS essays
 
 ### 🎯 What you will learn today
 

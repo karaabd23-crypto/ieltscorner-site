@@ -1,5 +1,5 @@
 ---
-title: "Upper-Intermediate Grammar: Inversion after negative adverbs"
+title: "How to Use Inversion after negative adverbs"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-6.5"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Upper-Intermediate Grammar: Inversion after negative adverbs
+## How to Use Inversion after negative adverbs
 
 ### 🎯 What you will learn today
 

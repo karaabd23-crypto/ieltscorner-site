@@ -1,5 +1,5 @@
 ---
-title: "Intermediate Grammar: Past continuous and past simple together"
+title: "How to Use Past continuous and past simple together"
 category: "grammar"
 level: "B1"
 ieltsBand: "5.0-6.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Intermediate Grammar: Past continuous and past simple together
+## How to Use Past continuous and past simple together
 
 ### 🎯 What you will learn today
 

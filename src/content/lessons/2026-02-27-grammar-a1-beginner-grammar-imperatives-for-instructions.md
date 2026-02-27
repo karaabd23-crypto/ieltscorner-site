@@ -1,5 +1,5 @@
 ---
-title: "Beginner Grammar: Imperatives for instructions"
+title: "How to Use Imperatives for instructions"
 category: "grammar"
 level: "A1"
 ieltsBand: "3.0-4.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Beginner Grammar: Imperatives for instructions
+## How to Use Imperatives for instructions
 
 ### 🎯 What you will learn today
 

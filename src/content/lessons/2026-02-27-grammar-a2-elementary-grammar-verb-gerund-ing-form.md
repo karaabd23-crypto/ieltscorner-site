@@ -1,5 +1,5 @@
 ---
-title: "Elementary Grammar: Verb + gerund (ing form)"
+title: "How to Use Verb + gerund (ing form)"
 category: "grammar"
 level: "A2"
 ieltsBand: "4.0-5.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Elementary Grammar: Verb + gerund (ing form)
+## How to Use Verb + gerund (ing form)
 
 ### 🎯 What you will learn today
 

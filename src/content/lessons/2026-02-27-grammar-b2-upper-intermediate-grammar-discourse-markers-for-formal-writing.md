@@ -1,5 +1,5 @@
 ---
-title: "Upper-Intermediate Grammar: Discourse markers for formal writing"
+title: "How to Use Discourse markers for formal writing"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-6.5"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Upper-Intermediate Grammar: Discourse markers for formal writing
+## How to Use Discourse markers for formal writing
 
 ### 🎯 What you will learn today
 

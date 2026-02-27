@@ -1,5 +1,5 @@
 ---
-title: "Upper-Intermediate Grammar: Future forms for prediction and planning"
+title: "How to Use Future forms for prediction and planning"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-6.5"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Upper-Intermediate Grammar: Future forms for prediction and planning
+## How to Use Future forms for prediction and planning
 
 ### 🎯 What you will learn today
 

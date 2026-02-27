@@ -1,5 +1,5 @@
 ---
-title: "Elementary Grammar: First conditional"
+title: "How to Use First conditional"
 category: "grammar"
 level: "A2"
 ieltsBand: "4.0-5.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Elementary Grammar: First conditional
+## How to Use First conditional
 
 ### 🎯 What you will learn today
 

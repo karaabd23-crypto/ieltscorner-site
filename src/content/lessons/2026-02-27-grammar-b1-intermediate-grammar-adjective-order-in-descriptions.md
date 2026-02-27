@@ -1,5 +1,5 @@
 ---
-title: "Intermediate Grammar: Adjective order in descriptions"
+title: "How to Use Adjective order in descriptions"
 category: "grammar"
 level: "B1"
 ieltsBand: "5.0-6.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Intermediate Grammar: Adjective order in descriptions
+## How to Use Adjective order in descriptions
 
 ### 🎯 What you will learn today
 

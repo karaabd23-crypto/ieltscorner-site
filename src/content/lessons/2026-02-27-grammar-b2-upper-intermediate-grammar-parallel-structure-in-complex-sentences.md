@@ -1,5 +1,5 @@
 ---
-title: "Upper-Intermediate Grammar: Parallel structure in complex sentences"
+title: "How to Use Parallel structure in complex sentences"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-6.5"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Upper-Intermediate Grammar: Parallel structure in complex sentences
+## How to Use Parallel structure in complex sentences
 
 ### 🎯 What you will learn today
 

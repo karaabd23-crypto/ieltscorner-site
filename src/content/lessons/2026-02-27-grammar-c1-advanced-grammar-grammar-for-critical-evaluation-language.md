@@ -1,5 +1,5 @@
 ---
-title: "Advanced Grammar: Grammar for critical evaluation language"
+title: "How to Use Grammar for critical evaluation language"
 category: "grammar"
 level: "C1"
 ieltsBand: "7.0-8.0"
@@ -36,7 +36,7 @@ priceCAD: 12
 draft: false
 ---
 
-## Advanced Grammar: Grammar for critical evaluation language
+## How to Use Grammar for critical evaluation language
 
 ### 🎯 What you will learn today
 

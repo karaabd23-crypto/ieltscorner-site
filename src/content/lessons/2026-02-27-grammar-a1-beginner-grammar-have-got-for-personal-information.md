@@ -1,5 +1,5 @@
 ---
-title: "Beginner Grammar: Have got for personal information"
+title: "How to Use Have got for personal information"
 category: "grammar"
 level: "A1"
 ieltsBand: "3.0-4.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Beginner Grammar: Have got for personal information
+## How to Use Have got for personal information
 
 ### 🎯 What you will learn today
 

@@ -1,5 +1,5 @@
 ---
-title: "Expert Grammar: Register shifts without grammar errors"
+title: "How to Use Register shifts without grammar errors"
 category: "grammar"
 level: "C2"
 ieltsBand: "8.5-9.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Expert Grammar: Register shifts without grammar errors
+## How to Use Register shifts without grammar errors
 
 ### 🎯 What you will learn today
 

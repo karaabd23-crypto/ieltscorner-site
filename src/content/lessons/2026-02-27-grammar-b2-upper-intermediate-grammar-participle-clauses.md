@@ -1,5 +1,5 @@
 ---
-title: "Upper-Intermediate Grammar: Participle clauses"
+title: "How to Use Participle clauses"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-6.5"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Upper-Intermediate Grammar: Participle clauses
+## How to Use Participle clauses
 
 ### 🎯 What you will learn today
 

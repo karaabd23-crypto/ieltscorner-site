@@ -1,5 +1,5 @@
 ---
-title: "Expert Grammar: Advanced reformulation techniques"
+title: "How to Use Advanced reformulation techniques"
 category: "grammar"
 level: "C2"
 ieltsBand: "8.5-9.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Expert Grammar: Advanced reformulation techniques
+## How to Use Advanced reformulation techniques
 
 ### 🎯 What you will learn today
 

@@ -1,5 +1,5 @@
 ---
-title: "Upper-Intermediate Grammar: Relative clauses with prepositions"
+title: "How to Use Relative clauses with prepositions"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-6.5"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Upper-Intermediate Grammar: Relative clauses with prepositions
+## How to Use Relative clauses with prepositions
 
 ### 🎯 What you will learn today
 

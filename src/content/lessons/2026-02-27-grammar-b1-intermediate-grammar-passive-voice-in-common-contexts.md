@@ -1,5 +1,5 @@
 ---
-title: "Intermediate Grammar: Passive voice in common contexts"
+title: "How to Use Passive voice in common contexts"
 category: "grammar"
 level: "B1"
 ieltsBand: "5.0-6.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Intermediate Grammar: Passive voice in common contexts
+## How to Use Passive voice in common contexts
 
 ### 🎯 What you will learn today
 

@@ -1,5 +1,5 @@
 ---
-title: "Expert Grammar: Abstract noun structures with accuracy"
+title: "How to Use Abstract noun structures with accuracy"
 category: "grammar"
 level: "C2"
 ieltsBand: "8.5-9.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Expert Grammar: Abstract noun structures with accuracy
+## How to Use Abstract noun structures with accuracy
 
 ### 🎯 What you will learn today
 

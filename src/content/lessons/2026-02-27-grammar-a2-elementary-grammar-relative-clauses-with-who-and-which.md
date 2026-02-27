@@ -1,5 +1,5 @@
 ---
-title: "Elementary Grammar: Relative clauses with who and which"
+title: "How to Use Relative clauses with who and which"
 category: "grammar"
 level: "A2"
 ieltsBand: "4.0-5.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Elementary Grammar: Relative clauses with who and which
+## How to Use Relative clauses with who and which
 
 ### 🎯 What you will learn today
 

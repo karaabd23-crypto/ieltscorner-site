@@ -1,5 +1,5 @@
 ---
-title: "Upper Intermediate: Essential Grammar"
+title: "How to Use Grammar in Clear Sentences"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-6.5"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Upper Intermediate: Essential Grammar
+## How to Use Grammar in Clear Sentences
 
 ### 🎯 What you will learn today
 

@@ -1,5 +1,5 @@
 ---
-title: "Advanced Grammar: Nominalisation in academic style"
+title: "How to Use Nominalisation in academic style"
 category: "grammar"
 level: "C1"
 ieltsBand: "7.0-8.0"
@@ -36,7 +36,7 @@ priceCAD: 12
 draft: false
 ---
 
-## Advanced Grammar: Nominalisation in academic style
+## How to Use Nominalisation in academic style
 
 ### 🎯 What you will learn today
 

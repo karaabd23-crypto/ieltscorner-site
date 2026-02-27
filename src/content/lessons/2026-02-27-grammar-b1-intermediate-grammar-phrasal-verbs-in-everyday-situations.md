@@ -1,5 +1,5 @@
 ---
-title: "Intermediate Grammar: Phrasal verbs in everyday situations"
+title: "How to Use Phrasal verbs in everyday situations"
 category: "grammar"
 level: "B1"
 ieltsBand: "5.0-6.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Intermediate Grammar: Phrasal verbs in everyday situations
+## How to Use Phrasal verbs in everyday situations
 
 ### 🎯 What you will learn today
 

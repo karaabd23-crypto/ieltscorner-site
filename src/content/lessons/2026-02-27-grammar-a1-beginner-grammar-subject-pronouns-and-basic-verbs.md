@@ -1,5 +1,5 @@
 ---
-title: "Beginner Grammar: Subject pronouns and basic verbs"
+title: "How to Use Subject pronouns and basic verbs"
 category: "grammar"
 level: "A1"
 ieltsBand: "3.0-4.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Beginner Grammar: Subject pronouns and basic verbs
+## How to Use Subject pronouns and basic verbs
 
 ### 🎯 What you will learn today
 

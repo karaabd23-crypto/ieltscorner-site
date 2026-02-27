@@ -1,5 +1,5 @@
 ---
-title: "Beginner Grammar: A, an, and the"
+title: "How to Use A, an, and the"
 category: "grammar"
 level: "A1"
 ieltsBand: "3.0-4.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Beginner Grammar: A, an, and the
+## How to Use A, an, and the
 
 ### 🎯 What you will learn today
 

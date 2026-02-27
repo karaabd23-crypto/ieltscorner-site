@@ -1,5 +1,5 @@
 ---
-title: "Expert: Essential Grammar"
+title: "How to Use Grammar in Clear Sentences"
 category: "grammar"
 level: "C2"
 ieltsBand: "8.5-9.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Expert: Essential Grammar
+## How to Use Grammar in Clear Sentences
 
 ### 🎯 What you will learn today
 

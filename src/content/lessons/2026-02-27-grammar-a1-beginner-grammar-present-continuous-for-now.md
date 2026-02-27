@@ -1,5 +1,5 @@
 ---
-title: "Beginner Grammar: Present continuous for now"
+title: "How to Use Present continuous for now"
 category: "grammar"
 level: "A1"
 ieltsBand: "3.0-4.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Beginner Grammar: Present continuous for now
+## How to Use Present continuous for now
 
 ### 🎯 What you will learn today
 

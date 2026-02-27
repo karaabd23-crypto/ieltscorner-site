@@ -1,5 +1,5 @@
 ---
-title: "Advanced Grammar: Advanced clause combinations"
+title: "How to Use Advanced clause combinations"
 category: "grammar"
 level: "C1"
 ieltsBand: "7.0-8.0"
@@ -36,7 +36,7 @@ priceCAD: 12
 draft: false
 ---
 
-## Advanced Grammar: Advanced clause combinations
+## How to Use Advanced clause combinations
 
 ### 🎯 What you will learn today
 

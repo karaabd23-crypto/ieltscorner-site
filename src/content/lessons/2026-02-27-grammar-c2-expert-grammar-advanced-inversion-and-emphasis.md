@@ -1,5 +1,5 @@
 ---
-title: "Expert Grammar: Advanced inversion and emphasis"
+title: "How to Use Advanced inversion and emphasis"
 category: "grammar"
 level: "C2"
 ieltsBand: "8.5-9.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Expert Grammar: Advanced inversion and emphasis
+## How to Use Advanced inversion and emphasis
 
 ### 🎯 What you will learn today
 

@@ -1,5 +1,5 @@
 ---
-title: "Elementary Grammar: Question tags in conversation"
+title: "How to Use Question tags in conversation"
 category: "grammar"
 level: "A2"
 ieltsBand: "4.0-5.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Elementary Grammar: Question tags in conversation
+## How to Use Question tags in conversation
 
 ### 🎯 What you will learn today
 

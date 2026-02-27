@@ -1,5 +1,5 @@
 ---
-title: "Expert Grammar: High-level error diagnosis and revision"
+title: "How to Use High-level error diagnosis and revision"
 category: "grammar"
 level: "C2"
 ieltsBand: "8.5-9.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Expert Grammar: High-level error diagnosis and revision
+## How to Use High-level error diagnosis and revision
 
 ### 🎯 What you will learn today
 

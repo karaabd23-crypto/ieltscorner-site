@@ -1,5 +1,5 @@
 ---
-title: "Intermediate Grammar: Reported speech basics"
+title: "How to Use Reported speech basics"
 category: "grammar"
 level: "B1"
 ieltsBand: "5.0-6.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Intermediate Grammar: Reported speech basics
+## How to Use Reported speech basics
 
 ### 🎯 What you will learn today
 

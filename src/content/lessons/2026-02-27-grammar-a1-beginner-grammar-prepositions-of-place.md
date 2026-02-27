@@ -1,5 +1,5 @@
 ---
-title: "Beginner Grammar: Prepositions of place"
+title: "How to Use Prepositions of place"
 category: "grammar"
 level: "A1"
 ieltsBand: "3.0-4.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Beginner Grammar: Prepositions of place
+## How to Use Prepositions of place
 
 ### 🎯 What you will learn today
 

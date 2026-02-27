@@ -1,5 +1,5 @@
 ---
-title: "Intermediate Grammar: Linking words for contrast and result"
+title: "How to Use Linking words for contrast and result"
 category: "grammar"
 level: "B1"
 ieltsBand: "5.0-6.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Intermediate Grammar: Linking words for contrast and result
+## How to Use Linking words for contrast and result
 
 ### 🎯 What you will learn today
 

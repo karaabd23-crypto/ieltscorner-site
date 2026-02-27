@@ -1,5 +1,5 @@
 ---
-title: "Intermediate Grammar: Quantifiers: much, many, a lot of, plenty of"
+title: "How to Use Quantifiers: much, many, a lot of, plenty of"
 category: "grammar"
 level: "B1"
 ieltsBand: "5.0-6.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Intermediate Grammar: Quantifiers: much, many, a lot of, plenty of
+## How to Use Quantifiers: much, many, a lot of, plenty of
 
 ### 🎯 What you will learn today
 

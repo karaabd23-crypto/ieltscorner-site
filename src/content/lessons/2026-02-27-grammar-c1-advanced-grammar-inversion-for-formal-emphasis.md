@@ -1,5 +1,5 @@
 ---
-title: "Advanced Grammar: Inversion for formal emphasis"
+title: "How to Use Inversion for formal emphasis"
 category: "grammar"
 level: "C1"
 ieltsBand: "7.0-8.0"
@@ -36,7 +36,7 @@ priceCAD: 12
 draft: false
 ---
 
-## Advanced Grammar: Inversion for formal emphasis
+## How to Use Inversion for formal emphasis
 
 ### 🎯 What you will learn today
 

@@ -1,5 +1,5 @@
 ---
-title: "Beginner Grammar: Can and cannot for ability"
+title: "How to Use Can and cannot for ability"
 category: "grammar"
 level: "A1"
 ieltsBand: "3.0-4.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Beginner Grammar: Can and cannot for ability
+## How to Use Can and cannot for ability
 
 ### 🎯 What you will learn today
 

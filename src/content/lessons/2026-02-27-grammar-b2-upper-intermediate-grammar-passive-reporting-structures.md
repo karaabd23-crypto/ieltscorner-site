@@ -1,5 +1,5 @@
 ---
-title: "Upper-Intermediate Grammar: Passive reporting structures"
+title: "How to Use Passive reporting structures"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-6.5"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Upper-Intermediate Grammar: Passive reporting structures
+## How to Use Passive reporting structures
 
 ### 🎯 What you will learn today
 

@@ -1,5 +1,5 @@
 ---
-title: "Intermediate Grammar: Modals for possibility: may, might, could"
+title: "How to Use Modals for possibility: may, might, could"
 category: "grammar"
 level: "B1"
 ieltsBand: "5.0-6.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Intermediate Grammar: Modals for possibility: may, might, could
+## How to Use Modals for possibility: may, might, could
 
 ### 🎯 What you will learn today
 

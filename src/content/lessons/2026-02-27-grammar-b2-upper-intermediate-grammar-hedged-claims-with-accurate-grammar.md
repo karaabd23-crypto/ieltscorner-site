@@ -1,5 +1,5 @@
 ---
-title: "Upper-Intermediate Grammar: Hedged claims with accurate grammar"
+title: "How to Use Hedged claims with accurate grammar"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-6.5"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Upper-Intermediate Grammar: Hedged claims with accurate grammar
+## How to Use Hedged claims with accurate grammar
 
 ### 🎯 What you will learn today
 

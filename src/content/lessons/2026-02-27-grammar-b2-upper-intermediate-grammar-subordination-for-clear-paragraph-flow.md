@@ -1,5 +1,5 @@
 ---
-title: "Upper-Intermediate Grammar: Subordination for clear paragraph flow"
+title: "How to Use Subordination for clear paragraph flow"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-6.5"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Upper-Intermediate Grammar: Subordination for clear paragraph flow
+## How to Use Subordination for clear paragraph flow
 
 ### 🎯 What you will learn today
 

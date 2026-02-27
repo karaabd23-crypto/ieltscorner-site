@@ -1,5 +1,5 @@
 ---
-title: "Elementary Grammar: Past simple regular verbs"
+title: "How to Use Past simple regular verbs"
 category: "grammar"
 level: "A2"
 ieltsBand: "4.0-5.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Elementary Grammar: Past simple regular verbs
+## How to Use Past simple regular verbs
 
 ### 🎯 What you will learn today
 

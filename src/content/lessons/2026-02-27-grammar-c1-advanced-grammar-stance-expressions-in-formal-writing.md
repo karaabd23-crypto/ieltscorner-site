@@ -1,5 +1,5 @@
 ---
-title: "Advanced Grammar: Stance expressions in formal writing"
+title: "How to Use Stance expressions in formal writing"
 category: "grammar"
 level: "C1"
 ieltsBand: "7.0-8.0"
@@ -36,7 +36,7 @@ priceCAD: 12
 draft: false
 ---
 
-## Advanced Grammar: Stance expressions in formal writing
+## How to Use Stance expressions in formal writing
 
 ### 🎯 What you will learn today
 

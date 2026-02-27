@@ -1,5 +1,5 @@
 ---
-title: "Elementary Grammar: Will for quick decisions"
+title: "How to Use Will for quick decisions"
 category: "grammar"
 level: "A2"
 ieltsBand: "4.0-5.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Elementary Grammar: Will for quick decisions
+## How to Use Will for quick decisions
 
 ### 🎯 What you will learn today
 

@@ -1,5 +1,5 @@
 ---
-title: "Expert Grammar: Advanced discourse grammar"
+title: "How to Use Advanced discourse grammar"
 category: "grammar"
 level: "C2"
 ieltsBand: "8.5-9.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Expert Grammar: Advanced discourse grammar
+## How to Use Advanced discourse grammar
 
 ### 🎯 What you will learn today
 

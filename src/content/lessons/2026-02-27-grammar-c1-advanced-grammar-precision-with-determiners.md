@@ -1,5 +1,5 @@
 ---
-title: "Advanced Grammar: Precision with determiners"
+title: "How to Use Precision with determiners"
 category: "grammar"
 level: "C1"
 ieltsBand: "7.0-8.0"
@@ -36,7 +36,7 @@ priceCAD: 12
 draft: false
 ---
 
-## Advanced Grammar: Precision with determiners
+## How to Use Precision with determiners
 
 ### 🎯 What you will learn today
 

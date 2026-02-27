@@ -1,5 +1,5 @@
 ---
-title: "Advanced Grammar: Advanced comparison structures"
+title: "How to Use Advanced comparison structures"
 category: "grammar"
 level: "C1"
 ieltsBand: "7.0-8.0"
@@ -36,7 +36,7 @@ priceCAD: 12
 draft: false
 ---
 
-## Advanced Grammar: Advanced comparison structures
+## How to Use Advanced comparison structures
 
 ### 🎯 What you will learn today
 

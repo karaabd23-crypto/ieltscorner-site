@@ -1,5 +1,5 @@
 ---
-title: "Upper-Intermediate Grammar: Modal verbs in past contexts"
+title: "How to Use Modal verbs in past contexts"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-6.5"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Upper-Intermediate Grammar: Modal verbs in past contexts
+## How to Use Modal verbs in past contexts
 
 ### 🎯 What you will learn today
 

@@ -1,5 +1,5 @@
 ---
-title: "Advanced Grammar: Advanced punctuation and sentence control"
+title: "How to Use Advanced punctuation and sentence control"
 category: "grammar"
 level: "C1"
 ieltsBand: "7.0-8.0"
@@ -36,7 +36,7 @@ priceCAD: 12
 draft: false
 ---
 
-## Advanced Grammar: Advanced punctuation and sentence control
+## How to Use Advanced punctuation and sentence control
 
 ### 🎯 What you will learn today
 

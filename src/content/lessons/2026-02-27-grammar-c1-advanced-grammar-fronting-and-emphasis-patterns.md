@@ -1,5 +1,5 @@
 ---
-title: "Advanced Grammar: Fronting and emphasis patterns"
+title: "How to Use Fronting and emphasis patterns"
 category: "grammar"
 level: "C1"
 ieltsBand: "7.0-8.0"
@@ -36,7 +36,7 @@ priceCAD: 12
 draft: false
 ---
 
-## Advanced Grammar: Fronting and emphasis patterns
+## How to Use Fronting and emphasis patterns
 
 ### 🎯 What you will learn today
 

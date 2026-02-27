@@ -1,5 +1,5 @@
 ---
-title: "Upper-Intermediate Grammar: Complex noun phrases"
+title: "How to Use Complex noun phrases"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-6.5"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Upper-Intermediate Grammar: Complex noun phrases
+## How to Use Complex noun phrases
 
 ### 🎯 What you will learn today
 

@@ -218,28 +218,38 @@ function pickTopic({ level, category, seed }) {
   return topics[topicIndex % topics.length];
 }
 
-function buildClearTitle({ level, category, topic }) {
-  const levelNames = {
-    A1: 'Beginner',
-    A2: 'Elementary',
-    B1: 'Intermediate',
-    B2: 'Upper-Intermediate',
-    C1: 'Advanced',
-    C2: 'Expert',
-  };
-  const levelName = levelNames[level] ?? 'Intermediate';
-  const kind = category === 'grammar' ? 'Grammar' : 'Vocabulary';
-  return `${levelName} ${kind}: ${topic[0].toUpperCase()}${topic.slice(1)}`;
+function simplifyGrammarTopic(topic) {
+  return String(topic)
+    .replace(/nominalisation/gi, 'noun forms')
+    .replace(/ellipsis and substitution/gi, 'shorter reference words')
+    .replace(/inversion/gi, 'word order changes')
+    .replace(/register shifts/gi, 'formal and casual style changes')
+    .replace(/parallelism/gi, 'parallel structure')
+    .replace(/discourse grammar/gi, 'grammar for linking ideas')
+    .replace(/subordination/gi, 'complex sentence links')
+    .replace(/determiners/gi, 'words like this, that, some, and each')
+    .trim();
 }
 
-function ensureClearTitle({ title, level, category, topic }) {
-  const fallbackTitle = buildClearTitle({ level, category, topic });
+function buildClearTitle({ category, topic }) {
+  const cleanTopic = category === 'grammar' ? simplifyGrammarTopic(topic) : String(topic);
+  const prettyTopic = `${cleanTopic[0].toUpperCase()}${cleanTopic.slice(1)}`;
+  if (category === 'grammar') {
+    return `How to Use ${prettyTopic}`;
+  }
+  return `Vocabulary for ${prettyTopic}`;
+}
+
+function ensureClearTitle({ title, category, topic }) {
+  const fallbackTitle = buildClearTitle({ category, topic });
   if (!title || typeof title !== 'string') return fallbackTitle;
   const cleaned = title.trim();
   if (!cleaned) return fallbackTitle;
   if (/essential|boost|lesson\s*\d*$/i.test(cleaned)) return fallbackTitle;
-  if (!cleaned.includes(':')) return `${fallbackTitle}`;
-  return cleaned;
+  if (/\b(a1|a2|b1|b2|c1|c2|beginner|elementary|intermediate|advanced|expert)\b/i.test(cleaned)) {
+    return fallbackTitle;
+  }
+  return cleaned.replace(/^grammar\s*:\s*/i, 'How to Use ').replace(/^vocabulary\s*:\s*/i, 'Vocabulary for ');
 }
 
 function scoreMap(level) {
@@ -278,7 +288,7 @@ Return valid JSON:
 }
 
 CONTENT REQUIREMENTS:
-- Title: Simple, specific, and useful. Include the topic clearly (example: "Beginner Grammar: Present Simple for Daily Routines")
+- Title: Simple, specific, and useful (example: "How to Use Articles: a, an, and the")
 - Excerpt: One sentence, beginner-friendly
 - heroTip: Short, encouraging tip starting with emoji (example: "👉 Start with examples")
 - Body: Markdown, starting with "##" heading
@@ -302,6 +312,7 @@ LANGUAGE RULES:
 - Write in natural teaching paragraphs (2-4 sentences), not only bullet lists
 - Use warm, encouraging teacher tone and clear transitions between sections
 - Avoid telegraphic style (do not write choppy one-line fragments)
+- Do not include level labels in titles (no A1/A2/B1/B2/C1/C2, beginner/intermediate/advanced)
 - Explain every grammar term (example: say "verb form" not just "conjugation")
 - Use real, everyday examples (work, school, hobbies)
 - Never use: "collocation", "hedging", "nuanced", "coherence", "cohesion"
@@ -416,7 +427,7 @@ async function generateLessonWithOpenAI({ apiKey, model, level, category, premiu
 }
 
 function fallbackLesson({ level, category, topic }) {
-  const title = buildClearTitle({ level, category, topic });
+  const title = buildClearTitle({ category, topic });
   
   return {
     title,
@@ -597,7 +608,7 @@ async function main() {
       ? await generateLessonWithOpenAI({ apiKey, model: opts.model, level, category, premium, topic })
       : fallbackLesson({ level, category, topic });
 
-    lessonData.title = ensureClearTitle({ title: lessonData.title, level, category, topic });
+    lessonData.title = ensureClearTitle({ title: lessonData.title, category, topic });
 
     const baseSlug = slugify(lessonData.title);
     const filename = `${today}-${category}-${level.toLowerCase()}-${baseSlug}.md`;

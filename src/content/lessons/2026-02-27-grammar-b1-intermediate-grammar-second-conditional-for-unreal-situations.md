@@ -1,5 +1,5 @@
 ---
-title: "Intermediate Grammar: Second conditional for unreal situations"
+title: "How to Use Second conditional for unreal situations"
 category: "grammar"
 level: "B1"
 ieltsBand: "5.0-6.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Intermediate Grammar: Second conditional for unreal situations
+## How to Use Second conditional for unreal situations
 
 ### 🎯 What you will learn today
 

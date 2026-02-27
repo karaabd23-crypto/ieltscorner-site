@@ -1,5 +1,5 @@
 ---
-title: "Beginner Grammar: Countable and uncountable nouns"
+title: "How to Use Countable and uncountable nouns"
 category: "grammar"
 level: "A1"
 ieltsBand: "3.0-4.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Beginner Grammar: Countable and uncountable nouns
+## How to Use Countable and uncountable nouns
 
 ### 🎯 What you will learn today
 

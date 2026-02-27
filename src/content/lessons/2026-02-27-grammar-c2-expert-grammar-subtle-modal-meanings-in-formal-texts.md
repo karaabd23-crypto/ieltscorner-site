@@ -1,5 +1,5 @@
 ---
-title: "Expert Grammar: Subtle modal meanings in formal texts"
+title: "How to Use Subtle modal meanings in formal texts"
 category: "grammar"
 level: "C2"
 ieltsBand: "8.5-9.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Expert Grammar: Subtle modal meanings in formal texts
+## How to Use Subtle modal meanings in formal texts
 
 ### 🎯 What you will learn today
 

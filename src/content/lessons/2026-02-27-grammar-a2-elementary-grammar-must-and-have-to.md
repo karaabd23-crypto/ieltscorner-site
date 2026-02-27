@@ -1,5 +1,5 @@
 ---
-title: "Elementary Grammar: Must and have to"
+title: "How to Use Must and have to"
 category: "grammar"
 level: "A2"
 ieltsBand: "4.0-5.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Elementary Grammar: Must and have to
+## How to Use Must and have to
 
 ### 🎯 What you will learn today
 

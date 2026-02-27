@@ -1,5 +1,5 @@
 ---
-title: "Expert Grammar: Advanced cohesion through grammar"
+title: "How to Use Advanced cohesion through grammar"
 category: "grammar"
 level: "C2"
 ieltsBand: "8.5-9.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Expert Grammar: Advanced cohesion through grammar
+## How to Use Advanced cohesion through grammar
 
 ### 🎯 What you will learn today
 

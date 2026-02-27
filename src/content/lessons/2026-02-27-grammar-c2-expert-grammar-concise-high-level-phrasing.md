@@ -1,5 +1,5 @@
 ---
-title: "Expert Grammar: Concise high-level phrasing"
+title: "How to Use Concise high-level phrasing"
 category: "grammar"
 level: "C2"
 ieltsBand: "8.5-9.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Expert Grammar: Concise high-level phrasing
+## How to Use Concise high-level phrasing
 
 ### 🎯 What you will learn today
 

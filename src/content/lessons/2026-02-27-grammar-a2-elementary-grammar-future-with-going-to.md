@@ -1,5 +1,5 @@
 ---
-title: "Elementary Grammar: Future with going to"
+title: "How to Use Future with going to"
 category: "grammar"
 level: "A2"
 ieltsBand: "4.0-5.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Elementary Grammar: Future with going to
+## How to Use Future with going to
 
 ### 🎯 What you will learn today
 

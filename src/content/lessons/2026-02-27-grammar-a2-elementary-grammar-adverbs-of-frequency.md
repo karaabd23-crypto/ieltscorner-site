@@ -1,5 +1,5 @@
 ---
-title: "Elementary Grammar: Adverbs of frequency"
+title: "How to Use Adverbs of frequency"
 category: "grammar"
 level: "A2"
 ieltsBand: "4.0-5.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Elementary Grammar: Adverbs of frequency
+## How to Use Adverbs of frequency
 
 ### 🎯 What you will learn today
 

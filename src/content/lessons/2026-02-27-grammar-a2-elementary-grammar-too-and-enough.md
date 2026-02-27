@@ -1,5 +1,5 @@
 ---
-title: "Elementary Grammar: Too and enough"
+title: "How to Use Too and enough"
 category: "grammar"
 level: "A2"
 ieltsBand: "4.0-5.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Elementary Grammar: Too and enough
+## How to Use Too and enough
 
 ### 🎯 What you will learn today
 

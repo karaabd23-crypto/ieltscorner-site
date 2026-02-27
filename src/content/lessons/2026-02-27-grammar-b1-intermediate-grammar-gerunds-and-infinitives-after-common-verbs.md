@@ -1,5 +1,5 @@
 ---
-title: "Intermediate Grammar: Gerunds and infinitives after common verbs"
+title: "How to Use Gerunds and infinitives after common verbs"
 category: "grammar"
 level: "B1"
 ieltsBand: "5.0-6.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Intermediate Grammar: Gerunds and infinitives after common verbs
+## How to Use Gerunds and infinitives after common verbs
 
 ### 🎯 What you will learn today
 

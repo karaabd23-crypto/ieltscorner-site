@@ -1,5 +1,5 @@
 ---
-title: "Expert Grammar: Tone control in expert responses"
+title: "How to Use Tone control in expert responses"
 category: "grammar"
 level: "C2"
 ieltsBand: "8.5-9.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Expert Grammar: Tone control in expert responses
+## How to Use Tone control in expert responses
 
 ### 🎯 What you will learn today
 

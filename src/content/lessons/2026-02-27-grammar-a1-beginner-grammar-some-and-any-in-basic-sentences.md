@@ -1,5 +1,5 @@
 ---
-title: "Beginner Grammar: Some and any in basic sentences"
+title: "How to Use Some and any in basic sentences"
 category: "grammar"
 level: "A1"
 ieltsBand: "3.0-4.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Beginner Grammar: Some and any in basic sentences
+## How to Use Some and any in basic sentences
 
 ### 🎯 What you will learn today
 

@@ -1,5 +1,5 @@
 ---
-title: "Beginner Grammar: Basic adverbs: very, really, quite"
+title: "How to Use Basic adverbs: very, really, quite"
 category: "grammar"
 level: "A1"
 ieltsBand: "3.0-4.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Beginner Grammar: Basic adverbs: very, really, quite
+## How to Use Basic adverbs: very, really, quite
 
 ### 🎯 What you will learn today
 

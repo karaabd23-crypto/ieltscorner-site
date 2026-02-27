@@ -1,5 +1,5 @@
 ---
-title: "Expert Grammar: Sophisticated clause architecture"
+title: "How to Use Sophisticated clause architecture"
 category: "grammar"
 level: "C2"
 ieltsBand: "8.5-9.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Expert Grammar: Sophisticated clause architecture
+## How to Use Sophisticated clause architecture
 
 ### 🎯 What you will learn today
 

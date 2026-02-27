@@ -1,5 +1,5 @@
 ---
-title: "Advanced Grammar: Reporting verbs with precise grammar"
+title: "How to Use Reporting verbs with precise grammar"
 category: "grammar"
 level: "C1"
 ieltsBand: "7.0-8.0"
@@ -36,7 +36,7 @@ priceCAD: 12
 draft: false
 ---
 
-## Advanced Grammar: Reporting verbs with precise grammar
+## How to Use Reporting verbs with precise grammar
 
 ### 🎯 What you will learn today
 

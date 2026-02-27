@@ -1,5 +1,5 @@
 ---
-title: "Elementary Grammar: Object pronouns and possessive pronouns"
+title: "How to Use Object pronouns and possessive pronouns"
 category: "grammar"
 level: "A2"
 ieltsBand: "4.0-5.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Elementary Grammar: Object pronouns and possessive pronouns
+## How to Use Object pronouns and possessive pronouns
 
 ### 🎯 What you will learn today
 

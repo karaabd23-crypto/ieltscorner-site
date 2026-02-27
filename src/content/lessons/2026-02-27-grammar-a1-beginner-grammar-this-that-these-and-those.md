@@ -1,5 +1,5 @@
 ---
-title: "Beginner Grammar: This, that, these, and those"
+title: "How to Use This, that, these, and those"
 category: "grammar"
 level: "A1"
 ieltsBand: "3.0-4.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Beginner Grammar: This, that, these, and those
+## How to Use This, that, these, and those
 
 ### 🎯 What you will learn today
 

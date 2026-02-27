@@ -1,5 +1,5 @@
 ---
-title: "Beginner Grammar: Adjectives in simple descriptions"
+title: "How to Use Adjectives in simple descriptions"
 category: "grammar"
 level: "A1"
 ieltsBand: "3.0-4.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Beginner Grammar: Adjectives in simple descriptions
+## How to Use Adjectives in simple descriptions
 
 ### 🎯 What you will learn today
 

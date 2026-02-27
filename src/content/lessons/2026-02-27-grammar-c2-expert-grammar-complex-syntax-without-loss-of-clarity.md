@@ -1,5 +1,5 @@
 ---
-title: "Expert Grammar: Complex syntax without loss of clarity"
+title: "How to Use Complex syntax without loss of clarity"
 category: "grammar"
 level: "C2"
 ieltsBand: "8.5-9.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Expert Grammar: Complex syntax without loss of clarity
+## How to Use Complex syntax without loss of clarity
 
 ### 🎯 What you will learn today
 

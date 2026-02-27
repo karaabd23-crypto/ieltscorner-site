@@ -1,5 +1,5 @@
 ---
-title: "Advanced Grammar: Avoiding ambiguity in long sentences"
+title: "How to Use Avoiding ambiguity in long sentences"
 category: "grammar"
 level: "C1"
 ieltsBand: "7.0-8.0"
@@ -36,7 +36,7 @@ priceCAD: 12
 draft: false
 ---
 
-## Advanced Grammar: Avoiding ambiguity in long sentences
+## How to Use Avoiding ambiguity in long sentences
 
 ### 🎯 What you will learn today
 

@@ -1,5 +1,5 @@
 ---
-title: "Expert Grammar: Precision in complex argument structures"
+title: "How to Use Precision in complex argument structures"
 category: "grammar"
 level: "C2"
 ieltsBand: "8.5-9.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Expert Grammar: Precision in complex argument structures
+## How to Use Precision in complex argument structures
 
 ### 🎯 What you will learn today
 

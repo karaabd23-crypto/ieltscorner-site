@@ -1,5 +1,5 @@
 ---
-title: "Beginner Grammar: Question words: who, what, where"
+title: "How to Use Question words: who, what, where"
 category: "grammar"
 level: "A1"
 ieltsBand: "3.0-4.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Beginner Grammar: Question words: who, what, where
+## How to Use Question words: who, what, where
 
 ### 🎯 What you will learn today
 

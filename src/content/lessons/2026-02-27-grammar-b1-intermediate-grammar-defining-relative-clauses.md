@@ -1,5 +1,5 @@
 ---
-title: "Intermediate Grammar: Defining relative clauses"
+title: "How to Use Defining relative clauses"
 category: "grammar"
 level: "B1"
 ieltsBand: "5.0-6.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Intermediate Grammar: Defining relative clauses
+## How to Use Defining relative clauses
 
 ### 🎯 What you will learn today
 

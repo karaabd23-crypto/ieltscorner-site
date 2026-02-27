@@ -1,5 +1,5 @@
 ---
-title: "Intermediate Grammar: Articles in general and specific meaning"
+title: "How to Use Articles in general and specific meaning"
 category: "grammar"
 level: "B1"
 ieltsBand: "5.0-6.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Intermediate Grammar: Articles in general and specific meaning
+## How to Use Articles in general and specific meaning
 
 ### 🎯 What you will learn today
 

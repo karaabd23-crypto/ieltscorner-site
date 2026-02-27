@@ -1,5 +1,5 @@
 ---
-title: "Advanced Grammar: Advanced passive structures"
+title: "How to Use Advanced passive structures"
 category: "grammar"
 level: "C1"
 ieltsBand: "7.0-8.0"
@@ -36,7 +36,7 @@ priceCAD: 12
 draft: false
 ---
 
-## Advanced Grammar: Advanced passive structures
+## How to Use Advanced passive structures
 
 ### 🎯 What you will learn today
 

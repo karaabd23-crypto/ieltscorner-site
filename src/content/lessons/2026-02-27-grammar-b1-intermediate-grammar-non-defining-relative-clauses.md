@@ -1,5 +1,5 @@
 ---
-title: "Intermediate Grammar: Non-defining relative clauses"
+title: "How to Use Non-defining relative clauses"
 category: "grammar"
 level: "B1"
 ieltsBand: "5.0-6.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Intermediate Grammar: Non-defining relative clauses
+## How to Use Non-defining relative clauses
 
 ### 🎯 What you will learn today
 

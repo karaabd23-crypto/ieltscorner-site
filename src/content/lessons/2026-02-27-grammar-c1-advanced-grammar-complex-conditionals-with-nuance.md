@@ -1,5 +1,5 @@
 ---
-title: "Advanced Grammar: Complex conditionals with nuance"
+title: "How to Use Complex conditionals with nuance"
 category: "grammar"
 level: "C1"
 ieltsBand: "7.0-8.0"
@@ -36,7 +36,7 @@ priceCAD: 12
 draft: false
 ---
 
-## Advanced Grammar: Complex conditionals with nuance
+## How to Use Complex conditionals with nuance
 
 ### 🎯 What you will learn today
 

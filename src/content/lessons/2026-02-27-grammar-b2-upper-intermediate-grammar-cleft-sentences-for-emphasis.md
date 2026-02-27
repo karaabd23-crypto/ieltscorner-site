@@ -1,5 +1,5 @@
 ---
-title: "Upper-Intermediate Grammar: Cleft sentences for emphasis"
+title: "How to Use Cleft sentences for emphasis"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-6.5"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Upper-Intermediate Grammar: Cleft sentences for emphasis
+## How to Use Cleft sentences for emphasis
 
 ### 🎯 What you will learn today
 

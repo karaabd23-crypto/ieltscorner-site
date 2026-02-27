@@ -1,5 +1,5 @@
 ---
-title: "Elementary Grammar: Verb + to infinitive"
+title: "How to Use Verb + to infinitive"
 category: "grammar"
 level: "A2"
 ieltsBand: "4.0-5.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Elementary Grammar: Verb + to infinitive
+## How to Use Verb + to infinitive
 
 ### 🎯 What you will learn today
 

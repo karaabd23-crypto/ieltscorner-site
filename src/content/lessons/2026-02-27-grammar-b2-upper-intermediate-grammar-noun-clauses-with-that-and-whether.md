@@ -1,5 +1,5 @@
 ---
-title: "Upper-Intermediate Grammar: Noun clauses with that and whether"
+title: "How to Use Noun clauses with that and whether"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-6.5"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Upper-Intermediate Grammar: Noun clauses with that and whether
+## How to Use Noun clauses with that and whether
 
 ### 🎯 What you will learn today
 

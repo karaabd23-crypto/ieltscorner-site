@@ -1,5 +1,5 @@
 ---
-title: "Elementary Grammar: Used to for past habits"
+title: "How to Use Used to for past habits"
 category: "grammar"
 level: "A2"
 ieltsBand: "4.0-5.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Elementary Grammar: Used to for past habits
+## How to Use Used to for past habits
 
 ### 🎯 What you will learn today
 

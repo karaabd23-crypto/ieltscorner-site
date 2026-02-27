@@ -1,5 +1,5 @@
 ---
-title: "Intermediate Grammar: Modals of obligation and prohibition"
+title: "How to Use Modals of obligation and prohibition"
 category: "grammar"
 level: "B1"
 ieltsBand: "5.0-6.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Intermediate Grammar: Modals of obligation and prohibition
+## How to Use Modals of obligation and prohibition
 
 ### 🎯 What you will learn today
 

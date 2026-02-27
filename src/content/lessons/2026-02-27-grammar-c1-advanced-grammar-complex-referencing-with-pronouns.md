@@ -1,5 +1,5 @@
 ---
-title: "Advanced Grammar: Complex referencing with pronouns"
+title: "How to Use Complex referencing with pronouns"
 category: "grammar"
 level: "C1"
 ieltsBand: "7.0-8.0"
@@ -36,7 +36,7 @@ priceCAD: 12
 draft: false
 ---
 
-## Advanced Grammar: Complex referencing with pronouns
+## How to Use Complex referencing with pronouns
 
 ### 🎯 What you will learn today
 

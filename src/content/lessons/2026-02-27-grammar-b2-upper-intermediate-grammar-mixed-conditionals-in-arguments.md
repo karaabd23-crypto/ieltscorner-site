@@ -1,5 +1,5 @@
 ---
-title: "Upper-Intermediate Grammar: Mixed conditionals in arguments"
+title: "How to Use Mixed conditionals in arguments"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-6.5"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Upper-Intermediate Grammar: Mixed conditionals in arguments
+## How to Use Mixed conditionals in arguments
 
 ### 🎯 What you will learn today
 

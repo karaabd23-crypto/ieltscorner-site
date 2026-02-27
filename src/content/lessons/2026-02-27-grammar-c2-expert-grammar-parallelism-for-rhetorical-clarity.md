@@ -1,5 +1,5 @@
 ---
-title: "Expert Grammar: Parallelism for rhetorical clarity"
+title: "How to Use Parallelism for rhetorical clarity"
 category: "grammar"
 level: "C2"
 ieltsBand: "8.5-9.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Expert Grammar: Parallelism for rhetorical clarity
+## How to Use Parallelism for rhetorical clarity
 
 ### 🎯 What you will learn today
 

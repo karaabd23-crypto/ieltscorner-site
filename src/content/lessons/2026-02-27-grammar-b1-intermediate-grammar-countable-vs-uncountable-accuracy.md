@@ -1,5 +1,5 @@
 ---
-title: "Intermediate Grammar: Countable vs uncountable accuracy"
+title: "How to Use Countable vs uncountable accuracy"
 category: "grammar"
 level: "B1"
 ieltsBand: "5.0-6.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Intermediate Grammar: Countable vs uncountable accuracy
+## How to Use Countable vs uncountable accuracy
 
 ### 🎯 What you will learn today
 

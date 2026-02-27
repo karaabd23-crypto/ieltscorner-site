@@ -1,5 +1,5 @@
 ---
-title: "Beginner Grammar: Possessive adjectives: my, your, his, her"
+title: "How to Use Possessive adjectives: my, your, his, her"
 category: "grammar"
 level: "A1"
 ieltsBand: "3.0-4.0"
@@ -36,7 +36,7 @@ priceCAD: 0
 draft: false
 ---
 
-## Beginner Grammar: Possessive adjectives: my, your, his, her
+## How to Use Possessive adjectives: my, your, his, her
 
 ### 🎯 What you will learn today
 
