@@ -77,10 +77,12 @@ function shouldBePremium(level, seed) {
 }
 
 function buildPrompt({ level, category, premium }) {
-  return `You are an expert curriculum writer for IELTS and CELPIP.
-Create ONE high-quality ${category.toUpperCase()} lesson at CEFR ${level}.
+  return `You are an expert ESL teacher writing lessons for IELTS and CELPIP learners.
+Create ONE high-quality ${category.toUpperCase()} lesson at CEFR level ${level}.
 
-Return valid JSON with EXACT schema:
+WRITE FOR ESL STUDENTS - use simple, clear language. Explain everything.
+
+Return valid JSON:
 {
   "title": string,
   "excerpt": string,
@@ -91,20 +93,43 @@ Return valid JSON with EXACT schema:
   "body": string
 }
 
-Quality requirements (important):
-- Lesson must be lively, practical, and not dull.
-- Body is markdown starting with "##" (no frontmatter).
-- Include mini-dialogues, tables/checklists, and at least 2 "visual" sections learners can scan quickly.
-- Include: clear explanation, real examples, common mistakes, guided practice (min 8 items), and answer key.
-- Include one IELTS exam strategy and one CELPIP strategy.
-- Include a soft CTA to continue learning at ieltscorner.ca.
-- Keep lesson 900-1400 words.
-- Use neutral, clear ESL-friendly language.
-- Tags: 4-7 lowercase tags.
-- visualAids: 3-6 concise strings describing visual supports available in the lesson.
-- quiz: 5-7 multiple-choice questions with explanations.
-- ${premium ? 'This is PREMIUM: make it advanced and depth-focused.' : 'This is FREE: make it practical and motivating.'}
-- Never mention AI or model names.`;
+CONTENT REQUIREMENTS:
+- Title: Simple and clear (example: "Beginner: How to Use Present Tense")
+- Excerpt: One sentence, beginner-friendly
+- heroTip: Short, encouraging tip starting with emoji (example: "👉 Start with examples")
+- Body: Markdown, starting with "##" heading
+- Keep it 1000-1400 words
+- Use EMOJI and VISUAL MARKERS (✅, ❌, 📝, 🎓) to break up text
+- Tags: 5-7 lowercase tags (include: "${category}", "${level.toLowerCase()}", "beginner-friendly", "esl", "examples")
+- visualAids: 3 short strings (example: ["Simple example table", "Right and wrong list", "Real test examples"])
+
+LESSON STRUCTURE (must include all sections):
+1. **What You Will Learn** (short, encouraging intro)
+2. **Look at Real Examples** (show 3-4 CORRECT examples, then 2-3 WRONG examples with ✅/❌ marks)
+3. **How It Works - Step by Step** (3-4 numbered steps with clear explanations)
+4. **The Most Common MISTAKES** (table with Wrong | Right | Why columns)
+5. **Practice - Try These Yourself** (3-4 exercises, then answers below)
+6. **For IELTS Exams** (bullet points: what to do, what NOT to do)
+7. **For CELPIP Exams** (bullet points: what to do, what NOT to do)
+8. **Your Next Steps** (encouraging final section)
+
+LANGUAGE RULES:
+- Use short, simple sentences
+- Explain every grammar term (example: say "verb form" not just "conjugation")
+- Use real, everyday examples (work, school, hobbies)
+- Never use: "collocation", "hedging", "nuanced", "coherence", "cohesion"
+- Use words like: correct, wrong, right, example, practice, rule, mistake
+- Every explanation should be: "Because..." or "Why?" answered
+
+QUIZ (5-7 questions):
+- Each question tests ONE skill
+- Options should be realistic mistakes ESL students make
+- Explanations should say WHY the answer is right
+- First question should be EASY to build confidence
+
+${premium ? 'PREMIUM LEVEL: Make content more challenging, include advanced examples and strategies.' : 'FREE LEVEL: Make content motivating, include lots of examples, encourage practice.'}
+
+Never mention AI, models, or automation.`;
 }
 
 async function generateLessonWithOpenAI({ apiKey, model, level, category, premium }) {
@@ -196,13 +221,23 @@ async function generateLessonWithOpenAI({ apiKey, model, level, category, premiu
 }
 
 function fallbackLesson({ level, category }) {
-  const title = `${level} ${category === 'grammar' ? 'Grammar' : 'Vocabulary'} Boost for IELTS & CELPIP`;
+  const levelNames = {
+    A1: 'Beginner',
+    A2: 'Easy',
+    B1: 'Intermediate',
+    B2: 'Upper Intermediate',
+    C1: 'Advanced',
+    C2: 'Expert'
+  };
+  const levelName = levelNames[level] || 'Intermediate';
+  const title = `${levelName}: Essential ${category === 'grammar' ? 'Grammar' : 'Vocabulary'}`;
+  
   return {
     title,
-    excerpt: `A practical ${level} ${category} lesson with visual supports, self-marking quiz, and exam-focused practice.`,
-    heroTip: 'Start with the visual summary, then test yourself in the quiz before you read the full answer key.',
-    tags: [category, level.toLowerCase(), 'ielts', 'celpip', 'self-study'],
-    visualAids: ['before/after sentence board', 'mistake radar checklist', 'score-boost strategy map'],
+    excerpt: `Learn ${category} with simple examples. Perfect for IELTS and CELPIP preparation.`,
+    heroTip: '👉 Start with the examples. Try the practice questions. Check answers at the bottom.',
+    tags: [category, level.toLowerCase(), 'beginner-friendly', 'esl', 'examples', 'practice', 'exam-prep'],
+    visualAids: ['Simple example table', 'Right and wrong list', 'Real test examples'],
     quiz: [
       {
         prompt: 'Choose the sentence with the best exam tone.',
