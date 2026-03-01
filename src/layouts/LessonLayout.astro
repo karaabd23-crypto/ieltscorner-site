@@ -1,6 +1,13 @@
 ---
 import Layout from "./Layout.astro";
 
+// TypeScript declaration for AdSense
+declare global {
+  interface Window {
+    adsbygoogle: any[];
+  }
+}
+
 /* ---------- Types ---------- */
 type NavItem = {
   href: string;
@@ -66,13 +73,13 @@ const {
   <section class="section-sm">
     <div class="shell">
       <ins class="adsbygoogle"
-           style="display:block"
+           style="display:block; text-align:center;"
+           data-ad-layout="in-article"
+           data-ad-format="fluid"
            data-ad-client="ca-pub-5615542310815721"
-           data-ad-slot="1122334455"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
+           data-ad-slot="4411874215"></ins>
+      <script is:inline>
+           (window.adsbygoogle = window.adsbygoogle || []).push({});
       </script>
     </div>
   </section>
@@ -125,8 +132,8 @@ const {
                data-ad-slot="5544332211"
                data-ad-format="auto"
                data-full-width-responsive="true"></ins>
-          <script>
-               (adsbygoogle = window.adsbygoogle || []).push({});
+          <script is:inline>
+               (window.adsbygoogle = window.adsbygoogle || []).push({});
           </script>
         </div>
 

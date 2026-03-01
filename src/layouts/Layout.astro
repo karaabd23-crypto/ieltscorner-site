@@ -1,11 +1,23 @@
 ---
 import "../styles/global.css";
 
+// TypeScript declaration for AdSense
+declare global {
+  interface Window {
+    adsbygoogle: any[];
+  }
+}
+
 const {
   title = "IELTS Corner",
   description = "High-level IELTS & CELPIP prep for serious learners.",
 } = Astro.props;
 ---
+
+<script is:inline>
+  // TypeScript type declaration for AdSense
+  window.adsbygoogle = window.adsbygoogle || [];
+</script>
 
 <!doctype html>
 <html lang="en">
@@ -55,11 +67,11 @@ const {
         <ins class="adsbygoogle"
              style="display:block"
              data-ad-client="ca-pub-5615542310815721"
-             data-ad-slot="1234567890"
-             data-ad-format="horizontal"
+             data-ad-slot="9664200893"
+             data-ad-format="auto"
              data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
+        <script is:inline>
+             (window.adsbygoogle = window.adsbygoogle || []).push({});
         </script>
       </div>
     </header>
@@ -74,12 +86,11 @@ const {
     <div class="container" style="padding: var(--s-6) 0;">
       <ins class="adsbygoogle"
            style="display:block"
+           data-ad-format="autorelaxed"
            data-ad-client="ca-pub-5615542310815721"
-           data-ad-slot="9876543210"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
+           data-ad-slot="7254823697"></ins>
+      <script is:inline>
+           (window.adsbygoogle = window.adsbygoogle || []).push({});
       </script>
     </div>
 
