@@ -27,7 +27,7 @@ export async function getStaticPaths() {
 }
 
 const { item } = Astro.props as { item: LessonEntry };
-const { Content } = await item.render();
+const { Content, headings } = await item.render();
 const currentCategory = item.data.category;
 
 const sameCategoryLessons = (
@@ -55,28 +55,50 @@ const olderLesson =
       <p class="muted" style="max-width: 75ch;">{item.data.excerpt}</p>
 
       <div class="cluster">
-        <a class="btn" href="/lessons">All lessons</a>
         <a class="btn btn-primary" href={`/lessons/${currentCategory}`}>
-          {categoryLabel(currentCategory)} lessons
+          ← Back to {categoryLabel(currentCategory)} lessons
         </a>
+        <a class="btn" href="/lessons">All lessons</a>
       </div>
 
-      <div class="cluster" aria-label="Explore lesson categories">
-        {categories.map((category) => (
-          <a
-            class={`btn ${category === currentCategory ? "btn-primary" : ""}`}
-            href={`/lessons/${category}`}
-          >
-            {categoryLabel(category)}
-          </a>
-        ))}
-      </div>
+      {headings.length > 0 && (
+        <details class="surface" style="padding: var(--s-3);">
+          <summary class="btn" style="width: fit-content; list-style: none; cursor: pointer;">
+            Jump to section ↓
+          </summary>
+          <ul class="list" style="margin-top: var(--s-3);">
+            {headings
+              .filter((heading) => heading.depth <= 3)
+              .map((heading) => (
+                <li>
+                  <a href={`#${heading.slug}`} style={`padding-left: ${(heading.depth - 1) * 10}px; display: inline-block;`}>
+                    {heading.text}
+                  </a>
+                </li>
+              ))}
+          </ul>
+        </details>
+      )}
     </div>
   </section>
 
   <section class="section-sm">
     <article class="surface" style="padding: var(--s-6);">
       <Content />
+
+      <div class="surface" style="padding: var(--s-3); margin-top: var(--s-6);">
+        <p class="muted" style="margin: 0 0 var(--s-2) 0;">Explore another category:</p>
+        <div class="cluster" aria-label="Explore lesson categories">
+          {categories.map((category) => (
+            <a
+              class={`btn ${category === currentCategory ? "btn-primary" : ""}`}
+              href={`/lessons/${category}`}
+            >
+              {categoryLabel(category)}
+            </a>
+          ))}
+        </div>
+      </div>
 
       <div class="cluster" style="margin-top: var(--s-6); justify-content: space-between;">
         <div class="cluster">
