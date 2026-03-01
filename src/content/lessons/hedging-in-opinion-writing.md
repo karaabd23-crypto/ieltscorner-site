@@ -1,11 +1,18 @@
----
+﻿---
 title: "Hedging in Opinion Writing"
 category: "writing"
+level: "C1"
+ieltsBand: "7.5-8.5"
+clb: "9-10"
+exam: ["IELTS", "CELPIP"]
 excerpt: "Learn how to hedge claims in opinion writing to sound academic, accurate, and high-scoring."
 date: "2025-12-23"
-level: "C1"
-exam: ["IELTS", "CELPIP"]
 tags: ["stance", "tone", "task-2"]
+heroTip: "Hedging transforms absolute claims into nuanced, high-band arguments."
+visualAids: []
+quiz: []
+premium: false
+priceCAD: 0
 draft: false
 ---
 
@@ -56,7 +63,7 @@ Use these to avoid overclaiming.
 
 Use: **may, might, can, could**
 
-### 4) “It is likely that…”
+### 4) “It is likely that”
 Use this for trends and predictions.
 
 **Strong:** Housing prices will drop soon.  

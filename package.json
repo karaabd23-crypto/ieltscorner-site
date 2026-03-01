@@ -11,6 +11,7 @@
     "lesson:dry-run": "node scripts/generate-lessons.mjs --dry-run"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.3.13",
     "astro": "^5.16.0"
   }
 }

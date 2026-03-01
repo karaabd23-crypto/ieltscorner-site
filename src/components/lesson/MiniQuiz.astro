@@ -1,0 +1,23 @@
+---
+// File: src/components/lesson/MiniQuiz.astro
+// Purpose: simple quiz block with collapsible answers
+// Props:
+//  - title: string
+// Usage:
+//  <MiniQuiz title="Mini-quiz">
+//    <ol>...</ol>
+//    <details>...</details>
+//  </MiniQuiz>
+
+const { title = "Mini-quiz" } = Astro.props;
+---
+
+<section class="quiz">
+  <div class="quiz__head">
+    <div class="quiz__dot" aria-hidden="true"></div>
+    <h2 class="quiz__title">{title}</h2>
+  </div>
+  <div class="quiz__body">
+    <slot />
+  </div>
+</section>

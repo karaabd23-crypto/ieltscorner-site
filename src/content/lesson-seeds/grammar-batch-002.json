@@ -1,0 +1,21 @@
+{
+  "test": "ielts",
+  "skill": "grammar",
+  "level": "B2",
+  "defaultDate": "2026-03-01",
+  "items": [
+    {"slug": "inversion-in-if-clauses", "title": "Inversion in If Clauses for Formal Writing", "description": "Learn how native speakers use inversion (Had I known, Were I to...) to sound more formal and sophisticated in academic and professional writing."},
+    {"slug": "dangling-modifiers-fix", "title": "Fixing Dangling Modifiers", "description": "Identify and correct dangling modifiers—phrases that don't clearly connect to the word they modify—a common IELTS Writing Task 1 error."},
+    {"slug": "reported-questions", "title": "Reported Questions Without 'Do'", "description": "Master the grammar of reported questions (He asked if she had finished) and how to avoid the common mistake of adding 'do'."},
+    {"slug": "cleft-sentences-advanced", "title": "Cleft Sentences for Emphasis and Variation", "description": "Use cleft sentences (It was the policy that caused the problem) to add emphasis and structural variety to your essays."},
+    {"slug": "ellipsis-substitution", "title": "Ellipsis and Substitution for Coherence", "description": "Learn how professional writers use ellipsis (leaving out words) and substitution (using 'one', 'do') to create smooth, cohesive paragraph flow."},
+    {"slug": "reduced-adverbial-clauses", "title": "Reducing Adverbial Clauses: Principles and Practice", "description": "Transform long adverbial clauses into shorter reduced forms (Being aware that... → Aware that...) to improve sentence efficiency."},
+    {"slug": "subjunctive-mood-after-certain-verbs", "title": "Subjunctive Mood After Suggest, Recommend, Insist", "description": "Understand when and how to use subjunctive forms (I suggest that she attend, not attends) in academic and formal writing."},
+    {"slug": "fronting-for-rhetorical-effect", "title": "Fronting Adverbials for Rhetorical Effect", "description": "Move adverbials to sentence-initial position (Clearly, the evidence shows...) to create emphasis and control reader focus in persuasive writing."},
+    {"slug": "noun-markers-determiners-precision", "title": "Noun Markers and Determiners for Precise Reference", "description": "Use determiners (articles, demonstratives, quantifiers) correctly to make specific, clear claims in academic arguments."},
+    {"slug": "transitivity-and-voice-choice", "title": "Transitivity and Voice Choice in Academic Discourse", "description": "Understand how choosing transitive vs. intransitive verbs, and active vs. passive voice, affects meaning and tone in professional writing."},
+    {"slug": "tense-sequencing-in-narratives", "title": "Tense Sequencing in Narrative and Chronological Explanation", "description": "Manage multiple tenses correctly when describing historical events or sequential procedures (He was working when she arrived earlier that day)."},
+    {"slug": "discourse-deixis-reference", "title": "Discourse Deixis: 'This', 'That', 'There' and Paragraph Cohesion", "description": "Use demonstrative and spatial deixis (This finding suggests..., There remains one issue...) to create clear links between sentences and paragraphs."},
+    {"slug": "agreement-and-concord-problems", "title": "Subject-Verb Concord: Complex and Tricky Cases", "description": "Master agreement with collective nouns, plural forms with singular meaning, and phrases like 'neither...nor' and 'one of the...'"}
+  ]
+}

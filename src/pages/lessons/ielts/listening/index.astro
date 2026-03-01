@@ -1,5 +1,18 @@
 ---
 import Layout from "../../../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const relatedLessons = (
+  await getCollection(
+    "lessons",
+    ({ data }) =>
+      !data.draft &&
+      data.exam.includes("IELTS") &&
+      ["grammar", "vocabulary", "speaking"].includes(data.category)
+  )
+)
+  .sort((a, b) => (a.data.date < b.data.date ? 1 : -1))
+  .slice(0, 8);
 ---
 
 <Layout
@@ -26,6 +39,19 @@ import Layout from "../../../../layouts/Layout.astro";
 
     <div style="height: var(--s-8);"></div>
 
+    <section class="section-sm">
+      <div class="surface" style="padding: var(--s-5);">
+        <div class="cluster quick-nav">
+          <a class="btn" href="/lessons/ielts">IELTS Home</a>
+          <a class="btn btn-primary" href="/lessons/ielts/listening">Listening</a>
+          <a class="btn" href="/lessons/ielts/reading">Reading</a>
+          <a class="btn" href="/lessons/ielts/speaking">Speaking</a>
+          <a class="btn" href="/lessons/ielts/writing">Writing</a>
+          <a class="btn" href="/lessons">All Lessons</a>
+        </div>
+      </div>
+    </section>
+
     <div class="grid grid-2">
       <div class="card">
         <h3>Core method</h3>
@@ -38,9 +64,30 @@ import Layout from "../../../../layouts/Layout.astro";
       <div class="card">
         <h3>Common traps</h3>
         <p class="muted">
-          Plurals, word form, spelling, numbers, and self-corrections (“Thursday… sorry, Friday”).
+          The most common traps include plurals, word form changes, spelling errors, number confusion,
+          and speaker self-corrections such as “Thursday… sorry, Friday.”
         </p>
       </div>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <h2>Related IELTS lessons</h2>
+    <p class="muted" style="max-width: 70ch;">
+      Use these related lessons to strengthen the grammar and vocabulary patterns that appear in IELTS listening tasks.
+    </p>
+
+    <div class="grid grid-2">
+      {relatedLessons.map((lesson) => (
+        <a class="card" href={`/lessons/${lesson.data.category}/${lesson.slug}/`} style="display:block;">
+          <div class="cluster" style="justify-content: space-between;">
+            <span class="pill">{lesson.data.category} • {lesson.data.level}</span>
+            <span class="pill">Open →</span>
+          </div>
+          <h3 style="margin-top: var(--s-3);">{lesson.data.title}</h3>
+          <p class="muted" style="margin-bottom: 0;">{lesson.data.excerpt}</p>
+        </a>
+      ))}
     </div>
   </section>
 </Layout>

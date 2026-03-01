@@ -51,7 +51,16 @@ const {
       </div>
 
       <div class="container" style="padding-bottom: var(--s-5);">
-        <div class="ad-slot">Ad placeholder (AdSense)</div>
+        <!-- AdSense Header Banner -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-5615542310815721"
+             data-ad-slot="1234567890"
+             data-ad-format="horizontal"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
       </div>
     </header>
 
@@ -60,6 +69,19 @@ const {
         <slot />
       </div>
     </main>
+
+    <!-- AdSense Before Footer -->
+    <div class="container" style="padding: var(--s-6) 0;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-5615542310815721"
+           data-ad-slot="9876543210"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
 
     <footer class="site-footer">
       <div class="container">

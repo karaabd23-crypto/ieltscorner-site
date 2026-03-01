@@ -1,0 +1,28 @@
+---
+// File: src/components/lesson/Callout.astro
+// Purpose: clean callout boxes (tip / warning / note)
+// Usage:
+//   <Callout type="tip" title="Quick tip">...</Callout>
+
+type CalloutType = "tip" | "warning" | "note";
+
+type Props = {
+  type?: CalloutType;
+  title?: string;
+};
+
+const { type = "note", title = "" } = Astro.props as Props;
+
+const classes = {
+  tip: "callout callout--tip",
+  warning: "callout callout--warning",
+  note: "callout callout--note",
+}[type as CalloutType] ?? "callout callout--note";
+---
+
+<aside class={classes} role="note">
+  {title ? <div class="callout__title">{title}</div> : null}
+  <div class="callout__content">
+    <slot />
+  </div>
+</aside>

@@ -2,10 +2,17 @@
 title: "The advanced uses of would"
 category: "grammar"
 level: "C1"
+ieltsBand: "7.5-8.5"
+clb: "9-10"
 exam: ["IELTS", "CELPIP"]
 excerpt: "Seven exam-relevant functions of would with controlled practice and common C1-level errors."
 date: "2025-12-23"
 tags: ["modality", "stance", "politeness"]
+heroTip: "Master would at C1 level for fluent, sophisticated speaking and writing."
+visualAids: []
+quiz: []
+premium: false
+priceCAD: 0
 draft: false
 ---
 

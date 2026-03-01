@@ -4,10 +4,10 @@ import { mkdir, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
-const CATEGORIES = ['grammar', 'vocabulary'];
+const CATEGORIES = ['grammar', 'vocabulary', 'writing', 'speaking'];
 const DEFAULT_MODEL = process.env.OPENAI_MODEL ?? 'gpt-4.1-mini';
 const LESSON_DIR = path.resolve('src/content/lessons');
-
+const LEECH_OUT_DIR = path.resolve('src/content/lessons/ielts/writing');
 const TOPIC_BANK = {
   grammar: {
     A1: [
@@ -151,10 +151,26 @@ const TOPIC_BANK = {
     C1: ['precise evaluation vocabulary', 'policy and society vocabulary', 'academic discussion vocabulary', 'advanced stance vocabulary'],
     C2: ['expert-level nuance vocabulary', 'high-precision argument vocabulary', 'advanced formal expression vocabulary', 'top-band lexical control vocabulary'],
   },
+  writing: {
+    A1: ['writing simple personal messages', 'building short sentences for writing tasks', 'basic punctuation in short writing', 'writing about daily routines'],
+    A2: ['writing clear paragraphs with one main idea', 'email writing basics for everyday situations', 'using linking words in short writing', 'describing past experiences in writing'],
+    B1: ['opinion paragraph writing with clear support', 'problem and solution writing structure', 'writing clear email requests and responses', 'organizing ideas for timed writing tasks'],
+    B2: ['essay introductions and thesis statements', 'supporting arguments with examples in essays', 'comparing two viewpoints in writing tasks', 'editing writing for clarity and cohesion'],
+    C1: ['advanced argument structure in formal essays', 'developing critical responses with evidence', 'refining tone for formal exam writing', 'improving sentence variety in high-band essays'],
+    C2: ['expert-level precision in persuasive writing', 'controlling advanced tone in exam essays', 'high-level revision strategies under time pressure', 'writing with maximum clarity and impact'],
+  },
+  speaking: {
+    A1: ['introducing yourself clearly in speaking tasks', 'answering simple personal questions', 'speaking about daily life with short sentences', 'using basic connectors in spoken answers'],
+    A2: ['giving short opinions in speaking tasks', 'describing people and places in speech', 'answering follow-up questions with confidence', 'speaking about plans and experiences'],
+    B1: ['structuring longer speaking answers', 'using examples to support spoken opinions', 'handling common speaking prompts clearly', 'improving fluency with simple linking phrases'],
+    B2: ['advanced speaking organization for exam tasks', 'developing arguments in spoken responses', 'managing speaking time effectively', 'improving spoken accuracy under pressure'],
+    C1: ['high-band speaking strategies for complex prompts', 'expressing nuanced opinions with clear structure', 'maintaining coherence in longer spoken responses', 'self-correcting grammar and vocabulary while speaking'],
+    C2: ['expert-level speaking precision and control', 'delivering persuasive spoken arguments', 'handling abstract topics fluently in exams', 'maximizing speaking scores with advanced response design'],
+  },
 };
 
 function parseArgs(argv) {
-  const opts = { count: 1, dryRun: false, model: DEFAULT_MODEL, category: 'all' };
+  const opts = { count: 1, dryRun: false, model: DEFAULT_MODEL, category: 'all', seedFile: null, overwrite: false };
   for (let i = 2; i < argv.length; i += 1) {
     const arg = argv[i];
     if (arg === '--count') {
@@ -168,6 +184,11 @@ function parseArgs(argv) {
     } else if (arg === '--category') {
       opts.category = String(argv[i + 1] ?? '').toLowerCase();
       i += 1;
+    } else if (arg === '--seed-file') {
+      opts.seedFile = argv[i + 1];
+      i += 1;
+    } else if (arg === '--overwrite') {
+      opts.overwrite = true;
     } else {
       throw new Error(`Unknown argument: ${arg}`);
     }
@@ -178,7 +199,7 @@ function parseArgs(argv) {
   }
 
   if (opts.category !== 'all' && !CATEGORIES.includes(opts.category)) {
-    throw new Error('--category must be one of: all, grammar, vocabulary');
+    throw new Error(`--category must be one of: all, ${CATEGORIES.join(', ')}`);
   }
 
   return opts;
@@ -237,7 +258,16 @@ function buildClearTitle({ category, topic }) {
   if (category === 'grammar') {
     return `How to Use ${prettyTopic}`;
   }
-  return `Vocabulary for ${prettyTopic}`;
+  if (category === 'vocabulary') {
+    return `Vocabulary for ${prettyTopic}`;
+  }
+  if (category === 'writing') {
+    return `How to Write About ${prettyTopic}`;
+  }
+  if (category === 'speaking') {
+    return `How to Speak About ${prettyTopic}`;
+  }
+  return `Lesson on ${prettyTopic}`;
 }
 
 function ensureClearTitle({ title, category, topic }) {
@@ -249,7 +279,11 @@ function ensureClearTitle({ title, category, topic }) {
   if (/\b(a1|a2|b1|b2|c1|c2|beginner|elementary|intermediate|advanced|expert)\b/i.test(cleaned)) {
     return fallbackTitle;
   }
-  return cleaned.replace(/^grammar\s*:\s*/i, 'How to Use ').replace(/^vocabulary\s*:\s*/i, 'Vocabulary for ');
+  return cleaned
+    .replace(/^grammar\s*:\s*/i, 'How to Use ')
+    .replace(/^vocabulary\s*:\s*/i, 'Vocabulary for ')
+    .replace(/^writing\s*:\s*/i, 'How to Write About ')
+    .replace(/^speaking\s*:\s*/i, 'How to Speak About ');
 }
 
 function scoreMap(level) {
@@ -587,8 +621,184 @@ draft: false
 ${body.trim()}\n`;
 }
 
+function twoDigit(n) {
+  return String(n).padStart(2, '0');
+}
+
+function leechMdxTemplate({ test, skill, title, description, level, date, slug }) {
+  return `---
+test: ${test}
+skill: ${skill}
+title: "${escapeYaml(title)}"
+category: "writing"
+level: "C1"
+ieltsBand: "7+"
+clb: "9-10"
+exam: ["IELTS"]
+excerpt: "${escapeYaml(description)}"
+date: "${date}"
+tags: ["writing", "ielts", "grammar", "band-7"]
+draft: false
+---
+
+import LessonShell from "../../../../components/lesson/LessonShell.astro";
+import Callout from "../../../../components/lesson/Callout.astro";
+import PatternTable from "../../../../components/lesson/PatternTable.astro";
+import MiniQuiz from "../../../../components/lesson/MiniQuiz.astro";
+
+<LessonShell
+  title="${escapeYaml(title)}"
+  description="${escapeYaml(description)}"
+  level="${escapeYaml(level)}"
+  date="${date}"
+>
+
+## Key points
+
+- This lesson focuses on **${slug}** and how to use it accurately in IELTS writing.
+- Aim for **controlled accuracy** first, then add range.
+
+<Callout type="tip" title="How to study this">
+Copy 2 example sentences into your own Task 2 paragraph. Keep the grammar simple and correct.
+</Callout>
+
+## Meaning and use (clear explanation)
+
+Write a short explanation here in plain English. Keep it simple. Give 3–4 examples.
+
+## Common patterns
+
+<PatternTable
+  caption="Useful patterns"
+  rows={[
+    { pattern: "Pattern 1", meaning: "Meaning/use 1", example: "Example 1." },
+    { pattern: "Pattern 2", meaning: "Meaning/use 2", example: "Example 2." },
+    { pattern: "Pattern 3", meaning: "Meaning/use 3", example: "Example 3." }
+  ]}
+/>
+
+## Common mistakes (IELTS)
+
+<Callout type="warning" title="Typical learner errors">
+- Wrong form
+- Wrong position in the sentence
+- Wrong meaning / wrong register
+</Callout>
+
+## Practice
+
+1) Rewrite sentence A more formally.  
+2) Rewrite sentence B using a different structure.  
+3) Fix the error in sentence C.
+
+<MiniQuiz title="Mini-quiz">
+<ol>
+  <li>Choose the correct sentence (A/B/C).</li>
+  <li>Fix the error: ________.</li>
+</ol>
+
+<details>
+  <summary>Answer key</summary>
+  <ol>
+    <li>Answer 1</li>
+    <li>Answer 2</li>
+  </ol>
+</details>
+</MiniQuiz>
+
+</LessonShell>
+`;
+}
+
+async function generateLeechBatchFromSeed({ seedFile, dryRun, overwrite }) {
+  if (!seedFile) throw new Error('Missing --seed-file');
+
+  const { readFile, access } = await import('node:fs/promises');
+
+  const seedPath = path.resolve(seedFile);
+  const raw = await readFile(seedPath, 'utf8');
+  const seed = JSON.parse(raw);
+
+  const test = seed.test ?? 'ielts';
+  const skill = seed.skill ?? 'writing';
+  const level = seed.level ?? 'Band 7+';
+  const defaultDate = seed.defaultDate ?? new Date().toISOString().slice(0, 10);
+
+  if (!Array.isArray(seed.items) || seed.items.length === 0) {
+    throw new Error('Seed file must include items: [] with at least 1 item');
+  }
+
+  await mkdir(LEECH_OUT_DIR, { recursive: true });
+
+  const created = [];
+  const skipped = [];
+
+  for (let i = 0; i < seed.items.length; i += 1) {
+    const item = seed.items[i];
+    const slug = item.slug;
+    const title = item.title;
+    const description = item.description;
+
+    if (!slug || !title || !description) {
+      throw new Error(`Seed item ${i + 1} missing slug/title/description`);
+    }
+
+    const fileName = `${twoDigit(i + 1)}-${slug}.mdx`;
+    const filePath = path.join(LEECH_OUT_DIR, fileName);
+
+    let exists = false;
+    try {
+      await access(filePath);
+      exists = true;
+    } catch {
+      exists = false;
+    }
+
+    if (exists && !overwrite) {
+      skipped.push(fileName);
+      continue;
+    }
+
+    const mdx = leechMdxTemplate({
+      test,
+      skill,
+      title,
+      description,
+      level,
+      date: item.date ?? defaultDate,
+      slug,
+    });
+
+    if (!dryRun) {
+      await writeFile(filePath, mdx, 'utf8');
+    }
+
+    created.push(fileName);
+  }
+
+  console.log(`✅ Leech batch complete`);
+  console.log(`📁 Output: ${LEECH_OUT_DIR}`);
+  console.log(`🟢 Created/Updated: ${created.length}`);
+  created.forEach((f) => console.log(`  + ${f}`));
+
+  if (skipped.length) {
+    console.log(`🟡 Skipped (already exist; re-run with --overwrite): ${skipped.length}`);
+    skipped.forEach((f) => console.log(`  - ${f}`));
+  }
+}
+
 async function main() {
   const opts = parseArgs(process.argv);
+
+  if (opts.seedFile) {
+    await generateLeechBatchFromSeed({
+      seedFile: opts.seedFile,
+      dryRun: opts.dryRun,
+      overwrite: opts.overwrite,
+    });
+    return;
+  }
+
   await mkdir(LESSON_DIR, { recursive: true });
   const currentFiles = await existingLessonFiles();
   const selectedCategories = opts.category === 'all' ? CATEGORIES : [opts.category];

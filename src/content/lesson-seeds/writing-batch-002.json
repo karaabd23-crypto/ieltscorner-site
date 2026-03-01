@@ -1,0 +1,21 @@
+{
+  "test": "ielts",
+  "skill": "writing",
+  "level": "B2",
+  "defaultDate": "2026-03-01",
+  "items": [
+    {"slug": "task-1-comparing-two-charts-together", "title": "Task 1: Comparing Data From Two Charts Together", "description": "Learn how to identify common themes across two different charts (bar and pie) and write a cohesive overview paragraph."},
+    {"slug": "task-1-describing-processes-with-passive-voice", "title": "Task 1: Describing Processes With Passive Voice", "description": "Master the unique grammar demands of process diagrams using appropriate passive voice and sequencing language (initially, subsequently, finally)."},
+    {"slug": "task-2-discussing-problems-and-solutions", "title": "Task 2: Problem-Solution Essays", "description": "Structure essays that identify problems, propose multiple solutions, and evaluate their feasibility with clear paragraphing."},
+    {"slug": "task-2-causes-and-effects-framework", "title": "Task 2: Exploring Causes and Effects", "description": "Develop essays that explain why something happens (causes) and what results follow (effects) with adequate detail and examples."},
+    {"slug": "task-2-opinion-to-what-extent", "title": "Task 2: 'To What Extent' Opinion Questions", "description": "Respond to questions asking for partial agreement by presenting a clear stance and balancing counterarguments effectively."},
+    {"slug": "task-2-advantages-disadvantages-balanced", "title": "Task 2: Balanced Advantages and Disadvantages Essays", "description": "Present equal weight to both sides of an argument before concluding, avoiding the most common pitfall of unbalanced discussion."},
+    {"slug": "paragraph-cohesion-linking-devices", "title": "Paragraph Cohesion: Linking Devices and Transitions", "description": "Use sophisticated linking words (moreover, nevertheless, consequently) and reference chains to create smooth, flowing paragraphs."},
+    {"slug": "supporting-points-with-specific-examples", "title": "Supporting Main Points With Specific, Relevant Examples", "description": "Learn the difference between vague statements and compelling examples; structure body paragraphs for maximum impact."},
+    {"slug": "maintaining-formal-register-throughout", "title": "Maintaining Formal Register: Common Lapses and Fixes", "description": "Identify informal language in your drafts (things, lots of, get, really) and replace with academic alternatives (factors, numerous, obtain, significantly)."},
+    {"slug": "time-management-planning-quick-outline", "title": "Time Management: Planning a Quick Outline Under Pressure", "description": "Develop a 2-minute planning strategy to organize your ideas before writing, reducing the need for extensive revision."},
+    {"slug": "addressing-the-task-directly-irrelevant-content", "title": "Addressing the Task Directly and Avoiding Irrelevant Content", "description": "Ensure every paragraph directly responds to the question asked, avoiding tangential discussion that reduces band scores."},
+    {"slug": "using-data-and-evidence-persuasively", "title": "Using Data, Statistics, and Evidence Persuasively", "description": "Incorporate numbers, research, and real-world examples to strengthen arguments and demonstrate critical thinking in task 2."},
+    {"slug": "proofreading-checklist-final-check", "title": "Proofreading Checklist: Final 2-Minute Check", "description": "Create a personal checklist of your common errors (spell-check, subject-verb agreement, article use) for last-minute review before submitting."}
+  ]
+}

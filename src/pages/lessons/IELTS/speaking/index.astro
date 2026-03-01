@@ -1,5 +1,18 @@
 ---
 import Layout from "../../../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const relatedLessons = (
+  await getCollection(
+    "lessons",
+    ({ data }) =>
+      !data.draft &&
+      data.exam.includes("IELTS") &&
+      ["speaking", "vocabulary", "grammar"].includes(data.category)
+  )
+)
+  .sort((a, b) => (a.data.date < b.data.date ? 1 : -1))
+  .slice(0, 8);
 ---
 
 <Layout
@@ -46,15 +59,37 @@ import Layout from "../../../../layouts/Layout.astro";
 
     <div style="height: var(--s-8);"></div>
 
+    <section class="section-sm">
+      <div class="surface" style="padding: var(--s-5);">
+        <div class="cluster quick-nav">
+          <a class="btn" href="/lessons/ielts">IELTS Home</a>
+          <a class="btn" href="/lessons/ielts/listening">Listening</a>
+          <a class="btn" href="/lessons/ielts/reading">Reading</a>
+          <a class="btn btn-primary" href="/lessons/ielts/speaking">Speaking</a>
+          <a class="btn" href="/lessons/ielts/writing">Writing</a>
+          <a class="btn" href="/lessons">All Lessons</a>
+        </div>
+      </div>
+    </section>
+
     <h2>IELTS Speaking lessons</h2>
     <p class="muted" style="max-width: 70ch;">
-      This list will populate automatically once you start adding IELTS Speaking lesson files.
+      This section focuses on repeatable speaking patterns you can use in Parts 1, 2, and 3.
+      Train one structure at a time, record yourself, and track whether your answers stay clear
+      when the topic becomes unfamiliar.
     </p>
 
-    <div class="card">
-      <p class="muted" style="margin: 0;">
-        Coming soon: lesson posts will appear here automatically. ✅
-      </p>
+    <div class="grid grid-2">
+      {relatedLessons.map((lesson) => (
+        <a class="card" href={`/lessons/${lesson.data.category}/${lesson.slug}/`} style="display:block;">
+          <div class="cluster" style="justify-content: space-between;">
+            <span class="pill">{lesson.data.category} • {lesson.data.level}</span>
+            <span class="pill">Open →</span>
+          </div>
+          <h3 style="margin-top: var(--s-3);">{lesson.data.title}</h3>
+          <p class="muted" style="margin-bottom: 0;">{lesson.data.excerpt}</p>
+        </a>
+      ))}
     </div>
 
     <div style="height: var(--s-8);"></div>

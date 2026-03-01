@@ -1,0 +1,20 @@
+{
+  "test": "ielts",
+  "skill": "vocabulary",
+  "level": "B2",
+  "defaultDate": "2026-03-01",
+  "items": [
+    {"slug": "collocations-criticism-response", "title": "Collocations for Giving and Receiving Criticism", "description": "Learn high-value word pairs (constructive feedback, take offense, broad criticism) for discussing feedback professionally."},
+    {"slug": "synonyms-increase-decrease", "title": "Precise Synonyms for 'Increase' and 'Decrease'", "description": "Replace overused words with nuanced alternatives (surge, plummet, stabilize, fluctuate) to show advanced vocabulary range."},
+    {"slug": "business-terminology-for-writing", "title": "Essential Business and Economics Vocabulary", "description": "Master domain-specific terms (revenue stream, stakeholder, implement strategy, feasibility study) for task 1 reports and task 2 essays."},
+    {"slug": "emotion-and-nuance-words", "title": "Emotions and Attitudes: Precise Word Choices", "description": "Go beyond 'happy' and 'sad' with words like 'resigned', 'apprehensive', 'ambivalent' to express complex feelings in essays."},
+    {"slug": "collocations-environment-sustainability", "title": "Collocations and Phrases: Environment and Sustainability", "description": "Learn authentic phrases (carbon footprint, renewable energy, ecosystem degradation) commonly used in environmental discussion topics."},
+    {"slug": "academic-hedging-qualifiers", "title": "Hedging Language and Qualifiers", "description": "Use words and phrases (arguably, to some extent, relatively, fairly) to soften claims and show nuanced, critical thinking."},
+    {"slug": "verbs-for-describing-studies-research", "title": "Verbs for Describing Research, Studies, and Findings", "description": "Master reporting verbs (correlate with, suggest that, indicate, propose) and their correct grammar for academic discussions."},
+    {"slug": "technology-vocabulary-modern-context", "title": "Technology and Digital Vocabulary in Modern Context", "description": "Learn both mainstream and sophisticated terms (algorithm, artificial intelligence, cybersecurity, data breach) from contemporary domains."},
+    {"slug": "persuasion-and-argument-language", "title": "Language of Persuasion and Argumentation", "description": "Use persuasive markers (undeniably, the evidence clearly shows, compelling reason) to strengthen task 2 essay arguments."},
+    {"slug": "word-families-suffixes-prefixes", "title": "Word Families: Maximizing Vocabulary Range", "description": "Understand derivations and word families (act, active, activity, activate, action) to vary vocabulary sophistication throughout essays."},
+    {"slug": "formality-registers-tone-control", "title": "Formality Registers: Matching Tone to Task and Audience", "description": "Understand when to use formal (subsequently, facilitate), neutral, and slightly informal expressions for different IELTS task types."},
+    {"slug": "phrasal-verbs-advanced-usage", "title": "Advanced Phrasal Verbs for Writing and Speaking", "description": "Use sophisticated phrasal verbs (bring about, set forth, account for, bear on) rather than single words to sound more natural and fluent."}
+  ]
+}

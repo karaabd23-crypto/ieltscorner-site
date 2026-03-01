@@ -1,0 +1,20 @@
+{
+  "test": "ielts",
+  "skill": "speaking",
+  "level": "B2",
+  "defaultDate": "2026-03-01",
+  "items": [
+    {"slug": "part-1-talking-about-yourself-naturally", "title": "Part 1: Talking About Yourself Naturally and Completely", "description": "Go beyond yes/no answers by preparing extended responses with reasons, examples, and personal reflections on common Part 1 topics."},
+    {"slug": "part-2-organizing-2-minute-response", "title": "Part 2: Organizing a 2-Minute Response With a Plan", "description": "Learn the structure of a Cue Card response: context, description, why it matters, and what you learned—all within 2 minutes."},
+    {"slug": "part-3-discussing-abstract-concepts", "title": "Part 3: Discussing Abstract Concepts and Broader Issues", "description": "Move from personal examples to general statements (In my country, many people..., Nowadays society tends to...) while maintaining coherence."},
+    {"slug": "fluency-strategies-managing-hesitation", "title": "Fluency Strategies: Handling Hesitation and Fast Recovery", "description": "Use pause fillers (well, let me think about that, I'd say) naturally; recover from mistakes without losing coherence."},
+    {"slug": "pronunciation-word-stress-intonation", "title": "Pronunciation: Word Stress and Sentence Intonation", "description": "Identify which syllables carry stress in key vocabulary; use intonation to signal questions, contrasts, and emphasis in fluent speech."},
+    {"slug": "opinion-discussion-polite-disagreement", "title": "Expressing Opinions and Politely Disagreeing", "description": "Present your views confidently (I believe, From my perspective) and respond to opposing views without being rude or vague."},
+    {"slug": "buying-time-techniques-during-speaking", "title": "Buying Time Techniques: Natural Pauses That Don't Hurt Scores", "description": "Use strategies like rephrasing the question, asking for clarification, and self-correction to gain thinking time without sounding unsure."},
+    {"slug": "linking-ideas-in-spoken-english", "title": "Linking Ideas in Spoken English Naturally", "description": "Connect sentences fluidly with spoken connectors (Well first of all, The thing is, What I mean is) that sound natural, not rehearsed."},
+    {"slug": "extending-answers-depth-not-repetition", "title": "Extending Answers With Depth, Not Just Repetition", "description": "Provide follow-up reasons, personal examples, and alternative viewpoints to transform short answers into band 7+ responses."},
+    {"slug": "handling-difficult-topics-or-unfamiliar-questions", "title": "Handling Difficult Topics: Strategies For Unfamiliar Questions", "description": "Respond gracefully to topics you haven't prepared (technology trends, environmental ethics, social media) using universal reasoning skills."},
+    {"slug": "eye-contact-body-language-speaking-confidence", "title": "Eye Contact and Body Language: Projecting Confidence", "description": "Understand the role of non-verbal communication in speaking; maintain engagement with the examiner while managing nerves."},
+    {"slug": "accent-and-intelligibility-focus-areas", "title": "Accent and Intelligibility: Where to Focus Your Effort", "description": "Distinguish between having an accent (acceptable) and being unintelligible (problematic); prioritize clarity of key vocabulary over perfect pronunciation."}
+  ]
+}

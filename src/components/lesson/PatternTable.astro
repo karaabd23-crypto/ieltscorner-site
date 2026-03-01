@@ -1,0 +1,46 @@
+---
+// File: src/components/lesson/PatternTable.astro
+// Purpose: small pattern tables for grammar structures
+// Props:
+//  - caption: string
+//  - rows: Array<{ pattern: string, meaning: string, example: string }>
+// Usage:
+//  <PatternTable caption="Common patterns" rows={[{pattern:"...",meaning:"...",example:"..."}]} />
+
+type PatternRow = {
+  pattern: string;
+  meaning: string;
+  example: string;
+};
+
+type Props = {
+  caption?: string;
+  rows?: PatternRow[];
+};
+
+const { caption = "", rows = [] } = Astro.props as Props;
+---
+
+<div class="pattern">
+  {caption ? <div class="pattern__caption">{caption}</div> : null}
+  <div class="pattern__table-wrap">
+    <table class="pattern__table">
+      <thead>
+        <tr>
+          <th>Pattern</th>
+          <th>Meaning / Use</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((r) => (
+          <tr>
+            <td><code>{r.pattern}</code></td>
+            <td>{r.meaning}</td>
+            <td>{r.example}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>

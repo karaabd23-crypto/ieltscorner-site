@@ -2,16 +2,17 @@ name: Publish AI lessons
 
 on:
   schedule:
-    - cron: "30 13 * * 1"
-    - cron: "30 15 * * 3"
-    - cron: "30 17 * * 5"
     - cron: "30 14 * * 0"
   workflow_dispatch:
     inputs:
-      count:
-        description: "How many lessons to generate"
+      per_category_count:
+        description: "How many lessons to generate per category"
         required: false
-        default: "1"
+        default: "3"
+      categories:
+        description: "Comma-separated categories (grammar,vocabulary,writing,speaking)"
+        required: false
+        default: "grammar,vocabulary,writing,speaking"
 
 permissions:
   contents: write
@@ -37,8 +38,18 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: gpt-4.1-mini
         run: |
-          COUNT="${{ github.event.inputs.count || '1' }}"
-          node scripts/generate-lessons.mjs --count "$COUNT"
+          COUNT="${{ github.event.inputs.per_category_count || '3' }}"
+          CATEGORIES_INPUT="${{ github.event.inputs.categories || 'grammar,vocabulary,writing,speaking' }}"
+
+          IFS=',' read -ra CATEGORIES <<< "$CATEGORIES_INPUT"
+          for CATEGORY in "${CATEGORIES[@]}"; do
+            CATEGORY="$(echo "$CATEGORY" | xargs)"
+            if [ -z "$CATEGORY" ]; then
+              continue
+            fi
+            echo "Generating $COUNT lesson(s) for category: $CATEGORY"
+            node scripts/generate-lessons.mjs --count "$COUNT" --category "$CATEGORY"
+          done
 
       - name: Commit and push generated lessons
         run: |

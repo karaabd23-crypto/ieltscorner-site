@@ -1,0 +1,59 @@
+---
+// File: src/components/lesson/LessonShell.astro
+// Purpose: consistent lesson layout inside content pages (MDX)
+// Usage in MDX:
+//   import LessonShell from "@/components/lesson/LessonShell.astro";
+//   <LessonShell title="..." description="..." level="Band 7+" date="2026-02-28"> ... </LessonShell>
+
+type Props = {
+  title: string;
+  description?: string;
+  level?: string;
+  date?: string;
+  introA?: string;
+  introB?: string;
+};
+
+const {
+  title,
+  description = "",
+  level,
+  date,
+  introA = "",
+  introB = "",
+} = Astro.props as Props;
+
+const introParagraphs = [introA, introB].filter(Boolean);
+const fallbackIntro = description
+  ? [
+      description,
+      "In this lesson, we use simple examples and short steps. Learn one pattern, use it in your own sentence, and then check your answer.",
+    ]
+  : [];
+
+const renderedIntro = introParagraphs.length >= 2 ? introParagraphs : fallbackIntro;
+---
+
+<section class="lesson-shell">
+  <header class="lesson-hero">
+    <div class="lesson-hero__accent" aria-hidden="true"></div>
+    <div class="lesson-hero__meta">
+      <span class="pill">IELTS • Writing</span>
+      {level ? <span class="pill pill--soft">{level}</span> : null}
+      {date ? <span class="pill pill--soft">{date}</span> : null}
+    </div>
+    <h1 class="lesson-hero__title">{title}</h1>
+
+    {renderedIntro.length > 0 ? (
+      <div class="lesson-hero__intro">
+        {renderedIntro.map((paragraph) => (
+          <p class="lesson-hero__desc">{paragraph}</p>
+        ))}
+      </div>
+    ) : null}
+  </header>
+
+  <div class="lesson-body">
+    <slot />
+  </div>
+</section>

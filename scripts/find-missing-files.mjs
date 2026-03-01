@@ -1,0 +1,152 @@
+#!/usr/bin/env node
+import fs from 'fs';
+import path from 'path';
+
+const lessonsDir = 'c:\\Users\\Karaa\\Documents\\ieltscorner-site\\src\\content\\lessons';
+
+// Files that should exist (from previous work)
+const expectedFiles = [
+  'a-an-and-the.md',
+  'abstract-noun-structures-with-accuracy.md',
+  'academic-discussion.md',
+  'adjective-order-in-descriptions.md',
+  'adjectives-in-simple-descriptions.md',
+  'advanced-argument-structure-in-formal-essays.md',
+  'advanced-article-usage.md',
+  'advanced-clause-combinations.md',
+  'advanced-cohesion-through-grammar.md',
+  'advanced-comparison-structures.md',
+  'advanced-conditionals-in-discussion-tasks.md',
+  'advanced-discourse-grammar.md',
+  'advanced-formal-expression-vocabulary.md',
+  'advanced-formal-expression.md',
+  'advanced-grammar-essential.md',
+  'advanced-inversion-and-emphasis.md',
+  'advanced-passive-structures.md',
+  'advanced-punctuation-and-sentence-control.md',
+  'advanced-reformulation-techniques.md',
+  'advanced-stance-vocabulary.md',
+  'adverbs-of-frequency.md',
+  'articles-in-general-and-specific-meaning.md',
+  'avoiding-ambiguity-in-long-sentences.md',
+  'basic-adverbs-very-really-quite.md',
+  'can-and-cannot-for-ability.md',
+  'cleft-sentences-for-emphasis.md',
+  'communication.md',
+  'comparatives-and-superlatives.md',
+  'complex-conditionals-with-nuance.md',
+  'complex-noun-phrases.md',
+  'complex-syntax-without-loss-of-clarity.md',
+  'concise-high-level-phrasing.md',
+  'controlled-complexity-in-ielts-essays.md',
+  'countable-and-uncountable-nouns.md',
+  'countable-vs-uncountable-accuracy.md',
+  'defining-relative-clauses.md',
+  'discourse-markers-for-formal-writing.md',
+  'education-and-work.md',
+  'ellipsis-and-substitution-for-coherence.md',
+  'expert-grammar-essential.md',
+  'first-conditional.md',
+  'food-and-shopping-words.md',
+  'fronting-and-emphasis-patterns.md',
+  'future-forms-for-prediction-and-planning.md',
+  'future-with-going-to.md',
+  'gerunds-and-infinitives-after-common-verbs.md',
+  'grammar-choices-for-persuasive-force.md',
+  'grammar-for-critical-evaluation-language.md',
+  'grammar-in-clear-sentences.md',
+  'have-got-for-personal-information.md',
+  'hedged-claims-with-accurate-grammar.md',
+  'hedging-in-opinion-writing.md',
+  'high-level-error-diagnosis-and-revision.md',
+  'high-precision-argument.md',
+  'imperatives-for-instructions.md',
+  'inversion-after-negative-adverbs.md',
+  'inversion-for-formal-emphasis.md',
+  'like-and-would-like.md',
+  'linking-words-for-contrast-and-result.md',
+  'mixed-conditionals-in-arguments.md',
+  'modal-verbs-for-deduction.md',
+  'modal-verbs-in-past-contexts.md',
+  'modals-for-possibility-may-might-could.md',
+  'modals-of-obligation-and-prohibition.md',
+  'must-and-have-to.md',
+  'nominalisation-in-academic-style.md',
+  'non-defining-relative-clauses.md',
+  'noun-clauses-with-that-and-whether.md',
+  'object-pronouns-and-possessive-pronouns.md',
+  'opinions-and-reasons.md',
+  'parallel-structure-in-complex-sentences.md',
+  'parallelism-for-rhetorical-clarity.md',
+  'participle-clauses.md',
+  'passive-reporting-structures.md',
+  'passive-voice-in-common-contexts.md',
+  'past-continuous-and-past-simple-together.md',
+  'past-simple-irregular-verbs.md',
+  'past-simple-regular-verbs.md',
+  'phrasal-verbs-in-everyday-situations.md',
+  'policy-and-society.md',
+  'possessive-adjectives-my-your-his-her.md',
+  'precision-in-complex-argument-structures.md',
+  'precision-under-timed-exam-conditions.md',
+  'precision-with-determiners.md',
+  'prepositions-of-place.md',
+  'present-continuous-for-now.md',
+  'present-perfect-continuous.md',
+  'present-perfect-with-ever-and-never.md',
+  'present-simple-for-daily-routines.md',
+  'quantifiers-much-many-a-lot-of-plenty-of.md',
+  'question-tags-in-conversation.md',
+  'question-words-who-what-where.md',
+  'reduced-relative-clauses.md',
+  'register-shifts-without-grammar-errors.md',
+  'relative-clauses-with-prepositions.md',
+  'relative-clauses-with-who-and-which.md',
+  'reported-speech-basics.md',
+  'reporting-verbs-with-precise-grammar.md',
+  'second-conditional-for-unreal-situations.md',
+  'should-for-advice.md',
+  'social-issues.md',
+  'some-and-any-in-basic-sentences.md',
+  'sophisticated-clause-architecture.md',
+  'stance-expressions-in-formal-writing.md',
+  'subject-pronouns-and-basic-verbs.md',
+  'subordination-for-clear-paragraph-flow.md',
+  'subtle-modal-meanings-in-formal-texts.md',
+  'there-is-and-there-are.md',
+  'this-that-these-and-those.md',
+  'time-and-routine-words.md',
+  'tone-control-in-expert-responses.md',
+  'too-and-enough.md',
+  'too-enough-and-sothat.md',
+  'used-to-for-past-habits.md',
+  'verb-gerund-ing-form.md',
+  'verb-to-infinitive.md',
+  'vocabulary-for-food-and-shopping-words.md',
+  'vocabulary-for-time-and-routine-words.md',
+  'vocabulary-for-weather-and-seasons-words.md',
+  'vocabulary-for-work-and-study-words.md',
+  'weather-and-seasons-words.md',
+  'will-for-quick-decisions.md',
+  'work-and-study-words.md',
+];
+
+// Get actual files
+const actualFiles = fs.readdirSync(lessonsDir).filter(f => f.endsWith('.md')).sort();
+
+// Find missing files
+const missing = expectedFiles.filter(f => !actualFiles.includes(f));
+const extra = actualFiles.filter(f => !expectedFiles.includes(f));
+
+if (missing.length > 0) {
+  console.log('❌ MISSING FILES:\n');
+  missing.forEach(f => console.log(`  ${f}`));
+}
+
+if (extra.length > 0) {
+  console.log('\n✅ EXTRA (UNEXPECTED) FILES:\n');
+  extra.forEach(f => console.log(`  ${f}`));
+}
+
+console.log(`\n📊 Expected: ${expectedFiles.length}, Actual: ${actualFiles.length}`);
+console.log(`Missing: ${missing.length}, Extra: ${extra.length}`);

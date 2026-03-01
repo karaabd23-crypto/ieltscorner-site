@@ -1,0 +1,59 @@
+{
+  "test": "ielts",
+  "skill": "writing",
+  "level": "Band 7+",
+  "defaultDate": "2026-02-28",
+  "batchSlug": "leech-a-001",
+  "items": [
+    {
+      "slug": "aoran",
+      "title": "Aoran: Why ‘Random’ Words Matter in Grammar Books",
+      "description": "How to use dictionary-style grammar references, and turn odd entries into IELTS accuracy habits."
+    },
+    {
+      "slug": "a-words",
+      "title": "A-words: ‘Aboard, Ajar, Asleep…’ and How to Use Them Correctly",
+      "description": "Predicative ‘a-’ adjectives, correct placement, and IELTS-friendly examples."
+    },
+    {
+      "slug": "a-bit",
+      "title": "A bit / A bit of: Softening Claims Without Sounding Vague",
+      "description": "Use ‘a bit’ strategically, then upgrade to Band 7+ approximators."
+    },
+    {
+      "slug": "be-able-to",
+      "title": "Be Able To: Ability, Opportunity, and IELTS Task 2 Precision",
+      "description": "Go beyond ‘can’ with time forms and nuance (managed to, success, etc.)."
+    },
+    {
+      "slug": "about-and-around",
+      "title": "About vs Around: Precision, Approximation, and Academic Tone",
+      "description": "Topic vs approximation meanings and how to sound more academic."
+    },
+    {
+      "slug": "above-and-below",
+      "title": "Above vs Below: Clean Referencing in Academic Writing",
+      "description": "Use referencing language correctly—or avoid it in Task 2 when it’s unnatural."
+    },
+    {
+      "slug": "abstract-noun",
+      "title": "Abstract Nouns: The Hidden Engine of Academic Style",
+      "description": "How abstraction + strong verbs creates Band 7+ academic tone."
+    },
+    {
+      "slug": "accepting-and-refusing",
+      "title": "Accepting and Refusing: Polite Tone Without Over-apologizing",
+      "description": "Polite, firm acceptance/refusal language (useful for GT letters too)."
+    },
+    {
+      "slug": "accusative",
+      "title": "Accusative: The ‘Object’ Concept You Actually Need",
+      "description": "Object tracking + pronoun case accuracy for clean grammar."
+    },
+    {
+      "slug": "across",
+      "title": "Across: Range, Distribution, and ‘Across + Noun’ in Academic Style",
+      "description": "Use ‘across’ for scope and category distribution—IELTS gold."
+    }
+  ]
+}
