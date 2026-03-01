@@ -106,8 +106,8 @@ const olderLesson =
   </section>
 
   {headings.length > 0 && (
-    <details class="lesson-jump-drawer">
-      <summary>Sections</summary>
+    <div class="lesson-jump-drawer" tabindex="0" aria-label="Lesson sections quick navigation">
+      <div class="lesson-jump-tab">Sections</div>
       <ul>
         {headings
           .filter((heading) => heading.depth <= 3)
@@ -119,6 +119,6 @@ const olderLesson =
             </li>
           ))}
       </ul>
-    </details>
+    </div>
   )}
 </Layout>
