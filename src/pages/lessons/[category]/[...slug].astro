@@ -60,25 +60,6 @@ const olderLesson =
         </a>
         <a class="btn" href="/lessons">All lessons</a>
       </div>
-
-      {headings.length > 0 && (
-        <details class="surface" style="padding: var(--s-3);">
-          <summary class="btn" style="width: fit-content; list-style: none; cursor: pointer;">
-            Jump to section ↓
-          </summary>
-          <ul class="list" style="margin-top: var(--s-3);">
-            {headings
-              .filter((heading) => heading.depth <= 3)
-              .map((heading) => (
-                <li>
-                  <a href={`#${heading.slug}`} style={`padding-left: ${(heading.depth - 1) * 10}px; display: inline-block;`}>
-                    {heading.text}
-                  </a>
-                </li>
-              ))}
-          </ul>
-        </details>
-      )}
     </div>
   </section>
 
@@ -123,4 +104,21 @@ const olderLesson =
       </div>
     </article>
   </section>
+
+  {headings.length > 0 && (
+    <details class="lesson-jump-drawer">
+      <summary>Sections</summary>
+      <ul>
+        {headings
+          .filter((heading) => heading.depth <= 3)
+          .map((heading) => (
+            <li>
+              <a href={`#${heading.slug}`} style={`padding-left: ${(heading.depth - 1) * 8}px;`}>
+                {heading.text}
+              </a>
+            </li>
+          ))}
+      </ul>
+    </details>
+  )}
 </Layout>
