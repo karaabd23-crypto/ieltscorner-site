@@ -4,6 +4,16 @@ import { getCollection, type CollectionEntry } from "astro:content";
 
 type LessonEntry = CollectionEntry<"lessons">;
 
+const categories: LessonEntry["data"]["category"][] = [
+  "grammar",
+  "vocabulary",
+  "writing",
+  "speaking",
+];
+
+const categoryLabel = (value: LessonEntry["data"]["category"]) =>
+  value[0].toUpperCase() + value.slice(1);
+
 export async function getStaticPaths() {
   const items = await getCollection(
     "lessons",
@@ -18,6 +28,21 @@ export async function getStaticPaths() {
 
 const { item } = Astro.props as { item: LessonEntry };
 const { Content } = await item.render();
+const currentCategory = item.data.category;
+
+const sameCategoryLessons = (
+  await getCollection(
+    "lessons",
+    ({ data }) => !data.draft && data.category === currentCategory
+  )
+).sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
+
+const currentIndex = sameCategoryLessons.findIndex((lesson) => lesson.slug === item.slug);
+const newerLesson = currentIndex > 0 ? sameCategoryLessons[currentIndex - 1] : null;
+const olderLesson =
+  currentIndex >= 0 && currentIndex < sameCategoryLessons.length - 1
+    ? sameCategoryLessons[currentIndex + 1]
+    : null;
 ---
 
 
@@ -28,12 +53,52 @@ const { Content } = await item.render();
       <span class="pill">{item.data.level} • {item.data.exam.join(" & ")}</span>
       <h1>{item.data.title}</h1>
       <p class="muted" style="max-width: 75ch;">{item.data.excerpt}</p>
+
+      <div class="cluster">
+        <a class="btn" href="/lessons">All lessons</a>
+        <a class="btn btn-primary" href={`/lessons/${currentCategory}`}>
+          {categoryLabel(currentCategory)} lessons
+        </a>
+      </div>
+
+      <div class="cluster" aria-label="Explore lesson categories">
+        {categories.map((category) => (
+          <a
+            class={`btn ${category === currentCategory ? "btn-primary" : ""}`}
+            href={`/lessons/${category}`}
+          >
+            {categoryLabel(category)}
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
   <section class="section-sm">
     <article class="surface" style="padding: var(--s-6);">
       <Content />
+
+      <div class="cluster" style="margin-top: var(--s-6); justify-content: space-between;">
+        <div class="cluster">
+          {newerLesson ? (
+            <a class="btn" href={`/lessons/${newerLesson.data.category}/${newerLesson.slug}/`}>
+              ← Newer lesson
+            </a>
+          ) : (
+            <a class="btn" href={`/lessons/${currentCategory}`}>
+              ← Back to {categoryLabel(currentCategory)} list
+            </a>
+          )}
+
+          {olderLesson ? (
+            <a class="btn" href={`/lessons/${olderLesson.data.category}/${olderLesson.slug}/`}>
+              Older lesson →
+            </a>
+          ) : null}
+        </div>
+
+        <a class="btn btn-primary" href="/lessons">Explore all categories →</a>
+      </div>
     </article>
   </section>
 </Layout>
