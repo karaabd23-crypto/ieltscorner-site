@@ -851,16 +851,17 @@ button{
   bottom: var(--s-4);
   z-index: 45;
   width: min(280px, calc(100vw - 24px));
-  background: var(--surface);
+  background: color-mix(in srgb, var(--surface) 88%, transparent 12%);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(6px);
 }
 
 .lesson-jump-tab {
   cursor: pointer;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1;
   padding: 10px 12px;
   color: var(--text);
@@ -868,10 +869,10 @@ button{
 
 .lesson-jump-drawer ul {
   margin: 0;
-  padding: 0 10px 10px;
+  padding: 0 12px 10px 24px;
   max-height: 40vh;
   overflow: auto;
-  list-style: none;
+  list-style: disc;
   opacity: 0;
   max-height: 0;
   padding-top: 0;
@@ -885,23 +886,23 @@ button{
 .lesson-jump-drawer:focus ul {
   opacity: 1;
   max-height: 40vh;
-  padding-top: 0;
+  padding-top: 2px;
   padding-bottom: 10px;
   pointer-events: auto;
 }
 
 .lesson-jump-drawer li + li {
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 .lesson-jump-drawer a {
-  display: block;
-  font-size: 13px;
-  line-height: 1.35;
-  color: var(--muted);
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
   text-decoration: none;
-  padding: 6px 4px;
-  border-radius: 8px;
+  padding: 4px 2px;
+  border-radius: 6px;
 }
 
 .lesson-jump-drawer a:hover {
