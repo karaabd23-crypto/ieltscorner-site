@@ -50,13 +50,92 @@ const olderLesson =
   currentIndex >= 0 && currentIndex < sameCategoryLessons.length - 1
     ? sameCategoryLessons[currentIndex + 1]
     : null;
+
+// SEO: Structured Data for Lesson
+const lessonSchema = {
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": item.data.title,
+  "description": item.data.excerpt,
+  "educationalLevel": item.data.level,
+  "teaches": item.data.category,
+  "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": "student"
+  },
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "IELTS Corner",
+    "url": Astro.site
+  },
+  "datePublished": item.data.date,
+  "inLanguage": "en-CA",
+  "learningResourceType": "lesson",
+  "isAccessibleForFree": true
+};
+
+// SEO: Breadcrumb Schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": Astro.site
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Lessons",
+      "item": new URL("/lessons", Astro.site)
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": categoryLabel(currentCategory),
+      "item": new URL(`/lessons/${currentCategory}`, Astro.site)
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": item.data.title,
+      "item": new URL(`/lessons/${currentCategory}/${item.slug}`, Astro.site)
+    }
+  ]
+};
+
+// Enhanced meta keywords for SEO
+const seoKeywords = `${item.data.title}, ${item.data.category}, ${item.data.level}, ${item.data.exam.join(", ")}, IELTS lessons, CELPIP lessons, English test preparation`;
 ---
 
+<Layout 
+  title={item.data.title}
+  description={item.data.excerpt}
+  keywords={seoKeywords}
+  type="article"
+  canonical={`/lessons/${currentCategory}/${item.slug}/`}
+>
+  <!-- Structured Data Scripts -->
+  <script type="application/ld+json" set:html={JSON.stringify(lessonSchema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
 
-
-<Layout title={`${item.data.title} | IELTS Corner`} description={item.data.excerpt}>
   <section class="section">
     <div class="stack">
+      <!-- SEO Breadcrumbs -->
+      <nav aria-label="Breadcrumb" style="font-size: 14px;">
+        <ol style="display: flex; gap: 8px; list-style: none; padding: 0; margin: 0; color: var(--muted);">
+          <li><a href="/">Home</a></li>
+          <li>›</li>
+          <li><a href="/lessons">Lessons</a></li>
+          <li>›</li>
+          <li><a href={`/lessons/${currentCategory}`}>{categoryLabel(currentCategory)}</a></li>
+          <li>›</li>
+          <li>{item.data.title}</li>
+        </ol>
+      </nav>
+
       <span class="pill">{item.data.level} • {item.data.exam.join(" & ")}</span>
       <h1>{item.data.title}</h1>
       <p class="muted" style="max-width: 75ch;">{item.data.excerpt}</p>

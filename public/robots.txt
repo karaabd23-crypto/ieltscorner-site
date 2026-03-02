@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Crawl-delay for politeness
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://ieltscorner.ca/sitemap-index.xml
+
+# Block admin and private areas
+Disallow: /admin/
+Disallow: /book/paid/
+
+# Allow search engines to index lessons and courses
+Allow: /lessons/
+Allow: /ielts/
+Allow: /celpip/

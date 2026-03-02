@@ -22,38 +22,43 @@ const lessons = (
   await getCollection("lessons", ({ data }) => !data.draft && data.category === category)
 ).sort((a: LessonEntry, b: LessonEntry) => (a.data.date < b.data.date ? 1 : -1));
 
-const metaMap: Record<Category, { pill: string; h1: string; blurb: string }> = {
+const metaMap: Record<Category, { pill: string; h1: string; blurb: string; keywords: string }> = {
   grammar: {
     pill: "🧩 Grammar • C1 / Band 7+ Focus",
     h1: "Grammar lessons that actually change scores.",
     blurb:
-      "Meaning-first grammar for IELTS & CELPIP: control, accuracy, and scoring impact (not rule memorization).",
+      "Master advanced grammar for IELTS Band 7+ and CELPIP CLB 9+. Learn complex sentences, conditionals, passive voice, and scoring-focused structures with clear examples.",
+    keywords: "IELTS grammar, CELPIP grammar, Band 7 grammar, advanced English grammar, grammar for IELTS writing, grammar for IELTS speaking, C1 grammar lessons"
   },
   vocabulary: {
     pill: "🧠 Vocabulary • C1 / Band 7+ Focus",
     h1: "Vocabulary lessons that actually change scores.",
     blurb:
-      "C1-level vocabulary for IELTS & CELPIP: word groups, meaning, and natural use.",
+      "Build advanced vocabulary for IELTS Band 7+ and CELPIP CLB 9+. Learn academic word groups, collocations, and high-impact expressions for all test sections.",
+    keywords: "IELTS vocabulary, CELPIP vocabulary, Band 7 vocabulary, academic vocabulary, IELTS word list, advanced English words, vocabulary for IELTS"
   },
   writing: {
     pill: "✍️ Writing • Band 7+ / CLB 9+",
     h1: "Writing lessons built for clarity, structure, and scores.",
     blurb:
-      "Task achievement, good flow, right tone, and examiner-friendly phrasing for IELTS & CELPIP.",
+      "Achieve IELTS Band 7+ or CELPIP CLB 9+ in writing. Learn essay structure, task response, coherence, vocabulary range, and grammar accuracy with scoring-focused strategies.",
+    keywords: "IELTS writing, CELPIP writing, Band 7 writing, IELTS essay, CELPIP email, task 2 writing, writing samples, IELTS writing tips"
   },
   speaking: {
     pill: "🎤 Speaking • Band 7+ / CLB 9+",
     h1: "Speaking lessons that make you sound natural under pressure.",
     blurb:
-      "Structure, fluency control, connecting words, and natural delivery for IELTS & CELPIP.",
+      "Improve IELTS Band 7+ or CELPIP CLB 9+ speaking scores. Learn fluency, pronunciation, vocabulary range, grammar accuracy, and natural delivery under exam conditions.",
+    keywords: "IELTS speaking, CELPIP speaking, Band 7 speaking, speaking test tips, IELTS speaking part 2, CELPIP speaking practice, improve speaking scores"
   },
 };
 
 const meta = metaMap[category];
 ---
 <Layout
-  title={`${category[0].toUpperCase() + category.slice(1)} Lessons — IELTS & CELPIP | IELTS Corner`}
+  title={`${category[0].toUpperCase() + category.slice(1)} Lessons for IELTS & CELPIP — Band 7+ / CLB 9+`}
   description={meta.blurb}
+  keywords={meta.keywords}
 >
   <section class="section">
     <div class="stack">

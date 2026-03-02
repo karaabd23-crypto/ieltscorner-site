@@ -11,7 +11,33 @@ declare global {
 const {
   title = "IELTS Corner",
   description = "High-level IELTS & CELPIP prep for serious learners.",
+  ogImage = "/heroes/lesson.png",
+  canonical = Astro.url.pathname,
+  type = "website",
+  keywords = "IELTS, CELPIP, English test preparation, Band 7+, CLB 9+, English lessons Canada",
 } = Astro.props;
+
+const fullTitle = title.includes("IELTS Corner") ? title : `${title} | IELTS Corner`;
+const canonicalURL = new URL(canonical, Astro.site);
+const ogImageURL = new URL(ogImage, Astro.site);
+
+// Structured data for Organization
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "IELTS Corner",
+  "description": "Professional IELTS and CELPIP test preparation with expert tutoring and free lessons",
+  "url": Astro.site,
+  "logo": new URL("/logo.gif", Astro.site),
+  "sameAs": [
+    "https://www.instagram.com/ieltscorner.ca",
+    "https://www.youtube.com/@KaraAbdolmaleki",
+    "https://t.me/Kaysenglishcorner"
+  ],
+  "areaServed": "Canada",
+  "teaches": "English Language",
+  "educationalLevel": ["Intermediate", "Advanced"],
+};
 ---
 
 <script is:inline>
@@ -24,13 +50,41 @@ const {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>{fullTitle}</title>
+    <meta name="title" content={fullTitle} />
     <meta name="description" content={description} />
-    <meta name="google-adsense-account" content="ca-pub-5615542310815721">
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="IELTS Corner" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:site_name" content="IELTS Corner" />
+    <meta property="og:locale" content="en_CA" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+    
+    <!-- Favicon and Assets -->
     <link rel="icon" href="/favicon.ico" />
     <link rel="stylesheet" href="/src/styles/global.css" />
     
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    
     <!-- Google AdSense -->
+    <meta name="google-adsense-account" content="ca-pub-5615542310815721">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5615542310815721"
      crossorigin="anonymous"></script>
   </head>
