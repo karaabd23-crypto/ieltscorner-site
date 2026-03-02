@@ -923,3 +923,242 @@ button{
     font-size: 12px;
   }
 }
+
+/* ---- LESSON CONTENT ENHANCEMENTS ---- */
+
+/* Lesson introduction boxes */
+.lesson-intro,
+.mistakes-box,
+.tips-box {
+  border-radius: var(--radius-sm);
+  padding: var(--s-5);
+  margin: var(--s-6) 0;
+  line-height: 1.8;
+}
+
+.lesson-intro {
+  background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
+  border-left: 4px solid #0066cc;
+  box-shadow: 0 2px 8px rgba(0, 102, 204, 0.08);
+}
+
+.lesson-intro h3 {
+  margin: 0 0 var(--s-3) 0;
+  color: #0052a3;
+}
+
+.mistakes-box {
+  background: linear-gradient(135deg, #ffe6e6 0%, #fff0f0 100%);
+  border-left: 4px solid #cc0000;
+  box-shadow: 0 2px 8px rgba(204, 0, 0, 0.08);
+}
+
+.mistakes-box h3 {
+  margin: 0 0 var(--s-3) 0;
+  color: #990000;
+}
+
+.tips-box {
+  background: linear-gradient(135deg, #e6ffe6 0%, #f0fff0 100%);
+  border-left: 4px solid #00aa00;
+  box-shadow: 0 2px 8px rgba(0, 170, 0, 0.08);
+}
+
+.tips-box h3 {
+  margin: 0 0 var(--s-3) 0;
+  color: #006600;
+}
+
+/* Enhanced tables for lesson comparisons */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--s-6) 0;
+  background: var(--surface);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+table thead {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+}
+
+table thead th {
+  padding: var(--s-4) var(--s-5);
+  text-align: left;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  border: none;
+}
+
+table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.2s ease;
+}
+
+table tbody tr:hover {
+  background: #f9f9f9;
+}
+
+table tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+table tbody td {
+  padding: var(--s-4) var(--s-5);
+  vertical-align: top;
+  border: none;
+}
+
+table tbody td:first-child {
+  font-weight: 500;
+  color: var(--text);
+}
+
+table tbody td em {
+  color: #555;
+  font-style: italic;
+  word-break: break-word;
+}
+
+/* Code blocks in lessons */
+code {
+  background: #f4f4f4;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+  font-size: 13px;
+  color: #d63384;
+}
+
+pre {
+  background: #2c3e50;
+  color: #ecf0f1;
+  padding: var(--s-5);
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+  margin: var(--s-6) 0;
+  line-height: 1.6;
+  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+  font-size: 13px;
+}
+
+pre code {
+  background: none;
+  color: #ecf0f1;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Lesson section headers */
+h2 {
+  margin-top: var(--s-7);
+  margin-bottom: var(--s-4);
+  padding-bottom: var(--s-3);
+  border-bottom: 2px solid var(--border-strong);
+  font-size: var(--step-2);
+  color: var(--text);
+}
+
+h3 {
+  margin-top: var(--s-5);
+  margin-bottom: var(--s-3);
+  font-size: var(--step-1);
+  color: var(--text);
+}
+
+/* Numbered and bulleted lists */
+ul, ol {
+  margin: var(--s-4) 0;
+  padding-left: var(--s-6);
+  line-height: 1.8;
+}
+
+ul li, ol li {
+  margin-bottom: var(--s-3);
+  color: var(--text);
+}
+
+ul li strong, ol li strong {
+  color: var(--text);
+}
+
+/* Example boxes */
+.example-box {
+  background: #f8f9fa;
+  border-left: 4px solid #0066cc;
+  padding: var(--s-4);
+  margin: var(--s-4) 0;
+  border-radius: var(--radius-sm);
+  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+  font-size: 14px;
+}
+
+.example-incorrect {
+  border-left-color: #cc0000;
+  background: #fff5f5;
+}
+
+.example-correct {
+  border-left-color: #00aa00;
+  background: #f5fff5;
+}
+
+/* Comparison layout */
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-5);
+  margin: var(--s-6) 0;
+}
+
+.comparison-grid > div {
+  padding: var(--s-4);
+  border-radius: var(--radius-sm);
+}
+
+.comparison-grid .incorrect {
+  background: #fff5f5;
+  border: 2px solid #ffcccc;
+}
+
+.comparison-grid .correct {
+  background: #f5fff5;
+  border: 2px solid #ccffcc;
+}
+
+@media (max-width: 768px) {
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  table {
+    font-size: 13px;
+  }
+  
+  table td, table th {
+    padding: var(--s-3) !important;
+  }
+}
+
+/* Emphasis and highlights */
+strong {
+  font-weight: 600;
+  color: var(--text);
+}
+
+em {
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* Horizontal rules */
+hr {
+  border: none;
+  height: 1px;
+  background: var(--border-strong);
+  margin: var(--s-7) 0;
+}
