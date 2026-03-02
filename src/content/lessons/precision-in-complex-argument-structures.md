@@ -1,5 +1,5 @@
 ﻿---
-title: "Precision in Complex Argument Structures"
+title: "Making Clear Arguments"
 category: "grammar"
 level: "C2"
 ieltsBand: "8.5-9.0"

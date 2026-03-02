@@ -1,5 +1,5 @@
 ﻿---
-title: "Vocabulary for Work and study words"
+title: "Work and Study Vocabulary"
 category: "vocabulary"
 level: "A2"
 ieltsBand: "4.0-5.0"
@@ -36,9 +36,9 @@ priceCAD: 0
 draft: false
 ---
 
-## Vocabulary for Work and study words
+## Work and Study Vocabulary
 
-### 🎯 What you will learn today learn today
+### 🎯 What you will learn today
 
 In this lesson, you will learn how to write and speak in a way that sounds clear, accurate, and natural. We will start with simple examples, then we will fix common mistakes step by step. By the end, you will know exactly what to do in your next IELTS or CELPIP practice task.
 

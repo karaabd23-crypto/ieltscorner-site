@@ -1,5 +1,5 @@
 ﻿---
-title: "Advanced conditionals in discussion tasks"
+title: "Advanced If-Sentences for Discussions"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-6.5"

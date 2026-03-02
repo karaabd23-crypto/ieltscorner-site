@@ -1,5 +1,5 @@
 ﻿---
-title: "Advanced passive structures"
+title: "Advanced Passive Voice"
 category: "grammar"
 level: "C1"
 ieltsBand: "7.0-8.0"

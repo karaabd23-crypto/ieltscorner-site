@@ -1,5 +1,5 @@
 ---
-title: "Cleft Sentences for Emphasis"
+title: "Special Sentence Patterns for Emphasis"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-6.5"
@@ -8,7 +8,7 @@ exam: ["IELTS", "CELPIP"]
 excerpt: "Learn cleft sentences for emphasis with clear examples and guided practice for IELTS and CELPIP."
 date: "2026-02-27"
 tags: ["grammar", "b2", "beginner-friendly", "esl", "examples", "practice", "exam-prep"]
-heroTip: "‘‰ Start with the examples. Try the practice questions. Check answers at the bottom. Use emojis or colours to guide you!"
+heroTip: "ï¿½ï¿½ Start with the examples. Try the practice questions. Check answers at the bottom. Use emojis or colours to guide you!"
 visualAids: ["Simple example table", "Right and wrong list", "Real test examples"]
 quiz:
   - prompt: "Which sentence is better for a test?"

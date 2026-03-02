@@ -1,5 +1,5 @@
 ﻿---
-title: "Advanced argument structure in formal essays"
+title: "How to Organize Essay Arguments"
 category: "writing"
 level: "C1"
 ieltsBand: "7.0-8.0"

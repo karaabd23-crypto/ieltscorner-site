@@ -1,5 +1,5 @@
 ﻿---
-title: "High-Precision Argument"
+title: "Exact Words for Arguments"
 category: "vocabulary"
 level: "C2"
 ieltsBand: "8.5-9.0"

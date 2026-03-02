@@ -1,5 +1,5 @@
 ﻿---
-title: "Advanced punctuation and sentence control"
+title: "Punctuation and Sentence Control"
 category: "grammar"
 level: "C1"
 ieltsBand: "7.0-8.0"

@@ -1,5 +1,5 @@
 ﻿---
-title: "Advanced comparison structures"
+title: "Advanced Ways to Compare"
 category: "grammar"
 level: "C1"
 ieltsBand: "7.0-8.0"

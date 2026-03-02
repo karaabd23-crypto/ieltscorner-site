@@ -1,5 +1,5 @@
 ---
-title: "Inversion for Formal Emphasis"
+title: "Changing Word Order for Emphasis"
 category: "grammar"
 level: "C1"
 ieltsBand: "7.0-8.0"
@@ -8,7 +8,7 @@ exam: ["IELTS", "CELPIP"]
 excerpt: "Learn inversion for formal emphasis with clear examples and guided practice for IELTS and CELPIP."
 date: "2026-02-27"
 tags: ["grammar", "c1", "beginner-friendly", "esl", "examples", "practice", "exam-prep"]
-heroTip: "‘‰ Start with the examples. Try the practice questions. Check answers at the bottom. Use emojis or colours to guide you!"
+heroTip: "ï¿½ï¿½ Start with the examples. Try the practice questions. Check answers at the bottom. Use emojis or colours to guide you!"
 visualAids: ["Simple example table", "Right and wrong list", "Real test examples"]
 quiz:
   - prompt: "Which sentence is better for a test?"
