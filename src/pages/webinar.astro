@@ -11,8 +11,8 @@ const nextSession = webinarSchedule.sessions.find(s => s.available);
   description="CELPIP weekly webinars. Every Saturday at 6:00 PM PST. Real strategies, live instruction, $12 per session."
   type="page"
 >
-  <section class="section" style="padding-top: var(--s-6);">
-    <div class="hero" style={`--hero-bg: url('/heroes/webinar.png');`}>
+  <section class="section webinar-section" style="padding-top: var(--s-6);">
+    <div class="hero webinar-hero" style={`--hero-bg: url('/heroes/webinar.png');`}>
       <div class="hero-content">
         <span class="pill">🎓 Live • Interactive • Weekly</span>
         <h1>CELPIP Weekly Webinars</h1>
@@ -20,52 +20,77 @@ const nextSession = webinarSchedule.sessions.find(s => s.available);
       </div>
     </div>
 
+    <div style="height: var(--s-4);"></div>
+
+    <!-- MOBILE-FIRST REGISTRATION CTA -->
+    <div class="mobile-register-cta">
+      <div class="mobile-register-content">
+        <div class="mobile-register-info">
+          <p class="next-session-label">Next Session: {nextSession?.topic}</p>
+          <p class="session-datetime">{nextSession?.dayOfWeek}, {nextSession?.date} • {nextSession?.time}</p>
+        </div>
+        <div class="mobile-register-pricing">
+          <p class="price">$12</p>
+          {nextSession?.available ? (
+            <a 
+              href="https://buy.stripe.com/4gM7sK3Gm4dC26l23ygMw01"
+              class="btn btn-primary mobile-register-btn"
+            >
+              Register Now →
+            </a>
+          ) : (
+            <p class="unavailable-notice">Session unavailable</p>
+          )}
+        </div>
+      </div>
+    </div>
+
     <div style="height: var(--s-6);"></div>
 
     <!-- VALUE PROPOSITION -->
-    <div class="grid grid-2" style="align-items: center; gap: var(--s-6);">
+    <div class="grid grid-2 value-section" style="align-items: center; gap: var(--s-6);">
       <div>
-        <h2>What you get in every session</h2>
+        <h2 class="section-heading">What you get in every session</h2>
         <div class="stack" style="gap: var(--s-3);">
-          <div class="check" style="display: flex; gap: var(--s-2); align-items: start;">
-            <div style="font-size: 1.5rem;">✓</div>
+          <div class="check benefit-item" style="display: flex; gap: var(--s-2); align-items: start;">
+            <div class="benefit-icon" style="font-size: 1.5rem;">✓</div>
             <div>
-              <strong>45 minutes of focused teaching</strong>
-              <p style="margin: var(--s-1) 0 0; color: var(--text-muted);">One specific CELPIP skill per session. No fluff. Real strategies from a certified instructor.</p>
+              <strong class="benefit-title">45 minutes of focused teaching</strong>
+              <p class="benefit-desc" style="margin: var(--s-1) 0 0; color: var(--text-muted);">One specific CELPIP skill per session. No fluff. Real strategies from a certified instructor.</p>
             </div>
           </div>
 
-          <div class="check" style="display: flex; gap: var(--s-2); align-items: start;">
-            <div style="font-size: 1.5rem;">✓</div>
+          <div class="check benefit-item" style="display: flex; gap: var(--s-2); align-items: start;">
+            <div class="benefit-icon" style="font-size: 1.5rem;">✓</div>
             <div>
-              <strong>15 minutes of live Q&A</strong>
-              <p style="margin: var(--s-1) 0 0; color: var(--text-muted);">Ask about your specific challenges. Get real-time answers from someone who knows CELPIP inside-out.</p>
+              <strong class="benefit-title">15 minutes of live Q&A</strong>
+              <p class="benefit-desc" style="margin: var(--s-1) 0 0; color: var(--text-muted);">Ask about your specific challenges. Get real-time answers from someone who knows CELPIP inside-out.</p>
             </div>
           </div>
 
-          <div class="check" style="display: flex; gap: var(--s-2); align-items: start;">
-            <div style="font-size: 1.5rem;">✓</div>
+          <div class="check benefit-item" style="display: flex; gap: var(--s-2); align-items: start;">
+            <div class="benefit-icon" style="font-size: 1.5rem;">✓</div>
             <div>
-              <strong>Rotating curriculum (All CELPIP skills)</strong>
-              <p style="margin: var(--s-1) 0 0; color: var(--text-muted);">Speaking, listening, reading, writing, grammar, vocabulary. Each week builds on the last.</p>
+              <strong class="benefit-title">Rotating curriculum (All CELPIP skills)</strong>
+              <p class="benefit-desc" style="margin: var(--s-1) 0 0; color: var(--text-muted);">Speaking, listening, reading, writing, grammar, vocabulary. Each week builds on the last.</p>
             </div>
           </div>
 
-          <div class="check" style="display: flex; gap: var(--s-2); align-items: start;">
-            <div style="font-size: 1.5rem;">✓</div>
+          <div class="check benefit-item" style="display: flex; gap: var(--s-2); align-items: start;">
+            <div class="benefit-icon" style="font-size: 1.5rem;">✓</div>
             <div>
-              <strong>Join anytime, learn anytime</strong>
-              <p style="margin: var(--s-1) 0 0; color: var(--text-muted);">Each week is valuable on its own. Miss a session? Join the next one. Your choice.</p>
+              <strong class="benefit-title">Join anytime, learn anytime</strong>
+              <p class="benefit-desc" style="margin: var(--s-1) 0 0; color: var(--text-muted);">Each week is valuable on its own. Miss a session? Join the next one. Your choice.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="surface" style="padding: var(--s-5); border-radius: 8px; text-align: center; border: 2px solid var(--accent);">
+      <div class="surface desktop-pricing-card" style="padding: var(--s-5); border-radius: 8px; text-align: center; border: 2px solid var(--accent);">
         <div style="font-size: 3rem; margin-bottom: var(--s-2);">🎯</div>
         <p style="font-size: 2.5rem; font-weight: 700; color: var(--accent); margin: 0;">$12</p>
         <p style="color: var(--text-muted); margin: var(--s-1) 0 var(--s-3);">per session</p>
-        <p style="font-size: 0.9rem; margin-bottom: var(--s-3);">60 minutes • Live on Google Meet • Every Saturday 6 PM PST</p>
+        <p class="pricing-description" style="font-size: 0.9rem; margin-bottom: var(--s-3);">60 minutes • Live on Google Meet • Every Saturday 6 PM PST</p>
         <a href="#register" class="btn btn-primary" style="width: 100%; text-align: center;">Register for this Saturday</a>
       </div>
     </div>
@@ -335,9 +360,225 @@ const nextSession = webinarSchedule.sessions.find(s => s.available);
 </Layout>
 
 <style>
+  /* Mobile-first registration CTA */
+  .mobile-register-cta {
+    background: linear-gradient(135deg, var(--accent) 0%, rgba(217, 72, 72, 0.9) 100%);
+    border-radius: 12px;
+    padding: var(--s-3);
+    color: white;
+    box-shadow: 0 4px 20px rgba(217, 72, 72, 0.3);
+  }
+
+  .mobile-register-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+  }
+
+  .mobile-register-info {
+    text-align: center;
+  }
+
+  .next-session-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 var(--s-1);
+    line-height: 1.3;
+  }
+
+  .session-datetime {
+    font-size: 0.95rem;
+    margin: 0;
+    opacity: 0.95;
+  }
+
+  .mobile-register-pricing {
+    text-align: center;
+  }
+
+  .price {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 var(--s-2);
+    line-height: 1;
+  }
+
+  .mobile-register-btn {
+    width: 100%;
+    padding: 16px 24px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    background: white;
+    color: var(--accent);
+    border: none;
+    text-align: center;
+    display: block;
+  }
+
+  .mobile-register-btn:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .unavailable-notice {
+    padding: var(--s-2);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  /* Mobile-optimized hero */
+  .webinar-hero .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .webinar-hero .hero-content p {
+    font-size: 1rem;
+  }
+
+  /* Typography adjustments for mobile */
+  .section-heading {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .benefit-title {
+    font-size: 1rem;
+  }
+
+  .benefit-desc {
+    font-size: 0.9rem;
+  }
+
+  /* Grid adjustments for mobile */
   @media (max-width: 768px) {
     .grid {
       grid-template-columns: 1fr !important;
+      gap: var(--s-3) !important;
+    }
+
+    .webinar-section {
+      padding-top: var(--s-4) !important;
+    }
+
+    .webinar-hero .hero-content h1 {
+      font-size: 1.75rem;
+    }
+
+    .section-heading {
+      font-size: 1.3rem;
+    }
+
+    .benefit-item {
+      padding: var(--s-2);
+      background: var(--surface);
+      border-radius: 8px;
+    }
+
+    .benefit-icon {
+      font-size: 1.25rem !important;
+    }
+
+    .benefit-title {
+      font-size: 0.95rem;
+    }
+
+    .benefit-desc {
+      font-size: 0.85rem;
+    }
+
+    /* Hide desktop pricing card on mobile - mobile CTA is better */
+    .desktop-pricing-card {
+      display: none;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+    }
+
+    .card {
+      padding: var(--s-3);
+    }
+
+    /* Simplify feature section on mobile */
+    .feature {
+      padding: var(--s-4) !important;
+    }
+
+    /* Make registration section more compact on mobile */
+    #register {
+      padding: var(--s-4) !important;
+    }
+
+    #register h2 {
+      font-size: 1.3rem;
+    }
+
+    #register .grid {
+      gap: var(--s-4) !important;
+    }
+
+    /* Mobile CTA visibility */
+    .mobile-register-cta {
+      display: block;
+    }
+
+    /* Simplify FAQ items on mobile */
+    .faq-item {
+      padding: var(--s-2) !important;
+    }
+
+    .faq-item summary {
+      font-size: 0.95rem;
+    }
+
+    .pricing-description {
+      font-size: 0.85rem !important;
+    }
+  }
+
+  @media (min-width: 769px) {
+    /* Hide mobile CTA on desktop */
+    .mobile-register-cta {
+      display: none;
+    }
+
+    .webinar-hero .hero-content h1 {
+      font-size: 2.5rem;
+    }
+  }
+
+  /* Extra small mobile devices */
+  @media (max-width: 560px) {
+    .mobile-register-cta {
+      padding: var(--s-2);
+    }
+
+    .next-session-label {
+      font-size: 1rem;
+    }
+
+    .session-datetime {
+      font-size: 0.85rem;
+    }
+
+    .price {
+      font-size: 2.5rem;
+    }
+
+    .mobile-register-btn {
+      padding: 14px 20px;
+      font-size: 1rem;
+    }
+
+    .webinar-hero .hero-content h1 {
+      font-size: 1.5rem;
+    }
+
+    .webinar-hero .hero-content p {
+      font-size: 0.9rem;
     }
   }
 
