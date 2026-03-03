@@ -1,0 +1,244 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Pricing & Plans — IELTS Corner"
+  description="Affordable pricing for IELTS and CELPIP preparation. Free lessons, tutoring, essay correction, and eBooks."
+  type="page"
+>
+  <section class="section" style="padding-top: var(--s-6);">
+    <div class="hero" style={`--hero-bg: url('/heroes/pricing.png');`}>
+      <div class="hero-content">
+        <h1>Transparent pricing. No hidden fees.</h1>
+        <p>Free lessons or pay for personalized help.</p>
+      </div>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+
+    <!-- PRICING CARDS -->
+    <div class="grid grid-3">
+      <!-- FREE LESSONS -->
+      <article
+        class="card"
+        style="border: 2px solid var(--text-muted); padding: var(--s-4); display: flex; flex-direction: column;"
+      >
+        <h2 style="color: var(--text-muted);">Free Lessons</h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Perfect for self-study</p>
+
+        <div style="flex: 1; padding: var(--s-3) 0; text-align: center;">
+          <div style="font-size: 2rem; font-weight: 700; margin-bottom: var(--s-2);">$0</div>
+          <p style="color: var(--text-muted); margin: 0;">Forever free</p>
+        </div>
+
+        <ul style="margin: var(--s-2) 0; padding: 0; list-style: none; flex: 1;">
+          <li style="padding: var(--s-1) 0; border-bottom: 1px solid var(--text-muted-light);">
+            <strong>502 lessons</strong> (grammar, vocab, writing, speaking)
+          </li>
+          <li style="padding: var(--s-1) 0; border-bottom: 1px solid var(--text-muted-light);">
+            <strong>All proficiency levels</strong> (A1–C1)
+          </li>
+          <li style="padding: var(--s-1) 0; border-bottom: 1px solid var(--text-muted-light);">
+            <strong>Updated regularly</strong> with new content
+          </li>
+          <li style="padding: var(--s-1) 0;">
+            <strong>Mobile friendly</strong> on any device
+          </li>
+        </ul>
+
+        <a href="/lessons" class="btn btn-ghost" style="width: 100%; text-align: center;">
+          Start learning →
+        </a>
+      </article>
+
+      <!-- TUTORING -->
+      <article
+        class="card"
+        style="border: 3px solid var(--accent); padding: var(--s-4); display: flex; flex-direction: column; transform: scale(1.05);"
+      >
+        <div style="display: inline-block; background: var(--accent); color: white; padding: var(--s-1) var(--s-2); border-radius: 4px; width: fit-content; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
+          MOST POPULAR
+        </div>
+
+        <h2>Tutoring</h2>
+        <p style="color: var(--accent); font-weight: 600;">1-on-1 personalized lessons</p>
+
+        <div style="flex: 1; padding: var(--s-3) 0; text-align: center;">
+          <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: var(--s-1); color: var(--accent);">CA$30</div>
+          <p style="color: var(--text-muted); margin: 0;">per 60-minute session</p>
+        </div>
+
+        <ul style="margin: var(--s-2) 0; padding: 0; list-style: none; flex: 1;">
+          <li style="padding: var(--s-1) 0; border-bottom: 1px solid var(--text-muted-light);">
+            <strong>Live Zoom lessons</strong> (you choose the time)
+          </li>
+          <li style="padding: var(--s-1) 0; border-bottom: 1px solid var(--text-muted-light);">
+            <strong>Essay feedback</strong> and mock speaking tests
+          </li>
+          <li style="padding: var(--s-1) 0; border-bottom: 1px solid var(--text-muted-light);">
+            <strong>Personalized lessons</strong> for your weak areas
+          </li>
+          <li style="padding: var(--s-1) 0; border-bottom: 1px solid var(--text-muted-light);">
+            <strong>Detailed feedback</strong> you can use in your next lesson
+          </li>
+          <li style="padding: var(--s-1) 0;">
+            <strong>2-hour money-back guarantee</strong> if unsatisfied
+          </li>
+        </ul>
+
+        <a href="/tutoring" class="btn btn-primary" style="width: 100%; text-align: center;">
+          Book a session →
+        </a>
+      </article>
+
+      <!-- ESSAY CORRECTION -->
+      <article
+        class="card"
+        style="border: 2px solid var(--text-muted); padding: var(--s-4); display: flex; flex-direction: column;"
+      >
+        <h2 style="color: var(--text-muted);">Essay Correction</h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Detailed feedback on writing</p>
+
+        <div style="flex: 1; padding: var(--s-3) 0; text-align: center;">
+          <div style="font-size: 2rem; font-weight: 700; margin-bottom: var(--s-2);">CA$15</div>
+          <p style="color: var(--text-muted); margin: 0;">per essay</p>
+        </div>
+
+        <ul style="margin: var(--s-2) 0; padding: 0; list-style: none; flex: 1;">
+          <li style="padding: var(--s-1) 0; border-bottom: 1px solid var(--text-muted-light);">
+            <strong>Grammar & vocabulary</strong> corrections
+          </li>
+          <li style="padding: var(--s-1) 0; border-bottom: 1px solid var(--text-muted-light);">
+            <strong>Organization feedback</strong> (structure and flow)
+          </li>
+          <li style="padding: var(--s-1) 0; border-bottom: 1px solid var(--text-muted-light);">
+            <strong>Estimated band score</strong> (IELTS/CELPIP)
+          </li>
+          <li style="padding: var(--s-1) 0; border-bottom: 1px solid var(--text-muted-light);">
+            <strong>Key areas to improve</strong> for next essay
+          </li>
+          <li style="padding: var(--s-1) 0;">
+            <strong>24–48 hour turnaround</strong> on feedback
+          </li>
+        </ul>
+
+        <a href="/essay-correction" class="btn btn-ghost" style="width: 100%; text-align: center;">
+          Submit an essay →
+        </a>
+      </article>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+
+    <!-- eBook -->
+    <div class="surface feature" style="padding: var(--s-5);">
+      <div class="grid grid-2">
+        <div>
+          <h2>eBook: Complete Guide to IELTS Grammar & Writing</h2>
+          <p><strong>Price: $19.99 CAD</strong></p>
+          <p>A comprehensive guide covering all grammar topics and writing task types for IELTS.</p>
+          <ul style="margin: var(--s-2) 0;">
+            <li>All IELTS grammar structures in one book</li>
+            <li>Common mistakes to avoid</li>
+            <li>8 model essays with band scores</li>
+            <li>Writing tips and strategies</li>
+            <li>PDF + mobile-friendly format</li>
+          </ul>
+          <a href="/ebook" class="btn btn-primary">Get the eBook →</a>
+        </div>
+
+        <div style="display: flex; align-items: center; justify-content: center;">
+          <div style="text-align: center; padding: var(--s-4); background: var(--accent-light); border-radius: 8px; width: 100%;">
+            <div style="font-size: 3rem;">📚</div>
+            <p style="margin: var(--s-2) 0 0; font-weight: 600;">PDF eBook</p>
+            <p style="margin: var(--s-1) 0; color: var(--text-muted);">$19.99</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+
+    <!-- COMPARISON TABLE -->
+    <div>
+      <h2>Compare all options</h2>
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; margin-top: var(--s-3);">
+          <thead style="background: var(--surface);">
+            <tr>
+              <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light); font-weight: 600;">Feature</th>
+              <th style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light); line-height: 1.2;">Free Lessons</th>
+              <th style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light); line-height: 1.2;">Tutoring</th>
+              <th style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light); line-height: 1.2;">Essay Correction</th>
+              <th style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light); line-height: 1.2;">eBook</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light); font-weight: 600;">Learn on your own</td>
+              <td style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light);">✓</td>
+              <td style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light);">✓</td>
+              <td style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light);">✓</td>
+              <td style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light);">✓</td>
+            </tr>
+            <tr style="background: var(--surface-light);">
+              <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light); font-weight: 600;">Personal feedback</td>
+              <td style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light);">—</td>
+              <td style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light);">✓</td>
+              <td style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light);">✓</td>
+              <td style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light);">—</td>
+            </tr>
+            <tr>
+              <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light); font-weight: 600;">Live interaction</td>
+              <td style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light);">—</td>
+              <td style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light);">✓</td>
+              <td style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light);">—</td>
+              <td style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light);">—</td>
+            </tr>
+            <tr style="background: var(--surface-light);">
+              <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light); font-weight: 600;">Band score prediction</td>
+              <td style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light);">—</td>
+              <td style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light);">✓</td>
+              <td style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light);">✓</td>
+              <td style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light);">✓</td>
+            </tr>
+            <tr>
+              <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light); font-weight: 600;">Price</td>
+              <td style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light); font-weight: 700; color: var(--accent);">$0</td>
+              <td style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light); font-weight: 700; color: var(--accent);">CA$30/hr</td>
+              <td style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light); font-weight: 700; color: var(--accent);">CA$15</td>
+              <td style="text-align: center; padding: var(--s-2); border: 1px solid var(--text-muted-light); font-weight: 700; color: var(--accent);">$19.99</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+
+    <!-- CTA -->
+    <div style="text-align: center; padding: var(--s-4); background: var(--accent-light); border-radius: 8px;">
+      <h2>Not sure where to start?</h2>
+      <p>Start with our <strong>free lessons</strong>. If you want personalized help, add <strong>tutoring</strong>. No commitment needed.</p>
+      <a href="/lessons" class="btn btn-primary">Explore free lessons →</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    table {
+      font-size: 0.85rem;
+    }
+
+    table th,
+    table td {
+      padding: var(--s-1) !important;
+    }
+  }
+</style>

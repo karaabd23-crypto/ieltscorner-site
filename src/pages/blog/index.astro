@@ -1,0 +1,107 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Blog — IELTS Corner"
+  description="IELTS and CELPIP tips, strategies, and English learning articles."
+  type="page"
+>
+  <section class="section" style="padding-top: var(--s-6);">
+    <div class="hero" style={`--hero-bg: url('/heroes/blog.png');`}>
+      <div class="hero-content">
+        <h1>IELTS & CELPIP blog</h1>
+        <p>Tips, strategies, and articles to help you get a higher score.</p>
+      </div>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+
+    <!-- FEATURED POST -->
+    <div class="surface feature" style="padding: var(--s-5); margin-bottom: var(--s-6);">
+      <div class="grid grid-2" style="align-items: center; gap: var(--s-4);">
+        <div>
+          <div style="display: inline-block; background: var(--accent); color: white; padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
+            FEATURED
+          </div>
+          <h2 style="margin-top: 0;">3 Grammar Mistakes That Cost You Marks</h2>
+          <p style="color: var(--text-muted);">Learn the top grammar errors IELTS students make, and how to fix them forever.</p>
+          <div style="display: flex; gap: var(--s-3); color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--s-2);">
+            <span>📅 March 1, 2026</span>
+            <span>⏱️ 5 min read</span>
+          </div>
+          <a href="/blog/grammar-mistakes-ielts" class="btn btn-primary">Read article →</a>
+        </div>
+        <div style="background: var(--accent-light); padding: var(--s-3); border-radius: 8px; text-align: center;">
+          <div style="font-size: 3rem;">📝</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOG POSTS GRID -->
+    <h2>Recent articles</h2>
+    <div class="grid grid-3" style="gap: var(--s-3); margin-bottom: var(--s-6);">
+      <!-- POST 1 -->
+      <article class="card">
+        <div style="display: inline-block; background: var(--accent-light); color: var(--accent); padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
+          Strategy
+        </div>
+        <h3 style="margin-top: 0;">How to Get Band 7 in IELTS Writing</h3>
+        <p style="color: var(--text-muted); flex: 1;">The exact structure and timing strategy that helps most students jump from Band 6 to Band 7.</p>
+        <div style="display: flex; gap: var(--s-2); color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--s-2);">
+          <span>📅 Feb 28, 2026</span>
+          <span>⏱️ 6 min</span>
+        </div>
+        <a href="/blog/band-7-writing-strategy" class="btn btn-ghost">Read →</a>
+      </article>
+
+      <!-- POST 2 -->
+      <article class="card">
+        <div style="display: inline-block; background: var(--accent-light); color: var(--accent); padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
+          Vocabulary
+        </div>
+        <h3 style="margin-top: 0;">150 Collocations for IELTS Writing</h3>
+        <p style="color: var(--text-muted); flex: 1;">The exact collocations that IELTS examiners want to see. Practice these every day.</p>
+        <div style="display: flex; gap: var(--s-2); color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--s-2);">
+          <span>📅 Feb 25, 2026</span>
+          <span>⏱️ 8 min</span>
+        </div>
+        <a href="/blog/collocations-ielts" class="btn btn-ghost">Read →</a>
+      </article>
+
+      <!-- POST 3 -->
+      <article class="card">
+        <div style="display: inline-block; background: var(--accent-light); color: var(--accent); padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
+          Speaking
+        </div>
+        <h3 style="margin-top: 0;">CELPIP Speaking Part 2: How to Score High</h3>
+        <p style="color: var(--text-muted); flex: 1;">Everything you need to know about Task 2, including common mistakes and what examiners listen for.</p>
+        <div style="display: flex; gap: var(--s-2); color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--s-2);">
+          <span>📅 Feb 20, 2026</span>
+          <span>⏱️ 7 min</span>
+        </div>
+        <a href="/blog/celpip-speaking-part2" class="btn btn-ghost">Read →</a>
+      </article>
+    </div>
+
+    <!-- MORE ARTICLES -->
+    <div style="text-align: center; padding: var(--s-4); background: var(--surface); border-radius: 8px;">
+      <p style="color: var(--text-muted);">More articles coming soon. <a href="/" style="color: var(--accent);">Subscribe to our newsletter →</a> to get the latest tips.</p>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+  </section>
+</Layout>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

@@ -1,0 +1,92 @@
+{
+  "sessions": [
+    {
+      "id": 1,
+      "date": "2026-03-07",
+      "dayOfWeek": "Saturday",
+      "time": "6:00 PM PST",
+      "timezone": "PST",
+      "topic": "Speaking: Building Confidence & Natural Flow",
+      "description": "Master the art of speaking naturally under pressure. Learn pacing, intonation, and how to handle difficult questions without panicking.",
+      "available": true,
+      "notes": ""
+    },
+    {
+      "id": 2,
+      "date": "2026-03-14",
+      "dayOfWeek": "Saturday",
+      "time": "6:00 PM PST",
+      "timezone": "PST",
+      "topic": "Reading: Strategies for Speed & Comprehension",
+      "description": "Tackle dense passages in 60 seconds. Learn skimming, scanning, and when to slow down. Real strategies that work.",
+      "available": true,
+      "notes": ""
+    },
+    {
+      "id": 3,
+      "date": "2026-03-21",
+      "dayOfWeek": "Saturday",
+      "time": "6:00 PM PST",
+      "timezone": "PST",
+      "topic": "Vocabulary: Words That Score High",
+      "description": "200+ essential collocations and expressions. Learn what evaluators notice. Precise language that sounds natural.",
+      "available": true,
+      "notes": ""
+    },
+    {
+      "id": 4,
+      "date": "2026-03-28",
+      "dayOfWeek": "Saturday",
+      "time": "6:00 PM PST",
+      "timezone": "PST",
+      "topic": "Listening: Catch Every Word Without Repeating",
+      "description": "Prediction techniques. Note-taking that actually helps. How to understand different accents and speeds.",
+      "available": true,
+      "notes": ""
+    },
+    {
+      "id": 5,
+      "date": "2026-04-04",
+      "dayOfWeek": "Saturday",
+      "time": "6:00 PM PST",
+      "timezone": "PST",
+      "topic": "Writing Task 1: Email Format That Gets CLB 9",
+      "description": "Task 1 secrets. Tone matching. Structure that works every time. 150-200 words done right.",
+      "available": true,
+      "notes": ""
+    },
+    {
+      "id": 6,
+      "date": "2026-04-11",
+      "dayOfWeek": "Saturday",
+      "time": "6:00 PM PST",
+      "timezone": "PST",
+      "topic": "Grammar: The 5 Mistakes Costing You Points",
+      "description": "Subject-verb agreement. Tenses. Complex sentences. How to check your own work in 3 minutes.",
+      "available": true,
+      "notes": ""
+    },
+    {
+      "id": 7,
+      "date": "2026-04-18",
+      "dayOfWeek": "Saturday",
+      "time": "6:00 PM PST",
+      "timezone": "PST",
+      "topic": "Test Psychology: Confidence Under Pressure",
+      "description": "Mental preparation. Managing anxiety. What to do when you blank. Proven techniques that work.",
+      "available": true,
+      "notes": ""
+    },
+    {
+      "id": 8,
+      "date": "2026-04-25",
+      "dayOfWeek": "Saturday",
+      "time": "6:00 PM PST",
+      "timezone": "PST",
+      "topic": "Mock Test Walkthrough: Real Exam Conditions",
+      "description": "Full test simulation. Timing breakdown. What to focus on in the final week before your real exam.",
+      "available": true,
+      "notes": ""
+    }
+  ]
+}

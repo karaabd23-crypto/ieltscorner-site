@@ -1,0 +1,104 @@
+---
+interface Props {
+  testimonials?: Array<{
+    name: string;
+    title: string;
+    score?: string;
+    text: string;
+    image?: string;
+  }>;
+  columns?: 1 | 2 | 3;
+}
+
+const defaultTestimonials = [
+  {
+    name: "Priya M.",
+    title: "Band 7.5 in IELTS",
+    score: "Improved from Band 6.5 → 7.5",
+    text: "The lessons are so clear. I finally understood conditionals after years of confusion. The tutor gave me real examples from actual tests.",
+    image: "/testimonials/priya.jpg"
+  },
+  {
+    name: "Ahmed K.",
+    title: "CLB 9 in CELPIP",
+    score: "Improved from CLB 8 → 9",
+    text: "The structured lessons helped me improve my speaking. The tips about pausing and emphasizing words actually made a difference in my test.",
+    image: "/testimonials/ahmed.jpg"
+  },
+  {
+    name: "Lisa C.",
+    title: "Band 7 in IELTS (Writing 7.5)",
+    score: "First attempt: Band 7",
+    text: "The essay correction feedback was so detailed. I knew exactly what to fix. The band score prediction was spot-on too.",
+    image: "/testimonials/lisa.jpg"
+  },
+  {
+    name: "Marco V.",
+    title: "Band 6.5 in IELTS",
+    score: "Improved from Band 5.5 → 6.5",
+    text: "Tutoring was worth every dollar. One-on-one practice with someone patient who explained my mistakes clearly.",
+    image: "/testimonials/marco.jpg"
+  },
+  {
+    name: "Sarah T.",
+    title: "Band 7.5 in IELTS (Reading 8)",
+    score: "Strong vocabulary improvement",
+    text: "The vocabulary lessons taught me collocations I never learned in school. These words came up in my actual test!",
+    image: "/testimonials/sarah.jpg"
+  },
+  {
+    name: "Dev S.",
+    title: "CLB 9 in CELPIP",
+    score: "Ideal Band Score Achieved",
+    text: "Everything I studied showed up in the test. The lessons are 100% aligned with what CELPIP actually tests.",
+    image: "/testimonials/dev.jpg"
+  }
+];
+
+const { 
+  testimonials = defaultTestimonials,
+  columns = 3
+} = Astro.props;
+---
+
+<div style={`display: grid; grid-template-columns: repeat(${columns}, 1fr); gap: var(--s-3);`}>
+  {testimonials.map((testimonial) => (
+    <article
+      class="testimonial-card"
+      style="padding: var(--s-3); border-radius: 8px; background: var(--surface); border: 1px solid var(--text-muted-light); display: flex; flex-direction: column;"
+    >
+      <!-- STARS -->
+      <div style="display: flex; gap: 0.25rem; margin-bottom: var(--s-1);">
+        <span style="color: #fbbf24;">★</span>
+        <span style="color: #fbbf24;">★</span>
+        <span style="color: #fbbf24;">★</span>
+        <span style="color: #fbbf24;">★</span>
+        <span style="color: #fbbf24;">★</span>
+      </div>
+
+      <!-- TESTIMONIAL TEXT -->
+      <p style="flex: 1; font-style: italic; line-height: 1.6; margin: 0 0 var(--s-2);">"{testimonial.text}"</p>
+
+      <!-- NAME & TITLE -->
+      <div style="border-top: 1px solid var(--text-muted-light); padding-top: var(--s-2);">
+        <p style="margin: 0; font-weight: 700;">{testimonial.name}</p>
+        <p style="margin: var(--s-1) 0 0; font-size: 0.9rem; color: var(--text-muted);">
+          {testimonial.title}
+        </p>
+        {testimonial.score && (
+          <p style="margin: var(--s-1) 0 0; font-size: 0.85rem; color: var(--accent); font-weight: 600;">
+            ✓ {testimonial.score}
+          </p>
+        )}
+      </div>
+    </article>
+  ))}
+</div>
+
+<style>
+  @media (max-width: 768px) {
+    :global(div) {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

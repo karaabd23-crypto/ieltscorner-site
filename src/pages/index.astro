@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Testimonials from "../components/Testimonials.astro";
+import Newsletter from "../components/Newsletter.astro";
 
 const homeKeywords = "IELTS preparation, CELPIP test, Band 7+ IELTS, CLB 9+ CELPIP, English test prep Canada, IELTS lessons, CELPIP lessons, IELTS grammar, IELTS vocabulary, IELTS writing, IELTS speaking, English tutoring Canada";
 ---
@@ -108,5 +110,24 @@ const homeKeywords = "IELTS preparation, CELPIP test, Band 7+ IELTS, CLB 9+ CELP
         </div>
       </div>
     </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <!-- TESTIMONIALS SECTION -->
+    <div>
+      <h2>Student results</h2>
+      <p style="color: var(--text-muted); margin-bottom: var(--s-4);">Real students, real scores.</p>
+      <Testimonials columns={3} />
+      <div style="text-align: center; margin-top: var(--s-4);">
+        <a href="/success-stories" class="btn btn-ghost">See more success stories →</a>
+      </div>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <!-- NEWSLETTER SECTION -->
+    <Newsletter />
+
+    <div style="height: var(--s-6);"></div>
   </section>
 </Layout>

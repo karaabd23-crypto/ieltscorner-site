@@ -1,0 +1,312 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="FAQ — IELTS Corner"
+  description="Frequently asked questions about IELTS Corner lessons, tutoring, essay correction, and exam preparation services."
+  type="page"
+>
+  <section class="section" style="padding-top: var(--s-6);">
+    <div class="hero" style={`--hero-bg: url('/heroes/faq.png');`}>
+      <div class="hero-content">
+        <h1>Frequently asked questions</h1>
+        <p>Answers to common questions about our lessons, tutoring, and services.</p>
+      </div>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+
+    <!-- FAQ SECTIONS -->
+    <div class="stack" style="gap: var(--s-6);">
+      <!-- LESSONS FAQ -->
+      <div>
+        <h2>About the lessons</h2>
+        <div class="faq-group">
+          <details class="faq-item">
+            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
+              Are the lessons really free?
+            </summary>
+            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
+              <p>Yes! All 502 lessons are completely free. We want to help all students, no matter their budget. We make money from tutoring and essay correction services for students who want personalized help.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
+              How many lessons are there?
+            </summary>
+            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
+              <p>We have 502 lessons organized into 4 categories:</p>
+              <ul>
+                <li><strong>Grammar:</strong> 81 lessons (articles, tenses, conditionals, etc.)</li>
+                <li><strong>Vocabulary:</strong> 26 lessons (academic words, phrasal verbs, collocations)</li>
+                <li><strong>Writing:</strong> 20 lessons (essay structure, grammar, task types)</li>
+                <li><strong>Speaking:</strong> 15 lessons (pronunciation, fluency, confidence)</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
+              How long is each lesson?
+            </summary>
+            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
+              <p>Most lessons take 5–15 minutes to read. They're short and focused. You learn one idea, see examples, and get practice. No long videos or boring lectures.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
+              Are lessons for IELTS or CELPIP?
+            </summary>
+            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
+              <p>Both! Most lessons work for both exams. Each lesson shows examples from real IELTS and CELPIP tests. Some lessons are specific to one exam (e.g., IELTS essay task vs CELPIP writing task), but 90% of the content helps for both.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
+              What proficiency levels do you cover?
+            </summary>
+            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
+              <p>We have lessons for all levels:</p>
+              <ul>
+                <li><strong>A1-A2:</strong> Beginner lessons (basic grammar, simple words)</li>
+                <li><strong>B1-B2:</strong> Intermediate lessons (complex tenses, advanced vocabulary)</li>
+                <li><strong>C1:</strong> Advanced lessons (uncommon structures, formal writing)</li>
+              </ul>
+              <p>Start at your level. Move to harder lessons when you're ready.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
+              Can I download the lessons?
+            </summary>
+            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
+              <p>Not yet. We're working on a downloadable PDF version of all lessons. For now, you can read them online on any device (phone, tablet, computer).</p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- TUTORING FAQ -->
+      <div>
+        <h2>About tutoring</h2>
+        <div class="faq-group">
+          <details class="faq-item">
+            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
+              How much does tutoring cost?
+            </summary>
+            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
+              <p><strong>CA$30 per hour.</strong> Each lesson is exactly 60 minutes of one-on-one instruction. No hidden fees. No payment until you book.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
+              How do I book a tutoring session?
+            </summary>
+            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
+              <ol>
+                <li>Go to our <a href="/tutoring">tutoring page</a></li>
+                <li>Click "Book a session" or <a href="/contact">contact us</a></li>
+                <li>Tell us your exam (IELTS or CELPIP) and what you want help with</li>
+                <li>We'll reply with available times</li>
+                <li>Choose your time and pay via Stripe/PayPal/e-transfer</li>
+                <li>Get a Zoom link before your lesson</li>
+              </ol>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
+              What can we work on in tutoring?
+            </summary>
+            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
+              <ul>
+                <li><strong>Writing feedback:</strong> We read your essays and give detailed band-score feedback</li>
+                <li><strong>Speaking practice:</strong> We do mock speaking tests and give you feedback</li>
+                <li><strong>Grammar help:</strong> Confused about a grammar topic? We explain it clearly</li>
+                <li><strong>Strategy:</strong> Time management, test-day strategy, answering different question types</li>
+                <li><strong>Confidence:</strong> Nervous about the test? We help you practice and feel ready</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
+              Do you offer a test guarantee?
+            </summary>
+            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
+              <p>We can't guarantee a test score (every student is different), but we can guarantee you'll improve. If you're not satisfied with tutoring quality after your first 2 hours, we offer a full refund—no questions asked.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
+              How long do most students study with a tutor?
+            </summary>
+            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
+              <p>It depends on your starting level and target score:</p>
+              <ul>
+                <li><strong>Beginner → Band 6:</strong> Usually 20-30 hours</li>
+                <li><strong>Band 5-6 → Band 7:</strong> Usually 15-25 hours</li>
+                <li><strong>Band 7 → Band 8:</strong> Usually 10-15 hours</li>
+              </ul>
+              <p>Many students book 2-4 hours per week and study on their own the rest of the time.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
+              Can I get a group discount?
+            </summary>
+            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
+              <p>Yes! If you have 3 or more people interested in tutoring, <a href="/contact">contact us</a> for a group rate. We offer discounts for 3+ students.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- ESSAY CORRECTION FAQ -->
+      <div>
+        <h2>About essay correction</h2>
+        <div class="faq-group">
+          <details class="faq-item">
+            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
+              How much does essay correction cost?
+            </summary>
+            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
+              <p><strong>CA$15 per essay.</strong> This includes detailed feedback on grammar, vocabulary, organization, and estimated band score.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
+              How long does it take to get feedback?
+            </summary>
+            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
+              <p>We usually provide feedback within 24-48 hours. During busy times (test season), it may take up to 72 hours.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
+              What kind of feedback do I get?
+            </summary>
+            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
+              <p>For each essay, you get:</p>
+              <ul>
+                <li>Grammar and vocabulary corrections (inline)</li>
+                <li>Organization feedback (what works, what doesn't)</li>
+                <li>Estimated IELTS/CELPIP band score</li>
+                <li>2-3 main areas to improve</li>
+                <li>Specific tips for your next essay</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
+              Can you correct informal emails or letters too?
+            </summary>
+            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
+              <p>Yes! We can correct any writing from IELTS Task 1 (letter, email, report) or CELPIP writing tasks. The price is the same: CA$15 per piece.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- GENERAL FAQ -->
+      <div>
+        <h2>General questions</h2>
+        <div class="faq-group">
+          <details class="faq-item">
+            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
+              Who is IELTS Corner for?
+            </summary>
+            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
+              <p>Anyone preparing for IELTS or CELPIP. We work with:</p>
+              <ul>
+                <li>Students who want to study alone with free lessons</li>
+                <li>Students who want personal help from a tutor</li>
+                <li>Students who want feedback on their writing</li>
+                <li>Beginners (A1) to advanced learners (C1)</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
+              What payment methods do you accept?
+            </summary>
+            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
+              <ul>
+                <li><strong>Stripe:</strong> Credit/debit cards (Visa, Mastercard, American Express)</li>
+                <li><strong>PayPal:</strong> PayPal accounts and cards</li>
+                <li><strong>e-Transfer:</strong> Canadian bank e-transfer (only)</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
+              Can I get a refund?
+            </summary>
+            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
+              <ul>
+                <li><strong>Tutoring:</strong> Full refund for first 2 hours if unsatisfied (within 7 days)</li>
+                <li><strong>Essay correction:</strong> Full refund if you're not satisfied with quality</li>
+                <li><strong>eBook:</strong> Full refund for first 30 days</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
+              Is there a privacy policy?
+            </summary>
+            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
+              <p>Yes. We take privacy seriously. Your information is safe. <a href="/privacy">Read our privacy policy →</a></p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
+              Still have questions?
+            </summary>
+            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
+              <p><a href="/contact">Contact us →</a> We're happy to help. Email, WhatsApp, or contact form.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+  </section>
+</Layout>
+
+<style>
+  .faq-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+  }
+
+  .faq-item {
+    all: revert;
+  }
+
+  .faq-item summary:hover {
+    background-color: var(--text-muted) !important;
+    opacity: 0.7;
+  }
+
+  .faq-item[open] summary {
+    background-color: var(--accent-light) !important;
+    color: var(--accent);
+  }
+</style>

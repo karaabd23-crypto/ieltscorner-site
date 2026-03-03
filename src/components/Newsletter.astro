@@ -1,0 +1,71 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  placeholder?: string;
+  buttonText?: string;
+  showBackground?: boolean;
+}
+
+const {
+  title = "Get weekly IELTS tips",
+  description = "Tips, strategies, and new lessons delivered to your inbox every week. Unsubscribe anytime.",
+  placeholder = "Your email",
+  buttonText = "Join now →",
+  showBackground = true
+} = Astro.props;
+---
+
+<div 
+  class:list={[
+    "newsletter-signup",
+    { "with-background": showBackground }
+  ]}
+  style={showBackground ? "padding: var(--s-4); background: var(--accent-light); border-radius: 8px; text-align: center;" : ""}
+>
+  <h3 style={`margin-top: 0; ${showBackground ? '' : 'text-align: center;'}`}>{title}</h3>
+  <p style={`color: var(--text-muted); ${showBackground ? '' : 'text-align: center;'}`}>{description}</p>
+  
+  <form 
+    name="newsletter"
+    method="POST"
+    netlify
+    data-netlify="true"
+    class="newsletter-form"
+    style="display: grid; grid-template-columns: 1fr auto; gap: var(--s-1); margin-top: var(--s-2);"
+  >
+    <input 
+      type="hidden" 
+      name="form-name" 
+      value="newsletter" 
+    />
+    
+    <input
+      type="email"
+      name="email"
+      placeholder={placeholder}
+      required
+      style="padding: var(--s-2); border: 1px solid var(--text-muted); border-radius: 4px; font-size: 1rem; background: white;"
+    />
+    
+    <button 
+      type="submit"
+      class="btn btn-primary"
+      style="white-space: nowrap;"
+    >
+      {buttonText}
+    </button>
+  </form>
+
+  <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: var(--s-2); margin-bottom: 0;">
+    No spam. We respect your inbox. <a href="/privacy" style="color: var(--accent);">Privacy policy</a>
+  </p>
+</div>
+
+<style>
+  @media (max-width: 640px) {
+    :global(.newsletter-form) {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

@@ -1,0 +1,140 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="About — IELTS Corner"
+  description="Learn about IELTS Corner, our mission to help students achieve their test score goals, and our approach to English teaching."
+  type="page"
+>
+  <section class="section" style="padding-top: var(--s-6);">
+    <div class="hero" style={`--hero-bg: url('/heroes/about.png');`}>
+      <div class="hero-content">
+        <h1>About IELTS Corner</h1>
+        <p>We help students get the test scores they need.</p>
+      </div>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <!-- ABOUT SECTION -->
+    <div class="grid grid-2">
+      <div>
+        <h2>Our mission</h2>
+        <p>Most students fail the IELTS and CELPIP because they don't learn the right things. They waste time on lessons that don't help their score.</p>
+        <p>At IELTS Corner, we focus on what matters: the structures, words, and strategies that actually improve test scores.</p>
+        <p>We believe every student can get Band 7+ (IELTS) or CLB 9+ (CELPIP). You just need the right lessons and the right practice.</p>
+      </div>
+
+      <div class="surface" style="padding: var(--s-4); border-radius: 8px; background: var(--accent-light);">
+        <h3 style="margin-top: 0;">What we offer</h3>
+        <div class="stack" style="gap: var(--s-2);">
+          <div>
+            <strong>502 free lessons</strong>
+            <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted);">Grammar, vocabulary, writing, and speaking lessons for all levels.</p>
+          </div>
+          <div>
+            <strong>1-on-1 tutoring</strong>
+            <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted);">CA$30/hour live lessons with personalized feedback.</p>
+          </div>
+          <div>
+            <strong>Essay correction</strong>
+            <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted);">CA$15 per essay with detailed band-score feedback.</p>
+          </div>
+          <div>
+            <strong>Comprehensive eBook</strong>
+            <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted);">$19.99 complete grammar and writing guide for IELTS/CELPIP.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+
+    <!-- WHY CHOOSE US -->
+    <div>
+      <h2>Why students choose IELTS Corner</h2>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3 style="margin-top: 0;">We focus on YOUR exam</h3>
+          <p>All our lessons are for IELTS and CELPIP. We don't teach general English—we teach what you need to pass.</p>
+        </article>
+
+        <article class="card">
+          <h3 style="margin-top: 0;">Clear, simple English</h3>
+          <p>Our lessons are written for students like you. No confusing grammar jargon. Just clear explanations and examples.</p>
+        </article>
+
+        <article class="card">
+          <h3 style="margin-top: 0;">Real examples and practice</h3>
+          <p>Every lesson uses real examples from IELTS/CELPIP tests. You practice with materials that match the actual exam.</p>
+        </article>
+
+        <article class="card">
+          <h3 style="margin-top: 0;">Organized by difficulty</h3>
+          <p>Lessons are arranged from A1 (beginner) to C1 (advanced). Start where you are. Move at your own pace.</p>
+        </article>
+
+        <article class="card">
+          <h3 style="margin-top: 0;">Quick and practical</h3>
+          <p>No long boring videos. Our lessons take 5–15 minutes. You leave with one useful thing you can use immediately.</p>
+        </article>
+
+        <article class="card">
+          <h3 style="margin-top: 0;">One-on-one support</h3>
+          <p>Want personal help? Book a tutor. Get individual attention. Get feedback on your writing. Be confident on test day.</p>
+        </article>
+      </div>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+
+    <!-- APPROACH SECTION -->
+    <div class="surface feature" style="padding: var(--s-5);">
+      <h2>Our teaching approach</h2>
+      <div class="grid grid-2">
+        <div class="stack">
+          <h3>1. Start with the structure</h3>
+          <p>We show you the grammar structure or rule first. You see exactly how it works, with simple examples.</p>
+        </div>
+
+        <div class="stack">
+          <h3>2. Real exam examples</h3>
+          <p>Then we show real sentences from IELTS and CELPIP tests. You see the rule in action from actual exams.</p>
+        </div>
+
+        <div class="stack">
+          <h3>3. Common mistakes</h3>
+          <p>We show what students do wrong. You learn what NOT to do, so you avoid the mistakes others make.</p>
+        </div>
+
+        <div class="stack">
+          <h3>4. Practice and tips</h3>
+          <p>Finally, we give you practice exercises and IELTS/CELPIP tips. You apply what you learned right away.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+
+    <!-- CONTACT SECTION -->
+    <div style="text-align: center;">
+      <h2>Ready to get your score?</h2>
+      <p>Start with our free lessons. If you want personal help, book a tutor.</p>
+      <div class="cluster" style="justify-content: center; margin-top: var(--s-2);">
+        <a class="btn btn-primary" href="/lessons">Explore lessons →</a>
+        <a class="btn" href="/tutoring">See tutoring</a>
+      </div>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+  </section>
+</Layout>
+
+<style>
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
