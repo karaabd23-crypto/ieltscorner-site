@@ -1,5 +1,6 @@
 ---
 import Layout from "./Layout.astro";
+import WebinarCTA from "../components/WebinarCTA.astro";
 
 // TypeScript declaration for AdSense
 declare global {
@@ -163,6 +164,13 @@ const {
           <p class="muted" style="margin:0;">If you need a printable worksheet for this topic, send a request through tutoring and include the lesson title so the material can match your current level.</p>
         </div>
       </aside>
+    </div>
+  </section>
+
+  <!-- Webinar CTA - Before Footer -->
+  <section class="section-sm">
+    <div class="shell">
+      <WebinarCTA />
     </div>
   </section>
 </Layout>

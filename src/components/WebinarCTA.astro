@@ -1,0 +1,132 @@
+---
+/**
+ * WebinarCTA - Horizontal divider-style webinar registration prompt
+ * Used on lesson pages and other content pages
+ */
+---
+
+<div class="webinar-cta">
+  <div class="webinar-cta-content">
+    <div class="webinar-cta-text">
+      <p class="webinar-cta-label">Live Session</p>
+      <p class="webinar-cta-title">Join the CELPIP Webinar</p>
+      <p class="webinar-cta-schedule">Every Saturday at 6:00 PM PST • $12/session</p>
+    </div>
+    <a href="/webinar" class="btn btn-primary webinar-cta-btn">
+      Register now →
+    </a>
+  </div>
+</div>
+
+<style>
+  .webinar-cta {
+    background: linear-gradient(90deg, var(--accent) 0%, rgba(217, 72, 72, 0.9) 100%);
+    border-radius: 12px;
+    padding: var(--s-3) var(--s-4);
+    margin: var(--s-6) 0;
+    color: white;
+  }
+
+  .webinar-cta-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-4);
+  }
+
+  .webinar-cta-text {
+    flex: 1;
+  }
+
+  .webinar-cta-label {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    opacity: 0.95;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .webinar-cta-title {
+    margin: var(--s-1) 0 var(--s-2);
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .webinar-cta-schedule {
+    margin: 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+  }
+
+  .webinar-cta-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    background: white;
+    color: var(--accent);
+    font-weight: 700;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+
+  .webinar-cta-btn:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Tablet: stack vertically */
+  @media (max-width: 768px) {
+    .webinar-cta {
+      padding: var(--s-2) var(--s-3);
+    }
+
+    .webinar-cta-content {
+      flex-direction: column;
+      gap: var(--s-2);
+      align-items: flex-start;
+    }
+
+    .webinar-cta-title {
+      font-size: 1.1rem;
+    }
+
+    .webinar-cta-schedule {
+      font-size: 0.9rem;
+    }
+
+    .webinar-cta-btn {
+      width: 100%;
+      text-align: center;
+      padding: 11px 20px;
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Mobile: make it even tighter */
+  @media (max-width: 560px) {
+    .webinar-cta {
+      padding: var(--s-2);
+      margin: var(--s-4) 0;
+    }
+
+    .webinar-cta-label {
+      font-size: 0.75rem;
+    }
+
+    .webinar-cta-title {
+      font-size: 1rem;
+      margin: var(--s-1) 0;
+    }
+
+    .webinar-cta-schedule {
+      font-size: 0.85rem;
+    }
+
+    .webinar-cta-btn {
+      padding: 10px 16px;
+      font-size: 0.85rem;
+    }
+  }
+</style>
