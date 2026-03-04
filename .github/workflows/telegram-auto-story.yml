@@ -1,22 +1,18 @@
-name: Auto-post Telegram content
+name: Auto-post Telegram stories
 
 on:
   schedule:
-    # 5 posts per day: 9am, 12pm, 3pm, 6pm, 9pm UTC
-    - cron: "0 9,12,15,18,21 * * *"
+    # Post stories 3 times per day: 10am, 2pm, 7pm UTC
+    - cron: "0 10,14,19 * * *"
   workflow_dispatch:
     inputs:
-      topic:
-        description: "Optional forced topic"
-        required: false
-        default: ""
       dry_run:
         description: "Run without posting"
         required: false
         default: "false"
 
 jobs:
-  telegram-post:
+  telegram-story:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -35,23 +31,16 @@ jobs:
             exit 1
           fi
 
-      - name: Generate and publish Telegram post
+      - name: Generate and publish Telegram story
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: gpt-4.1-mini
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          TELEGRAM_CHANNEL_URL: ${{ secrets.TELEGRAM_CHANNEL_URL }}
-          TELEGRAM_POST_TEMPLATE: ${{ secrets.TELEGRAM_POST_TEMPLATE }}
         run: |
-          TOPIC="${{ github.event.inputs.topic || '' }}"
           DRY_RUN="${{ github.event.inputs.dry_run || 'false' }}"
 
-          CMD="node scripts/post-telegram-content.mjs"
-
-          if [ -n "$TOPIC" ]; then
-            CMD="$CMD --topic \"$TOPIC\""
-          fi
+          CMD="node scripts/post-telegram-story.mjs"
 
           if [ "$DRY_RUN" = "true" ]; then
             CMD="$CMD --dry-run"
