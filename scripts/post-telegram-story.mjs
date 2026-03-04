@@ -92,45 +92,52 @@ function pickStoryTopic() {
 function fallbackStory(topicObj) {
   const { type, emoji } = topicObj;
 
-  // Comprehensive fallback examples with Persian and examples + SEPARATE quiz data
+  // Updated to match the model: conversational, dual-language, contextual
   const examples = {
     'vocab-tip': {
-      content: `${emoji} WORD POWER: "Serendipity" ✨
+      content: `${emoji} Word Power: "Serendipity"
 
-━━━━━━━━━━━━━━━━━━━━━
-📌 Meaning (فارسی): اتفاق خوش (یافتن چیزی خوب به طور تصادفی)
+Let's explore this wonderful word together! 🎯
+
+📌 Meaning:
+✅ A happy accident; finding something good by pure chance
+(فارسی): اتفاق خوش، یافتن چیزی خوب به طور تصادفی
 
 ✍️ Example:
 "Meeting you here was pure serendipity!"
+"دیدار با تو اینجا اتفاق خوش محسوب میشه!"
 
-━━━━━━━━━━━━━━━━━━━━━
-💪 Use it today in conversation!`,
+💡 Tip: Use this when something wonderful happens unexpectedly!
+
+Try using it today! 💪`,
       quiz: {
-        question: '❓ Which sentence uses "serendipity" correctly?',
+        question: '❓ Complete: "Finding my lost passport right before my flight was pure ___."',
         options: [
-          'The serendipity was planned by my manager',
-          'Finding this book was pure serendipity',
-          'I serendipity like this restaurant'
+          'serendipity',
+          'mistake',
+          'coincidence'
         ],
-        correctOptionId: 1
+        correctOptionId: 0
       }
     },
 
     'grammar-hack': {
-      content: `${emoji} GRAMMAR FIX: Present Perfect ⏱️
+      content: `${emoji} Grammar Fix: Present Perfect
 
-━━━━━━━━━━━━━━━━━━━━━
-🔴 WRONG: "I live here for 5 years"
-🟢 RIGHT: "I've lived here for 5 years"
+Let's clear up this common confusion! 🎯
 
-📌 (فارسی): برای وقتهای طولانی ongoing از Present Perfect استفاده کن
+📌 The Rule:
+❌ WRONG: "I live here for 5 years"
+✅ RIGHT: "I've lived here for 5 years"
+(فارسی): برای مدت طولانی از Present Perfect استفاده کن
 
 ✍️ Examples:
-✅ "She's been a doctor for 10 years"
-✅ "They've lived in Paris since 2020"
+"She's been a doctor for 10 years"
+"او ۱۰ سال است که پزشک است"
 
-━━━━━━━━━━━━━━━━━━━━━
-🎯 Practice with time expressions NOW!`,
+💡 Tip: Use Present Perfect when the time period is still ongoing!
+
+Master this now! 🎯`,
       quiz: {
         question: '❓ Choose the correct sentence:',
         options: [
@@ -143,144 +150,170 @@ function fallbackStory(topicObj) {
     },
 
     'idiom-quick': {
-      content: `${emoji} TODAY'S IDIOM: "Hit the nail on the head" 🔨
+      content: `${emoji} Idiom of the Day: "Hit the nail on the head"
 
-━━━━━━━━━━━━━━━━━━━━━
-📌 Meaning: دقیقاً درست، exact point را بیان کردن
+Let's explore this powerful expression! 💛
+
+📌 Meaning:
+✅ To say something that is exactly right or correct
+(فارسی): دقیقاً درست بودن، حق گفتن
 
 ✍️ Example:
 "Your analysis really hit the nail on the head!"
+"تجزیه‌تحلیل تو کاملاً صحیح بود!"
 
-━━━━━━━━━━━━━━━━━━━━━
-💬 Use this in your next discussion!`,
+💡 Tip: Use this to praise someone's insight or correct observation!
+
+Try it in conversation! 🎯`,
       quiz: {
-        question: '❓ What does "hit the nail on the head" mean?',
+        question: '❓ Complete: "When she said the project would fail, she really ___ because it did."',
         options: [
-          'To be exactly right about something',
-          'To hurt someone with a hammer',
-          'To start a new project'
+          'hit the nail on the head',
+          'broke the ice',
+          'let the cat out of the bag'
         ],
         correctOptionId: 0
       }
     },
 
     'pronunciation': {
-      content: `${emoji} SAY IT RIGHT: "Often" 🗣️
+      content: `${emoji} Pronunciation Guide: "Often"
 
-━━━━━━━━━━━━━━━━━━━━━
-Word: OFTEN
-❌ Wrong: OFF-ten (emphasize 't')
-✅ Right: OFF-en (silent 't')
+Let's say this word correctly! 🗣️
 
-📌 (فارسی): تلفظ "OF-en" است، نه "OF-ten"
+📌 The Correct Way:
+✅ Say: OFF-en (T is silent!)
+❌ NOT: OFF-ten (with clear T)
+(فارسی): تلفظ "آفن" است، نه "آفتن"
 
-🎯 Practice: "I often go to the coffee shop"
+✍️ Example in use:
+"I often go to that coffee shop"
+"من اغلب به آن کافه می‌روم"
 
-━━━━━━━━━━━━━━━━━━━━━
-🎧 Listen and repeat 3 times!`,
+💡 Tip: The 't' is silent – it sounds almost like a 'd' sound!
+
+Practice now! 🎧`,
       quiz: {
         question: '❓ Which pronunciation is correct for "often"?',
         options: [
-          'OFF-ten (clear T sound)',
-          'OFF-en (T is silent/reduced)',
-          'O-FEE-ten'
+          'OFF-en (silent T)',
+          'OFF-ten (clear T)',
+          'O-FEN (one syllable)'
         ],
-        correctOptionId: 1
+        correctOptionId: 0
       }
     },
 
     'expression': {
-      content: `${emoji} REACT LIKE A NATIVE: "That's brilliant!" 💯
+      content: `${emoji} Expression Upgrade: React Better
 
-━━━━━━━━━━━━━━━━━━━━━
-Instead of basic "very good":
-❌ "Very good"
-✅ "Brilliant!"
+Let's sound more native! 💬
+
+📌 Instead of "very good" say:
+✅ "Brilliant!" 
 ✅ "Fantastic!"
 ✅ "Outstanding!"
+(فارسی): از این لغات قوی‌تر اسفاده کن!
 
-📌 (فارسی): native speakers از این expressions استفاده میکنند
+✍️ Example:
+Instead: "That was very good"
+Better: "That was brilliant!"
+"بهتر از این بود نگفت!"
 
-━━━━━━━━━━━━━━━━━━━━━
-⬆️ Level up your English today!`,
+💡 Tip: Native speakers love these stronger expressions!
+
+Upgrade your English today! ⬆️`,
       quiz: {
-        question: '❓ Which expression sounds most natural?',
+        question: '❓ Which response sounds most natural from a native speaker?',
         options: [
-          'Your work is very good',
-          'Your work is brilliant',
-          'Your work is nice'
+          'Your presentation was very good',
+          'Your presentation was outstanding',
+          'Your presentation was nice'
         ],
         correctOptionId: 1
       }
     },
 
     'vocab-pair': {
-      content: `${emoji} CONFUSING PAIR: Affect vs. Effect 🎯
+      content: `${emoji} Confusing Pair: Affect vs. Effect
 
-━━━━━━━━━━━━━━━━━━━━━
-AFFECT = فعل (تحت تأثیر قرار دادن، تاثیر گذاشتن)
-EFFECT = اسم (نتیجه، تاثیر)
+Let's solve this once and for all! 🔄
+
+📌 The Difference:
+AFFECT = فعل (تاثیر گذاشتن، تحت تاثیر قرار دادن)
+EFFECT = اسم (نتیجه، اثر)
 
 ✍️ Examples:
-✅ "The rain affects my mood" (verb)
-✅ "The effect was dramatic" (noun)
+"The rain affects my mood" (verb)
+"باران بر روحیه‌ام تاثیر می‌گذارد"
 
-━━━━━━━━━━━━━━━━━━━━━
-🎯 Bookmark this pair NOW!`,
+"The effect was dramatic" (noun)
+"اثر آن تاثیرگذار بود"
+
+💡 Tip: AFFECT = Action, EFFECT = End result!
+
+Bookmark this! 🎯`,
       quiz: {
-        question: '❓ Fill the blank: "This change will _____ our budget"',
+        question: '❓ Choose the correct word: "Lack of sleep can seriously _____ your grades."',
         options: [
-          'affect (verb)',
-          'effect (noun)',
-          'Both are correct'
+          'affect',
+          'effect',
+          'afect'
         ],
         correctOptionId: 0
       }
     },
 
     'phrase-boost': {
-      content: `${emoji} SAY THIS INSTEAD: Professional Boosters 📈
+      content: `${emoji} Professional Language: Level Up
 
-━━━━━━━━━━━━━━━━━━━━━
-Instead of Common Words: Say...
+Sound more impressive! 📈
+
+📌 Replacements to Use:
 ❌ "Very good" → ✅ "Exceptional"
 ❌ "Nice work" → ✅ "Impressive effort"
-❌ "OK project" → ✅ "Well-executed project"
+❌ "Good idea" → ✅ "Innovative approach"
+(فارسی): از واژگان حرفه‌ای‌تر استفاده کن!
 
-📌 همینطور در فارسی: از واژگان قوی تر استفاده کن
+✍️ Example:
+At work: "That's an innovative approach to solving this!"
+در کار: "این یک رویکرد نوآورانه برای حل مسئله است!"
 
-━━━━━━━━━━━━━━━━━━━━━
-💼 Use these in meetings and emails!`,
+💡 Tip: These words stand out in meetings and emails!
+
+Use them today! 💼`,
       quiz: {
-        question: '❓ Which sounds most professional?',
+        question: '❓ Which sounds most professional in a work email?',
         options: [
-          'That\'s very good work',
-          'That\'s exceptional work',
-          'That\'s nice'
+          'Your report was very good',
+          'Your report demonstrates exceptional attention to detail',
+          'Your report was nice'
         ],
         correctOptionId: 1
       }
     },
 
     'quick-quiz': {
-      content: `${emoji} TEST YOUR KNOWLEDGE: Present vs. Past 🧠
+      content: `${emoji} Test Your Knowledge: Past Tenses
 
-━━━━━━━━━━━━━━━━━━━━━
-Key Rule:
-📌 (فارسی): با specific past time از Simple Past استفاده کن
+Let's check what you know! 🧠
 
-✍️ Example:
-❌ "I have been to Paris last year"
-✅ "I went to Paris last year"
+📌 Key Rule:
+With specific past time → Use Simple Past
+(فارسی): با زمان‌های مشخص گذشته از Simple Past استفاده کن
 
-━━━━━━━━━━━━━━━━━━━━━
-🎯 Now test yourself!`,
+❌ WRONG: "I have been to Paris last year"
+✅ RIGHT: "I went to Paris last year"
+
+💡 Because "last year" = specific past time!
+
+Ready to test? Let's go! 🎯`,
       quiz: {
         question: '❓ Which sentence is correct?',
         options: [
-          'I have been to Paris last year',
-          'I went to Paris last year',
-          'I have went to Paris last year'
+          'I have visited Japan last summer',
+          'I visited Japan last summer',
+          'I have been visiting Japan last summer'
         ],
         correctOptionId: 1
       }
@@ -288,10 +321,19 @@ Key Rule:
   };
 
   const storyData = examples[type] || {
-    content: `${emoji} ENGLISH TIP\n\n━━━━━━━━━━━━━━━━━━━━━\n📌 Master one concept at a time!\n🤖 More tips? DM the bot!\n━━━━━━━━━━━━━━━━━━━━━`,
+    content: `${emoji} English Tip of the Day
+
+Let's learn something new! 💡
+
+📌 Today's Focus:
+Master one concept at a time!
+
+💡 More tips coming your way!
+
+Stay tuned! 🚀`,
     quiz: {
-      question: '❓ Do you find these tips helpful?',
-      options: ['Yes!', 'Very helpful', 'Extremely helpful'],
+      question: '❓ Are you enjoying these daily tips?',
+      options: ['Yes!', 'Very much!', 'Extremely helpful!'],
       correctOptionId: 0
     }
   };
@@ -307,38 +349,53 @@ async function generateStoryWithOpenAI(topicObj, apiKey, model) {
 
   const { type, emoji, topic } = topicObj;
 
-  const prompt = `You are an English language coach creating engaging Telegram Story content (text-only, no images).
-Generate BOTH content AND quiz data separately.
+  const prompt = `You are an engaging English language coach creating Telegram stories that feel conversational and helpful.
 
 Topic: ${topic}
 Type: ${type}
 Emoji to start with: ${emoji}
 
-Create a response with this EXACT JSON structure:
+Create a response as VALID JSON with this exact structure:
 {
-  "content": "[emoji] [TITLE]\\n\\n━━━━━━━━━━━━━━━━━━━━━\\n[Teaching point with Persian explanation]\\n\\n✍️ Examples:\\n[Examples]\\n\\n━━━━━━━━━━━━━━━━━━━━━\\n[Call-to-action]",
+  "content": "text content here",
   "quiz": {
-    "question": "❓ [Quiz question]",
-    "options": ["[Option A]", "[Option B]", "[Option C]"],
-    "correctOptionId": [0, 1, or 2]
+    "question": "quiz question here",
+    "options": ["option 1", "option 2", "option 3"],
+    "correctOptionId": 0
   }
 }
 
-Guidelines for content:
-- Maximum 250 words
-- Use lots of emojis (💡✨🎯🗣️💬🔄⬆️)
-- Focus ONLY on vocabulary, grammar, idioms, expressions—NOT exam tips
-- Include Persian explanation in parentheses like: (فارسی): [explanation]
-- Use 2 example sentences with ✅ or ❌
-- Use Unicode borders: ━━━━━━━━━━━━━━━━━━━━━
-- Be conversational and mobile-friendly
+CONTENT GUIDELINES (conversational, like a friend):
+1. Start with emoji and engaging hook (e.g., "Let's explore this word together!")
+2. Include a "Meaning:" section with:
+   - English explanation (1-2 lines)
+   - Persian translation in parentheses: (فارسی): [translation]
+3. Include an "Example:" section with:
+   - English sentence using the word/phrase
+   - Persian translation below it
+4. Include a "Tip:" section with practical advice
+5. Use lots of emojis naturally throughout (💛✨🎯💬⬆️🎧)
+6. Keep tone warm, encouraging, and personal
+7. Maximum 200 words
 
-Guidelines for quiz:
-- Question should start with ❓
-- Provide exactly 3 options (A, B, C style)
-- correctOptionId must be 0, 1, or 2 (index of correct answer)
-- Make sure the correct answer teaches the lesson
-- Keep options concise
+QUIZ GUIDELINES (contextual, not just definitions):
+1. Question should be CONTEXTUAL - embed the word/phrase in a realistic sentence/situation
+2. Use fill-in-the-blank format when possible (like the model)
+3. Provide 3 plausible options (not obviously wrong)
+4. The correct answer teaches through usage
+5. correctOptionId must be 0, 1, or 2 (array index)
+
+STYLE MODEL TO FOLLOW:
+Content should be as conversational as this example:
+"Let's explore this wonderful word together! 
+📌 Meaning: A happy accident; finding something good by pure chance
+(فارسی): اتفاق خوش، یافتن چیزی خوب به طور تصادفی
+✍️ Example: "Meeting you here was pure serendipity!"
+💡 Tip: Use this when something wonderful happens unexpectedly!"
+
+Quiz should be contextual like:
+Q: "Complete: 'Finding my lost passport right before my flight was pure ___.'
+Options: serendipity / mistake / coincidence"
 
 Return ONLY valid JSON, no other text.`;
 
@@ -354,7 +411,7 @@ Return ONLY valid JSON, no other text.`;
         messages: [
           {
             role: 'system',
-            content: 'You create brief, engaging English learning content with Persian explanations as JSON responses.',
+            content: 'You create engaging, conversational English learning content with Persian explanations. Your style is warm, personal, and encouraging. Return valid JSON only.',
           },
           { role: 'user', content: prompt },
         ],
