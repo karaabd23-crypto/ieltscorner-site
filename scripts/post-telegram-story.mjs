@@ -233,6 +233,9 @@ async function postStoryWithImage(botToken, chatId, story, imagePath) {
   const ext = path.extname(fileName).slice(1).toLowerCase();
   const mimeType = ext === 'png' ? 'image/png' : 'image/jpeg';
   
+  // Check if this is a webinar template (post as-is without caption)
+  const isWebinarTemplate = fileName.toLowerCase().includes('webinar');
+  
   // Create proper multipart/form-data
   const boundary = `----FormBoundary${Date.now()}${Math.random().toString(36)}`;
   
@@ -245,12 +248,14 @@ async function postStoryWithImage(botToken, chatId, story, imagePath) {
     `${chatId}\r\n`
   ));
   
-  // caption field
-  parts.push(Buffer.from(
-    `--${boundary}\r\n` +
-    `Content-Disposition: form-data; name="caption"\r\n\r\n` +
-    `${story.text}\r\n`
-  ));
+  // caption field (only for non-webinar templates)
+  if (!isWebinarTemplate) {
+    parts.push(Buffer.from(
+      `--${boundary}\r\n` +
+      `Content-Disposition: form-data; name="caption"\r\n\r\n` +
+      `${story.text}\r\n`
+    ));
+  }
   
   // photo field with image data
   parts.push(Buffer.from(
@@ -277,6 +282,13 @@ async function postStoryWithImage(botToken, chatId, story, imagePath) {
   const data = await response.json();
   if (!response.ok || !data.ok) {
     throw new Error(`Telegram API error: ${JSON.stringify(data)}`);
+  }
+  
+  // Log what was posted
+  if (isWebinarTemplate) {
+    console.log(`[template] Posted webinar template as-is: ${fileName}`);
+  } else {
+    console.log(`[template] Posted ${fileName} with caption`);
   }
   
   return data;
