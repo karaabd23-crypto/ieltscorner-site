@@ -300,17 +300,18 @@ async function renderTextOnImage(imageBuffer, text) {
   const height = metadata.height;
   
   // Create SVG with text overlay
-  // Position text in the lower portion of the image (safe area for long text)
-  const fontSize = Math.max(24, Math.floor(width / 15)); // Scale font with image width
-  const lineHeight = fontSize * 1.4;
+  const fontSize = Math.max(20, Math.floor(width / 20)); // Scale font with image width
+  const lineHeight = fontSize * 1.3;
+  const padding = 30;
+  const maxWidth = width - (padding * 2);
   
   // Split text into lines for better wrapping
-  const maxCharsPerLine = Math.floor(width / (fontSize * 0.5)); // Rough estimate
+  const maxCharsPerLine = Math.floor(maxWidth / (fontSize * 0.5));
   const lines = [];
   let currentLine = '';
   
   for (const word of text.split(' ')) {
-    if ((currentLine + word).length <= maxCharsPerLine) {
+    if ((currentLine + (currentLine ? ' ' : '') + word).length <= maxCharsPerLine) {
       currentLine += (currentLine ? ' ' : '') + word;
     } else {
       if (currentLine) lines.push(currentLine);
@@ -319,36 +320,42 @@ async function renderTextOnImage(imageBuffer, text) {
   }
   if (currentLine) lines.push(currentLine);
   
-  // Calculate text block height
-  const textBlockHeight = lines.length * lineHeight + 40;
-  const yStart = height - textBlockHeight - 20; // 20px padding from bottom
+  // Calculate text block
+  const textBlockHeight = lines.length * lineHeight + 20;
+  const yStart = height - textBlockHeight - 20;
   
-  // Create SVG
-  let svgText = '';
+  // Build SVG with proper positioning
+  let svgContent = `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="textShadow" x="-50%" y="-50%" width="200%" height="200%">
+        <feDropShadow dx="2" dy="2" stdDeviation="4" flood-opacity="0.9"/>
+      </filter>
+    </defs>
+    <rect width="${width}" height="${height}" fill="rgba(0,0,0,0.2)" y="${yStart - 10}"/>`;
+  
+  // Add each line separately
   lines.forEach((line, index) => {
-    const y = yStart + 30 + (index * lineHeight);
-    svgText += `<text x="50%" y="${y}" text-anchor="middle" font-size="${fontSize}" font-weight="bold" fill="white" font-family="Arial, sans-serif" textLength="${width - 100}">${escapeXml(line)}</text>`;
+    const y = yStart + 25 + (index * lineHeight);
+    svgContent += `
+    <text 
+      x="${width / 2}" 
+      y="${y}" 
+      text-anchor="middle" 
+      font-size="${fontSize}" 
+      font-weight="bold" 
+      fill="white" 
+      font-family="Arial, sans-serif"
+      filter="url(#textShadow)"
+    >${escapeXml(line)}</text>`;
   });
   
-  const svg = `
-    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
-          <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.8"/>
-        </filter>
-      </defs>
-      <rect width="${width}" height="${height}" fill="rgba(0,0,0,0.3)" y="${yStart}"/>
-      <g filter="url(#shadow)">
-        ${svgText}
-      </g>
-    </svg>
-  `;
+  svgContent += `</svg>`;
   
   // Composite SVG text onto image
   const compositeBuffer = await sharp(imageBuffer)
     .composite([
       {
-        input: Buffer.from(svg),
+        input: Buffer.from(svgContent),
         top: 0,
         left: 0,
       }
