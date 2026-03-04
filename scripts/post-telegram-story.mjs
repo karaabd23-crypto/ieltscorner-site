@@ -451,66 +451,68 @@ Start implementing TODAY and watch your career transformation! 📈💪🚀`,
     },
 
     'quick-quiz': {
-      content: `🧠 Test Your Knowledge: Past Tenses (The Tricky Timing!)
+      content: `🧠 Grammar Guide: "Used to" vs "Would" (Past Habits Explained!)
 
-Let's test what you've learned! 🎯✨🎓
+This one confuses SO many students! Let's fix it forever! 🎯✨🧠
 
-Timing is EVERYTHING in English! ⏰ One tiny word can change EVERYTHING! 😅 This is why ESL students love to trip up on past tenses – the rules seem simple until reality hits! 💥 But if you understand the REASON behind the rule, you'll never make the mistake again! 🎓 You'll be a grammar master! 👑
+Okay, here's the frustrating part: "used to" and "would" BOTH talk about past habits! 😅 They sound similar, they mean similar things... but there are sneaky differences! 🤔 Native speakers use them differently in specific situations, and when you use the wrong one, it sounds off! 👂 But don't worry – the rule is actually SO simple once you understand it! 💡
 
-This is seriously important because native speakers can TELL immediately when someone uses the wrong tense! 👂 They notice! It's like nails on a chalkboard for them! 😬 But don't worry – once you get this, you'll understand SO much more English!
+Here's what trips people up: Both phrases describe repeated actions in the past! ⏰ Both feel like "something I did a lot back then!" Both are used in storytelling! So your brain gets confused! 🤯 But here's the SECRET: they're NOT exactly interchangeable! There are specific moments where you HAVE to use one or the other!
 
-Here's the thing: Timing words are KEY! 🔑 Specific time = Simple Past. Open-ended time = Present Perfect. That's it! That's the whole rule! Simple, right? 🎯
+The crazy part? Most learners don't even realize there's a difference! 😄 But native speakers are VERY particular about which one they use! Once you learn this, you'll notice native speakers using these correctly ALL the time!
 
-📌 The Golden Rule (Write this down!):
-With specific past time → Use Simple Past 🕐
-With open-ended/ongoing → Use Present Perfect ⏳
-(فارسی): با زمان‌های مشخص گذشته از Simple Past استفاده کن
-با زمان‌های نامشخص یا ادامه‌دار از Present Perfect استفاده کن
+📌 The Key Difference (Write this down!):
+"USED TO" = A past habit that NO LONGER happens (it stopped!) 🛑
+"WOULD" = A past habit you SOMETIMES did for entertainment/pleasure 😄
+(فارسی): Used to = عادتی که دیگه انجام نمی‌دی / Would = عادتی که گاهی انجام می‌دادی
 
-❌ WRONG: "I have been to Paris last year" (NOPE! 🙅 Last year = finished!)
-✅ RIGHT: "I went to Paris last year" (YES! ✓ Specific time = Simple Past!)
+❌ WRONG: "When I was young, I would live in Paris" (NO! This is weird!)
+✅ RIGHT: "When I was young, I used to live in Paris" (YES! ✓ Finished habit!)
 
-Why? Because "last year" = a finished time period! It's done! ✅ Completed! Finished! Kaput! 🏁 Over and done with! The year passed! So use Simple Past!
+Why? Because LIVING somewhere is a STATE (not an action you CHOSE to do), so you use "used to," not "would"! 
 
-✍️ More Real Examples (Starting to make sense?):
-❌ "I have visited Japan last summer" – NO! Summer is over! Finished! 🙅
-✅ "I visited Japan last summer" – YES! Specific time = Simple Past! ✓ 🌞
+"WOULD" is for things you DID by choice repeatedly:
+✅ "When I was 10, I would play basketball every day after school" ⚽ (your choice!)
+✅ "She would always visit her grandmother on weekends" 👵 (repeated action)
+❌ NOT: "She would live with her grandmother" (living = state, not chosen action)
 
-❌ "She has written the email yesterday" – WRONG! Yesterday is specific!
-✅ "She wrote the email yesterday" – RIGHT! Yesterday = finished day! ✓
+✍️ Real Examples (Listen to the difference!):
+"I used to be frustrated with grammar, but now I understand!" 😊
+"من قبلاً با گرامر خیلی ناامید بودم، ولی حالا می‌فهمم!"
+(This habit completely changed – use "used to")
 
-❌ "I have lived here in 2020" – Wrong timing!
-✅ "I lived here in 2020" – Right! Specific year! ✓
+"When I was in university, I would study at the library every night." 📚
+"وقتی دانشجو بودم، هر شب تو کتابخانه درس می‌خوندم."
+(A repeated action you chose to do regularly – use "would")
 
-✅ BUT: "I have lived here SINCE 2020" – YES! Still living there! Ongoing! ⏳
+"I would often take a walk in that park" ✓ (repeated leisure activity)
+"من معمولاً در آن پارک قدم می‌زدم"
+vs.
+"I used to live near that park" ✓ (permanent situation that changed)
+"من قبلاً نزدیک آن پارک زندگی می‌کردم"
 
-✅ AND: "I have lived here FOR 6 years" – YES! Still happening! ⏳
-
-💡 The Key Difference (This is important!):
-"I visited Paris" vs "I've been to Paris" 🤔
-- "I visited" = Specific past (when? sometime, somewhere)
-- "I've been" = Anytime in my life! General experience! 🌍
-
-Same destination, TOTALLY DIFFERENT emphasis! 📍
+Pro tip: Think of it this way:
+✅ "USED TO" = something was TRUE about your past life (the state/situation)
+✅ "WOULD" = something you REPEATEDLY CHOSE to do (the action)
 
 Other examples:
-"I saw that movie yesterday" ✓ (specific day)
-"I've seen that movie" ✓ (sometime, not sure when)
+"I used to have curly hair" ✓ (state that changed – use "used to")
+"I used to work at a coffee shop" ✓ (job that changed – use "used to")
+"I would go to the beach every summer" ✓ (action you chose repeatedly – use "would")
 
-"They ate lunch at noon" ✓ (specific time)
-"They've eaten lunch already" ✓ (finished, but not sure when)
+💡 Pro Tip:
+If you can say "I DON'T anymore" – use "USED TO"! 🛑
+If you can say "I DID THIS repeatedly for fun" – use "WOULD"! 😄
 
-Pro tip: Listen to how natives talk – you'll hear "I went to..." WAY more than "I have been to..." when talking about specific past events! 🎧✨ Just LISTEN to native speakers and your brain will start picking up the pattern!
-
-You've got this! Time to test yourself! 🚀💪🎯`,
+Master this and you'll sound like a NATIVE speaker! 🎯💪✨`,
       quiz: {
-        question: '❓ Which sentence uses the CORRECT past tense?',
+        question: '❓ Which is CORRECT? "When I was young, I _____ play video games every day."',
         options: [
-          'I have visited Paris last week ❌',
-          'I visited Paris last week ✅ (specific time)',
-          'I have visited Paris since last week ❌'
+          'would play (repeated action you chose) ✓',
+          'used to play (permanent states only)',
+          'Both are exactly the same'
         ],
-        correctOptionId: 1
+        correctOptionId: 0
       }
     },
   };
