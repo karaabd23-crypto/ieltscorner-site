@@ -289,6 +289,27 @@ export async function handler(event) {
   botData.stats.messagesReceived += 1;
 
   try {
+    // Handle new members joining group/supergroup
+    if (update.message?.new_chat_members) {
+      for (const newMember of update.message.new_chat_members) {
+        // Don't greet bots or the bot itself
+        if (newMember.is_bot) continue;
+
+        const userId = newMember.id;
+        buildUserData(userId);
+
+        // Send welcome DM to the new member
+        await telegramCall('sendMessage', {
+          chat_id: userId,
+          text: `Welcome to Kay's English Corner! 👋\n\nI help you build vocabulary, master grammar, learn idioms, and grow your English naturally.\n\nWhat interests you?`,
+          reply_markup: buildMainKeyboard(config),
+          disable_web_page_preview: true,
+        }, config.botToken).catch((err) => {
+          console.log(`Could not DM user ${userId}:`, err.message);
+        });
+      }
+    }
+
     // Handle text messages in private chat
     if (update.message && isPrivateChat(update.message.chat)) {
       const userId = update.message.from?.id;
@@ -335,25 +356,6 @@ export async function handler(event) {
         reply_markup: buildMainKeyboard(config),
         disable_web_page_preview: true,
       }, config.botToken);
-    }
-
-    // Handle new members joining (send welcome DM)
-    if (update.my_chat_member) {
-      const userId = update.my_chat_member.from?.id;
-      const status = update.my_chat_member.new_status;
-      const oldStatus = update.my_chat_member.old_status;
-
-      // Send welcome when user transitions to member status (new joiners or unrestricted users)
-      if (userId && status === 'member' && (oldStatus === 'restricted' || oldStatus === 'left' || oldStatus === 'kicked')) {
-        buildUserData(userId);
-        // Send welcome DM to the new member
-        await telegramCall('sendMessage', {
-          chat_id: userId,
-          text: `Welcome to Kay's English Corner! 👋\n\nI help you build vocabulary, master grammar, learn idioms, and grow your English naturally.\n\nWhat interests you?`,
-          reply_markup: buildMainKeyboard(config),
-          disable_web_page_preview: true,
-        }, config.botToken).catch(() => {});
-      }
     }
 
     // Track quiz poll responses
