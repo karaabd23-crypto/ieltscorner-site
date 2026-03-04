@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-import { readFile, readdir } from 'node:fs/promises';
+import { readFile, readdir, writeFile, unlink } from 'node:fs/promises';
 import path from 'node:path';
+import sharp from 'sharp';
 
 const DEFAULT_MODEL = 'gpt-4.1-mini';
 
@@ -233,8 +234,15 @@ async function postStoryWithImage(botToken, chatId, story, imagePath) {
   const ext = path.extname(fileName).slice(1).toLowerCase();
   const mimeType = ext === 'png' ? 'image/png' : 'image/jpeg';
   
-  // Check if this is a webinar template (post as-is without caption)
+  // Check if this is a webinar template (post as-is without text)
   const isWebinarTemplate = fileName.toLowerCase().includes('webinar');
+  
+  let finalImageBuffer = imageBuffer;
+  
+  if (!isWebinarTemplate) {
+    // Render text onto the image
+    finalImageBuffer = await renderTextOnImage(imageBuffer, story.text);
+  }
   
   // Create proper multipart/form-data
   const boundary = `----FormBoundary${Date.now()}${Math.random().toString(36)}`;
@@ -248,22 +256,13 @@ async function postStoryWithImage(botToken, chatId, story, imagePath) {
     `${chatId}\r\n`
   ));
   
-  // caption field (only for non-webinar templates)
-  if (!isWebinarTemplate) {
-    parts.push(Buffer.from(
-      `--${boundary}\r\n` +
-      `Content-Disposition: form-data; name="caption"\r\n\r\n` +
-      `${story.text}\r\n`
-    ));
-  }
-  
   // photo field with image data
   parts.push(Buffer.from(
     `--${boundary}\r\n` +
     `Content-Disposition: form-data; name="photo"; filename="${fileName}"\r\n` +
     `Content-Type: ${mimeType}\r\n\r\n`
   ));
-  parts.push(imageBuffer);
+  parts.push(finalImageBuffer);
   parts.push(Buffer.from(`\r\n`));
   
   // End boundary
@@ -288,10 +287,84 @@ async function postStoryWithImage(botToken, chatId, story, imagePath) {
   if (isWebinarTemplate) {
     console.log(`[template] Posted webinar template as-is: ${fileName}`);
   } else {
-    console.log(`[template] Posted ${fileName} with caption`);
+    console.log(`[template] Posted ${fileName} with text overlay`);
   }
   
   return data;
+}
+
+async function renderTextOnImage(imageBuffer, text) {
+  // Get image metadata to determine dimensions
+  const metadata = await sharp(imageBuffer).metadata();
+  const width = metadata.width;
+  const height = metadata.height;
+  
+  // Create SVG with text overlay
+  // Position text in the lower portion of the image (safe area for long text)
+  const fontSize = Math.max(24, Math.floor(width / 15)); // Scale font with image width
+  const lineHeight = fontSize * 1.4;
+  
+  // Split text into lines for better wrapping
+  const maxCharsPerLine = Math.floor(width / (fontSize * 0.5)); // Rough estimate
+  const lines = [];
+  let currentLine = '';
+  
+  for (const word of text.split(' ')) {
+    if ((currentLine + word).length <= maxCharsPerLine) {
+      currentLine += (currentLine ? ' ' : '') + word;
+    } else {
+      if (currentLine) lines.push(currentLine);
+      currentLine = word;
+    }
+  }
+  if (currentLine) lines.push(currentLine);
+  
+  // Calculate text block height
+  const textBlockHeight = lines.length * lineHeight + 40;
+  const yStart = height - textBlockHeight - 20; // 20px padding from bottom
+  
+  // Create SVG
+  let svgText = '';
+  lines.forEach((line, index) => {
+    const y = yStart + 30 + (index * lineHeight);
+    svgText += `<text x="50%" y="${y}" text-anchor="middle" font-size="${fontSize}" font-weight="bold" fill="white" font-family="Arial, sans-serif" textLength="${width - 100}">${escapeXml(line)}</text>`;
+  });
+  
+  const svg = `
+    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+          <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.8"/>
+        </filter>
+      </defs>
+      <rect width="${width}" height="${height}" fill="rgba(0,0,0,0.3)" y="${yStart}"/>
+      <g filter="url(#shadow)">
+        ${svgText}
+      </g>
+    </svg>
+  `;
+  
+  // Composite SVG text onto image
+  const compositeBuffer = await sharp(imageBuffer)
+    .composite([
+      {
+        input: Buffer.from(svg),
+        top: 0,
+        left: 0,
+      }
+    ])
+    .toBuffer();
+  
+  return compositeBuffer;
+}
+
+function escapeXml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
 }
 
 async function postStory(botToken, chatId, story) {
