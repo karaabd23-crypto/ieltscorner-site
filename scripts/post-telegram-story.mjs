@@ -263,9 +263,9 @@ Master this and your pronunciation will improve SO much! 🎯😊💪`,
       quiz: {
         question: '❓ Which pronunciation is CORRECT for "often"?',
         options: [
-          'OFF-en (silent T) – like "Austin" without "Aus"',
-          'OFF-ten (clear T sound) – definitely wrong!',
-          'O-FEN (one syllable) – nope!'
+          'OFF-en (silent T like "Austin" without "Aus") 🗣️',
+          'OFF-ten (with clear T sound) ❌',
+          'O-FEN (one syllable only) ❌'
         ],
         correctOptionId: 0
       }
@@ -317,7 +317,7 @@ Start using these TODAY and watch how people react! They'll be impressed! 💪�
         question: '❓ Which response sounds most NATIVE from a professional in a formal meeting?',
         options: [
           'Your presentation was very good',
-          'Your presentation was outstanding – the research was thorough, the visuals were compelling, and your delivery was exceptional',
+          'Outstanding! The research was thorough, visuals compelling, delivery exceptional! 🌟',
           'Your presentation was nice'
         ],
         correctOptionId: 1
@@ -437,7 +437,7 @@ Start implementing TODAY and watch your career transformation! 📈💪🚀`,
         question: '❓ Which sounds most professional in a work email?',
         options: [
           'Your report was very good',
-          'Your report demonstrates meticulous research, innovative thinking, and comprehensive analysis – truly exceptional work',
+          'Exceptional work! Meticulous research, innovative thinking, comprehensive analysis! 🌟',
           'Your report was nice'
         ],
         correctOptionId: 1
@@ -500,9 +500,9 @@ You've got this! Time to test yourself! 🚀💪🎯`,
       quiz: {
         question: '❓ Which sentence uses the CORRECT past tense?',
         options: [
-          'I have visited the Eiffel Tower last week (WRONG – last week is finished!)',
-          'I visited the Eiffel Tower last week (RIGHT – specific time!)',
-          'I have visited the Eiffel Tower since last week (WRONG – doesn\'t make sense!)'
+          'I have visited Paris last week ❌',
+          'I visited Paris last week ✅ (specific time)',
+          'I have visited Paris since last week ❌'
         ],
         correctOptionId: 1
       }
