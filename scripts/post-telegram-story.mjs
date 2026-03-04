@@ -92,9 +92,10 @@ function pickStoryTopic() {
 function fallbackStory(topicObj) {
   const { type, emoji } = topicObj;
 
-  // Comprehensive fallback examples with Persian, examples, and quizzes
+  // Comprehensive fallback examples with Persian and examples + SEPARATE quiz data
   const examples = {
-    'vocab-tip': `${emoji} WORD POWER: "Serendipity" ✨
+    'vocab-tip': {
+      content: `${emoji} WORD POWER: "Serendipity" ✨
 
 ━━━━━━━━━━━━━━━━━━━━━
 📌 Meaning (فارسی): اتفاق خوش (یافتن چیزی خوب به طور تصادفی)
@@ -102,18 +103,21 @@ function fallbackStory(topicObj) {
 ✍️ Example:
 "Meeting you here was pure serendipity!"
 
-❓ Quick Quiz:
-Which sentence uses "serendipity" correctly?
-
-A) The serendipity was planned by my manager
-B) Finding this book was pure serendipity
-C) I serendipity like this restaurant
-
-👉 Answer: B ✓
 ━━━━━━━━━━━━━━━━━━━━━
 💪 Use it today in conversation!`,
+      quiz: {
+        question: '❓ Which sentence uses "serendipity" correctly?',
+        options: [
+          'The serendipity was planned by my manager',
+          'Finding this book was pure serendipity',
+          'I serendipity like this restaurant'
+        ],
+        correctOptionId: 1
+      }
+    },
 
-    'grammar-hack': `${emoji} GRAMMAR FIX: Present Perfect ⏱️
+    'grammar-hack': {
+      content: `${emoji} GRAMMAR FIX: Present Perfect ⏱️
 
 ━━━━━━━━━━━━━━━━━━━━━
 🔴 WRONG: "I live here for 5 years"
@@ -125,18 +129,21 @@ C) I serendipity like this restaurant
 ✅ "She's been a doctor for 10 years"
 ✅ "They've lived in Paris since 2020"
 
-❓ Quiz:
-Choose the correct sentence:
-
-A) I have studied English for 3 years
-B) I study English for 3 years
-C) I studied English for 3 years
-
-👉 Answer: A ✓
 ━━━━━━━━━━━━━━━━━━━━━
 🎯 Practice with time expressions NOW!`,
+      quiz: {
+        question: '❓ Choose the correct sentence:',
+        options: [
+          'I have studied English for 3 years',
+          'I study English for 3 years',
+          'I studied English for 3 years'
+        ],
+        correctOptionId: 0
+      }
+    },
 
-    'idiom-quick': `${emoji} TODAY'S IDIOM: "Hit the nail on the head" 🔨
+    'idiom-quick': {
+      content: `${emoji} TODAY'S IDIOM: "Hit the nail on the head" 🔨
 
 ━━━━━━━━━━━━━━━━━━━━━
 📌 Meaning: دقیقاً درست، exact point را بیان کردن
@@ -144,18 +151,21 @@ C) I studied English for 3 years
 ✍️ Example:
 "Your analysis really hit the nail on the head!"
 
-❓ Quick Quiz:
-What does "hit the nail on the head" mean?
-
-A) To be exactly right about something
-B) To hurt someone with a hammer
-C) To start a new project
-
-👉 Answer: A ✓
 ━━━━━━━━━━━━━━━━━━━━━
 💬 Use this in your next discussion!`,
+      quiz: {
+        question: '❓ What does "hit the nail on the head" mean?',
+        options: [
+          'To be exactly right about something',
+          'To hurt someone with a hammer',
+          'To start a new project'
+        ],
+        correctOptionId: 0
+      }
+    },
 
-    'pronunciation': `${emoji} SAY IT RIGHT: "Often" 🗣️
+    'pronunciation': {
+      content: `${emoji} SAY IT RIGHT: "Often" 🗣️
 
 ━━━━━━━━━━━━━━━━━━━━━
 Word: OFTEN
@@ -166,17 +176,21 @@ Word: OFTEN
 
 🎯 Practice: "I often go to the coffee shop"
 
-❓ Which pronunciation is correct?
-
-A) OFF-ten (clear T sound)
-B) OFF-en (T is silent/reduced)
-C) O-FEE-ten
-
-👉 Answer: B ✓
 ━━━━━━━━━━━━━━━━━━━━━
 🎧 Listen and repeat 3 times!`,
+      quiz: {
+        question: '❓ Which pronunciation is correct for "often"?',
+        options: [
+          'OFF-ten (clear T sound)',
+          'OFF-en (T is silent/reduced)',
+          'O-FEE-ten'
+        ],
+        correctOptionId: 1
+      }
+    },
 
-    'expression': `${emoji} REACT LIKE A NATIVE: "That's brilliant!" 💯
+    'expression': {
+      content: `${emoji} REACT LIKE A NATIVE: "That's brilliant!" 💯
 
 ━━━━━━━━━━━━━━━━━━━━━
 Instead of basic "very good":
@@ -187,18 +201,21 @@ Instead of basic "very good":
 
 📌 (فارسی): native speakers از این expressions استفاده میکنند
 
-❓ Quiz:
-Which expression sounds most natural?
-
-A) "Your work is very good"
-B) "Your work is brilliant"
-C) "Your work is nice"
-
-👉 Answer: B ✓ (Native speakers love "brilliant")
 ━━━━━━━━━━━━━━━━━━━━━
 ⬆️ Level up your English today!`,
+      quiz: {
+        question: '❓ Which expression sounds most natural?',
+        options: [
+          'Your work is very good',
+          'Your work is brilliant',
+          'Your work is nice'
+        ],
+        correctOptionId: 1
+      }
+    },
 
-    'vocab-pair': `${emoji} CONFUSING PAIR: Affect vs. Effect 🎯
+    'vocab-pair': {
+      content: `${emoji} CONFUSING PAIR: Affect vs. Effect 🎯
 
 ━━━━━━━━━━━━━━━━━━━━━
 AFFECT = فعل (تحت تأثیر قرار دادن، تاثیر گذاشتن)
@@ -208,62 +225,78 @@ EFFECT = اسم (نتیجه، تاثیر)
 ✅ "The rain affects my mood" (verb)
 ✅ "The effect was dramatic" (noun)
 
-❓ Quiz:
-Fill the blank correctly:
-
-"This change will _____ our budget"
-
-A) affect
-B) effect
-
-👉 Answer: A (affect = verb)
 ━━━━━━━━━━━━━━━━━━━━━
 🎯 Bookmark this pair NOW!`,
+      quiz: {
+        question: '❓ Fill the blank: "This change will _____ our budget"',
+        options: [
+          'affect (verb)',
+          'effect (noun)',
+          'Both are correct'
+        ],
+        correctOptionId: 0
+      }
+    },
 
-    'phrase-boost': `${emoji} SAY THIS INSTEAD: Professional Boosters 📈
+    'phrase-boost': {
+      content: `${emoji} SAY THIS INSTEAD: Professional Boosters 📈
 
 ━━━━━━━━━━━━━━━━━━━━━
-Instead of "Good": Say...
+Instead of Common Words: Say...
 ❌ "Very good" → ✅ "Exceptional"
 ❌ "Nice work" → ✅ "Impressive effort"
 ❌ "OK project" → ✅ "Well-executed project"
 
 📌 همینطور در فارسی: از واژگان قوی تر استفاده کن
 
-❓ Quiz:
-Which sounds most professional?
-
-A) "That's very good work"
-B) "That's exceptional work"
-C) "That's nice"
-
-👉 Answer: B ✓
 ━━━━━━━━━━━━━━━━━━━━━
 💼 Use these in meetings and emails!`,
+      quiz: {
+        question: '❓ Which sounds most professional?',
+        options: [
+          'That\'s very good work',
+          'That\'s exceptional work',
+          'That\'s nice'
+        ],
+        correctOptionId: 1
+      }
+    },
 
-    'quick-quiz': `${emoji} QUICK QUIZ: Present vs. Perfect 🧠
+    'quick-quiz': {
+      content: `${emoji} TEST YOUR KNOWLEDGE: Present vs. Past 🧠
 
 ━━━━━━━━━━━━━━━━━━━━━
-Question: Which is WRONG?
-
-A) "I have been to Paris last year"
-B) "I went to Paris last year"
-C) "I've been living here for 5 years"
-
+Key Rule:
 📌 (فارسی): با specific past time از Simple Past استفاده کن
 
-👉 Answer: A ✗
-Reason: "last year" = specific time → use Simple Past
+✍️ Example:
+❌ "I have been to Paris last year"
+✅ "I went to Paris last year"
 
-✅ Correct: "I went to Paris last year"
-====================================
-🎯 Now you know! Test yourself NOW!`,
+━━━━━━━━━━━━━━━━━━━━━
+🎯 Now test yourself!`,
+      quiz: {
+        question: '❓ Which sentence is correct?',
+        options: [
+          'I have been to Paris last year',
+          'I went to Paris last year',
+          'I have went to Paris last year'
+        ],
+        correctOptionId: 1
+      }
+    },
   };
 
-  return {
-    text: examples[type] || `${emoji} ENGLISH TIP\n\n━━━━━━━━━━━━━━━━━━━━━\n⏰ Check your inbox later for more!\n\n🎯 Master one concept at a time!\n🤖 More tips? DM the bot!\n━━━━━━━━━━━━━━━━━━━━━`,
-    media: null,
+  const storyData = examples[type] || {
+    content: `${emoji} ENGLISH TIP\n\n━━━━━━━━━━━━━━━━━━━━━\n📌 Master one concept at a time!\n🤖 More tips? DM the bot!\n━━━━━━━━━━━━━━━━━━━━━`,
+    quiz: {
+      question: '❓ Do you find these tips helpful?',
+      options: ['Yes!', 'Very helpful', 'Extremely helpful'],
+      correctOptionId: 0
+    }
   };
+
+  return storyData;
 }
 
 async function generateStoryWithOpenAI(topicObj, apiKey, model) {
@@ -275,49 +308,39 @@ async function generateStoryWithOpenAI(topicObj, apiKey, model) {
   const { type, emoji, topic } = topicObj;
 
   const prompt = `You are an English language coach creating engaging Telegram Story content (text-only, no images).
+Generate BOTH content AND quiz data separately.
 
 Topic: ${topic}
 Type: ${type}
 Emoji to start with: ${emoji}
 
-Create SHORT, punchy content with this EXACT structure:
-1. Start with emoji and title/hook
-2. Include a line of separator: ━━━━━━━━━━━━━━━━━━━━━
-3. Add English teaching point (1-2 sentences)
-4. Add Persian explanation in parentheses or on next line (e.g., "(فارسی): [explanation]")
-5. Give 1-2 example sentences with ✅ or ❌
-6. Include a simple quiz with 3 options (A, B, C)
-7. Provide the answer
-8. End with separator and call-to-action
+Create a response with this EXACT JSON structure:
+{
+  "content": "[emoji] [TITLE]\\n\\n━━━━━━━━━━━━━━━━━━━━━\\n[Teaching point with Persian explanation]\\n\\n✍️ Examples:\\n[Examples]\\n\\n━━━━━━━━━━━━━━━━━━━━━\\n[Call-to-action]",
+  "quiz": {
+    "question": "❓ [Quiz question]",
+    "options": ["[Option A]", "[Option B]", "[Option C]"],
+    "correctOptionId": [0, 1, or 2]
+  }
+}
 
-Guidelines:
-- Maximum 300 words
-- Use lots of emojis (💡✨🎯🗣️💬🔄⬆️❓)
+Guidelines for content:
+- Maximum 250 words
+- Use lots of emojis (💡✨🎯🗣️💬🔄⬆️)
 - Focus ONLY on vocabulary, grammar, idioms, expressions—NOT exam tips
-- Make Persian explanations clear and helpful
-- Quiz should test understanding of the taught concept
+- Include Persian explanation in parentheses like: (فارسی): [explanation]
+- Use 2 example sentences with ✅ or ❌
 - Use Unicode borders: ━━━━━━━━━━━━━━━━━━━━━
 - Be conversational and mobile-friendly
-- Each section should be clearly separated
 
-Format:
-${emoji} [TITLE]
+Guidelines for quiz:
+- Question should start with ❓
+- Provide exactly 3 options (A, B, C style)
+- correctOptionId must be 0, 1, or 2 (index of correct answer)
+- Make sure the correct answer teaches the lesson
+- Keep options concise
 
-━━━━━━━━━━━━━━━━━━━━━
-📌 [English explanation]
-
-(فارسی): [Clear Persian explanation]
-
-✍️ Examples:
-[Examples with checkmarks]
-
-❓ Quiz:
-[Question with A, B, C options]
-
-👉 Answer: [Answer] ✓
-
-━━━━━━━━━━━━━━━━━━━━━
-[Motivational CTA]`;
+Return ONLY valid JSON, no other text.`;
 
   try {
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -331,12 +354,12 @@ ${emoji} [TITLE]
         messages: [
           {
             role: 'system',
-            content: 'You create brief, engaging English learning content with Persian explanations and quizzes for Telegram. Use lots of emojis. Format clearly with separators.',
+            content: 'You create brief, engaging English learning content with Persian explanations as JSON responses.',
           },
           { role: 'user', content: prompt },
         ],
         temperature: 0.8,
-        max_tokens: 600,
+        max_tokens: 800,
       }),
     });
 
@@ -352,10 +375,17 @@ ${emoji} [TITLE]
       return fallbackStory(topicObj);
     }
 
-    return {
-      text,
-      media: null,
-    };
+    try {
+      // Try to parse as JSON (new format)
+      const parsed = JSON.parse(text);
+      if (parsed.content && parsed.quiz) {
+        return parsed;
+      }
+    } catch {
+      // Fallback if not JSON
+    }
+
+    return fallbackStory(topicObj);
   } catch (error) {
     console.error('[fetch-error]', error.message);
     return fallbackStory(topicObj);
@@ -378,28 +408,30 @@ async function telegramRequest(botToken, method, payload) {
   return data;
 }
 
-async function findTemplateImages() {
-  const templateDir = path.join(process.cwd(), 'public', 'telegram-story-templates');
-  try {
-    const { readdir } = await import('node:fs/promises');
-    const files = await readdir(templateDir);
-    const imageFiles = files.filter(f => /\.(png|jpg|jpeg)$/i.test(f));
-    return imageFiles.map(f => path.join(templateDir, f));
-  } catch {
-    return [];
-  }
-}
-
 async function postStory(botToken, chatId, story) {
-  // Post as text-only message with decorative formatting
-  const message = `${story.text}`;
-  
-  return await telegramRequest(botToken, 'sendMessage', {
+  // Post the main content message
+  console.log('[posting] Main content to Telegram...');
+  const contentResult = await telegramRequest(botToken, 'sendMessage', {
     chat_id: chatId,
-    text: message,
+    text: story.content,
     disable_web_page_preview: true,
     parse_mode: 'HTML',
   });
+  console.log('[success] Content posted: message ID', contentResult.result?.message_id);
+
+  // Then post the quiz as a poll with correct answer
+  console.log('[posting] Quiz poll to Telegram...');
+  const quizResult = await telegramRequest(botToken, 'sendPoll', {
+    chat_id: chatId,
+    question: story.quiz.question,
+    options: story.quiz.options,
+    is_quiz: true,
+    correct_option_id: story.quiz.correctOptionId,
+    allows_multiple_answers: false,
+  });
+  console.log('[success] Quiz posted: message ID', quizResult.result?.message_id);
+
+  return { contentResult, quizResult };
 }
 
 async function main() {
@@ -424,23 +456,35 @@ async function main() {
   const story = await generateStoryWithOpenAI(topicObj, apiKey, options.model);
 
   if (options.preview) {
-    console.log('\n' + '='.repeat(50));
-    console.log('STORY PREVIEW');
-    console.log('='.repeat(50));
-    console.log(story.text);
-    console.log('='.repeat(50) + '\n');
+    console.log('\n' + '='.repeat(60));
+    console.log('STORY PREVIEW - CONTENT');
+    console.log('='.repeat(60));
+    console.log(story.content);
+    console.log('\n' + '='.repeat(60));
+    console.log('STORY PREVIEW - QUIZ');
+    console.log('='.repeat(60));
+    console.log(`Question: ${story.quiz.question}`);
+    story.quiz.options.forEach((opt, idx) => {
+      const marker = idx === story.quiz.correctOptionId ? '✅' : '  ';
+      console.log(`  ${marker} ${String.fromCharCode(65 + idx)}) ${opt}`);
+    });
+    console.log('='.repeat(60) + '\n');
     return;
   }
 
   if (options.dryRun) {
     console.log('[dry-run] Would post story:');
-    console.log(story.text);
+    console.log('\nCONTENT:');
+    console.log(story.content);
+    console.log('\nQUIZ:');
+    console.log(`Question: ${story.quiz.question}`);
+    story.quiz.options.forEach((opt, idx) => {
+      console.log(`  ${String.fromCharCode(65 + idx)}) ${opt}`);
+    });
     return;
   }
 
-  console.log('[posting] Story to Telegram...');
-  const result = await postStory(botToken, chatId, story);
-  console.log('[success] Story posted:', result.result?.message_id);
+  await postStory(botToken, chatId, story);
 }
 
 main().catch((error) => {
