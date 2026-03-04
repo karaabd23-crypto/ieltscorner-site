@@ -337,18 +337,16 @@ export async function handler(event) {
       }, config.botToken);
     }
 
-    // Handle new members joining
+    // Handle new members joining (send welcome DM)
     if (update.my_chat_member) {
       const userId = update.my_chat_member.from?.id;
       const status = update.my_chat_member.new_status;
       const oldStatus = update.my_chat_member.old_status;
-      const chatId = update.my_chat_member.chat?.id;
-      const chatType = update.my_chat_member.chat?.type;
 
-      // Only send welcome in private chats (DM) when bot receives new member events
-      if (userId && status === 'member' && oldStatus === 'restricted') {
+      // Send welcome when user transitions to member status (new joiners or unrestricted users)
+      if (userId && status === 'member' && (oldStatus === 'restricted' || oldStatus === 'left' || oldStatus === 'kicked')) {
         buildUserData(userId);
-        // Send welcome message
+        // Send welcome DM to the new member
         await telegramCall('sendMessage', {
           chat_id: userId,
           text: `Welcome to Kay's English Corner! 👋\n\nI help you build vocabulary, master grammar, learn idioms, and grow your English naturally.\n\nWhat interests you?`,
