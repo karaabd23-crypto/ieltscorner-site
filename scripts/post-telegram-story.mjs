@@ -1,20 +1,19 @@
 #!/usr/bin/env node
-import { readFile, readdir, writeFile, unlink } from 'node:fs/promises';
+import { readFile } from 'node:fs/promises';
 import path from 'node:path';
-import sharp from 'sharp';
 
 const DEFAULT_MODEL = 'gpt-4.1-mini';
 
-// Story topics - shorter, more engaging content
+// Story topics with structure for rich content
 const STORY_TOPICS = [
-  { type: 'vocab-tip', topic: 'One powerful word to sound more professional' },
-  { type: 'grammar-hack', topic: 'Fix this common mistake in 10 seconds' },
-  { type: 'idiom-quick', topic: 'Today\'s idiom - use it in conversation' },
-  { type: 'pronunciation', topic: 'How to say this tricky word correctly' },
-  { type: 'expression', topic: 'React like a native speaker' },
-  { type: 'vocab-pair', topic: 'Two words people always confuse' },
-  { type: 'phrase-boost', topic: 'Say this instead of "very good"' },
-  { type: 'quick-quiz', topic: 'Which sentence is correct?' },
+  { type: 'vocab-tip', emoji: '💡', topic: 'One powerful word to sound more professional' },
+  { type: 'grammar-hack', emoji: '✨', topic: 'Fix this common mistake in 10 seconds' },
+  { type: 'idiom-quick', emoji: '🎯', topic: 'Today\'s idiom - use it in conversation' },
+  { type: 'pronunciation', emoji: '🗣️', topic: 'How to say this tricky word correctly' },
+  { type: 'expression', emoji: '💬', topic: 'React like a native speaker' },
+  { type: 'vocab-pair', emoji: '🔄', topic: 'Two words people always confuse' },
+  { type: 'phrase-boost', emoji: '⬆️', topic: 'Say this instead of common words' },
+  { type: 'quick-quiz', emoji: '❓', topic: 'Test your English knowledge' },
 ];
 
 function stripWrappingQuotes(value) {
@@ -91,34 +90,178 @@ function pickStoryTopic() {
 }
 
 function fallbackStory(topicObj) {
-  const { type, topic } = topicObj;
-  const emojiMap = {
-    'vocab-tip': '💡',
-    'grammar-hack': '✨',
-    'idiom-quick': '🎯',
-    'pronunciation': '🗣️',
-    'expression': '💬',
-    'vocab-pair': '🔄',
-    'phrase-boost': '⬆️',
-    'quick-quiz': '❓',
-  };
+  const { type, emoji } = topicObj;
 
-  const emoji = emojiMap[type] || '📚';
-
-  // Different examples based on type
+  // Comprehensive fallback examples with Persian, examples, and quizzes
   const examples = {
-    'vocab-tip': `💡 Word Power: "Serendipity"\n\nMeaning: Finding good things by chance\n\nExample:\n"Meeting you here was pure serendipity!"\n\n✨ Try it today!`,
-    'grammar-hack': `✨ Quick Fix!\n\nSay: "I've lived here for 5 years"\nNOT: "I live here for 5 years"\n\nPresent Perfect for ongoing time!\n\n🎯 Use it correctly!`,
-    'idiom-quick': `🎯 Hit the nail on the head\n\nMeaning: Be exactly right\n\nExample:\n"You hit the nail on the head with that analysis!"\n\n💪 Try it in conversation!`,
-    'pronunciation': `🗣️ Say it right!\n\n"Comfortable"\n❌ com-FOR-table\n✅ KUMF-ter-bul\n\n3 syllables, not 4!\n\n🎧 Practice now!`,
-    'expression': `💬 React like a native!\n\nInstead of "very good":\n✅ "That's brilliant!"\n✅ "Fantastic work!"\n✅ "Outstanding!"\n\n⬆️ Level up your English!`,
-    'vocab-pair': `🔄 Confusing Words?\n\nAFFECT = verb (to influence)\nEFFECT = noun (result)\n\n"The rain affects my mood"\n"The effect was dramatic"\n\n🎯 Got it?`,
-    'phrase-boost': `⬆️ Say this instead!\n\n❌ "Very good"\n✅ "Brilliant"\n✅ "Exceptional"\n✅ "Outstanding"\n\nSound more professional!\n\n💼 Try it today!`,
-    'quick-quiz': `❓ Which is correct?\n\nA) "I've been to Paris last year"\nB) "I went to Paris last year"\n\n..\n..\nAnswer: B!\n\nUse Simple Past with specific past time!\n\n✅ Now you know!`,
+    'vocab-tip': `${emoji} WORD POWER: "Serendipity" ✨
+
+━━━━━━━━━━━━━━━━━━━━━
+📌 Meaning (فارسی): اتفاق خوش (یافتن چیزی خوب به طور تصادفی)
+
+✍️ Example:
+"Meeting you here was pure serendipity!"
+
+❓ Quick Quiz:
+Which sentence uses "serendipity" correctly?
+
+A) The serendipity was planned by my manager
+B) Finding this book was pure serendipity
+C) I serendipity like this restaurant
+
+👉 Answer: B ✓
+━━━━━━━━━━━━━━━━━━━━━
+💪 Use it today in conversation!`,
+
+    'grammar-hack': `${emoji} GRAMMAR FIX: Present Perfect ⏱️
+
+━━━━━━━━━━━━━━━━━━━━━
+🔴 WRONG: "I live here for 5 years"
+🟢 RIGHT: "I've lived here for 5 years"
+
+📌 (فارسی): برای وقتهای طولانی ongoing از Present Perfect استفاده کن
+
+✍️ Examples:
+✅ "She's been a doctor for 10 years"
+✅ "They've lived in Paris since 2020"
+
+❓ Quiz:
+Choose the correct sentence:
+
+A) I have studied English for 3 years
+B) I study English for 3 years
+C) I studied English for 3 years
+
+👉 Answer: A ✓
+━━━━━━━━━━━━━━━━━━━━━
+🎯 Practice with time expressions NOW!`,
+
+    'idiom-quick': `${emoji} TODAY'S IDIOM: "Hit the nail on the head" 🔨
+
+━━━━━━━━━━━━━━━━━━━━━
+📌 Meaning: دقیقاً درست، exact point را بیان کردن
+
+✍️ Example:
+"Your analysis really hit the nail on the head!"
+
+❓ Quick Quiz:
+What does "hit the nail on the head" mean?
+
+A) To be exactly right about something
+B) To hurt someone with a hammer
+C) To start a new project
+
+👉 Answer: A ✓
+━━━━━━━━━━━━━━━━━━━━━
+💬 Use this in your next discussion!`,
+
+    'pronunciation': `${emoji} SAY IT RIGHT: "Often" 🗣️
+
+━━━━━━━━━━━━━━━━━━━━━
+Word: OFTEN
+❌ Wrong: OFF-ten (emphasize 't')
+✅ Right: OFF-en (silent 't')
+
+📌 (فارسی): تلفظ "OF-en" است، نه "OF-ten"
+
+🎯 Practice: "I often go to the coffee shop"
+
+❓ Which pronunciation is correct?
+
+A) OFF-ten (clear T sound)
+B) OFF-en (T is silent/reduced)
+C) O-FEE-ten
+
+👉 Answer: B ✓
+━━━━━━━━━━━━━━━━━━━━━
+🎧 Listen and repeat 3 times!`,
+
+    'expression': `${emoji} REACT LIKE A NATIVE: "That's brilliant!" 💯
+
+━━━━━━━━━━━━━━━━━━━━━
+Instead of basic "very good":
+❌ "Very good"
+✅ "Brilliant!"
+✅ "Fantastic!"
+✅ "Outstanding!"
+
+📌 (فارسی): native speakers از این expressions استفاده میکنند
+
+❓ Quiz:
+Which expression sounds most natural?
+
+A) "Your work is very good"
+B) "Your work is brilliant"
+C) "Your work is nice"
+
+👉 Answer: B ✓ (Native speakers love "brilliant")
+━━━━━━━━━━━━━━━━━━━━━
+⬆️ Level up your English today!`,
+
+    'vocab-pair': `${emoji} CONFUSING PAIR: Affect vs. Effect 🎯
+
+━━━━━━━━━━━━━━━━━━━━━
+AFFECT = فعل (تحت تأثیر قرار دادن، تاثیر گذاشتن)
+EFFECT = اسم (نتیجه، تاثیر)
+
+✍️ Examples:
+✅ "The rain affects my mood" (verb)
+✅ "The effect was dramatic" (noun)
+
+❓ Quiz:
+Fill the blank correctly:
+
+"This change will _____ our budget"
+
+A) affect
+B) effect
+
+👉 Answer: A (affect = verb)
+━━━━━━━━━━━━━━━━━━━━━
+🎯 Bookmark this pair NOW!`,
+
+    'phrase-boost': `${emoji} SAY THIS INSTEAD: Professional Boosters 📈
+
+━━━━━━━━━━━━━━━━━━━━━
+Instead of "Good": Say...
+❌ "Very good" → ✅ "Exceptional"
+❌ "Nice work" → ✅ "Impressive effort"
+❌ "OK project" → ✅ "Well-executed project"
+
+📌 همینطور در فارسی: از واژگان قوی تر استفاده کن
+
+❓ Quiz:
+Which sounds most professional?
+
+A) "That's very good work"
+B) "That's exceptional work"
+C) "That's nice"
+
+👉 Answer: B ✓
+━━━━━━━━━━━━━━━━━━━━━
+💼 Use these in meetings and emails!`,
+
+    'quick-quiz': `${emoji} QUICK QUIZ: Present vs. Perfect 🧠
+
+━━━━━━━━━━━━━━━━━━━━━
+Question: Which is WRONG?
+
+A) "I have been to Paris last year"
+B) "I went to Paris last year"
+C) "I've been living here for 5 years"
+
+📌 (فارسی): با specific past time از Simple Past استفاده کن
+
+👉 Answer: A ✗
+Reason: "last year" = specific time → use Simple Past
+
+✅ Correct: "I went to Paris last year"
+====================================
+🎯 Now you know! Test yourself NOW!`,
   };
 
   return {
-    text: examples[type] || `${emoji} ${topic}\n\n"Brilliant" is stronger than "very good"\n\nExample:\n"That presentation was brilliant!"\n\n🤖 Want more? DM the bot!`,
+    text: examples[type] || `${emoji} ENGLISH TIP\n\n━━━━━━━━━━━━━━━━━━━━━\n⏰ Check your inbox later for more!\n\n🎯 Master one concept at a time!\n🤖 More tips? DM the bot!\n━━━━━━━━━━━━━━━━━━━━━`,
     media: null,
   };
 }
@@ -129,33 +272,52 @@ async function generateStoryWithOpenAI(topicObj, apiKey, model) {
     return fallbackStory(topicObj);
   }
 
-  const { type, topic } = topicObj;
+  const { type, emoji, topic } = topicObj;
 
-  const prompt = `You are an English language coach creating a Telegram Story (24-hour temporary content).
+  const prompt = `You are an English language coach creating engaging Telegram Story content (text-only, no images).
 
 Topic: ${topic}
 Type: ${type}
+Emoji to start with: ${emoji}
 
-Create SHORT, punchy content optimized for mobile viewing:
-- Maximum 60 words total
-- Start with an emoji
-- One clear point or tip
-- Include ONE example sentence
-- End with a quick CTA like "Try it!" or "Use it today!"
+Create SHORT, punchy content with this EXACT structure:
+1. Start with emoji and title/hook
+2. Include a line of separator: ━━━━━━━━━━━━━━━━━━━━━
+3. Add English teaching point (1-2 sentences)
+4. Add Persian explanation in parentheses or on next line (e.g., "(فارسی): [explanation]")
+5. Give 1-2 example sentences with ✅ or ❌
+6. Include a simple quiz with 3 options (A, B, C)
+7. Provide the answer
+8. End with separator and call-to-action
 
-Focus ONLY on vocabulary, grammar, idioms, expressions—NOT exam tips.
+Guidelines:
+- Maximum 300 words
+- Use lots of emojis (💡✨🎯🗣️💬🔄⬆️❓)
+- Focus ONLY on vocabulary, grammar, idioms, expressions—NOT exam tips
+- Make Persian explanations clear and helpful
+- Quiz should test understanding of the taught concept
+- Use Unicode borders: ━━━━━━━━━━━━━━━━━━━━━
+- Be conversational and mobile-friendly
+- Each section should be clearly separated
 
 Format:
-[Emoji] [Title/Hook]
+${emoji} [TITLE]
 
-[Main teaching point - 1-2 sentences]
+━━━━━━━━━━━━━━━━━━━━━
+📌 [English explanation]
 
-Example:
-[Your example]
+(فارسی): [Clear Persian explanation]
 
-[Short CTA]
+✍️ Examples:
+[Examples with checkmarks]
 
-Keep it conversational and engaging!`;
+❓ Quiz:
+[Question with A, B, C options]
+
+👉 Answer: [Answer] ✓
+
+━━━━━━━━━━━━━━━━━━━━━
+[Motivational CTA]`;
 
   try {
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -169,12 +331,12 @@ Keep it conversational and engaging!`;
         messages: [
           {
             role: 'system',
-            content: 'You create brief, engaging English learning content for Telegram Stories.',
+            content: 'You create brief, engaging English learning content with Persian explanations and quizzes for Telegram. Use lots of emojis. Format clearly with separators.',
           },
           { role: 'user', content: prompt },
         ],
         temperature: 0.8,
-        max_tokens: 200,
+        max_tokens: 600,
       }),
     });
 
@@ -192,7 +354,7 @@ Keep it conversational and engaging!`;
 
     return {
       text,
-      media: null, // Can be enhanced later with image generation
+      media: null,
     };
   } catch (error) {
     console.error('[fetch-error]', error.message);
@@ -219,6 +381,7 @@ async function telegramRequest(botToken, method, payload) {
 async function findTemplateImages() {
   const templateDir = path.join(process.cwd(), 'public', 'telegram-story-templates');
   try {
+    const { readdir } = await import('node:fs/promises');
     const files = await readdir(templateDir);
     const imageFiles = files.filter(f => /\.(png|jpg|jpeg)$/i.test(f));
     return imageFiles.map(f => path.join(templateDir, f));
@@ -227,174 +390,15 @@ async function findTemplateImages() {
   }
 }
 
-async function postStoryWithImage(botToken, chatId, story, imagePath) {
-  // Read image file as buffer
-  const imageBuffer = await readFile(imagePath);
-  const fileName = path.basename(imagePath);
-  const ext = path.extname(fileName).slice(1).toLowerCase();
-  const mimeType = ext === 'png' ? 'image/png' : 'image/jpeg';
-  
-  // Check if this is a webinar template (post as-is without text)
-  const isWebinarTemplate = fileName.toLowerCase().includes('webinar');
-  
-  let finalImageBuffer = imageBuffer;
-  
-  if (!isWebinarTemplate) {
-    // Render text onto the image
-    finalImageBuffer = await renderTextOnImage(imageBuffer, story.text);
-  }
-  
-  // Create proper multipart/form-data
-  const boundary = `----FormBoundary${Date.now()}${Math.random().toString(36)}`;
-  
-  const parts = [];
-  
-  // chat_id field
-  parts.push(Buffer.from(
-    `--${boundary}\r\n` +
-    `Content-Disposition: form-data; name="chat_id"\r\n\r\n` +
-    `${chatId}\r\n`
-  ));
-  
-  // photo field with image data
-  parts.push(Buffer.from(
-    `--${boundary}\r\n` +
-    `Content-Disposition: form-data; name="photo"; filename="${fileName}"\r\n` +
-    `Content-Type: ${mimeType}\r\n\r\n`
-  ));
-  parts.push(finalImageBuffer);
-  parts.push(Buffer.from(`\r\n`));
-  
-  // End boundary
-  parts.push(Buffer.from(`--${boundary}--\r\n`));
-  
-  const body = Buffer.concat(parts);
-  
-  const response = await fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': `multipart/form-data; boundary=${boundary}`,
-    },
-    body,
-  });
-  
-  const data = await response.json();
-  if (!response.ok || !data.ok) {
-    throw new Error(`Telegram API error: ${JSON.stringify(data)}`);
-  }
-  
-  // Log what was posted
-  if (isWebinarTemplate) {
-    console.log(`[template] Posted webinar template as-is: ${fileName}`);
-  } else {
-    console.log(`[template] Posted ${fileName} with text overlay`);
-  }
-  
-  return data;
-}
-
-async function renderTextOnImage(imageBuffer, text) {
-  // Get image metadata to determine dimensions
-  const metadata = await sharp(imageBuffer).metadata();
-  const width = metadata.width;
-  const height = metadata.height;
-  
-  // Create SVG with text overlay
-  const fontSize = Math.max(20, Math.floor(width / 20)); // Scale font with image width
-  const lineHeight = fontSize * 1.3;
-  const padding = 30;
-  const maxWidth = width - (padding * 2);
-  
-  // Split text into lines for better wrapping
-  const maxCharsPerLine = Math.floor(maxWidth / (fontSize * 0.5));
-  const lines = [];
-  let currentLine = '';
-  
-  for (const word of text.split(' ')) {
-    if ((currentLine + (currentLine ? ' ' : '') + word).length <= maxCharsPerLine) {
-      currentLine += (currentLine ? ' ' : '') + word;
-    } else {
-      if (currentLine) lines.push(currentLine);
-      currentLine = word;
-    }
-  }
-  if (currentLine) lines.push(currentLine);
-  
-  // Calculate text block
-  const textBlockHeight = lines.length * lineHeight + 20;
-  const yStart = height - textBlockHeight - 20;
-  
-  // Build SVG with proper positioning
-  let svgContent = `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <filter id="textShadow" x="-50%" y="-50%" width="200%" height="200%">
-        <feDropShadow dx="2" dy="2" stdDeviation="4" flood-opacity="0.9"/>
-      </filter>
-    </defs>
-    <rect width="${width}" height="${height}" fill="rgba(0,0,0,0.2)" y="${yStart - 10}"/>`;
-  
-  // Add each line separately
-  lines.forEach((line, index) => {
-    const y = yStart + 25 + (index * lineHeight);
-    svgContent += `
-    <text 
-      x="${width / 2}" 
-      y="${y}" 
-      text-anchor="middle" 
-      font-size="${fontSize}" 
-      font-weight="bold" 
-      fill="white" 
-      font-family="Arial, sans-serif"
-      filter="url(#textShadow)"
-    >${escapeXml(line)}</text>`;
-  });
-  
-  svgContent += `</svg>`;
-  
-  // Composite SVG text onto image
-  const compositeBuffer = await sharp(imageBuffer)
-    .composite([
-      {
-        input: Buffer.from(svgContent),
-        top: 0,
-        left: 0,
-      }
-    ])
-    .toBuffer();
-  
-  return compositeBuffer;
-}
-
-function escapeXml(str) {
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&apos;');
-}
-
 async function postStory(botToken, chatId, story) {
-  // Check for template images
-  const templates = await findTemplateImages();
-  
-  if (templates.length > 0) {
-    // Randomly select a template
-    const selectedTemplate = templates[Math.floor(Math.random() * templates.length)];
-    console.log(`[template] Using ${path.basename(selectedTemplate)}`);
-    return await postStoryWithImage(botToken, chatId, story, selectedTemplate);
-  }
-  
-  // Fallback to text-only formatted message
-  const topBorder = '━━━━━━━━━━━━━━━━━━━━━';
-  const bottomBorder = '━━━━━━━━━━━━━━━━━━━━━';
-  
-  const message = `${topBorder}\n📖 Quick Tip\n${topBorder}\n\n${story.text}\n\n${bottomBorder}`;
+  // Post as text-only message with decorative formatting
+  const message = `${story.text}`;
   
   return await telegramRequest(botToken, 'sendMessage', {
     chat_id: chatId,
     text: message,
     disable_web_page_preview: true,
+    parse_mode: 'HTML',
   });
 }
 
