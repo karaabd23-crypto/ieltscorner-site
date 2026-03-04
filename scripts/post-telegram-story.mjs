@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { readFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 
 const DEFAULT_MODEL = 'gpt-4.1-mini';
@@ -215,11 +215,85 @@ async function telegramRequest(botToken, method, payload) {
   return data;
 }
 
-async function postStory(botToken, chatId, story) {
-  // Note: As of now, Telegram Bot API doesn't have native story posting
-  // We'll post as a regular message with story-style formatting
-  // When native story API is available, update this method
+async function findTemplateImages() {
+  const templateDir = path.join(process.cwd(), 'public', 'telegram-story-templates');
+  try {
+    const files = await readdir(templateDir);
+    const imageFiles = files.filter(f => /\.(png|jpg|jpeg)$/i.test(f));
+    return imageFiles.map(f => path.join(templateDir, f));
+  } catch {
+    return [];
+  }
+}
+
+async function postStoryWithImage(botToken, chatId, story, imagePath) {
+  // Read image file as buffer
+  const imageBuffer = await readFile(imagePath);
+  const fileName = path.basename(imagePath);
+  const ext = path.extname(fileName).slice(1).toLowerCase();
+  const mimeType = ext === 'png' ? 'image/png' : 'image/jpeg';
   
+  // Create proper multipart/form-data
+  const boundary = `----FormBoundary${Date.now()}${Math.random().toString(36)}`;
+  
+  const parts = [];
+  
+  // chat_id field
+  parts.push(Buffer.from(
+    `--${boundary}\r\n` +
+    `Content-Disposition: form-data; name="chat_id"\r\n\r\n` +
+    `${chatId}\r\n`
+  ));
+  
+  // caption field
+  parts.push(Buffer.from(
+    `--${boundary}\r\n` +
+    `Content-Disposition: form-data; name="caption"\r\n\r\n` +
+    `${story.text}\r\n`
+  ));
+  
+  // photo field with image data
+  parts.push(Buffer.from(
+    `--${boundary}\r\n` +
+    `Content-Disposition: form-data; name="photo"; filename="${fileName}"\r\n` +
+    `Content-Type: ${mimeType}\r\n\r\n`
+  ));
+  parts.push(imageBuffer);
+  parts.push(Buffer.from(`\r\n`));
+  
+  // End boundary
+  parts.push(Buffer.from(`--${boundary}--\r\n`));
+  
+  const body = Buffer.concat(parts);
+  
+  const response = await fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': `multipart/form-data; boundary=${boundary}`,
+    },
+    body,
+  });
+  
+  const data = await response.json();
+  if (!response.ok || !data.ok) {
+    throw new Error(`Telegram API error: ${JSON.stringify(data)}`);
+  }
+  
+  return data;
+}
+
+async function postStory(botToken, chatId, story) {
+  // Check for template images
+  const templates = await findTemplateImages();
+  
+  if (templates.length > 0) {
+    // Randomly select a template
+    const selectedTemplate = templates[Math.floor(Math.random() * templates.length)];
+    console.log(`[template] Using ${path.basename(selectedTemplate)}`);
+    return await postStoryWithImage(botToken, chatId, story, selectedTemplate);
+  }
+  
+  // Fallback to text-only formatted message
   const topBorder = '━━━━━━━━━━━━━━━━━━━━━';
   const bottomBorder = '━━━━━━━━━━━━━━━━━━━━━';
   
