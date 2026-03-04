@@ -1,47 +1,92 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-
-const PAYHIP_CELPIP_URL = "/ebook";
 ---
 
 <Layout
-  title="CELPIP Course — IELTS Corner"
-  description="Simple, clear CELPIP prep for CLB 7–10. Step-by-step strategies, templates, and practice for all four skills."
+  title="CELPIP Prep — IELTS Corner"
+  description="CELPIP weekly webinars + full course. Live training on all four skills. $12/session. Start Saturday."
 >
   <section class="section">
-    <div class="hero" style={`--hero-bg: url('/heroes/celpip.png');`}>
-      <div class="hero-content">
-        <span class="pill">🇨🇦 CELPIP • CLB 7–10</span>
+    <!-- WEBINAR HERO SECTION -->
+    <div class="hero" style={`--hero-bg: linear-gradient(135deg, var(--accent) 0%, rgba(var(--accent-rgb), 0.7) 100%);`}>
+      <div class="hero-content" style="text-align: center;">
+        <span class="pill">📹 Live • Every Saturday • 6:00 PM PST</span>
 
-        <h1>Get the CELPIP course. Improve faster with clear steps.</h1>
+        <h1>CELPIP Weekly Webinars</h1>
 
         <p class="muted" style="max-width: 56ch;">
-          This course shows you what to do in the test — with simple language, clear templates, and real practice.
+          60-minute live sessions. Real strategies. Expert instruction. All four skills covered.
         </p>
 
-        <div class="cluster" style="margin-top: var(--s-2);">
-          <a class="btn btn-primary" href={PAYHIP_CELPIP_URL}>
-            View CELPIP course options →
+        <div class="cluster" style="margin-top: var(--s-3);">
+          <a class="btn btn-primary" href="/webinar" style="font-size: 1.1rem; padding: var(--s-3) var(--s-5);">
+            Join a webinar → Only $12
           </a>
-          <a class="btn btn-ghost" href="/tutoring">Private or group lessons →</a>
         </div>
 
-        <div style="height: var(--s-4);"></div>
+        <div style="height: var(--s-3);"></div>
 
-        <!-- 4 skill buttons -->
+        <!-- Quick skill nav -->
         <div class="cluster">
-          <a class="btn" href="/celpip/listening">Listening</a>
-          <a class="btn" href="/celpip/reading">Reading</a>
-          <a class="btn" href="/celpip/speaking">Speaking</a>
-          <a class="btn" href="/celpip/writing">Writing</a>
+          <a class="btn btn-ghost" href="/celpip/listening">Listening</a>
+          <a class="btn btn-ghost" href="/celpip/reading">Reading</a>
+          <a class="btn btn-ghost" href="/celpip/speaking">Speaking</a>
+          <a class="btn btn-ghost" href="/celpip/writing">Writing</a>
         </div>
       </div>
     </div>
 
     <div style="height: var(--s-8);"></div>
 
-    <div class="surface" style="padding: var(--s-6);">
-      <h2>Official CELPIP-General format (quick view)</h2>
+    <!-- WEBINAR BENEFITS -->
+    <div class="surface feature" style="border: 2px solid var(--accent); padding: var(--s-6);">
+      <h2 style="text-align: center; margin-top: 0;">Why join the webinars?</h2>
+      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-4);">
+        <div class="check" style="display: flex; gap: var(--s-3); align-items: start;">
+          <div style="font-size: 1.5rem;">✓</div>
+          <div>
+            <strong>45 min focused teaching</strong>
+            <p class="muted" style="margin: var(--s-1) 0 0;">One skill per session. Real strategies from a certified instructor.</p>
+          </div>
+        </div>
+
+        <div class="check" style="display: flex; gap: var(--s-3); align-items: start;">
+          <div style="font-size: 1.5rem;">✓</div>
+          <div>
+            <strong>15 min live Q&A</strong>
+            <p class="muted" style="margin: var(--s-1) 0 0;">Ask your specific questions. Get real-time answers.</p>
+          </div>
+        </div>
+
+        <div class="check" style="display: flex; gap: var(--s-3); align-items: start;">
+          <div style="font-size: 1.5rem;">✓</div>
+          <div>
+            <strong>Only $12 per session</strong>
+            <p class="muted" style="margin: var(--s-1) 0 0;">Pay as you go. No commitment. Join whenever you want.</p>
+          </div>
+        </div>
+
+        <div class="check" style="display: flex; gap: var(--s-3); align-items: start;">
+          <div style="font-size: 1.5rem;">✓</div>
+          <div>
+            <strong>All skills covered</strong>
+            <p class="muted" style="margin: var(--s-1) 0 0;">Speaking, listening, reading, writing, grammar, vocabulary, strategy, and test psychology.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: var(--s-5);">
+        <a class="btn btn-primary" href="/webinar" style="font-size: 1.05rem;">
+          See all webinar topics →
+        </a>
+      </div>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <!-- OFFICIAL FORMAT REFERENCE -->
+    <div class="surface" style="padding: var(--s-6); background: var(--surface);">
+      <h2>CELPIP-General format (quick overview)</h2>
       <div class="grid grid-2">
         <div>
           <h3>Listening</h3>
@@ -60,7 +105,21 @@ const PAYHIP_CELPIP_URL = "/ebook";
           <p class="muted">15–20 minutes • 8 tasks</p>
         </div>
       </div>
-      <p class="muted" style="margin-top: var(--s-3);">Source: CELPIP-General Overview Participant Package (2022).</p>
+      <p class="muted" style="margin-top: var(--s-3); font-size: 0.9rem;">Source: CELPIP-General Overview Participant Package (2022).</p>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <!-- COURSE SECTION (currently in development) -->
+    <div style="opacity: 0.7; padding: var(--s-6); border-left: 4px solid var(--text-muted); background: var(--surface);">
+      <h2 style="color: var(--text-muted);">📚 Full CELPIP Course (Coming Soon)</h2>
+      <p class="muted">
+        We're building a comprehensive course with step-by-step guidance, templates, and practice exercises for all four skills. 
+        In the meantime, join the <strong>weekly webinars</strong> to get live instruction and expert feedback.
+      </p>
+      <p class="muted" style="margin-top: var(--s-2);">
+        Want personalized guidance? Book a <a href="/tutoring">1-on-1 lesson</a> to get a custom study plan.
+      </p>
     </div>
 
     <div style="height: var(--s-8);"></div>
@@ -68,17 +127,16 @@ const PAYHIP_CELPIP_URL = "/ebook";
     <div class="surface feature">
       <div class="feature-grid">
         <div class="stack">
-          <h2>Who this is for</h2>
+          <h2>Quick start options</h2>
           <p class="muted" style="max-width: 58ch;">
-            If you feel “stuck,” you probably don’t need harder vocabulary. You need structure: what to say first, next,
-            and last — and how to avoid common mistakes.
+            Join the weekly webinars for live instruction, or book a lesson for personalized guidance.
           </p>
 
           <div class="cluster" style="margin-top: var(--s-2);">
-            <a class="btn btn-primary" href={PAYHIP_CELPIP_URL}>
-              See course details →
+            <a class="btn btn-primary" href="/webinar">
+              Join the webinars →
             </a>
-            <a class="btn" href="/tutoring">Lessons & pricing →</a>
+            <a class="btn" href="/tutoring">Book a lesson →</a>
           </div>
         </div>
 
@@ -112,17 +170,19 @@ const PAYHIP_CELPIP_URL = "/ebook";
 
     <div style="height: var(--s-8);"></div>
 
+
+
     <div class="grid grid-2">
       <div class="card">
-        <h3>Want a plan?</h3>
-        <p class="muted">Book one lesson. I will build your study plan and show you what to fix first.</p>
-        <a class="btn btn-primary" href="/tutoring">View pricing →</a>
+        <h3>🎓 Weekly Webinars</h3>
+        <p class="muted">Live sessions every Saturday at 6:00 PM PST. All CELPIP skills covered.</p>
+        <a class="btn btn-primary" href="/webinar">View schedule →</a>
       </div>
 
       <div class="card">
-        <h3>Want to start now?</h3>
-        <p class="muted">Review the course page first, then start with the skill that matches your weakest section.</p>
-        <a class="btn" href={PAYHIP_CELPIP_URL}>Open course page →</a>
+        <h3>👨‍🏫 1-on-1 Tutoring</h3>
+        <p class="muted">Personalized guidance and feedback for your specific weaknesses.</p>
+        <a class="btn" href="/tutoring">Check pricing →</a>
       </div>
     </div>
   </section>
