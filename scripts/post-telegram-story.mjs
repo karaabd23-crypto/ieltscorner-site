@@ -220,7 +220,10 @@ async function postStory(botToken, chatId, story) {
   // We'll post as a regular message with story-style formatting
   // When native story API is available, update this method
   
-  const message = `📖 Story\n\n${story.text}`;
+  const topBorder = '━━━━━━━━━━━━━━━━━━━━━';
+  const bottomBorder = '━━━━━━━━━━━━━━━━━━━━━';
+  
+  const message = `${topBorder}\n📖 Quick Tip\n${topBorder}\n\n${story.text}\n\n${bottomBorder}`;
   
   return await telegramRequest(botToken, 'sendMessage', {
     chat_id: chatId,
