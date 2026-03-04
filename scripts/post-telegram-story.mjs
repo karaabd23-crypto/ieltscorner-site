@@ -182,44 +182,50 @@ Master this now and you'll sound SO much better! 🎯✨`,
     },
 
     'idiom-quick': {
-      content: `🎯 Idiom of the Day: "Hit the nail on the head"
+      content: `🎯 Idiom of the Day: "Spill the beans"
 
-Let's explore this powerful expression! 💛✨🔨
+Let's explore this fun and tasty-sounding expression! 💛✨🫘
 
-You know that amazing feeling when someone says EXACTLY what you were thinking? 🤯 When they nail it on the first try and you're like "YES, EXACTLY! That's it!" 🎉 When they identify the REAL problem that nobody else saw? That's what this idiom is all about! 🏆
+You know that moment when a friend finally tells you the secret everyone's been keeping? 🤫 Or when someone accidentally reveals something that was supposed to be kept quiet? 😂 Or maybe you're dying to know gossip and you keep asking "Come on, spill the beans!" 🗣️💬 That's EXACTLY what this idiom means! It's one of those phrases that's so colorful, you can almost imagine someone literally SPILLING BEANS all over the place! 🫘💥
 
-It's one of those phrases that native speakers use constantly in conversations, meetings, negotiations – EVERYWHERE! 💬 And when YOU say it correctly at the right moment, you instantly sound smarter! 😄 Your friends will be like "Wow, did she just use that phrase correctly?" 🌟
+This idiom is EVERYWHERE in casual conversation, movies, TV shows, friend groups – basically anywhere people are talking about secrets! 🎬👯 Native speakers use it constantly when someone reveals a secret or tells someone something confidential! It's playful, friendly, and totally informal! 😄
 
-Here's the beauty of this idiom: it's visual! 🔨 You can picture a hammer hitting a nail perfectly straight – BAM! It goes right where it's supposed to go! That's exactly what it means when someone "hits the nail on the head!" ✨
+Here's the funny part: nobody really knows why it's about BEANS! 🤔 Some people think it comes from ancient Greece where people used beans to vote! Others think it's just a funny comparison! But honestly? It SOUNDS funny, which is why people love it! 🎉
 
 📌 Meaning:
-✅ To say something that is exactly right or correct  
-✅ To identify the main problem/issue perfectly 🎯
-✅ To make an accurate observation that nobody else made
-✅ To find the solution that was hiding in plain sight! 💡
-(فارسی): دقیقاً درست بودن، حق گفتن، صحیح دریافتن، دقیق تشخیص دادن
+✅ To reveal a secret or confidential information  
+✅ To tell someone something that was supposed to stay private 🤐
+✅ To accidentally or intentionally reveal "the news"
+✅ To confess or admit something you were hiding! 🗣️
+(فارسی): راز رو فاش کردن، راز خیلی کسی رو بیرون کشیدن، چیزی رو که باید مخفی می‌ماند فاش کردن!
 
-✍️ Real Examples from Work/Life:
-"Your analysis really hit the nail on the head! You understood our main problem perfectly!" 🏆
-"تجزیه‌تحلیل تو کاملاً صحیح بود! مشکل اصلی رو کاملاً فهمیدی!"
+✍️ Real Examples from Everyday Life:
+"Okay, I can't hold it anymore – let me spill the beans! I'm getting married!" 💍😍
+"دیگه نمی‌تونم پنهان کنم! میخوام بگم که ازدواج می‌کنم!"
 
-"When she said the project would fail because we didn't have enough budget, she really hit the nail on the head – it did fail for exactly that reason!" 😅📉
-"وقتی گفت پروژه شکست می‌خورد چون بودجه‌مون کافی نیست، تماماً حق گفت!"
+"She finally spilled the beans about where the party is going to be." 🎉🗺️
+"در آخر فاش کرد کجا مهمونی برگزار می‌شه!"
 
-"The teacher hit the nail on the head when she said most students didn't understand the concept because they missed the fundamentals!" 🎓✨
+"Don't spill the beans about the surprise party! It's supposed to be a secret!" 🤫🎁
+"لطفاً راز پارتی سورپرایز رو فاش نکن! باید مخفی بمونه!"
 
-"He hit the nail on the head with his observation about why customers are leaving – it's our customer service!" 📞💔
+Friend 1: "Come on, spill the beans! Who did you go out with last weekend?" 👀
+Friend 2: "Okay okay, but you can't tell anyone! I went out with..." 😊
 
-💡 Practical Tip:
-Use this when someone makes an insightful observation or solves a mystery! 🔍 It's a GREAT compliment in professional settings AND casual conversations. Teachers LOVE when students use it correctly! Your boss will notice! 👉✨ It shows you appreciate accuracy and smart thinking! 🧠
+Parents: "If you spill the beans about the vacation, you're grounded!" ✈️😬
 
-Try it today in a meeting or conversation! 🚀😊💪`,
+💡 Practical Tips:
+Use this when someone's keeping a secret and you want them to tell you! 👉 "Spill the beans!" is super casual and friendly! Use it with friends, family, classmates – ANYONE! 😄 It's NOT rude or aggressive – it's playful! 🎉 Teachers even use it with students! "Okay, who's going to spill the beans about what happened in the class yesterday?" 😄
+
+Bonus Usage: You can also say "I'm going to spill the beans" when YOU'RE about to reveal a secret! It's like announcing "I'm about to tell you something juicy!" 📢✨
+
+Start using it with your friends TODAY! They'll think you sound SO natural! 🚀💪`,
       quiz: {
-        question: '❓ Complete: "When she predicted the company would struggle with growth, she really ___ because that\'s exactly what happened."',
+        question: '❓ Complete: "Don\'t ___ about the surprise birthday party! It\'s supposed to be a secret!"',
         options: [
-          'hit the nail on the head',
-          'broke the ice',
-          'let the cat out of the bag'
+          'spill the beans (reveal the secret)',
+          'break the ice (start a conversation)',
+          'hit the target (aim correctly)'
         ],
         correctOptionId: 0
       }
