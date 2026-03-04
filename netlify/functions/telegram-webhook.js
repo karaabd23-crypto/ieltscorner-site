@@ -35,7 +35,10 @@ function normalizeText(input) {
 function buildMainKeyboard(config) {
   const rows = [
     [
-      { text: '🌐 Visit Website', url: config.websiteUrl },
+      { text: '� Register for Webinar', url: `${config.websiteUrl}/webinar` },
+    ],
+    [
+      { text: '�🌐 Visit Website', url: config.websiteUrl },
       { text: '📣 Telegram Channel', url: config.channelUrl },
     ],
     [
