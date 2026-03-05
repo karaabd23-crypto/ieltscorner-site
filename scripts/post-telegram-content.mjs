@@ -149,75 +149,182 @@ function extractJson(text) {
 }
 
 function fallbackContent({ type, level, topic, channelUrl }) {
-  const tags = ['#VocabBuilder', '#GrammarTip', '#IdiomsEnglish', '#LearnEnglish'];
-  const typeLabel = {
-    vocab: '📚 Word of the Day',
-    grammar: '✏️ Grammar Nugget',
-    idiom: '🎭 Idiom of the Day',
-    expression: '💬 Expression Tip',
-    phrasal: '🔗 Phrasal Verb',
-  }[type] || '📚 English Lesson';
+  // Curated quality lessons - rotate through these instead of generic template
+  const qualityLessons = [
+    {
+      title: '✏️ Grammar: Present Perfect vs Simple Past',
+      type: 'grammar',
+      level: 'B1',
+      topic: 'Present Perfect vs Simple Past',
+      postBody: `✏️ GRAMMAR NUGGET: Present Perfect vs Simple Past
 
-  const topicName = topic.split(' -')[0].trim();
+═══════════════════════════════════════════════════════════
+📖 ENGLISH EXPLANATION
+═══════════════════════════════════════════════════════════
 
-  const body = [
-    `${typeLabel}: "${topicName}"`,
-    '',
-    '═══════════════════════════════════',
-    '📖 ENGLISH EXPLANATION',
-    '═══════════════════════════════════',
-    '',
-    `This is how native speakers use "${topicName}" in real conversations.`,
-    '',
-    'Understanding this concept will help you:',
-    '• Sound more natural and fluent',
-    '• Communicate with confidence',
-    '• Be understood clearly in professional and social contexts',
-    '',
-    'Pay attention to the exact usage—this is exactly what native speakers do!',
-    '',
-    '═══════════════════════════════════',
-    '🇮🇷 شرح فارسی',
-    '═══════════════════════════════════',
-    '',
-    `این نحوه استفاده طبیعی از "${topicName}" در مکالمات واقعی است.`,
-    '',
-    'درک این مفهوم کمک می‌کند تا:',
-    '• بیشتر طبیعی و روان صحبت کنید',
-    '• با اعتماد به نفس ارتباط برقرار کنید',
-    '• در موقعیت‌های شغلی و اجتماعی واضح درک شوید',
-    '',
-    'دقت کنید که بومی انگلیسی‌زبان دقیقاً به این طریق استفاده می‌کنند!',
-    '',
-    '💡 PRACTICAL TIP / نکته عملی:',
-    'Use this word/phrase in 3 sentences TODAY. Say it out loud! 🗣️',
-    'امروز این را در 3 جملهای استفاده کنید. با صدای بلند بگویید!',
-    '',
-    '👉 Share your example in the comments below!',
-    '👉 مثالت را در نظرات به اشتراک بگذار!',
-  ].join('\n');
+❌ WRONG: "I have been to Paris last year" (The time is finished!)
+✅ CORRECT: "I went to Paris last year" (Finished time = Simple Past)
+
+The KEY rule:
+• Use SIMPLE PAST with specific finished times (last year, yesterday, in 2020)
+• Use PRESENT PERFECT with unfinished time periods (ever, never, recently)
+
+Examples:
+✓ "I've visited Paris" = Anytime in my life (no specific time)
+✓ "I visited Paris last month" = Finished time period
+✓ "She's lived here for 5 years" = Started in past, still now
+✓ "She lived here in 2020" = That time is over now
+
+═══════════════════════════════════════════════════════════
+🇮🇷 شرح فارسی
+═══════════════════════════════════════════════════════════
+
+❌ غلط: "I have been to Paris last year"
+✅ درست: "I went to Paris last year"
+
+قانون اصلی:
+• وقتی وقت مشخص و پایان یافته (سال گذشته، دیروز) از Simple Past استفاده کنید
+• وقتی زمان نامشخص است (تا حالا، هرگز) از Present Perfect استفاده کنید
+
+💡 TIP / نکته:
+Pay attention to TIME words—they tell you which tense to use!
+به کلمات زمان توجه کنید—آنها برای شما تنس درست را نشان می‌دهند!`,
+      hashtags: ['#GrammarTip', '#PresentPerfect', '#EnglishGrammar', '#LearnEnglish'],
+      quiz: {
+        question: '❓ Which is CORRECT? "I ___ to Japan last summer."',
+        options: [
+          'have gone',
+          'went ✅',
+          'am going',
+        ],
+        correctIndex: 1,
+        explanation: '"Last summer" is a finished time → Simple Past "went" is correct!',
+      },
+    },
+    {
+      title: '📚 Vocabulary: "Ephemeral"',
+      type: 'vocab',
+      level: 'B2',
+      topic: 'Ephemeral - lasting for a very short time',
+      postBody: `📚 WORD OF THE DAY: "Ephemeral"
+
+═══════════════════════════════════════════════════════════
+📖 ENGLISH EXPLANATION
+═══════════════════════════════════════════════════════════
+
+Definition: Something that lasts for a very short time or is temporary.
+
+Pronunciation: eh-FEM-er-ul
+
+This word is PERFECT for describing:
+• Fleeting moments in life
+• Short-lived beauty (like cherry blossoms)
+• Temporary trends or fashions
+• Memories that fade quickly
+
+Real Examples (Native Speakers Use It):
+✓ "The beauty of cherry blossoms is ephemeral—they only bloom for two weeks."
+✓ "Social media fame is often ephemeral; people forget about trends quickly."
+✓ "That moment of happiness was ephemeral but unforgettable."
+
+Why Learn This?
+Sounds sophisticated • Perfect for TOEFL/IELTS writing • Impresses native speakers
+
+═══════════════════════════════════════════════════════════
+🇮🇷 شرح فارسی
+═══════════════════════════════════════════════════════════
+
+تعریف: چیزی که برای مدت بسیار کوتاهی ماندگار است یا موقتی است.
+
+این کلمه برای توصیف مناسب است:
+• لحظات کوتاه ماندگار در زندگی
+• زیبایی کوتاه مدت (مانند گل های گیلاس)
+• روندهای موقتی
+• خاطرات که به سرعت محو می‌شوند
+
+💡 TIP / نکته:
+"Ephemeral" gives your English a sophisticated, poetic touch!
+از این کلمه برای نشان دادن زیبایی و ظرافت سخن استفاده کنید!`,
+      hashtags: ['#VocabBuilder', '#WordOfTheDay', '#LearnEnglish', '#Vocabulary'],
+      quiz: {
+        question: '❓ Which could be described as "ephemeral"?',
+        options: [
+          'A permanent tattoo',
+          'A beautiful sunset 🌅 ✅',
+          'The Rocky Mountains',
+        ],
+        correctIndex: 1,
+        explanation: 'A sunset is beautiful but lasts only a short time—that\'s ephemeral!',
+      },
+    },
+    {
+      title: '💬 Expression: "Better Late Than Never"',
+      type: 'expression',
+      level: 'A2',
+      topic: 'Better late than never - still good even if delayed',
+      postBody: `💬 EXPRESSION OF THE DAY: "Better Late Than Never"
+
+═══════════════════════════════════════════════════════════
+📖 ENGLISH EXPLANATION
+═══════════════════════════════════════════════════════════
+
+Meaning: It's still good to do something even if you do it late or after expected time. Don't give up!
+
+When Native Speakers Use It:
+✓ "I haven't exercised in months. Better late than never—I'm starting today!"
+✓ "You're arriving 2 hours late, but better late than never!"
+✓ "I finally started learning English at age 40. Better late than never!"
+
+Perfect For:
+• Encouraging someone who feels behind
+• Apologizing for delays but still showing up
+• Motivating yourself to start something
+
+What It DOESN'T Mean:
+✗ Don't use it when someone apologizes for being extremely late to something important
+
+═══════════════════════════════════════════════════════════
+🇮🇷 شرح فارسی
+═══════════════════════════════════════════════════════════
+
+معنی: انجام دادن چیزی آن هم اگر دیر انجام شود بهتر است تا اصلاً انجام ندادن.
+
+زمان استفاده:
+✓ "من برای ماه‌ها ورزش نکردم. بهتر است دیر شروع کنم تا اصلاً نکنم!"
+✓ "حالا شروع خوانا انگلیسی می‌کنم. بهتر دیر است تا هرگز!"
+
+💡 TIP / نکته:
+This phrase is VERY encouraging and positive!
+از این برای تشویق کردن دوستان خود استفاده کنید!`,
+      hashtags: ['#Expression', '#SpeakingTip', '#DailyEnglish', '#LearnEnglish'],
+      quiz: {
+        question: '❓ When would you say "Better late than never"?',
+        options: [
+          'When someone misses a deadline entirely',
+          'When someone finally starts trying, even if delayed ✅',
+          'When someone cancels plans',
+        ],
+        correctIndex: 1,
+        explanation: 'It\'s an encouraging phrase for when people finally take action, even if it\'s delayed!',
+      },
+    },
+  ];
+
+  // Pick a random lesson from the curated list
+  const lesson = qualityLessons[Math.floor(Math.random() * qualityLessons.length)];
 
   const cta = channelUrl
     ? `\n\n🌈✨ Kay's English Corner\nYour Gateway to English Success in Canada 🇨🇦\n🔗 Join us on Telegram\n${channelUrl}`
     : '';
 
   return {
-    title: typeLabel,
-    type,
-    level,
-    topic,
-    postBody: `${body}${cta}`,
-    hashtags: tags,
-    quiz: {
-      question: `How would you use "${topicName}" in a real conversation?`,
-      options: [
-        `Natural usage: "${topicName}" in everyday context`,
-        `Professional usage: "${topicName}" in formal settings`,
-        `Both—it works in casual AND professional situations`,
-      ],
-      correctIndex: 2,
-      explanation: `Native speakers use "${topicName}" naturally in both casual and professional conversations. It's a versatile and important phrase!`,
-    },
+    title: lesson.title,
+    type: lesson.type,
+    level: lesson.level,
+    topic: lesson.topic,
+    postBody: `${lesson.postBody}${cta}`,
+    hashtags: lesson.hashtags,
+    quiz: lesson.quiz,
   };
 }
 
