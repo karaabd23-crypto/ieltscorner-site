@@ -171,7 +171,7 @@ Examples:
 ✓ "She's lived here for 5 years" = Started in past, still now
 ✓ "She lived here in 2020" = That time is over now
 
-🇮🇷 شرح فارسی:
+🇮🇷
 
 ❌ غلط: "I have been to Paris last year"
 ✅ درست: "I went to Paris last year"
@@ -220,7 +220,7 @@ Real Examples (Native Speakers Use It):
 Why Learn This?
 Sounds sophisticated • Perfect for TOEFL/IELTS writing • Impresses native speakers
 
-🇮🇷 شرح فارسی:
+🇮🇷
 
 تعریف: چیزی که برای مدت بسیار کوتاهی ماندگار است یا موقتی است.
 
@@ -267,7 +267,7 @@ Perfect For:
 What It DOESN'T Mean:
 ✗ Don't use it when someone apologizes for being extremely late to something important
 
-🇮🇷 شرح فارسی:
+🇮🇷
 
 💡 TIP / نکته:
 This phrase is VERY encouraging and positive!
