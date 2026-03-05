@@ -164,11 +164,13 @@ Sarah was nervous. She hadn't slept well the night before because she was anxiou
 
 The interviewer asked, "Tell me about a time you felt serendipity in your career." Sarah thought for a moment. "Well, meeting my mentor was pure serendipity. I wasn't looking for mentorship, but her guidance changed my trajectory!" The interviewer smiled. She had used a sophisticated word naturally.
 
-🇮🇷
+🇮🇷 برای فارسی‌زبانان:
 
-سارا عصبی بود. او شب قبل خوب نخوابید چون درباره مصاحبه‌ی شغلی‌اش نگران بود. بهترین لباس‌اش را پوشید و زودتر رفت. استخدام‌کننده از او پرسید: "آیا کلمه‌ی sophisticated را می‌شانی؟" (آیا درک می‌کنی که معنی این کلمات پیشرفته چیست؟)
+⚠️ اشتباه عام: "خب، این یک قصه است" = "Well, this is a story"
+✅ بهتر: "Well, it's quite a tale" یا "What a story!" (طبیعی‌تر، تاکید بیشتر)
 
-💡 LESSON: Advanced vocabulary is most memorable when learned through natural stories!
+در داستان‌های طبیعی، لغات پیشرفته بدون تلاش تو ذهن می‌ماند (مثل سارا!).
+💡 نکته: داستان = بهترین دکتر برای حافظه!
 کلمات پیشرفته زمانی یادگیری می‌شوند که در داستان‌های واقعی قرار بگیرند!`,
       hashtags: ['#StorytimeEnglish', '#VocabularyInContext', '#RealWorldEnglish'],
       quizzes: [
@@ -215,15 +217,14 @@ This paragraph has FOUR major errors:
 ✅ CORRECTED VERSION:
 "I went to Paris last year. I spent two weeks there. The city is very beautiful. I saw the Eiffel Tower and it was amazing."
 
-🇮🇷
+🇮🇷 برای فارسی‌زبانان:
 
-این چهار اشتباه عام‌ترین مشکلات یادگیرندگان زبان انگلیسی است:
-• زمان فعل نادرست ❌
-• توافق حروف فاعل و فعل ❌
-• فرم‌های نادرست فعل ❌
+⚠️ فارسی‌زبانان اغلب این اشتباهات می‌کنند چون:
+• در فارسی، تغییر زمان فعل کم است
+• توافق فاعل-فعل در فارسی انعطاف‌پذیرتر است
+• فارسی "من رفتم/رفتم" = یکی؛ انگلیسی "I went" یا "I have gone" = بسیار متفاوت
 
-💡 KEY LESSON: Pay attention to verb forms AND subject-verb agreement!
-معنی: به فرم فعل ها و توافق حروف فاعل و فعل توجه کنید!`,
+💡 فوکوس: نگاه به "زمان ختم شده یا نشده" = کلید است!`,
       hashtags: ['#ErrorCorrection', '#EnglishGrammar', '#LearnFromMistakes'],
       quizzes: [
         {
@@ -276,14 +277,13 @@ BONUS: "Go for" = Choose or attempt
 ✓ I'm going for the blue shirt. (choosing it)
 ✓ Go for it! (try your hardest!)
 
-🇮🇷
+🇮🇷 برای فارسی‌زبانان:
 
-سه معنی برای "go":
-• A2: رفتن به مکان
-• B1: ادامه دادن
-• B2: انجام دادن چیز سخت
+⚠️ فارسی "رفتن" صرفاً حرکت است؛ انگلیسی "go" بسیار وسیع‌تر:
+• "Go for it" = "برو جلو!" (کاملاً متفاوت از حرکت)
+• "Go through with" = "با آن پیش برو" (فارسی: تکمیل کن، ترک نکن)
 
-💡 Pro Tip: Context tells you which meaning! سیاق کمک می‌کند!`,
+💡 یادگیری: "Phrasal verbs" را کل عبارت یاد بگیر، نه کلمه به کلمه!`,
       hashtags: ['#PhrasalVerbs', '#DifficultyProgression', '#EnglishMastery'],
       quizzes: [
         {
@@ -335,14 +335,14 @@ NATIVE SPEAKER TIP:
 In casual speech: "He's nothing like me!" (Most common!)
 In formal writing: "Unlike previous research..." (Very academic/professional)
 
-🇮🇷
+🇮🇷 برای فارسی‌زبانان:
 
-• Unlike = شروع جمله، تاکید تفاوت
-• Different from = هر جای جمله، رسمی‌تر
+⚠️ فارسی هم "بَر خلاف" (Unlike) هم "متفاوت از" (Different from) دارد اما:
+• "بَر خلاف" = شروع جمله، تاکید قوی (تقریباً همیشه)
+• "متفاوت از" = هر جا، معنی ساده‌تر
 
-مثال ساده: "This is different from what I expected" یا "Unlike last time, this is good"
-
-💡 Pro Tip: "Unlike" sounds more sophisticated! Impress your readers!`,
+در "برخلاف"، انگلیسی دقیق‌تر است. خطای مشترک: "Different from previous, this is..." (نادرست)
+✅ صحیح: "Unlike previous, this is..." (ادبی‌تر)`,
       hashtags: ['#VocabularyNuance', '#WritingTips', '#EnglishStyle'],
       quizzes: [
         {
@@ -393,19 +393,17 @@ B: "Ugh, no way! That's rough."
 A: "Tell me about it! I'm dying for a vacation."
 B: "You and me both, friend."
 
-🇮🇷 تفسیر:
+🇮🇷 برای فارسی‌زبانان:
 
-• "How've you been?" = How have you been (informal contraction—natives do this!)
-• "Same old, same old" = Nothing new; life is routine
-• "Tell me about it!" = I totally agree! (expression of sympathy)
-• "Pulling all-nighters" = Staying up all night working
-• "That's rough" = That's difficult/unfortunate
-• "I'm dying for" = I really want something badly
-• "You and me both" = I agree completely; same situation!
+⚠️ بومی‌انگلیسی‌زبانان همیشه "تقلا" می‌کنند (contractions):
+• "How've" نه "How have" (فارسی هم "چه‌ای" بجای "چه می‌") 
+• "Don't" نه "Do not" (با حالت طبیعی)
+• اگر NEW یا FORMAL فارسی صحبت کنی = "do not" = در انگلیسی غریب است!
 
-NOTICE: Look how they use CONTRACTIONS and CASUAL IDIOMS! That's real English! 🎯
+⚠️ همچنین: "Tell me about it" = سوال نیست! درخواست هم‌دردی است.
+اگر واقعاً بخواهی جواب بخواهی? "Tell me about it" + سکوت = غلط!
 
-💡 KEY: Native speakers compress words (how've, don't, isn't) and use repetition for rhythm!`,
+💡 یادگیری: CONTRACTIONS = بومی سخن، FORMAL = دانشگاهی/رسمی`,
       hashtags: ['#AuthenticEnglish', '#ConversationSkills', '#NativeSpeaker'],
       quizzes: [
         {
@@ -461,15 +459,13 @@ SIMILAR TRICKY WORDS:
 
 THE PATTERN: British place names often HIDE syllables!
 
-🇮🇷
+🇮🇷 برای فارسی‌زبانان:
 
-انگلیسی برای تلفظ دقیق نیاز دارد توجه به الگو‌های خفی:
-• برخی حروف خاموش هستند
-• برخی هجاها پنهان شده‌اند
+⚠️ فارسی "هر حرف" را تلفظ می‌کنی. انگلیسی برطعسی؟ خیر!
+• "Worcestershire" = 9 حرف سه هجا = متفاوت
+• فارسی: "مثل خوندن" = "موزسُتِرشایِر" (و یادت نمی‌رود!)
 
-😅 حتی بومی‌انگلیسی‌زبان‌ها گاهی اشتباه می‌کنند!
-
-💡 Pro Tip: Listen to British people say these words on YouTubeتو can hear the rhythm!`,
+💡 نکته: انگلیسی British = بماند رازآلود: حروف پنهان، هجاها سریع!`,
       hashtags: ['#Pronunciation', '#BritishEnglish', '#LanguageTricks'],
       quizzes: [
         {
@@ -533,16 +529,15 @@ WHEN DO YOU USE IT?
 - A casual dinner
 - Regular conversations
 
-🇮🇷
+🇮🇷 برای فارسی‌زبانان:
 
-بیان‌ها متفاوت اما معنی یکسان:
-• امریکا: Break a leg!
-• انگلیس: Toi toi toi!
-• استرالیا: All the best!
+⚠️ فارسی را سادگی رفتار کن: "موفق باشی" یا "بخت تو باشد"
+انگلیسی? بسیار متفاوت:
+• USA علی‌رغم خطر = "Break a leg!" (واقعی خطرناک نیست!)
+• UK = آلمانی "Toi toi toi" (غریب اما درست!)
+• Australia = دوستانه + لطیف
 
-هدیه: اگر بریتانیایی دوست دارید، این بیان استفاده کنید!
-
-💡 PRO TIP: Using the correct phrase for their accent = MASSIVE respect points!`,
+💡 اشتباه: از "Break a leg" برای امتحان خیلی خطرناک و غریب است نه "خوب!" 😅`,
       hashtags: ['#CulturalEnglish', '#IdiomsAroundWorld', '#CrossCultural'],
       quizzes: [
         {
@@ -609,16 +604,13 @@ TRICK: Listen to what comes AFTER:
 • DO + concrete actions = Do homework, do laundry, do research
 • MAKE + results/outcomes = Make money, make progress, make happen
 
-🇮🇷
+🇮🇷 برای فارسی‌زبانان:
 
-Make = ایجاد کردن، تولید کردن (نتایج)
-Do = انجام دادن (فعالیت‌ها)
+⚠️ فارسی: هر دو "کردن" است! انگلیسی = متفاوت:
+• "Make" = نتیجه‌ای بیرون می‌آید (تصمیم، پیشرفت، دوست)
+• "Do" = فعالیت درون (تکالیف، کارها، تحقیق)
 
-مثال:
-"I make a decision" (تصمیم می‌گیرم - نتیجه)
-"I do research" (تحقیق می‌کنم - فعالیت)
-
-💡 MEMORY TIP: MAKE = produces something DONE = performs action!`,
+💡 یادگیری: اگر "نتیجه" ببینی → MAKE. اگر "فعالیت" ببینی → DO!`,
       hashtags: ['#Collocations', '#CommonMistakes', '#FluentEnglish'],
       quizzes: [
         {
@@ -671,15 +663,15 @@ Do = انجام دادن (فعالیت‌ها)
 ✅ CORRECTED VERSION:
 "Environmental issues ARE becoming more serious. Governments ARE NOT doing enough to protect the environment. People should reduce THEIR use of plastic and work harder to help the planet. In my opinion, IT IS very important that everyone participates in protecting our environment because FUTURE generations DEPEND on our actions right now."
 
-🇮🇷
+🇮🇷 برای فارسی‌زبانان:
 
-اشتباهات عام:
-❌ توافق حروف فاعل و فعل (subject-verb agreement)
-❌ تکرار یا حذف فعل کمکی (auxiliary verbs)
-❌ مقولات گرامری اشتباه
-✅ توجه! این اشتباهات درجه‌ای را پایین می‌آورند!
+⚠️ این اشتباهات ۸۵% یادگیرندگان فارسی‌زبان:
+• "issues is" = فارسی: "مشکلات" + "است" (جمع + مفرد) = غریب است!
+• "governments not doing" = باید verb کمکی (is/are) بین نهادت و فعل
+• "they use" = "their use" = ضمیر مالکیت نیاز دارد
 
-💡 EDITING TIP: Read aloud! Your ear catches mistakes your eyes miss!`,
+💡 راه تست: بلند بخوان! گوش بومی، چشم نمی‌دید!
+فارسی هم: "مشکلات هستند سخت" = غریب، نه؟`,
       hashtags: ['#WritingTips', '#EssayEdit', '#EnglishMastery'],
       quizzes: [
         {
