@@ -188,7 +188,7 @@ Pay attention to TIME words—they tell you which tense to use!
         question: '❓ Which is CORRECT? "I ___ to Japan last summer."',
         options: [
           'have gone',
-          'went ✅',
+          'went',
           'am going',
         ],
         correctIndex: 1,
@@ -238,7 +238,7 @@ Sounds sophisticated • Perfect for TOEFL/IELTS writing • Impresses native sp
         question: '❓ Which could be described as "ephemeral"?',
         options: [
           'A permanent tattoo',
-          'A beautiful sunset 🌅 ✅',
+          'A beautiful sunset 🌅',
           'The Rocky Mountains',
         ],
         correctIndex: 1,
@@ -251,12 +251,6 @@ Sounds sophisticated • Perfect for TOEFL/IELTS writing • Impresses native sp
       level: 'A2',
       topic: 'Better late than never - still good even if delayed',
       postBody: `💬 EXPRESSION OF THE DAY: "Better Late Than Never"
-
-═══════════════════════════════════════════════════════════
-📖 ENGLISH EXPLANATION
-═══════════════════════════════════════════════════════════
-
-Meaning: It's still good to do something even if you do it late or after expected time. Don't give up!
 
 Meaning: It's still good to do something even if you do it late or after expected time. Don't give up!
 
@@ -283,7 +277,7 @@ This phrase is VERY encouraging and positive!
         question: '❓ When would you say "Better late than never"?',
         options: [
           'When someone misses a deadline entirely',
-          'When someone finally starts trying, even if delayed ✅',
+          'When someone finally starts trying, even if delayed',
           'When someone cancels plans',
         ],
         correctIndex: 1,
@@ -396,9 +390,6 @@ function normalizeContent(content, fallback) {
   const quiz = safe.quiz && typeof safe.quiz === 'object' ? safe.quiz : fallback.quiz;
 
   const options = Array.isArray(quiz.options) ? quiz.options.slice(0, 4).map((item) => String(item)) : fallback.quiz.options;
-  while (options.length < 4) {
-    options.push(`Option ${options.length + 1}`);
-  }
 
   const hashtags = Array.isArray(safe.hashtags)
     ? safe.hashtags.map((tag) => String(tag).trim()).filter(Boolean).slice(0, 6)
