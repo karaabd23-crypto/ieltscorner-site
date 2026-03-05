@@ -158,10 +158,6 @@ function fallbackContent({ type, level, topic, channelUrl }) {
       topic: 'Present Perfect vs Simple Past',
       postBody: `✏️ GRAMMAR NUGGET: Present Perfect vs Simple Past
 
-═══════════════════════════════════════════════════════════
-📖 ENGLISH EXPLANATION
-═══════════════════════════════════════════════════════════
-
 ❌ WRONG: "I have been to Paris last year" (The time is finished!)
 ✅ CORRECT: "I went to Paris last year" (Finished time = Simple Past)
 
@@ -175,9 +171,7 @@ Examples:
 ✓ "She's lived here for 5 years" = Started in past, still now
 ✓ "She lived here in 2020" = That time is over now
 
-═══════════════════════════════════════════════════════════
-🇮🇷 شرح فارسی
-═══════════════════════════════════════════════════════════
+🇮🇷 شرح فارسی:
 
 ❌ غلط: "I have been to Paris last year"
 ✅ درست: "I went to Paris last year"
@@ -208,10 +202,6 @@ Pay attention to TIME words—they tell you which tense to use!
       topic: 'Ephemeral - lasting for a very short time',
       postBody: `📚 WORD OF THE DAY: "Ephemeral"
 
-═══════════════════════════════════════════════════════════
-📖 ENGLISH EXPLANATION
-═══════════════════════════════════════════════════════════
-
 Definition: Something that lasts for a very short time or is temporary.
 
 Pronunciation: eh-FEM-er-ul
@@ -230,9 +220,7 @@ Real Examples (Native Speakers Use It):
 Why Learn This?
 Sounds sophisticated • Perfect for TOEFL/IELTS writing • Impresses native speakers
 
-═══════════════════════════════════════════════════════════
-🇮🇷 شرح فارسی
-═══════════════════════════════════════════════════════════
+🇮🇷 شرح فارسی:
 
 تعریف: چیزی که برای مدت بسیار کوتاهی ماندگار است یا موقتی است.
 
@@ -270,6 +258,8 @@ Sounds sophisticated • Perfect for TOEFL/IELTS writing • Impresses native sp
 
 Meaning: It's still good to do something even if you do it late or after expected time. Don't give up!
 
+Meaning: It's still good to do something even if you do it late or after expected time. Don't give up!
+
 When Native Speakers Use It:
 ✓ "I haven't exercised in months. Better late than never—I'm starting today!"
 ✓ "You're arriving 2 hours late, but better late than never!"
@@ -283,15 +273,7 @@ Perfect For:
 What It DOESN'T Mean:
 ✗ Don't use it when someone apologizes for being extremely late to something important
 
-═══════════════════════════════════════════════════════════
-🇮🇷 شرح فارسی
-═══════════════════════════════════════════════════════════
-
-معنی: انجام دادن چیزی آن هم اگر دیر انجام شود بهتر است تا اصلاً انجام ندادن.
-
-زمان استفاده:
-✓ "من برای ماه‌ها ورزش نکردم. بهتر است دیر شروع کنم تا اصلاً نکنم!"
-✓ "حالا شروع خوانا انگلیسی می‌کنم. بهتر دیر است تا هرگز!"
+🇮🇷 شرح فارسی:
 
 💡 TIP / نکته:
 This phrase is VERY encouraging and positive!
