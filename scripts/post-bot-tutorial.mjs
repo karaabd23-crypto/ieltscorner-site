@@ -70,8 +70,8 @@ I'm here to help you learn English EVERY DAY — and it's super easy! Let me sho
 
 📍 HOW TO START:
 
-1️⃣ Click this link: @kaysenglishcornerbot 🤖
-(Or search "Kay's English Corner Bot" in Telegram)
+1️⃣ Click this link: @Ewithkpaybot 🤖
+(Or search "Ewithkpaybot" in Telegram)
 
 2️⃣ Tap "START" 
 
@@ -99,7 +99,7 @@ Send "studied" to the bot EVERY DAY to build your streak! 🔥
 30 days = 🟡 Builder  
 365 days = 🏆 Champion
 
-🎯 TRY IT NOW: Click @kaysenglishcornerbot and send /start! 
+🎯 TRY IT NOW: Click @Ewithkpaybot and send /start! 
 
 Then come back and tell us what you think! 👇
 
@@ -160,7 +160,7 @@ Example: "serendipity" = finding good things by chance! 🍀
 • "streak" → Check progress
 
 ⚡ TRY IT NOW:
-1. Open @kaysenglishcornerbot
+1. Open @Ewithkpaybot
 2. Send "vocab"
 3. Learn a new word RIGHT NOW! 💪
 
@@ -193,7 +193,7 @@ The bot tracks your daily progress — and it's SO simple! 😊
 
 📍 HOW IT WORKS:
 
-1️⃣ Open @kaysenglishcornerbot 
+1️⃣ Open @Ewithkpaybot 
 2️⃣ Send "studied" EVERY DAY 
 3️⃣ Watch your streak grow! 🔥
 
@@ -225,7 +225,7 @@ Set a phone alarm for 8pm every day:
 "Send 'studied' to Kay's bot!" ⏰
 
 📱 ACTION STEP:
-Right now, open @kaysenglishcornerbot and send:
+Right now, open @Ewithkpaybot and send:
 • "streak" to check your current streak
 • "studied" to start building it TODAY!
 
@@ -258,7 +258,7 @@ Here's how the referral system works: 👇
 
 📍 GET YOUR REFERRAL LINK:
 
-1️⃣ Open @kaysenglishcornerbot 
+1️⃣ Open @Ewithkpaybot 
 2️⃣ Send "refer" 
 3️⃣ Get YOUR unique link! 🔗
 
@@ -296,7 +296,7 @@ Send "refer" anytime to see:
 • What you've earned!
 
 🎯 ACTION STEP:
-1. Get your link: @kaysenglishcornerbot → send "refer"
+1. Get your link: @Ewithkpaybot → send "refer"
 2. Share it with 3 friends TODAY
 3. Start earning! 💪
 
