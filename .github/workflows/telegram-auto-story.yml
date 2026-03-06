@@ -1,9 +1,6 @@
-name: Auto-post Telegram stories
+name: Auto-post Telegram stories (legacy manual)
 
 on:
-  schedule:
-    # Post stories 3 times per day: 10am, 2pm, 7pm UTC
-    - cron: "0 10,14,19 * * *"
   workflow_dispatch:
     inputs:
       dry_run:

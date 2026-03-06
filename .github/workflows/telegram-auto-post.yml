@@ -1,9 +1,6 @@
-name: Auto-post Telegram content
+name: Auto-post Telegram content (legacy manual)
 
 on:
-  schedule:
-    # 5 posts per day: 9am, 12pm, 3pm, 6pm, 9pm UTC
-    - cron: "0 9,12,15,18,21 * * *"
   workflow_dispatch:
     inputs:
       topic:
