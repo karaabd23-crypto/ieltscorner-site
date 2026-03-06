@@ -17,12 +17,18 @@ const WHATSAPP_GROUP_URL = "https://wa.me/17789942315";
         <h1>Pay first. Then book. Simple.</h1>
 
         <p class="muted" style="max-width: 60ch;">
-          Private lessons are <strong>CA$30/hour</strong>. After payment, Stripe will send you to the booking calendar.
+          Private lessons are <strong>CA$30 per session</strong>. After payment, you'll get a secure link to book <strong>one</strong> session.
         </p>
+
+        <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 12px 16px; margin: 16px 0; border-radius: 6px; max-width: 60ch;">
+          <p style="margin: 0; font-size: 14px; color: #856404; font-weight: 600;">
+            ⚠️ Each payment = one 60-minute session. To book multiple sessions, pay CA$30 each time.
+          </p>
+        </div>
 
         <div class="cluster">
           <a class="btn btn-primary" href={STRIPE_PRIVATE_PAY_URL} target="_blank" rel="noreferrer">
-            Pay CA$30 → then book
+            Pay CA$30 → book 1 session
           </a>
           <a class="btn btn-ghost" href={WHATSAPP_GROUP_URL} target="_blank" rel="noreferrer">
             Group classes (min 3) — WhatsApp →
@@ -39,10 +45,16 @@ const WHATSAPP_GROUP_URL = "https://wa.me/17789942315";
 
     <div class="grid grid-2" style="align-items:start;">
       <div class="card">
-        <h3>Private lesson — CA$30 (60 minutes)</h3>
+        <h3>Private lesson — CA$30 per session</h3>
         <p class="muted">
           One-on-one tutoring for IELTS or CELPIP. We fix the mistakes that lower your score.
         </p>
+
+        <div style="background: #f8f9fa; border: 1px solid #dee2e6; padding: 12px; margin: 12px 0; border-radius: 6px;">
+          <p style="margin: 0; font-size: 13px; color: #495057;">
+            <strong>Payment Policy:</strong> Each CA$30 payment covers one 60-minute session. For additional sessions, complete another payment.
+          </p>
+        </div>
 
         <div class="checklist">
           <div class="check">
@@ -71,40 +83,47 @@ const WHATSAPP_GROUP_URL = "https://wa.me/17789942315";
         <div style="height: var(--s-4);"></div>
 
         <a class="btn btn-primary" href={STRIPE_PRIVATE_PAY_URL} target="_blank" rel="noreferrer">
-          Pay CA$30 → then book
+          Pay CA$30 → book 1 session
         </a>
 
         <p class="muted" style="font-size: 13px; margin: 12px 0 0;">
-          After payment, Stripe redirects you to the booking calendar automatically.
+          After payment, you'll get a secure one-time link to book your session.
         </p>
       </div>
 
       <div class="card">
         <h3>How booking works</h3>
         <p class="muted" style="margin-bottom: 12px;">
-          Payment comes first, so unpaid bookings are impossible.
+          Payment comes first, so unpaid bookings are impossible. Each payment = one session.
         </p>
 
         <div class="checklist">
           <div class="check">
             <div class="icon">1</div>
             <div>
-              <strong>Pay securely on Stripe</strong>
-              <span>Use the “Pay CA$30” button.</span>
+              <strong>Pay CA$30 on Stripe</strong>
+              <span>Click the payment button for one tutoring session.</span>
             </div>
           </div>
           <div class="check">
             <div class="icon">2</div>
             <div>
-              <strong>Choose your time</strong>
-              <span>After payment, you’ll be sent to the booking calendar.</span>
+              <strong>Get booking access</strong>
+              <span>You'll receive a secure link to book this one session.</span>
             </div>
           </div>
           <div class="check">
             <div class="icon">3</div>
             <div>
-              <strong>Get your Meet link by email</strong>
-              <span>Google Calendar sends the confirmation + Google Meet link.</span>
+              <strong>Choose your time</strong>
+              <span>Select an available slot on Google Calendar.</span>
+            </div>
+          </div>
+          <div class="check">
+            <div class="icon">4</div>
+            <div>
+              <strong>Get your Meet link</strong>
+              <span>Calendar invite with Google Meet link arrives via email.</span>
             </div>
           </div>
         </div>

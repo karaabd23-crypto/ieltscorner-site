@@ -1,0 +1,104 @@
+/**
+ * Netlify Function: Validate Tutoring Payment Session
+ * 
+ * This function validates a Stripe checkout session for tutoring payments.
+ * It ensures users can only access the booking calendar after paying.
+ * 
+ * Environment variables needed:
+ * - STRIPE_API_KEY
+ * - TUTORING_CALENDAR_URL (Google Calendar booking link)
+ */
+
+import Stripe from 'stripe';
+
+const STRIPE_API_KEY = process.env.STRIPE_API_KEY;
+const TUTORING_CALENDAR_URL = process.env.TUTORING_CALENDAR_URL || 'https://calendar.google.com/calendar/appointments/schedules/YOUR_SCHEDULE_ID';
+
+// Payment link product ID - update this with your actual tutoring product ID from Stripe
+const TUTORING_PRICE_ID = process.env.TUTORING_PRICE_ID || 'price_tutoring';
+
+// Session validity period (24 hours in milliseconds)
+const SESSION_VALIDITY_PERIOD = 24 * 60 * 60 * 1000;
+
+export async function handler(event, context) {
+  // Only accept POST requests
+  if (event.httpMethod !== 'POST') {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({ error: 'Method not allowed' })
+    };
+  }
+
+  try {
+    const { sessionId } = JSON.parse(event.body);
+
+    if (!sessionId) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: 'Session ID is required' })
+      };
+    }
+
+    if (!STRIPE_API_KEY) {
+      console.error('Missing STRIPE_API_KEY environment variable');
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ error: 'Server configuration error' })
+      };
+    }
+
+    // Initialize Stripe
+    const stripe = new Stripe(STRIPE_API_KEY);
+
+    // Retrieve the checkout session
+    const session = await stripe.checkout.Session.retrieve(sessionId);
+
+    // Validate the session
+    const now = Date.now();
+    const sessionCreatedAt = session.created * 1000; // Convert to milliseconds
+    const sessionAge = now - sessionCreatedAt;
+
+    // Check if session is valid
+    const isValid = 
+      session.payment_status === 'paid' &&
+      session.status === 'complete' &&
+      sessionAge <= SESSION_VALIDITY_PERIOD;
+
+    if (!isValid) {
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ 
+          valid: false, 
+          reason: sessionAge > SESSION_VALIDITY_PERIOD ? 'Session expired' : 'Payment not confirmed'
+        })
+      };
+    }
+
+    // Session is valid - return booking URL
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        valid: true,
+        bookingUrl: TUTORING_CALENDAR_URL,
+        customerEmail: session.customer_details?.email || null,
+        customerName: session.customer_details?.name || null
+      })
+    };
+
+  } catch (error) {
+    console.error('Session validation error:', error);
+
+    // Handle specific Stripe errors
+    if (error.type === 'StripeInvalidRequestError') {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: 'Invalid session ID' })
+      };
+    }
+
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: 'Validation failed' })
+    };
+  }
+}

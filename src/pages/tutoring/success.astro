@@ -1,0 +1,180 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+// This page is shown after Stripe payment
+// It validates the session and shows the booking calendar link
+---
+
+<Layout
+  title="Payment Confirmed — Book Your Session"
+  description="Your tutoring payment is confirmed. Book your session time now."
+>
+  <section class="section">
+    <div class="hero" style={`--hero-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);`}>
+      <div class="hero-content" style="text-align: center;">
+        <span class="pill">✅ Payment Confirmed</span>
+        <h1>Thanks for your payment!</h1>
+        <p class="muted" style="max-width: 60ch; margin: 0 auto;">
+          Your CA$30 payment has been processed. Now you can book <strong>one</strong> session on Google Calendar.
+        </p>
+      </div>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <div class="shell shell-compact">
+      <div id="validation-container">
+        <div style="text-align: center; padding: var(--s-8);">
+          <p style="color: var(--text-muted);">Validating your payment...</p>
+        </div>
+      </div>
+
+      <div id="booking-container" style="display: none;">
+        <div class="card">
+          <h2 style="margin-top: 0;">📅 Book Your Session</h2>
+          
+          <div class="surface" style="padding: var(--s-5); margin-bottom: var(--s-4); background: #fff3cd; border-left: 4px solid #ffc107;">
+            <p style="margin: 0; font-weight: 600; color: #856404;">
+              ⚠️ Important: Each payment covers ONE 60-minute session.
+            </p>
+            <p style="margin: 8px 0 0; font-size: 14px; color: #856404;">
+              To book additional sessions, you must pay CA$30 again through the <a href="/tutoring" style="color: #856404; text-decoration: underline;">tutoring page</a>.
+            </p>
+          </div>
+
+          <div class="checklist">
+            <div class="check">
+              <div class="icon">1</div>
+              <div>
+                <strong>Click the booking button below</strong>
+                <span>You'll be taken to Google Calendar to choose your time.</span>
+              </div>
+            </div>
+            <div class="check">
+              <div class="icon">2</div>
+              <div>
+                <strong>Select an available time slot</strong>
+                <span>Pick a date and time that works for you.</span>
+              </div>
+            </div>
+            <div class="check">
+              <div class="icon">3</div>
+              <div>
+                <strong>Get your Google Meet link</strong>
+                <span>You'll receive a calendar invite with the Meet link via email.</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="height: var(--s-5);"></div>
+
+          <a 
+            id="calendar-link" 
+            class="btn btn-primary" 
+            href="#" 
+            target="_blank" 
+            rel="noreferrer"
+            style="display: inline-block; width: 100%; text-align: center;"
+          >
+            📅 Book Your Session on Google Calendar →
+          </a>
+
+          <p class="muted" style="font-size: 13px; margin: 16px 0 0; text-align: center;">
+            This link is for booking ONE session only.<br>
+            Lesson will be from <strong>kara.abdolmaleki@gmail.com</strong> on Google Meet.
+          </p>
+        </div>
+
+        <div style="height: var(--s-6);"></div>
+
+        <div class="card" style="border-left: 4px solid var(--accent);">
+          <h3 style="margin-top: 0;">Need more sessions?</h3>
+          <p class="muted">
+            Each session requires a separate payment. To book additional tutoring sessions, return to the tutoring page and complete another payment.
+          </p>
+          <a class="btn btn-ghost" href="/tutoring">
+            ← Back to Tutoring Page
+          </a>
+        </div>
+      </div>
+
+      <div id="error-container" style="display: none;">
+        <div class="card" style="border-left: 4px solid #dc3545;">
+          <h2 style="margin-top: 0; color: #dc3545;">⚠️ Payment Validation Failed</h2>
+          <p class="muted">
+            We couldn't verify your payment. This might happen if:
+          </p>
+          <ul class="muted">
+            <li>You accessed this page directly without completing payment</li>
+            <li>Your session has expired</li>
+            <li>There was an error processing your payment</li>
+          </ul>
+          <p class="muted">
+            Please complete payment first through the tutoring page.
+          </p>
+          <a class="btn btn-primary" href="/tutoring">
+            Go to Tutoring Page →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+  </section>
+
+  <script>
+    // Validate Stripe session and show booking calendar link
+    async function validateSession() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const sessionId = urlParams.get('session_id');
+
+      const validationContainer = document.getElementById('validation-container');
+      const bookingContainer = document.getElementById('booking-container');
+      const errorContainer = document.getElementById('error-container');
+
+      if (!validationContainer || !bookingContainer || !errorContainer) {
+        console.error('Required DOM elements not found');
+        return;
+      }
+
+      if (!sessionId) {
+        validationContainer.style.display = 'none';
+        errorContainer.style.display = 'block';
+        return;
+      }
+
+      try {
+        // Call Netlify function to validate session
+        const response = await fetch('/.netlify/functions/validate-tutoring-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sessionId })
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.valid && data.bookingUrl) {
+          // Show booking container with calendar link
+          validationContainer.style.display = 'none';
+          bookingContainer.style.display = 'block';
+          
+          const calendarLink = document.getElementById('calendar-link') as HTMLAnchorElement | null;
+          if (calendarLink) {
+            calendarLink.href = data.bookingUrl;
+          }
+        } else {
+          // Show error
+          validationContainer.style.display = 'none';
+          errorContainer.style.display = 'block';
+        }
+      } catch (error) {
+        console.error('Validation error:', error);
+        validationContainer.style.display = 'none';
+        errorContainer.style.display = 'block';
+      }
+    }
+
+    // Run validation on page load
+    validateSession();
+  </script>
+</Layout>
