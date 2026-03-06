@@ -32,6 +32,10 @@ import Layout from "../../layouts/Layout.astro";
       <div id="booking-container" style="display: none;">
         <div class="card">
           <h2 style="margin-top: 0;">📅 Book Your Session</h2>
+
+          <div id="credits-banner" class="surface" style="padding: var(--s-4); margin-bottom: var(--s-4); border: 2px solid var(--accent); border-radius: 10px; text-align: center; background: var(--accent-light);">
+            <p id="credits-text" style="margin: 0; font-weight: 700; color: var(--text);">Payment confirmed for 1 session.</p>
+          </div>
           
           <div class="surface" style="padding: var(--s-5); margin-bottom: var(--s-4); background: #fff3cd; border-left: 4px solid #ffc107;">
             <p style="margin: 0; font-weight: 600; color: #856404;">
@@ -74,13 +78,13 @@ import Layout from "../../layouts/Layout.astro";
             href="#" 
             target="_blank" 
             rel="noreferrer"
-            style="display: inline-block; width: 100%; text-align: center;"
+            style="display: inline-block; width: 100%; text-align: center; padding: 16px 20px; font-size: 1.05rem; font-weight: 700; box-shadow: 0 10px 24px rgba(0,0,0,0.16); border: 2px solid var(--accent);"
           >
-            📅 Book Your Session on Google Calendar →
+            📅 Book Your Session(s) on Google Calendar →
           </a>
 
-          <p class="muted" style="font-size: 13px; margin: 16px 0 0; text-align: center;">
-            This link is for booking ONE session only.<br>
+          <p id="booking-note" class="muted" style="font-size: 13px; margin: 16px 0 0; text-align: center;">
+            Use this link to book your purchased session(s).<br>
             Lesson will be from <strong>kara.abdolmaleki@gmail.com</strong> on Google Meet.
           </p>
         </div>
@@ -171,6 +175,22 @@ import Layout from "../../layouts/Layout.astro";
           const calendarLink = document.getElementById('calendar-link') as HTMLAnchorElement | null;
           if (calendarLink) {
             calendarLink.href = data.bookingUrl;
+          }
+
+          const sessionsPurchased = Number(data.sessionsPurchased ?? 1);
+          const creditsText = document.getElementById('credits-text');
+          const bookingNote = document.getElementById('booking-note');
+
+          if (creditsText) {
+            if (sessionsPurchased > 1) {
+              creditsText.textContent = `Payment confirmed for ${sessionsPurchased} sessions. You can book ${sessionsPurchased} time slots.`;
+            } else {
+              creditsText.textContent = 'Payment confirmed for 1 session. You can now book your time slot.';
+            }
+          }
+
+          if (bookingNote && sessionsPurchased > 1) {
+            bookingNote.innerHTML = `You purchased <strong>${sessionsPurchased} sessions</strong>. Please book ${sessionsPurchased} separate time slots using the calendar link.<br>Lesson will be from <strong>kara.abdolmaleki@gmail.com</strong> on Google Meet.`;
           }
         } else {
           // Show error

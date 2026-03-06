@@ -80,12 +80,16 @@ export async function handler(event, context) {
       };
     }
 
+    const sessionsPurchased = Math.max(1, Math.floor(amountTotal / TUTORING_AMOUNT_CENTS));
+
     // Session is valid - return booking URL
     return {
       statusCode: 200,
       body: JSON.stringify({
         valid: true,
         bookingUrl: TUTORING_CALENDAR_URL,
+        sessionsPurchased,
+        amountTotal,
         customerEmail: session.customer_details?.email || null,
         customerName: session.customer_details?.name || null
       })
