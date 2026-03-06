@@ -18,6 +18,15 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Restore Telegram history cache
+        id: restore-telegram-history
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/telegram-post-history.json
+          key: telegram-history-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            telegram-history-${{ github.ref_name }}-
+
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
 
@@ -30,8 +39,16 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
           TELEGRAM_CHANNEL_URL: ${{ secrets.TELEGRAM_CHANNEL_URL }}
+          TELEGRAM_HISTORY_FILE: .cache/telegram-post-history.json
           OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
         run: node scripts/post-telegram-story.mjs
+
+      - name: Save Telegram history cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/telegram-post-history.json
+          key: telegram-history-${{ github.ref_name }}-${{ github.run_id }}
 
       - name: Log completion
         if: always()

@@ -1,9 +1,12 @@
 #!/usr/bin/env node
-import { readFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 
 const DEFAULT_MODEL = 'gpt-4.1-mini';
 const DEFAULT_ANTHROPIC_MODEL = 'claude-3-5-sonnet-latest';
+const DEFAULT_HISTORY_FILE = '.cache/telegram-post-history.json';
+const HISTORY_MAX_ITEMS = 5000;
 
 const TOPIC_BANK = [
   { type: 'vocab', level: 'B1', topic: 'Reliable - someone or something you can trust', lang: 'EN/FA' },
@@ -729,6 +732,59 @@ function normalizeForDedupe(text) {
     .trim();
 }
 
+function createContentFingerprint(text) {
+  const normalized = normalizeForDedupe(text);
+  return createHash('sha256').update(normalized).digest('hex');
+}
+
+function resolveHistoryFilePath() {
+  const configured = process.env.TELEGRAM_HISTORY_FILE?.trim();
+  if (!configured) {
+    return path.join(process.cwd(), DEFAULT_HISTORY_FILE);
+  }
+
+  return path.isAbsolute(configured)
+    ? configured
+    : path.join(process.cwd(), configured);
+}
+
+async function loadPostHistory(filePath) {
+  try {
+    const raw = await readFile(filePath, 'utf8');
+    const parsed = JSON.parse(raw);
+    if (parsed && typeof parsed === 'object' && Array.isArray(parsed.items)) {
+      return parsed;
+    }
+  } catch {
+    // ignore missing/invalid history file
+  }
+
+  return { items: [] };
+}
+
+function hasFingerprint(history, fingerprint) {
+  return history.items.some((item) => item?.fingerprint === fingerprint);
+}
+
+function rememberFingerprint(history, fingerprint, meta = {}) {
+  const next = {
+    fingerprint,
+    kind: 'content',
+    topic: String(meta.topic ?? ''),
+    createdAt: new Date().toISOString(),
+  };
+
+  history.items.push(next);
+  if (history.items.length > HISTORY_MAX_ITEMS) {
+    history.items = history.items.slice(history.items.length - HISTORY_MAX_ITEMS);
+  }
+}
+
+async function savePostHistory(filePath, history) {
+  await mkdir(path.dirname(filePath), { recursive: true });
+  await writeFile(filePath, `${JSON.stringify(history, null, 2)}\n`, 'utf8');
+}
+
 function resolvePublicChannelSlug(channelUrl, chatId) {
   const fromUrl = String(channelUrl ?? '').trim();
   if (fromUrl) {
@@ -885,6 +941,14 @@ async function main() {
   }
 
   const messageText = buildPostMessage(content);
+  const historyFilePath = resolveHistoryFilePath();
+  const history = await loadPostHistory(historyFilePath);
+  const messageFingerprint = createContentFingerprint(messageText);
+  if (hasFingerprint(history, messageFingerprint)) {
+    console.log('[skip] Duplicate content found in persistent history. Skipping publish.');
+    return;
+  }
+
   const publicSlug = resolvePublicChannelSlug(channelUrl, chatId);
   const existingTexts = await fetchRecentChannelTexts(publicSlug);
   const normalizedMessage = normalizeForDedupe(messageText);
@@ -917,6 +981,9 @@ async function main() {
       is_anonymous: true,
     }, botToken);
   }
+
+  rememberFingerprint(history, messageFingerprint, { topic: content.topic });
+  await savePostHistory(historyFilePath, history);
 
   console.log(`[ok] Posted content and ${content.quizzes.length} quiz polls for topic: ${content.topic}`);
 }
