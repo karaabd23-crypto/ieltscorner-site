@@ -154,660 +154,336 @@ function extractJson(text) {
 }
 
 function fallbackContent({ type, level, topic, channelUrl }) {
-  // 10 B1-level fallback templates matching Kay's English Corner channel voice
+  // 7 B1-level format templates rotating through diverse styles
+  // All match Kay's English Corner enthusiastic voice
 
-  // FORMAT 1: Vocabulary
-  const vocabLessons = [
+  // FORMAT 1: Mini Story (narrative-based)
+  const storyFormats = [
     {
-      title: '💡 Word Power: "Reliable"',
-      format: 'vocabulary',
+      title: '📖 Mini Story: The Job Interview Surprise',
+      format: 'story',
       level: 'B1',
-      topic: 'Reliable - someone or something you can trust',
-      postBody: `💡 Word Power: "Reliable"
+      topic: 'Story about nervousness and success',
+      postBody: `📖 Mini Story: The Job Interview Surprise
 
-Let's explore this super useful word! ✨
+Sarah was SO nervous about her job interview! 😰
 
-You know that ONE friend who is ALWAYS there when you need them? 🤝 The one who never cancels plans and always keeps their promises? THAT person is reliable! 😊
+She left her house 2 hours early (way too early! 😅) and arrived at the office building. But when she checked the address again... OH NO! 😱 Wrong building!
 
-🔤 "Reliable" means someone or something you can TRUST and DEPEND ON! 💪
+She RAN to the correct address! Her heart was racing! 🏃‍♀️💨
 
-It's not just for people — things can be reliable too! Your car, your phone, your wifi... well, maybe not your wifi 😅
+When she arrived, sweating and out of breath, the interviewer smiled and said: "Don't worry! You're actually 15 minutes EARLY!" 😊
 
-✍️ Real Examples:
-✅ "My best friend is so reliable — she always helps me when I need her!" 🤗
-✅ "This car is very reliable. It never breaks down!" 🚗
-✅ "We need a reliable internet connection for the meeting." 💻
+Sarah got the job! 🎉
 
-🇮🇷 شرح فارسی:
-Reliable یعنی قابل اعتماد! مثلاً کسی که همیشه میتونی روش حساب کنی! 🌟
-✅ "دوستم خیلی قابل اعتماده — همیشه وقتی نیاز دارم کمکم میکنه!"
-✅ "این ماشین خیلی قابل اعتماده. هیچوقت خراب نمیشه!"
+🇮🇷 سارا خیلی نگران مصاحبه کاریش بود! ۲ ساعت زودتر رفت ولی به آدرس اشتباه رفته بود! دوید و به موقع رسید! کار رو گرفت! 💪
 
-💡 Pro Tip:
-The opposite is "unreliable" — someone you CAN'T count on! 🙅
-"Don't ask him — he's so unreliable. He always forgets!" 😤
+💡 What We Learn:
+✅ "Way too early" = خیلی خیلی زود 
+✅ "Out of breath" = نفس نفس زدن (من از نفس افتادم)
+✅ "Don't worry" = نگران نباش
 
-🎯 Your turn! Think of someone reliable in YOUR life and write a sentence about them! Share below! 👇
-
-🤖 Want interactive quizzes & personalized tips? DM the bot for exclusive features!`,
-      hashtags: ['#LearnEnglish', '#Vocabulary', '#B1English', '#DailyEnglish', '#WordPower'],
+🎯 YOUR TURN: Have YOU ever gone to the wrong place? Tell us! 👇`,
+      hashtags: ['#EnglishStory', '#LearnEnglish', '#B1English', '#RealLife'],
       quizzes: [
         {
-          question: '❓ "I always take this bus because it\'s very _____. It comes on time every day!"',
-          options: ['expensive', 'reliable', 'nervous', 'difficult'],
+          question: '❓ What does "out of breath" mean?',
+          options: ['Very angry', 'Breathing hard after running', 'Holding your breath', 'Speaking quietly'],
           correctIndex: 1,
-          explanation: '"Reliable" means you can trust it — it works every time! 💪',
-        },
-        {
-          question: '❓ Which person is the MOST reliable?',
-          options: ['Someone who always cancels plans', 'Someone who always keeps their promises', 'Someone who is always late', 'Someone who forgets everything'],
-          correctIndex: 1,
-          explanation: 'A reliable person keeps their promises! You can COUNT on them! 🤝',
-        },
-        {
-          question: '❓ "My old phone was so _____. It turned off all the time!" What word fits?',
-          options: ['reliable', 'unreliable', 'convenient', 'comfortable'],
-          correctIndex: 1,
-          explanation: 'If something breaks or stops working a lot, it\'s UNreliable! 📱😤',
+          explanation: '"Out of breath" = نفس نفس زدن! After running or exercise! 🏃‍♀️💨',
         },
       ],
     },
   ];
 
-  // FORMAT 2: Grammar
-  const grammarLessons = [
+  // FORMAT 2: Visual Comparison (side-by-side)
+  const comparisonFormats = [
     {
-      title: '🧠 Grammar Guide: "Used to" vs "Would" (Past Habits Explained!)',
-      format: 'grammar',
-      level: 'B1',
-      topic: 'Used to vs Would - past habits and states',
-      postBody: `🧠 Grammar Guide: "Used to" vs "Would" (Past Habits Explained!)
-
-This one confuses SO many students! Let's fix it forever! 🎯 ✨
-
-Okay, here's the frustrating part: "used to" and "would" BOTH talk about past habits! 😅 They sound similar, they mean similar things... but there are sneaky differences! 🤔
-
-But don't worry — the rule is actually SO simple once you understand it! 💡
-
-📌 The Key Difference (Write this down!):
-"USED TO" = A past habit that NO LONGER happens (it stopped!) 🛑
-"WOULD" = A past habit you did repeatedly BY CHOICE 😄
-
-🇮🇷 فارسی:
-Used to = عادتی که دیگه انجام نمی‌دی
-Would = عادتی که تکرار میکردی (انتخابی)
-
-❌ WRONG: "When I was young, I would live in Paris" (NO! Weird!)
-✅ RIGHT: "When I was young, I used to live in Paris" ✓
-→ Living somewhere is a STATE, not a chosen action!
-
-✅ "When I was 10, I would play basketball every day" ⚽ (your choice!)
-✅ "She would always visit her grandmother on weekends" 👵
-
-✍️ Real Examples:
-✅ "I used to be scared of dogs, but now I love them!" 🐕
-"من قبلاً از سگ می‌ترسیدم، ولی حالا عاشقشونم!"
-
-💡 Pro Tip: If you can say "I DON'T anymore" → use "USED TO"! 🛑
-If you "DID THIS many times by choice" → use "WOULD"! 😄
-
-🎯 Try it NOW: Write a sentence about a habit you USED TO have! 👇
-
-🤖 Want interactive quizzes & personalized tips? DM the bot for exclusive features!`,
-      hashtags: ['#EnglishGrammar', '#UsedToVsWould', '#B1Grammar', '#LearnEnglish'],
-      quizzes: [
-        {
-          question: '❓ "When I was a child, I _____ in a small town." (state, not choice)',
-          options: ['would live', 'used to live', 'would living', 'use to live'],
-          correctIndex: 1,
-          explanation: 'Living somewhere is a STATE — always use "used to" for states! 🏠',
-        },
-        {
-          question: '❓ "Every summer, we _____ go to the beach and swim all day." (repeated fun activity)',
-          options: ['used to', 'would', 'Both are correct!', 'will'],
-          correctIndex: 2,
-          explanation: 'Both work here! It\'s a repeated activity. But "would" emphasizes the fun memory! 🏖️',
-        },
-        {
-          question: '❓ Which is WRONG?',
-          options: ['I used to play piano.', 'I would play piano every day.', 'I would be tall when I was young.', 'I used to be tall.'],
-          correctIndex: 2,
-          explanation: '"Be tall" is a STATE — you can\'t use "would" for states! Use "used to"! 📏',
-        },
-      ],
-    },
-  ];
-
-  // FORMAT 3: Idiom
-  const idiomLessons = [
-    {
-      title: '🎭 Idiom Time: "Break a leg!"',
-      format: 'idiom',
-      level: 'B1',
-      topic: 'Break a leg - good luck or best wishes',
-      postBody: `🎭 Idiom Time: "Break a leg!" 🦵✨
-
-Wait, WHAT?! Why would you tell someone to break their leg?! 😱
-
-Here's the thing — this has NOTHING to do with breaking bones! 😅
-
-"Break a leg" is one of the most fun English idioms! It actually means "GOOD LUCK!" 🍀 Especially before a performance, speech, or big event! 🎤
-
-It comes from the theater world 🎭 — actors believe saying "good luck" is BAD luck! So they say the opposite! How funny is that?! 😄
-
-✍️ Real Examples:
-✅ "You have a job interview tomorrow? Break a leg!" 💼
-✅ "Break a leg at your presentation today!" 🎤
-✅ "My daughter's dance show is tonight!" — "Oh, tell her to break a leg!" 💃
-
-🇮🇷 شرح فارسی:
-Break a leg یعنی موفق باشی! 🍀
-وقتی کسی کار مهمی داره مثل مصاحبه یا ارائه، بهش بگو: Break a leg!
-✅ "فردا مصاحبه کاری داری؟ امیدوارم موفق بشی!"
-✅ "امشب رقص دخترمه!" — "بهش بگو موفق باشه!"
-
-⚠️ When NOT to use it:
-Don't say "break a leg" when someone is actually going to the hospital! 😅🏥
-Only use it for performances, tests, interviews, or big moments! 🌟
-
-💡 Tip: You can also say "Knock 'em dead!" — same meaning! 💪🔥
-
-🎯 Your turn: When was the LAST time someone wished YOU good luck? Tell us! 👇
-
-🤖 Want interactive quizzes & personalized tips? DM the bot for exclusive features!`,
-      hashtags: ['#EnglishIdioms', '#BreakALeg', '#B1English', '#DailyIdiom', '#GoodLuck'],
-      quizzes: [
-        {
-          question: '❓ Your friend is about to perform on stage. What do you say?',
-          options: ['Be careful with your legs!', 'Break a leg!', 'Don\'t break anything!', 'Good legs!'],
-          correctIndex: 1,
-          explanation: '"Break a leg" = Good luck! Perfect before a big performance! 🎭✨',
-        },
-        {
-          question: '❓ "Break a leg" comes from which world?',
-          options: ['Sports', 'Medicine', 'Theater', 'Cooking'],
-          correctIndex: 2,
-          explanation: 'Actors believe saying "good luck" is bad luck, so they say the opposite! 🎭',
-        },
-        {
-          question: '❓ When should you NOT say "break a leg"?',
-          options: ['Before a job interview', 'Before an exam', 'When someone is going to the hospital', 'Before a dance show'],
-          correctIndex: 2,
-          explanation: 'Don\'t say it when someone is actually hurt! 😅 Only for performances and big moments!',
-        },
-      ],
-    },
-  ];
-
-  // FORMAT 4: Phrasal verb
-  const phrasalLessons = [
-    {
-      title: '🔄 Phrasal Verb Power: "Look forward to"',
-      format: 'phrasal-verb',
-      level: 'B1',
-      topic: 'Look forward to - be excited about something in the future',
-      postBody: `🔄 Phrasal Verb Power: "Look forward to" 🎉
-
-This is one of the MOST useful phrases in English! ✨ You'll use it in conversations, emails, texts — EVERYWHERE! 📱💬📧
-
-"Look forward to" means you feel EXCITED and HAPPY about something in the future! 🤩
-
-Here's what makes this phrase special — you use it when you REALLY want something to happen! Not just "okay fine" but "YES I CAN'T WAIT!" 🎊
-
-✍️ Real Examples:
-✅ "I'm looking forward to the weekend!" 🎉
-✅ "She's looking forward to her vacation in Mexico!" 🏖️
-✅ "We look forward to meeting you!" (SO common in emails!) 📧
-
-⚠️ BUT HERE'S THE TRAP! The part that trips EVERYONE up! 😅
-After "look forward to" → use -ING! NOT infinitive!
-
-✅ "I look forward to SEEING you." ← CORRECT! ✓
-❌ "I look forward to SEE you." ← WRONG! ✗
-
-✅ "I'm looking forward to STARTING my new job." 💼
-❌ "I'm looking forward to START my new job." 🚫
-
-🇮🇷 شرح فارسی:
-Look forward to یعنی مشتاقانه منتظرم! 🌟
-✅ "مشتاقانه منتظر آخر هفته هستم!" 🎉
-✅ "مشتاقانه منتظر دیدنتون هستیم!" (خیلی رایج در ایمیل!)
-
-💡 Pro Tip: PERFECT for professional emails! End with:
-"I look forward to hearing from you." 📧✨
-
-🎯 What are YOU looking forward to this week? Tell us below! 👇
-
-🤖 Want interactive quizzes & personalized tips? DM the bot for exclusive features!`,
-      hashtags: ['#PhrasalVerbs', '#LookForwardTo', '#B1English', '#EnglishGrammar', '#DailyEnglish'],
-      quizzes: [
-        {
-          question: '❓ "I look forward to _____ you at the party!"',
-          options: ['see', 'seeing', 'saw', 'to see'],
-          correctIndex: 1,
-          explanation: 'After "look forward to" → always -ING! "Looking forward to SEEING!" ✨',
-        },
-        {
-          question: '❓ What does "I\'m looking forward to the weekend" mean?',
-          options: ['I\'m scared of the weekend', 'I\'m excited about the weekend!', 'I forgot about the weekend', 'I hate weekends'],
-          correctIndex: 1,
-          explanation: '"Looking forward to" = excited and happy! You CAN\'T WAIT! 🎉',
-        },
-        {
-          question: '❓ Which email ending is CORRECT?',
-          options: ['I look forward to hear from you.', 'I look forward to hearing from you.', 'I look forward hear from you.', 'I looking forward to hear.'],
-          correctIndex: 1,
-          explanation: '"Look forward to HEARING" — remember, always -ING after "to"! 📧',
-        },
-      ],
-    },
-  ];
-
-  // FORMAT 5: Expression
-  const expressionLessons = [
-    {
-      title: '💬 Say This Like a Native: "It depends!"',
-      format: 'expression',
-      level: 'B1',
-      topic: 'It depends - the answer changes based on the situation',
-      postBody: `💬 Say This Like a Native: "It depends!" 🤔
-
-Have you ever been asked a question and thought "Well... it's not that simple!" 😅
-
-THAT'S when you say "It depends!" ✨
-
-This is one of those magical phrases that makes you sound SO natural in English! 🌟 Native speakers use it ALL the time! 🗣️
-
-It means: the answer CHANGES based on the situation! There's no simple yes or no! 🤷
-
-✍️ Real Examples:
-✅ "Do you like cooking?" — "It depends! If I have time, yes!" 🍳
-✅ "Is English hard?" — "It depends on how much you practice!" 📚
-✅ "Should I take the bus?" — "It depends on the traffic!" 🚌
-
-📌 How to use it:
-• "It depends." (by itself — short answer!) 
-• "It depends ON + noun" → "It depends on the weather." ☀️🌧️
-• "It depends ON + question word" → "It depends on how far it is." 🗺️
-
-🇮🇷 شرح فارسی:
-It depends یعنی "بستگی داره"! 🤔
-✅ "آیا آشپزی دوست داری؟" — "بستگی داره! اگه وقت داشته باشم، آره!"
-✅ "انگلیسی سخته؟" — "بستگی داره چقدر تمرین کنی!"
-
-💡 Pro Tip: PERFECT for when people ask hard questions!
-Instead of struggling to explain, just say "Well, it depends..." and then explain WHY! 😎
-
-🎯 Answer this: "Do you prefer summer or winter?" Use "it depends" in your answer! 👇
-
-🤖 Want interactive quizzes & personalized tips? DM the bot for exclusive features!`,
-      hashtags: ['#EnglishExpressions', '#ItDepends', '#B1English', '#SpeakLikeANative'],
-      quizzes: [
-        {
-          question: '❓ "Will you go to the party?" — "_____ on who\'s going."',
-          options: ['It depends', 'It decides', 'It works', 'It changes'],
-          correctIndex: 0,
-          explanation: '"It depends on..." — the answer changes based on the situation! 🤔',
-        },
-        {
-          question: '❓ When do we say "it depends"?',
-          options: ['When we are 100% sure', 'When the answer is always the same', 'When the answer changes based on the situation', 'When we don\'t understand'],
-          correctIndex: 2,
-          explanation: '"It depends" = no simple yes or no! The situation matters! ✨',
-        },
-        {
-          question: '❓ Which is CORRECT?',
-          options: ['It depends of the price.', 'It depends on the price.', 'It depends for the price.', 'It depends at the price.'],
-          correctIndex: 1,
-          explanation: 'Always: "depends ON" — "It depends ON the price!" 💰',
-        },
-      ],
-    },
-  ];
-
-  // FORMAT 6: Error Correction
-  const errorLessons = [
-    {
-      title: '🔍 Spot the Mistake! Common Errors That Trip EVERYONE Up!',
-      format: 'error-correction',
-      level: 'B1',
-      topic: 'Common mistakes with agree, enjoy, and suggest',
-      postBody: `🔍 Spot the Mistake! Can You Fix These? 🧐
-
-These 3 mistakes are SO common! Even advanced students make them! 😅
-But once you learn the rules, you'll NEVER make them again! 💪✨
-
-Mistake 1: 😱
-❌ "I am agree with you."
-✅ "I agree with you."
-→ "Agree" is a VERB! You don't need "am"! Just say "I agree!" ✓
-
-Mistake 2: 🤦
-❌ "I enjoy to swim."
-✅ "I enjoy swimming."
-→ After "enjoy" → ALWAYS use -ING! No exceptions! 🏊
-
-Mistake 3: 😅
-❌ "She suggested me to go."
-✅ "She suggested that I go." OR "She suggested going."
-→ "Suggest" NEVER uses "me to..." pattern!
-
-🇮🇷 شرح فارسی:
-این ۳ اشتباه خیلی رایجه! 😅
-❌ I am agree ← اشتباهه. فقط بگید: I agree! ✅
-"من با تو موافقم!" = "I agree with you!"
-❌ enjoy to ← اشتباهه. بعد از enjoy همیشه ing بذارید! ✅
-"من از شنا کردن لذت میبرم!" = "I enjoy swimming!"
-
-💡 Pro Tip: After these verbs, ALWAYS use -ING:
-enjoy + doing ✅ | suggest + doing ✅ | avoid + doing ✅ | consider + doing ✅
-
-These are called "gerund verbs" — memorize them and you'll sound SO much more natural! 🌟
-
-🎯 Challenge: Write a sentence with "agree," "enjoy," or "suggest"! Let's see it! 👇
-
-🤖 Want interactive quizzes & personalized tips? DM the bot for exclusive features!`,
-      hashtags: ['#CommonMistakes', '#EnglishGrammar', '#B1English', '#FixYourEnglish', '#SpotTheMistake'],
-      quizzes: [
-        {
-          question: '❓ Which sentence is CORRECT?',
-          options: ['I am agree with this idea.', 'I agree with this idea.', 'I am agreed with this idea.', 'I agreeing with this idea.'],
-          correctIndex: 1,
-          explanation: '"Agree" is a verb — just say "I agree!" No "am" needed! 💪',
-        },
-        {
-          question: '❓ "I really enjoy _____ to music!" 🎵',
-          options: ['to listen', 'listen', 'listening', 'for listen'],
-          correctIndex: 2,
-          explanation: 'After "enjoy" → ALWAYS -ING: "enjoy listening!" 🎶',
-        },
-        {
-          question: '❓ "She suggested _____ the restaurant near the park."',
-          options: ['me to try', 'trying', 'me trying', 'I to try'],
-          correctIndex: 1,
-          explanation: '"Suggest" + -ING: "She suggested trying!" Or: "She suggested that I try!" ✅',
-        },
-      ],
-    },
-  ];
-
-  // FORMAT 7: Pronunciation
-  const pronunLessons = [
-    {
-      title: '🔊 CAN YOU SAY THIS? Most people can\'t! 🤯',
-      format: 'pronunciation',
-      level: 'B1',
-      topic: 'Tricky English pronunciation',
-      postBody: `🔊 CAN YOU SAY THIS? Most people can't! 🤯
-
-English spelling is CRAZY! 😅 These words look SO different from how they sound!
-
-Let's fix your pronunciation RIGHT NOW! 💪
-
-1️⃣ Wednesday = "WENZ-day" ✅ (not Wed-NES-day ❌)
-2️⃣ Comfortable = "KUMF-ter-bul" ✅ (not com-FOR-ta-ble ❌)
-3️⃣ Vegetable = "VEJ-tuh-bul" ✅ (not veg-eh-TAY-ble ❌)
-4️⃣ Interesting = "IN-tres-ting" ✅ (not in-ter-ES-ting ❌)
-5️⃣ Restaurant = "RES-tront" ✅ (not res-taw-RANT ❌)
-
-Wait, WHAT?! 😱 Only 3 syllables in "comfortable"?! YES! 🤯
-
-Here's the SECRET: In English, we SKIP sounds in long words! 🤐
-This is NOT lazy — it's how native speakers actually talk! 🗣️✨
-
-🇮🇷 شرح فارسی:
-در انگلیسی، بعضی کلمات اصلاً جوری که نوشته شدن تلفظ نمیشن! 🤯
-Wednesday رو میگن "ونزدی" — نه "ودنزدی"!
-Comfortable فقط ۳ بخش داره: "کامفتربل" — نه ۴ بخش!
-این طبیعیه! حتی آدمای بومی هم همینجوری حرف میزنن! ✅
-
-💡 Pro Tip: Say each word 5 times FAST! 🗣️
-Your mouth will learn the shortcut automatically! Try it NOW! 💪
-
-🎯 Which word surprised you the MOST? Tell us below! 👇
-
-🤖 Want interactive quizzes & personalized tips? DM the bot for exclusive features!`,
-      hashtags: ['#Pronunciation', '#SayItRight', '#B1English', '#EnglishSounds', '#CanYouSayThis'],
-      quizzes: [
-        {
-          question: '❓ How do native speakers say "comfortable"?',
-          options: ['com-FOR-ta-ble (4 syllables)', 'KUMF-ter-bul (3 syllables)', 'com-fort-ABLE', 'COMFY-table'],
-          correctIndex: 1,
-          explanation: 'Only 3 syllables! "KUMF-ter-bul" — we skip the "or" sound! 🤯',
-        },
-        {
-          question: '❓ How do you say "Wednesday"?',
-          options: ['Wed-NES-day', 'WENZ-day', 'Wed-IN-day', 'WED-nes-DAY'],
-          correctIndex: 1,
-          explanation: 'The "d" and second "e" are SILENT! Just "WENZ-day!" 📅',
-        },
-        {
-          question: '❓ Why do native speakers "skip" sounds in words?',
-          options: ['Because they are lazy', 'It\'s a natural part of how English works!', 'They don\'t know the right way', 'Only Americans do this'],
-          correctIndex: 1,
-          explanation: 'Skipping sounds in long words is NORMAL native English! Not laziness! 🗣️✨',
-        },
-      ],
-    },
-  ];
-
-  // FORMAT 8: Comparison
-  const compLessons = [
-    {
-      title: '⚖️ Make vs Do — FINALLY understand the difference! 🎯',
+      title: '⚡ Quick Fix: Stop Saying "Very"!',
       format: 'comparison',
       level: 'B1',
-      topic: 'Make vs Do - when to use each one',
-      postBody: `⚖️ Make vs Do — FINALLY understand the difference! 🎯
+      topic: 'Power words instead of very',
+      postBody: `⚡ Quick Fix: Stop Saying "Very"!
 
-This is one of the MOST confusing things in English! 😅
-But I promise — after this post, you'll NEVER mix them up again! 💪✨
+Native speakers DON'T say "very" all the time! 😅
+They use POWER WORDS instead! 💪
 
-Here's the simple SECRET: 🤫
+Here's the upgrade! ⬆️
 
-📌 DO = for tasks, work, and activities (the boring stuff! 😅)
-• do homework / do the dishes / do exercise
-• do a favour / do your best / do business
+❌ Very tired → ✅ EXHAUSTED 😴
+❌ Very hungry → ✅ STARVING 🍕
+❌ Very cold → ✅ FREEZING 🥶
+❌ Very hot → ✅ BOILING 🔥
+❌ Very funny → ✅ HILARIOUS 😂
+❌ Very scared → ✅ TERRIFIED 😱
 
-📌 MAKE = for creating or producing something NEW! ✨
-• make food / make a mistake / make a decision
-• make money / make a plan / make friends
+🇮🇷 فارسی:
+❌ خیلی خسته → ✅ خسته مرده (exhausted)
+❌ خیلی گرسنه → ✅ دارم از گرسنگی میمیرم (starving)
+❌ خیلی سرد → ✅ یخ زده (freezing)
 
-🔑 Memory trick that WORKS:
-DO = routine stuff you HAVE to do 😴
-MAKE = something you CREATE! 🎨✨
+💡 Pro Tip: These words are MORE expressive and make you sound SO much more natural! 🌟
 
-Now look at these — can you spot the mistakes? 👀
-
-❌ "I need to make my homework." ← WRONG!
-✅ "I need to do my homework." ← RIGHT! ✓
-
-❌ "I did a mistake." ← WRONG!
-✅ "I made a mistake." ← RIGHT! ✓
-
-🇮🇷 شرح فارسی:
-Do بیشتر برای کارها و وظایفه: do homework, do the dishes 📋
-"من باید تکالیفم رو انجام بدم!" = "I need to do my homework!"
-Make بیشتر برای ساختن چیز جدیده: make food, make a plan 🎨
-"من اشتباه کردم!" = "I made a mistake!"
-
-💡 Pro Tip: When you're not sure, ask yourself:
-"Am I CREATING something?" → MAKE ✨
-"Am I DOING a task?" → DO ✓
-
-🎯 Challenge: Write one sentence with MAKE and one with DO! Let's see! 👇
-
-🤖 Want interactive quizzes & personalized tips? DM the bot for exclusive features!`,
-      hashtags: ['#MakeVsDo', '#EnglishGrammar', '#B1English', '#ConfusingWords', '#LearnEnglish'],
+🎯 Try it NOW: Make a sentence with ONE power word! 👇`,
+      hashtags: ['#VocabularyTips', '#PowerWords', '#B1English', '#StopSayingVery'],
       quizzes: [
         {
-          question: '❓ "Can you _____ me a favour?" 🤝',
-          options: ['make', 'do', 'have', 'take'],
+          question: '❓ "I\'m not just tired, I\'m _____!" (Super tired)',
+          options: ['very tired', 'exhausted', 'sleeping', 'boring'],
           correctIndex: 1,
-          explanation: '"Do a favour" — it\'s a task, not creating something! ✅',
-        },
-        {
-          question: '❓ "She _____ a big mistake at work." 😅',
-          options: ['did', 'made', 'done', 'does'],
-          correctIndex: 1,
-          explanation: 'We say "MAKE a mistake" — not "do a mistake!" 💡',
-        },
-        {
-          question: '❓ Which pair is CORRECT?',
-          options: ['make homework, do a cake', 'do homework, make a cake', 'make the dishes, do money', 'do a decision, make exercise'],
-          correctIndex: 1,
-          explanation: 'DO homework (task! 📋) + MAKE a cake (creating! 🎂) = CORRECT! ✅',
+          explanation: '"Exhausted" = خسته مرده! Much stronger than "very tired!" 💪',
         },
       ],
     },
   ];
 
-  // FORMAT 9: Dialogue / Real Life
-  const storyLessons = [
+  // FORMAT 3: Ultra-Short Tip
+  const quickTipFormats = [
     {
-      title: '🎬 Real Conversation: At a Coffee Shop! ☕',
-      format: 'dialogue',
+      title: '💬 Say It Right: "I\'m good" vs "I\'m well"',
+      format: 'quick-tip',
       level: 'B1',
-      topic: 'Ordering at a coffee shop - useful phrases',
-      postBody: `🎬 Real Conversation: At a Coffee Shop! ☕
+      topic: 'Common greeting responses',
+      postBody: `💬 Say It Right: "I'm good" vs "I'm well"
 
-You're in Canada 🇨🇦 and you walk into Tim Hortons! ☕ What do you say?! 😅
+Someone asks: "How are you?" 👋
 
-Don't worry — here's EXACTLY how the conversation goes! 💪✨
+Which is correct? BOTH! But different! 😊
 
-👤 Barista: "Hi! What can I get for you?" 😊
-🙋 You: "Can I have a medium latte, please?" ☕
-👤 Barista: "Sure! Would you like that hot or iced?" 🧊
-🙋 You: "Iced, please!" ✨
-👤 Barista: "Do you want any flavour? Vanilla? Caramel?" 🍦
-🙋 You: "Vanilla sounds good!" 😄
-👤 Barista: "For here or to go?" 📦
-🙋 You: "To go, please!"
-👤 Barista: "That'll be $5.75." 💰
-🙋 You: "Here you go. Thanks!" 🤗
-👤 Barista: "Thank you! Have a great day!" ☀️
+✅ "I'm good!" = I'm feeling fine/happy (CASUAL, friendly) 😄
+✅ "I'm well!" = I'm healthy (FORMAL, polite) 🎩
 
-📌 KEY PHRASES to remember:
-• "Can I have a..." = THE polite way to order! 🙏
-• "For here or to go?" = eat here or take it? 📦
-• "That'll be..." = here's the price! 💰
-• "Here you go" = when you hand money/card! 💳
+🇮🇷 فارسی:
+"I'm good" = حالم خوبه (خودمونی) 😊
+"I'm well" = سلامتم (رسمی) 👔
 
-🇮🇷 شرح فارسی:
-Can I have a... = میتونم ... داشته باشم؟ 🙏
-"میتونم یه لاته متوسط داشته باشم لطفاً؟" ☕
-For here or to go? = اینجا میخورید یا میبرید؟ 📦
-That'll be = قیمتش میشه... 💰
+💡 99% of the time → "I'm good!" is perfect! ✨
 
-💡 Pro Tip: In Canada, you can say "double-double" for coffee with 2 creams + 2 sugars! 🇨🇦☕
-
-🎯 Next time you order coffee, try using "Can I have a..." — you'll sound SO natural! 👇
-
-🤖 Want interactive quizzes & personalized tips? DM the bot for exclusive features!`,
-      hashtags: ['#RealEnglish', '#CoffeeShop', '#B1Speaking', '#DailyConversation', '#CanadianEnglish'],
-      quizzes: [
-        {
-          question: '❓ How do you politely order in English? ☕',
-          options: ['Give me a coffee!', 'Can I have a coffee, please?', 'I want coffee now!', 'Hey, coffee!'],
-          correctIndex: 1,
-          explanation: '"Can I have a... please?" — THE polite way to order! 🙏✨',
-        },
-        {
-          question: '❓ "For here or to go?" — What does this mean?',
-          options: ['Hot or cold?', 'Eat here or take it with you?', 'Big or small?', 'Cash or card?'],
-          correctIndex: 1,
-          explanation: '"For here" = eat in the shop! "To go" = take it with you! 📦',
-        },
-        {
-          question: '❓ What is a "double-double" in Canada? 🇨🇦',
-          options: ['Two coffees', 'Coffee with 2 creams and 2 sugars', 'Double-size coffee', 'Two donuts'],
-          correctIndex: 1,
-          explanation: 'A double-double = 2 creams + 2 sugars! A classic Canadian order! ☕🇨🇦',
-        },
-      ],
+🎯 Next time someone asks "How are you?" → try "I'm good, thanks!" 👇`,
+      hashtags: ['#QuickTip', '#B1English', '#SayItRight', '#DailyEnglish'],
+      quizzes: [],
     },
   ];
 
-  // FORMAT 10: Canadian Culture
-  const culturalLessons = [
+  // FORMAT 4: Common Mistake Deep Dive
+  const mistakeFocusFormats = [
     {
-      title: '🇨🇦 Canadian English: Things People ACTUALLY Say!',
-      format: 'cultural',
+      title: '🔍 One Mistake Everyone Makes: "Bored" vs "Boring"',
+      format: 'mistake-focus',
       level: 'B1',
-      topic: 'Common Canadian expressions and small talk',
-      postBody: `🇨🇦 Canadian English: Things People ACTUALLY Say!
+      topic: '-ed vs -ing adjectives',
+      postBody: `🔍 One Mistake Everyone Makes: "Bored" vs "Boring"
 
-If you live in Canada, you NEED to know these! 🤩 They'll help you sound like a LOCAL! 💪✨
+This trips up EVERYONE! Even advanced students! 😅
 
-1️⃣ "Sorry!" 🙏
-Canadians say sorry ALL the time! Even when it's NOT their fault! 😅
-→ Someone bumps into YOU and says: "Oh, sorry!" 🤷‍♂️
+❌ "The movie was bored." ← WRONG! ✗
+✅ "The movie was boring." ← RIGHT! ✓
 
-2️⃣ "Double-double" ☕
-Coffee with 2 creams + 2 sugars! A Tim Hortons classic! 🍩
-→ "I'll have a double-double, please!" 
+❌ "I was boring at the party." ← WRONG! ✗
+✅ "I was bored at the party." ← RIGHT! ✓
 
-3️⃣ "How's it going?" 👋
-THIS IS A TRAP! 😅 It's NOT a real question! It's just a greeting!
-→ Answer: "Good, thanks! You?" (Don't tell your whole life story! 😂)
+📌 THE RULE (memorize this!):
 
-4️⃣ "No worries!" 😊
-Means "it's okay!" or "you're welcome!" SO useful!
-→ "Thanks for the ride!" — "No worries!" 🚗✨
+🔹 BORING = the thing that CAUSES boredom (it makes YOU bored!)
+→ The movie is boring. (فیلم کسل کننده است)
 
-5️⃣ "Toque" (say it like "took") 🧢
-A warm winter hat! VERY important November to March! 🥶❄️
-→ "Don't forget your toque — it's minus 20 today!" 
+🔹 BORED = YOU feel boredom (you ARE experiencing it!)
+→ I am bored. (من خسته شدم / حوصله‌ام سر رفت)
 
-🇮🇷 شرح فارسی:
-کانادایی‌ها خیلی "sorry" میگن — حتی وقتی تقصیر خودشون نیست! 😅
-Double-double یعنی قهوه با ۲ خامه و ۲ شکر! ☕
-How's it going فقط یه سلامه — جواب کوتاه بدید! 👋
-"خوبم ممنون! تو چطوری؟" = "Good, thanks! You?"
+🇮🇷 به فارسی:
+Boring = چیزی که کسل کننده است (فیلم، کتاب، درس)
+Bored = تو احساس کسلی میکنی
 
-💡 Pro Tip: If someone says "How's it going?" just say "Good, thanks!" Don't overthink it! 😎
+✨ More examples:
+✅ "This book is interesting!" (کتاب جالبه)
+✅ "I am interested in science!" (من به علم علاقه دارم)
 
-🎯 Have you noticed any of these Canadian habits? Which one surprised you? Tell us! 👇
+✅ "That lesson was confusing!" (درس گیج کننده بود)
+✅ "I was confused!" (من گیج شدم)
 
-🤖 Want interactive quizzes & personalized tips? DM the bot for exclusive features!`,
-      hashtags: ['#CanadianEnglish', '#LifeInCanada', '#B1English', '#CulturalTips', '#CanadianSlang'],
+💡 Remember: -ING describes the THING, -ED describes YOUR FEELING! 🎯
+
+🎯 YOUR TURN: Make a sentence with "bored" or "boring"! 👇`,
+      hashtags: ['#CommonMistakes', '#BoredVsBoring', '#B1Grammar', '#EnglishGrammar'],
       quizzes: [
         {
-          question: '❓ Someone says "How\'s it going?" What\'s the best answer? 👋',
-          options: ['Well, this morning I woke up at 7...', 'Good, thanks! You?', 'Going where?', 'I don\'t know.'],
+          question: '❓ "That class was so _____. I almost fell asleep!" 😴',
+          options: ['bored', 'boring', 'bore', 'to bore'],
           correctIndex: 1,
-          explanation: 'It\'s just a GREETING! Keep it short: "Good, thanks!" 😊✨',
-        },
-        {
-          question: '❓ You order a "double-double" at Tim Hortons. What do you get? ☕',
-          options: ['Two coffees', 'Coffee with 2 creams and 2 sugars', 'Double-size coffee', 'Two donuts'],
-          correctIndex: 1,
-          explanation: 'Double-double = 2 creams + 2 sugars! NOW you know! 🇨🇦☕',
-        },
-        {
-          question: '❓ What is a "toque" in Canadian English? 🧢',
-          options: ['A type of cake', 'A warm winter hat', 'A greeting', 'A type of coffee'],
-          correctIndex: 1,
-          explanation: 'A toque is a warm hat! ESSENTIAL for Canadian winters! 🥶❄️🧢',
+          explanation: 'The CLASS causes boredom → "boring"! YOU feel bored! 💤',
         },
       ],
     },
   ];
 
-  // ALL FORMATS IN ONE POOL
+  // FORMAT 5: Idiom with Story/Origin
+  const idiomOriginFormats = [
+    {
+      title: '🎭 Idiom Story: "Piece of cake!"',
+      format: 'idiom-origin',
+      level: 'B1',
+      topic: 'Idiom meaning very easy',
+      postBody: `🎭 Idiom Story: "Piece of cake!" 🍰
+
+"That test was a piece of cake!" 
+
+Wait... what?! 🤔 A test is a CAKE?! 😂
+
+Nope! "Piece of cake" = SUPER EASY! ✨
+
+🎂 The Story Behind It:
+In the 1870s in America, there were "cake walk" competitions! 🚶‍♀️ The couple who walked the most gracefully won a CAKE as a prize! 🏆
+
+It was SO easy (just walk nicely!) that people started saying "That's a piece of cake!" = That's SO simple! 😄
+
+✍️ Real Examples:
+✅ "The IELTS speaking test? Piece of cake!" 🍰
+✅ "Don't worry about driving in Canada — it's a piece of cake!" 🚗
+✅ "Cooking rice? Piece of cake!" 🍚
+
+🇮🇷 شرح فارسی:
+"Piece of cake" یعنی خیلی آسون! مث آب خوردن! 🍰
+✅ "نگران نباش، این تست خیلی آسونه!" = "Don't worry, this test is a piece of cake!"
+✅ "رانندگی تو کانادا؟ آسونه!" = "Driving in Canada? Piece of cake!"
+
+💡 Similar phrases:
+• "It's easy as pie!" 🥧
+• "It's a walk in the park!" 🌳
+• "It's a breeze!" 💨
+
+🎯 What's something that's a "piece of cake" for YOU? Share! 👇`,
+      hashtags: ['#EnglishIdioms', '#PieceOfCake', '#B1English', '#IdiomStory'],
+      quizzes: [
+        {
+          question: '❓ "Don\'t worry, this exam is a piece of ___!"',
+          options: ['bread', 'cake', 'candy', 'cookie'],
+          correctIndex: 1,
+          explanation: '"Piece of CAKE" = super easy! خیلی آسون! 🍰✨',
+        },
+      ],
+    },
+  ];
+
+  // FORMAT 6: Canadian Context / Real-Life
+  const culturalPracticalFormats = [
+    {
+      title: '🇨🇦 Real Canada: What to Say at Tim Hortons',
+      format: 'cultural-practical',
+      level: 'B1',
+      topic: 'Ordering coffee in Canada',
+      postBody: `🇨🇦 Real Canada: What to Say at Tim Hortons ☕
+
+You walk into Tim Hortons (Canada's #1 coffee shop!) and... freeze! 😅 What do you SAY?!
+
+Don't panic! Here's EXACTLY what to say! 💪
+
+👉 STEP 1: The barista says "Hi! What can I get for you?"
+
+YOU say: "Can I have a _____, please?" ✨
+(medium coffee, large latte, small hot chocolate, etc.)
+
+👉 STEP 2: They ask: "For here or to go?"
+
+• "For here" = eat/drink inside 🏪
+• "To go" = take it with you 📦
+
+YOU say: "To go, please!" 
+
+👉 STEP 3: They tell you the price: "That'll be $3.50"
+
+YOU say: "Here you go!" 💳 (when giving money/card)
+
+They say: "Thank you! Have a great day!" ☀️
+
+YOU say: "You too!" 😊
+
+✅ DONE! 🎉
+
+🇮🇷 به فارسی:
+"Can I have..." = میتونم ... داشته باشم؟
+"For here or to go?" = اینجا میخورید یا میبرید؟
+"Here you go" = بفرمایید (وقتی پول میدی)
+
+💡 BONUS Canadian Phrase:
+"Double-double" = coffee with 2 creams + 2 sugars! 🇨🇦☕
+Super common! Everyone knows it!
+
+🎯 Next time you order coffee, use these phrases! 💪👇`,
+      hashtags: ['#CanadianEnglish', '#TimHortons', '#B1Speaking', '#RealCanada'],
+      quizzes: [
+        {
+          question: '❓ What does "for here or to go?" mean?',
+          options: ['Hot or cold?', 'Eat inside or take with you?', 'Large or small?', 'With sugar or no sugar?'],
+          correctIndex: 1,
+          explanation: '"For here" = inside! "To go" = take it! 📦☕',
+        },
+      ],
+    },
+  ];
+
+  // FORMAT 7: Pronunciation Challenge
+  const pronunciationFormats = [
+    {
+      title: '🔊 Pronunciation Challenge: "Literally"',
+      format: 'pronunciation',
+      level: 'B1',
+      topic: 'How native speakers say literally',
+      postBody: `🔊 Pronunciation Challenge: "Literally" 🤯
+
+How do YOU say "literally"? 🤔
+
+Most people say: LIT-er-AL-ly (4 syllables) ❌
+Native speakers say: LIT-rally (2 syllables!) ✅
+
+Wait... WHAT?! Only 2 syllables?! 😱 YES! 
+
+We skip the "er-al" sounds! It becomes: "LIT-r'lly" 🎯
+
+Try it 5 times FAST:
+"Literally, literally, literally, literally, literally!" 🗣️💨
+
+✍️ Real Examples:
+✅ "I <b>literally</b> ran to the bus stop!" 🏃‍♀️
+→ LIT-rally ran!
+
+✅ "This is <b>literally</b> the best coffee ever!" ☕
+→ LIT-rally the best!
+
+🇮🇷 به فارسی:
+Literally یعنی واقعاً، مستقیماً (تأکید روی حقیقت)
+ولی تلفظش فقط ۲ بخشه: "لیت-رُلی" 🗣️
+
+⚠️ Common mistake:
+Learners say: "LIT-er-AL-ly" (too long! Sounds unnatural! 😅)
+Natives say: "LIT-r'lly" (fast, smooth! ✨)
+
+💡 Pro Tip: Say it FAST and let your mouth skip the middle part! Your tongue will learn the shortcut! 💪
+
+🎯 Say it OUT LOUD right now: "I literally can't believe it!" Try 3 times! 👇`,
+      hashtags: ['#Pronunciation', '#Literally', '#B1English', '#SayItRight'],
+      quizzes: [
+        {
+          question: '❓ How many syllables do native speakers use for "literally"?',
+          options: ['4 syllables', '3 syllables', '2 syllables', '1 syllable'],
+          correctIndex: 2,
+          explanation: 'Only 2 syllables! "LIT-r\'lly" — we skip the middle! 🗣️✨',
+        },
+      ],
+    },
+  ];
+
+  // Combine all 7 format types
   const allFormats = [
-    ...vocabLessons,
-    ...grammarLessons,
-    ...idiomLessons,
-    ...phrasalLessons,
-    ...expressionLessons,
-    ...errorLessons,
-    ...pronunLessons,
-    ...compLessons,
-    ...storyLessons,
-    ...culturalLessons,
+    ...storyFormats,
+    ...comparisonFormats,
+    ...quickTipFormats,
+    ...mistakeFocusFormats,
+    ...idiomOriginFormats,
+    ...culturalPracticalFormats,
+    ...pronunciationFormats,
   ];
 
+  // Randomly select one format
   const selectedLesson = allFormats[Math.floor(Math.random() * allFormats.length)];
 
   const cta = channelUrl
