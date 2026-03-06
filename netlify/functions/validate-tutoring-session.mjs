@@ -57,7 +57,9 @@ export async function handler(event, context) {
     const sessionAge = now - sessionCreatedAt;
 
     // Check if session is valid
-    const amountMatches = Number(session.amount_total ?? 0) === TUTORING_AMOUNT_CENTS;
+    // Use minimum threshold (not exact equality) so taxes/fees/currency adjustments do not break valid payments.
+    const amountTotal = Number(session.amount_total ?? 0);
+    const amountMatches = amountTotal >= TUTORING_AMOUNT_CENTS;
     const isValid = 
       session.payment_status === 'paid' &&
       session.status === 'complete' &&
@@ -72,7 +74,7 @@ export async function handler(event, context) {
           reason: sessionAge > SESSION_VALIDITY_PERIOD
             ? 'Session expired (older than 24 hours)'
             : !amountMatches
-              ? `Invalid session amount for tutoring (expected ${TUTORING_AMOUNT_CENTS}, got ${session.amount_total ?? 0})`
+              ? `Invalid session amount for tutoring (expected at least ${TUTORING_AMOUNT_CENTS}, got ${amountTotal})`
               : `Payment not confirmed (payment_status=${session.payment_status}, status=${session.status})`
         })
       };

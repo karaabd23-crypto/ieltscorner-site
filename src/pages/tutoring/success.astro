@@ -127,7 +127,12 @@ import Layout from "../../layouts/Layout.astro";
     // Validate Stripe session and show booking calendar link
     async function validateSession() {
       const urlParams = new URLSearchParams(window.location.search);
-      const sessionId = urlParams.get('session_id') || urlParams.get('checkout_session_id');
+      const sessionId =
+        urlParams.get('session_id')
+        || urlParams.get('checkout_session_id')
+        || urlParams.get('sessionId')
+        || urlParams.get('checkoutSessionId')
+        || urlParams.get('sid');
 
       const validationContainer = document.getElementById('validation-container');
       const bookingContainer = document.getElementById('booking-container');
@@ -143,7 +148,7 @@ import Layout from "../../layouts/Layout.astro";
         validationContainer.style.display = 'none';
         errorContainer.style.display = 'block';
         if (validationReason) {
-          validationReason.textContent = 'Debug: Missing checkout session ID in URL. Check Stripe Payment Link success URL includes ?session_id={CHECKOUT_SESSION_ID}.';
+          validationReason.textContent = 'Debug: Missing checkout session ID in URL. Stripe Payment Link success URL must include ?session_id={CHECKOUT_SESSION_ID}.';
         }
         return;
       }
