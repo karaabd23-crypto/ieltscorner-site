@@ -102,10 +102,18 @@ export const handler = async (event) => {
   const gmailUser = process.env.GMAIL_USER || 'kara.abdolmaleki@gmail.com';
   const gmailPassword = process.env.GMAIL_PASSWORD;
 
-  if (!stripeApiKey || !webhookSecret || !gmailPassword) {
+  const missingEnvVars = [];
+  if (!stripeApiKey) missingEnvVars.push('STRIPE_API_KEY');
+  if (!webhookSecret) missingEnvVars.push('STRIPE_WEBHOOK_SECRET');
+  if (!gmailPassword) missingEnvVars.push('GMAIL_PASSWORD');
+
+  if (missingEnvVars.length > 0) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Server not configured: missing Stripe/Gmail env vars' }),
+      body: JSON.stringify({
+        error: 'Server not configured: missing required environment variables',
+        missing: missingEnvVars,
+      }),
     };
   }
 
