@@ -25,21 +25,25 @@ jobs:
 
       - name: Validate required secrets
         if: ${{ github.event.inputs.dry_run != 'true' }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID || secrets.TELEGRAM_CHANNEL_ID }}
+          TELEGRAM_CHANNEL_URL: ${{ secrets.TELEGRAM_CHANNEL_URL }}
         run: |
-          if [ -z "${{ secrets.TELEGRAM_BOT_TOKEN }}" ]; then
+          if [ -z "$TELEGRAM_BOT_TOKEN" ]; then
             echo "Missing TELEGRAM_BOT_TOKEN secret."
             exit 1
           fi
 
-          if [ -z "${{ secrets.TELEGRAM_CHAT_ID }}" ] && [ -z "${{ secrets.TELEGRAM_CHANNEL_URL }}" ]; then
-            echo "Missing target channel secret. Set TELEGRAM_CHAT_ID or TELEGRAM_CHANNEL_URL."
+          if [ -z "$TELEGRAM_CHAT_ID" ] && [ -z "$TELEGRAM_CHANNEL_URL" ]; then
+            echo "Missing target channel secret. Set TELEGRAM_CHAT_ID/TELEGRAM_CHANNEL_ID or TELEGRAM_CHANNEL_URL."
             exit 1
           fi
 
       - name: Post weekly bot tutorial
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID || secrets.TELEGRAM_CHANNEL_ID }}
           TELEGRAM_CHANNEL_URL: ${{ secrets.TELEGRAM_CHANNEL_URL }}
         run: |
           if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
