@@ -13,9 +13,7 @@ import Stripe from 'stripe';
 
 const STRIPE_API_KEY = process.env.STRIPE_API_KEY;
 const TUTORING_CALENDAR_URL = process.env.TUTORING_CALENDAR_URL || 'https://calendar.google.com/calendar/appointments/schedules/YOUR_SCHEDULE_ID';
-
-// Payment link product ID - update this with your actual tutoring product ID from Stripe
-const TUTORING_PRICE_ID = process.env.TUTORING_PRICE_ID || 'price_tutoring';
+const TUTORING_AMOUNT_CENTS = Number.parseInt(process.env.TUTORING_AMOUNT_CENTS || '3000', 10);
 
 // Session validity period (24 hours in milliseconds)
 const SESSION_VALIDITY_PERIOD = 24 * 60 * 60 * 1000;
@@ -59,9 +57,11 @@ export async function handler(event, context) {
     const sessionAge = now - sessionCreatedAt;
 
     // Check if session is valid
+    const amountMatches = Number(session.amount_total ?? 0) === TUTORING_AMOUNT_CENTS;
     const isValid = 
       session.payment_status === 'paid' &&
       session.status === 'complete' &&
+      amountMatches &&
       sessionAge <= SESSION_VALIDITY_PERIOD;
 
     if (!isValid) {
@@ -71,7 +71,9 @@ export async function handler(event, context) {
           valid: false, 
           reason: sessionAge > SESSION_VALIDITY_PERIOD
             ? 'Session expired (older than 24 hours)'
-            : `Payment not confirmed (payment_status=${session.payment_status}, status=${session.status})`
+            : !amountMatches
+              ? `Invalid session amount for tutoring (expected ${TUTORING_AMOUNT_CENTS}, got ${session.amount_total ?? 0})`
+              : `Payment not confirmed (payment_status=${session.payment_status}, status=${session.status})`
         })
       };
     }

@@ -2,6 +2,43 @@ import Stripe from 'stripe';
 import nodemailer from 'nodemailer';
 
 const GOOGLE_MEET_LINK = 'https://meet.google.com/hcf-iwcn-syx';
+const DEFAULT_WEBINAR_AMOUNT_CENTS = 1200;
+
+function getPaymentLinkId(paymentLink) {
+  if (!paymentLink) {
+    return '';
+  }
+
+  if (typeof paymentLink === 'string') {
+    return paymentLink;
+  }
+
+  if (typeof paymentLink === 'object' && typeof paymentLink.id === 'string') {
+    return paymentLink.id;
+  }
+
+  return '';
+}
+
+function isWebinarPurchase(session) {
+  const configuredWebinarAmount = Number.parseInt(
+    process.env.WEBINAR_AMOUNT_CENTS || String(DEFAULT_WEBINAR_AMOUNT_CENTS),
+    10,
+  );
+
+  const sessionAmount = Number(session?.amount_total ?? 0);
+  if (!Number.isNaN(configuredWebinarAmount) && sessionAmount !== configuredWebinarAmount) {
+    return false;
+  }
+
+  const configuredWebinarPaymentLinkId = (process.env.WEBINAR_PAYMENT_LINK_ID || '').trim();
+  if (!configuredWebinarPaymentLinkId) {
+    return true;
+  }
+
+  const sessionPaymentLinkId = getPaymentLinkId(session?.payment_link);
+  return sessionPaymentLinkId === configuredWebinarPaymentLinkId;
+}
 
 function buildEmailHtml(customerName, gmailUser) {
   return `<!DOCTYPE html>
@@ -142,6 +179,13 @@ export const handler = async (event) => {
       return {
         statusCode: 200,
         body: JSON.stringify({ status: 'ignored', reason: 'not_paid' }),
+      };
+    }
+
+    if (!isWebinarPurchase(session)) {
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ status: 'ignored', reason: 'non_webinar_checkout' }),
       };
     }
 
