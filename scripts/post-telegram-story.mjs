@@ -84,8 +84,25 @@ function parseArgs(argv) {
 }
 
 function pickStoryTopic() {
-  const index = Math.floor(Math.random() * STORY_TOPICS.length);
+  const index = pickDeterministicIndex(STORY_TOPICS.length, 19);
   return STORY_TOPICS[index];
+}
+
+function pickDeterministicIndex(length, salt = 0) {
+  if (!Number.isInteger(length) || length <= 0) {
+    return 0;
+  }
+
+  const runNumber = Number.parseInt(process.env.GITHUB_RUN_NUMBER ?? '', 10);
+  const runAttempt = Number.parseInt(process.env.GITHUB_RUN_ATTEMPT ?? '1', 10);
+
+  if (Number.isFinite(runNumber) && runNumber > 0) {
+    const attempt = Number.isFinite(runAttempt) && runAttempt > 0 ? runAttempt : 1;
+    const seed = (runNumber * 97) + (attempt * 13) + salt;
+    return seed % length;
+  }
+
+  return Math.floor(Math.random() * length);
 }
 
 function fallbackStory(topicObj) {
@@ -652,6 +669,16 @@ async function telegramRequest(botToken, method, payload) {
 }
 
 async function postStory(botToken, chatId, story) {
+  const channelUrl = process.env.TELEGRAM_CHANNEL_URL ?? '';
+  const publicSlug = resolvePublicChannelSlug(channelUrl, chatId);
+  const existingTexts = await fetchRecentChannelTexts(publicSlug);
+  const normalizedContent = normalizeForDedupe(story.content);
+
+  if (existingTexts.includes(normalizedContent)) {
+    console.log('[skip] Duplicate story detected in recent channel posts. Skipping publish.');
+    return { skipped: true };
+  }
+
   console.log('[posting] Main content to Telegram...');
   const contentResult = await telegramRequest(botToken, 'sendMessage', {
     chat_id: chatId,
@@ -693,6 +720,68 @@ function resolveChatId(explicitChatId, channelUrl) {
   }
 
   return slug.startsWith('@') ? slug : `@${slug}`;
+}
+
+function htmlToPlainText(value) {
+  return String(value ?? '')
+    .replace(/<br\s*\/?\s*>/gi, '\n')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"');
+}
+
+function normalizeForDedupe(text) {
+  return String(text ?? '')
+    .replace(/\r\n/g, '\n')
+    .replace(/[ \t]+/g, ' ')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+function resolvePublicChannelSlug(channelUrl, chatId) {
+  const fromUrl = String(channelUrl ?? '').trim();
+  if (fromUrl) {
+    const normalized = fromUrl
+      .replace(/^https?:\/\//i, '')
+      .replace(/^t\.me\//i, '')
+      .replace(/^s\//i, '');
+    const slug = normalized.split(/[/?#]/)[0]?.trim();
+    if (slug && !slug.startsWith('+')) {
+      return slug.replace(/^@/, '');
+    }
+  }
+
+  const fromChat = String(chatId ?? '').trim();
+  if (fromChat.startsWith('@')) {
+    return fromChat.slice(1);
+  }
+
+  return '';
+}
+
+async function fetchRecentChannelTexts(slug) {
+  if (!slug) {
+    return [];
+  }
+
+  try {
+    const response = await fetch(`https://t.me/s/${slug}`);
+    if (!response.ok) {
+      return [];
+    }
+
+    const html = await response.text();
+    const blocks = [...html.matchAll(/<div class="tgme_widget_message_text[\s\S]*?>([\s\S]*?)<\/div>/g)];
+    return blocks
+      .map((match) => normalizeForDedupe(htmlToPlainText(match[1] ?? '')))
+      .filter(Boolean);
+  } catch {
+    return [];
+  }
 }
 
 async function main() {

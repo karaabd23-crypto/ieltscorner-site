@@ -119,8 +119,25 @@ function pickTopic(forcedTopic) {
     };
   }
 
-  const selected = TOPIC_BANK[Math.floor(Math.random() * TOPIC_BANK.length)] ?? TOPIC_BANK[0];
+  const selected = TOPIC_BANK[pickDeterministicIndex(TOPIC_BANK.length, 11)] ?? TOPIC_BANK[0];
   return { ...selected };
+}
+
+function pickDeterministicIndex(length, salt = 0) {
+  if (!Number.isInteger(length) || length <= 0) {
+    return 0;
+  }
+
+  const runNumber = Number.parseInt(process.env.GITHUB_RUN_NUMBER ?? '', 10);
+  const runAttempt = Number.parseInt(process.env.GITHUB_RUN_ATTEMPT ?? '1', 10);
+
+  if (Number.isFinite(runNumber) && runNumber > 0) {
+    const attempt = Number.isFinite(runAttempt) && runAttempt > 0 ? runAttempt : 1;
+    const seed = (runNumber * 97) + (attempt * 13) + salt;
+    return seed % length;
+  }
+
+  return Math.floor(Math.random() * length);
 }
 
 async function readTemplate(templateFileArg) {
@@ -483,8 +500,8 @@ Natives say: "LIT-r'lly" (fast, smooth! ✨)
     ...pronunciationFormats,
   ];
 
-  // Randomly select one format
-  const selectedLesson = allFormats[Math.floor(Math.random() * allFormats.length)];
+  // Rotate formats per workflow run to avoid repeated identical posts
+  const selectedLesson = allFormats[pickDeterministicIndex(allFormats.length, 37)];
 
   const cta = channelUrl
     ? `\n\n🌈✨ Kay's English Corner\nYour Gateway to English Success in Canada 🇨🇦\n🔗 Join us on Telegram\n${channelUrl}`
@@ -692,6 +709,68 @@ function normalizeContent(content, fallback) {
   };
 }
 
+function htmlToPlainText(value) {
+  return String(value ?? '')
+    .replace(/<br\s*\/?\s*>/gi, '\n')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"');
+}
+
+function normalizeForDedupe(text) {
+  return String(text ?? '')
+    .replace(/\r\n/g, '\n')
+    .replace(/[ \t]+/g, ' ')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+function resolvePublicChannelSlug(channelUrl, chatId) {
+  const fromUrl = String(channelUrl ?? '').trim();
+  if (fromUrl) {
+    const normalized = fromUrl
+      .replace(/^https?:\/\//i, '')
+      .replace(/^t\.me\//i, '')
+      .replace(/^s\//i, '');
+    const slug = normalized.split(/[/?#]/)[0]?.trim();
+    if (slug && !slug.startsWith('+')) {
+      return slug.replace(/^@/, '');
+    }
+  }
+
+  const fromChat = String(chatId ?? '').trim();
+  if (fromChat.startsWith('@')) {
+    return fromChat.slice(1);
+  }
+
+  return '';
+}
+
+async function fetchRecentChannelTexts(slug) {
+  if (!slug) {
+    return [];
+  }
+
+  try {
+    const response = await fetch(`https://t.me/s/${slug}`);
+    if (!response.ok) {
+      return [];
+    }
+
+    const html = await response.text();
+    const blocks = [...html.matchAll(/<div class="tgme_widget_message_text[\s\S]*?>([\s\S]*?)<\/div>/g)];
+    return blocks
+      .map((match) => normalizeForDedupe(htmlToPlainText(match[1] ?? '')))
+      .filter(Boolean);
+  } catch {
+    return [];
+  }
+}
+
 async function telegramRequest(method, payload, token) {
   const response = await fetch(`https://api.telegram.org/bot${token}/${method}`, {
     method: 'POST',
@@ -737,7 +816,7 @@ function resolveChatId(explicitChatId, channelUrl) {
 async function main() {
   await loadEnvFiles();
   const options = parseArgs(process.argv);
-  const pick = pickTopic(options.exam, options.topic);
+  const pick = pickTopic(options.topic);
   const template = await readTemplate(options.templateFile);
   const channelUrl = process.env.TELEGRAM_CHANNEL_URL?.trim() ?? '';
 
@@ -805,9 +884,18 @@ async function main() {
     throw new Error('Missing TELEGRAM_BOT_TOKEN and/or target channel (TELEGRAM_CHAT_ID or TELEGRAM_CHANNEL_URL).');
   }
 
+  const messageText = buildPostMessage(content);
+  const publicSlug = resolvePublicChannelSlug(channelUrl, chatId);
+  const existingTexts = await fetchRecentChannelTexts(publicSlug);
+  const normalizedMessage = normalizeForDedupe(messageText);
+  if (existingTexts.includes(normalizedMessage)) {
+    console.log('[skip] Duplicate content detected in recent channel posts. Skipping publish.');
+    return;
+  }
+
   await telegramRequest('sendMessage', {
     chat_id: chatId,
-    text: buildPostMessage(content),
+    text: messageText,
     disable_web_page_preview: true,
   }, botToken);
 
