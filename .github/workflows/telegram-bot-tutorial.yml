@@ -1,0 +1,49 @@
+name: Weekly Bot Tutorial
+
+on:
+  schedule:
+    # Every Monday at 10:00 UTC
+    - cron: "0 10 * * 1"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Run without posting"
+        required: false
+        default: "false"
+
+jobs:
+  post-tutorial:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate required secrets
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: |
+          if [ -z "${{ secrets.TELEGRAM_BOT_TOKEN }}" ]; then
+            echo "Missing TELEGRAM_BOT_TOKEN secret."
+            exit 1
+          fi
+
+          if [ -z "${{ secrets.TELEGRAM_CHAT_ID }}" ] && [ -z "${{ secrets.TELEGRAM_CHANNEL_URL }}" ]; then
+            echo "Missing target channel secret. Set TELEGRAM_CHAT_ID or TELEGRAM_CHANNEL_URL."
+            exit 1
+          fi
+
+      - name: Post weekly bot tutorial
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_CHANNEL_URL: ${{ secrets.TELEGRAM_CHANNEL_URL }}
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            node scripts/post-bot-tutorial.mjs --dry-run
+          else
+            node scripts/post-bot-tutorial.mjs
+          fi
