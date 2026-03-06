@@ -3,24 +3,29 @@ import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const DEFAULT_MODEL = 'gpt-4.1-mini';
+const DEFAULT_ANTHROPIC_MODEL = 'claude-3-5-sonnet-latest';
 
 const TOPIC_BANK = [
-  { type: 'vocab', level: 'B1', topic: 'Serendipity - finding good things by chance', lang: 'EN/FA' },
-  { type: 'vocab', level: 'B1', topic: 'Ephemeral - lasting for a very short time', lang: 'EN/FA' },
-  { type: 'vocab', level: 'B2', topic: 'Perspicacious - having keen judgment', lang: 'EN/FA' },
-  { type: 'vocab', level: 'A2', topic: 'Nostalgic - sentimental longing for the past', lang: 'EN/FA' },
+  { type: 'vocab', level: 'B1', topic: 'Reliable - someone or something you can trust', lang: 'EN/FA' },
+  { type: 'vocab', level: 'B1', topic: 'Convenient - easy to use or good for your situation', lang: 'EN/FA' },
+  { type: 'vocab', level: 'B1', topic: 'Afford - have enough money to buy something', lang: 'EN/FA' },
+  { type: 'vocab', level: 'A2', topic: 'Nervous - feeling worried before something happens', lang: 'EN/FA' },
+  { type: 'vocab', level: 'B1', topic: 'Improve - make something better', lang: 'EN/FA' },
   { type: 'grammar', level: 'B1', topic: 'Used to vs Would - past habits and states', lang: 'EN/FA' },
   { type: 'grammar', level: 'A2', topic: 'Present Perfect vs Simple Past', lang: 'EN/FA' },
-  { type: 'grammar', level: 'B2', topic: 'Mixed conditionals for nuanced situations', lang: 'EN/FA' },
+  { type: 'grammar', level: 'B1', topic: 'First and Second Conditionals - real and unreal situations', lang: 'EN/FA' },
   { type: 'grammar', level: 'A2', topic: 'Common preposition mistakes in English', lang: 'EN/FA' },
+  { type: 'grammar', level: 'B1', topic: 'Reported speech - telling someone what another person said', lang: 'EN/FA' },
   { type: 'idiom', level: 'B1', topic: 'Hit the nail on the head - be exactly right', lang: 'EN/FA' },
   { type: 'idiom', level: 'B1', topic: 'Break a leg - good luck or best wishes', lang: 'EN/FA' },
   { type: 'idiom', level: 'A2', topic: 'Piece of cake - something very easy', lang: 'EN/FA' },
-  { type: 'idiom', level: 'B2', topic: 'Put all your eggs in one basket - depend on one thing only', lang: 'EN/FA' },
+  { type: 'idiom', level: 'B1', topic: 'Under the weather - feeling a little sick', lang: 'EN/FA' },
   { type: 'expression', level: 'B1', topic: 'Better late than never - still good even if delayed', lang: 'EN/FA' },
   { type: 'expression', level: 'A2', topic: 'What a coincidence! - expressing surprise at timing', lang: 'EN/FA' },
-  { type: 'expression', level: 'B2', topic: 'To be honest with you - introducing sincere opinion', lang: 'EN/FA' },
+  { type: 'expression', level: 'B1', topic: 'It depends - the answer changes based on the situation', lang: 'EN/FA' },
   { type: 'phrasal', level: 'B1', topic: 'Get by - manage with difficulty or limited resources', lang: 'EN/FA' },
+  { type: 'phrasal', level: 'B1', topic: 'Look forward to - be excited about something in the future', lang: 'EN/FA' },
+  { type: 'phrasal', level: 'A2', topic: 'Turn off / Turn on - control a device or light', lang: 'EN/FA' },
 ];
 
 function stripWrappingQuotes(value) {
@@ -149,759 +154,578 @@ function extractJson(text) {
 }
 
 function fallbackContent({ type, level, topic, channelUrl }) {
-  // 10 format types with curated quality content - rotates through pedagogically diverse formats
-  
-  // FORMAT 1: Story-Based Learning (B2+ Corporate Narrative)
-  const storyFormatLessons = [
+  // 10 B1-level format types â€” simple, friendly, practical
+
+  // FORMAT 1: Vocabulary (everyday word)
+  const vocabLessons = [
     {
-      title: '🎭 Story-Based Learning: The Corporate Pivot',
-      format: 'story-based',
-      level: 'B2+',
-      topic: 'Advanced professional narrative with multisyllabic vocabulary',
-      postBody: `🎭 SOPHISTICATED NARRATIVE: "From Stagnation to Strategic Reorientation"
+      title: 'ðŸ“š Word of the Day: "Convenient"',
+      format: 'vocabulary',
+      level: 'B1',
+      topic: 'Convenient - easy to use or good for your situation',
+      postBody: `ðŸ“š WORD OF THE DAY: Convenient
 
-Alexandra, a senior management consultant, found herself at a precipice. Her organization had implemented an antiquated paradigm for stakeholder engagement, perpetuating inefficiencies across departments. Rather than acquiesce to mediocrity, she initiated a comprehensive restructuring.
+ðŸ”¤ What does it mean?
+"Convenient" means something is easy for you. It saves you time or effort.
 
-During the quarterly executive forum, Alexandra articulated her vision: "We must eschew our conventional methodologies. Our competition has leveraged agile frameworks, while we've remained entrenched in bureaucratic processes. This recalibration isn't merely cosmetic—it's existential."
+âœ… Examples:
+â€¢ "The store is very convenient â€” it's right next to my house."
+â€¢ "Is 3 PM a convenient time to meet?"
+â€¢ "Online shopping is so convenient. You don't even have to leave home!"
 
-Her colleague interjected: "Isn't this too precipitous? We lack empirical data to substantiate such a radical transformation."
+ðŸ‡®ðŸ‡· Ø¨Ù‡ ÙØ§Ø±Ø³ÛŒ:
+Convenient ÛŒØ¹Ù†ÛŒ Ø±Ø§Ø­Øª ÛŒØ§ Ù…Ù†Ø§Ø³Ø¨. Ù…Ø«Ù„Ø§Ù‹ ÙˆÙ‚ØªÛŒ ÛŒÙ‡ Ù…ØºØ§Ø²Ù‡ Ù†Ø²Ø¯ÛŒÚ© Ø®ÙˆÙ†ØªÙˆÙ†Ù‡ØŒ Ù…ÛŒÚ¯ÛŒØ¯ it's convenient.
 
-"Precisely," Alexandra countered. "That ambiguity is exactly why we must act. Circumspection often masquerades as prudence, but inertia is antithetical to innovation. The data confirms our trajectory is untenable."
+ðŸ’¡ Tip: The opposite is "inconvenient" â€” when something makes your life harder.
+âŒ "The bus schedule is really inconvenient â€” I have to wait an hour!"
 
-Within months, her initiative had engendered unprecedented productivity gains—not through happenstance, but through meticulous execution and unwavering philosophical commitment to organizational excellence.
+ðŸŽ¯ Try this TODAY: Write a sentence about something convenient in your life!
+Share it in the comments! ðŸ‘‡
 
-💡 KEY VOCABULARY SPOTLIGHT:
-• Paradigm (noun) = established model or framework
-• Eschew (verb) = deliberately avoid or reject
-• Entrenched (adjective) = firmly established, difficult to change
-• Precipitous (adjective) = sudden, extreme, or dangerously steep
-• Circumspection (noun) = careful consideration; caution
-• Substantiate (verb) = provide evidence for; verify
-
-💡 ADVANCED LEARNING TECHNIQUE:
-Notice how Alexandra doesn't merely "say things"—she "articulates," "leverages," and "substantiates." Professional English privileges precision over simplicity. Practice replacing everyday verbs (say, think, use) with their sophisticated equivalents.
-
-🎯 CHALLENGE: Identify three "pedestrian" verbs in your writing today and elevate them to B2+ alternatives!`,
-      hashtags: ['#AdvancedNarrative', '#ProfessionalEnglish', '#ExecutiveVocabulary'],
+ðŸ¤– Want interactive quizzes & personalized tips? DM the bot for exclusive features!`,
+      hashtags: ['#LearnEnglish', '#Vocabulary', '#B1English', '#DailyEnglish'],
       quizzes: [
         {
-          question: '❓ What does "eschew" mean in Alexandra\'s context?',
-          options: ['Examine thoroughly', 'Deliberately reject or avoid', 'Implement gradually', 'Question fundamentally'],
-          correctIndex: 1,
-          explanation: '"Eschew" = actively reject. She\'s calling for abandonment of outdated methodologies.',
+          question: 'â“ "The new metro station is very _____ for people who work downtown."',
+          options: ['convenient', 'nervous', 'difficult', 'expensive'],
+          correctIndex: 0,
+          explanation: '"Convenient" means it makes their life easier â€” the station is close and saves time!',
         },
         {
-          question: '❓ Her colleague\'s concern about being "too precipitous" suggests:',
-          options: ['Moving too slowly', 'Acting too hastily without sufficient caution', 'Being too detailed', 'Lacking resources'],
-          correctIndex: 1,
-          explanation: '"Precipitous" = dangerously sudden. He worries she\'s rushing the transformation.',
+          question: 'â“ Which situation is "inconvenient"?',
+          options: ['A store open 24 hours', 'A bus that comes every 5 minutes', 'A doctor only available at 6 AM', 'Free parking at work'],
+          correctIndex: 2,
+          explanation: '6 AM is too early for most people â€” that is inconvenient!',
         },
         {
-          question: '❓ "Circumspection often masquerades as prudence" implies:',
-          options: [
-            'Caution and wisdom are identical',
-            'Excessive caution can disguise itself as reasonable care',
-            'Prudence is impractical',
-            'Organizations should avoid caution'
-          ],
+          question: 'â“ "Is tomorrow _____ for you?" â€” What are we asking?',
+          options: ['Is tomorrow fun?', 'Is tomorrow a good time?', 'Is tomorrow free?', 'Is tomorrow sunny?'],
           correctIndex: 1,
-          explanation: 'Sophisticated observation: excessive caution (circumspection) can masquerade (disguise itself) as genuine wisdom (prudence)—a nuanced critique.',
+          explanation: 'We ask "Is it convenient?" to check if the time works well for someone.',
         },
       ],
     },
   ];
 
-  // FORMAT 2: Error Analysis Challenge (B2 - No Persian)
-  const errorAnalysisLessons = [
+  // FORMAT 2: Grammar (common patterns)
+  const grammarLessons = [
     {
-      title: '🔍 Error Analysis: Sophisticated Grammar Errors in Academic Writing',
-      format: 'error-analysis',
-      level: 'B2',
-      topic: 'Advanced learner mistakes in professional contexts',
-      postBody: `🔍 GRADUATE-LEVEL WRITING: Identify 5 Sophisticated Errors
+      title: 'âœï¸ Grammar Check: Present Perfect vs Simple Past',
+      format: 'grammar',
+      level: 'B1',
+      topic: 'When to use "I have done" vs "I did"',
+      postBody: `âœï¸ GRAMMAR: Present Perfect vs Simple Past
 
-❌ FLAWED ACADEMIC PARAGRAPH:
-"The implications of neuroplasticity are fundamental to contemporary pedagogical discourse. Researchers has demonstrated that cognitive flexibility, which it is enhanced through deliberate practice, enables individuals to circumvent traditionally entrenched learning paradigms. Despite of significant advances, institutional frameworks remain mired by outdated methodologies."
+Many learners mix these up. Let's make it simple! ðŸ˜Š
 
-💡 WHAT'S GRAMMATICALLY WRONG?
+ðŸ“Œ Simple Past = finished action, we know WHEN
+â€¢ "I visited Vancouver last summer." âœ…
+â€¢ "She called me yesterday." âœ…
 
-1. "Researchers has demonstrated" → Should be "Researchers have demonstrated" (plural subject = plural verb)
-2. "which it is enhanced" → Should be "which is enhanced" (redundant pronoun; relative clauses don't repeat subjects this way)
-3. "Despite of significant advances" → Should be "Despite significant advances" OR "In spite of significant advances" (preposition usage)
-4. "mired by outdated" → Should be "mired in outdated" (correct collocation with passive voice)
-5. Missing article: "the... learning paradigms" requires article consistency
+ðŸ“Œ Present Perfect = experience or result NOW
+â€¢ "I have visited Vancouver." (= at some point in my life)
+â€¢ "She has already called me." (= it's done, I know about it)
 
-✅ CORRECTED VERSION:
-"The implications of neuroplasticity are fundamental to contemporary pedagogical discourse. Researchers have demonstrated that cognitive flexibility, which is enhanced through deliberate practice, enables individuals to circumvent traditionally entrenched learning paradigms. Despite significant advances, institutional frameworks remain mired in outdated methodologies."
+ðŸ”‘ Easy Rule:
+â†’ If you say WHEN (yesterday, last week, in 2020) â†’ use Simple Past
+â†’ If you say EVER, NEVER, ALREADY, YET, JUST â†’ use Present Perfect
 
-💡 ADVANCED DISTINCTIONS:
-• "Despite" (preposition, no "of") vs "In spite of" (prepositional phrase with "of")
-• Relative clauses ("which is...") must not repeat subjects with pronouns
-• Passive voice collocations matter: "mired in," "entrenched by," "burdened with"
+âŒ Common mistake:
+"I have visited Vancouver last summer." â† WRONG!
+"I visited Vancouver last summer." â† RIGHT! âœ…
 
-🎯 CHALLENGE: Find ONE error in your next Telegram message and correct it!`,
-      hashtags: ['#AcademicWriting', '#AdvancedGrammar', '#PrecisionMatters'],
+ðŸ‡®ðŸ‡· Ø¨Ù‡ ÙØ§Ø±Ø³ÛŒ:
+Simple Past Ø¨Ø±Ø§ÛŒ Ú©Ø§Ø±Ù‡Ø§ÛŒ ØªÙ…ÙˆÙ… Ø´Ø¯Ù‡ Ø¨Ø§ Ø²Ù…Ø§Ù† Ù…Ø´Ø®Øµ.
+Present Perfect Ø¨Ø±Ø§ÛŒ ØªØ¬Ø±Ø¨Ù‡â€ŒÙ‡Ø§ ÛŒØ§ Ù†ØªÛŒØ¬Ù‡ Ø§Ù„Ø§Ù†.
+
+ðŸŽ¯ Try this: Write TWO sentences â€” one with Simple Past and one with Present Perfect!
+
+ðŸ¤– Want interactive quizzes & personalized tips? DM the bot for exclusive features!`,
+      hashtags: ['#EnglishGrammar', '#PresentPerfect', '#B1Grammar', '#LearnEnglish'],
       quizzes: [
         {
-          question: '❓ What\'s wrong with "Researchers has demonstrated"?',
-          options: [
-            'Nothing, "researchers" is singular',
-            '"Researchers" is plural, requiring "have" not "has"',
-            'Should use past tense instead'
-          ],
+          question: 'â“ "I _____ to Toronto three times." (experience, no specific time)',
+          options: ['went', 'have been', 'was going', 'did go'],
           correctIndex: 1,
-          explanation: 'Subject-verb agreement: plural subjects require plural verbs!',
+          explanation: 'No specific time mentioned = Present Perfect. "I have been to Toronto three times."',
         },
         {
-          question: '❓ How do you fix: "which it is enhanced through practice"?',
-          options: [
-            'Change "it" to "that"',
-            'Remove "it"—should be "which is enhanced through practice"',
-            'Add another verb after "it"'
-          ],
-          correctIndex: 1,
-          explanation: 'Relative clauses don\'t repeat subjects. "It" is redundant and ungrammatical.',
+          question: 'â“ "She _____ her homework yesterday."',
+          options: ['has finished', 'have finished', 'finished', 'is finishing'],
+          correctIndex: 2,
+          explanation: '"Yesterday" tells us WHEN. Use Simple Past: "She finished."',
         },
         {
-          question: '❓ Which is CORRECT?',
-          options: [
-            'Despite of significant advances',
-            'Despite significant advances',
-            'In spite significant advances'
-          ],
+          question: 'â“ Which sentence is CORRECT?',
+          options: ['I have seen that movie last week.', 'I saw that movie last week.', 'I have saw that movie.', 'I was seen that movie.'],
           correctIndex: 1,
-          explanation: '"Despite" is a preposition (no "of"). "In spite of" is a phrase (with "of").',
+          explanation: '"Last week" = specific time â†’ use Simple Past: "I saw."',
         },
       ],
     },
   ];
 
-  // FORMAT 3: Progressive Difficulty Tower (B2+ - Semantic Nuances)
-  const progressiveLessons = [
+  // FORMAT 3: Idiom (everyday sayings)
+  const idiomLessons = [
     {
-      title: '🏗️ Semantic Sophistication: "Undermine" at Three Cognitive Levels',
-      format: 'progressive-difficulty',
-      level: 'B2+',
-      topic: 'Advanced semantic nuances and collocational precision',
-      postBody: `🏗️ ONE CONCEPT, THREE ANALYTICAL DEPTHS
+      title: 'ðŸŽ­ Idiom Time: "Under the weather"',
+      format: 'idiom',
+      level: 'B1',
+      topic: 'Under the weather - feeling a little sick',
+      postBody: `ðŸŽ­ IDIOM: "Under the weather" ðŸ¤’
 
-LEVEL 1️⃣ (B1 - SURFACE UNDERSTANDING):
-"Undermine" = weaken or damage gradually
-✓ The scandal undermined his credibility. (direct causation)
-✓ Budget cuts undermine infrastructure quality. (straightforward damage)
+ðŸ”¤ What does it mean?
+It means you feel a little sick. Not very sick â€” just not great.
 
-LEVEL 2️⃣ (B2 - STRUCTURAL NUANCE):
-"Undermine" = systematically weaken foundational elements
-✓ Institutional corruption undermines democratic legitimacy. (attacks foundational principles, not just surface impacts)
-✓ Disinformation undermines epistemic frameworks. (targets how people know things, not just what they know)
-• Distinction: Not merely damage, but erosion of underlying principles
+âœ… Examples:
+â€¢ "I'm feeling a bit under the weather today. I think I'll stay home."
+â€¢ "My son was under the weather yesterday, so he didn't go to school."
+â€¢ "Are you okay? You look a bit under the weather."
 
-LEVEL 3️⃣ (B2+ - PHILOSOPHICAL/ANALYTICAL):
-"Undermine" = expose logical contradictions or philosophical flaws
-✓ Recent neuroscience undermines traditional mind-body dualism. (refutes theoretical foundations)
-✓ Postmodern critique undermines essentialist claims about identity. (deconstructs ontological assumptions)
-• Nuance: Suggests intellectual challenge, not just causal damage
+âš ï¸ It does NOT mean the weather is bad!
+âŒ "The weather is under the weather." â† This makes no sense!
+âœ… "I feel under the weather." â† Correct! You feel sick.
 
-SEMANTIC HIERARCHY:
-"Damage" (crude) → "Undermine" (systematic) → "Fundamentally vitiate" (theoretical)
+ðŸ‡®ðŸ‡· Ø¨Ù‡ ÙØ§Ø±Ø³ÛŒ:
+Under the weather ÛŒØ¹Ù†ÛŒ Ø­Ø§Ù„Ù… Ø®ÙˆØ¨ Ù†ÛŒØ³Øª ÛŒØ§ ÛŒÚ©Ù… Ù…Ø±ÛŒØ¶Ù…. Ù…Ø«Ù„Ø§Ù‹ ÙˆÙ‚ØªÛŒ Ø³Ø±Ù…Ø§ Ø®ÙˆØ±Ø¯ÛŒØ¯.
 
-💡 COLLOCATION PATTERNS:
-• Concrete: undermine [credibility, morale, effort]
-• Institutional: undermine [legitimacy, authority, governance]
-• Epistemological: undermine [certainty, assumptions, paradigms]
+ðŸ’¡ You can also say:
+â€¢ "I'm not feeling well."
+â€¢ "I feel a bit off today."
 
-🎯 MASTER-LEVEL CHALLENGE: Notice how word choice encodes your intellectual positioning. Choose "undermine" (systematic critique) vs. "damage" (causal harm) based on argumentative depth!`,
-      hashtags: ['#SemanticPrecision', '#AdvancedCollocations', '#IntellectualEnglish'],
+ðŸŽ¯ Next time you feel sick, try saying: "I'm a bit under the weather." ðŸ¤§
+
+ðŸ¤– Want interactive quizzes & personalized tips? DM the bot for exclusive features!`,
+      hashtags: ['#EnglishIdioms', '#UnderTheWeather', '#B1English', '#DailyIdiom'],
       quizzes: [
         {
-          question: '❓ "Institutional corruption undermines democratic legitimacy" suggests:',
-          options: [
-            'Corruption causes temporary problems',
-            'Corruption weakens the foundational principles of democracy itself',
-            'Corruption is only a financial issue'
-          ],
+          question: 'â“ Your friend says "I feel under the weather." What do they mean?',
+          options: ['They are cold because of rain', 'They feel a little sick', 'They are very happy', 'They don\'t like the weather'],
           correctIndex: 1,
-          explanation: 'B2+ understanding: "undermine" attacks foundational principles (legitimacy), not just operational efficiency.',
+          explanation: '"Under the weather" = feeling sick. It has nothing to do with actual weather!',
         },
         {
-          question: '❓ Why say "undermines epistemic frameworks" rather than "damages knowledge"?',
-          options: [
-            'It\'s unnecessarily complicated',
-            'It specifies that the attack targets how we know things, not just facts themselves',
-            'There\'s no meaningful difference'
-          ],
+          question: 'â“ When would you say "I\'m under the weather"?',
+          options: ['You got a promotion', 'You have a headache and sore throat', 'It\'s raining outside', 'You finished a big project'],
           correctIndex: 1,
-          explanation: '"Epistemic frameworks" = systems of knowing; more sophisticated than "knowledge".',
+          explanation: 'You say this when you feel sick â€” like a headache, cold, or sore throat.',
         },
         {
-          question: '❓ Which statement is MOST SOPHISTICATED?',
-          options: [
-            'This undermines my understanding',
-            'This undermines the epistemological scaffolding upon which contemporary scientific certainty is constructed',
-            'This damages things'
-          ],
+          question: 'â“ Which sentence uses the idiom CORRECTLY?',
+          options: ['The sky is under the weather.', 'I can\'t come to work â€” I\'m under the weather.', 'The weather is under me.', 'My car is under the weather.'],
           correctIndex: 1,
-          explanation: 'Maximum sophistication comes from theoretical vocabulary + precise target of critique.',
+          explanation: '"Under the weather" is about PEOPLE feeling sick, not about things or real weather.',
         },
       ],
     },
   ];
 
-  // FORMAT 4: Comparison Battle (B2 - Persian Removed)
-  const comparisonLessons = [
+  // FORMAT 4: Phrasal Verb
+  const phrasalLessons = [
     {
-      title: '⚖️ Comparison Battle: "Conversely" vs "Conversely"—The Subtle Art of Contrast',
-      format: 'comparison',
-      level: 'B2',
-      topic: 'Advanced discourse markers and logical relationships',
-      postBody: `⚖️ SOPHISTICATED CONTRAST: Understanding Nuanced Opposing Statements
+      title: 'ðŸ”„ Phrasal Verb: "Look forward to"',
+      format: 'phrasal-verb',
+      level: 'B1',
+      topic: 'Look forward to - be excited about something coming',
+      postBody: `ðŸ”„ PHRASAL VERB: "Look forward to" ðŸŽ‰
 
-CONTEXT 1: Direct Opposition in Academic Writing
-❌ "Traditional pedagogy emphasizes rote memorization. Conversely, constructivist approaches prioritize experiential discovery." (Acceptable, but blunt)
-✅ "Whereas traditional pedagogy emphasizes rote memorization, constructivist approaches fundamentally invert this paradigm by prioritizing experiential discovery." (More sophisticated, creates deeper contrast)
+ðŸ”¤ What does it mean?
+It means you are excited or happy about something that will happen.
 
-CONTEXT 2: Conceding then Contrasting
-❌ "The research is significant. Conversely, it has limitations." (Too simplistic)
-✅ "Although the research presents compelling findings, methodological constraints sufficiently undermine its generalizability to warrant circumspection in interpretation." (Acknowledges merit while demonstrating critical analysis)
+âœ… Examples:
+â€¢ "I look forward to the weekend!"
+â€¢ "She's looking forward to her vacation."
+â€¢ "We look forward to meeting you." (very common in emails!)
 
-THE DISCOURSE MARKER HIERARCHY:
-• "But" = crude opposition (avoid in formal writing)
-• "However" / "Nevertheless" = competent contrast (B1-B2)
-• "Conversely" = explicit logical inversion (B2, but potentially weak if overused)
-• "Whilst/Whereas" + clause inversion = sophisticated rhetorical positioning (B2+, more subtle)
-• Implicit contrast through structural parallelism (expert level)
+âš ï¸ Important grammar rule:
+After "look forward to" â†’ use -ING (not infinitive!)
+âœ… "I look forward to seeing you." â† CORRECT
+âŒ "I look forward to see you." â† WRONG
 
-NATIVE ELITE PRACTICE:
-In sophisticated academic discourse, contrast is often embedded structurally rather than explicitly marked. Notice how professional writers often avoid discourse markers entirely and rely on parallel construction to imply opposition.
+More examples with -ING:
+â€¢ "I'm looking forward to starting my new job."
+â€¢ "He looks forward to visiting his family."
 
-EXAMPLE - Professional vs. Pedestrian:
-❌ "Some argue X. Conversely, others argue Y."
-✅ "Whilst proponents contend X, critics posit the antithetical thesis: Y."
+ðŸ‡®ðŸ‡· Ø¨Ù‡ ÙØ§Ø±Ø³ÛŒ:
+Look forward to ÛŒØ¹Ù†ÛŒ Ù…Ø´ØªØ§Ù‚Ø§Ù†Ù‡ Ù…Ù†ØªØ¸Ø±Ù…. Ù…Ø«Ù„Ø§Ù‹: Ù…Ø´ØªØ§Ù‚Ø§Ù†Ù‡ Ù…Ù†ØªØ¸Ø± Ø¢Ø®Ø± Ù‡ÙØªÙ‡ Ù‡Ø³ØªÙ…!
 
-💡 STRATEGIC INSIGHT: Excessive use of "conversely" marks you as competent but not expert. True sophistication means creating contrast without announcing it.
+ðŸ’¡ This is perfect for emails:
+"Thank you for your help. I look forward to hearing from you." ðŸ“§
 
-🎯 CHALLENGE: Rewrite one comparison from your work using implicit contrast instead of explicit markers!`,
-      hashtags: ['#AcademicStyle', '#DiscourseMarkers', '#WritingSophistication'],
+ðŸŽ¯ Try this: What are YOU looking forward to this week? Write it below! ðŸ‘‡
+
+ðŸ¤– Want interactive quizzes & personalized tips? DM the bot for exclusive features!`,
+      hashtags: ['#PhrasalVerbs', '#LookForwardTo', '#B1English', '#EnglishGrammar'],
       quizzes: [
         {
-          question: '❓ Why is "whereas" more sophisticated than "conversely" in academic writing?',
-          options: [
-            'They\'re equally sophisticated',
-            '"Whereas" subordinates one idea to another, creating implicit logical relationships rather than announcing contrast',
-            '"Conversely" is actually more sophisticated'
-          ],
+          question: 'â“ "I look forward to _____ you at the party."',
+          options: ['see', 'seeing', 'saw', 'seen'],
           correctIndex: 1,
-          explanation: 'Expert writers embed contrast structurally; competent writers announce it with markers like "conversely".',
+          explanation: 'After "look forward to" we always use -ING: "seeing"!',
         },
         {
-          question: '❓ "Methodological constraints sufficiently undermine its generalizability" demonstrates:',
-          options: [
-            'Simple criticism',
-            'Measured critique acknowledging both merit and limitations',
-            'Praise with reservations'
-          ],
+          question: 'â“ What does "I\'m looking forward to the concert" mean?',
+          options: ['I want to cancel the concert', 'I am excited about the concert', 'I forgot about the concert', 'I am nervous about the concert'],
           correctIndex: 1,
-          explanation: '"Sufficiently undermine" = sophisticated quantification of critique; neither absolute dismissal nor uncritical acceptance.',
+          explanation: '"Looking forward to" = excited and happy about something in the future!',
         },
         {
-          question: '❓ Which revision BEST exemplifies B2+ sophistication?',
-          options: [
-            'Some argue X. Conversely, others argue Y.',
-            'Whilst proponents contend X, critics posit Y.',
-            'X is debated; some say one thing, some say another.'
-          ],
+          question: 'â“ Which email ending is CORRECT?',
+          options: ['I look forward to hear from you.', 'I look forward to hearing from you.', 'I look forward hear from you.', 'I look forward for hearing from you.'],
           correctIndex: 1,
-          explanation: 'Structural embedding + sophisticated verbs ("contend," "posit") + implicit contrast = higher register.',
+          explanation: '"Look forward TO + -ING": "I look forward to hearing from you."',
         },
       ],
     },
   ];
 
-  // FORMAT 5: Native Speaker Authenticity (B2+ - Policy Think Tank Dialogue)
-  const nativeSpeakerLessons = [
+  // FORMAT 5: Expression
+  const expressionLessons = [
     {
-      title: '🎬 Native Expert Dialogue: Policy Deliberation Between Researchers',
-      format: 'native-speaker',
-      level: 'B2+',
-      topic: 'Advanced professional discourse and intellectual debate',
-      postBody: `🎬 AUTHENTIC DIALOGUE: How Sophisticated Professionals Actually Argue
+      title: 'ðŸ’¬ Useful Expression: "It depends"',
+      format: 'expression',
+      level: 'B1',
+      topic: 'It depends - the answer changes based on the situation',
+      postBody: `ðŸ’¬ EXPRESSION: "It depends" ðŸ¤”
 
-SCENARIO: Two policy researchers debating climate mitigation frameworks 🌍
+ðŸ”¤ What does it mean?
+You say "it depends" when the answer is not always the same.
+The answer changes based on the situation.
 
-A: "The carbon offset paradigm is fundamentally flawed. It perpetuates the fiction that we can externalize environmental costs through market mechanisms."
+âœ… Examples:
+â€¢ "Do you like cooking?" â€” "It depends. If I have time, yes!"
+â€¢ "Is English hard?" â€” "It depends on how much you practice."
+â€¢ "Should I take the bus or drive?" â€” "It depends on the traffic."
 
-B: "I appreciate the critique, but I'd contend that's an oversimplification. Offsets aren't panacea, sure, but they're pragmatic given political constraints."
+ðŸ“Œ How to use it:
+â€¢ "It depends." (by itself â€” simple answer)
+â€¢ "It depends on + noun" â†’ "It depends on the weather."
+â€¢ "It depends on + question word" â†’ "It depends on how much it costs."
 
-A: "Pragmatism that exacerbates the problem isn't pragmatism—it's complicity. We're papering over systemic failures with incremental measures."
+ðŸ‡®ðŸ‡· Ø¨Ù‡ ÙØ§Ø±Ø³ÛŒ:
+It depends ÛŒØ¹Ù†ÛŒ Ø¨Ø³ØªÚ¯ÛŒ Ø¯Ø§Ø±Ù‡. Ù…Ø«Ù„Ø§Ù‹: Ø¨Ø³ØªÚ¯ÛŒ Ø¯Ø§Ø±Ù‡ Ø¨Ù‡ ÙˆØ¶Ø¹ÛŒØª Ø¢Ø¨ Ùˆ Ù‡ÙˆØ§.
 
-B: "That's intellectually satisfying rhetoric, but it lacks operational specificity. How exactly do you circumvent entrenched fossil fuel interests without intermediate mechanisms?"
+ðŸ’¡ This is very useful in conversations!
+When someone asks a question and you can't give a simple yes or no, say:
+"Well, it depends..."
 
-A: "Fair point. I'll concede that framing. But intermediate mechanisms cannot become permanent fixtures. There needs to be an explicit sunset clause."
+ðŸŽ¯ Try this: Answer this question using "it depends":
+"Do you prefer summer or winter?" ðŸ‘‡
 
-B: "Now we're converging. If we coupled offsets with mandatory carbon tax indexation—"
-
-A: "—and regulatory enforcement with real penalties, not token fines."
-
-B: "Exactly. That's a substantive policy architecture."
-
-💡 AUTHENTIC PATTERNS NATIVE PROFESSIONALS USE:
-• Explicit disagreement: "I appreciate X, but I'd contend..." (not just "you're wrong")
-• Strategic concession: "Fair point. I'll concede that framing." (shows intellectual maturity)
-• Collaborative completion: Finishing each other's thoughts mid-clause
-• Jargon precision: "operational specificity," "policy architecture" (field-specific terminology)
-• Escalating nuance: Moving from abstract critique to concrete mechanism design
-
-🎯 NOTICE: NO contractions here (unlike casual speech). Sophisticated deliberation privileges clarity over informality.
-
-CONTRASTIVE OBSERVATION:
-Compare casual: "Look, you're being unrealistic. That won't work in the real world."
-vs. Expert: "I'd contend that operational constraints warrant reconsideration of the theoretical model."
-= Same disagreement, exponentially more sophisticated register.`,
-      hashtags: ['#ProfessionalEnglish', '#IntellectualDialogue', '#ExpertRegister'],
+ðŸ¤– Want interactive quizzes & personalized tips? DM the bot for exclusive features!`,
+      hashtags: ['#EnglishExpressions', '#ItDepends', '#B1English', '#SpeakingTips'],
       quizzes: [
         {
-          question: '❓ When A says "It\'s complicity," they\'re arguing:',
-          options: [
-            'The approach is honest',
-            'Using intermediate measures is actively participating in environmental harm rather than genuinely solving it',
-            'Market mechanisms are helpful'
-          ],
-          correctIndex: 1,
-          explanation: '"Complicity" = knowing participation in wrongdoing. Strong rhetorical move.',
+          question: 'â“ "Will you go to the party?" â€” "_____ on who\'s going."',
+          options: ['It depends', 'It decides', 'It works', 'It matters'],
+          correctIndex: 0,
+          explanation: '"It depends on..." is how we say the answer changes based on something.',
         },
         {
-          question: '❓ B\'s response "That\'s rhetorically satisfying but lacks operational specificity" suggests:',
-          options: [
-            'A\'s critique is correct',
-            'A sounds good but doesn\'t explain HOW to implement alternatives',
-            'Rhetoric is more important than policy'
-          ],
-          correctIndex: 1,
-          explanation: '"Operational specificity" = concrete implementation details. B challenges abstract critique.',
+          question: 'â“ When do we use "it depends"?',
+          options: ['When we are sure about the answer', 'When the answer is always the same', 'When the answer changes based on the situation', 'When we don\'t understand the question'],
+          correctIndex: 2,
+          explanation: '"It depends" = the answer is not simple â€” it changes based on the situation.',
         },
         {
-          question: '❓ The dialogue demonstrates sophisticated negotiation through:',
-          options: [
-            'Direct personal attacks',
-            'Strategic concession, collaborative building, and moving from abstract critique to concrete design',
-            'Avoiding any disagreement'
-          ],
+          question: 'â“ Which is CORRECT?',
+          options: ['It depends of the price.', 'It depends on the price.', 'It depends for the price.', 'It depends at the price.'],
           correctIndex: 1,
-          explanation: 'Expert dialogic patterns: acknowledge merit, concede valid points, reconstruct toward shared solution.',
+          explanation: 'Always say "depends ON": "It depends on the price."',
         },
       ],
     },
   ];
 
-  // FORMAT 6: Pronunciation + Comprehensive Phonology (B2+ - Advanced Patterns)
-  const pronunciationLessons = [
+  // FORMAT 6: Error Correction (simple mistakes)
+  const errorLessons = [
     {
-      title: '🔊 Phonological Sophistication: Vowel Reduction and Prosody in Native Speech',
+      title: 'ðŸ” Common Mistake: "I am agree" âŒ',
+      format: 'error-correction',
+      level: 'B1',
+      topic: 'Common mistakes with agree, enjoy, and suggest',
+      postBody: `ðŸ” SPOT THE MISTAKE! Can you fix these? ðŸ§
+
+Mistake 1:
+âŒ "I am agree with you."
+âœ… "I agree with you."
+â†’ "Agree" is a verb, not an adjective. No "am"!
+
+Mistake 2:
+âŒ "I enjoy to swim."
+âœ… "I enjoy swimming."
+â†’ After "enjoy" â†’ always use -ING!
+
+Mistake 3:
+âŒ "She suggested me to go."
+âœ… "She suggested that I go." OR "She suggested going."
+â†’ "Suggest" doesn't use "me to..."
+
+ðŸ‡®ðŸ‡· Ø¨Ù‡ ÙØ§Ø±Ø³ÛŒ:
+âŒ I am agree â† Ø§Ø´ØªØ¨Ø§Ù‡ Ø±Ø§ÛŒØ¬. ÙÙ‚Ø· Ø¨Ú¯ÛŒØ¯ I agree
+âŒ enjoy to â† Ø¨Ø¹Ø¯ Ø§Ø² enjoy Ù‡Ù…ÛŒØ´Ù‡ ing Ø¨Ø°Ø§Ø±ÛŒØ¯
+âŒ suggest me to â† Ø¨Ø¹Ø¯ Ø§Ø² suggest Ø§Ø² that Ø§Ø³ØªÙØ§Ø¯Ù‡ Ú©Ù†ÛŒØ¯
+
+ðŸ’¡ These 3 mistakes are VERY common. If you fix them, your English will sound much more natural! ðŸŒŸ
+
+ðŸŽ¯ Challenge: Write a sentence with "agree," "enjoy," or "suggest." Share below! ðŸ‘‡
+
+ðŸ¤– Want interactive quizzes & personalized tips? DM the bot for exclusive features!`,
+      hashtags: ['#CommonMistakes', '#EnglishGrammar', '#B1English', '#FixYourEnglish'],
+      quizzes: [
+        {
+          question: 'â“ Which sentence is CORRECT?',
+          options: ['I am agree with this idea.', 'I agree with this idea.', 'I am agreed with this idea.', 'I agreeing with this idea.'],
+          correctIndex: 1,
+          explanation: '"Agree" is a verb. Just say "I agree" â€” no "am" needed!',
+        },
+        {
+          question: 'â“ "I really enjoy _____ music."',
+          options: ['to listen', 'listen', 'listening to', 'for listening'],
+          correctIndex: 2,
+          explanation: 'After "enjoy" â†’ use -ING: "enjoy listening to music."',
+        },
+        {
+          question: 'â“ "She suggested _____ early."',
+          options: ['me to leave', 'that I leave', 'me leaving', 'I to leave'],
+          correctIndex: 1,
+          explanation: '"Suggest" uses "that + subject + verb": "She suggested that I leave early."',
+        },
+      ],
+    },
+  ];
+
+  // FORMAT 7: Pronunciation (simple sounds)
+  const pronunLessons = [
+    {
+      title: 'ðŸ”Š Say It Right: Words that Sound Different than They Look!',
       format: 'pronunciation',
-      level: 'B2+',
-      topic: 'Advanced phonetic and prosodic patterns in professional speech',
-      postBody: `🔊 MASTER PRONUNCIATION: From Textbook Articulation to Native Prosody
+      level: 'B1',
+      topic: 'Tricky English pronunciation',
+      postBody: `ðŸ”Š SAY IT RIGHT! These words trick everyone! ðŸ˜…
 
-THE PHENOMENON: Vowel Reduction and Swallowing in Rapid Professional Speech
+These English words don't sound the way they look:
 
-Most learners over-articulate. Notice the difference:
+1ï¸âƒ£ Wednesday = "WENZ-day" (not Wed-NES-day)
+2ï¸âƒ£ Comfortable = "KUMF-ter-bul" (not com-FOR-ta-ble)
+3ï¸âƒ£ Vegetable = "VEJ-tuh-bul" (not ve-ge-TA-ble)
+4ï¸âƒ£ Interesting = "IN-tres-ting" (not in-ter-ES-ting)
+5ï¸âƒ£ Restaurant = "RES-tront" (not res-tau-RANT)
 
-❌ TEXTBOOK (Character-by-character, every vowel distinct):
-"Laboratory" = LAB-or-a-TOR-ee (5 clear syllables)
-✗ This marks you as non-native immediately.
+ðŸ’¡ Secret: In English, we often skip sounds in long words!
+This is totally normal. Even native speakers do this.
 
-✅ NATIVE SPEECH (Vowel reduction, syllable compression):
-"Laboratory" = LAB-ra-tree (3 syllables, vowels become schwa [ə] sound)
-or even colloquially: "LABRA-tree"
+ðŸ‡®ðŸ‡· Ø¨Ù‡ ÙØ§Ø±Ø³ÛŒ:
+Ø¯Ø± Ø§Ù†Ú¯Ù„ÛŒØ³ÛŒ Ø¨Ø¹Ø¶ÛŒ Ú©Ù„Ù…Ø§Øª Ø¬ÙˆØ±ÛŒ Ú©Ù‡ Ù†ÙˆØ´ØªÙ‡ Ø´Ø¯Ù† ØªÙ„ÙØ¸ Ù†Ù…ÛŒØ´Ù†!
+Ù…Ø«Ù„Ø§Ù‹ Wednesday Ø±Ùˆ Ù…ÛŒÚ¯ÛŒÙ… Â«ÙˆÙ†Ø²Ø¯ÛŒÂ» Ù†Ù‡ Â«ÙˆØ¯Ù†Ø²Ø¯ÛŒÂ».
 
-ADVANCED PATTERN 1: The Schwa Invasion
-In rapid speech, unstressed vowels collapse to [ə]:
-• "Photograph" = FOH-tuh-graf (not FOTE-o-graf)
-• "Communicate" = kuh-MYOO-ni-kayt (not COM-myoo-ni-kate)
-• "Interesting" = IN-truh-sting (not IN-tur-est-ing)
-→ Reality: Native speakers execute vowel reduction automatically; learners must hear and replicate this pattern.
+ðŸŽ¯ Practice tip: Say each word 5 times fast. Your mouth will learn the shortcut! ðŸ—£ï¸
 
-ADVANCED PATTERN 2: Prosodic Stress and Intonation Contours
-Professional English uses strategic stress-placement to signal sophistication:
-• Normal: "The POLICY is ineffective." (question form, confusion)
-• Assertive: "The policy is INEFFECT-ive." (confident statement)
-• Analytical: "The POL-icy is ineffective." (emphasizing the object of critique, inviting counter-argument)
+Which word surprised you the most? Tell us below! ðŸ‘‡
 
-💡 PHONOLOGICAL INSIGHT:
-Stress placement encodes epistemological positioning. Where you place stress telegraphs whether you're asking, asserting, or inviting dialogue.
-
-ADVANCED PATTERN 3: Connected Speech Phenomena
-Native speech violates textbook phoneme boundaries:
-• "Did you" → [dɪ dʒu] in isolation, but → [dɪdʒə] or [dɪʃə] in connected speech
-• "What are you" → [wɑt are ju] in slow speech, but → [wədʒə] in fluent speech
-• This isn't laziness—it's phonological sophistication.
-
-🎯 DIAGNOSTIC CHALLENGE: Listen to a native policy expert for 60 seconds and count how many words they fully pronounce vs. reduce. Most will be reduced.
-
-💡 MASTERY TECHNIQUE: Record yourself reading academic text. Then listen to a native professional read the same text. Map WHERE they differ phonetically. Those differences are your improvement pathway.`,
-      hashtags: ['#PhonologySophistication', '#NativePronunciation', '#ProsodyMatters'],
+ðŸ¤– Want interactive quizzes & personalized tips? DM the bot for exclusive features!`,
+      hashtags: ['#Pronunciation', '#SayItRight', '#B1English', '#EnglishSounds'],
       quizzes: [
         {
-          question: '❓ Why do natives say "LAB-ra-tree" instead of "LAB-or-a-TOR-ee"?',
-          options: [
-            'It\'s incorrect and uneducated',
-            'Unstressed vowels reduce to schwa [ə] sound in rapid fluent speech',
-            'Americans can\'t pronounce properly'
-          ],
+          question: 'â“ How do native speakers say "comfortable"?',
+          options: ['com-FOR-ta-ble (4 syllables)', 'KUMF-ter-bul (3 syllables)', 'com-fort-ABLE', 'COME-for-table'],
           correctIndex: 1,
-          explanation: 'Vowel reduction is a feature of fluent native speech, not a defect. It\'s phonologically systematic.',
+          explanation: 'We shorten it! "KUMF-ter-bul" â€” only 3 syllables, not 4.',
         },
         {
-          question: '❓ If you stress "THE policy is ineffective" vs "the POL-icy is ineffective":',
-          options: [
-            'Both mean exactly the same thing',
-            'Stress placement changes prosodic meaning; first suggests questioning, second invites focus-shifting critique',
-            'The first is always wrong'
-          ],
+          question: 'â“ How do you say "Wednesday"?',
+          options: ['Wed-NES-day', 'WENZ-day', 'Wed-IN-day', 'WED-nes-day'],
           correctIndex: 1,
-          explanation: 'Prosody = how stress/intonation shapes meaning. This is expert-level pronunciation.',
+          explanation: 'The "d" and second "e" are silent! We say "WENZ-day."',
         },
         {
-          question: '❓ Connected speech phenomena like "didyə" for "did you" represent:',
-          options: [
-            'Speech errors native speakers should avoid',
-            'Phonological features of fluent native discourse—automatic boundary reduction',
-            'Problems unique to American English'
-          ],
+          question: 'â“ Why do native speakers "skip" sounds in words?',
+          options: ['Because they are lazy', 'Because it is a natural part of English', 'Because they don\'t know the correct way', 'Because they speak too fast'],
           correctIndex: 1,
-          explanation: 'This phonological shifting is systematic, universal in native speech, and marks true fluency.',
+          explanation: 'Dropping sounds in long words is normal and natural English!',
         },
       ],
     },
   ];
 
-  // FORMAT 7: Cultural Context Master (B2+ - Diplomatic Euphemism Analysis)
+  // FORMAT 8: Comparison (similar words)
+  const compLessons = [
+    {
+      title: 'âš–ï¸ What\'s the Difference? "Make" vs "Do"',
+      format: 'comparison',
+      level: 'B1',
+      topic: 'Make vs Do - when to use each one',
+      postBody: `âš–ï¸ MAKE vs DO â€” What's the difference? ðŸ¤”
+
+This is one of the most confusing things in English!
+Here's a simple way to remember:
+
+ðŸ“Œ DO = for tasks, work, and activities
+â€¢ do homework / do the dishes / do exercise
+â€¢ do a favour / do your best / do business
+
+ðŸ“Œ MAKE = for creating or producing something
+â€¢ make food / make a mistake / make a decision
+â€¢ make money / make a plan / make friends
+
+ðŸ”‘ Simple memory trick:
+DO = routine tasks (boring stuff ðŸ˜…)
+MAKE = you create something new âœ¨
+
+âŒ Common mistakes:
+"I need to make my homework." â† WRONG
+"I need to do my homework." â† RIGHT âœ…
+
+"I did a mistake." â† WRONG
+"I made a mistake." â† RIGHT âœ…
+
+ðŸ‡®ðŸ‡· Ø¨Ù‡ ÙØ§Ø±Ø³ÛŒ:
+Do Ø¨ÛŒØ´ØªØ± Ø¨Ø±Ø§ÛŒ Ú©Ø§Ø±Ù‡Ø§ Ùˆ ÙˆØ¸Ø§ÛŒÙ: do homework, do the dishes
+Make Ø¨ÛŒØ´ØªØ± Ø¨Ø±Ø§ÛŒ Ø³Ø§Ø®ØªÙ† Ú†ÛŒØ² Ø¬Ø¯ÛŒØ¯: make food, make a plan
+
+ðŸŽ¯ Challenge: Write one sentence with MAKE and one with DO! ðŸ‘‡
+
+ðŸ¤– Want interactive quizzes & personalized tips? DM the bot for exclusive features!`,
+      hashtags: ['#MakeVsDo', '#EnglishGrammar', '#B1English', '#ConfusingWords'],
+      quizzes: [
+        {
+          question: 'â“ "Can you _____ me a favour?"',
+          options: ['make', 'do', 'have', 'take'],
+          correctIndex: 1,
+          explanation: '"Do a favour" â€” it\'s a task, not creating something!',
+        },
+        {
+          question: 'â“ "She _____ a big mistake at work."',
+          options: ['did', 'made', 'done', 'does'],
+          correctIndex: 1,
+          explanation: 'We say "make a mistake" â€” not "do a mistake."',
+        },
+        {
+          question: 'â“ Which pair is CORRECT?',
+          options: ['make homework, do a cake', 'do homework, make a cake', 'make the dishes, do money', 'do a decision, make exercise'],
+          correctIndex: 1,
+          explanation: 'DO homework (task) and MAKE a cake (creating something)!',
+        },
+      ],
+    },
+  ];
+
+  // FORMAT 9: Story / Dialogue (real life)
+  const storyLessons = [
+    {
+      title: 'ðŸŽ¬ Real Conversation: At a Coffee Shop â˜•',
+      format: 'dialogue',
+      level: 'B1',
+      topic: 'Ordering at a coffee shop - useful phrases',
+      postBody: `ðŸŽ¬ REAL CONVERSATION: At a Coffee Shop â˜•
+
+Let's practice! Read this conversation:
+
+ðŸ‘¤ Barista: "Hi! What can I get for you?"
+ðŸ™‹ You: "Can I have a medium latte, please?"
+ðŸ‘¤ Barista: "Sure! Would you like that hot or iced?"
+ðŸ™‹ You: "Iced, please."
+ðŸ‘¤ Barista: "Do you want any flavour? Vanilla? Caramel?"
+ðŸ™‹ You: "Vanilla sounds good!"
+ðŸ‘¤ Barista: "For here or to go?"
+ðŸ™‹ You: "To go, please."
+ðŸ‘¤ Barista: "That'll be $5.75."
+ðŸ™‹ You: "Here you go. Thanks!"
+ðŸ‘¤ Barista: "Thank you! Have a great day!"
+
+ðŸ“Œ Key phrases to remember:
+â€¢ "Can I have a..." = polite way to order
+â€¢ "For here or to go?" = eat in the shop or take it?
+â€¢ "That'll be..." = here is the price
+â€¢ "Here you go" = when you give money/card
+
+ðŸ‡®ðŸ‡· Ø¨Ù‡ ÙØ§Ø±Ø³ÛŒ:
+Can I have a... = Ù…ÛŒØªÙˆÙ†Ù… ... Ø¯Ø§Ø´ØªÙ‡ Ø¨Ø§Ø´Ù…ØŸ (Ø¨Ø±Ø§ÛŒ Ø³ÙØ§Ø±Ø´ Ø¯Ø§Ø¯Ù†)
+For here or to go? = Ø§ÛŒÙ†Ø¬Ø§ Ù…ÛŒØ®ÙˆØ±ÛŒØ¯ ÛŒØ§ Ù…ÛŒØ¨Ø±ÛŒØ¯ØŸ
+
+ðŸŽ¯ Next time you order coffee, try using these phrases! â˜•
+
+ðŸ¤– Want interactive quizzes & personalized tips? DM the bot for exclusive features!`,
+      hashtags: ['#RealEnglish', '#CoffeeShop', '#B1Speaking', '#DailyConversation'],
+      quizzes: [
+        {
+          question: 'â“ How do you politely order something in English?',
+          options: ['Give me a coffee!', 'Can I have a coffee, please?', 'I want coffee now.', 'Coffee!'],
+          correctIndex: 1,
+          explanation: '"Can I have a... please?" is the polite way to order in English!',
+        },
+        {
+          question: 'â“ "For here or to go?" â€” What does this mean?',
+          options: ['Do you want sugar?', 'Do you want to eat here or take it with you?', 'Do you want a big or small size?', 'Do you want to pay now or later?'],
+          correctIndex: 1,
+          explanation: '"For here" = eat in the shop. "To go" = take it with you.',
+        },
+        {
+          question: 'â“ When the barista says "That\'ll be $5.75," what should you do?',
+          options: ['Say "It depends"', 'Pay $5.75', 'Ask for a discount', 'Say "No thanks"'],
+          correctIndex: 1,
+          explanation: '"That\'ll be..." tells you the price. Time to pay!',
+        },
+      ],
+    },
+  ];
+
+  // FORMAT 10: Cultural tip
   const culturalLessons = [
     {
-      title: '🌍 Diplomatic Euphemism Analysis: "Friendly Fire" and Other Professional Circumlocutions',
-      format: 'cultural-context',
-      level: 'B2+',
-      topic: 'Advanced pragmatics and cultural semiotics in professional discourse',
-      postBody: `🌍 THE SEMIOTICS OF EVASION: How Professionals Obscure Through Language
+      title: 'ðŸ‡¨ðŸ‡¦ Canadian English: Things People Actually Say!',
+      format: 'cultural',
+      level: 'B1',
+      topic: 'Common Canadian expressions and small talk',
+      postBody: `ðŸ‡¨ðŸ‡¦ CANADIAN ENGLISH: Things You'll Hear Every Day!
 
-WHAT IS "FRIENDLY FIRE"?
-Technically: Soldiers accidentally wounded/killed by allies' weapons
-Linguistically: A terminological paradox designed to soften moral horror
+If you live in Canada, you'll hear these a lot:
 
-WHY THIS MATTERS:
-This single phrase demonstrates how professional registers use euphemism not as politeness, but as cognitive framing. The term restructures reality itself.
+1ï¸âƒ£ "Sorry!" ðŸ™
+Canadians say sorry ALL the time. Even when it's not their fault!
+â†’ Someone bumps into YOU and says: "Oh, sorry!"
 
-THE EUPHEMISTIC GRADIENT:
+2ï¸âƒ£ "Double-double" â˜•
+This means a coffee with 2 creams and 2 sugars (from Tim Hortons!).
+â†’ "I'll have a double-double, please."
 
-Level 1 (Direct Reality):
-"Our soldiers were killed by our own soldiers who made targeting mistakes."
-→ Uncomfortable. Demands accountability and transparency.
+3ï¸âƒ£ "How's it going?" ðŸ‘‹
+This is not a real question! It's just a greeting.
+â†’ Answer: "Good, thanks! You?" (Don't explain your whole day! ðŸ˜…)
 
-Level 2 (Partial Softening):
-"Casualties resulted from targeting error."
-→ Passive voice abstracts agency. But "casualties" acknowledges death.
+4ï¸âƒ£ "No worries!" ðŸ˜Š
+This means "it's okay" or "you're welcome."
+â†’ "Thanks for helping me!" â€” "No worries!"
 
-Level 3 (Professional Euphemism):
-"Friendly fire incident resulted in personnel attrition."
-→ "Attrition" = natural loss (like rainfall), not caused violence
-→ "Incident" = neutral, technical register
-→ "Friendly" = paradoxically humanizing while obscuring
+5ï¸âƒ£ "Toque" (sounds like "took") ðŸ§¢
+A warm winter hat. Very important in Canada! ðŸ¥¶
 
-Level 4 (Maximum Circumlocution):
-"Intra-theater security event necessitated force management protocols."
-→ Incomprehensible to non-specialists, which IS the point
-→ Obscures moral reality through terminological density
+ðŸ‡®ðŸ‡· Ø¨Ù‡ ÙØ§Ø±Ø³ÛŒ:
+Ú©Ø§Ù†Ø§Ø¯Ø§ÛŒÛŒâ€ŒÙ‡Ø§ Ø®ÛŒÙ„ÛŒ sorry Ù…ÛŒÚ¯Ù†! Double-double ÛŒØ¹Ù†ÛŒ Ù‚Ù‡ÙˆÙ‡ Ø¨Ø§ Û² Ø´Ú©Ø± Ùˆ Û² Ø®Ø§Ù…Ù‡.
+How's it going Ø¬ÙˆØ§Ø¨ Ú©ÙˆØªØ§Ù‡ Ù…ÛŒØ®ÙˆØ§Ø¯ØŒ Ù†Ù‡ Ø¯Ø§Ø³ØªØ§Ù† Ú©Ø§Ù…Ù„!
 
-💡 CULTURAL INSIGHT:
-Different English-speaking professional contexts employ euphemism strategically:
-• Military: "Collateral damage," "neutralize," "kinetic action"
-• Corporate: "Right-sizing," "resource optimization," "delayering"
-• Political: "Enhanced interrogation," "kinetic intervention"
-• Academic: "Problematize," "theorize," "emergent frameworks"
+ðŸŽ¯ Try this: Next time someone says "How's it going?" just say "Good, thanks!"
 
-Each domain encodes power relations through circumlocution.
-
-💡 THE PRAGMATIC FUNCTION:
-Euphemisms aren't failures of directness—they're sophisticated tools for:
-1) Reducing emotional intensity to enable decision-making
-2) Maintaining professional distance
-3) Creating in-group solidarity (specialists understand; outsiders don't)
-4) Obscuring moral discomfort
-
-🎯 EXPERT-LEVEL OBSERVATION:
-Notice that mastering English at B2+ means understanding not just what words mean, but what social work they perform. "Friendly fire" performs immense social work—it transforms tragedy into an administrative problem.
-
-CHALLENGE FOR CRITICAL LEARNERS:
-What euphemisms operate in YOUR professional field? What reality do they obscure? How does that obscuring serve institutional interests?`,
-      hashtags: ['#Pragmatics', '#Euphemism', '#CriticalLanguageAwareness'],
+ðŸ¤– Want interactive quizzes & personalized tips? DM the bot for exclusive features!`,
+      hashtags: ['#CanadianEnglish', '#LifeInCanada', '#B1English', '#CulturalTips'],
       quizzes: [
         {
-          question: '❓ Why is "friendly fire" language called a "paradox"?',
-          options: [
-            'It\'s not actually paradoxical',
-            'The term combines contradictory concepts (friendly + fire) to soften an uncomfortable reality',
-            'It\'s unclear what the phrase means'
-          ],
+          question: 'â“ Someone says "How\'s it going?" What\'s the best answer?',
+          options: ['Well, this morning I woke up at 7 and...', 'Good, thanks! You?', 'Going where?', 'I don\'t know.'],
           correctIndex: 1,
-          explanation: 'The linguistic paradox masks tragic reality. "Friendly" contradicts the harm, creating cognitive distancing.',
+          explanation: '"How\'s it going?" is just a greeting. Keep it short: "Good, thanks!"',
         },
         {
-          question: '❓ How does "personnel attrition" differ from "our soldiers were killed"?',
-          options: [
-            'There\'s no meaningful difference',
-            'Passive voice + abstract noun ("attrition") obscure agency and cause, making killing seem like natural loss',
-            'The second is more professional'
-          ],
+          question: 'â“ You order a "double-double" at Tim Hortons. What do you get?',
+          options: ['Two coffees', 'Coffee with 2 creams and 2 sugars', 'Double-size coffee', 'Coffee with double shot espresso'],
           correctIndex: 1,
-          explanation: '"Attrition" implies natural reduction (like rainfall), not caused violence. This is professional euphemism doing moral work.',
+          explanation: 'A double-double = 2 creams + 2 sugars. A classic Canadian order!',
         },
         {
-          question: '❓ Which is a function of professional euphemism?',
-          options: [
-            'Making language more poetic',
-            'Creating in-group solidarity among specialists while obscuring reality from outsiders',
-            'Making communication clearer'
-          ],
+          question: 'â“ What is a "toque" in Canadian English?',
+          options: ['A type of cake', 'A warm winter hat', 'A greeting', 'A type of coffee'],
           correctIndex: 1,
-          explanation: 'Euphemisms in professional domains create specialist registers that exclude outsiders—a form of institutional power.',
-        },
-      ],
-    },
-  ];
-
-  // FORMAT 8: Common Collocations Puzzle (B2+ - Sophisticated Verb Collocations)
-  const collocationLessons = [
-    {
-      title: '🧩 Collocation Mastery: "Precipitate" vs "Catalyze" vs "Engender"',
-      format: 'collocations',
-      level: 'B2+',
-      topic: 'Advanced verb selection and semantic precision in causation',
-      postBody: `🧩 SEMANTIC PRECISION: Understanding Subtle Causative Distinctions
-
-All three verbs mean "cause something to happen"—but precise speakers distinguish them rigorously.
-
-PRECIPITATE (verb) = Cause something sudden/sudden, often negative or unexpected:
-✓ "Economic sanctions precipitated political instability." (sudden, somewhat violent causation)
-✓ "The whistleblower's revelation precipitated institutional collapse." (rapid, forceful)
-• Connotation: Abruptness, necessity/inevitability, often negative
-• Typical objects: crisis, conflict, instability, collapse, decline
-
-CATALYZE (verb) = Initiate change that accelerates existing processes:
-✓ "Technological innovation catalyzed the industrial transformation." (enables/accelerates pre-existing conditions)
-✓ "Her mentorship catalyzed his intellectual development." (unlocked potential)
-• Connotation: Enabling, acceleration of natural processes, often positive
-• Typical objects: change, transformation, reform, development, growth
-
-ENGENDER (verb) = Gradual creation of attitudes/conditions through sustained influence:
-✓ "These policies engender distrust in democraticinstitutions." (generate attitudes slowly)
-✓ "Prolonged inequality engenders social resentment." (creates psychological states)
-• Connotation: Gradual production, psychological/attitudinal, morally neutral
-• Typical objects: sentiment, resentment, trust, hostility, culture, conditions
-
-COLLOCATIONAL HIERARCHY:
-Negative abruptness: PRECIPITATE
-Positive enabling: CATALYZE
-Attitude/culture creation: ENGENDER
-
-🎯 COMPARATIVE SENTENCES (Notice the exact differences):
-
-❌ "Economic inequality catalyzes social tension." (Wrong—suggests it's positive enabling)
-✅ "Economic inequality engenders social resentment." (Correct—creates psychological state)
-✅ "Economic inequality precipitates social unrest." (Also correct—sudden negative consequence)
-
-❌ "Leadership catalyzes instability." (Awkward—suggests good outcome)
-✅ "Leadership precipitates conflict." (Better—abrupt negative)
-
-❌ "Technology engenders the digital revolution." (Wrong—too gradual/passive)
-✅ "Technology catalyzes the digital revolution." (Correct—enables transformation)
-
-💡 EXPERT DISTINCTION:
-Imprecise writers use "cause" or "lead to." Sophisticated writers choose:
-• PRECIPITATE for sudden negative consequences
-• CATALYZE for enabling transformations
-• ENGENDER for cultural/psychological effects
-
-Native specialists notice immediately when learners misuse these. Correct collocation marks you as analytically sophisticated.
-
-🎯 DIAGNOSTIC: Look at your last three essay paragraphs. Count how many times you wrote "cause." Replace each with the precise causative verb.`,
-      hashtags: ['#VerbCollocations', '#SemanticPrecision', '#AdvancedAcademic'],
-      quizzes: [
-        {
-          question: '❓ Which verb BEST completes: "Policy failures _____ public distrust in government"?',
-          options: [
-            'precipitate (too sudden)',
-            'catalyze (suggests positive enabling)',
-            'engender (creates psychological attitude)'
-          ],
-          correctIndex: 2,
-          explanation: '"Engender" captures gradual creation of sentiment. "Precipitate" would be too abrupt.',
-        },
-        {
-          question: '❓ Distinguish: "Technology _____ innovation" vs "War _____ economic collapse"',
-          options: [
-            'Both use the same verb',
-            'First uses CATALYZE (enabling); second uses PRECIPITATE (sudden consequence)',
-            'Both use ENGENDER'
-          ],
-          correctIndex: 1,
-          explanation: 'CATALYZE = enabling existing processes. PRECIPITATE = sudden negative outcomes.',
-        },
-        {
-          question: '❓ Which demonstrates B2+ sophistication?',
-          options: [
-            'Inequality causes problems.',
-            'Inequality engenders systemic resentment.',
-            'Inequality precipitates instability.'
-          ],
-          correctIndex: 2,
-          explanation: 'Choosing precise causative verbs and their correct collocations marks advanced speakers.',
-        },
-      ],
-    },
-  ];
-
-  // FORMAT 9: Paragraph Rescue Challenge (B2 - Persian Removed)
-  const paragraphRescueLessons = [
-    {
-      title: '🆘 Paragraph Rescue: Scholarly Writing with Syntactic Errors',
-      format: 'paragraph-rescue',
-      level: 'B2',
-      topic: 'Advanced editing and academic writing refinement',
-      postBody: `🆘 GRADUATE-LEVEL WRITING: Identify and Fix Seven Errors
-
-❌ ORIGINAL (Flawed Academic Submission):
-"The epistemological implications of artificial intelligence is becoming increasingly salient to contemporary researchers. Whilst proponents argues that computational systems can replicate human cognition, critics contend such claims represents a fundamental misunderstanding of consciousness. Furthermore, the ethical frameworks which governs automated decision-making remains underdeveloped, creating significant challenges for implementation in high-stakes domains. The research community must reconcile these tensions, yet scholars are often reluctant to engage with philosophical questions, preferring instead quantitative methodologies that lacks theoretical depth. Current trajectories proves problematic without more robust interdisciplinary dialogue."
-
-💡 IDENTIFYING ERRORS:
-
-1. "implications... is" → "implications... ARE" (plural subject needs plural verb)
-2. "proponents argues" → "proponents argue" (plural subject; verb agreement)
-3. "claims represents" → "claims represent" (compound plural structure)
-4. "frameworks which governs" → "frameworks which govern" (relative clause agreement)
-5. "remains underdeveloped" → "remain underdeveloped" (plural frameworks need plural verb)
-6. "methodologies that lacks" → "methodologies that lack" (plural noun requiring plural verb)
-7. "trajectories proves" → "trajectories prove" (plural subject; verb agreement)
-
-BONUS: Structural awkwardness—"Yet scholars are reluctant" creates weak transition. Should be: "Yet, scholars' reluctance to engage with philosophical rigor"
-
-✅ CORRECTED VERSION:
-"The epistemological implications of artificial intelligence are becoming increasingly salient to contemporary researchers. Whilst proponents argue that computational systems can replicate human cognition, critics contend such claims represent a fundamental misunderstanding of consciousness. Furthermore, the ethical frameworks that govern automated decision-making remain underdeveloped, creating significant challenges for implementation in high-stakes domains. The research community must reconcile these tensions; yet scholars' reluctance to engage with philosophical rigor, coupled with preference for quantitative methodologies that lack theoretical depth, exacerbates fragmentation. Current trajectories prove problematic without more robust interdisciplinary dialogue."
-
-💡 EDITING PRINCIPLE:
-At B2+, errors aren't about simple grammar—they're about maintaining agreement across complex embedded structures. Sophisticated writing requires tracking plural/singular across multiple clauses.
-
-🎯 REFINEMENT: Notice the restructured final sentences use parallel construction ("coupled with preference") rather than awkward conjunction. This is editorial sophistication beyond error-correction.
-
-CHALLENGE: Rewrite one paragraph from your current work, focusing ONLY on subject-verb agreement in complex sentences.`,
-      hashtags: ['#AcademicEditing', '#SyntacticControl', '#WritingPolish'],
-      quizzes: [
-        {
-          question: '❓ Why is "implications... is" grammatically incorrect?',
-          options: [
-            'Nothing\'s wrong with it',
-            '"Implications" is plural; requires "are" not "is"',
-            'Should use past tense'
-          ],
-          correctIndex: 1,
-          explanation: 'Subject-verb agreement: plural subjects require plural verbs!',
-        },
-        {
-          question: '❓ Fix: "The frameworks which governs automated decisions remains problematic."',
-          options: [
-            'The frameworks which governs automated decisions remains problematic',
-            'The frameworks which govern automated decisions remain problematic',
-            'The framework which governs automated decisions remains problematic'
-          ],
-          correctIndex: 1,
-          explanation: '"Frameworks" (plural) requires "govern" and "remain" (both plural).',
-        },
-        {
-          question: '❓ At B2+, subject-verb agreement errors suggest:',
-          options: [
-            'Minor mistakes anyone makes',
-            'Inability to maintain grammatical control across complex embedded structures—serious for academic credibility',
-            'Native speakers make these mistakes too'
-          ],
-          correctIndex: 1,
-          explanation: 'At B2+, agreement errors read as careless or cognitively disorganized. Academics notice immediately.',
-        },
-      ],
-    },
-  ];
-
-  // FORMAT 10: Multiple Choice + Complex Logical Reasoning (B2+)
-  const multipleChoiceLessons = [
-    {
-      title: '📝 Advanced Logical Reasoning: Counterfactual Conditionals in Evidence Analysis',
-      format: 'multiple-choice',
-      level: 'B2+',
-      topic: 'Complex conditional structures and hypothetical reasoning',
-      postBody: `📝 MASTER COMPLEX CONDITIONALS: Moving Beyond Simple If-Then
-
-GRAMMAR FOCUS: Advanced Conditional Structures for Hypothesis and Evidence
-
-Level 1 (B1): Simple conditionals describe reality
-✓ "If renewable energy becomes cheaper, adoption increases." (Likely outcome, factual relationship)
-
-Level 2 (B2): Mixed conditionals express counterfactuals
-✓ "If we had invested in renewable energy a decade ago, we would currently possess more sustainable infrastructure." (Past condition unfulfilled; present consequence hypothetical)
-→ Structure: Past condition + Present consequence = What hypothetically exists NOW because of what didn't happen THEN
-
-Level 3 (B2+): Nested conditionals with evidential qualification
-✓ "Had institutional frameworks been more responsive to climate science, we would likely be navigating significantly less severe ecological constraints than we presently face."
-→ Double counterfactual: past (if institutions had responded) presupposing earlier cause (if climate warnings had been heeded)
-
-💡 THE EPISTEMOLOGICAL TOOL:
-Complex conditionals don't just describe grammar—they express levels of certainty:
-• "If X, then Y" = objective relationship (high certainty)
-• "If X, then Y would probably occur" = qualified prediction (medium certainty)
-• "Had X occurred, Y would presently exist" = counterfactual reasoning (lowest certainty; most sophisticated)
-
-NATIVE EXPERT PATTERN:
-Watch how policy experts construct arguments:
-
-❌ Simple/Weak: "If we had stricter regulations, pollution would be lower."
-✅ Advanced: "Were regulatory frameworks substantively more stringent, we would observe measurable atmospheric improvement—contingent, of course, on enforcement mechanisms that remain systemically underdeveloped."
-→ Notice: Triple conditional (if... were... would...) + qualification ("contingent on...") + acknowledgment of complicating factors
-
-💡 PRAGMATIC FUNCTION:
-Advanced conditionals allow you to:
-1) Make sophisticated claims without asserting certainty
-2) Acknowledge multiple causal pathways
-3) Signal intellectual humility while maintaining analytical rigor
-
-🎯 CHALLENGE: Take one claim from your field. Express it using three different conditional structures, moving from simple to complex. Notice how sophistication increases with conditional complexity!`,
-      hashtags: ['#ComplexConditionals', '#LogicalReasoning', '#AdvancedGrammar'],
-      quizzes: [
-        {
-          question: '❓ "Had institutions responded to climate warnings, we would currently possess more sustainable infrastructure." What does this structure express?',
-          options: [
-            'A simple statement about current reality',
-            'A counterfactual: past unfulfilled condition + present hypothetical consequence',
-            'A prediction about the future'
-          ],
-          correctIndex: 1,
-          explanation: 'Mixed conditional = past condition never fulfilled but present consequence imagined. Sophisticated rhetorical move.',
-        },
-        {
-          question: '❓ Why is "would probably occur" more B2+ than "would occur"?',
-          options: [
-            'It\'s less sophisticated',
-            'It qualifies certainty, expressing appropriate epistemic humility—a mark of advanced discourse',
-            'There\'s no meaningful difference'
-          ],
-          correctIndex: 1,
-          explanation: 'Experts hedge conditional claims with "probably," "likely," "tend to"—marking intellectual maturity.',
-        },
-        {
-          question: '❓ Which demonstrates mastery of conditional reasoning?',
-          options: [
-            'If regulations improve, pollution decreases.',
-            'Had regulatory frameworks been stringent and enforcement mechanisms robust, atmospheric improvement would have materialized—contingent on political will remaining aligned.',
-            'We should have stricter rules.'
-          ],
-          correctIndex: 1,
-          explanation: 'Multiple nested conditions + qualification + acknowledgment of complicating factors = B2+ sophistication.',
+          explanation: 'A toque is a warm hat! You need one for Canadian winters! ðŸ§¢',
         },
       ],
     },
@@ -909,23 +733,23 @@ Advanced conditionals allow you to:
 
   // ALL FORMATS IN ONE POOL - SELECT RANDOMLY
   const allFormats = [
-    ...storyFormatLessons,
-    ...errorAnalysisLessons,
-    ...progressiveLessons,
-    ...comparisonLessons,
-    ...nativeSpeakerLessons,
-    ...pronunciationLessons,
+    ...vocabLessons,
+    ...grammarLessons,
+    ...idiomLessons,
+    ...phrasalLessons,
+    ...expressionLessons,
+    ...errorLessons,
+    ...pronunLessons,
+    ...compLessons,
+    ...storyLessons,
     ...culturalLessons,
-    ...collocationLessons,
-    ...paragraphRescueLessons,
-    ...multipleChoiceLessons,
   ];
 
   // Pick a random format from all 10 types
   const selectedLesson = allFormats[Math.floor(Math.random() * allFormats.length)];
 
   const cta = channelUrl
-    ? `\n\n🌈✨ Kay's English Corner\nYour Gateway to English Success in Canada 🇨🇦\n🔗 Join us on Telegram\n${channelUrl}`
+    ? `\n\nðŸŒˆâœ¨ Kay's English Corner\nYour Gateway to English Success in Canada ðŸ‡¨ðŸ‡¦\nðŸ”— Join us on Telegram\n${channelUrl}`
     : '';
 
   return {
@@ -935,26 +759,24 @@ Advanced conditionals allow you to:
     topic: selectedLesson.topic,
     postBody: `${selectedLesson.postBody}${cta}`,
     hashtags: selectedLesson.hashtags,
-    quizzes: selectedLesson.quizzes || [selectedLesson.quiz], // Support both array and single quiz
+    quizzes: selectedLesson.quizzes || [selectedLesson.quiz],
   };
 }
-
-async function generateContentWithOpenAI({ model, type, level, topic, template, channelUrl }) {
-  const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey) {
-    return fallbackContent({ type, level, topic, channelUrl });
-  }
-
-  const templateHint = template
-    ? `Use this style template while keeping factual clarity:\n${template}`
-    : 'Use concise, encouraging micro-lesson style for Telegram channels.';
-
-  const prompt = `You are creating one Telegram post for English language learners.
-Audience: Intermediate English learners (B1-B2 level).
+function buildB1Prompt({ type, level, topic, templateHint, channelUrl }) {
+  return `You are creating one Telegram post for English language learners.
+Audience: B1 (intermediate) English learners. Many are Farsi speakers living in Canada.
 Content Type: ${type} (vocabulary, grammar, idiom, expression, or phrasal verb)
 Specific Topic: ${topic}
 Level: ${level}
 ${templateHint}
+
+IMPORTANT DIFFICULTY RULES:
+- The CONTENT you teach should be B1 level (intermediate).
+- The EXPLANATIONS must be written even simpler than B1 â€” use short sentences, everyday words, and a friendly tone so learners can easily understand.
+- NO academic or formal language in explanations. Write like a patient, encouraging teacher talking to a friend.
+- Use real-life, everyday examples (shopping, work, family, friends, travel).
+- Maximum sentence length in explanations: 15 words.
+- Avoid words like: paradigm, methodology, furthermore, consequently, albeit, whereas, circumlocution, epistemic, precipitate.
 
 Return STRICT JSON only:
 {
@@ -976,20 +798,34 @@ Requirements:
 - postBody max 2200 characters, plain text, no markdown tables.
 - Match this house style:
   1) Catchy title line with emoji for ${type}.
-  2) English explanation + example usage + natural context.
-  3) Persian/Farsi companion explanation.
-  4) Tip on how to practice this TODAY.
-  5) Call-to-action to share example in comments.
+  2) Simple English explanation + 2-3 example sentences from daily life.
+  3) Persian/Farsi companion explanation (short and clear).
+  4) One easy tip on how to practice this TODAY.
+  5) Call-to-action to share their own example in comments.
   6) Friendly branded footer for Kay's English Corner.
-- Focus ONLY on vocabulary, grammar, idioms, expressions—NOT exam tips.
-- Keep sentence structure simple and learner-friendly.
-- Include one practical usage task the user can try immediately.
-- quiz.question should feel like a usage scenario (fill-in-the-blank or best-choice).
+- Focus ONLY on vocabulary, grammar, idioms, expressionsâ€”NOT exam tips.
+- Keep everything simple, warm, and encouraging.
+- Include one practical task: e.g. "Try using this word in a sentence about your day!"
+- quiz.question should be a simple fill-in-the-blank or best-choice from a real-life scenario.
+- quiz.options: use simple, clear English. No trick answers.
 - Hashtags: 3 to 6 tags for ${type}.
 - quiz.correctIndex must be 0-3.
 - quiz options must be distinct and plausible.
-- Include this line near the end: "🤖 Want interactive quizzes & personalized tips? DM the bot for exclusive features!"
+- Include this line near the end: "ðŸ¤– Want interactive quizzes & personalized tips? DM the bot for exclusive features!"
 ${channelUrl ? `- Include this CTA naturally in postBody: ${channelUrl}` : ''}`;
+}
+
+async function generateContentWithOpenAI({ model, type, level, topic, template, channelUrl }) {
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) {
+    throw new Error('Missing OPENAI_API_KEY');
+  }
+
+  const templateHint = template
+    ? `Use this style template while keeping factual clarity:\n${template}`
+    : 'Use concise, encouraging micro-lesson style for Telegram channels.';
+
+  const prompt = buildB1Prompt({ type, level, topic, templateHint, channelUrl });
 
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
@@ -1014,6 +850,56 @@ ${channelUrl ? `- Include this CTA naturally in postBody: ${channelUrl}` : ''}`;
   const outputText = data?.choices?.[0]?.message?.content;
   if (!outputText || typeof outputText !== 'string') {
     throw new Error('OpenAI response did not include valid message content.');
+  }
+
+  const parsed = JSON.parse(extractJson(outputText));
+  return parsed;
+}
+
+async function generateContentWithAnthropic({ model, type, level, topic, template, channelUrl }) {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) {
+    throw new Error('Missing ANTHROPIC_API_KEY');
+  }
+
+  const templateHint = template
+    ? `Use this style template while keeping factual clarity:\n${template}`
+    : 'Use concise, encouraging micro-lesson style for Telegram channels.';
+
+  const prompt = buildB1Prompt({ type, level, topic, templateHint, channelUrl });
+
+  const response = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01',
+    },
+    body: JSON.stringify({
+      model: model || process.env.ANTHROPIC_MODEL || DEFAULT_ANTHROPIC_MODEL,
+      max_tokens: 1200,
+      temperature: 0.8,
+      messages: [
+        {
+          role: 'user',
+          content: prompt,
+        },
+      ],
+    }),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`Anthropic request failed (${response.status}): ${errorText}`);
+  }
+
+  const data = await response.json();
+  const outputText = Array.isArray(data?.content)
+    ? data.content.filter((item) => item?.type === 'text').map((item) => item.text).join('\n')
+    : '';
+
+  if (!outputText || typeof outputText !== 'string') {
+    throw new Error('Anthropic response did not include valid text content.');
   }
 
   const parsed = JSON.parse(extractJson(outputText));
@@ -1119,17 +1005,45 @@ async function main() {
   });
 
   let generated;
-  try {
-    generated = await generateContentWithOpenAI({
-      model: options.model,
-      exam: pick.exam,
-      level: pick.level,
-      topic: pick.topic,
-      template,
-      channelUrl,
-    });
-  } catch (error) {
-    console.warn(`[warn] Falling back to template content: ${error.message}`);
+  let generationError = '';
+
+  if (process.env.OPENAI_API_KEY) {
+    try {
+      generated = await generateContentWithOpenAI({
+        model: options.model,
+        exam: pick.exam,
+        level: pick.level,
+        topic: pick.topic,
+        template,
+        channelUrl,
+      });
+    } catch (error) {
+      generationError = error.message;
+      console.warn(`[warn] OpenAI generation failed: ${error.message}`);
+    }
+  }
+
+  if (!generated && process.env.ANTHROPIC_API_KEY) {
+    try {
+      generated = await generateContentWithAnthropic({
+        model: process.env.ANTHROPIC_MODEL || DEFAULT_ANTHROPIC_MODEL,
+        exam: pick.exam,
+        level: pick.level,
+        topic: pick.topic,
+        template,
+        channelUrl,
+      });
+      console.log('[ok] Generated content using Anthropic fallback');
+    } catch (error) {
+      generationError = generationError ? `${generationError} | ${error.message}` : error.message;
+      console.warn(`[warn] Anthropic generation failed: ${error.message}`);
+    }
+  }
+
+  if (!generated) {
+    if (generationError) {
+      console.warn(`[warn] Falling back to template content: ${generationError}`);
+    }
     generated = fallback;
   }
 
