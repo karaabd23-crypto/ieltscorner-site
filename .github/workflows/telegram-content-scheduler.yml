@@ -1,0 +1,35 @@
+name: Telegram Content Scheduler
+
+on:
+  schedule:
+    # Run 5 times daily: 9am, 12pm, 3pm, 6pm, 9pm UTC
+    - cron: '0 9,12,15,18,21 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  post-content:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Post Telegram content
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+        run: node scripts/post-telegram-content.mjs
+
+      - name: Log completion
+        if: always()
+        run: echo "Telegram content post completed at $(date)"

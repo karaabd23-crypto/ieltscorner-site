@@ -6,14 +6,14 @@
 [build.environment]
   NODE_VERSION = "20"
 
-# Scheduled function: Post telegram content 5x daily (9am, 12pm, 3pm, 6pm, 9pm UTC)
-[[scheduled_functions]]
-path = "/scheduled-post-telegram"
-cron = "0 9,12,15,18,21 * * *"
-
-# Scheduled function: Post telegram stories 3x daily (10am, 2pm, 7pm UTC)
-[[scheduled_functions]]
-path = "/scheduled-story-telegram"
-cron = "0 10,14,19 * * *"
+# Scheduled functions DISABLED - moved to GitHub Actions to save Netlify credits
+# See .github/workflows/telegram-content-scheduler.yml and telegram-story-scheduler.yml
+# [[scheduled_functions]]
+# path = "/scheduled-post-telegram"
+# cron = "0 9,12,15,18,21 * * *"
+#
+# [[scheduled_functions]]
+# path = "/scheduled-story-telegram"
+# cron = "0 10,14,19 * * *"
 
 # Telegram webhook: Updated 2026-03-04
