@@ -18,6 +18,10 @@ on:
 jobs:
   telegram-post:
     runs-on: ubuntu-latest
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN || secrets.TELEGRAM_TOKEN || secrets.BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID || secrets.TELEGRAM_CHANNEL_ID || secrets.CHAT_ID }}
+      TELEGRAM_CHANNEL_URL: ${{ secrets.TELEGRAM_CHANNEL_URL || secrets.CHANNEL_URL }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -29,19 +33,25 @@ jobs:
 
       - name: Validate required secrets
         if: ${{ github.event.inputs.dry_run != 'true' }}
+        id: validate_secrets
         run: |
-          if [ -z "${{ secrets.TELEGRAM_BOT_TOKEN }}" ] || [ -z "${{ secrets.TELEGRAM_CHAT_ID }}" ]; then
-            echo "Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID secret."
-            exit 1
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || { [ -z "$TELEGRAM_CHAT_ID" ] && [ -z "$TELEGRAM_CHANNEL_URL" ]; }; then
+            echo "⚠️ Missing Telegram posting secrets. Skipping this run instead of failing."
+            echo "Set one of: TELEGRAM_BOT_TOKEN / TELEGRAM_TOKEN / BOT_TOKEN"
+            echo "And one target: TELEGRAM_CHAT_ID / TELEGRAM_CHANNEL_ID / CHAT_ID or TELEGRAM_CHANNEL_URL / CHANNEL_URL"
+            echo "skip_post=true" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
 
+          echo "skip_post=false" >> "$GITHUB_OUTPUT"
+
       - name: Generate and publish Telegram post
+        if: ${{ github.event.inputs.dry_run == 'true' || steps.validate_secrets.outputs.skip_post != 'true' }}
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: gpt-4.1-mini
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          TELEGRAM_CHANNEL_URL: ${{ secrets.TELEGRAM_CHANNEL_URL }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
           TELEGRAM_POST_TEMPLATE: ${{ secrets.TELEGRAM_POST_TEMPLATE }}
         run: |
           TOPIC="${{ github.event.inputs.topic || '' }}"
