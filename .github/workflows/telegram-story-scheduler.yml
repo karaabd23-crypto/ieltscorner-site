@@ -23,8 +23,10 @@ jobs:
 
       - name: Post Telegram story
         env:
+          # API keys are OPTIONAL - script will use fallback content if not provided
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Required for posting to Telegram
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
           OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
