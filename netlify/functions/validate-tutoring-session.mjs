@@ -46,10 +46,10 @@ export async function handler(event, context) {
     }
 
     // Initialize Stripe
-    const stripe = new Stripe(STRIPE_API_KEY);
+    const stripe = new Stripe(STRIPE_API_KEY, { apiVersion: '2020-08-27' });
 
     // Retrieve the checkout session
-    const session = await stripe.checkout.Session.retrieve(sessionId);
+    const session = await stripe.checkout.sessions.retrieve(sessionId);
 
     // Validate the session
     const now = Date.now();
