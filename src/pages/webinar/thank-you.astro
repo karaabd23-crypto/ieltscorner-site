@@ -1,5 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+
+const webinarMeetLink = "https://meet.google.com/hcf-iwcn-syx";
 ---
 
 <Layout
@@ -20,6 +22,16 @@ import Layout from "../../layouts/Layout.astro";
 
       <div class="surface" style="padding: var(--s-5); border-radius: 8px; text-align: left; border: 2px solid var(--accent);">
         <h2 style="margin-top: 0; text-align: center;">What happens next</h2>
+
+        <div style="margin-top: var(--s-3); margin-bottom: var(--s-4); padding: var(--s-3); background: var(--accent-light); border-radius: 6px; text-align: center; border: 1px solid var(--accent);">
+          <p style="margin: 0 0 var(--s-2); font-weight: 700; color: var(--text);">Your webinar join link (save this now)</p>
+          <a href={webinarMeetLink} target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display: inline-block;">
+            Open Google Meet Link
+          </a>
+          <p style="margin: var(--s-2) 0 0; font-size: 0.9rem; color: var(--text-muted); word-break: break-all;">
+            {webinarMeetLink}
+          </p>
+        </div>
         
         <div class="stack" style="gap: var(--s-4); margin-top: var(--s-4);">
           <div style="display: flex; gap: var(--s-3); align-items: start;">
