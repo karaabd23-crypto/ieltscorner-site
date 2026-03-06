@@ -245,7 +245,7 @@ async function sendWebinarEmail(to, name) {
   });
 
   const mailOptions = {
-    from: 'hello@ieltscorner.ca',
+    from: 'kara.abdolmaleki@gmail.com',
     to: to,
     subject: 'Your IELTS Writing Workshop Link – This Sunday',
     html: `
@@ -365,7 +365,7 @@ Use Zapier Code or Make.com HTTP module to generate unique .ics files per regist
 **Option 1: Zapier/Make Multi-Step**
 
 Add a second action in your Zap/scenario:
-- **Send Email** to yourself (`hello@ieltscorner.ca`)
+- **Send Email** to yourself (`kara.abdolmaleki@gmail.com`)
 - **Subject:** "New webinar registration"
 - **Body:**
   ```

@@ -86,7 +86,7 @@
 ```
 
 ### Step 4: Email Address Update
-**Search for:** `hello@ieltscorner.ca` (appears in multiple files)
+**Search for:** `kara.abdolmaleki@gmail.com` (confirm contact email is correct in all pages)
 - `src/pages/contact.astro`
 - `src/pages/faq.astro`
 - `src/pages/terms.astro`

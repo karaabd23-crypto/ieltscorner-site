@@ -112,6 +112,7 @@ import Layout from "../../layouts/Layout.astro";
           <p class="muted">
             Please complete payment first through the tutoring page.
           </p>
+          <p id="validation-reason" class="muted" style="font-size: 13px; opacity: 0.9;"></p>
           <a class="btn btn-primary" href="/tutoring">
             Go to Tutoring Page →
           </a>
@@ -131,6 +132,7 @@ import Layout from "../../layouts/Layout.astro";
       const validationContainer = document.getElementById('validation-container');
       const bookingContainer = document.getElementById('booking-container');
       const errorContainer = document.getElementById('error-container');
+      const validationReason = document.getElementById('validation-reason');
 
       if (!validationContainer || !bookingContainer || !errorContainer) {
         console.error('Required DOM elements not found');
@@ -140,6 +142,9 @@ import Layout from "../../layouts/Layout.astro";
       if (!sessionId) {
         validationContainer.style.display = 'none';
         errorContainer.style.display = 'block';
+        if (validationReason) {
+          validationReason.textContent = 'Debug: Missing session_id in URL. Check Stripe Payment Link success URL includes ?session_id={CHECKOUT_SESSION_ID}.';
+        }
         return;
       }
 
@@ -166,11 +171,18 @@ import Layout from "../../layouts/Layout.astro";
           // Show error
           validationContainer.style.display = 'none';
           errorContainer.style.display = 'block';
+          if (validationReason) {
+            const reason = data?.reason || data?.error || 'Unknown validation error';
+            validationReason.textContent = `Debug: ${reason}`;
+          }
         }
       } catch (error) {
         console.error('Validation error:', error);
         validationContainer.style.display = 'none';
         errorContainer.style.display = 'block';
+        if (validationReason) {
+          validationReason.textContent = 'Debug: Request to validation function failed. Confirm Netlify function deployed and reachable.';
+        }
       }
     }
 

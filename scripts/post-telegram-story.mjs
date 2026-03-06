@@ -675,20 +675,41 @@ async function postStory(botToken, chatId, story) {
   return { contentResult, quizResult };
 }
 
+function resolveChatId(explicitChatId, channelUrl) {
+  const direct = explicitChatId?.trim();
+  if (direct) {
+    return direct;
+  }
+
+  const url = channelUrl?.trim();
+  if (!url) {
+    return '';
+  }
+
+  const normalized = url.replace(/^https?:\/\//i, '').replace(/^t\.me\//i, '');
+  const slug = normalized.split(/[/?#]/)[0]?.trim();
+  if (!slug) {
+    return '';
+  }
+
+  return slug.startsWith('@') ? slug : `@${slug}`;
+}
+
 async function main() {
   await loadEnvFiles();
 
   const options = parseArgs(process.argv);
   const apiKey = process.env.OPENAI_API_KEY ?? '';
   const botToken = process.env.TELEGRAM_BOT_TOKEN ?? '';
-  const chatId = process.env.TELEGRAM_CHAT_ID ?? '';
+  const channelUrl = process.env.TELEGRAM_CHANNEL_URL ?? '';
+  const chatId = resolveChatId(process.env.TELEGRAM_CHAT_ID, channelUrl);
 
   if (!options.dryRun && !options.preview && !botToken) {
     throw new Error('Missing TELEGRAM_BOT_TOKEN');
   }
 
   if (!options.dryRun && !options.preview && !chatId) {
-    throw new Error('Missing TELEGRAM_CHAT_ID');
+    throw new Error('Missing target channel (TELEGRAM_CHAT_ID or TELEGRAM_CHANNEL_URL)');
   }
 
   const topicObj = pickStoryTopic();
