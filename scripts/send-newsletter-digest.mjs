@@ -171,6 +171,15 @@ async function fetchNetlifyJson(url, accessToken) {
   return response.json();
 }
 
+async function getNetlifySiteInfo({ siteId, accessToken }) {
+  const site = await fetchNetlifyJson(`https://api.netlify.com/api/v1/sites/${siteId}`, accessToken);
+  return {
+    id: String(site?.id || siteId),
+    name: String(site?.name || ''),
+    url: String(site?.url || site?.ssl_url || ''),
+  };
+}
+
 function normalizeFormName(value) {
   return String(value || '')
     .trim()
@@ -356,6 +365,9 @@ async function main() {
   if (!options.dryRun && (!gmailUser || !gmailPassword)) {
     throw new Error('Missing GMAIL_USER and/or GMAIL_PASSWORD');
   }
+
+  const siteInfo = await getNetlifySiteInfo({ siteId, accessToken });
+  console.log(`[info] Netlify site: ${siteInfo.name || '(unknown)'} (${siteInfo.id}) ${siteInfo.url}`);
 
   const state = await loadState(stateFilePath);
   const formMatch = await getNetlifyFormMatch({ siteId, accessToken, formName });

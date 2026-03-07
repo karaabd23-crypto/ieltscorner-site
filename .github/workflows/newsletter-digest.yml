@@ -50,6 +50,14 @@ jobs:
             node scripts/send-newsletter-digest.mjs
           fi
 
+      - name: Ensure newsletter state file exists
+        if: always()
+        run: |
+          mkdir -p .cache
+          if [ ! -f .cache/newsletter-state.json ]; then
+            echo '{"lastSentAt":null}' > .cache/newsletter-state.json
+          fi
+
       - name: Save newsletter state cache
         if: always()
         uses: actions/cache/save@v4
