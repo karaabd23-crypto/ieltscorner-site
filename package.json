@@ -14,7 +14,9 @@
     "telegram:webhook:set": "node scripts/set-telegram-webhook.mjs",
     "telegram:story": "node scripts/post-telegram-story.mjs",
     "telegram:story:preview": "node scripts/post-telegram-story.mjs --preview",
-    "telegram:story:dry": "node scripts/post-telegram-story.mjs --dry-run"
+    "telegram:story:dry": "node scripts/post-telegram-story.mjs --dry-run",
+    "newsletter:digest": "node scripts/send-newsletter-digest.mjs",
+    "newsletter:digest:dry": "node scripts/send-newsletter-digest.mjs --dry-run"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",

@@ -1,0 +1,58 @@
+name: Newsletter Digest
+
+on:
+  schedule:
+    # Twice weekly: Tuesday and Friday at 15:00 UTC
+    - cron: '0 15 * * 2,5'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Run without sending emails'
+        required: false
+        default: 'false'
+
+jobs:
+  send-digest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Restore newsletter state cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/newsletter-state.json
+          key: newsletter-state-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            newsletter-state-${{ github.ref_name }}-
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Send newsletter digest
+        env:
+          NETLIFY_ACCESS_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NEWSLETTER_FORM_NAME: newsletter
+          NEWSLETTER_STATE_FILE: .cache/newsletter-state.json
+          SITE_URL: https://ieltscorner.ca
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
+        run: |
+          if [ "${{ github.event.inputs.dry_run || 'false' }}" = "true" ]; then
+            node scripts/send-newsletter-digest.mjs --dry-run
+          else
+            node scripts/send-newsletter-digest.mjs
+          fi
+
+      - name: Save newsletter state cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/newsletter-state.json
+          key: newsletter-state-${{ github.ref_name }}-${{ github.run_id }}
