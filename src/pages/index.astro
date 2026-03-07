@@ -183,6 +183,20 @@ const homeKeywords = "IELTS preparation, CELPIP test, Band 7+ IELTS, CLB 9+ CELP
     <!-- NEWSLETTER SECTION -->
     <Newsletter />
 
+    <form
+      name="newsletter"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      hidden
+      aria-hidden="true"
+      style="display:none;"
+    >
+      <input type="hidden" name="form-name" value="newsletter" />
+      <input type="text" name="bot-field" />
+      <input type="email" name="email" />
+    </form>
+
     <div style="height: var(--s-6);"></div>
   </section>
 </Layout>
