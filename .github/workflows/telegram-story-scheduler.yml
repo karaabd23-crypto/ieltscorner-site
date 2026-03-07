@@ -2,8 +2,10 @@ name: Telegram Story Scheduler
 
 on:
   schedule:
-    # Run 3 times daily: 10am, 2pm, 7pm UTC
-    - cron: '0 10,14,19 * * *'
+    # Run 3 times daily at North America-friendly windows (UTC):
+    # 17:00, 23:00, 02:00
+    # ≈ ET: 12pm, 6pm, 9pm | PT: 9am, 3pm, 6pm
+    - cron: '0 2,17,23 * * *'
   workflow_dispatch: # Allow manual trigger
 
 jobs:

@@ -2,8 +2,8 @@ name: Weekly Bot Tutorial
 
 on:
   schedule:
-    # Every Monday at 10:00 UTC
-    - cron: "0 10 * * 1"
+    # Every Monday at 18:00 UTC (North America daytime)
+    - cron: "0 18 * * 1"
   workflow_dispatch:
     inputs:
       dry_run:

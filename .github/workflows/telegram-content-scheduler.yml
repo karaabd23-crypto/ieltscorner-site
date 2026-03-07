@@ -2,8 +2,10 @@ name: Telegram Content Scheduler
 
 on:
   schedule:
-    # Run 5 times daily: 9am, 12pm, 3pm, 6pm, 9pm UTC
-    - cron: '0 9,12,15,18,21 * * *'
+    # Run 5 times daily at North America-friendly windows (UTC):
+    # 15:00, 18:00, 21:00, 00:00, 03:00
+    # ≈ ET: 10am, 1pm, 4pm, 7pm, 10pm | PT: 7am, 10am, 1pm, 4pm, 7pm
+    - cron: '0 0,3,15,18,21 * * *'
   workflow_dispatch: # Allow manual trigger
 
 jobs:
