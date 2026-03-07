@@ -171,14 +171,49 @@ async function fetchNetlifyJson(url, accessToken) {
   return response.json();
 }
 
-async function getNetlifyFormId({ siteId, accessToken, formName }) {
+function normalizeFormName(value) {
+  return String(value || '')
+    .trim()
+    .toLowerCase()
+    .replace(/[\s_-]+/g, '');
+}
+
+async function getNetlifyFormMatch({ siteId, accessToken, formName }) {
   const forms = await fetchNetlifyJson(`https://api.netlify.com/api/v1/sites/${siteId}/forms`, accessToken);
-  const target = forms.find((item) => String(item?.name || '').trim() === formName);
-  if (!target?.id) {
-    throw new Error(`Netlify form not found: ${formName}`);
+  const requested = normalizeFormName(formName);
+
+  const exact = forms.find((item) => String(item?.name || '').trim() === formName);
+  if (exact?.id) {
+    return {
+      formId: exact.id,
+      formName: String(exact.name || formName),
+      availableFormNames: forms.map((item) => String(item?.name || '').trim()).filter(Boolean),
+    };
   }
 
-  return target.id;
+  const normalizedMatch = forms.find((item) => normalizeFormName(item?.name) === requested);
+  if (normalizedMatch?.id) {
+    return {
+      formId: normalizedMatch.id,
+      formName: String(normalizedMatch.name || formName),
+      availableFormNames: forms.map((item) => String(item?.name || '').trim()).filter(Boolean),
+    };
+  }
+
+  const newsletterLike = forms.find((item) => normalizeFormName(item?.name).includes('newsletter'));
+  if (newsletterLike?.id) {
+    return {
+      formId: newsletterLike.id,
+      formName: String(newsletterLike.name || formName),
+      availableFormNames: forms.map((item) => String(item?.name || '').trim()).filter(Boolean),
+    };
+  }
+
+  return {
+    formId: '',
+    formName,
+    availableFormNames: forms.map((item) => String(item?.name || '').trim()).filter(Boolean),
+  };
 }
 
 async function getSubscribers({ formId, accessToken }) {
@@ -323,8 +358,23 @@ async function main() {
   }
 
   const state = await loadState(stateFilePath);
-  const formId = await getNetlifyFormId({ siteId, accessToken, formName });
-  const subscribers = await getSubscribers({ formId, accessToken });
+  const formMatch = await getNetlifyFormMatch({ siteId, accessToken, formName });
+
+  if (!formMatch.formId) {
+    const available = formMatch.availableFormNames.length
+      ? formMatch.availableFormNames.join(', ')
+      : '(none found for this site)';
+    console.log(`[warn] Netlify form not found: ${formName}`);
+    console.log(`[warn] Available forms: ${available}`);
+    console.log('[info] Skipping newsletter send. Submit the newsletter form once on production and re-run.');
+    return;
+  }
+
+  if (formMatch.formName !== formName) {
+    console.log(`[info] Using Netlify form: ${formMatch.formName} (requested: ${formName})`);
+  }
+
+  const subscribers = await getSubscribers({ formId: formMatch.formId, accessToken });
 
   if (subscribers.length === 0) {
     console.log('[info] No newsletter subscribers found.');

@@ -38,7 +38,7 @@ jobs:
         env:
           NETLIFY_ACCESS_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NEWSLETTER_FORM_NAME: newsletter
+          NEWSLETTER_FORM_NAME: ${{ secrets.NEWSLETTER_FORM_NAME }}
           NEWSLETTER_STATE_FILE: .cache/newsletter-state.json
           SITE_URL: https://ieltscorner.ca
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
