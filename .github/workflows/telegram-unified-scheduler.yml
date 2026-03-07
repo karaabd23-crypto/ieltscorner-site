@@ -1,0 +1,147 @@
+name: Telegram Unified Scheduler
+
+on:
+  schedule:
+    # Full lessons: 15:00, 21:00 UTC (2x daily)
+    # ≈ ET: 10am, 4pm | PT: 7am, 1pm
+    - cron: '0 15,21 * * *'
+    # Mini-tips: 03:00, 18:00, 00:00 UTC (3x daily)
+    # ≈ ET: 10pm, 1pm, 7pm | PT: 7pm, 10am, 4pm
+    - cron: '0 0,3,18 * * *'
+  workflow_dispatch:
+    inputs:
+      content_type:
+        description: 'Type of content to post'
+        required: true
+        default: 'lesson'
+        type: choice
+        options:
+          - lesson
+          - mini-tip
+          - both
+
+jobs:
+  determine-content-type:
+    runs-on: ubuntu-latest
+    outputs:
+      post_lesson: ${{ steps.decide.outputs.post_lesson }}
+      post_mini_tip: ${{ steps.decide.outputs.post_mini_tip }}
+    steps:
+      - name: Decide what to post
+        id: decide
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            case "${{ inputs.content_type }}" in
+              lesson)
+                echo "post_lesson=true" >> $GITHUB_OUTPUT
+                echo "post_mini_tip=false" >> $GITHUB_OUTPUT
+                ;;
+              mini-tip)
+                echo "post_lesson=false" >> $GITHUB_OUTPUT
+                echo "post_mini_tip=true" >> $GITHUB_OUTPUT
+                ;;
+              both)
+                echo "post_lesson=true" >> $GITHUB_OUTPUT
+                echo "post_mini_tip=true" >> $GITHUB_OUTPUT
+                ;;
+            esac
+          else
+            # For scheduled runs, determine by hour
+            HOUR=$(date -u +%H)
+            if [ "$HOUR" = "15" ] || [ "$HOUR" = "21" ]; then
+              echo "post_lesson=true" >> $GITHUB_OUTPUT
+              echo "post_mini_tip=false" >> $GITHUB_OUTPUT
+            else
+              echo "post_lesson=false" >> $GITHUB_OUTPUT
+              echo "post_mini_tip=true" >> $GITHUB_OUTPUT
+            fi
+          fi
+
+  post-lesson:
+    needs: determine-content-type
+    if: needs.determine-content-type.outputs.post_lesson == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Restore Telegram history cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/telegram-post-history.json
+          key: telegram-history-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            telegram-history-${{ github.ref_name }}-
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Post full lesson content
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          TELEGRAM_CHANNEL_URL: ${{ secrets.TELEGRAM_CHANNEL_URL }}
+          TELEGRAM_HISTORY_FILE: .cache/telegram-post-history.json
+          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+        run: node scripts/post-telegram-content.mjs
+
+      - name: Save Telegram history cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/telegram-post-history.json
+          key: telegram-history-lesson-${{ github.ref_name }}-${{ github.run_id }}
+
+  post-mini-tip:
+    needs: determine-content-type
+    if: needs.determine-content-type.outputs.post_mini_tip == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Restore Telegram history cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/telegram-post-history.json
+          key: telegram-history-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            telegram-history-${{ github.ref_name }}-
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Post mini-tip content
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          TELEGRAM_CHANNEL_URL: ${{ secrets.TELEGRAM_CHANNEL_URL }}
+          TELEGRAM_STORY_FALLBACK_TO_POST: 'true'
+          TELEGRAM_HISTORY_FILE: .cache/telegram-post-history.json
+          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+        run: node scripts/post-telegram-story.mjs
+
+      - name: Save Telegram history cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/telegram-post-history.json
+          key: telegram-history-tip-${{ github.ref_name }}-${{ github.run_id }}
+
+      - name: Log completion
+        if: always()
+        run: echo "Telegram content post completed at $(date)"
