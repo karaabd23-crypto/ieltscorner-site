@@ -106,8 +106,9 @@ const {
         form.reset();
         window.location.href = '/newsletter/thanks/';
       } catch {
-        status.textContent = 'Could not subscribe right now. Please try again.';
-        status.style.color = 'var(--text)';
+        status.textContent = 'Retrying with standard submit...';
+        status.style.color = 'var(--text-muted)';
+        form.submit();
       }
     });
   }
