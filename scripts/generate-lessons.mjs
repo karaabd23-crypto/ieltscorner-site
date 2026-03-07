@@ -804,6 +804,18 @@ async function main() {
   const selectedCategories = opts.category === 'all' ? CATEGORIES : [opts.category];
 
   const apiKey = process.env.OPENAI_API_KEY;
+  const generatorMode = String(process.env.LESSON_GENERATOR_MODE || 'auto').trim().toLowerCase();
+  const forceFallback = generatorMode === 'fallback';
+  const canUseOpenAI = Boolean(apiKey) && !forceFallback;
+
+  if (forceFallback) {
+    console.log('[info] LESSON_GENERATOR_MODE=fallback. Using built-in lesson templates (no OpenAI required).');
+  } else if (!apiKey) {
+    console.log('[info] OPENAI_API_KEY not found. Using built-in lesson templates.');
+  } else {
+    console.log('[info] OPENAI_API_KEY detected. Using AI lesson generation.');
+  }
+
   const today = new Date().toISOString().slice(0, 10);
 
   const created = [];
@@ -814,7 +826,7 @@ async function main() {
     const priceCAD = premium ? 12 : 0;
     const score = scoreMap(level);
 
-    const lessonData = apiKey
+    const lessonData = canUseOpenAI
       ? await generateLessonWithOpenAI({ apiKey, model: opts.model, level, category, premium, topic })
       : fallbackLesson({ level, category, topic });
 
