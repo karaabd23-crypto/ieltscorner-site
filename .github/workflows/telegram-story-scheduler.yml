@@ -37,10 +37,19 @@ jobs:
           # API keys are OPTIONAL - script will use fallback content if not provided
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          # Required for posting to Telegram
+          # Required for all Telegram publishing
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          # Optional fallback to legacy channel-post mode
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
           TELEGRAM_CHANNEL_URL: ${{ secrets.TELEGRAM_CHANNEL_URL }}
+          # Optional true Telegram Business Story mode
+          TELEGRAM_BUSINESS_CONNECTION_ID: ${{ secrets.TELEGRAM_BUSINESS_CONNECTION_ID }}
+          TELEGRAM_STORY_PHOTO_URL: ${{ secrets.TELEGRAM_STORY_PHOTO_URL }}
+          TELEGRAM_STORY_VIDEO_URL: ${{ secrets.TELEGRAM_STORY_VIDEO_URL }}
+          TELEGRAM_STORY_ACTIVE_PERIOD: ${{ vars.TELEGRAM_STORY_ACTIVE_PERIOD }}
+          TELEGRAM_STORY_POST_TO_CHAT_PAGE: ${{ vars.TELEGRAM_STORY_POST_TO_CHAT_PAGE }}
+          TELEGRAM_STORY_PROTECT_CONTENT: ${{ vars.TELEGRAM_STORY_PROTECT_CONTENT }}
+          TELEGRAM_STORY_FALLBACK_TO_POST: 'true'
           TELEGRAM_HISTORY_FILE: .cache/telegram-post-history.json
           OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
         run: node scripts/post-telegram-story.mjs
