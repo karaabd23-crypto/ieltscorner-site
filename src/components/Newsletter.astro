@@ -30,7 +30,7 @@ const {
   <form 
     name="newsletter"
     method="POST"
-    action="/"
+    action="/newsletter/thanks/"
     netlify
     data-netlify="true"
     data-netlify-honeypot="bot-field"
@@ -104,6 +104,7 @@ const {
         status.textContent = 'Thanks! You are subscribed.';
         status.style.color = 'var(--accent)';
         form.reset();
+        window.location.href = '/newsletter/thanks/';
       } catch {
         status.textContent = 'Could not subscribe right now. Please try again.';
         status.style.color = 'var(--text)';
