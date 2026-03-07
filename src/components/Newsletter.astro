@@ -30,8 +30,11 @@ const {
   <form 
     name="newsletter"
     method="POST"
+    action="/"
     netlify
     data-netlify="true"
+    data-netlify-honeypot="bot-field"
+    id="newsletter-form"
     class="newsletter-form"
     style="display: grid; grid-template-columns: 1fr auto; gap: var(--s-1); margin-top: var(--s-2);"
   >
@@ -40,6 +43,10 @@ const {
       name="form-name" 
       value="newsletter" 
     />
+
+    <p style="display:none;">
+      <label>Don’t fill this out: <input name="bot-field" /></label>
+    </p>
     
     <input
       type="email"
@@ -58,10 +65,52 @@ const {
     </button>
   </form>
 
+  <p id="newsletter-status" role="status" aria-live="polite" style="font-size: 0.9rem; margin-top: var(--s-1); min-height: 1.2rem;"></p>
+
   <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: var(--s-2); margin-bottom: 0;">
     No spam. We respect your inbox. <a href="/privacy" style="color: var(--accent);">Privacy policy</a>
   </p>
 </div>
+
+<script>
+  const form = document.getElementById('newsletter-form');
+  const status = document.getElementById('newsletter-status');
+
+  if (form instanceof HTMLFormElement && status instanceof HTMLElement) {
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      status.textContent = 'Submitting...';
+      status.style.color = 'var(--text-muted)';
+
+      const formData = new FormData(form);
+      const params = new URLSearchParams();
+      formData.forEach((value, key) => {
+        params.append(key, String(value));
+      });
+      const encoded = params.toString();
+
+      try {
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: encoded,
+        });
+
+        if (!response.ok) {
+          throw new Error('Request failed');
+        }
+
+        status.textContent = 'Thanks! You are subscribed.';
+        status.style.color = 'var(--accent)';
+        form.reset();
+      } catch {
+        status.textContent = 'Could not subscribe right now. Please try again.';
+        status.style.color = 'var(--text)';
+      }
+    });
+  }
+</script>
 
 <style>
   @media (max-width: 640px) {
