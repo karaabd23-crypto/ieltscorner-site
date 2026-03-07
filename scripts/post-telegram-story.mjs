@@ -671,7 +671,89 @@ async function telegramRequest(botToken, method, payload) {
   return data;
 }
 
-async function postStory(botToken, chatId, story) {
+function parseBooleanEnv(value, defaultValue = false) {
+  if (value === undefined || value === null || value === '') {
+    return defaultValue;
+  }
+
+  const normalized = String(value).trim().toLowerCase();
+  if (['1', 'true', 'yes', 'y', 'on'].includes(normalized)) {
+    return true;
+  }
+  if (['0', 'false', 'no', 'n', 'off'].includes(normalized)) {
+    return false;
+  }
+
+  return defaultValue;
+}
+
+function resolveStoryActivePeriod(rawValue) {
+  const allowed = new Set([21600, 43200, 86400, 172800]);
+  const fallback = 86400;
+  const parsed = Number.parseInt(String(rawValue ?? fallback), 10);
+  if (!Number.isFinite(parsed) || !allowed.has(parsed)) {
+    return fallback;
+  }
+  return parsed;
+}
+
+function truncateByCodePoints(value, maxLength) {
+  const chars = Array.from(String(value ?? ''));
+  if (chars.length <= maxLength) {
+    return chars.join('');
+  }
+  return `${chars.slice(0, maxLength - 1).join('')}…`;
+}
+
+function toStoryCaption(htmlText) {
+  const normalized = normalizeForDedupe(String(htmlText ?? ''));
+  return truncateByCodePoints(normalized, 2048);
+}
+
+function resolveStoryMedia() {
+  const storyPhotoUrl = (process.env.TELEGRAM_STORY_PHOTO_URL ?? '').trim();
+  const storyVideoUrl = (process.env.TELEGRAM_STORY_VIDEO_URL ?? '').trim();
+
+  if (storyPhotoUrl) {
+    return { type: 'photo', photo: storyPhotoUrl };
+  }
+
+  if (storyVideoUrl) {
+    return { type: 'video', video: storyVideoUrl };
+  }
+
+  return null;
+}
+
+async function postBusinessStory(botToken, story) {
+  const businessConnectionId = (process.env.TELEGRAM_BUSINESS_CONNECTION_ID ?? '').trim();
+  const media = resolveStoryMedia();
+
+  if (!businessConnectionId || !media) {
+    return { skipped: true };
+  }
+
+  const activePeriod = resolveStoryActivePeriod(process.env.TELEGRAM_STORY_ACTIVE_PERIOD);
+  const postToChatPage = parseBooleanEnv(process.env.TELEGRAM_STORY_POST_TO_CHAT_PAGE, true);
+  const protectContent = parseBooleanEnv(process.env.TELEGRAM_STORY_PROTECT_CONTENT, false);
+  const caption = toStoryCaption(story.content);
+
+  console.log('[posting] Telegram Business story...');
+  const storyResult = await telegramRequest(botToken, 'postStory', {
+    business_connection_id: businessConnectionId,
+    content: media,
+    active_period: activePeriod,
+    caption,
+    parse_mode: 'HTML',
+    post_to_chat_page: postToChatPage,
+    protect_content: protectContent,
+  });
+
+  console.log('[success] Story posted: story ID', storyResult.result?.id);
+  return { storyResult };
+}
+
+async function postStoryAsChannelPost(botToken, chatId, story) {
   const channelUrl = process.env.TELEGRAM_CHANNEL_URL ?? '';
   const publicSlug = resolvePublicChannelSlug(channelUrl, chatId);
   const existingTexts = await fetchRecentChannelTexts(publicSlug);
@@ -846,6 +928,10 @@ async function main() {
   const options = parseArgs(process.argv);
   const apiKey = process.env.OPENAI_API_KEY ?? '';
   const botToken = process.env.TELEGRAM_BOT_TOKEN ?? '';
+  const fallbackToChannelPost = parseBooleanEnv(process.env.TELEGRAM_STORY_FALLBACK_TO_POST, false);
+  const businessConnectionId = (process.env.TELEGRAM_BUSINESS_CONNECTION_ID ?? '').trim();
+  const hasStoryMedia = Boolean(resolveStoryMedia());
+  const canPostTrueStory = Boolean(businessConnectionId && hasStoryMedia);
   const channelUrl = process.env.TELEGRAM_CHANNEL_URL ?? '';
   const chatId = resolveChatId(process.env.TELEGRAM_CHAT_ID, channelUrl);
 
@@ -853,8 +939,8 @@ async function main() {
     throw new Error('Missing TELEGRAM_BOT_TOKEN');
   }
 
-  if (!options.dryRun && !options.preview && !chatId) {
-    throw new Error('Missing target channel (TELEGRAM_CHAT_ID or TELEGRAM_CHANNEL_URL)');
+  if (!options.dryRun && !options.preview && fallbackToChannelPost && !chatId) {
+    throw new Error('Missing target channel (TELEGRAM_CHAT_ID or TELEGRAM_CHANNEL_URL) for fallback channel posting');
   }
 
   const topicObj = pickStoryTopic();
@@ -863,7 +949,9 @@ async function main() {
   const story = await generateStoryWithOpenAI(topicObj, apiKey, options.model);
 
   if (options.preview) {
+    const mode = canPostTrueStory ? 'telegram-business-story' : (fallbackToChannelPost ? 'channel-post-fallback' : 'disabled-no-story-config');
     console.log('\n' + '='.repeat(70));
+    console.log(`MODE: ${mode}`);
     console.log('STORY PREVIEW - CONTENT');
     console.log('='.repeat(70));
     console.log(story.content);
@@ -880,6 +968,8 @@ async function main() {
   }
 
   if (options.dryRun) {
+    const mode = canPostTrueStory ? 'telegram-business-story' : (fallbackToChannelPost ? 'channel-post-fallback' : 'disabled-no-story-config');
+    console.log(`[dry-run] Mode: ${mode}`);
     console.log('[dry-run] Would post story:');
     console.log('\nCONTENT:');
     console.log(story.content);
@@ -894,13 +984,27 @@ async function main() {
   const historyFilePath = resolveHistoryFilePath();
   const history = await loadPostHistory(historyFilePath);
   const storyFingerprint = createContentFingerprint(story.content);
+  console.log(`[dedup] Story fingerprint: ${storyFingerprint.slice(0, 12)}... | History size: ${history.items?.length ?? 0} items`);
   if (hasFingerprint(history, storyFingerprint)) {
     console.log('[skip] Duplicate story found in persistent history. Skipping publish.');
     return;
   }
+  console.log('[post] Story is unique. Proceeding with post.');
 
-  const result = await postStory(botToken, chatId, story);
+  if (!canPostTrueStory && !fallbackToChannelPost) {
+    console.log('[skip] Story scheduler is configured to avoid channel posts and true story settings are missing.');
+    console.log('[hint] Set TELEGRAM_BUSINESS_CONNECTION_ID + TELEGRAM_STORY_PHOTO_URL (or TELEGRAM_STORY_VIDEO_URL) to publish true Telegram Stories.');
+    console.log('[hint] Or set TELEGRAM_STORY_FALLBACK_TO_POST=true to keep old channel post behavior.');
+    return;
+  }
+
+  const result = canPostTrueStory
+    ? await postBusinessStory(botToken, story)
+    : await postStoryAsChannelPost(botToken, chatId, story);
+
   if (result?.skipped) {
+    console.log('[skip] Story settings are incomplete for true Telegram Stories.');
+    console.log('[hint] Set TELEGRAM_BUSINESS_CONNECTION_ID + TELEGRAM_STORY_PHOTO_URL (or TELEGRAM_STORY_VIDEO_URL).');
     return;
   }
 

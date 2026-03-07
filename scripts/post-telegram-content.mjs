@@ -944,10 +944,12 @@ async function main() {
   const historyFilePath = resolveHistoryFilePath();
   const history = await loadPostHistory(historyFilePath);
   const messageFingerprint = createContentFingerprint(messageText);
+  console.log(`[dedup] Message fingerprint: ${messageFingerprint.slice(0, 12)}... | History size: ${history.items?.length ?? 0} items`);
   if (hasFingerprint(history, messageFingerprint)) {
     console.log('[skip] Duplicate content found in persistent history. Skipping publish.');
     return;
   }
+  console.log('[post] Message is unique. Proceeding with post.');
 
   const publicSlug = resolvePublicChannelSlug(channelUrl, chatId);
   const existingTexts = await fetchRecentChannelTexts(publicSlug);
@@ -956,6 +958,7 @@ async function main() {
     console.log('[skip] Duplicate content detected in recent channel posts. Skipping publish.');
     return;
   }
+  console.log('[post] Channel check passed. Posting to Telegram...');
 
   await telegramRequest('sendMessage', {
     chat_id: chatId,
