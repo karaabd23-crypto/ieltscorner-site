@@ -1,0 +1,39 @@
+name: Cleanup all duplicate Telegram posts
+
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: 'Apply deletions (leave empty for dry-run)'
+        required: false
+        type: string
+
+jobs:
+  cleanup:
+    name: Scan and cleanup duplicates
+    runs-on: ubuntu-latest
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      TELEGRAM_CHANNEL_URL: ${{ secrets.TELEGRAM_CHANNEL_URL }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run cleanup (dry-run mode)
+        if: ${{ github.event.inputs.apply == '' }}
+        run: node scripts/cleanup-all-duplicates.mjs
+        continue-on-error: true
+
+      - name: Run cleanup (apply deletions)
+        if: ${{ github.event.inputs.apply != '' }}
+        run: node scripts/cleanup-all-duplicates.mjs --apply
+        continue-on-error: true
+
+      - name: Summary
+        if: always()
+        run: echo "Cleanup completed. Check logs above for details."
