@@ -74,7 +74,7 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: .cache/telegram-post-history.json
-          key: telegram-history-${{ github.ref_name }}-shared
+          key: telegram-history-${{ github.ref_name }}-${{ github.run_id }}-${{ github.job }}
           restore-keys: |
             telegram-history-${{ github.ref_name }}-
 
@@ -97,7 +97,7 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: .cache/telegram-post-history.json
-          key: telegram-history-${{ github.ref_name }}-shared
+          key: telegram-history-${{ github.ref_name }}-${{ github.run_id }}-${{ github.job }}
 
   post-mini-tip:
     needs: determine-content-type
@@ -116,7 +116,7 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: .cache/telegram-post-history.json
-          key: telegram-history-${{ github.ref_name }}-shared
+          key: telegram-history-${{ github.ref_name }}-${{ github.run_id }}-${{ github.job }}
           restore-keys: |
             telegram-history-${{ github.ref_name }}-
 
@@ -140,7 +140,7 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: .cache/telegram-post-history.json
-          key: telegram-history-${{ github.ref_name }}-shared
+          key: telegram-history-${{ github.ref_name }}-${{ github.run_id }}-${{ github.job }}
 
       - name: Log completion
         if: always()
