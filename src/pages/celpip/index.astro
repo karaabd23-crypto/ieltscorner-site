@@ -23,16 +23,6 @@ import Layout from "../../layouts/Layout.astro";
             Join a webinar → Only $12
           </a>
         </div>
-
-        <div style="height: var(--s-3);"></div>
-
-        <!-- Quick skill nav -->
-        <div class="cluster">
-          <a class="btn btn-ghost" href="/celpip/listening">Listening</a>
-          <a class="btn btn-ghost" href="/celpip/reading">Reading</a>
-          <a class="btn btn-ghost" href="/celpip/speaking">Speaking</a>
-          <a class="btn btn-ghost" href="/celpip/writing">Writing</a>
-        </div>
       </div>
     </div>
 
@@ -84,38 +74,6 @@ import Layout from "../../layouts/Layout.astro";
 
     <div style="height: var(--s-8);"></div>
 
-    <!-- LESSONS SECTION -->
-    <div class="surface feature" style="padding: var(--s-6); border: 2px solid var(--accent); background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.05) 0%, rgba(var(--accent-rgb), 0) 100%);">
-      <h2 style="margin-top: 0;">📚 Learn at Your Own Pace</h2>
-      <p class="muted" style="max-width: 60ch;">
-        Browse our full library of CELPIP lessons organized by skill. Each lesson breaks down test strategies, common mistakes, and practice tips.
-      </p>
-      <div style="height: var(--s-3);"></div>
-      <div class="grid grid-2">
-        <a class="card" href="/lessons/celpip/listening" style="text-decoration: none;">
-          <h3>🎧 Listening Lessons</h3>
-          <p class="muted">Comprehension strategies, note-taking tips, and accuracy drills.</p>
-        </a>
-        <a class="card" href="/lessons/celpip/reading" style="text-decoration: none;">
-          <h3>📖 Reading Lessons</h3>
-          <p class="muted">Scanning techniques, inference practice, and time management.</p>
-        </a>
-        <a class="card" href="/lessons/celpip/speaking" style="text-decoration: none;">
-          <h3>🎤 Speaking Lessons</h3>
-          <p class="muted">Task strategies, fluency tips, and natural delivery practice.</p>
-        </a>
-        <a class="card" href="/lessons/celpip/writing" style="text-decoration: none;">
-          <h3>✍️ Writing Lessons</h3>
-          <p class="muted">Email and essay structures, clarity, and proofreading tips.</p>
-        </a>
-      </div>
-      <div style="text-align: center; margin-top: var(--s-4);">
-        <a class="btn btn-primary" href="/lessons/celpip">View all CELPIP lessons →</a>
-      </div>
-    </div>
-
-    <div style="height: var(--s-8);"></div>
-
     <!-- OFFICIAL FORMAT REFERENCE -->
     <div class="surface" style="padding: var(--s-6); background: var(--surface);">
       <h2>CELPIP-General format (quick overview)</h2>
@@ -138,6 +96,80 @@ import Layout from "../../layouts/Layout.astro";
         </div>
       </div>
       <p class="muted" style="margin-top: var(--s-3); font-size: 0.9rem;">Source: CELPIP-General Overview Participant Package (2022).</p>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <!-- LESSONS BY SKILL SECTION -->
+    <div style="padding: var(--s-6);">
+      <div style="text-align: center; margin-bottom: var(--s-4);">
+        <h2 style="margin: 0 0 var(--s-2) 0;">📚 Learn at Your Own Pace</h2>
+        <p class="muted" style="max-width: 70ch; margin: 0 auto;">
+          Self-study lessons for each skill. Choose a category below, work through the strategies, and practice at your own speed. Perfect as a supplement to webinars or for solo prep.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--s-4); margin: var(--s-5) 0;">
+        <!-- Listening -->
+        <a href="/lessons/celpip/listening" style="text-decoration: none; display: block;">
+          <div class="surface" style="padding: var(--s-4); height: 100%; border-left: 4px solid #8B7FFF; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(139,127,255,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+            <div style="font-size: 2rem; margin-bottom: var(--s-2);">🎧</div>
+            <h3 style="margin: 0 0 var(--s-2) 0; color: var(--text);">Listening</h3>
+            <ul class="muted" style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 1.6;">
+              <li>✓ Comprehension strategies</li>
+              <li>✓ Note-taking techniques</li>
+              <li>✓ Accuracy drills</li>
+            </ul>
+            <div style="margin-top: var(--s-3);" class="pill" style="background: #8B7FFF; color: white; padding: 0.4rem 0.8rem; border-radius: 4px; display: inline-block; font-size: 0.8rem;">Browse lessons →</div>
+          </div>
+        </a>
+
+        <!-- Reading -->
+        <a href="/lessons/celpip/reading" style="text-decoration: none; display: block;">
+          <div class="surface" style="padding: var(--s-4); height: 100%; border-left: 4px solid #FF6B6B; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(255,107,107,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+            <div style="font-size: 2rem; margin-bottom: var(--s-2);">📖</div>
+            <h3 style="margin: 0 0 var(--s-2) 0; color: var(--text);">Reading</h3>
+            <ul class="muted" style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 1.6;">
+              <li>✓ Scanning techniques</li>
+              <li>✓ Inference practice</li>
+              <li>✓ Time management</li>
+            </ul>
+            <div style="margin-top: var(--s-3);" class="pill" style="background: #FF6B6B; color: white; padding: 0.4rem 0.8rem; border-radius: 4px; display: inline-block; font-size: 0.8rem;">Browse lessons →</div>
+          </div>
+        </a>
+
+        <!-- Speaking -->
+        <a href="/lessons/celpip/speaking" style="text-decoration: none; display: block;">
+          <div class="surface" style="padding: var(--s-4); height: 100%; border-left: 4px solid #FFD93D; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(255,217,61,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+            <div style="font-size: 2rem; margin-bottom: var(--s-2);">🎤</div>
+            <h3 style="margin: 0 0 var(--s-2) 0; color: var(--text);">Speaking</h3>
+            <ul class="muted" style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 1.6;">
+              <li>✓ Task strategies</li>
+              <li>✓ Fluency tips</li>
+              <li>✓ Natural delivery</li>
+            </ul>
+            <div style="margin-top: var(--s-3);" class="pill" style="background: #FFD93D; color: #333; padding: 0.4rem 0.8rem; border-radius: 4px; display: inline-block; font-size: 0.8rem;">Browse lessons →</div>
+          </div>
+        </a>
+
+        <!-- Writing -->
+        <a href="/lessons/celpip/writing" style="text-decoration: none; display: block;">
+          <div class="surface" style="padding: var(--s-4); height: 100%; border-left: 4px solid #6BCB77; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(107,203,119,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+            <div style="font-size: 2rem; margin-bottom: var(--s-2);">✍️</div>
+            <h3 style="margin: 0 0 var(--s-2) 0; color: var(--text);">Writing</h3>
+            <ul class="muted" style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 1.6;">
+              <li>✓ Email + essay</li>
+              <li>✓ Clear structure</li>
+              <li>✓ Proofreading</li>
+            </ul>
+            <div style="margin-top: var(--s-3);" class="pill" style="background: #6BCB77; color: white; padding: 0.4rem 0.8rem; border-radius: 4px; display: inline-block; font-size: 0.8rem;">Browse lessons →</div>
+          </div>
+        </a>
+      </div>
+
+      <div style="text-align: center; margin-top: var(--s-5);">
+        <a class="btn btn-primary" href="/lessons/celpip" style="font-size: 1.05rem;">View all CELPIP lessons →</a>
+      </div>
     </div>
 
     <div style="height: var(--s-8);"></div>
@@ -201,8 +233,6 @@ import Layout from "../../layouts/Layout.astro";
     </div>
 
     <div style="height: var(--s-8);"></div>
-
-
 
     <div class="grid grid-2">
       <div class="card">
