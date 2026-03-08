@@ -670,6 +670,14 @@ async function generateContentWithAnthropic({ model, type, level, topic, templat
 
 function normalizeContent(content, fallback) {
   const safe = content && typeof content === 'object' ? content : fallback;
+  const fallbackQuiz = fallback?.quiz && typeof fallback.quiz === 'object'
+    ? fallback.quiz
+    : {
+      question: 'Quick check',
+      options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+      correctIndex: 0,
+      explanation: '',
+    };
   
   // Handle both old single quiz and new quizzes array
   let quizzes = [];
@@ -680,11 +688,14 @@ function normalizeContent(content, fallback) {
   } else if (Array.isArray(fallback.quizzes) && fallback.quizzes.length > 0) {
     quizzes = fallback.quizzes;
   } else {
-    quizzes = [fallback.quiz];
+    quizzes = [fallbackQuiz];
   }
 
+  const validQuizObjects = quizzes.filter((quiz) => quiz && typeof quiz === 'object');
+  const quizzesToNormalize = validQuizObjects.length > 0 ? validQuizObjects : [fallbackQuiz];
+
   // Normalize quiz objects
-  const normalizedQuizzes = quizzes.slice(0, 3).map((quiz) => {
+  const normalizedQuizzes = quizzesToNormalize.slice(0, 3).map((quiz) => {
     const options = Array.isArray(quiz.options) ? quiz.options.slice(0, 4).map((item) => String(item)) : ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
     return {
       question: String(quiz.question || '').slice(0, 290),
