@@ -764,10 +764,13 @@ async function postStoryAsChannelPost(botToken, chatId, story) {
     return { skipped: true };
   }
 
+  const signature = `\n\n✨ Kay's English Corner✨\nYour Gateway to English Success in Canada 🇨🇦\n🔗 Join us on Telegram\nhttps://t.me/Kaysenglishcorner`;
+  const contentWithSignature = `${story.content}${signature}`;
+
   console.log('[posting] Main content to Telegram...');
   const contentResult = await telegramRequest(botToken, 'sendMessage', {
     chat_id: chatId,
-    text: story.content,
+    text: contentWithSignature,
     disable_web_page_preview: true,
     parse_mode: 'HTML',
   });

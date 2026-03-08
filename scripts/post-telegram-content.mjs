@@ -506,16 +506,14 @@ Natives say: "LIT-r'lly" (fast, smooth! ✨)
   // Rotate formats per workflow run to avoid repeated identical posts
   const selectedLesson = allFormats[pickDeterministicIndex(allFormats.length, 37)];
 
-  const cta = channelUrl
-    ? `\n\n🌈✨ Kay's English Corner\nYour Gateway to English Success in Canada 🇨🇦\n🔗 Join us on Telegram\n${channelUrl}`
-    : '';
+  const signature = `\n\n✨ Kay's English Corner✨\nYour Gateway to English Success in Canada 🇨🇦\n🔗 Join us on Telegram\nhttps://t.me/Kaysenglishcorner`;
 
   return {
     title: selectedLesson.title,
     format: selectedLesson.format,
     level: selectedLesson.level,
     topic: selectedLesson.topic,
-    postBody: `${selectedLesson.postBody}${cta}`,
+    postBody: `${selectedLesson.postBody}${signature}`,
     hashtags: selectedLesson.hashtags,
     quizzes: selectedLesson.quizzes || [selectedLesson.quiz],
   };
