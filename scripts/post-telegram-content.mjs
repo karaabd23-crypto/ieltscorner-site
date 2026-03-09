@@ -672,12 +672,7 @@ function normalizeContent(content, fallback) {
   const safe = content && typeof content === 'object' ? content : fallback;
   const fallbackQuiz = fallback?.quiz && typeof fallback.quiz === 'object'
     ? fallback.quiz
-    : {
-      question: 'Quick check',
-      options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
-      correctIndex: 0,
-      explanation: '',
-    };
+    : null; // Changed from generic quiz to null
   
   // Handle both old single quiz and new quizzes array
   let quizzes = [];
@@ -687,23 +682,33 @@ function normalizeContent(content, fallback) {
     quizzes = [safe.quiz];
   } else if (Array.isArray(fallback.quizzes) && fallback.quizzes.length > 0) {
     quizzes = fallback.quizzes;
-  } else {
+  } else if (fallbackQuiz) {
     quizzes = [fallbackQuiz];
   }
 
-  const validQuizObjects = quizzes.filter((quiz) => quiz && typeof quiz === 'object');
-  const quizzesToNormalize = validQuizObjects.length > 0 ? validQuizObjects : [fallbackQuiz];
+  const validQuizObjects = quizzes.filter((quiz) => {
+    // Only include quizzes that have real content (not generic placeholders)
+    if (!quiz || typeof quiz !== 'object') return false;
+    const hasQuestion = quiz.question && quiz.question !== 'Quick check';
+    const hasValidOptions = Array.isArray(quiz.options) && 
+      quiz.options.length >= 2 && 
+      !quiz.options[0].startsWith('Option '); // Filter out generic "Option X" placeholders
+    return hasQuestion && hasValidOptions;
+  });
 
-  // Normalize quiz objects
-  const normalizedQuizzes = quizzesToNormalize.slice(0, 3).map((quiz) => {
-    const options = Array.isArray(quiz.options) ? quiz.options.slice(0, 4).map((item) => String(item)) : ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
+  // Normalize quiz objects - only process if we have valid quizzes
+  const normalizedQuizzes = validQuizObjects.slice(0, 3).map((quiz) => {
+    const options = Array.isArray(quiz.options) ? quiz.options.slice(0, 4).map((item) => String(item)) : [];
+    // Ensure we have at least 2 options for a valid quiz
+    if (options.length < 2) return null;
+    
     return {
       question: String(quiz.question || '').slice(0, 290),
-      options: options.length >= 3 ? options.slice(0, 4) : [...options, ...Array(4 - options.length).fill('').map((_, i) => `Option ${options.length + i + 1}`)],
-      correctIndex: Math.max(0, Math.min(3, Number(quiz.correctIndex ?? 0))),
+      options: options.slice(0, 4), // Use actual options, don't pad with generic ones
+      correctIndex: Math.max(0, Math.min(options.length - 1, Number(quiz.correctIndex ?? 0))),
       explanation: String(quiz.explanation || '').slice(0, 180),
     };
-  });
+  }).filter(Boolean); // Remove any null entries
 
   const hashtags = Array.isArray(safe.hashtags)
     ? safe.hashtags.map((tag) => String(tag).trim()).filter(Boolean).slice(0, 6)
@@ -997,7 +1002,9 @@ async function main() {
   rememberFingerprint(history, messageFingerprint, { topic: content.topic });
   await savePostHistory(historyFilePath, history);
 
-  console.log(`[ok] Posted content and ${content.quizzes.length} quiz polls for topic: ${content.topic}`);
+  const quizCount = content.quizzes.length;
+  const quizMsg = quizCount === 0 ? 'no quiz' : `${quizCount} quiz poll${quizCount > 1 ? 's' : ''}`;
+  console.log(`[ok] Posted content with ${quizMsg} for topic: ${content.topic}`);
 }
 
 main().catch((error) => {
