@@ -47,7 +47,7 @@ function buildMainKeyboard(config) {
       { text: '✉️ Contact Kay', callback_data: 'contact' },
     ],
     [
-      { text: '� Weekly Webinars', url: `${config.websiteUrl}/webinar` },
+      { text: '🎓 Weekly Webinars', url: `${config.websiteUrl}/webinar` },
       { text: '📘 CELPIP eBook', url: `${config.websiteUrl}/ebook` },
     ],
   ];
