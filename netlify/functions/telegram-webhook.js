@@ -50,8 +50,8 @@ function buildMainKeyboard(config) {
       { text: '✉️ Contact Kay', callback_data: 'contact' },
     ],
     [
-      { text: '🎁 Refer a Friend', callback_data: 'refer' },
-      { text: '📈 My Streak', callback_data: 'streak' },
+      { text: '� Weekly Webinars', url: `${config.websiteUrl}/webinar` },
+      { text: '📘 CELPIP eBook', url: `${config.websiteUrl}/ebook` },
     ],
   ];
 
@@ -140,29 +140,6 @@ function keywordReply(text, config, userId) {
     };
   }
 
-  if (t.includes('refer')) {
-    return {
-      text: `🎁 Refer Friends & Earn:\nYour link: ${config.websiteUrl}?ref=${user.referralCode}\n\n• 5 referrals = Free webinar\n• 10 referrals = 1-hour tutoring seat\n\nShare it!`,
-      reply_markup: buildMainKeyboard(config),
-    };
-  }
-
-  if (t.includes('streak')) {
-    return {
-      text: `🔥 Your Study Streak: ${user.streak} days!\n\nSend "studied" daily to build it.\n\nGoals:\n• 7 days = 🟢 Starter\n• 30 days = 🟡 Builder\n• 365 days = 🏆 Champion`,
-      reply_markup: buildMainKeyboard(config),
-    };
-  }
-
-  if (t.includes('studied')) {
-    user.streak += 1;
-    user.lastActive = new Date().toISOString();
-    return {
-      text: `🎉 Amazing! Streak: ${user.streak} days in a row.\n\nSee you tomorrow!`,
-      reply_markup: buildMainKeyboard(config),
-    };
-  }
-
   if (t.includes('contact') || t.includes('dm')) {
     return {
       text: contactMessage(config),
@@ -171,7 +148,7 @@ function keywordReply(text, config, userId) {
   }
 
   return {
-    text: 'I can help with vocabulary, grammar, idioms, study streaks, referrals, and more. Choose an option below 👇',
+    text: 'I can help with vocabulary, grammar, idioms, webinars, and eBooks. Choose an option below 👇',
     reply_markup: buildMainKeyboard(config),
   };
 }
@@ -195,14 +172,6 @@ function callbackReply(data, config, userId) {
     case 'contact':
       return {
         text: contactMessage(config),
-      };
-    case 'refer':
-      return {
-        text: `🎁 Your unique link:\n${config.websiteUrl}?ref=${user.referralCode}\n\nShare freely!`,
-      };
-    case 'streak':
-      return {
-        text: `🔥 Streak: ${user.streak} days\n\nChallenge: 30 days in a row!\n\nBonus: Share your progress in comments.`,
       };
     default:
       return {
@@ -242,8 +211,8 @@ I'm your AI English companion. Here's what I can help with:
 📚 **Vocabulary** - Daily words & phrases
 ✏️ **Grammar** - Practical tips & explanations
 💡 **Idioms & Expressions** - Natural English speech patterns
-🎁 **Referrals** - Earn rewards by inviting friends
-🔥 **Streak Tracking** - Build consistent learning habits
+� **Weekly Webinars** - Live sessions every Saturday
+📘 **CELPIP eBook** - Complete exam preparation guide
 
 To get started, just:
 1. Say hello or click any button below
