@@ -35,6 +35,9 @@ function normalizeText(input) {
 function buildMainKeyboard(config) {
   const rows = [
     [
+      { text: '🔥 Register for Live Webinar → Only $12', url: `${config.websiteUrl}/webinar` },
+    ],
+    [
       { text: '🌐 Visit Website', url: config.websiteUrl },
       { text: '📣 Telegram Channel', url: config.channelUrl },
     ],
@@ -47,7 +50,7 @@ function buildMainKeyboard(config) {
       { text: '✉️ Contact Kay', callback_data: 'contact' },
     ],
     [
-      { text: '🎓 Weekly Webinars', url: `${config.websiteUrl}/webinar` },
+      { text: '🎥 YouTube Channel', url: 'https://www.youtube.com/@KaraAbdolmaleki' },
       { text: '📘 CELPIP eBook', url: `${config.websiteUrl}/ebook` },
     ],
   ];
