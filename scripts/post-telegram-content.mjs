@@ -281,7 +281,14 @@ Which is correct? BOTH! But different! 😊
 
 🎯 Next time someone asks "How are you?" → try "I'm good, thanks!" 👇`,
       hashtags: ['#QuickTip', '#B1English', '#SayItRight', '#DailyEnglish'],
-      quizzes: [],
+      quizzes: [
+        {
+          question: '❓ Your friend asks "How are you?" What sounds most natural?',
+          options: ["I'm good, thanks!", "I'm well, thank you.", "I'm fine.", "I have good."],
+          correctIndex: 0,
+          explanation: '"I\'m good!" is the most natural casual response! 99% of native speakers use it! 😊',
+        },
+      ],
     },
   ];
 
