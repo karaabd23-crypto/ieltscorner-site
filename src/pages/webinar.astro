@@ -1,587 +1,119 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import webinarSchedule from "../data/webinar-schedule.json";
 
-// Get the next available session
-const nextSession = webinarSchedule.sessions.find(s => s.available);
+const WEBINAR_CALENDLY_URL = 'https://calendly.com/ieltscorner/webinar';
 ---
 
 <Layout
-  title="CELPIP Weekly Webinars — Every Saturday at 6:00 PM — IELTS Corner"
-  description="CELPIP weekly webinars. Every Saturday at 6:00 PM PST. Real strategies, live instruction, $12 per session."
+  title="CELPIP Weekly Webinar — Register with Calendly"
+  description="Join weekly CELPIP webinars with live strategy and Q&A. Register instantly via Calendly popup."
   type="page"
 >
-  <section class="section webinar-section" style="padding-top: var(--s-6);">
-    <div class="hero webinar-hero" style={`--hero-bg: url('/heroes/webinar.png');`}>
+  <section class="section">
+    <div class="hero" style={`--hero-bg: url('/heroes/webinar.png');`}>
       <div class="hero-content">
-        <span class="pill">🎓 Live • Interactive • Weekly</span>
-        <h1>CELPIP Weekly Webinars</h1>
-        <p>60-minute live sessions. Every Saturday at 6:00 PM PST.</p>
+        <span class="pill">🎓 Weekly Webinar • Live Online</span>
+        <h1>Register for This Week’s Webinar</h1>
+        <p class="muted" style="max-width: 64ch;">
+          Live CELPIP strategy session with practical examples and real-time Q&A.
+          Click below to open the registration popup and pick your slot.
+        </p>
+
+        <div class="cluster">
+          <button id="open-webinar-calendly" class="btn btn-primary" type="button">
+            Open Registration Popup →
+          </button>
+          <a class="btn btn-ghost" href={WEBINAR_CALENDLY_URL} target="_blank" rel="noreferrer">
+            Open full booking page
+          </a>
+        </div>
+
+        <p class="muted" style="font-size: 14px; margin: 0;">
+          If the popup is blocked, use “Open full booking page”.
+        </p>
       </div>
     </div>
 
-    <div style="height: var(--s-4);"></div>
+    <div style="height: var(--s-7);"></div>
 
-    <!-- MOBILE-FIRST REGISTRATION CTA -->
-    <div class="mobile-register-cta">
-      <div class="mobile-register-content">
-        <div class="mobile-register-info">
-          <p class="next-session-label">Next Session: {nextSession?.topic}</p>
-          <p class="session-datetime">{nextSession?.dayOfWeek}, {nextSession?.date} • {nextSession?.time}</p>
-        </div>
-        <div class="mobile-register-pricing">
-          <p class="price">$12</p>
-          {nextSession?.available ? (
-            <a 
-              href="https://buy.stripe.com/4gM7sK3Gm4dC26l23ygMw01"
-              class="btn btn-primary mobile-register-btn"
-            >
-              Register Now →
-            </a>
-          ) : (
-            <p class="unavailable-notice">Session unavailable</p>
-          )}
-        </div>
-      </div>
-    </div>
-
-    <div style="height: var(--s-6);"></div>
-
-    <!-- VALUE PROPOSITION -->
-    <div class="grid grid-2 value-section" style="align-items: center; gap: var(--s-6);">
-      <div>
-        <h2 class="section-heading">What you get in every session</h2>
-        <div class="stack" style="gap: var(--s-3);">
-          <div class="check benefit-item" style="display: flex; gap: var(--s-2); align-items: start;">
-            <div class="benefit-icon" style="font-size: 1.5rem;">✓</div>
+    <div class="grid grid-2" style="align-items: start; gap: var(--s-5);">
+      <article class="card">
+        <h2 style="margin-top: 0;">What you get</h2>
+        <div class="checklist">
+          <div class="check">
+            <div class="icon">✓</div>
             <div>
-              <strong class="benefit-title">45 minutes of focused teaching</strong>
-              <p class="benefit-desc" style="margin: var(--s-1) 0 0; color: var(--text-muted);">One specific CELPIP skill per session. No fluff. Real strategies from a certified instructor.</p>
+              <strong>Focused live teaching</strong>
+              <span>High-impact CELPIP strategy in a practical format.</span>
             </div>
           </div>
-
-          <div class="check benefit-item" style="display: flex; gap: var(--s-2); align-items: start;">
-            <div class="benefit-icon" style="font-size: 1.5rem;">✓</div>
+          <div class="check">
+            <div class="icon">✓</div>
             <div>
-              <strong class="benefit-title">15 minutes of live Q&A</strong>
-              <p class="benefit-desc" style="margin: var(--s-1) 0 0; color: var(--text-muted);">Ask about your specific challenges. Get real-time answers from someone who knows CELPIP inside-out.</p>
+              <strong>Q&A with instructor</strong>
+              <span>Ask your own questions and get direct guidance.</span>
             </div>
           </div>
-
-          <div class="check benefit-item" style="display: flex; gap: var(--s-2); align-items: start;">
-            <div class="benefit-icon" style="font-size: 1.5rem;">✓</div>
+          <div class="check">
+            <div class="icon">✓</div>
             <div>
-              <strong class="benefit-title">Rotating curriculum (All CELPIP skills)</strong>
-              <p class="benefit-desc" style="margin: var(--s-1) 0 0; color: var(--text-muted);">Speaking, listening, reading, writing, grammar, vocabulary. Each week builds on the last.</p>
-            </div>
-          </div>
-
-          <div class="check benefit-item" style="display: flex; gap: var(--s-2); align-items: start;">
-            <div class="benefit-icon" style="font-size: 1.5rem;">✓</div>
-            <div>
-              <strong class="benefit-title">Join anytime, learn anytime</strong>
-              <p class="benefit-desc" style="margin: var(--s-1) 0 0; color: var(--text-muted);">Each week is valuable on its own. Miss a session? Join the next one. Your choice.</p>
+              <strong>Actionable next steps</strong>
+              <span>Leave with a simple study plan for the week.</span>
             </div>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="surface desktop-pricing-card" style="padding: var(--s-5); border-radius: 8px; text-align: center; border: 2px solid var(--accent);">
-        <div style="font-size: 3rem; margin-bottom: var(--s-2);">🎯</div>
-        <p style="font-size: 2.5rem; font-weight: 700; color: var(--accent); margin: 0;">$12</p>
-        <p style="color: var(--text-muted); margin: var(--s-1) 0 var(--s-3);">per session</p>
-        <p class="pricing-description" style="font-size: 0.9rem; margin-bottom: var(--s-3);">60 minutes • Live on Google Meet • Every Saturday 6 PM PST</p>
-        <a href="#register" class="btn btn-primary" style="width: 100%; text-align: center;">Register for this Saturday</a>
-      </div>
+      <article class="surface webinar-cta-card">
+        <h3 style="margin-top: 0;">Fast registration</h3>
+        <p class="muted" style="margin-top: 0;">
+          Use the popup widget (bottom-right badge) or the button above to book in seconds.
+        </p>
+        <button id="open-webinar-calendly-secondary" class="btn btn-primary" type="button" style="width: 100%;">
+          Register for Webinar →
+        </button>
+      </article>
     </div>
-
-    <div style="height: var(--s-8);"></div>
-
-    <!-- 8-WEEK CURRICULUM -->
-    <div>
-      <h2>Dynamic curriculum (All CELPIP skills)</h2>
-      <p style="color: var(--text-muted); margin-bottom: var(--s-4);">Topics are updated weekly. Each Saturday covers a different CELPIP skill or strategy. Check back to see what's on the agenda!</p>
-
-      <div class="grid grid-2" style="gap: var(--s-3);">
-        <!-- WEEK 1 -->
-        <article class="card">
-          <div style="display: inline-block; background: var(--accent); color: white; padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
-            WEEK 1
-          </div>
-          <h3 style="margin-top: 0;">Task 2 Essay Structure That Gets CLB 9</h3>
-          <p style="color: var(--text-muted);">The exact structure CELPIP evaluators want. Introduction strategies. Effective arguments. Strong conclusions.</p>
-        </article>
-
-        <!-- WEEK 2 -->
-        <article class="card">
-          <div style="display: inline-block; background: var(--accent); color: white; padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
-            WEEK 2
-          </div>
-          <h3 style="margin-top: 0;">Coherence & Cohesion Secrets</h3>
-          <p style="color: var(--text-muted);">Linking words that actually work. Paragraph flow. How to connect ideas without sounding robotic.</p>
-        </article>
-
-        <!-- WEEK 3 -->
-        <article class="card">
-          <div style="display: inline-block; background: var(--accent); color: white; padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
-            WEEK 3
-          </div>
-          <h3 style="margin-top: 0;">Vocabulary for CLB 9+ (Not Just "Big Words")</h3>
-          <p style="color: var(--text-muted);">150+ collocations that evaluators notice. Precise vocabulary. Natural word choices that demonstrate proficiency.</p>
-        </article>
-
-        <!-- WEEK 4 -->
-        <article class="card">
-          <div style="display: inline-block; background: var(--accent); color: white; padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
-            WEEK 4
-          </div>
-          <h3 style="margin-top: 0;">Grammar Accuracy: The 5 Mistakes That Cost You</h3>
-          <p style="color: var(--text-muted);">Subject-verb agreement. Articles. Complex sentences done right. How to avoid common CLB 7-8 errors.</p>
-        </article>
-
-        <!-- WEEK 5 -->
-        <article class="card">
-          <div style="display: inline-block; background: var(--accent); color: white; padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
-            WEEK 5
-          </div>
-          <h3 style="margin-top: 0;">Task 1 Email Writing Mastery</h3>
-          <p style="color: var(--text-muted);">How to respond to situations. Formal vs informal tone. The 150-200 word structure that scores high.</p>
-        </article>
-
-        <!-- WEEK 6 -->
-        <article class="card">
-          <div style="display: inline-block; background: var(--accent); color: white; padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
-            WEEK 6
-          </div>
-          <h3 style="margin-top: 0;">Timing Strategy: 53-60 Minutes Without Panic</h3>
-          <p style="color: var(--text-muted);">Exact time breakdown for both tasks. Planning vs writing. How to maximize your score under time pressure.</p>
-        </article>
-
-        <!-- WEEK 7 -->
-        <article class="card">
-          <div style="display: inline-block; background: var(--accent); color: white; padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
-            WEEK 7
-          </div>
-          <h3 style="margin-top: 0;">Responding to ANY Survey Question</h3>
-          <p style="color: var(--text-muted);">Opinion questions. Choice between two options. Balancing personal perspective with broader thinking.</p>
-        </article>
-
-        <!-- WEEK 8 -->
-        <article class="card">
-          <div style="display: inline-block; background: var(--accent); color: white; padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
-            WEEK 8
-          </div>
-          <h3 style="margin-top: 0;">Test Day Confidence & Final Review</h3>
-          <p style="color: var(--text-muted);">Mental preparation. Common panic scenarios. What to do when you blank. Quick review of all strategies.</p>
-        </article>
-      </div>
-    </div>
-
-    <div style="height: var(--s-8);"></div>
-
-    <!-- UPCOMING SESSION -->
-    <div id="register" class="surface feature" style="padding: var(--s-6); border: 3px solid var(--accent); border-radius: 8px;">
-      <div class="grid grid-2" style="align-items: center; gap: var(--s-6);">
-        <div>
-          <div style="display: inline-block; background: var(--accent); color: white; padding: var(--s-1) var(--s-3); border-radius: 4px; font-size: 0.9rem; font-weight: 700; margin-bottom: var(--s-3);">
-            {nextSession?.dayOfWeek.toUpperCase()}
-          </div>
-          <h2 style="margin-top: 0;">Next Session: {nextSession?.topic}</h2>
-          <p style="font-size: 1.1rem; margin: var(--s-2) 0;"><strong>{nextSession?.dayOfWeek}, {nextSession?.date}</strong></p>
-          <p style="font-size: 1.1rem; margin: var(--s-1) 0;"><strong>{nextSession?.time}</strong></p>
-          
-          <div style="margin: var(--s-4) 0;">
-            <p style="font-weight: 600; margin-bottom: var(--s-2);">This week's focus:</p>
-            <p style="margin: 0 0 var(--s-3); color: var(--text-muted);">{nextSession?.description}</p>
-            <p style="font-weight: 600; margin-bottom: var(--s-2);">What you'll get:</p>
-            <ul style="margin: 0; padding-left: var(--s-4); color: var(--text-muted);">
-              <li>45 minutes of focused, live teaching</li>
-              <li>Real examples and expert strategies</li>
-              <li>15 minutes of live Q&A for your questions</li>
-              <li>Actionable takeaways you can use immediately</li>
-            </ul>
-          </div>
-
-          <div style="padding: var(--s-3); background: var(--accent-light); border-radius: 4px; margin: var(--s-4) 0;">
-            <p style="margin: 0; font-weight: 600;">📧 What happens after you register:</p>
-            <ol style="margin: var(--s-2) 0 0; padding-left: var(--s-4);">
-              <li>Instant email with Google Meet link</li>
-              <li>Session details and what to expect</li>
-              <li>Pro tips for getting the most from the webinar</li>
-            </ol>
-          </div>
-        </div>
-
-        <div style="text-align: center;">
-          <div style="padding: var(--s-5); background: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-            <p style="font-size: 2.5rem; font-weight: 700; color: var(--accent); margin: 0;">$12</p>
-            <p style="color: var(--text-muted); margin: var(--s-1) 0 var(--s-4);">60 minutes • Live • Interactive</p>
-            
-            {nextSession?.available ? (
-              <>
-                <!-- STRIPE CHECKOUT BUTTON -->
-                <a 
-                  href="https://buy.stripe.com/4gM7sK3Gm4dC26l23ygMw01"
-                  class="btn btn-primary"
-                  style="width: 100%; padding: var(--s-3); font-size: 1.1rem; text-align: center; display: block;"
-                >
-                  Register Now →
-                </a>
-
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: var(--s-3);">
-                  Secure payment via Stripe<br/>
-                  Link sent instantly after payment
-                </p>
-              </>
-            ) : (
-              <div style="padding: var(--s-3); background: var(--accent-light); border-radius: 4px; text-align: center;">
-                <p style="margin: 0; font-weight: 600; color: var(--accent);">⚠️ This session is unavailable</p>
-                <p style="margin: var(--s-2) 0 0; font-size: 0.9rem; color: var(--text-muted);">
-                  Check back soon for the next available session
-                </p>
-              </div>
-            )}
-          </div>
-
-          <div style="margin-top: var(--s-4); text-align: left;">
-            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: var(--s-2);"><strong>Limited spots available</strong></p>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">
-              Keep sessions interactive (~15-20 students max).<br/>
-              Can't make this session? Join us next week.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div style="height: var(--s-8);"></div>
-
-    <!-- WHO THIS IS FOR -->
-    <div>
-      <h2>Is this workshop for you?</h2>
-      <div class="grid grid-2" style="gap: var(--s-4);">
-        <div class="surface" style="padding: var(--s-4); border-left: 4px solid var(--accent);">
-          <h3 style="margin-top: 0;">✓ This is for you if:</h3>
-          <ul style="margin: 0; padding-left: var(--s-3); color: var(--text-muted);">
-            <li>You're stuck at CLB 7 or 8 and want to reach CLB 9+</li>
-            <li>You want structured, focused learning (not random YouTube videos)</li>
-            <li>You value live interaction and real-time feedback</li>
-            <li>You're serious about your test date (within 1-3 months)</li>
-            <li>You want accountability and consistent support</li>
-          </ul>
-        </div>
-
-        <div class="surface" style="padding: var(--s-4); border-left: 4px solid var(--text-muted);">
-          <h3 style="margin-top: 0;">✗ This is NOT for you if:</h3>
-          <ul style="margin: 0; padding-left: var(--s-3); color: var(--text-muted);">
-            <li>You're looking for magic tricks or shortcuts</li>
-            <li>You won't show up consistently</li>
-            <li>You expect results without practicing what you learn</li>
-            <li>You're not willing to invest $12/week in your score</li>
-            <li>You prefer passive learning (just watching recordings)</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div style="height: var(--s-6);"></div>
-
-    <!-- FAQ -->
-    <div>
-      <h2>Common questions</h2>
-      <div class="stack" style="gap: var(--s-3);">
-        <details class="faq-item" style="padding: var(--s-2); background: var(--surface); border-radius: 4px;">
-          <summary style="cursor: pointer; font-weight: 600;">Do I get a recording if I can't attend live?</summary>
-          <p style="padding-top: var(--s-2); color: var(--text-muted);">
-            No. This is a live workshop. The value is in showing up, asking questions, and getting real-time feedback. 
-            If you miss a session, you can join the next week's topic. Recordings may be edited and posted to YouTube later, but never the full session.
-          </p>
-        </details>
-
-        <details class="faq-item" style="padding: var(--s-2); background: var(--surface); border-radius: 4px;">
-          <summary style="cursor: pointer; font-weight: 600;">Can I attend just one session, or do I need to commit to all 8 weeks?</summary>
-          <p style="padding-top: var(--s-2); color: var(--text-muted);">
-            Pay per session ($12 each). No subscription. Join one week or all eight—your choice. 
-            Each session is valuable on its own, but the full cycle gives you comprehensive coverage.
-          </p>
-        </details>
-
-        <details class="faq-item" style="padding: var(--s-2); background: var(--surface); border-radius: 4px;">
-          <summary style="cursor: pointer; font-weight: 600;">What platform do you use?</summary>
-          <p style="padding-top: var(--s-2); color: var(--text-muted);">
-            Google Meet. You'll receive the link via email immediately after payment. No account needed—just click and join.
-          </p>
-        </details>
-
-        <details class="faq-item" style="padding: var(--s-2); background: var(--surface); border-radius: 4px;">
-          <summary style="cursor: pointer; font-weight: 600;">Will you cover all CELPIP skills or just writing?</summary>
-          <p style="padding-top: var(--s-2); color: var(--text-muted);">
-            All CELPIP skills! Each week covers something different—speaking, listening, reading, writing, grammar, vocabulary, strategy, and test psychology. Topics rotate weekly, so come back to see what's planned.
-          </p>
-        </details>
-
-        <details class="faq-item" style="padding: var(--s-2); background: var(--surface); border-radius: 4px;">
-          <summary style="cursor: pointer; font-weight: 600;">Will you review my essays during the session?</summary>
-          <p style="padding-top: var(--s-2); color: var(--text-muted);">
-            We teach strategies and review example essays together, but this isn't 1-on-1 correction. 
-            For personalized essay feedback, book <a href="/essay-correction">essay correction service</a> (CA$15) or <a href="/tutoring">1-on-1 tutoring</a> (CA$30/hr).
-          </p>
-        </details>
-
-        <details class="faq-item" style="padding: var(--s-2); background: var(--surface); border-radius: 4px;">
-          <summary style="cursor: pointer; font-weight: 600;">Can I get a refund?</summary>
-          <p style="padding-top: var(--s-2); color: var(--text-muted);">
-            If the session doesn't start or there's a technical issue on our end, yes—full refund. 
-            If you simply change your mind or don't show up, no refund. $12 is a commitment to yourself.
-          </p>
-        </details>
-
-        <details class="faq-item" style="padding: var(--s-2); background: var(--surface); border-radius: 4px;">
-          <summary style="cursor: pointer; font-weight: 600;">How many people attend?</summary>
-          <p style="padding-top: var(--s-2); color: var(--text-muted);">
-            We cap each session at 15-20 students to keep it interactive. If you see the registration link, there are spots available.
-          </p>
-        </details>
-      </div>
-    </div>
-
-    <div style="height: var(--s-6);"></div>
-
-    <!-- FINAL CTA -->
-    <div style="text-align: center; padding: var(--s-5); background: var(--accent-light); border-radius: 8px;">
-      <h2>Ready to reach CLB 9?</h2>
-      <p style="max-width: 600px; margin: var(--s-2) auto;">60 minutes. $12. Every Saturday at 6:00 PM PST.</p>
-      <a href="#register" class="btn btn-primary" style="margin-top: var(--s-3);">Register for this Saturday</a>
-    </div>
-
-    <div style="height: var(--s-6);"></div>
   </section>
+
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async is:inline></script>
+
+  <script is:inline>
+    window.addEventListener('load', () => {
+      const calendlyUrl = 'https://calendly.com/ieltscorner/webinar';
+      if (!window.Calendly) return;
+
+      window.Calendly.initBadgeWidget({
+        url: calendlyUrl,
+        text: "Register for this week's Webinar",
+        color: '#d94848',
+        textColor: '#ffffff',
+        branding: true,
+      });
+
+      const openPopup = () => {
+        if (!window.Calendly) {
+          window.open(calendlyUrl, '_blank', 'noopener,noreferrer');
+          return;
+        }
+        window.Calendly.initPopupWidget({ url: calendlyUrl });
+      };
+
+      const primary = document.getElementById('open-webinar-calendly');
+      const secondary = document.getElementById('open-webinar-calendly-secondary');
+
+      primary?.addEventListener('click', openPopup);
+      secondary?.addEventListener('click', openPopup);
+    });
+  </script>
 </Layout>
 
 <style>
-  /* Mobile-first registration CTA */
-  .mobile-register-cta {
-    background: linear-gradient(135deg, var(--accent) 0%, rgba(217, 72, 72, 0.9) 100%);
-    border-radius: 12px;
-    padding: var(--s-3);
-    color: white;
-    box-shadow: 0 4px 20px rgba(217, 72, 72, 0.3);
-  }
-
-  .mobile-register-content {
-    display: flex;
-    flex-direction: column;
-    gap: var(--s-3);
-  }
-
-  .mobile-register-info {
-    text-align: center;
-  }
-
-  .next-session-label {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin: 0 0 var(--s-1);
-    line-height: 1.3;
-  }
-
-  .session-datetime {
-    font-size: 0.95rem;
-    margin: 0;
-    opacity: 0.95;
-  }
-
-  .mobile-register-pricing {
-    text-align: center;
-  }
-
-  .price {
-    font-size: 3rem;
-    font-weight: 700;
-    margin: 0 0 var(--s-2);
-    line-height: 1;
-  }
-
-  .mobile-register-btn {
-    width: 100%;
-    padding: 16px 24px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    background: white;
-    color: var(--accent);
-    border: none;
-    text-align: center;
-    display: block;
-  }
-
-  .mobile-register-btn:hover {
-    background: rgba(255, 255, 255, 0.95);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-  }
-
-  .unavailable-notice {
-    padding: var(--s-2);
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    font-weight: 600;
-    margin: 0;
-  }
-
-  /* Mobile-optimized hero */
-  .webinar-hero .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .webinar-hero .hero-content p {
-    font-size: 1rem;
-  }
-
-  /* Typography adjustments for mobile */
-  .section-heading {
-    font-size: 1.5rem;
-    line-height: 1.3;
-  }
-
-  .benefit-title {
-    font-size: 1rem;
-  }
-
-  .benefit-desc {
-    font-size: 0.9rem;
-  }
-
-  /* Grid adjustments for mobile */
-  @media (max-width: 768px) {
-    .grid {
-      grid-template-columns: 1fr !important;
-      gap: var(--s-3) !important;
-    }
-
-    .webinar-section {
-      padding-top: var(--s-4) !important;
-    }
-
-    .webinar-hero .hero-content h1 {
-      font-size: 1.75rem;
-    }
-
-    .section-heading {
-      font-size: 1.3rem;
-    }
-
-    .benefit-item {
-      padding: var(--s-2);
-      background: var(--surface);
-      border-radius: 8px;
-    }
-
-    .benefit-icon {
-      font-size: 1.25rem !important;
-    }
-
-    .benefit-title {
-      font-size: 0.95rem;
-    }
-
-    .benefit-desc {
-      font-size: 0.85rem;
-    }
-
-    /* Hide desktop pricing card on mobile - mobile CTA is better */
-    .desktop-pricing-card {
-      display: none;
-    }
-
-    .card h3 {
-      font-size: 1.1rem;
-    }
-
-    .card {
-      padding: var(--s-3);
-    }
-
-    /* Simplify feature section on mobile */
-    .feature {
-      padding: var(--s-4) !important;
-    }
-
-    /* Make registration section more compact on mobile */
-    #register {
-      padding: var(--s-4) !important;
-    }
-
-    #register h2 {
-      font-size: 1.3rem;
-    }
-
-    #register .grid {
-      gap: var(--s-4) !important;
-    }
-
-    /* Mobile CTA visibility */
-    .mobile-register-cta {
-      display: block;
-    }
-
-    /* Simplify FAQ items on mobile */
-    .faq-item {
-      padding: var(--s-2) !important;
-    }
-
-    .faq-item summary {
-      font-size: 0.95rem;
-    }
-
-    .pricing-description {
-      font-size: 0.85rem !important;
-    }
-  }
-
-  @media (min-width: 769px) {
-    /* Hide mobile CTA on desktop */
-    .mobile-register-cta {
-      display: none;
-    }
-
-    .webinar-hero .hero-content h1 {
-      font-size: 2.5rem;
-    }
-  }
-
-  /* Extra small mobile devices */
-  @media (max-width: 560px) {
-    .mobile-register-cta {
-      padding: var(--s-2);
-    }
-
-    .next-session-label {
-      font-size: 1rem;
-    }
-
-    .session-datetime {
-      font-size: 0.85rem;
-    }
-
-    .price {
-      font-size: 2.5rem;
-    }
-
-    .mobile-register-btn {
-      padding: 14px 20px;
-      font-size: 1rem;
-    }
-
-    .webinar-hero .hero-content h1 {
-      font-size: 1.5rem;
-    }
-
-    .webinar-hero .hero-content p {
-      font-size: 0.9rem;
-    }
-  }
-
-  .faq-item summary:hover {
-    opacity: 0.8;
+  .webinar-cta-card {
+    padding: var(--s-5);
+    border: 2px solid color-mix(in srgb, var(--accent) 38%, var(--border) 62%);
+    border-radius: var(--radius-sm);
+    background: color-mix(in srgb, var(--surface) 86%, var(--accent) 14%);
   }
 </style>

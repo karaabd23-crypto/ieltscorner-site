@@ -1,147 +1,115 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 
-const STRIPE_PRIVATE_PAY_URL = "https://buy.stripe.com/7sYfZg90GcK826lgYsgMw00";
-const WHATSAPP_GROUP_URL = "https://wa.me/17789942315";
+const PRIVATE_CALENDLY_URL = 'https://calendly.com/ieltscorner/private-class';
+const WHATSAPP_GROUP_URL = 'https://wa.me/17789942315';
 ---
 
 <Layout
-  title="Tutoring — IELTS & CELPIP (Online)"
-  description="Private IELTS/CELPIP lessons on Google Meet. CA$30/hour. Pay first, then book your time."
+  title="Private Classes — IELTS & CELPIP"
+  description="Book one-on-one IELTS/CELPIP classes directly from the embedded Calendly calendar."
 >
   <section class="section">
     <div class="hero" style={`--hero-bg: url('/heroes/tutoring.png');`}>
       <div class="hero-content">
-        <span class="pill">🎓 Tutoring • Google Meet</span>
-
-        <h1>Pay first. Then book. Simple.</h1>
-
-        <p class="muted" style="max-width: 60ch;">
-          Private lessons are <strong>CA$30 per session</strong>. After payment, you'll get a secure link to book <strong>one</strong> session.
+        <span class="pill">🎓 Private Classes • Google Meet</span>
+        <h1>Book Your Private Class</h1>
+        <p class="muted" style="max-width: 64ch;">
+          Choose your preferred time directly from the embedded calendar below.
+          You’ll receive confirmation and session details by email.
         </p>
-
-        <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 12px 16px; margin: 16px 0; border-radius: 6px; max-width: 60ch;">
-          <p style="margin: 0; font-size: 14px; color: #856404; font-weight: 600;">
-            ⚠️ Each payment = one 60-minute session. To book multiple sessions, pay CA$30 each time.
-          </p>
-        </div>
 
         <div class="cluster">
-          <a class="btn btn-primary" href={STRIPE_PRIVATE_PAY_URL} target="_blank" rel="noreferrer">
-            Pay CA$30 → book 1 session
-          </a>
-          <a class="btn btn-ghost" href={WHATSAPP_GROUP_URL} target="_blank" rel="noreferrer">
-            Group classes (min 3) — WhatsApp →
+          <a class="btn btn-primary" href="#book-private-class">Open booking calendar ↓</a>
+          <a class="btn btn-ghost" href={PRIVATE_CALENDLY_URL} target="_blank" rel="noreferrer">
+            Open in new tab
           </a>
         </div>
-
-        <p class="muted" style="max-width: 60ch; font-size:14px; margin: 0;">
-          Lessons are on Google Meet from <strong>kara.abdolmaleki@gmail.com</strong>.
-        </p>
       </div>
     </div>
 
-    <div style="height: var(--s-8);"></div>
+    <div style="height: var(--s-7);"></div>
 
-    <div class="grid grid-2" style="align-items:start;">
-      <div class="card">
-        <h3>Private lesson — CA$30 per session</h3>
-        <p class="muted">
-          One-on-one tutoring for IELTS or CELPIP. We fix the mistakes that lower your score.
-        </p>
-
-        <div style="background: #f8f9fa; border: 1px solid #dee2e6; padding: 12px; margin: 12px 0; border-radius: 6px;">
-          <p style="margin: 0; font-size: 13px; color: #495057;">
-            <strong>Payment Policy:</strong> Each CA$30 payment covers one 60-minute session. For additional sessions, complete another payment.
-          </p>
-        </div>
-
+    <div class="grid grid-2" style="align-items: start; gap: var(--s-5);">
+      <article class="card">
+        <h2 style="margin-top: 0;">Why private classes work</h2>
         <div class="checklist">
           <div class="check">
             <div class="icon">✓</div>
             <div>
-              <strong>Direct feedback</strong>
-              <span>Clear corrections you can use right away.</span>
+              <strong>Personalized strategy</strong>
+              <span>Focused on your exact score target and weak points.</span>
             </div>
           </div>
           <div class="check">
             <div class="icon">✓</div>
             <div>
-              <strong>Simple weekly plan</strong>
-              <span>You’ll know exactly what to practice next.</span>
+              <strong>Direct corrections</strong>
+              <span>Clear feedback on speaking, writing, grammar, and vocabulary.</span>
             </div>
           </div>
           <div class="check">
             <div class="icon">✓</div>
             <div>
-              <strong>Exam-style practice</strong>
-              <span>Speaking & writing tasks that match the test.</span>
+              <strong>Simple action plan</strong>
+              <span>Know exactly what to practice before your next session.</span>
             </div>
           </div>
         </div>
+      </article>
 
-        <div style="height: var(--s-4);"></div>
-
-        <a class="btn btn-primary" href={STRIPE_PRIVATE_PAY_URL} target="_blank" rel="noreferrer">
-          Pay CA$30 → book 1 session
+      <article class="surface tutoring-note">
+        <h3 style="margin-top: 0;">Group classes</h3>
+        <p class="muted" style="margin-top: 0;">
+          For small-group classes (minimum 3 students), message on WhatsApp to coordinate a custom time.
+        </p>
+        <a class="btn" href={WHATSAPP_GROUP_URL} target="_blank" rel="noreferrer">
+          WhatsApp: +1 (778) 994-2315 →
         </a>
-
-        <p class="muted" style="font-size: 13px; margin: 12px 0 0;">
-          After payment, you'll get a secure one-time link to book your session.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>How booking works</h3>
-        <p class="muted" style="margin-bottom: 12px;">
-          Payment comes first, so unpaid bookings are impossible. Each payment = one session.
-        </p>
-
-        <div class="checklist">
-          <div class="check">
-            <div class="icon">1</div>
-            <div>
-              <strong>Pay CA$30 on Stripe</strong>
-              <span>Click the payment button for one tutoring session.</span>
-            </div>
-          </div>
-          <div class="check">
-            <div class="icon">2</div>
-            <div>
-              <strong>Get booking access</strong>
-              <span>You'll receive a secure link to book this one session.</span>
-            </div>
-          </div>
-          <div class="check">
-            <div class="icon">3</div>
-            <div>
-              <strong>Choose your time</strong>
-              <span>Select an available slot on Google Calendar.</span>
-            </div>
-          </div>
-          <div class="check">
-            <div class="icon">4</div>
-            <div>
-              <strong>Get your Meet link</strong>
-              <span>Calendar invite with Google Meet link arrives via email.</span>
-            </div>
-          </div>
-        </div>
-
-        <div style="height: var(--s-5);"></div>
-
-        <div class="surface" style="padding: var(--s-5);">
-          <h3 style="margin-top:0;">Group classes</h3>
-          <p class="muted" style="margin-bottom: 12px;">
-            Group lessons are <strong>CA$15 per student</strong> (minimum <strong>3 students</strong>). Message me on WhatsApp to set a time.
-          </p>
-          <a class="btn" href={WHATSAPP_GROUP_URL} target="_blank" rel="noreferrer">
-            WhatsApp: +1 (778) 994-2315 →
-          </a>
-        </div>
-      </div>
+      </article>
     </div>
 
-    <div style="height: var(--s-8);"></div>
+    <div style="height: var(--s-7);"></div>
+
+    <div id="book-private-class" class="surface calendly-wrap">
+      <h2 style="margin-top: 0;">Private Class Booking Calendar</h2>
+      <p class="muted" style="margin-top: 0;">
+        Select a date and time below to reserve your private IELTS/CELPIP session.
+      </p>
+
+      <div
+        class="calendly-inline-widget"
+        data-url={PRIVATE_CALENDLY_URL}
+        style="min-width:320px;height:760px;"
+      ></div>
+    </div>
   </section>
+
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async is:inline></script>
 </Layout>
+
+<style>
+  .calendly-wrap {
+    padding: var(--s-5);
+    border: 2px solid color-mix(in srgb, var(--accent) 38%, var(--border) 62%);
+    border-radius: var(--radius);
+  }
+
+  .tutoring-note {
+    padding: var(--s-5);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: color-mix(in srgb, var(--surface) 86%, var(--band) 14%);
+  }
+
+  @media (max-width: 768px) {
+    .calendly-wrap {
+      padding: var(--s-3);
+    }
+
+    .calendly-inline-widget {
+      height: 700px !important;
+    }
+  }
+</style>
