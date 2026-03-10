@@ -36,61 +36,37 @@ const WEBINAR_CALENDLY_URL = 'https://calendly.com/ieltscorner/webinar';
 
     <div style="height: var(--s-7);"></div>
 
-    <div class="grid grid-2" style="align-items: start; gap: var(--s-5);">
-      <article class="card">
-        <h2 style="margin-top: 0;">What you get</h2>
-        <div class="checklist">
-          <div class="check">
-            <div class="icon">✓</div>
-            <div>
-              <strong>Focused live teaching</strong>
-              <span>High-impact CELPIP strategy in a practical format.</span>
-            </div>
-          </div>
-          <div class="check">
-            <div class="icon">✓</div>
-            <div>
-              <strong>Q&A with instructor</strong>
-              <span>Ask your own questions and get direct guidance.</span>
-            </div>
-          </div>
-          <div class="check">
-            <div class="icon">✓</div>
-            <div>
-              <strong>Actionable next steps</strong>
-              <span>Leave with a simple study plan for the week.</span>
-            </div>
+    <article class="card">
+      <h2 style="margin-top: 0;">What you get</h2>
+      <div class="checklist">
+        <div class="check">
+          <div class="icon">✓</div>
+          <div>
+            <strong>Focused live teaching</strong>
+            <span>High-impact CELPIP strategy in a practical format.</span>
           </div>
         </div>
-      </article>
-
-      <article class="surface webinar-cta-card">
-        <h3 style="margin-top: 0;">Fast registration</h3>
-        <p class="muted" style="margin-top: 0;">
-          Use the popup widget (bottom-right badge) or the button above to book in seconds.
-        </p>
-        <button id="open-webinar-calendly-secondary" class="btn btn-primary" type="button" style="width: 100%;">
-          Register for Webinar →
-        </button>
-      </article>
-    </div>
+        <div class="check">
+          <div class="icon">✓</div>
+          <div>
+            <strong>Q&A with instructor</strong>
+            <span>Ask your own questions and get direct guidance.</span>
+          </div>
+        </div>
+        <div class="check">
+          <div class="icon">✓</div>
+          <div>
+            <strong>Actionable next steps</strong>
+            <span>Leave with a simple study plan for the week.</span>
+          </div>
+        </div>
+      </div>
+    </article>
   </section>
-
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async is:inline></script>
 
   <script is:inline>
     window.addEventListener('load', () => {
       const calendlyUrl = 'https://calendly.com/ieltscorner/webinar';
-      if (!window.Calendly) return;
-
-      window.Calendly.initBadgeWidget({
-        url: calendlyUrl,
-        text: "Register for this week's Webinar",
-        color: '#d94848',
-        textColor: '#ffffff',
-        branding: true,
-      });
 
       const openPopup = () => {
         if (!window.Calendly) {
@@ -101,19 +77,8 @@ const WEBINAR_CALENDLY_URL = 'https://calendly.com/ieltscorner/webinar';
       };
 
       const primary = document.getElementById('open-webinar-calendly');
-      const secondary = document.getElementById('open-webinar-calendly-secondary');
 
       primary?.addEventListener('click', openPopup);
-      secondary?.addEventListener('click', openPopup);
     });
   </script>
 </Layout>
-
-<style>
-  .webinar-cta-card {
-    padding: var(--s-5);
-    border: 2px solid color-mix(in srgb, var(--accent) 38%, var(--border) 62%);
-    border-radius: var(--radius-sm);
-    background: color-mix(in srgb, var(--surface) 86%, var(--accent) 14%);
-  }
-</style>

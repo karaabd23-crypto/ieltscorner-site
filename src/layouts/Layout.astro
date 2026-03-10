@@ -96,6 +96,27 @@ const organizationSchema = {
       gtag('js', new Date());
       gtag('config', 'G-XXXXXXXXXX');
     </script>
+
+    <!-- Calendly global badge -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async is:inline></script>
+    <script is:inline>
+      window.addEventListener('load', () => {
+        if (!window.Calendly || window.__ieltscornerCalendlyBadgeInit) {
+          return;
+        }
+
+        window.Calendly.initBadgeWidget({
+          url: "https://calendly.com/ieltscorner/webinar",
+          text: "Register for this week's Webinar",
+          color: '#d94848',
+          textColor: '#ffffff',
+          branding: true,
+        });
+
+        window.__ieltscornerCalendlyBadgeInit = true;
+      });
+    </script>
   </head>
 
   <body>
