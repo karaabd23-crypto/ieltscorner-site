@@ -5,7 +5,7 @@ import { getCollection, type CollectionEntry } from "astro:content";
 type LessonEntry = CollectionEntry<"lessons">;
 type Category = LessonEntry["data"]["category"];
 
-const categories: Category[] = ["grammar", "vocabulary", "writing", "speaking"];
+const categories: Category[] = ["grammar", "vocabulary", "writing", "speaking", "listening", "reading"];
 
 export const getStaticPaths = () => {
   return [
@@ -13,6 +13,8 @@ export const getStaticPaths = () => {
     { params: { category: "vocabulary" } },
     { params: { category: "writing" } },
     { params: { category: "speaking" } },
+    { params: { category: "listening" } },
+    { params: { category: "reading" } },
   ];
 };
 
@@ -50,6 +52,20 @@ const metaMap: Record<Category, { pill: string; h1: string; blurb: string; keywo
     blurb:
       "Improve your IELTS Band 7+ or CELPIP CLB 9+ speaking score. Learn how to speak smoothly, pronounce words correctly, use good vocabulary and grammar, and sound natural during the test.",
     keywords: "IELTS speaking, CELPIP speaking, Band 7 speaking, speaking test tips, IELTS speaking part 2, CELPIP speaking practice, improve speaking scores"
+  },
+  listening: {
+    pill: "🎧 Listening • Band 7+ / CLB 9+",
+    h1: "Train your ear for faster, more accurate answers.",
+    blurb:
+      "Improve IELTS and CELPIP listening with targeted practice in prediction, note-taking, and detail recognition. Build the habits you need to catch key information under time pressure.",
+    keywords: "IELTS listening, CELPIP listening, listening strategies, note-taking for listening, listening practice, Band 7 listening, CLB 9 listening"
+  },
+  reading: {
+    pill: "📖 Reading • Band 7+ / CLB 9+",
+    h1: "Read with precision and choose evidence-based answers.",
+    blurb:
+      "Build strong IELTS and CELPIP reading skills with scanning, inference, and time-management strategies. Learn how to avoid distractors and select answers based on text evidence.",
+    keywords: "IELTS reading, CELPIP reading, reading strategies, scanning and skimming, inference questions, Band 7 reading, CLB 9 reading"
   },
 };
 
