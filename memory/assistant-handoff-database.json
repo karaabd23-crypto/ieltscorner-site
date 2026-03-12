@@ -1,0 +1,194 @@
+{
+  "meta": {
+    "generatedAt": "2026-03-11",
+    "project": "ieltscorner-site",
+    "purpose": "Cross-model handoff memory for user preferences, decisions, outcomes, and pending work.",
+    "scope": "Current conversation thread and in-workspace changes performed during this session."
+  },
+  "userProfile": {
+    "siteGoal": "Grow IELTS/CELPIP prep site with clearer UX, monetized writing AI subscription, and practical conversion paths.",
+    "primaryPriorities": [
+      "Reduce click depth and simplify navigation",
+      "Improve visual clarity (especially hero sections)",
+      "Increase visibility of Writing Hub and paid offer",
+      "Keep admin testing friction near zero"
+    ],
+    "communicationStyle": {
+      "likes": [
+        "Direct implementation",
+        "Fast iterations",
+        "Concrete visual fixes"
+      ],
+      "dislikes": [
+        "Overly abstract planning without changes",
+        "Extra clicks and maze-like navigation",
+        "UI elements that hide/obscure important controls"
+      ]
+    }
+  },
+  "hardPreferences": {
+    "design": [
+      "Avoid red-heavy heroes unless explicitly desired",
+      "No frosted panel box over hero text",
+      "Prefer large heading + primary buttons over small helper paragraphs",
+      "Hero images should fill cleanly and look neutral/readable"
+    ],
+    "navigation": [
+      "Writing Hub must be easy to find from CELPIP pages",
+      "Reduce clicks where possible",
+      "Top menu should be more prominent"
+    ],
+    "contentMonetization": [
+      "Paid AI writing plan at CA$5/month",
+      "Promote paid writing offer broadly on-site",
+      "Include large prompt bank and model/sample responses"
+    ],
+    "adminAccess": [
+      "Admin should be able to test post-payment lab locally without paying repeatedly"
+    ]
+  },
+  "requestsChronology": [
+    {
+      "theme": "CTA and funnel",
+      "asked": "Replace human feedback CTAs with book-a-class links",
+      "status": "done"
+    },
+    {
+      "theme": "Stripe setup",
+      "asked": "Configure CELPIP writing subscription with provided Stripe price",
+      "status": "done"
+    },
+    {
+      "theme": "Hero visuals",
+      "asked": "Remove panel, remove small text, fix red heroes, improve readability",
+      "status": "done (iterative)"
+    },
+    {
+      "theme": "Navigation simplification",
+      "asked": "Make CELPIP/Writing easier to reach; reduce maze-like clicks",
+      "status": "done"
+    },
+    {
+      "theme": "Lesson heading drawer",
+      "asked": "Bring back/ensure heading jump drawer",
+      "status": "done (repositioned to avoid overlap)"
+    },
+    {
+      "theme": "Admin bypass",
+      "asked": "Access post-payment AI lab as admin without paying every time",
+      "status": "done for localhost"
+    },
+    {
+      "theme": "Prompt product expansion",
+      "asked": "100 prompts + sample responses + strong advertising",
+      "status": "done"
+    },
+    {
+      "theme": "Sample quality",
+      "asked": "Samples should be CLB 9+ and state level + why",
+      "status": "done"
+    },
+    {
+      "theme": "Sample accessibility flow",
+      "asked": "Students should access samples somewhere, perhaps after analysis",
+      "status": "partially done (samples visible in prompt panel; post-analysis-only placement not yet implemented)"
+    }
+  ],
+  "acceptedDecisions": [
+    "Add Writing Hub shortcuts across CELPIP hubs and CELPIP lesson pages",
+    "Simplify /lessons/celpip by surfacing lessons directly",
+    "Keep jump drawer and move it away from bottom-right overlap",
+    "Use localhost admin bypass for paid lab testing",
+    "Promote Writing Hub in top nav and sticky banner",
+    "Expand paid offer with 100 prompts and per-prompt samples",
+    "Display sample CLB level and reasons"
+  ],
+  "rejectedOrCorrected": [
+    "Frosted glass hero panel (rejected)",
+    "Small hero helper text clutter (rejected)",
+    "Red-heavy hero overlays where user requested neutral look (corrected)",
+    "Drawer hidden behind webinar/Calendly button (corrected)",
+    "Unlock path showing JSON/error due to response parsing and empty sessionId handling (corrected)"
+  ],
+  "implementationSummary": {
+    "coreFilesTouched": [
+      "src/styles/global.css",
+      "src/layouts/Layout.astro",
+      "src/pages/celpip/index.astro",
+      "src/pages/celpip/listening/index.astro",
+      "src/pages/celpip/reading/index.astro",
+      "src/pages/celpip/speaking/index.astro",
+      "src/pages/celpip/writing/index.astro",
+      "src/pages/celpip/writing/ai-feedback/index.astro",
+      "src/pages/celpip/writing/ai-feedback/success.astro",
+      "src/pages/lessons/celpip/index.astro",
+      "src/pages/lessons/[category]/[...slug].astro",
+      "src/components/CelpipWritingLab.astro",
+      "src/components/CelpipWritingBanner.astro",
+      "src/lib/celpipWritingData.mjs",
+      "netlify/functions/validate-celpip-writing-session.mjs",
+      "netlify/functions/evaluate-celpip-writing.mjs",
+      ".env.example",
+      ".env"
+    ],
+    "notableUXOutcomes": [
+      "Top nav has dedicated Writing Hub entry",
+      "Sticky top banner promotes webinar + Writing Hub offer",
+      "Hero styling less red and less cluttered",
+      "Jump drawer moved to bottom-left and made more visible",
+      "CELPIP lesson navigation reduced click depth",
+      "Paid lab now shows sample responses with CLB 9 label + rationale"
+    ],
+    "monetizationOutcomes": [
+      "Offer messaging includes 100 prompts and sample responses",
+      "CA$5/month pricing emphasized in writing AI flow",
+      "Writing Hub visibility increased across site"
+    ]
+  },
+  "adminBypassAndLocalTesting": {
+    "intent": "Allow local admin testing of paid lab without repeated checkout.",
+    "mechanism": [
+      "Validation function supports admin bypass token",
+      "Localhost auto-bypass for validation when bypass token exists",
+      "Evaluator supports admin bypass and local fallback report when AI provider is unavailable"
+    ],
+    "localEnvKeys": [
+      "CELPIP_WRITING_ADMIN_BYPASS_TOKEN",
+      "CELPIP_WRITING_PRICE_ID",
+      "STRIPE_API_KEY",
+      "OPENAI_API_KEY (or ANTHROPIC_API_KEY)"
+    ],
+    "knownLimitation": "If external AI quota is exhausted, fallback report is used in local admin mode to preserve flow testing."
+  },
+  "currentState": {
+    "buildCheck": "Astro check passing with zero errors at last verification.",
+    "devServerNote": "Netlify dev command has shown non-zero exits in terminal history while a node listener still served port 8888 in multiple checks.",
+    "featureStatus": {
+      "paidLabUnlock": "working in local admin mode",
+      "analysisButton": "working path restored; local admin fallback available",
+      "promptBank": "100 prompts available",
+      "sampleMetadata": "CLB 9 + rationale visible in UI"
+    }
+  },
+  "pendingNextBestActions": [
+    {
+      "priority": "high",
+      "item": "Implement post-analysis sample reveal pattern (auto-open sample response after first analysis run) to match explicit user preference."
+    },
+    {
+      "priority": "medium",
+      "item": "Optionally relabel sample level text from CLB 9 to CLB 9+ if user wants stronger claim wording."
+    },
+    {
+      "priority": "medium",
+      "item": "Optionally tone down sticky webinar strip red if user requests further visual neutralization."
+    }
+  ],
+  "handoffInstructionsForAnyModel": [
+    "Treat navigation simplification and click reduction as default priority.",
+    "Do not reintroduce hero clutter (small helper text, heavy red overlays, frosted text panel) unless user explicitly asks.",
+    "Keep Writing Hub visibility high in global nav and CELPIP routes.",
+    "Preserve admin local bypass and do not expose bypass behavior publicly in production UX copy.",
+    "When adjusting paid lab UX, keep sample response access obvious and low-friction for subscribers."
+  ]
+}

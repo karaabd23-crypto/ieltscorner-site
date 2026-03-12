@@ -73,12 +73,60 @@ const {
 </div>
 
 <script>
+  const storageKey = 'ieltscorner.newsletterSignup';
   const form = document.getElementById('newsletter-form');
   const status = document.getElementById('newsletter-status');
+  const normalizeEmail = (value: string) => String(value || '').trim().toLowerCase();
+  const readSignup = () => {
+    try {
+      const raw = localStorage.getItem(storageKey);
+      if (!raw) return null;
+
+      const parsed = JSON.parse(raw);
+      if (!parsed || typeof parsed !== 'object') return null;
+
+      return parsed;
+    } catch {
+      return null;
+    }
+  };
+  const saveSignup = (email: string) => {
+    try {
+      localStorage.setItem(storageKey, JSON.stringify({
+        email: normalizeEmail(email),
+        unlockedLessons: true,
+        subscribedAt: new Date().toISOString(),
+      }));
+    } catch {
+    }
+  };
 
   if (form instanceof HTMLFormElement && status instanceof HTMLElement) {
+    const savedSignup = readSignup();
+    if (savedSignup?.email) {
+      status.textContent = `You are already subscribed as ${savedSignup.email}.`;
+      status.style.color = 'var(--accent)';
+    }
+
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
+
+      const emailInput = form.elements.namedItem('email');
+      const email = emailInput instanceof HTMLInputElement ? normalizeEmail(emailInput.value) : '';
+
+      if (!email) {
+        status.textContent = 'Please enter a valid email.';
+        status.style.color = 'var(--text-muted)';
+        return;
+      }
+
+      const saved = readSignup();
+      if (saved?.email === email) {
+        saveSignup(email);
+        status.textContent = 'You are already subscribed. No need to sign up again.';
+        status.style.color = 'var(--accent)';
+        return;
+      }
 
       status.textContent = 'Submitting...';
       status.style.color = 'var(--text-muted)';
@@ -101,11 +149,19 @@ const {
           throw new Error('Request failed');
         }
 
+        saveSignup(email);
         status.textContent = 'Thanks! You are subscribed.';
         status.style.color = 'var(--accent)';
         form.reset();
         window.location.href = '/newsletter/thanks/';
       } catch {
+        if (saved?.email === email) {
+          saveSignup(email);
+          status.textContent = 'You are already subscribed. No duplicate signup was created.';
+          status.style.color = 'var(--accent)';
+          return;
+        }
+
         status.textContent = 'Retrying with standard submit...';
         status.style.color = 'var(--text-muted)';
         form.submit();

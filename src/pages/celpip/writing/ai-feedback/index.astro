@@ -1,0 +1,156 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import {
+  CELPIP_PROMPT_TOTAL,
+  CELPIP_TASK_CONFIG,
+  CELPIP_WRITING_PRICE_CAD,
+} from '../../../../lib/celpipWritingData.mjs';
+
+const task1 = CELPIP_TASK_CONFIG.task1;
+const task2 = CELPIP_TASK_CONFIG.task2;
+const promptTotal = CELPIP_PROMPT_TOTAL;
+---
+
+<Layout
+  title="Have Your CELPIP Writing Scored by AI | Timed Practice + Analysis"
+  description="Monthly CELPIP writing AI subscription with timed Task 1 and Task 2 practice, scoring, and instant cancellation."
+>
+  <section class="section">
+    <div class="hero" style={`--hero-bg: url('/heroes/writing.png');`}>
+      <div class="hero-content">
+        <span class="pill">New paid service</span>
+        <h1>Have your CELPIP writing scored and analyzed by AI</h1>
+        <p class="muted" style="max-width: 68ch;">
+          Practice both CELPIP writing tasks under official time limits, upload or paste your response, and get AI marks with detailed analysis.
+        </p>
+        <p class="muted" style="max-width: 68ch; margin-top: var(--s-2);">
+          <strong>CA$5/month.</strong> Includes {promptTotal} writing prompts and CLB 9+ sample responses for every prompt, with level rationale.
+        </p>
+        <div class="cluster">
+          <button id="buy-writing-lab" class="btn btn-primary" type="button">
+            Start for CA${CELPIP_WRITING_PRICE_CAD}/month →
+          </button>
+          <a class="btn" href="/tutoring">Book a class for human feedback →</a>
+        </div>
+        <p id="checkout-status" class="muted" style="margin: var(--s-2) 0 0; min-height: 1.2rem;"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="grid grid-3">
+      <article class="card">
+        <h2 style="margin-top: 0;">Task 1</h2>
+        <p><strong>{task1.label}</strong></p>
+        <p class="muted" style="margin-bottom: 0;">{task1.minutes} minutes · {task1.targetWords}</p>
+      </article>
+      <article class="card">
+        <h2 style="margin-top: 0;">Task 2</h2>
+        <p><strong>{task2.label}</strong></p>
+        <p class="muted" style="margin-bottom: 0;">{task2.minutes} minutes · {task2.targetWords}</p>
+      </article>
+      <article class="card">
+        <h2 style="margin-top: 0;">Feedback</h2>
+        <p><strong>Estimated CELPIP level</strong></p>
+        <p class="muted" style="margin-bottom: 0;">AI strengths, issues, rewrites, and next steps</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface" style="padding: var(--s-6);">
+      <div class="grid grid-2" style="align-items:start; gap: var(--s-5);">
+        <div>
+          <h2>What students can do inside the lab</h2>
+          <div class="checklist">
+            <div class="check"><div class="icon">1</div><div><strong>Generate a prompt</strong><span>Choose from Task 1 email prompts and Task 2 survey prompts.</span></div></div>
+            <div class="check"><div class="icon">2</div><div><strong>Open a CLB 9+ sample response</strong><span>Every prompt includes target level and why it meets that level.</span></div></div>
+            <div class="check"><div class="icon">3</div><div><strong>Write under pressure</strong><span>Use the built-in timer for the official task length.</span></div></div>
+            <div class="check"><div class="icon">4</div><div><strong>Upload or paste a response</strong><span>Type directly or load a plain-text file.</span></div></div>
+            <div class="check"><div class="icon">5</div><div><strong>Receive AI analysis</strong><span>See estimated level, trait scores, revision advice, and rewrite suggestions.</span></div></div>
+          </div>
+        </div>
+
+        <div class="card" style="border: 2px solid var(--accent);">
+          <h3 style="margin-top: 0;">Included in your monthly plan</h3>
+          <ul class="muted" style="margin: 0 0 0 var(--s-4);">
+            <li>Access to both CELPIP writing task types</li>
+            <li>Official-style timed practice</li>
+            <li><strong>{promptTotal} prompt bank</strong> for repeated practice</li>
+            <li><strong>Sample response included for every prompt</strong></li>
+            <li>AI scoring + analysis based on CELPIP level descriptors</li>
+            <li>Word count tracking and revision guidance</li>
+            <li><strong>Cancel instantly anytime</strong> from inside your dashboard</li>
+            <li><strong>No contracts. No hidden fees.</strong></li>
+          </ul>
+          <div style="height: var(--s-4);"></div>
+          <button id="buy-writing-lab-secondary" class="btn btn-primary" type="button" style="width: 100%;">
+            Subscribe for CA${CELPIP_WRITING_PRICE_CAD}/month
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const buyButtons = [
+      document.getElementById('buy-writing-lab'),
+      document.getElementById('buy-writing-lab-secondary'),
+    ].filter(Boolean);
+    const status = document.getElementById('checkout-status');
+
+    const readApiResponse = async (response: Response) => {
+      const contentType = response.headers.get('content-type') || '';
+      if (contentType.includes('application/json')) {
+        return response.json();
+      }
+
+      const text = await response.text();
+      const isHtml = /<!doctype html>|<html/i.test(text);
+      if (isHtml) {
+        throw new Error(
+          'Checkout endpoint returned HTML instead of JSON. Start the site with Netlify Functions enabled (use `netlify dev`) and confirm Stripe env vars are set.'
+        );
+      }
+
+      try {
+        return JSON.parse(text);
+      } catch {
+      }
+
+      throw new Error(text?.trim() || 'Unexpected response from checkout endpoint.');
+    };
+
+    const startCheckout = async () => {
+      if (status) status.textContent = 'Redirecting to secure checkout…';
+      buyButtons.forEach((button) => {
+        if (button instanceof HTMLButtonElement) button.disabled = true;
+      });
+
+      try {
+        const response = await fetch('/.netlify/functions/create-celpip-writing-checkout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ product: 'celpip-writing-ai' }),
+        });
+        const data = await readApiResponse(response);
+        if (!response.ok || !data.checkoutUrl) {
+          throw new Error(data.error || 'Unable to start checkout');
+        }
+        window.location.href = data.checkoutUrl;
+      } catch (error) {
+        const message = error instanceof Error ? error.message : 'Unable to start checkout.';
+        if (status) status.textContent = message;
+        buyButtons.forEach((button) => {
+          if (button instanceof HTMLButtonElement) button.disabled = false;
+        });
+      }
+    };
+
+    buyButtons.forEach((button) => button?.addEventListener('click', startCheckout));
+
+    if (new URLSearchParams(window.location.search).get('canceled') === '1' && status) {
+      status.textContent = 'Checkout was canceled. You can try again anytime.';
+    }
+  </script>
+</Layout>

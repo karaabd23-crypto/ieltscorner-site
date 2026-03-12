@@ -1,0 +1,25 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import CelpipWritingLab from '../../../../components/CelpipWritingLab.astro';
+---
+
+<Layout
+  title="CELPIP Writing Score & Analysis — Access Unlocked"
+  description="Monthly CELPIP writing AI plan unlocked with secure billing and instant cancellation controls."
+>
+  <section class="section">
+    <div class="hero" style={`--hero: #f2f1ef; --hero-bg: url('/heroes/writing.png'); --hero-bg-opacity: 0.22;`}>
+      <div class="hero-content">
+        <span class="pill">✍️ CELPIP Writing Score & Analysis</span>
+        <h1>Practice under exam timing, then get AI feedback.</h1>
+        <p class="muted" style="max-width: 64ch;">
+          Your monthly subscription unlocks a timed writing lab for CELPIP Task 1 and Task 2. You can manage billing in Stripe or cancel instantly anytime.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <CelpipWritingLab />
+  </section>
+</Layout>

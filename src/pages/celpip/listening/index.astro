@@ -1,5 +1,6 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
+import CelpipWritingBanner from "../../../components/CelpipWritingBanner.astro";
 import { getCollection } from "astro:content";
 import { getLessonTier, getPublicLessonTitle } from "../../../lib/lessonLevel";
 
@@ -25,11 +26,12 @@ const skillLessons = (
       <div class="hero-content">
         <span class="pill">🎧 CELPIP Listening</span>
         <h1>Understand clearly, catch every detail, score higher</h1>
-        <p class="muted" style="max-width: 65ch;">
-          Master CELPIP listening: multiple choice, matching, and note-taking. Learn prediction, active listening, and distraction recovery.
-        </p>
       </div>
     </div>
+  </section>
+
+  <section class="section-sm">
+    <CelpipWritingBanner />
   </section>
 
   <section class="section-sm">

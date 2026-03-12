@@ -1,5 +1,6 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
+import CelpipWritingBanner from "../../../components/CelpipWritingBanner.astro";
 import { getCollection } from "astro:content";
 import { getLessonTier, getPublicLessonTitle } from "../../../lib/lessonLevel";
 
@@ -25,11 +26,12 @@ const skillLessons = (
       <div class="hero-content">
         <span class="pill">🗣️ CELPIP Speaking</span>
         <h1>Know what to say, speak clearly, score higher</h1>
-        <p class="muted" style="max-width: 65ch;">
-          Master CELPIP speaking with task templates, fluency strategies, and confidence-building techniques. Record, practice, and improve.
-        </p>
       </div>
     </div>
+  </section>
+
+  <section class="section-sm">
+    <CelpipWritingBanner />
   </section>
 
   <section class="section-sm">
@@ -41,6 +43,44 @@ const skillLessons = (
         <a class="btn btn-primary" href="/celpip/speaking">Speaking</a>
         <a class="btn" href="/celpip/writing">Writing</a>
         <a class="btn" href="/lessons">All Lessons</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface" style="padding: var(--s-6); border: 2px solid var(--accent);">
+      <h2 style="margin-top: 0;">All CELPIP Speaking services in one place</h2>
+      <p class="muted" style="margin-top: 0; max-width: 72ch;">
+        Use this page as your speaking hub: free lessons, guided coaching, webinar training, and skill-building resources from one location.
+      </p>
+
+      <div class="grid grid-2" style="margin-top: var(--s-4);">
+        <article class="card" style="display:flex; flex-direction:column; gap: var(--s-2);">
+          <h3 style="margin: 0;">🎙️ Free Speaking Lessons</h3>
+          <p class="muted" style="margin:0;">Task-by-task strategies, structure templates, and fluency support for CELPIP speaking.</p>
+          <a class="btn btn-primary" href="/lessons/celpip/speaking">Browse speaking lessons →</a>
+        </article>
+
+        <article class="card" style="display:flex; flex-direction:column; gap: var(--s-2);">
+          <h3 style="margin: 0;">🧑‍🏫 Private Speaking Coaching</h3>
+          <p class="muted" style="margin:0;">One-on-one feedback on pronunciation, fluency, structure, and confidence under pressure.</p>
+          <a class="btn" href="/tutoring">Book speaking coaching →</a>
+        </article>
+
+        <article class="card" style="display:flex; flex-direction:column; gap: var(--s-2);">
+          <h3 style="margin: 0;">🎓 Weekly CELPIP Webinar</h3>
+          <p class="muted" style="margin:0;">Live strategy sessions with practical examples and Q&A.</p>
+          <a class="btn" href="/webinar">Join webinar sessions →</a>
+        </article>
+
+        <article class="card" style="display:flex; flex-direction:column; gap: var(--s-2);">
+          <h3 style="margin: 0;">✍️ Add Writing Support</h3>
+          <p class="muted" style="margin:0;">Build your full CELPIP score by combining speaking prep with writing practice and feedback.</p>
+          <div class="cluster">
+            <a class="btn" href="/celpip/writing">Writing hub →</a>
+            <a class="btn" href="/celpip/writing/ai-feedback">AI score & analysis →</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>

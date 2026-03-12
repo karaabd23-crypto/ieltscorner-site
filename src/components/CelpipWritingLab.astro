@@ -1,0 +1,619 @@
+---
+import {
+  CELPIP_PROMPT_BANK,
+  CELPIP_PROMPT_TOTAL,
+  CELPIP_TASK_CONFIG,
+} from '../lib/celpipWritingData.mjs';
+
+const promptBank = CELPIP_PROMPT_BANK;
+const promptTotal = CELPIP_PROMPT_TOTAL;
+const taskConfig = CELPIP_TASK_CONFIG;
+---
+
+<section class="surface" style="padding: var(--s-6);">
+  <div id="writing-lab-validation">
+    <p class="muted" style="margin: 0;">Checking your payment and unlocking CELPIP writing score and analysis…</p>
+  </div>
+
+  <div id="writing-lab-error" style="display:none;">
+    <div class="card" style="border-left: 4px solid #dc3545;">
+      <h2 style="margin-top: 0; color: #dc3545;">Unable to unlock the writing lab</h2>
+      <p class="muted" id="writing-lab-error-text">Your payment could not be validated.</p>
+      <div class="cluster">
+        <a class="btn btn-primary" href="/celpip/writing/ai-feedback">Back to the service page</a>
+        <a class="btn" href="/pricing">View pricing</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="writing-lab-app" style="display:none;">
+    <div class="cluster" style="justify-content: space-between; align-items: flex-start; gap: var(--s-3);">
+      <div>
+        <span class="pill">Paid access unlocked</span>
+        <h2 style="margin: var(--s-2) 0 0;">Timed CELPIP Writing Practice</h2>
+        <p class="muted" style="margin: var(--s-2) 0 0; max-width: 70ch;">
+          Choose a task, start the timer, write your answer, then get an AI estimate for your CELPIP level with detailed strengths, weaknesses, and revision advice.
+        </p>
+        <p class="muted" style="margin: var(--s-2) 0 0; max-width: 70ch;">
+          Your plan includes {promptTotal} prompts (Task 1 + Task 2) and a sample response for every prompt. Secure billing is handled by Stripe.
+        </p>
+        <div class="cluster" style="margin-top: var(--s-2); gap: var(--s-2);">
+          <button id="manage-billing" class="btn" type="button">Manage billing (Stripe)</button>
+          <button id="cancel-subscription-now" class="btn" type="button">Cancel now (instant)</button>
+        </div>
+      </div>
+      <div class="surface" style="padding: var(--s-3); min-width: 220px;">
+        <p style="margin: 0; font-weight: 700;">Timer</p>
+        <div id="writing-lab-timer" style="font-size: 2rem; font-weight: 800; margin-top: var(--s-1);">27:00</div>
+        <p id="writing-lab-timer-note" class="muted" style="margin: var(--s-1) 0 0;">Task 1 time limit</p>
+      </div>
+    </div>
+
+    <div style="height: var(--s-5);"></div>
+
+    <div class="grid grid-2" style="align-items: start; gap: var(--s-5);">
+      <div class="card" style="display: grid; gap: var(--s-4);">
+        <div>
+          <label for="task-select"><strong>Choose task</strong></label>
+          <select id="task-select" style="margin-top: var(--s-1); width: 100%; padding: var(--s-2); border-radius: 8px; border: 1px solid var(--border);">
+            <option value="task1">Task 1 · Email</option>
+            <option value="task2">Task 2 · Survey response</option>
+          </select>
+        </div>
+
+        <div class="cluster" style="gap: var(--s-2);">
+          <button id="prompt-randomize" class="btn btn-primary" type="button">New prompt</button>
+          <button id="timer-start" class="btn" type="button">Start timer</button>
+          <button id="timer-reset" class="btn" type="button">Reset timer</button>
+        </div>
+
+        <div class="surface" style="padding: var(--s-4);">
+          <div class="cluster" style="justify-content: space-between; align-items: baseline;">
+            <h3 id="prompt-title" style="margin: 0;">Prompt title</h3>
+            <span id="task-meta" class="pill">150–200 words</span>
+          </div>
+          <p id="prompt-text" style="margin: var(--s-3) 0 0;"></p>
+          <ul id="prompt-points" class="muted" style="margin: var(--s-2) 0 0 var(--s-4);"></ul>
+          <details id="sample-response-wrap" style="margin-top: var(--s-3);">
+            <summary style="cursor: pointer; font-weight: 700;">View sample response</summary>
+            <p id="sample-response-level" class="muted" style="margin: var(--s-2) 0 0; font-weight: 700;"></p>
+            <ul id="sample-response-why" class="muted" style="margin: var(--s-1) 0 0 var(--s-4);"></ul>
+            <p id="sample-response-text" class="muted" style="margin: var(--s-2) 0 0; white-space: pre-line;"></p>
+          </details>
+        </div>
+
+        <div>
+          <div class="cluster" style="justify-content: space-between; align-items: baseline;">
+            <label for="response-text"><strong>Your response</strong></label>
+            <span id="word-count" class="pill">0 words</span>
+          </div>
+          <textarea id="response-text" rows="16" style="width: 100%; margin-top: var(--s-1); padding: var(--s-3); border-radius: 10px; border: 1px solid var(--border); font: inherit; line-height: 1.55;" placeholder="Write your CELPIP response here or upload a .txt/.md file below."></textarea>
+          <div class="cluster" style="margin-top: var(--s-2); gap: var(--s-2);">
+            <input id="response-file" type="file" accept=".txt,.md,text/plain" />
+            <button id="analyze-response" class="btn btn-primary" type="button">Get AI marks & analysis</button>
+          </div>
+          <p id="lab-status" class="muted" style="min-height: 1.2rem; margin: var(--s-2) 0 0;"></p>
+        </div>
+      </div>
+
+      <div class="stack" style="gap: var(--s-4);">
+        <div class="card">
+          <h3 style="margin-top: 0;">How the scoring works</h3>
+          <ul class="muted" style="margin: 0 0 0 var(--s-4);">
+            <li>Task 1 focuses on purpose, tone, and completeness.</li>
+            <li>Task 2 focuses on clear opinion, support, and comparison.</li>
+            <li>The AI estimates a CELPIP level on a 1–12 scale.</li>
+            <li>You receive strengths, problem areas, and revision advice.</li>
+          </ul>
+        </div>
+
+        <div class="card" id="results-card" style="display:none;">
+          <div class="cluster" style="justify-content: space-between; align-items: baseline; gap: var(--s-2);">
+            <h3 style="margin: 0;">AI score report</h3>
+            <span id="results-level" class="pill">Level --</span>
+          </div>
+          <p id="results-summary" class="muted" style="margin: var(--s-2) 0 0;"></p>
+
+          <div class="surface" style="padding: var(--s-3); margin-top: var(--s-3);">
+            <p id="results-sample-hint" class="muted" style="margin: 0 0 var(--s-2) 0;">
+              Compare your response with the sample for this prompt.
+            </p>
+            <button id="results-open-sample" class="btn" type="button">Compare with sample response ↓</button>
+          </div>
+
+          <div id="results-traits" class="grid grid-2" style="margin-top: var(--s-3); gap: var(--s-2);"></div>
+
+          <div style="margin-top: var(--s-4);">
+            <h4 style="margin-bottom: var(--s-2);">What is working</h4>
+            <ul id="results-strengths" class="muted" style="margin: 0 0 0 var(--s-4);"></ul>
+          </div>
+
+          <div style="margin-top: var(--s-4);">
+            <h4 style="margin-bottom: var(--s-2);">What to fix next</h4>
+            <ul id="results-priorities" class="muted" style="margin: 0 0 0 var(--s-4);"></ul>
+          </div>
+
+          <div style="margin-top: var(--s-4);">
+            <h4 style="margin-bottom: var(--s-2);">Suggested rewrites</h4>
+            <ul id="results-rewrites" class="muted" style="margin: 0 0 0 var(--s-4);"></ul>
+          </div>
+
+          <div style="margin-top: var(--s-4);">
+            <h4 style="margin-bottom: var(--s-2);">Next practice steps</h4>
+            <ul id="results-steps" class="muted" style="margin: 0 0 0 var(--s-4);"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script define:vars={{ promptBank, promptTotal, taskConfig }}>
+    (() => {
+      const storageKey = 'ieltscorner.celpipWritingLab';
+      const adminTokenStorageKey = 'ieltscorner.celpipWritingAdminToken';
+      const validationEl = document.getElementById('writing-lab-validation');
+      const errorEl = document.getElementById('writing-lab-error');
+      const errorText = document.getElementById('writing-lab-error-text');
+      const appEl = document.getElementById('writing-lab-app');
+      const taskSelect = document.getElementById('task-select');
+      const promptTitle = document.getElementById('prompt-title');
+      const promptText = document.getElementById('prompt-text');
+      const promptPoints = document.getElementById('prompt-points');
+      const sampleResponseWrap = document.getElementById('sample-response-wrap');
+      const sampleResponseLevel = document.getElementById('sample-response-level');
+      const sampleResponseWhy = document.getElementById('sample-response-why');
+      const sampleResponseText = document.getElementById('sample-response-text');
+      const taskMeta = document.getElementById('task-meta');
+      const responseText = document.getElementById('response-text');
+      const responseFile = document.getElementById('response-file');
+      const analyzeBtn = document.getElementById('analyze-response');
+      const randomizeBtn = document.getElementById('prompt-randomize');
+      const timerStartBtn = document.getElementById('timer-start');
+      const timerResetBtn = document.getElementById('timer-reset');
+      const timerEl = document.getElementById('writing-lab-timer');
+      const timerNote = document.getElementById('writing-lab-timer-note');
+      const wordCountEl = document.getElementById('word-count');
+      const statusEl = document.getElementById('lab-status');
+      const manageBillingBtn = document.getElementById('manage-billing');
+      const cancelNowBtn = document.getElementById('cancel-subscription-now');
+      const resultsCard = document.getElementById('results-card');
+      const resultsLevel = document.getElementById('results-level');
+      const resultsSummary = document.getElementById('results-summary');
+      const resultsSampleHint = document.getElementById('results-sample-hint');
+      const resultsOpenSampleBtn = document.getElementById('results-open-sample');
+      const resultsTraits = document.getElementById('results-traits');
+      const resultsStrengths = document.getElementById('results-strengths');
+      const resultsPriorities = document.getElementById('results-priorities');
+      const resultsRewrites = document.getElementById('results-rewrites');
+      const resultsSteps = document.getElementById('results-steps');
+
+      let sessionId = '';
+      let customerId = '';
+      let subscriptionId = '';
+      let timerHandle = null;
+      let activeTask = 'task1';
+      let activePromptIndex = 0;
+      let remainingSeconds = taskConfig.task1.minutes * 60;
+      let startedAt = null;
+
+      const normalizeState = () => ({
+        task: activeTask,
+        promptIndex: activePromptIndex,
+        responseText: responseText instanceof HTMLTextAreaElement ? responseText.value : '',
+        remainingSeconds,
+        startedAt,
+      });
+
+      const saveState = () => {
+        try {
+          localStorage.setItem(storageKey, JSON.stringify(normalizeState()));
+        } catch {}
+      };
+
+      const readState = () => {
+        try {
+          const raw = localStorage.getItem(storageKey);
+          return raw ? JSON.parse(raw) : null;
+        } catch {
+          return null;
+        }
+      };
+
+      const formatTime = (seconds) => {
+        const mins = String(Math.max(0, Math.floor(seconds / 60))).padStart(2, '0');
+        const secs = String(Math.max(0, seconds % 60)).padStart(2, '0');
+        return `${mins}:${secs}`;
+      };
+
+      const countWords = (value) => {
+        const text = String(value || '').trim();
+        if (!text) return 0;
+        return text.split(/\s+/).filter(Boolean).length;
+      };
+
+      const currentPrompt = () => promptBank[activeTask][activePromptIndex];
+
+      const renderPrompt = () => {
+        const task = taskConfig[activeTask];
+        const prompt = currentPrompt();
+        if (promptTitle) promptTitle.textContent = prompt.title;
+        if (taskMeta) taskMeta.textContent = `${task.targetWords} · ${task.minutes} min`;
+        if (timerNote) timerNote.textContent = `${task.label} time limit`;
+        if (promptText) {
+          promptText.textContent = prompt.scenario || prompt.question || '';
+        }
+        if (sampleResponseText) {
+          sampleResponseText.textContent = prompt.sampleResponse || '';
+        }
+        if (sampleResponseLevel) {
+          sampleResponseLevel.textContent = prompt.sampleLevel
+            ? `Sample level: ${prompt.sampleLevel}`
+            : '';
+        }
+        if (sampleResponseWhy) {
+          sampleResponseWhy.innerHTML = '';
+          const reasons = Array.isArray(prompt.sampleLevelWhy) ? prompt.sampleLevelWhy : [];
+          reasons.forEach((reason) => {
+            const li = document.createElement('li');
+            li.textContent = reason;
+            sampleResponseWhy.appendChild(li);
+          });
+        }
+        if (sampleResponseWrap) {
+          sampleResponseWrap.style.display = prompt.sampleResponse ? 'block' : 'none';
+        }
+        if (promptPoints) {
+          promptPoints.innerHTML = '';
+          const points = prompt.instructions || (prompt.options ? [`Choose one option: ${prompt.options.join(' or ')}`, 'State your opinion clearly.', 'Support your choice with reasons and examples.'] : []);
+          points.forEach((point) => {
+            const li = document.createElement('li');
+            li.textContent = point;
+            promptPoints.appendChild(li);
+          });
+        }
+      };
+
+      const renderTimer = () => {
+        if (timerEl) timerEl.textContent = formatTime(remainingSeconds);
+      };
+
+      const resetTimerForTask = () => {
+        remainingSeconds = taskConfig[activeTask].minutes * 60;
+        startedAt = null;
+        if (timerHandle) {
+          clearInterval(timerHandle);
+          timerHandle = null;
+        }
+        renderTimer();
+        saveState();
+      };
+
+      const tick = () => {
+        remainingSeconds -= 1;
+        if (remainingSeconds <= 0) {
+          remainingSeconds = 0;
+          clearInterval(timerHandle);
+          timerHandle = null;
+          if (statusEl) {
+            statusEl.textContent = 'Time is up. You can still submit for analysis.';
+          }
+        }
+        renderTimer();
+        saveState();
+      };
+
+      const startTimer = () => {
+        if (timerHandle) return;
+        startedAt = Date.now();
+        timerHandle = window.setInterval(tick, 1000);
+        saveState();
+      };
+
+      const setStatus = (message, isError = false) => {
+        if (!statusEl) return;
+        statusEl.textContent = message;
+        statusEl.style.color = isError ? '#b42318' : 'var(--text-muted)';
+      };
+
+        const readApiResponse = async (response) => {
+          const contentType = response.headers.get('content-type') || '';
+          if (contentType.includes('application/json')) {
+            return response.json();
+          }
+
+          const text = await response.text();
+          const isHtml = /<!doctype html>|<html/i.test(text);
+          if (isHtml) {
+            throw new Error(
+              'Service endpoint returned HTML instead of JSON. Run with Netlify Functions enabled (`netlify dev`) and verify required env vars.'
+            );
+          }
+
+          try {
+            return JSON.parse(text);
+          } catch {
+          }
+
+          throw new Error(text?.trim() || 'Unexpected API response.');
+        };
+
+      const renderResultsList = (el, items) => {
+        if (!el) return;
+        el.innerHTML = '';
+        (items || []).forEach((item) => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          el.appendChild(li);
+        });
+      };
+
+      const openSampleForComparison = () => {
+        if (sampleResponseWrap instanceof HTMLDetailsElement) {
+          sampleResponseWrap.open = true;
+          sampleResponseWrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      };
+
+      const renderResults = (report) => {
+        if (!resultsCard) return;
+        resultsCard.style.display = 'block';
+        if (resultsLevel) resultsLevel.textContent = `Estimated CELPIP Level ${report.overallLevel}`;
+        if (resultsSummary) resultsSummary.textContent = report.overallSummary || report.descriptor || '';
+        const prompt = currentPrompt();
+        if (resultsSampleHint) {
+          resultsSampleHint.textContent = prompt?.sampleLevel
+            ? `Compare your response with the ${prompt.sampleLevel} sample for this exact prompt.`
+            : 'Compare your response with the sample for this exact prompt.';
+        }
+        if (resultsTraits) {
+          resultsTraits.innerHTML = '';
+          Object.entries(report.traitScores || {}).forEach(([label, value]) => {
+            const card = document.createElement('div');
+            card.className = 'surface';
+            card.style.padding = 'var(--s-3)';
+            card.innerHTML = `<strong>${label}</strong><div style="margin-top:6px; font-size: 1.25rem; font-weight: 800;">${value}/12</div>`;
+            resultsTraits.appendChild(card);
+          });
+        }
+        renderResultsList(resultsStrengths, report.strengths);
+        renderResultsList(resultsPriorities, report.improvementPriorities);
+        renderResultsList(resultsRewrites, report.rewriteSuggestions);
+        renderResultsList(resultsSteps, report.nextPracticeSteps);
+
+        if (prompt?.sampleResponse) {
+          openSampleForComparison();
+        }
+      };
+
+      const updateWordCount = () => {
+        if (wordCountEl && responseText instanceof HTMLTextAreaElement) {
+          wordCountEl.textContent = `${countWords(responseText.value)} words`;
+        }
+      };
+
+      const loadSavedState = () => {
+        const saved = readState();
+        if (!saved) return;
+        if (saved.task && taskConfig[saved.task]) {
+          activeTask = saved.task;
+          if (taskSelect instanceof HTMLSelectElement) {
+            taskSelect.value = activeTask;
+          }
+        }
+        if (Number.isInteger(saved.promptIndex) && promptBank[activeTask][saved.promptIndex]) {
+          activePromptIndex = saved.promptIndex;
+        }
+        if (responseText instanceof HTMLTextAreaElement && typeof saved.responseText === 'string') {
+          responseText.value = saved.responseText;
+        }
+        if (typeof saved.remainingSeconds === 'number' && saved.remainingSeconds > 0) {
+          remainingSeconds = saved.remainingSeconds;
+        }
+        renderPrompt();
+        renderTimer();
+        updateWordCount();
+      };
+
+      const validatePaidAccess = async () => {
+        const params = new URLSearchParams(window.location.search);
+        const tokenFromQuery = (params.get('admin_token') || '').trim();
+        const disableAdmin = params.get('admin_mode') === 'off';
+
+        if (disableAdmin) {
+          localStorage.removeItem(adminTokenStorageKey);
+        }
+
+        if (tokenFromQuery) {
+          localStorage.setItem(adminTokenStorageKey, tokenFromQuery);
+          params.delete('admin_token');
+          const cleanQuery = params.toString();
+          const cleanUrl = `${window.location.pathname}${cleanQuery ? `?${cleanQuery}` : ''}${window.location.hash}`;
+          window.history.replaceState({}, '', cleanUrl);
+        }
+
+        const adminToken = (localStorage.getItem(adminTokenStorageKey) || '').trim();
+        sessionId = params.get('session_id') || params.get('checkout_session_id') || params.get('sessionId') || '';
+
+        if (!sessionId && !adminToken) {
+          if (validationEl) validationEl.style.display = 'none';
+          if (errorEl) errorEl.style.display = 'block';
+          if (errorText) errorText.textContent = 'Missing checkout session ID. Return to the writing service page and complete payment again.';
+          return;
+        }
+
+        try {
+          const response = await fetch('/.netlify/functions/validate-celpip-writing-session', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ sessionId, adminToken }),
+          });
+          const data = await readApiResponse(response);
+
+          if (!response.ok || !data.valid) {
+            throw new Error(data.reason || data.error || 'Payment validation failed');
+          }
+
+          sessionId = String(data.sessionId || sessionId || '').trim();
+          customerId = String(data.customerId || '');
+          subscriptionId = String(data.subscriptionId || '');
+
+          if (validationEl) validationEl.style.display = 'none';
+          if (appEl) appEl.style.display = 'block';
+          if (data.adminBypass) {
+            setStatus('Admin bypass mode is active on this browser.');
+          }
+          loadSavedState();
+        } catch (error) {
+          if (validationEl) validationEl.style.display = 'none';
+          if (errorEl) errorEl.style.display = 'block';
+          if (errorText) errorText.textContent = error?.message || 'Payment validation failed.';
+        }
+      };
+
+      const analyze = async () => {
+        if (!(responseText instanceof HTMLTextAreaElement)) return;
+
+        const answer = responseText.value.trim();
+        if (!answer) {
+          setStatus('Please write or upload a response first.', true);
+          return;
+        }
+
+        const prompt = currentPrompt();
+        const secondsSpent = (taskConfig[activeTask].minutes * 60) - remainingSeconds;
+
+        setStatus('Analyzing your response…');
+        if (analyzeBtn instanceof HTMLButtonElement) analyzeBtn.disabled = true;
+
+        try {
+          const response = await fetch('/.netlify/functions/evaluate-celpip-writing', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              sessionId,
+              adminToken: (localStorage.getItem(adminTokenStorageKey) || '').trim(),
+              taskType: activeTask,
+              promptId: prompt.id,
+              promptTitle: prompt.title,
+              promptText: prompt.scenario || prompt.question || '',
+              promptInstructions: prompt.instructions || prompt.options || [],
+              responseText: answer,
+              timeSpentSeconds: Math.max(0, secondsSpent),
+            }),
+          });
+
+          const data = await readApiResponse(response);
+          if (!response.ok) {
+            throw new Error(data.error || 'Evaluation failed');
+          }
+
+          renderResults(data.report);
+          setStatus('Analysis ready. Review the report and revise your response.');
+        } catch (error) {
+          setStatus(error?.message || 'Unable to analyze your response right now.', true);
+        } finally {
+          if (analyzeBtn instanceof HTMLButtonElement) analyzeBtn.disabled = false;
+        }
+      };
+
+      const manageBilling = async () => {
+        if (!customerId) {
+          setStatus('Billing customer ID is missing. Refresh this page and try again.', true);
+          return;
+        }
+
+        setStatus('Opening secure Stripe billing portal…');
+        if (manageBillingBtn instanceof HTMLButtonElement) manageBillingBtn.disabled = true;
+
+        try {
+          const response = await fetch('/.netlify/functions/create-celpip-writing-portal', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ customerId, sessionId }),
+          });
+          const data = await readApiResponse(response);
+          if (!response.ok || !data.portalUrl) {
+            throw new Error(data.error || 'Unable to open billing portal');
+          }
+          window.location.href = data.portalUrl;
+        } catch (error) {
+          const message = error instanceof Error ? error.message : 'Unable to open billing portal.';
+          setStatus(message, true);
+          if (manageBillingBtn instanceof HTMLButtonElement) manageBillingBtn.disabled = false;
+        }
+      };
+
+      const cancelInstantly = async () => {
+        const confirmed = window.confirm('Cancel now? This will cancel your subscription immediately.');
+        if (!confirmed) return;
+
+        setStatus('Canceling your subscription now…');
+        if (cancelNowBtn instanceof HTMLButtonElement) cancelNowBtn.disabled = true;
+
+        try {
+          const response = await fetch('/.netlify/functions/cancel-celpip-writing-subscription', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ sessionId, subscriptionId }),
+          });
+          const data = await readApiResponse(response);
+          if (!response.ok || !data.canceled) {
+            throw new Error(data.error || 'Unable to cancel subscription');
+          }
+          setStatus('Your subscription was canceled instantly. Access will now be removed on next request.');
+        } catch (error) {
+          const message = error instanceof Error ? error.message : 'Unable to cancel subscription.';
+          setStatus(message, true);
+          if (cancelNowBtn instanceof HTMLButtonElement) cancelNowBtn.disabled = false;
+        }
+      };
+
+      if (taskSelect instanceof HTMLSelectElement) {
+        taskSelect.addEventListener('change', () => {
+          activeTask = taskSelect.value;
+          activePromptIndex = 0;
+          renderPrompt();
+          resetTimerForTask();
+          saveState();
+        });
+      }
+
+      randomizeBtn?.addEventListener('click', () => {
+        activePromptIndex = Math.floor(Math.random() * promptBank[activeTask].length);
+        renderPrompt();
+        saveState();
+      });
+
+      timerStartBtn?.addEventListener('click', startTimer);
+      timerResetBtn?.addEventListener('click', resetTimerForTask);
+      analyzeBtn?.addEventListener('click', analyze);
+      manageBillingBtn?.addEventListener('click', manageBilling);
+      cancelNowBtn?.addEventListener('click', cancelInstantly);
+      resultsOpenSampleBtn?.addEventListener('click', openSampleForComparison);
+
+      if (responseText instanceof HTMLTextAreaElement) {
+        responseText.addEventListener('input', () => {
+          updateWordCount();
+          saveState();
+        });
+      }
+
+      if (responseFile instanceof HTMLInputElement) {
+        responseFile.addEventListener('change', async () => {
+          const file = responseFile.files?.[0];
+          if (!file || !(responseText instanceof HTMLTextAreaElement)) return;
+          const content = await file.text();
+          responseText.value = content;
+          updateWordCount();
+          saveState();
+          setStatus(`Loaded ${file.name}.`);
+        });
+      }
+
+      renderPrompt();
+      renderTimer();
+      updateWordCount();
+      validatePaidAccess();
+    })();
+  </script>
+</section>

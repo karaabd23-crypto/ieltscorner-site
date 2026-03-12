@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import CelpipWritingBanner from "../../components/CelpipWritingBanner.astro";
 ---
 
 <Layout
@@ -8,15 +9,11 @@ import Layout from "../../layouts/Layout.astro";
 >
   <section class="section">
     <!-- WEBINAR HERO SECTION -->
-    <div class="hero" style={`--hero-bg: linear-gradient(135deg, rgba(217, 72, 72, 0.8) 0%, rgba(217, 72, 72, 0.55) 100%), url('/heroes/celpip.png');`}>
+    <div class="hero" style={`--hero-bg: url('/heroes/celpip.png');`}>
       <div class="hero-content" style="text-align: center;">
         <span class="pill">📹 Live • Every Saturday • 6:00 PM PST</span>
 
         <h1>CELPIP Weekly Webinars</h1>
-
-        <p class="muted" style="max-width: 56ch;">
-          60-minute live sessions. Real strategies. Expert instruction. All four skills covered.
-        </p>
 
         <div class="cluster" style="margin-top: var(--s-3);">
           <a class="btn btn-primary" href="/webinar" style="font-size: 1.1rem; padding: var(--s-3) var(--s-5);">
@@ -26,7 +23,11 @@ import Layout from "../../layouts/Layout.astro";
       </div>
     </div>
 
-    <div style="height: var(--s-8);"></div>
+    <div style="height: var(--s-5);"></div>
+
+    <CelpipWritingBanner />
+
+    <div style="height: var(--s-5);"></div>
 
     <!-- WEBINAR BENEFITS -->
     <div class="surface feature" style="border: 2px solid var(--accent); padding: var(--s-6);">

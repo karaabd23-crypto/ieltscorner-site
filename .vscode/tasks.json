@@ -6,6 +6,12 @@
 			"type": "shell",
 			"command": "npm run dev",
 			"isBackground": true
+		},
+		{
+			"label": "Dev Server",
+			"type": "shell",
+			"command": "npm run dev",
+			"isBackground": true
 		}
 	]
 }

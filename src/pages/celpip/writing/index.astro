@@ -21,13 +21,10 @@ const skillLessons = (
   description="CELPIP writing strategies for task response, organization, and grammar. Master task 1 email and task 2 survey response with clear templates and examples."
 >
   <section class="section">
-    <div class="hero" style={`--hero-bg: url('/heroes/writing.png');`}>
+    <div class="hero" style={`--hero: #f2f1ef; --hero-bg: url('/heroes/writing.png');`}>
       <div class="hero-content">
         <span class="pill">✍️ CELPIP Writing</span>
         <h1>Organize your ideas, express clearly, score higher</h1>
-        <p class="muted" style="max-width: 65ch;">
-          Master CELPIP writing with templates, organization strategies, and grammar focus. Task 1 and Task 2 explained.
-        </p>
       </div>
     </div>
   </section>
@@ -41,6 +38,44 @@ const skillLessons = (
         <a class="btn" href="/celpip/speaking">Speaking</a>
         <a class="btn btn-primary" href="/celpip/writing">Writing</a>
         <a class="btn" href="/lessons">All Lessons</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface" style="padding: var(--s-6); border: 2px solid var(--accent);">
+      <h2 style="margin-top: 0;">All CELPIP Writing services in one place</h2>
+      <p class="muted" style="margin-top: 0; max-width: 72ch;">
+        Start with free writing lessons, get your writing scored by AI under timed conditions, then book a class for human feedback when you need deeper support.
+      </p>
+
+      <div class="grid grid-2" style="margin-top: var(--s-4);">
+        <article class="card" style="display:flex; flex-direction:column; gap: var(--s-2);">
+          <h3 style="margin: 0;">✍️ AI Writing Score & Analysis</h3>
+          <p class="muted" style="margin:0;">Timed Task 1 + Task 2 practice with AI level estimate, trait scores, and revision advice.</p>
+          <a class="btn btn-primary" href="/celpip/writing/ai-feedback">Get your writing scored by AI →</a>
+        </article>
+
+        <article class="card" style="display:flex; flex-direction:column; gap: var(--s-2);">
+          <h3 style="margin: 0;">🧑‍🏫 Book a Writing Class</h3>
+          <p class="muted" style="margin:0;">Get direct human feedback during private classes focused on your CELPIP writing performance.</p>
+          <a class="btn" href="/tutoring">Book a class for human feedback →</a>
+        </article>
+
+        <article class="card" style="display:flex; flex-direction:column; gap: var(--s-2);">
+          <h3 style="margin: 0;">📚 Free Writing Lessons</h3>
+          <p class="muted" style="margin:0;">Templates, structure models, and grammar support for CELPIP writing tasks.</p>
+          <a class="btn" href="/lessons/celpip/writing">Browse writing lessons →</a>
+        </article>
+
+        <article class="card" style="display:flex; flex-direction:column; gap: var(--s-2);">
+          <h3 style="margin: 0;">🎓 Tutoring + Webinar</h3>
+          <p class="muted" style="margin:0;">Private coaching and weekly CELPIP webinar sessions for guided improvement.</p>
+          <div class="cluster">
+            <a class="btn" href="/tutoring">Private tutoring →</a>
+            <a class="btn" href="/webinar">Weekly webinar →</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -120,10 +155,11 @@ const skillLessons = (
       <div class="surface" style="padding: var(--s-6);">
         <div class="stack" style="gap: var(--s-4); text-align: center;">
           <h2>Ready to improve your writing?</h2>
-          <p class="muted">Practice with real CELPIP writing tasks and get structured feedback.</p>
+          <p class="muted">Practice with real CELPIP writing tasks, get timed AI feedback, then book a class for human guidance.</p>
           <div class="cluster" style="justify-content: center;">
             <a class="btn btn-primary" href="/lessons/celpip/writing">Free writing lessons →</a>
-            <a class="btn" href="/essay-correction">Essay feedback service →</a>
+            <a class="btn" href="/celpip/writing/ai-feedback">AI score & analysis →</a>
+            <a class="btn" href="/tutoring">Book a writing class →</a>
           </div>
         </div>
       </div>

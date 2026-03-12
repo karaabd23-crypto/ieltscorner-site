@@ -23,10 +23,6 @@ const homeKeywords = "IELTS preparation, CELPIP test, Band 7+ IELTS, CLB 9+ CELP
 
         <h1>Learn the English you need for a higher test score.</h1>
 
-        <p>
-          Free lessons for grammar, vocabulary, writing, and speaking. Everything is focused on IELTS and CELPIP tests.
-        </p>
-
         <div class="cluster" style="margin-top: var(--s-2);">
           <a class="btn btn-primary" href="/lessons">Start learning →</a>
           <a class="btn btn-ghost" href="/tutoring">Get a tutor</a>
@@ -35,6 +31,38 @@ const homeKeywords = "IELTS preparation, CELPIP test, Band 7+ IELTS, CLB 9+ CELP
     </div>
 
     <!-- breathing room -->
+    <div style="height: var(--s-8);"></div>
+
+    <!-- CELPIP SKILL HUBS -->
+    <div class="surface feature" style="border: 2px solid var(--accent);">
+      <div class="feature-grid">
+        <div class="stack">
+          <span class="pill">⭐ Popular shortcuts</span>
+          <h2>Go directly to CELPIP Writing & Speaking hubs</h2>
+          <p class="muted" style="max-width: 60ch;">
+            Each hub combines all related services in one place: free lessons, paid tools, tutoring, and live webinar support.
+          </p>
+        </div>
+
+        <div class="grid grid-2" style="gap: var(--s-3);">
+          <a class="hub-link-card hub-link-card--writing" href="/celpip/writing" aria-label="Open CELPIP Writing Hub">
+            <div class="card hub-link-card__inner">
+              <h3 style="margin-top: 0;">✍️ Writing Hub</h3>
+              <p class="muted" style="margin-bottom: 0;">Get your writing scored by AI, then book a class for human feedback, lessons, and coaching.</p>
+              <span class="hub-link-card__cta">Open writing hub →</span>
+            </div>
+          </a>
+          <a class="hub-link-card hub-link-card--speaking" href="/celpip/speaking" aria-label="Open CELPIP Speaking Hub">
+            <div class="card hub-link-card__inner">
+              <h3 style="margin-top: 0;">🗣️ Speaking Hub</h3>
+              <p class="muted" style="margin-bottom: 0;">Task strategies, speaking lessons, tutoring, and webinar support.</p>
+              <span class="hub-link-card__cta">Open speaking hub →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
     <div style="height: var(--s-8);"></div>
 
     <!-- TOP CATEGORY CARDS -->
@@ -200,3 +228,76 @@ const homeKeywords = "IELTS preparation, CELPIP test, Band 7+ IELTS, CLB 9+ CELP
     <div style="height: var(--s-6);"></div>
   </section>
 </Layout>
+
+<style>
+  .hub-link-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    border-radius: var(--radius-sm);
+    transform: translateY(0);
+    transition: transform 220ms ease, box-shadow 220ms ease;
+    animation: hubFloat 4.5s ease-in-out infinite;
+  }
+
+  .hub-link-card__inner {
+    height: 100%;
+    border-left: 4px solid var(--accent);
+    transition: border-color 220ms ease, background 220ms ease;
+  }
+
+  .hub-link-card--speaking {
+    animation-delay: 0.35s;
+  }
+
+  .hub-link-card--speaking .hub-link-card__inner {
+    border-left-color: var(--band);
+  }
+
+  .hub-link-card__cta {
+    display: inline-block;
+    margin-top: var(--s-3);
+    font-weight: 700;
+    color: var(--accent);
+    transition: transform 220ms ease;
+  }
+
+  .hub-link-card:where(:hover, :focus-visible) {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 12px 28px color-mix(in srgb, var(--accent) 24%, transparent);
+  }
+
+  .hub-link-card:where(:hover, :focus-visible) .hub-link-card__inner {
+    background: color-mix(in srgb, var(--surface) 86%, var(--accent-light) 14%);
+  }
+
+  .hub-link-card:where(:hover, :focus-visible) .hub-link-card__cta {
+    transform: translateX(5px);
+  }
+
+  .hub-link-card:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--accent) 55%, white 45%);
+    outline-offset: 2px;
+  }
+
+  @keyframes hubFloat {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hub-link-card {
+      animation: none;
+      transition: none;
+    }
+
+    .hub-link-card__cta {
+      transition: none;
+    }
+  }
+</style>

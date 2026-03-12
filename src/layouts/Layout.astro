@@ -124,9 +124,12 @@ const organizationSchema = {
     <!-- WEBINAR BANNER (Sticky) -->
     <div style="position: sticky; top: 0; z-index: 100; background: linear-gradient(90deg, var(--accent) 0%, rgba(217, 72, 72, 0.9) 100%); color: white; padding: 12px 0; text-align: center; border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
       <div class="container" style="display: flex; align-items: center; justify-content: center; gap: var(--s-2); flex-wrap: wrap;">
-        <span style="font-size: 14px;">🎓 <strong>Weekly Webinar Every Saturday at 6:00 PM PST</strong></span>
+        <span style="font-size: 14px;">🎓 <strong>Weekly Webinar • 100 CELPIP Writing Prompts + Sample Responses for CA$5/month</strong></span>
         <a href="/webinar" style="color: white; font-weight: 700; font-size: 13px; text-decoration: none; background: rgba(255, 255, 255, 0.2); padding: 6px 12px; border-radius: 999px; transition: background 140ms ease;">
-          Register Now →
+          Webinar →
+        </a>
+        <a href="/celpip/writing/ai-feedback" style="color: white; font-weight: 700; font-size: 13px; text-decoration: none; background: rgba(255, 255, 255, 0.2); padding: 6px 12px; border-radius: 999px; transition: background 140ms ease;">
+          Writing Hub →
         </a>
       </div>
     </div>
@@ -144,6 +147,7 @@ const organizationSchema = {
         <nav class="nav" aria-label="Primary">
           <a href="/ielts">IELTS</a>
           <a href="/celpip">CELPIP</a>
+          <a class="nav-hub" href="/celpip/writing/ai-feedback">Writing Hub $5</a>
           <a href="/webinar">Webinar</a>
           <a href="/lessons">Free Lessons</a>
           <a href="/ebook">eBook</a>
@@ -270,16 +274,45 @@ const organizationSchema = {
     {isLessonsPath && (
       <script is:inline>
         (() => {
-          const storageKey = 'ieltscorner.lessonsGateUnlocked';
+          const storageKey = 'ieltscorner.newsletterSignup';
           const gate = document.getElementById('lesson-email-gate');
           const form = document.getElementById('lesson-email-gate-form');
           const status = document.getElementById('lesson-email-gate-status');
+          const normalizeEmail = (value) => String(value || '').trim().toLowerCase();
+          const readSignup = () => {
+            try {
+              const raw = localStorage.getItem(storageKey);
+              if (!raw) return null;
+
+              const parsed = JSON.parse(raw);
+              if (!parsed || typeof parsed !== 'object') return null;
+
+              return parsed;
+            } catch {
+              return null;
+            }
+          };
+          const saveSignup = (email) => {
+            try {
+              localStorage.setItem(storageKey, JSON.stringify({
+                email: normalizeEmail(email),
+                unlockedLessons: true,
+                subscribedAt: new Date().toISOString(),
+              }));
+            } catch {
+            }
+          };
+          const unlockGate = () => {
+            gate.remove();
+            document.body.classList.remove('lessons-locked');
+          };
 
           if (!gate) return;
 
           try {
-            if (localStorage.getItem(storageKey) === 'true') {
-              gate.remove();
+            const savedSignup = readSignup();
+            if (savedSignup?.email) {
+              unlockGate();
               return;
             }
           } catch {
@@ -291,6 +324,26 @@ const organizationSchema = {
 
           form.addEventListener('submit', async (event) => {
             event.preventDefault();
+
+            const emailInput = form.elements.namedItem('email');
+            const email = emailInput instanceof HTMLInputElement ? normalizeEmail(emailInput.value) : '';
+
+            if (!email) {
+              if (status instanceof HTMLElement) {
+                status.textContent = 'Please enter a valid email.';
+              }
+              return;
+            }
+
+            const savedSignup = readSignup();
+            if (savedSignup?.email === email) {
+              saveSignup(email);
+              if (status instanceof HTMLElement) {
+                status.textContent = 'Welcome back! Your lessons are unlocked.';
+              }
+              unlockGate();
+              return;
+            }
 
             if (status instanceof HTMLElement) {
               status.textContent = 'Unlocking...';
@@ -313,15 +366,24 @@ const organizationSchema = {
                 throw new Error('Request failed');
               }
 
-              try {
-                localStorage.setItem(storageKey, 'true');
-              } catch {
+              saveSignup(email);
+              if (status instanceof HTMLElement) {
+                status.textContent = 'Success! Your lessons are unlocked.';
+              }
+              unlockGate();
+            } catch {
+              if (savedSignup?.email === email) {
+                saveSignup(email);
+                if (status instanceof HTMLElement) {
+                  status.textContent = 'Welcome back! Your lessons are unlocked.';
+                }
+                unlockGate();
+                return;
               }
 
-              gate.remove();
-              document.body.classList.remove('lessons-locked');
-            } catch {
-              form.submit();
+              if (status instanceof HTMLElement) {
+                status.textContent = 'We had trouble submitting your email. Please try again.';
+              }
             }
           });
         })();

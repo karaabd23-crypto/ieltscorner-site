@@ -1,5 +1,7 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
+import Quiz from "../../../components/Quiz.astro";
+import CelpipWritingBanner from "../../../components/CelpipWritingBanner.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { getLessonTier, getPublicLessonTitle } from "../../../lib/lessonLevel";
 
@@ -150,12 +152,22 @@ const seoKeywords = `${item.data.title}, ${item.data.category}, ${item.data.leve
         </a>
         <a class="btn" href="/lessons">All lessons</a>
       </div>
+
+      {item.data.exam.includes('CELPIP') && (
+        <CelpipWritingBanner />
+      )}
     </div>
   </section>
 
   <section class="section-sm">
     <article class="surface" style="padding: var(--s-6);">
       <Content />
+
+      {item.data.quiz.length > 0 && (
+        <div style="margin-top: var(--s-6);">
+          <Quiz title="Interactive practice" questions={item.data.quiz} />
+        </div>
+      )}
 
       <div class="surface" style="padding: var(--s-3); margin-top: var(--s-6);">
         <p class="muted" style="margin: 0 0 var(--s-2) 0;">Explore another category:</p>

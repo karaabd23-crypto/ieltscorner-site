@@ -10,14 +10,11 @@ const WEBINAR_CALENDLY_URL = 'https://calendly.com/ieltscorner/webinar';
   type="page"
 >
   <section class="section">
-    <div class="hero" style={`--hero-bg: url('/heroes/webinar.png');`}>
+    <div class="hero" style={`--hero-bg: url('/heroes/webinar.png'); --hero-bg-opacity: 0.18;`}>
       <div class="hero-content">
         <span class="pill">🎓 Weekly Webinar • Live Online</span>
         <h1>Register for This Week’s Webinar</h1>
-        <p class="muted" style="max-width: 64ch;">
-          Live CELPIP strategy session with practical examples and real-time Q&A.
-          Click below to open the registration popup and pick your slot.
-        </p>
+
 
         <div class="cluster">
           <button id="open-webinar-calendly" class="btn btn-primary" type="button">
@@ -28,9 +25,6 @@ const WEBINAR_CALENDLY_URL = 'https://calendly.com/ieltscorner/webinar';
           </a>
         </div>
 
-        <p class="muted" style="font-size: 14px; margin: 0;">
-          If the popup is blocked, use “Open full booking page”.
-        </p>
       </div>
     </div>
 
