@@ -87,6 +87,7 @@ const promptTotal = CELPIP_PROMPT_TOTAL;
           <button id="buy-writing-lab-secondary" class="btn btn-primary" type="button" style="width: 100%;">
             Subscribe for CA${CELPIP_WRITING_PRICE_CAD}/month
           </button>
+          <p id="checkout-status-secondary" class="muted" style="margin: var(--s-2) 0 0; min-height: 1.2rem;"></p>
         </div>
       </div>
     </div>
@@ -97,7 +98,18 @@ const promptTotal = CELPIP_PROMPT_TOTAL;
       document.getElementById('buy-writing-lab'),
       document.getElementById('buy-writing-lab-secondary'),
     ].filter(Boolean);
-    const status = document.getElementById('checkout-status');
+    const statusEls = [
+      document.getElementById('checkout-status'),
+      document.getElementById('checkout-status-secondary'),
+    ].filter(Boolean);
+
+    const setCheckoutStatus = (message: string) => {
+      statusEls.forEach((el) => {
+        if (el instanceof HTMLElement) {
+          el.textContent = message;
+        }
+      });
+    };
 
     const readApiResponse = async (response: Response) => {
       const contentType = response.headers.get('content-type') || '';
@@ -122,7 +134,7 @@ const promptTotal = CELPIP_PROMPT_TOTAL;
     };
 
     const startCheckout = async () => {
-      if (status) status.textContent = 'Redirecting to secure checkout…';
+      setCheckoutStatus('Redirecting to secure checkout…');
       buyButtons.forEach((button) => {
         if (button instanceof HTMLButtonElement) button.disabled = true;
       });
@@ -140,7 +152,7 @@ const promptTotal = CELPIP_PROMPT_TOTAL;
         window.location.href = data.checkoutUrl;
       } catch (error) {
         const message = error instanceof Error ? error.message : 'Unable to start checkout.';
-        if (status) status.textContent = message;
+        setCheckoutStatus(message);
         buyButtons.forEach((button) => {
           if (button instanceof HTMLButtonElement) button.disabled = false;
         });
@@ -149,8 +161,8 @@ const promptTotal = CELPIP_PROMPT_TOTAL;
 
     buyButtons.forEach((button) => button?.addEventListener('click', startCheckout));
 
-    if (new URLSearchParams(window.location.search).get('canceled') === '1' && status) {
-      status.textContent = 'Checkout was canceled. You can try again anytime.';
+    if (new URLSearchParams(window.location.search).get('canceled') === '1') {
+      setCheckoutStatus('Checkout was canceled. You can try again anytime.');
     }
   </script>
 </Layout>
