@@ -853,7 +853,7 @@ function resolvePublicChannelSlug(channelUrl, chatId) {
 
 async function fetchRecentChannelTexts(slug) {
   if (!slug) {
-    postBody: ensureStandardSignature(String(safe.postBody ?? fallback.postBody).slice(0, 3500)),
+    return [];
   }
 
   try {
