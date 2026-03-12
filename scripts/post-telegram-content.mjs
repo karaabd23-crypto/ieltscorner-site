@@ -7,6 +7,10 @@ const DEFAULT_MODEL = 'gpt-4.1-mini';
 const DEFAULT_ANTHROPIC_MODEL = 'claude-3-5-sonnet-latest';
 const DEFAULT_HISTORY_FILE = '.cache/telegram-post-history.json';
 const HISTORY_MAX_ITEMS = 5000;
+const STANDARD_TELEGRAM_SIGNATURE = `✨ Kay's English Corner✨
+Your Gateway to English Success in Canada 🇨🇦
+🔗 Join us on Telegram
+https://t.me/Kaysenglishcorner`;
 
 const TOPIC_BANK = [
   { type: 'vocab', level: 'B1', topic: 'Reliable - someone or something you can trust', lang: 'EN/FA' },
@@ -753,8 +757,28 @@ function normalizeForDedupe(text) {
     .trim();
 }
 
+function ensureStandardSignature(text) {
+  const body = String(text ?? '').trim();
+  if (!body) {
+    return STANDARD_TELEGRAM_SIGNATURE;
+  }
+
+  if (body.includes(`https://t.me/Kaysenglishcorner`) || body.includes(`Kay's English Corner`)) {
+    return body;
+  }
+
+  return `${body}\n\n${STANDARD_TELEGRAM_SIGNATURE}`;
+}
+
+function stripSignatureForDedupe(text) {
+  return String(text ?? '')
+    .replace(/\n?✨ Kay's English Corner✨[\s\S]*?https:\/\/t\.me\/Kaysenglishcorner/gi, '')
+    .replace(/\n?🌈✨ Kay's English Corner[\s\S]*?https:\/\/t\.me\/Kaysenglishcorner/gi, '')
+    .trim();
+}
+
 function createContentFingerprint(text) {
-  const normalized = normalizeForDedupe(text);
+  const normalized = normalizeForDedupe(stripSignatureForDedupe(text));
   return createHash('sha256').update(normalized).digest('hex');
 }
 
@@ -829,7 +853,7 @@ function resolvePublicChannelSlug(channelUrl, chatId) {
 
 async function fetchRecentChannelTexts(slug) {
   if (!slug) {
-    return [];
+    postBody: ensureStandardSignature(String(safe.postBody ?? fallback.postBody).slice(0, 3500)),
   }
 
   try {
