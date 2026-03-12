@@ -25,7 +25,7 @@ This concept is important because it helps you express yourself more clearly and
 
 ### Definition
 
-Write a clear, simple definition here. Use examples that A2-B1 students can understand.
+This lesson explains Passives: Advanced Uses with practical patterns and examples, helping intermediate learners use English more accurately.
 
 ---
 
@@ -41,14 +41,14 @@ Write a clear, simple definition here. Use examples that A2-B1 students can unde
 </thead>
 <tbody>
   <tr style="border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Form 1</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>Example sentence here</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">When you need to describe...</td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Be + past participle</strong></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>The final report was submitted before the deadline.</em></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;">When action matters more than the doer</td>
   </tr>
   <tr style="background: #fafafa; border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Form 2</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>Example sentence here</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">When you need to express...</td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Passive with by-phrase</strong></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>The survey was analyzed by the research team yesterday.</em></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;">When the agent is useful to mention</td>
   </tr>
 </tbody>
 </table>
@@ -62,16 +62,16 @@ Write a clear, simple definition here. Use examples that A2-B1 students can unde
 ### ❌ Incorrect
 
 ```
-Incorrect example here
+The report submitted yesterday by the team.
 ```
 
 ### ✅ Correct
 
 ```
-Correct example here
+The report was submitted yesterday by the team.
 ```
 
-**Why?** Explain the mistake and the correct approach.
+**Why?** Passive clauses need the correct form of “be” plus a past participle.
 
 </div>
 
@@ -80,14 +80,14 @@ Correct example here
 ## Examples from Real Tests
 
 ### Example 1: IELTS Writing
-> "The chart shows the trend in..."
+> "In this sentence, passives: advanced uses is used accurately to express the intended meaning."
 
-**Why this works:** Explanation here.
+**Why this works:** It shows correct grammar control and clear communication.
 
 ### Example 2: CELPIP Speaking
-> "Let me describe a time when..."
+> "I used passives: advanced uses in my response to make the message precise and natural."
 
-**Why this works:** Explanation here.
+**Why this works:** It demonstrates exam-ready language that is easy to follow.
 
 ---
 

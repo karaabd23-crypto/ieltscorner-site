@@ -20,6 +20,7 @@ const {
 const fullTitle = title.includes("IELTS Corner") ? title : `${title} | IELTS Corner`;
 const canonicalURL = new URL(canonical, Astro.site);
 const ogImageURL = new URL(ogImage, Astro.site);
+const isLessonsPath = Astro.url.pathname.startsWith("/lessons");
 
 // Structured data for Organization
 const organizationSchema = {
@@ -172,6 +173,47 @@ const organizationSchema = {
       </div>
     </header>
 
+    {isLessonsPath && (
+      <div id="lesson-email-gate" class="lesson-email-gate" role="dialog" aria-modal="true" aria-labelledby="lesson-email-gate-title">
+        <div class="lesson-email-gate__panel surface">
+          <h2 id="lesson-email-gate-title" style="margin-top: 0;">Get instant access to all lessons</h2>
+          <p class="muted" style="margin-top: 0;">
+            Enter your email once to unlock free lesson access. You will also receive lesson updates twice a week.
+          </p>
+
+          {/* @ts-ignore */}
+          <form
+            id="lesson-email-gate-form"
+            name="newsletter"
+            method="POST"
+            action="/newsletter/thanks/"
+            netlify
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            class="lesson-email-gate__form"
+          >
+            <input type="hidden" name="form-name" value="newsletter" />
+            <p style="display:none;">
+              <label>Don’t fill this out: <input name="bot-field" /></label>
+            </p>
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email"
+              required
+              autocomplete="email"
+              style="padding: var(--s-2); border-radius: 6px; border: 1px solid var(--text-muted);"
+            />
+            <button type="submit" class="btn btn-primary">Unlock lessons</button>
+          </form>
+
+          <p id="lesson-email-gate-status" role="status" aria-live="polite" class="muted" style="min-height: 1.2rem; margin: var(--s-2) 0 0;"></p>
+          <p class="muted" style="font-size: 0.9rem; margin-bottom: 0;">By continuing, you agree to receive lesson emails. You can unsubscribe any time.</p>
+        </div>
+      </div>
+    )}
+
     <main class="site-main">
       <div class="container">
         <slot />
@@ -224,5 +266,103 @@ const organizationSchema = {
         </div>
       </div>
     </footer>
+
+    {isLessonsPath && (
+      <script is:inline>
+        (() => {
+          const storageKey = 'ieltscorner.lessonsGateUnlocked';
+          const gate = document.getElementById('lesson-email-gate');
+          const form = document.getElementById('lesson-email-gate-form');
+          const status = document.getElementById('lesson-email-gate-status');
+
+          if (!gate) return;
+
+          try {
+            if (localStorage.getItem(storageKey) === 'true') {
+              gate.remove();
+              return;
+            }
+          } catch {
+          }
+
+          document.body.classList.add('lessons-locked');
+
+          if (!(form instanceof HTMLFormElement)) return;
+
+          form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            if (status instanceof HTMLElement) {
+              status.textContent = 'Unlocking...';
+            }
+
+            const formData = new FormData(form);
+            const params = new URLSearchParams();
+            formData.forEach((value, key) => {
+              params.append(key, String(value));
+            });
+
+            try {
+              const response = await fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: params.toString(),
+              });
+
+              if (!response.ok) {
+                throw new Error('Request failed');
+              }
+
+              try {
+                localStorage.setItem(storageKey, 'true');
+              } catch {
+              }
+
+              gate.remove();
+              document.body.classList.remove('lessons-locked');
+            } catch {
+              form.submit();
+            }
+          });
+        })();
+      </script>
+    )}
+
+    {isLessonsPath && (
+      <style is:global>
+        body.lessons-locked {
+          overflow: hidden;
+        }
+
+        .lesson-email-gate {
+          position: fixed;
+          inset: 0;
+          z-index: 1000;
+          display: grid;
+          place-items: center;
+          padding: var(--s-4);
+          background: color-mix(in srgb, var(--text) 55%, transparent);
+        }
+
+        .lesson-email-gate__panel {
+          width: min(520px, 100%);
+          padding: var(--s-5);
+          border-radius: 12px;
+        }
+
+        .lesson-email-gate__form {
+          display: grid;
+          grid-template-columns: 1fr auto;
+          gap: var(--s-2);
+          margin-top: var(--s-3);
+        }
+
+        @media (max-width: 640px) {
+          .lesson-email-gate__form {
+            grid-template-columns: 1fr;
+          }
+        }
+      </style>
+    )}
   </body>
 </html>

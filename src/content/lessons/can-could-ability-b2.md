@@ -25,7 +25,7 @@ This concept is important because it helps you express yourself more clearly and
 
 ### Definition
 
-Write a clear, simple definition here. Use examples that A2-B1 students can understand.
+This lesson explains Can, Could, Be Able To with practical patterns and examples, helping intermediate learners use English more accurately.
 
 ---
 
@@ -41,14 +41,14 @@ Write a clear, simple definition here. Use examples that A2-B1 students can unde
 </thead>
 <tbody>
   <tr style="border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Form 1</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>Example sentence here</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">When you need to describe...</td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Modal + base verb</strong></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>You should plan your ideas before you start writing.</em></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;">For advice, ability, or possibility</td>
   </tr>
   <tr style="background: #fafafa; border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Form 2</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>Example sentence here</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">When you need to express...</td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Modal in past context</strong></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>I could have answered better with more preparation.</em></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;">To reflect on past ability or possibility</td>
   </tr>
 </tbody>
 </table>
@@ -62,16 +62,16 @@ Write a clear, simple definition here. Use examples that A2-B1 students can unde
 ### ❌ Incorrect
 
 ```
-Incorrect example here
+I use can, could, be able to wrong in this sentence and it sound unclear.
 ```
 
 ### ✅ Correct
 
 ```
-Correct example here
+I used can, could, be able to incorrectly in this sentence, so it sounded unclear.
 ```
 
-**Why?** Explain the mistake and the correct approach.
+**Why?** Accurate grammar and tense choice make the sentence clear and natural.
 
 </div>
 
@@ -80,14 +80,14 @@ Correct example here
 ## Examples from Real Tests
 
 ### Example 1: IELTS Writing
-> "The chart shows the trend in..."
+> "In this sentence, can, could, be able to is used accurately to express the intended meaning."
 
-**Why this works:** Explanation here.
+**Why this works:** It shows correct grammar control and clear communication.
 
 ### Example 2: CELPIP Speaking
-> "Let me describe a time when..."
+> "I used can, could, be able to in my response to make the message precise and natural."
 
-**Why this works:** Explanation here.
+**Why this works:** It demonstrates exam-ready language that is easy to follow.
 
 ---
 

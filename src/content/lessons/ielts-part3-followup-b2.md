@@ -25,7 +25,7 @@ This concept is important because it helps you express yourself more clearly and
 
 ### Definition
 
-Write a clear, simple definition here. Use examples that A2-B1 students can understand.
+This lesson shows how to use IELTS Speaking Part 3: Follow up Questions naturally in spoken English, so intermediate learners can sound clearer and more confident.
 
 ---
 
@@ -41,14 +41,14 @@ Write a clear, simple definition here. Use examples that A2-B1 students can unde
 </thead>
 <tbody>
   <tr style="border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Form 1</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>Example sentence here</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">When you need to describe...</td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Simple response frame</strong></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>I usually apply ielts speaking part 3: follow up questions when I explain my opinion in Part 3.</em></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;">For clear and direct spoken answers</td>
   </tr>
   <tr style="background: #fafafa; border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Form 2</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>Example sentence here</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">When you need to express...</td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Extended response frame</strong></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>I add reasons and examples, which makes my ielts speaking part 3: follow up questions more convincing.</em></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;">To develop longer spoken responses</td>
   </tr>
 </tbody>
 </table>
@@ -62,16 +62,16 @@ Write a clear, simple definition here. Use examples that A2-B1 students can unde
 ### ❌ Incorrect
 
 ```
-Incorrect example here
+I use ielts speaking part 3: follow up questions wrong in this sentence and it sound unclear.
 ```
 
 ### ✅ Correct
 
 ```
-Correct example here
+I used ielts speaking part 3: follow up questions incorrectly in this sentence, so it sounded unclear.
 ```
 
-**Why?** Explain the mistake and the correct approach.
+**Why?** Accurate grammar and tense choice make the sentence clear and natural.
 
 </div>
 
@@ -80,14 +80,14 @@ Correct example here
 ## Examples from Real Tests
 
 ### Example 1: IELTS Writing
-> "The chart shows the trend in..."
+> "One useful strategy is to use ielts speaking part 3: follow up questions so my answer sounds natural and focused."
 
-**Why this works:** Explanation here.
+**Why this works:** It demonstrates ielts speaking part 3: follow up questions with a clear structure and fluent delivery.
 
 ### Example 2: CELPIP Speaking
-> "Let me describe a time when..."
+> "When I practiced, ielts speaking part 3: follow up questions helped me explain my idea faster and more clearly."
 
-**Why this works:** Explanation here.
+**Why this works:** It shows how ielts speaking part 3: follow up questions improves clarity under time pressure.
 
 ---
 

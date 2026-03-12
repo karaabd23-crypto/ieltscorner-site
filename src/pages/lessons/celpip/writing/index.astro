@@ -1,6 +1,7 @@
 ---
 import Layout from "../../../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import { getLessonTier, getPublicLessonTitle } from "../../../../lib/lessonLevel";
 
 const allLessons = (
   await getCollection(
@@ -85,10 +86,10 @@ const relatedLessons = (
         {allLessons.map((lesson) => (
           <a class="card" href={`/lessons/${lesson.data.category}/${lesson.slug}/`} style="display:block;">
             <div class="cluster" style="justify-content: space-between;">
-              <span class="pill">{lesson.data.level}</span>
+              <span class="pill">{getLessonTier(lesson.data.level)}</span>
               <span class="pill">Open →</span>
             </div>
-            <h3 style="margin-top: var(--s-3);">{lesson.data.title}</h3>
+            <h3 style="margin-top: var(--s-3);">{getPublicLessonTitle(lesson.data.title, lesson.data.level)}</h3>
             <p class="muted" style="margin-bottom: 0;">{lesson.data.excerpt}</p>
           </a>
         ))}
@@ -112,10 +113,10 @@ const relatedLessons = (
           {relatedLessons.map((lesson) => (
             <a class="card" href={`/lessons/${lesson.data.category}/${lesson.slug}/`} style="display:block;">
               <div class="cluster" style="justify-content: space-between;">
-                <span class="pill">{lesson.data.category} • {lesson.data.level}</span>
+                <span class="pill">{lesson.data.category} • {getLessonTier(lesson.data.level)}</span>
                 <span class="pill">Open →</span>
               </div>
-              <h3 style="margin-top: var(--s-3);">{lesson.data.title}</h3>
+              <h3 style="margin-top: var(--s-3);">{getPublicLessonTitle(lesson.data.title, lesson.data.level)}</h3>
               <p class="muted" style="margin-bottom: 0;">{lesson.data.excerpt}</p>
             </a>
           ))}

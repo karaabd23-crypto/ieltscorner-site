@@ -25,7 +25,7 @@ This concept is important because it helps you express yourself more clearly and
 
 ### Definition
 
-Write a clear, simple definition here. Use examples that A2-B1 students can understand.
+This lesson explains Perfect vs Simple Tenses with practical patterns and examples, helping intermediate learners use English more accurately.
 
 ---
 
@@ -41,14 +41,14 @@ Write a clear, simple definition here. Use examples that A2-B1 students can unde
 </thead>
 <tbody>
   <tr style="border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Form 1</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>Example sentence here</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">When you need to describe...</td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Main tense pattern</strong></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>I study in the morning and I review vocabulary at night.</em></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;">For the core time meaning of the tense</td>
   </tr>
   <tr style="background: #fafafa; border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Form 2</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>Example sentence here</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">When you need to express...</td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Contrast with another tense</strong></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>I was studying when my teacher sent the assignment.</em></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;">When two time actions interact</td>
   </tr>
 </tbody>
 </table>
@@ -62,16 +62,16 @@ Write a clear, simple definition here. Use examples that A2-B1 students can unde
 ### ❌ Incorrect
 
 ```
-Incorrect example here
+Yesterday I go to class and learn new words.
 ```
 
 ### ✅ Correct
 
 ```
-Correct example here
+Yesterday I went to class and learned new words.
 ```
 
-**Why?** Explain the mistake and the correct approach.
+**Why?** Past-time markers require past verb forms for sequence and accuracy.
 
 </div>
 
@@ -80,14 +80,14 @@ Correct example here
 ## Examples from Real Tests
 
 ### Example 1: IELTS Writing
-> "The chart shows the trend in..."
+> "In this sentence, perfect vs simple tenses is used accurately to express the intended meaning."
 
-**Why this works:** Explanation here.
+**Why this works:** It shows correct grammar control and clear communication.
 
 ### Example 2: CELPIP Speaking
-> "Let me describe a time when..."
+> "I used perfect vs simple tenses in my response to make the message precise and natural."
 
-**Why this works:** Explanation here.
+**Why this works:** It demonstrates exam-ready language that is easy to follow.
 
 ---
 

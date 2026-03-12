@@ -25,7 +25,7 @@ This concept is important because it helps you express yourself more clearly and
 
 ### Definition
 
-Write a clear, simple definition here. Use examples that A2-B1 students can understand.
+This lesson shows how to use Asking for Clarification naturally in spoken English, so intermediate learners can sound clearer and more confident.
 
 ---
 
@@ -41,14 +41,14 @@ Write a clear, simple definition here. Use examples that A2-B1 students can unde
 </thead>
 <tbody>
   <tr style="border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Form 1</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>Example sentence here</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">When you need to describe...</td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>If + present, result</strong></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>If I have time tonight, I will review one writing task.</em></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;">To talk about real future possibilities</td>
   </tr>
   <tr style="background: #fafafa; border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Form 2</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>Example sentence here</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">When you need to express...</td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>If + past, would</strong></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>If I lived closer, I would join every weekend workshop.</em></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;">To describe unreal or imagined situations</td>
   </tr>
 </tbody>
 </table>
@@ -62,16 +62,16 @@ Write a clear, simple definition here. Use examples that A2-B1 students can unde
 ### ❌ Incorrect
 
 ```
-Incorrect example here
+If I will have time, I will call you tonight.
 ```
 
 ### ✅ Correct
 
 ```
-Correct example here
+If I have time, I will call you tonight.
 ```
 
-**Why?** Explain the mistake and the correct approach.
+**Why?** In first conditionals, the if-clause uses present simple, not “will”.
 
 </div>
 
@@ -80,14 +80,14 @@ Correct example here
 ## Examples from Real Tests
 
 ### Example 1: IELTS Writing
-> "The chart shows the trend in..."
+> "One useful strategy is to use asking for clarification so my answer sounds natural and focused."
 
-**Why this works:** Explanation here.
+**Why this works:** It demonstrates asking for clarification with a clear structure and fluent delivery.
 
 ### Example 2: CELPIP Speaking
-> "Let me describe a time when..."
+> "When I practiced, asking for clarification helped me explain my idea faster and more clearly."
 
-**Why this works:** Explanation here.
+**Why this works:** It shows how asking for clarification improves clarity under time pressure.
 
 ---
 

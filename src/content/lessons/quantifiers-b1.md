@@ -25,7 +25,7 @@ This concept is important because it helps you express yourself more clearly and
 
 ### Definition
 
-Write a clear, simple definition here. Use examples that A2-B1 students can understand.
+This lesson teaches Quantifiers and Amounts for intermediate learners, so you can choose more precise words in IELTS and CELPIP responses.
 
 ---
 
@@ -41,14 +41,14 @@ Write a clear, simple definition here. Use examples that A2-B1 students can unde
 </thead>
 <tbody>
   <tr style="border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Form 1</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>Example sentence here</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">When you need to describe...</td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>If + present, result</strong></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>If I have time tonight, I will review one writing task.</em></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;">To talk about real future possibilities</td>
   </tr>
   <tr style="background: #fafafa; border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Form 2</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>Example sentence here</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">When you need to express...</td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>If + past, would</strong></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>If I lived closer, I would join every weekend workshop.</em></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;">To describe unreal or imagined situations</td>
   </tr>
 </tbody>
 </table>
@@ -62,16 +62,16 @@ Write a clear, simple definition here. Use examples that A2-B1 students can unde
 ### ❌ Incorrect
 
 ```
-Incorrect example here
+If I will have time, I will call you tonight.
 ```
 
 ### ✅ Correct
 
 ```
-Correct example here
+If I have time, I will call you tonight.
 ```
 
-**Why?** Explain the mistake and the correct approach.
+**Why?** In first conditionals, the if-clause uses present simple, not “will”.
 
 </div>
 
@@ -80,14 +80,14 @@ Correct example here
 ## Examples from Real Tests
 
 ### Example 1: IELTS Writing
-> "The chart shows the trend in..."
+> "In this sentence, quantifiers and amounts is used accurately to express the intended meaning."
 
-**Why this works:** Explanation here.
+**Why this works:** It shows correct grammar control and clear communication.
 
 ### Example 2: CELPIP Speaking
-> "Let me describe a time when..."
+> "I used quantifiers and amounts in my response to make the message precise and natural."
 
-**Why this works:** Explanation here.
+**Why this works:** It demonstrates exam-ready language that is easy to follow.
 
 ---
 

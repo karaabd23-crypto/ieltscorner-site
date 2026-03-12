@@ -1,6 +1,7 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
+import { getLessonTier, getPublicLessonTitle } from "../../../lib/lessonLevel";
 
 type LessonEntry = CollectionEntry<"lessons">;
 type Category = LessonEntry["data"]["category"];
@@ -103,13 +104,13 @@ const meta = metaMap[category];
             <a class="card" href={`/lessons/${l.data.category}/${l.slug}/`} style="display:block;">
               <div class="cluster" style="justify-content: space-between;">
                 <div class="cluster">
-                  <span class="pill">{l.data.level} • {l.data.exam.join(" & ")}</span>
+                  <span class="pill">{getLessonTier(l.data.level)} • {l.data.exam.join(" & ")}</span>
                   {l.data.tags?.length ? <span class="pill">{l.data.tags[0]}</span> : null}
                 </div>
                 <span class="pill">Open →</span>
               </div>
 
-              <h3 style="margin-top: var(--s-3);">{l.data.title}</h3>
+              <h3 style="margin-top: var(--s-3);">{getPublicLessonTitle(l.data.title, l.data.level)}</h3>
               <p class="muted" style="margin-bottom: 0;">{l.data.excerpt}</p>
             </a>
           ))}

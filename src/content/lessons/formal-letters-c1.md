@@ -25,7 +25,7 @@ This concept is important because it helps you express yourself more clearly and
 
 ### Definition
 
-Write a clear, simple definition here. Use examples that A2-B1 students can understand.
+This lesson teaches Letter Writing: Formal for advanced learners, so you can choose more precise words in IELTS and CELPIP responses.
 
 ---
 
@@ -41,14 +41,14 @@ Write a clear, simple definition here. Use examples that A2-B1 students can unde
 </thead>
 <tbody>
   <tr style="border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Form 1</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>Example sentence here</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">When you need to describe...</td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Core word in context</strong></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>The speaker gave a clear example of letter writing: formal during the lesson.</em></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;">To express the basic meaning clearly</td>
   </tr>
   <tr style="background: #fafafa; border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Form 2</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>Example sentence here</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">When you need to express...</td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Collocation or phrase</strong></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>We practiced useful phrases related to letter writing: formal in pairs.</em></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;">To sound more natural and precise</td>
   </tr>
 </tbody>
 </table>
@@ -62,16 +62,16 @@ Write a clear, simple definition here. Use examples that A2-B1 students can unde
 ### ❌ Incorrect
 
 ```
-Incorrect example here
+The essay used letter writing: formal in a not clear way.
 ```
 
 ### ✅ Correct
 
 ```
-Correct example here
+The essay used letter writing: formal in a clearer and more precise way.
 ```
 
-**Why?** Explain the mistake and the correct approach.
+**Why?** Choose natural collocations and concise wording to improve clarity.
 
 </div>
 
@@ -80,14 +80,14 @@ Correct example here
 ## Examples from Real Tests
 
 ### Example 1: IELTS Writing
-> "The chart shows the trend in..."
+> "In this sentence, letter writing: formal is used accurately to express the intended meaning."
 
-**Why this works:** Explanation here.
+**Why this works:** It shows correct grammar control and clear communication.
 
 ### Example 2: CELPIP Speaking
-> "Let me describe a time when..."
+> "I used letter writing: formal in my response to make the message precise and natural."
 
-**Why this works:** Explanation here.
+**Why this works:** It demonstrates exam-ready language that is easy to follow.
 
 ---
 

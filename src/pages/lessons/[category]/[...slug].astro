@@ -1,6 +1,7 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
+import { getLessonTier, getPublicLessonTitle } from "../../../lib/lessonLevel";
 
 type LessonEntry = CollectionEntry<"lessons">;
 
@@ -37,6 +38,7 @@ export async function getStaticPaths() {
 
 const { item } = Astro.props as { item: LessonEntry };
 const { Content, headings } = await item.render();
+const publicTitle = getPublicLessonTitle(item.data.title, item.data.level);
 const currentCategory = item.data.category;
 
 const sameCategoryLessons = (
@@ -113,7 +115,7 @@ const seoKeywords = `${item.data.title}, ${item.data.category}, ${item.data.leve
 ---
 
 <Layout 
-  title={item.data.title}
+  title={publicTitle}
   description={item.data.excerpt}
   keywords={seoKeywords}
   type="article"
@@ -134,12 +136,12 @@ const seoKeywords = `${item.data.title}, ${item.data.category}, ${item.data.leve
           <li>›</li>
           <li><a href={`/lessons/${currentCategory}`}>{categoryLabel(currentCategory)}</a></li>
           <li>›</li>
-          <li>{item.data.title}</li>
+          <li>{publicTitle}</li>
         </ol>
       </nav>
 
-      <span class="pill">{item.data.level} • {item.data.exam.join(" & ")}</span>
-      <h1>{item.data.title}</h1>
+      <span class="pill">{getLessonTier(item.data.level)} • {item.data.exam.join(" & ")}</span>
+      <h1>{publicTitle}</h1>
       <p class="muted" style="max-width: 75ch;">{item.data.excerpt}</p>
 
       <div class="cluster">

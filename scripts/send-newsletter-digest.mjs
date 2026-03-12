@@ -6,6 +6,86 @@ import nodemailer from 'nodemailer';
 const DEFAULT_SITE_URL = 'https://ieltscorner.ca';
 const DEFAULT_FORM_NAME = 'newsletter';
 const DEFAULT_STATE_FILE = '.cache/newsletter-state.json';
+const DEFAULT_YOUTUBE_CHANNEL_URL = 'https://www.youtube.com/@KaraAbdolmaleki';
+
+function decodeXmlEntities(value) {
+  return String(value || '')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'");
+}
+
+async function resolveYouTubeChannelId(channelUrl) {
+  const envChannelId = process.env.YOUTUBE_CHANNEL_ID?.trim();
+  if (envChannelId) {
+    return envChannelId;
+  }
+
+  const directMatch = String(channelUrl || '').match(/youtube\.com\/channel\/(UC[\w-]+)/i);
+  if (directMatch?.[1]) {
+    return directMatch[1];
+  }
+
+  try {
+    const response = await fetch(channelUrl, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (compatible; IELTSCornerDigest/1.0)',
+      },
+    });
+
+    if (!response.ok) {
+      return '';
+    }
+
+    const html = await response.text();
+    const channelMatch = html.match(/youtube\.com\/channel\/(UC[\w-]+)/i);
+    return channelMatch?.[1] || '';
+  } catch {
+    return '';
+  }
+}
+
+async function getLatestYouTubeVideo(channelUrl) {
+  const channelId = await resolveYouTubeChannelId(channelUrl);
+  if (!channelId) {
+    return null;
+  }
+
+  try {
+    const feedUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
+    const response = await fetch(feedUrl);
+    if (!response.ok) {
+      return null;
+    }
+
+    const xml = await response.text();
+    const entryMatch = xml.match(/<entry>([\s\S]*?)<\/entry>/i);
+    if (!entryMatch) {
+      return null;
+    }
+
+    const entry = entryMatch[1];
+    const videoId = entry.match(/<yt:videoId>([^<]+)<\/yt:videoId>/i)?.[1]?.trim();
+    const titleRaw = entry.match(/<title>([^<]+)<\/title>/i)?.[1]?.trim() || 'Latest YouTube lesson';
+    const title = decodeXmlEntities(titleRaw);
+    const url = entry.match(/<link[^>]*href="([^"]+)"/i)?.[1]?.trim()
+      || (videoId ? `https://www.youtube.com/watch?v=${videoId}` : channelUrl);
+
+    if (!videoId) {
+      return null;
+    }
+
+    return {
+      title,
+      url,
+      thumbnailUrl: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
+    };
+  } catch {
+    return null;
+  }
+}
 
 function stripWrappingQuotes(value) {
   const trimmed = value.trim();
@@ -54,12 +134,15 @@ async function loadEnvFiles() {
 function parseArgs(argv) {
   const options = {
     dryRun: false,
+    preview: false,
   };
 
   for (let index = 2; index < argv.length; index += 1) {
     const arg = argv[index];
     if (arg === '--dry-run') {
       options.dryRun = true;
+    } else if (arg === '--preview') {
+      options.preview = true;
     } else {
       throw new Error(`Unknown argument: ${arg}`);
     }
@@ -107,10 +190,9 @@ function toIsoDate(input) {
   return date.toISOString();
 }
 
-async function getLessonsAfter(isoTimestamp) {
+async function getLatestLessons(limit = 5) {
   const lessonsDir = path.join(process.cwd(), 'src', 'content', 'lessons');
   const files = await readdir(lessonsDir);
-  const threshold = isoTimestamp ? new Date(isoTimestamp).getTime() : 0;
 
   const lessons = [];
   for (const fileName of files) {
@@ -131,11 +213,6 @@ async function getLessonsAfter(isoTimestamp) {
       continue;
     }
 
-    const dateValue = new Date(dateIso).getTime();
-    if (dateValue <= threshold) {
-      continue;
-    }
-
     const slug = fileName.replace(/\.md$/, '');
     const category = String(frontmatter.category || '').trim();
     if (!category) {
@@ -146,13 +223,14 @@ async function getLessonsAfter(isoTimestamp) {
       title: String(frontmatter.title || slug).trim(),
       excerpt: String(frontmatter.excerpt || '').trim(),
       category,
+      level: String(frontmatter.level || '').trim(),
       slug,
       dateIso,
     });
   }
 
-  lessons.sort((a, b) => new Date(a.dateIso).getTime() - new Date(b.dateIso).getTime());
-  return lessons;
+  lessons.sort((a, b) => new Date(b.dateIso).getTime() - new Date(a.dateIso).getTime());
+  return lessons.slice(0, limit);
 }
 
 async function fetchNetlifyJson(url, accessToken) {
@@ -286,23 +364,86 @@ function buildLessonUrl(siteUrl, lesson) {
   return `${siteUrl}/lessons/${lesson.category}/${lesson.slug}/`;
 }
 
-function buildHtmlEmail({ siteUrl, lessons }) {
+function getLessonTier(level) {
+  const n = String(level || '').trim().toUpperCase();
+  if (n === 'A1' || n === 'A2') return 'Basic';
+  if (n === 'B1' || n === 'B2') return 'Intermediate';
+  return 'Advanced';
+}
+
+function getPublicLessonTitle(title, level) {
+  const cleaned = String(title || '')
+    .replace(/\s*\((A1|A2|B1|B2|C1|C2)\)\s*/gi, ' ')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+
+  const normalizedLevel = String(level || '').trim().toUpperCase();
+  const isEarlyLevel = normalizedLevel === 'A1' || normalizedLevel === 'A2' || normalizedLevel === 'B1';
+
+  let baseTitle = cleaned;
+
+  if (isEarlyLevel) {
+    if (/(conditional|if[-\s]?sentence|if[-\s]?statement)/i.test(cleaned)) {
+      baseTitle = 'How to use "if"';
+    } else {
+      const shortTitle = cleaned
+        .replace(/^How to\s+/i, '')
+        .replace(/^Using\s+/i, '')
+        .replace(/\s+for\s+.*$/i, '')
+        .replace(/\s+in\s+.*$/i, '')
+        .replace(/\s*[:\-–—]\s*.*/, '')
+        .replace(/\s{2,}/g, ' ')
+        .trim();
+
+      if (shortTitle.length >= 8) {
+        baseTitle = shortTitle;
+      }
+    }
+  }
+
+  if (normalizedLevel) {
+    return `${baseTitle} – ${getLessonTier(normalizedLevel)}`;
+  }
+
+  return baseTitle;
+}
+
+function buildHtmlEmail({ siteUrl, lessons, latestYouTubeVideo, youtubeChannelUrl }) {
   const listItems = lessons
     .map((lesson) => {
       const url = buildLessonUrl(siteUrl, lesson);
+      const title = getPublicLessonTitle(lesson.title, lesson.level);
       const excerpt = lesson.excerpt ? `<p style="margin:6px 0 0;color:#555;">${lesson.excerpt}</p>` : '';
-      return `<li style="margin:0 0 14px;"><a href="${url}" style="color:#d94848;font-weight:700;text-decoration:none;">${lesson.title}</a>${excerpt}</li>`;
+      return `<li style="margin:0 0 14px;"><a href="${url}" style="color:#d94848;font-weight:700;text-decoration:none;">${title}</a>${excerpt}</li>`;
     })
     .join('');
+
+  const latestVideoBlock = latestYouTubeVideo
+    ? `
+        <h3 style="margin:0 0 8px;color:#1f1f1f;">Latest YouTube lesson</h3>
+        <a href="${latestYouTubeVideo.url}" style="display:block;text-decoration:none;margin:0 0 16px;">
+          <img src="${latestYouTubeVideo.thumbnailUrl}" alt="${latestYouTubeVideo.title}" style="width:100%;max-width:560px;height:auto;border-radius:10px;border:1px solid #e9e1dc;display:block;" />
+          <p style="margin:8px 0 0;color:#d94848;font-weight:700;">${latestYouTubeVideo.title}</p>
+          <p style="margin:4px 0 0;color:#555;">Watch now on YouTube →</p>
+        </a>`
+    : '';
 
   return `<!doctype html>
 <html>
   <body style="font-family:Arial,sans-serif;background:#f6f4f3;padding:16px;">
     <table role="presentation" style="max-width:640px;margin:0 auto;background:#fff;border:1px solid #e9e1dc;border-radius:10px;padding:18px;">
       <tr><td>
-        <h2 style="margin:0 0 8px;color:#1f1f1f;">New IELTS Corner Lessons</h2>
-        <p style="margin:0 0 16px;color:#444;">We published new lessons this week:</p>
+        <h2 style="margin:0 0 8px;color:#1f1f1f;">Latest IELTS Corner Lessons</h2>
+        <p style="margin:0 0 16px;color:#444;">Here are the 5 most recent lessons:</p>
         <ul style="padding-left:18px;margin:0 0 18px;">${listItems}</ul>
+        ${latestVideoBlock}
+        <h3 style="margin:0 0 8px;color:#1f1f1f;">Keep improving this week</h3>
+        <ul style="padding-left:18px;margin:0 0 18px;">
+          <li style="margin:0 0 8px;"><a href="${siteUrl}/webinar/" style="color:#d94848;font-weight:700;text-decoration:none;">Join the weekly webinar</a> for live score-raising strategies.</li>
+          <li style="margin:0 0 8px;"><a href="${youtubeChannelUrl}" style="color:#d94848;font-weight:700;text-decoration:none;">Watch YouTube lessons</a> for quick exam tips and practice.</li>
+          <li style="margin:0 0 8px;"><a href="https://t.me/Kaysenglishcorner" style="color:#d94848;font-weight:700;text-decoration:none;">Join our Telegram channel</a> for daily short tips and updates.</li>
+          <li style="margin:0;"><a href="${siteUrl}/tutoring/" style="color:#d94848;font-weight:700;text-decoration:none;">Book a private lesson</a> for personalized feedback.</li>
+        </ul>
         <p style="margin:0;color:#666;">You are receiving this because you subscribed on ieltscorner.ca.</p>
       </td></tr>
     </table>
@@ -310,17 +451,22 @@ function buildHtmlEmail({ siteUrl, lessons }) {
 </html>`;
 }
 
-function buildTextEmail({ siteUrl, lessons }) {
+function buildTextEmail({ siteUrl, lessons, latestYouTubeVideo, youtubeChannelUrl }) {
   const lines = lessons.map((lesson) => {
     const url = buildLessonUrl(siteUrl, lesson);
+    const title = getPublicLessonTitle(lesson.title, lesson.level);
     const excerpt = lesson.excerpt ? `\n${lesson.excerpt}` : '';
-    return `- ${lesson.title}\n${url}${excerpt}`;
+    return `- ${title}\n${url}${excerpt}`;
   }).join('\n\n');
 
-  return `New IELTS Corner Lessons\n\n${lines}\n\nYou are receiving this because you subscribed on ieltscorner.ca.`;
+  const latestVideoText = latestYouTubeVideo
+    ? `\n\nLatest YouTube lesson:\n- ${latestYouTubeVideo.title}\n${latestYouTubeVideo.url}`
+    : '';
+
+  return `Latest IELTS Corner Lessons\n\n${lines}${latestVideoText}\n\nKeep improving this week:\n- Weekly webinar: ${siteUrl}/webinar/\n- YouTube lessons: ${youtubeChannelUrl}\n- Telegram channel: https://t.me/Kaysenglishcorner\n- Private lessons: ${siteUrl}/tutoring/\n\nYou are receiving this because you subscribed on ieltscorner.ca.`;
 }
 
-async function sendDigestEmails({ subscribers, lessons, gmailUser, gmailPassword, siteUrl }) {
+async function sendDigestEmails({ subscribers, lessons, gmailUser, gmailPassword, siteUrl, latestYouTubeVideo, youtubeChannelUrl }) {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -334,9 +480,9 @@ async function sendDigestEmails({ subscribers, lessons, gmailUser, gmailPassword
     await transporter.sendMail({
       from: `IELTS Corner <${gmailUser}>`,
       to,
-      subject: `New IELTS lessons this week (${lessons.length})`,
-      text: buildTextEmail({ siteUrl, lessons }),
-      html: buildHtmlEmail({ siteUrl, lessons }),
+      subject: `Your IELTS Corner update: latest ${lessons.length} lessons`,
+      text: buildTextEmail({ siteUrl, lessons, latestYouTubeVideo, youtubeChannelUrl }),
+      html: buildHtmlEmail({ siteUrl, lessons, latestYouTubeVideo, youtubeChannelUrl }),
     });
 
     sentCount += 1;
@@ -350,12 +496,32 @@ async function main() {
   await loadEnvFiles();
   const options = parseArgs(process.argv);
 
+  const siteUrl = (process.env.SITE_URL || DEFAULT_SITE_URL).trim().replace(/\/$/, '');
+  const youtubeChannelUrl = (process.env.YOUTUBE_CHANNEL_URL || DEFAULT_YOUTUBE_CHANNEL_URL).trim();
+  const latestYouTubeVideo = await getLatestYouTubeVideo(youtubeChannelUrl);
+
+  if (options.preview) {
+    const lessons = await getLatestLessons(5);
+    if (lessons.length === 0) {
+      console.log('[preview] No published lessons found.');
+      return;
+    }
+
+    console.log(`[preview] Subject: Your IELTS Corner update: latest ${lessons.length} lessons`);
+    console.log('[preview] Lesson titles:', lessons.map((item) => item.title));
+    console.log('[preview] Latest YouTube video:', latestYouTubeVideo ? latestYouTubeVideo.title : 'not found');
+    console.log('\n[preview] Text email:\n');
+    console.log(buildTextEmail({ siteUrl, lessons, latestYouTubeVideo, youtubeChannelUrl }));
+    console.log('\n[preview] HTML email:\n');
+    console.log(buildHtmlEmail({ siteUrl, lessons, latestYouTubeVideo, youtubeChannelUrl }));
+    return;
+  }
+
   const accessToken = process.env.NETLIFY_ACCESS_TOKEN || '';
   const siteId = process.env.NETLIFY_SITE_ID || '';
   const formName = (process.env.NEWSLETTER_FORM_NAME || DEFAULT_FORM_NAME).trim();
   const gmailUser = process.env.GMAIL_USER || '';
   const gmailPassword = process.env.GMAIL_PASSWORD || '';
-  const siteUrl = (process.env.SITE_URL || DEFAULT_SITE_URL).trim().replace(/\/$/, '');
   const stateFilePath = resolveStateFilePath();
 
   if (!accessToken || !siteId) {
@@ -393,19 +559,20 @@ async function main() {
     return;
   }
 
-  const lessons = await getLessonsAfter(state.lastSentAt);
+  const lessons = await getLatestLessons(5);
   if (lessons.length === 0) {
-    console.log('[info] No new lessons since last send.');
+    console.log('[info] No published lessons found.');
     return;
   }
 
   console.log(`[info] Subscribers: ${subscribers.length}`);
-  console.log(`[info] New lessons: ${lessons.length}`);
+  console.log(`[info] Latest lessons selected: ${lessons.length}`);
   console.log(`[info] Last sent at: ${state.lastSentAt || 'never'}`);
 
   if (options.dryRun) {
     console.log('[dry-run] First recipients:', subscribers.slice(0, 5));
     console.log('[dry-run] Lesson titles:', lessons.map((item) => item.title));
+    console.log('[dry-run] Latest YouTube video:', latestYouTubeVideo ? latestYouTubeVideo.title : 'not found');
     return;
   }
 
@@ -415,9 +582,11 @@ async function main() {
     gmailUser,
     gmailPassword,
     siteUrl,
+    latestYouTubeVideo,
+    youtubeChannelUrl,
   });
 
-  const newestLessonDate = lessons[lessons.length - 1]?.dateIso || new Date().toISOString();
+  const newestLessonDate = lessons[0]?.dateIso || new Date().toISOString();
   await saveState(stateFilePath, {
     lastSentAt: newestLessonDate,
     lastRunAt: new Date().toISOString(),

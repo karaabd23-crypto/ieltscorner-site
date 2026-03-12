@@ -25,7 +25,7 @@ This concept is important because it helps you express yourself more clearly and
 
 ### Definition
 
-Write a clear, simple definition here. Use examples that A2-B1 students can understand.
+This lesson explains how to use IELTS Writing Task 2: Advantage/Disadvantage in clear written English, helping advanced learners produce stronger task responses.
 
 ---
 
@@ -41,14 +41,14 @@ Write a clear, simple definition here. Use examples that A2-B1 students can unde
 </thead>
 <tbody>
   <tr style="border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Form 1</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>Example sentence here</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">When you need to describe...</td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Clear sentence pattern</strong></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>This paragraph uses ielts writing task 2: advantage/disadvantage to present one main idea clearly.</em></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;">For accurate and readable task writing</td>
   </tr>
   <tr style="background: #fafafa; border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Form 2</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>Example sentence here</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">When you need to express...</td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Formal extension pattern</strong></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>In formal tasks, ielts writing task 2: advantage/disadvantage helps connect claims and evidence logically.</em></td>
+    <td style="padding: 0.75rem; border: 1px solid #ddd;">To improve coherence and formal tone</td>
   </tr>
 </tbody>
 </table>
@@ -62,16 +62,16 @@ Write a clear, simple definition here. Use examples that A2-B1 students can unde
 ### ❌ Incorrect
 
 ```
-Incorrect example here
+I use ielts writing task 2: advantage/disadvantage wrong in this sentence and it sound unclear.
 ```
 
 ### ✅ Correct
 
 ```
-Correct example here
+I used ielts writing task 2: advantage/disadvantage incorrectly in this sentence, so it sounded unclear.
 ```
 
-**Why?** Explain the mistake and the correct approach.
+**Why?** Accurate grammar and tense choice make the sentence clear and natural.
 
 </div>
 
@@ -80,14 +80,14 @@ Correct example here
 ## Examples from Real Tests
 
 ### Example 1: IELTS Writing
-> "The chart shows the trend in..."
+> "Overall, the data shows that ielts writing task 2: advantage/disadvantage plays a key role in the final trend."
 
-**Why this works:** Explanation here.
+**Why this works:** It applies ielts writing task 2: advantage/disadvantage in a formal IELTS style with a clear claim.
 
 ### Example 2: CELPIP Speaking
-> "Let me describe a time when..."
+> "In my opinion, using ielts writing task 2: advantage/disadvantage makes this response clearer and more organized."
 
-**Why this works:** Explanation here.
+**Why this works:** It uses ielts writing task 2: advantage/disadvantage to present a direct opinion plus support.
 
 ---
 
