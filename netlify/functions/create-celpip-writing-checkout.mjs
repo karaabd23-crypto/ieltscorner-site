@@ -6,7 +6,7 @@ import {
 } from '../../src/lib/celpipWritingData.mjs';
 
 const STRIPE_API_KEY = process.env.STRIPE_API_KEY;
-const PRICE_ID = (process.env.CELPIP_WRITING_PRICE_ID || '').trim();
+const PRICE_ID = (process.env.CELPIP_WRITING_PRICE_ID || 'price_1T9z9OAfbKGrKsHyDdo8ua53').trim();
 
 function getBaseUrl(event) {
   return (
@@ -27,13 +27,6 @@ export async function handler(event) {
     return {
       statusCode: 500,
       body: JSON.stringify({ error: 'Missing STRIPE_API_KEY in environment variables' }),
-    };
-  }
-
-  if (!PRICE_ID) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: 'Missing CELPIP_WRITING_PRICE_ID. Create a Stripe monthly price and add it to environment variables.' }),
     };
   }
 

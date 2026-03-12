@@ -5,7 +5,7 @@ import {
 } from '../../src/lib/celpipWritingData.mjs';
 
 const STRIPE_API_KEY = process.env.STRIPE_API_KEY;
-const PRICE_ID = (process.env.CELPIP_WRITING_PRICE_ID || '').trim();
+const PRICE_ID = (process.env.CELPIP_WRITING_PRICE_ID || 'price_1T9z9OAfbKGrKsHyDdo8ua53').trim();
 const ADMIN_BYPASS_TOKEN = (process.env.CELPIP_WRITING_ADMIN_BYPASS_TOKEN || '').trim();
 
 function adminBypassPayload() {
