@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 
-const PRIVATE_CALENDLY_URL = 'https://calendly.com/ieltscorner/30min';
+const PRIVATE_CALENDLY_URL = 'https://calendly.com/ieltscorner/60min';
 ---
 
 <Layout
@@ -26,7 +26,7 @@ const PRIVATE_CALENDLY_URL = 'https://calendly.com/ieltscorner/30min';
 
     <div style="height: var(--s-7);"></div>
 
-    <div class="grid grid-2" style="align-items: start; gap: var(--s-5);">
+    <div class="grid" style="align-items: start; gap: var(--s-5);">
       <article class="card">
         <h2 style="margin-top: 0;">Why private classes work</h2>
         <div class="checklist">
@@ -52,13 +52,6 @@ const PRIVATE_CALENDLY_URL = 'https://calendly.com/ieltscorner/30min';
             </div>
           </div>
         </div>
-      </article>
-
-      <article class="surface tutoring-note">
-        <h3 style="margin-top: 0;">Group classes</h3>
-        <p class="muted" style="margin-top: 0; margin-bottom: 0;">
-          Group classes are also managed through Calendly. Use the booking calendar below to select the appropriate class type and time slot.
-        </p>
       </article>
     </div>
 
@@ -87,13 +80,6 @@ const PRIVATE_CALENDLY_URL = 'https://calendly.com/ieltscorner/30min';
     padding: var(--s-5);
     border: 2px solid color-mix(in srgb, var(--accent) 38%, var(--border) 62%);
     border-radius: var(--radius);
-  }
-
-  .tutoring-note {
-    padding: var(--s-5);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    background: color-mix(in srgb, var(--surface) 86%, var(--band) 14%);
   }
 
   @media (max-width: 768px) {
