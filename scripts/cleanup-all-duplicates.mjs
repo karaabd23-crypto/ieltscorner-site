@@ -127,28 +127,31 @@ async function fetchAllChannelMessages(slug) {
     }
 
     const html = await response.text();
-    
-    // Extract all message divs with structure: <div class="tgme_widget_message_day" ... contains multiple messages
-    const dayBlocks = [...html.matchAll(/<div class="tgme_widget_message_day"[\s\S]*?<\/div>/g)];
-    
+
+    const postMatches = [...html.matchAll(/data-post="[^"]*\/(\d+)"/g)];
     const messages = [];
-    for (const dayBlock of dayBlocks) {
-      // Extract individual message IDs and text from each day block
-      const dayHtml = dayBlock[0];
-      
-      // Find message IDs in data-post attributes
-      const postMatches = [...dayHtml.matchAll(/data-post="[^"]*\/(\d+)"/g)];
-      const textMatches = [...dayHtml.matchAll(/<div class="tgme_widget_message_text[\s\S]*?>([\s\S]*?)<\/div>/g)];
-      
-      postMatches.forEach((match, idx) => {
-        const messageId = match[1];
-        const textContent = textMatches[idx]?.[1] ?? '';
-        if (messageId && textContent) {
-          messages.push({
-            messageId: String(messageId),
-            text: htmlToPlainText(textContent),
-          });
-        }
+
+    for (let i = 0; i < postMatches.length; i += 1) {
+      const messageId = postMatches[i]?.[1];
+      const start = postMatches[i]?.index ?? -1;
+      const end = i + 1 < postMatches.length ? (postMatches[i + 1]?.index ?? html.length) : html.length;
+
+      if (!messageId || start < 0 || end <= start) {
+        continue;
+      }
+
+      const chunk = html.slice(start, end);
+      const textMatch = chunk.match(/<div class="tgme_widget_message_text[\s\S]*?>([\s\S]*?)<\/div>/);
+      const textContent = textMatch?.[1] ?? '';
+      const text = htmlToPlainText(textContent).trim();
+
+      if (!text) {
+        continue;
+      }
+
+      messages.push({
+        messageId: String(messageId),
+        text,
       });
     }
 

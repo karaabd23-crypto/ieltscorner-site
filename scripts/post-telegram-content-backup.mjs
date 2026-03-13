@@ -3,6 +3,10 @@ import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const DEFAULT_MODEL = 'gpt-4.1-mini';
+const STANDARD_TELEGRAM_SIGNATURE = `✨ Kay's English Corner✨
+Your Gateway to English Success in Canada 🇨🇦
+🔗 Join us on Telegram
+https://t.me/Kaysenglishcorner`;
 
 const TOPIC_BANK = [
   { type: 'vocab', level: 'B1', topic: 'Serendipity - finding good things by chance', lang: 'EN/FA' },
@@ -146,6 +150,19 @@ function extractJson(text) {
     throw new Error('No JSON object found in model response.');
   }
   return text.slice(start, end + 1);
+}
+
+function ensureStandardSignature(text) {
+  const body = String(text ?? '').trim();
+  if (!body) {
+    return STANDARD_TELEGRAM_SIGNATURE;
+  }
+
+  if (body.includes(`https://t.me/Kaysenglishcorner`) || body.includes(`Kay's English Corner`)) {
+    return body;
+  }
+
+  return `${body}\n\n${STANDARD_TELEGRAM_SIGNATURE}`;
 }
 
 function fallbackContent({ type, level, topic, channelUrl }) {
@@ -1097,7 +1114,7 @@ function resolveChatId(explicitChatId, channelUrl) {
 
   const normalized = url.replace(/^https?:\/\//i, '').replace(/^t\.me\//i, '');
   const slug = normalized.split(/[/?#]/)[0]?.trim();
-  if (!slug) {
+      postBody: ensureStandardSignature(String(safe.postBody ?? fallback.postBody).slice(0, 3500)),
     return '';
   }
 
