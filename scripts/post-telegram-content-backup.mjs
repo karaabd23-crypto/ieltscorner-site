@@ -1114,7 +1114,7 @@ function resolveChatId(explicitChatId, channelUrl) {
 
   const normalized = url.replace(/^https?:\/\//i, '').replace(/^t\.me\//i, '');
   const slug = normalized.split(/[/?#]/)[0]?.trim();
-      postBody: ensureStandardSignature(String(safe.postBody ?? fallback.postBody).slice(0, 3500)),
+  if (!slug) {
     return '';
   }
 
