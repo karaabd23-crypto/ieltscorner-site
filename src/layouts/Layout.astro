@@ -237,11 +237,15 @@ const organizationSchema = {
     </header>
 
     <script is:inline>
-      // Dropdown persistence: keep open for 2s after mouse leaves, close on click elsewhere
+      // Dropdown: hover on desktop, tap-to-toggle on mobile
       document.addEventListener('DOMContentLoaded', () => {
         const dropdowns = document.querySelectorAll('.nav-item-dropdown');
+        const MOBILE_BREAKPOINT = 768;
+
         dropdowns.forEach((item) => {
           let timeoutId;
+
+          // Desktop hover behaviour
           item.addEventListener('mouseenter', () => {
             clearTimeout(timeoutId);
             item.classList.add('dropdown-open');
@@ -251,9 +255,28 @@ const organizationSchema = {
               item.classList.remove('dropdown-open');
             }, 2000);
           });
+
+          // Mobile tap-to-toggle: first tap opens the dropdown,
+          // second tap on the trigger navigates to the link.
+          const trigger = item.querySelector('.nav-trigger');
+          if (trigger) {
+            trigger.addEventListener('click', (e) => {
+              if (window.innerWidth <= MOBILE_BREAKPOINT) {
+                if (!item.classList.contains('dropdown-open')) {
+                  e.preventDefault();
+                  // Close any other open dropdowns first
+                  dropdowns.forEach((d) => {
+                    if (d !== item) d.classList.remove('dropdown-open');
+                  });
+                  item.classList.add('dropdown-open');
+                }
+                // If already open, allow the link to navigate normally
+              }
+            });
+          }
         });
 
-        // Close dropdown immediately if clicking outside
+        // Close all dropdowns when clicking outside any of them
         document.addEventListener('click', (e) => {
           dropdowns.forEach((item) => {
             if (!item.contains(e.target)) {
