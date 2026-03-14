@@ -823,12 +823,19 @@ button{
     min-width: 0;
     width: 100%;
     margin-top: 6px;
-    opacity: 1;
-    visibility: visible;
+    /* hidden by default on mobile; revealed via .dropdown-open toggle */
+    opacity: 0;
+    visibility: hidden;
     transform: none;
-    pointer-events: auto;
+    pointer-events: none;
     box-shadow: none;
     background: rgba(255,255,255,0.75);
+    transition: opacity 200ms ease, visibility 200ms ease;
+  }
+  .nav-item-dropdown.dropdown-open .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 }
 
