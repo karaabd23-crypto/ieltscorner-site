@@ -15,6 +15,8 @@ const {
   canonical = Astro.url.pathname,
   type = "website",
   keywords = "IELTS, CELPIP, English test preparation, Band 7+, CLB 9+, English lessons Canada",
+  noindex = false,
+  structuredData = [],
 } = Astro.props;
 
 const fullTitle = title.includes("IELTS Corner") ? title : `${title} | IELTS Corner`;
@@ -22,6 +24,7 @@ const canonicalURL = new URL(canonical, Astro.site);
 const ogImageURL = new URL(ogImage, Astro.site);
 const isLessonsPath = Astro.url.pathname.startsWith("/lessons");
 const currentPath = Astro.url.pathname;
+const robotsContent = noindex ? "noindex, nofollow" : "index, follow";
 
 const navGroups = [
   {
@@ -30,10 +33,10 @@ const navGroups = [
     items: [
       { label: 'Overview', href: '/ielts' },
       { label: 'All IELTS lessons', href: '/lessons/ielts' },
-      { label: 'Listening', href: '/lessons/ielts/listening' },
-      { label: 'Reading', href: '/lessons/ielts/reading' },
-      { label: 'Writing', href: '/lessons/ielts/writing' },
-      { label: 'Speaking', href: '/lessons/ielts/speaking' },
+      { label: 'Listening', href: '/ielts/listening' },
+      { label: 'Reading', href: '/ielts/reading' },
+      { label: 'Writing', href: '/ielts/writing' },
+      { label: 'Speaking', href: '/ielts/speaking' },
     ],
   },
   {
@@ -90,6 +93,38 @@ const organizationSchema = {
   "teaches": "English Language",
   "educationalLevel": ["Intermediate", "Advanced"],
 };
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "IELTS Corner",
+  "url": Astro.site,
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "IELTS Corner",
+    "url": Astro.site,
+  },
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": type === "article" ? "Article" : "WebPage",
+  "name": fullTitle,
+  "description": description,
+  "url": canonicalURL,
+  "primaryImageOfPage": ogImageURL,
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "IELTS Corner",
+    "url": Astro.site,
+  },
+  "about": ["IELTS", "CELPIP", "English test preparation"],
+};
+
+const extraStructuredData = Array.isArray(structuredData) ? structuredData : [structuredData];
+const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraStructuredData].filter(Boolean);
 ---
 
 <script is:inline>
@@ -109,7 +144,7 @@ const organizationSchema = {
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
     <meta name="author" content="IELTS Corner" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={robotsContent} />
     <link rel="canonical" href={canonicalURL} />
     
     <!-- Open Graph / Facebook -->
@@ -133,7 +168,10 @@ const organizationSchema = {
     <link rel="stylesheet" href="/src/styles/global.css" />
     
     <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    {pageSchemas.map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
+    <slot name="head" />
     
     <!-- Google AdSense -->
     <meta name="google-adsense-account" content="ca-pub-5615542310815721">

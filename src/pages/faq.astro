@@ -1,11 +1,38 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { buildFAQSchema } from "../lib/seo";
+
+const faqStructuredData = [
+  buildFAQSchema([
+    {
+      question: "Are the lessons really free?",
+      answer: "Yes. IELTS Corner lessons are free to read online. Revenue comes from tutoring and writing feedback services.",
+    },
+    {
+      question: "Are the lessons for IELTS or CELPIP?",
+      answer: "Most lessons support both IELTS and CELPIP, while some pages are specific to one exam or task type.",
+    },
+    {
+      question: "How much does tutoring cost?",
+      answer: "Tutoring costs CA$30 per hour for a 60-minute one-on-one lesson.",
+    },
+    {
+      question: "How much does essay correction cost?",
+      answer: "Essay correction costs CA$15 per essay and includes detailed feedback on grammar, vocabulary, organization, and an estimated band score.",
+    },
+    {
+      question: "How long does it take to get feedback?",
+      answer: "Feedback is usually returned within 24 to 48 hours, and sometimes up to 72 hours during busy periods.",
+    },
+  ]),
+];
 ---
 
 <Layout
   title="FAQ — IELTS Corner"
   description="Frequently asked questions about IELTS Corner lessons, tutoring, essay correction, and exam preparation services."
   type="page"
+  structuredData={faqStructuredData}
 >
   <section class="section" style="padding-top: var(--s-6);">
     <div class="hero" style={`--hero-bg: url('/heroes/faq.png');`}>

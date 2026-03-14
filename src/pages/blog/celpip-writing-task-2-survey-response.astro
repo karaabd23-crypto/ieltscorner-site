@@ -1,0 +1,120 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "How do I answer CELPIP Writing Task 2 survey response questions?",
+    answer: "Answer CELPIP Writing Task 2 survey response questions by choosing one position clearly, supporting it with reasons, and comparing it naturally to the alternative when useful.",
+  },
+  {
+    question: "Do I need to discuss both choices in CELPIP survey response tasks?",
+    answer: "You should focus mainly on the option you choose, but it can help to mention why the other option is less suitable if that strengthens your argument.",
+  },
+  {
+    question: "What lowers CELPIP Task 2 survey response scores?",
+    answer: "Students often lose marks by sounding repetitive, failing to justify their choice clearly, or writing paragraphs that drift away from the decision they made.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "CELPIP Writing Task 2 Survey Response", path: "/blog/celpip-writing-task-2-survey-response/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="CELPIP Writing Task 2 Survey Response | Structure and CLB 9 Tips"
+  description="CELPIP Writing Task 2 survey response guide with structure, argument development, and practical CLB 9 strategies for stronger task performance."
+  type="article"
+  keywords="CELPIP Writing Task 2 survey response, CELPIP survey response, CELPIP writing task 2 tips, CLB 9 CELPIP writing, CELPIP survey structure"
+  structuredData={pageStructuredData}
+>
+  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
+    <div style="margin-bottom: var(--s-4);">
+      <a href="/blog" style="color: var(--accent);">← Back to blog</a>
+    </div>
+
+    <header style="margin-bottom: var(--s-4);">
+      <h1 style="margin: 0;">CELPIP Writing Task 2 Survey Response Guide</h1>
+      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
+        <span>📅 March 14, 2026</span>
+        <span>✍️ IELTS Corner Team</span>
+        <span>⏱️ 6 min read</span>
+      </div>
+    </header>
+
+    <div class="divider" style="margin: var(--s-4) 0; height: 2px; background: var(--text-muted-light);"></div>
+
+    <div class="article-content" style="line-height: 1.8;">
+      <p>
+        CELPIP Writing Task 2 survey response questions test more than opinion. They test whether you can make a choice, justify it clearly, and stay organized from beginning to end.
+      </p>
+
+      <h2>What a strong survey response does</h2>
+      <ul>
+        <li>Chooses one option clearly and early.</li>
+        <li>Gives two or three relevant reasons.</li>
+        <li>Uses examples or realistic consequences.</li>
+        <li>Maintains one line of argument instead of changing position halfway through.</li>
+      </ul>
+
+      <h2>A simple structure for CELPIP Task 2</h2>
+      <div style="padding: var(--s-3); background: #dbeafe; border-left: 4px solid #0284c7; border-radius: 4px; margin: var(--s-3) 0;">
+        <p style="margin: 0;"><strong>Introduction:</strong> state which option you choose.</p>
+        <p style="margin: var(--s-2) 0 0;"><strong>Body paragraph 1:</strong> first reason with explanation.</p>
+        <p style="margin: var(--s-2) 0 0;"><strong>Body paragraph 2:</strong> second reason with example or consequence.</p>
+        <p style="margin: var(--s-2) 0 0;"><strong>Closing:</strong> reinforce your choice briefly.</p>
+      </div>
+
+      <h2>Should you mention the other option?</h2>
+      <p>
+        Yes, but only if it strengthens your argument. A short contrast can work well. A full paragraph defending both sides usually weakens clarity.
+      </p>
+
+      <h2>What makes Task 2 sound stronger</h2>
+      <ul>
+        <li>Clear comparative language like “more practical,” “more cost-effective,” or “better suited to…”</li>
+        <li>Specific reasons instead of vague statements like “it is better”</li>
+        <li>Logical sequence from choice to reason to example</li>
+      </ul>
+
+      <h2>Next step</h2>
+      <p>
+        For more practice, open the <a href="/celpip/writing">CELPIP writing hub</a>, the <a href="/lessons/writing/celpip-task2-survey-b2/">CELPIP survey response lesson</a>, or the <a href="/celpip/writing/ai-feedback">AI writing feedback tool</a>.
+      </p>
+
+      <h2>FAQ</h2>
+      {pageFaqs.map((item) => (
+        <details class="card" style="margin-bottom: var(--s-3);">
+          <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
+          <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .article-content {
+    color: var(--text);
+  }
+
+  .article-content h2 {
+    margin-top: var(--s-5);
+    margin-bottom: var(--s-2);
+  }
+
+  .article-content ul {
+    margin: var(--s-2) 0;
+    padding-left: var(--s-4);
+  }
+
+  .article-content li {
+    margin: var(--s-1) 0;
+  }
+</style>

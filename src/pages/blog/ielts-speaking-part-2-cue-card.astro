@@ -1,0 +1,142 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "How do I answer IELTS Speaking Part 2?",
+    answer: "Answer IELTS Speaking Part 2 by using the 1-minute preparation time to note a simple beginning, two or three points to talk about, and a short ending. Then speak in a clear sequence instead of trying to memorize a script.",
+  },
+  {
+    question: "How long should I speak in IELTS Speaking Part 2?",
+    answer: "You should aim to speak close to the full 2 minutes in IELTS Speaking Part 2. Very short answers usually limit your chance to show fluency and language range.",
+  },
+  {
+    question: "Do I need advanced vocabulary for IELTS cue cards?",
+    answer: "No. You need vocabulary you can use naturally and accurately. Clear development is more important than forcing rare words into the answer.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "IELTS Speaking Part 2 Cue Card", path: "/blog/ielts-speaking-part-2-cue-card/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="IELTS Speaking Part 2 Cue Card | How to Speak for 2 Minutes"
+  description="IELTS Speaking Part 2 cue card strategy with 1-minute prep, answer structure, and the habits that help you speak clearly for the full 2 minutes."
+  type="article"
+  keywords="IELTS Speaking Part 2, IELTS cue card, IELTS speaking cue card tips, IELTS speaking part 2 strategy, how to speak for 2 minutes IELTS"
+  structuredData={pageStructuredData}
+>
+  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
+    <div style="margin-bottom: var(--s-4);">
+      <a href="/blog" style="color: var(--accent);">← Back to blog</a>
+    </div>
+
+    <header style="margin-bottom: var(--s-4);">
+      <h1 style="margin: 0;">IELTS Speaking Part 2 Cue Card Guide</h1>
+      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
+        <span>📅 March 14, 2026</span>
+        <span>✍️ IELTS Corner Team</span>
+        <span>⏱️ 6 min read</span>
+      </div>
+    </header>
+
+    <div class="divider" style="margin: var(--s-4) 0; height: 2px; background: var(--text-muted-light);"></div>
+
+    <div class="article-content" style="line-height: 1.8;">
+      <p>
+        IELTS Speaking Part 2 becomes much easier when students stop treating it like a memory test. The cue card is there to guide you. Your goal is to organize ideas fast and keep speaking naturally for the full 2 minutes.
+      </p>
+
+      <h2>What happens in IELTS Speaking Part 2?</h2>
+      <p>You receive a cue card, one minute to prepare, and then you speak for up to two minutes. After that, the examiner usually asks one or two short follow-up questions.</p>
+
+      <h2>How to use the 1-minute preparation time</h2>
+      <ul>
+        <li><strong>10 seconds:</strong> decide on one clear story or situation.</li>
+        <li><strong>30 seconds:</strong> write two or three bullet points with simple keywords.</li>
+        <li><strong>20 seconds:</strong> think of a starting sentence and a final comment.</li>
+      </ul>
+
+      <h2>A simple cue card structure</h2>
+      <div style="padding: var(--s-3); background: #dbeafe; border-left: 4px solid #0284c7; border-radius: 4px; margin: var(--s-3) 0;">
+        <p style="margin: 0;"><strong>Opening:</strong> say what the topic is and why you chose it.</p>
+        <p style="margin: var(--s-2) 0 0;"><strong>Middle:</strong> move through two or three clear details.</p>
+        <p style="margin: var(--s-2) 0 0;"><strong>Ending:</strong> explain why the experience or person mattered to you.</p>
+      </div>
+
+      <h2>What to avoid</h2>
+      <ul>
+        <li>Memorized introductions that sound unnatural.</li>
+        <li>Trying to use rare vocabulary you cannot control.</li>
+        <li>Stopping after 45 seconds because your notes were too short.</li>
+        <li>Repeating the bullet points without development.</li>
+      </ul>
+
+      <h2>How to extend your answer naturally</h2>
+      <p>
+        If you finish too early, add one of these: what happened before, what happened next, how you felt, or why the topic is still important now. That keeps the answer relevant while giving you more material.
+      </p>
+
+      <h2>Example extension prompts</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: var(--s-3) 0;">
+        <tr style="background: var(--surface);">
+          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">If you get stuck</th>
+          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Add this</th>
+        </tr>
+        <tr>
+          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">You described the event already</td>
+          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Explain why it was memorable.</td>
+        </tr>
+        <tr>
+          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">You used all bullet points</td>
+          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Add what you learned or what changed after.</td>
+        </tr>
+        <tr>
+          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">You are repeating yourself</td>
+          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Give one specific example or sensory detail.</td>
+        </tr>
+      </table>
+
+      <h2>Next step</h2>
+      <p>
+        For more cue-card practice, go to the <a href="/ielts/speaking">IELTS speaking hub</a> or open the related <a href="/lessons/speaking/ielts-part2-cuecard-c1/">IELTS Part 2 cue card lesson</a>. If you need live feedback, use <a href="/tutoring">tutoring</a>.
+      </p>
+
+      <h2>FAQ</h2>
+      {pageFaqs.map((item) => (
+        <details class="card" style="margin-bottom: var(--s-3);">
+          <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
+          <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .article-content {
+    color: var(--text);
+  }
+
+  .article-content h2 {
+    margin-top: var(--s-5);
+    margin-bottom: var(--s-2);
+  }
+
+  .article-content ul {
+    margin: var(--s-2) 0;
+    padding-left: var(--s-4);
+  }
+
+  .article-content li {
+    margin: var(--s-1) 0;
+  }
+</style>

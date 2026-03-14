@@ -1,22 +1,85 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageKeywords = "IELTS preparation, IELTS writing, IELTS speaking, IELTS reading, IELTS listening, IELTS tutor, Band 7 IELTS, IELTS writing task 2, IELTS speaking practice";
+
+const pageFaqs = [
+  {
+    question: "What is the best way to prepare for IELTS?",
+    answer: "The best way to prepare for IELTS is to work skill by skill, learn the format, practice real question types, and get feedback on writing or speaking when possible.",
+  },
+  {
+    question: "Does IELTS Corner cover all four IELTS skills?",
+    answer: "Yes. IELTS Corner covers IELTS writing, speaking, reading, and listening through lesson archives, skill hubs, blog posts, and tutoring.",
+  },
+  {
+    question: "Can I use these IELTS lessons for both Academic and General Training?",
+    answer: "Many strategy and language lessons work for both Academic and General Training, especially speaking, listening, grammar, and vocabulary. Writing-specific guidance should be matched to the correct task type.",
+  },
+  {
+    question: "Do you provide feedback for IELTS writing?",
+    answer: "Yes. IELTS Corner offers essay correction and private tutoring for students who want direct feedback on IELTS writing.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "IELTS", path: "/ielts/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
 ---
 
 <Layout
-  title="IELTS — IELTS Corner"
-  description="Band 7+ IELTS support with clear structure for Writing, Speaking, Reading, and Listening."
+  title="IELTS Preparation | Writing, Speaking, Reading and Listening"
+  description="IELTS preparation for writing, speaking, reading, and listening. Learn the IELTS format, improve Band 7+ skills, and use clear lessons, strategy guides, and tutoring."
+  keywords={pageKeywords}
+  structuredData={pageStructuredData}
 >
   <section class="section">
     <div class="hero" style={`--hero-bg: url('/heroes/IELTS.png');`}>
       <div class="hero-content">
         <span class="pill">🎯 IELTS • Band 7+</span>
 
-        <h1>IELTS help that teaches you what really works.</h1>
+        <h1>IELTS preparation that matches how students actually search.</h1>
+
+        <p class="muted" style="max-width: 62ch;">
+          Build your IELTS score with targeted help for writing, speaking, reading, and listening. Use this page as the main hub, then go deeper into the exact skill holding your score back.
+        </p>
 
         <div class="cluster">
-          <a class="btn btn-primary" href="/lessons/ielts">Browse IELTS lessons →</a>
-          <a class="btn btn-ghost" href="/lessons">All lessons →</a>
+          <a class="btn btn-primary" href="/ielts/writing">IELTS writing →</a>
+          <a class="btn btn-ghost" href="/lessons/ielts">All IELTS lessons →</a>
         </div>
+      </div>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <div class="surface" style="padding: var(--s-6);">
+      <h2 style="margin-top: 0;">Start with the right IELTS page</h2>
+      <p class="muted" style="max-width: 68ch; margin-top: 0;">
+        Students rarely search for a vague IELTS course. They search for the exact problem: IELTS writing task 2, IELTS speaking part 2, reading question types, listening traps, or Band 7 strategy. These hubs are organized around that reality.
+      </p>
+      <div class="grid grid-2" style="margin-top: var(--s-4);">
+        <a class="card" href="/ielts/writing" style="text-decoration:none;">
+          <h3>IELTS Writing</h3>
+          <p class="muted">Task 1, Task 2, argument structure, cohesion, grammar control, and score-building feedback options.</p>
+        </a>
+        <a class="card" href="/ielts/speaking" style="text-decoration:none;">
+          <h3>IELTS Speaking</h3>
+          <p class="muted">Part 1, 2, and 3 support with fluency, coherence, vocabulary, and pronunciation guidance.</p>
+        </a>
+        <a class="card" href="/ielts/reading" style="text-decoration:none;">
+          <h3>IELTS Reading</h3>
+          <p class="muted">Question-type strategy, scanning, proof-based answers, and timing discipline.</p>
+        </a>
+        <a class="card" href="/ielts/listening" style="text-decoration:none;">
+          <h3>IELTS Listening</h3>
+          <p class="muted">Section-by-section listening help, trap awareness, prediction, and note-taking habits.</p>
+        </a>
       </div>
     </div>
 
@@ -26,25 +89,88 @@ import Layout from "../../layouts/Layout.astro";
       <article class="card">
         <h3>Writing</h3>
         <p class="muted">Learn how to organize your ideas, connect them clearly, and write in the right style for higher scores.</p>
-        <a class="btn" href="/lessons/ielts/writing">See lessons →</a>
+        <a class="btn" href="/ielts/writing">Open hub →</a>
       </article>
 
       <article class="card">
         <h3>Speaking</h3>
         <p class="muted">Practice giving clear answers with good vocabulary and natural delivery.</p>
-        <a class="btn" href="/lessons/ielts/speaking">See lessons →</a>
+        <a class="btn" href="/ielts/speaking">Open hub →</a>
       </article>
 
       <article class="card">
         <h3>Reading</h3>
         <p class="muted">Learn smart reading strategies, how to manage your time, and how to avoid common mistakes.</p>
-        <a class="btn" href="/lessons/ielts/reading">See lessons →</a>
+        <a class="btn" href="/ielts/reading">Open hub →</a>
       </article>
 
       <article class="card">
         <h3>Listening</h3>
         <p class="muted">Learn how to predict answers, listen for key words, and check your work carefully.</p>
-        <a class="btn" href="/lessons/ielts/listening">See lessons →</a>
+        <a class="btn" href="/ielts/listening">Open hub →</a>
+      </article>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <div class="surface feature">
+      <div class="feature-grid">
+        <div class="stack">
+          <h2>Band 7+ usually depends on these four things</h2>
+          <p class="muted" style="max-width: 60ch;">
+            Students often blame vocabulary alone. In practice, the bigger issues are task understanding, idea development, organization, and error control under time pressure.
+          </p>
+        </div>
+
+        <div class="checklist">
+          <div class="check">
+            <div class="icon">✓</div>
+            <div>
+              <strong>Know the format</strong>
+              <span>Each skill has repeatable question types and predictable traps.</span>
+            </div>
+          </div>
+
+          <div class="check">
+            <div class="icon">✓</div>
+            <div>
+              <strong>Train one weakness at a time</strong>
+              <span>Fix writing structure differently from speaking fluency or reading timing.</span>
+            </div>
+          </div>
+
+          <div class="check">
+            <div class="icon">✓</div>
+            <div>
+              <strong>Use evidence, not guesswork</strong>
+              <span>Reading and listening scores improve when you stop choosing answers by feeling.</span>
+            </div>
+          </div>
+
+          <div class="check">
+            <div class="icon">✓</div>
+            <div>
+              <strong>Get feedback on productive skills</strong>
+              <span>Writing and speaking improve faster when someone shows you the exact problem.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <div class="grid grid-2">
+      <article class="card">
+        <h3>Popular IELTS article</h3>
+        <p class="muted">A focused Band 7 writing strategy page for students trying to move past the mid-band plateau.</p>
+        <a class="btn btn-primary" href="/blog/band-7-writing-strategy">Read the guide →</a>
+      </article>
+
+      <article class="card">
+        <h3>All IELTS lessons</h3>
+        <p class="muted">If you already know your weak area, go directly to the full IELTS lesson archive.</p>
+        <a class="btn" href="/lessons/ielts">Browse lessons →</a>
       </article>
     </div>
 
@@ -88,6 +214,20 @@ import Layout from "../../layouts/Layout.astro";
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <div class="surface" style="padding: var(--s-6);">
+      <h2 style="margin-top: 0;">IELTS preparation FAQ</h2>
+      <div class="stack" style="gap: var(--s-3); margin-top: var(--s-4);">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
       </div>
     </div>
   </section>

@@ -1,0 +1,229 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { getLessonTier, getPublicLessonTitle } from "../../../lib/lessonLevel";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../../lib/seo";
+
+const relatedLessons = (
+  await getCollection(
+    "lessons",
+    ({ data }) =>
+      !data.draft &&
+      data.exam.includes("IELTS") &&
+      ["writing", "grammar", "vocabulary"].includes(data.category)
+  )
+)
+  .sort((a, b) => (a.data.date < b.data.date ? 1 : -1))
+  .slice(0, 8);
+
+const pageFaqs = [
+  {
+    question: "How can I improve my IELTS writing score?",
+    answer: "Improve your IELTS writing score by learning the task format, building clear paragraph structure, answering the question directly, and reducing grammar errors through regular feedback and revision.",
+  },
+  {
+    question: "Does this page help with IELTS Writing Task 1 and Task 2?",
+    answer: "Yes. This IELTS writing hub covers both the overview students need for writing preparation and links to deeper lessons and correction support.",
+  },
+  {
+    question: "Do I need advanced vocabulary for Band 7 in IELTS writing?",
+    answer: "Not necessarily. Band 7 writing depends more on clear task response, organization, and controlled grammar than on forcing rare vocabulary into every sentence.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "IELTS", path: "/ielts/" },
+    { name: "Writing", path: "/ielts/writing/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+
+const pageKeywords = "IELTS writing, IELTS writing task 2, IELTS writing task 1, Band 7 IELTS writing, IELTS essay structure, IELTS writing tips, IELTS essay correction";
+---
+
+<Layout
+  title="IELTS Writing Preparation | Task 1, Task 2 and Band 7 Strategy"
+  description="IELTS writing preparation for Task 1 and Task 2. Improve structure, task response, cohesion, grammar, and Band 7+ writing control."
+  keywords={pageKeywords}
+  structuredData={pageStructuredData}
+>
+  <section class="section">
+    <div class="hero" style={`--hero-bg: url('/heroes/writing.png');`}>
+      <div class="hero-content">
+        <span class="pill">✍️ IELTS Writing</span>
+        <h1>Build the structure first. The score follows.</h1>
+        <p class="muted" style="max-width: 62ch;">
+          IELTS writing scores usually stay low for predictable reasons: weak task response, unclear paragraph logic, and grammar that breaks under time pressure. This page helps you fix those root problems, then go deeper into lessons and feedback.
+        </p>
+        <div class="cluster">
+          <a class="btn btn-primary" href="/lessons/ielts/writing">Browse writing lessons →</a>
+          <a class="btn btn-ghost" href="/essay-correction">Essay correction →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface" style="padding: var(--s-5);">
+      <div class="cluster quick-nav">
+        <a class="btn" href="/ielts">IELTS Home</a>
+        <a class="btn" href="/ielts/listening">Listening</a>
+        <a class="btn" href="/ielts/reading">Reading</a>
+        <a class="btn" href="/ielts/speaking">Speaking</a>
+        <a class="btn btn-primary" href="/ielts/writing">Writing</a>
+        <a class="btn" href="/lessons/ielts">All IELTS lessons</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface feature">
+      <div class="feature-grid">
+        <div class="stack">
+          <h2>What strong IELTS writing usually looks like</h2>
+          <p class="muted" style="max-width: 62ch;">
+            A strong essay or report answers the task directly, keeps one main idea per paragraph, and uses grammar you can control consistently. Complex language helps only when it stays accurate.
+          </p>
+        </div>
+
+        <div class="grid grid-2" style="gap: var(--s-4);">
+          <div class="card">
+            <h3>Task response</h3>
+            <p class="muted">Answer the exact question. Do not write a memorized essay that only matches the topic loosely.</p>
+          </div>
+          <div class="card">
+            <h3>Paragraph control</h3>
+            <p class="muted">One clear idea per body paragraph. Explain it, then support it with a relevant example.</p>
+          </div>
+          <div class="card">
+            <h3>Cohesion</h3>
+            <p class="muted">Use linking words to show logic, not to decorate every sentence.</p>
+          </div>
+          <div class="card">
+            <h3>Grammar range and accuracy</h3>
+            <p class="muted">Band 7+ writing needs variety, but accuracy still matters more than risk.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface" style="padding: var(--s-6);">
+      <h2>IELTS writing format at a glance</h2>
+      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-4);">
+        <div class="card">
+          <h3>Task 1</h3>
+          <p class="muted">Academic candidates describe visual information. General Training candidates write a letter. Both require clear purpose, organization, and tone control.</p>
+        </div>
+        <div class="card">
+          <h3>Task 2</h3>
+          <p class="muted">A formal essay that usually matters more for the final writing band. Students need position, support, and paragraph discipline.</p>
+        </div>
+      </div>
+      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-4);">
+        <div class="card">
+          <h3>Best use of time</h3>
+          <p class="muted">Most students should spend more time on Task 2. The exact split depends on format, but planning and proofreading should never disappear completely.</p>
+        </div>
+        <div class="card">
+          <h3>Highest-leverage habit</h3>
+          <p class="muted">Write, review, and correct. IELTS writing improves fastest when you see exactly why a sentence or paragraph is weak.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface" style="padding: var(--s-6);">
+      <h2>Popular IELTS writing guides</h2>
+      <p class="muted" style="margin-top: 0; max-width: 70ch;">
+        These article-style guides target the specific IELTS writing queries students search most often before they browse the full lesson archive.
+      </p>
+      <div class="grid grid-2" style="margin-bottom: var(--s-5);">
+        <a class="card" href="/blog/ielts-writing-task-2-structure" style="text-decoration:none;">
+          <h3>IELTS Writing Task 2 structure</h3>
+          <p class="muted">A focused guide to essay format, paragraph planning, and why clear structure stabilizes scores.</p>
+        </a>
+        <a class="card" href="/blog/band-7-writing-strategy" style="text-decoration:none;">
+          <h3>How to get Band 7 in IELTS Writing</h3>
+          <p class="muted">A score-focused strategy page for students trying to move up from Band 6 territory.</p>
+        </a>
+      </div>
+      <div class="grid grid-3" style="gap: var(--s-3); margin-bottom: var(--s-5);">
+        <a class="card" href="/blog/ielts-writing-task-1-academic-guide" style="text-decoration:none;">
+          <h3>IELTS Task 1 Academic Guide</h3>
+          <p class="muted">Charts, tables, maps, and process response structure.</p>
+        </a>
+        <a class="card" href="/blog/ielts-writing-task-1-general-training-letter" style="text-decoration:none;">
+          <h3>IELTS Task 1 GT Letter Guide</h3>
+          <p class="muted">Tone control and complete bullet-point coverage.</p>
+        </a>
+        <a class="card" href="/blog/ielts-writing-task-2-opinion-essay" style="text-decoration:none;">
+          <h3>IELTS Task 2 Opinion Essay</h3>
+          <p class="muted">Position-first structure with clear support logic.</p>
+        </a>
+        <a class="card" href="/blog/ielts-writing-task-2-discussion-essay" style="text-decoration:none;">
+          <h3>IELTS Task 2 Discussion Essay</h3>
+          <p class="muted">Both views plus your own stance and justification.</p>
+        </a>
+        <a class="card" href="/blog/ielts-writing-task-2-advantages-disadvantages" style="text-decoration:none;">
+          <h3>Advantages/Disadvantages Essay</h3>
+          <p class="muted">Compare impact depth instead of listing random ideas.</p>
+        </a>
+        <a class="card" href="/blog/ielts-writing-task-2-problem-solution" style="text-decoration:none;">
+          <h3>Problem Solution Essay</h3>
+          <p class="muted">Cause analysis with realistic, specific solutions.</p>
+        </a>
+      </div>
+
+      <h2>Related IELTS writing lessons</h2>
+      <p class="muted" style="margin-top: 0; max-width: 70ch;">
+        These writing, grammar, and vocabulary lessons support the exact language decisions that affect your IELTS writing band score.
+      </p>
+      <div class="grid grid-2">
+        {relatedLessons.map((lesson) => (
+          <a class="card" href={`/lessons/${lesson.data.category}/${lesson.slug}/`} style="display:block; text-decoration:none;">
+            <div class="cluster" style="justify-content: space-between;">
+              <span class="pill">{lesson.data.category} • {getLessonTier(lesson.data.level)}</span>
+              <span class="pill">Open →</span>
+            </div>
+            <h3 style="margin-top: var(--s-3);">{getPublicLessonTitle(lesson.data.title, lesson.data.level)}</h3>
+            <p class="muted" style="margin-bottom: 0;">{lesson.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Need direct writing feedback?</h3>
+        <p class="muted">Essay correction is usually the fastest way to stop repeating the same mistakes.</p>
+        <a class="btn btn-primary" href="/essay-correction">Get essay correction →</a>
+      </div>
+      <div class="card">
+        <h3>Want a broader IELTS study plan?</h3>
+        <p class="muted">Go back to the main IELTS hub and move into the next skill when writing is under control.</p>
+        <a class="btn" href="/ielts">Back to IELTS →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface" style="padding: var(--s-6);">
+      <h2 style="margin-top: 0;">IELTS writing FAQ</h2>
+      <div class="stack" style="gap: var(--s-3); margin-top: var(--s-4);">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

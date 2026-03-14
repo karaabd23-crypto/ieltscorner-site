@@ -1,0 +1,126 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "How do I write CELPIP Writing Task 1 email responses?",
+    answer: "Write CELPIP Writing Task 1 email responses with a clear purpose, direct response to every bullet point, organized paragraphs, and a tone that matches the situation.",
+  },
+  {
+    question: "What tone should I use in CELPIP Task 1 email?",
+    answer: "Most CELPIP Task 1 emails require a semi-formal tone. You should sound polite and clear without becoming too casual or too academic.",
+  },
+  {
+    question: "What lowers CELPIP Task 1 email scores?",
+    answer: "Students lose marks when they miss one of the prompt points, use the wrong tone, or write paragraphs that feel disconnected and repetitive.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "CELPIP Writing Task 1 Email", path: "/blog/celpip-writing-task-1-email/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="CELPIP Writing Task 1 Email | Structure, Tone and CLB 9 Tips"
+  description="CELPIP Writing Task 1 email guide with structure, tone, prompt coverage, and the habits that help students write stronger CLB 9 responses."
+  type="article"
+  keywords="CELPIP Writing Task 1 email, CELPIP email writing, CELPIP writing task 1 tips, CELPIP email structure, CLB 9 CELPIP writing"
+  structuredData={pageStructuredData}
+>
+  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
+    <div style="margin-bottom: var(--s-4);">
+      <a href="/blog" style="color: var(--accent);">← Back to blog</a>
+    </div>
+
+    <header style="margin-bottom: var(--s-4);">
+      <h1 style="margin: 0;">CELPIP Writing Task 1 Email Guide</h1>
+      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
+        <span>📅 March 14, 2026</span>
+        <span>✍️ IELTS Corner Team</span>
+        <span>⏱️ 6 min read</span>
+      </div>
+    </header>
+
+    <div class="divider" style="margin: var(--s-4) 0; height: 2px; background: var(--text-muted-light);"></div>
+
+    <div class="article-content" style="line-height: 1.8;">
+      <p>
+        CELPIP Writing Task 1 looks simple until students start missing prompt points or using the wrong tone. A strong email response is not just correct English. It is organized, complete, and appropriate for the situation.
+      </p>
+
+      <h2>What CELPIP Task 1 usually requires</h2>
+      <p>
+        You usually need to write to a person or organization, explain a situation, and ask for or provide something specific. The task is practical, so clarity matters more than sounding overly formal.
+      </p>
+
+      <h2>A simple Task 1 email structure</h2>
+      <div style="padding: var(--s-3); background: #dbeafe; border-left: 4px solid #0284c7; border-radius: 4px; margin: var(--s-3) 0;">
+        <p style="margin: 0;"><strong>Opening:</strong> greet the reader and state the reason for writing.</p>
+        <p style="margin: var(--s-2) 0 0;"><strong>Body paragraph 1:</strong> explain the context or problem.</p>
+        <p style="margin: var(--s-2) 0 0;"><strong>Body paragraph 2:</strong> ask, suggest, or respond to the task points clearly.</p>
+        <p style="margin: var(--s-2) 0 0;"><strong>Closing:</strong> polite final sentence and sign-off.</p>
+      </div>
+
+      <h2>How to keep the tone right</h2>
+      <ul>
+        <li>Use polite requests such as “I would appreciate it if…”</li>
+        <li>Avoid texting-style language like “btw” or “u”.</li>
+        <li>Do not become too stiff if the context is friendly but still practical.</li>
+      </ul>
+
+      <h2>The biggest Task 1 mistake</h2>
+      <p>
+        The biggest mistake is incomplete coverage. If the prompt gives you three things to include, all three must appear clearly in the response. Good grammar cannot fully rescue a missing task point.
+      </p>
+
+      <h2>Quick checklist before you finish</h2>
+      <ul>
+        <li>Did you answer every bullet point?</li>
+        <li>Is the purpose of the email obvious in the first lines?</li>
+        <li>Does the tone match the situation?</li>
+        <li>Does each paragraph have one clear job?</li>
+        <li>Did you check for spelling and repeated phrases?</li>
+      </ul>
+
+      <h2>Next step</h2>
+      <p>
+        To practice with more examples, open the <a href="/celpip/writing">CELPIP writing hub</a> or go directly to the <a href="/lessons/writing/celpip-task1-email-b2/">CELPIP Task 1 email lesson</a>. If you want live scoring, use the <a href="/celpip/writing/ai-feedback">AI writing tool</a>.
+      </p>
+
+      <h2>FAQ</h2>
+      {pageFaqs.map((item) => (
+        <details class="card" style="margin-bottom: var(--s-3);">
+          <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
+          <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .article-content {
+    color: var(--text);
+  }
+
+  .article-content h2 {
+    margin-top: var(--s-5);
+    margin-bottom: var(--s-2);
+  }
+
+  .article-content ul {
+    margin: var(--s-2) 0;
+    padding-left: var(--s-4);
+  }
+
+  .article-content li {
+    margin: var(--s-1) 0;
+  }
+</style>

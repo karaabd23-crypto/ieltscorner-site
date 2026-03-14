@@ -1,0 +1,73 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "What are the main IELTS Reading question types?",
+    answer: "Main IELTS Reading question types include True/False/Not Given, matching headings, summary completion, multiple choice, sentence completion, and matching information.",
+  },
+  {
+    question: "How should I handle different IELTS Reading question types?",
+    answer: "Handle IELTS Reading question types with a proof-first method: identify keywords, locate paraphrases in the text, and confirm evidence before selecting an answer.",
+  },
+  {
+    question: "Why do students lose marks in IELTS Reading?",
+    answer: "Students often lose marks by relying on keyword matching only, misreading question instructions, and spending too long on one difficult item.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "IELTS Reading Question Types", path: "/blog/ielts-reading-question-types/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="IELTS Reading Question Types | Strategy by Question Format"
+  description="IELTS Reading question types explained with practical strategy for True/False/Not Given, matching, completion tasks, and time management."
+  type="article"
+  keywords="IELTS Reading question types, IELTS True False Not Given, IELTS matching headings, IELTS reading tips"
+  structuredData={pageStructuredData}
+>
+  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
+    <div style="margin-bottom: var(--s-4);"><a href="/blog" style="color: var(--accent);">← Back to blog</a></div>
+    <header style="margin-bottom: var(--s-4);">
+      <h1 style="margin: 0;">IELTS Reading Question Types Guide</h1>
+      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
+        <span>📅 March 14, 2026</span><span>✍️ IELTS Corner Team</span><span>⏱️ 7 min read</span>
+      </div>
+    </header>
+    <div class="article-content" style="line-height: 1.8;">
+      <p>IELTS Reading is not one skill. Different question types require different reading behaviors. Students improve faster when they stop using one method for every task.</p>
+      <h2>High-impact IELTS Reading question types</h2>
+      <ul>
+        <li>True/False/Not Given</li>
+        <li>Matching headings</li>
+        <li>Summary and sentence completion</li>
+        <li>Multiple choice and matching information</li>
+      </ul>
+      <h2>Core strategy</h2>
+      <p>Use a proof-first approach: identify question keywords, find paraphrases, and confirm exact evidence lines before choosing an answer.</p>
+      <h2>Common mistakes</h2>
+      <ul>
+        <li>Choosing answers by topic familiarity</li>
+        <li>Ignoring instruction words like NO MORE THAN TWO WORDS</li>
+        <li>Spending too much time on one item and losing later marks</li>
+      </ul>
+      <h2>Next step</h2>
+      <p>Use the <a href="/ielts/reading">IELTS reading hub</a> and the reading lesson archive at <a href="/lessons/ielts/reading">IELTS reading lessons</a> to drill question-type behavior directly.</p>
+      <h2>FAQ</h2>
+      {pageFaqs.map((item) => (
+        <details class="card" style="margin-bottom: var(--s-3);">
+          <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
+          <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </article>
+</Layout>

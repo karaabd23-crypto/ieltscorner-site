@@ -6,6 +6,11 @@ import { getCollection, type CollectionEntry } from "astro:content";
 import { getLessonTier, getPublicLessonTitle } from "../../../lib/lessonLevel";
 
 type LessonEntry = CollectionEntry<"lessons">;
+type GuideLink = {
+  title: string;
+  href: string;
+  description: string;
+};
 
 const categories: LessonEntry["data"]["category"][] = [
   "grammar",
@@ -42,6 +47,7 @@ const { item } = Astro.props as { item: LessonEntry };
 const { Content, headings } = await item.render();
 const publicTitle = getPublicLessonTitle(item.data.title, item.data.level);
 const currentCategory = item.data.category;
+const slugText = item.slug.toLowerCase();
 
 const sameCategoryLessons = (
   await getCollection(
@@ -56,6 +62,116 @@ const olderLesson =
   currentIndex >= 0 && currentIndex < sameCategoryLessons.length - 1
     ? sameCategoryLessons[currentIndex + 1]
     : null;
+
+const guideLinks: GuideLink[] = [];
+const seenGuideHrefs = new Set<string>();
+
+const addGuide = (guide: GuideLink) => {
+  if (seenGuideHrefs.has(guide.href)) return;
+  seenGuideHrefs.add(guide.href);
+  guideLinks.push(guide);
+};
+
+if (item.data.exam.includes("IELTS")) {
+  if (currentCategory === "writing") {
+    addGuide({
+      title: "IELTS Writing Task 2 Structure",
+      href: "/blog/ielts-writing-task-2-structure",
+      description: "Essay format, paragraph control, and timing structure for stable scores.",
+    });
+    addGuide({
+      title: "How to Get Band 7 in IELTS Writing",
+      href: "/blog/band-7-writing-strategy",
+      description: "A focused strategy guide for moving from Band 6 to Band 7+.",
+    });
+  }
+
+  if (currentCategory === "speaking") {
+    addGuide({
+      title: "IELTS Speaking Part 2 Cue Card Guide",
+      href: "/blog/ielts-speaking-part-2-cue-card",
+      description: "How to use 1-minute prep time and maintain coherent 2-minute answers.",
+    });
+    addGuide({
+      title: "IELTS Speaking Part 1 Topics Guide",
+      href: "/blog/ielts-speaking-part-1-topics",
+      description: "Natural, score-safe approaches for short personal topic questions.",
+    });
+  }
+
+  if (currentCategory === "reading") {
+    addGuide({
+      title: "IELTS Reading Question Types Guide",
+      href: "/blog/ielts-reading-question-types",
+      description: "Question-type strategy for matching, completion, and T/F/NG tasks.",
+    });
+  }
+}
+
+if (item.data.exam.includes("CELPIP")) {
+  if (currentCategory === "writing") {
+    addGuide({
+      title: "CELPIP Writing Task 1 Email Guide",
+      href: "/blog/celpip-writing-task-1-email",
+      description: "Tone, structure, and prompt coverage for stronger Task 1 responses.",
+    });
+    addGuide({
+      title: "CELPIP Writing Task 2 Survey Response Guide",
+      href: "/blog/celpip-writing-task-2-survey-response",
+      description: "Position, support, and paragraph flow for Task 2 clarity.",
+    });
+    addGuide({
+      title: "CELPIP Sample Answers Guide",
+      href: "/blog/celpip-sample-answers",
+      description: "How to use model answers strategically without memorization traps.",
+    });
+  }
+
+  if (currentCategory === "speaking") {
+    addGuide({
+      title: "CELPIP Speaking Task 1 Guide",
+      href: "/blog/celpip-speaking-task-1",
+      description: "A clear structure for personal-experience responses under time pressure.",
+    });
+    addGuide({
+      title: "CELPIP Speaking Task 2 Guide",
+      href: "/blog/celpip-speaking-part2",
+      description: "Task-level strategy for fluency, content development, and score control.",
+    });
+  }
+}
+
+if (slugText.includes("task1") && currentCategory === "writing") {
+  addGuide({
+    title: "CELPIP Writing Task 1 Email Guide",
+    href: "/blog/celpip-writing-task-1-email",
+    description: "Specific guidance for email tasks and semi-formal tone control.",
+  });
+}
+
+if (slugText.includes("task2") && currentCategory === "writing") {
+  addGuide({
+    title: "IELTS Writing Task 2 Structure",
+    href: "/blog/ielts-writing-task-2-structure",
+    description: "A reliable blueprint for high-intent essay preparation queries.",
+  });
+}
+
+if (slugText.includes("part1") && currentCategory === "speaking") {
+  addGuide({
+    title: "IELTS Speaking Part 1 Topics Guide",
+    href: "/blog/ielts-speaking-part-1-topics",
+    description: "Practical development techniques for short speaking prompts.",
+  });
+}
+
+if (slugText.includes("part2") && currentCategory === "speaking") {
+  addGuide({
+    title: "IELTS Speaking Part 2 Cue Card Guide",
+    href: "/blog/ielts-speaking-part-2-cue-card",
+    description: "How to plan, extend, and close long-turn answers naturally.",
+  });
+}
 
 // SEO: Structured Data for Lesson
 const lessonSchema = {
@@ -166,6 +282,21 @@ const seoKeywords = `${item.data.title}, ${item.data.category}, ${item.data.leve
       {item.data.quiz.length > 0 && (
         <div style="margin-top: var(--s-6);">
           <Quiz title="Interactive practice" questions={item.data.quiz} />
+        </div>
+      )}
+
+      {guideLinks.length > 0 && (
+        <div class="surface" style="padding: var(--s-4); margin-top: var(--s-6);">
+          <h3 style="margin-top: 0;">Related Strategy Guides</h3>
+          <p class="muted" style="margin-top: 0;">Use these focused pages to go deeper on the exact test task behind this lesson.</p>
+          <div class="grid grid-2" style="gap: var(--s-3);">
+            {guideLinks.slice(0, 4).map((guide) => (
+              <a class="card" href={guide.href} style="display:block; text-decoration:none;">
+                <h4 style="margin-top: 0; margin-bottom: var(--s-1);">{guide.title}</h4>
+                <p class="muted" style="margin: 0;">{guide.description}</p>
+              </a>
+            ))}
+          </div>
         </div>
       )}
 

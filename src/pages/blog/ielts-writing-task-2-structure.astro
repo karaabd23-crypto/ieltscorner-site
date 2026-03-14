@@ -1,0 +1,160 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "What is the best structure for IELTS Writing Task 2?",
+    answer: "A reliable IELTS Writing Task 2 structure is introduction, two body paragraphs, and conclusion. Each body paragraph should focus on one main reason supported by explanation and an example.",
+  },
+  {
+    question: "How many paragraphs should IELTS Writing Task 2 have?",
+    answer: "Most strong IELTS Writing Task 2 essays have four paragraphs: introduction, body paragraph 1, body paragraph 2, and conclusion.",
+  },
+  {
+    question: "Do I need a complicated structure for Band 7 in IELTS Writing Task 2?",
+    answer: "No. Band 7 usually comes from a clear, controlled structure rather than an overly complicated one. Simplicity plus logical development is stronger than forced complexity.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "IELTS Writing Task 2 Structure", path: "/blog/ielts-writing-task-2-structure/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="IELTS Writing Task 2 Structure | Simple Essay Format for Band 7+"
+  description="IELTS Writing Task 2 structure explained clearly. Learn the essay format, paragraph plan, timing, and common mistakes that lower Band 7+ writing scores."
+  type="article"
+  keywords="IELTS Writing Task 2 structure, IELTS essay structure, IELTS Writing Task 2 format, Band 7 IELTS writing, IELTS essay paragraphs"
+  structuredData={pageStructuredData}
+>
+  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
+    <div style="margin-bottom: var(--s-4);">
+      <a href="/blog" style="color: var(--accent);">← Back to blog</a>
+    </div>
+
+    <header style="margin-bottom: var(--s-4);">
+      <h1 style="margin: 0;">IELTS Writing Task 2 Structure</h1>
+      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
+        <span>📅 March 14, 2026</span>
+        <span>✍️ IELTS Corner Team</span>
+        <span>⏱️ 7 min read</span>
+      </div>
+    </header>
+
+    <div class="divider" style="margin: var(--s-4) 0; height: 2px; background: var(--text-muted-light);"></div>
+
+    <div class="article-content" style="line-height: 1.8;">
+      <p>
+        Many IELTS essays stay stuck around Band 6 because the structure is unstable. Students add random ideas, overuse linking words, or write paragraphs that do not really support the position. A strong IELTS Writing Task 2 score starts with a predictable essay shape.
+      </p>
+
+      <h2>The 4-paragraph structure that works</h2>
+      <div class="tips-box" style="padding: var(--s-3); background: #dbeafe; border-left: 4px solid #0284c7; border-radius: 4px; margin: var(--s-3) 0;">
+        <p style="margin: 0;"><strong>Introduction:</strong> paraphrase the question and state your position.</p>
+        <p style="margin: var(--s-2) 0 0;"><strong>Body 1:</strong> first main reason, then explanation and example.</p>
+        <p style="margin: var(--s-2) 0 0;"><strong>Body 2:</strong> second main reason, then explanation and example.</p>
+        <p style="margin: var(--s-2) 0 0;"><strong>Conclusion:</strong> restate your position without adding a new idea.</p>
+      </div>
+
+      <h2>What each paragraph should do</h2>
+      <p><strong>Introduction:</strong> Do not write a long background story. Your job is to set up the topic and make your position clear.</p>
+      <p><strong>Body paragraphs:</strong> Each body paragraph needs one central idea. If two unrelated reasons appear in the same paragraph, cohesion drops.</p>
+      <p><strong>Conclusion:</strong> Keep it short. Summarize the position and main logic. Do not introduce a new example here.</p>
+
+      <h2>Sample template</h2>
+      <div style="padding: var(--s-3); background: var(--surface); border-radius: 6px; margin: var(--s-3) 0;">
+        <p><strong>Introduction:</strong> While some people believe X, I believe Y because reason 1 and reason 2.</p>
+        <p><strong>Body 1:</strong> First, reason 1. Explain why it matters. Add one specific example.</p>
+        <p><strong>Body 2:</strong> Second, reason 2. Explain it clearly. Add one relevant example.</p>
+        <p><strong>Conclusion:</strong> In conclusion, I believe Y because of reason 1 and reason 2.</p>
+      </div>
+
+      <h2>Timing for IELTS Writing Task 2</h2>
+      <ul>
+        <li><strong>2-3 minutes:</strong> decide your position and outline two body ideas.</li>
+        <li><strong>30-32 minutes:</strong> write the full essay.</li>
+        <li><strong>5 minutes:</strong> check grammar, spelling, punctuation, and repetition.</li>
+      </ul>
+
+      <h2>Common structure mistakes</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: var(--s-3) 0;">
+        <tr style="background: var(--surface);">
+          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Mistake</th>
+          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Fix</th>
+        </tr>
+        <tr>
+          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Unclear opinion in introduction</td>
+          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">State the position directly in one sentence.</td>
+        </tr>
+        <tr>
+          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Three or four reasons in one body paragraph</td>
+          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Limit each paragraph to one core reason.</td>
+        </tr>
+        <tr>
+          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Conclusion adds a fresh argument</td>
+          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Only summarize what you already proved.</td>
+        </tr>
+        <tr>
+          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Linking words everywhere</td>
+          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Use transitions when meaning changes, not in every sentence.</td>
+        </tr>
+      </table>
+
+      <h2>What Band 7 essays usually do better</h2>
+      <p>
+        Band 7 essays are not magical. They usually have a clearer position, stronger paragraph unity, and fewer moments where the reader has to guess why a sentence is there. That is why structure matters so much.
+      </p>
+
+      <h2>Next step</h2>
+      <p>
+        Use this structure on one essay today, then compare it to your older writing. If you want direct feedback, go to <a href="/essay-correction">essay correction</a>. If you want more task-specific support, visit the <a href="/ielts/writing">IELTS writing hub</a> or browse the <a href="/lessons/ielts/writing">IELTS writing lessons</a>.
+      </p>
+
+      <h2>FAQ</h2>
+      {pageFaqs.map((item) => (
+        <details class="card" style="margin-bottom: var(--s-3);">
+          <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
+          <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+        </details>
+      ))}
+    </div>
+
+    <div class="divider" style="margin: var(--s-4) 0; height: 2px; background: var(--text-muted-light);"></div>
+
+    <div style="padding: var(--s-4); background: var(--accent-light); border-radius: 8px; text-align: center;">
+      <h3 style="margin-top: 0;">Need feedback on your IELTS writing?</h3>
+      <p style="margin: var(--s-2) 0;">Use essay correction for line-by-line feedback or open the IELTS writing hub for more task-specific guidance.</p>
+      <div class="cluster" style="justify-content: center;">
+        <a href="/essay-correction" class="btn btn-primary">Essay correction →</a>
+        <a href="/ielts/writing" class="btn btn-ghost">IELTS writing hub →</a>
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .article-content {
+    color: var(--text);
+  }
+
+  .article-content h2 {
+    margin-top: var(--s-5);
+    margin-bottom: var(--s-2);
+  }
+
+  .article-content ul {
+    margin: var(--s-2) 0;
+    padding-left: var(--s-4);
+  }
+
+  .article-content li {
+    margin: var(--s-1) 0;
+  }
+</style>

@@ -1,0 +1,122 @@
+﻿---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "How should I use this guide effectively?",
+    answer: "Use the structure on one timed response, review where logic breaks, then revise the same response once. This loop builds score-related habits faster than writing many unchecked answers.",
+  },
+  {
+    question: "Is this enough for a high band or CLB score?",
+    answer: "This guide gives you a strong strategy baseline. Most candidates improve faster when they combine it with targeted lessons and feedback.",
+  },
+  {
+    question: "What should I do after reading this page?",
+    answer: "Practice one task immediately, then compare your draft against the checklist and linked resources below.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "IELTS Writing Task 2 Discussion Essay", path: "/blog/ielts-writing-task-2-discussion-essay/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="IELTS Writing Task 2 Discussion Essay | Both Views and Your Opinion"
+  description="IELTS discussion essay format explained with both-view development, balanced argument, and clear personal position."
+  type="article"
+  keywords="IELTS discussion essay, IELTS both views essay, IELTS task 2 discussion"
+  structuredData={pageStructuredData}
+>
+  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
+    <div style="margin-bottom: var(--s-4);">
+      <a href="/blog" style="color: var(--accent);">&larr; Back to blog</a>
+    </div>
+
+    <header style="margin-bottom: var(--s-4);">
+      <h1 style="margin: 0;">IELTS Writing Task 2 Discussion Essay</h1>
+      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
+        <span>March 14, 2026</span>
+        <span>IELTS Corner Team</span>
+        <span>6 min read</span>
+      </div>
+    </header>
+
+    <div class="divider" style="margin: var(--s-4) 0; height: 2px; background: var(--text-muted-light);"></div>
+
+    <div class="article-content" style="line-height: 1.8;">
+      <p>Discussion essays require control: represent both views fairly, then make your own view explicit and supported.</p>
+
+      <h2>Quick strategy framework</h2>
+      <ul>
+        <li>Plan before writing or speaking so your response has a clear structure.</li>
+        <li>Keep one main idea per paragraph or answer block.</li>
+        <li>Support claims with one relevant reason or example, not multiple weak points.</li>
+        <li>Leave time for a short review step to catch avoidable errors.</li>
+      </ul>
+
+      <h2>Common mistakes to avoid</h2>
+      <table style="width: 100%; border-collapse: collapse; margin: var(--s-3) 0;">
+        <tr style="background: var(--surface);">
+          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Mistake</th>
+          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Better move</th>
+        </tr>
+        <tr>
+          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Starting without a plan</td>
+          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Take 1-2 minutes to map your response first.</td>
+        </tr>
+        <tr>
+          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Adding ideas without development</td>
+          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Develop fewer ideas with clearer support.</td>
+        </tr>
+        <tr>
+          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Skipping review</td>
+          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Reserve a short final check for clarity and errors.</td>
+        </tr>
+      </table>
+
+      <h2>Related guides and next steps</h2>
+      <ul>
+        <li><a href="/ielts/writing">IELTS writing hub</a></li>
+        <li><a href="/blog/ielts-writing-task-2-opinion-essay">Opinion essay guide</a></li>
+        <li><a href="/blog/ielts-writing-task-2-problem-solution">Problem solution guide</a></li>
+        <li><a href="/essay-correction">Essay correction service</a></li>
+      </ul>
+
+      <h2>FAQ</h2>
+      {pageFaqs.map((item) => (
+        <details class="card" style="margin-bottom: var(--s-3);">
+          <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
+          <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .article-content {
+    color: var(--text);
+  }
+
+  .article-content h2 {
+    margin-top: var(--s-5);
+    margin-bottom: var(--s-2);
+  }
+
+  .article-content ul {
+    margin: var(--s-2) 0;
+    padding-left: var(--s-4);
+  }
+
+  .article-content li {
+    margin: var(--s-1) 0;
+  }
+</style>
+

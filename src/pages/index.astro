@@ -2,15 +2,38 @@
 import Layout from "../layouts/Layout.astro";
 import Testimonials from "../components/Testimonials.astro";
 import Newsletter from "../components/Newsletter.astro";
+import { buildFAQSchema } from "../lib/seo";
 
-const homeKeywords = "IELTS preparation, CELPIP test, Band 7+ IELTS, CLB 9+ CELPIP, English test prep Canada, IELTS lessons, CELPIP lessons, IELTS grammar, IELTS vocabulary, IELTS writing, IELTS speaking, English tutoring Canada";
+const homeKeywords = "IELTS preparation, CELPIP preparation, IELTS lessons, CELPIP lessons, IELTS writing, IELTS speaking, CELPIP writing, CELPIP speaking, IELTS tutor, CELPIP tutor, IELTS writing task 2, CELPIP writing examples, English test preparation";
+
+const homeFaqs = [
+  {
+    question: "Is IELTS Corner for IELTS or CELPIP?",
+    answer: "IELTS Corner supports both IELTS and CELPIP with free lessons, test-specific skill hubs, tutoring, and writing support.",
+  },
+  {
+    question: "Where should I start for IELTS preparation?",
+    answer: "Start with the IELTS overview page, then move into the skill you need most help with, such as IELTS writing, IELTS speaking, IELTS reading, or IELTS listening.",
+  },
+  {
+    question: "Where should I start for CELPIP preparation?",
+    answer: "Start with the CELPIP overview page, then choose the relevant skill hub for writing, speaking, reading, or listening.",
+  },
+  {
+    question: "Do you offer feedback for writing?",
+    answer: "Yes. IELTS Corner offers essay correction, private tutoring, and CELPIP writing AI feedback for students who want deeper review.",
+  },
+];
+
+const homeStructuredData = [buildFAQSchema(homeFaqs)];
 ---
 
 <Layout
-  title="IELTS Corner — Band 7+ IELTS & CELPIP Lessons & Tutoring"
-  description="Get Band 7+ in IELTS or CLB 9+ in CELPIP. Free lessons for grammar, vocabulary, writing, and speaking. Learn what you need to improve your test score."
+  title="IELTS Preparation and CELPIP Preparation | Free Lessons and Tutoring"
+  description="IELTS preparation and CELPIP preparation with free lessons, writing help, speaking strategies, and tutoring. Study IELTS and CELPIP with clear, skill-based guidance."
   keywords={homeKeywords}
   type="website"
+  structuredData={homeStructuredData}
 >
   <section class="section" style="padding-top: var(--s-6);">
     <!-- HERO (background image) -->
@@ -31,6 +54,39 @@ const homeKeywords = "IELTS preparation, CELPIP test, Band 7+ IELTS, CLB 9+ CELP
     </div>
 
     <!-- breathing room -->
+    <div style="height: var(--s-8);"></div>
+
+    <div class="surface feature" style="border: 2px solid color-mix(in srgb, var(--band) 30%, transparent);">
+      <div class="feature-grid">
+        <div class="stack">
+          <span class="pill">Search-intent shortcuts</span>
+          <h2>Start with the exact score problem you need to fix.</h2>
+          <p class="muted" style="max-width: 62ch;">
+            The fastest path to rankings and conversions is clear intent matching. These are the pages students usually want first: IELTS writing, IELTS speaking, CELPIP writing, and CELPIP speaking.
+          </p>
+        </div>
+
+        <div class="grid grid-2" style="gap: var(--s-3);">
+          <a class="card" href="/ielts/writing" style="text-decoration:none;">
+            <h3>IELTS Writing</h3>
+            <p class="muted">Task 1, Task 2, Band 7+ structure, grammar control, and score-raising habits.</p>
+          </a>
+          <a class="card" href="/ielts/speaking" style="text-decoration:none;">
+            <h3>IELTS Speaking</h3>
+            <p class="muted">Part 1, 2, and 3 strategies, natural answers, and fluency practice.</p>
+          </a>
+          <a class="card" href="/celpip/writing" style="text-decoration:none;">
+            <h3>CELPIP Writing</h3>
+            <p class="muted">Email and survey response strategy, timed practice, and AI feedback.</p>
+          </a>
+          <a class="card" href="/celpip/speaking" style="text-decoration:none;">
+            <h3>CELPIP Speaking</h3>
+            <p class="muted">Task-by-task speaking support, structure templates, and coaching options.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
     <div style="height: var(--s-8);"></div>
 
     <!-- CELPIP SKILL HUBS -->
@@ -90,6 +146,30 @@ const homeKeywords = "IELTS preparation, CELPIP test, Band 7+ IELTS, CLB 9+ CELP
         <p>Learn how to give clear, natural answers that sound confident.</p>
         <a class="btn" href="/lessons/speaking">See lessons →</a>
       </article>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <div class="surface" style="padding: var(--s-6);">
+      <h2 style="margin-top: 0;">Popular IELTS and CELPIP resources</h2>
+      <div class="grid grid-2" style="margin-top: var(--s-4); gap: var(--s-3);">
+        <a class="card" href="/blog/band-7-writing-strategy" style="text-decoration:none;">
+          <h3>How to get Band 7 in IELTS Writing</h3>
+          <p class="muted">High-intent writing strategy page with structure and timing guidance.</p>
+        </a>
+        <a class="card" href="/blog/celpip-speaking-part2" style="text-decoration:none;">
+          <h3>CELPIP Speaking Task 2 guide</h3>
+          <p class="muted">A focused article for one of the most searched CELPIP speaking tasks.</p>
+        </a>
+        <a class="card" href="/celpip/writing/samples" style="text-decoration:none;">
+          <h3>CELPIP sample essays</h3>
+          <p class="muted">Internal destination for students who specifically want model writing examples.</p>
+        </a>
+        <a class="card" href="/faq" style="text-decoration:none;">
+          <h3>FAQ</h3>
+          <p class="muted">Trust-building answers about lessons, tutoring, writing help, and pricing.</p>
+        </a>
+      </div>
     </div>
 
     <div style="height: var(--s-8);"></div>
@@ -210,6 +290,20 @@ const homeKeywords = "IELTS preparation, CELPIP test, Band 7+ IELTS, CLB 9+ CELP
 
     <!-- NEWSLETTER SECTION -->
     <Newsletter />
+
+    <div style="height: var(--s-8);"></div>
+
+    <div class="surface" style="padding: var(--s-6);">
+      <h2 style="margin-top: 0;">FAQ</h2>
+      <div class="stack" style="gap: var(--s-3); margin-top: var(--s-4);">
+        {homeFaqs.map((item) => (
+          <details class="card">
+            <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
+            <p class="muted" style="margin-bottom: 0; margin-top: var(--s-2);">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
 
     <form
       name="newsletter"

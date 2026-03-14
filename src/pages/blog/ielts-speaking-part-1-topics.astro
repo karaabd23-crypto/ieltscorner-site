@@ -1,0 +1,77 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "How do I prepare for IELTS Speaking Part 1 topics?",
+    answer: "Prepare for IELTS Speaking Part 1 topics by practicing short personal answers with one reason or example, not memorized scripts. Focus on natural fluency and clear pronunciation.",
+  },
+  {
+    question: "How long should IELTS Speaking Part 1 answers be?",
+    answer: "Most strong IELTS Speaking Part 1 answers are around two to four sentences, long enough to develop one idea but short enough to stay direct.",
+  },
+  {
+    question: "Should I memorize IELTS Speaking Part 1 answers?",
+    answer: "No. Memorized answers often sound unnatural and can reduce coherence. It is better to learn flexible patterns you can adapt to many topics.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "IELTS Speaking Part 1 Topics", path: "/blog/ielts-speaking-part-1-topics/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="IELTS Speaking Part 1 Topics | How to Answer Naturally"
+  description="IELTS Speaking Part 1 topic prep with answer patterns, common themes, and practical tips for natural fluency and Band 7+ speaking control."
+  type="article"
+  keywords="IELTS speaking part 1 topics, IELTS part 1 questions, IELTS speaking part 1 tips, IELTS speaking topics, Band 7 speaking"
+  structuredData={pageStructuredData}
+>
+  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
+    <div style="margin-bottom: var(--s-4);"><a href="/blog" style="color: var(--accent);">← Back to blog</a></div>
+    <header style="margin-bottom: var(--s-4);">
+      <h1 style="margin: 0;">IELTS Speaking Part 1 Topics Guide</h1>
+      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
+        <span>📅 March 14, 2026</span><span>✍️ IELTS Corner Team</span><span>⏱️ 6 min read</span>
+      </div>
+    </header>
+    <div class="article-content" style="line-height: 1.8;">
+      <p>IELTS Speaking Part 1 topics look simple, but many students still lose marks by giving one-line answers or sounding memorized. The goal is short, natural development with clear pronunciation.</p>
+      <h2>Common IELTS Part 1 topic families</h2>
+      <ul>
+        <li>Home and hometown</li>
+        <li>Work or study</li>
+        <li>Daily routines and hobbies</li>
+        <li>Food, transport, weather, technology</li>
+      </ul>
+      <h2>Simple answer pattern</h2>
+      <p>Use this pattern: direct answer, one reason, one short example. This keeps answers natural and coherent.</p>
+      <div style="padding: var(--s-3); background: var(--surface); border-radius: 6px;">
+        <p><strong>Question:</strong> Do you enjoy cooking?</p>
+        <p><strong>Answer:</strong> Yes, I do, especially on weekends. It helps me relax after a busy week, and I usually try one new recipe each Saturday.</p>
+      </div>
+      <h2>What to avoid</h2>
+      <ul>
+        <li>One-word answers</li>
+        <li>Overly long stories in Part 1</li>
+        <li>Memorized openings repeated for every question</li>
+      </ul>
+      <h2>Where to practice next</h2>
+      <p>Use the <a href="/ielts/speaking">IELTS speaking hub</a>, the <a href="/blog/ielts-speaking-part-2-cue-card">Part 2 cue card guide</a>, and related lessons like <a href="/lessons/speaking/ielts-part1-techniques-b2/">IELTS Part 1 techniques</a>.</p>
+      <h2>FAQ</h2>
+      {pageFaqs.map((item) => (
+        <details class="card" style="margin-bottom: var(--s-3);">
+          <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
+          <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </article>
+</Layout>

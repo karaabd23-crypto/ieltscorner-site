@@ -1,0 +1,70 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "How should I answer CELPIP Speaking Task 1?",
+    answer: "Answer CELPIP Speaking Task 1 with a clear personal experience structure: context, key event, and takeaway. Keep the story simple and coherent.",
+  },
+  {
+    question: "What is CELPIP Speaking Task 1 about?",
+    answer: "CELPIP Speaking Task 1 usually asks you to describe a personal experience. You need to speak clearly, stay organized, and keep fluency under time pressure.",
+  },
+  {
+    question: "What lowers CELPIP Task 1 speaking scores?",
+    answer: "Scores drop when answers are disorganized, too short, repetitive, or filled with hesitation and filler words.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "CELPIP Speaking Task 1", path: "/blog/celpip-speaking-task-1/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="CELPIP Speaking Task 1 | Personal Experience Structure Guide"
+  description="CELPIP Speaking Task 1 strategy for personal-experience prompts, answer structure, fluency, and practical CLB 9 speaking habits."
+  type="article"
+  keywords="CELPIP Speaking Task 1, CELPIP speaking tips, CELPIP personal experience question, CLB 9 speaking"
+  structuredData={pageStructuredData}
+>
+  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
+    <div style="margin-bottom: var(--s-4);"><a href="/blog" style="color: var(--accent);">← Back to blog</a></div>
+    <header style="margin-bottom: var(--s-4);">
+      <h1 style="margin: 0;">CELPIP Speaking Task 1 Guide</h1>
+      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
+        <span>📅 March 14, 2026</span><span>✍️ IELTS Corner Team</span><span>⏱️ 6 min read</span>
+      </div>
+    </header>
+    <div class="article-content" style="line-height: 1.8;">
+      <p>CELPIP Speaking Task 1 rewards clear storytelling, not dramatic language. A short, organized personal experience with one key message often performs better than a long, messy answer.</p>
+      <h2>Simple Task 1 structure</h2>
+      <ul>
+        <li>Context: where and when it happened</li>
+        <li>Main event: what happened and why it mattered</li>
+        <li>Outcome: what you learned or why it is memorable</li>
+      </ul>
+      <h2>Fluency tips</h2>
+      <ul>
+        <li>Use transition phrases: first, then, after that, finally</li>
+        <li>Keep sentence length controlled under pressure</li>
+        <li>Pause briefly instead of using many filler words</li>
+      </ul>
+      <h2>Practice next</h2>
+      <p>Use the <a href="/celpip/speaking">CELPIP speaking hub</a> and lesson pages like <a href="/lessons/speaking/celpip-task1-experience-b2/">Task 1 describe an experience</a>.</p>
+      <h2>FAQ</h2>
+      {pageFaqs.map((item) => (
+        <details class="card" style="margin-bottom: var(--s-3);">
+          <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
+          <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </article>
+</Layout>

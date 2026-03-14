@@ -1,11 +1,43 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import CelpipWritingBanner from "../../components/CelpipWritingBanner.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageKeywords = "CELPIP preparation, CELPIP writing, CELPIP speaking, CELPIP reading, CELPIP listening, CELPIP writing samples, CELPIP tutor, CELPIP webinar, CLB 9 CELPIP";
+
+const pageFaqs = [
+  {
+    question: "What is the best way to prepare for CELPIP?",
+    answer: "The best way to prepare for CELPIP is to learn the task format for each skill, practice under time pressure, and get feedback on writing or speaking if those are your weak areas.",
+  },
+  {
+    question: "Does IELTS Corner cover all four CELPIP skills?",
+    answer: "Yes. IELTS Corner includes CELPIP writing, speaking, reading, and listening pages, lesson archives, webinars, tutoring, and writing support.",
+  },
+  {
+    question: "Do you offer CELPIP writing feedback?",
+    answer: "Yes. IELTS Corner offers CELPIP writing AI feedback, sample essays, and private coaching for students who want deeper review.",
+  },
+  {
+    question: "Are the CELPIP webinars the only way to study here?",
+    answer: "No. The webinars are one support option. You can also use free lessons, skill hubs, sample essays, AI writing tools, and private tutoring.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "CELPIP", path: "/celpip/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
 ---
 
 <Layout
-  title="CELPIP Prep — IELTS Corner"
-  description="CELPIP weekly webinars + full course. Live training on all four skills. $12/session. Start Saturday."
+  title="CELPIP Preparation | Writing, Speaking, Reading and Listening"
+  description="CELPIP preparation for writing, speaking, reading, and listening. Study CELPIP with free lessons, writing tools, webinars, tutoring, and sample responses."
+  keywords={pageKeywords}
+  structuredData={pageStructuredData}
 >
   <section class="section">
     <!-- WEBINAR HERO SECTION -->
@@ -13,13 +45,47 @@ import CelpipWritingBanner from "../../components/CelpipWritingBanner.astro";
       <div class="hero-content" style="text-align: center;">
         <span class="pill">📹 Live • Every Saturday • 6:00 PM PST</span>
 
-        <h1>CELPIP Weekly Webinars</h1>
+        <h1>CELPIP preparation with lessons, writing tools, and live support</h1>
+
+        <p class="muted" style="max-width: 64ch; margin: 0 auto;">
+          This is the main CELPIP hub for students targeting stronger writing, speaking, reading, and listening scores. Start with the right skill page, then add webinars or tutoring if you need feedback.
+        </p>
 
         <div class="cluster" style="margin-top: var(--s-3);">
           <a class="btn btn-primary" href="/webinar" style="font-size: 1.1rem; padding: var(--s-3) var(--s-5);">
             Join a webinar → Only $12
           </a>
+          <a class="btn btn-ghost" href="/lessons/celpip" style="font-size: 1.1rem; padding: var(--s-3) var(--s-5);">
+            Browse CELPIP lessons →
+          </a>
         </div>
+      </div>
+    </div>
+
+    <div style="height: var(--s-5);"></div>
+
+    <div class="surface" style="padding: var(--s-6);">
+      <h2 style="margin-top: 0; text-align: center;">Start with the exact CELPIP task you need to fix</h2>
+      <p class="muted" style="max-width: 72ch; margin: 0 auto; text-align: center;">
+        Strong SEO pages also help users navigate correctly. These hubs match the most common CELPIP preparation intents and point students to the right resources fast.
+      </p>
+      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-5);">
+        <a class="card" href="/celpip/writing" style="text-decoration:none;">
+          <h3>CELPIP Writing</h3>
+          <p class="muted">Email and survey strategy, sample essays, AI scoring, and human feedback options.</p>
+        </a>
+        <a class="card" href="/celpip/speaking" style="text-decoration:none;">
+          <h3>CELPIP Speaking</h3>
+          <p class="muted">Task-by-task speaking structure, fluency guidance, and coaching support.</p>
+        </a>
+        <a class="card" href="/celpip/reading" style="text-decoration:none;">
+          <h3>CELPIP Reading</h3>
+          <p class="muted">Reading for information, viewpoints, and diagram application with time-saving tactics.</p>
+        </a>
+        <a class="card" href="/celpip/listening" style="text-decoration:none;">
+          <h3>CELPIP Listening</h3>
+          <p class="muted">Prediction, note-taking, detail tracking, and multiple-choice accuracy under time pressure.</p>
+        </a>
       </div>
     </div>
 
@@ -69,6 +135,30 @@ import CelpipWritingBanner from "../../components/CelpipWritingBanner.astro";
       <div style="text-align: center; margin-top: var(--s-5);">
         <a class="btn btn-primary" href="/webinar" style="font-size: 1.05rem;">
           See all webinar topics →
+        </a>
+      </div>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <div class="surface" style="padding: var(--s-6);">
+      <h2 style="text-align: center; margin-top: 0;">Popular CELPIP resources</h2>
+      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-4);">
+        <a class="card" href="/celpip/writing/ai-feedback" style="text-decoration:none;">
+          <h3>CELPIP writing AI feedback</h3>
+          <p class="muted">Timed writing practice for students who want immediate scoring and revision guidance.</p>
+        </a>
+        <a class="card" href="/celpip/writing/samples" style="text-decoration:none;">
+          <h3>CELPIP sample essays</h3>
+          <p class="muted">Sample responses for students specifically searching for model answers and structure examples.</p>
+        </a>
+        <a class="card" href="/blog/celpip-speaking-part2" style="text-decoration:none;">
+          <h3>CELPIP Speaking Task 2 guide</h3>
+          <p class="muted">A focused article targeting a specific CELPIP speaking task and its scoring demands.</p>
+        </a>
+        <a class="card" href="/lessons/celpip" style="text-decoration:none;">
+          <h3>All CELPIP lessons</h3>
+          <p class="muted">Use the archive if you want to browse by skill and open the latest CELPIP lesson pages directly.</p>
         </a>
       </div>
     </div>
@@ -230,6 +320,20 @@ import CelpipWritingBanner from "../../components/CelpipWritingBanner.astro";
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div style="height: var(--s-8);"></div>
+
+    <div class="surface" style="padding: var(--s-6);">
+      <h2 style="margin-top: 0;">CELPIP preparation FAQ</h2>
+      <div class="stack" style="gap: var(--s-3); margin-top: var(--s-4);">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
       </div>
     </div>
 

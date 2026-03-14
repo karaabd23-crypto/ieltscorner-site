@@ -1,0 +1,71 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "How should I use CELPIP sample answers for preparation?",
+    answer: "Use CELPIP sample answers to study structure, tone, and idea development patterns. Adapt patterns to your own language instead of memorizing exact responses.",
+  },
+  {
+    question: "Are CELPIP sample answers enough for a high score?",
+    answer: "Sample answers help, but high scores usually require active practice, timed responses, and feedback on your own writing and speaking output.",
+  },
+  {
+    question: "Where can I find CELPIP sample answers on this site?",
+    answer: "You can access sample-answer resources through the CELPIP writing samples page and related task-level CELPIP writing and speaking guides.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "CELPIP Sample Answers", path: "/blog/celpip-sample-answers/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="CELPIP Sample Answers | How to Use Models Without Memorizing"
+  description="CELPIP sample answers strategy guide for writing and speaking: how to learn structure and language patterns without memorization traps."
+  type="article"
+  keywords="CELPIP sample answers, CELPIP writing samples, CELPIP speaking sample answers, CELPIP preparation"
+  structuredData={pageStructuredData}
+>
+  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
+    <div style="margin-bottom: var(--s-4);"><a href="/blog" style="color: var(--accent);">← Back to blog</a></div>
+    <header style="margin-bottom: var(--s-4);">
+      <h1 style="margin: 0;">CELPIP Sample Answers Guide</h1>
+      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
+        <span>📅 March 14, 2026</span><span>✍️ IELTS Corner Team</span><span>⏱️ 6 min read</span>
+      </div>
+    </header>
+    <div class="article-content" style="line-height: 1.8;">
+      <p>CELPIP sample answers are useful when you treat them as models, not scripts. The strongest students copy structure and idea flow, then produce their own language under timed conditions.</p>
+      <h2>What to study in sample answers</h2>
+      <ul>
+        <li>Opening and closing sentence patterns</li>
+        <li>How reasons are supported with examples</li>
+        <li>Tone control for task context</li>
+        <li>Transition use and paragraph flow</li>
+      </ul>
+      <h2>What not to do</h2>
+      <ul>
+        <li>Memorize full answers and repeat them in test conditions</li>
+        <li>Copy advanced vocabulary you cannot control naturally</li>
+        <li>Ignore timing while focusing only on model language</li>
+      </ul>
+      <h2>Where to practice</h2>
+      <p>Use <a href="/celpip/writing/samples">CELPIP writing samples</a>, then move to the <a href="/celpip/writing/ai-feedback">AI writing lab</a> or <a href="/tutoring">tutoring</a> for personalized feedback.</p>
+      <h2>FAQ</h2>
+      {pageFaqs.map((item) => (
+        <details class="card" style="margin-bottom: var(--s-3);">
+          <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
+          <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </article>
+</Layout>

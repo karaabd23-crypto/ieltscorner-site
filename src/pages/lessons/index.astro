@@ -1,10 +1,22 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema } from "../../lib/seo";
+
+const pageKeywords = "IELTS lessons, CELPIP lessons, IELTS writing lessons, IELTS speaking lessons, CELPIP writing lessons, CELPIP speaking lessons, grammar lessons, vocabulary lessons";
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+  { name: "Home", path: "/" },
+  { name: "Lessons", path: "/lessons/" },
+  ]),
+];
 ---
 
 <Layout
-  title="Lessons — IELTS Corner"
-  description="Free lessons for IELTS & CELPIP: Grammar, Vocabulary, and skill-specific training for Listening, Reading, Speaking, and Writing."
+  title="Free IELTS and CELPIP Lessons | Writing, Speaking, Reading and More"
+  description="Free IELTS and CELPIP lessons for writing, speaking, reading, listening, grammar, and vocabulary. Study by exam, skill, or language focus."
+  keywords={pageKeywords}
+  structuredData={pageStructuredData}
 >
   <section class="section">
     <div class="hero" style={`--hero-bg: url('/heroes/lesson.png');`}>
@@ -14,7 +26,7 @@ import Layout from "../../layouts/Layout.astro";
         <h1>Pick your test. Pick your skill. Practice properly.</h1>
 
         <p class="muted" style="max-width: 58ch;">
-          Free lessons for IELTS and CELPIP — clear steps, good examples, and practice that makes sense.
+          Free IELTS and CELPIP lessons organized by exam, skill, and language focus so students can find the exact topic they searched for.
         </p>
 
         <div class="cluster">
@@ -93,11 +105,11 @@ import Layout from "../../layouts/Layout.astro";
         <div class="stack">
           <h2>IELTS lessons</h2>
           <p class="muted" style="max-width: 58ch;">
-            IELTS lessons are here — but for now, the main path is coaching (to get to Band 7+ faster).
+            IELTS lessons cover writing, speaking, reading, and listening with clear explanations, examples, and Band 7+ strategy support.
           </p>
           <div class="cluster">
-            <a class="btn btn-primary" href="/tutoring">Go to tutoring →</a>
-            <a class="btn" href="/ielts">IELTS page →</a>
+            <a class="btn btn-primary" href="/ielts">IELTS hub →</a>
+            <a class="btn" href="/tutoring">Tutoring →</a>
           </div>
         </div>
 
