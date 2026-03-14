@@ -1,8 +1,5 @@
 import { createHash } from 'node:crypto';
-import { getStore } from '@netlify/blobs';
 import { CELPIP_PROMPT_BANK } from '../../src/lib/celpipWritingData.mjs';
-
-const CLAIM_STORE = getStore('celpip-free-sample-claims');
 
 const allPrompts = [...CELPIP_PROMPT_BANK.task1, ...CELPIP_PROMPT_BANK.task2]
   .map((prompt) => ({
@@ -44,10 +41,6 @@ function sanitizePrompt(prompt) {
   };
 }
 
-function findPromptById(promptId) {
-  return allPrompts.find((item) => item.id === promptId) || null;
-}
-
 export async function handler(event) {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: JSON.stringify({ error: 'Method not allowed' }) };
@@ -65,49 +58,9 @@ export async function handler(event) {
       return { statusCode: 500, body: JSON.stringify({ error: 'No sample essays are currently available.' }) };
     }
 
-    const key = emailHash(email);
-    const existing = await CLAIM_STORE.get(key, { type: 'json' });
-
-    if (existing?.promptId) {
-      const prompt = sanitizePrompt(findPromptById(existing.promptId));
-      if (prompt) {
-        return {
-          statusCode: 200,
-          body: JSON.stringify({
-            ok: true,
-            alreadyClaimed: true,
-            prompt,
-          }),
-        };
-      }
-    }
-
-    const selectedPrompt = pickPromptForEmail(email);
-
-    const writeResult = await CLAIM_STORE.setJSON(
-      key,
-      {
-        email,
-        promptId: selectedPrompt.id,
-        claimedAt: new Date().toISOString(),
-      },
-      { onlyIfNew: true }
-    );
-
-    if (!writeResult.modified) {
-      const claimed = await CLAIM_STORE.get(key, { type: 'json' });
-      const prompt = sanitizePrompt(findPromptById(claimed?.promptId));
-      if (prompt) {
-        return {
-          statusCode: 200,
-          body: JSON.stringify({
-            ok: true,
-            alreadyClaimed: true,
-            prompt,
-          }),
-        };
-      }
-    }
+    // Deterministic unlock: each email always maps to exactly one sample essay.
+    // This keeps the experience consistent and avoids runtime dependencies.
+    const selectedPrompt = pickPromptForEmail(emailHash(email));
 
     return {
       statusCode: 200,
