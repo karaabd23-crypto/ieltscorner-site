@@ -21,6 +21,58 @@ const fullTitle = title.includes("IELTS Corner") ? title : `${title} | IELTS Cor
 const canonicalURL = new URL(canonical, Astro.site);
 const ogImageURL = new URL(ogImage, Astro.site);
 const isLessonsPath = Astro.url.pathname.startsWith("/lessons");
+const currentPath = Astro.url.pathname;
+
+const navGroups = [
+  {
+    label: 'IELTS',
+    href: '/ielts',
+    items: [
+      { label: 'Overview', href: '/ielts' },
+      { label: 'All IELTS lessons', href: '/lessons/ielts' },
+      { label: 'Listening', href: '/lessons/ielts/listening' },
+      { label: 'Reading', href: '/lessons/ielts/reading' },
+      { label: 'Writing', href: '/lessons/ielts/writing' },
+      { label: 'Speaking', href: '/lessons/ielts/speaking' },
+    ],
+  },
+  {
+    label: 'CELPIP',
+    href: '/celpip',
+    items: [
+      { label: 'Overview', href: '/celpip' },
+      { label: 'Listening', href: '/celpip/listening' },
+      { label: 'Reading', href: '/celpip/reading' },
+      { label: 'Writing', href: '/celpip/writing' },
+      { label: 'Speaking', href: '/celpip/speaking' },
+      { label: 'AI Writing Lab', href: '/celpip/writing/ai-feedback' },
+      { label: 'Sample Library', href: '/celpip/writing/samples' },
+    ],
+  },
+  {
+    label: 'Services',
+    href: '/pricing',
+    items: [
+      { label: 'Pricing', href: '/pricing' },
+      { label: 'Tutoring', href: '/tutoring' },
+      { label: 'Essay correction', href: '/essay-correction' },
+      { label: 'eBook', href: '/ebook' },
+      { label: 'Weekly webinar', href: '/webinar' },
+    ],
+  },
+  {
+    label: 'Resources',
+    href: '/lessons',
+    items: [
+      { label: 'All lessons', href: '/lessons' },
+      { label: 'Blog', href: '/blog' },
+      { label: 'Success stories', href: '/success-stories' },
+      { label: 'FAQ', href: '/faq' },
+      { label: 'Contact', href: '/contact' },
+      { label: 'About', href: '/about' },
+    ],
+  },
+];
 
 // Structured data for Organization
 const organizationSchema = {
@@ -122,7 +174,7 @@ const organizationSchema = {
 
   <body>
     <!-- WEBINAR BANNER (Sticky) -->
-    <div style="position: sticky; top: 0; z-index: 100; background: linear-gradient(90deg, var(--accent) 0%, rgba(217, 72, 72, 0.9) 100%); color: white; padding: 12px 0; text-align: center; border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
+    <div style="position: relative; z-index: 40; background: linear-gradient(90deg, var(--accent) 0%, rgba(217, 72, 72, 0.9) 100%); color: white; padding: 12px 0; text-align: center; border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
       <div class="container" style="display: flex; align-items: center; justify-content: center; gap: var(--s-2); flex-wrap: wrap;">
         <span style="font-size: 14px;">🎓 <strong>Weekly Webinar • 100 CELPIP Writing Prompts + Sample Responses for CA$5/month</strong></span>
         <a href="/webinar" style="color: white; font-weight: 700; font-size: 13px; text-decoration: none; background: rgba(255, 255, 255, 0.2); padding: 6px 12px; border-radius: 999px; transition: background 140ms ease;">
@@ -131,8 +183,86 @@ const organizationSchema = {
         <a href="/celpip/writing/ai-feedback" style="color: white; font-weight: 700; font-size: 13px; text-decoration: none; background: rgba(255, 255, 255, 0.2); padding: 6px 12px; border-radius: 999px; transition: background 140ms ease;">
           Writing Hub →
         </a>
+        <a href="/celpip/writing/samples" style="color: white; font-weight: 700; font-size: 13px; text-decoration: none; background: rgba(255, 255, 255, 0.2); padding: 6px 12px; border-radius: 999px; transition: background 140ms ease;">
+          Sample Library →
+        </a>
       </div>
     </div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="IELTS Corner home">
+          <img src="/logo.gif" alt="IELTS Corner" loading="eager" decoding="async" />
+          <div class="brand-title">
+            <strong>IELTS Corner</strong>
+            <span>IELTS &amp; CELPIP prep</span>
+          </div>
+        </a>
+
+        <nav class="nav nav-main" aria-label="Primary navigation">
+          {navGroups.map((group) => {
+            const groupActive = currentPath === group.href || currentPath.startsWith(`${group.href}/`);
+            return (
+              <div class="nav-item nav-item-dropdown">
+                <a class:list={["nav-trigger", groupActive && "is-active"]} href={group.href}>
+                  <span>{group.label}</span>
+                  <span aria-hidden="true">▾</span>
+                </a>
+                <div class="nav-dropdown" role="menu" aria-label={`${group.label} links`}>
+                  {group.items.map((item) => {
+                    const itemActive = currentPath === item.href || currentPath.startsWith(`${item.href}/`);
+                    return (
+                      <a class:list={[itemActive && 'is-active']} href={item.href} role="menuitem">{item.label}</a>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
+
+          <a class:list={["nav-hub", currentPath.startsWith('/celpip/writing/ai-feedback') && 'is-active']} href="/celpip/writing/ai-feedback">
+            Writing Hub
+          </a>
+        </nav>
+
+        <div class="header-right">
+          <div class="social" aria-label="Social links">
+            <a href="https://www.instagram.com/ieltscorner.ca" target="_blank" rel="noreferrer" aria-label="Instagram">IG</a>
+            <a href="https://www.youtube.com/@KaraAbdolmaleki" target="_blank" rel="noreferrer" aria-label="YouTube">YT</a>
+            <a href="https://t.me/Kaysenglishcorner" target="_blank" rel="noreferrer" aria-label="Telegram">TG</a>
+          </div>
+          <a class="btn btn-primary cta" href="/tutoring">Book a class</a>
+        </div>
+      </div>
+    </header>
+
+    <script is:inline>
+      // Dropdown persistence: keep open for 2s after mouse leaves, close on click elsewhere
+      document.addEventListener('DOMContentLoaded', () => {
+        const dropdowns = document.querySelectorAll('.nav-item-dropdown');
+        dropdowns.forEach((item) => {
+          let timeoutId;
+          item.addEventListener('mouseenter', () => {
+            clearTimeout(timeoutId);
+            item.classList.add('dropdown-open');
+          });
+          item.addEventListener('mouseleave', () => {
+            timeoutId = setTimeout(() => {
+              item.classList.remove('dropdown-open');
+            }, 2000);
+          });
+        });
+
+        // Close dropdown immediately if clicking outside
+        document.addEventListener('click', (e) => {
+          dropdowns.forEach((item) => {
+            if (!item.contains(e.target)) {
+              item.classList.remove('dropdown-open');
+            }
+          });
+        });
+      });
+    </script>
 
     {isLessonsPath && (
       <div id="lesson-email-gate" class="lesson-email-gate" role="dialog" aria-modal="true" aria-labelledby="lesson-email-gate-title">
