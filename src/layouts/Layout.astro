@@ -253,10 +253,14 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
               const groupActive = currentPath === group.href || currentPath.startsWith(`${group.href}/`);
               return (
                 <div class="nav-item nav-item-dropdown">
-                  <a class:list={["nav-trigger", groupActive && "is-active"]} href={group.href}>
-                    <span>{group.label}</span>
-                    <span aria-hidden="true">▾</span>
-                  </a>
+                  <div class="nav-item-row">
+                    <a class:list={["nav-trigger", groupActive && "is-active"]} href={group.href}>
+                      <span>{group.label}</span>
+                    </a>
+                    <button class="nav-expand" type="button" aria-label={`Expand ${group.label} links`} aria-expanded="false">
+                      <span aria-hidden="true">▾</span>
+                    </button>
+                  </div>
                   <div class="nav-dropdown" role="menu" aria-label={`${group.label} links`}>
                     {group.items.map((item) => {
                       const itemActive = currentPath === item.href || currentPath.startsWith(`${item.href}/`);
@@ -292,12 +296,30 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
         const siteHeader = document.querySelector('.site-header');
         const menuToggle = document.getElementById('menu-toggle');
         const dropdowns = document.querySelectorAll('.nav-item-dropdown');
+        const expandButtons = document.querySelectorAll('.nav-expand');
         const desktopQuery = window.matchMedia('(min-width: 769px)');
+        const mobileQuery = window.matchMedia('(max-width: 768px)');
+
+        const setExpandState = (item, expanded) => {
+          const button = item.querySelector('.nav-expand');
+          if (button instanceof HTMLButtonElement) {
+            button.setAttribute('aria-expanded', String(expanded));
+          }
+        };
+
+        const closeAllDropdowns = () => {
+          dropdowns.forEach((item) => {
+            item.classList.remove('dropdown-open');
+            setExpandState(item, false);
+          });
+        };
 
         const closeMenu = () => {
           if (!siteHeader || !menuToggle) return;
           siteHeader.classList.remove('menu-open');
           menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.textContent = 'Menu';
+          closeAllDropdowns();
         };
 
         if (menuToggle) {
@@ -305,8 +327,38 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
             if (!siteHeader) return;
             const isOpen = siteHeader.classList.toggle('menu-open');
             menuToggle.setAttribute('aria-expanded', String(isOpen));
+            menuToggle.textContent = isOpen ? 'Close' : 'Menu';
           });
         }
+
+        // Mobile accordion: expand/collapse from dedicated chevron button.
+        expandButtons.forEach((button) => {
+          button.addEventListener('click', (event) => {
+            if (!mobileQuery.matches) return;
+            event.preventDefault();
+            event.stopPropagation();
+
+            const item = button.closest('.nav-item-dropdown');
+            if (!item) return;
+
+            const isOpen = item.classList.contains('dropdown-open');
+            closeAllDropdowns();
+
+            if (!isOpen) {
+              item.classList.add('dropdown-open');
+              setExpandState(item, true);
+            }
+          });
+        });
+
+        // Close mobile menu after choosing any destination link.
+        const navLinks = document.querySelectorAll('#primary-navigation a, #site-header-panel .header-right a');
+        navLinks.forEach((link) => {
+          link.addEventListener('click', () => {
+            if (!mobileQuery.matches) return;
+            closeMenu();
+          });
+        });
 
         dropdowns.forEach((item) => {
           let timeoutId;
@@ -331,8 +383,9 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
           }
 
           dropdowns.forEach((item) => {
-            if (!item.contains(e.target)) {
+            if (!(e.target instanceof Node) || !item.contains(e.target)) {
               item.classList.remove('dropdown-open');
+              setExpandState(item, false);
             }
           });
         });
@@ -347,6 +400,7 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
         desktopQuery.addEventListener('change', (event) => {
           if (event.matches) {
             closeMenu();
+            closeAllDropdowns();
           }
         });
       });
