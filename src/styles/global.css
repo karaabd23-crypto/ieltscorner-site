@@ -55,6 +55,7 @@
   --s-6: var(--space-6);
   --s-7: var(--space-7);
   --s-8: var(--space-8);
+}
 /* removed stray closing brace */
 
 *{ box-sizing:border-box; }
@@ -830,27 +831,16 @@ button{
     background: rgba(255,255,255,0.75);
   }
 }
-}
 
+@media (max-width: 768px) {
   .hero{
     padding: var(--s-6);
-  }
     transition: opacity 320ms ease, transform 320ms ease, visibility 320ms ease;
-  /* On mobile: image drops to the bottom so text always stays readable */
-  .hero::before{
-  .nav-item-dropdown:hover .nav-dropdown,
-  .nav-item-dropdown:focus-within .nav-dropdown,
-  .nav-item-dropdown:active .nav-dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    pointer-events: auto;
   }
   .hero-content{
     max-width: 100%;
     min-height: 420px; /* gives breathing room above the image */
   }
-
   .grid-4{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .feature-grid{ grid-template-columns: 1fr; }
   .footer-inner{ grid-template-columns:1fr; }
