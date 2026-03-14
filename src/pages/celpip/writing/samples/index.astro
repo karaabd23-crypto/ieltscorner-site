@@ -1,0 +1,521 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs';
+---
+
+<Layout
+  title="100 CELPIP Sample Essays | Paid Access"
+  description="Subscriber-only access to 100 CELPIP sample essays for Task 1 and Task 2."
+>
+  <section class="section">
+    <div class="hero" style={`--hero-bg: url('/heroes/writing.png');`}>
+      <div class="hero-content">
+        <span class="pill">100 CELPIP sample essays</span>
+        <h1>100 CELPIP Sample Essays</h1>
+        <p class="muted" style="max-width: 68ch;">
+          Access model responses for the full CELPIP writing prompt bank.
+          Access is available only to active subscribers.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div id="sample-library-checking" class="surface" style="padding: var(--s-5);">
+      <p class="muted" style="margin: 0;">Checking your subscription and loading sample essays…</p>
+    </div>
+
+    <div id="sample-library-locked" style="display:none;">
+      <div class="card" style="border-left: 4px solid #dc3545;">
+        <h2 style="margin-top: 0; color: #dc3545;">Unlock 100 CELPIP sample essays</h2>
+        <p id="sample-library-locked-reason" class="muted" style="margin-top: 0;">
+          Unlock all 100 CELPIP sample essays plus the timed AI writing lab for just CA$5/month.
+        </p>
+        <div class="cluster">
+          <a class="btn btn-primary" href="/celpip/writing/ai-feedback">Subscribe for CA${CELPIP_WRITING_PRICE_CAD}/month</a>
+          <a class="btn" href="/tutoring">Book a class</a>
+        </div>
+      </div>
+
+      <div style="height: var(--s-4);"></div>
+
+      <div class="surface" style="padding: var(--s-5);">
+        <h3 style="margin-top: 0;">Preview style of the essays you will unlock</h3>
+        <p class="muted" style="margin-top: 0; max-width: 72ch;">
+          Subscribers get all 100 complete model essays with task context, CLB level tags, and rationale.
+        </p>
+
+        <div class="grid grid-3" style="gap: var(--s-3);">
+          <article class="card">
+            <span class="pill">Task 1</span>
+            <h4 style="margin: var(--s-2) 0 0;">Noise complaint email</h4>
+            <p class="muted" style="margin-bottom: 0;">
+              "I am writing to formally raise a concern about repeated late-night noise in our building..."
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="pill">Task 2</span>
+            <h4 style="margin: var(--s-2) 0 0;">Online vs in-person classes</h4>
+            <p class="muted" style="margin-bottom: 0;">
+              "In my view, online classes are often more practical for working adults because..."
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="pill">Task 2</span>
+            <h4 style="margin: var(--s-2) 0 0;">Rent or buy for newcomers</h4>
+            <p class="muted" style="margin-bottom: 0;">
+              "For most newcomers, renting first is a safer choice while they build stability in Canada..."
+            </p>
+          </article>
+        </div>
+
+        <ul class="muted" style="margin: var(--s-3) 0 0 var(--s-4);">
+          <li>50 Task 1 email essays + 50 Task 2 survey essays</li>
+          <li>CLB level label and short quality rationale for each model</li>
+          <li>Use the same subscription to access writing lab + essay bank</li>
+        </ul>
+      </div>
+
+      <div style="height: var(--s-4);"></div>
+
+      <div class="surface" style="padding: var(--s-5);">
+        <h3 style="margin-top: 0;">Get 1 free sample essay now</h3>
+        <p class="muted" style="margin-top: 0;">
+          Enter your email to unlock exactly one full sample essay instantly. This email will be added to our IELTS/CELPIP newsletter.
+        </p>
+
+        <form id="free-sample-form" style="display: grid; grid-template-columns: 1fr auto; gap: var(--s-2); align-items: center;">
+          <input
+            id="free-sample-email"
+            type="email"
+            autocomplete="email"
+            placeholder="Your email"
+            required
+            style="padding: var(--s-2); border: 1px solid var(--border); border-radius: 10px; font: inherit;"
+          />
+          <button id="free-sample-submit" class="btn btn-primary" type="submit">Unlock 1 free essay</button>
+        </form>
+
+        <p class="muted" style="margin: var(--s-1) 0 0; font-size: 0.9rem;">
+          Already unlocked before? Enter the same email and we will load your previously unlocked essay.
+        </p>
+
+        <p id="free-sample-status" class="muted" style="margin: var(--s-2) 0 0; min-height: 1.2rem;"></p>
+
+        <article id="free-sample-result" class="card" style="display:none; margin-top: var(--s-3);">
+          <span class="pill">Your free unlocked essay</span>
+          <h4 id="free-sample-title" style="margin: var(--s-2) 0 0;"></h4>
+          <p id="free-sample-task" class="muted" style="margin: var(--s-1) 0 0;"></p>
+          <p id="free-sample-scenario" class="muted" style="margin: var(--s-2) 0 0;"></p>
+          <p id="free-sample-level" class="muted" style="margin: var(--s-2) 0 0;"></p>
+          <ul id="free-sample-why" class="muted" style="margin: var(--s-2) 0 0 var(--s-4);"></ul>
+          <p id="free-sample-text" class="muted" style="white-space: pre-line; margin: var(--s-2) 0 0;"></p>
+        </article>
+      </div>
+    </div>
+
+    <div id="sample-library-app" style="display:none;">
+      <div class="surface" style="padding: var(--s-5);">
+        <div class="cluster" style="justify-content: space-between; align-items: flex-start; gap: var(--s-3);">
+          <div>
+            <span class="pill">Paid access unlocked</span>
+            <h2 style="margin: var(--s-2) 0 0;">100 CELPIP Sample Essays</h2>
+            <p id="sample-library-summary" class="muted" style="margin: var(--s-2) 0 0;"></p>
+          </div>
+          <div class="cluster" style="gap: var(--s-2);">
+            <button id="sample-library-manage-billing" class="btn" type="button">Manage billing (Stripe)</button>
+            <button id="sample-library-cancel-now" class="btn" type="button">Cancel now (instant)</button>
+          </div>
+        </div>
+
+        <p id="sample-library-status" class="muted" style="margin: var(--s-2) 0 0; min-height: 1.2rem;"></p>
+      </div>
+
+      <div style="height: var(--s-4);"></div>
+
+      <div class="grid grid-2" style="align-items: start; gap: var(--s-4);">
+        <div class="surface" style="padding: var(--s-5);">
+          <h3 style="margin-top: 0;">Task 1 · Email Essays</h3>
+          <p id="sample-library-task1-count" class="muted" style="margin-top: 0;"></p>
+          <div id="sample-library-task1-list" class="stack" style="gap: var(--s-3);"></div>
+        </div>
+
+        <div class="surface" style="padding: var(--s-5);">
+          <h3 style="margin-top: 0;">Task 2 · Survey Essays</h3>
+          <p id="sample-library-task2-count" class="muted" style="margin-top: 0;"></p>
+          <div id="sample-library-task2-list" class="stack" style="gap: var(--s-3);"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    (() => {
+      const accessStorageKey = 'ieltscorner.celpipWritingAccess';
+      const adminTokenStorageKey = 'ieltscorner.celpipWritingAdminToken';
+
+      const checkingEl = document.getElementById('sample-library-checking');
+      const lockedEl = document.getElementById('sample-library-locked');
+      const lockedReasonEl = document.getElementById('sample-library-locked-reason');
+      const appEl = document.getElementById('sample-library-app');
+      const summaryEl = document.getElementById('sample-library-summary');
+      const statusEl = document.getElementById('sample-library-status');
+      const task1CountEl = document.getElementById('sample-library-task1-count');
+      const task2CountEl = document.getElementById('sample-library-task2-count');
+      const task1ListEl = document.getElementById('sample-library-task1-list');
+      const task2ListEl = document.getElementById('sample-library-task2-list');
+      const manageBillingBtn = document.getElementById('sample-library-manage-billing');
+      const cancelNowBtn = document.getElementById('sample-library-cancel-now');
+      const freeSampleForm = document.getElementById('free-sample-form');
+      const freeSampleEmailInput = document.getElementById('free-sample-email');
+      const freeSampleSubmit = document.getElementById('free-sample-submit');
+      const freeSampleStatus = document.getElementById('free-sample-status');
+      const freeSampleResult = document.getElementById('free-sample-result');
+      const freeSampleTitle = document.getElementById('free-sample-title');
+      const freeSampleTask = document.getElementById('free-sample-task');
+      const freeSampleScenario = document.getElementById('free-sample-scenario');
+      const freeSampleLevel = document.getElementById('free-sample-level');
+      const freeSampleWhy = document.getElementById('free-sample-why');
+      const freeSampleText = document.getElementById('free-sample-text');
+
+      let sessionId = '';
+      let customerId = '';
+      let subscriptionId = '';
+
+      const normalizeEmail = (value) => String(value || '').trim().toLowerCase();
+
+      const setStatus = (message, isError = false) => {
+        if (!statusEl) return;
+        statusEl.textContent = message;
+        statusEl.style.color = isError ? '#b42318' : 'var(--text-muted)';
+      };
+
+      const readApiResponse = async (response) => {
+        const contentType = response.headers.get('content-type') || '';
+        if (contentType.includes('application/json')) {
+          return response.json();
+        }
+
+        const text = await response.text();
+        const isHtml = /<!doctype html>|<html/i.test(text);
+        if (isHtml) {
+          throw new Error(
+            'Sample essay endpoint returned HTML instead of JSON. Run with Netlify Functions enabled (`netlify dev`) and verify required env vars.'
+          );
+        }
+
+        try {
+          return JSON.parse(text);
+        } catch {
+        }
+
+        throw new Error(text?.trim() || 'Unexpected API response.');
+      };
+
+      const readStoredAccess = () => {
+        try {
+          const raw = localStorage.getItem(accessStorageKey);
+          if (!raw) return null;
+          return JSON.parse(raw);
+        } catch {
+          return null;
+        }
+      };
+
+      const saveAccess = () => {
+        try {
+          localStorage.setItem(accessStorageKey, JSON.stringify({
+            sessionId,
+            customerId,
+            subscriptionId,
+            savedAt: Date.now(),
+          }));
+        } catch {
+        }
+      };
+
+      const showLocked = (reason) => {
+        if (checkingEl) checkingEl.style.display = 'none';
+        if (appEl) appEl.style.display = 'none';
+        if (lockedEl) lockedEl.style.display = 'block';
+        if (lockedReasonEl) lockedReasonEl.textContent = reason || 'Subscription validation failed.';
+      };
+
+      const setFreeSampleStatus = (message, isError = false) => {
+        if (!(freeSampleStatus instanceof HTMLElement)) return;
+        freeSampleStatus.textContent = message;
+        freeSampleStatus.style.color = isError ? '#b42318' : 'var(--text-muted)';
+      };
+
+      const renderFreeSample = (prompt) => {
+        if (!(freeSampleResult instanceof HTMLElement)) return;
+        if (!(freeSampleTitle instanceof HTMLElement)) return;
+        if (!(freeSampleTask instanceof HTMLElement)) return;
+        if (!(freeSampleScenario instanceof HTMLElement)) return;
+        if (!(freeSampleLevel instanceof HTMLElement)) return;
+        if (!(freeSampleWhy instanceof HTMLElement)) return;
+        if (!(freeSampleText instanceof HTMLElement)) return;
+
+        freeSampleTitle.textContent = prompt?.title || 'Unlocked sample essay';
+        freeSampleTask.textContent = prompt?.taskType === 'task2' ? 'Task 2 · Survey essay' : 'Task 1 · Email essay';
+        freeSampleScenario.textContent = prompt?.scenario || '';
+        freeSampleLevel.textContent = prompt?.sampleLevel ? `Model level: ${prompt.sampleLevel}` : '';
+        freeSampleText.textContent = prompt?.sampleResponse || '';
+
+        freeSampleWhy.innerHTML = '';
+        (Array.isArray(prompt?.sampleLevelWhy) ? prompt.sampleLevelWhy : []).forEach((reason) => {
+          const li = document.createElement('li');
+          li.textContent = reason;
+          freeSampleWhy.appendChild(li);
+        });
+
+        freeSampleResult.style.display = 'block';
+      };
+
+      const submitNewsletterSignup = async (email) => {
+        const payload = new URLSearchParams();
+        payload.append('form-name', 'newsletter');
+        payload.append('email', email);
+        payload.append('bot-field', '');
+
+        try {
+          await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: payload.toString(),
+          });
+        } catch {
+        }
+      };
+
+      const claimFreeEssay = async (email) => {
+        const response = await fetch('/.netlify/functions/claim-free-celpip-sample', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        });
+
+        const data = await readApiResponse(response);
+        if (!response.ok || !data.ok || !data.prompt) {
+          throw new Error(data.error || 'Unable to unlock your free sample essay right now.');
+        }
+
+        return data;
+      };
+
+      const buildPromptCard = (prompt) => {
+        const article = document.createElement('article');
+        article.className = 'card';
+
+        const title = document.createElement('h4');
+        title.style.marginTop = '0';
+        title.textContent = prompt.title || 'Untitled prompt';
+
+        const level = document.createElement('p');
+        level.className = 'muted';
+        level.style.marginTop = '0';
+        level.textContent = prompt.sampleLevel ? `Model level: ${prompt.sampleLevel}` : '';
+
+        const context = document.createElement('p');
+        context.className = 'muted';
+        context.style.marginTop = '0';
+        context.textContent = prompt.scenario || prompt.question || '';
+
+        const whyList = document.createElement('ul');
+        whyList.className = 'muted';
+        whyList.style.margin = '0 0 0 var(--s-4)';
+        (Array.isArray(prompt.sampleLevelWhy) ? prompt.sampleLevelWhy : []).forEach((reason) => {
+          const li = document.createElement('li');
+          li.textContent = reason;
+          whyList.appendChild(li);
+        });
+
+        const sample = document.createElement('p');
+        sample.className = 'muted';
+        sample.style.whiteSpace = 'pre-line';
+        sample.style.marginBottom = '0';
+        sample.textContent = prompt.sampleResponse || '';
+
+        article.appendChild(title);
+        if (level.textContent) article.appendChild(level);
+        if (context.textContent) article.appendChild(context);
+        if (whyList.childElementCount > 0) article.appendChild(whyList);
+        if (sample.textContent) article.appendChild(sample);
+        return article;
+      };
+
+      const renderLibrary = (data) => {
+        const task1 = Array.isArray(data.task1) ? data.task1 : [];
+        const task2 = Array.isArray(data.task2) ? data.task2 : [];
+
+        if (task1CountEl) task1CountEl.textContent = `${task1.length} email essays`; 
+        if (task2CountEl) task2CountEl.textContent = `${task2.length} survey essays`;
+        if (summaryEl) {
+          summaryEl.textContent = `${data.promptTotal || task1.length + task2.length} essays unlocked for this active subscription.`;
+        }
+
+        if (task1ListEl) {
+          task1ListEl.innerHTML = '';
+          task1.forEach((prompt) => task1ListEl.appendChild(buildPromptCard(prompt)));
+        }
+
+        if (task2ListEl) {
+          task2ListEl.innerHTML = '';
+          task2.forEach((prompt) => task2ListEl.appendChild(buildPromptCard(prompt)));
+        }
+      };
+
+      const loadLibrary = async () => {
+        const params = new URLSearchParams(window.location.search);
+        const tokenFromQuery = (params.get('admin_token') || '').trim();
+        const disableAdmin = params.get('admin_mode') === 'off';
+
+        if (disableAdmin) {
+          localStorage.removeItem(adminTokenStorageKey);
+        }
+
+        if (tokenFromQuery) {
+          localStorage.setItem(adminTokenStorageKey, tokenFromQuery);
+          params.delete('admin_token');
+          const cleanQuery = params.toString();
+          const cleanUrl = `${window.location.pathname}${cleanQuery ? `?${cleanQuery}` : ''}${window.location.hash}`;
+          window.history.replaceState({}, '', cleanUrl);
+        }
+
+        const stored = readStoredAccess();
+        sessionId = params.get('session_id') || params.get('checkout_session_id') || params.get('sessionId') || stored?.sessionId || '';
+        const adminToken = (localStorage.getItem(adminTokenStorageKey) || '').trim();
+
+        if (!sessionId && !adminToken) {
+          showLocked('Unlock all 100 CELPIP sample essays plus the timed AI writing lab for just CA$5/month.');
+          return;
+        }
+
+        try {
+          const response = await fetch('/.netlify/functions/get-celpip-writing-samples', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ sessionId, adminToken }),
+          });
+
+          const data = await readApiResponse(response);
+          if (!response.ok || !data.valid) {
+            throw new Error(data.reason || data.error || 'Access denied.');
+          }
+
+          sessionId = String(data.sessionId || sessionId || '').trim();
+          customerId = String(data.customerId || stored?.customerId || '');
+          subscriptionId = String(data.subscriptionId || stored?.subscriptionId || '');
+          saveAccess();
+
+          renderLibrary(data);
+          if (checkingEl) checkingEl.style.display = 'none';
+          if (lockedEl) lockedEl.style.display = 'none';
+          if (appEl) appEl.style.display = 'block';
+          if (data.adminBypass) {
+            setStatus('Admin bypass mode is active on this browser.');
+          }
+        } catch (error) {
+          showLocked(error?.message || 'Could not validate subscription for this library.');
+        }
+      };
+
+      const manageBilling = async () => {
+        if (!customerId) {
+          setStatus('Billing customer ID is missing. Open the writing lab once, then try again.', true);
+          return;
+        }
+
+        setStatus('Opening secure Stripe billing portal…');
+        if (manageBillingBtn instanceof HTMLButtonElement) manageBillingBtn.disabled = true;
+
+        try {
+          const response = await fetch('/.netlify/functions/create-celpip-writing-portal', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ customerId, sessionId }),
+          });
+          const data = await readApiResponse(response);
+          if (!response.ok || !data.portalUrl) {
+            throw new Error(data.error || 'Unable to open billing portal');
+          }
+          window.location.href = data.portalUrl;
+        } catch (error) {
+          const message = error instanceof Error ? error.message : 'Unable to open billing portal.';
+          setStatus(message, true);
+          if (manageBillingBtn instanceof HTMLButtonElement) manageBillingBtn.disabled = false;
+        }
+      };
+
+      const cancelInstantly = async () => {
+        const confirmed = window.confirm('Cancel now? This will cancel your subscription immediately.');
+        if (!confirmed) return;
+
+        setStatus('Canceling your subscription now…');
+        if (cancelNowBtn instanceof HTMLButtonElement) cancelNowBtn.disabled = true;
+
+        try {
+          const response = await fetch('/.netlify/functions/cancel-celpip-writing-subscription', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ sessionId, subscriptionId }),
+          });
+          const data = await readApiResponse(response);
+          if (!response.ok || !data.canceled) {
+            throw new Error(data.error || 'Unable to cancel subscription');
+          }
+          setStatus('Your subscription was canceled instantly. Access will be removed on next request.');
+        } catch (error) {
+          const message = error instanceof Error ? error.message : 'Unable to cancel subscription.';
+          setStatus(message, true);
+          if (cancelNowBtn instanceof HTMLButtonElement) cancelNowBtn.disabled = false;
+        }
+      };
+
+      if (freeSampleForm instanceof HTMLFormElement) {
+        freeSampleForm.addEventListener('submit', async (event) => {
+          event.preventDefault();
+          const email = freeSampleEmailInput instanceof HTMLInputElement
+            ? normalizeEmail(freeSampleEmailInput.value)
+            : '';
+
+          if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+            setFreeSampleStatus('Please enter a valid email address.', true);
+            return;
+          }
+
+          if (freeSampleSubmit instanceof HTMLButtonElement) {
+            freeSampleSubmit.disabled = true;
+          }
+
+          setFreeSampleStatus('Saving your email and unlocking your free sample essay...');
+          const newsletterPromise = submitNewsletterSignup(email);
+
+          try {
+            const result = await claimFreeEssay(email);
+            renderFreeSample(result.prompt);
+            await newsletterPromise;
+            const message = result.alreadyClaimed
+              ? 'You already unlocked your one free sample. Showing your previously unlocked essay.'
+              : 'Your free sample essay is unlocked. This email has also been added to the newsletter list.';
+            setFreeSampleStatus(message);
+          } catch (error) {
+            await newsletterPromise;
+            const message = error instanceof Error ? error.message : 'Unable to unlock your free sample essay right now.';
+            setFreeSampleStatus(`${message} Your email was still saved to the newsletter list.`, true);
+          } finally {
+            if (freeSampleSubmit instanceof HTMLButtonElement) {
+              freeSampleSubmit.disabled = false;
+            }
+          }
+        });
+      }
+
+      manageBillingBtn?.addEventListener('click', manageBilling);
+      cancelNowBtn?.addEventListener('click', cancelInstantly);
+      loadLibrary();
+    })();
+  </script>
+</Layout>

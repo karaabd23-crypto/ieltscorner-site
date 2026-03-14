@@ -46,14 +46,13 @@ const navGroups = [
       { label: 'Writing', href: '/celpip/writing' },
       { label: 'Speaking', href: '/celpip/speaking' },
       { label: 'AI Writing Lab', href: '/celpip/writing/ai-feedback' },
-      { label: 'Sample Library', href: '/celpip/writing/samples' },
+      { label: 'Sample Essays', href: '/celpip/writing/samples' },
     ],
   },
   {
     label: 'Services',
-    href: '/pricing',
+    href: '/tutoring',
     items: [
-      { label: 'Pricing', href: '/pricing' },
       { label: 'Tutoring', href: '/tutoring' },
       { label: 'Essay correction', href: '/essay-correction' },
       { label: 'eBook', href: '/ebook' },
@@ -184,7 +183,7 @@ const organizationSchema = {
           Writing Hub →
         </a>
         <a href="/celpip/writing/samples" style="color: white; font-weight: 700; font-size: 13px; text-decoration: none; background: rgba(255, 255, 255, 0.2); padding: 6px 12px; border-radius: 999px; transition: background 140ms ease;">
-          Sample Library →
+          Sample Essays →
         </a>
       </div>
     </div>
@@ -199,39 +198,52 @@ const organizationSchema = {
           </div>
         </a>
 
-        <nav class="nav nav-main" aria-label="Primary navigation">
-          {navGroups.map((group) => {
-            const groupActive = currentPath === group.href || currentPath.startsWith(`${group.href}/`);
-            return (
-              <div class="nav-item nav-item-dropdown">
-                <a class:list={["nav-trigger", groupActive && "is-active"]} href={group.href}>
-                  <span>{group.label}</span>
-                  <span aria-hidden="true">▾</span>
-                </a>
-                <div class="nav-dropdown" role="menu" aria-label={`${group.label} links`}>
-                  {group.items.map((item) => {
-                    const itemActive = currentPath === item.href || currentPath.startsWith(`${item.href}/`);
-                    return (
-                      <a class:list={[itemActive && 'is-active']} href={item.href} role="menuitem">{item.label}</a>
-                    );
-                  })}
+        <button
+          id="menu-toggle"
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-header-panel"
+          aria-label="Toggle primary navigation"
+        >
+          Menu
+        </button>
+
+        <div id="site-header-panel" class="header-panel">
+          <nav id="primary-navigation" class="nav nav-main" aria-label="Primary navigation">
+            {navGroups.map((group) => {
+              const groupActive = currentPath === group.href || currentPath.startsWith(`${group.href}/`);
+              return (
+                <div class="nav-item nav-item-dropdown">
+                  <a class:list={["nav-trigger", groupActive && "is-active"]} href={group.href}>
+                    <span>{group.label}</span>
+                    <span aria-hidden="true">▾</span>
+                  </a>
+                  <div class="nav-dropdown" role="menu" aria-label={`${group.label} links`}>
+                    {group.items.map((item) => {
+                      const itemActive = currentPath === item.href || currentPath.startsWith(`${item.href}/`);
+                      return (
+                        <a class:list={[itemActive && 'is-active']} href={item.href} role="menuitem">{item.label}</a>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
 
-          <a class:list={["nav-hub", currentPath.startsWith('/celpip/writing/ai-feedback') && 'is-active']} href="/celpip/writing/ai-feedback">
-            Writing Hub
-          </a>
-        </nav>
+            <a class:list={["nav-hub", currentPath.startsWith('/celpip/writing/ai-feedback') && 'is-active']} href="/celpip/writing/ai-feedback">
+              Writing Hub
+            </a>
+          </nav>
 
-        <div class="header-right">
-          <div class="social" aria-label="Social links">
-            <a href="https://www.instagram.com/ieltscorner.ca" target="_blank" rel="noreferrer" aria-label="Instagram">IG</a>
-            <a href="https://www.youtube.com/@KaraAbdolmaleki" target="_blank" rel="noreferrer" aria-label="YouTube">YT</a>
-            <a href="https://t.me/Kaysenglishcorner" target="_blank" rel="noreferrer" aria-label="Telegram">TG</a>
+          <div class="header-right">
+            <div class="social" aria-label="Social links">
+              <a href="https://www.instagram.com/ieltscorner.ca" target="_blank" rel="noreferrer" aria-label="Instagram">IG</a>
+              <a href="https://www.youtube.com/@KaraAbdolmaleki" target="_blank" rel="noreferrer" aria-label="YouTube">YT</a>
+              <a href="https://t.me/Kaysenglishcorner" target="_blank" rel="noreferrer" aria-label="Telegram">TG</a>
+            </div>
+            <a class="btn btn-primary cta" href="/tutoring">Book a class</a>
           </div>
-          <a class="btn btn-primary cta" href="/tutoring">Book a class</a>
         </div>
       </div>
     </header>
@@ -239,14 +251,34 @@ const organizationSchema = {
     <script is:inline>
       // Dropdown persistence: keep open for 2s after mouse leaves, close on click elsewhere
       document.addEventListener('DOMContentLoaded', () => {
+        const siteHeader = document.querySelector('.site-header');
+        const menuToggle = document.getElementById('menu-toggle');
         const dropdowns = document.querySelectorAll('.nav-item-dropdown');
+        const desktopQuery = window.matchMedia('(min-width: 769px)');
+
+        const closeMenu = () => {
+          if (!siteHeader || !menuToggle) return;
+          siteHeader.classList.remove('menu-open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        };
+
+        if (menuToggle) {
+          menuToggle.addEventListener('click', () => {
+            if (!siteHeader) return;
+            const isOpen = siteHeader.classList.toggle('menu-open');
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+          });
+        }
+
         dropdowns.forEach((item) => {
           let timeoutId;
           item.addEventListener('mouseenter', () => {
+            if (!desktopQuery.matches) return;
             clearTimeout(timeoutId);
             item.classList.add('dropdown-open');
           });
           item.addEventListener('mouseleave', () => {
+            if (!desktopQuery.matches) return;
             timeoutId = setTimeout(() => {
               item.classList.remove('dropdown-open');
             }, 2000);
@@ -255,11 +287,29 @@ const organizationSchema = {
 
         // Close dropdown immediately if clicking outside
         document.addEventListener('click', (e) => {
+          const clickedInsideHeader = e.target instanceof Node && siteHeader?.contains(e.target);
+          if (!clickedInsideHeader) {
+            closeMenu();
+          }
+
           dropdowns.forEach((item) => {
             if (!item.contains(e.target)) {
               item.classList.remove('dropdown-open');
             }
           });
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            closeMenu();
+            dropdowns.forEach((item) => item.classList.remove('dropdown-open'));
+          }
+        });
+
+        desktopQuery.addEventListener('change', (event) => {
+          if (event.matches) {
+            closeMenu();
+          }
         });
       });
     </script>

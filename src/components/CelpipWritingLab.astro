@@ -21,7 +21,7 @@ const taskConfig = CELPIP_TASK_CONFIG;
       <p class="muted" id="writing-lab-error-text">Your payment could not be validated.</p>
       <div class="cluster">
         <a class="btn btn-primary" href="/celpip/writing/ai-feedback">Back to the service page</a>
-        <a class="btn" href="/pricing">View pricing</a>
+        <a class="btn" href="/tutoring">Book a class</a>
       </div>
     </div>
   </div>
@@ -150,6 +150,7 @@ const taskConfig = CELPIP_TASK_CONFIG;
   <script define:vars={{ promptBank, promptTotal, taskConfig }}>
     (() => {
       const storageKey = 'ieltscorner.celpipWritingLab';
+      const accessStorageKey = 'ieltscorner.celpipWritingAccess';
       const adminTokenStorageKey = 'ieltscorner.celpipWritingAdminToken';
       const validationEl = document.getElementById('writing-lab-validation');
       const errorEl = document.getElementById('writing-lab-error');
@@ -216,6 +217,27 @@ const taskConfig = CELPIP_TASK_CONFIG;
           return raw ? JSON.parse(raw) : null;
         } catch {
           return null;
+        }
+      };
+
+      const readStoredAccess = () => {
+        try {
+          const raw = localStorage.getItem(accessStorageKey);
+          return raw ? JSON.parse(raw) : null;
+        } catch {
+          return null;
+        }
+      };
+
+      const saveAccess = () => {
+        try {
+          localStorage.setItem(accessStorageKey, JSON.stringify({
+            sessionId,
+            customerId,
+            subscriptionId,
+            savedAt: Date.now(),
+          }));
+        } catch {
         }
       };
 
@@ -432,7 +454,8 @@ const taskConfig = CELPIP_TASK_CONFIG;
         }
 
         const adminToken = (localStorage.getItem(adminTokenStorageKey) || '').trim();
-        sessionId = params.get('session_id') || params.get('checkout_session_id') || params.get('sessionId') || '';
+        const storedAccess = readStoredAccess();
+        sessionId = params.get('session_id') || params.get('checkout_session_id') || params.get('sessionId') || storedAccess?.sessionId || '';
 
         if (!sessionId && !adminToken) {
           if (validationEl) validationEl.style.display = 'none';
@@ -456,6 +479,7 @@ const taskConfig = CELPIP_TASK_CONFIG;
           sessionId = String(data.sessionId || sessionId || '').trim();
           customerId = String(data.customerId || '');
           subscriptionId = String(data.subscriptionId || '');
+          saveAccess();
 
           if (validationEl) validationEl.style.display = 'none';
           if (appEl) appEl.style.display = 'block';
@@ -464,6 +488,7 @@ const taskConfig = CELPIP_TASK_CONFIG;
           }
           loadSavedState();
         } catch (error) {
+          localStorage.removeItem(accessStorageKey);
           if (validationEl) validationEl.style.display = 'none';
           if (errorEl) errorEl.style.display = 'block';
           if (errorText) errorText.textContent = error?.message || 'Payment validation failed.';

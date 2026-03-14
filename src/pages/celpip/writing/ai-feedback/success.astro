@@ -15,6 +15,10 @@ import CelpipWritingLab from '../../../../components/CelpipWritingLab.astro';
         <p class="muted" style="max-width: 64ch;">
           Your monthly subscription unlocks a timed writing lab for CELPIP Task 1 and Task 2. You can manage billing in Stripe or cancel instantly anytime.
         </p>
+        <div class="cluster" style="margin-top: var(--s-2);">
+          <a id="success-open-lab" class="btn btn-primary" href="/celpip/writing/ai-feedback/success">Open writing lab</a>
+          <a id="success-open-samples" class="btn" href="/celpip/writing/samples">Open sample essays</a>
+        </div>
       </div>
     </div>
   </section>
@@ -22,4 +26,23 @@ import CelpipWritingLab from '../../../../components/CelpipWritingLab.astro';
   <section class="section-sm">
     <CelpipWritingLab />
   </section>
+
+  <script is:inline>
+    (() => {
+      const params = new URLSearchParams(window.location.search);
+      const sessionId = params.get('session_id') || params.get('checkout_session_id') || params.get('sessionId') || '';
+      if (!sessionId) return;
+
+      const withSession = (basePath) => `${basePath}?session_id=${encodeURIComponent(sessionId)}`;
+      const labLink = document.getElementById('success-open-lab');
+      const sampleLink = document.getElementById('success-open-samples');
+
+      if (labLink instanceof HTMLAnchorElement) {
+        labLink.href = withSession('/celpip/writing/ai-feedback/success');
+      }
+      if (sampleLink instanceof HTMLAnchorElement) {
+        sampleLink.href = withSession('/celpip/writing/samples');
+      }
+    })();
+  </script>
 </Layout>

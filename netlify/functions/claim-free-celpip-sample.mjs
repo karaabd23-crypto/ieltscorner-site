@@ -1,0 +1,126 @@
+import { createHash } from 'node:crypto';
+import { getStore } from '@netlify/blobs';
+import { CELPIP_PROMPT_BANK } from '../../src/lib/celpipWritingData.mjs';
+
+const CLAIM_STORE = getStore('celpip-free-sample-claims');
+
+const allPrompts = [...CELPIP_PROMPT_BANK.task1, ...CELPIP_PROMPT_BANK.task2]
+  .map((prompt) => ({
+    id: prompt.id,
+    title: prompt.title,
+    taskType: prompt.id.startsWith('email-') ? 'task1' : 'task2',
+    scenario: prompt.scenario || prompt.question || '',
+    sampleResponse: prompt.sampleResponse || '',
+    sampleLevel: prompt.sampleLevel || '',
+    sampleLevelWhy: Array.isArray(prompt.sampleLevelWhy) ? prompt.sampleLevelWhy : [],
+  }))
+  .filter((prompt) => prompt.sampleResponse);
+
+function normalizeEmail(value) {
+  return String(value || '').trim().toLowerCase();
+}
+
+function emailHash(email) {
+  return createHash('sha256').update(email).digest('hex');
+}
+
+function pickPromptForEmail(email) {
+  const seedHex = createHash('sha256').update(`celpip-free-sample:${email}`).digest('hex').slice(0, 12);
+  const seed = Number.parseInt(seedHex, 16);
+  const index = Number.isFinite(seed) ? seed % allPrompts.length : 0;
+  return allPrompts[index] || allPrompts[0];
+}
+
+function sanitizePrompt(prompt) {
+  if (!prompt) return null;
+  return {
+    id: prompt.id,
+    title: prompt.title,
+    taskType: prompt.taskType,
+    scenario: prompt.scenario,
+    sampleResponse: prompt.sampleResponse,
+    sampleLevel: prompt.sampleLevel,
+    sampleLevelWhy: prompt.sampleLevelWhy,
+  };
+}
+
+function findPromptById(promptId) {
+  return allPrompts.find((item) => item.id === promptId) || null;
+}
+
+export async function handler(event) {
+  if (event.httpMethod !== 'POST') {
+    return { statusCode: 405, body: JSON.stringify({ error: 'Method not allowed' }) };
+  }
+
+  try {
+    const body = JSON.parse(event.body || '{}');
+    const email = normalizeEmail(body.email);
+
+    if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+      return { statusCode: 400, body: JSON.stringify({ error: 'Please enter a valid email address.' }) };
+    }
+
+    if (allPrompts.length === 0) {
+      return { statusCode: 500, body: JSON.stringify({ error: 'No sample essays are currently available.' }) };
+    }
+
+    const key = emailHash(email);
+    const existing = await CLAIM_STORE.get(key, { type: 'json' });
+
+    if (existing?.promptId) {
+      const prompt = sanitizePrompt(findPromptById(existing.promptId));
+      if (prompt) {
+        return {
+          statusCode: 200,
+          body: JSON.stringify({
+            ok: true,
+            alreadyClaimed: true,
+            prompt,
+          }),
+        };
+      }
+    }
+
+    const selectedPrompt = pickPromptForEmail(email);
+
+    const writeResult = await CLAIM_STORE.setJSON(
+      key,
+      {
+        email,
+        promptId: selectedPrompt.id,
+        claimedAt: new Date().toISOString(),
+      },
+      { onlyIfNew: true }
+    );
+
+    if (!writeResult.modified) {
+      const claimed = await CLAIM_STORE.get(key, { type: 'json' });
+      const prompt = sanitizePrompt(findPromptById(claimed?.promptId));
+      if (prompt) {
+        return {
+          statusCode: 200,
+          body: JSON.stringify({
+            ok: true,
+            alreadyClaimed: true,
+            prompt,
+          }),
+        };
+      }
+    }
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        ok: true,
+        alreadyClaimed: false,
+        prompt: sanitizePrompt(selectedPrompt),
+      }),
+    };
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: error?.message || 'Unable to unlock a free sample essay right now.' }),
+    };
+  }
+}
