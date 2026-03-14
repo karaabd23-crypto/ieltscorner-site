@@ -1,6 +1,7 @@
 import Stripe from 'stripe';
 import {
   CELPIP_WRITING_BILLING_INTERVAL,
+  CELPIP_WRITING_MONTHLY_EVAL_LIMIT,
   CELPIP_WRITING_PRODUCT_NAME,
 } from '../../src/lib/celpipWritingData.mjs';
 
@@ -20,6 +21,9 @@ function adminBypassPayload() {
     customerName: 'Admin Preview',
     sessionId: 'admin-bypass',
     adminBypass: true,
+    evalsUsed: 0,
+    evalLimit: CELPIP_WRITING_MONTHLY_EVAL_LIMIT,
+    topupCredits: 0,
   };
 }
 
@@ -125,6 +129,26 @@ export async function handler(event) {
     const customerId = extractId(session.customer);
     const subscription = subResult.subscription;
 
+    // Fetch usage metrics from customer metadata
+    let evalsUsed = 0;
+    let topupCredits = 0;
+    if (customerId) {
+      try {
+        const customer = await stripe.customers.retrieve(customerId);
+        if (!customer.deleted) {
+          const periodStart = new Date(subscription.current_period_start * 1000).toISOString().slice(0, 10);
+          const storedPeriod = String(customer.metadata?.celpip_eval_period || '');
+          evalsUsed =
+            storedPeriod === periodStart
+              ? Math.max(0, Number(customer.metadata?.celpip_eval_count || '0'))
+              : 0;
+          topupCredits = Math.max(0, Number(customer.metadata?.celpip_topup_credits || '0'));
+        }
+      } catch {
+        // Non-fatal: usage data unavailable but access is still valid
+      }
+    }
+
     return {
       statusCode: 200,
       body: JSON.stringify({
@@ -137,6 +161,9 @@ export async function handler(event) {
         customerEmail: session.customer_details?.email || null,
         customerName: session.customer_details?.name || null,
         sessionId,
+        evalsUsed,
+        evalLimit: CELPIP_WRITING_MONTHLY_EVAL_LIMIT,
+        topupCredits,
       }),
     };
   } catch (error) {

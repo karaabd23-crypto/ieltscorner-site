@@ -3,6 +3,12 @@ export const CELPIP_WRITING_PRICE_CAD = 5;
 export const CELPIP_WRITING_AMOUNT_CENTS = 500;
 export const CELPIP_WRITING_BILLING_INTERVAL = 'month';
 
+export const CELPIP_WRITING_MONTHLY_EVAL_LIMIT = 20;
+export const CELPIP_WRITING_TOPUP_CREDITS = 10;
+export const CELPIP_WRITING_TOPUP_PRICE_CAD = 2;
+export const CELPIP_WRITING_TOPUP_AMOUNT_CENTS = 200;
+export const CELPIP_WRITING_TOPUP_PRODUCT_NAME = 'CELPIP Writing AI — Extra Requests';
+
 export const CELPIP_TASK_CONFIG = {
   task1: {
     id: 'task1',

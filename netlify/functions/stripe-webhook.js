@@ -1,8 +1,51 @@
 import Stripe from 'stripe';
 import nodemailer from 'nodemailer';
+import {
+  CELPIP_WRITING_TOPUP_CREDITS,
+} from '../../src/lib/celpipWritingData.mjs';
 
 const GOOGLE_MEET_LINK = 'https://meet.google.com/hcf-iwcn-syx';
 const DEFAULT_WEBINAR_AMOUNT_CENTS = 1200;
+
+function extractCustomerId(value) {
+  if (!value) return '';
+  if (typeof value === 'string') return value;
+  if (typeof value === 'object' && typeof value.id === 'string') return value.id;
+  return '';
+}
+
+async function handleTopupSession(stripe, session) {
+  const creditsGranted = Math.max(1, Number(session.metadata?.credits || CELPIP_WRITING_TOPUP_CREDITS));
+  const customerId = extractCustomerId(session.customer);
+  if (!customerId) return;
+
+  try {
+    const customer = await stripe.customers.retrieve(customerId);
+    if (customer.deleted) return;
+
+    const topupSessionId = String(session.id || '');
+    const redeemedSessions = String(customer.metadata?.celpip_redeemed_topups || '');
+    if (redeemedSessions.split(',').filter(Boolean).includes(topupSessionId)) {
+      // Already redeemed (success page already credited); skip
+      return;
+    }
+
+    const currentTopupCredits = Math.max(0, Number(customer.metadata?.celpip_topup_credits || '0'));
+    const newTopupCredits = currentTopupCredits + creditsGranted;
+    const sessionList = redeemedSessions.split(',').filter(Boolean);
+    sessionList.push(topupSessionId);
+    const updatedRedeemedSessions = sessionList.slice(-10).join(',');
+
+    await stripe.customers.update(customerId, {
+      metadata: {
+        celpip_topup_credits: String(newTopupCredits),
+        celpip_redeemed_topups: updatedRedeemedSessions,
+      },
+    });
+  } catch {
+    // Non-fatal: webhook credit update failure is acceptable (success page is the primary path)
+  }
+}
 
 function getPaymentLinkId(paymentLink) {
   if (!paymentLink) {
@@ -179,6 +222,15 @@ export const handler = async (event) => {
       return {
         statusCode: 200,
         body: JSON.stringify({ status: 'ignored', reason: 'not_paid' }),
+      };
+    }
+
+    // Handle CELPIP writing top-up purchases (safety net — primary redemption via success page)
+    if (session.metadata?.service === 'celpip-writing-topup') {
+      await handleTopupSession(stripe, session);
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ status: 'success', type: 'celpip-topup' }),
       };
     }
 
