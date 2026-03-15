@@ -5,136 +5,105 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn reducing wordiness for B2 level. Clear explanations with practical examples and exercises for IELTS and CELPIP."
+excerpt: "B2 lesson on Reducing Wordiness: clear framework, exam-style tasks, and model answers for IELTS/CELPIP writing."
 date: "2026-03-02"
 tags: ["writing", "b2", "grammar", "esl", "examples", "practice", "exam-prep"]
 heroTip: "✍️ Master this concept by studying the examples below. Practice the exercises, then check your answers."
 videoEmbed: ""
 draft: false
 ---
+## Goal
+Use concise language to increase clarity, improve paragraph flow, and sound more academic in IELTS/CELPIP writing.
 
+## What Changes at B2
+At B2, reducing wordiness is not only about shorter sentences. It is about **information density**:
+- each sentence should add a new function (claim, explanation, evidence, consequence)
+- connectors should clarify logic, not fill space
+- repetition should be replaced with precise detail
 
-## Reducing Wordiness
+## Why This Matters for Band 6-7
+- **Task Achievement:** focused paragraphs answer the prompt directly.
+- **Coherence and Cohesion:** concise sentences make paragraph logic easier to track.
+- **Lexical Resource:** stronger verb choice reduces dependence on vague fillers.
 
-<div class="lesson-intro" style="background: #f0f7ff; border-left: 4px solid #0066cc; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
+## Practical Editing Framework (B2)
+1. Mark the purpose of each sentence: C (claim), E (explain), X (example), R (result).
+2. Delete any sentence that repeats an earlier function.
+3. Replace weak noun phrases with verbs:
+	- *provide an explanation* -> *explain*
+	- *make an improvement* -> *improve*
+4. Compress double markers:
+	- *In my opinion, I believe that...* -> *I believe that...*
+5. Check sentence length: keep most sentences under 25 words unless complexity is necessary.
 
-### Why Learn This?
-This concept is important because it helps you express yourself more clearly and accurately in English. You will use it in both IELTS and CELPIP tests.
+## Before and After (B2-Level)
+### Example 1: Redundant Framing
+- Wordy: *There are many different reasons why this issue is important and should be considered carefully by the government.*
+- Better: *This issue deserves policy attention because it affects public health and transport efficiency.*
 
-</div>
+### Example 2: Repeated Conclusion Language
+- Wordy: *In conclusion, to sum up, I strongly think that this policy is good in many different ways.*
+- Better: *In conclusion, this policy is beneficial, particularly for low-income commuters.*
 
-### Definition
+### Example 3: IELTS Task 2 Opinion Sentence
+- Wordy: *I completely agree with this idea because it is very useful and very helpful for society in general terms.*
+- Better: *I agree with this view because the policy reduces congestion and improves access to essential services.*
 
-This lesson explains how to use Reducing Wordiness in clear written English, helping intermediate learners produce stronger task responses.
+## High-Value Moves
+- Use one precise noun instead of a long phrase: *residents* not *people who live in the city*.
+- Remove empty boosters: very, really, basically, in fact (unless needed for contrast).
+- Prefer direct verbs: *increase, reduce, limit, improve*.
 
----
+## Practice
+### Exercise 1: Tighten These Sentences
+Rewrite each sentence in **15-20 words**.
+1. *It is very important to mention that students in modern society face lots of different kinds of stress today.*
+2. *The government should take actions and do improvements in order to make the situation better for everyone.*
+3. *There are a lot of advantages and benefits that public transport can provide in many urban areas.*
 
-## Structure and Rules
+### Exercise 2: Paragraph Compression
+Original paragraph (57 words):
+*In my opinion, public transport is very important and useful in many ways. It helps many people and it can reduce traffic in cities. Also, it has benefits for the environment too. For these reasons, I think governments should invest more in transport systems because it is a good thing for society.*
 
-<table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
-<thead>
-  <tr style="background: #e6e6e6;">
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Rule</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Example</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">When to Use</th>
-  </tr>
-</thead>
-<tbody>
-  <tr style="border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Clear sentence pattern</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>This paragraph uses reducing wordiness to present one main idea clearly.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">For accurate and readable task writing</td>
-  </tr>
-  <tr style="background: #fafafa; border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Formal extension pattern</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>In formal tasks, reducing wordiness helps connect claims and evidence logically.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">To improve coherence and formal tone</td>
-  </tr>
-</tbody>
-</table>
+Task: Rewrite to **40-45 words** while keeping all key ideas.
 
----
+### Exercise 3: IELTS/CELPIP Mini Task
+Write one body paragraph (5-6 sentences):
+*Some people think cities should limit private cars in downtown areas. Do you agree?*
 
-## Common Mistakes
+Requirements:
+- one clear topic sentence
+- one explanation sentence
+- one concrete example
+- one consequence sentence
+- no sentence-level repetition
 
-<div class="mistakes-box" style="background: #ffe6e6; border-left: 4px solid #cc0000; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
+## Sample Answers
+### Exercise 1 (Possible)
+1. *Students today face significant stress from academic pressure, financial concerns, and uncertain employment prospects.*
+2. *The government should implement targeted reforms to improve service quality and reduce inequality.*
+3. *Public transport offers major benefits, including lower congestion, reduced emissions, and wider mobility access.*
 
-### ❌ Incorrect
+### Exercise 2 (Possible)
+*Public transport is essential because it reduces urban traffic and supports environmental goals. Since it benefits commuters and city infrastructure, governments should increase investment in reliable transport systems.*
 
-```
-I use reducing wordiness wrong in this sentence and it sound unclear.
-```
+## B2 Checklist for Conciseness
+- Did every sentence perform a different function?
+- Did I remove repeated framing language?
+- Did I use precise verbs instead of long noun phrases?
+- Did I keep logical connectors meaningful?
+- Could this paragraph be cut by 10% without losing meaning?
 
-### ✅ Correct
+## Final Tip
+Strong B2 writing sounds controlled, not crowded. If two sentences do the same job, keep the stronger one.
 
-```
-I used reducing wordiness incorrectly in this sentence, so it sounded unclear.
-```
+## Level Deep Dive (B2)
+At B2, your writing should show controlled development. Use Reducing Wordiness to build argument progression: claim, evidence, implication.
 
-**Why?** Accurate grammar and tense choice make the sentence clear and natural.
+Micro-task:
+- write 6 sentences
+- include one contrast marker (however, although)
+- include one cause-result marker (therefore, as a result)
+- include one realistic example detail
 
-</div>
-
----
-
-## Examples from Real Tests
-
-### Example 1: IELTS Writing
-> "Overall, the data shows that reducing wordiness plays a key role in the final trend."
-
-**Why this works:** It applies reducing wordiness in a formal IELTS style with a clear claim.
-
-### Example 2: CELPIP Speaking
-> "In my opinion, using reducing wordiness makes this response clearer and more organized."
-
-**Why this works:** It uses reducing wordiness to present a direct opinion plus support.
-
----
-
-## Practice Exercises
-
-### Exercise 1: Fill in the Blanks
-
-1. She __________ (go) to the market every Saturday.
-2. I can't __________ (watch) the movie because I have work.
-3. They __________ (eat) dinner when the phone rang.
-
-**Answers:** 1. goes  2. watch  3. were eating
-
-### Exercise 2: Correct the Mistakes
-
-1. She don't like coffee. → ___________________________
-2. He can goes to school. → ___________________________
-3. I have saw that movie. → ___________________________
-
-### Exercise 3: Write Your Own Sentences
-
-Create sentences using the structure:
-- Sentence 1: ___________________________
-- Sentence 2: ___________________________
-
----
-
-## Tips for IELTS and CELPIP
-
-<div class="tips-box" style="background: #e6ffe6; border-left: 4px solid #00aa00; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
-
-✓ **For Writing:** Use this structure to show your grammar range. Examiners want to see variety.
-
-✓ **For Speaking:** Practice this form until it feels natural. You should be able to use it automatically.
-
-✓ **For Listening:** When you hear this structure, try to understand the meaning first, then the grammar.
-
-✓ **Study Strategy:** Write 5 sentences with this structure every day for one week.
-
-</div>
-
----
-
-## Next Steps
-
-- Review this lesson tomorrow
-- Do Exercise 3 again to check your progress
-- Try using this in your next writing task
-- Speak this structure aloud 5 times
-
+Quality rule: remove any sentence that restates the same idea without adding evidence.

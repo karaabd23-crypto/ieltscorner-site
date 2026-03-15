@@ -1,14 +1,14 @@
-﻿---
+---
 title: "How to Use Grammar in Clear Sentences"
 category: "grammar"
 level: "C1"
 ieltsBand: "7.0-8.0"
 clb: "9-10"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn grammar with simple examples. Perfect for IELTS and CELPIP preparation."
+excerpt: "C1 grammar lesson on How to Use Grammar in Clear Sentences with unpacked explanations, aligned practice, and model answers."
 date: "2026-02-27"
-tags: ["grammar", "c1", "beginner-friendly", "esl", "examples", "practice", "exam-prep"]
-heroTip: "👉 Start with the examples. Try the practice questions. Check answers at the bottom."
+tags: ["grammar", "c1", "exam-prep", "ielts", "celpip"]
+heroTip: "Understand the idea first, then practice under timed exam conditions."
 visualAids: ["Simple example table", "Right and wrong list", "Real test examples"]
 quiz:
   - prompt: "Which sentence is better for a test?"
@@ -35,160 +35,65 @@ premium: true
 priceCAD: 12
 draft: false
 ---
+## Goal
+Master **How to Use Grammar in Clear Sentences** with high-information, concise argumentation.
 
-## How to Use Grammar in Clear Sentences
+## Concept Unpacked
+This lesson explains the core meaning, where learners usually get confused, and how to apply the pattern in exam contexts. At C1, focus on nuanced explanation with precision focus.
 
-### 🎯 What you will learn today learn today
+## Key Rule in Plain Language
+1. Identify the grammatical function you need (time, agreement, relationship, emphasis).
+2. Build a correct base sentence first.
+3. Add one support detail only after the form is stable.
+4. Re-check agreement, tense, and punctuation before finalizing.
 
-At C1 level, strong grammar means control, clarity, and precision. In this lesson, you will practice building sentences that sound confident without becoming complicated or unnatural. The goal is to make your ideas easy to follow while keeping an advanced tone.
+## Worked Examples
+### Example 1: Basic Control
+- Weak: *The sentence has the idea but grammar control is unstable.*
+- Better: *The sentence is grammatically controlled and the meaning is immediate.*
+- Why it improves: the reader can process the message without re-reading.
 
-### 👀 Real examples
+### Example 2: Exam-Style Precision
+- Weak: *The paragraph uses long forms but logic is unclear.*
+- Better: *The paragraph uses controlled structure to link claim, reason, and consequence.*
+- Why it improves: grammar supports argument flow instead of interrupting it.
 
+## Frequent Errors and Fixes
+- Error: grammatical form chosen correctly, but wrong word order.
+- Fix: keep core clause order stable before adding modifiers.
 
-<div class="comparison-cards">
-<div class="comparison-row">
-  <div class="card-item weak">
-    <strong>❌ Weak</strong>
-    <p>People are bad at money.</p>
-  </div>
-  <div class="card-item better">
-    <strong>✅ Better</strong>
-    <p>Many people struggle with long-term financial planning.</p>
-  </div>
-  <div class="card-item why">
-    <strong>Why it works</strong>
-    <p>The expression is accurate and formal.</p>
-  </div>
-</div>
-<div class="comparison-row">
-  <div class="card-item weak">
-    <strong>❌ Weak</strong>
-    <p>This is very bad.</p>
-  </div>
-  <div class="card-item better">
-    <strong>✅ Better</strong>
-    <p>This can lead to avoidable social and economic problems.</p>
-  </div>
-  <div class="card-item why">
-    <strong>Why it works</strong>
-    <p>The sentence is specific and meaningful.</p>
-  </div>
-</div>
-<div class="comparison-row">
-  <div class="card-item weak">
-    <strong>❌ Weak</strong>
-    <p>I think good is here.</p>
-  </div>
-  <div class="card-item better">
-    <strong>✅ Better</strong>
-    <p>I believe this approach is effective in practice.</p>
-  </div>
-  <div class="card-item why">
-    <strong>Why it works</strong>
-    <p>Grammar and register are controlled.</p>
-  </div>
-</div>
-</div>
+- Error: mixing tense/aspect inside one claim.
+- Fix: choose one timeline and stay consistent.
 
+- Error: adding complexity without communicative purpose.
+- Fix: keep only structures that add meaning.
 
-Notice that the better versions are not longer for no reason. They are clearer because each sentence carries one strong idea.
+## Practice
+### Exercise 1: Diagnose and Correct
+Correct each sentence and state the rule you used.
+1. The policy affect many people and create serious problem.
+2. If cities will invest in buses, traffic reduce quickly.
+3. This measure was implement last year and improve access.
 
-### 🧠 How this works
+### Exercise 2: Controlled Application
+Write 4 sentences using **How to Use Grammar in Clear Sentences**:
+- one statement
+- one contrast sentence
+- one cause-result sentence
+- one exam-style summary sentence
 
-At advanced levels, avoid writing dense sentences that hide your meaning. Instead, use controlled complexity: one central idea, one clear explanation, and one relevant example.
+### Exercise 3: Micro Paragraph
+Write 5-6 sentences on this prompt:
+*Should governments prioritize public transport funding?*
+Use **How to Use Grammar in Clear Sentences** at least twice and keep your logic clear.
 
-Use this quality check before you submit:
-1. **Precision:** Is my claim specific?
-2. **Control:** Is grammar accurate from start to finish?
-3. **Flow:** Does each sentence connect logically to the next one?
+## Answer Key
+### Exercise 1 (Possible)
+1. *The policy affects many people and creates serious problems.*
+2. *If cities invest in buses, traffic will reduce quickly.*
+3. *This measure was implemented last year and improved access.*
 
-### ❌ Common mistakes and easy fixes
-
-<div class="comparison-cards">
-<div class="comparison-row">
-  <div class="card-item weak">
-    <strong>❌ Mistake</strong>
-    <p>Over-complex sentence with mixed ideas</p>
-  </div>
-  <div class="card-item better">
-    <strong>✅ Better</strong>
-    <p>Break into two linked sentences</p>
-  </div>
-  <div class="card-item why">
-    <strong>Why it works</strong>
-    <p>Clarity improves without losing sophistication.</p>
-  </div>
-</div>
-<div class="comparison-row">
-  <div class="card-item weak">
-    <strong>❌ Mistake</strong>
-    <p>Formal word used incorrectly</p>
-  </div>
-  <div class="card-item better">
-    <strong>✅ Better</strong>
-    <p>Replace with a precise familiar word</p>
-  </div>
-  <div class="card-item why">
-    <strong>Why it works</strong>
-    <p>Better lexical control.</p>
-  </div>
-</div>
-<div class="comparison-row">
-  <div class="card-item weak">
-    <strong>❌ Mistake</strong>
-    <p>Vague claim</p>
-  </div>
-  <div class="card-item better">
-    <strong>✅ Better</strong>
-    <p>Add a concrete detail or condition</p>
-  </div>
-  <div class="card-item why">
-    <strong>Why it works</strong>
-    <p>Improves argument quality.</p>
-  </div>
-</div>
-<div class="comparison-row">
-  <div class="card-item weak">
-    <strong>❌ Mistake</strong>
-    <p>Forced style</p>
-  </div>
-  <div class="card-item better">
-    <strong>✅ Better</strong>
-    <p>Use natural formal phrasing</p>
-  </div>
-  <div class="card-item why">
-    <strong>Why it works</strong>
-    <p>Natural language reads as higher quality.</p>
-  </div>
-</div>
-</div>
-
-
-### ✅ Guided practice
-
-1. Upgrade this sentence: **"This is bad for people and bad for money."**
-2. Choose the correct option:
-  - A) I do a decision
-  - B) I make a decision
-  - C) I making a decision
-3. Fix the error: **"The student is have a test today."**
-4. Improve this claim with a condition: **"Public transport is useful."**
-
-### ✅ Suggested answers answers
-
-1. **This can create significant social and economic pressure for many households.**
-2. **B) I make a decision.**
-3. **The student has a test today.**
-4. **Public transport is especially useful in large cities where congestion is a daily problem.**
-
-### 🇬🇧 For IELTS
-
-Use advanced grammar with control, not risk. A clear argument with accurate language scores better than a complex paragraph full of errors.
-
-### 🇨🇦 For CELPIP
-
-Be concise and precise. Even at high levels, CELPIP rewards clear communication and logical structure over decorative language.
-
-### 🚀 Next step
-
-Take one of your previous responses and revise only the grammar and sentence control. Keep your ideas the same. This helps you see exactly how grammar quality changes your score.
+## Final Check
+- Did grammar choices improve clarity?
+- Is each sentence doing one job?
+- Does performance meet the C1 target: use the skill with balance, evidence, and efficient phrasing?

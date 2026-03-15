@@ -5,136 +5,105 @@ level: "B1"
 ieltsBand: "4.5-5.5"
 clb: "5-6"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn reducing wordiness for B1 level. Clear explanations with practical examples and exercises for IELTS and CELPIP."
+excerpt: "B1 lesson on Reducing Wordiness: clear framework, exam-style tasks, and model answers for IELTS/CELPIP writing."
 date: "2026-03-02"
 tags: ["writing", "b1", "grammar", "esl", "examples", "practice", "exam-prep"]
 heroTip: "✍️ Master this concept by studying the examples below. Practice the exercises, then check your answers."
 videoEmbed: ""
 draft: false
 ---
+## Goal
+Write short, clear paragraphs by removing unnecessary words without losing meaning.
 
+## What "Reducing Wordiness" Means
+Wordy writing repeats ideas, uses vague fillers, and hides the main point.
 
-## Reducing Wordiness
+At B1, your target is simple:
+- one sentence = one clear message
+- no repeated adjectives (very, really, quite) unless needed
+- use direct verbs instead of long noun phrases
 
-<div class="lesson-intro" style="background: #f0f7ff; border-left: 4px solid #0066cc; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
+## Why This Improves IELTS and CELPIP Scores
+- **Task Response / Content:** Your answer stays focused on the question.
+- **Coherence:** The examiner can follow your logic quickly.
+- **Language Control:** Clear grammar is more valuable than long complicated sentences.
 
-### Why Learn This?
-This concept is important because it helps you express yourself more clearly and accurately in English. You will use it in both IELTS and CELPIP tests.
+## Core B1 Rules
+1. Delete empty starters: *It is important to note that...*
+2. Replace long phrases with one verb:
+	- *make a decision* -> *decide*
+	- *give an explanation* -> *explain*
+3. Keep only one reason in each supporting sentence.
+4. Read the sentence aloud. If you run out of breath, shorten it.
 
-</div>
+## Before and After Examples
+### Example 1
+- Wordy: *In my personal opinion, I think public transport is very useful and very important for many different people in society.*
+- Better: *Public transport is important because it helps workers and students travel cheaply.*
 
-### Definition
+### Example 2
+- Wordy: *There are many reasons why pollution is a problem and this is a thing that affects a lot of people in cities.*
+- Better: *Pollution is a major city problem because it harms residents' health.*
 
-This lesson explains how to use Reducing Wordiness in clear written English, helping intermediate learners produce stronger task responses.
+### Example 3 (IELTS Task 2 style)
+- Wordy: *It is clear that there are many advantages and positive benefits of online learning for students nowadays.*
+- Better: *Online learning offers two main advantages: flexible schedules and lower commuting costs.*
 
----
+## Common B1 Mistakes
+- Mistake: repeating the same idea with new words
+- Fix: keep the strongest version and delete the rest
 
-## Structure and Rules
+- Mistake: using long introductions before the main claim
+- Fix: start with the claim immediately
 
-<table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
-<thead>
-  <tr style="background: #e6e6e6;">
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Rule</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Example</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">When to Use</th>
-  </tr>
-</thead>
-<tbody>
-  <tr style="border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Clear sentence pattern</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>This paragraph uses reducing wordiness to present one main idea clearly.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">For accurate and readable task writing</td>
-  </tr>
-  <tr style="background: #fafafa; border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Formal extension pattern</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>In formal tasks, reducing wordiness helps connect claims and evidence logically.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">To improve coherence and formal tone</td>
-  </tr>
-</tbody>
-</table>
+- Mistake: writing one long sentence with many "and" links
+- Fix: split into two shorter sentences
 
----
+## Practice
+### Exercise 1: Make These Sentences Concise
+1. *I personally think that in my opinion this policy is not a good policy for people.*
+2. *There are many different kinds of problems that students face in education today.*
+3. *In conclusion, to sum up, this topic has many advantages and disadvantages.*
 
-## Common Mistakes
+### Exercise 2: Keep One Idea Per Sentence
+Rewrite this into **2 clear sentences**:
+*Public transport is useful because it is cheap and good for the environment and helps reduce traffic and people can arrive faster at work.*
 
-<div class="mistakes-box" style="background: #ffe6e6; border-left: 4px solid #cc0000; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
+### Exercise 3: Mini Exam Task
+Write **4 sentences** on this question:
+*Should cities spend more money on buses and trains?*
 
-### ❌ Incorrect
+Requirements:
+- sentence 1: your opinion
+- sentence 2: one reason
+- sentence 3: one example
+- sentence 4: short conclusion
 
-```
-I use reducing wordiness wrong in this sentence and it sound unclear.
-```
+## Sample Answers
+### Exercise 1 (Possible)
+1. *This policy is not good for residents.*
+2. *Students face several challenges at school.*
+3. *In conclusion, this topic has both benefits and drawbacks.*
 
-### ✅ Correct
+### Exercise 2 (Possible)
+*Public transport is useful because it is affordable and reduces traffic. It is also better for the environment than private cars.*
 
-```
-I used reducing wordiness incorrectly in this sentence, so it sounded unclear.
-```
+## Quick Self-Check
+- Did I remove repeated words?
+- Did each sentence have one clear point?
+- Did I avoid long filler phrases?
+- Could an examiner understand my meaning immediately?
 
-**Why?** Accurate grammar and tense choice make the sentence clear and natural.
+## Final Tip
+At B1, clarity beats complexity. If a shorter sentence says the same thing, choose the shorter sentence.
 
-</div>
+## Level Deep Dive (B1)
+At B1, you should manage paragraph unity. Use Reducing Wordiness to support one central point with simple but clear logic.
 
----
+Micro-task:
+- one topic sentence
+- two support sentences
+- one concrete example
+- one short concluding line
 
-## Examples from Real Tests
-
-### Example 1: IELTS Writing
-> "Overall, the data shows that reducing wordiness plays a key role in the final trend."
-
-**Why this works:** It applies reducing wordiness in a formal IELTS style with a clear claim.
-
-### Example 2: CELPIP Speaking
-> "In my opinion, using reducing wordiness makes this response clearer and more organized."
-
-**Why this works:** It uses reducing wordiness to present a direct opinion plus support.
-
----
-
-## Practice Exercises
-
-### Exercise 1: Fill in the Blanks
-
-1. She __________ (go) to the market every Saturday.
-2. I can't __________ (watch) the movie because I have work.
-3. They __________ (eat) dinner when the phone rang.
-
-**Answers:** 1. goes  2. watch  3. were eating
-
-### Exercise 2: Correct the Mistakes
-
-1. She don't like coffee. → ___________________________
-2. He can goes to school. → ___________________________
-3. I have saw that movie. → ___________________________
-
-### Exercise 3: Write Your Own Sentences
-
-Create sentences using the structure:
-- Sentence 1: ___________________________
-- Sentence 2: ___________________________
-
----
-
-## Tips for IELTS and CELPIP
-
-<div class="tips-box" style="background: #e6ffe6; border-left: 4px solid #00aa00; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
-
-✓ **For Writing:** Use this structure to show your grammar range. Examiners want to see variety.
-
-✓ **For Speaking:** Practice this form until it feels natural. You should be able to use it automatically.
-
-✓ **For Listening:** When you hear this structure, try to understand the meaning first, then the grammar.
-
-✓ **Study Strategy:** Write 5 sentences with this structure every day for one week.
-
-</div>
-
----
-
-## Next Steps
-
-- Review this lesson tomorrow
-- Do Exercise 3 again to check your progress
-- Try using this in your next writing task
-- Speak this structure aloud 5 times
-
+Quality rule: avoid overloading a sentence with many clauses; clarity comes first.

@@ -5,136 +5,68 @@ level: "C1"
 ieltsBand: "7.5-8.5"
 clb: "9-10"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn noun formation for C1 level. Clear explanations with practical examples and exercises for IELTS and CELPIP."
+excerpt: "C1 noun-formation lesson with real transformation patterns, exam-focused practice, and full answer keys."
 date: "2026-03-02"
-tags: ["grammar", "c1", "grammar", "esl", "examples", "practice", "exam-prep"]
-heroTip: "📝 Master this concept by studying the examples below. Practice the exercises, then check your answers."
+tags: ["grammar", "c1", "cefr-differentiated", "ielts", "celpip"]
+heroTip: "Check part of speech first, then choose the correct noun suffix and spelling."
 videoEmbed: ""
 draft: false
 ---
+## Goal
+Use advanced noun formation to produce concise, nuanced, high-band academic argumentation.
 
+## C1 Focus
+At C1, noun formation supports argument density and formal register. Use it strategically, not mechanically.
 
-## Noun Formation
+## Advanced Noun-Formation Moves
+- transparent -> transparency
+- stable -> stability
+- vulnerable -> vulnerability
+- responsible -> responsibility
+- legitimate -> legitimacy
+- intervene -> intervention
 
-<div class="lesson-intro" style="background: #f0f7ff; border-left: 4px solid #0066cc; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
+## Precision and Control
+### Over-nominalized (weaker)
+*The implementation of regulations led to the reduction of emissions through the facilitation of compliance.*
 
-### Why Learn This?
-This concept is important because it helps you express yourself more clearly and accurately in English. You will use it in both IELTS and CELPIP tests.
+### Controlled (better)
+*Regulatory intervention reduced emissions by improving compliance.*
 
-</div>
+Why better: fewer words, stronger verb-noun balance, clearer processing.
 
-### Definition
+## Practice
+### Exercise 1: Precision Selection
+Choose the noun that best fits a formal argument.
+1. The policy improved institutional ______. (legitimate / legitimacy / legitimation)
+2. Economic ______ increased after targeted reforms. (stable / stability / stabilizing)
+3. Public ______ to the policy remained high in rural regions. (resist / resistance / resistant)
 
-This lesson explains Noun Formation with practical patterns and examples, helping advanced learners use English more accurately.
+### Exercise 2: Compression Rewrite
+Rewrite each sentence to reduce word count by at least 20% while preserving meaning.
+1. The government made an intervention that caused a reduction in emissions.
+2. There was a lack of transparency and this created public dissatisfaction.
+3. The company accepted responsibility for implementation failure.
 
----
+### Exercise 3: C1 Mini-Paragraph
+Write 7 sentences on this prompt:
+*Should environmental policy be prioritized if economic growth slows?*
+Requirements:
+- one qualified claim
+- one concession
+- one evidence-based example
+- at least 10 high-value formed nouns
 
-## Structure and Rules
+## Answer Key
+### Exercise 1
+1. legitimacy 2. stability 3. resistance
 
-<table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
-<thead>
-  <tr style="background: #e6e6e6;">
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Rule</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Example</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">When to Use</th>
-  </tr>
-</thead>
-<tbody>
-  <tr style="border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Core usage pattern</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>Students use noun formation to build clear advanced level sentences.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">For common daily communication</td>
-  </tr>
-  <tr style="background: #fafafa; border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Expanded usage pattern</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>This pattern helps learners use noun formation with better precision and control.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">For more detailed meaning and nuance</td>
-  </tr>
-</tbody>
-</table>
+### Exercise 2 (Possible)
+1. *Government intervention reduced emissions.*
+2. *Limited transparency caused public dissatisfaction.*
+3. *The company accepted responsibility for implementation failure.*
 
----
-
-## Common Mistakes
-
-<div class="mistakes-box" style="background: #ffe6e6; border-left: 4px solid #cc0000; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
-
-### ❌ Incorrect
-
-```
-I use noun formation wrong in this sentence and it sound unclear.
-```
-
-### ✅ Correct
-
-```
-I used noun formation incorrectly in this sentence, so it sounded unclear.
-```
-
-**Why?** Accurate grammar and tense choice make the sentence clear and natural.
-
-</div>
-
----
-
-## Examples from Real Tests
-
-### Example 1: IELTS Writing
-> "In this sentence, noun formation is used accurately to express the intended meaning."
-
-**Why this works:** It shows correct grammar control and clear communication.
-
-### Example 2: CELPIP Speaking
-> "I used noun formation in my response to make the message precise and natural."
-
-**Why this works:** It demonstrates exam-ready language that is easy to follow.
-
----
-
-## Practice Exercises
-
-### Exercise 1: Fill in the Blanks
-
-1. She __________ (go) to the market every Saturday.
-2. I can't __________ (watch) the movie because I have work.
-3. They __________ (eat) dinner when the phone rang.
-
-**Answers:** 1. goes  2. watch  3. were eating
-
-### Exercise 2: Correct the Mistakes
-
-1. She don't like coffee. → ___________________________
-2. He can goes to school. → ___________________________
-3. I have saw that movie. → ___________________________
-
-### Exercise 3: Write Your Own Sentences
-
-Create sentences using the structure:
-- Sentence 1: ___________________________
-- Sentence 2: ___________________________
-
----
-
-## Tips for IELTS and CELPIP
-
-<div class="tips-box" style="background: #e6ffe6; border-left: 4px solid #00aa00; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
-
-✓ **For Writing:** Use this structure to show your grammar range. Examiners want to see variety.
-
-✓ **For Speaking:** Practice this form until it feels natural. You should be able to use it automatically.
-
-✓ **For Listening:** When you hear this structure, try to understand the meaning first, then the grammar.
-
-✓ **Study Strategy:** Write 5 sentences with this structure every day for one week.
-
-</div>
-
----
-
-## Next Steps
-
-- Review this lesson tomorrow
-- Do Exercise 3 again to check your progress
-- Try using this in your next writing task
-- Speak this structure aloud 5 times
-
+## C1 Check
+- Does each noun add precision?
+- Is nominalization balanced with active verbs?
+- Is the paragraph concise and evaluator-friendly?

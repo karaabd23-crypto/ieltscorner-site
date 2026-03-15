@@ -5,136 +5,63 @@ level: "C1"
 ieltsBand: "7.5-8.5"
 clb: "9-10"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn pronunciation: stress and intonation for C1 level. Clear explanations with practical examples and exercises for IELTS and CELPIP."
+excerpt: "Learn Pronunciation: Stress and Intonation for C1 with clear explanations, focused practice, and model answers."
 date: "2026-03-02"
-tags: ["speaking", "c1", "grammar", "esl", "examples", "practice", "exam-prep"]
-heroTip: "🎤 Master this concept by studying the examples below. Practice the exercises, then check your answers."
+tags: ["speaking", "c1", "cefr-differentiated", "ielts", "celpip"]
+heroTip: "Do the exercises before checking the answer key to build active recall."
 videoEmbed: ""
 draft: false
 ---
+## Goal
+Master advanced **prominence, rhythm, and intonation** to sound controlled and credible at C1.
 
+## Why It Matters
+At higher bands, pronunciation is not just about individual sounds. Examiners listen for discourse control: what you highlight, where you pause, and how pitch guides interpretation.
 
-## Pronunciation: Stress and Intonation
+## High-Band Controls
+1. Use nuclear stress on the most informative word in each thought group.
+2. Shift stress to correct assumptions: *I said MONday, not TUESday.*
+3. Use fall-rise for partial agreement and nuanced stance.
+4. Avoid mechanical equal stress; reduce predictable function words.
 
-<div class="lesson-intro" style="background: #f0f7ff; border-left: 4px solid #0066cc; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
+## Worked Example
+- Baseline: *The proposal is useful, but it may create short-term disruption.*
+- C1 delivery cue: *The proPOSal is USEful | but it may create short-term disRUPtion.*
+- Nuance variant (fall-rise on "useful"): signals qualified support rather than full endorsement.
 
-### Why Learn This?
-This concept is important because it helps you express yourself more clearly and accurately in English. You will use it in both IELTS and CELPIP tests.
+## Practice
+### Exercise 1: Nuclear Stress Choice
+Choose which word should receive nuclear stress:
+1. The policy helps commuters in rural areas.
+2. We expected quick results, but progress was limited.
+3. I support the plan only if public funding is transparent.
 
-</div>
+### Exercise 2: Intonation Meaning Shift
+Read both versions and explain the meaning difference:
+1. *I thought she borrowed the CAR.*
+2. *I thought SHE borrowed the car.*
 
-### Definition
+### Exercise 3: 45-Second Delivery Task
+Speak on: *Should city centers limit private vehicles?*
+Requirements:
+- at least 3 thought groups
+- one contrast stress shift
+- one fall-rise to show qualified agreement
 
-This lesson shows how to use Pronunciation: Stress and Intonation naturally in spoken English, so advanced learners can sound clearer and more confident.
+## Answer Key
+### Exercise 1 (Possible)
+1. comMUTers (or RUral, depending on intent)
+2. LImited (contrast with "quick")
+3. TRANSparent (condition focus)
 
----
+### Exercise 2 (Interpretation)
+1. Stress on CAR contrasts object (car vs something else).
+2. Stress on SHE contrasts person (she vs someone else).
 
-## Structure and Rules
+### Exercise 3 (Sample Script)
+*I generally support the policy | because city centers are already over-crowded. It could reduce congestion and pollution | especially during peak hours. That said, it should be phased in carefully | so small businesses are not unfairly affected.*
 
-<table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
-<thead>
-  <tr style="background: #e6e6e6;">
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Rule</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Example</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">When to Use</th>
-  </tr>
-</thead>
-<tbody>
-  <tr style="border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Simple response frame</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>I usually apply pronunciation: stress and intonation when I explain my opinion in Part 3.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">For clear and direct spoken answers</td>
-  </tr>
-  <tr style="background: #fafafa; border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Extended response frame</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>I add reasons and examples, which makes my pronunciation: stress and intonation more convincing.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">To develop longer spoken responses</td>
-  </tr>
-</tbody>
-</table>
-
----
-
-## Common Mistakes
-
-<div class="mistakes-box" style="background: #ffe6e6; border-left: 4px solid #cc0000; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
-
-### ❌ Incorrect
-
-```
-I use pronunciation: stress and intonation wrong in this sentence and it sound unclear.
-```
-
-### ✅ Correct
-
-```
-I used pronunciation: stress and intonation incorrectly in this sentence, so it sounded unclear.
-```
-
-**Why?** Accurate grammar and tense choice make the sentence clear and natural.
-
-</div>
-
----
-
-## Examples from Real Tests
-
-### Example 1: IELTS Writing
-> "One useful strategy is to use pronunciation: stress and intonation so my answer sounds natural and focused."
-
-**Why this works:** It demonstrates pronunciation: stress and intonation with a clear structure and fluent delivery.
-
-### Example 2: CELPIP Speaking
-> "When I practiced, pronunciation: stress and intonation helped me explain my idea faster and more clearly."
-
-**Why this works:** It shows how pronunciation: stress and intonation improves clarity under time pressure.
-
----
-
-## Practice Exercises
-
-### Exercise 1: Fill in the Blanks
-
-1. She __________ (go) to the market every Saturday.
-2. I can't __________ (watch) the movie because I have work.
-3. They __________ (eat) dinner when the phone rang.
-
-**Answers:** 1. goes  2. watch  3. were eating
-
-### Exercise 2: Correct the Mistakes
-
-1. She don't like coffee. → ___________________________
-2. He can goes to school. → ___________________________
-3. I have saw that movie. → ___________________________
-
-### Exercise 3: Write Your Own Sentences
-
-Create sentences using the structure:
-- Sentence 1: ___________________________
-- Sentence 2: ___________________________
-
----
-
-## Tips for IELTS and CELPIP
-
-<div class="tips-box" style="background: #e6ffe6; border-left: 4px solid #00aa00; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
-
-✓ **For Writing:** Use this structure to show your grammar range. Examiners want to see variety.
-
-✓ **For Speaking:** Practice this form until it feels natural. You should be able to use it automatically.
-
-✓ **For Listening:** When you hear this structure, try to understand the meaning first, then the grammar.
-
-✓ **Study Strategy:** Write 5 sentences with this structure every day for one week.
-
-</div>
-
----
-
-## Next Steps
-
-- Review this lesson tomorrow
-- Do Exercise 3 again to check your progress
-- Try using this in your next writing task
-- Speak this structure aloud 5 times
-
+## Self-Check
+- Did I place nuclear stress intentionally?
+- Did pitch movement match meaning (statement, uncertainty, contrast)?
+- Does my delivery sound purposeful rather than monotone?

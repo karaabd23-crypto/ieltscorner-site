@@ -1,14 +1,14 @@
-﻿---
+---
 title: "Social Issues"
 category: "vocabulary"
 level: "B2"
 ieltsBand: "6.0-6.5"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn social issues vocabulary with clear examples and guided practice for IELTS and CELPIP."
+excerpt: "B2 vocabulary lesson on Social Issues with unpacked explanations, aligned practice, and model answers."
 date: "2026-02-27"
-tags: ["vocabulary", "b2", "beginner-friendly", "esl", "examples", "practice", "exam-prep"]
-heroTip: "👉 Start with the examples. Try the practice questions. Check answers at the bottom. Use emojis or colours to guide you!"
+tags: ["vocabulary", "b2", "exam-prep", "ielts", "celpip"]
+heroTip: "Understand the idea first, then practice under timed exam conditions."
 visualAids: ["Simple example table", "Right and wrong list", "Real test examples"]
 quiz:
   - prompt: "Which sentence is better for a test?"
@@ -35,164 +35,55 @@ premium: false
 priceCAD: 0
 draft: false
 ---
+## Goal
+Use **Social Issues** vocabulary precisely with controlled complexity and clear logic chains.
 
-## Overview
+## Concept Unpacked
+Strong vocabulary performance is not about rare words; it is about choosing words and collocations that are semantically exact for the context. At B2, use deeper explanation with contrast and nuance.
 
-### 🎯 What you will learn today learn today
+## High-Value Lexical Moves
+1. Prefer precise nouns/verbs over vague adjectives.
+2. Use collocations that examiners expect in academic or test tasks.
+3. Avoid repeating one word family in every sentence.
+4. Check register consistency (formal-neutral for IELTS/CELPIP writing tasks).
 
-In this lesson, you will learn how to write and speak in a way that sounds clear, accurate, and natural. We will start with simple examples, then we will fix common mistakes step by step. By the end, you will know exactly what to do in your next IELTS or CELPIP practice task.
+## Worked Examples
+- Weak: *This result is very big and very good for many people.*
+- Better: *The result is significant because it improves access for low-income commuters.*
+- Why it improves: precision replaces vague intensifiers.
 
-### 👀 Real examples
+- Weak: *The government should do something for this problem.*
+- Better: *The government should implement targeted measures to address this issue.*
+- Why it improves: verb choice becomes concrete and evaluative.
 
-Look at the difference between unclear language and clear exam-ready language.
+## Practice
+### Exercise 1: Best Option
+Choose the most precise option.
+1. The reform had a ___ effect on attendance. (big / significant / nice)
+2. Policymakers should ___ the root cause directly. (address / make / get)
+3. The report failed to ___ evidence for the claim. (provide / tell / show up)
 
+### Exercise 2: Rewrite for Precision
+Rewrite these using stronger vocabulary.
+1. This idea is good in many ways.
+2. The result is bad for society.
+3. People have many different problems in cities.
 
-<div class="comparison-cards">
-<div class="comparison-row">
-  <div class="card-item weak">
-    <strong>❌ Weak</strong>
-    <p>People are bad at money.</p>
-  </div>
-  <div class="card-item better">
-    <strong>✅ Better</strong>
-    <p>Many people struggle with money management.</p>
-  </div>
-  <div class="card-item why">
-    <strong>Why it works</strong>
-    <p>The meaning is specific and professional.</p>
-  </div>
-</div>
-<div class="comparison-row">
-  <div class="card-item weak">
-    <strong>❌ Weak</strong>
-    <p>This is very bad.</p>
-  </div>
-  <div class="card-item better">
-    <strong>✅ Better</strong>
-    <p>This can cause serious problems for families.</p>
-  </div>
-  <div class="card-item why">
-    <strong>Why it works</strong>
-    <p>The reader can understand the real impact.</p>
-  </div>
-</div>
-<div class="comparison-row">
-  <div class="card-item weak">
-    <strong>❌ Weak</strong>
-    <p>I think good is here.</p>
-  </div>
-  <div class="card-item better">
-    <strong>✅ Better</strong>
-    <p>I think this policy is useful.</p>
-  </div>
-  <div class="card-item why">
-    <strong>Why it works</strong>
-    <p>Grammar and word choice are correct.</p>
-  </div>
-</div>
-</div>
+### Exercise 3: Lexical Task
+Write 6 sentences on this prompt:
+*Should city centers limit private cars?*
+Use at least 8 target words/chunks naturally.
 
-When your sentence is specific, the examiner can follow your idea easily. Because your message is clear, your score can improve.
+## Answer Key
+### Exercise 1
+1) significant 2) address 3) provide
 
-### 🧠 How the rule works (simple explanation)
+### Exercise 2 (Possible)
+1. *This proposal is beneficial because it lowers transport costs and emissions.*
+2. *The policy has adverse effects on low-income households.*
+3. *Urban residents face recurring challenges such as congestion, pollution, and housing pressure.*
 
-Good grammar lessons are not about memorizing difficult words. They are about building clear meaning. First, choose one clear idea. Then choose words you are confident with. After that, check your sentence and ask: "Can another person understand this quickly?"
-
-Use this 3-step check:
-1. **Clear idea:** Can you explain your point in one sentence?
-2. **Correct form:** Is your verb form and sentence structure correct?
-3. **Natural style:** Does it sound like real English, not a translated sentence?
-
-### ❌ Common mistakes and easy fixes
-
-<div class="comparison-cards">
-<div class="comparison-row">
-  <div class="card-item weak">
-    <strong>❌ Mistake</strong>
-    <p>Very general sentence</p>
-  </div>
-  <div class="card-item better">
-    <strong>✅ Better</strong>
-    <p>Add one specific detail</p>
-  </div>
-  <div class="card-item why">
-    <strong>Why it works</strong>
-    <p>Specific details make ideas stronger.</p>
-  </div>
-</div>
-<div class="comparison-row">
-  <div class="card-item weak">
-    <strong>❌ Mistake</strong>
-    <p>Wrong verb form</p>
-  </div>
-  <div class="card-item better">
-    <strong>✅ Better</strong>
-    <p>Use the correct tense</p>
-  </div>
-  <div class="card-item why">
-    <strong>Why it works</strong>
-    <p>Correct tense improves clarity.</p>
-  </div>
-</div>
-<div class="comparison-row">
-  <div class="card-item weak">
-    <strong>❌ Mistake</strong>
-    <p>Repeating the same sentence pattern</p>
-  </div>
-  <div class="card-item better">
-    <strong>✅ Better</strong>
-    <p>Vary sentence openings</p>
-  </div>
-  <div class="card-item why">
-    <strong>Why it works</strong>
-    <p>Variety makes writing easier to read.</p>
-  </div>
-</div>
-<div class="comparison-row">
-  <div class="card-item weak">
-    <strong>❌ Mistake</strong>
-    <p>Fancy word used incorrectly</p>
-  </div>
-  <div class="card-item better">
-    <strong>✅ Better</strong>
-    <p>Use a simpler correct word</p>
-  </div>
-  <div class="card-item why">
-    <strong>Why it works</strong>
-    <p>Accuracy is better than risky vocabulary.</p>
-  </div>
-</div>
-</div>
-
-### ✅ Guided practice
-
-Now try these short tasks. Write your answers before looking at the key.
-
-1. Rewrite: **"This is bad for people and bad for money."**
-2. Choose the correct sentence:
-   - A) I do a decision
-   - B) I make a decision
-   - C) I making a decision
-3. Fix the grammar: **"The student is have a test today."**
-4. Improve this opinion sentence: **"Public transport is good."** Add one reason.
-
-### ✅ Suggested answers answers
-
-1. **This causes financial and social problems for many families.**
-2. **B) I make a decision.**
-3. **The student has a test today.** / **The student is having a test today.**
-4. **Public transport is useful because it reduces traffic and saves money.**
-
-### 🇬🇧 For IELTS
-
-In IELTS, clear organization and accurate grammar matter a lot. Start with a direct answer, support it with one clear reason, and add a simple example. Keep your language natural and controlled.
-
-### 🇨🇦 For CELPIP
-
-In CELPIP, you also need clear structure, but speed and clarity are very important. Give your point early, support it quickly, and avoid long confusing sentences. Short, correct sentences are better than long risky ones.
-
-### 🚀 Your next step
-
-Use one sentence pattern from this lesson in your next practice response today. After writing, read your answer out loud once. If it sounds clear when you speak it, it will usually read clearly too.
-
-You are improving every time you practice with feedback. Keep going—you are closer than you think.
+## Final Check
+- Are collocations natural?
+- Is register consistent?
+- Does vocabulary meet B2 target: use the skill strategically under exam constraints?

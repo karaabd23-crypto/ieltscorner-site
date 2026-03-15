@@ -5,136 +5,49 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn ielts writing task 1: maps and comparisons for B2 level. Clear explanations with practical examples and exercises for IELTS and CELPIP."
+excerpt: "B2 writing lesson on IELTS Writing Task 1: Maps and Comparisons with unpacked explanations, aligned practice, and model answers."
 date: "2026-03-02"
-tags: ["writing", "b2", "grammar", "esl", "examples", "practice", "exam-prep"]
-heroTip: "✍️ Master this concept by studying the examples below. Practice the exercises, then check your answers."
+tags: ["writing", "b2", "cefr-differentiated", "ielts", "celpip"]
+heroTip: "Understand the idea first, then practice under timed exam conditions."
 videoEmbed: ""
 draft: false
 ---
+## Goal
+Produce higher-quality IELTS/CELPIP writing for **IELTS Writing Task 1: Maps and Comparisons** with controlled complexity and clear logic chains.
 
+## Concept Unpacked
+Writing score depends on argument clarity, development, and language control. This lesson unpacks how to build a paragraph that is easy to evaluate.
 
-## IELTS Writing Task 1: Maps and Comparisons
+## Paragraph Blueprint
+1. clear claim
+2. reason
+3. specific example
+4. implication
 
-<div class="lesson-intro" style="background: #f0f7ff; border-left: 4px solid #0066cc; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
+## Worked Upgrade
+- Weak: *This idea is important in many ways for many people.*
+- Better: *This policy is important because it reduces congestion and improves access to employment centers.*
 
-### Why Learn This?
-This concept is important because it helps you express yourself more clearly and accurately in English. You will use it in both IELTS and CELPIP tests.
+## Practice
+### Exercise 1: Precision Rewrite
+Rewrite 3 vague sentences into exam-ready versions.
 
-</div>
+### Exercise 2: Body Paragraph Task
+Write 6 sentences responding to an IELTS/CELPIP prompt with claim, support, and implication.
 
-### Definition
+### Exercise 3: Timed Edit
+Cut 15% of a draft paragraph while preserving meaning.
 
-This lesson explains how to use IELTS Writing Task 1: Maps and Comparisons in clear written English, helping intermediate learners produce stronger task responses.
+## Answer Key
+### Exercise 1 (Sample Rewrites)
+1. *This policy is significant because it reduces commuting costs for low-income workers.*
+2. *The proposal has benefits, but poor implementation can increase inequality.*
+3. *In conclusion, the policy is effective only when funding and access are balanced.*
 
----
+### Exercise 2 (Sample Paragraph)
+*I agree that governments should prioritize public transport investment because it improves access to employment and reduces congestion. Reliable transit allows low-income workers to travel affordably, which can increase labor participation. For example, cities that expanded rapid bus systems reported shorter commute times and better job connectivity. As a result, transport-focused investment can deliver both economic and social benefits.*
 
-## Structure and Rules
-
-<table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
-<thead>
-  <tr style="background: #e6e6e6;">
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Rule</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Example</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">When to Use</th>
-  </tr>
-</thead>
-<tbody>
-  <tr style="border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Clear sentence pattern</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>This paragraph uses ielts writing task 1: maps and comparisons to present one main idea clearly.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">For accurate and readable task writing</td>
-  </tr>
-  <tr style="background: #fafafa; border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Formal extension pattern</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>In formal tasks, ielts writing task 1: maps and comparisons helps connect claims and evidence logically.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">To improve coherence and formal tone</td>
-  </tr>
-</tbody>
-</table>
-
----
-
-## Common Mistakes
-
-<div class="mistakes-box" style="background: #ffe6e6; border-left: 4px solid #cc0000; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
-
-### ❌ Incorrect
-
-```
-I use ielts writing task 1: maps and comparisons wrong in this sentence and it sound unclear.
-```
-
-### ✅ Correct
-
-```
-I used ielts writing task 1: maps and comparisons incorrectly in this sentence, so it sounded unclear.
-```
-
-**Why?** Accurate grammar and tense choice make the sentence clear and natural.
-
-</div>
-
----
-
-## Examples from Real Tests
-
-### Example 1: IELTS Writing
-> "Overall, the data shows that ielts writing task 1: maps and comparisons plays a key role in the final trend."
-
-**Why this works:** It applies ielts writing task 1: maps and comparisons in a formal IELTS style with a clear claim.
-
-### Example 2: CELPIP Speaking
-> "In my opinion, using ielts writing task 1: maps and comparisons makes this response clearer and more organized."
-
-**Why this works:** It uses ielts writing task 1: maps and comparisons to present a direct opinion plus support.
-
----
-
-## Practice Exercises
-
-### Exercise 1: Fill in the Blanks
-
-1. She __________ (go) to the market every Saturday.
-2. I can't __________ (watch) the movie because I have work.
-3. They __________ (eat) dinner when the phone rang.
-
-**Answers:** 1. goes  2. watch  3. were eating
-
-### Exercise 2: Correct the Mistakes
-
-1. She don't like coffee. → ___________________________
-2. He can goes to school. → ___________________________
-3. I have saw that movie. → ___________________________
-
-### Exercise 3: Write Your Own Sentences
-
-Create sentences using the structure:
-- Sentence 1: ___________________________
-- Sentence 2: ___________________________
-
----
-
-## Tips for IELTS and CELPIP
-
-<div class="tips-box" style="background: #e6ffe6; border-left: 4px solid #00aa00; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
-
-✓ **For Writing:** Use this structure to show your grammar range. Examiners want to see variety.
-
-✓ **For Speaking:** Practice this form until it feels natural. You should be able to use it automatically.
-
-✓ **For Listening:** When you hear this structure, try to understand the meaning first, then the grammar.
-
-✓ **Study Strategy:** Write 5 sentences with this structure every day for one week.
-
-</div>
-
----
-
-## Next Steps
-
-- Review this lesson tomorrow
-- Do Exercise 3 again to check your progress
-- Try using this in your next writing task
-- Speak this structure aloud 5 times
-
+## Final Check
+- Is the argument explicit and supported?
+- Is wording concise and relevant?
+- Is this at B2 target: use the skill strategically under exam constraints?

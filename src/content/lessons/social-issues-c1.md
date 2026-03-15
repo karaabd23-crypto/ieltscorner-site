@@ -5,136 +5,62 @@ level: "C1"
 ieltsBand: "7.5-8.5"
 clb: "9-10"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn social issues vocabulary for C1 level. Clear explanations with practical examples and exercises for IELTS and CELPIP."
+excerpt: "C1 vocabulary lesson on Social Issues Vocabulary with unpacked explanations, aligned practice, and model answers."
 date: "2026-03-02"
-tags: ["vocabulary", "c1", "grammar", "esl", "examples", "practice", "exam-prep"]
-heroTip: "📚 Master this concept by studying the examples below. Practice the exercises, then check your answers."
+tags: ["vocabulary", "c1", "cefr-differentiated", "ielts", "celpip"]
+heroTip: "Understand the idea first, then practice under timed exam conditions."
 videoEmbed: ""
 draft: false
 ---
+## Goal
+Use **Social Issues Vocabulary** vocabulary precisely with high-information, concise argumentation.
 
+## Concept Unpacked
+Strong vocabulary performance is not about rare words; it is about choosing words and collocations that are semantically exact for the context. At C1, use nuanced explanation with precision focus.
 
-## Social Issues Vocabulary
+## High-Value Lexical Moves
+1. Prefer precise nouns/verbs over vague adjectives.
+2. Use collocations that examiners expect in academic or test tasks.
+3. Avoid repeating one word family in every sentence.
+4. Check register consistency (formal-neutral for IELTS/CELPIP writing tasks).
 
-<div class="lesson-intro" style="background: #f0f7ff; border-left: 4px solid #0066cc; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
+## Worked Examples
+- Weak: *This result is very big and very good for many people.*
+- Better: *The result is significant because it improves access for low-income commuters.*
+- Why it improves: precision replaces vague intensifiers.
 
-### Why Learn This?
-This concept is important because it helps you express yourself more clearly and accurately in English. You will use it in both IELTS and CELPIP tests.
+- Weak: *The government should do something for this problem.*
+- Better: *The government should implement targeted measures to address this issue.*
+- Why it improves: verb choice becomes concrete and evaluative.
 
-</div>
+## Practice
+### Exercise 1: Best Option
+Choose the most precise option.
+1. The reform had a ___ effect on attendance. (big / significant / nice)
+2. Policymakers should ___ the root cause directly. (address / make / get)
+3. The report failed to ___ evidence for the claim. (provide / tell / show up)
 
-### Definition
+### Exercise 2: Rewrite for Precision
+Rewrite these using stronger vocabulary.
+1. This idea is good in many ways.
+2. The result is bad for society.
+3. People have many different problems in cities.
 
-This lesson teaches Social Issues Vocabulary for advanced learners, so you can choose more precise words in IELTS and CELPIP responses.
+### Exercise 3: Lexical Task
+Write 6 sentences on this prompt:
+*Should city centers limit private cars?*
+Use at least 8 target words/chunks naturally.
 
----
+## Answer Key
+### Exercise 1
+1) significant 2) address 3) provide
 
-## Structure and Rules
+### Exercise 2 (Possible)
+1. *This proposal is beneficial because it lowers transport costs and emissions.*
+2. *The policy has adverse effects on low-income households.*
+3. *Urban residents face recurring challenges such as congestion, pollution, and housing pressure.*
 
-<table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
-<thead>
-  <tr style="background: #e6e6e6;">
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Rule</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Example</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">When to Use</th>
-  </tr>
-</thead>
-<tbody>
-  <tr style="border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Core word in context</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>The speaker gave a clear example of social issues vocabulary during the lesson.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">To express the basic meaning clearly</td>
-  </tr>
-  <tr style="background: #fafafa; border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Collocation or phrase</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>We practiced useful phrases related to social issues vocabulary in pairs.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">To sound more natural and precise</td>
-  </tr>
-</tbody>
-</table>
-
----
-
-## Common Mistakes
-
-<div class="mistakes-box" style="background: #ffe6e6; border-left: 4px solid #cc0000; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
-
-### ❌ Incorrect
-
-```
-The essay used social issues vocabulary in a not clear way.
-```
-
-### ✅ Correct
-
-```
-The essay used social issues vocabulary in a clearer and more precise way.
-```
-
-**Why?** Choose natural collocations and concise wording to improve clarity.
-
-</div>
-
----
-
-## Examples from Real Tests
-
-### Example 1: IELTS Writing
-> "In this sentence, social issues vocabulary is used accurately to express the intended meaning."
-
-**Why this works:** It shows correct grammar control and clear communication.
-
-### Example 2: CELPIP Speaking
-> "I used social issues vocabulary in my response to make the message precise and natural."
-
-**Why this works:** It demonstrates exam-ready language that is easy to follow.
-
----
-
-## Practice Exercises
-
-### Exercise 1: Fill in the Blanks
-
-1. She __________ (go) to the market every Saturday.
-2. I can't __________ (watch) the movie because I have work.
-3. They __________ (eat) dinner when the phone rang.
-
-**Answers:** 1. goes  2. watch  3. were eating
-
-### Exercise 2: Correct the Mistakes
-
-1. She don't like coffee. → ___________________________
-2. He can goes to school. → ___________________________
-3. I have saw that movie. → ___________________________
-
-### Exercise 3: Write Your Own Sentences
-
-Create sentences using the structure:
-- Sentence 1: ___________________________
-- Sentence 2: ___________________________
-
----
-
-## Tips for IELTS and CELPIP
-
-<div class="tips-box" style="background: #e6ffe6; border-left: 4px solid #00aa00; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
-
-✓ **For Writing:** Use this structure to show your grammar range. Examiners want to see variety.
-
-✓ **For Speaking:** Practice this form until it feels natural. You should be able to use it automatically.
-
-✓ **For Listening:** When you hear this structure, try to understand the meaning first, then the grammar.
-
-✓ **Study Strategy:** Write 5 sentences with this structure every day for one week.
-
-</div>
-
----
-
-## Next Steps
-
-- Review this lesson tomorrow
-- Do Exercise 3 again to check your progress
-- Try using this in your next writing task
-- Speak this structure aloud 5 times
-
+## Final Check
+- Are collocations natural?
+- Is register consistent?
+- Does vocabulary meet C1 target: use the skill with balance, evidence, and efficient phrasing?

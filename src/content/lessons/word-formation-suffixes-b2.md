@@ -5,136 +5,62 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn word formation: suffixes for B2 level. Clear explanations with practical examples and exercises for IELTS and CELPIP."
+excerpt: "B2 suffixes lesson with real word-formation examples, exam-focused practice, and full answer keys."
 date: "2026-03-02"
-tags: ["grammar", "b2", "grammar", "esl", "examples", "practice", "exam-prep"]
-heroTip: "📝 Master this concept by studying the examples below. Practice the exercises, then check your answers."
+tags: ["grammar", "b2", "cefr-differentiated", "ielts", "celpip"]
+heroTip: "Form the word first, then check meaning and part of speech in context."
 videoEmbed: ""
 draft: false
 ---
+## Goal
+Use **suffixes** to increase lexical range and precision in IELTS/CELPIP writing.
 
+## What Changes at B2
+At B2, you should use word formation strategically: not just creating words, but selecting the form that best matches argument purpose and register.
 
-## Word Formation: Suffixes
+## High-Value Forms
+- help + **-ful** -> helpful
+- care + **-less** -> careless
+- govern + **-ment** -> government
+- educate + **-ion** -> education
 
-<div class="lesson-intro" style="background: #f0f7ff; border-left: 4px solid #0066cc; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
+Also useful at B2:
+- modern + **-ize** -> modernize
+- stable + **-ity** -> stability
+- efficient + **-ly** -> efficiently
 
-### Why Learn This?
-This concept is important because it helps you express yourself more clearly and accurately in English. You will use it in both IELTS and CELPIP tests.
+## Weak vs Strong Usage
+- Weak: *The policy is not good and not effective.*
+- Better: *The policy is ineffective and poorly targeted.*
+- Why better: stronger formed words reduce repetition and increase precision.
 
-</div>
+## Practice
+### Exercise 1: Choose the Best Form
+1. The report was too ______ (simple / simplify / simplistic) for a technical audience.
+2. The plan is financially ______ (sustain / sustainable / sustainability).
+3. We should avoid ______ the impact of small daily habits. (estimate / overestimate / estimation)
 
-### Definition
+### Exercise 2: Rewrite for Precision
+Rewrite each sentence using formed words:
+1. The system is not fair and not useful.
+2. They did not understand the instruction correctly.
+3. The government must make the process modern.
 
-This lesson explains Word Formation: Suffixes with practical patterns and examples, helping intermediate learners use English more accurately.
+### Exercise 3: Task 2 Paragraph
+Write one body paragraph (6 sentences) on this prompt:
+*Should cities limit private cars in downtown areas?*
+Use at least 8 words formed with suffixes.
 
----
+## Answer Key
+### Exercise 1
+1. simplistic 2. sustainable 3. overestimate
 
-## Structure and Rules
+### Exercise 2 (Possible)
+1. *The system is unfair and ineffective.*
+2. *They misunderstood the instruction.*
+3. *The government must modernize the process.*
 
-<table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
-<thead>
-  <tr style="background: #e6e6e6;">
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Rule</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Example</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">When to Use</th>
-  </tr>
-</thead>
-<tbody>
-  <tr style="border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Core usage pattern</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>Students use word formation: suffixes to build clear intermediate level sentences.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">For common daily communication</td>
-  </tr>
-  <tr style="background: #fafafa; border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Expanded usage pattern</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>This pattern helps learners use word formation: suffixes with better precision and control.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">For more detailed meaning and nuance</td>
-  </tr>
-</tbody>
-</table>
-
----
-
-## Common Mistakes
-
-<div class="mistakes-box" style="background: #ffe6e6; border-left: 4px solid #cc0000; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
-
-### ❌ Incorrect
-
-```
-I use word formation: suffixes wrong in this sentence and it sound unclear.
-```
-
-### ✅ Correct
-
-```
-I used word formation: suffixes incorrectly in this sentence, so it sounded unclear.
-```
-
-**Why?** Accurate grammar and tense choice make the sentence clear and natural.
-
-</div>
-
----
-
-## Examples from Real Tests
-
-### Example 1: IELTS Writing
-> "In this sentence, word formation: suffixes is used accurately to express the intended meaning."
-
-**Why this works:** It shows correct grammar control and clear communication.
-
-### Example 2: CELPIP Speaking
-> "I used word formation: suffixes in my response to make the message precise and natural."
-
-**Why this works:** It demonstrates exam-ready language that is easy to follow.
-
----
-
-## Practice Exercises
-
-### Exercise 1: Fill in the Blanks
-
-1. She __________ (go) to the market every Saturday.
-2. I can't __________ (watch) the movie because I have work.
-3. They __________ (eat) dinner when the phone rang.
-
-**Answers:** 1. goes  2. watch  3. were eating
-
-### Exercise 2: Correct the Mistakes
-
-1. She don't like coffee. → ___________________________
-2. He can goes to school. → ___________________________
-3. I have saw that movie. → ___________________________
-
-### Exercise 3: Write Your Own Sentences
-
-Create sentences using the structure:
-- Sentence 1: ___________________________
-- Sentence 2: ___________________________
-
----
-
-## Tips for IELTS and CELPIP
-
-<div class="tips-box" style="background: #e6ffe6; border-left: 4px solid #00aa00; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
-
-✓ **For Writing:** Use this structure to show your grammar range. Examiners want to see variety.
-
-✓ **For Speaking:** Practice this form until it feels natural. You should be able to use it automatically.
-
-✓ **For Listening:** When you hear this structure, try to understand the meaning first, then the grammar.
-
-✓ **Study Strategy:** Write 5 sentences with this structure every day for one week.
-
-</div>
-
----
-
-## Next Steps
-
-- Review this lesson tomorrow
-- Do Exercise 3 again to check your progress
-- Try using this in your next writing task
-- Speak this structure aloud 5 times
-
+## B2 Check
+- Did I improve precision, not just complexity?
+- Did I avoid overusing one prefix/suffix family?
+- Are formed words context-appropriate and natural?

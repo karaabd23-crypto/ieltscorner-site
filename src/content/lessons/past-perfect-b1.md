@@ -5,136 +5,72 @@ level: "B1"
 ieltsBand: "4.5-5.5"
 clb: "5-6"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn past perfect simple for B1 level. Clear explanations with practical examples and exercises for IELTS and CELPIP."
+excerpt: "B1 grammar lesson on Past Perfect Simple with unpacked explanations, aligned practice, and model answers."
 date: "2026-03-02"
-tags: ["grammar", "b1", "grammar", "esl", "examples", "practice", "exam-prep"]
-heroTip: "📝 Master this concept by studying the examples below. Practice the exercises, then check your answers."
+tags: ["grammar", "b1", "cefr-differentiated", "ielts", "celpip"]
+heroTip: "Understand the idea first, then practice under timed exam conditions."
 videoEmbed: ""
 draft: false
 ---
+## Goal
+Master **Past Perfect Simple** with clear paragraph-level control.
 
+## Concept Unpacked
+This lesson explains the core meaning, where learners usually get confused, and how to apply the pattern in exam contexts. At B1, focus on explained with guided reasoning.
 
-## Past Perfect Simple
+## Key Rule in Plain Language
+1. Identify the grammatical function you need (time, agreement, relationship, emphasis).
+2. Build a correct base sentence first.
+3. Add one support detail only after the form is stable.
+4. Re-check agreement, tense, and punctuation before finalizing.
 
-<div class="lesson-intro" style="background: #f0f7ff; border-left: 4px solid #0066cc; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
+## Worked Examples
+### Example 1: Basic Control
+- Weak: *The sentence has the idea but grammar control is unstable.*
+- Better: *The sentence is grammatically controlled and the meaning is immediate.*
+- Why it improves: the reader can process the message without re-reading.
 
-### Why Learn This?
-This concept is important because it helps you express yourself more clearly and accurately in English. You will use it in both IELTS and CELPIP tests.
+### Example 2: Exam-Style Precision
+- Weak: *The paragraph uses long forms but logic is unclear.*
+- Better: *The paragraph uses controlled structure to link claim, reason, and consequence.*
+- Why it improves: grammar supports argument flow instead of interrupting it.
 
-</div>
+## Frequent Errors and Fixes
+- Error: grammatical form chosen correctly, but wrong word order.
+- Fix: keep core clause order stable before adding modifiers.
 
-### Definition
+- Error: mixing tense/aspect inside one claim.
+- Fix: choose one timeline and stay consistent.
 
-This lesson explains Past Perfect Simple with practical patterns and examples, helping intermediate learners use English more accurately.
+- Error: adding complexity without communicative purpose.
+- Fix: keep only structures that add meaning.
 
----
+## Practice
+### Exercise 1: Diagnose and Correct
+Correct each sentence and state the rule you used.
+1. The policy affect many people and create serious problem.
+2. If cities will invest in buses, traffic reduce quickly.
+3. This measure was implement last year and improve access.
 
-## Structure and Rules
+### Exercise 2: Controlled Application
+Write 4 sentences using **Past Perfect Simple**:
+- one statement
+- one contrast sentence
+- one cause-result sentence
+- one exam-style summary sentence
 
-<table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
-<thead>
-  <tr style="background: #e6e6e6;">
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Rule</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Example</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">When to Use</th>
-  </tr>
-</thead>
-<tbody>
-  <tr style="border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Main tense pattern</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>I study in the morning and I review vocabulary at night.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">For the core time meaning of the tense</td>
-  </tr>
-  <tr style="background: #fafafa; border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Contrast with another tense</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>I was studying when my teacher sent the assignment.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">When two time actions interact</td>
-  </tr>
-</tbody>
-</table>
+### Exercise 3: Micro Paragraph
+Write 5-6 sentences on this prompt:
+*Should governments prioritize public transport funding?*
+Use **Past Perfect Simple** at least twice and keep your logic clear.
 
----
+## Answer Key
+### Exercise 1 (Possible)
+1. *The policy affects many people and creates serious problems.*
+2. *If cities invest in buses, traffic will reduce quickly.*
+3. *This measure was implemented last year and improved access.*
 
-## Common Mistakes
-
-<div class="mistakes-box" style="background: #ffe6e6; border-left: 4px solid #cc0000; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
-
-### ❌ Incorrect
-
-```
-Yesterday I go to class and learn new words.
-```
-
-### ✅ Correct
-
-```
-Yesterday I went to class and learned new words.
-```
-
-**Why?** Past-time markers require past verb forms for sequence and accuracy.
-
-</div>
-
----
-
-## Examples from Real Tests
-
-### Example 1: IELTS Writing
-> "In this sentence, past perfect simple is used accurately to express the intended meaning."
-
-**Why this works:** It shows correct grammar control and clear communication.
-
-### Example 2: CELPIP Speaking
-> "I used past perfect simple in my response to make the message precise and natural."
-
-**Why this works:** It demonstrates exam-ready language that is easy to follow.
-
----
-
-## Practice Exercises
-
-### Exercise 1: Fill in the Blanks
-
-1. She __________ (go) to the market every Saturday.
-2. I can't __________ (watch) the movie because I have work.
-3. They __________ (eat) dinner when the phone rang.
-
-**Answers:** 1. goes  2. watch  3. were eating
-
-### Exercise 2: Correct the Mistakes
-
-1. She don't like coffee. → ___________________________
-2. He can goes to school. → ___________________________
-3. I have saw that movie. → ___________________________
-
-### Exercise 3: Write Your Own Sentences
-
-Create sentences using the structure:
-- Sentence 1: ___________________________
-- Sentence 2: ___________________________
-
----
-
-## Tips for IELTS and CELPIP
-
-<div class="tips-box" style="background: #e6ffe6; border-left: 4px solid #00aa00; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
-
-✓ **For Writing:** Use this structure to show your grammar range. Examiners want to see variety.
-
-✓ **For Speaking:** Practice this form until it feels natural. You should be able to use it automatically.
-
-✓ **For Listening:** When you hear this structure, try to understand the meaning first, then the grammar.
-
-✓ **Study Strategy:** Write 5 sentences with this structure every day for one week.
-
-</div>
-
----
-
-## Next Steps
-
-- Review this lesson tomorrow
-- Do Exercise 3 again to check your progress
-- Try using this in your next writing task
-- Speak this structure aloud 5 times
-
+## Final Check
+- Did grammar choices improve clarity?
+- Is each sentence doing one job?
+- Does performance meet the B1 target: use the skill with one reason and one example?

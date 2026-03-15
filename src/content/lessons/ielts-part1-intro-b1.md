@@ -5,136 +5,52 @@ level: "B1"
 ieltsBand: "4.5-5.5"
 clb: "5-6"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn ielts speaking part 1: introducing yourself for B1 level. Clear explanations with practical examples and exercises for IELTS and CELPIP."
+excerpt: "B1 speaking lesson on IELTS Speaking Part 1: Introducing Yourself with unpacked explanations, aligned practice, and model answers."
 date: "2026-03-02"
-tags: ["speaking", "b1", "grammar", "esl", "examples", "practice", "exam-prep"]
-heroTip: "🎤 Master this concept by studying the examples below. Practice the exercises, then check your answers."
+tags: ["speaking", "b1", "cefr-differentiated", "ielts", "celpip"]
+heroTip: "Understand the idea first, then practice under timed exam conditions."
 videoEmbed: ""
 draft: false
 ---
+## Goal
+Deliver stronger spoken responses for **IELTS Speaking Part 1: Introducing Yourself** with clear paragraph-level control.
 
+## Concept Unpacked
+High-scoring speaking answers are structured in real time: claim, reason, example, close. This lesson shows how to keep fluency while adding content depth.
 
-## IELTS Speaking Part 1: Introducing Yourself
+## Response Architecture
+1. Direct answer (no long preface)
+2. One reason
+3. One specific example
+4. Clear final sentence
 
-<div class="lesson-intro" style="background: #f0f7ff; border-left: 4px solid #0066cc; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
+## Worked Upgrade
+- Weak: *I agree because it is good.*
+- Better: *I agree because it reduces commuting time; for example, my trip became 20 minutes shorter after route changes.*
+- Why: specific support increases coherence and lexical quality.
 
-### Why Learn This?
-This concept is important because it helps you express yourself more clearly and accurately in English. You will use it in both IELTS and CELPIP tests.
+## Practice
+### Exercise 1: 35-Second Task
+Prompt: *Should students work part-time while studying?*
 
-</div>
+### Exercise 2: Upgrade Drill
+Rewrite this spoken answer to B1 quality:
+*I think this is better because it is useful.*
 
-### Definition
+### Exercise 3: IELTS/CELPIP Timed Response
+Deliver a 60-second response with one contrast and one personal example.
 
-This lesson shows how to use IELTS Speaking Part 1: Introducing Yourself naturally in spoken English, so intermediate learners can sound clearer and more confident.
+## Answer Key
+### Model Answer (Sample)
+*I support this approach because it improves efficiency under time pressure. For example, when I practiced with a fixed structure, my responses became clearer and more complete. Although spontaneous speaking is useful, structured planning helps me avoid repetition. So overall, this strategy improves both fluency and coherence.*
 
----
+### Why It Scores Better
+- direct opening claim
+- specific example
+- controlled contrast
+- clear close
 
-## Structure and Rules
-
-<table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
-<thead>
-  <tr style="background: #e6e6e6;">
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Rule</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Example</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">When to Use</th>
-  </tr>
-</thead>
-<tbody>
-  <tr style="border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Simple response frame</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>I usually apply ielts speaking part 1: introducing yourself when I explain my opinion in Part 3.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">For clear and direct spoken answers</td>
-  </tr>
-  <tr style="background: #fafafa; border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Extended response frame</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>I add reasons and examples, which makes my ielts speaking part 1: introducing yourself more convincing.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">To develop longer spoken responses</td>
-  </tr>
-</tbody>
-</table>
-
----
-
-## Common Mistakes
-
-<div class="mistakes-box" style="background: #ffe6e6; border-left: 4px solid #cc0000; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
-
-### ❌ Incorrect
-
-```
-I use ielts speaking part 1: introducing yourself wrong in this sentence and it sound unclear.
-```
-
-### ✅ Correct
-
-```
-I used ielts speaking part 1: introducing yourself incorrectly in this sentence, so it sounded unclear.
-```
-
-**Why?** Accurate grammar and tense choice make the sentence clear and natural.
-
-</div>
-
----
-
-## Examples from Real Tests
-
-### Example 1: IELTS Writing
-> "One useful strategy is to use ielts speaking part 1: introducing yourself so my answer sounds natural and focused."
-
-**Why this works:** It demonstrates ielts speaking part 1: introducing yourself with a clear structure and fluent delivery.
-
-### Example 2: CELPIP Speaking
-> "When I practiced, ielts speaking part 1: introducing yourself helped me explain my idea faster and more clearly."
-
-**Why this works:** It shows how ielts speaking part 1: introducing yourself improves clarity under time pressure.
-
----
-
-## Practice Exercises
-
-### Exercise 1: Fill in the Blanks
-
-1. She __________ (go) to the market every Saturday.
-2. I can't __________ (watch) the movie because I have work.
-3. They __________ (eat) dinner when the phone rang.
-
-**Answers:** 1. goes  2. watch  3. were eating
-
-### Exercise 2: Correct the Mistakes
-
-1. She don't like coffee. → ___________________________
-2. He can goes to school. → ___________________________
-3. I have saw that movie. → ___________________________
-
-### Exercise 3: Write Your Own Sentences
-
-Create sentences using the structure:
-- Sentence 1: ___________________________
-- Sentence 2: ___________________________
-
----
-
-## Tips for IELTS and CELPIP
-
-<div class="tips-box" style="background: #e6ffe6; border-left: 4px solid #00aa00; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
-
-✓ **For Writing:** Use this structure to show your grammar range. Examiners want to see variety.
-
-✓ **For Speaking:** Practice this form until it feels natural. You should be able to use it automatically.
-
-✓ **For Listening:** When you hear this structure, try to understand the meaning first, then the grammar.
-
-✓ **Study Strategy:** Write 5 sentences with this structure every day for one week.
-
-</div>
-
----
-
-## Next Steps
-
-- Review this lesson tomorrow
-- Do Exercise 3 again to check your progress
-- Try using this in your next writing task
-- Speak this structure aloud 5 times
-
+## Final Check
+- Did I answer directly?
+- Did I add one concrete example?
+- Is this at B1 target: use the skill with one reason and one example?

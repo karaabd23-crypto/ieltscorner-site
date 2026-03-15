@@ -5,10 +5,10 @@ level: "B1"
 ieltsBand: "5.5-6.5"
 clb: "6-8"
 exam: ["CELPIP"]
-excerpt: "Learn how to predict likely answers before audio starts so you can catch key details faster and avoid distractors."
+excerpt: "B1 listening lesson on CELPIP Listening: Predict Keywords Before the Audio with unpacked explanations, aligned practice, and model answers."
 date: "2026-03-09"
 tags: ["celpip", "listening", "prediction", "keywords", "note-taking"]
-heroTip: "🎧 Read the question first, predict possible words, then listen with a purpose."
+heroTip: "Understand the idea first, then practice under timed exam conditions."
 visualAids: ["Question-first scanning", "Keyword prediction map", "Distractor checklist"]
 quiz:
   - prompt: "Before CELPIP listening audio starts, what should you do first?"
@@ -23,83 +23,55 @@ premium: false
 priceCAD: 12
 draft: false
 ---
+## Goal
+Improve listening score for **CELPIP Listening: Predict Keywords Before the Audio** using clear paragraph-level control under exam timing.
 
-## Why this skill matters
-In CELPIP Listening, you hear each recording once. If you wait passively, important details can pass before you notice them. Prediction helps you listen actively.
+## Concept Unpacked
+Listening errors usually happen when candidates chase every word instead of tracking meaning structure. This lesson teaches prediction, signal tracking, and recovery after missed details.
 
-When you predict correctly, you:
-- focus on the right part of the message,
-- ignore irrelevant details,
-- and answer faster with more confidence.
+## Strategy Pipeline
+### Before Audio
+Predict likely information: numbers, opinions, sequence, or contrast.
 
-## The 20-second prediction routine
-Use this every time before audio begins.
+### During Audio
+Track signal words: however, therefore, first, finally, although.
 
-1. **Read the question stem**
-   - Identify the task: purpose, detail, attitude, next step, or best response.
-2. **Underline signal words**
-   - Time words, numbers, locations, comparison words, or emotional tone.
-3. **Predict 2–4 likely keywords**
-   - Example: if the question asks about a delay, likely words may include *traffic*, *late*, *reschedule*, *accident*.
-4. **Set a listening target**
-   - Tell yourself: “I’m listening for reason + action.”
+### After Audio
+Verify note accuracy and eliminate options that contradict tone or logic.
 
-## Example: question-first prediction
-**Question:** Why is the caller late for the meeting?
+## Worked Example
+- Missed detail moment: one phrase is unclear.
+- Recovery action: skip that fragment, capture next signal, then infer missing part from context.
+- Why it works: prevents full comprehension collapse.
 
-### Fast prediction
-- likely reason words: *traffic*, *train delay*, *childcare issue*, *weather*
-- likely action words: *arrive at 10*, *join online*, *reschedule*
+## Practice
+### Exercise 1: Gist Capture
+Listen once and write one-sentence main idea for each clip.
 
-### What often happens in audio
-The speaker gives background first, then the real reason. Many test takers choose the first detail they hear. That is a distractor.
+### Exercise 2: Detail Grid
+Fill a note grid with 6 key details (who/what/why/result).
 
-## Common distractors and how to beat them
+### Exercise 3: Timed CELPIP Drill
+Complete a mini listening set with strict timing.
+Track:
+- total correct
+- details missed
+- recovery success rate
 
-### 1) First-detail trap
-You hear one possible reason early, then a correction later.
-- **Fix:** wait for final confirmed detail.
+## Answer Key
+### Exercise 1 (Sample Gist)
+*The speaker explains why timed strategy improves overall test accuracy.*
 
-### 2) Similar-word trap
-Option says *appointment*, audio says *meeting*. Meaning is close but context may differ.
-- **Fix:** match meaning + context, not just one word.
+### Exercise 2 (Sample Key Details)
+- main problem identified
+- strategy step order
+- one caution about over-focusing on single words
+- recommended recovery action
 
-### 3) Emotional-tone trap
-Audio sounds upset, but question asks for **next action**.
-- **Fix:** answer the question type, not the strongest emotion.
+### Distractor Note
+A common wrong option copies one phrase from audio but ignores speaker intent.
 
-## Note-taking format (micro-notes)
-Do not write full sentences. Use compact notes:
-
-- `R:` reason
-- `A:` action
-- `T:` time
-- `?` uncertain detail
-
-Example notes:
-- `R: train issue`
-- `A: join online`
-- `T: 10:15`
-
-This keeps your attention on listening, not writing.
-
-## Practice drill (3 minutes)
-1. Pick one listening clip (news/interview/podcast).
-2. Write one prediction question yourself.
-3. Predict four keywords before playing.
-4. Listen once and mark:
-   - correct prediction ✅
-   - missed prediction ❌
-5. Repeat with a new clip.
-
-Do this daily for one week. You will feel the difference in speed and clarity.
-
-## Exam-day checklist
-- Read question first.
-- Predict keywords.
-- Listen for confirmation, not first mention.
-- Take micro-notes.
-- Choose answer that matches **meaning + context**.
-
-## Quick recap
-Prediction turns listening from passive to strategic. In CELPIP, that gives you higher accuracy with less panic.
+## Final Check
+- Did I track meaning, not isolated words?
+- Did I recover quickly after uncertainty?
+- Is this at B1 target: use the skill with one reason and one example?

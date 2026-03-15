@@ -1,14 +1,14 @@
-﻿---
+---
 title: "Making Clear Arguments"
 category: "grammar"
 level: "C2"
 ieltsBand: "8.5-9.0"
 clb: "11-12"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn precision in complex argument structures with clear examples and guided practice for IELTS and CELPIP."
+excerpt: "C2 grammar lesson on Making Clear Arguments with unpacked explanations, aligned practice, and model answers."
 date: "2026-03-01"
-tags: ["grammar", "c2", "beginner-friendly", "esl", "examples", "practice", "exam-prep"]
-heroTip: "👉 Start with the examples. Try the practice questions. Check answers at the bottom. Use emojis or colours to guide you!"
+tags: ["grammar", "c2", "exam-prep", "ielts", "celpip"]
+heroTip: "Understand the idea first, then practice under timed exam conditions."
 visualAids: ["Simple example table", "Right and wrong list", "Real test examples"]
 quiz:
   - prompt: "Which sentence is better for a test?"
@@ -35,164 +35,65 @@ premium: false
 priceCAD: 0
 draft: false
 ---
+## Goal
+Master **Making Clear Arguments** with maximum precision under time pressure.
 
-## How to Use Precision in complex argument structures
+## Concept Unpacked
+This lesson explains the core meaning, where learners usually get confused, and how to apply the pattern in exam contexts. At C2, focus on expert-level synthesis and refinement.
 
-### 🎯 What you will learn today learn today
+## Key Rule in Plain Language
+1. Identify the grammatical function you need (time, agreement, relationship, emphasis).
+2. Build a correct base sentence first.
+3. Add one support detail only after the form is stable.
+4. Re-check agreement, tense, and punctuation before finalizing.
 
-In this lesson, you will learn how to write and speak in a way that sounds clear, accurate, and natural. We will start with simple examples, then we will fix common mistakes step by step. By the end, you will know exactly what to do in your next IELTS or CELPIP practice task.
+## Worked Examples
+### Example 1: Basic Control
+- Weak: *The sentence has the idea but grammar control is unstable.*
+- Better: *The sentence is grammatically controlled and the meaning is immediate.*
+- Why it improves: the reader can process the message without re-reading.
 
-### 👀 Real examples
+### Example 2: Exam-Style Precision
+- Weak: *The paragraph uses long forms but logic is unclear.*
+- Better: *The paragraph uses controlled structure to link claim, reason, and consequence.*
+- Why it improves: grammar supports argument flow instead of interrupting it.
 
-Look at the difference between unclear language and clear exam-ready language.
+## Frequent Errors and Fixes
+- Error: grammatical form chosen correctly, but wrong word order.
+- Fix: keep core clause order stable before adding modifiers.
 
+- Error: mixing tense/aspect inside one claim.
+- Fix: choose one timeline and stay consistent.
 
-<div class="comparison-cards">
-<div class="comparison-row">
-  <div class="card-item weak">
-    <strong>❌ Weak</strong>
-    <p>People are bad at money.</p>
-  </div>
-  <div class="card-item better">
-    <strong>✅ Better</strong>
-    <p>Many people struggle with money management.</p>
-  </div>
-  <div class="card-item why">
-    <strong>Why it works</strong>
-    <p>The meaning is specific and professional.</p>
-  </div>
-</div>
-<div class="comparison-row">
-  <div class="card-item weak">
-    <strong>❌ Weak</strong>
-    <p>This is very bad.</p>
-  </div>
-  <div class="card-item better">
-    <strong>✅ Better</strong>
-    <p>This can cause serious problems for families.</p>
-  </div>
-  <div class="card-item why">
-    <strong>Why it works</strong>
-    <p>The reader can understand the real impact.</p>
-  </div>
-</div>
-<div class="comparison-row">
-  <div class="card-item weak">
-    <strong>❌ Weak</strong>
-    <p>I think good is here.</p>
-  </div>
-  <div class="card-item better">
-    <strong>✅ Better</strong>
-    <p>I think this policy is useful.</p>
-  </div>
-  <div class="card-item why">
-    <strong>Why it works</strong>
-    <p>Grammar and word choice are correct.</p>
-  </div>
-</div>
-</div>
+- Error: adding complexity without communicative purpose.
+- Fix: keep only structures that add meaning.
 
-When your sentence is specific, the examiner can follow your idea easily. Because your message is clear, your score can improve.
+## Practice
+### Exercise 1: Diagnose and Correct
+Correct each sentence and state the rule you used.
+1. The policy affect many people and create serious problem.
+2. If cities will invest in buses, traffic reduce quickly.
+3. This measure was implement last year and improve access.
 
-### 🧠 How the rule works (simple explanation)
+### Exercise 2: Controlled Application
+Write 4 sentences using **Making Clear Arguments**:
+- one statement
+- one contrast sentence
+- one cause-result sentence
+- one exam-style summary sentence
 
-Good grammar lessons are not about memorizing difficult words. They are about building clear meaning. First, choose one clear idea. Then choose words you are confident with. After that, check your sentence and ask: "Can another person understand this quickly?"
+### Exercise 3: Micro Paragraph
+Write 5-6 sentences on this prompt:
+*Should governments prioritize public transport funding?*
+Use **Making Clear Arguments** at least twice and keep your logic clear.
 
-Use this 3-step check:
-1. **Clear idea:** Can you explain your point in one sentence?
-2. **Correct form:** Is your verb form and sentence structure correct?
-3. **Natural style:** Does it sound like real English, not a translated sentence?
+## Answer Key
+### Exercise 1 (Possible)
+1. *The policy affects many people and creates serious problems.*
+2. *If cities invest in buses, traffic will reduce quickly.*
+3. *This measure was implemented last year and improved access.*
 
-### ❌ Common mistakes and easy fixes
-
-<div class="comparison-cards">
-<div class="comparison-row">
-  <div class="card-item weak">
-    <strong>❌ Mistake</strong>
-    <p>Very general sentence</p>
-  </div>
-  <div class="card-item better">
-    <strong>✅ Better</strong>
-    <p>Add one specific detail</p>
-  </div>
-  <div class="card-item why">
-    <strong>Why it works</strong>
-    <p>Specific details make ideas stronger.</p>
-  </div>
-</div>
-<div class="comparison-row">
-  <div class="card-item weak">
-    <strong>❌ Mistake</strong>
-    <p>Wrong verb form</p>
-  </div>
-  <div class="card-item better">
-    <strong>✅ Better</strong>
-    <p>Use the correct tense</p>
-  </div>
-  <div class="card-item why">
-    <strong>Why it works</strong>
-    <p>Correct tense improves clarity.</p>
-  </div>
-</div>
-<div class="comparison-row">
-  <div class="card-item weak">
-    <strong>❌ Mistake</strong>
-    <p>Repeating the same sentence pattern</p>
-  </div>
-  <div class="card-item better">
-    <strong>✅ Better</strong>
-    <p>Vary sentence openings</p>
-  </div>
-  <div class="card-item why">
-    <strong>Why it works</strong>
-    <p>Variety makes writing easier to read.</p>
-  </div>
-</div>
-<div class="comparison-row">
-  <div class="card-item weak">
-    <strong>❌ Mistake</strong>
-    <p>Fancy word used incorrectly</p>
-  </div>
-  <div class="card-item better">
-    <strong>✅ Better</strong>
-    <p>Use a simpler correct word</p>
-  </div>
-  <div class="card-item why">
-    <strong>Why it works</strong>
-    <p>Accuracy is better than risky vocabulary.</p>
-  </div>
-</div>
-</div>
-
-### ✅ Guided practice
-
-Now try these short tasks. Write your answers before looking at the key.
-
-1. Rewrite: **"This is bad for people and bad for money."**
-2. Choose the correct sentence:
-   - A) I do a decision
-   - B) I make a decision
-   - C) I making a decision
-3. Fix the grammar: **"The student is have a test today."**
-4. Improve this opinion sentence: **"Public transport is good."** Add one reason.
-
-### ✅ Suggested answers answers
-
-1. **This causes financial and social problems for many families.**
-2. **B) I make a decision.**
-3. **The student has a test today.** / **The student is having a test today.**
-4. **Public transport is useful because it reduces traffic and saves money.**
-
-### 🇬🇧 For IELTS
-
-In IELTS, clear organization and accurate grammar matter a lot. Start with a direct answer, support it with one clear reason, and add a simple example. Keep your language natural and controlled.
-
-### 🇨🇦 For CELPIP
-
-In CELPIP, you also need clear structure, but speed and clarity are very important. Give your point early, support it quickly, and avoid long confusing sentences. Short, correct sentences are better than long risky ones.
-
-### 🚀 Your next step
-
-Use one sentence pattern from this lesson in your next practice response today. After writing, read your answer out loud once. If it sounds clear when you speak it, it will usually read clearly too.
-
-You are improving every time you practice with feedback. Keep going—you are closer than you think.
+## Final Check
+- Did grammar choices improve clarity?
+- Is each sentence doing one job?
+- Does performance meet the C2 target: demonstrate evaluator-friendly mastery?

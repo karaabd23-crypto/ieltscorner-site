@@ -5,136 +5,68 @@ level: "B1"
 ieltsBand: "4.5-5.5"
 clb: "5-6"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn pronunciation: stress and intonation for B1 level. Clear explanations with practical examples and exercises for IELTS and CELPIP."
+excerpt: "Practice Pronunciation: Stress and Intonation at B1 level with clear explanations, focused tasks, and answer keys."
 date: "2026-03-02"
-tags: ["speaking", "b1", "grammar", "esl", "examples", "practice", "exam-prep"]
-heroTip: "🎤 Master this concept by studying the examples below. Practice the exercises, then check your answers."
+tags: ["speaking", "b1", "cefr-differentiated", "ielts", "celpip"]
+heroTip: "Study actively: do the exercise first, then compare with the model answer."
 videoEmbed: ""
 draft: false
 ---
+## Goal
+Improve clarity in spoken English by controlling basic **word stress** and **sentence stress**.
 
+## Level Target (B1)
+At B1, you should stress key content words (nouns, main verbs, adjectives) and avoid flat monotone delivery.
 
-## Pronunciation: Stress and Intonation
+## Core Pronunciation Rules
+1. In multi-syllable words, one syllable is stronger: e.g., re-LAX, im-POR-tant.
+2. In sentences, stress content words: *I NEED a NEW BUS pass.*
+3. Function words are usually weaker: a, the, to, of, can.
+4. Keep intonation rising for yes/no questions and falling for statements.
 
-<div class="lesson-intro" style="background: #f0f7ff; border-left: 4px solid #0066cc; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
+## Minimal Pair of Rhythm
+- Flat: *I want to buy a new ticket today.* (all words equal)
+- Better: *I WANT to BUY a NEW TICKet toDAY.*
+- Why: natural rhythm makes meaning easier to follow.
 
-### Why Learn This?
-This concept is important because it helps you express yourself more clearly and accurately in English. You will use it in both IELTS and CELPIP tests.
+## Practice
+### Exercise 1: Mark Stressed Syllables
+Mark the stressed syllable in each word:
+1. comfortable
+2. develop
+3. information
+4. education
 
-</div>
+### Exercise 2: Sentence Stress
+Underline the words you would stress:
+1. I need a new phone charger.
+2. She wants to study in Canada next year.
+3. We can meet after the speaking class.
 
-### Definition
+### Exercise 3: Intonation Read-Aloud
+Read aloud with falling intonation for statements and rising intonation for yes/no questions:
+1. I usually practice speaking at night.
+2. Do you prefer studying alone?
+3. We finished the lesson early.
 
-This lesson shows how to use Pronunciation: Stress and Intonation naturally in spoken English, so intermediate learners can sound clearer and more confident.
+## Answer Key
+### Exercise 1
+1. COM-fort-a-ble
+2. de-VE-lop
+3. in-for-MA-tion
+4. e-du-CA-tion
 
----
+### Exercise 2 (Possible)
+1. *I NEED a NEW PHONE CHARGer.*
+2. *She WANTS to STUdy in CANada next YEAR.*
+3. *We can MEET after the SPEAKing CLASS.*
 
-## Structure and Rules
+### Exercise 3 (Guide)
+1. Falling at the end.
+2. Rising at the end.
+3. Falling at the end.
 
-<table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
-<thead>
-  <tr style="background: #e6e6e6;">
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Rule</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Example</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">When to Use</th>
-  </tr>
-</thead>
-<tbody>
-  <tr style="border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Simple response frame</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>I usually apply pronunciation: stress and intonation when I explain my opinion in Part 3.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">For clear and direct spoken answers</td>
-  </tr>
-  <tr style="background: #fafafa; border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Extended response frame</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>I add reasons and examples, which makes my pronunciation: stress and intonation more convincing.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">To develop longer spoken responses</td>
-  </tr>
-</tbody>
-</table>
-
----
-
-## Common Mistakes
-
-<div class="mistakes-box" style="background: #ffe6e6; border-left: 4px solid #cc0000; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
-
-### ❌ Incorrect
-
-```
-I use pronunciation: stress and intonation wrong in this sentence and it sound unclear.
-```
-
-### ✅ Correct
-
-```
-I used pronunciation: stress and intonation incorrectly in this sentence, so it sounded unclear.
-```
-
-**Why?** Accurate grammar and tense choice make the sentence clear and natural.
-
-</div>
-
----
-
-## Examples from Real Tests
-
-### Example 1: IELTS Writing
-> "One useful strategy is to use pronunciation: stress and intonation so my answer sounds natural and focused."
-
-**Why this works:** It demonstrates pronunciation: stress and intonation with a clear structure and fluent delivery.
-
-### Example 2: CELPIP Speaking
-> "When I practiced, pronunciation: stress and intonation helped me explain my idea faster and more clearly."
-
-**Why this works:** It shows how pronunciation: stress and intonation improves clarity under time pressure.
-
----
-
-## Practice Exercises
-
-### Exercise 1: Fill in the Blanks
-
-1. She __________ (go) to the market every Saturday.
-2. I can't __________ (watch) the movie because I have work.
-3. They __________ (eat) dinner when the phone rang.
-
-**Answers:** 1. goes  2. watch  3. were eating
-
-### Exercise 2: Correct the Mistakes
-
-1. She don't like coffee. → ___________________________
-2. He can goes to school. → ___________________________
-3. I have saw that movie. → ___________________________
-
-### Exercise 3: Write Your Own Sentences
-
-Create sentences using the structure:
-- Sentence 1: ___________________________
-- Sentence 2: ___________________________
-
----
-
-## Tips for IELTS and CELPIP
-
-<div class="tips-box" style="background: #e6ffe6; border-left: 4px solid #00aa00; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
-
-✓ **For Writing:** Use this structure to show your grammar range. Examiners want to see variety.
-
-✓ **For Speaking:** Practice this form until it feels natural. You should be able to use it automatically.
-
-✓ **For Listening:** When you hear this structure, try to understand the meaning first, then the grammar.
-
-✓ **Study Strategy:** Write 5 sentences with this structure every day for one week.
-
-</div>
-
----
-
-## Next Steps
-
-- Review this lesson tomorrow
-- Do Exercise 3 again to check your progress
-- Try using this in your next writing task
-- Speak this structure aloud 5 times
-
+## Final Check
+- Did I stress key words, not every word?
+- Is my question intonation different from statement intonation?
+- Is my speech easier to understand after stress marking?

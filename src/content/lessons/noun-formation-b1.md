@@ -5,136 +5,63 @@ level: "B1"
 ieltsBand: "4.5-5.5"
 clb: "5-6"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn noun formation for B1 level. Clear explanations with practical examples and exercises for IELTS and CELPIP."
+excerpt: "B1 noun-formation lesson with real transformation patterns, exam-focused practice, and full answer keys."
 date: "2026-03-02"
-tags: ["grammar", "b1", "grammar", "esl", "examples", "practice", "exam-prep"]
-heroTip: "📝 Master this concept by studying the examples below. Practice the exercises, then check your answers."
+tags: ["grammar", "b1", "cefr-differentiated", "ielts", "celpip"]
+heroTip: "Check part of speech first, then choose the correct noun suffix and spelling."
 videoEmbed: ""
 draft: false
 ---
+## Goal
+Use common noun-formation patterns accurately in IELTS/CELPIP writing and speaking.
 
+## What Is Noun Formation?
+Noun formation means creating nouns from verbs or adjectives, for example:
+- decide -> decision
+- improve -> improvement
+- happy -> happiness
+- active -> activity
 
-## Noun Formation
+At B1, your aim is practical control: choose the correct noun form so your sentence is grammatical and natural.
 
-<div class="lesson-intro" style="background: #f0f7ff; border-left: 4px solid #0066cc; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
-
-### Why Learn This?
-This concept is important because it helps you express yourself more clearly and accurately in English. You will use it in both IELTS and CELPIP tests.
-
-</div>
-
-### Definition
-
-This lesson explains Noun Formation with practical patterns and examples, helping intermediate learners use English more accurately.
-
----
-
-## Structure and Rules
-
-<table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
-<thead>
-  <tr style="background: #e6e6e6;">
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Rule</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Example</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">When to Use</th>
-  </tr>
-</thead>
-<tbody>
-  <tr style="border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Core usage pattern</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>Students use noun formation to build clear intermediate level sentences.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">For common daily communication</td>
-  </tr>
-  <tr style="background: #fafafa; border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Expanded usage pattern</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>This pattern helps learners use noun formation with better precision and control.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">For more detailed meaning and nuance</td>
-  </tr>
-</tbody>
-</table>
-
----
+## Core B1 Patterns
+- verb + **-tion / -sion**: inform -> information, conclude -> conclusion
+- verb + **-ment**: develop -> development, assess -> assessment
+- adjective + **-ness**: effective -> effectiveness, kind -> kindness
+- adjective + **-ity**: equal -> equality, possible -> possibility
 
 ## Common Mistakes
+- Wrong part of speech: *The government should improve transportation for better educate.*
+- Better: *...for better education.*
 
-<div class="mistakes-box" style="background: #ffe6e6; border-left: 4px solid #cc0000; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
+- Spelling error after suffix: *developement*
+- Better: *development*
 
-### ❌ Incorrect
+## Practice
+### Exercise 1: Form the Correct Noun
+1. decide -> ______
+2. improve -> ______
+3. equal -> ______
+4. effective -> ______
+5. possible -> ______
 
-```
-I use noun formation wrong in this sentence and it sound unclear.
-```
+### Exercise 2: Complete the Sentence
+1. The city's rapid ______ has created housing pressure. (develop)
+2. Better public transport improves social ______. (equal)
+3. This policy led to a clear ______ in air quality. (improve)
+4. The final ______ was announced yesterday. (decide)
 
-### ✅ Correct
+### Exercise 3: Short Writing Task
+Write 5 sentences about education or transport and use at least 6 formed nouns from this lesson.
 
-```
-I used noun formation incorrectly in this sentence, so it sounded unclear.
-```
+## Answer Key
+### Exercise 1
+1. decision 2. improvement 3. equality 4. effectiveness 5. possibility
 
-**Why?** Accurate grammar and tense choice make the sentence clear and natural.
+### Exercise 2
+1. development 2. equality 3. improvement 4. decision
 
-</div>
-
----
-
-## Examples from Real Tests
-
-### Example 1: IELTS Writing
-> "In this sentence, noun formation is used accurately to express the intended meaning."
-
-**Why this works:** It shows correct grammar control and clear communication.
-
-### Example 2: CELPIP Speaking
-> "I used noun formation in my response to make the message precise and natural."
-
-**Why this works:** It demonstrates exam-ready language that is easy to follow.
-
----
-
-## Practice Exercises
-
-### Exercise 1: Fill in the Blanks
-
-1. She __________ (go) to the market every Saturday.
-2. I can't __________ (watch) the movie because I have work.
-3. They __________ (eat) dinner when the phone rang.
-
-**Answers:** 1. goes  2. watch  3. were eating
-
-### Exercise 2: Correct the Mistakes
-
-1. She don't like coffee. → ___________________________
-2. He can goes to school. → ___________________________
-3. I have saw that movie. → ___________________________
-
-### Exercise 3: Write Your Own Sentences
-
-Create sentences using the structure:
-- Sentence 1: ___________________________
-- Sentence 2: ___________________________
-
----
-
-## Tips for IELTS and CELPIP
-
-<div class="tips-box" style="background: #e6ffe6; border-left: 4px solid #00aa00; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
-
-✓ **For Writing:** Use this structure to show your grammar range. Examiners want to see variety.
-
-✓ **For Speaking:** Practice this form until it feels natural. You should be able to use it automatically.
-
-✓ **For Listening:** When you hear this structure, try to understand the meaning first, then the grammar.
-
-✓ **Study Strategy:** Write 5 sentences with this structure every day for one week.
-
-</div>
-
----
-
-## Next Steps
-
-- Review this lesson tomorrow
-- Do Exercise 3 again to check your progress
-- Try using this in your next writing task
-- Speak this structure aloud 5 times
-
+## B1 Check
+- Did I choose noun form where a noun is needed?
+- Is the suffix spelling correct?
+- Does the noun fit the sentence meaning?

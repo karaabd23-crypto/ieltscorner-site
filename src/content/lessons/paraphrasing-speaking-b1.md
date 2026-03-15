@@ -5,136 +5,67 @@ level: "B1"
 ieltsBand: "4.5-5.5"
 clb: "5-6"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn paraphrasing and rephrasing for B1 level. Clear explanations with practical examples and exercises for IELTS and CELPIP."
+excerpt: "Practice Paraphrasing and Rephrasing at B1 level with clear explanations, focused tasks, and answer keys."
 date: "2026-03-02"
-tags: ["speaking", "b1", "grammar", "esl", "examples", "practice", "exam-prep"]
-heroTip: "🎤 Master this concept by studying the examples below. Practice the exercises, then check your answers."
+tags: ["speaking", "b1", "cefr-differentiated", "ielts", "celpip"]
+heroTip: "Study actively: do the exercise first, then compare with the model answer."
 videoEmbed: ""
 draft: false
 ---
+## Goal
+Use **Paraphrasing and Rephrasing** to give clearer, more organized speaking responses.
 
+## Level Target (B1)
+At this intermediate stage, your response should have a direct answer, one reason, one example, and a clear ending.
 
-## Paraphrasing and Rephrasing
+## 4-Step Speaking Frame
+1. answer directly
+2. add one reason
+3. give one concrete example
+4. close with a final sentence
 
-<div class="lesson-intro" style="background: #f0f7ff; border-left: 4px solid #0066cc; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
+## Weak vs Strong
+- Weak: *I agree because it is good and useful.*
+- Strong: *I agree because it saves commuting time; for example, my bus route now takes 20 minutes less than before.*
 
-### Why Learn This?
-This concept is important because it helps you express yourself more clearly and accurately in English. You will use it in both IELTS and CELPIP tests.
+## Practice
+### Exercise 1
+Speak for 35 seconds: *Should students work part-time while studying?*
 
-</div>
+### Exercise 2
+Improve this response:
+*I like online classes because they are good.*
 
-### Definition
+### Exercise 3
+Speak for 50 seconds: *Public transport vs private cars*
+Include one comparison and one personal example.
 
-This lesson shows how to use Paraphrasing and Rephrasing naturally in spoken English, so intermediate learners can sound clearer and more confident.
+## Answer Key
+### Exercise 2 (Possible Upgrade)
+*I prefer online classes because they save commuting time and allow flexible scheduling. For example, I can review lecture recordings before exams, which helps me study more effectively.*
 
----
+## Fluency Checklist
+- Did I answer immediately?
+- Did I add one specific example?
+- Did I finish clearly?
 
-## Structure and Rules
+## Level-Specific Challenge (B1)
+Write one paragraph (5 sentences) about a common social topic using **Paraphrasing and Rephrasing**.
+Requirements:
+- one clear claim
+- one support reason
+- one specific example
+- one linking phrase
+- one concise conclusion
+Focus on clarity and structure more than advanced vocabulary.
 
-<table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
-<thead>
-  <tr style="background: #e6e6e6;">
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Rule</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">Example</th>
-    <th style="padding: 0.75rem; text-align: left; border: 1px solid #999;">When to Use</th>
-  </tr>
-</thead>
-<tbody>
-  <tr style="border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Simple response frame</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>I usually apply paraphrasing and rephrasing when I explain my opinion in Part 3.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">For clear and direct spoken answers</td>
-  </tr>
-  <tr style="background: #fafafa; border: 1px solid #ddd;">
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Extended response frame</strong></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;"><em>I add reasons and examples, which makes my paraphrasing and rephrasing more convincing.</em></td>
-    <td style="padding: 0.75rem; border: 1px solid #ddd;">To develop longer spoken responses</td>
-  </tr>
-</tbody>
-</table>
+## Level Deep Dive (B1)
+At B1, you should manage paragraph unity. Use Paraphrasing and Rephrasing to support one central point with simple but clear logic.
 
----
+Micro-task:
+- one topic sentence
+- two support sentences
+- one concrete example
+- one short concluding line
 
-## Common Mistakes
-
-<div class="mistakes-box" style="background: #ffe6e6; border-left: 4px solid #cc0000; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
-
-### ❌ Incorrect
-
-```
-I use paraphrasing and rephrasing wrong in this sentence and it sound unclear.
-```
-
-### ✅ Correct
-
-```
-I used paraphrasing and rephrasing incorrectly in this sentence, so it sounded unclear.
-```
-
-**Why?** Accurate grammar and tense choice make the sentence clear and natural.
-
-</div>
-
----
-
-## Examples from Real Tests
-
-### Example 1: IELTS Writing
-> "One useful strategy is to use paraphrasing and rephrasing so my answer sounds natural and focused."
-
-**Why this works:** It demonstrates paraphrasing and rephrasing with a clear structure and fluent delivery.
-
-### Example 2: CELPIP Speaking
-> "When I practiced, paraphrasing and rephrasing helped me explain my idea faster and more clearly."
-
-**Why this works:** It shows how paraphrasing and rephrasing improves clarity under time pressure.
-
----
-
-## Practice Exercises
-
-### Exercise 1: Fill in the Blanks
-
-1. She __________ (go) to the market every Saturday.
-2. I can't __________ (watch) the movie because I have work.
-3. They __________ (eat) dinner when the phone rang.
-
-**Answers:** 1. goes  2. watch  3. were eating
-
-### Exercise 2: Correct the Mistakes
-
-1. She don't like coffee. → ___________________________
-2. He can goes to school. → ___________________________
-3. I have saw that movie. → ___________________________
-
-### Exercise 3: Write Your Own Sentences
-
-Create sentences using the structure:
-- Sentence 1: ___________________________
-- Sentence 2: ___________________________
-
----
-
-## Tips for IELTS and CELPIP
-
-<div class="tips-box" style="background: #e6ffe6; border-left: 4px solid #00aa00; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
-
-✓ **For Writing:** Use this structure to show your grammar range. Examiners want to see variety.
-
-✓ **For Speaking:** Practice this form until it feels natural. You should be able to use it automatically.
-
-✓ **For Listening:** When you hear this structure, try to understand the meaning first, then the grammar.
-
-✓ **Study Strategy:** Write 5 sentences with this structure every day for one week.
-
-</div>
-
----
-
-## Next Steps
-
-- Review this lesson tomorrow
-- Do Exercise 3 again to check your progress
-- Try using this in your next writing task
-- Speak this structure aloud 5 times
-
+Quality rule: avoid overloading a sentence with many clauses; clarity comes first.

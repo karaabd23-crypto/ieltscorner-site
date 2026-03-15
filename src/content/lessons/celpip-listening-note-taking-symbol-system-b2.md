@@ -5,10 +5,10 @@ level: "B2"
 ieltsBand: "6.5-7.5"
 clb: "8-9"
 exam: ["CELPIP"]
-excerpt: "Build a practical symbol system for CELPIP listening so you capture key details quickly without missing the next sentence."
+excerpt: "B2 listening lesson on CELPIP Listening: Note-Taking with a Symbol System with unpacked explanations, aligned practice, and model answers."
 date: "2026-03-09"
 tags: ["celpip", "listening", "note-taking", "symbols", "time-management"]
-heroTip: "✍️ Fast symbols beat full sentences. Record ideas, not grammar."
+heroTip: "Understand the idea first, then practice under timed exam conditions."
 visualAids: ["Symbol legend", "Two-column notes", "Confirmation markers"]
 quiz:
   - prompt: "What is the best note-taking style for CELPIP listening?"
@@ -23,99 +23,55 @@ premium: false
 priceCAD: 12
 draft: false
 ---
+## Goal
+Improve listening score for **CELPIP Listening: Note-Taking with a Symbol System** using controlled complexity and clear logic chains under exam timing.
 
-## Why note-taking fails for many test takers
-Most learners lose points because they write too much. They try to record every sentence, then miss the next key detail.
+## Concept Unpacked
+Listening errors usually happen when candidates chase every word instead of tracking meaning structure. This lesson teaches prediction, signal tracking, and recovery after missed details.
 
-Good CELPIP notes are:
-- short,
-- selective,
-- and structured for question answering.
+## Strategy Pipeline
+### Before Audio
+Predict likely information: numbers, opinions, sequence, or contrast.
 
-## Your symbol toolkit
-Create a personal symbol set and keep it consistent.
+### During Audio
+Track signal words: however, therefore, first, finally, although.
 
-### Core symbols
-- `↑` increase / improvement
-- `↓` decrease / problem
-- `→` result / next step
-- `vs` comparison
-- `w/` with
-- `w/o` without
-- `b/c` because
-- `@` at (time/place)
-- `$` cost / budget
-- `!` important
+### After Audio
+Verify note accuracy and eliminate options that contradict tone or logic.
 
-### Example conversion
-Audio: “The store had lower prices, but delivery was delayed by two days.”
+## Worked Example
+- Missed detail moment: one phrase is unclear.
+- Recovery action: skip that fragment, capture next signal, then infer missing part from context.
+- Why it works: prevents full comprehension collapse.
 
-Notes:
-- `store $↓`
-- `delivery delay +2d !`
+## Practice
+### Exercise 1: Gist Capture
+Listen once and write one-sentence main idea for each clip.
 
-## Two-column method (recommended)
-Split notes into two quick columns:
+### Exercise 2: Detail Grid
+Fill a note grid with 6 key details (who/what/why/result).
 
-- **Left:** facts/details
-- **Right:** purpose/decision/outcome
+### Exercise 3: Timed CELPIP Drill
+Complete a mini listening set with strict timing.
+Track:
+- total correct
+- details missed
+- recovery success rate
 
-This prevents random notes and helps you answer inference questions faster.
+## Answer Key
+### Exercise 1 (Sample Gist)
+*The speaker explains why timed strategy improves overall test accuracy.*
 
-## What to write (and what to skip)
+### Exercise 2 (Sample Key Details)
+- main problem identified
+- strategy step order
+- one caution about over-focusing on single words
+- recommended recovery action
 
-### Write
-- names, dates, numbers,
-- cause-effect relationships,
-- decision points,
-- final recommendation.
+### Distractor Note
+A common wrong option copies one phrase from audio but ignores speaker intent.
 
-### Skip
-- filler words,
-- repeated examples,
-- full grammatical sentences.
-
-## Listening flow strategy
-
-1. **Pre-listening (5–10 seconds):** set your symbols page.
-2. **During audio:** capture only answer-relevant details.
-3. **If lost:** skip one phrase, catch next anchor (number/name/contrast word).
-4. **After audio:** use notes to verify option meaning, not exact word match only.
-
-## Mini practice task
-Audio theme: team scheduling conflict.
-
-Expected strong notes:
-- `Mon mtg 9:00`
-- `Sara late b/c daycare`
-- `opt1 move 9:30`
-- `opt2 keep time + online`
-- `final → opt2`
-
-From these notes, you can answer:
-- reason,
-- alternatives,
-- final decision.
-
-## Common mistakes
-
-### Mistake 1: Beautiful notes, low score
-Your notes look neat but too long.
-- **Fix:** cut every note to 2–5 tokens.
-
-### Mistake 2: Vocabulary mismatch panic
-You wrote *cheap*, option says *affordable*.
-- **Fix:** match meaning, not exact surface word.
-
-### Mistake 3: Missing final answer cue
-You note options but not final choice.
-- **Fix:** always mark final decision with `→ final`.
-
-## 7-day improvement plan
-- Day 1–2: build and test your symbol set.
-- Day 3–4: practice two-column notes with short clips.
-- Day 5–6: timed CELPIP-style clips, one listen only.
-- Day 7: full mixed practice and error review.
-
-## Quick recap
-In CELPIP Listening, speed and selectivity matter more than perfect writing. A simple symbol system gives you cleaner thinking and better answers under pressure.
+## Final Check
+- Did I track meaning, not isolated words?
+- Did I recover quickly after uncertainty?
+- Is this at B2 target: use the skill strategically under exam constraints?
