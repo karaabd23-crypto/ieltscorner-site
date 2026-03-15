@@ -1,0 +1,88 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import { CELPIP_WRITING_TOPUP_CREDITS } from '../../../../lib/celpipWritingData.mjs';
+---
+
+<Layout
+  title="Extra Evaluations Purchased — CELPIP Writing Lab"
+  description="Your additional AI evaluation credits have been added. Return to the writing lab to continue practising."
+>
+  <section class="section">
+    <div class="hero" style={`--hero: #f2f1ef; --hero-bg: url('/heroes/writing.png'); --hero-bg-opacity: 0.22;`}>
+      <div class="hero-content">
+        <span class="pill">✅ Purchase confirmed</span>
+        <h1>Your extra evaluations are being added.</h1>
+        <p class="muted" style="max-width: 64ch;" id="topup-status">
+          Verifying your payment and crediting your account…
+        </p>
+        <div class="cluster" id="topup-actions" style="display:none;">
+          <a id="back-to-lab" class="btn btn-primary" href="/celpip/writing/ai-feedback/success">Return to Writing Lab →</a>
+          <a class="btn" href="/celpip/writing/ai-feedback">Back to service page</a>
+        </div>
+        <div class="cluster" id="topup-error-actions" style="display:none;">
+          <a class="btn btn-primary" href="/celpip/writing/ai-feedback">Back to service page</a>
+          <a class="btn" href="/pricing">View pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script define:vars={{ defaultCredits: CELPIP_WRITING_TOPUP_CREDITS }}>
+    (async () => {
+      const statusEl = document.getElementById('topup-status');
+      const actionsEl = document.getElementById('topup-actions');
+      const errorActionsEl = document.getElementById('topup-error-actions');
+      const backToLabLink = document.getElementById('back-to-lab');
+
+      const setStatus = (msg) => {
+        if (statusEl instanceof HTMLElement) statusEl.textContent = msg;
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const topupSessionId = params.get('topup_session') || '';
+      const originalSessionId = params.get('session_id') || '';
+
+      if (!topupSessionId) {
+        setStatus('Missing top-up session ID. If you completed a purchase, contact support.');
+        if (errorActionsEl instanceof HTMLElement) errorActionsEl.style.display = 'flex';
+        return;
+      }
+
+      // Update the "Return to Writing Lab" link with the original session ID
+      if (originalSessionId && backToLabLink instanceof HTMLAnchorElement) {
+        backToLabLink.href = `/celpip/writing/ai-feedback/success?session_id=${encodeURIComponent(originalSessionId)}`;
+      }
+
+      try {
+        const response = await fetch('/.netlify/functions/redeem-celpip-writing-topup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ topupSessionId }),
+        });
+
+        const contentType = response.headers.get('content-type') || '';
+        const data = contentType.includes('application/json')
+          ? await response.json()
+          : { error: await response.text() };
+
+        if (!response.ok) {
+          throw new Error(data.error || 'Failed to add credits');
+        }
+
+        const credits = Number(data.creditsAdded || defaultCredits);
+        const alreadyRedeemed = Boolean(data.alreadyRedeemed);
+
+        if (alreadyRedeemed) {
+          setStatus(`Your ${credits} extra evaluation${credits !== 1 ? 's' : ''} were already added to your account. Return to the writing lab to continue.`);
+        } else {
+          setStatus(`${credits} extra evaluation${credits !== 1 ? 's' : ''} added to your account! Return to the writing lab to use them.`);
+        }
+
+        if (actionsEl instanceof HTMLElement) actionsEl.style.display = 'flex';
+      } catch (error) {
+        setStatus(error?.message || 'Unable to verify your top-up. Please contact support if credits were not added.');
+        if (errorActionsEl instanceof HTMLElement) errorActionsEl.style.display = 'flex';
+      }
+    })();
+  </script>
+</Layout>

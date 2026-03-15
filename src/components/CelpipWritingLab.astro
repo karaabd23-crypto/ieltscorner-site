@@ -3,6 +3,9 @@ import {
   CELPIP_PROMPT_BANK,
   CELPIP_PROMPT_TOTAL,
   CELPIP_TASK_CONFIG,
+  CELPIP_WRITING_MONTHLY_EVAL_LIMIT,
+  CELPIP_WRITING_TOPUP_CREDITS,
+  CELPIP_WRITING_TOPUP_PRICE_CAD,
 } from '../lib/celpipWritingData.mjs';
 
 const promptBank = CELPIP_PROMPT_BANK;
@@ -42,10 +45,31 @@ const taskConfig = CELPIP_TASK_CONFIG;
           <button id="cancel-subscription-now" class="btn" type="button">Cancel now (instant)</button>
         </div>
       </div>
-      <div class="surface" style="padding: var(--s-3); min-width: 220px;">
-        <p style="margin: 0; font-weight: 700;">Timer</p>
-        <div id="writing-lab-timer" style="font-size: 2rem; font-weight: 800; margin-top: var(--s-1);">27:00</div>
-        <p id="writing-lab-timer-note" class="muted" style="margin: var(--s-1) 0 0;">Task 1 time limit</p>
+      <div style="display: grid; gap: var(--s-3); min-width: 220px;">
+        <div class="surface" style="padding: var(--s-3);">
+          <p style="margin: 0; font-weight: 700;">Timer</p>
+          <div id="writing-lab-timer" style="font-size: 2rem; font-weight: 800; margin-top: var(--s-1);">27:00</div>
+          <p id="writing-lab-timer-note" class="muted" style="margin: var(--s-1) 0 0;">Task 1 time limit</p>
+        </div>
+        <div class="surface" style="padding: var(--s-3);" id="eval-counter-panel">
+          <p style="margin: 0; font-weight: 700;">AI evaluations</p>
+          <div id="eval-counter" style="font-size: 1.25rem; font-weight: 800; margin-top: var(--s-1);">— / {CELPIP_WRITING_MONTHLY_EVAL_LIMIT}</div>
+          <p class="muted" style="margin: var(--s-1) 0 0; font-size: 0.85rem;">this billing period</p>
+          <p id="topup-counter" class="muted" style="margin: var(--s-1) 0 0; font-size: 0.85rem; display:none;"></p>
+        </div>
+      </div>
+    </div>
+
+    <div id="eval-limit-banner" style="display:none; margin-top: var(--s-4);">
+      <div class="card" style="border-left: 4px solid #e6a817; background: #fffbf0;">
+        <p style="margin: 0; font-weight: 700;">Monthly evaluation limit reached</p>
+        <p class="muted" style="margin: var(--s-1) 0 var(--s-2);">
+          You have used all {CELPIP_WRITING_MONTHLY_EVAL_LIMIT} AI evaluations included in this billing period. Purchase {CELPIP_WRITING_TOPUP_CREDITS} extra evaluations for CA${CELPIP_WRITING_TOPUP_PRICE_CAD} to keep practising.
+        </p>
+        <div class="cluster" style="gap: var(--s-2);">
+          <button id="buy-topup" class="btn btn-primary" type="button">Buy {CELPIP_WRITING_TOPUP_CREDITS} more evaluations — CA${CELPIP_WRITING_TOPUP_PRICE_CAD} →</button>
+        </div>
+        <p id="topup-checkout-status" class="muted" style="min-height: 1.2rem; margin: var(--s-2) 0 0;"></p>
       </div>
     </div>
 
@@ -147,7 +171,7 @@ const taskConfig = CELPIP_TASK_CONFIG;
     </div>
   </div>
 
-  <script define:vars={{ promptBank, promptTotal, taskConfig }}>
+  <script define:vars={{ promptBank, promptTotal, taskConfig, CELPIP_WRITING_MONTHLY_EVAL_LIMIT, CELPIP_WRITING_TOPUP_CREDITS, CELPIP_WRITING_TOPUP_PRICE_CAD }}>
     (() => {
       const storageKey = 'ieltscorner.celpipWritingLab';
       const accessStorageKey = 'ieltscorner.celpipWritingAccess';
@@ -187,6 +211,11 @@ const taskConfig = CELPIP_TASK_CONFIG;
       const resultsPriorities = document.getElementById('results-priorities');
       const resultsRewrites = document.getElementById('results-rewrites');
       const resultsSteps = document.getElementById('results-steps');
+      const evalCounterEl = document.getElementById('eval-counter');
+      const topupCounterEl = document.getElementById('topup-counter');
+      const evalLimitBanner = document.getElementById('eval-limit-banner');
+      const buyTopupBtn = document.getElementById('buy-topup');
+      const topupCheckoutStatus = document.getElementById('topup-checkout-status');
 
       let sessionId = '';
       let customerId = '';
@@ -369,6 +398,27 @@ const taskConfig = CELPIP_TASK_CONFIG;
         });
       };
 
+      const updateEvalCounter = (evalsUsed, evalLimit, topupCredits) => {
+        if (evalCounterEl) {
+          evalCounterEl.textContent = `${evalsUsed} / ${evalLimit}`;
+        }
+        if (topupCounterEl) {
+          if (topupCredits > 0) {
+            topupCounterEl.textContent = `+ ${topupCredits} bonus credit${topupCredits !== 1 ? 's' : ''}`;
+            topupCounterEl.style.display = 'block';
+          } else {
+            topupCounterEl.style.display = 'none';
+          }
+        }
+        const atLimit = evalsUsed >= evalLimit && topupCredits <= 0;
+        if (evalLimitBanner instanceof HTMLElement) {
+          evalLimitBanner.style.display = atLimit ? 'block' : 'none';
+        }
+        if (analyzeBtn instanceof HTMLButtonElement) {
+          analyzeBtn.disabled = atLimit;
+        }
+      };
+
       const openSampleForComparison = () => {
         if (sampleResponseWrap instanceof HTMLDetailsElement) {
           sampleResponseWrap.open = true;
@@ -486,6 +536,11 @@ const taskConfig = CELPIP_TASK_CONFIG;
           if (data.adminBypass) {
             setStatus('Admin bypass mode is active on this browser.');
           }
+          updateEvalCounter(
+            Number(data.evalsUsed || 0),
+            Number(data.evalLimit || CELPIP_WRITING_MONTHLY_EVAL_LIMIT),
+            Number(data.topupCredits || 0),
+          );
           loadSavedState();
         } catch (error) {
           localStorage.removeItem(accessStorageKey);
@@ -529,6 +584,14 @@ const taskConfig = CELPIP_TASK_CONFIG;
 
           const data = await readApiResponse(response);
           if (!response.ok) {
+            if (response.status === 429 && data.limitReached) {
+              updateEvalCounter(
+                Number(data.evalsUsed ?? CELPIP_WRITING_MONTHLY_EVAL_LIMIT),
+                Number(data.evalLimit || CELPIP_WRITING_MONTHLY_EVAL_LIMIT),
+                0,
+              );
+              throw new Error(data.error || 'Monthly evaluation limit reached.');
+            }
             throw new Error(data.error || 'Evaluation failed');
           }
 
@@ -593,6 +656,30 @@ const taskConfig = CELPIP_TASK_CONFIG;
         }
       };
 
+      const buyTopup = async () => {
+        if (topupCheckoutStatus instanceof HTMLElement) {
+          topupCheckoutStatus.textContent = 'Redirecting to secure checkout…';
+        }
+        if (buyTopupBtn instanceof HTMLButtonElement) buyTopupBtn.disabled = true;
+
+        try {
+          const response = await fetch('/.netlify/functions/create-celpip-writing-topup', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ customerId, sessionId }),
+          });
+          const data = await readApiResponse(response);
+          if (!response.ok || !data.checkoutUrl) {
+            throw new Error(data.error || 'Unable to start checkout');
+          }
+          window.location.href = data.checkoutUrl;
+        } catch (error) {
+          const message = error instanceof Error ? error.message : 'Unable to start checkout.';
+          if (topupCheckoutStatus instanceof HTMLElement) topupCheckoutStatus.textContent = message;
+          if (buyTopupBtn instanceof HTMLButtonElement) buyTopupBtn.disabled = false;
+        }
+      };
+
       if (taskSelect instanceof HTMLSelectElement) {
         taskSelect.addEventListener('change', () => {
           activeTask = taskSelect.value;
@@ -614,6 +701,7 @@ const taskConfig = CELPIP_TASK_CONFIG;
       analyzeBtn?.addEventListener('click', analyze);
       manageBillingBtn?.addEventListener('click', manageBilling);
       cancelNowBtn?.addEventListener('click', cancelInstantly);
+      buyTopupBtn?.addEventListener('click', buyTopup);
       resultsOpenSampleBtn?.addEventListener('click', openSampleForComparison);
 
       if (responseText instanceof HTMLTextAreaElement) {

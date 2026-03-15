@@ -3,6 +3,7 @@ import {
   CELPIP_LEVEL_GUIDE,
   CELPIP_TASK_CONFIG,
   CELPIP_WRITING_BILLING_INTERVAL,
+  CELPIP_WRITING_MONTHLY_EVAL_LIMIT,
   CELPIP_WRITING_PRODUCT_NAME,
 } from '../../src/lib/celpipWritingData.mjs';
 
@@ -46,7 +47,11 @@ async function validateSession(sessionId) {
     throw new Error('No subscription found for this checkout session.');
   }
 
-  const subscription = await stripe.subscriptions.retrieve(subscriptionId);
+  const subscription =
+    typeof session.subscription === 'object' && session.subscription !== null
+      ? session.subscription
+      : await stripe.subscriptions.retrieve(subscriptionId);
+
   const active = subscription.status === 'active' || subscription.status === 'trialing';
   if (!active) {
     throw new Error(`Subscription is ${subscription.status}. Access requires an active subscription.`);
@@ -59,7 +64,7 @@ async function validateSession(sessionId) {
     }
   }
 
-  return session;
+  return { session, subscription };
 }
 
 function buildPrompt({ taskType, promptTitle, promptText, promptInstructions, responseText, timeSpentSeconds, wordCount }) {
@@ -215,8 +220,47 @@ export async function handler(event) {
     const bypassByToken = ADMIN_BYPASS_TOKEN && adminToken && adminToken === ADMIN_BYPASS_TOKEN;
     const bypassByLocalhost = ADMIN_BYPASS_TOKEN && isLocalhostRequest(event) && sessionId === 'admin-bypass';
     const isAdminBypass = Boolean(bypassByToken || bypassByLocalhost);
+
+    let session = null;
+    let subscription = null;
     if (!isAdminBypass) {
-      await validateSession(sessionId);
+      const result = await validateSession(sessionId);
+      session = result.session;
+      subscription = result.subscription;
+    }
+
+    // Usage tracking via Stripe customer metadata (skipped for admin bypass)
+    let customerId = '';
+    let evalsUsed = 0;
+    let topupCredits = 0;
+    let periodStart = '';
+    if (!isAdminBypass && session && subscription && STRIPE_API_KEY) {
+      customerId = extractId(session.customer);
+      if (customerId) {
+        const stripe = new Stripe(STRIPE_API_KEY, { apiVersion: '2020-08-27' });
+        const customer = await stripe.customers.retrieve(customerId);
+        if (!customer.deleted) {
+          periodStart = new Date(subscription.current_period_start * 1000).toISOString().slice(0, 10);
+          const storedPeriod = String(customer.metadata?.celpip_eval_period || '');
+          evalsUsed =
+            storedPeriod === periodStart
+              ? Math.max(0, Number(customer.metadata?.celpip_eval_count || '0'))
+              : 0;
+          topupCredits = Math.max(0, Number(customer.metadata?.celpip_topup_credits || '0'));
+
+          if (evalsUsed >= CELPIP_WRITING_MONTHLY_EVAL_LIMIT && topupCredits <= 0) {
+            return {
+              statusCode: 429,
+              body: JSON.stringify({
+                error: `Monthly evaluation limit of ${CELPIP_WRITING_MONTHLY_EVAL_LIMIT} reached. Purchase additional requests to continue.`,
+                limitReached: true,
+                evalsUsed,
+                evalLimit: CELPIP_WRITING_MONTHLY_EVAL_LIMIT,
+              }),
+            };
+          }
+        }
+      }
     }
 
     if (!ANTHROPIC_API_KEY && !OPENAI_API_KEY) {
@@ -259,6 +303,24 @@ export async function handler(event) {
       }
 
       report = normalizeReport(buildAdminFallbackReport({ taskType, responseText, wordCount }));
+    }
+
+    // Increment usage counter after a successful evaluation
+    if (!isAdminBypass && customerId && periodStart && STRIPE_API_KEY) {
+      try {
+        const stripe = new Stripe(STRIPE_API_KEY, { apiVersion: '2020-08-27' });
+        const newCount = evalsUsed + 1;
+        const updatedMeta = {
+          celpip_eval_count: String(newCount),
+          celpip_eval_period: periodStart,
+        };
+        if (evalsUsed >= CELPIP_WRITING_MONTHLY_EVAL_LIMIT && topupCredits > 0) {
+          updatedMeta.celpip_topup_credits = String(topupCredits - 1);
+        }
+        await stripe.customers.update(customerId, { metadata: updatedMeta });
+      } catch {
+        // Non-fatal: usage tracking failure should not block the grading response
+      }
     }
 
     return {
