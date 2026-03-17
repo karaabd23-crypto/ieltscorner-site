@@ -25,6 +25,9 @@ const ogImageURL = new URL(ogImage, Astro.site);
 const isLessonsPath = Astro.url.pathname.startsWith("/lessons");
 const currentPath = Astro.url.pathname;
 const robotsContent = noindex ? "noindex, nofollow" : "index, follow";
+const normalizedPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+const floatingCtaPaths = new Set(["/", "/ielts", "/celpip", "/webinar"]);
+const showFloatingWebinarCta = floatingCtaPaths.has(normalizedPath);
 
 const navGroups = [
   {
@@ -192,14 +195,15 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async is:inline></script>
     <script is:inline>
       window.addEventListener('load', () => {
-        if (!window.Calendly || window.__ieltscornerCalendlyBadgeInit) {
+        const allowBadge = document.body?.dataset.mainPage === '1';
+        if (!allowBadge || !window.Calendly || window.__ieltscornerCalendlyBadgeInit) {
           return;
         }
 
         window.Calendly.initBadgeWidget({
           url: "https://calendly.com/ieltscorner/weekly_webinar",
-          text: "Register for this week's Webinar",
-          color: '#d94848',
+          text: "Weekly webinar",
+          color: '#c48787',
           textColor: '#ffffff',
           branding: true,
         });
@@ -209,9 +213,9 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
     </script>
   </head>
 
-  <body>
+  <body data-main-page={showFloatingWebinarCta ? "1" : "0"}>
     <!-- WEBINAR BANNER (Sticky) -->
-    <div style="position: relative; z-index: 40; background: linear-gradient(90deg, var(--accent) 0%, rgba(217, 72, 72, 0.9) 100%); color: white; padding: 12px 0; text-align: center; border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
+    <div class="top-drawer-banner" style="position: relative; z-index: 40; background: linear-gradient(90deg, var(--accent) 0%, rgba(217, 72, 72, 0.9) 100%); color: white; padding: 12px 0; text-align: center; border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
       <div class="container" style="display: flex; align-items: center; justify-content: center; gap: var(--s-2); flex-wrap: wrap;">
         <span style="font-size: 14px;">🎓 <strong>Weekly Webinar • 100 CELPIP Writing Prompts + Sample Responses for CA$5/month</strong></span>
         <a href="/webinar" style="color: white; font-weight: 700; font-size: 13px; text-decoration: none; background: rgba(255, 255, 255, 0.2); padding: 6px 12px; border-radius: 999px; transition: background 140ms ease;">

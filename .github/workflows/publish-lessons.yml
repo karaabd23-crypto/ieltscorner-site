@@ -59,6 +59,9 @@ jobs:
             node scripts/generate-lessons.mjs --count "$COUNT" --category "$CATEGORY"
           done
 
+      - name: Run lesson QA gate
+        run: npm run lesson:qa
+
       - name: Commit and push generated lessons
         run: |
           if git diff --quiet; then

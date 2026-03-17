@@ -40,6 +40,53 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
       <div style="height: var(--s-4);"></div>
 
       <div class="surface" style="padding: var(--s-5);">
+        <h3 style="margin-top: 0;">Get 1 free sample essay now</h3>
+        <p class="muted" style="margin-top: 0;">
+          Enter your email to unlock exactly one full sample essay instantly. This email will be added to our IELTS/CELPIP newsletter.
+        </p>
+
+        <form id="free-sample-form" style="display: grid; grid-template-columns: 1fr auto; gap: var(--s-2); align-items: center;">
+          <input
+            id="free-sample-email"
+            type="email"
+            autocomplete="email"
+            placeholder="Your email"
+            required
+            style="padding: var(--s-2); border: 1px solid var(--border); border-radius: 10px; font: inherit;"
+          />
+          <button id="free-sample-submit" class="btn btn-primary" type="submit">Unlock 1 free essay</button>
+        </form>
+
+        <p class="muted" style="margin: var(--s-1) 0 0; font-size: 0.9rem;">
+          Already unlocked before? Enter the same email and we will load your previously unlocked essay.
+        </p>
+
+        <p id="free-sample-status" class="muted" style="margin: var(--s-2) 0 0; min-height: 1.2rem;"></p>
+
+        <article id="free-sample-result" class="card" style="display:none; margin-top: var(--s-3);">
+          <span class="pill">Your free unlocked essay</span>
+          <h4 id="free-sample-title" style="margin: var(--s-2) 0 0;"></h4>
+          <p id="free-sample-task" class="muted" style="margin: var(--s-1) 0 0;"></p>
+          <p id="free-sample-scenario" class="muted" style="margin: var(--s-2) 0 0;"></p>
+          <p id="free-sample-level" class="muted" style="margin: var(--s-2) 0 0;"></p>
+          <ul id="free-sample-why" class="muted" style="margin: var(--s-2) 0 0 var(--s-4);"></ul>
+          <p id="free-sample-text" class="muted" style="white-space: pre-line; margin: var(--s-2) 0 0;"></p>
+        </article>
+
+        <div id="free-sample-upsell" class="card" style="display:none; margin-top: var(--s-3); border-left: 4px solid #2ea369;">
+          <h4 style="margin-top: 0;">Enjoyed your free essay?</h4>
+          <p class="muted" style="margin-top: 0;">
+            Unlock all 100 CELPIP sample essays plus the timed AI writing lab for only CA${CELPIP_WRITING_PRICE_CAD}/month.
+          </p>
+          <div class="cluster">
+            <a class="btn btn-primary" href="/celpip/writing/ai-feedback">Unlock all essays for CA${CELPIP_WRITING_PRICE_CAD}/month</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: var(--s-4);"></div>
+
+      <div class="surface" style="padding: var(--s-5);">
         <h3 style="margin-top: 0;">Preview style of the essays you will unlock</h3>
         <p class="muted" style="margin-top: 0; max-width: 72ch;">
           Subscribers get all 100 complete model essays with task context, CLB level tags, and rationale.
@@ -76,43 +123,6 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
           <li>CLB level label and short quality rationale for each model</li>
           <li>Use the same subscription to access writing lab + essay bank</li>
         </ul>
-      </div>
-
-      <div style="height: var(--s-4);"></div>
-
-      <div class="surface" style="padding: var(--s-5);">
-        <h3 style="margin-top: 0;">Get 1 free sample essay now</h3>
-        <p class="muted" style="margin-top: 0;">
-          Enter your email to unlock exactly one full sample essay instantly. This email will be added to our IELTS/CELPIP newsletter.
-        </p>
-
-        <form id="free-sample-form" style="display: grid; grid-template-columns: 1fr auto; gap: var(--s-2); align-items: center;">
-          <input
-            id="free-sample-email"
-            type="email"
-            autocomplete="email"
-            placeholder="Your email"
-            required
-            style="padding: var(--s-2); border: 1px solid var(--border); border-radius: 10px; font: inherit;"
-          />
-          <button id="free-sample-submit" class="btn btn-primary" type="submit">Unlock 1 free essay</button>
-        </form>
-
-        <p class="muted" style="margin: var(--s-1) 0 0; font-size: 0.9rem;">
-          Already unlocked before? Enter the same email and we will load your previously unlocked essay.
-        </p>
-
-        <p id="free-sample-status" class="muted" style="margin: var(--s-2) 0 0; min-height: 1.2rem;"></p>
-
-        <article id="free-sample-result" class="card" style="display:none; margin-top: var(--s-3);">
-          <span class="pill">Your free unlocked essay</span>
-          <h4 id="free-sample-title" style="margin: var(--s-2) 0 0;"></h4>
-          <p id="free-sample-task" class="muted" style="margin: var(--s-1) 0 0;"></p>
-          <p id="free-sample-scenario" class="muted" style="margin: var(--s-2) 0 0;"></p>
-          <p id="free-sample-level" class="muted" style="margin: var(--s-2) 0 0;"></p>
-          <ul id="free-sample-why" class="muted" style="margin: var(--s-2) 0 0 var(--s-4);"></ul>
-          <p id="free-sample-text" class="muted" style="white-space: pre-line; margin: var(--s-2) 0 0;"></p>
-        </article>
       </div>
     </div>
 
@@ -173,6 +183,7 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
       const freeSampleSubmit = document.getElementById('free-sample-submit');
       const freeSampleStatus = document.getElementById('free-sample-status');
       const freeSampleResult = document.getElementById('free-sample-result');
+      const freeSampleUpsell = document.getElementById('free-sample-upsell');
       const freeSampleTitle = document.getElementById('free-sample-title');
       const freeSampleTask = document.getElementById('free-sample-task');
       const freeSampleScenario = document.getElementById('free-sample-scenario');
@@ -272,6 +283,9 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
         });
 
         freeSampleResult.style.display = 'block';
+        if (freeSampleUpsell instanceof HTMLElement) {
+          freeSampleUpsell.style.display = 'block';
+        }
       };
 
       const submitNewsletterSignup = async (email) => {

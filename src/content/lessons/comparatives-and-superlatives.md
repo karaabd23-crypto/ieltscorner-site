@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Comparatives and superlatives"
 category: "grammar"
 level: "A2"
@@ -36,64 +36,151 @@ priceCAD: 0
 draft: false
 ---
 ## Goal
-Master **Comparatives and superlatives** with simple linked sentences.
+Learn how to use **Comparatives and superlatives** accurately in IELTS and CELPIP responses.
 
-## Concept Unpacked
-This lesson explains the core meaning, where learners usually get confused, and how to apply the pattern in exam contexts. At A2, focus on clear examples plus one extension point.
+## What Comparatives and superlatives Means
+This lesson is specifically about **Comparatives and superlatives**. By the end, you should understand when to use it, how to form it correctly, and how to avoid common errors.
+
+## Topic Explanation and Use
+Comparatives and superlatives controls how a sentence carries meaning: reference, sequence, and emphasis must stay clear from start to finish.
+
+Use Comparatives and superlatives to make one precise meaning per sentence, then expand only when the added structure improves clarity for exam readers.
+
+Use conditions:
+- Choose the target form after deciding the exact meaning (fact, contrast, cause, or condition).
+- Keep agreement and word order stable before adding extra clauses or modifiers.
+- If a longer sentence becomes harder to scan, split it and keep the same logic.
+
+Reference examples:
+- *In exam writing, accurate Comparatives and superlatives helps each sentence carry one clear grammatical purpose.*
+- *When Comparatives and superlatives is chosen deliberately, arguments stay precise and easier to evaluate under time pressure.*
 
 ## Key Rule in Plain Language
-1. Identify the grammatical function you need (time, agreement, relationship, emphasis).
-2. Build a correct base sentence first.
-3. Add one support detail only after the form is stable.
-4. Re-check agreement, tense, and punctuation before finalizing.
+1. Choose the exact grammar job first: where **Comparatives and superlatives** controls time, relationship, or emphasis.
+2. Build a complete base clause, then place **Comparatives and superlatives** in the position required by the pattern.
+3. Check agreement and tense around **Comparatives and superlatives** before adding extra words.
+4. Add one supporting clause only if the logic stays clear in public policy and daily life context.
+5. Re-read for one specific risk: wrong form, wrong position, or mixed timeline.
 
-## Worked Examples
-### Example 1: Basic Control
-- Weak: *The sentence has the idea but grammar control is unstable.*
-- Better: *The sentence is grammatically controlled and the meaning is immediate.*
-- Why it improves: the reader can process the message without re-reading.
+## Real-World Examples with Comparatives and superlatives
+### Example 1
+- Weak: *This route is more cheap than the old one.*
+- Strong: *This route is cheaper than the old one.*
+- Why it works: the grammar choice supports communication instead of confusing the reader.
 
-### Example 2: Exam-Style Precision
-- Weak: *The paragraph uses long forms but logic is unclear.*
-- Better: *The paragraph uses controlled structure to link claim, reason, and consequence.*
-- Why it improves: grammar supports argument flow instead of interrupting it.
+### Example 2
+- Weak: *It is the most easiest option for students.*
+- Strong: *It is the easiest option for students.*
+- Why it works: the reader can follow the logic without re-reading.
 
-## Frequent Errors and Fixes
-- Error: grammatical form chosen correctly, but wrong word order.
-- Fix: keep core clause order stable before adding modifiers.
+## Common Errors with Comparatives and superlatives
+<details class="lesson-accordion lesson-error">
+<summary>Error 1: combining comparison forms incorrectly (more cheaper, most easiest)</summary>
 
-- Error: mixing tense/aspect inside one claim.
-- Fix: choose one timeline and stay consistent.
+- Weak: *This route is more cheap than the old one.*
+- Strong: *This route is cheaper than the old one.*
+- Fix: use either -er/-est or more/most, but not both together.
+</details>
 
-- Error: adding complexity without communicative purpose.
-- Fix: keep only structures that add meaning.
+<details class="lesson-accordion lesson-error">
+<summary>Error 2: using the right idea with unstable sentence structure</summary>
+
+- Weak: *It is the most easiest option for students.*
+- Strong: *It is the easiest option for students.*
+- Fix: revise agreement and clause structure so the form supports meaning.
+</details>
+
+<details class="lesson-accordion lesson-error">
+<summary>Error 3: adding complexity in Comparatives and superlatives without improving meaning</summary>
+
+- Weak: *The writer attempts Comparatives and superlatives, but the sentence becomes difficult to follow due to unnecessary additions.*
+- Strong: *The writer uses Comparatives and superlatives selectively, so the sentence remains clear and focused.*
+- Fix: keep only structures that improve precision or clarity.
+</details>
 
 ## Practice
-### Exercise 1: Diagnose and Correct
-Correct each sentence and state the rule you used.
-1. The policy affect many people and create serious problem.
-2. If cities will invest in buses, traffic reduce quickly.
-3. This measure was implement last year and improve access.
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 1: Correct the Sentence</summary>
 
-### Exercise 2: Controlled Application
-Write 4 sentences using **Comparatives and superlatives**:
-- one statement
-- one contrast sentence
-- one cause-result sentence
-- one exam-style summary sentence
+Correct each sentence so it uses **Comparatives and superlatives** naturally.
+1. This phone is more better than my old one.
+2. Her explanation was clearer than all students in class.
+3. Public transit is the most cheapest way to travel downtown.
+</details>
 
-### Exercise 3: Micro Paragraph
-Write 5-6 sentences on this prompt:
-*Should governments prioritize public transport funding?*
-Use **Comparatives and superlatives** at least twice and keep your logic clear.
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 2: Build Sentences</summary>
 
-## Answer Key
-### Exercise 1 (Possible)
-1. *The policy affects many people and creates serious problems.*
-2. *If cities invest in buses, traffic will reduce quickly.*
-3. *This measure was implemented last year and improved access.*
+Write 4 sentences that apply **Comparatives and superlatives** in public policy and daily life context.
+- sentence 1: use **Comparatives and superlatives** to state one clear fact
+- sentence 2: use **Comparatives and superlatives** to show contrast or qualification
+- sentence 3: use **Comparatives and superlatives** to express cause and result
+- sentence 4: use **Comparatives and superlatives** in an exam-style summary line
+</details>
 
-## Final Check
-- Did grammar choices improve clarity?
-- Is each sentence doing one job?
-- Does performance meet the A2 target: apply patterns in familiar contexts?
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 3: Mini Paragraph</summary>
+
+Write 5-6 sentences for this prompt:
+Should communities invest more in practical public services?
+Use **Comparatives and superlatives** at least twice.
+</details>
+
+## Answer Guide
+<details class="lesson-accordion lesson-answer">
+<summary>Open Answer Guide</summary>
+
+For Exercise 1, your corrected versions should:
+- keep form choices consistent with the sentence meaning,
+- place **Comparatives and superlatives** in a grammatically correct structure,
+- and produce a sentence that sounds natural in context.
+
+Possible corrected versions:
+1. *This phone is better than my old one.*
+2. *Her explanation was clearer than all the other students in class.*
+3. *Public transit is the cheapest way to travel downtown.*
+</details>
+
+## Interactive Exercise Test
+<div class="mini-quiz" data-mini-quiz>
+<div class="mini-quiz-head">
+<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>
+<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/3 | Attempted: 0/3</p>
+<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>
+</div>
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q1. Choose the stronger version for: combining comparison forms incorrectly (more cheaper, most easiest)</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. This route is more cheap than the old one.</button>
+<button type="button" data-choice="B">B. This route is cheaper than the old one.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q2. Choose the stronger version for: using the right idea with unstable sentence structure</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. It is the most easiest option for students.</button>
+<button type="button" data-choice="B">B. It is the easiest option for students.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q3. Choose the stronger version for: adding complexity in Comparatives and superlatives without improving meaning</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. The writer attempts Comparatives and superlatives, but the sentence becomes difficult to follow due to unnecessary additions.</button>
+<button type="button" data-choice="B">B. The writer uses Comparatives and superlatives selectively, so the sentence remains clear and focused.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+</div>
+
+## Want Personalized Score Feedback?
+If you want faster improvement than self-study alone, use one paid support option:
+- [Essay Correction](/essay-correction)
+- [1-on-1 Tutoring](/tutoring)
+- [AI Writing Feedback](/celpip/writing/ai-feedback)
+- [Weekly Webinar](/webinar)
+
+Best when you need precise correction on grammar control, task response quality, and exam-style scoring.

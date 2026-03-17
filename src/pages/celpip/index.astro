@@ -40,51 +40,40 @@ const pageStructuredData = [
   structuredData={pageStructuredData}
 >
   <section class="section">
-    <!-- WEBINAR HERO SECTION -->
     <div class="hero" style={`--hero-bg: url('/heroes/celpip.png');`}>
-      <div class="hero-content" style="text-align: center;">
-        <span class="pill">📹 Live • Every Saturday • 6:00 PM PST</span>
-
-        <h1>CELPIP preparation with lessons, writing tools, and live support</h1>
-
-        <p class="muted" style="max-width: 64ch; margin: 0 auto;">
-          This is the main CELPIP hub for students targeting stronger writing, speaking, reading, and listening scores. Start with the right skill page, then add webinars or tutoring if you need feedback.
-        </p>
-
+      <div class="hero-content" style="text-align: center; max-width: 64ch; margin: 0 auto;">
+        <span class="pill">CELPIP hub for free study resources</span>
+        <h1>Start free, build skills, then add support only if needed</h1>
         <div class="cluster" style="margin-top: var(--s-3);">
-          <a class="btn btn-primary" href="/webinar" style="font-size: 1.1rem; padding: var(--s-3) var(--s-5);">
-            Join a webinar → Only $12
-          </a>
-          <a class="btn btn-ghost" href="/lessons/celpip" style="font-size: 1.1rem; padding: var(--s-3) var(--s-5);">
-            Browse CELPIP lessons →
-          </a>
+          <a class="btn btn-primary" href="/lessons/celpip">Browse free CELPIP lessons →</a>
+          <a class="btn btn-ghost" href="#celpip-skill-hubs">Choose your skill →</a>
         </div>
       </div>
     </div>
 
     <div style="height: var(--s-5);"></div>
 
-    <div class="surface" style="padding: var(--s-6);">
+    <div id="celpip-skill-hubs" class="surface" style="padding: var(--s-6);">
       <h2 style="margin-top: 0; text-align: center;">Start with the exact CELPIP task you need to fix</h2>
       <p class="muted" style="max-width: 72ch; margin: 0 auto; text-align: center;">
-        Strong SEO pages also help users navigate correctly. These hubs match the most common CELPIP preparation intents and point students to the right resources fast.
+        Pick one skill and keep your study path simple. Each page is focused, so you are not overloaded with too many options.
       </p>
       <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-5);">
         <a class="card" href="/celpip/writing" style="text-decoration:none;">
           <h3>CELPIP Writing</h3>
-          <p class="muted">Email and survey strategy, sample essays, AI scoring, and human feedback options.</p>
+          <p class="muted">Email and survey strategy, clear structure, and practice prompts.</p>
         </a>
         <a class="card" href="/celpip/speaking" style="text-decoration:none;">
           <h3>CELPIP Speaking</h3>
-          <p class="muted">Task-by-task speaking structure, fluency guidance, and coaching support.</p>
+          <p class="muted">Task-by-task speaking structure and fluency guidance.</p>
         </a>
         <a class="card" href="/celpip/reading" style="text-decoration:none;">
           <h3>CELPIP Reading</h3>
-          <p class="muted">Reading for information, viewpoints, and diagram application with time-saving tactics.</p>
+          <p class="muted">Reading tactics for speed, detail accuracy, and answer selection.</p>
         </a>
         <a class="card" href="/celpip/listening" style="text-decoration:none;">
           <h3>CELPIP Listening</h3>
-          <p class="muted">Prediction, note-taking, detail tracking, and multiple-choice accuracy under time pressure.</p>
+          <p class="muted">Prediction, note-taking, and common trap awareness.</p>
         </a>
       </div>
     </div>
@@ -95,46 +84,24 @@ const pageStructuredData = [
 
     <div style="height: var(--s-5);"></div>
 
-    <!-- WEBINAR BENEFITS -->
-    <div class="surface feature" style="border: 2px solid var(--accent); padding: var(--s-6);">
-      <h2 style="text-align: center; margin-top: 0;">Why join the webinars?</h2>
+    <div class="surface" style="padding: var(--s-6);">
+      <h2 style="text-align: center; margin-top: 0;">Free CELPIP resources to use right now</h2>
       <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-4);">
-        <div class="check" style="display: flex; gap: var(--s-3); align-items: start;">
-          <div style="font-size: 1.5rem;">✓</div>
-          <div>
-            <strong>45 min focused teaching</strong>
-            <p class="muted" style="margin: var(--s-1) 0 0;">One skill per session. Real strategies from a certified instructor.</p>
-          </div>
-        </div>
-
-        <div class="check" style="display: flex; gap: var(--s-3); align-items: start;">
-          <div style="font-size: 1.5rem;">✓</div>
-          <div>
-            <strong>15 min live Q&A</strong>
-            <p class="muted" style="margin: var(--s-1) 0 0;">Ask your specific questions. Get real-time answers.</p>
-          </div>
-        </div>
-
-        <div class="check" style="display: flex; gap: var(--s-3); align-items: start;">
-          <div style="font-size: 1.5rem;">✓</div>
-          <div>
-            <strong>Only $12 per session</strong>
-            <p class="muted" style="margin: var(--s-1) 0 0;">Pay as you go. No commitment. Join whenever you want.</p>
-          </div>
-        </div>
-
-        <div class="check" style="display: flex; gap: var(--s-3); align-items: start;">
-          <div style="font-size: 1.5rem;">✓</div>
-          <div>
-            <strong>All skills covered</strong>
-            <p class="muted" style="margin: var(--s-1) 0 0;">Speaking, listening, reading, writing, grammar, vocabulary, strategy, and test psychology.</p>
-          </div>
-        </div>
-      </div>
-
-      <div style="text-align: center; margin-top: var(--s-5);">
-        <a class="btn btn-primary" href="/webinar" style="font-size: 1.05rem;">
-          See all webinar topics →
+        <a class="card" href="/celpip/writing/samples" style="text-decoration:none;">
+          <h3>CELPIP sample essays</h3>
+          <p class="muted">Model responses with practical structure and language ideas.</p>
+        </a>
+        <a class="card" href="/blog/celpip-speaking-part2" style="text-decoration:none;">
+          <h3>CELPIP Speaking Task 2 guide</h3>
+          <p class="muted">A focused task guide with examples and a clear response pattern.</p>
+        </a>
+        <a class="card" href="/lessons/celpip" style="text-decoration:none;">
+          <h3>All CELPIP lessons</h3>
+          <p class="muted">Browse all CELPIP lesson categories in one place.</p>
+        </a>
+        <a class="card" href="/celpip/writing" style="text-decoration:none;">
+          <h3>CELPIP Writing hub</h3>
+          <p class="muted">Writing roadmap with free guidance before advanced support.</p>
         </a>
       </div>
     </div>
@@ -142,183 +109,54 @@ const pageStructuredData = [
     <div style="height: var(--s-8);"></div>
 
     <div class="surface" style="padding: var(--s-6);">
-      <h2 style="text-align: center; margin-top: 0;">Popular CELPIP resources</h2>
-      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-4);">
-        <a class="card" href="/celpip/writing/ai-feedback" style="text-decoration:none;">
-          <h3>CELPIP writing AI feedback</h3>
-          <p class="muted">Timed writing practice for students who want immediate scoring and revision guidance.</p>
-        </a>
-        <a class="card" href="/celpip/writing/samples" style="text-decoration:none;">
-          <h3>CELPIP sample essays</h3>
-          <p class="muted">Sample responses for students specifically searching for model answers and structure examples.</p>
-        </a>
-        <a class="card" href="/blog/celpip-speaking-part2" style="text-decoration:none;">
-          <h3>CELPIP Speaking Task 2 guide</h3>
-          <p class="muted">A focused article targeting a specific CELPIP speaking task and its scoring demands.</p>
-        </a>
-        <a class="card" href="/lessons/celpip" style="text-decoration:none;">
-          <h3>All CELPIP lessons</h3>
-          <p class="muted">Use the archive if you want to browse by skill and open the latest CELPIP lesson pages directly.</p>
-        </a>
+      <h2 style="margin-top: 0; text-align: center;">Simple CELPIP study order</h2>
+      <div class="grid grid-2" style="margin-top: var(--s-4); gap: var(--s-4);">
+        <div class="card">
+          <h3>1) Learn the format</h3>
+          <p class="muted">Start with one skill page so you know what the task expects.</p>
+        </div>
+        <div class="card">
+          <h3>2) Practice with free resources</h3>
+          <p class="muted">Use free lessons and samples until your structure feels stable.</p>
+        </div>
+        <div class="card">
+          <h3>3) Review your weak points</h3>
+          <p class="muted">Track where you lose points: timing, clarity, grammar, or task response.</p>
+        </div>
+        <div class="card">
+          <h3>4) Add feedback if needed</h3>
+          <p class="muted">Only then choose AI scoring, webinars, or private tutoring.</p>
+        </div>
       </div>
     </div>
 
     <div style="height: var(--s-8);"></div>
 
-    <!-- OFFICIAL FORMAT REFERENCE -->
-    <div class="surface" style="padding: var(--s-6); background: var(--surface);">
-      <h2>CELPIP-General format (quick overview)</h2>
-      <div class="grid grid-2">
-        <div>
-          <h3>Listening</h3>
-          <p class="muted">47–55 minutes • 6 parts (+ possible unscored items)</p>
-        </div>
-        <div>
-          <h3>Reading</h3>
-          <p class="muted">55–60 minutes • 4 parts (+ possible unscored items)</p>
-        </div>
-        <div>
-          <h3>Writing</h3>
-          <p class="muted">53–60 minutes • 2 tasks (Email + Survey response)</p>
-        </div>
-        <div>
-          <h3>Speaking</h3>
-          <p class="muted">15–20 minutes • 8 tasks</p>
-        </div>
-      </div>
-      <p class="muted" style="margin-top: var(--s-3); font-size: 0.9rem;">Source: CELPIP-General Overview Participant Package (2022).</p>
-    </div>
-
-    <div style="height: var(--s-8);"></div>
-
-    <!-- LESSONS BY SKILL SECTION -->
-    <div style="padding: var(--s-6);">
-      <div style="text-align: center; margin-bottom: var(--s-4);">
-        <h2 style="margin: 0 0 var(--s-2) 0;">📚 Learn at Your Own Pace</h2>
-        <p class="muted" style="max-width: 70ch; margin: 0 auto;">
-          Self-study lessons for each skill. Choose a category below, work through the strategies, and practice at your own speed. Perfect as a supplement to webinars or for solo prep.
-        </p>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--s-4); margin: var(--s-5) 0;">
-        <!-- Listening -->
-        <a href="/lessons/celpip/listening" style="text-decoration: none; display: block;">
-          <div class="surface" style="padding: var(--s-4); height: 100%; border-left: 4px solid #8B7FFF; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(139,127,255,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-            <div style="font-size: 2rem; margin-bottom: var(--s-2);">🎧</div>
-            <h3 style="margin: 0 0 var(--s-2) 0; color: var(--text);">Listening</h3>
-            <ul class="muted" style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 1.6;">
-              <li>✓ Comprehension strategies</li>
-              <li>✓ Note-taking techniques</li>
-              <li>✓ Accuracy drills</li>
-            </ul>
-            <div style="margin-top: var(--s-3);" class="pill" style="background: #8B7FFF; color: white; padding: 0.4rem 0.8rem; border-radius: 4px; display: inline-block; font-size: 0.8rem;">Browse lessons →</div>
-          </div>
-        </a>
-
-        <!-- Reading -->
-        <a href="/lessons/celpip/reading" style="text-decoration: none; display: block;">
-          <div class="surface" style="padding: var(--s-4); height: 100%; border-left: 4px solid #FF6B6B; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(255,107,107,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-            <div style="font-size: 2rem; margin-bottom: var(--s-2);">📖</div>
-            <h3 style="margin: 0 0 var(--s-2) 0; color: var(--text);">Reading</h3>
-            <ul class="muted" style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 1.6;">
-              <li>✓ Scanning techniques</li>
-              <li>✓ Inference practice</li>
-              <li>✓ Time management</li>
-            </ul>
-            <div style="margin-top: var(--s-3);" class="pill" style="background: #FF6B6B; color: white; padding: 0.4rem 0.8rem; border-radius: 4px; display: inline-block; font-size: 0.8rem;">Browse lessons →</div>
-          </div>
-        </a>
-
-        <!-- Speaking -->
-        <a href="/lessons/celpip/speaking" style="text-decoration: none; display: block;">
-          <div class="surface" style="padding: var(--s-4); height: 100%; border-left: 4px solid #FFD93D; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(255,217,61,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-            <div style="font-size: 2rem; margin-bottom: var(--s-2);">🎤</div>
-            <h3 style="margin: 0 0 var(--s-2) 0; color: var(--text);">Speaking</h3>
-            <ul class="muted" style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 1.6;">
-              <li>✓ Task strategies</li>
-              <li>✓ Fluency tips</li>
-              <li>✓ Natural delivery</li>
-            </ul>
-            <div style="margin-top: var(--s-3);" class="pill" style="background: #FFD93D; color: #333; padding: 0.4rem 0.8rem; border-radius: 4px; display: inline-block; font-size: 0.8rem;">Browse lessons →</div>
-          </div>
-        </a>
-
-        <!-- Writing -->
-        <a href="/lessons/celpip/writing" style="text-decoration: none; display: block;">
-          <div class="surface" style="padding: var(--s-4); height: 100%; border-left: 4px solid #6BCB77; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(107,203,119,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-            <div style="font-size: 2rem; margin-bottom: var(--s-2);">✍️</div>
-            <h3 style="margin: 0 0 var(--s-2) 0; color: var(--text);">Writing</h3>
-            <ul class="muted" style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 1.6;">
-              <li>✓ Email + essay</li>
-              <li>✓ Clear structure</li>
-              <li>✓ Proofreading</li>
-            </ul>
-            <div style="margin-top: var(--s-3);" class="pill" style="background: #6BCB77; color: white; padding: 0.4rem 0.8rem; border-radius: 4px; display: inline-block; font-size: 0.8rem;">Browse lessons →</div>
-          </div>
-        </a>
-      </div>
-
-      <div style="text-align: center; margin-top: var(--s-5);">
-        <a class="btn btn-primary" href="/lessons/celpip" style="font-size: 1.05rem;">View all CELPIP lessons →</a>
-      </div>
-    </div>
-
-    <div style="height: var(--s-8);"></div>
-
-    <!-- COURSE SECTION (currently in development) -->
-    <div style="opacity: 0.7; padding: var(--s-6); border-left: 4px solid var(--text-muted); background: var(--surface);">
-      <h2 style="color: var(--text-muted);">📚 Full CELPIP Course (Coming Soon)</h2>
-      <p class="muted">
-        We're building a comprehensive course with step-by-step guidance, templates, and practice exercises for all four skills. 
-        In the meantime, join the <strong>weekly webinars</strong> to get live instruction and expert feedback.
-      </p>
-      <p class="muted" style="margin-top: var(--s-2);">
-        Want personalized guidance? Book a <a href="/tutoring">1-on-1 lesson</a> to get a custom study plan.
-      </p>
-    </div>
-
-    <div style="height: var(--s-8);"></div>
-
-    <div class="surface feature">
+    <div class="surface feature" style="border: 2px solid var(--accent);">
       <div class="feature-grid">
         <div class="stack">
-          <h2>Quick start options</h2>
+          <h2>Optional paid support</h2>
           <p class="muted" style="max-width: 58ch;">
-            Join the weekly webinars for live instruction, or book a lesson for personalized guidance.
+            After you finish the free path, choose the support level that fits your timeline.
           </p>
-
-          <div class="cluster" style="margin-top: var(--s-2);">
-            <a class="btn btn-primary" href="/webinar">
-              Join the webinars →
-            </a>
-            <a class="btn" href="/tutoring">Book a lesson →</a>
-          </div>
         </div>
-
-        <div class="checklist">
-          <div class="check">
-            <div class="icon">✓</div>
-            <div>
-              <strong>Simple templates</strong>
-              <span>Use the same structure for many topics.</span>
-            </div>
-          </div>
-
-          <div class="check">
-            <div class="icon">✓</div>
-            <div>
-              <strong>Clear examples</strong>
-              <span>Easy-to-understand English.</span>
-            </div>
-          </div>
-
-          <div class="check">
-            <div class="icon">✓</div>
-            <div>
-              <strong>Practice that matches the test</strong>
-              <span>So nothing feels “new” on exam day.</span>
-            </div>
-          </div>
+        <div class="grid grid-2" style="gap: var(--s-3);">
+          <a class="card" href="/celpip/writing/ai-feedback" style="text-decoration:none;">
+            <h3>AI Writing Feedback</h3>
+            <p class="muted">Fast scoring and revision guidance for timed writing practice.</p>
+          </a>
+          <a class="card" href="/webinar" style="text-decoration:none;">
+            <h3>Weekly Webinar</h3>
+            <p class="muted">Live teaching and Q&A every Saturday.</p>
+          </a>
+          <a class="card" href="/essay-correction" style="text-decoration:none;">
+            <h3>Essay Correction</h3>
+            <p class="muted">Detailed written feedback on your response quality.</p>
+          </a>
+          <a class="card" href="/tutoring" style="text-decoration:none;">
+            <h3>1-on-1 Tutoring</h3>
+            <p class="muted">Personal coaching for your exact score bottleneck.</p>
+          </a>
         </div>
       </div>
     </div>
@@ -337,20 +175,5 @@ const pageStructuredData = [
       </div>
     </div>
 
-    <div style="height: var(--s-8);"></div>
-
-    <div class="grid grid-2">
-      <div class="card">
-        <h3>🎓 Weekly Webinars</h3>
-        <p class="muted">Live sessions every Saturday at 6:00 PM PST. All CELPIP skills covered.</p>
-        <a class="btn btn-primary" href="/webinar">View schedule →</a>
-      </div>
-
-      <div class="card">
-        <h3>👨‍🏫 1-on-1 Tutoring</h3>
-        <p class="muted">Personalized guidance and feedback for your specific weaknesses.</p>
-        <a class="btn" href="/tutoring">Check pricing →</a>
-      </div>
-    </div>
   </section>
 </Layout>

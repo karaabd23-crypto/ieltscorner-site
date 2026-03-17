@@ -13,60 +13,151 @@ videoEmbed: ""
 draft: false
 ---
 ## Goal
-Use advanced noun formation to produce concise, nuanced, high-band academic argumentation.
+Learn how to use **Noun Formation** accurately in IELTS and CELPIP responses.
 
-## C1 Focus
-At C1, noun formation supports argument density and formal register. Use it strategically, not mechanically.
+## What Noun Formation Means
+This lesson is specifically about **Noun Formation**. By the end, you should understand when to use it, how to form it correctly, and how to avoid common errors.
 
-## Advanced Noun-Formation Moves
-- transparent -> transparency
-- stable -> stability
-- vulnerable -> vulnerability
-- responsible -> responsibility
-- legitimate -> legitimacy
-- intervene -> intervention
+## Topic Explanation and Use
+Noun Formation controls how a sentence carries meaning: reference, sequence, and emphasis must stay clear from start to finish.
 
-## Precision and Control
-### Over-nominalized (weaker)
-*The implementation of regulations led to the reduction of emissions through the facilitation of compliance.*
+Use Noun Formation to make one precise meaning per sentence, then expand only when the added structure improves clarity for exam readers.
 
-### Controlled (better)
-*Regulatory intervention reduced emissions by improving compliance.*
+Use conditions:
+- Choose the target form after deciding the exact meaning (fact, contrast, cause, or condition).
+- Keep agreement and word order stable before adding extra clauses or modifiers.
+- If a longer sentence becomes harder to scan, split it and keep the same logic.
 
-Why better: fewer words, stronger verb-noun balance, clearer processing.
+Reference examples:
+- *In exam writing, accurate Noun Formation helps each sentence carry one clear grammatical purpose.*
+- *When Noun Formation is chosen deliberately, arguments stay precise and easier to evaluate under time pressure.*
+
+## Key Rule in Plain Language
+1. Choose the exact grammar job first: where **Noun Formation** controls time, relationship, or emphasis.
+2. Build a complete base clause, then place **Noun Formation** in the position required by the pattern.
+3. Check agreement and tense around **Noun Formation** before adding extra words.
+4. Add one supporting clause only if the logic stays clear in public policy and daily life context.
+5. Re-read for one specific risk: wrong form, wrong position, or mixed timeline.
+
+## Real-World Examples with Noun Formation
+### Example 1
+- Weak: *The sentence uses Noun Formation but the form are not matched to the intended meaning.*
+- Strong: *The sentence uses Noun Formation and the forms are matched to the intended meaning.*
+- Why it works: the grammar choice supports communication instead of confusing the reader.
+
+### Example 2
+- Weak: *Writers apply Noun Formation in long sentences, but one form choice reduce clarity.*
+- Strong: *Writers apply Noun Formation in long sentences, and each form choice supports clarity.*
+- Why it works: the reader can follow the logic without re-reading.
+
+## Common Errors with Noun Formation
+<details class="lesson-accordion lesson-error">
+<summary>Error 1: using Noun Formation with a form that does not match the grammatical function</summary>
+
+- Weak: *The sentence uses Noun Formation but the form are not matched to the intended meaning.*
+- Strong: *The sentence uses Noun Formation and the forms are matched to the intended meaning.*
+- Fix: identify the grammar function first, then select the Noun Formation form that fits the sentence.
+</details>
+
+<details class="lesson-accordion lesson-error">
+<summary>Error 2: using Noun Formation with inconsistent agreement or structure</summary>
+
+- Weak: *The paragraph shows Noun Formation, but the form choices creates confusion for the reader.*
+- Strong: *The paragraph shows Noun Formation, and the form choices create clear meaning for the reader.*
+- Fix: keep agreement stable and verify the full clause after each form change.
+</details>
+
+<details class="lesson-accordion lesson-error">
+<summary>Error 3: adding extra complexity in Noun Formation without communicative value</summary>
+
+- Weak: *The response uses Noun Formation repeatedly and the sentence become harder to follow.*
+- Strong: *The response uses Noun Formation selectively, so each sentence stays clear and purposeful.*
+- Fix: prefer simpler structure when added complexity does not improve precision.
+</details>
 
 ## Practice
-### Exercise 1: Precision Selection
-Choose the noun that best fits a formal argument.
-1. The policy improved institutional ______. (legitimate / legitimacy / legitimation)
-2. Economic ______ increased after targeted reforms. (stable / stability / stabilizing)
-3. Public ______ to the policy remained high in rural regions. (resist / resistance / resistant)
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 1: Correct the Sentence</summary>
 
-### Exercise 2: Compression Rewrite
-Rewrite each sentence to reduce word count by at least 20% while preserving meaning.
-1. The government made an intervention that caused a reduction in emissions.
-2. There was a lack of transparency and this created public dissatisfaction.
-3. The company accepted responsibility for implementation failure.
+Correct each sentence so it uses **Noun Formation** naturally.
+1. The writer used Noun Formation, but one key form are incorrect in the sentence.
+2. This paragraph includes Noun Formation, but one structure break the intended meaning.
+3. The response attempts Noun Formation, but one phrase does not fit the grammar pattern.
+</details>
 
-### Exercise 3: C1 Mini-Paragraph
-Write 7 sentences on this prompt:
-*Should environmental policy be prioritized if economic growth slows?*
-Requirements:
-- one qualified claim
-- one concession
-- one evidence-based example
-- at least 10 high-value formed nouns
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 2: Build Sentences</summary>
 
-## Answer Key
-### Exercise 1
-1. legitimacy 2. stability 3. resistance
+Write 4 sentences that apply **Noun Formation** in public policy and daily life context.
+- sentence 1: use **Noun Formation** to state one clear fact
+- sentence 2: use **Noun Formation** to show contrast or qualification
+- sentence 3: use **Noun Formation** to express cause and result
+- sentence 4: use **Noun Formation** in an exam-style summary line
+</details>
 
-### Exercise 2 (Possible)
-1. *Government intervention reduced emissions.*
-2. *Limited transparency caused public dissatisfaction.*
-3. *The company accepted responsibility for implementation failure.*
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 3: Mini Paragraph</summary>
 
-## C1 Check
-- Does each noun add precision?
-- Is nominalization balanced with active verbs?
-- Is the paragraph concise and evaluator-friendly?
+Write 5-6 sentences for this prompt:
+Should communities invest more in practical public services?
+Use **Noun Formation** at least twice.
+</details>
+
+## Answer Guide
+<details class="lesson-accordion lesson-answer">
+<summary>Open Answer Guide</summary>
+
+For Exercise 1, your corrected versions should:
+- keep form choices consistent with the sentence meaning,
+- place **Noun Formation** in a grammatically correct structure,
+- and produce a sentence that sounds natural in context.
+
+Possible corrected versions:
+1. *The writer used Noun Formation, but one key form is incorrect in the sentence.*
+2. *This paragraph includes Noun Formation, but one structure breaks the intended meaning.*
+3. *The response attempts Noun Formation, but one phrase does not fit the grammar pattern.*
+</details>
+
+## Interactive Exercise Test
+<div class="mini-quiz" data-mini-quiz>
+<div class="mini-quiz-head">
+<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>
+<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/3 | Attempted: 0/3</p>
+<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>
+</div>
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q1. Choose the stronger version for: using Noun Formation with a form that does not match the grammatical function</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. The sentence uses Noun Formation but the form are not matched to the intended meaning.</button>
+<button type="button" data-choice="B">B. The sentence uses Noun Formation and the forms are matched to the intended meaning.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q2. Choose the stronger version for: using Noun Formation with inconsistent agreement or structure</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. The paragraph shows Noun Formation, but the form choices creates confusion for the reader.</button>
+<button type="button" data-choice="B">B. The paragraph shows Noun Formation, and the form choices create clear meaning for the reader.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q3. Choose the stronger version for: adding extra complexity in Noun Formation without communicative value</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. The response uses Noun Formation repeatedly and the sentence become harder to follow.</button>
+<button type="button" data-choice="B">B. The response uses Noun Formation selectively, so each sentence stays clear and purposeful.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+</div>
+
+## Want Personalized Score Feedback?
+If you want faster improvement than self-study alone, use one paid support option:
+- [Essay Correction](/essay-correction)
+- [1-on-1 Tutoring](/tutoring)
+- [AI Writing Feedback](/celpip/writing/ai-feedback)
+- [Weekly Webinar](/webinar)
+
+Best when you need precise correction on grammar control, task response quality, and exam-style scoring.

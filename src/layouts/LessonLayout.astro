@@ -130,8 +130,10 @@ const {
           </script>
         </div>
 
-        <div class="panel">
-          <slot />
+        <div class="panel lesson-content-wrap">
+          <article class="lesson-content">
+            <slot />
+          </article>
         </div>
       </main>
 
@@ -170,7 +172,229 @@ const {
   <!-- Webinar CTA - Before Footer -->
   <section class="section-sm">
     <div class="shell">
+      <div class="surface" style="padding: var(--s-6);">
+        <h2 style="margin-top: 0;">Need deeper feedback after this lesson?</h2>
+        <p class="muted" style="margin-top: 0; max-width: 70ch;">
+          Start free with lessons first, then choose one paid support option only if you want faster improvement.
+        </p>
+
+        <div class="grid grid-2" style="gap: var(--s-3); margin-top: var(--s-3);">
+          <a class="card" href="/essay-correction" style="text-decoration:none;">
+            <h3>Essay Correction</h3>
+            <p class="muted" style="margin-bottom: 0;">Get detailed written feedback and score guidance.</p>
+          </a>
+          <a class="card" href="/tutoring" style="text-decoration:none;">
+            <h3>1-on-1 Tutoring</h3>
+            <p class="muted" style="margin-bottom: 0;">Private coaching focused on your exact weak points.</p>
+          </a>
+          <a class="card" href="/celpip/writing/ai-feedback" style="text-decoration:none;">
+            <h3>AI Writing Feedback</h3>
+            <p class="muted" style="margin-bottom: 0;">Timed writing practice with instant analysis.</p>
+          </a>
+          <a class="card" href="/webinar" style="text-decoration:none;">
+            <h3>Weekly Webinar</h3>
+            <p class="muted" style="margin-bottom: 0;">Join live sessions for guided test strategy.</p>
+          </a>
+        </div>
+
+        <div class="cluster" style="margin-top: var(--s-4);">
+          <a class="btn btn-primary" href="/tutoring">View paid services →</a>
+          <a class="btn" href="/lessons">Keep learning free →</a>
+        </div>
+      </div>
+
+      <div style="height: var(--s-5);"></div>
+
       <WebinarCTA />
     </div>
   </section>
+
+  <script is:inline>
+    (() => {
+      const readStorage = (key) => {
+        try {
+          return window.localStorage.getItem(key);
+        } catch {
+          return null;
+        }
+      };
+
+      const writeStorage = (key, value) => {
+        try {
+          window.localStorage.setItem(key, value);
+        } catch {
+          // Ignore storage failures (private mode / restricted contexts)
+        }
+      };
+
+      const roots = Array.from(document.querySelectorAll('.lesson-content'));
+      if (roots.length === 0) return;
+
+      roots.forEach((root) => {
+        const details = Array.from(root.querySelectorAll('details.lesson-accordion'));
+        let toolbar = null;
+        if (details.length > 0) {
+          toolbar = document.createElement('div');
+          toolbar.className = 'lesson-toolbar';
+          toolbar.innerHTML = `
+            <strong>Study Mode</strong>
+            <button type="button" data-action="expand">Open all sections</button>
+            <button type="button" data-action="collapse">Close all sections</button>
+            <span class="lesson-progress" aria-live="polite">Practice 0/0 complete</span>
+          `;
+          root.prepend(toolbar);
+        }
+
+        const saveKeyBase = `${window.location.pathname}::practice::`;
+        const practiceBlocks = Array.from(root.querySelectorAll('details.lesson-practice'));
+        const quizRoot = root.querySelector('[data-mini-quiz]');
+
+        const updateProgress = () => {
+          const total = practiceBlocks.length;
+          const done = practiceBlocks.filter((block) => block.dataset.complete === 'true').length;
+          const badge = toolbar?.querySelector('.lesson-progress');
+          if (badge) badge.textContent = `Practice ${done}/${total} complete`;
+        };
+
+        toolbar?.addEventListener('click', (event) => {
+          const target = event.target;
+          if (!(target instanceof HTMLElement)) return;
+          const action = target.getAttribute('data-action');
+          if (action === 'expand') {
+            details.forEach((d) => { d.open = true; });
+          }
+          if (action === 'collapse') {
+            details.forEach((d) => { d.open = false; });
+          }
+        });
+
+        practiceBlocks.forEach((block, index) => {
+          const key = `${saveKeyBase}${index}`;
+          const noteKey = `${key}::notes`;
+          const savedDone = readStorage(key) === '1';
+          if (savedDone) block.dataset.complete = 'true';
+
+          const controls = document.createElement('div');
+          controls.className = 'practice-controls';
+          controls.innerHTML = `
+            <label class="practice-check">
+              <input type="checkbox" ${savedDone ? 'checked' : ''} />
+              Mark this exercise complete
+            </label>
+            <textarea rows="3" placeholder="Write your answer notes here..."></textarea>
+          `;
+
+          const checkbox = controls.querySelector('input');
+          const textarea = controls.querySelector('textarea');
+          const savedNote = readStorage(noteKey);
+          if (textarea && savedNote) textarea.value = savedNote;
+
+          checkbox?.addEventListener('change', () => {
+            const checked = Boolean(checkbox.checked);
+            block.dataset.complete = checked ? 'true' : 'false';
+            writeStorage(key, checked ? '1' : '0');
+            updateProgress();
+          });
+
+          textarea?.addEventListener('input', () => {
+            writeStorage(noteKey, textarea.value);
+          });
+
+          block.appendChild(controls);
+        });
+
+        if (quizRoot) {
+          const cards = Array.from(quizRoot.querySelectorAll('.mini-quiz-card'));
+          const scoreNode = quizRoot.querySelector('[data-mini-quiz-score]');
+          const resetButton = quizRoot.querySelector('[data-mini-quiz-reset]');
+
+          cards.forEach((card, index) => {
+            card.dataset.result = 'not-attempted';
+            const title = card.querySelector('.mini-quiz-title');
+            if (title) {
+              const badge = document.createElement('span');
+              badge.className = 'mini-quiz-status status-not-attempted';
+              badge.textContent = `${index + 1}. not attempted`;
+              title.prepend(badge);
+            }
+          });
+
+          const refreshScore = () => {
+            const correct = cards.filter((card) => card.dataset.result === 'correct').length;
+            const attempted = cards.filter((card) => card.dataset.result !== 'not-attempted').length;
+            if (scoreNode) scoreNode.textContent = `Score: ${correct}/${cards.length} | Attempted: ${attempted}/${cards.length}`;
+          };
+
+          const setStatus = (card, status) => {
+            card.dataset.result = status;
+            const badge = card.querySelector('.mini-quiz-status');
+            if (!badge) return;
+            badge.classList.remove('status-not-attempted', 'status-correct', 'status-wrong');
+            if (status === 'correct') {
+              badge.classList.add('status-correct');
+              badge.textContent = `${badge.textContent.split('.')[0]}. correct`;
+            } else if (status === 'wrong') {
+              badge.classList.add('status-wrong');
+              badge.textContent = `${badge.textContent.split('.')[0]}. wrong`;
+            } else {
+              badge.classList.add('status-not-attempted');
+              badge.textContent = `${badge.textContent.split('.')[0]}. not attempted`;
+            }
+          };
+
+          cards.forEach((card) => {
+            const answer = card.getAttribute('data-answer') || '';
+            const feedback = card.querySelector('.mini-quiz-feedback');
+            const buttons = Array.from(card.querySelectorAll('button[data-choice]'));
+
+            buttons.forEach((btn) => {
+              btn.addEventListener('click', () => {
+                if (card.dataset.locked === 'true') return;
+                const choice = btn.getAttribute('data-choice');
+                const isCorrect = choice === answer;
+                setStatus(card, isCorrect ? 'correct' : 'wrong');
+                card.dataset.locked = 'true';
+
+                buttons.forEach((b) => {
+                  b.classList.remove('is-correct', 'is-wrong');
+                  b.disabled = true;
+                });
+                btn.classList.add(isCorrect ? 'is-correct' : 'is-wrong');
+                const correctButton = buttons.find((b) => b.getAttribute('data-choice') === answer);
+                correctButton?.classList.add('is-correct');
+
+                if (feedback) {
+                  feedback.textContent = isCorrect
+                    ? 'Correct. This is the stronger sentence.'
+                    : 'Wrong. The correct answer is highlighted in green.';
+                }
+                refreshScore();
+              });
+            });
+          });
+
+          resetButton?.addEventListener('click', () => {
+            cards.forEach((card, index) => {
+              card.dataset.locked = 'false';
+              setStatus(card, 'not-attempted');
+              const feedback = card.querySelector('.mini-quiz-feedback');
+              if (feedback) feedback.textContent = '';
+              const buttons = Array.from(card.querySelectorAll('button[data-choice]'));
+              buttons.forEach((b) => {
+                b.disabled = false;
+                b.classList.remove('is-correct', 'is-wrong');
+              });
+              const badge = card.querySelector('.mini-quiz-status');
+              if (badge) badge.textContent = `${index + 1}. not attempted`;
+            });
+            refreshScore();
+          });
+
+          refreshScore();
+        }
+
+        updateProgress();
+      });
+    })();
+  </script>
 </Layout>

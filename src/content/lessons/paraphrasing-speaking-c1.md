@@ -13,71 +13,124 @@ videoEmbed: ""
 draft: false
 ---
 ## Goal
-Master **Paraphrasing and Rephrasing** for C1 (advanced precision) performance in IELTS/CELPIP contexts.
+Use **Paraphrasing and Rephrasing** to deliver clear and well-supported IELTS and CELPIP speaking responses.
 
-## Why It Matters
-Examiners reward communication that is clear, accurate, and relevant. This lesson helps you move from vague language to controlled, purposeful language.
+## What This Lesson Covers
+This lesson focuses on how **Paraphrasing and Rephrasing** improves spoken response quality: direct answers, clear support, and smoother organization.
 
-## Response Structure
-1. direct answer
-2. reason
-3. specific example
-4. clear close
+## Topic Explanation and Use
+Paraphrasing and Rephrasing is a speaking control skill used to organize answers clearly and maintain coherence under time limits.
 
-## Example Upgrade
-- Weak: I agree because it is good.
-- Better: I agree because it saves time for commuters.
-- Strong: I agree because it saves commuting time; for example, my daily trip became 20 minutes shorter after the new bus route started.
+Use this skill to answer directly, support with a reason, and finish with a clear conclusion while maintaining natural fluency.
+
+Use conditions:
+- Open with a direct response to the question.
+- Support with one concrete example, not abstract filler.
+- Close with a sentence that summarizes your position.
+
+Reference examples:
+- *I support this approach because it improves reliability; for example, the pilot reduced service delays.*
+- *Overall, this option is more practical because outcomes are clearer and easier to measure.*
+
+## Key Rule in Plain Language
+1. Decide your main answer first.
+2. Add one clear reason linked to **Paraphrasing and Rephrasing**.
+3. Give one concrete example from real life.
+4. Keep sentence forms simple and accurate under time pressure.
+5. End with one final sentence that summarizes your point.
+
+## Real-World Examples with Paraphrasing and Rephrasing
+- Weak: *I agree because it is good.*
+- Strong: *I support this idea because focused investment can improve access, reliability, and quality of life. For example, a pilot program improved service response times in one local district.*
+- Why it works: the response includes a reason and a real example.
+
+## Common Errors with Paraphrasing and Rephrasing
+<details class="lesson-accordion lesson-error">
+<summary>Error 1: long introductions before the actual answer</summary>
+
+- Weak: *Well, there are many perspectives and many factors, and in my opinion this topic is complex.*
+- Strong: *I support this approach because it improves service reliability for residents.*
+- Fix: answer in the first sentence, then expand.
+</details>
+
+<details class="lesson-accordion lesson-error">
+<summary>Error 2: repeating fillers instead of adding meaning</summary>
+
+- Weak: *Like, you know, it is good, like, because it is good for people.*
+- Strong: *It is effective because it reduces delays and improves access for workers.*
+- Fix: replace fillers with one reason and one concrete detail.
+</details>
+
+<details class="lesson-accordion lesson-error">
+<summary>Error 3: finishing without a clear conclusion</summary>
+
+- Weak: *So yes, that is all, maybe.*
+- Strong: *Overall, this option is more practical because it delivers clearer and more predictable outcomes.*
+- Fix: end with one summary sentence.
+</details>
+
 ## Practice
-### Exercise 1: Improve the Sentence
-1. This topic is very important in many ways.
-2. I think this is good and bad for many reasons.
-3. In conclusion, there are many pros and cons.
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 1</summary>
 
-### Exercise 2: Focused Production
-Write 5-6 sentences on this prompt:
-*Should governments invest more in public transport?*
-Requirements:
-- one clear claim
-- one reason
-- one specific example
-- one concluding implication
+Speak for 35 seconds on this prompt:
+*Should communities invest more in practical public services?*
+</details>
 
-### Exercise 3: Timed Upgrade
-Rewrite this sentence in 60 seconds:
-*People make many writing mistakes because they do not practice enough.*
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 2</summary>
 
-## Answer Key
-### Exercise 1 (Possible Answers)
-1. This issue is important because it affects cost, access, and quality of life.
-2. Although this policy has benefits, it may create access problems in rural regions.
-3. In conclusion, the policy has clear strengths, but implementation quality determines success.
+Improve this response:
+*I agree because it is better and good.*
+</details>
 
-### Exercise 3 (Possible Answer)
-Limited practice leads to recurring errors that reduce exam performance.
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 3</summary>
 
-## Self-Check
-- Is my claim explicit?
-- Is support concrete rather than generic?
-- Is wording concise and level-appropriate?
+Speak for 50 seconds and include comparison, one concrete example, and a final conclusion.
+Try to use this consequence idea: Residents benefit from clearer systems and more predictable support.
+</details>
 
-## Level-Specific Challenge (C1)
-Write one high-band paragraph (7 sentences) using **Paraphrasing and Rephrasing** with nuanced control.
-Requirements:
-- qualified thesis
-- concession sentence
-- evidence-driven support
-- synthesis close
-Then edit for lexical economy: remove at least 12% of words without losing meaning.
+## Interactive Exercise Test
+<div class="mini-quiz" data-mini-quiz>
+<div class="mini-quiz-head">
+<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>
+<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/3 | Attempted: 0/3</p>
+<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>
+</div>
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q1. Choose the stronger version for: long introductions before the actual answer</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. Well, there are many perspectives and many factors, and in my opinion this topic is complex.</button>
+<button type="button" data-choice="B">B. I support this approach because it improves service reliability for residents.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
 
-## Level Deep Dive (C1)
-At C1, focus on precision and nuance. Use Paraphrasing and Rephrasing to present defensible claims, acknowledge complexity, and keep wording efficient.
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q2. Choose the stronger version for: repeating fillers instead of adding meaning</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. Like, you know, it is good, like, because it is good for people.</button>
+<button type="button" data-choice="B">B. It is effective because it reduces delays and improves access for workers.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
 
-Micro-task:
-- qualified thesis
-- concession sentence
-- evidence-driven support
-- synthesis close
-- final compression pass (cut 10-15% words)
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q3. Choose the stronger version for: finishing without a clear conclusion</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. So yes, that is all, maybe.</button>
+<button type="button" data-choice="B">B. Overall, this option is more practical because it delivers clearer and more predictable outcomes.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+</div>
 
-Quality rule: advanced language must increase clarity, not decorate weak reasoning.
+## Want Personalized Score Feedback?
+If you want faster improvement than self-study alone, use one paid support option:
+- [Essay Correction](/essay-correction)
+- [1-on-1 Tutoring](/tutoring)
+- [AI Writing Feedback](/celpip/writing/ai-feedback)
+- [Weekly Webinar](/webinar)
+
+Best when you need speaking-specific feedback on fluency, coherence, grammar range, and lexical resource.

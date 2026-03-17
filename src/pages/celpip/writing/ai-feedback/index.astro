@@ -18,22 +18,26 @@ const promptTotal = CELPIP_PROMPT_TOTAL;
   <section class="section">
     <div class="hero" style={`--hero-bg: url('/heroes/writing.png');`}>
       <div class="hero-content">
-        <span class="pill">New paid service</span>
-        <h1>Have your CELPIP writing scored and analyzed by AI</h1>
-        <p class="muted" style="max-width: 68ch;">
-          Practice both CELPIP writing tasks under official time limits, upload or paste your response, and get AI marks with detailed analysis.
-        </p>
-        <p class="muted" style="max-width: 68ch; margin-top: var(--s-2);">
-          <strong>CA$5/month.</strong> Includes {promptTotal} writing prompts and CLB 9+ sample responses for every prompt, with level rationale.
-        </p>
+        <span class="pill">CELPIP Writing AI Lab</span>
+        <h1>Get faster CELPIP writing feedback with timed AI analysis</h1>
+        <p class="muted" style="max-width: 68ch;">Start with one prompt, write under time pressure, and get clear score-focused revision guidance.</p>
         <div class="cluster">
           <button id="buy-writing-lab" class="btn btn-primary" type="button">
             Start for CA${CELPIP_WRITING_PRICE_CAD}/month →
           </button>
           <a class="btn" href="/tutoring">Book a class for human feedback →</a>
         </div>
-        <p id="checkout-status" class="muted" style="margin: var(--s-2) 0 0; min-height: 1.2rem;"></p>
       </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface" style="padding: var(--s-5); border: 1px solid var(--border-strong);">
+      <h2 style="margin-top: 0;">Plan and pricing details</h2>
+      <p class="muted" style="margin-top: 0; max-width: 72ch;">
+        <strong>CA$5/month.</strong> Includes {promptTotal} writing prompts and CLB 9+ sample responses for every prompt, with level rationale.
+      </p>
+      <p id="checkout-status" class="muted" style="margin: var(--s-2) 0 0; min-height: 1.2rem;"></p>
     </div>
   </section>
 

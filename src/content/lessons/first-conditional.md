@@ -1,4 +1,4 @@
-﻿---
+---
 title: "First conditional"
 category: "grammar"
 level: "A2"
@@ -36,64 +36,151 @@ priceCAD: 0
 draft: false
 ---
 ## Goal
-Master **First conditional** with simple linked sentences.
+Learn how to use **First conditional** accurately in IELTS and CELPIP responses.
 
-## Concept Unpacked
-This lesson explains the core meaning, where learners usually get confused, and how to apply the pattern in exam contexts. At A2, focus on clear examples plus one extension point.
+## What First conditional Means
+This lesson is specifically about **First conditional**. By the end, you should understand when to use it, how to form it correctly, and how to avoid common errors.
+
+## Topic Explanation and Use
+First conditional controls hypothetical vs real situations. The form shows whether a result is factual, probable, or imagined.
+
+Use First conditional by matching the if-clause form to the result clause so probability and timeline stay consistent.
+
+Use conditions:
+- Choose one conditional pattern and keep both clauses aligned.
+- Use would/could/might in result clauses for unreal present/future meaning.
+- Avoid mixing real and unreal patterns in one condition-result pair.
+
+Reference examples:
+- *In exam writing, accurate First conditional helps each sentence carry one clear grammatical purpose.*
+- *When First conditional is chosen deliberately, arguments stay precise and easier to evaluate under time pressure.*
 
 ## Key Rule in Plain Language
-1. Identify the grammatical function you need (time, agreement, relationship, emphasis).
-2. Build a correct base sentence first.
-3. Add one support detail only after the form is stable.
-4. Re-check agreement, tense, and punctuation before finalizing.
+1. Choose the exact grammar job first: where **First conditional** controls time, relationship, or emphasis.
+2. Build a complete base clause, then place **First conditional** in the position required by the pattern.
+3. Check agreement and tense around **First conditional** before adding extra words.
+4. Add one supporting clause only if the logic stays clear in public policy and daily life context.
+5. Re-read for one specific risk: wrong form, wrong position, or mixed timeline.
 
-## Worked Examples
-### Example 1: Basic Control
-- Weak: *The sentence has the idea but grammar control is unstable.*
-- Better: *The sentence is grammatically controlled and the meaning is immediate.*
-- Why it improves: the reader can process the message without re-reading.
+## Real-World Examples with First conditional
+### Example 1
+- Weak: *If governments invest in transit, traffic reduced quickly.*
+- Strong: *If governments invest in transit, traffic will reduce quickly.*
+- Why it works: the grammar choice supports communication instead of confusing the reader.
 
-### Example 2: Exam-Style Precision
-- Weak: *The paragraph uses long forms but logic is unclear.*
-- Better: *The paragraph uses controlled structure to link claim, reason, and consequence.*
-- Why it improves: grammar supports argument flow instead of interrupting it.
+### Example 2
+- Weak: *If I knew the answer, I will tell you now.*
+- Strong: *If I knew the answer, I would tell you now.*
+- Why it works: the reader can follow the logic without re-reading.
 
-## Frequent Errors and Fixes
-- Error: grammatical form chosen correctly, but wrong word order.
-- Fix: keep core clause order stable before adding modifiers.
+## Common Errors with First conditional
+<details class="lesson-accordion lesson-error">
+<summary>Error 1: mixing first and second conditional forms in one sentence</summary>
 
-- Error: mixing tense/aspect inside one claim.
-- Fix: choose one timeline and stay consistent.
+- Weak: *If governments invest in transit, traffic reduced quickly.*
+- Strong: *If governments invest in transit, traffic will reduce quickly.*
+- Fix: match the if-clause tense and result clause form correctly.
+</details>
 
-- Error: adding complexity without communicative purpose.
-- Fix: keep only structures that add meaning.
+<details class="lesson-accordion lesson-error">
+<summary>Error 2: using the right idea with unstable sentence structure</summary>
+
+- Weak: *If I knew the answer, I will tell you now.*
+- Strong: *If I knew the answer, I would tell you now.*
+- Fix: revise agreement and clause structure so the form supports meaning.
+</details>
+
+<details class="lesson-accordion lesson-error">
+<summary>Error 3: adding complexity in First conditional without improving meaning</summary>
+
+- Weak: *The writer attempts First conditional, but the sentence becomes difficult to follow due to unnecessary additions.*
+- Strong: *The writer uses First conditional selectively, so the sentence remains clear and focused.*
+- Fix: keep only structures that improve precision or clarity.
+</details>
 
 ## Practice
-### Exercise 1: Diagnose and Correct
-Correct each sentence and state the rule you used.
-1. The policy affect many people and create serious problem.
-2. If cities will invest in buses, traffic reduce quickly.
-3. This measure was implement last year and improve access.
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 1: Correct the Sentence</summary>
 
-### Exercise 2: Controlled Application
-Write 4 sentences using **First conditional**:
-- one statement
-- one contrast sentence
-- one cause-result sentence
-- one exam-style summary sentence
+Correct each sentence so it uses **First conditional** naturally.
+1. If students study consistently, they would improve their scores quickly.
+2. If I had enough money, I will travel this summer.
+3. If the policy had started earlier, results are better now.
+</details>
 
-### Exercise 3: Micro Paragraph
-Write 5-6 sentences on this prompt:
-*Should governments prioritize public transport funding?*
-Use **First conditional** at least twice and keep your logic clear.
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 2: Build Sentences</summary>
 
-## Answer Key
-### Exercise 1 (Possible)
-1. *The policy affects many people and creates serious problems.*
-2. *If cities invest in buses, traffic will reduce quickly.*
-3. *This measure was implemented last year and improved access.*
+Write 4 sentences that apply **First conditional** in public policy and daily life context.
+- sentence 1: use **First conditional** to state one clear fact
+- sentence 2: use **First conditional** to show contrast or qualification
+- sentence 3: use **First conditional** to express cause and result
+- sentence 4: use **First conditional** in an exam-style summary line
+</details>
 
-## Final Check
-- Did grammar choices improve clarity?
-- Is each sentence doing one job?
-- Does performance meet the A2 target: apply patterns in familiar contexts?
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 3: Mini Paragraph</summary>
+
+Write 5-6 sentences for this prompt:
+Should communities invest more in practical public services?
+Use **First conditional** at least twice.
+</details>
+
+## Answer Guide
+<details class="lesson-accordion lesson-answer">
+<summary>Open Answer Guide</summary>
+
+For Exercise 1, your corrected versions should:
+- keep form choices consistent with the sentence meaning,
+- place **First conditional** in a grammatically correct structure,
+- and produce a sentence that sounds natural in context.
+
+Possible corrected versions:
+1. *If students study consistently, they will improve their scores quickly.*
+2. *If I had enough money, I would travel this summer.*
+3. *If the policy had started earlier, results would be better now.*
+</details>
+
+## Interactive Exercise Test
+<div class="mini-quiz" data-mini-quiz>
+<div class="mini-quiz-head">
+<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>
+<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/3 | Attempted: 0/3</p>
+<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>
+</div>
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q1. Choose the stronger version for: mixing first and second conditional forms in one sentence</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. If governments invest in transit, traffic reduced quickly.</button>
+<button type="button" data-choice="B">B. If governments invest in transit, traffic will reduce quickly.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q2. Choose the stronger version for: using the right idea with unstable sentence structure</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. If I knew the answer, I will tell you now.</button>
+<button type="button" data-choice="B">B. If I knew the answer, I would tell you now.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q3. Choose the stronger version for: adding complexity in First conditional without improving meaning</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. The writer attempts First conditional, but the sentence becomes difficult to follow due to unnecessary additions.</button>
+<button type="button" data-choice="B">B. The writer uses First conditional selectively, so the sentence remains clear and focused.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+</div>
+
+## Want Personalized Score Feedback?
+If you want faster improvement than self-study alone, use one paid support option:
+- [Essay Correction](/essay-correction)
+- [1-on-1 Tutoring](/tutoring)
+- [AI Writing Feedback](/celpip/writing/ai-feedback)
+- [Weekly Webinar](/webinar)
+
+Best when you need precise correction on grammar control, task response quality, and exam-style scoring.

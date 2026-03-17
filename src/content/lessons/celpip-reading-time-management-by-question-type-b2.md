@@ -24,57 +24,137 @@ priceCAD: 12
 draft: false
 ---
 ## Goal
-Improve reading accuracy and timing for **CELPIP Reading: Time Management by Question Type** using controlled complexity and clear logic chains.
+Apply **CELPIP Reading: Time Management by Question Type** to produce clearer, higher-scoring CELPIP writing.
 
-## Concept Unpacked
-Reading success depends on proof-based decision-making, not keyword guessing. In this lesson, we break the strategy into pre-reading, in-reading, and post-question checks so each choice is justified.
+## What CELPIP Reading: Time Management by Question Type Changes in Writing
+This lesson is about using **CELPIP Reading: Time Management by Question Type** to improve clarity, development, and control. Examiners reward writing that is direct, logical, and easy to follow.
 
-## Step-by-Step Strategy
-### Step 1: Classify the Question
-Is it asking for detail, inference, writer attitude, or purpose?
+## Topic Explanation and Use
+CELPIP Reading: Time Management by Question Type is a writing control skill that shapes how ideas are sequenced, supported, and interpreted by the reader.
 
-### Step 2: Locate Evidence Efficiently
-Scan for anchor terms, then verify in nearby lines.
+Use this skill to build a clear argument flow: claim, support, evidence, and consequence. Strong use helps examiners track logic without rereading.
 
-### Step 3: Validate Against Distractors
-Eliminate options that contain true words but wrong meaning.
+Use conditions:
+- Start with a clear claim sentence that matches the task requirement.
+- Attach evidence that is specific enough to verify your point.
+- Use logical connectors only when they accurately represent relationships.
 
-## Worked Example
-Prompt type: inference
-- Distractor: repeats one keyword from the passage.
-- Correct choice: matches the writer's implied position across two lines.
-- Why: inference questions require meaning-level confirmation, not surface matching.
+Reference examples:
+- *The proposal is costlier in year one; however, it lowers delay-related losses over time.*
+- *The district expanded bus priority lanes: average commute times fell across peak routes.*
+
+## Key Rule in Plain Language
+1. Turn the prompt into one specific claim linked to **CELPIP Reading: Time Management by Question Type**.
+2. Build a clear sequence: claim, reason, evidence, consequence.
+3. Keep sentence structure controlled so each line adds one function.
+4. Add one concrete detail (group, time, or measured change) to prove the point.
+5. Edit for precision: remove filler and keep only evidence-bearing wording.
+
+## Real-World Examples with CELPIP Reading: Time Management by Question Type
+### Example 1
+- Weak: *This topic is important and has many effects.*
+- Strong: *Focused investment can improve access, reliability, and quality of life.*
+- Why it works: the sentence is specific and measurable.
+
+### Example 2
+- Weak: *I think this is good and bad in many ways.*
+- Strong: *A pilot program improved service response times in one local district.*
+- Why it works: the contrast is explicit and balanced.
+
+## Common Errors with CELPIP Reading: Time Management by Question Type
+<details class="lesson-accordion lesson-error">
+<summary>Error 1: repeating the same point with different words</summary>
+
+- Weak: *This policy is important, very important, and important in many ways.*
+- Strong: *This policy matters because it improves access, reduces delays, and supports daily routines.*
+- Fix: state one idea once, then add evidence.
+</details>
+
+<details class="lesson-accordion lesson-error">
+<summary>Error 2: using generic examples with no detail</summary>
+
+- Weak: *Many places improved after changes were made.*
+- Strong: *One district reduced response times by 18% after introducing coordinated service planning.*
+- Fix: include a specific place, group, timeline, or measured result.
+</details>
+
+<details class="lesson-accordion lesson-error">
+<summary>Error 3: writing long sentences with weak logic links</summary>
+
+- Weak: *The policy changed and many people were affected and it was good and bad for many reasons.*
+- Strong: *The policy improved reliability for commuters; however, implementation costs were higher in the first quarter.*
+- Fix: split ideas and use clear logical connectors.
+</details>
 
 ## Practice
-### Exercise 1: Question-Type Mapping
-Read 6 sample questions and label each type (detail/inference/attitude/purpose).
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 1: Rewrite for Clarity</summary>
 
-### Exercise 2: Evidence Hunt
-For 5 questions, write:
-- the best answer
-- the exact proof phrase(s)
-- one reason a distractor is wrong
+Improve these sentences.
+1. This issue affects public services in several ways.
+2. The government should respond because current results are weak.
+3. This policy has benefits and costs that need evaluation.
+</details>
 
-### Exercise 3: Timed Mini Set (CELPIP)
-Complete 8 questions in a strict time cap.
-After finishing, record:
-- correct count
-- average seconds per question
-- which type consumed the most time
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 2: Focused Paragraph</summary>
 
-## Answer Key
-### Mini Example
-- Q type: inference
-- Best answer: B
-- Proof: lines indicating contrast plus implied writer stance
-- Distractor note: option C repeats a keyword but reverses the author's position
+Write 5-6 sentences using **CELPIP Reading: Time Management by Question Type**.
+Include one claim, one reason, one example, and one consequence.
+Use this real-world context: public policy and daily life.
+</details>
 
-### Additional Sample Set
-- Q1 (detail): A | Proof: sentence states the service starts at 9 a.m. | Distractor C is about location, not start time.
-- Q2 (purpose): D | Proof: final paragraph explains the writer's goal is to recommend policy changes. | Distractor B describes a background fact only.
-- Q3 (attitude): C | Proof: modal verbs and evaluative adjectives show cautious support. | Distractor A sounds too certain and ignores the qualifier.
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 3: Level Upgrade</summary>
 
-## Final Check
-- Did I prove each answer from text?
-- Did I avoid keyword-only matching?
-- Is this at B2 target: use the skill strategically under exam constraints?
+Rewrite this sentence at B2 standard:
+*People lose marks because they do not practice enough.*
+</details>
+
+## Sample Answer Style
+Your improved sentence should be specific, concise, and logically connected.
+Aim to include a concrete detail such as a measured change, timeline, or named group.
+
+## Interactive Exercise Test
+<div class="mini-quiz" data-mini-quiz>
+<div class="mini-quiz-head">
+<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>
+<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/3 | Attempted: 0/3</p>
+<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>
+</div>
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q1. Choose the stronger version for: repeating the same point with different words</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. This policy is important, very important, and important in many ways.</button>
+<button type="button" data-choice="B">B. This policy matters because it improves access, reduces delays, and supports daily routines.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q2. Choose the stronger version for: using generic examples with no detail</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. Many places improved after changes were made.</button>
+<button type="button" data-choice="B">B. One district reduced response times by 18% after introducing coordinated service planning.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q3. Choose the stronger version for: writing long sentences with weak logic links</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. The policy changed and many people were affected and it was good and bad for many reasons.</button>
+<button type="button" data-choice="B">B. The policy improved reliability for commuters; however, implementation costs were higher in the first quarter.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+</div>
+
+## Want Personalized Score Feedback?
+If you want faster improvement than self-study alone, use one paid support option:
+- [Essay Correction](/essay-correction)
+- [1-on-1 Tutoring](/tutoring)
+- [AI Writing Feedback](/celpip/writing/ai-feedback)
+- [Weekly Webinar](/webinar)
+
+Best when you need detailed scoring guidance on clarity, cohesion, evidence use, and task achievement.

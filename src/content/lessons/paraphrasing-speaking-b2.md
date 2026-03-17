@@ -13,58 +13,124 @@ videoEmbed: ""
 draft: false
 ---
 ## Goal
-Use **Paraphrasing and Rephrasing** to give clearer, more organized speaking responses.
+Use **Paraphrasing and Rephrasing** to deliver clear and well-supported IELTS and CELPIP speaking responses.
 
-## Level Target (B2)
-At this intermediate stage, your response should have a direct answer, one reason, one example, and a clear ending.
+## What This Lesson Covers
+This lesson focuses on how **Paraphrasing and Rephrasing** improves spoken response quality: direct answers, clear support, and smoother organization.
 
-## 4-Step Speaking Frame
-1. answer directly
-2. add one reason
-3. give one concrete example
-4. close with a final sentence
+## Topic Explanation and Use
+Paraphrasing and Rephrasing is a speaking control skill used to organize answers clearly and maintain coherence under time limits.
 
-## Weak vs Strong
-- Weak: *I agree because it is good and useful.*
-- Strong: *I agree because it saves commuting time; for example, my bus route now takes 20 minutes less than before.*
+Use this skill to answer directly, support with a reason, and finish with a clear conclusion while maintaining natural fluency.
+
+Use conditions:
+- Open with a direct response to the question.
+- Support with one concrete example, not abstract filler.
+- Close with a sentence that summarizes your position.
+
+Reference examples:
+- *I support this approach because it improves reliability; for example, the pilot reduced service delays.*
+- *Overall, this option is more practical because outcomes are clearer and easier to measure.*
+
+## Key Rule in Plain Language
+1. Decide your main answer first.
+2. Add one clear reason linked to **Paraphrasing and Rephrasing**.
+3. Give one concrete example from real life.
+4. Keep sentence forms simple and accurate under time pressure.
+5. End with one final sentence that summarizes your point.
+
+## Real-World Examples with Paraphrasing and Rephrasing
+- Weak: *I agree because it is good.*
+- Strong: *I support this idea because focused investment can improve access, reliability, and quality of life. For example, a pilot program improved service response times in one local district.*
+- Why it works: the response includes a reason and a real example.
+
+## Common Errors with Paraphrasing and Rephrasing
+<details class="lesson-accordion lesson-error">
+<summary>Error 1: long introductions before the actual answer</summary>
+
+- Weak: *Well, there are many perspectives and many factors, and in my opinion this topic is complex.*
+- Strong: *I support this approach because it improves service reliability for residents.*
+- Fix: answer in the first sentence, then expand.
+</details>
+
+<details class="lesson-accordion lesson-error">
+<summary>Error 2: repeating fillers instead of adding meaning</summary>
+
+- Weak: *Like, you know, it is good, like, because it is good for people.*
+- Strong: *It is effective because it reduces delays and improves access for workers.*
+- Fix: replace fillers with one reason and one concrete detail.
+</details>
+
+<details class="lesson-accordion lesson-error">
+<summary>Error 3: finishing without a clear conclusion</summary>
+
+- Weak: *So yes, that is all, maybe.*
+- Strong: *Overall, this option is more practical because it delivers clearer and more predictable outcomes.*
+- Fix: end with one summary sentence.
+</details>
 
 ## Practice
-### Exercise 1
-Speak for 35 seconds: *Should students work part-time while studying?*
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 1</summary>
 
-### Exercise 2
+Speak for 35 seconds on this prompt:
+*Should communities invest more in practical public services?*
+</details>
+
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 2</summary>
+
 Improve this response:
-*I like online classes because they are good.*
+*I agree because it is better and good.*
+</details>
 
-### Exercise 3
-Speak for 50 seconds: *Public transport vs private cars*
-Include one comparison and one personal example.
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 3</summary>
 
-## Answer Key
-### Exercise 2 (Possible Upgrade)
-*I prefer online classes because they save commuting time and allow flexible scheduling. For example, I can review lecture recordings before exams, which helps me study more effectively.*
+Speak for 50 seconds and include comparison, one concrete example, and a final conclusion.
+Try to use this consequence idea: Residents benefit from clearer systems and more predictable support.
+</details>
 
-## Fluency Checklist
-- Did I answer immediately?
-- Did I add one specific example?
-- Did I finish clearly?
+## Interactive Exercise Test
+<div class="mini-quiz" data-mini-quiz>
+<div class="mini-quiz-head">
+<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>
+<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/3 | Attempted: 0/3</p>
+<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>
+</div>
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q1. Choose the stronger version for: long introductions before the actual answer</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. Well, there are many perspectives and many factors, and in my opinion this topic is complex.</button>
+<button type="button" data-choice="B">B. I support this approach because it improves service reliability for residents.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
 
-## Level-Specific Challenge (B2)
-Write one argumentative paragraph (6 sentences) using **Paraphrasing and Rephrasing**.
-Requirements:
-- claim + counterpoint
-- one data-style example
-- one consequence sentence
-- at least two logical connectors (contrast and result)
-After writing, delete any sentence that repeats meaning without adding evidence.
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q2. Choose the stronger version for: repeating fillers instead of adding meaning</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. Like, you know, it is good, like, because it is good for people.</button>
+<button type="button" data-choice="B">B. It is effective because it reduces delays and improves access for workers.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
 
-## Level Deep Dive (B2)
-At B2, your writing should show controlled development. Use Paraphrasing and Rephrasing to build argument progression: claim, evidence, implication.
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q3. Choose the stronger version for: finishing without a clear conclusion</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. So yes, that is all, maybe.</button>
+<button type="button" data-choice="B">B. Overall, this option is more practical because it delivers clearer and more predictable outcomes.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+</div>
 
-Micro-task:
-- write 6 sentences
-- include one contrast marker (however, although)
-- include one cause-result marker (therefore, as a result)
-- include one realistic example detail
+## Want Personalized Score Feedback?
+If you want faster improvement than self-study alone, use one paid support option:
+- [Essay Correction](/essay-correction)
+- [1-on-1 Tutoring](/tutoring)
+- [AI Writing Feedback](/celpip/writing/ai-feedback)
+- [Weekly Webinar](/webinar)
 
-Quality rule: remove any sentence that restates the same idea without adding evidence.
+Best when you need speaking-specific feedback on fluency, coherence, grammar range, and lexical resource.

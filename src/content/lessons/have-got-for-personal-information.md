@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Have got for personal information"
 category: "grammar"
 level: "A1"
@@ -36,64 +36,147 @@ priceCAD: 0
 draft: false
 ---
 ## Goal
-Master **Have got for personal information** with simple sentence control.
+Learn how to use **Have got for personal information** accurately in IELTS and CELPIP responses.
 
-## Concept Unpacked
-This lesson explains the core meaning, where learners usually get confused, and how to apply the pattern in exam contexts. At A1, focus on short, concrete explanations.
+## What Have got for personal information Means
+This lesson is specifically about **Have got for personal information**. By the end, you should understand when to use it, how to form it correctly, and how to avoid common errors.
+
+## Topic Explanation and Use
+Have got for personal information controls possession and present relationships by combining have/have got as main verb forms and have as an auxiliary in perfect structures.
+
+Use Have got for personal information to state possession and personal information clearly, and distinguish between main-verb have and auxiliary have in sentence structure.
+
+Use conditions:
+- Use have got mainly for present possession (I have got, she has got).
+- Use do/does for questions and negatives with main-verb have in standard forms (Do you have...?).
+- Do not confuse main-verb have with auxiliary have in perfect forms (has finished, have studied).
+
+Reference examples:
+- *In exam writing, accurate Have got for personal information helps each sentence carry one clear grammatical purpose.*
+- *When Have got for personal information is chosen deliberately, arguments stay precise and easier to evaluate under time pressure.*
 
 ## Key Rule in Plain Language
-1. Identify the grammatical function you need (time, agreement, relationship, emphasis).
-2. Build a correct base sentence first.
-3. Add one support detail only after the form is stable.
-4. Re-check agreement, tense, and punctuation before finalizing.
+1. Use have got for present possession with correct subject form (have got/has got).
+2. Use do/does + have for standard questions and negatives with main-verb have.
+3. Do not mix possession meaning with perfect auxiliary structures.
+4. Keep agreement stable in all persons: I/you/we/they have, he/she/it has.
+5. Check whether have is a main verb or an auxiliary before editing the sentence.
 
-## Worked Examples
-### Example 1: Basic Control
-- Weak: *The sentence has the idea but grammar control is unstable.*
-- Better: *The sentence is grammatically controlled and the meaning is immediate.*
-- Why it improves: the reader can process the message without re-reading.
+## Real-World Examples with Have got for personal information
+### Example 1
+- Weak: *She have got two younger brothers.*
+- Strong: *She has got two younger brothers.*
+- Why it works: the grammar choice supports communication instead of confusing the reader.
 
-### Example 2: Exam-Style Precision
-- Weak: *The paragraph uses long forms but logic is unclear.*
-- Better: *The paragraph uses controlled structure to link claim, reason, and consequence.*
-- Why it improves: grammar supports argument flow instead of interrupting it.
+### Example 2
+- Weak: *Do he have a laptop for class?*
+- Strong: *Does he have a laptop for class?*
+- Why it works: the reader can follow the logic without re-reading.
 
-## Frequent Errors and Fixes
-- Error: grammatical form chosen correctly, but wrong word order.
-- Fix: keep core clause order stable before adding modifiers.
+## Common Errors with Have got for personal information
+<details class="lesson-accordion lesson-error">
+<summary>Error 1: mixing have/has forms in possession sentences</summary>
 
-- Error: mixing tense/aspect inside one claim.
-- Fix: choose one timeline and stay consistent.
+- Weak: *She have got two younger brothers.*
+- Strong: *She has got two younger brothers.*
+- Fix: use has with he/she/it and have with I/you/we/they.
+</details>
 
-- Error: adding complexity without communicative purpose.
-- Fix: keep only structures that add meaning.
+<details class="lesson-accordion lesson-error">
+<summary>Error 2: using auxiliary have where main-verb have is needed</summary>
+
+- Weak: *She has finished a bicycle in the garage.*
+- Strong: *She has a bicycle in the garage.*
+- Fix: use main-verb have/has for possession, not perfect auxiliary forms.
+</details>
+
+<details class="lesson-accordion lesson-error">
+<summary>Error 3: double-marking questions with has got and do-support</summary>
+
+- Weak: *Does she has got enough time today?*
+- Strong: *Has she got enough time today?*
+- Fix: for have got questions, invert has/have directly without do-support.
+</details>
 
 ## Practice
-### Exercise 1: Diagnose and Correct
-Correct each sentence and state the rule you used.
-1. The policy affect many people and create serious problem.
-2. If cities will invest in buses, traffic reduce quickly.
-3. This measure was implement last year and improve access.
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 1: Correct the Sentence</summary>
 
-### Exercise 2: Controlled Application
-Write 4 sentences using **Have got for personal information**:
-- one statement
-- one contrast sentence
-- one cause-result sentence
-- one exam-style summary sentence
+Correct each sentence so it uses **Have got for personal information** naturally.
+1. I has got a new dictionary for exam study.
+2. Does she has a part-time job after school?
+3. They have got finished the homework already.
+</details>
 
-### Exercise 3: Micro Paragraph
-Write 5-6 sentences on this prompt:
-*Should governments prioritize public transport funding?*
-Use **Have got for personal information** at least twice and keep your logic clear.
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 2: Build Sentences</summary>
 
-## Answer Key
-### Exercise 1 (Possible)
-1. *The policy affects many people and creates serious problems.*
-2. *If cities invest in buses, traffic will reduce quickly.*
-3. *This measure was implemented last year and improved access.*
+Write 4 sentences: one with have got (possession), one with have (daily routine), one question with do/does + have, and one present perfect sentence with auxiliary have.
+Underline main-verb have and circle auxiliary have in your sentences.
+</details>
 
-## Final Check
-- Did grammar choices improve clarity?
-- Is each sentence doing one job?
-- Does performance meet the A1 target: recognize and apply core patterns accurately?
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 3: Mini Paragraph</summary>
+
+Write 5-6 sentences for this prompt:
+Write a short self-introduction using have/have got for family, study, and daily routine details.
+</details>
+
+## Answer Guide
+<details class="lesson-accordion lesson-answer">
+<summary>Open Answer Guide</summary>
+
+For Exercise 1, your corrected versions should:
+- keep form choices consistent with the sentence meaning,
+- place **Have got for personal information** in a grammatically correct structure,
+- and produce a sentence that sounds natural in context.
+
+Possible corrected versions:
+1. *I have got a new dictionary for exam study.*
+2. *Does she have a part-time job after school?*
+3. *They have finished the homework already.*
+</details>
+
+## Interactive Exercise Test
+<div class="mini-quiz" data-mini-quiz>
+<div class="mini-quiz-head">
+<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>
+<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/3 | Attempted: 0/3</p>
+<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>
+</div>
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q1. Choose the stronger version for: mixing have/has forms in possession sentences</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. She have got two younger brothers.</button>
+<button type="button" data-choice="B">B. She has got two younger brothers.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q2. Choose the stronger version for: using auxiliary have where main-verb have is needed</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. She has finished a bicycle in the garage.</button>
+<button type="button" data-choice="B">B. She has a bicycle in the garage.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q3. Choose the stronger version for: double-marking questions with has got and do-support</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. Does she has got enough time today?</button>
+<button type="button" data-choice="B">B. Has she got enough time today?</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+</div>
+
+## Want Personalized Score Feedback?
+If you want faster improvement than self-study alone, use one paid support option:
+- [Essay Correction](/essay-correction)
+- [1-on-1 Tutoring](/tutoring)
+- [AI Writing Feedback](/celpip/writing/ai-feedback)
+- [Weekly Webinar](/webinar)
+
+Best when you need precise correction on grammar control, task response quality, and exam-style scoring.

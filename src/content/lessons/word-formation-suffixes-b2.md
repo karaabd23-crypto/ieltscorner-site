@@ -13,54 +13,148 @@ videoEmbed: ""
 draft: false
 ---
 ## Goal
-Use **suffixes** to increase lexical range and precision in IELTS/CELPIP writing.
+Learn how to use **Word Formation: Suffixes** accurately in IELTS and CELPIP responses.
 
-## What Changes at B2
-At B2, you should use word formation strategically: not just creating words, but selecting the form that best matches argument purpose and register.
+## What Word Formation: Suffixes Means
+This lesson is specifically about **Word Formation: Suffixes**. By the end, you should understand when to use it, how to form it correctly, and how to avoid common errors.
 
-## High-Value Forms
-- help + **-ful** -> helpful
-- care + **-less** -> careless
-- govern + **-ment** -> government
-- educate + **-ion** -> education
+## Topic Explanation and Use
+Word Formation: Suffixes controls how base words change part of speech and meaning through suffixes and prefixes (for example, verb to noun, adjective to adverb).
 
-Also useful at B2:
-- modern + **-ize** -> modernize
-- stable + **-ity** -> stability
-- efficient + **-ly** -> efficiently
+Use Word Formation: Suffixes by identifying the target part of speech in the sentence first, then choosing the affix that creates the needed word class and meaning.
 
-## Weak vs Strong Usage
-- Weak: *The policy is not good and not effective.*
-- Better: *The policy is ineffective and poorly targeted.*
-- Why better: stronger formed words reduce repetition and increase precision.
+Use conditions:
+- Decide the target word class (noun, verb, adjective, adverb) before adding an affix.
+- Check spelling changes after affixation (for example, happy -> happiness, decide -> decision).
+- Verify that the derived word fits grammar and collocation in the full sentence.
+
+Reference examples:
+- *The report emphasized affordability, not just affordable pricing claims.*
+- *The program improved employability by combining practical and technical training.*
+
+## Key Rule in Plain Language
+1. Identify the target word class before modifying the base word.
+2. Apply Word Formation patterns that match meaning and grammar in the sentence.
+3. Check spelling changes caused by affixation before finalizing the word.
+4. Test the derived word in a full sentence to confirm collocation and tone.
+5. Replace awkward derivatives with the most natural exam-appropriate form.
+
+## Real-World Examples with Word Formation: Suffixes
+### Example 1
+- Weak: *The committee requested more transparent in procurement decisions.*
+- Strong: *The committee requested more transparency in procurement decisions.*
+- Why it works: the grammar choice supports communication instead of confusing the reader.
+
+### Example 2
+- Weak: *The campaign made participation more access for rural applicants.*
+- Strong: *The campaign made participation more accessible for rural applicants.*
+- Why it works: the reader can follow the logic without re-reading.
+
+## Common Errors with Word Formation: Suffixes
+<details class="lesson-accordion lesson-error">
+<summary>Error 1: choosing the wrong word class after adding a suffix or prefix</summary>
+
+- Weak: *The committee requested more transparent in procurement decisions.*
+- Strong: *The committee requested more transparency in procurement decisions.*
+- Fix: identify the required word class first, then form the word and re-check collocation.
+</details>
+
+<details class="lesson-accordion lesson-error">
+<summary>Error 2: using an affix form that breaks spelling or natural usage</summary>
+
+- Weak: *The proposal was effectivness in reducing wait times.*
+- Strong: *The proposal was effective in reducing wait times.*
+- Fix: check whether the sentence needs adjective, noun, or adverb before finalizing the derived form.
+</details>
+
+<details class="lesson-accordion lesson-error">
+<summary>Error 3: overusing one derived form instead of varying precise word families</summary>
+
+- Weak: *The policy is productive because productivity improves productive outcomes.*
+- Strong: *The policy is productive because higher productivity improves outcomes.*
+- Fix: vary word-family forms only when each form serves a clear grammatical role.
+</details>
 
 ## Practice
-### Exercise 1: Choose the Best Form
-1. The report was too ______ (simple / simplify / simplistic) for a technical audience.
-2. The plan is financially ______ (sustain / sustainable / sustainability).
-3. We should avoid ______ the impact of small daily habits. (estimate / overestimate / estimation)
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 1: Correct the Sentence</summary>
 
-### Exercise 2: Rewrite for Precision
-Rewrite each sentence using formed words:
-1. The system is not fair and not useful.
-2. They did not understand the instruction correctly.
-3. The government must make the process modern.
+Correct each sentence so it uses **Word Formation: Suffixes** naturally.
+1. The new policy improved employ for recent graduates.
+2. Her explanation was clear, but the conclusion lacked persuasive.
+3. The platform increased convenient for users with limited time.
+</details>
 
-### Exercise 3: Task 2 Paragraph
-Write one body paragraph (6 sentences) on this prompt:
-*Should cities limit private cars in downtown areas?*
-Use at least 8 words formed with suffixes.
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 2: Build Sentences</summary>
 
-## Answer Key
-### Exercise 1
-1. simplistic 2. sustainable 3. overestimate
+Create one noun from each base word and use it in a sentence: develop, resist, efficient, govern.
+Create one adjective from each base word and use it in a sentence: access, value, predict, danger.
+</details>
 
-### Exercise 2 (Possible)
-1. *The system is unfair and ineffective.*
-2. *They misunderstood the instruction.*
-3. *The government must modernize the process.*
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 3: Mini Paragraph</summary>
 
-## B2 Check
-- Did I improve precision, not just complexity?
-- Did I avoid overusing one prefix/suffix family?
-- Are formed words context-appropriate and natural?
+Write 5-6 sentences for this prompt:
+Should local colleges expand skills training programs for faster employment outcomes?
+Use at least four correctly derived words (for example, employment, supportive, effectively, development).
+</details>
+
+## Answer Guide
+<details class="lesson-accordion lesson-answer">
+<summary>Open Answer Guide</summary>
+
+For Exercise 1, your corrected versions should:
+- use the correct derived word class required by each sentence position,
+- apply accurate spelling after affix changes,
+- and produce natural collocations in context.
+
+Possible corrected versions:
+1. *The new policy improved employment for recent graduates.*
+2. *Her explanation was clear, but the conclusion lacked persuasion.*
+3. *The platform increased convenience for users with limited time.*
+</details>
+
+## Interactive Exercise Test
+<div class="mini-quiz" data-mini-quiz>
+<div class="mini-quiz-head">
+<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>
+<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/3 | Attempted: 0/3</p>
+<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>
+</div>
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q1. Choose the stronger version for: choosing the wrong word class after adding a suffix or prefix</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. The committee requested more transparent in procurement decisions.</button>
+<button type="button" data-choice="B">B. The committee requested more transparency in procurement decisions.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q2. Choose the stronger version for: using an affix form that breaks spelling or natural usage</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. The proposal was effectivness in reducing wait times.</button>
+<button type="button" data-choice="B">B. The proposal was effective in reducing wait times.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q3. Choose the stronger version for: overusing one derived form instead of varying precise word families</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. The policy is productive because productivity improves productive outcomes.</button>
+<button type="button" data-choice="B">B. The policy is productive because higher productivity improves outcomes.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+</div>
+
+## Want Personalized Score Feedback?
+If you want faster improvement than self-study alone, use one paid support option:
+- [Essay Correction](/essay-correction)
+- [1-on-1 Tutoring](/tutoring)
+- [AI Writing Feedback](/celpip/writing/ai-feedback)
+- [Weekly Webinar](/webinar)
+
+Best when you need precise correction on grammar control, task response quality, and exam-style scoring.

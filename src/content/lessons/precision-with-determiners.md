@@ -36,64 +36,151 @@ priceCAD: 12
 draft: false
 ---
 ## Goal
-Master **Using Articles and Words Correctly** with high-information, concise argumentation.
+Learn how to use **Using Articles and Words Correctly** accurately in IELTS and CELPIP responses.
 
-## Concept Unpacked
-This lesson explains the core meaning, where learners usually get confused, and how to apply the pattern in exam contexts. At C1, focus on nuanced explanation with precision focus.
+## What Using Articles and Words Correctly Means
+This lesson is specifically about **Using Articles and Words Correctly**. By the end, you should understand when to use it, how to form it correctly, and how to avoid common errors.
+
+## Topic Explanation and Use
+Articles mark whether a noun is specific, non-specific, singular, or already known to the reader. In English, the main article choices are a, an, and the.
+
+Use a/an for singular countable nouns when introducing something non-specific, and use the when the noun is specific, previously mentioned, unique, or clear from context.
+
+Use conditions:
+- Use a before consonant sounds and an before vowel sounds.
+- Use the when writer and reader can identify the same noun reference.
+- Do not add articles to most uncountable nouns in generic statements.
+
+Reference examples:
+- *A district launched a pilot, and the pilot improved response times.*
+- *The policy reduced noise near the hospital during peak traffic hours.*
 
 ## Key Rule in Plain Language
-1. Identify the grammatical function you need (time, agreement, relationship, emphasis).
-2. Build a correct base sentence first.
-3. Add one support detail only after the form is stable.
-4. Re-check agreement, tense, and punctuation before finalizing.
+1. Choose the exact grammar job first: where **Articles and Words Correctly** controls time, relationship, or emphasis.
+2. Build a complete base clause, then place **Articles and Words Correctly** in the position required by the pattern.
+3. Check agreement and tense around **Articles and Words Correctly** before adding extra words.
+4. Add one supporting clause only if the logic stays clear in public policy and daily life context.
+5. Re-read for one specific risk: wrong form, wrong position, or mixed timeline.
 
-## Worked Examples
-### Example 1: Basic Control
-- Weak: *The sentence has the idea but grammar control is unstable.*
-- Better: *The sentence is grammatically controlled and the meaning is immediate.*
-- Why it improves: the reader can process the message without re-reading.
+## Real-World Examples with Using Articles and Words Correctly
+### Example 1
+- Weak: *I bought book and umbrella from market.*
+- Strong: *I bought a book and an umbrella from the market.*
+- Why it works: the grammar choice supports communication instead of confusing the reader.
 
-### Example 2: Exam-Style Precision
-- Weak: *The paragraph uses long forms but logic is unclear.*
-- Better: *The paragraph uses controlled structure to link claim, reason, and consequence.*
-- Why it improves: grammar supports argument flow instead of interrupting it.
+### Example 2
+- Weak: *Sun rises in east every day.*
+- Strong: *The sun rises in the east every day.*
+- Why it works: the reader can follow the logic without re-reading.
 
-## Frequent Errors and Fixes
-- Error: grammatical form chosen correctly, but wrong word order.
-- Fix: keep core clause order stable before adding modifiers.
+## Common Errors with Using Articles and Words Correctly
+<details class="lesson-accordion lesson-error">
+<summary>Error 1: omitting a, an, or the where a noun needs one</summary>
 
-- Error: mixing tense/aspect inside one claim.
-- Fix: choose one timeline and stay consistent.
+- Weak: *I bought book and umbrella from market.*
+- Strong: *I bought a book and an umbrella from the market.*
+- Fix: check countable singular nouns and known specific references.
+</details>
 
-- Error: adding complexity without communicative purpose.
-- Fix: keep only structures that add meaning.
+<details class="lesson-accordion lesson-error">
+<summary>Error 2: using the right idea with unstable sentence structure</summary>
+
+- Weak: *Sun rises in east every day.*
+- Strong: *The sun rises in the east every day.*
+- Fix: revise agreement and clause structure so the form supports meaning.
+</details>
+
+<details class="lesson-accordion lesson-error">
+<summary>Error 3: adding complexity in Using Articles and Words Correctly without improving meaning</summary>
+
+- Weak: *The writer attempts Using Articles and Words Correctly, but the sentence becomes difficult to follow due to unnecessary additions.*
+- Strong: *The writer uses Using Articles and Words Correctly selectively, so the sentence remains clear and focused.*
+- Fix: keep only structures that improve precision or clarity.
+</details>
 
 ## Practice
-### Exercise 1: Diagnose and Correct
-Correct each sentence and state the rule you used.
-1. The policy affect many people and create serious problem.
-2. If cities will invest in buses, traffic reduce quickly.
-3. This measure was implement last year and improve access.
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 1: Correct the Sentence</summary>
 
-### Exercise 2: Controlled Application
-Write 4 sentences using **Using Articles and Words Correctly**:
-- one statement
-- one contrast sentence
-- one cause-result sentence
-- one exam-style summary sentence
+Correct each sentence so it uses **Using Articles and Words Correctly** naturally.
+1. She wants to become engineer in future.
+2. I visited museum near my house yesterday.
+3. He gave me advice that changed the way I study.
+</details>
 
-### Exercise 3: Micro Paragraph
-Write 5-6 sentences on this prompt:
-*Should governments prioritize public transport funding?*
-Use **Using Articles and Words Correctly** at least twice and keep your logic clear.
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 2: Build Sentences</summary>
 
-## Answer Key
-### Exercise 1 (Possible)
-1. *The policy affects many people and creates serious problems.*
-2. *If cities invest in buses, traffic will reduce quickly.*
-3. *This measure was implemented last year and improved access.*
+Write 4 sentences that apply **Using Articles and Words Correctly** in public policy and daily life context.
+- sentence 1: use **Articles and Words Correctly** to state one clear fact
+- sentence 2: use **Articles and Words Correctly** to show contrast or qualification
+- sentence 3: use **Articles and Words Correctly** to express cause and result
+- sentence 4: use **Articles and Words Correctly** in an exam-style summary line
+</details>
 
-## Final Check
-- Did grammar choices improve clarity?
-- Is each sentence doing one job?
-- Does performance meet the C1 target: use the skill with balance, evidence, and efficient phrasing?
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 3: Mini Paragraph</summary>
+
+Write 5-6 sentences for this prompt:
+Should communities invest more in practical public services?
+Use **Articles and Words Correctly** at least twice.
+</details>
+
+## Answer Guide
+<details class="lesson-accordion lesson-answer">
+<summary>Open Answer Guide</summary>
+
+For Exercise 1, your corrected versions should:
+- keep form choices consistent with the sentence meaning,
+- place **Articles and Words Correctly** in a grammatically correct structure,
+- and produce a sentence that sounds natural in context.
+
+Possible corrected versions:
+1. *She wants to become an engineer in the future.*
+2. *I visited the museum near my house yesterday.*
+3. *He gave me advice that changed the way I study.*
+</details>
+
+## Interactive Exercise Test
+<div class="mini-quiz" data-mini-quiz>
+<div class="mini-quiz-head">
+<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>
+<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/3 | Attempted: 0/3</p>
+<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>
+</div>
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q1. Choose the stronger version for: omitting a, an, or the where a noun needs one</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. I bought book and umbrella from market.</button>
+<button type="button" data-choice="B">B. I bought a book and an umbrella from the market.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q2. Choose the stronger version for: using the right idea with unstable sentence structure</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. Sun rises in east every day.</button>
+<button type="button" data-choice="B">B. The sun rises in the east every day.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q3. Choose the stronger version for: adding complexity in Using Articles and Words Correctly without improving meaning</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. The writer attempts Using Articles and Words Correctly, but the sentence becomes difficult to follow due to unnecessary additions.</button>
+<button type="button" data-choice="B">B. The writer uses Using Articles and Words Correctly selectively, so the sentence remains clear and focused.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+</div>
+
+## Want Personalized Score Feedback?
+If you want faster improvement than self-study alone, use one paid support option:
+- [Essay Correction](/essay-correction)
+- [1-on-1 Tutoring](/tutoring)
+- [AI Writing Feedback](/celpip/writing/ai-feedback)
+- [Weekly Webinar](/webinar)
+
+Best when you need precise correction on grammar control, task response quality, and exam-style scoring.

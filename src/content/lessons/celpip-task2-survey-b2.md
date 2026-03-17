@@ -13,41 +13,137 @@ videoEmbed: ""
 draft: false
 ---
 ## Goal
-Produce higher-quality IELTS/CELPIP writing for **CELPIP Writing Task 2: Survey Response** with controlled complexity and clear logic chains.
+Apply **CELPIP Writing Task 2: Survey Response** to produce clearer, higher-scoring IELTS and CELPIP writing.
 
-## Concept Unpacked
-Writing score depends on argument clarity, development, and language control. This lesson unpacks how to build a paragraph that is easy to evaluate.
+## What CELPIP Writing Task 2: Survey Response Changes in Writing
+This lesson is about using **CELPIP Writing Task 2: Survey Response** to improve clarity, development, and control. Examiners reward writing that is direct, logical, and easy to follow.
 
-## Paragraph Blueprint
-1. clear claim
-2. reason
-3. specific example
-4. implication
+## Topic Explanation and Use
+CELPIP Writing Task 2: Survey Response is a writing control skill that shapes how ideas are sequenced, supported, and interpreted by the reader.
 
-## Worked Upgrade
-- Weak: *This idea is important in many ways for many people.*
-- Better: *This policy is important because it reduces congestion and improves access to employment centers.*
+Use this skill to build a clear argument flow: claim, support, evidence, and consequence. Strong use helps examiners track logic without rereading.
+
+Use conditions:
+- Start with a clear claim sentence that matches the task requirement.
+- Attach evidence that is specific enough to verify your point.
+- Use logical connectors only when they accurately represent relationships.
+
+Reference examples:
+- *The proposal is costlier in year one; however, it lowers delay-related losses over time.*
+- *The district expanded bus priority lanes: average commute times fell across peak routes.*
+
+## Key Rule in Plain Language
+1. Turn the prompt into one specific claim linked to **CELPIP Writing Task 2: Survey Response**.
+2. Build a clear sequence: claim, reason, evidence, consequence.
+3. Keep sentence structure controlled so each line adds one function.
+4. Add one concrete detail (group, time, or measured change) to prove the point.
+5. Edit for precision: remove filler and keep only evidence-bearing wording.
+
+## Real-World Examples with CELPIP Writing Task 2: Survey Response
+### Example 1
+- Weak: *This topic is important and has many effects.*
+- Strong: *task-focused structure improves coherence and relevance under exam time limits.*
+- Why it works: the sentence is specific and measurable.
+
+### Example 2
+- Weak: *I think this is good and bad in many ways.*
+- Strong: *responses with a direct claim and measurable example receive stronger examiner ratings.*
+- Why it works: the contrast is explicit and balanced.
+
+## Common Errors with CELPIP Writing Task 2: Survey Response
+<details class="lesson-accordion lesson-error">
+<summary>Error 1: repeating the same point with different words</summary>
+
+- Weak: *This policy is important, very important, and important in many ways.*
+- Strong: *This policy matters because it improves access, reduces delays, and supports daily routines.*
+- Fix: state one idea once, then add evidence.
+</details>
+
+<details class="lesson-accordion lesson-error">
+<summary>Error 2: using generic examples with no detail</summary>
+
+- Weak: *Many places improved after changes were made.*
+- Strong: *One district reduced response times by 18% after introducing coordinated service planning.*
+- Fix: include a specific place, group, timeline, or measured result.
+</details>
+
+<details class="lesson-accordion lesson-error">
+<summary>Error 3: writing long sentences with weak logic links</summary>
+
+- Weak: *The policy changed and many people were affected and it was good and bad for many reasons.*
+- Strong: *The policy improved reliability for commuters; however, implementation costs were higher in the first quarter.*
+- Fix: split ideas and use clear logical connectors.
+</details>
 
 ## Practice
-### Exercise 1: Precision Rewrite
-Rewrite 3 vague sentences into exam-ready versions.
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 1: Rewrite for Clarity</summary>
 
-### Exercise 2: Body Paragraph Task
-Write 6 sentences responding to an IELTS/CELPIP prompt with claim, support, and implication.
+Improve these sentences.
+1. This issue affects public services in several ways.
+2. The government should respond because current results are weak.
+3. This policy has benefits and costs that need evaluation.
+</details>
 
-### Exercise 3: Timed Edit
-Cut 15% of a draft paragraph while preserving meaning.
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 2: Focused Paragraph</summary>
 
-## Answer Key
-### Exercise 1 (Sample Rewrites)
-1. *This policy is significant because it reduces commuting costs for low-income workers.*
-2. *The proposal has benefits, but poor implementation can increase inequality.*
-3. *In conclusion, the policy is effective only when funding and access are balanced.*
+Write 5-6 sentences using **CELPIP Writing Task 2: Survey Response**.
+Include one claim, one reason, one example, and one consequence.
+Use this real-world context: exam writing task response.
+</details>
 
-### Exercise 2 (Sample Paragraph)
-*I agree that governments should prioritize public transport investment because it improves access to employment and reduces congestion. Reliable transit allows low-income workers to travel affordably, which can increase labor participation. For example, cities that expanded rapid bus systems reported shorter commute times and better job connectivity. As a result, transport-focused investment can deliver both economic and social benefits.*
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 3: Level Upgrade</summary>
 
-## Final Check
-- Is the argument explicit and supported?
-- Is wording concise and relevant?
-- Is this at B2 target: use the skill strategically under exam constraints?
+Rewrite this sentence at B2 standard:
+*People lose marks because they do not practice enough.*
+</details>
+
+## Sample Answer Style
+Your improved sentence should be specific, concise, and logically connected.
+Aim to include a concrete detail such as a measured change, timeline, or named group.
+
+## Interactive Exercise Test
+<div class="mini-quiz" data-mini-quiz>
+<div class="mini-quiz-head">
+<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>
+<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/3 | Attempted: 0/3</p>
+<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>
+</div>
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q1. Choose the stronger version for: repeating the same point with different words</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. This policy is important, very important, and important in many ways.</button>
+<button type="button" data-choice="B">B. This policy matters because it improves access, reduces delays, and supports daily routines.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q2. Choose the stronger version for: using generic examples with no detail</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. Many places improved after changes were made.</button>
+<button type="button" data-choice="B">B. One district reduced response times by 18% after introducing coordinated service planning.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q3. Choose the stronger version for: writing long sentences with weak logic links</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. The policy changed and many people were affected and it was good and bad for many reasons.</button>
+<button type="button" data-choice="B">B. The policy improved reliability for commuters; however, implementation costs were higher in the first quarter.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+</div>
+
+## Want Personalized Score Feedback?
+If you want faster improvement than self-study alone, use one paid support option:
+- [Essay Correction](/essay-correction)
+- [1-on-1 Tutoring](/tutoring)
+- [AI Writing Feedback](/celpip/writing/ai-feedback)
+- [Weekly Webinar](/webinar)
+
+Best when you need detailed scoring guidance on clarity, cohesion, evidence use, and task achievement.

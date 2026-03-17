@@ -276,7 +276,7 @@ const seoKeywords = `${item.data.title}, ${item.data.category}, ${item.data.leve
   </section>
 
   <section class="section-sm">
-    <article class="surface" style="padding: var(--s-6);">
+    <article class="surface lesson-content" style="padding: var(--s-6);">
       <Content />
 
       {item.data.quiz.length > 0 && (
@@ -354,4 +354,115 @@ const seoKeywords = `${item.data.title}, ${item.data.category}, ${item.data.leve
       </ul>
     </div>
   )}
+
+  <script is:inline>
+    (() => {
+      const initializeMiniQuiz = () => {
+        const roots = Array.from(document.querySelectorAll('.lesson-content'));
+        if (roots.length === 0) return;
+
+        roots.forEach((root) => {
+          const quizRoot = root.querySelector('[data-mini-quiz]');
+          if (!quizRoot || quizRoot.dataset.initialized === 'true') return;
+          quizRoot.dataset.initialized = 'true';
+
+          const cards = Array.from(quizRoot.querySelectorAll('.mini-quiz-card'));
+          const scoreNode = quizRoot.querySelector('[data-mini-quiz-score]');
+          const resetButton = quizRoot.querySelector('[data-mini-quiz-reset]');
+
+          cards.forEach((card, index) => {
+            card.dataset.result = 'not-attempted';
+            card.dataset.locked = 'false';
+            const title = card.querySelector('.mini-quiz-title');
+            if (title && !title.querySelector('.mini-quiz-status')) {
+              const badge = document.createElement('span');
+              badge.className = 'mini-quiz-status status-not-attempted';
+              badge.textContent = `${index + 1}. not attempted`;
+              title.prepend(badge);
+            }
+          });
+
+          const refreshScore = () => {
+            const correct = cards.filter((card) => card.dataset.result === 'correct').length;
+            const attempted = cards.filter((card) => card.dataset.result !== 'not-attempted').length;
+            if (scoreNode) scoreNode.textContent = `Score: ${correct}/${cards.length} | Attempted: ${attempted}/${cards.length}`;
+          };
+
+          const setStatus = (card, status) => {
+            card.dataset.result = status;
+            const badge = card.querySelector('.mini-quiz-status');
+            if (!badge) return;
+            badge.classList.remove('status-not-attempted', 'status-correct', 'status-wrong');
+            const prefix = `${badge.textContent.split('.')[0]}.`;
+            if (status === 'correct') {
+              badge.classList.add('status-correct');
+              badge.textContent = `${prefix} correct`;
+            } else if (status === 'wrong') {
+              badge.classList.add('status-wrong');
+              badge.textContent = `${prefix} wrong`;
+            } else {
+              badge.classList.add('status-not-attempted');
+              badge.textContent = `${prefix} not attempted`;
+            }
+          };
+
+          cards.forEach((card) => {
+            const answer = card.getAttribute('data-answer') || '';
+            const feedback = card.querySelector('.mini-quiz-feedback');
+            const buttons = Array.from(card.querySelectorAll('button[data-choice]'));
+
+            buttons.forEach((btn) => {
+              btn.addEventListener('click', () => {
+                if (card.dataset.locked === 'true') return;
+                const choice = btn.getAttribute('data-choice');
+                const isCorrect = choice === answer;
+                setStatus(card, isCorrect ? 'correct' : 'wrong');
+                card.dataset.locked = 'true';
+
+                buttons.forEach((buttonNode) => {
+                  buttonNode.classList.remove('is-correct', 'is-wrong');
+                  buttonNode.disabled = true;
+                });
+
+                btn.classList.add(isCorrect ? 'is-correct' : 'is-wrong');
+                const correctButton = buttons.find((buttonNode) => buttonNode.getAttribute('data-choice') === answer);
+                correctButton?.classList.add('is-correct');
+
+                if (feedback) {
+                  feedback.textContent = isCorrect
+                    ? 'Correct. This is the stronger sentence.'
+                    : 'Wrong. The correct answer is highlighted in green.';
+                }
+
+                refreshScore();
+              });
+            });
+          });
+
+          resetButton?.addEventListener('click', () => {
+            cards.forEach((card, index) => {
+              card.dataset.locked = 'false';
+              setStatus(card, 'not-attempted');
+              const feedback = card.querySelector('.mini-quiz-feedback');
+              if (feedback) feedback.textContent = '';
+              const buttons = Array.from(card.querySelectorAll('button[data-choice]'));
+              buttons.forEach((buttonNode) => {
+                buttonNode.disabled = false;
+                buttonNode.classList.remove('is-correct', 'is-wrong');
+              });
+              const badge = card.querySelector('.mini-quiz-status');
+              if (badge) badge.textContent = `${index + 1}. not attempted`;
+            });
+
+            refreshScore();
+          });
+
+          refreshScore();
+        });
+      };
+
+      initializeMiniQuiz();
+      document.addEventListener('astro:page-load', initializeMiniQuiz);
+    })();
+  </script>
 </Layout>

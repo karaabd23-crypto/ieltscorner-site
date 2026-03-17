@@ -13,54 +13,138 @@ videoEmbed: ""
 draft: false
 ---
 ## Goal
-Use **Linking Words and Transition Phrases** vocabulary precisely with high-information, concise argumentation.
+Use vocabulary for **Linking Words and Transition Phrases** naturally and precisely in IELTS and CELPIP tasks.
 
-## Concept Unpacked
-Strong vocabulary performance is not about rare words; it is about choosing words and collocations that are semantically exact for the context. At C1, use nuanced explanation with precision focus.
+## What This Topic Covers
+This lesson focuses on vocabulary choices related to **Linking Words and Transition Phrases**. Strong vocabulary means choosing words and collocations that fit the exact meaning and context.
 
-## High-Value Lexical Moves
-1. Prefer precise nouns/verbs over vague adjectives.
-2. Use collocations that examiners expect in academic or test tasks.
-3. Avoid repeating one word family in every sentence.
-4. Check register consistency (formal-neutral for IELTS/CELPIP writing tasks).
+## Topic Explanation and Use
+Linking Words and Transition Phrases is a lexical field used to discuss a specific domain with precise meaning and natural collocations.
 
-## Worked Examples
-- Weak: *This result is very big and very good for many people.*
-- Better: *The result is significant because it improves access for low-income commuters.*
-- Why it improves: precision replaces vague intensifiers.
+Use this vocabulary when you need topic-appropriate, register-appropriate wording in IELTS/CELPIP writing or speaking instead of vague high-frequency words.
 
-- Weak: *The government should do something for this problem.*
-- Better: *The government should implement targeted measures to address this issue.*
-- Why it improves: verb choice becomes concrete and evaluative.
+Use conditions:
+- Prefer domain-specific nouns and verbs over generic adjectives like good or bad.
+- Use collocations that native usage expects in academic and formal contexts.
+- Maintain consistent register and avoid slang in formal exam responses.
+
+Reference examples:
+- *The proposal improves service reliability and long-term planning capacity.*
+- *Targeted intervention produced measurable gains in attendance and outcomes.*
+
+## Key Rule in Plain Language
+1. Define the exact meaning you need in **Linking Words and Transition Phrases** before choosing words.
+2. Pick one precise collocation that native users expect in public policy and daily life discussion.
+3. Use the collocation in one sentence with a clear subject, action, and outcome.
+4. Replace one vague word with a measurable or concrete term.
+5. Check register and tone so the wording fits IELTS and CELPIP tasks.
+
+## Real-World Examples for Linking Words and Transition Phrases
+- Weak: *This point is good for people in many ways.*
+- Strong: *This point is significant in public policy and daily life because it improves access and reliability.*
+
+- Weak: *Leaders should do something about this problem.*
+- Strong: *Decision-makers should implement targeted measures to address this issue.*
+
+## Common Errors with Linking Words and Transition Phrases
+<details class="lesson-accordion lesson-error">
+<summary>Error 1: using broad words when a specific term is needed</summary>
+
+- Weak: *This proposal is good and helpful for people in many ways.*
+- Strong: *This proposal is beneficial because it improves service reliability for local residents.*
+- Fix: choose one exact term that matches your intended meaning.
+</details>
+
+<details class="lesson-accordion lesson-error">
+<summary>Error 2: literal translation from another language</summary>
+
+- Weak: *The city made a strong traffic control and people got more facility.*
+- Strong: *The city introduced stricter traffic controls, and residents received better services.*
+- Fix: replace translated phrases with natural English chunks.
+</details>
+
+<details class="lesson-accordion lesson-error">
+<summary>Error 3: overusing one word family in a paragraph</summary>
+
+- Weak: *The policy is important, and this importance is important for important reasons.*
+- Strong: *The policy is significant because it improves safety, reduces delays, and supports long-term planning.*
+- Fix: vary word choice while keeping meaning precise.
+</details>
 
 ## Practice
-### Exercise 1: Best Option
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 1: Best Word Choice</summary>
+
 Choose the most precise option.
-1. The reform had a ___ effect on attendance. (big / significant / nice)
-2. Policymakers should ___ the root cause directly. (address / make / get)
-3. The report failed to ___ evidence for the claim. (provide / tell / show up)
+1. The reform had a ___ impact. (big / significant / nice)
+2. Governments should ___ the main cause. (address / make / get)
+3. Writers must ___ evidence for each claim. (provide / tell / put)
+</details>
 
-### Exercise 2: Rewrite for Precision
-Rewrite these using stronger vocabulary.
-1. This idea is good in many ways.
-2. The result is bad for society.
-3. People have many different problems in cities.
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 2: Rewrite for Precision</summary>
 
-### Exercise 3: Lexical Task
+Rewrite each sentence using stronger vocabulary linked to **Linking Words and Transition Phrases**.
+1. This proposal helps people.
+2. The outcome harms some communities.
+3. This policy matters for long-term planning.
+</details>
+
+<details class="lesson-accordion lesson-practice">
+<summary>Exercise 3: Short Response</summary>
+
 Write 6 sentences on this prompt:
-*Should city centers limit private cars?*
-Use at least 8 target words/chunks naturally.
+*Should communities invest more in practical public services?*
+Use at least 8 precise words or chunks.
+</details>
 
-## Answer Key
-### Exercise 1
-1) significant 2) address 3) provide
+## Answer Guide
+<details class="lesson-accordion lesson-answer">
+<summary>Open Answer Guide</summary>
 
-### Exercise 2 (Possible)
-1. *This proposal is beneficial because it lowers transport costs and emissions.*
-2. *The policy has adverse effects on low-income households.*
-3. *Urban residents face recurring challenges such as congestion, pollution, and housing pressure.*
+Exercise 1: 1) significant 2) address 3) provide
+</details>
 
-## Final Check
-- Are collocations natural?
-- Is register consistent?
-- Does vocabulary meet C1 target: use the skill with balance, evidence, and efficient phrasing?
+## Interactive Exercise Test
+<div class="mini-quiz" data-mini-quiz>
+<div class="mini-quiz-head">
+<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>
+<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/3 | Attempted: 0/3</p>
+<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>
+</div>
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q1. Choose the stronger version for: using broad words when a specific term is needed</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. This proposal is good and helpful for people in many ways.</button>
+<button type="button" data-choice="B">B. This proposal is beneficial because it improves service reliability for local residents.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q2. Choose the stronger version for: literal translation from another language</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. The city made a strong traffic control and people got more facility.</button>
+<button type="button" data-choice="B">B. The city introduced stricter traffic controls, and residents received better services.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+
+<article class="mini-quiz-card" data-answer="B">
+<p class="mini-quiz-title">Q3. Choose the stronger version for: overusing one word family in a paragraph</p>
+<div class="mini-quiz-options">
+<button type="button" data-choice="A">A. The policy is important, and this importance is important for important reasons.</button>
+<button type="button" data-choice="B">B. The policy is significant because it improves safety, reduces delays, and supports long-term planning.</button>
+</div>
+<p class="mini-quiz-feedback" aria-live="polite"></p>
+</article>
+</div>
+
+## Want Personalized Score Feedback?
+If you want faster improvement than self-study alone, use one paid support option:
+- [Essay Correction](/essay-correction)
+- [1-on-1 Tutoring](/tutoring)
+- [AI Writing Feedback](/celpip/writing/ai-feedback)
+- [Weekly Webinar](/webinar)
+
+Best when you need precise correction on word choice, collocations, and band-level lexical control.
