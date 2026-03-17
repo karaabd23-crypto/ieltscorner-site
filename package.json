@@ -11,6 +11,7 @@
     "lesson:check:standards": "node scripts/enforce-lesson-quality-gate.mjs",
     "lesson:check:standards:changed": "node scripts/enforce-lesson-quality-gate.mjs --changed",
     "lesson:check:standards:working": "node scripts/enforce-lesson-quality-gate.mjs --working",
+    "lesson:audit:excellence": "node scripts/audit-grammar-lesson-excellence.mjs",
     "lesson:audit:topic": "node scripts/audit-lessons-topic-alignment.mjs",
     "lesson:qa": "npm run lesson:check:standards && npm run lesson:audit:topic",
     "lesson:qa:changed": "npm run lesson:check:standards:changed && npm run lesson:audit:topic",

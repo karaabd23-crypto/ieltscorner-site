@@ -5,159 +5,229 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B2 grammar lesson on Adverbs of Time and Duration with unpacked explanations, aligned practice, and model answers."
+excerpt: "B2 lesson on Adverbs of Time and Duration with teacher-style explanation, guided practice, and topic-linked review."
 date: "2026-03-02"
 tags: ["grammar", "b2", "cefr-differentiated", "ielts", "celpip"]
-heroTip: "Understand the idea first, then practice under timed exam conditions."
+heroTip: "Say the rule or strategy in plain English before you edit your answer."
 videoEmbed: ""
 draft: false
+visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
+quiz:
+  - prompt: "Which sentence uses Adverbs of Time and Duration correctly?"
+    options:
+      - "She speaks English fluent during presentations."
+      - "She speaks English fluently during presentations."
+      - "I every day revise vocabulary on the bus."
+    correctIndex: 1
+    explanation: "Option 2 matches the main rule for Adverbs of Time and Duration and keeps the sentence natural."
+  - prompt: "What should you check first when editing Adverbs of Time and Duration?"
+    options:
+      - "The meaning you want and the sentence pattern you need"
+      - "Only the number of long words in the sentence"
+      - "Whether the sentence sounds complicated enough"
+    correctIndex: 0
+    explanation: "Start from meaning and pattern; complexity is never the first goal."
+  - prompt: "Which edit fixes a common Adverbs of Time and Duration mistake?"
+    options:
+      - "The train arrived lately, so many workers were delayed."
+      - "The train arrived late, so many workers were delayed."
+      - "He explained the chart clear and short."
+    correctIndex: 1
+    explanation: "Option 2 repairs a typical Adverbs of Time and Duration error and matches the target form."
 ---
-## Goal
-Learn how to use **Adverbs of Time and Duration** accurately in IELTS and CELPIP responses.
-
-## What Adverbs of Time and Duration Means
-This lesson is specifically about **Adverbs of Time and Duration**. By the end, you should understand when to use it, how to form it correctly, and how to avoid common errors.
-
 ## Topic Explanation and Use
-Adverbs of Time and Duration controls how a sentence carries meaning: reference, sequence, and emphasis must stay clear from start to finish.
-
-Use Adverbs of Time and Duration to make one precise meaning per sentence, then expand only when the added structure improves clarity for exam readers.
-
-Use conditions:
-- Choose the target form after deciding the exact meaning (fact, contrast, cause, or condition).
-- Keep agreement and word order stable before adding extra clauses or modifiers.
-- If a longer sentence becomes harder to scan, split it and keep the same logic.
-
-Reference examples:
-- *In exam writing, accurate Time and Duration helps each sentence carry one clear grammatical purpose.*
-- *When Time and Duration is chosen deliberately, arguments stay precise and easier to evaluate under time pressure.*
-
-## Key Rule in Plain Language
-1. Choose the exact grammar job first: where **Time and Duration** controls time, relationship, or emphasis.
-2. Build a complete base clause, then place **Time and Duration** in the position required by the pattern.
-3. Check agreement and tense around **Time and Duration** before adding extra words.
-4. Add one supporting clause only if the logic stays clear in public policy and daily life context.
-5. Re-read for one specific risk: wrong form, wrong position, or mixed timeline.
+<div class="lesson-teach-grid">
+  <section class="lesson-panel lesson-panel-core">
+    <p class="lesson-panel-label">Core idea</p>
+    <p>Adverbs add useful detail, but the wrong form or position can make the sentence sound odd.</p>
+<p>Adverbs answer questions such as how, when, how often, and to what degree. They often describe verbs, adjectives, or whole sentences.</p>
+<p>Use adverbs to add timing, frequency, degree, or manner without rewriting the whole sentence. Good adverb choice makes the sentence more precise, but misplaced adverbs can sound unnatural or confusing.</p>
+<p>At B2 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+  </section>
+  <section class="lesson-panel lesson-panel-when">
+    <p class="lesson-panel-label">Use it here</p>
+    <ul><li>Choose the adverb that matches the job: frequency, manner, time, or degree.</li><li>Check position carefully because adverb placement changes emphasis.</li><li>Use the adjective form after linking verbs such as be, seem, and become.</li></ul>
+  </section>
+  <section class="lesson-panel lesson-panel-pattern">
+    <p class="lesson-panel-label">Watch it work</p>
+    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">She speaks clearly during presentations.</div>
+<div class="lesson-pattern-sentence">The buses usually arrive on time in the morning.</div></div>
+  </section>
+  <section class="lesson-panel lesson-panel-remember">
+    <p class="lesson-panel-label">Remember this</p>
+    <ul><li>Choose the adverb job first: manner, frequency, time, or degree.</li><li>Check whether English needs an adjective or an adverb in that sentence slot.</li><li>Place the adverb where the sentence sounds natural.</li><li>Move the adverb if the focus becomes confusing.</li><li>Keep only the adverbs that add real meaning.</li></ul>
+  </section>
+</div>
 
 ## Real-World Examples with Adverbs of Time and Duration
-### Example 1
-- Weak: *The sentence uses Adverbs of Time and Duration but the form are not matched to the intended meaning.*
-- Strong: *The sentence uses Adverbs of Time and Duration and the forms are matched to the intended meaning.*
-- Why it works: the grammar choice supports communication instead of confusing the reader.
-
-### Example 2
-- Weak: *Writers apply Adverbs of Time and Duration in long sentences, but one form choice reduce clarity.*
-- Strong: *Writers apply Adverbs of Time and Duration in long sentences, and each form choice supports clarity.*
-- Why it works: the reader can follow the logic without re-reading.
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>She speaks English fluent during presentations.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>She speaks English fluently during presentations.</p>
+  <p class="lesson-card-note">This correction matches the intended meaning and keeps Time and Duration natural.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I every day revise vocabulary on the bus.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>I revise vocabulary every day on the bus.</p>
+  <p class="lesson-card-note">This version sounds more natural because Time and Duration fits the sentence clearly.</p>
+</article>
+</div>
 
 ## Common Errors with Adverbs of Time and Duration
-<details class="lesson-accordion lesson-error">
-<summary>Error 1: using Adverbs of Time and Duration with a form that does not match the grammatical function</summary>
-
-- Weak: *The sentence uses Adverbs of Time and Duration but the form are not matched to the intended meaning.*
-- Strong: *The sentence uses Adverbs of Time and Duration and the forms are matched to the intended meaning.*
-- Fix: identify the grammar function first, then select the Adverbs of Time and Duration form that fits the sentence.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 2: using Adverbs of Time and Duration with inconsistent agreement or structure</summary>
-
-- Weak: *The paragraph shows Adverbs of Time and Duration, but the form choices creates confusion for the reader.*
-- Strong: *The paragraph shows Adverbs of Time and Duration, and the form choices create clear meaning for the reader.*
-- Fix: keep agreement stable and verify the full clause after each form change.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 3: adding extra complexity in Adverbs of Time and Duration without communicative value</summary>
-
-- Weak: *The response uses Adverbs of Time and Duration repeatedly and the sentence become harder to follow.*
-- Strong: *The response uses Adverbs of Time and Duration selectively, so each sentence stays clear and purposeful.*
-- Fix: prefer simpler structure when added complexity does not improve precision.
-</details>
-
-## Practice
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 1: Correct the Sentence</summary>
-
-Correct each sentence so it uses **Adverbs of Time and Duration** naturally.
-1. The writer used Adverbs of Time and Duration, but one key form are incorrect in the sentence.
-2. This paragraph includes Adverbs of Time and Duration, but one structure break the intended meaning.
-3. The response attempts Adverbs of Time and Duration, but one phrase does not fit the grammar pattern.
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 2: Build Sentences</summary>
-
-Write 4 sentences that apply **Adverbs of Time and Duration** in public policy and daily life context.
-- sentence 1: use **Time and Duration** to state one clear fact
-- sentence 2: use **Time and Duration** to show contrast or qualification
-- sentence 3: use **Time and Duration** to express cause and result
-- sentence 4: use **Time and Duration** in an exam-style summary line
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 3: Mini Paragraph</summary>
-
-Write 5-6 sentences for this prompt:
-Should communities invest more in practical public services?
-Use **Time and Duration** at least twice.
-</details>
-
-## Answer Guide
-<details class="lesson-accordion lesson-answer">
-<summary>Open Answer Guide</summary>
-
-For Exercise 1, your corrected versions should:
-- keep form choices consistent with the sentence meaning,
-- place **Time and Duration** in a grammatically correct structure,
-- and produce a sentence that sounds natural in context.
-
-Possible corrected versions:
-1. *The writer used Adverbs of Time and Duration, but one key form is incorrect in the sentence.*
-2. *This paragraph includes Adverbs of Time and Duration, but one structure breaks the intended meaning.*
-3. *The response attempts Adverbs of Time and Duration, but one phrase does not fit the grammar pattern.*
-</details>
-
-## Interactive Exercise Test
-<div class="mini-quiz" data-mini-quiz>
-<div class="mini-quiz-head">
-<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>
-<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/3 | Attempted: 0/3</p>
-<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>
-</div>
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q1. Choose the stronger version for: using Adverbs of Time and Duration with a form that does not match the grammatical function</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. The sentence uses Adverbs of Time and Duration but the form are not matched to the intended meaning.</button>
-<button type="button" data-choice="B">B. The sentence uses Adverbs of Time and Duration and the forms are matched to the intended meaning.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<div class="lesson-error-grid">
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 1</p>
+  <h3>using the wrong form or placing the adverb in an awkward position</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>She speaks English fluent during presentations.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>She speaks English fluently during presentations.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> choose the correct adverb form and place it where the sentence sounds natural</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q2. Choose the stronger version for: using Adverbs of Time and Duration with inconsistent agreement or structure</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. The paragraph shows Adverbs of Time and Duration, but the form choices creates confusion for the reader.</button>
-<button type="button" data-choice="B">B. The paragraph shows Adverbs of Time and Duration, and the form choices create clear meaning for the reader.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 2</p>
+  <h3>using an adjective after an action verb</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>He answered quick during the interview.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>He answered quickly during the interview.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> use the adverb form to describe how the action happened</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q3. Choose the stronger version for: adding extra complexity in Adverbs of Time and Duration without communicative value</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. The response uses Adverbs of Time and Duration repeatedly and the sentence become harder to follow.</button>
-<button type="button" data-choice="B">B. The response uses Adverbs of Time and Duration selectively, so each sentence stays clear and purposeful.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 3</p>
+  <h3>placing the frequency adverb where it sounds unnatural</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>I go always by train to the city centre.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I always go by train to the city centre.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> move the frequency adverb closer to the main verb</p>
 </article>
 </div>
 
-## Want Personalized Score Feedback?
-If you want faster improvement than self-study alone, use one paid support option:
-- [Essay Correction](/essay-correction)
-- [1-on-1 Tutoring](/tutoring)
-- [AI Writing Feedback](/celpip/writing/ai-feedback)
-- [Weekly Webinar](/webinar)
+## Interactive Practice Lab
+<div class="practice-lab" data-practice-lab>
+  <div class="practice-lab-head">
+    <div>
+      <h3>Practice</h3>
+      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+    </div>
+    <div class="practice-lab-status">
+      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
+    </div>
+  </div>
+  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <div class="practice-lab-grid">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Time and Duration form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+  <p class="practice-task-label">1. Quick pick</p>
+  <h3>Choose the stronger sentence for Time and Duration.</h3>
+  <div class="practice-choice-grid">
+<button type="button" class="practice-choice" data-choice-index="0">
+  The train arrived lately, so many workers were delayed.
+</button>
+<button type="button" class="practice-choice" data-choice-index="1">
+  The train arrived late, so many workers were delayed.
+</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="order" data-task-answer="He explained||the chart clearly||and briefly." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+  <p class="practice-task-label">2. Build it</p>
+  <h3>Put this Time and Duration sentence in the correct order.</h3>
+  <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
+  <div class="practice-chip-bank" data-order-bank>
+<button type="button" class="practice-chip" data-chip-value="and briefly." data-chip-origin="bank-1" data-chip-id="1-0">
+  and briefly.
+</button>
+<button type="button" class="practice-chip" data-chip-value="He explained" data-chip-origin="bank-1" data-chip-id="1-1">
+  He explained
+</button>
+<button type="button" class="practice-chip" data-chip-value="the chart clearly" data-chip-origin="bank-1" data-chip-id="1-2">
+  the chart clearly
+</button>
+  </div>
+  <div class="practice-chip-answer" data-order-answer></div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+    <button type="button" class="practice-clear-btn" data-task-clear>Clear</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="typing" data-task-answers="Students often study after dinner in the evening." data-task-id="2" data-correct-feedback="Correct. You repaired the sentence without changing the message." data-wrong-feedback="Not yet. Check the target form, then type the full corrected sentence.">
+  <p class="practice-task-label">3. Type the fix</p>
+  <h3>Rewrite the sentence so Time and Duration is correct.</h3>
+  <p class="practice-source-line"><span>Fix this:</span> Students often in the evening study after dinner.</p>
+  <div class="practice-input-row">
+    <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
+  <p class="practice-task-label">4. Final sort</p>
+  <h3>Mark each sentence as correct or needing a fix.</h3>
+  <div class="practice-sort-list">
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
+  <p>The train arrived late, so many workers were delayed.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
+  <p>The train arrived lately, so many workers were delayed.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
+  <p>He explained the chart clearly and briefly.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
+  <p>He explained the chart clear and short.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+  </div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+  </div>
+</div>
 
-Best when you need precise correction on grammar control, task response quality, and exam-style scoring.
+## Get Feedback
+<div class="lesson-support-callout">
+  <div class="lesson-support-hero">
+    <p class="lesson-support-label">Personalized score feedback</p>
+    <h3>Get clear next-step advice.</h3>
+    <p class="lesson-support-copy">Choose the support that matches your study goal. You get direct correction, clear scoring language, and a simple next step.</p>
+  </div>
+  <div class="lesson-support-grid">
+    <a class="lesson-support-card lesson-support-card-essay" href="/essay-correction">
+      <span class="lesson-support-icon" aria-hidden="true">A+</span>
+      <strong>Essay Correction</strong>
+      <span>Detailed comments on one draft with band-style scoring.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-tutoring" href="/tutoring">
+      <span class="lesson-support-icon" aria-hidden="true">1:1</span>
+      <strong>1-on-1 Tutoring</strong>
+      <span>Live help when you want guided practice and fast correction.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-ai" href="/celpip/writing/ai-feedback">
+      <span class="lesson-support-icon" aria-hidden="true">AI</span>
+      <strong>AI Writing Feedback</strong>
+      <span>Quick checks when you want to test ideas before a full review.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-webinar" href="/webinar">
+      <span class="lesson-support-icon" aria-hidden="true">Live</span>
+      <strong>Weekly Webinar</strong>
+      <span>Join a guided session and learn with real exam-style examples.</span>
+    </a>
+  </div>
+  <p class="lesson-support-best">Best when you need precise correction on grammar control, task response quality, and exam-style scoring.</p>
+</div>

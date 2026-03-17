@@ -5,182 +5,233 @@ level: "B2"
 ieltsBand: "6.0-6.5"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B2 grammar lesson on Mixed If-Statements in Arguments with unpacked explanations, aligned practice, and model answers."
+excerpt: "B2 lesson on Mixed If-Statements in Arguments with teacher-style explanation, guided practice, and topic-linked review."
 date: "2026-02-27"
 tags: ["grammar", "b2", "exam-prep", "ielts", "celpip"]
-heroTip: "Understand the idea first, then practice under timed exam conditions."
-visualAids: ["Simple example table", "Right and wrong list", "Real test examples"]
+heroTip: "Say the rule or strategy in plain English before you edit your answer."
+visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence is better for a test?"
-    options: ["Very bad.", "This is not helpful.", "This creates problems."]
+  - prompt: "Which sentence uses Mixed If-Statements in Arguments correctly?"
+    options:
+      - "I think this plan is kind of bad for cities."
+      - "This plan is unlikely to benefit cities in the long term."
+      - "People absolutely hate the change, and it is a total disaster."
     correctIndex: 1
-    explanation: "Option 2 is clear and serious. Good for tests."
-  - prompt: "How do you say \"to choose\"?"
-    options: ["do a decision", "make a decision", "get a decision"]
+    explanation: "Option 2 matches the main rule for Mixed If-Statements in Arguments and keeps the sentence natural."
+  - prompt: "What should you check first when editing Mixed If-Statements in Arguments?"
+    options:
+      - "The meaning you want and the sentence pattern you need"
+      - "Only the number of long words in the sentence"
+      - "Whether the sentence sounds complicated enough"
+    correctIndex: 0
+    explanation: "Start from meaning and pattern; complexity is never the first goal."
+  - prompt: "Which edit fixes a common Mixed If-Statements in Arguments mistake?"
+    options:
+      - "This idea is super good because everybody will love it."
+      - "This idea could be effective because it addresses a common local need."
+      - "I totally think the council messed this up badly."
     correctIndex: 1
-    explanation: "We say \"make a decision\". \"Do a decision\" is wrong."
-  - prompt: "After you write, what should you check first?"
-    options: ["Only the length", "Grammar and spelling", "Only adjectives"]
-    correctIndex: 1
-    explanation: "Good grammar helps you get better marks on tests."
-  - prompt: "Which sentence is more polite?"
-    options: ["This always happens.", "This might happen.", "This happen maybe."]
-    correctIndex: 1
-    explanation: "Option 2 is more careful and polite. Better for tests."
-  - prompt: "What helps you speak more smoothly?"
-    options: ["Memorize everything", "Use connecting words like also and then", "Never stop talking"]
-    correctIndex: 1
-    explanation: "Connecting words help your speaking sound natural."
+    explanation: "Option 2 repairs a typical Mixed If-Statements in Arguments error and matches the target form."
 premium: false
 priceCAD: 0
 draft: false
 ---
-## Goal
-Learn how to use **Mixed If-Statements in Arguments** accurately in IELTS and CELPIP responses.
-
-## What Mixed If-Statements in Arguments Means
-This lesson is specifically about **Mixed If-Statements in Arguments**. By the end, you should understand when to use it, how to form it correctly, and how to avoid common errors.
-
 ## Topic Explanation and Use
-Mixed If-Statements in Arguments controls hypothetical vs real situations. The form shows whether a result is factual, probable, or imagined.
-
-Use Mixed If-Statements in Arguments by matching the if-clause form to the result clause so probability and timeline stay consistent.
-
-Use conditions:
-- Choose one conditional pattern and keep both clauses aligned.
-- Use would/could/might in result clauses for unreal present/future meaning.
-- Avoid mixing real and unreal patterns in one condition-result pair.
-
-Reference examples:
-- *In exam writing, accurate Mixed If-Statements in Arguments helps each sentence carry one clear grammatical purpose.*
-- *When Mixed If-Statements in Arguments is chosen deliberately, arguments stay precise and easier to evaluate under time pressure.*
-
-## Key Rule in Plain Language
-1. Choose the exact grammar job first: where **Mixed If-Statements in Arguments** controls time, relationship, or emphasis.
-2. Build a complete base clause, then place **Mixed If-Statements in Arguments** in the position required by the pattern.
-3. Check agreement and tense around **Mixed If-Statements in Arguments** before adding extra words.
-4. Add one supporting clause only if the logic stays clear in public policy and daily life context.
-5. Re-read for one specific risk: wrong form, wrong position, or mixed timeline.
+<div class="lesson-teach-grid">
+  <section class="lesson-panel lesson-panel-core">
+    <p class="lesson-panel-label">Core idea</p>
+    <p>This lesson is about sounding clear, measured, and believable.</p>
+<p>Register and precision come from grammar choices that sound measured, clear, and appropriate for the task. In formal exam English, you usually need controlled claims rather than dramatic or casual ones.</p>
+<p>Use more careful grammar when you need to sound balanced, persuasive, or objective. Small changes such as hedging, reformulation, and sentence framing can make an answer sound much more credible.</p>
+<p>At B2 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+  </section>
+  <section class="lesson-panel lesson-panel-when">
+    <p class="lesson-panel-label">Use it here</p>
+    <ul><li>Choose language that matches the task: cautious for academic claims, direct for clear instruction, balanced for argument.</li><li>Prefer precise claims you can support instead of dramatic statements you cannot prove.</li><li>Revise casual or spoken grammar if the task expects a more formal tone.</li></ul>
+  </section>
+  <section class="lesson-panel lesson-panel-pattern">
+    <p class="lesson-panel-label">Watch it work</p>
+    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">This suggests that the policy may be effective in the short term.</div>
+<div class="lesson-pattern-sentence">A more practical approach would be to improve route frequency before expansion.</div></div>
+  </section>
+  <section class="lesson-panel lesson-panel-remember">
+    <p class="lesson-panel-label">Remember this</p>
+    <ul><li>Decide what tone the task needs before you choose the sentence pattern.</li><li>Replace casual or dramatic claims with language you can support.</li><li>Use grammar that sounds measured when the task is formal or academic.</li><li>Cut vague intensifiers such as really, totally, or super if they weaken precision.</li><li>Read the sentence once and ask whether it sounds credible, not just strong.</li></ul>
+  </section>
+</div>
 
 ## Real-World Examples with Mixed If-Statements in Arguments
-### Example 1
-- Weak: *The sentence uses Mixed If-Statements in Arguments but the form are not matched to the intended meaning.*
-- Strong: *The sentence uses Mixed If-Statements in Arguments and the forms are matched to the intended meaning.*
-- Why it works: the grammar choice supports communication instead of confusing the reader.
-
-### Example 2
-- Weak: *Writers apply Mixed If-Statements in Arguments in long sentences, but one form choice reduce clarity.*
-- Strong: *Writers apply Mixed If-Statements in Arguments in long sentences, and each form choice supports clarity.*
-- Why it works: the reader can follow the logic without re-reading.
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I think this plan is kind of bad for cities.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>This plan is unlikely to benefit cities in the long term.</p>
+  <p class="lesson-card-note">This correction matches the intended meaning and keeps Mixed If-Statements in Arguments natural.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>People absolutely hate the change, and it is a total disaster.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Many residents appear dissatisfied with the change.</p>
+  <p class="lesson-card-note">This version sounds more natural because Mixed If-Statements in Arguments fits the sentence clearly.</p>
+</article>
+</div>
 
 ## Common Errors with Mixed If-Statements in Arguments
-<details class="lesson-accordion lesson-error">
-<summary>Error 1: using Mixed If-Statements in Arguments with a form that does not match the grammatical function</summary>
-
-- Weak: *The sentence uses Mixed If-Statements in Arguments but the form are not matched to the intended meaning.*
-- Strong: *The sentence uses Mixed If-Statements in Arguments and the forms are matched to the intended meaning.*
-- Fix: identify the grammar function first, then select the Mixed If-Statements in Arguments form that fits the sentence.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 2: using Mixed If-Statements in Arguments with inconsistent agreement or structure</summary>
-
-- Weak: *The paragraph shows Mixed If-Statements in Arguments, but the form choices creates confusion for the reader.*
-- Strong: *The paragraph shows Mixed If-Statements in Arguments, and the form choices create clear meaning for the reader.*
-- Fix: keep agreement stable and verify the full clause after each form change.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 3: adding extra complexity in Mixed If-Statements in Arguments without communicative value</summary>
-
-- Weak: *The response uses Mixed If-Statements in Arguments repeatedly and the sentence become harder to follow.*
-- Strong: *The response uses Mixed If-Statements in Arguments selectively, so each sentence stays clear and purposeful.*
-- Fix: prefer simpler structure when added complexity does not improve precision.
-</details>
-
-## Practice
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 1: Correct the Sentence</summary>
-
-Correct each sentence so it uses **Mixed If-Statements in Arguments** naturally.
-1. The writer used Mixed If-Statements in Arguments, but one key form are incorrect in the sentence.
-2. This paragraph includes Mixed If-Statements in Arguments, but one structure break the intended meaning.
-3. The response attempts Mixed If-Statements in Arguments, but one phrase does not fit the grammar pattern.
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 2: Build Sentences</summary>
-
-Write 4 sentences that apply **Mixed If-Statements in Arguments** in public policy and daily life context.
-- sentence 1: use **Mixed If-Statements in Arguments** to state one clear fact
-- sentence 2: use **Mixed If-Statements in Arguments** to show contrast or qualification
-- sentence 3: use **Mixed If-Statements in Arguments** to express cause and result
-- sentence 4: use **Mixed If-Statements in Arguments** in an exam-style summary line
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 3: Mini Paragraph</summary>
-
-Write 5-6 sentences for this prompt:
-Should communities invest more in practical public services?
-Use **Mixed If-Statements in Arguments** at least twice.
-</details>
-
-## Answer Guide
-<details class="lesson-accordion lesson-answer">
-<summary>Open Answer Guide</summary>
-
-For Exercise 1, your corrected versions should:
-- keep form choices consistent with the sentence meaning,
-- place **Mixed If-Statements in Arguments** in a grammatically correct structure,
-- and produce a sentence that sounds natural in context.
-
-Possible corrected versions:
-1. *The writer used Mixed If-Statements in Arguments, but one key form is incorrect in the sentence.*
-2. *This paragraph includes Mixed If-Statements in Arguments, but one structure breaks the intended meaning.*
-3. *The response attempts Mixed If-Statements in Arguments, but one phrase does not fit the grammar pattern.*
-</details>
-
-## Interactive Exercise Test
-<div class="mini-quiz" data-mini-quiz>
-<div class="mini-quiz-head">
-<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>
-<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/3 | Attempted: 0/3</p>
-<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>
-</div>
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q1. Choose the stronger version for: using Mixed If-Statements in Arguments with a form that does not match the grammatical function</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. The sentence uses Mixed If-Statements in Arguments but the form are not matched to the intended meaning.</button>
-<button type="button" data-choice="B">B. The sentence uses Mixed If-Statements in Arguments and the forms are matched to the intended meaning.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<div class="lesson-error-grid">
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 1</p>
+  <h3>using casual or dramatic grammar in a task that needs measured formal English</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>I think this plan is kind of bad for cities.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>This plan is unlikely to benefit cities in the long term.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> replace spoken-style wording with precise, supportable claims and more controlled sentence framing</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q2. Choose the stronger version for: using Mixed If-Statements in Arguments with inconsistent agreement or structure</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. The paragraph shows Mixed If-Statements in Arguments, but the form choices creates confusion for the reader.</button>
-<button type="button" data-choice="B">B. The paragraph shows Mixed If-Statements in Arguments, and the form choices create clear meaning for the reader.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 2</p>
+  <h3>using spoken intensifiers in a formal academic sentence</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>This is a really big problem that totally affects everyone.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>This is a serious problem that affects many residents.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> replace emotional intensifiers with precise, supportable wording</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q3. Choose the stronger version for: adding extra complexity in Mixed If-Statements in Arguments without communicative value</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. The response uses Mixed If-Statements in Arguments repeatedly and the sentence become harder to follow.</button>
-<button type="button" data-choice="B">B. The response uses Mixed If-Statements in Arguments selectively, so each sentence stays clear and purposeful.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 3</p>
+  <h3>making an absolute claim that the evidence cannot support</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>This proves public transport is always the best solution.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>This suggests public transport can be the more effective solution in many cities.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> use measured grammar when the evidence supports a tendency, not an absolute fact</p>
 </article>
 </div>
 
-## Want Personalized Score Feedback?
-If you want faster improvement than self-study alone, use one paid support option:
-- [Essay Correction](/essay-correction)
-- [1-on-1 Tutoring](/tutoring)
-- [AI Writing Feedback](/celpip/writing/ai-feedback)
-- [Weekly Webinar](/webinar)
+## Interactive Practice Lab
+<div class="practice-lab" data-practice-lab>
+  <div class="practice-lab-head">
+    <div>
+      <h3>Practice</h3>
+      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+    </div>
+    <div class="practice-lab-status">
+      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
+    </div>
+  </div>
+  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <div class="practice-lab-grid">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Mixed If-Statements in Arguments form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+  <p class="practice-task-label">1. Quick pick</p>
+  <h3>Choose the stronger sentence for Mixed If-Statements in Arguments.</h3>
+  <div class="practice-choice-grid">
+<button type="button" class="practice-choice" data-choice-index="0">
+  This idea is super good because everybody will love it.
+</button>
+<button type="button" class="practice-choice" data-choice-index="1">
+  This idea could be effective because it addresses a common local need.
+</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="order" data-task-answer="The council seems||to have handled||this issue||poorly." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+  <p class="practice-task-label">2. Build it</p>
+  <h3>Put this Mixed If-Statements in Arguments sentence in the correct order.</h3>
+  <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
+  <div class="practice-chip-bank" data-order-bank>
+<button type="button" class="practice-chip" data-chip-value="this issue" data-chip-origin="bank-1" data-chip-id="1-0">
+  this issue
+</button>
+<button type="button" class="practice-chip" data-chip-value="to have handled" data-chip-origin="bank-1" data-chip-id="1-1">
+  to have handled
+</button>
+<button type="button" class="practice-chip" data-chip-value="The council seems" data-chip-origin="bank-1" data-chip-id="1-2">
+  The council seems
+</button>
+<button type="button" class="practice-chip" data-chip-value="poorly." data-chip-origin="bank-1" data-chip-id="1-3">
+  poorly.
+</button>
+  </div>
+  <div class="practice-chip-answer" data-order-answer></div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+    <button type="button" class="practice-clear-btn" data-task-clear>Clear</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="typing" data-task-answers="This suggests the project could benefit many communities." data-task-id="2" data-correct-feedback="Correct. You repaired the sentence without changing the message." data-wrong-feedback="Not yet. Check the target form, then type the full corrected sentence.">
+  <p class="practice-task-label">3. Type the fix</p>
+  <h3>Rewrite the sentence so Mixed If-Statements in Arguments is correct.</h3>
+  <p class="practice-source-line"><span>Fix this:</span> This proves the project is perfect for every community.</p>
+  <div class="practice-input-row">
+    <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
+  <p class="practice-task-label">4. Final sort</p>
+  <h3>Mark each sentence as correct or needing a fix.</h3>
+  <div class="practice-sort-list">
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
+  <p>This idea could be effective because it addresses a common local need.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
+  <p>This idea is super good because everybody will love it.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
+  <p>The council seems to have handled this issue poorly.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
+  <p>I totally think the council messed this up badly.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+  </div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+  </div>
+</div>
 
-Best when you need precise correction on grammar control, task response quality, and exam-style scoring.
+## Get Feedback
+<div class="lesson-support-callout">
+  <div class="lesson-support-hero">
+    <p class="lesson-support-label">Personalized score feedback</p>
+    <h3>Get clear next-step advice.</h3>
+    <p class="lesson-support-copy">Choose the support that matches your study goal. You get direct correction, clear scoring language, and a simple next step.</p>
+  </div>
+  <div class="lesson-support-grid">
+    <a class="lesson-support-card lesson-support-card-essay" href="/essay-correction">
+      <span class="lesson-support-icon" aria-hidden="true">A+</span>
+      <strong>Essay Correction</strong>
+      <span>Detailed comments on one draft with band-style scoring.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-tutoring" href="/tutoring">
+      <span class="lesson-support-icon" aria-hidden="true">1:1</span>
+      <strong>1-on-1 Tutoring</strong>
+      <span>Live help when you want guided practice and fast correction.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-ai" href="/celpip/writing/ai-feedback">
+      <span class="lesson-support-icon" aria-hidden="true">AI</span>
+      <strong>AI Writing Feedback</strong>
+      <span>Quick checks when you want to test ideas before a full review.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-webinar" href="/webinar">
+      <span class="lesson-support-icon" aria-hidden="true">Live</span>
+      <strong>Weekly Webinar</strong>
+      <span>Join a guided session and learn with real exam-style examples.</span>
+    </a>
+  </div>
+  <p class="lesson-support-best">Best when you need precise correction on grammar control, task response quality, and exam-style scoring.</p>
+</div>

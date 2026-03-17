@@ -5,145 +5,235 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B2 writing lesson on IELTS Writing Task 2: Opinion Essays with unpacked explanations, aligned practice, and model answers."
+excerpt: "B2 writing lesson on IELTS Writing Task 2: Opinion Essays with clearer structure, stronger support, and exam-focused review."
 date: "2026-03-02"
 tags: ["writing", "b2", "cefr-differentiated", "ielts", "celpip"]
-heroTip: "Understand the idea first, then practice under timed exam conditions."
+heroTip: "Plan the job of the response before you write the sentences."
 videoEmbed: ""
 draft: false
+visualAids: ["Planning sequence", "Model paragraph frame", "Final editing checklist"]
+quiz:
+  - prompt: "What should come before full drafting in IELTS Writing Task 2: Opinion Essays?"
+    options:
+      - "A quick plan with purpose and supporting points"
+      - "A long conclusion"
+      - "A list of rare words"
+    correctIndex: 0
+    explanation: "A short plan improves task control and paragraph direction immediately."
+  - prompt: "What makes support stronger in exam writing?"
+    options:
+      - "Specific explanation and detail"
+      - "Repeating the same idea"
+      - "Keeping the point abstract"
+    correctIndex: 0
+    explanation: "Specific support is easier for the examiner to trust."
+  - prompt: "What should you check before you finish the paragraph?"
+    options:
+      - "Whether each sentence has a clear job"
+      - "Whether every sentence is very long"
+      - "Whether you used the rarest words possible"
+    correctIndex: 0
+    explanation: "A paragraph reads better when each sentence does one clear piece of work."
 ---
-## Goal
-Apply **IELTS Writing Task 2: Opinion Essays** to produce clearer, higher-scoring IELTS and CELPIP writing.
-
-## What IELTS Writing Task 2: Opinion Essays Changes in Writing
-This lesson is about using **IELTS Writing Task 2: Opinion Essays** to improve clarity, development, and control. Examiners reward writing that is direct, logical, and easy to follow.
-
 ## Topic Explanation and Use
-IELTS Writing Task 2: Opinion Essays is a writing control skill that shapes how ideas are sequenced, supported, and interpreted by the reader.
-
-Use this skill to build a clear argument flow: claim, support, evidence, and consequence. Strong use helps examiners track logic without rereading.
-
-Use conditions:
-- Start with a clear claim sentence that matches the task requirement.
-- Attach evidence that is specific enough to verify your point.
-- Use logical connectors only when they accurately represent relationships.
-
-Reference examples:
-- *The proposal is costlier in year one; however, it lowers delay-related losses over time.*
-- *The district expanded bus priority lanes: average commute times fell across peak routes.*
-
-## Key Rule in Plain Language
-1. Turn the prompt into one specific claim linked to **IELTS Writing Task 2: Opinion Essays**.
-2. Build a clear sequence: claim, reason, evidence, consequence.
-3. Keep sentence structure controlled so each line adds one function.
-4. Add one concrete detail (group, time, or measured change) to prove the point.
-5. Edit for precision: remove filler and keep only evidence-bearing wording.
+<div class="lesson-teach-grid">
+  <section class="lesson-panel lesson-panel-core">
+    <p class="lesson-panel-label">Core idea</p>
+    <p>This lesson focuses on one writing move that changes clarity and score at the same time.</p>
+<p>Opinion essays reward commitment and clarity. The examiner should know your position by the end of the introduction and should never have to guess whether you agree, disagree, or partly agree. Strong responses keep the same position from introduction to conclusion, then support that position with one main reason per body paragraph.</p>
+<p>Use this structure when the task asks whether you agree or disagree, or when it asks for your opinion on an issue. Plan your thesis first, then generate two body points that clearly support that thesis. A smaller number of well-developed reasons scores better than a long list of weak ideas.</p>
+<p>At B2 level, stronger writing comes from better paragraph control, not from simply making the language longer.</p>
+  </section>
+  <section class="lesson-panel lesson-panel-when">
+    <p class="lesson-panel-label">Use it here</p>
+    <ul><li>Start by identifying the exact job of the task or paragraph.</li><li>Keep support specific enough to prove the point rather than decorate it.</li><li>Check that every sentence moves the response toward its purpose.</li></ul>
+  </section>
+  <section class="lesson-panel lesson-panel-pattern">
+    <p class="lesson-panel-label">Watch it work</p>
+    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">I completely agree that city budgets should prioritize public transport because it improves access for workers and reduces long-term congestion costs.</div>
+<div class="lesson-pattern-sentence">One practical reason is reliability: after one district added bus-only lanes, average commute delays fell by 18% during peak hours.</div></div>
+  </section>
+  <section class="lesson-panel lesson-panel-remember">
+    <p class="lesson-panel-label">Remember this</p>
+    <ul><li>Underline the instruction words so you know exactly what opinion the task asks for.</li><li>Write one thesis sentence that states your position directly.</li><li>Plan two body reasons and one concrete example or explanation for each.</li><li>Keep each body paragraph on one reason only.</li><li>Restate your position in the conclusion without adding a new idea.</li></ul>
+  </section>
+</div>
 
 ## Real-World Examples with IELTS Writing Task 2: Opinion Essays
-### Example 1
-- Weak: *This topic is important and has many effects.*
-- Strong: *task-focused structure improves coherence and relevance under exam time limits.*
-- Why it works: the sentence is specific and measurable.
-
-### Example 2
-- Weak: *I think this is good and bad in many ways.*
-- Strong: *responses with a direct claim and measurable example receive stronger examiner ratings.*
-- Why it works: the contrast is explicit and balanced.
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>This topic is important and has many effects.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>I completely agree that city budgets should prioritize public transport because it improves access for workers and reduces long-term congestion costs.</p>
+  <p class="lesson-card-note">The stronger sentence gives the paragraph a clear direction.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I think this is good and bad in many ways.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>One practical reason is reliability: after one district added bus-only lanes, average commute delays fell by 18% during peak hours.</p>
+  <p class="lesson-card-note">The better version develops the idea instead of circling around it.</p>
+</article>
+</div>
 
 ## Common Errors with IELTS Writing Task 2: Opinion Essays
-<details class="lesson-accordion lesson-error">
-<summary>Error 1: repeating the same point with different words</summary>
-
-- Weak: *This policy is important, very important, and important in many ways.*
-- Strong: *This policy matters because it improves access, reduces delays, and supports daily routines.*
-- Fix: state one idea once, then add evidence.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 2: using generic examples with no detail</summary>
-
-- Weak: *Many places improved after changes were made.*
-- Strong: *One district reduced response times by 18% after introducing coordinated service planning.*
-- Fix: include a specific place, group, timeline, or measured result.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 3: writing long sentences with weak logic links</summary>
-
-- Weak: *The policy changed and many people were affected and it was good and bad for many reasons.*
-- Strong: *The policy improved reliability for commuters; however, implementation costs were higher in the first quarter.*
-- Fix: split ideas and use clear logical connectors.
-</details>
-
-## Practice
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 1: Rewrite for Clarity</summary>
-
-Improve these sentences.
-1. This issue affects public services in several ways.
-2. The government should respond because current results are weak.
-3. This policy has benefits and costs that need evaluation.
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 2: Focused Paragraph</summary>
-
-Write 5-6 sentences using **IELTS Writing Task 2: Opinion Essays**.
-Include one claim, one reason, one example, and one consequence.
-Use this real-world context: exam writing task response.
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 3: Level Upgrade</summary>
-
-Rewrite this sentence at B2 standard:
-*People lose marks because they do not practice enough.*
-</details>
-
-## Sample Answer Style
-Your improved sentence should be specific, concise, and logically connected.
-Aim to include a concrete detail such as a measured change, timeline, or named group.
-
-## Interactive Exercise Test
-<div class="mini-quiz" data-mini-quiz>
-<div class="mini-quiz-head">
-<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>
-<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/3 | Attempted: 0/3</p>
-<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>
-</div>
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q1. Choose the stronger version for: repeating the same point with different words</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. This policy is important, very important, and important in many ways.</button>
-<button type="button" data-choice="B">B. This policy matters because it improves access, reduces delays, and supports daily routines.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<div class="lesson-error-grid">
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 1</p>
+  <h3>starting to write before deciding the task purpose</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>This issue is important and has many sides.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>This essay argues that better transit investment improves daily life for workers.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Write one clear task sentence before the first full paragraph.</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q2. Choose the stronger version for: using generic examples with no detail</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. Many places improved after changes were made.</button>
-<button type="button" data-choice="B">B. One district reduced response times by 18% after introducing coordinated service planning.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 2</p>
+  <h3>using examples that are too general to prove the point</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Many places improved after changes were made.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>One district reduced response times by 18% after introducing coordinated service planning.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Add a place, group, time, or measured result.</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q3. Choose the stronger version for: writing long sentences with weak logic links</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. The policy changed and many people were affected and it was good and bad for many reasons.</button>
-<button type="button" data-choice="B">B. The policy improved reliability for commuters; however, implementation costs were higher in the first quarter.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 3</p>
+  <h3>losing paragraph control by adding every idea at once</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The policy is good, bad, expensive, helpful, and important for many people for many reasons.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The policy is expensive at first; however, it improves reliability for daily commuters.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Give each paragraph one job and one main idea.</p>
 </article>
 </div>
 
-## Want Personalized Score Feedback?
-If you want faster improvement than self-study alone, use one paid support option:
-- [Essay Correction](/essay-correction)
-- [1-on-1 Tutoring](/tutoring)
-- [AI Writing Feedback](/celpip/writing/ai-feedback)
-- [Weekly Webinar](/webinar)
+## Interactive Practice Lab
+<div class="practice-lab" data-practice-lab>
+  <div class="practice-lab-head">
+    <div>
+      <h3>Practice</h3>
+      <p class="practice-lab-intro">Begin with purpose. Then check the order and cut anything that does not help the paragraph.</p>
+    </div>
+    <div class="practice-lab-status">
+      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
+    </div>
+  </div>
+  <p class="practice-lab-coach">If a sentence has no clear job, it should change or disappear.</p>
+  <div class="practice-lab-grid">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
+  <p class="practice-task-label">1. Quick pick</p>
+  <h3>Choose the stronger move for IELTS Writing Task 2: Opinion Essays.</h3>
+  <div class="practice-choice-grid">
+<button type="button" class="practice-choice" data-choice-index="0">
+  Keep the idea vague and hope the reader understands.
+</button>
+<button type="button" class="practice-choice" data-choice-index="1">
+  I completely agree that city budgets should prioritize public transport because it improves access for workers and reduces long-term congestion costs.
+</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="order" data-task-answer="Underline the instruction words so you know exactly what opinion the task asks for.||Write one thesis sentence that states your position directly.||Plan two body reasons and one concrete example or explanation for each.||Keep each body paragraph on one reason only." data-task-id="1">
+  <p class="practice-task-label">2. Build the flow</p>
+  <h3>Put these moves in a helpful order.</h3>
+  <p class="practice-task-note">Put the chunks in the natural order.</p>
+  <div class="practice-chip-bank" data-order-bank>
+<button type="button" class="practice-chip" data-chip-value="Write one thesis sentence that states your position directly." data-chip-origin="bank-1" data-chip-id="1-0">
+  Write one thesis sentence that states your position directly.
+</button>
+<button type="button" class="practice-chip" data-chip-value="Underline the instruction words so you know exactly what opinion the task asks for." data-chip-origin="bank-1" data-chip-id="1-1">
+  Underline the instruction words so you know exactly what opinion the task asks for.
+</button>
+<button type="button" class="practice-chip" data-chip-value="Keep each body paragraph on one reason only." data-chip-origin="bank-1" data-chip-id="1-2">
+  Keep each body paragraph on one reason only.
+</button>
+<button type="button" class="practice-chip" data-chip-value="Plan two body reasons and one concrete example or explanation for each." data-chip-origin="bank-1" data-chip-id="1-3">
+  Plan two body reasons and one concrete example or explanation for each.
+</button>
+  </div>
+  <div class="practice-chip-answer" data-order-answer></div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+    <button type="button" class="practice-clear-btn" data-task-clear>Clear</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="sort" data-task-id="2">
+  <p class="practice-task-label">3. Final sort</p>
+  <h3>Sort these habits into helpful or not helpful.</h3>
+  <div class="practice-sort-list">
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
+  <p>Underline the instruction words so you know exactly what opinion the task asks for.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="1">
+  <p>Write one thesis sentence that states your position directly.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="2">
+  <p>Add a new reason in the middle of the paragraph to sound richer.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
+  <p>Use a broad example even when it does not prove the point clearly.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+  </div>
+</div>
+  </div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="3">
+  <p class="practice-task-label">4. Last check</p>
+  <h3>Choose the sentence that sounds more controlled.</h3>
+  <div class="practice-choice-grid">
+<button type="button" class="practice-choice" data-choice-index="0">
+  This point is important in many ways and that is all.
+</button>
+<button type="button" class="practice-choice" data-choice-index="1">
+  One practical reason is reliability: after one district added bus-only lanes, average commute delays fell by 18% during peak hours.
+</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+  </div>
+</div>
 
-Best when you need detailed scoring guidance on clarity, cohesion, evidence use, and task achievement.
+## Get Feedback
+<div class="lesson-support-callout">
+  <div class="lesson-support-hero">
+    <p class="lesson-support-label">Personalized score feedback</p>
+    <h3>Get clear next-step advice.</h3>
+    <p class="lesson-support-copy">Choose the support that matches your study goal. You get direct correction, clear scoring language, and a simple next step.</p>
+  </div>
+  <div class="lesson-support-grid">
+    <a class="lesson-support-card lesson-support-card-essay" href="/essay-correction">
+      <span class="lesson-support-icon" aria-hidden="true">A+</span>
+      <strong>Essay Correction</strong>
+      <span>Detailed comments on one draft with band-style scoring.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-tutoring" href="/tutoring">
+      <span class="lesson-support-icon" aria-hidden="true">1:1</span>
+      <strong>1-on-1 Tutoring</strong>
+      <span>Live help when you want guided practice and fast correction.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-ai" href="/celpip/writing/ai-feedback">
+      <span class="lesson-support-icon" aria-hidden="true">AI</span>
+      <strong>AI Writing Feedback</strong>
+      <span>Quick checks when you want to test ideas before a full review.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-webinar" href="/webinar">
+      <span class="lesson-support-icon" aria-hidden="true">Live</span>
+      <strong>Weekly Webinar</strong>
+      <span>Join a guided session and learn with real exam-style examples.</span>
+    </a>
+  </div>
+  <p class="lesson-support-best">Best when you need detailed scoring guidance on clarity, cohesion, evidence use, and task achievement.</p>
+</div>

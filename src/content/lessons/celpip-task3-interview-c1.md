@@ -5,132 +5,235 @@ level: "C1"
 ieltsBand: "7.5-8.5"
 clb: "9-10"
 exam: ["IELTS", "CELPIP"]
-excerpt: "C1 speaking lesson on CELPIP Speaking Task 3: Interview Scenario with unpacked explanations, aligned practice, and model answers."
+excerpt: "C1 speaking lesson on CELPIP Speaking Task 3: Interview Scenario with clearer response frames, practice prompts, and self-checks."
 date: "2026-03-02"
 tags: ["speaking", "c1", "cefr-differentiated", "ielts", "celpip"]
-heroTip: "Understand the idea first, then practice under timed exam conditions."
+heroTip: "Start with a direct answer. Most speaking problems get smaller once the opening sentence is clear."
 videoEmbed: ""
 draft: false
+visualAids: ["Direct-answer frame", "Reason-example model", "Recording checklist"]
+quiz:
+  - prompt: "What is a safe speaking frame for CELPIP Speaking Task 3: Interview Scenario?"
+    options:
+      - "Answer, reason, example, close"
+      - "Long apology, filler, random detail"
+      - "Silence, then topic change"
+    correctIndex: 0
+    explanation: "A simple structure protects both fluency and clarity."
+  - prompt: "What usually sounds stronger in speaking exams?"
+    options:
+      - "Short accurate language"
+      - "Long risky language with weak logic"
+      - "No structure at all"
+    correctIndex: 0
+    explanation: "Control usually beats forced complexity in speaking."
+  - prompt: "What should you do after giving the direct answer?"
+    options:
+      - "Add one reason and one example"
+      - "Apologize for your English"
+      - "Change the topic quickly"
+    correctIndex: 0
+    explanation: "A simple reason-example extension makes the answer easier to follow."
 ---
-## Goal
-Use **CELPIP Speaking Task 3: Interview Scenario** to deliver clear and well-supported IELTS and CELPIP speaking responses.
-
-## What This Lesson Covers
-This lesson focuses on how **CELPIP Speaking Task 3: Interview Scenario** improves spoken response quality: direct answers, clear support, and smoother organization.
-
 ## Topic Explanation and Use
-CELPIP Speaking Task 3: Interview Scenario is a speaking control skill used to organize answers clearly and maintain coherence under time limits.
-
-Use this skill to answer directly, support with a reason, and finish with a clear conclusion while maintaining natural fluency.
-
-Use conditions:
-- Open with a direct response to the question.
-- Support with one concrete example, not abstract filler.
-- Close with a sentence that summarizes your position.
-
-Reference examples:
-- *I support this approach because it improves reliability; for example, the pilot reduced service delays.*
-- *Overall, this option is more practical because outcomes are clearer and easier to measure.*
-
-## Key Rule in Plain Language
-1. Decide your main answer first.
-2. Add one clear reason linked to **CELPIP Speaking Task 3: Interview Scenario**.
-3. Give one concrete example from real life.
-4. Keep sentence forms simple and accurate under time pressure.
-5. End with one final sentence that summarizes your point.
+<div class="lesson-teach-grid">
+  <section class="lesson-panel lesson-panel-core">
+    <p class="lesson-panel-label">Core idea</p>
+    <p>This lesson helps you sound organized without sounding memorized.</p>
+<p>This speaking skill helps you sound organized under time pressure. Clear answers usually follow a simple pattern: direct response, one reason, one example, short conclusion. Even when the topic is unfamiliar, that pattern helps you stay fluent and focused.</p>
+<p>Use this lesson whenever you need a more reliable way to build spoken responses. Focus on structure first, then on vocabulary and style. A controlled simple answer is better than a long answer with weak logic.</p>
+<p>At C1 level, speaking improves when your answer pattern is stable and easy to repeat under time pressure.</p>
+  </section>
+  <section class="lesson-panel lesson-panel-when">
+    <p class="lesson-panel-label">Use it here</p>
+    <ul><li>Give a direct answer before adding background.</li><li>Extend with one reason, detail, or example at a time.</li><li>Use short signposts only when they help the listener follow the answer.</li></ul>
+  </section>
+  <section class="lesson-panel lesson-panel-pattern">
+    <p class="lesson-panel-label">Watch it work</p>
+    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">I think this approach is useful because focused investment can improve access, reliability, and quality of life.</div>
+<div class="lesson-pattern-sentence">For example, a pilot program improved service response times in one local district.</div></div>
+  </section>
+  <section class="lesson-panel lesson-panel-remember">
+    <p class="lesson-panel-label">Remember this</p>
+    <ul><li>Answer directly in the first sentence.</li><li>Add one clear reason.</li><li>Support it with one example or consequence.</li><li>Use one short linker if it helps the flow.</li><li>Finish with a short closing message.</li></ul>
+  </section>
+</div>
 
 ## Real-World Examples with CELPIP Speaking Task 3: Interview Scenario
-- Weak: *I agree because it is good.*
-- Strong: *I support this idea because task-focused structure improves coherence and relevance under exam time limits. For example, responses with a direct claim and measurable example receive stronger examiner ratings.*
-- Why it works: the response includes a reason and a real example.
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Well, there are many perspectives and many factors, and in my opinion this topic is complex.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>I think this approach is useful because focused investment can improve access, reliability, and quality of life.</p>
+  <p class="lesson-card-note">The better answer starts doing the real speaking job immediately.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>It is good, and also, like, there are many reasons, and yes, that is all.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>For example, a pilot program improved service response times in one local district.</p>
+  <p class="lesson-card-note">The stronger sentence adds meaning instead of filler.</p>
+</article>
+</div>
 
 ## Common Errors with CELPIP Speaking Task 3: Interview Scenario
-<details class="lesson-accordion lesson-error">
-<summary>Error 1: long introductions before the actual answer</summary>
-
-- Weak: *Well, there are many perspectives and many factors, and in my opinion this topic is complex.*
-- Strong: *I support this approach because it improves service reliability for residents.*
-- Fix: answer in the first sentence, then expand.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 2: repeating fillers instead of adding meaning</summary>
-
-- Weak: *Like, you know, it is good, like, because it is good for people.*
-- Strong: *It is effective because it reduces delays and improves access for workers.*
-- Fix: replace fillers with one reason and one concrete detail.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 3: finishing without a clear conclusion</summary>
-
-- Weak: *So yes, that is all, maybe.*
-- Strong: *Overall, this option is more practical because it delivers clearer and more predictable outcomes.*
-- Fix: end with one summary sentence.
-</details>
-
-## Practice
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 1</summary>
-
-Speak for 35 seconds on this prompt:
-*Write a short response that gives one clear position, one reason, and one specific example.*
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 2</summary>
-
-Improve this response:
-*I agree because it is better and good.*
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 3</summary>
-
-Speak for 50 seconds and include comparison, one concrete example, and a final conclusion.
-Try to use this consequence idea: arguments become easier to score for clarity, development, and control.
-</details>
-
-## Interactive Exercise Test
-<div class="mini-quiz" data-mini-quiz>
-<div class="mini-quiz-head">
-<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>
-<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/3 | Attempted: 0/3</p>
-<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>
-</div>
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q1. Choose the stronger version for: long introductions before the actual answer</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. Well, there are many perspectives and many factors, and in my opinion this topic is complex.</button>
-<button type="button" data-choice="B">B. I support this approach because it improves service reliability for residents.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<div class="lesson-error-grid">
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 1</p>
+  <h3>delaying the direct answer</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Well, there are many sides to this question and it is hard to say.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I think this approach is useful because focused investment can improve access, reliability, and quality of life.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Answer first, then extend.</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q2. Choose the stronger version for: repeating fillers instead of adding meaning</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. Like, you know, it is good, like, because it is good for people.</button>
-<button type="button" data-choice="B">B. It is effective because it reduces delays and improves access for workers.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 2</p>
+  <h3>using fillers instead of content</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Like, you know, it is good because it is good for people.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>For example, a pilot program improved service response times in one local district.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Replace filler with one real reason or detail.</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q3. Choose the stronger version for: finishing without a clear conclusion</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. So yes, that is all, maybe.</button>
-<button type="button" data-choice="B">B. Overall, this option is more practical because it delivers clearer and more predictable outcomes.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 3</p>
+  <h3>finishing without a clear final line</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>So yes, maybe, that is my idea.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Overall, that is why I think this option is more practical.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Prepare one short closing sentence you can use naturally.</p>
 </article>
 </div>
 
-## Want Personalized Score Feedback?
-If you want faster improvement than self-study alone, use one paid support option:
-- [Essay Correction](/essay-correction)
-- [1-on-1 Tutoring](/tutoring)
-- [AI Writing Feedback](/celpip/writing/ai-feedback)
-- [Weekly Webinar](/webinar)
+## Interactive Practice Lab
+<div class="practice-lab" data-practice-lab>
+  <div class="practice-lab-head">
+    <div>
+      <h3>Practice</h3>
+      <p class="practice-lab-intro">Start with the opening move, then check the answer shape from start to finish.</p>
+    </div>
+    <div class="practice-lab-status">
+      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
+    </div>
+  </div>
+  <p class="practice-lab-coach">If a line does not add meaning, cut it and replace it with one clear reason or example.</p>
+  <div class="practice-lab-grid">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
+  <p class="practice-task-label">1. Quick pick</p>
+  <h3>Choose the stronger move for CELPIP Speaking Task 3: Interview Scenario.</h3>
+  <div class="practice-choice-grid">
+<button type="button" class="practice-choice" data-choice-index="0">
+  Talk around the question first and hope the listener finds your point.
+</button>
+<button type="button" class="practice-choice" data-choice-index="1">
+  I think this approach is useful because focused investment can improve access, reliability, and quality of life.
+</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="order" data-task-answer="Answer directly in the first sentence.||Add one clear reason.||Support it with one example or consequence.||Use one short linker if it helps the flow." data-task-id="1">
+  <p class="practice-task-label">2. Build the flow</p>
+  <h3>Put these moves in a helpful order.</h3>
+  <p class="practice-task-note">Put the chunks in the natural order.</p>
+  <div class="practice-chip-bank" data-order-bank>
+<button type="button" class="practice-chip" data-chip-value="Answer directly in the first sentence." data-chip-origin="bank-1" data-chip-id="1-0">
+  Answer directly in the first sentence.
+</button>
+<button type="button" class="practice-chip" data-chip-value="Support it with one example or consequence." data-chip-origin="bank-1" data-chip-id="1-1">
+  Support it with one example or consequence.
+</button>
+<button type="button" class="practice-chip" data-chip-value="Use one short linker if it helps the flow." data-chip-origin="bank-1" data-chip-id="1-2">
+  Use one short linker if it helps the flow.
+</button>
+<button type="button" class="practice-chip" data-chip-value="Add one clear reason." data-chip-origin="bank-1" data-chip-id="1-3">
+  Add one clear reason.
+</button>
+  </div>
+  <div class="practice-chip-answer" data-order-answer></div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+    <button type="button" class="practice-clear-btn" data-task-clear>Clear</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="sort" data-task-id="2">
+  <p class="practice-task-label">3. Final sort</p>
+  <h3>Sort these habits into helpful or not helpful.</h3>
+  <div class="practice-sort-list">
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
+  <p>Answer directly in the first sentence.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="1">
+  <p>Add one clear reason.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="2">
+  <p>Keep talking around the topic until an answer appears.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
+  <p>Use fillers because they sound more natural than silence.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+  </div>
+</div>
+  </div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="3">
+  <p class="practice-task-label">4. Last check</p>
+  <h3>Choose the sentence that sounds more controlled.</h3>
+  <div class="practice-choice-grid">
+<button type="button" class="practice-choice" data-choice-index="0">
+  It is good and there are many reasons, and that is all.
+</button>
+<button type="button" class="practice-choice" data-choice-index="1">
+  For example, a pilot program improved service response times in one local district.
+</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+  </div>
+</div>
 
-Best when you need speaking-specific feedback on fluency, coherence, grammar range, and lexical resource.
+## Get Feedback
+<div class="lesson-support-callout">
+  <div class="lesson-support-hero">
+    <p class="lesson-support-label">Personalized score feedback</p>
+    <h3>Get clear next-step advice.</h3>
+    <p class="lesson-support-copy">Choose the support that matches your study goal. You get direct correction, clear scoring language, and a simple next step.</p>
+  </div>
+  <div class="lesson-support-grid">
+    <a class="lesson-support-card lesson-support-card-essay" href="/essay-correction">
+      <span class="lesson-support-icon" aria-hidden="true">A+</span>
+      <strong>Essay Correction</strong>
+      <span>Detailed comments on one draft with band-style scoring.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-tutoring" href="/tutoring">
+      <span class="lesson-support-icon" aria-hidden="true">1:1</span>
+      <strong>1-on-1 Tutoring</strong>
+      <span>Live help when you want guided practice and fast correction.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-ai" href="/celpip/writing/ai-feedback">
+      <span class="lesson-support-icon" aria-hidden="true">AI</span>
+      <strong>AI Writing Feedback</strong>
+      <span>Quick checks when you want to test ideas before a full review.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-webinar" href="/webinar">
+      <span class="lesson-support-icon" aria-hidden="true">Live</span>
+      <strong>Weekly Webinar</strong>
+      <span>Join a guided session and learn with real exam-style examples.</span>
+    </a>
+  </div>
+  <p class="lesson-support-best">Best when you need speaking-specific feedback on fluency, coherence, grammar range, and lexical resource.</p>
+</div>

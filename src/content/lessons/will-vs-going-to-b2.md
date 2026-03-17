@@ -5,156 +5,232 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B2 grammar lesson on Will vs Going To with unpacked explanations, aligned practice, and model answers."
+excerpt: "Match tense choice to time meaning so the reader never has to guess your timeline."
 date: "2026-03-02"
 tags: ["grammar", "b2", "cefr-differentiated", "ielts", "celpip"]
-heroTip: "Understand the idea first, then practice under timed exam conditions."
+heroTip: "Circle the time marker before you choose the verb form."
 videoEmbed: ""
 draft: false
+visualAids: ["Timeline with tense labels", "Finished vs unfinished time markers", "Simple/perfect contrast pairs"]
+quiz:
+  - prompt: "Which sentence uses Will vs Going To correctly?"
+    options:
+      - "The city policy update improve commuter access, but the sentence form is unstable."
+      - "The city policy update improves commuter access, and the sentence form is stable."
+      - "Students in one district reported progress, but the structure of the explanation is unclear."
+    correctIndex: 1
+    explanation: "Option 2 matches the main rule for Will vs Going To and keeps the sentence natural."
+  - prompt: "What should you check first when editing Will vs Going To?"
+    options:
+      - "The meaning you want and the sentence pattern you need"
+      - "Only the number of long words in the sentence"
+      - "Whether the sentence sounds complicated enough"
+    correctIndex: 0
+    explanation: "Start from meaning and pattern; complexity is never the first goal."
+  - prompt: "Which edit fixes a common Will vs Going To mistake?"
+    options:
+      - "The council approve the plan, but the timeline details remain unclear."
+      - "The council approved the plan, but the timeline details remain unclear."
+      - "If schools add tutoring support, more students improve exam performance."
+    correctIndex: 1
+    explanation: "Option 2 repairs a typical Will vs Going To error and matches the target form."
 ---
-## Goal
-Learn how to use **Will vs Going To** accurately in IELTS and CELPIP responses.
-
-## What Will vs Going To Means
-This lesson is specifically about **Will vs Going To**. By the end, you should understand when to use it, how to form it correctly, and how to avoid common errors.
-
 ## Topic Explanation and Use
-Will vs Going To controls how a sentence carries meaning: reference, sequence, and emphasis must stay clear from start to finish.
-
-Use Will vs Going To to make one precise meaning per sentence, then expand only when the added structure improves clarity for exam readers.
-
-Use conditions:
-- Choose the target form after deciding the exact meaning (fact, contrast, cause, or condition).
-- Keep agreement and word order stable before adding extra clauses or modifiers.
-- If a longer sentence becomes harder to scan, split it and keep the same logic.
-
-Reference examples:
-- *In exam writing, accurate Will vs Going To helps each sentence carry one clear grammatical purpose.*
-- *When Will vs Going To is chosen deliberately, arguments stay precise and easier to evaluate under time pressure.*
-
-## Key Rule in Plain Language
-1. Use be + going to + base verb for planned future actions.
-2. Check subject-agreement in be (am/is/are) before finalizing the sentence.
-3. Use going to for pre-decided plans and evidence-based predictions.
-4. Use will mainly for instant decisions made while speaking.
-5. Keep one clear future timeline per sentence to avoid tense confusion.
+<div class="lesson-teach-grid">
+  <section class="lesson-panel lesson-panel-core">
+    <p class="lesson-panel-label">Core idea</p>
+    <p>Tense choice becomes easier when you decide the timeline before the verb form.</p>
+<p>Tense choices place actions on a timeline and show whether they are finished, ongoing, repeated, or connected to another time point.</p>
+<p>Use tense accurately by deciding the time first and the meaning second. Readers should be able to follow your timeline without stopping to reinterpret the verb forms.</p>
+<p>At B2 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+  </section>
+  <section class="lesson-panel lesson-panel-when">
+    <p class="lesson-panel-label">Use it here</p>
+    <ul><li>Find the time signal or implied timeline before you choose the verb.</li><li>Keep the tense stable until the timeline genuinely changes.</li><li>Use perfect forms when you need to connect an earlier action to another time point.</li></ul>
+  </section>
+  <section class="lesson-panel lesson-panel-pattern">
+    <p class="lesson-panel-label">Watch it work</p>
+    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Since January, attendance has improved every week.</div>
+<div class="lesson-pattern-sentence">By the end of the year, the team will have completed the trial.</div></div>
+  </section>
+  <section class="lesson-panel lesson-panel-remember">
+    <p class="lesson-panel-label">Remember this</p>
+    <ul><li>Mark the timeline first with a time word or situation clue.</li><li>Choose simple, continuous, perfect, or perfect continuous from the meaning.</li><li>Keep the reference point stable inside the sentence.</li><li>Use tense shifts only when the timeline really changes.</li><li>Check that the final verb form agrees with the time marker.</li></ul>
+  </section>
+</div>
 
 ## Real-World Examples with Will vs Going To
-### Example 1
-- Weak: *I going to study tonight because I have an exam tomorrow.*
-- Strong: *I am going to study tonight because I have an exam tomorrow.*
-- Why it works: the grammar choice supports communication instead of confusing the reader.
-
-### Example 2
-- Weak: *Look at those clouds. It is rain soon.*
-- Strong: *Look at those clouds. It is going to rain soon.*
-- Why it works: the reader can follow the logic without re-reading.
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The city policy update improve commuter access, but the sentence form is unstable.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>The city policy update improves commuter access, and the sentence form is stable.</p>
+  <p class="lesson-card-note">This correction matches the intended meaning and keeps Will vs Going To natural.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Students in one district reported progress, but the structure of the explanation is unclear.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Students in one district reported progress, and the explanation is grammatically clear.</p>
+  <p class="lesson-card-note">This version sounds more natural because Will vs Going To fits the sentence clearly.</p>
+</article>
+</div>
 
 ## Common Errors with Will vs Going To
-<details class="lesson-accordion lesson-error">
-<summary>Error 1: omitting be before going to</summary>
-
-- Weak: *I going to study tonight because I have an exam tomorrow.*
-- Strong: *I am going to study tonight because I have an exam tomorrow.*
-- Fix: use am/is/are before going to and keep subject agreement accurate.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 2: using will and going to without meaning distinction</summary>
-
-- Weak: *I will visit my cousin next month because I already booked tickets.*
-- Strong: *I am going to visit my cousin next month because I already booked tickets.*
-- Fix: prefer going to for plans decided before speaking; use will for instant decisions.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 3: using present simple where planned future form is required</summary>
-
-- Weak: *Tomorrow I go to the dentist at 10 a.m.*
-- Strong: *Tomorrow I am going to go to the dentist at 10 a.m.*
-- Fix: use going to when the sentence expresses a personal future plan.
-</details>
-
-## Practice
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 1: Correct the Sentence</summary>
-
-Correct each sentence so it uses **Will vs Going To** naturally.
-1. She going to visit her aunt this weekend.
-2. They is going to start the project next Monday.
-3. I think he going to pass the test with more practice.
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 2: Build Sentences</summary>
-
-Write 4 sentences with going to: one personal plan, one family plan, one weather prediction from evidence, and one school/work intention.
-Then rewrite one sentence with will and explain why that meaning changes.
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 3: Mini Paragraph</summary>
-
-Write 5-6 sentences for this prompt:
-What are you going to do this week to improve your English?
-Use going to at least three times with different subjects.
-</details>
-
-## Answer Guide
-<details class="lesson-accordion lesson-answer">
-<summary>Open Answer Guide</summary>
-
-For Exercise 1, your corrected versions should:
-- keep form choices consistent with the sentence meaning,
-- place **Will vs Going To** in a grammatically correct structure,
-- and produce a sentence that sounds natural in context.
-
-Possible corrected versions:
-1. *She is going to visit her aunt this weekend.*
-2. *They are going to start the project next Monday.*
-3. *I think he is going to pass the test with more practice.*
-</details>
-
-## Interactive Exercise Test
-<div class="mini-quiz" data-mini-quiz>
-<div class="mini-quiz-head">
-<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>
-<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/3 | Attempted: 0/3</p>
-<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>
-</div>
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q1. Choose the stronger version for: omitting be before going to</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. I going to study tonight because I have an exam tomorrow.</button>
-<button type="button" data-choice="B">B. I am going to study tonight because I have an exam tomorrow.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<div class="lesson-error-grid">
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 1</p>
+  <h3>using the correct idea with an incorrect form</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The city policy update improve commuter access, but the sentence form is unstable.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The city policy update improves commuter access, and the sentence form is stable.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> separate meaning choice from form checking, then edit for accuracy</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q2. Choose the stronger version for: using will and going to without meaning distinction</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. I will visit my cousin next month because I already booked tickets.</button>
-<button type="button" data-choice="B">B. I am going to visit my cousin next month because I already booked tickets.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 2</p>
+  <h3>using present perfect with a finished time marker</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>She has finished the report yesterday.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>She finished the report yesterday.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> use a past form with finished time markers like yesterday or last week</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q3. Choose the stronger version for: using present simple where planned future form is required</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. Tomorrow I go to the dentist at 10 a.m.</button>
-<button type="button" data-choice="B">B. Tomorrow I am going to go to the dentist at 10 a.m.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 3</p>
+  <h3>switching tense without a time reason</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The study started in May and shows strong results in June.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The study started in May and showed strong results in June.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> keep the tense stable unless the timeline genuinely changes</p>
 </article>
 </div>
 
-## Want Personalized Score Feedback?
-If you want faster improvement than self-study alone, use one paid support option:
-- [Essay Correction](/essay-correction)
-- [1-on-1 Tutoring](/tutoring)
-- [AI Writing Feedback](/celpip/writing/ai-feedback)
-- [Weekly Webinar](/webinar)
+## Interactive Practice Lab
+<div class="practice-lab" data-practice-lab>
+  <div class="practice-lab-head">
+    <div>
+      <h3>Practice</h3>
+      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+    </div>
+    <div class="practice-lab-status">
+      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
+    </div>
+  </div>
+  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <div class="practice-lab-grid">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Will vs Going To form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+  <p class="practice-task-label">1. Quick pick</p>
+  <h3>Choose the stronger sentence for Will vs Going To.</h3>
+  <div class="practice-choice-grid">
+<button type="button" class="practice-choice" data-choice-index="0">
+  The council approve the plan, but the timeline details remain unclear.
+</button>
+<button type="button" class="practice-choice" data-choice-index="1">
+  The council approved the plan, but the timeline details remain unclear.
+</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="order" data-task-answer="If schools add||tutoring support, more||students will improve||exam performance." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+  <p class="practice-task-label">2. Build it</p>
+  <h3>Put this Will vs Going To sentence in the correct order.</h3>
+  <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
+  <div class="practice-chip-bank" data-order-bank>
+<button type="button" class="practice-chip" data-chip-value="tutoring support, more" data-chip-origin="bank-1" data-chip-id="1-0">
+  tutoring support, more
+</button>
+<button type="button" class="practice-chip" data-chip-value="If schools add" data-chip-origin="bank-1" data-chip-id="1-1">
+  If schools add
+</button>
+<button type="button" class="practice-chip" data-chip-value="students will improve" data-chip-origin="bank-1" data-chip-id="1-2">
+  students will improve
+</button>
+<button type="button" class="practice-chip" data-chip-value="exam performance." data-chip-origin="bank-1" data-chip-id="1-3">
+  exam performance.
+</button>
+  </div>
+  <div class="practice-chip-answer" data-order-answer></div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+    <button type="button" class="practice-clear-btn" data-task-clear>Clear</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="typing" data-task-answers="The clinic report shows progress, but one sentence switches tense without reason." data-task-id="2" data-correct-feedback="Correct. You repaired the sentence without changing the message." data-wrong-feedback="Not yet. Check the target form, then type the full corrected sentence.">
+  <p class="practice-task-label">3. Type the fix</p>
+  <h3>Rewrite the sentence so Will vs Going To is correct.</h3>
+  <p class="practice-source-line"><span>Fix this:</span> The clinic report shows progress, but one sentence switch tense without reason.</p>
+  <div class="practice-input-row">
+    <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
+  <p class="practice-task-label">4. Final sort</p>
+  <h3>Mark each sentence as correct or needing a fix.</h3>
+  <div class="practice-sort-list">
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
+  <p>The council approved the plan, but the timeline details remain unclear.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
+  <p>The council approve the plan, but the timeline details remain unclear.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
+  <p>If schools add tutoring support, more students will improve exam performance.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
+  <p>If schools add tutoring support, more students improve exam performance.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+  </div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+  </div>
+</div>
 
-Best when you need precise correction on grammar control, task response quality, and exam-style scoring.
+## Get Feedback
+<div class="lesson-support-callout">
+  <div class="lesson-support-hero">
+    <p class="lesson-support-label">Personalized score feedback</p>
+    <h3>Get clear next-step advice.</h3>
+    <p class="lesson-support-copy">Choose the support that matches your study goal. You get direct correction, clear scoring language, and a simple next step.</p>
+  </div>
+  <div class="lesson-support-grid">
+    <a class="lesson-support-card lesson-support-card-essay" href="/essay-correction">
+      <span class="lesson-support-icon" aria-hidden="true">A+</span>
+      <strong>Essay Correction</strong>
+      <span>Detailed comments on one draft with band-style scoring.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-tutoring" href="/tutoring">
+      <span class="lesson-support-icon" aria-hidden="true">1:1</span>
+      <strong>1-on-1 Tutoring</strong>
+      <span>Live help when you want guided practice and fast correction.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-ai" href="/celpip/writing/ai-feedback">
+      <span class="lesson-support-icon" aria-hidden="true">AI</span>
+      <strong>AI Writing Feedback</strong>
+      <span>Quick checks when you want to test ideas before a full review.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-webinar" href="/webinar">
+      <span class="lesson-support-icon" aria-hidden="true">Live</span>
+      <strong>Weekly Webinar</strong>
+      <span>Join a guided session and learn with real exam-style examples.</span>
+    </a>
+  </div>
+  <p class="lesson-support-best">Best when you need precise correction on grammar control, task response quality, and exam-style scoring.</p>
+</div>

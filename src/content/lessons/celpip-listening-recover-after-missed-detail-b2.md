@@ -5,156 +5,236 @@ level: "B2"
 ieltsBand: "6.5-7.5"
 clb: "8-9"
 exam: ["CELPIP"]
-excerpt: "B2 listening lesson on CELPIP Listening: Recover Quickly After Missing a Detail with unpacked explanations, aligned practice, and model answers."
+excerpt: "B2 listening lesson on CELPIP Listening: Recover Quickly After Missing a Detail with task strategy, attention control, and review routines."
 date: "2026-03-09"
 tags: ["celpip", "listening", "recovery", "focus", "test-strategy"]
-heroTip: "Understand the idea first, then practice under timed exam conditions."
-visualAids: ["Anchor-word recovery", "Reset routine", "Decision tree"]
+heroTip: "Do not try to catch every word. Track the question focus and the signal words that carry the answer."
+visualAids: ["Before-listening routine", "Signal word list", "Recovery checklist"]
 quiz:
-  - prompt: "You miss one sentence in CELPIP Listening. What should you do next?"
+  - prompt: "What matters most in CELPIP Listening: Recover Quickly After Missing a Detail?"
     options:
-      - "Stop and mentally replay it"
-      - "Guess randomly and stop listening"
-      - "Refocus on the next anchor word and continue"
-      - "Wait until the audio ends"
-    correctIndex: 2
-    explanation: "Recovery means moving forward immediately to protect the rest of your answers."
+      - "Protecting attention and tracking key information"
+      - "Writing full sentences during the audio"
+      - "Memorizing every word"
+    correctIndex: 0
+    explanation: "The goal is targeted listening, not full transcription."
+  - prompt: "What should you do after missing one detail in the audio?"
+    options:
+      - "Stay with the next clear signal"
+      - "Stop listening completely"
+      - "Replay the missed word in your head"
+    correctIndex: 0
+    explanation: "Recovery starts by returning to the live audio, not by freezing on the missed word."
+  - prompt: "What kind of notes are usually most useful?"
+    options:
+      - "Short keywords and symbols"
+      - "Full polished sentences"
+      - "No notes at all"
+    correctIndex: 0
+    explanation: "Usable notes protect attention better than full-sentence transcription."
 premium: false
 priceCAD: 12
 draft: false
 ---
-## Goal
-Apply **CELPIP Listening: Recover Quickly After Missing a Detail** to produce clearer, higher-scoring CELPIP writing.
-
-## What CELPIP Listening: Recover Quickly After Missing a Detail Changes in Writing
-This lesson is about using **CELPIP Listening: Recover Quickly After Missing a Detail** to improve clarity, development, and control. Examiners reward writing that is direct, logical, and easy to follow.
-
 ## Topic Explanation and Use
-CELPIP Listening: Recover Quickly After Missing a Detail is a writing control skill that shapes how ideas are sequenced, supported, and interpreted by the reader.
-
-Use this skill to build a clear argument flow: claim, support, evidence, and consequence. Strong use helps examiners track logic without rereading.
-
-Use conditions:
-- Start with a clear claim sentence that matches the task requirement.
-- Attach evidence that is specific enough to verify your point.
-- Use logical connectors only when they accurately represent relationships.
-
-Reference examples:
-- *The proposal is costlier in year one; however, it lowers delay-related losses over time.*
-- *The district expanded bus priority lanes: average commute times fell across peak routes.*
-
-## Key Rule in Plain Language
-1. Turn the prompt into one specific claim linked to **CELPIP Listening: Recover Quickly After Missing a Detail**.
-2. Build a clear sequence: claim, reason, evidence, consequence.
-3. Keep sentence structure controlled so each line adds one function.
-4. Add one concrete detail (group, time, or measured change) to prove the point.
-5. Edit for precision: remove filler and keep only evidence-bearing wording.
+<div class="lesson-teach-grid">
+  <section class="lesson-panel lesson-panel-core">
+    <p class="lesson-panel-label">Core idea</p>
+    <p>This lesson gives you one listening habit you can use before, during, and after the audio.</p>
+<p>Missing one detail is normal in listening tasks. The danger comes when you keep thinking about the missed word and stop following the next part of the audio. Strong listeners recover by returning to the main idea, tracking signpost words, and using later clarification or repetition to rebuild the missing information.</p>
+<p>Use recovery strategies whenever the audio feels too fast or one item is unclear. Listen for contrast words, repetition, examples, and corrections because speakers often restate the point in a simpler way.</p>
+<p>At B2 level, listening gains usually come from better attention control, not from trying to hear every word.</p>
+  </section>
+  <section class="lesson-panel lesson-panel-when">
+    <p class="lesson-panel-label">Use it here</p>
+    <ul><li>Read the question quickly before the audio whenever the task allows it.</li><li>Decide what information matters most for that item.</li><li>Stay with the message instead of fighting for every missed word.</li></ul>
+  </section>
+  <section class="lesson-panel lesson-panel-pattern">
+    <p class="lesson-panel-label">Watch it work</p>
+    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">missed price -&gt; keep listening -&gt; speaker repeats “so it costs eighteen dollars in total”</div>
+<div class="lesson-pattern-sentence">missed location -&gt; hear later “that is why we moved it to Room B”</div></div>
+  </section>
+  <section class="lesson-panel lesson-panel-remember">
+    <p class="lesson-panel-label">Remember this</p>
+    <ul><li>Accept the missed detail quickly and keep listening.</li><li>Listen for signposts such as however, actually, because, and for example.</li><li>Use later repetition or clarification to rebuild the idea.</li><li>Match your notes to the question focus again.</li><li>Guess only after you have used all later evidence in the audio.</li></ul>
+  </section>
+</div>
 
 ## Real-World Examples with CELPIP Listening: Recover Quickly After Missing a Detail
-### Example 1
-- Weak: *This topic is important and has many effects.*
-- Strong: *Digital workflows can improve efficiency when teams have clear communication norms.*
-- Why it works: the sentence is specific and measurable.
-
-### Example 2
-- Weak: *I think this is good and bad in many ways.*
-- Strong: *A support team reduced response time after introducing a centralized ticket platform.*
-- Why it works: the contrast is explicit and balanced.
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I try to hear every word and write full sentences while the speaker continues.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>I focus on the question type, track the signal words, and capture only the information I need.</p>
+  <p class="lesson-card-note">The stronger strategy protects attention and improves answer accuracy.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>When I miss one detail, I keep thinking about it and miss the next answer too.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>When I miss one detail, I stay with the audio and wait for the next clear signal or repetition.</p>
+  <p class="lesson-card-note">Recovery is built into the strategy instead of being treated like failure.</p>
+</article>
+</div>
 
 ## Common Errors with CELPIP Listening: Recover Quickly After Missing a Detail
-<details class="lesson-accordion lesson-error">
-<summary>Error 1: repeating the same point with different words</summary>
-
-- Weak: *This policy is important, very important, and important in many ways.*
-- Strong: *This policy matters because it improves access, reduces delays, and supports daily routines.*
-- Fix: state one idea once, then add evidence.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 2: using generic examples with no detail</summary>
-
-- Weak: *Many places improved after changes were made.*
-- Strong: *One district reduced response times by 18% after introducing coordinated service planning.*
-- Fix: include a specific place, group, timeline, or measured result.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 3: writing long sentences with weak logic links</summary>
-
-- Weak: *The policy changed and many people were affected and it was good and bad for many reasons.*
-- Strong: *The policy improved reliability for commuters; however, implementation costs were higher in the first quarter.*
-- Fix: split ideas and use clear logical connectors.
-</details>
-
-## Practice
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 1: Rewrite for Clarity</summary>
-
-Improve these sentences.
-1. This issue affects public services in several ways.
-2. The government should respond because current results are weak.
-3. This policy has benefits and costs that need evaluation.
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 2: Focused Paragraph</summary>
-
-Write 5-6 sentences using **CELPIP Listening: Recover Quickly After Missing a Detail**.
-Include one claim, one reason, one example, and one consequence.
-Use this real-world context: technology adoption.
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 3: Level Upgrade</summary>
-
-Rewrite this sentence at B2 standard:
-*People lose marks because they do not practice enough.*
-</details>
-
-## Sample Answer Style
-Your improved sentence should be specific, concise, and logically connected.
-Aim to include a concrete detail such as a measured change, timeline, or named group.
-
-## Interactive Exercise Test
-<div class="mini-quiz" data-mini-quiz>
-<div class="mini-quiz-head">
-<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>
-<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/3 | Attempted: 0/3</p>
-<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>
-</div>
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q1. Choose the stronger version for: repeating the same point with different words</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. This policy is important, very important, and important in many ways.</button>
-<button type="button" data-choice="B">B. This policy matters because it improves access, reduces delays, and supports daily routines.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<div class="lesson-error-grid">
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 1</p>
+  <h3>trying to catch every word instead of the answer focus</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>I write everything I hear, so I miss the next sentence.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I track only the key information linked to the question.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use the question to decide what matters most.</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q2. Choose the stronger version for: using generic examples with no detail</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. Many places improved after changes were made.</button>
-<button type="button" data-choice="B">B. One district reduced response times by 18% after introducing coordinated service planning.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 2</p>
+  <h3>panicking after one missed detail</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>I stop following the audio because of one unknown word.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I let the missed word go and listen for the next signpost or repetition.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Stay with the message and recover from later evidence.</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q3. Choose the stronger version for: writing long sentences with weak logic links</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. The policy changed and many people were affected and it was good and bad for many reasons.</button>
-<button type="button" data-choice="B">B. The policy improved reliability for commuters; however, implementation costs were higher in the first quarter.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 3</p>
+  <h3>using notes that are too long to read back quickly</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>I write complete sentences that I cannot process in time.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I use short keywords, arrows, numbers, and contrast markers.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Make notes usable, not beautiful.</p>
 </article>
 </div>
 
-## Want Personalized Score Feedback?
-If you want faster improvement than self-study alone, use one paid support option:
-- [Essay Correction](/essay-correction)
-- [1-on-1 Tutoring](/tutoring)
-- [AI Writing Feedback](/celpip/writing/ai-feedback)
-- [Weekly Webinar](/webinar)
+## Interactive Practice Lab
+<div class="practice-lab" data-practice-lab>
+  <div class="practice-lab-head">
+    <div>
+      <h3>Practice</h3>
+      <p class="practice-lab-intro">First notice what matters. Then check your sequence and your recovery habits.</p>
+    </div>
+    <div class="practice-lab-status">
+      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
+    </div>
+  </div>
+  <p class="practice-lab-coach">The question should control your attention. If it does not, the audio will feel harder than it really is.</p>
+  <div class="practice-lab-grid">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
+  <p class="practice-task-label">1. Quick pick</p>
+  <h3>Choose the stronger move for CELPIP Listening: Recover Quickly After Missing a Detail.</h3>
+  <div class="practice-choice-grid">
+<button type="button" class="practice-choice" data-choice-index="0">
+  I try to write everything because more notes always means better listening.
+</button>
+<button type="button" class="practice-choice" data-choice-index="1">
+  I focus on the question type, track the signal words, and capture only the information I need.
+</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="order" data-task-answer="Accept the missed detail quickly and keep listening.||Listen for signposts such as however, actually, because, and for example.||Use later repetition or clarification to rebuild the idea.||Match your notes to the question focus again." data-task-id="1">
+  <p class="practice-task-label">2. Build the flow</p>
+  <h3>Put these moves in a helpful order.</h3>
+  <p class="practice-task-note">Put the chunks in the natural order.</p>
+  <div class="practice-chip-bank" data-order-bank>
+<button type="button" class="practice-chip" data-chip-value="Accept the missed detail quickly and keep listening." data-chip-origin="bank-1" data-chip-id="1-0">
+  Accept the missed detail quickly and keep listening.
+</button>
+<button type="button" class="practice-chip" data-chip-value="Match your notes to the question focus again." data-chip-origin="bank-1" data-chip-id="1-1">
+  Match your notes to the question focus again.
+</button>
+<button type="button" class="practice-chip" data-chip-value="Use later repetition or clarification to rebuild the idea." data-chip-origin="bank-1" data-chip-id="1-2">
+  Use later repetition or clarification to rebuild the idea.
+</button>
+<button type="button" class="practice-chip" data-chip-value="Listen for signposts such as however, actually, because, and for example." data-chip-origin="bank-1" data-chip-id="1-3">
+  Listen for signposts such as however, actually, because, and for example.
+</button>
+  </div>
+  <div class="practice-chip-answer" data-order-answer></div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+    <button type="button" class="practice-clear-btn" data-task-clear>Clear</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="sort" data-task-id="2">
+  <p class="practice-task-label">3. Final sort</p>
+  <h3>Sort these habits into helpful or not helpful.</h3>
+  <div class="practice-sort-list">
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
+  <p>Accept the missed detail quickly and keep listening.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="1">
+  <p>Listen for signposts such as however, actually, because, and for example.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="2">
+  <p>Write every word because more notes always mean better listening.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
+  <p>Replay the missed word in your head even if the speaker has moved on.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+  </div>
+</div>
+  </div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="3">
+  <p class="practice-task-label">4. Last check</p>
+  <h3>Choose the sentence that sounds more controlled.</h3>
+  <div class="practice-choice-grid">
+<button type="button" class="practice-choice" data-choice-index="0">
+  If I miss one word, I stop and think about it until I understand it.
+</button>
+<button type="button" class="practice-choice" data-choice-index="1">
+  When I miss one detail, I stay with the audio and wait for the next clear signal or repetition.
+</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+  </div>
+</div>
 
-Best when you need detailed scoring guidance on clarity, cohesion, evidence use, and task achievement.
+## Get Feedback
+<div class="lesson-support-callout">
+  <div class="lesson-support-hero">
+    <p class="lesson-support-label">Personalized score feedback</p>
+    <h3>Get clear next-step advice.</h3>
+    <p class="lesson-support-copy">Choose the support that matches your study goal. You get direct correction, clear scoring language, and a simple next step.</p>
+  </div>
+  <div class="lesson-support-grid">
+    <a class="lesson-support-card lesson-support-card-essay" href="/essay-correction">
+      <span class="lesson-support-icon" aria-hidden="true">A+</span>
+      <strong>Essay Correction</strong>
+      <span>Detailed comments on one draft with band-style scoring.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-tutoring" href="/tutoring">
+      <span class="lesson-support-icon" aria-hidden="true">1:1</span>
+      <strong>1-on-1 Tutoring</strong>
+      <span>Live help when you want guided practice and fast correction.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-ai" href="/celpip/writing/ai-feedback">
+      <span class="lesson-support-icon" aria-hidden="true">AI</span>
+      <strong>AI Writing Feedback</strong>
+      <span>Quick checks when you want to test ideas before a full review.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-webinar" href="/webinar">
+      <span class="lesson-support-icon" aria-hidden="true">Live</span>
+      <strong>Weekly Webinar</strong>
+      <span>Join a guided session and learn with real exam-style examples.</span>
+    </a>
+  </div>
+  <p class="lesson-support-best">Best when you need guided feedback on listening habits, task strategy, and exam accuracy.</p>
+</div>

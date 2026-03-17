@@ -5,182 +5,230 @@ level: "B2"
 ieltsBand: "6.0-6.5"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B2 grammar lesson on Connecting Words for Essays with unpacked explanations, aligned practice, and model answers."
+excerpt: "B2 lesson on Connecting Words for Essays with teacher-style explanation, guided practice, and topic-linked review."
 date: "2026-02-27"
 tags: ["grammar", "b2", "exam-prep", "ielts", "celpip"]
-heroTip: "Understand the idea first, then practice under timed exam conditions."
-visualAids: ["Simple example table", "Right and wrong list", "Real test examples"]
+heroTip: "Say the rule or strategy in plain English before you edit your answer."
+visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence is better for a test?"
-    options: ["Very bad.", "This is not helpful.", "This creates problems."]
+  - prompt: "Which sentence uses Connecting Words for Essays correctly?"
+    options:
+      - "The route is cheaper however it takes longer in the morning."
+      - "The route is cheaper; however, it takes longer in the morning."
+      - "The buses were delayed because therefore many students were late."
     correctIndex: 1
-    explanation: "Option 2 is clear and serious. Good for tests."
-  - prompt: "How do you say \"to choose\"?"
-    options: ["do a decision", "make a decision", "get a decision"]
+    explanation: "Option 2 matches the main rule for Connecting Words for Essays and keeps the sentence natural."
+  - prompt: "What should you check first when editing Connecting Words for Essays?"
+    options:
+      - "The meaning you want and the sentence pattern you need"
+      - "Only the number of long words in the sentence"
+      - "Whether the sentence sounds complicated enough"
+    correctIndex: 0
+    explanation: "Start from meaning and pattern; complexity is never the first goal."
+  - prompt: "Which edit fixes a common Connecting Words for Essays mistake?"
+    options:
+      - "The library opens earlier however the study rooms still fill quickly."
+      - "The library opens earlier; however, the study rooms still fill quickly."
+      - "The policy was expensive because it reduced congestion."
     correctIndex: 1
-    explanation: "We say \"make a decision\". \"Do a decision\" is wrong."
-  - prompt: "After you write, what should you check first?"
-    options: ["Only the length", "Grammar and spelling", "Only adjectives"]
-    correctIndex: 1
-    explanation: "Good grammar helps you get better marks on tests."
-  - prompt: "Which sentence is more polite?"
-    options: ["This always happens.", "This might happen.", "This happen maybe."]
-    correctIndex: 1
-    explanation: "Option 2 is more careful and polite. Better for tests."
-  - prompt: "What helps you speak more smoothly?"
-    options: ["Memorize everything", "Use connecting words like also and then", "Never stop talking"]
-    correctIndex: 1
-    explanation: "Connecting words help your speaking sound natural."
+    explanation: "Option 2 repairs a typical Connecting Words for Essays error and matches the target form."
 premium: false
 priceCAD: 0
 draft: false
 ---
-## Goal
-Learn how to use **Connecting Words for Essays** accurately in IELTS and CELPIP responses.
-
-## What Connecting Words for Essays Means
-This lesson is specifically about **Connecting Words for Essays**. By the end, you should understand when to use it, how to form it correctly, and how to avoid common errors.
-
 ## Topic Explanation and Use
-Connecting Words for Essays controls how a sentence carries meaning: reference, sequence, and emphasis must stay clear from start to finish.
-
-Use Connecting Words for Essays to make one precise meaning per sentence, then expand only when the added structure improves clarity for exam readers.
-
-Use conditions:
-- Choose the target form after deciding the exact meaning (fact, contrast, cause, or condition).
-- Keep agreement and word order stable before adding extra clauses or modifiers.
-- If a longer sentence becomes harder to scan, split it and keep the same logic.
-
-Reference examples:
-- *In exam writing, accurate Connecting Words for Essays helps each sentence carry one clear grammatical purpose.*
-- *When Connecting Words for Essays is chosen deliberately, arguments stay precise and easier to evaluate under time pressure.*
-
-## Key Rule in Plain Language
-1. Choose the exact grammar job first: where **Connecting Words for Essays** controls time, relationship, or emphasis.
-2. Build a complete base clause, then place **Connecting Words for Essays** in the position required by the pattern.
-3. Check agreement and tense around **Connecting Words for Essays** before adding extra words.
-4. Add one supporting clause only if the logic stays clear in exam writing task response context.
-5. Re-read for one specific risk: wrong form, wrong position, or mixed timeline.
+<div class="lesson-teach-grid">
+  <section class="lesson-panel lesson-panel-core">
+    <p class="lesson-panel-label">Core idea</p>
+    <p>Connectors should make the logic easier to follow, not harder.</p>
+<p>Connectors show the relationship between ideas. They tell the reader whether you are adding information, contrasting, giving a reason, or showing a result.</p>
+<p>Use connectors to guide the reader through your logic. The best connector is the one that matches the real relationship between the ideas, not the one that sounds most formal.</p>
+<p>At B2 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+  </section>
+  <section class="lesson-panel lesson-panel-when">
+    <p class="lesson-panel-label">Use it here</p>
+    <ul><li>Choose the connector after you decide the relationship: addition, contrast, reason, or result.</li><li>Do not force a formal connector if a simple one like but or so is clearer.</li><li>Check punctuation because some connectors join full clauses and some do not.</li></ul>
+  </section>
+  <section class="lesson-panel lesson-panel-pattern">
+    <p class="lesson-panel-label">Watch it work</p>
+    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">The route is cheaper, but it takes longer during rush hour.</div>
+<div class="lesson-pattern-sentence">The pilot improved reliability; therefore, fewer passengers complained.</div></div>
+  </section>
+  <section class="lesson-panel lesson-panel-remember">
+    <p class="lesson-panel-label">Remember this</p>
+    <ul><li>Decide the relationship first: addition, contrast, reason, or result.</li><li>Choose a connector that matches that relationship exactly.</li><li>Check whether the connector joins words, phrases, or full clauses.</li><li>Fix punctuation after the connector pattern is chosen.</li><li>Read the whole sentence to make sure the logic is easy to follow.</li></ul>
+  </section>
+</div>
 
 ## Real-World Examples with Connecting Words for Essays
-### Example 1
-- Weak: *The sentence uses Connecting Words for Essays but the form are not matched to the intended meaning.*
-- Strong: *The sentence uses Connecting Words for Essays and the forms are matched to the intended meaning.*
-- Why it works: the grammar choice supports communication instead of confusing the reader.
-
-### Example 2
-- Weak: *Writers apply Connecting Words for Essays in long sentences, but one form choice reduce clarity.*
-- Strong: *Writers apply Connecting Words for Essays in long sentences, and each form choice supports clarity.*
-- Why it works: the reader can follow the logic without re-reading.
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The route is cheaper however it takes longer in the morning.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>The route is cheaper; however, it takes longer in the morning.</p>
+  <p class="lesson-card-note">This correction matches the intended meaning and keeps Connecting Words for Essays natural.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The buses were delayed because therefore many students were late.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>The buses were delayed; therefore, many students were late.</p>
+  <p class="lesson-card-note">This version sounds more natural because Connecting Words for Essays fits the sentence clearly.</p>
+</article>
+</div>
 
 ## Common Errors with Connecting Words for Essays
-<details class="lesson-accordion lesson-error">
-<summary>Error 1: using Connecting Words for Essays with a form that does not match the grammatical function</summary>
-
-- Weak: *The sentence uses Connecting Words for Essays but the form are not matched to the intended meaning.*
-- Strong: *The sentence uses Connecting Words for Essays and the forms are matched to the intended meaning.*
-- Fix: identify the grammar function first, then select the Connecting Words for Essays form that fits the sentence.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 2: using Connecting Words for Essays with inconsistent agreement or structure</summary>
-
-- Weak: *The paragraph shows Connecting Words for Essays, but the form choices creates confusion for the reader.*
-- Strong: *The paragraph shows Connecting Words for Essays, and the form choices create clear meaning for the reader.*
-- Fix: keep agreement stable and verify the full clause after each form change.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 3: adding extra complexity in Connecting Words for Essays without communicative value</summary>
-
-- Weak: *The response uses Connecting Words for Essays repeatedly and the sentence become harder to follow.*
-- Strong: *The response uses Connecting Words for Essays selectively, so each sentence stays clear and purposeful.*
-- Fix: prefer simpler structure when added complexity does not improve precision.
-</details>
-
-## Practice
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 1: Correct the Sentence</summary>
-
-Correct each sentence so it uses **Connecting Words for Essays** naturally.
-1. The writer used Connecting Words for Essays, but one key form are incorrect in the sentence.
-2. This paragraph includes Connecting Words for Essays, but one structure break the intended meaning.
-3. The response attempts Connecting Words for Essays, but one phrase does not fit the grammar pattern.
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 2: Build Sentences</summary>
-
-Write 4 sentences that apply **Connecting Words for Essays** in exam writing task response context.
-- sentence 1: use **Connecting Words for Essays** to state one clear fact
-- sentence 2: use **Connecting Words for Essays** to show contrast or qualification
-- sentence 3: use **Connecting Words for Essays** to express cause and result
-- sentence 4: use **Connecting Words for Essays** in an exam-style summary line
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 3: Mini Paragraph</summary>
-
-Write 5-6 sentences for this prompt:
-Write a short response that gives one clear position, one reason, and one specific example.
-Use **Connecting Words for Essays** at least twice.
-</details>
-
-## Answer Guide
-<details class="lesson-accordion lesson-answer">
-<summary>Open Answer Guide</summary>
-
-For Exercise 1, your corrected versions should:
-- keep form choices consistent with the sentence meaning,
-- place **Connecting Words for Essays** in a grammatically correct structure,
-- and produce a sentence that sounds natural in context.
-
-Possible corrected versions:
-1. *The writer used Connecting Words for Essays, but one key form is incorrect in the sentence.*
-2. *This paragraph includes Connecting Words for Essays, but one structure breaks the intended meaning.*
-3. *The response attempts Connecting Words for Essays, but one phrase does not fit the grammar pattern.*
-</details>
-
-## Interactive Exercise Test
-<div class="mini-quiz" data-mini-quiz>
-<div class="mini-quiz-head">
-<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>
-<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/3 | Attempted: 0/3</p>
-<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>
-</div>
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q1. Choose the stronger version for: using Connecting Words for Essays with a form that does not match the grammatical function</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. The sentence uses Connecting Words for Essays but the form are not matched to the intended meaning.</button>
-<button type="button" data-choice="B">B. The sentence uses Connecting Words for Essays and the forms are matched to the intended meaning.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<div class="lesson-error-grid">
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 1</p>
+  <h3>choosing a connector or punctuation pattern that does not match the relationship</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The route is cheaper however it takes longer in the morning.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The route is cheaper; however, it takes longer in the morning.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> decide the relationship first, then use a connector and punctuation pattern that fits it</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q2. Choose the stronger version for: using Connecting Words for Essays with inconsistent agreement or structure</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. The paragraph shows Connecting Words for Essays, but the form choices creates confusion for the reader.</button>
-<button type="button" data-choice="B">B. The paragraph shows Connecting Words for Essays, and the form choices create clear meaning for the reader.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 2</p>
+  <h3>using a connector that shows the wrong relationship</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The route became cheaper; however, more people started using it.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The route became cheaper, so more people started using it.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> choose the connector from the real logic between the ideas</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q3. Choose the stronger version for: adding extra complexity in Connecting Words for Essays without communicative value</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. The response uses Connecting Words for Essays repeatedly and the sentence become harder to follow.</button>
-<button type="button" data-choice="B">B. The response uses Connecting Words for Essays selectively, so each sentence stays clear and purposeful.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 3</p>
+  <h3>joining full clauses with connector punctuation that does not work</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The buses improved however the station remained crowded.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The buses improved; however, the station remained crowded.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> when however joins full clauses, use punctuation that marks the clause boundary</p>
 </article>
 </div>
 
-## Want Personalized Score Feedback?
-If you want faster improvement than self-study alone, use one paid support option:
-- [Essay Correction](/essay-correction)
-- [1-on-1 Tutoring](/tutoring)
-- [AI Writing Feedback](/celpip/writing/ai-feedback)
-- [Weekly Webinar](/webinar)
+## Interactive Practice Lab
+<div class="practice-lab" data-practice-lab>
+  <div class="practice-lab-head">
+    <div>
+      <h3>Practice</h3>
+      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+    </div>
+    <div class="practice-lab-status">
+      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
+    </div>
+  </div>
+  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <div class="practice-lab-grid">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Connecting Words for Essays form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+  <p class="practice-task-label">1. Quick pick</p>
+  <h3>Choose the stronger sentence for Connecting Words for Essays.</h3>
+  <div class="practice-choice-grid">
+<button type="button" class="practice-choice" data-choice-index="0">
+  The library opens earlier however the study rooms still fill quickly.
+</button>
+<button type="button" class="practice-choice" data-choice-index="1">
+  The library opens earlier; however, the study rooms still fill quickly.
+</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="order" data-task-answer="The policy was||expensive, but it||reduced congestion." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+  <p class="practice-task-label">2. Build it</p>
+  <h3>Put this Connecting Words for Essays sentence in the correct order.</h3>
+  <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
+  <div class="practice-chip-bank" data-order-bank>
+<button type="button" class="practice-chip" data-chip-value="expensive, but it" data-chip-origin="bank-1" data-chip-id="1-0">
+  expensive, but it
+</button>
+<button type="button" class="practice-chip" data-chip-value="The policy was" data-chip-origin="bank-1" data-chip-id="1-1">
+  The policy was
+</button>
+<button type="button" class="practice-chip" data-chip-value="reduced congestion." data-chip-origin="bank-1" data-chip-id="1-2">
+  reduced congestion.
+</button>
+  </div>
+  <div class="practice-chip-answer" data-order-answer></div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+    <button type="button" class="practice-clear-btn" data-task-clear>Clear</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="typing" data-task-answers="Students revised carefully; as a result, they felt calmer in the test." data-task-id="2" data-correct-feedback="Correct. You repaired the sentence without changing the message." data-wrong-feedback="Not yet. Check the target form, then type the full corrected sentence.">
+  <p class="practice-task-label">3. Type the fix</p>
+  <h3>Rewrite the sentence so Connecting Words for Essays is correct.</h3>
+  <p class="practice-source-line"><span>Fix this:</span> Students revised carefully as a result they felt calmer in the test.</p>
+  <div class="practice-input-row">
+    <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
+  <p class="practice-task-label">4. Final sort</p>
+  <h3>Mark each sentence as correct or needing a fix.</h3>
+  <div class="practice-sort-list">
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
+  <p>The library opens earlier; however, the study rooms still fill quickly.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
+  <p>The library opens earlier however the study rooms still fill quickly.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
+  <p>The policy was expensive, but it reduced congestion.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
+  <p>The policy was expensive because it reduced congestion.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+  </div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+  </div>
+</div>
 
-Best when you need precise correction on grammar control, task response quality, and exam-style scoring.
+## Get Feedback
+<div class="lesson-support-callout">
+  <div class="lesson-support-hero">
+    <p class="lesson-support-label">Personalized score feedback</p>
+    <h3>Get clear next-step advice.</h3>
+    <p class="lesson-support-copy">Choose the support that matches your study goal. You get direct correction, clear scoring language, and a simple next step.</p>
+  </div>
+  <div class="lesson-support-grid">
+    <a class="lesson-support-card lesson-support-card-essay" href="/essay-correction">
+      <span class="lesson-support-icon" aria-hidden="true">A+</span>
+      <strong>Essay Correction</strong>
+      <span>Detailed comments on one draft with band-style scoring.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-tutoring" href="/tutoring">
+      <span class="lesson-support-icon" aria-hidden="true">1:1</span>
+      <strong>1-on-1 Tutoring</strong>
+      <span>Live help when you want guided practice and fast correction.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-ai" href="/celpip/writing/ai-feedback">
+      <span class="lesson-support-icon" aria-hidden="true">AI</span>
+      <strong>AI Writing Feedback</strong>
+      <span>Quick checks when you want to test ideas before a full review.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-webinar" href="/webinar">
+      <span class="lesson-support-icon" aria-hidden="true">Live</span>
+      <strong>Weekly Webinar</strong>
+      <span>Join a guided session and learn with real exam-style examples.</span>
+    </a>
+  </div>
+  <p class="lesson-support-best">Best when you need precise correction on grammar control, task response quality, and exam-style scoring.</p>
+</div>

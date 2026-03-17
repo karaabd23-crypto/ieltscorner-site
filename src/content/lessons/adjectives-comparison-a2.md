@@ -5,159 +5,232 @@ level: "A2"
 ieltsBand: "3.5-4.0"
 clb: "3-4"
 exam: ["IELTS", "CELPIP"]
-excerpt: "A2 grammar lesson on Adjectives in Comparison with unpacked explanations, aligned practice, and model answers."
+excerpt: "A2 lesson on Adjectives in Comparison with teacher-style explanation, guided practice, and topic-linked review."
 date: "2026-03-02"
 tags: ["grammar", "a2", "cefr-differentiated", "ielts", "celpip"]
-heroTip: "Understand the idea first, then practice under timed exam conditions."
+heroTip: "Say the rule or strategy in plain English before you edit your answer."
 videoEmbed: ""
 draft: false
+visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
+quiz:
+  - prompt: "Which sentence uses Adjectives in Comparison correctly?"
+    options:
+      - "This route is more cheap than the old one."
+      - "This route is cheaper than the old one."
+      - "It is the most easiest option for students."
+    correctIndex: 1
+    explanation: "Option 2 matches the main rule for Adjectives in Comparison and keeps the sentence natural."
+  - prompt: "What should you check first when editing Adjectives in Comparison?"
+    options:
+      - "The meaning you want and the sentence pattern you need"
+      - "Only the number of long words in the sentence"
+      - "Whether the sentence sounds complicated enough"
+    correctIndex: 0
+    explanation: "Start from meaning and pattern; complexity is never the first goal."
+  - prompt: "Which edit fixes a common Adjectives in Comparison mistake?"
+    options:
+      - "This phone is more better than my old one."
+      - "This phone is better than my old one."
+      - "Her explanation was clearer than all students in class."
+    correctIndex: 1
+    explanation: "Option 2 repairs a typical Adjectives in Comparison error and matches the target form."
 ---
-## Goal
-Learn how to use **Adjectives in Comparison** accurately in IELTS and CELPIP responses.
-
-## What Adjectives in Comparison Means
-This lesson is specifically about **Adjectives in Comparison**. By the end, you should understand when to use it, how to form it correctly, and how to avoid common errors.
-
 ## Topic Explanation and Use
-Adjectives in Comparison controls how a sentence carries meaning: reference, sequence, and emphasis must stay clear from start to finish.
-
-Use Adjectives in Comparison to make one precise meaning per sentence, then expand only when the added structure improves clarity for exam readers.
-
-Use conditions:
-- Choose the target form after deciding the exact meaning (fact, contrast, cause, or condition).
-- Keep agreement and word order stable before adding extra clauses or modifiers.
-- If a longer sentence becomes harder to scan, split it and keep the same logic.
-
-Reference examples:
-- *In exam writing, accurate Adjectives in Comparison helps each sentence carry one clear grammatical purpose.*
-- *When Adjectives in Comparison is chosen deliberately, arguments stay precise and easier to evaluate under time pressure.*
-
-## Key Rule in Plain Language
-1. Choose the exact grammar job first: where **Adjectives in Comparison** controls time, relationship, or emphasis.
-2. Build a complete base clause, then place **Adjectives in Comparison** in the position required by the pattern.
-3. Check agreement and tense around **Adjectives in Comparison** before adding extra words.
-4. Add one supporting clause only if the logic stays clear in public policy and daily life context.
-5. Re-read for one specific risk: wrong form, wrong position, or mixed timeline.
+<div class="lesson-teach-grid">
+  <section class="lesson-panel lesson-panel-core">
+    <p class="lesson-panel-label">Core idea</p>
+    <p>Comparison language should sound simple and exact, not heavy or doubled.</p>
+<p>Comparison forms show difference, equality, or the highest degree. English uses comparative, superlative, and equality patterns such as more, -er, most, -est, and as ... as.</p>
+<p>Use comparison when you need to measure change, rank options, or show which idea is stronger, cheaper, faster, or more useful.</p>
+<p>At A2 level, keep sentences short and clear first. Add extra words only when they help meaning.</p>
+  </section>
+  <section class="lesson-panel lesson-panel-when">
+    <p class="lesson-panel-label">Use it here</p>
+    <ul><li>Use than after a comparative form.</li><li>Use only one comparison marker at a time: cheaper or more expensive, not more cheaper.</li><li>Use as ... as when you want to show equality.</li></ul>
+  </section>
+  <section class="lesson-panel lesson-panel-pattern">
+    <p class="lesson-panel-label">Watch it work</p>
+    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">This route is cheaper than the old one.</div>
+<div class="lesson-pattern-sentence">The online option is as flexible as the in-person course.</div></div>
+  </section>
+  <section class="lesson-panel lesson-panel-remember">
+    <p class="lesson-panel-label">Remember this</p>
+    <ul><li>Decide the exact meaning before choosing the grammar form.</li><li>Write the shortest correct version first.</li><li>Add detail only after the grammar is stable.</li><li>Check one risk at a time: form, order, agreement, or reference.</li><li>Keep the sentence only if it stays clear in one reading.</li></ul>
+  </section>
+</div>
 
 ## Real-World Examples with Adjectives in Comparison
-### Example 1
-- Weak: *This route is more cheap than the old one.*
-- Strong: *This route is cheaper than the old one.*
-- Why it works: the grammar choice supports communication instead of confusing the reader.
-
-### Example 2
-- Weak: *It is the most easiest option for students.*
-- Strong: *It is the easiest option for students.*
-- Why it works: the reader can follow the logic without re-reading.
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>This route is more cheap than the old one.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>This route is cheaper than the old one.</p>
+  <p class="lesson-card-note">This correction matches the intended meaning and keeps Adjectives in Comparison natural.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>It is the most easiest option for students.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>It is the easiest option for students.</p>
+  <p class="lesson-card-note">This version sounds more natural because Adjectives in Comparison fits the sentence clearly.</p>
+</article>
+</div>
 
 ## Common Errors with Adjectives in Comparison
-<details class="lesson-accordion lesson-error">
-<summary>Error 1: combining comparison forms incorrectly (more cheaper, most easiest)</summary>
-
-- Weak: *This route is more cheap than the old one.*
-- Strong: *This route is cheaper than the old one.*
-- Fix: use either -er/-est or more/most, but not both together.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 2: using the right idea with unstable sentence structure</summary>
-
-- Weak: *It is the most easiest option for students.*
-- Strong: *It is the easiest option for students.*
-- Fix: revise agreement and clause structure so the form supports meaning.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 3: adding complexity in Adjectives in Comparison without improving meaning</summary>
-
-- Weak: *The writer attempts Adjectives in Comparison, but the sentence becomes difficult to follow due to unnecessary additions.*
-- Strong: *The writer uses Adjectives in Comparison selectively, so the sentence remains clear and focused.*
-- Fix: keep only structures that improve precision or clarity.
-</details>
-
-## Practice
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 1: Correct the Sentence</summary>
-
-Correct each sentence so it uses **Adjectives in Comparison** naturally.
-1. This phone is more better than my old one.
-2. Her explanation was clearer than all students in class.
-3. Public transit is the most cheapest way to travel downtown.
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 2: Build Sentences</summary>
-
-Write 4 sentences that apply **Adjectives in Comparison** in public policy and daily life context.
-- sentence 1: use **Adjectives in Comparison** to state one clear fact
-- sentence 2: use **Adjectives in Comparison** to show contrast or qualification
-- sentence 3: use **Adjectives in Comparison** to express cause and result
-- sentence 4: use **Adjectives in Comparison** in an exam-style summary line
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 3: Mini Paragraph</summary>
-
-Write 5-6 sentences for this prompt:
-Should communities invest more in practical public services?
-Use **Adjectives in Comparison** at least twice.
-</details>
-
-## Answer Guide
-<details class="lesson-accordion lesson-answer">
-<summary>Open Answer Guide</summary>
-
-For Exercise 1, your corrected versions should:
-- keep form choices consistent with the sentence meaning,
-- place **Adjectives in Comparison** in a grammatically correct structure,
-- and produce a sentence that sounds natural in context.
-
-Possible corrected versions:
-1. *This phone is better than my old one.*
-2. *Her explanation was clearer than all the other students in class.*
-3. *Public transit is the cheapest way to travel downtown.*
-</details>
-
-## Interactive Exercise Test
-<div class="mini-quiz" data-mini-quiz>
-<div class="mini-quiz-head">
-<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>
-<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/3 | Attempted: 0/3</p>
-<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>
-</div>
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q1. Choose the stronger version for: combining comparison forms incorrectly (more cheaper, most easiest)</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. This route is more cheap than the old one.</button>
-<button type="button" data-choice="B">B. This route is cheaper than the old one.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<div class="lesson-error-grid">
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 1</p>
+  <h3>combining comparison forms incorrectly (more cheaper, most easiest)</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>This route is more cheap than the old one.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>This route is cheaper than the old one.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> use either -er/-est or more/most, but not both together</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q2. Choose the stronger version for: using the right idea with unstable sentence structure</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. It is the most easiest option for students.</button>
-<button type="button" data-choice="B">B. It is the easiest option for students.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 2</p>
+  <h3>using double comparatives</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>This route is more faster during rush hour.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>This route is faster during rush hour.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> use one comparative marker only (-er or more)</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q3. Choose the stronger version for: adding complexity in Adjectives in Comparison without improving meaning</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. The writer attempts Adjectives in Comparison, but the sentence becomes difficult to follow due to unnecessary additions.</button>
-<button type="button" data-choice="B">B. The writer uses Adjectives in Comparison selectively, so the sentence remains clear and focused.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 3</p>
+  <h3>using than after a superlative</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>It is the cheapest than the old model.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>It is cheaper than the old model.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> use than with comparatives and use in/of with superlatives</p>
 </article>
 </div>
 
-## Want Personalized Score Feedback?
-If you want faster improvement than self-study alone, use one paid support option:
-- [Essay Correction](/essay-correction)
-- [1-on-1 Tutoring](/tutoring)
-- [AI Writing Feedback](/celpip/writing/ai-feedback)
-- [Weekly Webinar](/webinar)
+## Interactive Practice Lab
+<div class="practice-lab" data-practice-lab>
+  <div class="practice-lab-head">
+    <div>
+      <h3>Practice</h3>
+      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+    </div>
+    <div class="practice-lab-status">
+      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
+    </div>
+  </div>
+  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <div class="practice-lab-grid">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Adjectives in Comparison form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+  <p class="practice-task-label">1. Quick pick</p>
+  <h3>Choose the stronger sentence for Adjectives in Comparison.</h3>
+  <div class="practice-choice-grid">
+<button type="button" class="practice-choice" data-choice-index="0">
+  This phone is more better than my old one.
+</button>
+<button type="button" class="practice-choice" data-choice-index="1">
+  This phone is better than my old one.
+</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="order" data-task-answer="Her explanation was||clearer than all||the other students||in class." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+  <p class="practice-task-label">2. Build it</p>
+  <h3>Put this Adjectives in Comparison sentence in the correct order.</h3>
+  <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
+  <div class="practice-chip-bank" data-order-bank>
+<button type="button" class="practice-chip" data-chip-value="the other students" data-chip-origin="bank-1" data-chip-id="1-0">
+  the other students
+</button>
+<button type="button" class="practice-chip" data-chip-value="in class." data-chip-origin="bank-1" data-chip-id="1-1">
+  in class.
+</button>
+<button type="button" class="practice-chip" data-chip-value="clearer than all" data-chip-origin="bank-1" data-chip-id="1-2">
+  clearer than all
+</button>
+<button type="button" class="practice-chip" data-chip-value="Her explanation was" data-chip-origin="bank-1" data-chip-id="1-3">
+  Her explanation was
+</button>
+  </div>
+  <div class="practice-chip-answer" data-order-answer></div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+    <button type="button" class="practice-clear-btn" data-task-clear>Clear</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="typing" data-task-answers="Public transit is the cheapest way to travel downtown." data-task-id="2" data-correct-feedback="Correct. You repaired the sentence without changing the message." data-wrong-feedback="Not yet. Check the target form, then type the full corrected sentence.">
+  <p class="practice-task-label">3. Type the fix</p>
+  <h3>Rewrite the sentence so Adjectives in Comparison is correct.</h3>
+  <p class="practice-source-line"><span>Fix this:</span> Public transit is the most cheapest way to travel downtown.</p>
+  <div class="practice-input-row">
+    <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
+  <p class="practice-task-label">4. Final sort</p>
+  <h3>Mark each sentence as correct or needing a fix.</h3>
+  <div class="practice-sort-list">
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
+  <p>This phone is better than my old one.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
+  <p>This phone is more better than my old one.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
+  <p>Her explanation was clearer than all the other students in class.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
+  <p>Her explanation was clearer than all students in class.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+  </div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+  </div>
+</div>
 
-Best when you need precise correction on grammar control, task response quality, and exam-style scoring.
+## Get Feedback
+<div class="lesson-support-callout">
+  <div class="lesson-support-hero">
+    <p class="lesson-support-label">Personalized score feedback</p>
+    <h3>Get clear next-step advice.</h3>
+    <p class="lesson-support-copy">Choose the support that matches your study goal. You get direct correction, clear scoring language, and a simple next step.</p>
+  </div>
+  <div class="lesson-support-grid">
+    <a class="lesson-support-card lesson-support-card-essay" href="/essay-correction">
+      <span class="lesson-support-icon" aria-hidden="true">A+</span>
+      <strong>Essay Correction</strong>
+      <span>Detailed comments on one draft with band-style scoring.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-tutoring" href="/tutoring">
+      <span class="lesson-support-icon" aria-hidden="true">1:1</span>
+      <strong>1-on-1 Tutoring</strong>
+      <span>Live help when you want guided practice and fast correction.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-ai" href="/celpip/writing/ai-feedback">
+      <span class="lesson-support-icon" aria-hidden="true">AI</span>
+      <strong>AI Writing Feedback</strong>
+      <span>Quick checks when you want to test ideas before a full review.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-webinar" href="/webinar">
+      <span class="lesson-support-icon" aria-hidden="true">Live</span>
+      <strong>Weekly Webinar</strong>
+      <span>Join a guided session and learn with real exam-style examples.</span>
+    </a>
+  </div>
+  <p class="lesson-support-best">Best when you need precise correction on grammar control, task response quality, and exam-style scoring.</p>
+</div>

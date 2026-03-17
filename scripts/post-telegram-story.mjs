@@ -2,6 +2,20 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
+import {
+  claimPostOwnership,
+  createContentFingerprint as createTelegramFingerprint,
+  fetchRecentChannelTexts as fetchRecentTelegramChannelTexts,
+  hasFingerprint as hasTelegramFingerprint,
+  hasRecentTopic as hasRecentTelegramTopic,
+  loadPostHistory as loadTelegramPostHistory,
+  rememberFingerprint as rememberTelegramFingerprint,
+  releasePostOwnershipClaim,
+  resolveHistoryFilePath as resolveTelegramHistoryFilePath,
+  resolvePublicChannelSlug as resolveTelegramPublicChannelSlug,
+  savePostHistory as saveTelegramPostHistory,
+  toCanonicalPostText as toCanonicalTelegramPostText,
+} from './lib/telegram-dedupe.mjs';
 
 const DEFAULT_MODEL = 'gpt-4.1-mini';
 const DEFAULT_HISTORY_FILE = '.cache/telegram-post-history.json';
@@ -755,9 +769,9 @@ async function postBusinessStory(botToken, story) {
 
 async function postStoryAsChannelPost(botToken, chatId, story) {
   const channelUrl = process.env.TELEGRAM_CHANNEL_URL ?? '';
-  const publicSlug = resolvePublicChannelSlug(channelUrl, chatId);
-  const existingTexts = await fetchRecentChannelTexts(publicSlug);
-  const normalizedContent = normalizeForDedupe(story.content);
+  const publicSlug = resolveTelegramPublicChannelSlug(channelUrl, chatId);
+  const existingTexts = await fetchRecentTelegramChannelTexts(publicSlug, { stripSignature: true });
+  const normalizedContent = toCanonicalTelegramPostText(story.content, { stripSignature: true });
 
   if (existingTexts.includes(normalizedContent)) {
     console.log('[skip] Duplicate story detected in recent channel posts. Skipping publish.');
@@ -984,35 +998,61 @@ async function main() {
     return;
   }
 
-  const historyFilePath = resolveHistoryFilePath();
-  const history = await loadPostHistory(historyFilePath);
-  const storyFingerprint = createContentFingerprint(story.content);
+  const historyFilePath = resolveTelegramHistoryFilePath();
+  const history = await loadTelegramPostHistory(historyFilePath);
+  const storyFingerprint = createTelegramFingerprint(story.content, { stripSignature: true });
+  const topicDedupeDays = Math.max(1, Number.parseInt(process.env.TELEGRAM_TOPIC_DEDUPE_DAYS ?? '60', 10) || 60);
   console.log(`[dedup] Story fingerprint: ${storyFingerprint.slice(0, 12)}... | History size: ${history.items?.length ?? 0} items`);
-  if (hasFingerprint(history, storyFingerprint)) {
+  if (hasTelegramFingerprint(history, storyFingerprint)) {
     console.log('[skip] Duplicate story found in persistent history. Skipping publish.');
     return;
   }
-  console.log('[post] Story is unique. Proceeding with post.');
-
-  if (!canPostTrueStory && !fallbackToChannelPost) {
-    console.log('[skip] Story scheduler is configured to avoid channel posts and true story settings are missing.');
-    console.log('[hint] Set TELEGRAM_BUSINESS_CONNECTION_ID + TELEGRAM_STORY_PHOTO_URL (or TELEGRAM_STORY_VIDEO_URL) to publish true Telegram Stories.');
-    console.log('[hint] Or set TELEGRAM_STORY_FALLBACK_TO_POST=true to keep old channel post behavior.');
+  if (hasRecentTelegramTopic(history, topicObj.topic, { kind: 'story', maxAgeDays: topicDedupeDays })) {
+    console.log(`[skip] Story topic already posted in the last ${topicDedupeDays} days. Skipping publish.`);
     return;
   }
 
-  const result = canPostTrueStory
-    ? await postBusinessStory(botToken, story)
-    : await postStoryAsChannelPost(botToken, chatId, story);
-
-  if (result?.skipped) {
-    console.log('[skip] Story settings are incomplete for true Telegram Stories.');
-    console.log('[hint] Set TELEGRAM_BUSINESS_CONNECTION_ID + TELEGRAM_STORY_PHOTO_URL (or TELEGRAM_STORY_VIDEO_URL).');
+  const claim = await claimPostOwnership({
+    kind: 'story',
+    fingerprint: storyFingerprint,
+    topic: topicObj.topic,
+  });
+  if (!claim.claimed) {
+    console.log('[skip] Another Telegram story run already owns this topic or fingerprint. Skipping publish.');
     return;
   }
 
-  rememberFingerprint(history, storyFingerprint, { topic: topicObj.topic });
-  await savePostHistory(historyFilePath, history);
+  try {
+    console.log('[post] Story is unique. Proceeding with post.');
+
+    if (!canPostTrueStory && !fallbackToChannelPost) {
+      console.log('[skip] Story scheduler is configured to avoid channel posts and true story settings are missing.');
+      console.log('[hint] Set TELEGRAM_BUSINESS_CONNECTION_ID + TELEGRAM_STORY_PHOTO_URL (or TELEGRAM_STORY_VIDEO_URL) to publish true Telegram Stories.');
+      console.log('[hint] Or set TELEGRAM_STORY_FALLBACK_TO_POST=true to keep old channel post behavior.');
+      return;
+    }
+
+    const result = canPostTrueStory
+      ? await postBusinessStory(botToken, story)
+      : await postStoryAsChannelPost(botToken, chatId, story);
+
+    if (result?.skipped) {
+      console.log('[skip] Story settings are incomplete for true Telegram Stories.');
+      console.log('[hint] Set TELEGRAM_BUSINESS_CONNECTION_ID + TELEGRAM_STORY_PHOTO_URL (or TELEGRAM_STORY_VIDEO_URL).');
+      return;
+    }
+
+    rememberTelegramFingerprint(history, storyFingerprint, {
+      kind: 'story',
+      topic: topicObj.topic,
+      messageId: result?.contentResult?.result?.message_id ?? null,
+      quizMessageIds: result?.quizResult?.result?.message_id ? [result.quizResult.result.message_id] : [],
+      storyId: result?.storyResult?.result?.id ?? null,
+    });
+    await saveTelegramPostHistory(historyFilePath, history);
+  } finally {
+    await releasePostOwnershipClaim(claim);
+  }
 }
 
 main().catch((error) => {

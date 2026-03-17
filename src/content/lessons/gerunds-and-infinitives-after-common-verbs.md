@@ -5,182 +5,230 @@ level: "B1"
 ieltsBand: "5.0-6.0"
 clb: "6-7"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B1 grammar lesson on Gerunds and infinitives after common verbs with unpacked explanations, aligned practice, and model answers."
+excerpt: "B1 lesson on Gerunds and infinitives after common verbs with teacher-style explanation, guided practice, and topic-linked review."
 date: "2026-02-27"
 tags: ["grammar", "b1", "exam-prep", "ielts", "celpip"]
-heroTip: "Understand the idea first, then practice under timed exam conditions."
-visualAids: ["Simple example table", "Right and wrong list", "Real test examples"]
+heroTip: "Say the rule or strategy in plain English before you edit your answer."
+visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence is better for a test?"
-    options: ["Very bad.", "This is not helpful.", "This creates problems."]
+  - prompt: "Which sentence uses Gerunds and infinitives after common verbs correctly?"
+    options:
+      - "She avoided to answer the question directly."
+      - "She avoided answering the question directly."
+      - "They decided expanding the program next term."
     correctIndex: 1
-    explanation: "Option 2 is clear and serious. Good for tests."
-  - prompt: "How do you say \"to choose\"?"
-    options: ["do a decision", "make a decision", "get a decision"]
+    explanation: "Option 2 matches the main rule for Gerunds and infinitives after common verbs and keeps the sentence natural."
+  - prompt: "What should you check first when editing Gerunds and infinitives after common verbs?"
+    options:
+      - "The meaning you want and the sentence pattern you need"
+      - "Only the number of long words in the sentence"
+      - "Whether the sentence sounds complicated enough"
+    correctIndex: 0
+    explanation: "Start from meaning and pattern; complexity is never the first goal."
+  - prompt: "Which edit fixes a common Gerunds and infinitives after common verbs mistake?"
+    options:
+      - "He is interested to joining the evening class."
+      - "He is interested in joining the evening class."
+      - "We discussed to move the workshop to Friday."
     correctIndex: 1
-    explanation: "We say \"make a decision\". \"Do a decision\" is wrong."
-  - prompt: "After you write, what should you check first?"
-    options: ["Only the length", "Grammar and spelling", "Only adjectives"]
-    correctIndex: 1
-    explanation: "Good grammar helps you get better marks on tests."
-  - prompt: "Which sentence is more polite?"
-    options: ["This always happens.", "This might happen.", "This happen maybe."]
-    correctIndex: 1
-    explanation: "Option 2 is more careful and polite. Better for tests."
-  - prompt: "What helps you speak more smoothly?"
-    options: ["Memorize everything", "Use connecting words like also and then", "Never stop talking"]
-    correctIndex: 1
-    explanation: "Connecting words help your speaking sound natural."
+    explanation: "Option 2 repairs a typical Gerunds and infinitives after common verbs error and matches the target form."
 premium: false
 priceCAD: 0
 draft: false
 ---
-## Goal
-Learn how to use **Gerunds and infinitives after common verbs** accurately in IELTS and CELPIP responses.
-
-## What Gerunds and infinitives after common verbs Means
-This lesson is specifically about **Gerunds and infinitives after common verbs**. By the end, you should understand when to use it, how to form it correctly, and how to avoid common errors.
-
 ## Topic Explanation and Use
-Gerunds and infinitives after common verbs controls how a sentence carries meaning: reference, sequence, and emphasis must stay clear from start to finish.
-
-Use Gerunds and infinitives after common verbs to make one precise meaning per sentence, then expand only when the added structure improves clarity for exam readers.
-
-Use conditions:
-- Choose the target form after deciding the exact meaning (fact, contrast, cause, or condition).
-- Keep agreement and word order stable before adding extra clauses or modifiers.
-- If a longer sentence becomes harder to scan, split it and keep the same logic.
-
-Reference examples:
-- *In exam writing, accurate Gerunds and infinitives after common verbs helps each sentence carry one clear grammatical purpose.*
-- *When Gerunds and infinitives after common verbs is chosen deliberately, arguments stay precise and easier to evaluate under time pressure.*
-
-## Key Rule in Plain Language
-1. Choose the exact grammar job first: where **Gerunds and infinitives after common verbs** controls time, relationship, or emphasis.
-2. Build a complete base clause, then place **Gerunds and infinitives after common verbs** in the position required by the pattern.
-3. Check agreement and tense around **Gerunds and infinitives after common verbs** before adding extra words.
-4. Add one supporting clause only if the logic stays clear in public policy and daily life context.
-5. Re-read for one specific risk: wrong form, wrong position, or mixed timeline.
+<div class="lesson-teach-grid">
+  <section class="lesson-panel lesson-panel-core">
+    <p class="lesson-panel-label">Core idea</p>
+    <p>After some verbs, only one grammar pattern sounds natural.</p>
+<p>Some verbs are followed by a gerund (-ing), some by an infinitive (to + base verb), and some patterns change after prepositions. These are fixed grammar patterns, not free choices.</p>
+<p>Use the right verb pattern after the first word. If the first verb is wrong, the whole sentence will sound off even if the meaning is clear.</p>
+<p>At B1 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+  </section>
+  <section class="lesson-panel lesson-panel-when">
+    <p class="lesson-panel-label">Use it here</p>
+    <ul><li>After a preposition, use the -ing form.</li><li>Learn common verb partners as full chunks: decide to, avoid doing, interested in doing.</li><li>Check whether changing from -ing to infinitive changes the meaning of the sentence.</li></ul>
+  </section>
+  <section class="lesson-panel lesson-panel-pattern">
+    <p class="lesson-panel-label">Watch it work</p>
+    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">She avoided answering the question directly.</div>
+<div class="lesson-pattern-sentence">They decided to expand the program next term.</div></div>
+  </section>
+  <section class="lesson-panel lesson-panel-remember">
+    <p class="lesson-panel-label">Remember this</p>
+    <ul><li>Learn the first word and the next verb form together as one chunk.</li><li>Use the -ing form after prepositions.</li><li>Check whether the first verb takes -ing, to + verb, or both with a meaning change.</li><li>Test the sentence slot again after you change the verb form.</li><li>Keep the pattern simple enough that the meaning stays clear.</li></ul>
+  </section>
+</div>
 
 ## Real-World Examples with Gerunds and infinitives after common verbs
-### Example 1
-- Weak: *The sentence uses Gerunds and infinitives after common verbs but the form are not matched to the intended meaning.*
-- Strong: *The sentence uses Gerunds and infinitives after common verbs and the forms are matched to the intended meaning.*
-- Why it works: the grammar choice supports communication instead of confusing the reader.
-
-### Example 2
-- Weak: *Writers apply Gerunds and infinitives after common verbs in long sentences, but one form choice reduce clarity.*
-- Strong: *Writers apply Gerunds and infinitives after common verbs in long sentences, and each form choice supports clarity.*
-- Why it works: the reader can follow the logic without re-reading.
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>She avoided to answer the question directly.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>She avoided answering the question directly.</p>
+  <p class="lesson-card-note">This correction matches the intended meaning and keeps Gerunds and infinitives after common verbs natural.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>They decided expanding the program next term.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>They decided to expand the program next term.</p>
+  <p class="lesson-card-note">This version sounds more natural because Gerunds and infinitives after common verbs fits the sentence clearly.</p>
+</article>
+</div>
 
 ## Common Errors with Gerunds and infinitives after common verbs
-<details class="lesson-accordion lesson-error">
-<summary>Error 1: using Gerunds and infinitives after common verbs with a form that does not match the grammatical function</summary>
-
-- Weak: *The sentence uses Gerunds and infinitives after common verbs but the form are not matched to the intended meaning.*
-- Strong: *The sentence uses Gerunds and infinitives after common verbs and the forms are matched to the intended meaning.*
-- Fix: identify the grammar function first, then select the Gerunds and infinitives after common verbs form that fits the sentence.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 2: using Gerunds and infinitives after common verbs with inconsistent agreement or structure</summary>
-
-- Weak: *The paragraph shows Gerunds and infinitives after common verbs, but the form choices creates confusion for the reader.*
-- Strong: *The paragraph shows Gerunds and infinitives after common verbs, and the form choices create clear meaning for the reader.*
-- Fix: keep agreement stable and verify the full clause after each form change.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 3: adding extra complexity in Gerunds and infinitives after common verbs without communicative value</summary>
-
-- Weak: *The response uses Gerunds and infinitives after common verbs repeatedly and the sentence become harder to follow.*
-- Strong: *The response uses Gerunds and infinitives after common verbs selectively, so each sentence stays clear and purposeful.*
-- Fix: prefer simpler structure when added complexity does not improve precision.
-</details>
-
-## Practice
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 1: Correct the Sentence</summary>
-
-Correct each sentence so it uses **Gerunds and infinitives after common verbs** naturally.
-1. The writer used Gerunds and infinitives after common verbs, but one key form are incorrect in the sentence.
-2. This paragraph includes Gerunds and infinitives after common verbs, but one structure break the intended meaning.
-3. The response attempts Gerunds and infinitives after common verbs, but one phrase does not fit the grammar pattern.
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 2: Build Sentences</summary>
-
-Write 4 sentences that apply **Gerunds and infinitives after common verbs** in public policy and daily life context.
-- sentence 1: use **Gerunds and infinitives after common verbs** to state one clear fact
-- sentence 2: use **Gerunds and infinitives after common verbs** to show contrast or qualification
-- sentence 3: use **Gerunds and infinitives after common verbs** to express cause and result
-- sentence 4: use **Gerunds and infinitives after common verbs** in an exam-style summary line
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 3: Mini Paragraph</summary>
-
-Write 5-6 sentences for this prompt:
-Should communities invest more in practical public services?
-Use **Gerunds and infinitives after common verbs** at least twice.
-</details>
-
-## Answer Guide
-<details class="lesson-accordion lesson-answer">
-<summary>Open Answer Guide</summary>
-
-For Exercise 1, your corrected versions should:
-- keep form choices consistent with the sentence meaning,
-- place **Gerunds and infinitives after common verbs** in a grammatically correct structure,
-- and produce a sentence that sounds natural in context.
-
-Possible corrected versions:
-1. *The writer used Gerunds and infinitives after common verbs, but one key form is incorrect in the sentence.*
-2. *This paragraph includes Gerunds and infinitives after common verbs, but one structure breaks the intended meaning.*
-3. *The response attempts Gerunds and infinitives after common verbs, but one phrase does not fit the grammar pattern.*
-</details>
-
-## Interactive Exercise Test
-<div class="mini-quiz" data-mini-quiz>
-<div class="mini-quiz-head">
-<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>
-<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/3 | Attempted: 0/3</p>
-<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>
-</div>
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q1. Choose the stronger version for: using Gerunds and infinitives after common verbs with a form that does not match the grammatical function</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. The sentence uses Gerunds and infinitives after common verbs but the form are not matched to the intended meaning.</button>
-<button type="button" data-choice="B">B. The sentence uses Gerunds and infinitives after common verbs and the forms are matched to the intended meaning.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<div class="lesson-error-grid">
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 1</p>
+  <h3>using the wrong form after the first verb or preposition</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>She avoided to answer the question directly.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>She avoided answering the question directly.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> learn each verb pattern as a chunk and keep the next form consistent</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q2. Choose the stronger version for: using Gerunds and infinitives after common verbs with inconsistent agreement or structure</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. The paragraph shows Gerunds and infinitives after common verbs, but the form choices creates confusion for the reader.</button>
-<button type="button" data-choice="B">B. The paragraph shows Gerunds and infinitives after common verbs, and the form choices create clear meaning for the reader.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 2</p>
+  <h3>using the infinitive after a preposition</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>She is interested in to join the course.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>She is interested in joining the course.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> use the -ing form after prepositions</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q3. Choose the stronger version for: adding extra complexity in Gerunds and infinitives after common verbs without communicative value</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. The response uses Gerunds and infinitives after common verbs repeatedly and the sentence become harder to follow.</button>
-<button type="button" data-choice="B">B. The response uses Gerunds and infinitives after common verbs selectively, so each sentence stays clear and purposeful.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 3</p>
+  <h3>changing meaning by choosing the wrong verb pattern</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>He stopped to smoke in the office.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>He stopped smoking in the office.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> check whether the verb pattern changes the meaning</p>
 </article>
 </div>
 
-## Want Personalized Score Feedback?
-If you want faster improvement than self-study alone, use one paid support option:
-- [Essay Correction](/essay-correction)
-- [1-on-1 Tutoring](/tutoring)
-- [AI Writing Feedback](/celpip/writing/ai-feedback)
-- [Weekly Webinar](/webinar)
+## Interactive Practice Lab
+<div class="practice-lab" data-practice-lab>
+  <div class="practice-lab-head">
+    <div>
+      <h3>Practice</h3>
+      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+    </div>
+    <div class="practice-lab-status">
+      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
+    </div>
+  </div>
+  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <div class="practice-lab-grid">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Gerunds and infinitives after common verbs form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+  <p class="practice-task-label">1. Quick pick</p>
+  <h3>Choose the stronger sentence for Gerunds and infinitives after common verbs.</h3>
+  <div class="practice-choice-grid">
+<button type="button" class="practice-choice" data-choice-index="0">
+  He is interested to joining the evening class.
+</button>
+<button type="button" class="practice-choice" data-choice-index="1">
+  He is interested in joining the evening class.
+</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="order" data-task-answer="We discussed||moving the workshop||to Friday." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+  <p class="practice-task-label">2. Build it</p>
+  <h3>Put this Gerunds and infinitives after common verbs sentence in the correct order.</h3>
+  <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
+  <div class="practice-chip-bank" data-order-bank>
+<button type="button" class="practice-chip" data-chip-value="We discussed" data-chip-origin="bank-1" data-chip-id="1-0">
+  We discussed
+</button>
+<button type="button" class="practice-chip" data-chip-value="to Friday." data-chip-origin="bank-1" data-chip-id="1-1">
+  to Friday.
+</button>
+<button type="button" class="practice-chip" data-chip-value="moving the workshop" data-chip-origin="bank-1" data-chip-id="1-2">
+  moving the workshop
+</button>
+  </div>
+  <div class="practice-chip-answer" data-order-answer></div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+    <button type="button" class="practice-clear-btn" data-task-clear>Clear</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="typing" data-task-answers="The manager admitted making a planning mistake." data-task-id="2" data-correct-feedback="Correct. You repaired the sentence without changing the message." data-wrong-feedback="Not yet. Check the target form, then type the full corrected sentence.">
+  <p class="practice-task-label">3. Type the fix</p>
+  <h3>Rewrite the sentence so Gerunds and infinitives after common verbs is correct.</h3>
+  <p class="practice-source-line"><span>Fix this:</span> The manager admitted to make a planning mistake.</p>
+  <div class="practice-input-row">
+    <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
+  <p class="practice-task-label">4. Final sort</p>
+  <h3>Mark each sentence as correct or needing a fix.</h3>
+  <div class="practice-sort-list">
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
+  <p>He is interested in joining the evening class.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
+  <p>He is interested to joining the evening class.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
+  <p>We discussed moving the workshop to Friday.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
+  <p>We discussed to move the workshop to Friday.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+  </div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+  </div>
+</div>
 
-Best when you need precise correction on grammar control, task response quality, and exam-style scoring.
+## Get Feedback
+<div class="lesson-support-callout">
+  <div class="lesson-support-hero">
+    <p class="lesson-support-label">Personalized score feedback</p>
+    <h3>Get clear next-step advice.</h3>
+    <p class="lesson-support-copy">Choose the support that matches your study goal. You get direct correction, clear scoring language, and a simple next step.</p>
+  </div>
+  <div class="lesson-support-grid">
+    <a class="lesson-support-card lesson-support-card-essay" href="/essay-correction">
+      <span class="lesson-support-icon" aria-hidden="true">A+</span>
+      <strong>Essay Correction</strong>
+      <span>Detailed comments on one draft with band-style scoring.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-tutoring" href="/tutoring">
+      <span class="lesson-support-icon" aria-hidden="true">1:1</span>
+      <strong>1-on-1 Tutoring</strong>
+      <span>Live help when you want guided practice and fast correction.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-ai" href="/celpip/writing/ai-feedback">
+      <span class="lesson-support-icon" aria-hidden="true">AI</span>
+      <strong>AI Writing Feedback</strong>
+      <span>Quick checks when you want to test ideas before a full review.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-webinar" href="/webinar">
+      <span class="lesson-support-icon" aria-hidden="true">Live</span>
+      <strong>Weekly Webinar</strong>
+      <span>Join a guided session and learn with real exam-style examples.</span>
+    </a>
+  </div>
+  <p class="lesson-support-best">Best when you need precise correction on grammar control, task response quality, and exam-style scoring.</p>
+</div>

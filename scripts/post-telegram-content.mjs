@@ -1,12 +1,23 @@
 #!/usr/bin/env node
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
-import { createHash } from 'node:crypto';
+import { readFile } from 'node:fs/promises';
 import path from 'node:path';
+import {
+  claimPostOwnership,
+  createContentFingerprint as createTelegramFingerprint,
+  fetchRecentChannelTexts as fetchRecentTelegramChannelTexts,
+  hasFingerprint as hasTelegramFingerprint,
+  hasRecentTopic as hasRecentTelegramTopic,
+  loadPostHistory as loadTelegramPostHistory,
+  rememberFingerprint as rememberTelegramFingerprint,
+  releasePostOwnershipClaim,
+  resolveHistoryFilePath as resolveTelegramHistoryFilePath,
+  resolvePublicChannelSlug as resolveTelegramPublicChannelSlug,
+  savePostHistory as saveTelegramPostHistory,
+  toCanonicalPostText as toCanonicalTelegramPostText,
+} from './lib/telegram-dedupe.mjs';
 
 const DEFAULT_MODEL = 'gpt-4.1-mini';
 const DEFAULT_ANTHROPIC_MODEL = 'claude-3-5-sonnet-latest';
-const DEFAULT_HISTORY_FILE = '.cache/telegram-post-history.json';
-const HISTORY_MAX_ITEMS = 5000;
 const STANDARD_TELEGRAM_SIGNATURE = `✨ Kay's English Corner✨
 Your Gateway to English Success in Canada 🇨🇦
 🔗 Join us on Telegram
@@ -986,56 +997,84 @@ async function main() {
   }
 
   const messageText = buildPostMessage(content);
-  const historyFilePath = resolveHistoryFilePath();
-  const history = await loadPostHistory(historyFilePath);
-  const messageFingerprint = createContentFingerprint(messageText);
+  const historyFilePath = resolveTelegramHistoryFilePath();
+  const history = await loadTelegramPostHistory(historyFilePath);
+  const messageFingerprint = createTelegramFingerprint(messageText, { stripSignature: true });
+  const topicDedupeDays = Math.max(1, Number.parseInt(process.env.TELEGRAM_TOPIC_DEDUPE_DAYS ?? '60', 10) || 60);
   console.log(`[dedup] Message fingerprint: ${messageFingerprint.slice(0, 12)}... | History size: ${history.items?.length ?? 0} items`);
-  if (hasFingerprint(history, messageFingerprint)) {
+  if (hasTelegramFingerprint(history, messageFingerprint)) {
     console.log('[skip] Duplicate content found in persistent history. Skipping publish.');
     return;
   }
-  console.log('[post] Message is unique. Proceeding with post.');
-
-  const publicSlug = resolvePublicChannelSlug(channelUrl, chatId);
-  const existingTexts = await fetchRecentChannelTexts(publicSlug);
-  const normalizedMessage = normalizeForDedupe(messageText);
-  if (existingTexts.includes(normalizedMessage)) {
-    console.log('[skip] Duplicate content detected in recent channel posts. Skipping publish.');
+  if (hasRecentTelegramTopic(history, content.topic, { kind: 'content', maxAgeDays: topicDedupeDays })) {
+    console.log(`[skip] Topic already posted in the last ${topicDedupeDays} days. Skipping publish.`);
     return;
   }
-  console.log('[post] Channel check passed. Posting to Telegram...');
 
-  await telegramRequest('sendMessage', {
-    chat_id: chatId,
-    text: messageText,
-    disable_web_page_preview: true,
-  }, botToken);
-
-  // Send all 3 quizzes (or however many are provided)
-  for (let i = 0; i < content.quizzes.length; i += 1) {
-    const quiz = content.quizzes[i];
-    const delayMs = i > 0 ? 500 : 0; // Small delay between polls to avoid rate limiting
-    if (delayMs > 0) {
-      await new Promise((resolve) => setTimeout(resolve, delayMs));
-    }
-    
-    await telegramRequest('sendPoll', {
-      chat_id: chatId,
-      question: quiz.question,
-      options: quiz.options,
-      type: 'quiz',
-      correct_option_id: quiz.correctIndex,
-      explanation: quiz.explanation,
-      is_anonymous: true,
-    }, botToken);
+  const claim = await claimPostOwnership({
+    kind: 'content',
+    fingerprint: messageFingerprint,
+    topic: content.topic,
+  });
+  if (!claim.claimed) {
+    console.log('[skip] Another Telegram content run already owns this topic or fingerprint. Skipping publish.');
+    return;
   }
 
-  rememberFingerprint(history, messageFingerprint, { topic: content.topic });
-  await savePostHistory(historyFilePath, history);
+  try {
+    console.log('[post] Message is unique. Proceeding with post.');
 
-  const quizCount = content.quizzes.length;
-  const quizMsg = quizCount === 0 ? 'no quiz' : `${quizCount} quiz poll${quizCount > 1 ? 's' : ''}`;
-  console.log(`[ok] Posted content with ${quizMsg} for topic: ${content.topic}`);
+    const publicSlug = resolveTelegramPublicChannelSlug(channelUrl, chatId);
+    const existingTexts = await fetchRecentTelegramChannelTexts(publicSlug, { stripSignature: true });
+    const normalizedMessage = toCanonicalTelegramPostText(messageText, { stripSignature: true });
+    if (existingTexts.includes(normalizedMessage)) {
+      console.log('[skip] Duplicate content detected in recent channel posts. Skipping publish.');
+      return;
+    }
+    console.log('[post] Channel check passed. Posting to Telegram...');
+
+    const messageResult = await telegramRequest('sendMessage', {
+      chat_id: chatId,
+      text: messageText,
+      disable_web_page_preview: true,
+    }, botToken);
+
+    const quizMessageIds = [];
+    for (let i = 0; i < content.quizzes.length; i += 1) {
+      const quiz = content.quizzes[i];
+      const delayMs = i > 0 ? 500 : 0;
+      if (delayMs > 0) {
+        await new Promise((resolve) => setTimeout(resolve, delayMs));
+      }
+
+      const quizResult = await telegramRequest('sendPoll', {
+        chat_id: chatId,
+        question: quiz.question,
+        options: quiz.options,
+        type: 'quiz',
+        correct_option_id: quiz.correctIndex,
+        explanation: quiz.explanation,
+        is_anonymous: true,
+      }, botToken);
+      if (quizResult?.result?.message_id) {
+        quizMessageIds.push(quizResult.result.message_id);
+      }
+    }
+
+    rememberTelegramFingerprint(history, messageFingerprint, {
+      kind: 'content',
+      topic: content.topic,
+      messageId: messageResult?.result?.message_id ?? null,
+      quizMessageIds,
+    });
+    await saveTelegramPostHistory(historyFilePath, history);
+
+    const quizCount = content.quizzes.length;
+    const quizMsg = quizCount === 0 ? 'no quiz' : `${quizCount} quiz poll${quizCount > 1 ? 's' : ''}`;
+    console.log(`[ok] Posted content with ${quizMsg} for topic: ${content.topic}`);
+  } finally {
+    await releasePostOwnershipClaim(claim);
+  }
 }
 
 main().catch((error) => {

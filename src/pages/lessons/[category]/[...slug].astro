@@ -1,7 +1,5 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-import Quiz from "../../../components/Quiz.astro";
-import CelpipWritingBanner from "../../../components/CelpipWritingBanner.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { getLessonTier, getPublicLessonTitle } from "../../../lib/lessonLevel";
 
@@ -27,7 +25,7 @@ const categoryLabel = (value: LessonEntry["data"]["category"]) =>
 const cleanHeadingText = (text: string) =>
   text
     .replace(/\p{Extended_Pictographic}/gu, "")
-    .replace(/[•·]/g, "")
+    .replace(/\u00E2\u20AC\u00A2|\u00C2|[•·]/g, "")
     .replace(/\s{2,}/g, " ")
     .trim();
 
@@ -183,17 +181,17 @@ const lessonSchema = {
   "teaches": item.data.category,
   "audience": {
     "@type": "EducationalAudience",
-    "educationalRole": "student"
+    "educationalRole": "student",
   },
   "provider": {
     "@type": "EducationalOrganization",
     "name": "IELTS Corner",
-    "url": Astro.site
+    "url": Astro.site,
   },
   "datePublished": item.data.date,
   "inLanguage": "en-CA",
   "learningResourceType": "lesson",
-  "isAccessibleForFree": true
+  "isAccessibleForFree": true,
 };
 
 // SEO: Breadcrumb Schema
@@ -205,34 +203,34 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": Astro.site
+      "item": Astro.site,
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Lessons",
-      "item": new URL("/lessons", Astro.site)
+      "item": new URL("/lessons", Astro.site),
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": categoryLabel(currentCategory),
-      "item": new URL(`/lessons/${currentCategory}`, Astro.site)
+      "item": new URL(`/lessons/${currentCategory}`, Astro.site),
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": item.data.title,
-      "item": new URL(`/lessons/${currentCategory}/${item.slug}`, Astro.site)
-    }
-  ]
+      "item": new URL(`/lessons/${currentCategory}/${item.slug}`, Astro.site),
+    },
+  ],
 };
 
 // Enhanced meta keywords for SEO
 const seoKeywords = `${item.data.title}, ${item.data.category}, ${item.data.level}, ${item.data.exam.join(", ")}, IELTS lessons, CELPIP lessons, English test preparation`;
 ---
 
-<Layout 
+<Layout
   title={publicTitle}
   description={item.data.excerpt}
   keywords={seoKeywords}
@@ -249,41 +247,31 @@ const seoKeywords = `${item.data.title}, ${item.data.category}, ${item.data.leve
       <nav aria-label="Breadcrumb" style="font-size: 14px;">
         <ol style="display: flex; gap: 8px; list-style: none; padding: 0; margin: 0; color: var(--muted);">
           <li><a href="/">Home</a></li>
-          <li>›</li>
+          <li>&gt;</li>
           <li><a href="/lessons">Lessons</a></li>
-          <li>›</li>
+          <li>&gt;</li>
           <li><a href={`/lessons/${currentCategory}`}>{categoryLabel(currentCategory)}</a></li>
-          <li>›</li>
+          <li>&gt;</li>
           <li>{publicTitle}</li>
         </ol>
       </nav>
 
-      <span class="pill">{getLessonTier(item.data.level)} • {item.data.exam.join(" & ")}</span>
+      <span class="pill">{getLessonTier(item.data.level)} | {item.data.exam.join(" & ")}</span>
       <h1>{publicTitle}</h1>
       <p class="muted" style="max-width: 75ch;">{item.data.excerpt}</p>
 
       <div class="cluster">
         <a class="btn btn-primary" href={`/lessons/${currentCategory}`}>
-          ← Back to {categoryLabel(currentCategory)} lessons
+          &lt;- Back to {categoryLabel(currentCategory)} lessons
         </a>
         <a class="btn" href="/lessons">All lessons</a>
       </div>
-
-      {item.data.exam.includes('CELPIP') && (
-        <CelpipWritingBanner />
-      )}
     </div>
   </section>
 
   <section class="section-sm">
     <article class="surface lesson-content" style="padding: var(--s-6);">
       <Content />
-
-      {item.data.quiz.length > 0 && (
-        <div style="margin-top: var(--s-6);">
-          <Quiz title="Interactive practice" questions={item.data.quiz} />
-        </div>
-      )}
 
       {guideLinks.length > 0 && (
         <div class="surface" style="padding: var(--s-4); margin-top: var(--s-6);">
@@ -318,22 +306,22 @@ const seoKeywords = `${item.data.title}, ${item.data.category}, ${item.data.leve
         <div class="cluster">
           {newerLesson ? (
             <a class="btn" href={`/lessons/${newerLesson.data.category}/${newerLesson.slug}/`}>
-              ← Newer lesson
+              &lt;- Newer lesson
             </a>
           ) : (
             <a class="btn" href={`/lessons/${currentCategory}`}>
-              ← Back to {categoryLabel(currentCategory)} list
+              &lt;- Back to {categoryLabel(currentCategory)} list
             </a>
           )}
 
           {olderLesson ? (
             <a class="btn" href={`/lessons/${olderLesson.data.category}/${olderLesson.slug}/`}>
-              Older lesson →
+              Older lesson -&gt;
             </a>
           ) : null}
         </div>
 
-        <a class="btn btn-primary" href="/lessons">Explore all categories →</a>
+        <a class="btn btn-primary" href="/lessons">Explore all categories -&gt;</a>
       </div>
     </article>
   </section>
@@ -357,112 +345,256 @@ const seoKeywords = `${item.data.title}, ${item.data.category}, ${item.data.leve
 
   <script is:inline>
     (() => {
-      const initializeMiniQuiz = () => {
-        const roots = Array.from(document.querySelectorAll('.lesson-content'));
+      const normalizeAnswer = (value) =>
+        String(value || "")
+          .toLowerCase()
+          .replace(/[^\w\s]/g, " ")
+          .replace(/\s+/g, " ")
+          .trim();
+
+      const initializePracticeLab = () => {
+        const roots = Array.from(document.querySelectorAll(".lesson-content"));
         if (roots.length === 0) return;
 
         roots.forEach((root) => {
-          const quizRoot = root.querySelector('[data-mini-quiz]');
-          if (!quizRoot || quizRoot.dataset.initialized === 'true') return;
-          quizRoot.dataset.initialized = 'true';
+          const lab = root.querySelector("[data-practice-lab]");
+          if (!lab || lab.dataset.initialized === "true") return;
+          lab.dataset.initialized = "true";
 
-          const cards = Array.from(quizRoot.querySelectorAll('.mini-quiz-card'));
-          const scoreNode = quizRoot.querySelector('[data-mini-quiz-score]');
-          const resetButton = quizRoot.querySelector('[data-mini-quiz-reset]');
+          const tasks = Array.from(lab.querySelectorAll(".practice-task"));
+          const scoreNode = lab.querySelector("[data-practice-score]");
+          const resetButton = lab.querySelector("[data-practice-reset]");
 
-          cards.forEach((card, index) => {
-            card.dataset.result = 'not-attempted';
-            card.dataset.locked = 'false';
-            const title = card.querySelector('.mini-quiz-title');
-            if (title && !title.querySelector('.mini-quiz-status')) {
-              const badge = document.createElement('span');
-              badge.className = 'mini-quiz-status status-not-attempted';
-              badge.textContent = `${index + 1}. not attempted`;
-              title.prepend(badge);
-            }
-          });
-
-          const refreshScore = () => {
-            const correct = cards.filter((card) => card.dataset.result === 'correct').length;
-            const attempted = cards.filter((card) => card.dataset.result !== 'not-attempted').length;
-            if (scoreNode) scoreNode.textContent = `Score: ${correct}/${cards.length} | Attempted: ${attempted}/${cards.length}`;
+          const updateScore = () => {
+            const completed = tasks.filter((task) => task.dataset.complete === "true").length;
+            if (scoreNode) scoreNode.textContent = `Score: ${completed}/${tasks.length}`;
           };
 
-          const setStatus = (card, status) => {
-            card.dataset.result = status;
-            const badge = card.querySelector('.mini-quiz-status');
-            if (!badge) return;
-            badge.classList.remove('status-not-attempted', 'status-correct', 'status-wrong');
-            const prefix = `${badge.textContent.split('.')[0]}.`;
-            if (status === 'correct') {
-              badge.classList.add('status-correct');
-              badge.textContent = `${prefix} correct`;
-            } else if (status === 'wrong') {
-              badge.classList.add('status-wrong');
-              badge.textContent = `${prefix} wrong`;
-            } else {
-              badge.classList.add('status-not-attempted');
-              badge.textContent = `${prefix} not attempted`;
+          const setTaskFeedback = (task, message, ok = false) => {
+            const feedback = task.querySelector("[data-task-feedback]");
+            if (feedback) feedback.textContent = message;
+            task.classList.toggle("is-complete", ok);
+            task.classList.toggle("is-wrong", !ok && Boolean(message));
+          };
+
+          const getFeedbackMessage = (task, ok, fallback) =>
+            ok
+              ? task.getAttribute("data-correct-feedback") || fallback
+              : task.getAttribute("data-wrong-feedback") || fallback;
+
+          const markTask = (task, ok) => {
+            task.dataset.complete = ok ? "true" : "false";
+            updateScore();
+          };
+
+          const resetTask = (task) => {
+            task.dataset.complete = "false";
+            task.classList.remove("is-complete", "is-wrong");
+            const feedback = task.querySelector("[data-task-feedback]");
+            if (feedback) feedback.textContent = "";
+
+            if (task.dataset.taskType === "choice") {
+              task.querySelectorAll(".practice-choice").forEach((buttonNode) => {
+                buttonNode.classList.remove("is-correct", "is-wrong");
+              });
+            }
+
+            if (task.dataset.taskType === "order") {
+              const bank = task.querySelector("[data-order-bank]");
+              const answer = task.querySelector("[data-order-answer]");
+              if (bank && answer) {
+                Array.from(answer.querySelectorAll(".practice-chip")).forEach((chip) => bank.appendChild(chip));
+              }
+            }
+
+            if (task.dataset.taskType === "typing") {
+              const input = task.querySelector("[data-typing-input]");
+              if (input) input.value = "";
+            }
+
+            if (task.dataset.taskType === "sort") {
+              task.querySelectorAll(".practice-sort-row").forEach((row) => {
+                row.dataset.choice = "";
+                row.classList.remove("is-correct", "is-wrong");
+              });
+              task.querySelectorAll(".practice-sort-btn").forEach((buttonNode) => {
+                buttonNode.classList.remove("is-active");
+              });
             }
           };
 
-          cards.forEach((card) => {
-            const answer = card.getAttribute('data-answer') || '';
-            const feedback = card.querySelector('.mini-quiz-feedback');
-            const buttons = Array.from(card.querySelectorAll('button[data-choice]'));
+          tasks.forEach((task) => {
+            task.dataset.complete = "false";
 
-            buttons.forEach((btn) => {
-              btn.addEventListener('click', () => {
-                if (card.dataset.locked === 'true') return;
-                const choice = btn.getAttribute('data-choice');
-                const isCorrect = choice === answer;
-                setStatus(card, isCorrect ? 'correct' : 'wrong');
-                card.dataset.locked = 'true';
+            if (task.dataset.taskType === "choice") {
+              const buttons = Array.from(task.querySelectorAll(".practice-choice"));
+              buttons.forEach((buttonNode) => {
+                buttonNode.addEventListener("click", () => {
+                  if (task.dataset.complete === "true") return;
+                  const correctIndex = Number(task.dataset.taskAnswer || -1);
+                  const selectedIndex = Number(buttonNode.getAttribute("data-choice-index"));
+                  buttons.forEach((node) => node.classList.remove("is-correct", "is-wrong"));
 
-                buttons.forEach((buttonNode) => {
-                  buttonNode.classList.remove('is-correct', 'is-wrong');
-                  buttonNode.disabled = true;
+                  if (selectedIndex === correctIndex) {
+                    buttonNode.classList.add("is-correct");
+                    setTaskFeedback(
+                      task,
+                      getFeedbackMessage(task, true, "Correct. That is the stronger option."),
+                      true
+                    );
+                    markTask(task, true);
+                  } else {
+                    buttonNode.classList.add("is-wrong");
+                    setTaskFeedback(
+                      task,
+                      getFeedbackMessage(task, false, "Not yet. Compare the meaning and try again."),
+                      false
+                    );
+                    markTask(task, false);
+                  }
                 });
+              });
+            }
 
-                btn.classList.add(isCorrect ? 'is-correct' : 'is-wrong');
-                const correctButton = buttons.find((buttonNode) => buttonNode.getAttribute('data-choice') === answer);
-                correctButton?.classList.add('is-correct');
+            if (task.dataset.taskType === "order") {
+              task.addEventListener("click", (event) => {
+                const target = event.target;
+                if (!(target instanceof HTMLElement)) return;
+                const chip = target.closest(".practice-chip");
+                if (!chip) return;
+                const bank = task.querySelector("[data-order-bank]");
+                const answer = task.querySelector("[data-order-answer]");
+                if (!bank || !answer) return;
 
-                if (feedback) {
-                  feedback.textContent = isCorrect
-                    ? 'Correct. This is the stronger sentence.'
-                    : 'Wrong. The correct answer is highlighted in green.';
+                if (answer.contains(chip)) bank.appendChild(chip);
+                else answer.appendChild(chip);
+              });
+
+              const checkButton = task.querySelector("[data-task-check]");
+              const clearButton = task.querySelector("[data-task-clear]");
+
+              checkButton?.addEventListener("click", () => {
+                const answer = task.querySelector("[data-order-answer]");
+                const expected = String(task.dataset.taskAnswer || "").split("||").filter(Boolean);
+                const current = Array.from(answer?.querySelectorAll(".practice-chip") || []).map((chip) =>
+                  chip.getAttribute("data-chip-value") || ""
+                );
+
+                if (current.length !== expected.length) {
+                  setTaskFeedback(task, "Use all the chunks before you check.", false);
+                  markTask(task, false);
+                  return;
                 }
 
-                refreshScore();
+                const ok = current.every((value, index) => value === expected[index]);
+                setTaskFeedback(
+                  task,
+                  getFeedbackMessage(
+                    task,
+                    ok,
+                    ok ? "Correct. The sentence order is natural." : "Not yet. Read it again and rebuild the order."
+                  ),
+                  ok
+                );
+                markTask(task, ok);
               });
-            });
+
+              clearButton?.addEventListener("click", () => resetTask(task));
+            }
+
+            if (task.dataset.taskType === "typing") {
+              const checkButton = task.querySelector("[data-task-check]");
+              const input = task.querySelector("[data-typing-input]");
+
+              checkButton?.addEventListener("click", () => {
+                const answers = String(task.dataset.taskAnswers || "")
+                  .split("||")
+                  .map((item) => normalizeAnswer(item))
+                  .filter(Boolean);
+                const userAnswer = normalizeAnswer(input?.value || "");
+                const ok = answers.includes(userAnswer);
+
+                setTaskFeedback(
+                  task,
+                  getFeedbackMessage(
+                    task,
+                    ok,
+                    ok ? "Correct. Nice repair." : "Not yet. Check the target form and try again."
+                  ),
+                  ok
+                );
+                markTask(task, ok);
+              });
+            }
+
+            if (task.dataset.taskType === "sort") {
+              task.querySelectorAll(".practice-sort-row").forEach((row) => {
+                row.querySelectorAll(".practice-sort-btn").forEach((buttonNode) => {
+                  buttonNode.addEventListener("click", () => {
+                    row.dataset.choice = buttonNode.getAttribute("data-sort-choice") || "";
+                    row.querySelectorAll(".practice-sort-btn").forEach((btn) => btn.classList.remove("is-active"));
+                    buttonNode.classList.add("is-active");
+                  });
+                });
+              });
+
+              const checkButton = task.querySelector("[data-task-check]");
+              checkButton?.addEventListener("click", () => {
+                const rows = Array.from(task.querySelectorAll(".practice-sort-row"));
+                let allChosen = true;
+                let allCorrect = true;
+
+                rows.forEach((row) => {
+                  const choice = row.dataset.choice || "";
+                  const target = row.dataset.sortTarget || "";
+                  row.classList.remove("is-correct", "is-wrong");
+
+                  if (!choice) {
+                    allChosen = false;
+                    allCorrect = false;
+                    return;
+                  }
+
+                  if (choice === target) row.classList.add("is-correct");
+                  else {
+                    row.classList.add("is-wrong");
+                    allCorrect = false;
+                  }
+                });
+
+                if (!allChosen) {
+                  setTaskFeedback(task, "Choose a column for every sentence first.", false);
+                  markTask(task, false);
+                  return;
+                }
+
+                setTaskFeedback(
+                  task,
+                  getFeedbackMessage(
+                    task,
+                    allCorrect,
+                    allCorrect
+                      ? "Correct. You sorted the sentences accurately."
+                      : "Some rows are in the wrong column. Try again."
+                  ),
+                  allCorrect
+                );
+                markTask(task, allCorrect);
+              });
+            }
           });
 
-          resetButton?.addEventListener('click', () => {
-            cards.forEach((card, index) => {
-              card.dataset.locked = 'false';
-              setStatus(card, 'not-attempted');
-              const feedback = card.querySelector('.mini-quiz-feedback');
-              if (feedback) feedback.textContent = '';
-              const buttons = Array.from(card.querySelectorAll('button[data-choice]'));
-              buttons.forEach((buttonNode) => {
-                buttonNode.disabled = false;
-                buttonNode.classList.remove('is-correct', 'is-wrong');
-              });
-              const badge = card.querySelector('.mini-quiz-status');
-              if (badge) badge.textContent = `${index + 1}. not attempted`;
-            });
-
-            refreshScore();
+          resetButton?.addEventListener("click", () => {
+            tasks.forEach((task) => resetTask(task));
+            updateScore();
           });
 
-          refreshScore();
+          updateScore();
         });
       };
 
-      initializeMiniQuiz();
-      document.addEventListener('astro:page-load', initializeMiniQuiz);
+      initializePracticeLab();
+      document.addEventListener("astro:page-load", initializePracticeLab);
     })();
   </script>
 </Layout>

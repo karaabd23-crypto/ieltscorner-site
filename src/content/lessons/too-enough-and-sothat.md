@@ -5,182 +5,233 @@ level: "B1"
 ieltsBand: "5.0-6.0"
 clb: "6-7"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B1 grammar lesson on Too, enough, and so...that with unpacked explanations, aligned practice, and model answers."
+excerpt: "B1 lesson on Too, enough, and so...that with teacher-style explanation, guided practice, and topic-linked review."
 date: "2026-02-27"
 tags: ["grammar", "b1", "exam-prep", "ielts", "celpip"]
-heroTip: "Understand the idea first, then practice under timed exam conditions."
-visualAids: ["Simple example table", "Right and wrong list", "Real test examples"]
+heroTip: "Say the rule or strategy in plain English before you edit your answer."
+visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence is better for a test?"
-    options: ["Very bad.", "This is not helpful.", "This creates problems."]
+  - prompt: "Which sentence uses Too, enough, and so...that correctly?"
+    options:
+      - "The room was too noisy that we left early."
+      - "The room was so noisy that we left early."
+      - "There was not enough chairs for everyone."
     correctIndex: 1
-    explanation: "Option 2 is clear and serious. Good for tests."
-  - prompt: "How do you say \"to choose\"?"
-    options: ["do a decision", "make a decision", "get a decision"]
+    explanation: "Option 2 matches the main rule for Too, enough, and so...that and keeps the sentence natural."
+  - prompt: "What should you check first when editing Too, enough, and so...that?"
+    options:
+      - "The meaning you want and the sentence pattern you need"
+      - "Only the number of long words in the sentence"
+      - "Whether the sentence sounds complicated enough"
+    correctIndex: 0
+    explanation: "Start from meaning and pattern; complexity is never the first goal."
+  - prompt: "Which edit fixes a common Too, enough, and so...that mistake?"
+    options:
+      - "She was enough confident to lead the discussion."
+      - "She was confident enough to lead the discussion."
+      - "The bus was too full that nobody else could get on."
     correctIndex: 1
-    explanation: "We say \"make a decision\". \"Do a decision\" is wrong."
-  - prompt: "After you write, what should you check first?"
-    options: ["Only the length", "Grammar and spelling", "Only adjectives"]
-    correctIndex: 1
-    explanation: "Good grammar helps you get better marks on tests."
-  - prompt: "Which sentence is more polite?"
-    options: ["This always happens.", "This might happen.", "This happen maybe."]
-    correctIndex: 1
-    explanation: "Option 2 is more careful and polite. Better for tests."
-  - prompt: "What helps you speak more smoothly?"
-    options: ["Memorize everything", "Use connecting words like also and then", "Never stop talking"]
-    correctIndex: 1
-    explanation: "Connecting words help your speaking sound natural."
+    explanation: "Option 2 repairs a typical Too, enough, and so...that error and matches the target form."
 premium: false
 priceCAD: 0
 draft: false
 ---
-## Goal
-Learn how to use **Too, enough, and so...that** accurately in IELTS and CELPIP responses.
-
-## What Too, enough, and so...that Means
-This lesson is specifically about **Too, enough, and so...that**. By the end, you should understand when to use it, how to form it correctly, and how to avoid common errors.
-
 ## Topic Explanation and Use
-Too, enough, and so...that controls how a sentence carries meaning: reference, sequence, and emphasis must stay clear from start to finish.
-
-Use Too, enough, and so...that to make one precise meaning per sentence, then expand only when the added structure improves clarity for exam readers.
-
-Use conditions:
-- Choose the target form after deciding the exact meaning (fact, contrast, cause, or condition).
-- Keep agreement and word order stable before adding extra clauses or modifiers.
-- If a longer sentence becomes harder to scan, split it and keep the same logic.
-
-Reference examples:
-- *In exam writing, accurate Too, enough, and so...that helps each sentence carry one clear grammatical purpose.*
-- *When Too, enough, and so...that is chosen deliberately, arguments stay precise and easier to evaluate under time pressure.*
-
-## Key Rule in Plain Language
-1. Choose the exact grammar job first: where **Too, enough, and so...that** controls time, relationship, or emphasis.
-2. Build a complete base clause, then place **Too, enough, and so...that** in the position required by the pattern.
-3. Check agreement and tense around **Too, enough, and so...that** before adding extra words.
-4. Add one supporting clause only if the logic stays clear in public policy and daily life context.
-5. Re-read for one specific risk: wrong form, wrong position, or mixed timeline.
+<div class="lesson-teach-grid">
+  <section class="lesson-panel lesson-panel-core">
+    <p class="lesson-panel-label">Core idea</p>
+    <p>These forms help you show enough, too much, or a clear result.</p>
+<p>Result structures such as too, enough, and so ... that show whether a quality reaches a limit or produces a result. They are useful when you want to show capacity, failure, or consequence clearly.</p>
+<p>Use too when something passes a negative limit, enough when it reaches a needed level, and so ... that when you want to show a full result clause.</p>
+<p>At B1 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+  </section>
+  <section class="lesson-panel lesson-panel-when">
+    <p class="lesson-panel-label">Use it here</p>
+    <ul><li>Use too + adjective/adverb + to + verb for negative limits.</li><li>Use adjective/adverb + enough + to + verb for sufficient level.</li><li>Use so + adjective/adverb + that + clause when you need a full result clause.</li></ul>
+  </section>
+  <section class="lesson-panel lesson-panel-pattern">
+    <p class="lesson-panel-label">Watch it work</p>
+    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">The room was so noisy that we left early.</div>
+<div class="lesson-pattern-sentence">She was confident enough to answer without notes.</div></div>
+  </section>
+  <section class="lesson-panel lesson-panel-remember">
+    <p class="lesson-panel-label">Remember this</p>
+    <ul><li>Decide whether you mean excess, sufficiency, or a full result clause.</li><li>Use too for excess and enough for sufficient level.</li><li>Use so ... that when you need a full result clause after the adjective or adverb.</li><li>Check the noun or verb pattern after enough carefully.</li><li>Keep the whole sentence focused on one result only.</li></ul>
+  </section>
+</div>
 
 ## Real-World Examples with Too, enough, and so...that
-### Example 1
-- Weak: *The sentence uses Too, enough, and so...that but the form are not matched to the intended meaning.*
-- Strong: *The sentence uses Too, enough, and so...that and the forms are matched to the intended meaning.*
-- Why it works: the grammar choice supports communication instead of confusing the reader.
-
-### Example 2
-- Weak: *Writers apply Too, enough, and so...that in long sentences, but one form choice reduce clarity.*
-- Strong: *Writers apply Too, enough, and so...that in long sentences, and each form choice supports clarity.*
-- Why it works: the reader can follow the logic without re-reading.
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The room was too noisy that we left early.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>The room was so noisy that we left early.</p>
+  <p class="lesson-card-note">This correction matches the intended meaning and keeps Too, enough, and so...that natural.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>There was not enough chairs for everyone.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>There were not enough chairs for everyone.</p>
+  <p class="lesson-card-note">This version sounds more natural because Too, enough, and so...that fits the sentence clearly.</p>
+</article>
+</div>
 
 ## Common Errors with Too, enough, and so...that
-<details class="lesson-accordion lesson-error">
-<summary>Error 1: using Too, enough, and so...that with a form that does not match the grammatical function</summary>
-
-- Weak: *The sentence uses Too, enough, and so...that but the form are not matched to the intended meaning.*
-- Strong: *The sentence uses Too, enough, and so...that and the forms are matched to the intended meaning.*
-- Fix: identify the grammar function first, then select the Too, enough, and so...that form that fits the sentence.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 2: using Too, enough, and so...that with inconsistent agreement or structure</summary>
-
-- Weak: *The paragraph shows Too, enough, and so...that, but the form choices creates confusion for the reader.*
-- Strong: *The paragraph shows Too, enough, and so...that, and the form choices create clear meaning for the reader.*
-- Fix: keep agreement stable and verify the full clause after each form change.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 3: adding extra complexity in Too, enough, and so...that without communicative value</summary>
-
-- Weak: *The response uses Too, enough, and so...that repeatedly and the sentence become harder to follow.*
-- Strong: *The response uses Too, enough, and so...that selectively, so each sentence stays clear and purposeful.*
-- Fix: prefer simpler structure when added complexity does not improve precision.
-</details>
-
-## Practice
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 1: Correct the Sentence</summary>
-
-Correct each sentence so it uses **Too, enough, and so...that** naturally.
-1. The writer used Too, enough, and so...that, but one key form are incorrect in the sentence.
-2. This paragraph includes Too, enough, and so...that, but one structure break the intended meaning.
-3. The response attempts Too, enough, and so...that, but one phrase does not fit the grammar pattern.
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 2: Build Sentences</summary>
-
-Write 4 sentences that apply **Too, enough, and so...that** in public policy and daily life context.
-- sentence 1: use **Too, enough, and so...that** to state one clear fact
-- sentence 2: use **Too, enough, and so...that** to show contrast or qualification
-- sentence 3: use **Too, enough, and so...that** to express cause and result
-- sentence 4: use **Too, enough, and so...that** in an exam-style summary line
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 3: Mini Paragraph</summary>
-
-Write 5-6 sentences for this prompt:
-Should communities invest more in practical public services?
-Use **Too, enough, and so...that** at least twice.
-</details>
-
-## Answer Guide
-<details class="lesson-accordion lesson-answer">
-<summary>Open Answer Guide</summary>
-
-For Exercise 1, your corrected versions should:
-- keep form choices consistent with the sentence meaning,
-- place **Too, enough, and so...that** in a grammatically correct structure,
-- and produce a sentence that sounds natural in context.
-
-Possible corrected versions:
-1. *The writer used Too, enough, and so...that, but one key form is incorrect in the sentence.*
-2. *This paragraph includes Too, enough, and so...that, but one structure breaks the intended meaning.*
-3. *The response attempts Too, enough, and so...that, but one phrase does not fit the grammar pattern.*
-</details>
-
-## Interactive Exercise Test
-<div class="mini-quiz" data-mini-quiz>
-<div class="mini-quiz-head">
-<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>
-<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/3 | Attempted: 0/3</p>
-<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>
-</div>
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q1. Choose the stronger version for: using Too, enough, and so...that with a form that does not match the grammatical function</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. The sentence uses Too, enough, and so...that but the form are not matched to the intended meaning.</button>
-<button type="button" data-choice="B">B. The sentence uses Too, enough, and so...that and the forms are matched to the intended meaning.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<div class="lesson-error-grid">
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 1</p>
+  <h3>mixing too, enough, and so ... that patterns</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The room was too noisy that we left early.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The room was so noisy that we left early.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> choose the structure from the exact meaning: excess, sufficiency, or full result clause</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q2. Choose the stronger version for: using Too, enough, and so...that with inconsistent agreement or structure</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. The paragraph shows Too, enough, and so...that, but the form choices creates confusion for the reader.</button>
-<button type="button" data-choice="B">B. The paragraph shows Too, enough, and so...that, and the form choices create clear meaning for the reader.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 2</p>
+  <h3>placing enough in the wrong position</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The room was enough quiet to record the interview.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The room was quiet enough to record the interview.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> place enough after the adjective or adverb it describes</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q3. Choose the stronger version for: adding extra complexity in Too, enough, and so...that without communicative value</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. The response uses Too, enough, and so...that repeatedly and the sentence become harder to follow.</button>
-<button type="button" data-choice="B">B. The response uses Too, enough, and so...that selectively, so each sentence stays clear and purposeful.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 3</p>
+  <h3>using too when the sentence means sufficient level</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>We were too prepared to finish the task on time.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>We were prepared enough to finish the task on time.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> use enough for a positive sufficient level</p>
 </article>
 </div>
 
-## Want Personalized Score Feedback?
-If you want faster improvement than self-study alone, use one paid support option:
-- [Essay Correction](/essay-correction)
-- [1-on-1 Tutoring](/tutoring)
-- [AI Writing Feedback](/celpip/writing/ai-feedback)
-- [Weekly Webinar](/webinar)
+## Interactive Practice Lab
+<div class="practice-lab" data-practice-lab>
+  <div class="practice-lab-head">
+    <div>
+      <h3>Practice</h3>
+      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+    </div>
+    <div class="practice-lab-status">
+      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
+    </div>
+  </div>
+  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <div class="practice-lab-grid">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Too, enough, and so...that form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+  <p class="practice-task-label">1. Quick pick</p>
+  <h3>Choose the stronger sentence for Too, enough, and so...that.</h3>
+  <div class="practice-choice-grid">
+<button type="button" class="practice-choice" data-choice-index="0">
+  She was enough confident to lead the discussion.
+</button>
+<button type="button" class="practice-choice" data-choice-index="1">
+  She was confident enough to lead the discussion.
+</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="order" data-task-answer="The bus was||so full that||nobody else could||get on." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+  <p class="practice-task-label">2. Build it</p>
+  <h3>Put this Too, enough, and so...that sentence in the correct order.</h3>
+  <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
+  <div class="practice-chip-bank" data-order-bank>
+<button type="button" class="practice-chip" data-chip-value="so full that" data-chip-origin="bank-1" data-chip-id="1-0">
+  so full that
+</button>
+<button type="button" class="practice-chip" data-chip-value="The bus was" data-chip-origin="bank-1" data-chip-id="1-1">
+  The bus was
+</button>
+<button type="button" class="practice-chip" data-chip-value="nobody else could" data-chip-origin="bank-1" data-chip-id="1-2">
+  nobody else could
+</button>
+<button type="button" class="practice-chip" data-chip-value="get on." data-chip-origin="bank-1" data-chip-id="1-3">
+  get on.
+</button>
+  </div>
+  <div class="practice-chip-answer" data-order-answer></div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+    <button type="button" class="practice-clear-btn" data-task-clear>Clear</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="typing" data-task-answers="We had enough time to finish the notes before class." data-task-id="2" data-correct-feedback="Correct. You repaired the sentence without changing the message." data-wrong-feedback="Not yet. Check the target form, then type the full corrected sentence.">
+  <p class="practice-task-label">3. Type the fix</p>
+  <h3>Rewrite the sentence so Too, enough, and so...that is correct.</h3>
+  <p class="practice-source-line"><span>Fix this:</span> We had time enough to finish the notes before class.</p>
+  <div class="practice-input-row">
+    <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
+  <p class="practice-task-label">4. Final sort</p>
+  <h3>Mark each sentence as correct or needing a fix.</h3>
+  <div class="practice-sort-list">
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
+  <p>She was confident enough to lead the discussion.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
+  <p>She was enough confident to lead the discussion.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
+  <p>The bus was so full that nobody else could get on.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
+  <p>The bus was too full that nobody else could get on.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+  </div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+  </div>
+</div>
 
-Best when you need precise correction on grammar control, task response quality, and exam-style scoring.
+## Get Feedback
+<div class="lesson-support-callout">
+  <div class="lesson-support-hero">
+    <p class="lesson-support-label">Personalized score feedback</p>
+    <h3>Get clear next-step advice.</h3>
+    <p class="lesson-support-copy">Choose the support that matches your study goal. You get direct correction, clear scoring language, and a simple next step.</p>
+  </div>
+  <div class="lesson-support-grid">
+    <a class="lesson-support-card lesson-support-card-essay" href="/essay-correction">
+      <span class="lesson-support-icon" aria-hidden="true">A+</span>
+      <strong>Essay Correction</strong>
+      <span>Detailed comments on one draft with band-style scoring.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-tutoring" href="/tutoring">
+      <span class="lesson-support-icon" aria-hidden="true">1:1</span>
+      <strong>1-on-1 Tutoring</strong>
+      <span>Live help when you want guided practice and fast correction.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-ai" href="/celpip/writing/ai-feedback">
+      <span class="lesson-support-icon" aria-hidden="true">AI</span>
+      <strong>AI Writing Feedback</strong>
+      <span>Quick checks when you want to test ideas before a full review.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-webinar" href="/webinar">
+      <span class="lesson-support-icon" aria-hidden="true">Live</span>
+      <strong>Weekly Webinar</strong>
+      <span>Join a guided session and learn with real exam-style examples.</span>
+    </a>
+  </div>
+  <p class="lesson-support-best">Best when you need precise correction on grammar control, task response quality, and exam-style scoring.</p>
+</div>

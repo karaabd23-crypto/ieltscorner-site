@@ -5,156 +5,236 @@ level: "B1"
 ieltsBand: "5.5-6.5"
 clb: "6-8"
 exam: ["CELPIP"]
-excerpt: "B1 reading lesson on CELPIP Reading: Scan for Proof, Not Just Keyword Match with unpacked explanations, aligned practice, and model answers."
+excerpt: "B1 reading lesson on CELPIP Reading: Scan for Proof, Not Just Keyword Match with proof-finding, time control, and trap awareness."
 date: "2026-03-09"
 tags: ["celpip", "reading", "scanning", "evidence", "distractors"]
-heroTip: "Understand the idea first, then practice under timed exam conditions."
-visualAids: ["Proof line marking", "Distractor elimination", "Question-to-text map"]
+heroTip: "A matching word is not proof. Stay until you find the sentence that actually answers the question."
+visualAids: ["Proof vs keyword chart", "Time budget grid", "Trap word list"]
 quiz:
-  - prompt: "What should decide your final answer in CELPIP Reading?"
+  - prompt: "What is the safest first job in CELPIP Reading: Scan for Proof, Not Just Keyword Match?"
     options:
-      - "The option with the most advanced vocabulary"
-      - "The first option with a matching keyword"
-      - "The option supported by clear text evidence"
-      - "The shortest option"
-    correctIndex: 2
-    explanation: "Evidence-based selection prevents distractor mistakes."
+      - "Find proof for the answer"
+      - "Trust the first familiar word"
+      - "Reread the whole text every time"
+    correctIndex: 0
+    explanation: "Reading accuracy improves when the answer is tied to evidence, not recognition alone."
+  - prompt: "What should you avoid when checking an answer?"
+    options:
+      - "Confusing a matching keyword with real proof"
+      - "Reading the exact answer line carefully"
+      - "Checking time after a hard question"
+    correctIndex: 0
+    explanation: "A familiar word is not enough; the line must actually prove the answer."
+  - prompt: "What is the safer time-management move?"
+    options:
+      - "Move on after a limit and return later"
+      - "Stay on one hard item until time is gone"
+      - "Choose at random without any proof"
+    correctIndex: 0
+    explanation: "Protecting total score matters more than winning one hard item immediately."
 premium: false
 priceCAD: 12
 draft: false
 ---
-## Goal
-Apply **CELPIP Reading: Scan for Proof, Not Just Keyword Match** to produce clearer, higher-scoring CELPIP writing.
-
-## What CELPIP Reading: Scan for Proof, Not Just Keyword Match Changes in Writing
-This lesson is about using **CELPIP Reading: Scan for Proof, Not Just Keyword Match** to improve clarity, development, and control. Examiners reward writing that is direct, logical, and easy to follow.
-
 ## Topic Explanation and Use
-CELPIP Reading: Scan for Proof, Not Just Keyword Match is a writing control skill that shapes how ideas are sequenced, supported, and interpreted by the reader.
-
-Use this skill to build a clear argument flow: claim, support, evidence, and consequence. Strong use helps examiners track logic without rereading.
-
-Use conditions:
-- Start with a clear claim sentence that matches the task requirement.
-- Attach evidence that is specific enough to verify your point.
-- Use logical connectors only when they accurately represent relationships.
-
-Reference examples:
-- *The proposal is costlier in year one; however, it lowers delay-related losses over time.*
-- *The district expanded bus priority lanes: average commute times fell across peak routes.*
-
-## Key Rule in Plain Language
-1. Turn the prompt into one specific claim linked to **CELPIP Reading: Scan for Proof, Not Just Keyword Match**.
-2. Build a clear sequence: claim, reason, evidence, consequence.
-3. Keep sentence structure controlled so each line adds one function.
-4. Add one concrete detail (group, time, or measured change) to prove the point.
-5. Edit for precision: remove filler and keep only evidence-bearing wording.
+<div class="lesson-teach-grid">
+  <section class="lesson-panel lesson-panel-core">
+    <p class="lesson-panel-label">Core idea</p>
+    <p>This lesson focuses on one reading decision that can save marks right away.</p>
+<p>Reading traps often appear when a word in the question also appears in the text. That feels safe, but the surrounding sentence may actually give a different meaning. Strong readers look for proof, not just matching vocabulary. Proof usually comes from the whole sentence or nearby lines, not from one repeated word.</p>
+<p>Use this strategy whenever answer options look familiar too quickly. After spotting a possible location, read the sentence around it and ask what the text really says. That extra check prevents many keyword-match mistakes, especially in inference and detail questions.</p>
+<p>At B1 level, reading gains often come from better proof-checking and time control, not only from vocabulary.</p>
+  </section>
+  <section class="lesson-panel lesson-panel-when">
+    <p class="lesson-panel-label">Use it here</p>
+    <ul><li>Start from the question, not from a full reread of the passage.</li><li>Use the text to prove the answer, not only to locate a keyword.</li><li>Protect your time so one hard item does not damage the full section.</li></ul>
+  </section>
+  <section class="lesson-panel lesson-panel-pattern">
+    <p class="lesson-panel-label">Watch it work</p>
+    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Question says “main reason”; text repeats the keyword but actually gives an example, not the reason.</div>
+<div class="lesson-pattern-sentence">Question says “not recommended”; text contains the keyword recommended but the sentence is a warning, so the answer changes.</div></div>
+  </section>
+  <section class="lesson-panel lesson-panel-remember">
+    <p class="lesson-panel-label">Remember this</p>
+    <ul><li>Use keywords only to locate the likely area of the text.</li><li>Read the sentence and nearby lines for the full meaning.</li><li>Check whether the text actually proves the answer choice.</li><li>Watch for contrast words that reverse or limit the meaning.</li><li>Choose the option only after you can explain the proof in your own words.</li></ul>
+  </section>
+</div>
 
 ## Real-World Examples with CELPIP Reading: Scan for Proof, Not Just Keyword Match
-### Example 1
-- Weak: *This topic is important and has many effects.*
-- Strong: *Focused investment can improve access, reliability, and quality of life.*
-- Why it works: the sentence is specific and measurable.
-
-### Example 2
-- Weak: *I think this is good and bad in many ways.*
-- Strong: *A pilot program improved service response times in one local district.*
-- Why it works: the contrast is explicit and balanced.
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I saw the same word in the passage, so I chose that option immediately.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>I used the keyword to find the area, then checked the sentence that actually proved the answer.</p>
+  <p class="lesson-card-note">The answer comes from evidence, not from recognition alone.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I spent too long on one difficult item and had to rush the last questions.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>I used a time limit, skipped when necessary, and returned after securing easier marks.</p>
+  <p class="lesson-card-note">The stronger method protects the whole section.</p>
+</article>
+</div>
 
 ## Common Errors with CELPIP Reading: Scan for Proof, Not Just Keyword Match
-<details class="lesson-accordion lesson-error">
-<summary>Error 1: repeating the same point with different words</summary>
-
-- Weak: *This policy is important, very important, and important in many ways.*
-- Strong: *This policy matters because it improves access, reduces delays, and supports daily routines.*
-- Fix: state one idea once, then add evidence.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 2: using generic examples with no detail</summary>
-
-- Weak: *Many places improved after changes were made.*
-- Strong: *One district reduced response times by 18% after introducing coordinated service planning.*
-- Fix: include a specific place, group, timeline, or measured result.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 3: writing long sentences with weak logic links</summary>
-
-- Weak: *The policy changed and many people were affected and it was good and bad for many reasons.*
-- Strong: *The policy improved reliability for commuters; however, implementation costs were higher in the first quarter.*
-- Fix: split ideas and use clear logical connectors.
-</details>
-
-## Practice
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 1: Rewrite for Clarity</summary>
-
-Improve these sentences.
-1. This issue affects public services in several ways.
-2. The government should respond because current results are weak.
-3. This policy has benefits and costs that need evaluation.
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 2: Focused Paragraph</summary>
-
-Write 5-6 sentences using **CELPIP Reading: Scan for Proof, Not Just Keyword Match**.
-Include one claim, one reason, one example, and one consequence.
-Use this real-world context: public policy and daily life.
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 3: Level Upgrade</summary>
-
-Rewrite this sentence at B1 standard:
-*People lose marks because they do not practice enough.*
-</details>
-
-## Sample Answer Style
-Your improved sentence should be specific, concise, and logically connected.
-Aim to include a concrete detail such as a measured change, timeline, or named group.
-
-## Interactive Exercise Test
-<div class="mini-quiz" data-mini-quiz>
-<div class="mini-quiz-head">
-<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>
-<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/3 | Attempted: 0/3</p>
-<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>
-</div>
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q1. Choose the stronger version for: repeating the same point with different words</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. This policy is important, very important, and important in many ways.</button>
-<button type="button" data-choice="B">B. This policy matters because it improves access, reduces delays, and supports daily routines.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<div class="lesson-error-grid">
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 1</p>
+  <h3>trusting keyword match without checking meaning</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The same word appears, so this must be the answer.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The same word helps me find the place, but I still need proof from the sentence.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Separate locating from proving.</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q2. Choose the stronger version for: using generic examples with no detail</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. Many places improved after changes were made.</button>
-<button type="button" data-choice="B">B. One district reduced response times by 18% after introducing coordinated service planning.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 2</p>
+  <h3>rereading too much without a question focus</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>I read the whole passage again because I feel unsure.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I return to the exact area linked to the question and re-check the evidence there.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Let the question decide where your attention goes.</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q3. Choose the stronger version for: writing long sentences with weak logic links</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. The policy changed and many people were affected and it was good and bad for many reasons.</button>
-<button type="button" data-choice="B">B. The policy improved reliability for commuters; however, implementation costs were higher in the first quarter.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 3</p>
+  <h3>letting one hard item control the clock</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>I stay until I solve the hardest question first.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I set a limit, move on, and return after the easier marks are secure.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Manage time for total score, not for one item.</p>
 </article>
 </div>
 
-## Want Personalized Score Feedback?
-If you want faster improvement than self-study alone, use one paid support option:
-- [Essay Correction](/essay-correction)
-- [1-on-1 Tutoring](/tutoring)
-- [AI Writing Feedback](/celpip/writing/ai-feedback)
-- [Weekly Webinar](/webinar)
+## Interactive Practice Lab
+<div class="practice-lab" data-practice-lab>
+  <div class="practice-lab-head">
+    <div>
+      <h3>Practice</h3>
+      <p class="practice-lab-intro">Start by finding proof. Then check your reading sequence and your timing decisions.</p>
+    </div>
+    <div class="practice-lab-status">
+      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
+    </div>
+  </div>
+  <p class="practice-lab-coach">A repeated keyword is only a map. The answer still needs proof.</p>
+  <div class="practice-lab-grid">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
+  <p class="practice-task-label">1. Quick pick</p>
+  <h3>Choose the stronger move for CELPIP Reading: Scan for Proof, Not Just Keyword Match.</h3>
+  <div class="practice-choice-grid">
+<button type="button" class="practice-choice" data-choice-index="0">
+  I saw the same word, so I chose that answer immediately.
+</button>
+<button type="button" class="practice-choice" data-choice-index="1">
+  I used the keyword to find the area, then checked the sentence that actually proved the answer.
+</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="order" data-task-answer="Use keywords only to locate the likely area of the text.||Read the sentence and nearby lines for the full meaning.||Check whether the text actually proves the answer choice.||Watch for contrast words that reverse or limit the meaning." data-task-id="1">
+  <p class="practice-task-label">2. Build the flow</p>
+  <h3>Put these moves in a helpful order.</h3>
+  <p class="practice-task-note">Put the chunks in the natural order.</p>
+  <div class="practice-chip-bank" data-order-bank>
+<button type="button" class="practice-chip" data-chip-value="Read the sentence and nearby lines for the full meaning." data-chip-origin="bank-1" data-chip-id="1-0">
+  Read the sentence and nearby lines for the full meaning.
+</button>
+<button type="button" class="practice-chip" data-chip-value="Check whether the text actually proves the answer choice." data-chip-origin="bank-1" data-chip-id="1-1">
+  Check whether the text actually proves the answer choice.
+</button>
+<button type="button" class="practice-chip" data-chip-value="Watch for contrast words that reverse or limit the meaning." data-chip-origin="bank-1" data-chip-id="1-2">
+  Watch for contrast words that reverse or limit the meaning.
+</button>
+<button type="button" class="practice-chip" data-chip-value="Use keywords only to locate the likely area of the text." data-chip-origin="bank-1" data-chip-id="1-3">
+  Use keywords only to locate the likely area of the text.
+</button>
+  </div>
+  <div class="practice-chip-answer" data-order-answer></div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+    <button type="button" class="practice-clear-btn" data-task-clear>Clear</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="sort" data-task-id="2">
+  <p class="practice-task-label">3. Final sort</p>
+  <h3>Sort these habits into helpful or not helpful.</h3>
+  <div class="practice-sort-list">
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
+  <p>Use keywords only to locate the likely area of the text.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="1">
+  <p>Read the sentence and nearby lines for the full meaning.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="2">
+  <p>Choose the answer as soon as you spot one familiar word.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
+  <p>Stay on the hardest item first because solving it feels efficient.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+  </div>
+</div>
+  </div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="3">
+  <p class="practice-task-label">4. Last check</p>
+  <h3>Choose the sentence that sounds more controlled.</h3>
+  <div class="practice-choice-grid">
+<button type="button" class="practice-choice" data-choice-index="0">
+  I stayed on one hard question because solving it first felt efficient.
+</button>
+<button type="button" class="practice-choice" data-choice-index="1">
+  I used a time limit, skipped when necessary, and returned after securing easier marks.
+</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+  </div>
+</div>
 
-Best when you need detailed scoring guidance on clarity, cohesion, evidence use, and task achievement.
+## Get Feedback
+<div class="lesson-support-callout">
+  <div class="lesson-support-hero">
+    <p class="lesson-support-label">Personalized score feedback</p>
+    <h3>Get clear next-step advice.</h3>
+    <p class="lesson-support-copy">Choose the support that matches your study goal. You get direct correction, clear scoring language, and a simple next step.</p>
+  </div>
+  <div class="lesson-support-grid">
+    <a class="lesson-support-card lesson-support-card-essay" href="/essay-correction">
+      <span class="lesson-support-icon" aria-hidden="true">A+</span>
+      <strong>Essay Correction</strong>
+      <span>Detailed comments on one draft with band-style scoring.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-tutoring" href="/tutoring">
+      <span class="lesson-support-icon" aria-hidden="true">1:1</span>
+      <strong>1-on-1 Tutoring</strong>
+      <span>Live help when you want guided practice and fast correction.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-ai" href="/celpip/writing/ai-feedback">
+      <span class="lesson-support-icon" aria-hidden="true">AI</span>
+      <strong>AI Writing Feedback</strong>
+      <span>Quick checks when you want to test ideas before a full review.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-webinar" href="/webinar">
+      <span class="lesson-support-icon" aria-hidden="true">Live</span>
+      <strong>Weekly Webinar</strong>
+      <span>Join a guided session and learn with real exam-style examples.</span>
+    </a>
+  </div>
+  <p class="lesson-support-best">Best when you need guided feedback on reading accuracy, proof-finding, and timed section control.</p>
+</div>

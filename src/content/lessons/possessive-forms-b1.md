@@ -5,159 +5,235 @@ level: "B1"
 ieltsBand: "4.5-5.5"
 clb: "5-6"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B1 grammar lesson on Possessive Adjectives and Pronouns with unpacked explanations, aligned practice, and model answers."
+excerpt: "B1 lesson on Possessive Adjectives and Pronouns with teacher-style explanation, guided practice, and topic-linked review."
 date: "2026-03-02"
 tags: ["grammar", "b1", "cefr-differentiated", "ielts", "celpip"]
-heroTip: "Understand the idea first, then practice under timed exam conditions."
+heroTip: "Say the rule or strategy in plain English before you edit your answer."
 videoEmbed: ""
 draft: false
+visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
+quiz:
+  - prompt: "Which sentence uses Possessive Adjectives and Pronouns correctly?"
+    options:
+      - "When Maria met Ana, she said she needed help."
+      - "When Maria met Ana, Maria said she needed help."
+      - "The managers told the interns that they were unprepared."
+    correctIndex: 1
+    explanation: "Option 2 matches the main rule for Possessive Adjectives and Pronouns and keeps the sentence natural."
+  - prompt: "What should you check first when editing Possessive Adjectives and Pronouns?"
+    options:
+      - "The meaning you want and the sentence pattern you need"
+      - "Only the number of long words in the sentence"
+      - "Whether the sentence sounds complicated enough"
+    correctIndex: 0
+    explanation: "Start from meaning and pattern; complexity is never the first goal."
+  - prompt: "Which edit fixes a common Possessive Adjectives and Pronouns mistake?"
+    options:
+      - "James told David that he should revise the introduction."
+      - "James told David that David should revise the introduction."
+      - "The team presented the plan to the board, and they rejected it."
+    correctIndex: 1
+    explanation: "Option 2 repairs a typical Possessive Adjectives and Pronouns error and matches the target form."
 ---
-## Goal
-Learn how to use **Possessive Adjectives and Pronouns** accurately in IELTS and CELPIP responses.
-
-## What Possessive Adjectives and Pronouns Means
-This lesson is specifically about **Possessive Adjectives and Pronouns**. By the end, you should understand when to use it, how to form it correctly, and how to avoid common errors.
-
 ## Topic Explanation and Use
-Possessive Adjectives and Pronouns controls how a sentence carries meaning: reference, sequence, and emphasis must stay clear from start to finish.
-
-Use Possessive Adjectives and Pronouns to make one precise meaning per sentence, then expand only when the added structure improves clarity for exam readers.
-
-Use conditions:
-- Choose the target form after deciding the exact meaning (fact, contrast, cause, or condition).
-- Keep agreement and word order stable before adding extra clauses or modifiers.
-- If a longer sentence becomes harder to scan, split it and keep the same logic.
-
-Reference examples:
-- *In exam writing, accurate Possessive Adjectives and Pronouns helps each sentence carry one clear grammatical purpose.*
-- *When Possessive Adjectives and Pronouns is chosen deliberately, arguments stay precise and easier to evaluate under time pressure.*
-
-## Key Rule in Plain Language
-1. Choose the exact grammar job first: where **Possessive Adjectives and Pronouns** controls time, relationship, or emphasis.
-2. Build a complete base clause, then place **Possessive Adjectives and Pronouns** in the position required by the pattern.
-3. Check agreement and tense around **Possessive Adjectives and Pronouns** before adding extra words.
-4. Add one supporting clause only if the logic stays clear in public policy and daily life context.
-5. Re-read for one specific risk: wrong form, wrong position, or mixed timeline.
+<div class="lesson-teach-grid">
+  <section class="lesson-panel lesson-panel-core">
+    <p class="lesson-panel-label">Core idea</p>
+    <p>Pronouns save repetition, but only when the reference stays clear.</p>
+<p>Pronouns replace nouns so you do not have to repeat the same word again and again. They help sentences flow, but they create problems when the reference is unclear.</p>
+<p>Use pronouns only when the reader can identify exactly who or what the pronoun refers to. If two possible meanings are competing, repeat the noun.</p>
+<p>At B1 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+  </section>
+  <section class="lesson-panel lesson-panel-when">
+    <p class="lesson-panel-label">Use it here</p>
+    <ul><li>Check whether the pronoun has one clear reference.</li><li>Match the pronoun type to the job: subject, object, possessive, reflexive, or demonstrative.</li><li>Repeat the noun when the sentence would otherwise be ambiguous.</li></ul>
+  </section>
+  <section class="lesson-panel lesson-panel-pattern">
+    <p class="lesson-panel-label">Watch it work</p>
+    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Maria called the manager because she needed an update.</div>
+<div class="lesson-pattern-sentence">This option is cheaper, but that one is more reliable.</div></div>
+  </section>
+  <section class="lesson-panel lesson-panel-remember">
+    <p class="lesson-panel-label">Remember this</p>
+    <ul><li>Find the noun each pronoun refers to.</li><li>Check whether the reference is still clear after the noun is replaced.</li><li>Match the pronoun type to the sentence job.</li><li>Repeat the noun if two possible references compete.</li><li>Keep pronouns only when they genuinely make the sentence smoother.</li></ul>
+  </section>
+</div>
 
 ## Real-World Examples with Possessive Adjectives and Pronouns
-### Example 1
-- Weak: *When Maria met Ana, she said she needed help.*
-- Strong: *When Maria met Ana, Maria said she needed help.*
-- Why it works: the grammar choice supports communication instead of confusing the reader.
-
-### Example 2
-- Weak: *The managers told the interns that they were unprepared.*
-- Strong: *The managers told the interns that the report was unprepared.*
-- Why it works: the reader can follow the logic without re-reading.
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>When Maria met Ana, she said she needed help.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>When Maria met Ana, Maria said she needed help.</p>
+  <p class="lesson-card-note">This correction matches the intended meaning and keeps Possessive Adjectives and Pronouns natural.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The managers told the interns that they were unprepared.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>The managers told the interns that the report was unprepared.</p>
+  <p class="lesson-card-note">This version sounds more natural because Possessive Adjectives and Pronouns fits the sentence clearly.</p>
+</article>
+</div>
 
 ## Common Errors with Possessive Adjectives and Pronouns
-<details class="lesson-accordion lesson-error">
-<summary>Error 1: using unclear pronoun references in complex sentences</summary>
-
-- Weak: *When Maria met Ana, she said she needed help.*
-- Strong: *When Maria met Ana, Maria said she needed help.*
-- Fix: repeat the noun when a pronoun could refer to more than one person or thing.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 2: using the right idea with unstable sentence structure</summary>
-
-- Weak: *The managers told the interns that they were unprepared.*
-- Strong: *The managers told the interns that the report was unprepared.*
-- Fix: revise agreement and clause structure so the form supports meaning.
-</details>
-
-<details class="lesson-accordion lesson-error">
-<summary>Error 3: adding complexity in Possessive Adjectives and Pronouns without improving meaning</summary>
-
-- Weak: *The writer attempts Possessive Adjectives and Pronouns, but the sentence becomes difficult to follow due to unnecessary additions.*
-- Strong: *The writer uses Possessive Adjectives and Pronouns selectively, so the sentence remains clear and focused.*
-- Fix: keep only structures that improve precision or clarity.
-</details>
-
-## Practice
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 1: Correct the Sentence</summary>
-
-Correct each sentence so it uses **Possessive Adjectives and Pronouns** naturally.
-1. James told David that he should revise the introduction.
-2. The team presented the plan to the board, and they rejected it.
-3. When the teacher spoke to the parents, they were worried.
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 2: Build Sentences</summary>
-
-Write 4 sentences that apply **Possessive Adjectives and Pronouns** in public policy and daily life context.
-- sentence 1: use **Possessive Adjectives and Pronouns** to state one clear fact
-- sentence 2: use **Possessive Adjectives and Pronouns** to show contrast or qualification
-- sentence 3: use **Possessive Adjectives and Pronouns** to express cause and result
-- sentence 4: use **Possessive Adjectives and Pronouns** in an exam-style summary line
-</details>
-
-<details class="lesson-accordion lesson-practice">
-<summary>Exercise 3: Mini Paragraph</summary>
-
-Write 5-6 sentences for this prompt:
-Should communities invest more in practical public services?
-Use **Possessive Adjectives and Pronouns** at least twice.
-</details>
-
-## Answer Guide
-<details class="lesson-accordion lesson-answer">
-<summary>Open Answer Guide</summary>
-
-For Exercise 1, your corrected versions should:
-- keep form choices consistent with the sentence meaning,
-- place **Possessive Adjectives and Pronouns** in a grammatically correct structure,
-- and produce a sentence that sounds natural in context.
-
-Possible corrected versions:
-1. *James told David that David should revise the introduction.*
-2. *The team presented the plan to the board, and the board rejected it.*
-3. *When the teacher spoke to the parents, the parents were worried.*
-</details>
-
-## Interactive Exercise Test
-<div class="mini-quiz" data-mini-quiz>
-<div class="mini-quiz-head">
-<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>
-<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/3 | Attempted: 0/3</p>
-<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>
-</div>
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q1. Choose the stronger version for: using unclear pronoun references in complex sentences</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. When Maria met Ana, she said she needed help.</button>
-<button type="button" data-choice="B">B. When Maria met Ana, Maria said she needed help.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<div class="lesson-error-grid">
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 1</p>
+  <h3>using unclear pronoun references in complex sentences</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>When Maria met Ana, she said she needed help.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>When Maria met Ana, Maria said she needed help.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> repeat the noun when a pronoun could refer to more than one person or thing</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q2. Choose the stronger version for: using the right idea with unstable sentence structure</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. The managers told the interns that they were unprepared.</button>
-<button type="button" data-choice="B">B. The managers told the interns that the report was unprepared.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 2</p>
+  <h3>using a pronoun with more than one possible reference</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>When Sara met Lina, she looked worried.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>When Sara met Lina, Lina looked worried.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> repeat the noun if the pronoun could point to two different people</p>
 </article>
-
-<article class="mini-quiz-card" data-answer="B">
-<p class="mini-quiz-title">Q3. Choose the stronger version for: adding complexity in Possessive Adjectives and Pronouns without improving meaning</p>
-<div class="mini-quiz-options">
-<button type="button" data-choice="A">A. The writer attempts Possessive Adjectives and Pronouns, but the sentence becomes difficult to follow due to unnecessary additions.</button>
-<button type="button" data-choice="B">B. The writer uses Possessive Adjectives and Pronouns selectively, so the sentence remains clear and focused.</button>
-</div>
-<p class="mini-quiz-feedback" aria-live="polite"></p>
+<article class="lesson-error-card">
+  <p class="lesson-card-label">Common problem 3</p>
+  <h3>choosing the wrong pronoun form after a preposition or verb</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The teacher spoke to he after class.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The teacher spoke to him after class.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> check whether the sentence needs a subject, object, or possessive pronoun</p>
 </article>
 </div>
 
-## Want Personalized Score Feedback?
-If you want faster improvement than self-study alone, use one paid support option:
-- [Essay Correction](/essay-correction)
-- [1-on-1 Tutoring](/tutoring)
-- [AI Writing Feedback](/celpip/writing/ai-feedback)
-- [Weekly Webinar](/webinar)
+## Interactive Practice Lab
+<div class="practice-lab" data-practice-lab>
+  <div class="practice-lab-head">
+    <div>
+      <h3>Practice</h3>
+      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+    </div>
+    <div class="practice-lab-status">
+      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
+    </div>
+  </div>
+  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <div class="practice-lab-grid">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Possessive Adjectives and Pronouns form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+  <p class="practice-task-label">1. Quick pick</p>
+  <h3>Choose the stronger sentence for Possessive Adjectives and Pronouns.</h3>
+  <div class="practice-choice-grid">
+<button type="button" class="practice-choice" data-choice-index="0">
+  James told David that he should revise the introduction.
+</button>
+<button type="button" class="practice-choice" data-choice-index="1">
+  James told David that David should revise the introduction.
+</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="order" data-task-answer="The team||presented the plan||to the board,||and the board||rejected it." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+  <p class="practice-task-label">2. Build it</p>
+  <h3>Put this Possessive Adjectives and Pronouns sentence in the correct order.</h3>
+  <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
+  <div class="practice-chip-bank" data-order-bank>
+<button type="button" class="practice-chip" data-chip-value="presented the plan" data-chip-origin="bank-1" data-chip-id="1-0">
+  presented the plan
+</button>
+<button type="button" class="practice-chip" data-chip-value="rejected it." data-chip-origin="bank-1" data-chip-id="1-1">
+  rejected it.
+</button>
+<button type="button" class="practice-chip" data-chip-value="and the board" data-chip-origin="bank-1" data-chip-id="1-2">
+  and the board
+</button>
+<button type="button" class="practice-chip" data-chip-value="to the board," data-chip-origin="bank-1" data-chip-id="1-3">
+  to the board,
+</button>
+<button type="button" class="practice-chip" data-chip-value="The team" data-chip-origin="bank-1" data-chip-id="1-4">
+  The team
+</button>
+  </div>
+  <div class="practice-chip-answer" data-order-answer></div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+    <button type="button" class="practice-clear-btn" data-task-clear>Clear</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="typing" data-task-answers="When the teacher spoke to the parents, the parents were worried." data-task-id="2" data-correct-feedback="Correct. You repaired the sentence without changing the message." data-wrong-feedback="Not yet. Check the target form, then type the full corrected sentence.">
+  <p class="practice-task-label">3. Type the fix</p>
+  <h3>Rewrite the sentence so Possessive Adjectives and Pronouns is correct.</h3>
+  <p class="practice-source-line"><span>Fix this:</span> When the teacher spoke to the parents, they were worried.</p>
+  <div class="practice-input-row">
+    <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
+  <p class="practice-task-label">4. Final sort</p>
+  <h3>Mark each sentence as correct or needing a fix.</h3>
+  <div class="practice-sort-list">
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
+  <p>James told David that David should revise the introduction.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
+  <p>James told David that he should revise the introduction.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
+  <p>The team presented the plan to the board, and the board rejected it.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
+  <p>The team presented the plan to the board, and they rejected it.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+  </div>
+</div>
+  </div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
+  </div>
+</div>
 
-Best when you need precise correction on grammar control, task response quality, and exam-style scoring.
+## Get Feedback
+<div class="lesson-support-callout">
+  <div class="lesson-support-hero">
+    <p class="lesson-support-label">Personalized score feedback</p>
+    <h3>Get clear next-step advice.</h3>
+    <p class="lesson-support-copy">Choose the support that matches your study goal. You get direct correction, clear scoring language, and a simple next step.</p>
+  </div>
+  <div class="lesson-support-grid">
+    <a class="lesson-support-card lesson-support-card-essay" href="/essay-correction">
+      <span class="lesson-support-icon" aria-hidden="true">A+</span>
+      <strong>Essay Correction</strong>
+      <span>Detailed comments on one draft with band-style scoring.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-tutoring" href="/tutoring">
+      <span class="lesson-support-icon" aria-hidden="true">1:1</span>
+      <strong>1-on-1 Tutoring</strong>
+      <span>Live help when you want guided practice and fast correction.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-ai" href="/celpip/writing/ai-feedback">
+      <span class="lesson-support-icon" aria-hidden="true">AI</span>
+      <strong>AI Writing Feedback</strong>
+      <span>Quick checks when you want to test ideas before a full review.</span>
+    </a>
+    <a class="lesson-support-card lesson-support-card-webinar" href="/webinar">
+      <span class="lesson-support-icon" aria-hidden="true">Live</span>
+      <strong>Weekly Webinar</strong>
+      <span>Join a guided session and learn with real exam-style examples.</span>
+    </a>
+  </div>
+  <p class="lesson-support-best">Best when you need precise correction on grammar control, task response quality, and exam-style scoring.</p>
+</div>
