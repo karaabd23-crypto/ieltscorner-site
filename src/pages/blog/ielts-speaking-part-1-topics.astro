@@ -5,15 +5,18 @@ import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
 const pageFaqs = [
   {
     question: "How do I prepare for IELTS Speaking Part 1 topics?",
-    answer: "Prepare for IELTS Speaking Part 1 topics by practicing short personal answers with one reason or example, not memorized scripts. Focus on natural fluency and clear pronunciation.",
+    answer:
+      "Prepare by practicing short personal answers with one reason or one small detail. The goal is natural fluency, not memorized speeches.",
   },
   {
     question: "How long should IELTS Speaking Part 1 answers be?",
-    answer: "Most strong IELTS Speaking Part 1 answers are around two to four sentences, long enough to develop one idea but short enough to stay direct.",
+    answer:
+      "Most strong Part 1 answers are around two to four sentences. They should be longer than one-line answers, but still short and direct.",
   },
   {
     question: "Should I memorize IELTS Speaking Part 1 answers?",
-    answer: "No. Memorized answers often sound unnatural and can reduce coherence. It is better to learn flexible patterns you can adapt to many topics.",
+    answer:
+      "No. Memorized answers often sound unnatural. It is better to learn a flexible answer pattern you can use on many topics.",
   },
 ];
 
@@ -28,50 +31,150 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="IELTS Speaking Part 1 Topics | How to Answer Naturally"
-  description="IELTS Speaking Part 1 topic prep with answer patterns, common themes, and practical tips for natural fluency and Band 7+ speaking control."
+  title="IELTS Speaking Part 1 Topics | Answer Naturally and Clearly"
+  description="A practical IELTS Speaking Part 1 guide with topic families, short-answer structure, and simple ways to sound more natural."
   type="article"
-  keywords="IELTS speaking part 1 topics, IELTS part 1 questions, IELTS speaking part 1 tips, IELTS speaking topics, Band 7 speaking"
+  keywords="IELTS speaking part 1 topics, IELTS part 1 questions, IELTS speaking part 1 tips"
   structuredData={pageStructuredData}
 >
-  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
-    <div style="margin-bottom: var(--s-4);"><a href="/blog" style="color: var(--accent);">← Back to blog</a></div>
-    <header style="margin-bottom: var(--s-4);">
-      <h1 style="margin: 0;">IELTS Speaking Part 1 Topics Guide</h1>
-      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
-        <span>📅 March 14, 2026</span><span>✍️ IELTS Corner Team</span><span>⏱️ 6 min read</span>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag">IELTS speaking guide</span>
+      <h1 style="margin: 0;">IELTS Speaking Part 1 topics</h1>
+      <div class="guide-meta">
+        <span>March 17, 2026</span>
+        <span>6 min read</span>
       </div>
     </header>
-    <div class="article-content" style="line-height: 1.8;">
-      <p>IELTS Speaking Part 1 topics look simple, but many students still lose marks by giving one-line answers or sounding memorized. The goal is short, natural development with clear pronunciation.</p>
-      <h2>Common IELTS Part 1 topic families</h2>
-      <ul>
-        <li>Home and hometown</li>
-        <li>Work or study</li>
-        <li>Daily routines and hobbies</li>
-        <li>Food, transport, weather, technology</li>
-      </ul>
-      <h2>Simple answer pattern</h2>
-      <p>Use this pattern: direct answer, one reason, one short example. This keeps answers natural and coherent.</p>
-      <div style="padding: var(--s-3); background: var(--surface); border-radius: 6px;">
-        <p><strong>Question:</strong> Do you enjoy cooking?</p>
-        <p><strong>Answer:</strong> Yes, I do, especially on weekends. It helps me relax after a busy week, and I usually try one new recipe each Saturday.</p>
-      </div>
-      <h2>What to avoid</h2>
-      <ul>
-        <li>One-word answers</li>
-        <li>Overly long stories in Part 1</li>
-        <li>Memorized openings repeated for every question</li>
-      </ul>
-      <h2>Where to practice next</h2>
-      <p>Use the <a href="/ielts/speaking">IELTS speaking hub</a>, the <a href="/blog/ielts-speaking-part-2-cue-card">Part 2 cue card guide</a>, and related lessons like <a href="/lessons/speaking/ielts-part1-techniques-b2/">IELTS Part 1 techniques</a>.</p>
-      <h2>FAQ</h2>
-      {pageFaqs.map((item) => (
-        <details class="card" style="margin-bottom: var(--s-3);">
-          <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
-          <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
-        </details>
-      ))}
+
+    <div class="guide-lead">
+      <p>
+        IELTS Speaking Part 1 looks easy, but many students still lose marks by giving
+        answers that are too short, too memorized, or too flat. The goal is not a long
+        speech. The goal is a natural answer with one small development.
+      </p>
+      <p>
+        If you can answer clearly, give one reason, and add one short detail, Part 1 becomes
+        much more manageable.
+      </p>
     </div>
+
+    <div class="guide-grid guide-grid-2">
+      <section class="guide-card">
+        <h2>Common Part 1 topic families</h2>
+        <ul class="guide-list">
+          <li>Home and hometown</li>
+          <li>Work or study</li>
+          <li>Daily routine and hobbies</li>
+          <li>Food, transport, weather, and technology</li>
+        </ul>
+      </section>
+
+      <section class="guide-card">
+        <h2>What examiners want to hear</h2>
+        <ul class="guide-list">
+          <li>A direct answer</li>
+          <li>Natural pronunciation</li>
+          <li>Simple but clear development</li>
+          <li>Flexible language, not a memorized script</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>A simple Part 1 answer pattern</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Answer the question</h3>
+            <p>Give a clear yes, no, or direct opinion first.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Give a reason</h3>
+            <p>Explain why in one short sentence.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Add one detail</h3>
+            <p>Use a small example, habit, or personal detail to sound more natural.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Example</h2>
+      <div class="guide-example">
+        <p><strong>Question:</strong> Do you enjoy cooking?</p>
+        <p>
+          <strong>Answer:</strong> Yes, I do. I find it relaxing after a busy day, and I
+          usually try one new recipe on weekends.
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>What to avoid</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Weak move</th>
+          <th>Better move</th>
+        </tr>
+        <tr>
+          <td>One-word answers</td>
+          <td>Use at least one reason or one detail.</td>
+        </tr>
+        <tr>
+          <td>Very long stories</td>
+          <td>Keep Part 1 answers short and direct.</td>
+        </tr>
+        <tr>
+          <td>The same memorized opening every time</td>
+          <td>Start naturally and match the exact question.</td>
+        </tr>
+        <tr>
+          <td>Speaking too quickly</td>
+          <td>Slow down enough to sound clear and controlled.</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Next step</h2>
+      <div class="guide-links">
+        <a href="/blog/ielts-speaking-part-2-cue-card">
+          <strong>Read the Part 2 cue card guide</strong>
+          <span>Move from short personal answers to a longer organized talk.</span>
+        </a>
+        <a href="/ielts/speaking">
+          <strong>Go to the IELTS speaking hub</strong>
+          <span>Open more speaking guides and lessons.</span>
+        </a>
+        <a href="/lessons/speaking/ielts-part1-techniques-b2/">
+          <strong>Open the related lesson</strong>
+          <span>Practice Part 1 techniques in a focused lesson format.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
   </article>
 </Layout>

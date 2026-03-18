@@ -1,19 +1,22 @@
-﻿---
+---
 import Layout from "../../layouts/Layout.astro";
 import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
 
 const pageFaqs = [
   {
-    question: "How should I use this guide effectively?",
-    answer: "Use the structure on one timed response, review where logic breaks, then revise the same response once. This loop builds score-related habits faster than writing many unchecked answers.",
+    question: "What makes IELTS Speaking Part 3 difficult?",
+    answer:
+      "Part 3 is difficult because the questions are more abstract, there is no preparation time, and you need to explain and justify ideas on the spot.",
   },
   {
-    question: "Is this enough for a high band or CLB score?",
-    answer: "This guide gives you a strong strategy baseline. Most candidates improve faster when they combine it with targeted lessons and feedback.",
+    question: "How long should IELTS Part 3 answers be?",
+    answer:
+      "Part 3 answers should usually be longer than Part 1 answers. One clear opinion with a reason, an example, and a short extra comment is often enough.",
   },
   {
-    question: "What should I do after reading this page?",
-    answer: "Practice one task immediately, then compare your draft against the checklist and linked resources below.",
+    question: "What helps students score better in IELTS Speaking Part 3?",
+    answer:
+      "Students usually score better when they stop giving short personal answers and start explaining causes, effects, comparisons, and possible future changes.",
   },
 ];
 
@@ -28,95 +31,149 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="IELTS Speaking Part 3 Questions Guide | Develop Ideas Under Pressure"
-  description="IELTS Speaking Part 3 strategy for abstract questions, idea development, and higher-band fluency and coherence."
+  title="IELTS Speaking Part 3 Questions Guide | Answer Abstract Questions Better"
+  description="A clear IELTS Speaking Part 3 guide with answer structure, idea development, and simple ways to sound more analytical."
   type="article"
   keywords="IELTS Speaking Part 3, IELTS speaking part 3 questions, IELTS speaking strategy"
   structuredData={pageStructuredData}
 >
-  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
-    <div style="margin-bottom: var(--s-4);">
-      <a href="/blog" style="color: var(--accent);">&larr; Back to blog</a>
-    </div>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
 
-    <header style="margin-bottom: var(--s-4);">
-      <h1 style="margin: 0;">IELTS Speaking Part 3 Questions Guide</h1>
-      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
-        <span>March 14, 2026</span>
-        <span>IELTS Corner Team</span>
-        <span>6 min read</span>
+    <header class="guide-header">
+      <span class="guide-tag">IELTS speaking guide</span>
+      <h1 style="margin: 0;">IELTS Speaking Part 3 questions</h1>
+      <div class="guide-meta">
+        <span>March 17, 2026</span>
+        <span>7 min read</span>
       </div>
     </header>
 
-    <div class="divider" style="margin: var(--s-4) 0; height: 2px; background: var(--text-muted-light);"></div>
-
-    <div class="article-content" style="line-height: 1.8;">
-      <p>Part 3 usually separates mid-band and high-band speakers. You need to explain, compare, and justify ideas without memorized scripts.</p>
-
-      <h2>Quick strategy framework</h2>
-      <ul>
-        <li>Plan before writing or speaking so your response has a clear structure.</li>
-        <li>Keep one main idea per paragraph or answer block.</li>
-        <li>Support claims with one relevant reason or example, not multiple weak points.</li>
-        <li>Leave time for a short review step to catch avoidable errors.</li>
-      </ul>
-
-      <h2>Common mistakes to avoid</h2>
-      <table style="width: 100%; border-collapse: collapse; margin: var(--s-3) 0;">
-        <tr style="background: var(--surface);">
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Mistake</th>
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Better move</th>
-        </tr>
-        <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Starting without a plan</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Take 1-2 minutes to map your response first.</td>
-        </tr>
-        <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Adding ideas without development</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Develop fewer ideas with clearer support.</td>
-        </tr>
-        <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Skipping review</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Reserve a short final check for clarity and errors.</td>
-        </tr>
-      </table>
-
-      <h2>Related guides and next steps</h2>
-      <ul>
-        <li><a href="/ielts/speaking">IELTS speaking hub</a></li>
-        <li><a href="/blog/ielts-speaking-part-2-cue-card">Speaking Part 2 cue card guide</a></li>
-        <li><a href="/blog/ielts-speaking-part-1-topics">Speaking Part 1 topics guide</a></li>
-        <li><a href="/tutoring">Speaking tutoring</a></li>
-      </ul>
-
-      <h2>FAQ</h2>
-      {pageFaqs.map((item) => (
-        <details class="card" style="margin-bottom: var(--s-3);">
-          <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
-          <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
-        </details>
-      ))}
+    <div class="guide-lead">
+      <p>
+        Part 3 often separates mid-band and high-band speakers. In Part 1, short natural
+        answers are fine. In Part 3, you need to explain ideas in a wider, more abstract
+        way.
+      </p>
+      <p>
+        The good news is that you do not need a long speech. You need one clear answer that
+        develops naturally.
+      </p>
     </div>
+
+    <div class="guide-grid guide-grid-2">
+      <section class="guide-card">
+        <h2>What Part 3 usually asks you to do</h2>
+        <ul class="guide-list">
+          <li>Explain why something happens.</li>
+          <li>Compare two ideas or groups.</li>
+          <li>Discuss advantages and disadvantages.</li>
+          <li>Predict how things may change in the future.</li>
+        </ul>
+      </section>
+
+      <section class="guide-card">
+        <h2>What usually sounds weak</h2>
+        <ul class="guide-list">
+          <li>Very short answers with no reason.</li>
+          <li>Personal stories when the question is asking for a general view.</li>
+          <li>Repeating the same idea in different words.</li>
+          <li>Using fillers because the answer has no structure.</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>A simple Part 3 answer frame</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Answer directly</h3>
+            <p>Say what you think in one sentence.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Give a reason</h3>
+            <p>Explain why you think that.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Add an example or comparison</h3>
+            <p>Use one short example, contrast, or real-world effect.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Extend briefly</h3>
+            <p>Add a future result or wider comment if you still have more to say.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Example</h2>
+      <div class="guide-example">
+        <p><strong>Question:</strong> Why do some people prefer living in big cities?</p>
+        <p>
+          <strong>Answer:</strong> I think many people prefer big cities because they offer
+          more job opportunities and services. For example, it is usually easier to find
+          specialized work, better transport, and more entertainment in a large city than
+          in a small town.
+        </p>
+      </div>
+      <div class="guide-note" style="margin-top: var(--s-3);">
+        <p>
+          This answer works because it moves from opinion to reason to example without
+          sounding memorized.
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Best ways to extend your answer</h2>
+      <ul class="guide-list">
+        <li>Compare the present with the past.</li>
+        <li>Compare younger and older people.</li>
+        <li>Explain a likely result in the future.</li>
+        <li>Contrast cities and rural areas, or individuals and society.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Next step</h2>
+      <div class="guide-links">
+        <a href="/blog/ielts-speaking-part-2-cue-card">
+          <strong>Read the Part 2 cue card guide</strong>
+          <span>See how Part 3 grows out of the topic from the long-turn section.</span>
+        </a>
+        <a href="/ielts/speaking">
+          <strong>Go to the IELTS speaking hub</strong>
+          <span>Find the next speaking guide or lesson.</span>
+        </a>
+        <a href="/tutoring">
+          <strong>Use speaking tutoring</strong>
+          <span>Get direct feedback on idea development, fluency, and range.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
   </article>
 </Layout>
-
-<style>
-  .article-content {
-    color: var(--text);
-  }
-
-  .article-content h2 {
-    margin-top: var(--s-5);
-    margin-bottom: var(--s-2);
-  }
-
-  .article-content ul {
-    margin: var(--s-2) 0;
-    padding-left: var(--s-4);
-  }
-
-  .article-content li {
-    margin: var(--s-1) 0;
-  }
-</style>
-

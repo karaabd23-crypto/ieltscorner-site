@@ -1,11 +1,11 @@
 ---
-title: "CELPIP Speaking Task 2: Give Your Opinion (C1)"
+title: "CELPIP Speaking Task 7: Expressing an Opinion (C1)"
 category: "speaking"
 level: "C1"
 ieltsBand: "7.5-8.5"
 clb: "9-10"
 exam: ["IELTS", "CELPIP"]
-excerpt: "C1 speaking lesson on CELPIP Speaking Task 2: Give Your Opinion with clearer response frames, practice prompts, and self-checks."
+excerpt: "C1 speaking lesson on CELPIP Speaking Task 7: Expressing an Opinion with clearer response frames, practice prompts, and self-checks."
 date: "2026-03-02"
 tags: ["speaking", "c1", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Start with a direct answer. Most speaking problems get smaller once the opening sentence is clear."
@@ -13,7 +13,7 @@ videoEmbed: ""
 draft: false
 visualAids: ["Direct-answer frame", "Reason-example model", "Recording checklist"]
 quiz:
-  - prompt: "What is a safe speaking frame for CELPIP Speaking Task 2: Give Your Opinion?"
+  - prompt: "What is a safe speaking frame for CELPIP Speaking Task 7: Expressing an Opinion?"
     options:
       - "Answer, reason, example, close"
       - "Long apology, filler, random detail"
@@ -59,7 +59,7 @@ quiz:
   </section>
 </div>
 
-## Real-World Examples with CELPIP Speaking Task 2: Give Your Opinion
+## Real-World Examples with CELPIP Speaking Task 7: Expressing an Opinion
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
@@ -75,7 +75,7 @@ quiz:
 </article>
 </div>
 
-## Common Errors with CELPIP Speaking Task 2: Give Your Opinion
+## Common Errors with CELPIP Speaking Task 7: Expressing an Opinion
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -116,7 +116,7 @@ quiz:
   <div class="practice-lab-grid">
 <article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger move for CELPIP Speaking Task 2: Give Your Opinion.</h3>
+  <h3>Choose the stronger move for CELPIP Speaking Task 7: Expressing an Opinion.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
   Talk around the question first and hope the listener finds your point.

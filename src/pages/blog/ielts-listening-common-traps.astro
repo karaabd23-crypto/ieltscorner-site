@@ -1,19 +1,22 @@
-﻿---
+---
 import Layout from "../../layouts/Layout.astro";
 import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
 
 const pageFaqs = [
   {
-    question: "How should I use this guide effectively?",
-    answer: "Use the structure on one timed response, review where logic breaks, then revise the same response once. This loop builds score-related habits faster than writing many unchecked answers.",
+    question: "What is the most common trap in IELTS Listening?",
+    answer:
+      "The most common trap is the distractor: the speaker says one answer, then changes or corrects it later.",
   },
   {
-    question: "Is this enough for a high band or CLB score?",
-    answer: "This guide gives you a strong strategy baseline. Most candidates improve faster when they combine it with targeted lessons and feedback.",
+    question: "Why do students lose easy marks in IELTS Listening?",
+    answer:
+      "Students often lose easy marks because of spelling, plurals, word limits, and answer changes that happen quickly in the audio.",
   },
   {
-    question: "What should I do after reading this page?",
-    answer: "Practice one task immediately, then compare your draft against the checklist and linked resources below.",
+    question: "How can I avoid IELTS Listening traps?",
+    answer:
+      "Predict the answer type early, keep listening until the idea is fully finished, and always check the written answer carefully at the end.",
   },
 ];
 
@@ -28,95 +31,167 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="IELTS Listening Common Traps | How to Avoid Easy Score Loss"
-  description="IELTS listening trap patterns and prevention strategies for distractors, corrections, spelling errors, and answer transfer mistakes."
+  title="IELTS Listening Common Traps | Avoid Easy Score Loss"
+  description="A practical guide to IELTS Listening traps, including distractors, answer corrections, spelling problems, and word-limit mistakes."
   type="article"
-  keywords="IELTS listening traps, IELTS listening mistakes, IELTS listening distractors"
+  keywords="IELTS listening traps, IELTS listening mistakes, IELTS distractors"
   structuredData={pageStructuredData}
 >
-  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
-    <div style="margin-bottom: var(--s-4);">
-      <a href="/blog" style="color: var(--accent);">&larr; Back to blog</a>
-    </div>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
 
-    <header style="margin-bottom: var(--s-4);">
-      <h1 style="margin: 0;">IELTS Listening Common Traps</h1>
-      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
-        <span>March 14, 2026</span>
-        <span>IELTS Corner Team</span>
+    <header class="guide-header">
+      <span class="guide-tag">IELTS listening guide</span>
+      <h1 style="margin: 0;">IELTS Listening common traps</h1>
+      <div class="guide-meta">
+        <span>March 17, 2026</span>
         <span>6 min read</span>
       </div>
     </header>
 
-    <div class="divider" style="margin: var(--s-4) 0; height: 2px; background: var(--text-muted-light);"></div>
+    <div class="guide-lead">
+      <p>
+        Many IELTS Listening mistakes are not about English level. They happen because the
+        test is designed to make careless listeners choose the wrong answer too early.
+      </p>
+      <p>
+        If you know the usual traps, you stop treating every wrong answer like a surprise.
+      </p>
+    </div>
 
-    <div class="article-content" style="line-height: 1.8;">
-      <p>Most listening score drops are predictable: distractor answers, corrected information, and weak checking habits. This page helps you neutralize those traps.</p>
+    <div class="guide-grid guide-grid-2">
+      <section class="guide-card">
+        <h2>The biggest trap</h2>
+        <p>
+          The speaker gives one answer, then changes it. Students who stop listening too
+          early keep the wrong answer.
+        </p>
+      </section>
 
-      <h2>Quick strategy framework</h2>
-      <ul>
-        <li>Plan before writing or speaking so your response has a clear structure.</li>
-        <li>Keep one main idea per paragraph or answer block.</li>
-        <li>Support claims with one relevant reason or example, not multiple weak points.</li>
-        <li>Leave time for a short review step to catch avoidable errors.</li>
+      <section class="guide-card">
+        <h2>The smartest habit</h2>
+        <p>
+          Do not lock your answer too quickly. Keep listening until the speaker clearly
+          finishes the point.
+        </p>
+      </section>
+    </div>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Trap 1: Distractors</h2>
+      <div class="guide-example">
+        <p><strong>Example:</strong> We first planned to meet on Thursday, but we moved it to Friday morning.</p>
+      </div>
+      <p>
+        The wrong answer sounds possible because it comes first. The real answer arrives
+        after the correction.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Trap 2: Similar words, different meaning</h2>
+      <p>
+        IELTS may use words that sound connected but are not the same answer. For example,
+        the speaker may mention a place name, but the question is asking for the transport
+        method used to get there.
+      </p>
+      <div class="guide-note">
+        <p>
+          Always match the answer to the exact question, not only to a word you heard
+          clearly.
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Trap 3: Word-limit mistakes</h2>
+      <p>
+        Even a correct idea becomes wrong if it breaks the instruction. If the task says
+        <strong>one word only</strong>, you cannot write two words.
+      </p>
+      <ul class="guide-list">
+        <li>Underline the limit before the audio starts.</li>
+        <li>Check the written answer again during transfer time.</li>
       </ul>
+    </section>
 
-      <h2>Common mistakes to avoid</h2>
-      <table style="width: 100%; border-collapse: collapse; margin: var(--s-3) 0;">
-        <tr style="background: var(--surface);">
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Mistake</th>
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Better move</th>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Trap 4: Spelling and plural endings</h2>
+      <p>
+        Listening scores often drop on very small writing details: a missing letter, the
+        wrong vowel, or a missing plural <strong>s</strong>.
+      </p>
+      <ul class="guide-list">
+        <li>If the grammar around the blank suggests a plural, write a plural.</li>
+        <li>Pay extra attention to names, streets, dates, and numbers.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Trap 5: Staying stuck on one missed answer</h2>
+      <p>
+        This is a listening habit problem, not a language problem. If you keep thinking
+        about question 12, the recording moves on and you may lose questions 13 and 14 too.
+      </p>
+      <div class="guide-note">
+        <p>Miss one answer, move on immediately, and recover on the next one.</p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Quick final check</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Check</th>
+          <th>Reason</th>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Starting without a plan</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Take 1-2 minutes to map your response first.</td>
+          <td>Spelling</td>
+          <td>The answer must be written correctly.</td>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Adding ideas without development</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Develop fewer ideas with clearer support.</td>
+          <td>Plural endings</td>
+          <td>The grammar around the blank may require a plural noun.</td>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Skipping review</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Reserve a short final check for clarity and errors.</td>
+          <td>Word limit</td>
+          <td>Too many words means the answer is wrong.</td>
+        </tr>
+        <tr>
+          <td>Numbers and dates</td>
+          <td>Incorrect format can cost the mark.</td>
         </tr>
       </table>
+    </section>
 
-      <h2>Related guides and next steps</h2>
-      <ul>
-        <li><a href="/ielts/listening">IELTS listening hub</a></li>
-        <li><a href="/blog/ielts-listening-question-types">Listening question types guide</a></li>
-        <li><a href="/lessons/ielts/listening">IELTS listening lessons</a></li>
-        <li><a href="/tutoring">IELTS coaching</a></li>
-      </ul>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Next step</h2>
+      <div class="guide-links">
+        <a href="/blog/ielts-listening-question-types">
+          <strong>Read the question types guide</strong>
+          <span>Pair trap awareness with the right strategy for each task type.</span>
+        </a>
+        <a href="/ielts/listening">
+          <strong>Go to the IELTS listening hub</strong>
+          <span>Find the next listening guide, lesson, or practice route.</span>
+        </a>
+        <a href="/lessons/ielts/listening">
+          <strong>Study listening lessons</strong>
+          <span>Train the listening habits behind these common exam mistakes.</span>
+        </a>
+      </div>
+    </section>
 
+    <section class="guide-card" style="margin-top: var(--s-4);">
       <h2>FAQ</h2>
-      {pageFaqs.map((item) => (
-        <details class="card" style="margin-bottom: var(--s-3);">
-          <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
-          <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
-        </details>
-      ))}
-    </div>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
   </article>
 </Layout>
-
-<style>
-  .article-content {
-    color: var(--text);
-  }
-
-  .article-content h2 {
-    margin-top: var(--s-5);
-    margin-bottom: var(--s-2);
-  }
-
-  .article-content ul {
-    margin: var(--s-2) 0;
-    padding-left: var(--s-4);
-  }
-
-  .article-content li {
-    margin: var(--s-1) 0;
-  }
-</style>
-

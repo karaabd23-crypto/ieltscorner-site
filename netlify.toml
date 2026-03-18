@@ -6,6 +6,12 @@
 [build.environment]
   NODE_VERSION = "20"
 
+[[redirects]]
+  from = "/blog/celpip-speaking-task-2-opinion-strategy"
+  to = "/blog/celpip-speaking-task-7-opinion-strategy"
+  status = 301
+  force = true
+
 # Scheduled functions DISABLED - moved to GitHub Actions to save Netlify credits
 # See .github/workflows/telegram-content-scheduler.yml and telegram-story-scheduler.yml
 # [[scheduled_functions]]

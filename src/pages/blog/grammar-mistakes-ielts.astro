@@ -1,132 +1,170 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "What grammar mistakes lower IELTS writing scores most often?",
+    answer:
+      "Common score-lowering mistakes include subject-verb agreement problems, double subjects, and unnatural word order in sentences that try to sound too formal.",
+  },
+  {
+    question: "Can a few grammar mistakes really affect my score?",
+    answer:
+      "Yes. A few repeated grammar mistakes can make the whole response feel less controlled, especially when the same error appears again and again.",
+  },
+  {
+    question: "How can I reduce grammar mistakes faster?",
+    answer:
+      "Focus on a few repeated error patterns, write slowly enough to stay in control, and check the same problem areas every time you review your work.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "Grammar Mistakes in IELTS", path: "/blog/grammar-mistakes-ielts/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
 ---
 
 <Layout
-  title="3 Grammar Mistakes That Cost You Marks — IELTS Corner Blog"
-  description="Learn the top 3 grammar mistakes IELTS students make, and how to fix them forever."
+  title="Grammar Mistakes That Lower IELTS Scores | Fix the Most Common Ones First"
+  description="A practical guide to the grammar mistakes IELTS students repeat most often, with simpler fixes that improve control quickly."
   type="article"
+  keywords="IELTS grammar mistakes, IELTS writing grammar errors, subject verb agreement IELTS"
+  structuredData={pageStructuredData}
 >
-  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
-    <div style="margin-bottom: var(--s-4);">
-      <a href="/blog" style="color: var(--accent);">← Back to blog</a>
-    </div>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
 
-    <header style="margin-bottom: var(--s-4);">
-      <h1 style="margin: 0;">3 Grammar Mistakes That Cost You Marks</h1>
-      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
-        <span>📅 March 1, 2026</span>
-        <span>✍️ IELTS Corner Team</span>
-        <span>⏱️ 5 min read</span>
+    <header class="guide-header">
+      <span class="guide-tag">IELTS grammar guide</span>
+      <h1 style="margin: 0;">Grammar mistakes that lower IELTS scores</h1>
+      <div class="guide-meta">
+        <span>March 17, 2026</span>
+        <span>6 min read</span>
       </div>
     </header>
 
-    <div class="divider" style="margin: var(--s-4) 0; height: 2px; background: var(--text-muted-light);"></div>
-
-    <div class="article-content" style="line-height: 1.8;">
+    <div class="guide-lead">
       <p>
-        IELTS students lose marks for the same grammar mistakes over and over. In this article, we show you the 3 most common errors—and how to fix them.
+        Most students do not lose grammar marks because of rare advanced structures. They
+        lose marks because a few common mistakes keep repeating. If you fix those patterns,
+        your writing and speaking start to feel much more controlled.
       </p>
+      <p>
+        The fastest improvement usually comes from noticing what you do again and again.
+      </p>
+    </div>
 
-      <h2>Mistake #1: Subject-Verb Agreement</h2>
-      <div class="mistakes-box" style="padding: var(--s-3); background: #fee2e2; border-left: 4px solid #dc2626; border-radius: 4px; margin: var(--s-3) 0;">
-        <p style="margin: 0;"><strong>❌ Incorrect:</strong>"The number of students who studies English are increasing."</p>
-        <p style="margin: var(--s-2) 0 0;"><strong>✓ Correct:</strong> "The number of students who study English is increasing."</p>
+    <section class="guide-card">
+      <h2>Three mistakes that appear again and again</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Subject-verb agreement with long subjects</h3>
+            <p>Students follow the nearest noun instead of the real subject.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Double subjects</h3>
+            <p>The noun is repeated with a pronoun, which makes the sentence ungrammatical.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Risky word order</h3>
+            <p>Writers try to sound formal, but the sentence order becomes unnatural.</p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <p><strong>Why it happens:</strong> We look at the nearest noun ("students"), but the subject is actually "the number" (singular).</p>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Examples of safer corrections</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Weak sentence</th>
+          <th>Better sentence</th>
+        </tr>
+        <tr>
+          <td>The number of students who study abroad are increasing.</td>
+          <td>The number of students who study abroad is increasing.</td>
+        </tr>
+        <tr>
+          <td>My sister, she lives in Calgary.</td>
+          <td>My sister lives in Calgary.</td>
+        </tr>
+        <tr>
+          <td>Under no circumstances I will accept this.</td>
+          <td>I will not accept this under any circumstances.</td>
+        </tr>
+      </table>
+    </section>
 
-      <p><strong>Rule:</strong> The subject is usually the noun closest to the verb, right? <strong>No!</strong> The subject is the main noun phrase, not the one in the middle.</p>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Why these mistakes happen</h2>
+      <div class="guide-grid guide-grid-2">
+        <div class="guide-note">
+          <p>
+            Some errors come from translation. The sentence pattern feels normal in another
+            language, so it slips into English.
+          </p>
+        </div>
+        <div class="guide-note">
+          <p>
+            Other errors happen because students try to sound more advanced before the basic
+            sentence is stable.
+          </p>
+        </div>
+      </div>
+    </section>
 
-      <p><strong>Examples:</strong></p>
-      <ul>
-        <li>"The <strong>group</strong> of people <strong>is</strong> large." (group = subject)</li>
-        <li>"The <strong>series</strong> of events <strong>has</strong> changed." (series = subject)</li>
-        <li>"The <strong>majority</strong> of students <strong>get</strong> Band 6." (majority = subject)</li>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>A better checking habit</h2>
+      <ul class="guide-list">
+        <li>Find the real subject before you check the verb.</li>
+        <li>Make sure one clause has one clear subject.</li>
+        <li>Keep word order simple unless you are fully sure the advanced pattern is correct.</li>
+        <li>Check your last three sentences before you submit, not only the first paragraph.</li>
       </ul>
+    </section>
 
-      <p><strong>Practice:</strong> Identify the main noun (subject). Ignore words in the middle. Match the verb to that noun only.</p>
-
-      <h2>Mistake #2: Adding Extra Subjects</h2>
-      <div class="mistakes-box" style="padding: var(--s-3); background: #fee2e2; border-left: 4px solid #dc2626; border-radius: 4px; margin: var(--s-3) 0;">
-        <p style="margin: 0;"><strong>❌ Incorrect:</strong> "My sister, she lives in Canada."</p>
-        <p style="margin: var(--s-2) 0 0;"><strong>✓ Correct:</strong> "My sister lives in Canada."</p>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Next step</h2>
+      <div class="guide-links">
+        <a href="/lessons/grammar/subject-verb-agreement-b1">
+          <strong>Study subject-verb agreement</strong>
+          <span>Fix one of the most common grammar patterns first.</span>
+        </a>
+        <a href="/lessons/grammar">
+          <strong>Browse grammar lessons</strong>
+          <span>Open the full grammar lesson library.</span>
+        </a>
+        <a href="/tutoring">
+          <strong>Get direct feedback</strong>
+          <span>Use tutoring if you want someone to catch your repeated error patterns.</span>
+        </a>
       </div>
+    </section>
 
-      <p>Or with a relative clause:</p>
-      <p style="margin: 0;"><strong>❌ Incorrect:</strong> "The students who want to study, they need to prepare."</p>
-      <p style="margin: var(--s-2) 0;"><strong>✓ Correct:</strong> "The students who want to study need to prepare."</p>
-
-      <p><strong>Why it happens:</strong> In some languages, repeating the subject is normal. In English, it's redundant and incorrect.</p>
-
-      <p><strong>Rule:</strong> Don't repeat the subject. One subject per verb.</p>
-
-      <h2>Mistake #3: Wrong Word Order (Inversion)</h2>
-      <div class="mistakes-box" style="padding: var(--s-3); background: #fee2e2; border-left: 4px solid #dc2626; border-radius: 4px; margin: var(--s-3) 0;">
-        <p style="margin: 0;"><strong>❌ Incorrect:</strong> "I have never seen such difficulty a test."</p>
-        <p style="margin: var(--s-2) 0 0;"><strong>✓ Correct:</strong> "I have never seen such a difficult test."</p>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
       </div>
-
-      <p><strong>Another example:</strong></p>
-      <p style="margin: 0;"><strong>❌ Incorrect:</strong> "Under no circumstances I will accept this."</p>
-      <p style="margin: var(--s-2) 0;"><strong>✓ Correct:</strong> "Under no circumstances will I accept this." (or avoid inversion: "I will not accept this.")</p>
-
-      <p><strong>Why it happens:</strong> You're trying to sound formal but getting the word order wrong. Inversion is tricky!</p>
-
-      <p><strong>Safe rule:</strong> Unless you're sure about inversion, keep the normal word order: Subject + Verb + Object.</p>
-
-      <h2>How to Avoid These Mistakes</h2>
-      <ol>
-        <li><strong>Read your writing aloud.</strong> Your ear will catch many grammar mistakes.</li>
-        <li><strong>Find the main subject first.</strong> Ignore prepositional phrases and relative clauses.</li>
-        <li><strong>Don't repeat the subject.</strong> "She lives in Canada" (not "She, she lives...").</li>
-        <li><strong>Keep word order simple.</strong> Subject + Verb + Object is safest.</li>
-        <li><strong>Practice with our lessons.</strong> We have 81 grammar lessons covering all these structures.</li>
-      </ol>
-
-      <h2>Next Steps</h2>
-      <p>Want to master these structures? Check out our lessons on:</p>
-      <ul>
-        <li><a href="/lessons/grammar/subject-verb-agreement-b1">Subject-Verb Agreement</a></li>
-        <li><a href="/lessons">More grammar lessons →</a></li>
-      </ul>
-
-      <p>Or <a href="/contact">get personalized help from a tutor</a>.</p>
-    </div>
-
-    <div class="divider" style="margin: var(--s-4) 0; height: 2px; background: var(--text-muted-light);"></div>
-
-    <div style="padding: var(--s-4); background: var(--accent-light); border-radius: 8px; text-align: center;">
-      <h3 style="margin-top: 0;">Ready to improve your grammar?</h3>
-      <p style="margin: var(--s-2) 0;">Explore our 81 free grammar lessons or book a tutor for personalized help.</p>
-      <a href="/lessons/grammar" class="btn btn-primary">See grammar lessons →</a>
-    </div>
-
-    <div style="height: var(--s-6);"></div>
-
-    <div style="text-align: center;">
-      <a href="/blog" class="btn btn-ghost">← Back to all articles</a>
-    </div>
+    </section>
   </article>
 </Layout>
-
-<style>
-  .article-content {
-    color: var(--text);
-  }
-
-  .article-content h2 {
-    margin-top: var(--s-5);
-    margin-bottom: var(--s-2);
-  }
-
-  .article-content ul,
-  .article-content ol {
-    margin: var(--s-2) 0;
-    padding-left: var(--s-4);
-  }
-
-  .article-content li {
-    margin: var(--s-1) 0;
-  }
-</style>

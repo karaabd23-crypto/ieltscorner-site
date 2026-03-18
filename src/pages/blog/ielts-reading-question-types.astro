@@ -5,15 +5,18 @@ import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
 const pageFaqs = [
   {
     question: "What are the main IELTS Reading question types?",
-    answer: "Main IELTS Reading question types include True/False/Not Given, matching headings, summary completion, multiple choice, sentence completion, and matching information.",
+    answer:
+      "The main IELTS Reading question types include True/False/Not Given, matching headings, summary completion, sentence completion, multiple choice, and matching information.",
   },
   {
-    question: "How should I handle different IELTS Reading question types?",
-    answer: "Handle IELTS Reading question types with a proof-first method: identify keywords, locate paraphrases in the text, and confirm evidence before selecting an answer.",
+    question: "Should I use the same method for every question type?",
+    answer:
+      "No. Different question types need different reading behavior. Matching headings needs paragraph-level reading, while completion tasks need more exact detail checking.",
   },
   {
     question: "Why do students lose marks in IELTS Reading?",
-    answer: "Students often lose marks by relying on keyword matching only, misreading question instructions, and spending too long on one difficult item.",
+    answer:
+      "Students often lose marks when they trust keywords too quickly, miss instruction limits, or spend too long on one hard question.",
   },
 ];
 
@@ -28,46 +31,154 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="IELTS Reading Question Types | Strategy by Question Format"
-  description="IELTS Reading question types explained with practical strategy for True/False/Not Given, matching, completion tasks, and time management."
+  title="IELTS Reading Question Types | Use the Right Method for Each One"
+  description="A practical IELTS Reading guide explaining the main question types and the reading behavior each one needs."
   type="article"
-  keywords="IELTS Reading question types, IELTS True False Not Given, IELTS matching headings, IELTS reading tips"
+  keywords="IELTS Reading question types, IELTS True False Not Given, IELTS matching headings, IELTS reading strategy"
   structuredData={pageStructuredData}
 >
-  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
-    <div style="margin-bottom: var(--s-4);"><a href="/blog" style="color: var(--accent);">← Back to blog</a></div>
-    <header style="margin-bottom: var(--s-4);">
-      <h1 style="margin: 0;">IELTS Reading Question Types Guide</h1>
-      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
-        <span>📅 March 14, 2026</span><span>✍️ IELTS Corner Team</span><span>⏱️ 7 min read</span>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag">IELTS reading guide</span>
+      <h1 style="margin: 0;">IELTS Reading question types</h1>
+      <div class="guide-meta">
+        <span>March 17, 2026</span>
+        <span>7 min read</span>
       </div>
     </header>
-    <div class="article-content" style="line-height: 1.8;">
-      <p>IELTS Reading is not one skill. Different question types require different reading behaviors. Students improve faster when they stop using one method for every task.</p>
-      <h2>High-impact IELTS Reading question types</h2>
-      <ul>
-        <li>True/False/Not Given</li>
-        <li>Matching headings</li>
-        <li>Summary and sentence completion</li>
-        <li>Multiple choice and matching information</li>
-      </ul>
-      <h2>Core strategy</h2>
-      <p>Use a proof-first approach: identify question keywords, find paraphrases, and confirm exact evidence lines before choosing an answer.</p>
-      <h2>Common mistakes</h2>
-      <ul>
-        <li>Choosing answers by topic familiarity</li>
-        <li>Ignoring instruction words like NO MORE THAN TWO WORDS</li>
-        <li>Spending too much time on one item and losing later marks</li>
-      </ul>
-      <h2>Next step</h2>
-      <p>Use the <a href="/ielts/reading">IELTS reading hub</a> and the reading lesson archive at <a href="/lessons/ielts/reading">IELTS reading lessons</a> to drill question-type behavior directly.</p>
-      <h2>FAQ</h2>
-      {pageFaqs.map((item) => (
-        <details class="card" style="margin-bottom: var(--s-3);">
-          <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
-          <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
-        </details>
-      ))}
+
+    <div class="guide-lead">
+      <p>
+        IELTS Reading is not one single skill. Different question types reward different
+        habits. Students often struggle because they try to use one method for every task.
+      </p>
+      <p>
+        The safest approach is proof first. Find the evidence in the passage before you
+        decide on the answer.
+      </p>
     </div>
+
+    <div class="guide-grid guide-grid-2">
+      <section class="guide-card">
+        <h2>Question types that need big-picture reading</h2>
+        <ul class="guide-list">
+          <li>Matching headings</li>
+          <li>Matching information to paragraphs</li>
+          <li>Choosing the best summary idea</li>
+        </ul>
+      </section>
+
+      <section class="guide-card">
+        <h2>Question types that need detail checking</h2>
+        <ul class="guide-list">
+          <li>True/False/Not Given</li>
+          <li>Sentence or summary completion</li>
+          <li>Multiple choice with close options</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>How to handle the main question types</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>True/False/Not Given</h3>
+            <p>Compare the statement with the passage carefully. One changed detail can change the answer.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Matching headings</h3>
+            <p>Read for the main idea of the whole paragraph, not one interesting sentence.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Completion tasks</h3>
+            <p>Respect word limits and check grammar so the answer fits the sentence.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Multiple choice</h3>
+            <p>Do not choose the first familiar idea. Check which option matches the passage most exactly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>The proof-first method</h2>
+      <div class="guide-note">
+        <p>
+          A good reading answer is based on evidence, not feeling. Mark the key words in the
+          question, find the paraphrase in the text, and confirm the exact line before you
+          commit to the answer.
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>What usually goes wrong</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Problem</th>
+          <th>Better move</th>
+        </tr>
+        <tr>
+          <td>Keyword matching only</td>
+          <td>Look for meaning and paraphrase, not only repeated words.</td>
+        </tr>
+        <tr>
+          <td>Ignoring instruction limits</td>
+          <td>Check "NO MORE THAN..." before you write the answer.</td>
+        </tr>
+        <tr>
+          <td>Too much time on one item</td>
+          <td>Move on and return later if needed.</td>
+        </tr>
+        <tr>
+          <td>Choosing before checking proof</td>
+          <td>Find the evidence line first.</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Next step</h2>
+      <div class="guide-links">
+        <a href="/ielts/reading">
+          <strong>Go to the IELTS reading hub</strong>
+          <span>Open more reading strategy and timing resources.</span>
+        </a>
+        <a href="/lessons/ielts/reading">
+          <strong>Browse IELTS reading lessons</strong>
+          <span>Practice reading skills in lesson format.</span>
+        </a>
+        <a href="/blog/ielts-listening-question-types">
+          <strong>Read the listening question-types guide</strong>
+          <span>Compare how proof-first thinking changes between reading and listening.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
   </article>
 </Layout>

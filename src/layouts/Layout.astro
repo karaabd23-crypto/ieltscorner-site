@@ -544,11 +544,11 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
 
     <!-- AdSense Before Footer -->
     {showAds && (
-      <div class="container ad-container-footer" style="padding: var(--s-3) 0;">
-        <ins class="adsbygoogle"
-            style="display:block; max-height: 120px;"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
+      <div class="container ad-container-footer ad-shell ad-shell--line" style="padding: var(--s-3) 0;">
+        <ins class="adsbygoogle ad-unit-line"
+            style="display:block"
+            data-ad-format="horizontal"
+            data-full-width-responsive="false"
             data-ad-client="ca-pub-5615542310815721"
             data-ad-slot="7254823697"></ins>
         <script is:inline>

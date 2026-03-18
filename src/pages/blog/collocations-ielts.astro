@@ -1,270 +1,194 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "What are collocations in IELTS writing?",
+    answer:
+      "Collocations are word combinations that sound natural together, such as 'take action' or 'play a role'. They help your writing sound more fluent and natural.",
+  },
+  {
+    question: "Do collocations improve IELTS scores automatically?",
+    answer:
+      "No. They help only when they match the meaning and sound natural in the sentence. Forced collocations often make writing worse, not better.",
+  },
+  {
+    question: "How should I study collocations for IELTS?",
+    answer:
+      "Study them by topic and function, then use each one in your own sentences. It is better to control a smaller set well than memorize a long list poorly.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "Collocations for IELTS Writing", path: "/blog/collocations-ielts/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
 ---
 
 <Layout
-  title="150 Collocations for IELTS Writing — IELTS Corner Blog"
-  description="Essential collocations for improving your IELTS writing score. Practice these academic word combinations."
+  title="Collocations for IELTS Writing | Use Them Naturally, Not For Show"
+  description="A practical IELTS collocations guide with useful word combinations, safer usage advice, and a better way to study them."
   type="article"
+  keywords="IELTS collocations, collocations for IELTS writing, IELTS vocabulary chunks"
+  structuredData={pageStructuredData}
 >
-  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
-    <div style="margin-bottom: var(--s-4);">
-      <a href="/blog" style="color: var(--accent);">← Back to blog</a>
-    </div>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
 
-    <header style="margin-bottom: var(--s-4);">
-      <h1 style="margin: 0;">150 Collocations for IELTS Writing</h1>
-      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
-        <span>📅 February 25, 2026</span>
-        <span>✍️ IELTS Corner Team</span>
-        <span>⏱️ 8 min read</span>
+    <header class="guide-header">
+      <span class="guide-tag">IELTS vocabulary guide</span>
+      <h1 style="margin: 0;">Collocations for IELTS Writing</h1>
+      <div class="guide-meta">
+        <span>March 17, 2026</span>
+        <span>7 min read</span>
       </div>
     </header>
 
-    <div class="divider" style="margin: var(--s-4) 0; height: 2px; background: var(--text-muted-light);"></div>
-
-    <div class="article-content" style="line-height: 1.8;">
+    <div class="guide-lead">
       <p>
-        Want to jump from Band 6 to Band 7? Use collocations. These are word combinations that native speakers use together. Examiners notice when you use them correctly.
+        Collocations can make IELTS writing sound more natural, but only when they fit the
+        meaning of the sentence. Good collocations are not decoration. They are useful chunks
+        of language that native speakers expect to hear together.
       </p>
-
-      <h2>What Are Collocations?</h2>
-      <p><strong>Collocation = two words that go together naturally.</strong></p>
-      <ul>
-        <li><strong>✓ Correct:</strong> "take measures" or "take action"</li>
-        <li><strong>❌ Wrong:</strong> "make measures" or "do action"</li>
-      </ul>
-
-      <p>They're wrong because native speakers don't say them that way. You can't translate word-by-word. You have to learn them as chunks.</p>
-
-      <h2>20 Essential Collocations for Task 2 Essays</h2>
-
-      <div style="margin: var(--s-4) 0;">
-        <h3 style="margin-top: 0; color: var(--accent);">Expressing Agreement/Disagreement</h3>
-        <ol>
-          <li><strong>I tend to agree that...</strong> (not "I agree that")</li>
-          <li><strong>It could be argued that...</strong> (not "I think that")</li>
-          <li><strong>There is strong evidence that...</strong></li>
-          <li><strong>It is widely accepted that...</strong></li>
-          <li><strong>The consensus is that...</strong></li>
-        </ol>
-      </div>
-
-      <div style="margin: var(--s-4) 0;">
-        <h3 style="margin-top: 0; color: var(--accent);">Presenting Arguments</h3>
-        <ol start="6">
-          <li><strong>Take measures</strong> (not "make measures")</li>
-          <li><strong>Bring about change</strong> (not "make change")</li>
-          <li><strong>Play a role</strong> (not "play an important part")</li>
-          <li><strong>Have an impact on</strong> (not "have influence on")</li>
-          <li><strong>Take into account</strong> (not "think about")</li>
-        </ol>
-      </div>
-
-      <div style="margin: var(--s-4) 0;">
-        <h3 style="margin-top: 0; color: var(--accent);">Describing Problems/Solutions</h3>
-        <ol start="11">
-          <li><strong>Address the issue</strong> (not "solve the problem")</li>
-          <li><strong>Tackle the problem</strong></li>
-          <li><strong>Rise to the challenge</strong> (not "face the challenge")</li>
-          <li><strong>Alleviate pressure</strong> (not "reduce pressure")</li>
-          <li><strong>Shed light on</strong> (not "explain")</li>
-        </ol>
-      </div>
-
-      <div style="margin: var(--s-4) 0;">
-        <h3 style="margin-top: 0; color: var(--accent);">Showing Cause/Effect</h3>
-        <ol start="16">
-          <li><strong>Give rise to</strong> (not "cause")</li>
-          <li><strong>Lead to</strong></li>
-          <li><strong>As a consequence</strong> (not "so")</li>
-          <li><strong>Result in</strong></li>
-          <li><strong>Bring about</strong></li>
-        </ol>
-      </div>
-
-      <div style="margin: var(--s-4) 0;">
-        <h3 style="margin-top: 0; color: var(--accent);">Quantifying/Intensifying</h3>
-        <ol start="21">
-          <li><strong>To a great extent</strong> (not "very much")</li>
-          <li><strong>By and large</strong> (not "mostly")</li>
-          <li><strong>On the whole</strong></li>
-          <li><strong>To some degree</strong></li>
-          <li><strong>For the most part</strong></li>
-        </ol>
-      </div>
-
-      <h2>20 Collocations for Education Essays</h2>
-
-      <div style="margin: var(--s-4) 0; padding: var(--s-3); background: var(--surface); border-radius: 4px;">
-        <ol>
-          <li><strong>Impart knowledge</strong> (not "give knowledge")</li>
-          <li><strong>Broaden horizons</strong></li>
-          <li><strong>Expand the mind</strong></li>
-          <li><strong>Acquire skills</strong> (not "learn skills")</li>
-          <li><strong>Foster creativity</strong></li>
-          <li><strong>Nurture talent</strong></li>
-          <li><strong>Pursue education</strong></li>
-          <li><strong>Delve into a subject</strong> (not "study deeply")</li>
-          <li><strong>Develop critical thinking</strong></li>
-          <li><strong>Equip students with</strong> (not "give students")</li>
-          <li><strong>Academic rigor</strong></li>
-          <li><strong>Lifelong learning</strong></li>
-          <li><strong>Cultivate interest</strong></li>
-          <li><strong>Instill values</strong></li>
-          <li><strong>Undertake research</strong> (not "do research")</li>
-          <li><strong>Engage with material</strong> (not "learn material")</li>
-          <li><strong>Get to grips with</strong> (not "understand")</li>
-          <li><strong>Master the subject</strong></li>
-          <li><strong>Reap the benefits</strong> (not "get the benefits")</li>
-          <li><strong>Capitalize on opportunities</strong></li>
-        </ol>
-      </div>
-
-      <h2>20 Collocations for Technology/Environment Essays</h2>
-
-      <div style="margin: var(--s-4) 0; padding: var(--s-3); background: var(--surface); border-radius: 4px;">
-        <ol>
-          <li><strong>Harness technology</strong> (not "use technology")</li>
-          <li><strong>Technological advancement</strong></li>
-          <li><strong>Cutting-edge technology</strong></li>
-          <li><strong>Drive innovation</strong></li>
-          <li><strong>Pave the way for</strong> (not "make possible")</li>
-          <li><strong>Environmental degradation</strong></li>
-          <li><strong>Deplete resources</strong> (not "use up")</li>
-          <li><strong>Sustainability concerns</strong></li>
-          <li><strong>Mitigate climate change</strong></li>
-          <li><strong>Go green</strong> or <strong>Adopt green practices</strong></li>
-          <li><strong>Preserve biodiversity</strong></li>
-          <li><strong>Curb emissions</strong> (not "reduce")</li>
-          <li><strong>Renewable energy</strong></li>
-          <li><strong>Carbon footprint</strong></li>
-          <li><strong>Ecological balance</strong></li>
-          <li><strong>Waste management</strong></li>
-          <li><strong>Pollute the environment</strong></li>
-          <li><strong>Ecological damage</strong></li>
-          <li><strong>Safeguard nature</strong></li>
-          <li><strong>Sustainable development</strong></li>
-        </ol>
-      </div>
-
-      <h2>20 Collocations for Social/Health Essays</h2>
-
-      <div style="margin: var(--s-4) 0; padding: var(--s-3); background: var(--surface); border-radius: 4px;">
-        <ol>
-          <li><strong>Social inequality</strong> or <strong>social disparity</strong></li>
-          <li><strong>Socioeconomic status</strong></li>
-          <li><strong>Combat poverty</strong> (not "fight poverty")</li>
-          <li><strong>Vulnerable population</strong></li>
-          <li><strong>Healthcare system</strong></li>
-          <li><strong>Public health</strong></li>
-          <li><strong>Life expectancy</strong></li>
-          <li><strong>Sedentary lifestyle</strong></li>
-          <li><strong>Mental wellbeing</strong></li>
-          <li><strong>Physical fitness</strong></li>
-          <li><strong>Chronic disease</strong></li>
-          <li><strong>Preventative care</strong></li>
-          <li><strong>Health crisis</strong></li>
-          <li><strong>Nutritional value</strong></li>
-          <li><strong>Quality of life</strong></li>
-          <li><strong>Promote wellbeing</strong></li>
-          <li><strong>Enhance health</strong></li>
-          <li><strong>Social cohesion</strong></li>
-          <li><strong>Community support</strong></li>
-          <li><strong>Welfare system</strong></li>
-        </ol>
-      </div>
-
-      <h2>How to Use Collocations (Don't Memorize!)</h2>
-      <p style="padding: var(--s-3); background: #dbeafe; border-left: 4px solid #0284c7; border-radius: 4px; margin: var(--s-3) 0;">
-        <strong>⚠️ Don't just memorize a list.</strong> You need to understand when to use each collocation and practice using them in sentences.
+      <p>
+        It is better to use ten collocations accurately than fifty collocations badly.
       </p>
-
-      <h3>Step 1: Understand the meaning</h3>
-      <p>"Harness technology" means "use technology effectively." It's stronger than "use" alone.</p>
-
-      <h3>Step 2: Use in a sentence</h3>
-      <p>"Nations should harness technology to tackle climate change."</p>
-
-      <h3>Step 3: Practice using it naturally</h3>
-      <p>Write 3 sentences using "harness technology" until it feels natural.</p>
-
-      <h2>Quick Reference Table</h2>
-      <table style="width: 100%; border-collapse: collapse; margin: var(--s-3) 0; font-size: 0.9rem;">
-        <tr style="background: var(--surface);">
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Instead of...</th>
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Use...</th>
-        </tr>
-        <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">I think</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">It could be argued that / tend to agree</td>
-        </tr>
-        <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Very important</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Play a crucial role / have significant impact</td>
-        </tr>
-        <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">So/Therefore</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">As a consequence / subsequently</td>
-        </tr>
-        <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Use technology</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Harness technology / leverage technology</td>
-        </tr>
-        <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Reduce pollution</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Curb emissions / mitigate environmental damage</td>
-        </tr>
-      </table>
-
-      <h2>Practice Task</h2>
-      <p>Write a quick Task 2 paragraph (150-200 words) using at least 5 collocations from the list above. Focus on making them sound natural, not forced.</p>
-
-      <p>Want feedback? <a href="/essay-correction">Submit your paragraph for correction →</a> (CA$15)</p>
-
-      <h2>Key Takeaway</h2>
-      <p><strong>Collocations = naturally occurring word pairs.</strong> Native speakers use them without thinking. IELTS examiners notice when you use them correctly. Learning collocations is one of the fastest ways to jump from Band 6 to Band 7.</p>
-
-      <p>Where to practice: Check out our <a href="/lessons/vocabulary">vocabulary lessons</a> for more collocation-rich content.</p>
     </div>
 
-    <div class="divider" style="margin: var(--s-4) 0; height: 2px; background: var(--text-muted-light);"></div>
+    <div class="guide-grid guide-grid-2">
+      <section class="guide-card">
+        <h2>What strong collocation use looks like</h2>
+        <ul class="guide-list">
+          <li>The collocation fits the topic and meaning.</li>
+          <li>It sounds natural inside the sentence.</li>
+          <li>You can control the grammar around it.</li>
+          <li>You do not repeat the same chunk too often.</li>
+        </ul>
+      </section>
 
-    <div style="padding: var(--s-4); background: var(--accent-light); border-radius: 8px; text-align: center;">
-      <h3 style="margin-top: 0;">Learn 150+ collocations in one place</h3>
-      <p style="margin: var(--s-2) 0;">Download our vocabulary guide with the most important collocations organized by topic.</p>
-      <a href="/ebook" class="btn btn-primary">Get the eBook →</a>
+      <section class="guide-card">
+        <h2>What weak collocation use looks like</h2>
+        <ul class="guide-list">
+          <li>The phrase is copied but the meaning is unclear.</li>
+          <li>The sentence around it is unnatural.</li>
+          <li>The collocation is too advanced for the idea.</li>
+          <li>The same phrase appears in every paragraph.</li>
+        </ul>
+      </section>
     </div>
 
-    <div style="height: var(--s-6);"></div>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>High-value collocations by function</h2>
+      <div class="guide-grid guide-grid-2">
+        <div class="guide-example">
+          <p><strong>Presenting arguments</strong></p>
+          <p>play a role</p>
+          <p>take action</p>
+          <p>have an impact on</p>
+          <p>take into account</p>
+        </div>
+        <div class="guide-example">
+          <p><strong>Cause and effect</strong></p>
+          <p>lead to</p>
+          <p>result in</p>
+          <p>give rise to</p>
+          <p>as a consequence</p>
+        </div>
+        <div class="guide-example">
+          <p><strong>Problems and solutions</strong></p>
+          <p>address the issue</p>
+          <p>tackle the problem</p>
+          <p>alleviate pressure</p>
+          <p>implement a solution</p>
+        </div>
+        <div class="guide-example">
+          <p><strong>Education and society</strong></p>
+          <p>acquire skills</p>
+          <p>broaden horizons</p>
+          <p>social inequality</p>
+          <p>public health</p>
+        </div>
+      </div>
+    </section>
 
-    <div style="text-align: center;">
-      <a href="/blog" class="btn btn-ghost">← Back to all articles</a>
-    </div>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>How to study them better</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Learn the meaning first</h3>
+            <p>Do not memorize a phrase until you know exactly what it means.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Write your own sentence</h3>
+            <p>Use the collocation in a sentence about a familiar IELTS topic.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Group by function</h3>
+            <p>Study collocations for argument, cause and effect, and solutions separately.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Reuse them naturally</h3>
+            <p>Bring them into essays only when they fit the idea without forcing them.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>The biggest collocation mistake</h2>
+      <div class="guide-note">
+        <p>
+          The biggest mistake is choosing a phrase because it sounds impressive. If the
+          collocation does not fit the sentence naturally, simple language is safer and often
+          better.
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Next step</h2>
+      <div class="guide-links">
+        <a href="/lessons/vocabulary">
+          <strong>Browse vocabulary lessons</strong>
+          <span>Build more topic vocabulary and useful language chunks.</span>
+        </a>
+        <a href="/ielts/writing">
+          <strong>Go to the IELTS writing hub</strong>
+          <span>See where vocabulary fits into structure, support, and task response.</span>
+        </a>
+        <a href="/essay-correction">
+          <strong>Get writing feedback</strong>
+          <span>See whether the vocabulary in your own essay sounds natural.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
   </article>
 </Layout>
-
-<style>
-  .article-content {
-    color: var(--text);
-  }
-
-  .article-content h2 {
-    margin-top: var(--s-5);
-    margin-bottom: var(--s-2);
-  }
-
-  .article-content h3 {
-    margin-top: var(--s-3);
-  }
-
-  .article-content ul,
-  .article-content ol {
-    margin: var(--s-2) 0;
-    padding-left: var(--s-4);
-  }
-
-  .article-content li {
-    margin: var(--s-1) 0;
-  }
-</style>

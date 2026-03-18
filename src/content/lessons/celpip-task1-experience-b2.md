@@ -1,11 +1,11 @@
 ---
-title: "CELPIP Speaking Task 1: Describe an Experience (B2)"
+title: "CELPIP Speaking Task 2: Talking About a Personal Experience (B2)"
 category: "speaking"
 level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B2 speaking lesson on CELPIP Speaking Task 1: Describe an Experience with clearer response frames, practice prompts, and self-checks."
+excerpt: "B2 speaking lesson on CELPIP Speaking Task 2: Talking About a Personal Experience with clearer response frames, practice prompts, and self-checks."
 date: "2026-03-02"
 tags: ["speaking", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Start with a direct answer. Most speaking problems get smaller once the opening sentence is clear."
@@ -13,7 +13,7 @@ videoEmbed: ""
 draft: false
 visualAids: ["Direct-answer frame", "Reason-example model", "Recording checklist"]
 quiz:
-  - prompt: "What is a safe speaking frame for CELPIP Speaking Task 1: Describe an Experience?"
+  - prompt: "What is a safe speaking frame for CELPIP Speaking Task 2: Talking About a Personal Experience?"
     options:
       - "Answer, reason, example, close"
       - "Long apology, filler, random detail"
@@ -59,7 +59,7 @@ quiz:
   </section>
 </div>
 
-## Real-World Examples with CELPIP Speaking Task 1: Describe an Experience
+## Real-World Examples with CELPIP Speaking Task 2: Talking About a Personal Experience
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
@@ -75,7 +75,7 @@ quiz:
 </article>
 </div>
 
-## Common Errors with CELPIP Speaking Task 1: Describe an Experience
+## Common Errors with CELPIP Speaking Task 2: Talking About a Personal Experience
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -116,7 +116,7 @@ quiz:
   <div class="practice-lab-grid">
 <article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger move for CELPIP Speaking Task 1: Describe an Experience.</h3>
+  <h3>Choose the stronger move for CELPIP Speaking Task 2: Talking About a Personal Experience.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
   Talk around the question first and hope the listener finds your point.

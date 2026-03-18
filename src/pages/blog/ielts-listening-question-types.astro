@@ -1,19 +1,22 @@
-﻿---
+---
 import Layout from "../../layouts/Layout.astro";
 import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
 
 const pageFaqs = [
   {
-    question: "How should I use this guide effectively?",
-    answer: "Use the structure on one timed response, review where logic breaks, then revise the same response once. This loop builds score-related habits faster than writing many unchecked answers.",
+    question: "What are the most common IELTS Listening question types?",
+    answer:
+      "Common IELTS Listening question types include form completion, note completion, multiple choice, matching, map or plan labelling, and sentence or summary completion.",
   },
   {
-    question: "Is this enough for a high band or CLB score?",
-    answer: "This guide gives you a strong strategy baseline. Most candidates improve faster when they combine it with targeted lessons and feedback.",
+    question: "Should I use the same strategy for every IELTS Listening question type?",
+    answer:
+      "No. You should keep the same core habits, but different task types need different attention. For example, map questions need direction language, while completion tasks need grammar and spelling control.",
   },
   {
-    question: "What should I do after reading this page?",
-    answer: "Practice one task immediately, then compare your draft against the checklist and linked resources below.",
+    question: "What improves IELTS Listening scores fastest?",
+    answer:
+      "The fastest improvements usually come from better prediction, cleaner note focus, and stronger checking of word limits, spelling, numbers, and plurals.",
   },
 ];
 
@@ -28,95 +31,170 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="IELTS Listening Question Types Guide | Strategy by Task Format"
-  description="IELTS listening question types explained with format-specific tactics for form completion, matching, multiple choice, and maps."
+  title="IELTS Listening Question Types Guide | Simple Strategies for Each Task"
+  description="A clear IELTS Listening question type guide with practical strategies for completion, matching, map, and multiple-choice tasks."
   type="article"
   keywords="IELTS listening question types, IELTS listening strategy, IELTS listening tips"
   structuredData={pageStructuredData}
 >
-  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
-    <div style="margin-bottom: var(--s-4);">
-      <a href="/blog" style="color: var(--accent);">&larr; Back to blog</a>
-    </div>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
 
-    <header style="margin-bottom: var(--s-4);">
-      <h1 style="margin: 0;">IELTS Listening Question Types Guide</h1>
-      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
-        <span>March 14, 2026</span>
-        <span>IELTS Corner Team</span>
-        <span>6 min read</span>
+    <header class="guide-header">
+      <span class="guide-tag">IELTS listening guide</span>
+      <h1 style="margin: 0;">IELTS Listening question types</h1>
+      <div class="guide-meta">
+        <span>March 17, 2026</span>
+        <span>7 min read</span>
       </div>
     </header>
 
-    <div class="divider" style="margin: var(--s-4) 0; height: 2px; background: var(--text-muted-light);"></div>
+    <div class="guide-lead">
+      <p>
+        IELTS Listening does not become easier just because you listen more. Scores improve
+        faster when you recognize the task type and know what to watch for before the audio
+        starts.
+      </p>
+      <p>
+        The recording only plays once, so you need a simple habit for each type of question.
+        That is what this guide is for.
+      </p>
+    </div>
 
-    <div class="article-content" style="line-height: 1.8;">
-      <p>Listening performance improves faster when strategy matches question type. Use this page to train the right habit for each format.</p>
+    <div class="guide-grid guide-grid-2">
+      <section class="guide-card">
+        <h2>Core habits for every task</h2>
+        <ul class="guide-list">
+          <li>Read the instructions carefully.</li>
+          <li>Underline the word limit.</li>
+          <li>Predict the type of answer before listening.</li>
+          <li>Keep following the audio even if you miss one answer.</li>
+        </ul>
+      </section>
 
-      <h2>Quick strategy framework</h2>
-      <ul>
-        <li>Plan before writing or speaking so your response has a clear structure.</li>
-        <li>Keep one main idea per paragraph or answer block.</li>
-        <li>Support claims with one relevant reason or example, not multiple weak points.</li>
-        <li>Leave time for a short review step to catch avoidable errors.</li>
+      <section class="guide-card">
+        <h2>What often goes wrong</h2>
+        <ul class="guide-list">
+          <li>Students notice the answer too late because they were not ready for it.</li>
+          <li>They hear the right idea but write the wrong form of the word.</li>
+          <li>They keep thinking about one missed answer and lose the next two.</li>
+          <li>They ignore spelling, plurals, or number format.</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Completion tasks</h2>
+      <p>
+        This includes form completion, note completion, table completion, and summary
+        completion. These questions reward good prediction.
+      </p>
+      <ul class="guide-list">
+        <li>Check whether the blank needs a noun, number, date, or adjective.</li>
+        <li>Watch singular and plural carefully.</li>
+        <li>Listen for paraphrase, not only the exact same word from the paper.</li>
       </ul>
+      <div class="guide-note">
+        <p>
+          If the line says <strong>three ___</strong>, the answer should probably be a
+          plural noun. That kind of small grammar clue saves marks.
+        </p>
+      </div>
+    </section>
 
-      <h2>Common mistakes to avoid</h2>
-      <table style="width: 100%; border-collapse: collapse; margin: var(--s-3) 0;">
-        <tr style="background: var(--surface);">
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Mistake</th>
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Better move</th>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Multiple choice</h2>
+      <p>
+        Multiple choice is dangerous because all the options can sound possible for a few
+        seconds. IELTS often gives a wrong answer first, then corrects it later.
+      </p>
+      <ul class="guide-list">
+        <li>Read all options before the audio starts.</li>
+        <li>Notice the key difference between the options.</li>
+        <li>Do not choose too early. Wait until the speaker finishes the idea.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Matching tasks</h2>
+      <p>
+        Matching questions usually test your ability to track several speakers or several
+        ideas at the same time.
+      </p>
+      <ul class="guide-list">
+        <li>Mark short keywords next to each option.</li>
+        <li>Focus on differences between the choices.</li>
+        <li>Cross out options once you are sure they are wrong.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Map and plan questions</h2>
+      <p>
+        These questions are easier when you treat them like direction language, not only
+        listening comprehension.
+      </p>
+      <ul class="guide-list">
+        <li>Find the starting point before the recording begins.</li>
+        <li>Watch direction words like left, opposite, next to, and at the end of.</li>
+        <li>Move your eyes with the speaker as the route changes.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Quick check at the end</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Check</th>
+          <th>Why it matters</th>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Starting without a plan</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Take 1-2 minutes to map your response first.</td>
+          <td>Word limit</td>
+          <td>Too many words means the answer is wrong even if the idea is correct.</td>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Adding ideas without development</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Develop fewer ideas with clearer support.</td>
+          <td>Spelling</td>
+          <td>IELTS Listening marks exact written answers.</td>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Skipping review</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Reserve a short final check for clarity and errors.</td>
+          <td>Singular or plural</td>
+          <td>A missing <strong>s</strong> can cost a mark.</td>
+        </tr>
+        <tr>
+          <td>Numbers and dates</td>
+          <td>Write them in a clear and accepted format.</td>
         </tr>
       </table>
+    </section>
 
-      <h2>Related guides and next steps</h2>
-      <ul>
-        <li><a href="/ielts/listening">IELTS listening hub</a></li>
-        <li><a href="/blog/ielts-listening-common-traps">IELTS listening common traps</a></li>
-        <li><a href="/ielts/reading">IELTS reading hub</a></li>
-        <li><a href="/tutoring">IELTS coaching</a></li>
-      </ul>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Next step</h2>
+      <div class="guide-links">
+        <a href="/blog/ielts-listening-common-traps">
+          <strong>Read the common traps guide</strong>
+          <span>Learn how IELTS hides wrong answers inside the recording.</span>
+        </a>
+        <a href="/ielts/listening">
+          <strong>Go to the IELTS listening hub</strong>
+          <span>Open the main listening page for more strategy and practice links.</span>
+        </a>
+        <a href="/lessons/ielts/listening">
+          <strong>Study IELTS listening lessons</strong>
+          <span>Work on the vocabulary and listening skills behind these task types.</span>
+        </a>
+      </div>
+    </section>
 
+    <section class="guide-card" style="margin-top: var(--s-4);">
       <h2>FAQ</h2>
-      {pageFaqs.map((item) => (
-        <details class="card" style="margin-bottom: var(--s-3);">
-          <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
-          <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
-        </details>
-      ))}
-    </div>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
   </article>
 </Layout>
-
-<style>
-  .article-content {
-    color: var(--text);
-  }
-
-  .article-content h2 {
-    margin-top: var(--s-5);
-    margin-bottom: var(--s-2);
-  }
-
-  .article-content ul {
-    margin: var(--s-2) 0;
-    padding-left: var(--s-4);
-  }
-
-  .article-content li {
-    margin: var(--s-1) 0;
-  }
-</style>
-

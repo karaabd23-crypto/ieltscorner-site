@@ -1,19 +1,22 @@
-﻿---
+---
 import Layout from "../../layouts/Layout.astro";
 import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
 
 const pageFaqs = [
   {
-    question: "How should I use this guide effectively?",
-    answer: "Use the structure on one timed response, review where logic breaks, then revise the same response once. This loop builds score-related habits faster than writing many unchecked answers.",
+    question: "What are the main parts of CELPIP Listening?",
+    answer:
+      "The CELPIP Listening test includes problem solving, daily life conversation, information, news, discussion, and viewpoints sections.",
   },
   {
-    question: "Is this enough for a high band or CLB score?",
-    answer: "This guide gives you a strong strategy baseline. Most candidates improve faster when they combine it with targeted lessons and feedback.",
+    question: "Should I listen the same way in every CELPIP Listening part?",
+    answer:
+      "No. Some parts reward fast practical listening, while others need stronger attention to opinion, attitude, or speaker purpose.",
   },
   {
-    question: "What should I do after reading this page?",
-    answer: "Practice one task immediately, then compare your draft against the checklist and linked resources below.",
+    question: "What helps CELPIP Listening scores improve fastest?",
+    answer:
+      "Scores usually improve faster when students learn the section patterns, predict what kind of answer they need, and stop leaving questions blank.",
   },
 ];
 
@@ -28,95 +31,128 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="CELPIP Listening Question Types Guide | Build Accuracy Across All Parts"
-  description="CELPIP listening question type guide with tactics for problem-solving, daily conversation, news, discussion, and viewpoints sections."
+  title="CELPIP Listening Question Types Guide | Strategies for Every Part"
+  description="A practical CELPIP Listening guide with section-by-section strategy for problem solving, conversation, information, news, discussion, and viewpoints."
   type="article"
   keywords="CELPIP listening question types, CELPIP listening strategy, CELPIP listening tips"
   structuredData={pageStructuredData}
 >
-  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
-    <div style="margin-bottom: var(--s-4);">
-      <a href="/blog" style="color: var(--accent);">&larr; Back to blog</a>
-    </div>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
 
-    <header style="margin-bottom: var(--s-4);">
-      <h1 style="margin: 0;">CELPIP Listening Question Types Guide</h1>
-      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
-        <span>March 14, 2026</span>
-        <span>IELTS Corner Team</span>
-        <span>6 min read</span>
+    <header class="guide-header">
+      <span class="guide-tag">CELPIP listening guide</span>
+      <h1 style="margin: 0;">CELPIP Listening question types</h1>
+      <div class="guide-meta">
+        <span>March 17, 2026</span>
+        <span>7 min read</span>
       </div>
     </header>
 
-    <div class="divider" style="margin: var(--s-4) 0; height: 2px; background: var(--text-muted-light);"></div>
+    <div class="guide-lead">
+      <p>
+        CELPIP Listening rewards pattern recognition. Each section sounds different and asks
+        you to notice different things, so one general listening strategy is not enough.
+      </p>
+      <p>
+        Once you know what each part is testing, the questions feel much more predictable.
+      </p>
+    </div>
 
-    <div class="article-content" style="line-height: 1.8;">
-      <p>Listening scores improve with pattern recognition. This guide shows how each CELPIP listening section rewards a different listening behavior.</p>
+    <section class="guide-card">
+      <h2>The six listening parts</h2>
+      <div class="guide-grid guide-grid-2">
+        <div class="guide-card">
+          <h3>Part 1: Problem solving</h3>
+          <p class="muted">Listen for the practical decision, not only for background details.</p>
+        </div>
+        <div class="guide-card">
+          <h3>Part 2: Daily life conversation</h3>
+          <p class="muted">Track who says what and why the conversation is happening.</p>
+        </div>
+        <div class="guide-card">
+          <h3>Part 3: Information</h3>
+          <p class="muted">Notice key facts, sequence, and instructions.</p>
+        </div>
+        <div class="guide-card">
+          <h3>Part 4: News item</h3>
+          <p class="muted">Focus on the main event, cause, and result.</p>
+        </div>
+        <div class="guide-card">
+          <h3>Part 5: Discussion</h3>
+          <p class="muted">Watch each speaker's opinion and how it changes during the talk.</p>
+        </div>
+        <div class="guide-card">
+          <h3>Part 6: Viewpoints</h3>
+          <p class="muted">Separate the writer's or speaker's attitude from supporting details.</p>
+        </div>
+      </div>
+    </section>
 
-      <h2>Quick strategy framework</h2>
-      <ul>
-        <li>Plan before writing or speaking so your response has a clear structure.</li>
-        <li>Keep one main idea per paragraph or answer block.</li>
-        <li>Support claims with one relevant reason or example, not multiple weak points.</li>
-        <li>Leave time for a short review step to catch avoidable errors.</li>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Best habits for every section</h2>
+      <ul class="guide-list">
+        <li>Read the choices quickly before the audio begins.</li>
+        <li>Predict what kind of information you need.</li>
+        <li>Keep moving forward because you cannot go back later.</li>
+        <li>Never leave a question blank.</li>
       </ul>
+    </section>
 
-      <h2>Common mistakes to avoid</h2>
-      <table style="width: 100%; border-collapse: collapse; margin: var(--s-3) 0;">
-        <tr style="background: var(--surface);">
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Mistake</th>
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Better move</th>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Where students often lose marks</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Problem</th>
+          <th>Better move</th>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Starting without a plan</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Take 1-2 minutes to map your response first.</td>
+          <td>They focus on one detail and miss the main point.</td>
+          <td>Ask what the speaker is trying to decide, explain, or recommend.</td>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Adding ideas without development</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Develop fewer ideas with clearer support.</td>
+          <td>They do not notice changes in opinion.</td>
+          <td>Listen for contrast words like but, however, actually, and instead.</td>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Skipping review</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Reserve a short final check for clarity and errors.</td>
+          <td>They leave blanks and plan to return later.</td>
+          <td>Choose the best answer before time moves you forward.</td>
+        </tr>
+        <tr>
+          <td>They treat every section like the same kind of task.</td>
+          <td>Adjust your focus based on whether the part is factual, practical, or opinion-based.</td>
         </tr>
       </table>
+    </section>
 
-      <h2>Related guides and next steps</h2>
-      <ul>
-        <li><a href="/celpip/listening">CELPIP listening hub</a></li>
-        <li><a href="/blog/celpip-reading-question-types">CELPIP reading question types guide</a></li>
-        <li><a href="/lessons/celpip/listening">CELPIP listening lessons</a></li>
-        <li><a href="/tutoring">CELPIP tutoring</a></li>
-      </ul>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Next step</h2>
+      <div class="guide-links">
+        <a href="/blog/celpip-reading-question-types">
+          <strong>Read the CELPIP reading guide</strong>
+          <span>Study the reading patterns that often match the same practical skills.</span>
+        </a>
+        <a href="/celpip/listening">
+          <strong>Go to the CELPIP listening hub</strong>
+          <span>Open the main listening page for lessons and more strategy.</span>
+        </a>
+        <a href="/lessons/celpip/listening">
+          <strong>Study CELPIP listening lessons</strong>
+          <span>Practice the language and skills behind each listening part.</span>
+        </a>
+      </div>
+    </section>
 
+    <section class="guide-card" style="margin-top: var(--s-4);">
       <h2>FAQ</h2>
-      {pageFaqs.map((item) => (
-        <details class="card" style="margin-bottom: var(--s-3);">
-          <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
-          <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
-        </details>
-      ))}
-    </div>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
   </article>
 </Layout>
-
-<style>
-  .article-content {
-    color: var(--text);
-  }
-
-  .article-content h2 {
-    margin-top: var(--s-5);
-    margin-bottom: var(--s-2);
-  }
-
-  .article-content ul {
-    margin: var(--s-2) 0;
-    padding-left: var(--s-4);
-  }
-
-  .article-content li {
-    margin: var(--s-1) 0;
-  }
-</style>
-

@@ -1364,10 +1364,47 @@ button{
   box-shadow: var(--shadow-soft);
 }
 
+.ad-shell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ad-shell--line {
+  min-height: 104px;
+}
+
+.ad-shell--square {
+  min-height: 274px;
+}
+
+.ad-unit-line {
+  width: min(100%, 728px);
+  max-width: 728px;
+  min-height: 90px;
+  max-height: 90px;
+}
+
+.ad-unit-square {
+  width: min(100%, 300px);
+  max-width: 300px;
+  min-height: 250px;
+  max-height: 250px;
+}
+
 /* Responsive ad spacing */
 @media (max-width: 768px) {
   .adsbygoogle {
     margin: var(--s-4) auto;
+  }
+
+  .ad-unit-line {
+    width: min(100%, 468px);
+    max-width: 468px;
+    min-height: 60px;
+    max-height: 60px;
   }
 }
 
@@ -1375,12 +1412,23 @@ button{
   .adsbygoogle {
     margin: var(--s-3) auto;
   }
+
+  .ad-unit-line {
+    width: min(100%, 320px);
+    max-width: 320px;
+    min-height: 50px;
+    max-height: 50px;
+  }
+
+  .ad-shell--square {
+    min-height: 260px;
+  }
 }
 
 /* Sidebar ad specific styling */
 .sidebar .adsbygoogle {
   margin: 0;
-  min-height: 250px;
+  min-height: 0;
 }
 
 .lesson-jump-drawer {
@@ -1711,19 +1759,18 @@ hr {
 }
 
 .ad-container-footer {
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  min-width: 220px;
-  background: #fff;
-  box-shadow: 0 8px 32px rgba(20,22,23,0.10);
-  border-radius: 18px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(8px);
-  pointer-events: none;
-  z-index: 10;
+  display: flex;
+  position: static;
+  min-width: 0;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  pointer-events: auto;
+  z-index: auto;
+  clear: both;
 }
 
 @media (min-width: 769px) {

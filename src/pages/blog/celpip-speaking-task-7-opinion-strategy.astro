@@ -1,0 +1,164 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "What is CELPIP Speaking Task 7 testing?",
+    answer:
+      "Task 7 is testing whether you can express an opinion clearly, support it with reasons, and keep speaking in an organized way.",
+  },
+  {
+    question: "Do I need to discuss both sides in Task 7?",
+    answer:
+      "No. You can mention another view briefly, but the main job is to explain your own opinion well.",
+  },
+  {
+    question: "What usually lowers Task 7 scores?",
+    answer:
+      "Scores often drop when the opinion is unclear, the support is repetitive, or the answer is too short to develop the idea properly.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "CELPIP Speaking Task 7 Opinion Strategy", path: "/blog/celpip-speaking-task-7-opinion-strategy/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="CELPIP Speaking Task 7 | Express Opinions Clearly"
+  description="A CELPIP Speaking Task 7 guide with a simple opinion structure, clearer support, and better ways to sound organized under pressure."
+  type="article"
+  keywords="CELPIP speaking task 7, CELPIP opinion strategy, CELPIP speaking opinions"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag">CELPIP speaking guide</span>
+      <h1 style="margin: 0;">CELPIP Speaking Task 7</h1>
+      <div class="guide-meta">
+        <span>March 17, 2026</span>
+        <span>6 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        CELPIP Speaking Task 7 rewards clear thinking more than dramatic language. The
+        strongest answers tell the listener exactly what you think, then support that opinion
+        with reasons that are easy to follow.
+      </p>
+      <p>
+        A simple, organized answer usually sounds much stronger than an ambitious answer that
+        repeats itself or loses direction.
+      </p>
+    </div>
+
+    <section class="guide-card">
+      <h2>A simple Task 7 structure</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>State your opinion</h3>
+            <p>Give your answer clearly in the opening sentence.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Give your first reason</h3>
+            <p>Choose a reason that is easy to explain under time pressure.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Add support</h3>
+            <p>Use an example, result, or short comparison to make the reason stronger.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Close clearly</h3>
+            <p>End with one sentence that reinforces your position.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Example frame</h2>
+      <div class="guide-example">
+        <p><strong>Opinion:</strong> Personally, I believe this is the better choice.</p>
+        <p><strong>Reason:</strong> The main reason is that it would save time and reduce stress.</p>
+        <p><strong>Support:</strong> For example, people with busy schedules usually need the most practical option.</p>
+        <p><strong>Closing:</strong> That is why I would definitely support this choice.</p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>What often sounds weak</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Weak move</th>
+          <th>Better move</th>
+        </tr>
+        <tr>
+          <td>The opinion appears too late.</td>
+          <td>State it immediately.</td>
+        </tr>
+        <tr>
+          <td>The same reason is repeated in different words.</td>
+          <td>Add one useful example instead.</td>
+        </tr>
+        <tr>
+          <td>The support is too vague.</td>
+          <td>Use a specific result, situation, or comparison.</td>
+        </tr>
+        <tr>
+          <td>The answer sounds memorized.</td>
+          <td>Keep a frame, but use natural wording.</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Next step</h2>
+      <div class="guide-links">
+        <a href="/blog/celpip-speaking-task-5-comparing-options">
+          <strong>Read the Task 5 guide</strong>
+          <span>Compare clear opinion speaking with comparison and persuasion tasks.</span>
+        </a>
+        <a href="/blog/celpip-speaking-part2">
+          <strong>Read the Task 2 guide</strong>
+          <span>See how personal storytelling differs from opinion speaking.</span>
+        </a>
+        <a href="/celpip/speaking">
+          <strong>Go to the CELPIP speaking hub</strong>
+          <span>Open more speaking guides and related lesson links.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </article>
+</Layout>

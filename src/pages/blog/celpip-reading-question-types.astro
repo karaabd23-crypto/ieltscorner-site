@@ -1,19 +1,22 @@
-﻿---
+---
 import Layout from "../../layouts/Layout.astro";
 import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
 
 const pageFaqs = [
   {
-    question: "How should I use this guide effectively?",
-    answer: "Use the structure on one timed response, review where logic breaks, then revise the same response once. This loop builds score-related habits faster than writing many unchecked answers.",
+    question: "What are the main parts of CELPIP Reading?",
+    answer:
+      "CELPIP Reading includes correspondence, diagram-based reading, information reading, and viewpoints reading.",
   },
   {
-    question: "Is this enough for a high band or CLB score?",
-    answer: "This guide gives you a strong strategy baseline. Most candidates improve faster when they combine it with targeted lessons and feedback.",
+    question: "Do I need to read every CELPIP passage slowly from beginning to end?",
+    answer:
+      "No. Some questions reward quick scanning, while others need slower reading to compare ideas and viewpoints carefully.",
   },
   {
-    question: "What should I do after reading this page?",
-    answer: "Practice one task immediately, then compare your draft against the checklist and linked resources below.",
+    question: "What is the biggest reading mistake in CELPIP?",
+    answer:
+      "A common mistake is choosing an answer that sounds reasonable but is not fully supported by the passage.",
   },
 ];
 
@@ -28,95 +31,132 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="CELPIP Reading Question Types Guide | Faster Decisions and Better Accuracy"
-  description="CELPIP reading question types with focused tactics for correspondence, diagrams, information passages, and viewpoint questions."
+  title="CELPIP Reading Question Types Guide | Read Faster and Choose Better"
+  description="A practical CELPIP Reading guide with section-by-section strategy for correspondence, diagrams, information passages, and viewpoints."
   type="article"
   keywords="CELPIP reading question types, CELPIP reading strategy, CELPIP reading tips"
   structuredData={pageStructuredData}
 >
-  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
-    <div style="margin-bottom: var(--s-4);">
-      <a href="/blog" style="color: var(--accent);">&larr; Back to blog</a>
-    </div>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
 
-    <header style="margin-bottom: var(--s-4);">
-      <h1 style="margin: 0;">CELPIP Reading Question Types Guide</h1>
-      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
-        <span>March 14, 2026</span>
-        <span>IELTS Corner Team</span>
-        <span>6 min read</span>
+    <header class="guide-header">
+      <span class="guide-tag">CELPIP reading guide</span>
+      <h1 style="margin: 0;">CELPIP Reading question types</h1>
+      <div class="guide-meta">
+        <span>March 17, 2026</span>
+        <span>7 min read</span>
       </div>
     </header>
 
-    <div class="divider" style="margin: var(--s-4) 0; height: 2px; background: var(--text-muted-light);"></div>
+    <div class="guide-lead">
+      <p>
+        CELPIP Reading is not only about speed. It is also about reading with the right
+        purpose. Some parts want quick practical information, while others test whether you
+        can compare opinions carefully.
+      </p>
+      <p>
+        Once you know what each reading part is really testing, your choices become much
+        more accurate.
+      </p>
+    </div>
 
-    <div class="article-content" style="line-height: 1.8;">
-      <p>You do not need to read every passage the same way. This guide maps question types to the fastest reliable strategy.</p>
+    <section class="guide-card">
+      <h2>The main reading parts</h2>
+      <div class="guide-grid guide-grid-2">
+        <div class="guide-card">
+          <h3>Reading correspondence</h3>
+          <p class="muted">Focus on purpose, request, reply, and practical details.</p>
+        </div>
+        <div class="guide-card">
+          <h3>Reading to apply a diagram</h3>
+          <p class="muted">Match the text to a visual plan or process carefully.</p>
+        </div>
+        <div class="guide-card">
+          <h3>Reading for information</h3>
+          <p class="muted">Track facts, sequence, and the meaning of specific details.</p>
+        </div>
+        <div class="guide-card">
+          <h3>Reading for viewpoints</h3>
+          <p class="muted">Compare attitudes, arguments, and points of disagreement.</p>
+        </div>
+      </div>
+    </section>
 
-      <h2>Quick strategy framework</h2>
-      <ul>
-        <li>Plan before writing or speaking so your response has a clear structure.</li>
-        <li>Keep one main idea per paragraph or answer block.</li>
-        <li>Support claims with one relevant reason or example, not multiple weak points.</li>
-        <li>Leave time for a short review step to catch avoidable errors.</li>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>How to read each type better</h2>
+      <ul class="guide-list">
+        <li><strong>Correspondence:</strong> find who wants what, and why.</li>
+        <li><strong>Diagram tasks:</strong> move between the text and the visual, not only the passage.</li>
+        <li><strong>Information passages:</strong> scan first, then read the key area more closely.</li>
+        <li><strong>Viewpoints:</strong> separate each person's opinion before choosing an answer.</li>
       </ul>
+    </section>
 
-      <h2>Common mistakes to avoid</h2>
-      <table style="width: 100%; border-collapse: collapse; margin: var(--s-3) 0;">
-        <tr style="background: var(--surface);">
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Mistake</th>
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Better move</th>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>What usually causes wrong answers</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Problem</th>
+          <th>Better move</th>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Starting without a plan</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Take 1-2 minutes to map your response first.</td>
+          <td>The answer sounds possible, but the passage does not fully support it.</td>
+          <td>Choose only what the text really says or clearly implies.</td>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Adding ideas without development</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Develop fewer ideas with clearer support.</td>
+          <td>Students read too slowly in the early questions.</td>
+          <td>Scan first, then slow down only where the answer is likely to be.</td>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Skipping review</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Reserve a short final check for clarity and errors.</td>
+          <td>Different viewpoints get mixed together.</td>
+          <td>Mark each speaker's or writer's opinion clearly.</td>
+        </tr>
+        <tr>
+          <td>The visual part of a diagram task is ignored.</td>
+          <td>Use the text and the diagram together.</td>
         </tr>
       </table>
+    </section>
 
-      <h2>Related guides and next steps</h2>
-      <ul>
-        <li><a href="/celpip/reading">CELPIP reading hub</a></li>
-        <li><a href="/celpip/listening">CELPIP listening hub</a></li>
-        <li><a href="/lessons/celpip/reading">CELPIP reading lessons</a></li>
-        <li><a href="/tutoring">CELPIP tutoring</a></li>
-      </ul>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>A simple reading habit that helps</h2>
+      <div class="guide-note">
+        <p>
+          Before choosing an answer, ask: <strong>Where is the proof?</strong> This one
+          question improves reading accuracy more than guessing from general meaning.
+        </p>
+      </div>
+    </section>
 
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Next step</h2>
+      <div class="guide-links">
+        <a href="/blog/celpip-listening-question-types">
+          <strong>Read the CELPIP listening guide</strong>
+          <span>Pair your reading strategy with the same section-by-section approach in listening.</span>
+        </a>
+        <a href="/celpip/reading">
+          <strong>Go to the CELPIP reading hub</strong>
+          <span>Open the main reading page for more strategy and resources.</span>
+        </a>
+        <a href="/lessons/celpip/reading">
+          <strong>Study CELPIP reading lessons</strong>
+          <span>Practice the vocabulary and reading habits behind these question types.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
       <h2>FAQ</h2>
-      {pageFaqs.map((item) => (
-        <details class="card" style="margin-bottom: var(--s-3);">
-          <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
-          <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
-        </details>
-      ))}
-    </div>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
   </article>
 </Layout>
-
-<style>
-  .article-content {
-    color: var(--text);
-  }
-
-  .article-content h2 {
-    margin-top: var(--s-5);
-    margin-bottom: var(--s-2);
-  }
-
-  .article-content ul {
-    margin: var(--s-2) 0;
-    padding-left: var(--s-4);
-  }
-
-  .article-content li {
-    margin: var(--s-1) 0;
-  }
-</style>
-

@@ -1,19 +1,22 @@
-﻿---
+---
 import Layout from "../../layouts/Layout.astro";
 import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
 
 const pageFaqs = [
   {
-    question: "How should I use this guide effectively?",
-    answer: "Use the structure on one timed response, review where logic breaks, then revise the same response once. This loop builds score-related habits faster than writing many unchecked answers.",
+    question: "Are CELPIP Task 1 templates safe to use?",
+    answer:
+      "Yes, if you use them as a flexible frame. A good template helps you organize the email, but the wording should still match the prompt.",
   },
   {
-    question: "Is this enough for a high band or CLB score?",
-    answer: "This guide gives you a strong strategy baseline. Most candidates improve faster when they combine it with targeted lessons and feedback.",
+    question: "What should a Task 1 email template include?",
+    answer:
+      "It should include a clear reason for writing, space to cover every prompt point, and a polite closing that matches the situation.",
   },
   {
-    question: "What should I do after reading this page?",
-    answer: "Practice one task immediately, then compare your draft against the checklist and linked resources below.",
+    question: "What makes a CELPIP email sound memorized?",
+    answer:
+      "Emails sound memorized when every sentence is too generic, the tone does not match the prompt, or the same fixed phrases appear again and again.",
   },
 ];
 
@@ -28,95 +31,162 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="CELPIP Writing Task 1 Templates | Email Structure for CLB 9"
-  description="CELPIP Task 1 email templates with opening lines, body structure, and tone frameworks for clearer high-scoring responses."
+  title="CELPIP Writing Task 1 Templates | Flexible Email Frame That Sounds Natural"
+  description="A clear CELPIP Task 1 email template guide with paragraph jobs, tone control, and safe sentence frames you can adapt quickly."
   type="article"
-  keywords="CELPIP writing task 1 templates, CELPIP email template, CLB 9 writing"
+  keywords="CELPIP Writing Task 1 templates, CELPIP email template, CELPIP Task 1 structure"
   structuredData={pageStructuredData}
 >
-  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
-    <div style="margin-bottom: var(--s-4);">
-      <a href="/blog" style="color: var(--accent);">&larr; Back to blog</a>
-    </div>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
 
-    <header style="margin-bottom: var(--s-4);">
-      <h1 style="margin: 0;">CELPIP Writing Task 1 Templates</h1>
-      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
-        <span>March 14, 2026</span>
-        <span>IELTS Corner Team</span>
-        <span>6 min read</span>
+    <header class="guide-header">
+      <span class="guide-tag">CELPIP writing guide</span>
+      <h1 style="margin: 0;">CELPIP Writing Task 1 templates</h1>
+      <div class="guide-meta">
+        <span>March 17, 2026</span>
+        <span>7 min read</span>
       </div>
     </header>
 
-    <div class="divider" style="margin: var(--s-4) 0; height: 2px; background: var(--text-muted-light);"></div>
+    <div class="guide-lead">
+      <p>
+        A template should make you faster and clearer. It should not make every answer
+        sound the same. In CELPIP Task 1, the safest template is one that gives you a
+        strong structure but still leaves room for the real details of the prompt.
+      </p>
+      <p>
+        If you know what each paragraph needs to do, you can adapt quickly without sounding
+        memorized.
+      </p>
+    </div>
 
-    <div class="article-content" style="line-height: 1.8;">
-      <p>Templates are useful when they provide structure without forcing memorized language. Use these frameworks to stay complete, clear, and natural.</p>
+    <div class="guide-grid guide-grid-2">
+      <section class="guide-card">
+        <h2>What a useful template does</h2>
+        <ul class="guide-list">
+          <li>Shows the purpose of the email in the first lines.</li>
+          <li>Leaves space for every prompt point.</li>
+          <li>Keeps the tone polite and natural.</li>
+          <li>Ends clearly instead of stopping suddenly.</li>
+        </ul>
+      </section>
 
-      <h2>Quick strategy framework</h2>
-      <ul>
-        <li>Plan before writing or speaking so your response has a clear structure.</li>
-        <li>Keep one main idea per paragraph or answer block.</li>
-        <li>Support claims with one relevant reason or example, not multiple weak points.</li>
-        <li>Leave time for a short review step to catch avoidable errors.</li>
-      </ul>
+      <section class="guide-card">
+        <h2>What a bad template does</h2>
+        <ul class="guide-list">
+          <li>Uses the same vague sentences for every prompt.</li>
+          <li>Forgets one of the bullet points.</li>
+          <li>Sounds too formal or too casual for the situation.</li>
+          <li>Repeats fixed phrases too often.</li>
+        </ul>
+      </section>
+    </div>
 
-      <h2>Common mistakes to avoid</h2>
-      <table style="width: 100%; border-collapse: collapse; margin: var(--s-3) 0;">
-        <tr style="background: var(--surface);">
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Mistake</th>
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Better move</th>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>A safe Task 1 email frame</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Open clearly</h3>
+            <p>Greet the reader and explain why you are writing in the first sentence or two.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Cover the main situation</h3>
+            <p>Explain the problem, request, or purpose with enough detail to be clear.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Finish the remaining points</h3>
+            <p>Make sure the other instructions from the prompt are fully covered.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Close politely</h3>
+            <p>Use a natural final sentence and sign-off that matches the relationship.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Sentence frames you can adapt</h2>
+      <div class="guide-example">
+        <p><strong>Opening:</strong> I am writing to explain...</p>
+        <p><strong>Main detail:</strong> The main issue is that...</p>
+        <p><strong>Request or follow-up:</strong> I would appreciate it if you could...</p>
+        <p><strong>Closing:</strong> Thank you for your time and consideration.</p>
+      </div>
+      <div class="guide-note" style="margin-top: var(--s-3);">
+        <p>
+          These are frames, not full answers. Replace the general language with details from
+          the real prompt, or the email will sound empty.
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Quick check before you finish</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Check</th>
+          <th>What you want</th>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Starting without a plan</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Take 1-2 minutes to map your response first.</td>
+          <td>Purpose</td>
+          <td>The reason for writing is clear at the start.</td>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Adding ideas without development</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Develop fewer ideas with clearer support.</td>
+          <td>Prompt coverage</td>
+          <td>Every task point is easy to find.</td>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Skipping review</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Reserve a short final check for clarity and errors.</td>
+          <td>Tone</td>
+          <td>The email sounds polite and appropriate for the reader.</td>
+        </tr>
+        <tr>
+          <td>Ending</td>
+          <td>The email closes naturally instead of stopping abruptly.</td>
         </tr>
       </table>
+    </section>
 
-      <h2>Related guides and next steps</h2>
-      <ul>
-        <li><a href="/celpip/writing">CELPIP writing hub</a></li>
-        <li><a href="/blog/celpip-writing-task-1-email">Task 1 email guide</a></li>
-        <li><a href="/celpip/writing/ai-feedback">AI writing feedback</a></li>
-        <li><a href="/tutoring">CELPIP coaching</a></li>
-      </ul>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Next step</h2>
+      <div class="guide-links">
+        <a href="/blog/celpip-writing-task-1-email">
+          <strong>Read the full Task 1 email guide</strong>
+          <span>See how structure and tone work together in a real response.</span>
+        </a>
+        <a href="/celpip/writing/ai-feedback">
+          <strong>Try AI writing feedback</strong>
+          <span>Get scoring, correction, and lesson suggestions on your own draft.</span>
+        </a>
+        <a href="/celpip/writing">
+          <strong>Go to the CELPIP writing hub</strong>
+          <span>Open more writing guides, samples, and support options.</span>
+        </a>
+      </div>
+    </section>
 
+    <section class="guide-card" style="margin-top: var(--s-4);">
       <h2>FAQ</h2>
-      {pageFaqs.map((item) => (
-        <details class="card" style="margin-bottom: var(--s-3);">
-          <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
-          <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
-        </details>
-      ))}
-    </div>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
   </article>
 </Layout>
-
-<style>
-  .article-content {
-    color: var(--text);
-  }
-
-  .article-content h2 {
-    margin-top: var(--s-5);
-    margin-bottom: var(--s-2);
-  }
-
-  .article-content ul {
-    margin: var(--s-2) 0;
-    padding-left: var(--s-4);
-  }
-
-  .article-content li {
-    margin: var(--s-1) 0;
-  }
-</style>
-

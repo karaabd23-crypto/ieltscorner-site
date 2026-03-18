@@ -1,11 +1,11 @@
 ---
-title: "CELPIP Speaking Task 3: Interview Scenario (B1)"
+title: "CELPIP Speaking Task 3: Describing a Scene (B1)"
 category: "speaking"
 level: "B1"
 ieltsBand: "4.5-5.5"
 clb: "5-6"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B1 speaking lesson on CELPIP Speaking Task 3: Interview Scenario with clearer response frames, practice prompts, and self-checks."
+excerpt: "B1 speaking lesson on CELPIP Speaking Task 3: Describing a Scene with clearer response frames, practice prompts, and self-checks."
 date: "2026-03-02"
 tags: ["speaking", "b1", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Start with a direct answer. Most speaking problems get smaller once the opening sentence is clear."
@@ -13,7 +13,7 @@ videoEmbed: ""
 draft: false
 visualAids: ["Direct-answer frame", "Reason-example model", "Recording checklist"]
 quiz:
-  - prompt: "What is a safe speaking frame for CELPIP Speaking Task 3: Interview Scenario?"
+  - prompt: "What is a safe speaking frame for CELPIP Speaking Task 3: Describing a Scene?"
     options:
       - "Answer, reason, example, close"
       - "Long apology, filler, random detail"
@@ -59,7 +59,7 @@ quiz:
   </section>
 </div>
 
-## Real-World Examples with CELPIP Speaking Task 3: Interview Scenario
+## Real-World Examples with CELPIP Speaking Task 3: Describing a Scene
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
@@ -75,7 +75,7 @@ quiz:
 </article>
 </div>
 
-## Common Errors with CELPIP Speaking Task 3: Interview Scenario
+## Common Errors with CELPIP Speaking Task 3: Describing a Scene
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -116,7 +116,7 @@ quiz:
   <div class="practice-lab-grid">
 <article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger move for CELPIP Speaking Task 3: Interview Scenario.</h3>
+  <h3>Choose the stronger move for CELPIP Speaking Task 3: Describing a Scene.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
   Talk around the question first and hope the listener finds your point.

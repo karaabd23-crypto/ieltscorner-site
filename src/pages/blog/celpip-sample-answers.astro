@@ -4,16 +4,19 @@ import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
 
 const pageFaqs = [
   {
-    question: "How should I use CELPIP sample answers for preparation?",
-    answer: "Use CELPIP sample answers to study structure, tone, and idea development patterns. Adapt patterns to your own language instead of memorizing exact responses.",
+    question: "What should I learn from CELPIP sample answers?",
+    answer:
+      "Study the structure, tone, and idea development. Those are the parts that transfer well to your own writing and speaking.",
   },
   {
-    question: "Are CELPIP sample answers enough for a high score?",
-    answer: "Sample answers help, but high scores usually require active practice, timed responses, and feedback on your own writing and speaking output.",
+    question: "Should I memorize CELPIP sample answers?",
+    answer:
+      "No. Memorizing full answers usually makes your language sound stiff, repetitive, and less natural under pressure.",
   },
   {
-    question: "Where can I find CELPIP sample answers on this site?",
-    answer: "You can access sample-answer resources through the CELPIP writing samples page and related task-level CELPIP writing and speaking guides.",
+    question: "How can I use sample answers more effectively?",
+    answer:
+      "Read one model, identify what makes it work, then write or speak your own version on a similar prompt while keeping the same structure.",
   },
 ];
 
@@ -28,44 +31,130 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="CELPIP Sample Answers | How to Use Models Without Memorizing"
-  description="CELPIP sample answers strategy guide for writing and speaking: how to learn structure and language patterns without memorization traps."
+  title="CELPIP Sample Answers | Study Models Without Sounding Memorized"
+  description="A practical guide to using CELPIP sample answers for writing and speaking without copying, memorizing, or repeating weak patterns."
   type="article"
-  keywords="CELPIP sample answers, CELPIP writing samples, CELPIP speaking sample answers, CELPIP preparation"
+  keywords="CELPIP sample answers, CELPIP writing samples, CELPIP speaking sample answers"
   structuredData={pageStructuredData}
 >
-  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
-    <div style="margin-bottom: var(--s-4);"><a href="/blog" style="color: var(--accent);">← Back to blog</a></div>
-    <header style="margin-bottom: var(--s-4);">
-      <h1 style="margin: 0;">CELPIP Sample Answers Guide</h1>
-      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
-        <span>📅 March 14, 2026</span><span>✍️ IELTS Corner Team</span><span>⏱️ 6 min read</span>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag">CELPIP study guide</span>
+      <h1 style="margin: 0;">CELPIP sample answers</h1>
+      <div class="guide-meta">
+        <span>March 17, 2026</span>
+        <span>6 min read</span>
       </div>
     </header>
-    <div class="article-content" style="line-height: 1.8;">
-      <p>CELPIP sample answers are useful when you treat them as models, not scripts. The strongest students copy structure and idea flow, then produce their own language under timed conditions.</p>
-      <h2>What to study in sample answers</h2>
-      <ul>
-        <li>Opening and closing sentence patterns</li>
-        <li>How reasons are supported with examples</li>
-        <li>Tone control for task context</li>
-        <li>Transition use and paragraph flow</li>
-      </ul>
-      <h2>What not to do</h2>
-      <ul>
-        <li>Memorize full answers and repeat them in test conditions</li>
-        <li>Copy advanced vocabulary you cannot control naturally</li>
-        <li>Ignore timing while focusing only on model language</li>
-      </ul>
-      <h2>Where to practice</h2>
-      <p>Use <a href="/celpip/writing/samples">CELPIP writing samples</a>, then move to the <a href="/celpip/writing/ai-feedback">AI writing lab</a> or <a href="/tutoring">tutoring</a> for personalized feedback.</p>
-      <h2>FAQ</h2>
-      {pageFaqs.map((item) => (
-        <details class="card" style="margin-bottom: var(--s-3);">
-          <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
-          <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
-        </details>
-      ))}
+
+    <div class="guide-lead">
+      <p>
+        Sample answers are useful when you study them like a teacher, not like a memorizer.
+        The goal is to notice why the response works, then build your own answer with the
+        same control.
+      </p>
+      <p>
+        Students improve faster when they copy the structure and not the exact sentences.
+      </p>
     </div>
+
+    <div class="guide-grid guide-grid-2">
+      <section class="guide-card">
+        <h2>What to copy</h2>
+        <ul class="guide-list">
+          <li>The order of ideas.</li>
+          <li>The balance between main point and support.</li>
+          <li>The tone used for the task.</li>
+          <li>The way the answer starts and finishes clearly.</li>
+        </ul>
+      </section>
+
+      <section class="guide-card">
+        <h2>What not to copy</h2>
+        <ul class="guide-list">
+          <li>Whole paragraphs or speeches word for word.</li>
+          <li>Vocabulary you cannot use naturally.</li>
+          <li>Examples that do not fit your own prompt.</li>
+          <li>Mistakes hidden inside a weak sample.</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>A better way to study one sample</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Read for structure</h3>
+            <p>Find the opening, the support, and the closing before you focus on vocabulary.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Mark useful language</h3>
+            <p>Keep only the phrases that are clear, natural, and easy for you to reuse.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Close the model</h3>
+            <p>Do not keep looking at it while you create your own response.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Compare after</h3>
+            <p>Check whether your answer is just as clear and complete, not whether it is identical.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>The biggest trap</h2>
+      <div class="guide-note">
+        <p>
+          The biggest trap is false confidence. A model answer can look easy when you read
+          it slowly, but real improvement only happens when you produce your own answer
+          under time pressure.
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Next step</h2>
+      <div class="guide-links">
+        <a href="/celpip/writing/samples">
+          <strong>Open CELPIP writing samples</strong>
+          <span>Study sample essays with a clearer purpose.</span>
+        </a>
+        <a href="/blog/celpip-writing-task-1-email">
+          <strong>Read the Task 1 email guide</strong>
+          <span>See how sample structure works inside a real writing task.</span>
+        </a>
+        <a href="/celpip/writing/ai-feedback">
+          <strong>Try AI writing feedback</strong>
+          <span>Get scoring and lesson suggestions on your own response.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
   </article>
 </Layout>
