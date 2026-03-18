@@ -45,7 +45,7 @@ This file turns the long chat thread into a concrete status list.
    - Cleaned small confirmation pages under [src/pages/newsletter](c:/Users/Karaa/Documents/ieltscorner-site/src/pages/newsletter), [src/pages/webinar](c:/Users/Karaa/Documents/ieltscorner-site/src/pages/webinar), and [src/pages/book](c:/Users/Karaa/Documents/ieltscorner-site/src/pages/book)
 
 6. Newsletter subscriber visibility inside the product
-   - Added a private dashboard page at [src/pages/admin/newsletter.astro](c:/Users/Karaa/Documents/ieltscorner-site/src/pages/admin/newsletter.astro)
+   - Added a private dashboard page at [src/pages/owner/newsletter.astro](c:/Users/Karaa/Documents/ieltscorner-site/src/pages/owner/newsletter.astro)
    - Added a protected summary endpoint at [netlify/functions/newsletter-stats.mjs](c:/Users/Karaa/Documents/ieltscorner-site/netlify/functions/newsletter-stats.mjs)
    - This still requires `NEWSLETTER_DASHBOARD_TOKEN`, `NETLIFY_ACCESS_TOKEN`, and `NETLIFY_SITE_ID` in the environment
 
