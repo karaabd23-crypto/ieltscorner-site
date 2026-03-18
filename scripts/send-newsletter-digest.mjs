@@ -258,6 +258,24 @@ function buildLessonCards(siteUrl, lessons) {
     .join('');
 }
 
+function normalizeTelegramPreview(telegramPost) {
+  const preview = String(telegramPost?.preview || '').trim();
+  if (!preview) {
+    return 'Open the latest Telegram teaching post for a short daily lesson.';
+  }
+
+  const normalized = preview.toLowerCase();
+  if (
+    normalized.includes('pinned a video')
+    || normalized.includes('pinned a message')
+    || normalized.includes('joined telegram')
+  ) {
+    return 'Open the latest Telegram teaching post for a quick study boost and a short quiz.';
+  }
+
+  return preview;
+}
+
 function buildSocialCards({ youtubeVideo, telegramPost, instagramPost, youtubeChannelUrl, telegramChannelUrl, instagramUrl }) {
   const cards = [];
 
@@ -285,6 +303,7 @@ function buildSocialCards({ youtubeVideo, telegramPost, instagramPost, youtubeCh
   }
 
   if (telegramPost) {
+    const telegramPreview = normalizeTelegramPreview(telegramPost);
     const subscriberLine = telegramPost.subscriberCount
       ? `Channel size: ${escapeHtml(telegramPost.subscriberCount)} subscribers`
       : 'Daily teaching post on Telegram';
@@ -300,7 +319,7 @@ function buildSocialCards({ youtubeVideo, telegramPost, instagramPost, youtubeCh
           <tr>
             <td style="padding: 10px 14px 14px;">
               <div style="font-size: 15px; line-height: 1.5; font-weight: 800; color: #1f2b37;">${escapeHtml(telegramPost.title || "Kay's English Corner")}</div>
-              <div style="font-size: 13px; line-height: 1.6; color: #586577; margin-top: 8px;">${escapeHtml(telegramPost.preview || 'Open the latest channel post for a short daily lesson.')}</div>
+              <div style="font-size: 13px; line-height: 1.6; color: #586577; margin-top: 8px;">${escapeHtml(telegramPreview)}</div>
               <div style="font-size: 12px; line-height: 1.6; color: #6d7785; margin-top: 10px;">${subscriberLine}</div>
               <a href="${telegramPost.url || telegramChannelUrl}" style="display: inline-block; margin-top: 12px; color: #24507d; font-weight: 800; text-decoration: none;">Open latest post</a>
             </td>
@@ -351,6 +370,112 @@ function buildSocialCards({ youtubeVideo, telegramPost, instagramPost, youtubeCh
   `;
 }
 
+function buildWeeklyPlan(siteUrl, lessons, telegramChannelUrl, youtubeChannelUrl) {
+  const first = lessons[0];
+  const second = lessons[1];
+  const third = lessons[2];
+
+  const steps = [
+    first
+      ? {
+          title: 'Start with one lesson',
+          text: `${first.title} gives you one clear teaching point to study first this week.`,
+          href: buildLessonUrl(siteUrl, first),
+          label: 'Open first lesson',
+        }
+      : {
+          title: 'Start with one lesson',
+          text: 'Open one full lesson and stay with that topic long enough to finish the interactive practice.',
+          href: `${siteUrl}/lessons/`,
+          label: 'Open lessons',
+        },
+    second
+      ? {
+          title: 'Add one second topic',
+          text: `${second.title} works well as your next focused read after the first lesson.`,
+          href: buildLessonUrl(siteUrl, second),
+          label: 'Open next lesson',
+        }
+      : {
+          title: 'Add one second topic',
+          text: 'Choose one more lesson only after you finish the first one.',
+          href: `${siteUrl}/lessons/`,
+          label: 'Browse lessons',
+        },
+    {
+      title: 'Stay warm between lessons',
+      text: third
+        ? `Use Telegram or YouTube after ${third.title} to keep the topic active during the week.`
+        : 'Use Telegram or YouTube between lessons so your English stays active during the week.',
+      href: telegramChannelUrl || youtubeChannelUrl || siteUrl,
+      label: telegramChannelUrl ? 'Open Telegram' : 'Open YouTube',
+    },
+  ];
+
+  return `
+    <table role="presentation" width="100%" style="border-collapse: collapse; background: #fffdf8; border: 1px solid #eadfd2; border-radius: 22px; overflow: hidden;">
+      <tr>
+        <td style="padding: 22px 22px 10px;">
+          <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 800; color: #8d4d21; margin-bottom: 10px;">This Week's Study Plan</div>
+          <div style="font-size: 24px; line-height: 1.25; font-weight: 800; color: #1f2b37; margin-bottom: 8px;">If you only study three times this week, do it in this order.</div>
+          <div style="font-size: 15px; line-height: 1.7; color: #586577; margin-bottom: 18px;">This keeps your week simple: one strong lesson, one follow-up lesson, and one lighter touchpoint.</div>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 0 22px 22px;">
+          ${steps.map((step, index) => `
+            <table role="presentation" width="100%" style="border-collapse: collapse; margin-bottom: 14px; background: #ffffff; border: 1px solid #eadfd2; border-radius: 16px;">
+              <tr>
+                <td width="52" valign="top" style="padding: 16px 0 16px 16px;">
+                  <div style="width: 34px; height: 34px; border-radius: 999px; background: #173656; color: #ffffff; font-size: 15px; font-weight: 800; line-height: 34px; text-align: center;">${index + 1}</div>
+                </td>
+                <td style="padding: 16px 16px 16px 0;">
+                  <div style="font-size: 17px; line-height: 1.35; font-weight: 800; color: #1f2b37; margin-bottom: 6px;">${escapeHtml(step.title)}</div>
+                  <div style="font-size: 14px; line-height: 1.7; color: #586577; margin-bottom: 10px;">${escapeHtml(step.text)}</div>
+                  <a href="${step.href}" style="display: inline-block; color: #173656; font-weight: 800; text-decoration: none;">${escapeHtml(step.label)} →</a>
+                </td>
+              </tr>
+            </table>
+          `).join('')}
+        </td>
+      </tr>
+    </table>
+  `;
+}
+
+function buildSocialButtonRow({ youtubeVideo, telegramPost, instagramPost, youtubeChannelUrl, telegramChannelUrl, instagramUrl }) {
+  const links = [
+    {
+      label: 'Watch on YouTube',
+      href: youtubeVideo?.url || youtubeChannelUrl,
+      background: '#ffe9e4',
+      color: '#922d1d',
+    },
+    {
+      label: 'Open Telegram',
+      href: telegramPost?.url || telegramChannelUrl,
+      background: '#e9f2ff',
+      color: '#24507d',
+    },
+    {
+      label: 'View Instagram',
+      href: instagramPost?.url || instagramUrl,
+      background: '#fff0f6',
+      color: '#8b3f63',
+    },
+  ].filter((item) => item.href);
+
+  if (!links.length) return '';
+
+  return `
+    <div style="margin-top: 16px;">
+      ${links.map((item) => `
+        <a href="${item.href}" style="display: inline-block; margin: 0 10px 10px 0; padding: 10px 15px; border-radius: 999px; background: ${item.background}; color: ${item.color}; font-weight: 800; text-decoration: none;">${escapeHtml(item.label)}</a>
+      `).join('')}
+    </div>
+  `;
+}
+
 function buildHtmlEmail({
   siteUrl,
   lessons,
@@ -370,6 +495,15 @@ function buildHtmlEmail({
     telegramChannelUrl,
     instagramUrl,
   });
+  const weeklyPlan = buildWeeklyPlan(siteUrl, lessons, telegramChannelUrl, youtubeChannelUrl);
+  const socialButtons = buildSocialButtonRow({
+    youtubeVideo,
+    telegramPost,
+    instagramPost,
+    youtubeChannelUrl,
+    telegramChannelUrl,
+    instagramUrl,
+  });
 
   return `<!doctype html>
 <html>
@@ -381,8 +515,14 @@ function buildHtmlEmail({
             <tr>
               <td style="padding: 34px 34px 26px; background: linear-gradient(135deg, #fff0df 0%, #fff8f1 50%, #f4f8ff 100%);">
                 <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 800; color: #8d4d21; margin-bottom: 10px;">IELTS Corner Weekly Digest</div>
-                <div style="font-size: 34px; line-height: 1.15; font-weight: 800; color: #1f2b37; margin-bottom: 12px;">Fresh lessons, clear study steps, and the newest channel updates.</div>
-                <div style="font-size: 16px; line-height: 1.7; color: #4e5a6b; max-width: 560px;">This week&apos;s digest is built to help you choose one useful lesson, one social post, and one next action instead of collecting random tips.</div>
+                <div style="font-size: 34px; line-height: 1.15; font-weight: 800; color: #1f2b37; margin-bottom: 12px;">Your week is easier when you know what to study first.</div>
+                <div style="font-size: 16px; line-height: 1.7; color: #4e5a6b; max-width: 560px;">This digest is designed like a teacher&apos;s weekly note: one clear place to start, a few strong follow-ups, and the latest short practice from each channel.</div>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding: 26px 34px 12px;">
+                ${weeklyPlan}
               </td>
             </tr>
 
@@ -402,6 +542,7 @@ function buildHtmlEmail({
                 <div style="font-size: 24px; line-height: 1.25; font-weight: 800; color: #1f2b37; margin-bottom: 8px;">Latest on our channels</div>
                 <div style="font-size: 15px; line-height: 1.7; color: #586577; margin-bottom: 20px;">If you want short study boosts between lessons, use the newest post from each channel below.</div>
                 ${socialCards}
+                ${socialButtons}
               </td>
             </tr>
             ` : ''}
@@ -450,6 +591,7 @@ function buildTextEmail({
   telegramChannelUrl,
   instagramUrl,
 }) {
+  const telegramPreview = normalizeTelegramPreview(telegramPost);
   const lessonLines = lessons.map((lesson) => {
     const url = buildLessonUrl(siteUrl, lesson);
     const support = lesson.excerpt || lesson.heroTip || '';
@@ -458,13 +600,18 @@ function buildTextEmail({
 
   const socialLines = [
     youtubeVideo ? `YouTube: ${youtubeVideo.title}\n${youtubeVideo.url}` : `YouTube: ${youtubeChannelUrl}`,
-    telegramPost ? `Telegram: ${telegramPost.preview}\n${telegramPost.url || telegramChannelUrl}` : `Telegram: ${telegramChannelUrl}`,
+    telegramPost ? `Telegram: ${telegramPreview}\n${telegramPost.url || telegramChannelUrl}` : `Telegram: ${telegramChannelUrl}`,
     instagramPost ? `Instagram: ${instagramPost.preview}\n${instagramPost.url || instagramUrl}` : `Instagram: ${instagramUrl}`,
   ].join('\n\n');
 
   return `IELTS Corner Weekly Digest
 
-Fresh lessons, clear study steps, and the newest channel updates.
+Your week is easier when you know what to study first.
+
+This week's simple plan:
+1. Open one full lesson and finish the interactive practice.
+2. Add one second lesson only after the first one is done.
+3. Use Telegram or YouTube between lessons to keep the topic active.
 
 Start with these new lessons:
 
@@ -533,7 +680,8 @@ async function main() {
     getLatestInstagramPost(instagramUsername),
   ]);
 
-  const subject = `IELTS Corner weekly digest: ${lessons.length} fresh lessons and study links`;
+  const leadTitle = lessons[0]?.title || 'fresh lessons';
+  const subject = `IELTS Corner digest: start with "${leadTitle}" this week`;
   const html = buildHtmlEmail({
     siteUrl,
     lessons,

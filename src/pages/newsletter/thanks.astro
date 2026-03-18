@@ -3,19 +3,24 @@ import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout
-  title="Newsletter Subscription Confirmed — IELTS Corner"
+  title="Newsletter Subscription Confirmed | IELTS Corner"
   description="Your newsletter subscription has been received."
   type="page"
   noindex={true}
 >
   <section class="section" style="padding-top: var(--s-6);">
     <div class="shell" style="max-width: 760px; margin: 0 auto;">
-      <div class="surface" style="padding: var(--s-4); border-radius: 10px; text-align: center;">
-        <h1 style="margin-top: 0;">You’re subscribed ✅</h1>
-        <p style="color: var(--text-muted); margin-bottom: var(--s-3);">
-          Thanks for joining our newsletter. We’ll send IELTS/CELPIP tips and updates to your inbox.
+      <div class="surface" style="padding: var(--s-5); border-radius: 16px; text-align: center;">
+        <p class="pill" style="margin: 0 auto var(--s-3); width: fit-content;">Subscription confirmed</p>
+        <h1 style="margin-top: 0;">You're subscribed</h1>
+        <p style="color: var(--text-muted); margin-bottom: var(--s-3); max-width: 56ch; margin-inline: auto;">
+          Thanks for joining the newsletter. You will receive the weekly digest with new lessons,
+          fresh study suggestions, and links to the latest Telegram, YouTube, and Instagram posts.
         </p>
-        <a href="/" class="btn btn-primary" style="text-decoration: none;">Back to home</a>
+        <div class="cluster" style="justify-content: center;">
+          <a href="/" class="btn btn-primary">Back to home</a>
+          <a href="/blog" class="btn btn-ghost">Read the blog</a>
+        </div>
       </div>
     </div>
   </section>

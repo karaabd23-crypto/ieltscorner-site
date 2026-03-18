@@ -5,7 +5,6 @@ import path from 'node:path';
 
 const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 const CATEGORIES = ['grammar', 'vocabulary', 'writing', 'speaking'];
-const DEFAULT_MODEL = process.env.OPENAI_MODEL ?? 'gpt-4.1-mini';
 const LESSON_DIR = path.resolve('src/content/lessons');
 const LEECH_OUT_DIR = path.resolve('src/content/lessons/ielts/writing');
 const TOPIC_BANK = {
@@ -303,162 +302,7 @@ function shouldBePremium(level, seed) {
   return seed % 2 === 0;
 }
 
-function buildPrompt({ level, category, premium, topic }) {
-  return `You are an expert ESL teacher writing lessons for IELTS and CELPIP learners.
-Create ONE high-quality ${category.toUpperCase()} lesson at CEFR level ${level}.
-Target topic: ${topic}
-
-WRITE FOR ESL STUDENTS - use simple, clear language. Explain everything.
-
-Return valid JSON:
-{
-  "title": string,
-  "excerpt": string,
-  "heroTip": string,
-  "tags": string[],
-  "visualAids": string[],
-  "quiz": [{"prompt": string, "options": string[], "correctIndex": number, "explanation": string}],
-  "body": string
-}
-
-CONTENT REQUIREMENTS:
-- Title: Simple, specific, and useful (example: "How to Use Articles: a, an, and the")
-- Excerpt: One sentence, beginner-friendly
-- heroTip: Short, encouraging tip starting with emoji (example: "👉 Start with examples")
-- Body: Markdown, starting with "##" heading
-- Keep it 1000-1400 words
-- Use EMOJI and VISUAL MARKERS (✅, ❌, 📝, 🎓) and even colour coding or H5P-style interactive ideas (drag‑and‑drop, fill‑in‑blank) to break up text
-- Tags: 5-7 lowercase tags (include: "${category}", "${level.toLowerCase()}", "beginner-friendly", "esl", "examples")
-- visualAids: 3 short strings (example: ["Simple example table", "Right and wrong list", "Real test examples"])
-
-LESSON STRUCTURE (must include all sections):
-1. **What You Will Learn** (short, encouraging intro)
-2. **Look at Real Examples** (show 3-4 CORRECT examples, then 2-3 WRONG examples with ✅/❌ marks)
-3. **How It Works - Step by Step** (3-4 numbered steps with clear explanations)
-4. **The Most Common MISTAKES** (table with Wrong | Right | Why columns)
-5. **Practice - Try These Yourself** (3-4 exercises, then answers below)
-6. **For IELTS Exams** (bullet points: what to do, what NOT to do)
-7. **For CELPIP Exams** (bullet points: what to do, what NOT to do)
-8. **Your Next Steps** (encouraging final section)
-
-LANGUAGE RULES:
-- Use short, simple sentences
-- Write in natural teaching paragraphs (2-4 sentences), not only bullet lists
-- Use warm, encouraging teacher tone and clear transitions between sections
-- Avoid telegraphic style (do not write choppy one-line fragments)
-- Do not include level labels in titles (no A1/A2/B1/B2/C1/C2, beginner/intermediate/advanced)
-- Explain every grammar term (example: say "verb form" not just "conjugation")
-- Use real, everyday examples (work, school, hobbies)
-- Never use: "collocation", "hedging", "nuanced", "coherence", "cohesion"
-- Use words like: correct, wrong, right, example, practice, rule, mistake
-- Every explanation should be: "Because..." or "Why?" answered
-
-QUIZ (5-7 questions):
-- Each question tests ONE skill
-- Options should be realistic mistakes ESL students make
-- Explanations should say WHY the answer is right
-- First question should be EASY to build confidence
-
-CELPIP ACCURACY RULES (must follow):
-- Speaking = 8 tasks total (not 4)
-- Writing = 2 tasks: Writing an Email + Responding to Survey Questions
-- Writing task target length = about 150-200 words each
-- Listening timing = 47-55 minutes (6 parts, plus possible unscored items)
-- Reading timing = 55-60 minutes (4 parts, plus possible unscored items)
-- Do not invent CELPIP task names or numbers
-
-${premium ? 'PREMIUM LEVEL: Make content more challenging, include advanced examples and strategies.' : 'FREE LEVEL: Make content motivating, include lots of examples, encourage practice.'}
-
-Never mention AI, models, or automation.`;
-}
-
-async function generateLessonWithOpenAI({ apiKey, model, level, category, premium, topic }) {
-  const response = await fetch('https://api.openai.com/v1/responses', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      model,
-      input: buildPrompt({ level, category, premium, topic }),
-      text: {
-        format: {
-          type: 'json_schema',
-          name: 'lesson',
-          schema: {
-            type: 'object',
-            additionalProperties: false,
-            required: ['title', 'excerpt', 'heroTip', 'tags', 'visualAids', 'quiz', 'body'],
-            properties: {
-              title: { type: 'string', minLength: 8, maxLength: 120 },
-              excerpt: { type: 'string', minLength: 20, maxLength: 240 },
-              heroTip: { type: 'string', minLength: 20, maxLength: 180 },
-              tags: {
-                type: 'array',
-                minItems: 4,
-                maxItems: 7,
-                items: { type: 'string' },
-              },
-              visualAids: {
-                type: 'array',
-                minItems: 3,
-                maxItems: 6,
-                items: { type: 'string' },
-              },
-              quiz: {
-                type: 'array',
-                minItems: 5,
-                maxItems: 7,
-                items: {
-                  type: 'object',
-                  additionalProperties: false,
-                  required: ['prompt', 'options', 'correctIndex', 'explanation'],
-                  properties: {
-                    prompt: { type: 'string', minLength: 8 },
-                    options: {
-                      type: 'array',
-                      minItems: 3,
-                      maxItems: 4,
-                      items: { type: 'string' },
-                    },
-                    correctIndex: { type: 'number' },
-                    explanation: { type: 'string', minLength: 8 },
-                  },
-                },
-              },
-              body: { type: 'string', minLength: 900 },
-            },
-          },
-          strict: true,
-        },
-      },
-    }),
-  });
-
-  if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(`OpenAI API error ${response.status}: ${errorText}`);
-  }
-
-  const data = await response.json();
-  const outputText = data.output_text;
-  if (!outputText) {
-    throw new Error('OpenAI response did not include output_text');
-  }
-
-  const parsed = JSON.parse(outputText);
-  if (!parsed.body.startsWith('## ')) {
-    parsed.body = `## Lesson\n\n${parsed.body}`;
-  }
-
-  parsed.quiz = parsed.quiz.map((q) => ({
-    ...q,
-    correctIndex: Math.max(0, Math.min(Number(q.correctIndex ?? 0), (q.options?.length ?? 1) - 1)),
-  }));
-
-  return parsed;
-}
+// Lesson generation is intentionally local and deterministic.
 
 function fallbackLesson({ level, category, topic }) {
   const title = buildClearTitle({ category, topic });
@@ -803,18 +647,7 @@ async function main() {
   const currentFiles = await existingLessonFiles();
   const selectedCategories = opts.category === 'all' ? CATEGORIES : [opts.category];
 
-  const apiKey = process.env.OPENAI_API_KEY;
-  const generatorMode = String(process.env.LESSON_GENERATOR_MODE || 'auto').trim().toLowerCase();
-  const forceFallback = generatorMode === 'fallback';
-  const canUseOpenAI = Boolean(apiKey) && !forceFallback;
-
-  if (forceFallback) {
-    console.log('[info] LESSON_GENERATOR_MODE=fallback. Using built-in lesson templates (no OpenAI required).');
-  } else if (!apiKey) {
-    console.log('[info] OPENAI_API_KEY not found. Using built-in lesson templates.');
-  } else {
-    console.log('[info] OPENAI_API_KEY detected. Using AI lesson generation.');
-  }
+  console.log('[info] Using built-in lesson generator with teacher-maintained templates.');
 
   const today = new Date().toISOString().slice(0, 10);
 
@@ -826,9 +659,7 @@ async function main() {
     const priceCAD = premium ? 12 : 0;
     const score = scoreMap(level);
 
-    const lessonData = canUseOpenAI
-      ? await generateLessonWithOpenAI({ apiKey, model: opts.model, level, category, premium, topic })
-      : fallbackLesson({ level, category, topic });
+    const lessonData = fallbackLesson({ level, category, topic });
 
     lessonData.title = ensureClearTitle({ title: lessonData.title, category, topic });
 

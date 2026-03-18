@@ -1,78 +1,110 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const WEBINAR_CALENDLY_URL = 'https://calendly.com/ieltscorner/weekly_webinar';
+const WEBINAR_CALENDLY_URL = "https://calendly.com/ieltscorner/weekly_webinar";
 ---
 
 <Layout
-  title="CELPIP Weekly Webinar — Register with Calendly"
-  description="Join weekly CELPIP webinars with live strategy and Q&A. Register instantly via Calendly popup."
+  title="CELPIP Weekly Webinar | Register"
+  description="Join the weekly CELPIP webinar for live strategy teaching and practical Q and A."
   type="page"
 >
   <section class="section">
     <div class="hero" style={`--hero-bg: url('/heroes/webinar.png'); --hero-bg-opacity: 0.18;`}>
       <div class="hero-content">
-        <span class="pill">🎓 Weekly Webinar • Live Online</span>
-        <h1>Register for This Week’s Webinar</h1>
-
+        <span class="pill">Weekly webinar | Live online</span>
+        <h1>Register for this week's webinar</h1>
+        <p>
+          Use the webinar when you want one live session that clears up a confusing exam skill,
+          gives you a simple study plan, and lets you ask direct questions.
+        </p>
 
         <div class="cluster">
           <button id="open-webinar-calendly" class="btn btn-primary" type="button">
-            Open Registration Popup →
+            Open registration
           </button>
           <a class="btn btn-ghost" href={WEBINAR_CALENDLY_URL} target="_blank" rel="noreferrer">
             Open full booking page
           </a>
         </div>
-
       </div>
     </div>
 
     <div style="height: var(--s-7);"></div>
 
     <article class="card">
-      <h2 style="margin-top: 0;">What you get</h2>
+      <h2 style="margin-top: 0;">What happens in the webinar</h2>
       <div class="checklist">
         <div class="check">
-          <div class="icon">✓</div>
+          <div class="icon">1</div>
           <div>
-            <strong>Focused live teaching</strong>
-            <span>High-impact CELPIP strategy in a practical format.</span>
+            <strong>One focused teaching topic</strong>
+            <span>The session stays on one real score problem instead of trying to cover everything.</span>
           </div>
         </div>
         <div class="check">
-          <div class="icon">✓</div>
+          <div class="icon">2</div>
           <div>
-            <strong>Q&A with instructor</strong>
-            <span>Ask your own questions and get direct guidance.</span>
+            <strong>Examples that show the pattern clearly</strong>
+            <span>You should leave understanding what to do differently, not just with more notes.</span>
           </div>
         </div>
         <div class="check">
-          <div class="icon">✓</div>
+          <div class="icon">3</div>
           <div>
-            <strong>Actionable next steps</strong>
-            <span>Leave with a simple study plan for the week.</span>
+            <strong>Questions at the end</strong>
+            <span>You can ask for clarification before you go back to studying alone.</span>
           </div>
         </div>
       </div>
     </article>
+
+    <div style="height: var(--s-5);"></div>
+
+    <article class="card">
+      <h2 style="margin-top: 0;">Who this is best for</h2>
+      <ul>
+        <li>Students who understand some English already but still lose marks because exam strategy is unclear</li>
+        <li>Students who want direct answers before spending money on longer tutoring</li>
+        <li>Students who learn better when one topic is explained live, not only read alone</li>
+      </ul>
+    </article>
+
+    <div style="height: var(--s-5);"></div>
+
+    <article class="surface webinar-note">
+      <h2 style="margin-top: 0;">What to bring</h2>
+      <p style="margin-bottom: var(--s-2);">
+        Bring one specific question, one weak task, or one recent mistake you want clarified.
+        Students get more value from the webinar when they arrive with a real problem in mind.
+      </p>
+      <a class="btn" href={WEBINAR_CALENDLY_URL} target="_blank" rel="noreferrer">
+        See available times
+      </a>
+    </article>
   </section>
 
   <script is:inline>
-    window.addEventListener('load', () => {
-      const calendlyUrl = 'https://calendly.com/ieltscorner/weekly_webinar';
+    window.addEventListener("load", () => {
+      const calendlyUrl = "https://calendly.com/ieltscorner/weekly_webinar";
 
       const openPopup = () => {
         if (!window.Calendly) {
-          window.open(calendlyUrl, '_blank', 'noopener,noreferrer');
+          window.open(calendlyUrl, "_blank", "noopener,noreferrer");
           return;
         }
         window.Calendly.initPopupWidget({ url: calendlyUrl });
       };
 
-      const primary = document.getElementById('open-webinar-calendly');
-
-      primary?.addEventListener('click', openPopup);
+      const primary = document.getElementById("open-webinar-calendly");
+      primary?.addEventListener("click", openPopup);
     });
   </script>
 </Layout>
+
+<style>
+  .webinar-note {
+    padding: var(--s-4);
+    border-left: 4px solid var(--accent);
+  }
+</style>

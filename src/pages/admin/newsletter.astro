@@ -1,0 +1,276 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Newsletter Dashboard | IELTS Corner"
+  description="Private newsletter subscriber dashboard for IELTS Corner."
+  noindex={true}
+>
+  <section class="section" style="padding-top: var(--s-6);">
+    <div class="hero" style={`--hero-bg: url('/heroes/contact.png');`}>
+      <div class="hero-content">
+        <span class="pill">Private dashboard</span>
+        <h1>Newsletter subscriber count</h1>
+        <p>
+          This page gives you the current newsletter total without opening the terminal.
+          It is protected by a separate dashboard token and only returns summary data.
+        </p>
+      </div>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+
+    <div class="grid grid-2 newsletter-admin-layout">
+      <section class="surface newsletter-admin-card">
+        <h2 style="margin-top: 0;">Load the dashboard</h2>
+        <p class="muted" style="margin-top: 0;">
+          Enter the private dashboard token. The token is stored only in this browser session.
+        </p>
+
+        <form id="newsletter-admin-form" class="stack" style="gap: var(--s-3);">
+          <div>
+            <label for="newsletter-dashboard-token" class="newsletter-admin-label">Dashboard token</label>
+            <input
+              id="newsletter-dashboard-token"
+              name="token"
+              type="password"
+              class="newsletter-admin-input"
+              autocomplete="off"
+              required
+            />
+          </div>
+
+          <div class="cluster">
+            <button type="submit" class="btn btn-primary">Load subscriber count</button>
+            <button id="newsletter-admin-clear" type="button" class="btn btn-ghost">Clear saved token</button>
+          </div>
+        </form>
+
+        <p id="newsletter-admin-status" role="status" aria-live="polite" class="muted" style="min-height: 1.4rem; margin-top: var(--s-3);"></p>
+      </section>
+
+      <section class="surface newsletter-admin-card">
+        <h2 style="margin-top: 0;">What this shows</h2>
+        <ul style="margin: 0; padding-left: var(--s-3);">
+          <li>Current unique subscriber count</li>
+          <li>Latest signup time</li>
+          <li>Form name being used</li>
+          <li>The five most recent subscriber emails for quick spot checks</li>
+        </ul>
+        <p class="muted" style="margin-bottom: 0; margin-top: var(--s-3);">
+          If you prefer the terminal, `npm run newsletter:stats` still works too.
+        </p>
+      </section>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+
+    <section id="newsletter-admin-results" class="surface newsletter-admin-card" hidden>
+      <div class="grid grid-3 newsletter-admin-metrics">
+        <article class="card">
+          <p class="newsletter-admin-metric-label">Subscribers</p>
+          <p id="newsletter-admin-count" class="newsletter-admin-metric-value">-</p>
+        </article>
+
+        <article class="card">
+          <p class="newsletter-admin-metric-label">Latest signup</p>
+          <p id="newsletter-admin-latest" class="newsletter-admin-metric-value newsletter-admin-metric-value--small">-</p>
+        </article>
+
+        <article class="card">
+          <p class="newsletter-admin-metric-label">Form</p>
+          <p id="newsletter-admin-form-name" class="newsletter-admin-metric-value newsletter-admin-metric-value--small">-</p>
+        </article>
+      </div>
+
+      <div class="grid grid-2 newsletter-admin-layout" style="margin-top: var(--s-4);">
+        <div>
+          <h2 style="margin-top: 0;">Site</h2>
+          <p id="newsletter-admin-site-name" style="margin-bottom: var(--s-1); font-weight: 700;">-</p>
+          <p id="newsletter-admin-site-url" class="muted" style="margin: 0;">-</p>
+        </div>
+
+        <div>
+          <h2 style="margin-top: 0;">Recent subscribers</h2>
+          <ul id="newsletter-admin-emails" style="margin: 0; padding-left: var(--s-3);"></ul>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <script is:inline>
+    (() => {
+      const storageKey = "ieltscorner.newsletterDashboardToken";
+      const form = document.getElementById("newsletter-admin-form");
+      const input = document.getElementById("newsletter-dashboard-token");
+      const status = document.getElementById("newsletter-admin-status");
+      const clearButton = document.getElementById("newsletter-admin-clear");
+      const results = document.getElementById("newsletter-admin-results");
+      const count = document.getElementById("newsletter-admin-count");
+      const latest = document.getElementById("newsletter-admin-latest");
+      const formName = document.getElementById("newsletter-admin-form-name");
+      const siteName = document.getElementById("newsletter-admin-site-name");
+      const siteUrl = document.getElementById("newsletter-admin-site-url");
+      const emails = document.getElementById("newsletter-admin-emails");
+
+      const formatDate = (value) => {
+        if (!value) return "No signups yet";
+        const date = new Date(value);
+        if (Number.isNaN(date.getTime())) return String(value);
+        return date.toLocaleString("en-CA", {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+          hour: "numeric",
+          minute: "2-digit",
+        });
+      };
+
+      const populate = (data) => {
+        if (!results || !count || !latest || !formName || !siteName || !siteUrl || !emails) return;
+
+        count.textContent = String(data.subscriberCount ?? "-");
+        latest.textContent = formatDate(data.latestSignup);
+        formName.textContent = data.formName || "-";
+        siteName.textContent = data.siteName || "-";
+        siteUrl.textContent = data.siteUrl || "-";
+        emails.innerHTML = "";
+
+        const recent = Array.isArray(data.recentSubscriberEmails) ? data.recentSubscriberEmails : [];
+        recent.forEach((email) => {
+          const item = document.createElement("li");
+          item.textContent = email;
+          emails.appendChild(item);
+        });
+
+        if (!recent.length) {
+          const item = document.createElement("li");
+          item.textContent = "No recent email data available";
+          emails.appendChild(item);
+        }
+
+        results.hidden = false;
+      };
+
+      const loadStats = async (token) => {
+        if (!(status instanceof HTMLElement)) return;
+
+        status.textContent = "Loading...";
+
+        try {
+          const response = await fetch("/.netlify/functions/newsletter-stats", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ token }),
+          });
+
+          const payload = await response.json();
+          if (!response.ok) {
+            throw new Error(payload?.error || "Unable to load dashboard");
+          }
+
+          sessionStorage.setItem(storageKey, token);
+          status.textContent = "Dashboard loaded.";
+          populate(payload);
+        } catch (error) {
+          status.textContent = error?.message || "Unable to load dashboard";
+          if (results instanceof HTMLElement) {
+            results.hidden = true;
+          }
+        }
+      };
+
+      if (input instanceof HTMLInputElement) {
+        const savedToken = sessionStorage.getItem(storageKey);
+        if (savedToken) {
+          input.value = savedToken;
+          loadStats(savedToken);
+        }
+      }
+
+      form?.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const token = input instanceof HTMLInputElement ? input.value.trim() : "";
+        if (!token) {
+          if (status instanceof HTMLElement) {
+            status.textContent = "Enter the dashboard token first.";
+          }
+          return;
+        }
+        loadStats(token);
+      });
+
+      clearButton?.addEventListener("click", () => {
+        sessionStorage.removeItem(storageKey);
+        if (input instanceof HTMLInputElement) {
+          input.value = "";
+        }
+        if (status instanceof HTMLElement) {
+          status.textContent = "Saved token cleared.";
+        }
+        if (results instanceof HTMLElement) {
+          results.hidden = true;
+        }
+      });
+    })();
+  </script>
+</Layout>
+
+<style>
+  .newsletter-admin-layout {
+    gap: var(--s-4);
+  }
+
+  .newsletter-admin-card {
+    padding: var(--s-4);
+    border-radius: 16px;
+  }
+
+  .newsletter-admin-label {
+    display: block;
+    margin-bottom: var(--s-1);
+    font-weight: 700;
+  }
+
+  .newsletter-admin-input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border-strong);
+    border-radius: 12px;
+    font: inherit;
+  }
+
+  .newsletter-admin-metrics {
+    gap: var(--s-3);
+  }
+
+  .newsletter-admin-metric-label {
+    margin: 0 0 var(--s-1);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    font-weight: 800;
+  }
+
+  .newsletter-admin-metric-value {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1.1;
+  }
+
+  .newsletter-admin-metric-value--small {
+    font-size: 1.1rem;
+    color: var(--text);
+  }
+
+  @media (max-width: 768px) {
+    .newsletter-admin-layout,
+    .newsletter-admin-metrics {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

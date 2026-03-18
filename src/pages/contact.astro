@@ -3,25 +3,42 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
-  title="Contact Us — IELTS Corner"
-  description="Get in touch with us for tutoring, essay correction, or general questions about IELTS and CELPIP exam preparation."
+  title="Contact | IELTS Corner"
+  description="Contact IELTS Corner for tutoring, writing feedback, study-plan help, or general IELTS and CELPIP questions."
   type="page"
 >
   <section class="section" style="padding-top: var(--s-6);">
     <div class="hero" style={`--hero-bg: url('/heroes/contact.png');`}>
       <div class="hero-content">
-        <h1>Get in touch with us.</h1>
-        <p>Have questions about our lessons, tutoring, or services? We're here to help.</p>
+        <h1>Tell us what you need help with.</h1>
+        <p>
+          The clearer your message is, the more useful the reply can be. One short message
+          with your exam, your current level, and your target is enough.
+        </p>
       </div>
     </div>
 
-    <div style="height: var(--s-8);"></div>
+    <div style="height: var(--s-7);"></div>
 
-    <!-- CONTACT FORM & INFO -->
-    <div class="grid grid-2">
-      <!-- FORM -->
+    <div class="surface contact-tip">
+      <h2 style="margin-top: 0;">Fastest way to get a useful reply</h2>
+      <p style="margin-bottom: var(--s-2);">Include these three details in your first message:</p>
+      <ol style="margin: 0; padding-left: var(--s-4);">
+        <li>Your exam: IELTS, CELPIP, or general English</li>
+        <li>Your current score or level, if you know it</li>
+        <li>Your target score and deadline</li>
+      </ol>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+
+    <div class="grid grid-2 contact-layout">
       <div>
-        <h2>Send us a message</h2>
+        <h2>Send a message</h2>
+        <p class="muted" style="margin-top: 0;">
+          Short and clear is fine. You do not need to write a long introduction.
+        </p>
+
         {/* @ts-ignore */}
         <form
           name="contact"
@@ -29,62 +46,45 @@ import Layout from "../layouts/Layout.astro";
           netlify
           data-netlify="true"
           data-netlify-honeypot="bot-field"
-          class="stack"
-          style="gap: var(--s-3);"
+          class="stack contact-form"
         >
           <input type="hidden" name="form-name" value="contact" />
 
-          <p style="display:none;">
-            <label>Don’t fill this out: <input name="bot-field" /></label>
+          <p style="display: none;">
+            <label>Do not fill this out: <input name="bot-field" /></label>
           </p>
 
           <div>
-            <label for="name" style="display: block; margin-bottom: var(--s-1);">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              style="width: 100%; padding: var(--s-1); border: 1px solid var(--text-muted); border-radius: 4px; font-size: 1rem;"
-            />
+            <label for="name" class="contact-label">Name</label>
+            <input type="text" id="name" name="name" required class="contact-input" />
           </div>
 
           <div>
-            <label for="email" style="display: block; margin-bottom: var(--s-1);">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              style="width: 100%; padding: var(--s-1); border: 1px solid var(--text-muted); border-radius: 4px; font-size: 1rem;"
-            />
+            <label for="email" class="contact-label">Email</label>
+            <input type="email" id="email" name="email" required class="contact-input" />
           </div>
 
           <div>
-            <label for="subject" style="display: block; margin-bottom: var(--s-1);">Subject</label>
-            <select
-              id="subject"
-              name="subject"
-              required
-              style="width: 100%; padding: var(--s-1); border: 1px solid var(--text-muted); border-radius: 4px; font-size: 1rem;"
-            >
-              <option value="">Choose a subject</option>
-              <option value="tutoring">Tutoring inquiry</option>
+            <label for="subject" class="contact-label">What do you need help with?</label>
+            <select id="subject" name="subject" required class="contact-input">
+              <option value="">Choose one</option>
+              <option value="tutoring">Tutoring</option>
               <option value="essay-correction">Essay correction</option>
-              <option value="ebook">eBook question</option>
-              <option value="lessons">Lessons question</option>
+              <option value="writing-lab">Writing score lab</option>
+              <option value="study-plan">Study plan question</option>
+              <option value="lessons">Lesson question</option>
               <option value="other">Other</option>
             </select>
           </div>
 
           <div>
-            <label for="message" style="display: block; margin-bottom: var(--s-1);">Message</label>
+            <label for="message" class="contact-label">Message</label>
             <textarea
               id="message"
               name="message"
-              rows="6"
+              rows="7"
               required
-              style="width: 100%; padding: var(--s-1); border: 1px solid var(--text-muted); border-radius: 4px; font-size: 1rem; font-family: inherit;"
+              class="contact-input contact-textarea"
             ></textarea>
           </div>
 
@@ -92,68 +92,81 @@ import Layout from "../layouts/Layout.astro";
         </form>
       </div>
 
-      <!-- CONTACT INFO -->
       <div>
         <h2>Other ways to reach us</h2>
 
         <div class="stack" style="gap: var(--s-4);">
-          <div class="surface" style="padding: var(--s-3); border-radius: 8px;">
+          <div class="surface contact-box">
             <h3 style="margin-top: 0;">WhatsApp</h3>
-            <p>Quick questions? Message us on WhatsApp for fast replies.</p>
+            <p>Best for quick questions about timing, availability, or which service fits your situation.</p>
             <a href="https://wa.me/16479317537" class="btn" target="_blank" rel="noopener noreferrer">
-              Open WhatsApp →
+              Open WhatsApp
             </a>
           </div>
 
-          <div class="surface" style="padding: var(--s-3); border-radius: 8px;">
+          <div class="surface contact-box">
             <h3 style="margin-top: 0;">Email</h3>
-            <p>For longer messages or detailed inquiries, send us an email.</p>
+            <p>Best for detailed questions, writing samples, or anything you want to explain carefully.</p>
             <a href="mailto:kara.abdolmaleki@gmail.com" class="btn">
               kara.abdolmaleki@gmail.com
             </a>
           </div>
 
-          <div class="surface" style="padding: var(--s-3); border-radius: 8px;">
-            <h3 style="margin-top: 0;">Services</h3>
+          <div class="surface contact-box">
+            <h3 style="margin-top: 0;">Services people ask about most</h3>
             <ul style="margin: 0; padding-left: var(--s-3);">
-              <li><strong>Tutoring:</strong> CA$30/hour - Live 1-on-1 lessons</li>
-              <li><strong>Essay Correction:</strong> CA$15 per essay</li>
-              <li><strong>eBook:</strong> $19.99 - Complete grammar + writing guide</li>
+              <li><strong>Tutoring:</strong> CA$30 for a 60-minute live lesson</li>
+              <li><strong>Essay correction:</strong> CA$15 per piece with detailed comments</li>
+              <li><strong>Writing score lab:</strong> subscription-based writing feedback and model answers</li>
             </ul>
           </div>
 
-          <div class="surface" style="padding: var(--s-3); border-radius: 8px; background: var(--accent-light); border-left: 4px solid var(--accent);">
+          <div class="surface contact-box contact-box--accent">
             <h3 style="margin-top: 0;">Response time</h3>
-            <p>We reply to all messages within 24 hours during business days. For urgent questions about tutoring, try WhatsApp.</p>
+            <p style="margin-bottom: 0;">
+              We usually reply within 24 hours on business days. If your test date is close,
+              say that in the first line so we can read your message in the right context.
+            </p>
           </div>
         </div>
       </div>
     </div>
 
-    <div style="height: var(--s-8);"></div>
+    <div style="height: var(--s-7);"></div>
 
-    <!-- FAQ INLINE -->
     <div>
-      <h2>Common questions</h2>
-      <div class="grid grid-2">
-        <div class="surface" style="padding: var(--s-3);">
-          <h3 style="margin-top: 0;">How do I book a tutoring session?</h3>
-          <p>Fill out the form above and select "Tutoring inquiry." We'll reply with available times and a payment link.</p>
+      <h2>Common questions before people contact us</h2>
+      <div class="grid grid-2 contact-layout">
+        <div class="surface contact-box">
+          <h3 style="margin-top: 0;">How do I book tutoring?</h3>
+          <p>
+            Send a tutoring message with your exam, current level, and target score.
+            We reply with suitable times and the next booking step.
+          </p>
         </div>
 
-        <div class="surface" style="padding: var(--s-3);">
-          <h3 style="margin-top: 0;">What payment methods do you accept?</h3>
-          <p>We accept Stripe (credit/debit cards), PayPal, and e-transfer. Payment details are sent after you contact us.</p>
+        <div class="surface contact-box">
+          <h3 style="margin-top: 0;">How do payments work?</h3>
+          <p>
+            Payment details are shared after the service is confirmed. Current options include
+            Stripe, PayPal, and e-transfer when appropriate.
+          </p>
         </div>
 
-        <div class="surface" style="padding: var(--s-3);">
-          <h3 style="margin-top: 0;">Can I get a refund on lessons?</h3>
-          <p>Yes. If you're not satisfied with tutoring, we offer a full refund for your first 2 hours within 7 days.</p>
+        <div class="surface contact-box">
+          <h3 style="margin-top: 0;">What if I am not sure which service I need?</h3>
+          <p>
+            Tell us what exam task is hurting your score most. We can usually tell you whether
+            free lessons, writing feedback, or tutoring is the better next step.
+          </p>
         </div>
 
-        <div class="surface" style="padding: var(--s-3);">
-          <h3 style="margin-top: 0;">Do you offer group lessons?</h3>
-          <p>Currently, we offer 1-on-1 tutoring. Contact us if you're interested in group rates for 3+ students.</p>
+        <div class="surface contact-box">
+          <h3 style="margin-top: 0;">What if something is not the right fit?</h3>
+          <p>
+            Tell us quickly. The goal is to solve the problem directly, not make you chase support.
+            Full details are also available on the <a href="/faq">FAQ page</a> and in the <a href="/terms">terms</a>.
+          </p>
         </div>
       </div>
     </div>
@@ -161,8 +174,53 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style>
+  .contact-layout {
+    gap: var(--s-5);
+  }
+
+  .contact-tip {
+    padding: var(--s-4);
+    margin-bottom: var(--s-2);
+    border-left: 4px solid var(--accent);
+  }
+
+  .contact-form {
+    gap: var(--s-3);
+  }
+
+  .contact-label {
+    display: block;
+    margin-bottom: var(--s-1);
+    font-weight: 600;
+  }
+
+  .contact-input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border-strong);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #fff;
+  }
+
+  .contact-textarea {
+    min-height: 10rem;
+    resize: vertical;
+  }
+
+  .contact-box {
+    padding: var(--s-3);
+    border-radius: 14px;
+  }
+
+  .contact-box--accent {
+    background: var(--accent-light);
+    border-left: 4px solid var(--accent);
+  }
+
   @media (max-width: 768px) {
-    .grid {
+    .contact-layout {
       grid-template-columns: 1fr !important;
     }
   }

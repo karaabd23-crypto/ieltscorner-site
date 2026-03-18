@@ -1,167 +1,151 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Testimonials from "../components/Testimonials.astro";
+
+const studyPaths = [
+  {
+    title: "A graduate-school applicant who needed stronger writing structure",
+    startingPoint: "Ideas were good, but the writing was not organized well enough for a stable higher score.",
+    actions: [
+      "Reviewed the free writing and grammar lessons first",
+      "Used tutoring to fix paragraph flow and sentence control",
+      "Submitted a few practice essays for direct feedback",
+    ],
+    outcome: "The student became much more consistent and stopped losing easy marks for organization.",
+    label: "Writing focus",
+  },
+  {
+    title: "A CELPIP student who needed clearer speaking",
+    startingPoint: "The main issue was not lack of ideas. It was pace, clarity, and how the answer was organized under time pressure.",
+    actions: [
+      "Practised task-by-task speaking structure",
+      "Did guided speaking sessions with feedback on pace and emphasis",
+      "Used mock answers to build more natural timing",
+    ],
+    outcome: "The student sounded calmer, clearer, and more controlled in the speaking tasks.",
+    label: "Speaking focus",
+  },
+  {
+    title: "A student whose writing score was lower than every other skill",
+    startingPoint: "Reading and listening were already strong, but writing was holding the overall result down.",
+    actions: [
+      "Used task-specific writing lessons to stop guessing what the examiner wanted",
+      "Got direct feedback on repeated grammar and task-response mistakes",
+      "Rewrote the same tasks after feedback instead of always starting fresh",
+    ],
+    outcome: "The score gap between writing and the other skills became much smaller.",
+    label: "Score gap",
+  },
+  {
+    title: "A self-study learner who needed a clear routine",
+    startingPoint: "The student did not need more resources. The student needed a better order for using them.",
+    actions: [
+      "Studied one lesson at a time instead of jumping between topics",
+      "Used shorter daily sessions more consistently",
+      "Saved paid support for the exact areas that still felt stuck",
+    ],
+    outcome: "Progress became steadier because the study plan finally made sense.",
+    label: "Self-study",
+  },
+];
 ---
 
 <Layout
-  title="Student Success Stories — IELTS Corner"
-  description="Real success stories from IELTS and CELPIP students who reached their target scores with IELTS Corner tutoring and lessons."
+  title="Student Feedback and Study Paths | IELTS Corner"
+  description="Student feedback and common study paths for IELTS and CELPIP learners using IELTS Corner lessons and support."
   type="page"
 >
   <section class="section" style="padding-top: var(--s-6);">
     <div class="hero" style={`--hero-bg: url('/heroes/success.png');`}>
       <div class="hero-content">
         <h1>Students getting results</h1>
+        <p>
+          Some students use only the free lessons. Some add writing feedback. Some need live
+          tutoring because the test date is close. The strongest progress usually comes from
+          clear goals and steady practice, not from doing everything at once.
+        </p>
       </div>
     </div>
 
     <div style="height: var(--s-6);"></div>
 
-    <!-- TESTIMONIALS -->
-    <h2>What students say</h2>
-    <Testimonials columns={3} />
+    <section>
+      <h2>What students say</h2>
+      <p class="muted" style="max-width: 72ch;">
+        Names are shortened for privacy. The point is not the name. The point is what kind of
+        help moved the score or the skill forward.
+      </p>
+      <Testimonials columns={3} />
+    </section>
 
     <div style="height: var(--s-6);"></div>
 
-    <!-- SUCCESS METRICS -->
-    <div class="grid grid-3">
-      <article class="card" style="text-align: center;">
-        <div style="font-size: 2.5rem; font-weight: 700; color: var(--accent);">500+</div>
-        <p style="margin: var(--s-1) 0 0; font-weight: 600;">Students Helped</p>
-        <p style="color: var(--text-muted);">From beginner to advanced levels</p>
+    <div class="grid grid-3 study-choices">
+      <article class="card study-choice-card">
+        <p class="study-choice-card__label">Start here</p>
+        <h3>Free lessons</h3>
+        <p class="muted">Best when you need a clear explanation before you spend money on support.</p>
       </article>
 
-      <article class="card" style="text-align: center;">
-        <div style="font-size: 2.5rem; font-weight: 700; color: var(--accent);">98%</div>
-        <p style="margin: var(--s-1) 0 0; font-weight: 600;">Satisfaction Rate</p>
-        <p style="color: var(--text-muted);">Would recommend to a friend</p>
+      <article class="card study-choice-card">
+        <p class="study-choice-card__label">Use when needed</p>
+        <h3>Tutoring</h3>
+        <p class="muted">Best when your test date is close or your weak skill needs live correction.</p>
       </article>
 
-      <article class="card" style="text-align: center;">
-        <div style="font-size: 2.5rem; font-weight: 700; color: var(--accent);">+1.5</div>
-        <p style="margin: var(--s-1) 0 0; font-weight: 600;">Average Score Jump</p>
-        <p style="color: var(--text-muted);">IELTS band increase</p>
+      <article class="card study-choice-card">
+        <p class="study-choice-card__label">Use for writing</p>
+        <h3>Writing feedback</h3>
+        <p class="muted">Best when your writing keeps losing marks and you need to see exactly why.</p>
       </article>
     </div>
 
     <div style="height: var(--s-6);"></div>
 
-    <!-- DETAILED STORIES -->
-    <div>
-      <h2>How students achieved their goals</h2>
+    <section>
+      <h2>Common study paths that led to progress</h2>
+      <p class="muted" style="max-width: 72ch;">
+        The examples below are simplified composites based on repeated student patterns.
+        Personal details are reduced so the focus stays on the study choices and what changed.
+      </p>
 
-      <div class="stack" style="gap: var(--s-4);">
-        <!-- STORY 1 -->
-        <div class="grid grid-2" style="align-items: center; gap: var(--s-4);">
-          <div>
-            <h3 style="margin-top: 0;">Priya: Band 6.5 → 7.5 in 8 weeks</h3>
-            <p><strong style="color: var(--accent);">Goal:</strong> Get into her target master's program</p>
-            <p><strong style="color: var(--accent);">Challenge:</strong> Struggled with grammar, especially conditionals and complex sentences. Ran out of time in writing and speaking.</p>
-            <p><strong style="color: var(--accent);">What she did:</strong></p>
-            <ul>
-              <li>Used free grammar lessons to review problem areas</li>
-              <li>Booked 12 tutoring hours over 8 weeks</li>
-              <li>Had her essays corrected 3 times</li>
-            </ul>
-            <p><strong style="color: var(--accent);">Result:</strong> +1.0 band score increase. Admitted to her program!</p>
-            <p style="font-style: italic; color: var(--text-muted);">
-              "I was so confused about conditionals. The free lessons explained it clearly, and tutoring gave me practice. Seeing the band score improve was so motivating."
-            </p>
-          </div>
+      <div class="stack" style="gap: var(--s-4); margin-top: var(--s-4);">
+        {studyPaths.map((path) => (
+          <article class="surface study-path-card">
+            <div class="study-path-card__header">
+              <span class="study-path-card__tag">{path.label}</span>
+              <h3 style="margin: 0;">{path.title}</h3>
+            </div>
 
-          <div style="background: var(--surface); padding: var(--s-3); border-radius: 8px; text-align: center;">
-            <div style="font-size: 3rem;">📈</div>
-            <p style="font-size: 1.5rem; font-weight: 700; color: var(--accent); margin: var(--s-1) 0;">6.5 → 7.5</p>
-            <p style="color: var(--text-muted); margin: 0;">8 weeks, 12 tutoring hours</p>
-          </div>
-        </div>
+            <p><strong>Starting point:</strong> {path.startingPoint}</p>
 
-        <!-- STORY 2 -->
-        <div class="grid grid-2" style="align-items: center; gap: var(--s-4);">
-          <div style="background: var(--surface); padding: var(--s-3); border-radius: 8px; text-align: center;">
-            <div style="font-size: 3rem;">🎤</div>
-            <p style="font-size: 1.5rem; font-weight: 700; color: var(--accent); margin: var(--s-1) 0;">CLB 8 → 9</p>
-            <p style="color: var(--text-muted); margin: 0;">6 weeks, 10 tutoring hours</p>
-          </div>
+            <div>
+              <p style="margin-bottom: var(--s-1);"><strong>What helped:</strong></p>
+              <ul style="margin: 0; padding-left: var(--s-3);">
+                {path.actions.map((action) => (
+                  <li>{action}</li>
+                ))}
+              </ul>
+            </div>
 
-          <div>
-            <h3 style="margin-top: 0;">Ahmed: CLB 8 → 9 in CELPIP (Speaking focus)</h3>
-            <p><strong style="color: var(--accent);">Goal:</strong> Improve speaking score to qualify for immigration</p>
-            <p><strong style="color: var(--accent);">Challenge:</strong> Native speaker of Arabic. Accent affected understanding. Spoke too fast, didn't pause.</p>
-            <p><strong style="color: var(--accent);">What he did:</strong></p>
-            <ul>
-              <li>Reviewed speaking lesson on pronunciation</li>
-              <li>Booked 10 tutoring sessions (speaking practice)</li>
-              <li>Did mock speaking tests with feedback</li>
-            </ul>
-            <p><strong style="color: var(--accent);">Result:</strong> Reached CLB 9 in speaking. Immigration approved!</p>
-            <p style="font-style: italic; color: var(--text-muted);">
-              "Tutoring helped me sound more natural. The tips about pausing and emphasizing words actually worked in the real test."
-            </p>
-          </div>
-        </div>
-
-        <!-- STORY 3 -->
-        <div class="grid grid-2" style="align-items: center; gap: var(--s-4);">
-          <div>
-            <h3 style="margin-top: 0;">Lisa: Band 6 → 7 (Writing 7.5) in 6 weeks</h3>
-            <p><strong style="color: var(--accent);">Goal:</strong> Improve from Band 6 to Band 7 overall</p>
-            <p><strong style="color: var(--accent);">Challenge:</strong> Writing was her skill. Scored 5.5 on writing section. Grammar errors and poor organization.</p>
-            <p><strong style="color: var(--accent);">What she did:</strong></p>
-            <ul>
-              <li>Took free writing lessons on task types and time management</li>
-              <li>Submitted 4 essays for correction (CA$15 each)</li>
-              <li>Applied feedback and rewrote essays</li>
-            </ul>
-            <p><strong style="color: var(--accent);">Result:</strong> Writing jumped from 5.5 → 7.5. Overall Band 7!</p>
-            <p style="font-style: italic; color: var(--text-muted);">
-              "The essay feedback was SO detailed. I knew exactly what to fix. Band score predictions were spot-on."
-            </p>
-          </div>
-
-          <div style="background: var(--surface); padding: var(--s-3); border-radius: 8px; text-align: center;">
-            <div style="font-size: 3rem;">✍️</div>
-            <p style="font-size: 1.5rem; font-weight: 700; color: var(--accent); margin: var(--s-1) 0;">5.5 → 7.5</p>
-            <p style="color: var(--text-muted); margin: 0;">Writing, 6 weeks, 4 essays</p>
-          </div>
-        </div>
-
-        <!-- STORY 4 -->
-        <div class="grid grid-2" style="align-items: center; gap: var(--s-4);">
-          <div style="background: var(--surface); padding: var(--s-3); border-radius: 8px; text-align: center;">
-            <div style="font-size: 3rem;">📚</div>
-            <p style="font-size: 1.5rem; font-weight: 700; color: var(--accent); margin: var(--s-1) 0;">B1 → B2</p>
-            <p style="color: var(--text-muted); margin: 0;">12 weeks, self-study from lessons</p>
-          </div>
-
-          <div>
-            <h3 style="margin-top: 0;">Marco: Self-study from B1 → B2 in 3 months</h3>
-            <p><strong style="color: var(--accent);">Goal:</strong> Improve English level for job advancement</p>
-            <p><strong style="color: var(--accent);">Challenge:</strong> Couldn't afford tutoring. Needed structured learning.</p>
-            <p><strong style="color: var(--accent);">What he did:</strong></p>
-            <ul>
-              <li>Used free lessons organized by proficiency level</li>
-              <li>Spent 1 hour per day on lessons (5 days/week)</li>
-              <li>Did quiz exercises after each lesson</li>
-            </ul>
-            <p><strong style="color: var(--accent);">Result:</strong> Reached B2 level. Got promoted at work!</p>
-            <p style="font-style: italic; color: var(--text-muted);">
-              "Free lessons were enough. Having everything organized by level made it easy to progress without a teacher."
-            </p>
-          </div>
-        </div>
+            <p style="margin-bottom: 0;"><strong>What changed:</strong> {path.outcome}</p>
+          </article>
+        ))}
       </div>
-    </div>
+    </section>
 
     <div style="height: var(--s-6);"></div>
 
-    <!-- CTA -->
-    <div style="text-align: center; padding: var(--s-4); background: var(--accent-light); border-radius: 8px;">
-      <h2>Your success story starts here</h2>
-      <p>Whether you study alone with our free lessons or get personalized help with tutoring, we're here to help you reach your goal.</p>
+    <div class="surface success-cta">
+      <h2 style="margin-top: 0;">Choose the next step that matches your real problem</h2>
+      <p style="max-width: 72ch;">
+        If you need explanation, start with the lessons. If you need correction, use writing feedback.
+        If you need direct guidance and accountability, tutoring is the stronger next step.
+      </p>
       <div class="cluster" style="justify-content: center; margin-top: var(--s-2);">
-        <a class="btn btn-primary" href="/lessons">Start free lessons →</a>
-        <a class="btn" href="/tutoring">Book a tutor</a>
+        <a class="btn btn-primary" href="/lessons">Start free lessons</a>
+        <a class="btn" href="/essay-correction">Get writing feedback</a>
+        <a class="btn" href="/tutoring">See tutoring</a>
       </div>
     </div>
 
@@ -170,8 +154,61 @@ import Testimonials from "../components/Testimonials.astro";
 </Layout>
 
 <style>
+  .study-choices {
+    gap: var(--s-3);
+  }
+
+  .study-choice-card {
+    text-align: center;
+  }
+
+  .study-choice-card__label {
+    display: inline-block;
+    margin: 0 0 var(--s-2);
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .study-path-card {
+    padding: var(--s-4);
+    border-radius: 16px;
+  }
+
+  .study-path-card__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--s-2);
+    margin-bottom: var(--s-2);
+  }
+
+  .study-path-card__tag {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--band) 12%, white 88%);
+    color: var(--band);
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .success-cta {
+    padding: var(--s-5);
+    text-align: center;
+    background: var(--accent-light);
+    border-radius: 16px;
+  }
+
   @media (max-width: 768px) {
-    .grid {
+    .study-choices {
       grid-template-columns: 1fr !important;
     }
   }

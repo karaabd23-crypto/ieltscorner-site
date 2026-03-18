@@ -3,25 +3,58 @@ import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout
-  title="eBook Coming Soon — IELTS Corner"
-  description="The IELTS Corner eBook is in development and will be available soon."
+  title="eBook Coming Soon | IELTS Corner"
+  description="The IELTS Corner eBook is still in development. Use the lessons and support pages for now."
 >
   <section class="section">
     <div class="hero" style={`--hero-bg: url('/heroes/ebook.png');`}>
       <div class="hero-content">
-        <span class="pill">📘 eBook</span>
-        <h1>eBook Coming Soon</h1>
+        <span class="pill">eBook</span>
+        <h1>The eBook is not ready yet</h1>
         <p class="muted" style="max-width: 62ch;">
-          The eBook is currently in progress and not available yet. We are building a practical, score-focused guide for IELTS and CELPIP learners.
+          It is still being shaped into something worth using, not just something to sell.
+          The goal is a practical guide that helps IELTS and CELPIP learners study with less confusion.
         </p>
         <p class="muted" style="max-width: 62ch; margin-top: var(--s-2);">
-          While it is being prepared, you can use free lessons and get support through tutoring.
+          Until it is ready, the strongest materials are still the free lessons, the writing feedback services,
+          and the skill hubs already on the site.
         </p>
         <div class="cluster" style="margin-top: var(--s-2);">
-          <a class="btn btn-primary" href="/lessons">Explore free lessons →</a>
-          <a class="btn" href="/tutoring">Book a class →</a>
+          <a class="btn btn-primary" href="/lessons">Explore free lessons</a>
+          <a class="btn" href="/blog">Read the blog</a>
         </div>
       </div>
     </div>
+
+    <div style="height: var(--s-6);"></div>
+
+    <div class="surface ebook-panel">
+      <h2 style="margin-top: 0;">What to use instead right now</h2>
+      <p>
+        If you need help today, start with one grammar, writing, or speaking lesson. If the score problem is still
+        unclear after that, move to writing feedback or tutoring for direct correction.
+      </p>
+      <div class="cluster" style="margin-top: var(--s-2);">
+        <a class="btn" href="/essay-correction">Essay correction</a>
+        <a class="btn" href="/celpip/writing/ai-feedback/">Writing score lab</a>
+        <a class="btn" href="/tutoring">Tutoring</a>
+      </div>
+    </div>
+
+    <div style="height: var(--s-5);"></div>
+
+    <div class="surface ebook-panel">
+      <h2 style="margin-top: 0;">Want to hear about it later?</h2>
+      <p style="margin-bottom: 0;">
+        Join the newsletter on the home page if you want the announcement when the eBook is actually ready.
+      </p>
+    </div>
   </section>
 </Layout>
+
+<style>
+  .ebook-panel {
+    padding: var(--s-4);
+    border-left: 4px solid var(--accent);
+  }
+</style>

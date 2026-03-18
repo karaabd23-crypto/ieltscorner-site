@@ -35,11 +35,10 @@
 - `npm run preview` → Local preview of production build
 - `npm run astro -- [command]` → Raw Astro CLI (e.g., `astro check` for TypeScript validation)
 
-### Environment variables and OpenAI keys
+### Environment variables
 
-- Some automation scripts (e.g. `scripts/generate-lessons.mjs`) consume `process.env.OPENAI_API_KEY` and optional `OPENAI_MODEL`.
 - Store secrets in a `.env` file at the project root or in your shell environment; the repo already has `.env` and `.env.production` in `.gitignore`.
-- A template `.env.example` shows the required variables. Never check the real key into source control.
+- A template `.env.example` shows the required variables. Never check real secrets into source control.
 
 ## Deployment & Live Updates
 

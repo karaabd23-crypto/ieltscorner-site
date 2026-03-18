@@ -13,10 +13,6 @@ on:
         description: "Comma-separated categories (grammar,vocabulary,writing,speaking)"
         required: false
         default: "grammar,vocabulary,writing,speaking"
-      generation_mode:
-        description: "Generation mode: fallback (no API key) or ai (requires OPENAI_API_KEY)"
-        required: false
-        default: "fallback"
 
 permissions:
   contents: write
@@ -39,15 +35,11 @@ jobs:
 
       - name: Generate lessons
         env:
-          LESSON_GENERATOR_MODE: ${{ github.event.inputs.generation_mode || 'fallback' }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: gpt-4.1-mini
+          LESSON_GENERATOR_MODE: fallback
         run: |
           COUNT="${{ github.event.inputs.per_category_count || '3' }}"
           CATEGORIES_INPUT="${{ github.event.inputs.categories || 'grammar,vocabulary,writing,speaking' }}"
-          MODE="${{ github.event.inputs.generation_mode || 'fallback' }}"
-
-          echo "Lesson generation mode: $MODE"
+          echo "Lesson generation mode: fallback"
 
           IFS=',' read -ra CATEGORIES <<< "$CATEGORIES_INPUT"
           for CATEGORY in "${CATEGORIES[@]}"; do

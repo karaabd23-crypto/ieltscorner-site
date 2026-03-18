@@ -11,6 +11,156 @@ const pageStructuredData = [
 
 const pageKeywords =
   "IELTS blog, CELPIP blog, IELTS writing tips, IELTS speaking tips, CELPIP writing tips, CELPIP speaking tips, IELTS strategy articles, CELPIP strategy articles";
+
+const featuredArticle = {
+  title: "IELTS Writing Task 2 Structure",
+  description: "A direct guide to paragraph flow, essay balance, and the mistakes that pull scores down even when the ideas are good.",
+  href: "/blog/ielts-writing-task-2-structure",
+  meta: "Writing | 7 min read",
+  note: "Start here if your essays have ideas but still feel loose, repetitive, or hard to control.",
+};
+
+const recentArticles = [
+  {
+    tag: "Strategy",
+    title: "How to Get Band 7 in IELTS Writing",
+    description: "A practical guide to structure, timing, and the habits that help many students move from Band 6 to Band 7.",
+    date: "February 28, 2026",
+    meta: "6 min read",
+    href: "/blog/band-7-writing-strategy",
+  },
+  {
+    tag: "Writing",
+    title: "IELTS Writing Task 2 Structure",
+    description: "A clear guide to essay structure, paragraph balance, and timing control for Task 2.",
+    date: "March 14, 2026",
+    meta: "7 min read",
+    href: "/blog/ielts-writing-task-2-structure",
+  },
+  {
+    tag: "Vocabulary",
+    title: "Collocations for IELTS Writing",
+    description: "Useful word combinations for stronger essays, with a focus on natural use instead of memorized lists.",
+    date: "March 17, 2026",
+    meta: "7 min read",
+    href: "/blog/collocations-ielts",
+  },
+  {
+    tag: "CELPIP Speaking",
+    title: "CELPIP Speaking Task 2 Guide",
+    description: "A clearer personal-story structure for speaking longer without losing control.",
+    date: "March 17, 2026",
+    meta: "7 min read",
+    href: "/blog/celpip-speaking-part2",
+  },
+  {
+    tag: "Speaking",
+    title: "IELTS Speaking Part 2 Cue Card Guide",
+    description: "How to use the 1-minute prep time and speak for the full 2 minutes without sounding memorized.",
+    date: "March 14, 2026",
+    meta: "6 min read",
+    href: "/blog/ielts-speaking-part-2-cue-card",
+  },
+  {
+    tag: "Speaking",
+    title: "IELTS Speaking Part 1 Topics Guide",
+    description: "Natural answer development for short personal questions without filler or memorized openings.",
+    date: "March 14, 2026",
+    meta: "6 min read",
+    href: "/blog/ielts-speaking-part-1-topics",
+  },
+  {
+    tag: "Reading",
+    title: "IELTS Reading Question Types Guide",
+    description: "A practical approach to matching, completion, true-false-not-given, and the timing decisions behind them.",
+    date: "March 14, 2026",
+    meta: "7 min read",
+    href: "/blog/ielts-reading-question-types",
+  },
+  {
+    tag: "CELPIP Writing",
+    title: "CELPIP Writing Task 1 Email Guide",
+    description: "Tone, structure, and the prompt details students often miss in Task 1 emails.",
+    date: "March 14, 2026",
+    meta: "6 min read",
+    href: "/blog/celpip-writing-task-1-email",
+  },
+  {
+    tag: "CELPIP Writing",
+    title: "CELPIP Writing Task 2 Survey Response Guide",
+    description: "How to build a clear position, organize support, and keep Task 2 responses controlled under time pressure.",
+    date: "March 14, 2026",
+    meta: "6 min read",
+    href: "/blog/celpip-writing-task-2-survey-response",
+  },
+  {
+    tag: "CELPIP Speaking",
+    title: "CELPIP Speaking Task 1 Guide",
+    description: "How to give practical advice clearly and sound more helpful than generic.",
+    date: "March 17, 2026",
+    meta: "6 min read",
+    href: "/blog/celpip-speaking-task-1",
+  },
+  {
+    tag: "Samples",
+    title: "CELPIP Sample Answers Guide",
+    description: "How to study sample answers without falling into memorization or copying habits.",
+    date: "March 14, 2026",
+    meta: "6 min read",
+    href: "/blog/celpip-sample-answers",
+  },
+];
+
+const startCards = [
+  {
+    title: "I need help with writing",
+    text: "Start with one task guide, then move to a structure article or writing feedback.",
+    href: "/ielts/writing",
+    label: "Open writing hub",
+  },
+  {
+    title: "I need help with speaking",
+    text: "Start with the task that feels weak, then compare your answers to the speaking guides.",
+    href: "/celpip/speaking",
+    label: "Open speaking hub",
+  },
+  {
+    title: "I feel lost and need a clearer route",
+    text: "Use the free lessons first if you want the building blocks before test strategy.",
+    href: "/lessons",
+    label: "Open lessons",
+  },
+];
+
+const taskGroups = [
+  {
+    title: "IELTS articles",
+    links: [
+      { label: "Task 1 Academic guide", href: "/blog/ielts-writing-task-1-academic-guide" },
+      { label: "Task 1 General Training letter", href: "/blog/ielts-writing-task-1-general-training-letter" },
+      { label: "Task 2 opinion essay", href: "/blog/ielts-writing-task-2-opinion-essay" },
+      { label: "Task 2 discussion essay", href: "/blog/ielts-writing-task-2-discussion-essay" },
+      { label: "Task 2 problem-solution essay", href: "/blog/ielts-writing-task-2-problem-solution" },
+      { label: "Advantages and disadvantages essay", href: "/blog/ielts-writing-task-2-advantages-disadvantages" },
+      { label: "Speaking Part 3 guide", href: "/blog/ielts-speaking-part-3-questions-guide" },
+      { label: "Listening question types", href: "/blog/ielts-listening-question-types" },
+      { label: "Listening common traps", href: "/blog/ielts-listening-common-traps" },
+    ],
+  },
+  {
+    title: "CELPIP articles",
+    links: [
+      { label: "Writing Task 1 templates", href: "/blog/celpip-writing-task-1-templates" },
+      { label: "Writing Task 2 templates", href: "/blog/celpip-writing-task-2-templates" },
+      { label: "Speaking Task 2 guide", href: "/blog/celpip-speaking-part2" },
+      { label: "Speaking Task 5 guide", href: "/blog/celpip-speaking-task-5-comparing-options" },
+      { label: "Speaking Task 7 guide", href: "/blog/celpip-speaking-task-7-opinion-strategy" },
+      { label: "Reading question types", href: "/blog/celpip-reading-question-types" },
+      { label: "Listening question types", href: "/blog/celpip-listening-question-types" },
+      { label: "Sample answers guide", href: "/blog/celpip-sample-answers" },
+    ],
+  },
+];
 ---
 
 <Layout
@@ -25,187 +175,107 @@ const pageKeywords =
       <div class="hero-content">
         <h1>IELTS and CELPIP articles</h1>
         <p>
-          Use these guides when you need a clear explanation of one task, one score problem,
-          or one study decision.
+          Use the blog when you need one strong explanation of one task, one mistake pattern,
+          or one study decision. The goal is not to read everything. The goal is to read the
+          right page next.
         </p>
       </div>
     </div>
 
     <div style="height: var(--s-6);"></div>
 
-    <div class="surface feature" style="padding: var(--s-5); margin-bottom: var(--s-6);">
+    <div class="grid grid-3 blog-start-grid">
+      {startCards.map((card) => (
+        <article class="surface blog-start-card">
+          <h2 style="margin-top: 0;">{card.title}</h2>
+          <p>{card.text}</p>
+          <a href={card.href} class="btn btn-ghost">{card.label}</a>
+        </article>
+      ))}
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+
+    <div class="surface feature blog-featured">
       <div class="grid grid-2" style="align-items: center; gap: var(--s-4);">
         <div>
-          <div style="display: inline-block; background: var(--accent); color: white; padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
-            Featured
+          <div class="blog-card-tag">Featured</div>
+          <h2 style="margin-top: 0;">{featuredArticle.title}</h2>
+          <p style="color: var(--text-muted);">{featuredArticle.description}</p>
+          <div class="blog-card-meta">
+            <span>{featuredArticle.meta}</span>
           </div>
-          <h2 style="margin-top: 0;">IELTS Writing Task 2 Structure: The Format That Keeps Scores Stable</h2>
-          <p style="color: var(--text-muted);">
-            A direct guide to IELTS Writing Task 2 structure, paragraph flow, and the mistakes that pull essays down.
-          </p>
-          <div style="display: flex; gap: var(--s-3); color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--s-2); flex-wrap: wrap;">
-            <span>March 14, 2026</span>
-            <span>7 min read</span>
-          </div>
-          <a href="/blog/ielts-writing-task-2-structure" class="btn btn-primary">Read article</a>
+          <a href={featuredArticle.href} class="btn btn-primary">Read article</a>
         </div>
-        <div style="background: var(--accent-light); padding: var(--s-5); border-radius: 12px;">
-          <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; color: var(--text-muted);">
-            Start here if your essays lose marks because the ideas are there but the organization is weak.
+
+        <div class="blog-featured-note">
+          <p style="margin: 0; font-size: 1.02rem; line-height: 1.75; color: var(--text-muted);">
+            {featuredArticle.note}
           </p>
         </div>
+      </div>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+
+    <div class="surface" style="padding: var(--s-5); margin-bottom: var(--s-6);">
+      <h2 style="margin-top: 0;">How to use this blog well</h2>
+      <div class="grid grid-3 blog-start-grid" style="margin-top: var(--s-3);">
+        <article class="card">
+          <h3 style="margin-top: 0;">1. Pick one score problem</h3>
+          <p class="muted">For example: weak introductions, repetitive vocabulary, unfinished speaking answers, or slow reading timing.</p>
+        </article>
+        <article class="card">
+          <h3 style="margin-top: 0;">2. Read one article only</h3>
+          <p class="muted">If you open too many pages, everything starts to blur. One careful read is stronger than five quick ones.</p>
+        </article>
+        <article class="card">
+          <h3 style="margin-top: 0;">3. Return to practice</h3>
+          <p class="muted">The blog explains the idea. Your next step should be a lesson, a writing task, or a speaking attempt.</p>
+        </article>
       </div>
     </div>
 
     <h2>Recent articles</h2>
-    <div class="grid grid-3" style="gap: var(--s-3); margin-bottom: var(--s-6);">
-      <article class="card">
-        <div class="blog-card-tag">Strategy</div>
-        <h3 style="margin-top: 0;">How to Get Band 7 in IELTS Writing</h3>
-        <p style="color: var(--text-muted); flex: 1;">A practical guide to structure, timing, and the habits that help many students move from Band 6 to Band 7.</p>
-        <div class="blog-card-meta">
-          <span>February 28, 2026</span>
-          <span>6 min read</span>
-        </div>
-        <a href="/blog/band-7-writing-strategy" class="btn btn-ghost">Read</a>
-      </article>
-
-      <article class="card">
-        <div class="blog-card-tag">Writing</div>
-        <h3 style="margin-top: 0;">IELTS Writing Task 2 Structure</h3>
-        <p style="color: var(--text-muted); flex: 1;">A clear guide to essay structure, paragraph balance, and timing control for Task 2.</p>
-        <div class="blog-card-meta">
-          <span>March 14, 2026</span>
-          <span>7 min read</span>
-        </div>
-        <a href="/blog/ielts-writing-task-2-structure" class="btn btn-ghost">Read</a>
-      </article>
-
-      <article class="card">
-        <div class="blog-card-tag">Vocabulary</div>
-        <h3 style="margin-top: 0;">Collocations for IELTS Writing</h3>
-        <p style="color: var(--text-muted); flex: 1;">Useful word combinations for stronger essays, with a focus on natural use instead of memorized lists.</p>
-        <div class="blog-card-meta">
-          <span>March 17, 2026</span>
-          <span>7 min read</span>
-        </div>
-        <a href="/blog/collocations-ielts" class="btn btn-ghost">Read</a>
-      </article>
-
-      <article class="card">
-        <div class="blog-card-tag">Speaking</div>
-        <h3 style="margin-top: 0;">CELPIP Speaking Task 2 Guide</h3>
-        <p style="color: var(--text-muted); flex: 1;">A clearer personal-story structure for speaking longer without losing control.</p>
-        <div class="blog-card-meta">
-          <span>March 17, 2026</span>
-          <span>7 min read</span>
-        </div>
-        <a href="/blog/celpip-speaking-part2" class="btn btn-ghost">Read</a>
-      </article>
-
-      <article class="card">
-        <div class="blog-card-tag">Speaking</div>
-        <h3 style="margin-top: 0;">IELTS Speaking Part 2 Cue Card Guide</h3>
-        <p style="color: var(--text-muted); flex: 1;">How to use the 1-minute prep time and speak for the full 2 minutes without sounding memorized.</p>
-        <div class="blog-card-meta">
-          <span>March 14, 2026</span>
-          <span>6 min read</span>
-        </div>
-        <a href="/blog/ielts-speaking-part-2-cue-card" class="btn btn-ghost">Read</a>
-      </article>
-
-      <article class="card">
-        <div class="blog-card-tag">Speaking</div>
-        <h3 style="margin-top: 0;">IELTS Speaking Part 1 Topics Guide</h3>
-        <p style="color: var(--text-muted); flex: 1;">Natural answer development for short personal questions without filler or memorized openings.</p>
-        <div class="blog-card-meta">
-          <span>March 14, 2026</span>
-          <span>6 min read</span>
-        </div>
-        <a href="/blog/ielts-speaking-part-1-topics" class="btn btn-ghost">Read</a>
-      </article>
-
-      <article class="card">
-        <div class="blog-card-tag">Reading</div>
-        <h3 style="margin-top: 0;">IELTS Reading Question Types Guide</h3>
-        <p style="color: var(--text-muted); flex: 1;">A practical approach to matching, completion, true-false-not-given, and the timing decisions behind them.</p>
-        <div class="blog-card-meta">
-          <span>March 14, 2026</span>
-          <span>7 min read</span>
-        </div>
-        <a href="/blog/ielts-reading-question-types" class="btn btn-ghost">Read</a>
-      </article>
-
-      <article class="card">
-        <div class="blog-card-tag">CELPIP Writing</div>
-        <h3 style="margin-top: 0;">CELPIP Writing Task 1 Email Guide</h3>
-        <p style="color: var(--text-muted); flex: 1;">Tone, structure, and the prompt details students often miss in Task 1 emails.</p>
-        <div class="blog-card-meta">
-          <span>March 14, 2026</span>
-          <span>6 min read</span>
-        </div>
-        <a href="/blog/celpip-writing-task-1-email" class="btn btn-ghost">Read</a>
-      </article>
-
-      <article class="card">
-        <div class="blog-card-tag">CELPIP Writing</div>
-        <h3 style="margin-top: 0;">CELPIP Writing Task 2 Survey Response Guide</h3>
-        <p style="color: var(--text-muted); flex: 1;">How to build a clear position, organize support, and keep Task 2 responses controlled under time pressure.</p>
-        <div class="blog-card-meta">
-          <span>March 14, 2026</span>
-          <span>6 min read</span>
-        </div>
-        <a href="/blog/celpip-writing-task-2-survey-response" class="btn btn-ghost">Read</a>
-      </article>
-
-      <article class="card">
-        <div class="blog-card-tag">CELPIP Speaking</div>
-        <h3 style="margin-top: 0;">CELPIP Speaking Task 1 Guide</h3>
-        <p style="color: var(--text-muted); flex: 1;">How to give practical advice clearly and sound more helpful than generic.</p>
-        <div class="blog-card-meta">
-          <span>March 17, 2026</span>
-          <span>6 min read</span>
-        </div>
-        <a href="/blog/celpip-speaking-task-1" class="btn btn-ghost">Read</a>
-      </article>
-
-      <article class="card">
-        <div class="blog-card-tag">CELPIP Writing</div>
-        <h3 style="margin-top: 0;">CELPIP Sample Answers Guide</h3>
-        <p style="color: var(--text-muted); flex: 1;">How to study sample answers without falling into memorization or copying habits.</p>
-        <div class="blog-card-meta">
-          <span>March 14, 2026</span>
-          <span>6 min read</span>
-        </div>
-        <a href="/blog/celpip-sample-answers" class="btn btn-ghost">Read</a>
-      </article>
+    <div class="grid grid-3 blog-article-grid" style="gap: var(--s-3); margin-bottom: var(--s-6);">
+      {recentArticles.map((article) => (
+        <article class="card blog-card">
+          <div class="blog-card-tag">{article.tag}</div>
+          <h3 style="margin-top: 0;">{article.title}</h3>
+          <p style="color: var(--text-muted); flex: 1;">{article.description}</p>
+          <div class="blog-card-meta">
+            <span>{article.date}</span>
+            <span>{article.meta}</span>
+          </div>
+          <a href={article.href} class="btn btn-ghost">Read</a>
+        </article>
+      ))}
     </div>
 
-    <div class="surface" style="padding: var(--s-5); margin-bottom: var(--s-6);">
-      <h2 style="margin-top: 0;">Browse by task</h2>
-      <p class="muted" style="margin-top: 0;">Use these links when you want one focused article for one specific exam task.</p>
-      <div class="grid grid-3" style="gap: var(--s-2);">
-        <a href="/blog/ielts-writing-task-1-academic-guide">IELTS Task 1 Academic</a>
-        <a href="/blog/ielts-writing-task-1-general-training-letter">IELTS Task 1 GT Letter</a>
-        <a href="/blog/ielts-writing-task-2-opinion-essay">IELTS Task 2 Opinion Essay</a>
-        <a href="/blog/ielts-writing-task-2-discussion-essay">IELTS Task 2 Discussion Essay</a>
-        <a href="/blog/ielts-writing-task-2-advantages-disadvantages">IELTS Advantages and Disadvantages</a>
-        <a href="/blog/ielts-writing-task-2-problem-solution">IELTS Problem Solution Essay</a>
-        <a href="/blog/ielts-speaking-part-3-questions-guide">IELTS Speaking Part 3</a>
-        <a href="/blog/ielts-listening-question-types">IELTS Listening Question Types</a>
-        <a href="/blog/ielts-listening-common-traps">IELTS Listening Common Traps</a>
-        <a href="/blog/celpip-writing-task-1-templates">CELPIP Task 1 Templates</a>
-        <a href="/blog/celpip-writing-task-2-templates">CELPIP Task 2 Templates</a>
-        <a href="/blog/celpip-speaking-part2">CELPIP Speaking Task 2</a>
-        <a href="/blog/celpip-speaking-task-5-comparing-options">CELPIP Speaking Task 5</a>
-        <a href="/blog/celpip-speaking-task-7-opinion-strategy">CELPIP Speaking Task 7</a>
-        <a href="/blog/celpip-reading-question-types">CELPIP Reading Question Types</a>
-        <a href="/blog/celpip-listening-question-types">CELPIP Listening Question Types</a>
+    <div class="grid grid-2 blog-task-groups" style="gap: var(--s-4);">
+      {taskGroups.map((group) => (
+        <section class="surface blog-task-group">
+          <h2 style="margin-top: 0;">{group.title}</h2>
+          <div class="stack" style="gap: var(--s-2);">
+            {group.links.map((link) => (
+              <a href={link.href} class="blog-task-link">{link.label}</a>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+
+    <div class="surface blog-cta">
+      <h2 style="margin-top: 0;">Want the new articles without checking the site every day?</h2>
+      <p style="max-width: 72ch; margin: 0 auto;">
+        The newsletter pulls together the newest lessons, social posts, and study suggestions in one weekly digest.
+      </p>
+      <div class="cluster" style="justify-content: center; margin-top: var(--s-3);">
+        <a href="/" class="btn btn-primary">Join the newsletter</a>
+        <a href="/about" class="btn btn-ghost">About the teacher</a>
       </div>
-    </div>
-
-    <div style="text-align: center; padding: var(--s-4); background: var(--surface); border-radius: 8px;">
-      <p style="color: var(--text-muted);">More articles are on the way. <a href="/" style="color: var(--accent);">Subscribe to the newsletter</a> to get new ones first.</p>
     </div>
 
     <div style="height: var(--s-6);"></div>
@@ -213,7 +283,27 @@ const pageKeywords =
 </Layout>
 
 <style>
-  .card {
+  .blog-start-grid {
+    gap: var(--s-3);
+  }
+
+  .blog-start-card,
+  .blog-task-group {
+    padding: var(--s-4);
+    border-radius: 16px;
+  }
+
+  .blog-featured {
+    padding: var(--s-5);
+  }
+
+  .blog-featured-note {
+    background: var(--accent-light);
+    padding: var(--s-5);
+    border-radius: 16px;
+  }
+
+  .blog-card {
     display: flex;
     flex-direction: column;
   }
@@ -224,9 +314,9 @@ const pageKeywords =
     background: var(--accent-light);
     color: var(--accent);
     padding: var(--s-1) var(--s-2);
-    border-radius: 4px;
-    font-size: 0.85rem;
-    font-weight: 700;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 800;
     margin-bottom: var(--s-2);
   }
 
@@ -239,8 +329,33 @@ const pageKeywords =
     flex-wrap: wrap;
   }
 
+  .blog-task-link {
+    display: block;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--surface) 82%, white 18%);
+    border: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .blog-task-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .blog-cta {
+    padding: var(--s-5);
+    text-align: center;
+    background: linear-gradient(135deg, rgba(23, 54, 86, 0.05) 0%, rgba(217, 72, 72, 0.08) 100%);
+    border-radius: 18px;
+  }
+
   @media (max-width: 768px) {
-    .grid {
+    .blog-start-grid,
+    .blog-article-grid,
+    .blog-task-groups {
       grid-template-columns: 1fr !important;
     }
   }

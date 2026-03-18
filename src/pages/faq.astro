@@ -2,35 +2,184 @@
 import Layout from "../layouts/Layout.astro";
 import { buildFAQSchema } from "../lib/seo";
 
+const faqSections = [
+  {
+    title: "About the lessons",
+    intro: "Use the free lessons when you want a clear explanation first and teacher support second.",
+    items: [
+      {
+        question: "Are the lessons really free?",
+        answer: "Yes. The lessons are free to read on the site. Paid support is only for students who want direct help such as tutoring, essay correction, or the writing score lab.",
+        body: "<p>Yes. The lessons are free to read on the site. Paid support is only for students who want direct help such as tutoring, essay correction, or the writing score lab.</p>",
+      },
+      {
+        question: "Where should I start if I feel lost?",
+        answer: "Start with the one skill that is lowering your score most. Do not try to fix everything in one day.",
+        body: "<p>Start with the one skill that is lowering your score most. If writing is weak, start with writing. If grammar errors keep appearing, start with one grammar point. The best first step is usually one focused lesson, not five random ones.</p>",
+      },
+      {
+        question: "How many lessons are there?",
+        answer: "There are hundreds of lessons across grammar, vocabulary, writing, and speaking.",
+        body: "<p>There are hundreds of lessons across grammar, vocabulary, writing, and speaking. The goal is not to read everything. The goal is to find the lesson that fixes the problem you have right now.</p>",
+      },
+      {
+        question: "How long is each lesson?",
+        answer: "Most lessons take about 5 to 15 minutes to read, depending on the topic.",
+        body: "<p>Most lessons take about 5 to 15 minutes to read, depending on the topic. The stronger approach is to read one lesson carefully, do the interactive task, and only then move to the next page.</p>",
+      },
+      {
+        question: "Are lessons for IELTS or CELPIP?",
+        answer: "Both. Many lessons help both exams because the underlying English skill is the same, while some pages are task-specific.",
+        body: "<p>Both. Many lessons help both exams because grammar, vocabulary, and sentence control overlap. Some pages are task-specific when the format changes, such as IELTS Writing Task 2 or CELPIP Writing Task 1.</p>",
+      },
+      {
+        question: "What level do the lessons cover?",
+        answer: "The site covers beginner to advanced levels, but the explanations are written to stay understandable even when the topic is harder.",
+        body: "<p>The site covers beginner to advanced levels. Even when the grammar point is B2 or C1, the explanation should still be readable for a lower-intermediate learner.</p>",
+      },
+      {
+        question: "Can I download the lessons?",
+        answer: "Not yet. Right now the lessons are designed for online study.",
+        body: "<p>Not yet. Right now the lessons are designed for online study on phone or desktop. If downloadable versions are added later, they will be announced on the site and through the newsletter.</p>",
+      },
+    ],
+  },
+  {
+    title: "About tutoring",
+    intro: "Use tutoring when you need direct feedback, speaking practice, or a study plan for a real deadline.",
+    items: [
+      {
+        question: "How much does tutoring cost?",
+        answer: "Tutoring is CA$30 for a 60-minute one-to-one lesson.",
+        body: "<p><strong>CA$30 for a 60-minute one-to-one lesson.</strong> The lesson is live and focused on the exam skill or score problem you want to fix.</p>",
+      },
+      {
+        question: "What happens after I contact you?",
+        answer: "You explain your exam and goal, we reply with a suitable next step, and then you choose whether to book.",
+        body: "<ol><li>You send your exam, level, and target.</li><li>We reply with the most suitable next step.</li><li>If tutoring is the right fit, we offer times and booking details.</li></ol>",
+      },
+      {
+        question: "What can we work on in tutoring?",
+        answer: "Tutoring can focus on speaking, writing, grammar, strategy, or a full study plan.",
+        body: "<ul><li><strong>Writing:</strong> structure, task response, sentence control, and rewriting</li><li><strong>Speaking:</strong> mock tests, fluency, pronunciation, and answer building</li><li><strong>Grammar:</strong> targeted explanation of repeated mistakes</li><li><strong>Strategy:</strong> timing, question handling, and study planning</li></ul>",
+      },
+      {
+        question: "Can you guarantee a score?",
+        answer: "No. No honest teacher can guarantee a score. What can be done is to diagnose the weak skill and help you improve it clearly.",
+        body: "<p>No. No honest teacher can guarantee a score. Test results still depend on your current level, the time you have, your practice habits, and how you perform on the day. What we can do is identify the weak skill and work on it directly.</p>",
+      },
+      {
+        question: "How many sessions do students usually need?",
+        answer: "That depends on the gap between your current score and target score.",
+        body: "<p>That depends on the gap between your current score and target score. Some students need a few focused sessions for writing or speaking. Others need a longer plan. The first conversation usually makes that much clearer.</p>",
+      },
+      {
+        question: "Do you offer group lessons?",
+        answer: "Sometimes, if a small group has the same goal and level.",
+        body: "<p>Sometimes. If a small group has a similar level and a similar target, contact us and ask. One-to-one teaching is still the main format because it gives better feedback.</p>",
+      },
+    ],
+  },
+  {
+    title: "About writing feedback",
+    intro: "Use writing feedback when you already practice on your own but still do not know why the score stays low.",
+    items: [
+      {
+        question: "How much does essay correction cost?",
+        answer: "Essay correction is CA$15 per piece.",
+        body: "<p><strong>CA$15 per piece.</strong> That is for direct feedback on your writing, not a generic score label.</p>",
+      },
+      {
+        question: "How long does it take to get feedback?",
+        answer: "Usually 24 to 48 hours, and sometimes up to 72 hours during busier periods.",
+        body: "<p>Usually 24 to 48 hours, and sometimes up to 72 hours during busier periods. If your exam is close, mention the date in your message.</p>",
+      },
+      {
+        question: "What kind of feedback do I get?",
+        answer: "You get comments on grammar, vocabulary, organization, and the main issues that are hurting the score.",
+        body: "<ul><li>Grammar and vocabulary corrections</li><li>Comments on organization and task response</li><li>An estimated score range</li><li>The main mistakes to fix next</li><li>Practical guidance for the next rewrite</li></ul>",
+      },
+      {
+        question: "Can you mark letters and emails too?",
+        answer: "Yes. IELTS Task 1 letters, CELPIP emails, and similar writing tasks can all be reviewed.",
+        body: "<p>Yes. IELTS Task 1 letters, CELPIP emails, survey responses, and similar writing tasks can all be reviewed.</p>",
+      },
+      {
+        question: "How is the writing score lab different from essay correction?",
+        answer: "The writing score lab is a subscription tool for faster repeated checks. Essay correction is a more direct reviewed service for individual pieces.",
+        body: "<p>The writing score lab is better when you want ongoing practice and quick repeated checks. Essay correction is better when you want more direct attention on one piece of writing.</p>",
+      },
+    ],
+  },
+  {
+    title: "General questions",
+    intro: "These are the questions people ask when they want to know how the site works overall.",
+    items: [
+      {
+        question: "Who is IELTS Corner for?",
+        answer: "The site is for IELTS and CELPIP students who want clearer teaching, stronger writing and speaking, or a more focused study plan.",
+        body: "<p>The site is for IELTS and CELPIP students who want clearer teaching, stronger writing and speaking, or a more focused study plan. Some people only use the free lessons. Others add tutoring or writing feedback when they need direct help.</p>",
+      },
+      {
+        question: "How do payments work?",
+        answer: "Payment details are shared once the service is confirmed. Current options include Stripe, PayPal, and e-transfer where appropriate.",
+        body: "<p>Payment details are shared once the service is confirmed. Current options include Stripe, PayPal, and e-transfer where appropriate.</p>",
+      },
+      {
+        question: "What if a service is not the right fit?",
+        answer: "Tell us quickly. The goal is to solve the problem directly, not make support frustrating.",
+        body: "<p>Tell us quickly. The goal is to solve the problem directly, not make support frustrating. More detailed policy information is available in the <a href=\"/terms\">terms of service</a>.</p>",
+      },
+      {
+        question: "Is there a privacy policy?",
+        answer: "Yes. The privacy policy explains what data is collected and how it is used.",
+        body: "<p>Yes. The <a href=\"/privacy\">privacy policy</a> explains what data is collected and how it is used.</p>",
+      },
+      {
+        question: "Still have a specific question?",
+        answer: "Use the contact page and include your exam, current level, and target.",
+        body: "<p><a href=\"/contact\">Use the contact page</a> and include your exam, current level, and target. That usually leads to a much more useful reply.</p>",
+      },
+    ],
+  },
+];
+
 const faqStructuredData = [
-  buildFAQSchema([
-    {
-      question: "Are the lessons really free?",
-      answer: "Yes. IELTS Corner lessons are free to read online. Revenue comes from tutoring and writing feedback services.",
-    },
-    {
-      question: "Are the lessons for IELTS or CELPIP?",
-      answer: "Most lessons support both IELTS and CELPIP, while some pages are specific to one exam or task type.",
-    },
-    {
-      question: "How much does tutoring cost?",
-      answer: "Tutoring costs CA$30 per hour for a 60-minute one-on-one lesson.",
-    },
-    {
-      question: "How much does essay correction cost?",
-      answer: "Essay correction costs CA$15 per essay and includes detailed feedback on grammar, vocabulary, organization, and an estimated band score.",
-    },
-    {
-      question: "How long does it take to get feedback?",
-      answer: "Feedback is usually returned within 24 to 48 hours, and sometimes up to 72 hours during busy periods.",
-    },
-  ]),
+  buildFAQSchema(
+    faqSections.flatMap((section) => (
+      section.items.map((item) => ({
+        question: item.question,
+        answer: item.answer,
+      }))
+    )),
+  ),
+];
+
+const quickRoutes = [
+  {
+    title: "Use free lessons",
+    text: "Best when you want to study one topic on your own first.",
+    href: "/lessons",
+    label: "Open lessons",
+  },
+  {
+    title: "Use tutoring",
+    text: "Best when your test date is close and you need direct guidance.",
+    href: "/tutoring",
+    label: "See tutoring",
+  },
+  {
+    title: "Use writing feedback",
+    text: "Best when your essays or emails keep losing marks and you do not know why.",
+    href: "/essay-correction",
+    label: "See writing feedback",
+  },
 ];
 ---
 
 <Layout
-  title="FAQ — IELTS Corner"
-  description="Frequently asked questions about IELTS Corner lessons, tutoring, essay correction, and exam preparation services."
+  title="FAQ | IELTS Corner"
+  description="Frequently asked questions about IELTS Corner lessons, tutoring, writing feedback, and study support."
   type="page"
   structuredData={faqStructuredData}
 >
@@ -38,284 +187,59 @@ const faqStructuredData = [
     <div class="hero" style={`--hero-bg: url('/heroes/faq.png');`}>
       <div class="hero-content">
         <h1>Frequently asked questions</h1>
+        <p>
+          Use this page when you want the short answer first. If your question is more specific,
+          the <a href="/contact">contact page</a> is the better next step.
+        </p>
       </div>
     </div>
 
     <div style="height: var(--s-6);"></div>
 
-    <!-- FAQ SECTIONS -->
+    <div class="grid grid-3 faq-routes">
+      {quickRoutes.map((route) => (
+        <article class="surface faq-route-card">
+          <h2 style="margin-top: 0;">{route.title}</h2>
+          <p>{route.text}</p>
+          <a href={route.href} class="btn btn-ghost">{route.label}</a>
+        </article>
+      ))}
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+
     <div class="stack" style="gap: var(--s-6);">
-      <!-- LESSONS FAQ -->
-      <div>
-        <h2>About the lessons</h2>
-        <div class="faq-group">
-          <details class="faq-item">
-            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
-              Are the lessons really free?
-            </summary>
-            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
-              <p>Yes! All 502 lessons are completely free. We want to help all students, no matter their budget. We make money from tutoring and essay correction services for students who want personalized help.</p>
-            </div>
-          </details>
+      {faqSections.map((section) => (
+        <section>
+          <h2>{section.title}</h2>
+          <p class="muted" style="margin-top: 0; max-width: 72ch;">{section.intro}</p>
 
-          <details class="faq-item">
-            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
-              How many lessons are there?
-            </summary>
-            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
-              <p>We have 502 lessons organized into 4 categories:</p>
-              <ul>
-                <li><strong>Grammar:</strong> 81 lessons (articles, tenses, conditionals, etc.)</li>
-                <li><strong>Vocabulary:</strong> 26 lessons (academic words, phrasal verbs, collocations)</li>
-                <li><strong>Writing:</strong> 20 lessons (essay structure, grammar, task types)</li>
-                <li><strong>Speaking:</strong> 15 lessons (pronunciation, fluency, confidence)</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
-              How long is each lesson?
-            </summary>
-            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
-              <p>Most lessons take 5–15 minutes to read. They're short and focused. You learn one idea, see examples, and get practice. No long videos or boring lectures.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
-              Are lessons for IELTS or CELPIP?
-            </summary>
-            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
-              <p>Both! Most lessons work for both exams. Each lesson shows examples from real IELTS and CELPIP tests. Some lessons are specific to one exam (e.g., IELTS essay task vs CELPIP writing task), but 90% of the content helps for both.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
-              What proficiency levels do you cover?
-            </summary>
-            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
-              <p>We have lessons for all levels:</p>
-              <ul>
-                <li><strong>A1-A2:</strong> Beginner lessons (basic grammar, simple words)</li>
-                <li><strong>B1-B2:</strong> Intermediate lessons (complex tenses, advanced vocabulary)</li>
-                <li><strong>C1:</strong> Advanced lessons (uncommon structures, formal writing)</li>
-              </ul>
-              <p>Start at your level. Move to harder lessons when you're ready.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
-              Can I download the lessons?
-            </summary>
-            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
-              <p>Not yet. We're working on a downloadable PDF version of all lessons. For now, you can read them online on any device (phone, tablet, computer).</p>
-            </div>
-          </details>
-        </div>
-      </div>
-
-      <!-- TUTORING FAQ -->
-      <div>
-        <h2>About tutoring</h2>
-        <div class="faq-group">
-          <details class="faq-item">
-            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
-              How much does tutoring cost?
-            </summary>
-            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
-              <p><strong>CA$30 per hour.</strong> Each lesson is exactly 60 minutes of one-on-one instruction. No hidden fees. No payment until you book.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
-              How do I book a tutoring session?
-            </summary>
-            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
-              <ol>
-                <li>Go to our <a href="/tutoring">tutoring page</a></li>
-                <li>Click "Book a session" or <a href="/contact">contact us</a></li>
-                <li>Tell us your exam (IELTS or CELPIP) and what you want help with</li>
-                <li>We'll reply with available times</li>
-                <li>Choose your time and pay via Stripe/PayPal/e-transfer</li>
-                <li>Get a Zoom link before your lesson</li>
-              </ol>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
-              What can we work on in tutoring?
-            </summary>
-            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
-              <ul>
-                <li><strong>Writing feedback:</strong> We read your essays and give detailed band-score feedback</li>
-                <li><strong>Speaking practice:</strong> We do mock speaking tests and give you feedback</li>
-                <li><strong>Grammar help:</strong> Confused about a grammar topic? We explain it clearly</li>
-                <li><strong>Strategy:</strong> Time management, test-day strategy, answering different question types</li>
-                <li><strong>Confidence:</strong> Nervous about the test? We help you practice and feel ready</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
-              Do you offer a test guarantee?
-            </summary>
-            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
-              <p>We can't guarantee a test score (every student is different), but we can guarantee you'll improve. If you're not satisfied with tutoring quality after your first 2 hours, we offer a full refund—no questions asked.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
-              How long do most students study with a tutor?
-            </summary>
-            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
-              <p>It depends on your starting level and target score:</p>
-              <ul>
-                <li><strong>Beginner → Band 6:</strong> Usually 20-30 hours</li>
-                <li><strong>Band 5-6 → Band 7:</strong> Usually 15-25 hours</li>
-                <li><strong>Band 7 → Band 8:</strong> Usually 10-15 hours</li>
-              </ul>
-              <p>Many students book 2-4 hours per week and study on their own the rest of the time.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
-              Can I get a group discount?
-            </summary>
-            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
-              <p>Yes! If you have 3 or more people interested in tutoring, <a href="/contact">contact us</a> for a group rate. We offer discounts for 3+ students.</p>
-            </div>
-          </details>
-        </div>
-      </div>
-
-      <!-- ESSAY CORRECTION FAQ -->
-      <div>
-        <h2>About essay correction</h2>
-        <div class="faq-group">
-          <details class="faq-item">
-            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
-              How much does essay correction cost?
-            </summary>
-            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
-              <p><strong>CA$15 per essay.</strong> This includes detailed feedback on grammar, vocabulary, organization, and estimated band score.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
-              How long does it take to get feedback?
-            </summary>
-            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
-              <p>We usually provide feedback within 24-48 hours. During busy times (test season), it may take up to 72 hours.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
-              What kind of feedback do I get?
-            </summary>
-            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
-              <p>For each essay, you get:</p>
-              <ul>
-                <li>Grammar and vocabulary corrections (inline)</li>
-                <li>Organization feedback (what works, what doesn't)</li>
-                <li>Estimated IELTS/CELPIP band score</li>
-                <li>2-3 main areas to improve</li>
-                <li>Specific tips for your next essay</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
-              Can you correct informal emails or letters too?
-            </summary>
-            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
-              <p>Yes! We can correct any writing from IELTS Task 1 (letter, email, report) or CELPIP writing tasks. The price is the same: CA$15 per piece.</p>
-            </div>
-          </details>
-        </div>
-      </div>
-
-      <!-- GENERAL FAQ -->
-      <div>
-        <h2>General questions</h2>
-        <div class="faq-group">
-          <details class="faq-item">
-            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
-              Who is IELTS Corner for?
-            </summary>
-            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
-              <p>Anyone preparing for IELTS or CELPIP. We work with:</p>
-              <ul>
-                <li>Students who want to study alone with free lessons</li>
-                <li>Students who want personal help from a tutor</li>
-                <li>Students who want feedback on their writing</li>
-                <li>Beginners (A1) to advanced learners (C1)</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
-              What payment methods do you accept?
-            </summary>
-            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
-              <ul>
-                <li><strong>Stripe:</strong> Credit/debit cards (Visa, Mastercard, American Express)</li>
-                <li><strong>PayPal:</strong> PayPal accounts and cards</li>
-                <li><strong>e-Transfer:</strong> Canadian bank e-transfer (only)</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
-              Can I get a refund?
-            </summary>
-            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
-              <ul>
-                <li><strong>Tutoring:</strong> Full refund for first 2 hours if unsatisfied (within 7 days)</li>
-                <li><strong>Essay correction:</strong> Full refund if you're not satisfied with quality</li>
-                <li><strong>eBook:</strong> Full refund for first 30 days</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
-              Is there a privacy policy?
-            </summary>
-            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
-              <p>Yes. We take privacy seriously. Your information is safe. <a href="/privacy">Read our privacy policy →</a></p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary style="cursor: pointer; padding: var(--s-2); background: var(--surface); border: 1px solid var(--text-muted); border-radius: 4px; font-weight: 600;">
-              Still have questions?
-            </summary>
-            <div style="padding: var(--s-3); border-left: 3px solid var(--accent);">
-              <p><a href="/contact">Contact us →</a> We're happy to help. Email, WhatsApp, or contact form.</p>
-            </div>
-          </details>
-        </div>
-      </div>
+          <div class="faq-group">
+            {section.items.map((item) => (
+              <details class="faq-item">
+                <summary class="faq-summary">{item.question}</summary>
+                <div class="faq-answer" set:html={item.body}></div>
+              </details>
+            ))}
+          </div>
+        </section>
+      ))}
     </div>
 
-    <div style="height: var(--s-6);"></div>
+    <div style="height: var(--s-7);"></div>
   </section>
 </Layout>
 
 <style>
+  .faq-routes {
+    gap: var(--s-3);
+  }
+
+  .faq-route-card {
+    padding: var(--s-4);
+    border-radius: 16px;
+  }
+
   .faq-group {
     display: flex;
     flex-direction: column;
@@ -324,15 +248,53 @@ const faqStructuredData = [
 
   .faq-item {
     all: revert;
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: 14px;
+    overflow: hidden;
   }
 
-  .faq-item summary:hover {
-    background-color: var(--text-muted) !important;
-    opacity: 0.7;
+  .faq-summary {
+    cursor: pointer;
+    padding: 1rem 1.1rem;
+    font-weight: 700;
+    list-style: none;
   }
 
-  .faq-item[open] summary {
-    background-color: var(--accent-light) !important;
+  .faq-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-summary::after {
+    content: "+";
+    float: right;
     color: var(--accent);
+    font-size: 1.1rem;
+    font-weight: 800;
+  }
+
+  .faq-item[open] .faq-summary {
+    background: var(--accent-light);
+  }
+
+  .faq-item[open] .faq-summary::after {
+    content: "-";
+  }
+
+  .faq-answer {
+    padding: 0 1.1rem 1.1rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .faq-answer :global(p:first-child) {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .faq-routes {
+      grid-template-columns: 1fr !important;
+    }
   }
 </style>

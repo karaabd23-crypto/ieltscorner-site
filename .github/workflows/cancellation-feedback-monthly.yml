@@ -48,8 +48,6 @@ jobs:
           CANCEL_FEEDBACK_STATE_FILE: .cache/cancellation-feedback-state.json
           CANCEL_FEEDBACK_REPORT_DIR: .cache/cancellation-feedback-reports
           CANCEL_FEEDBACK_REPORT_TO: ${{ secrets.CANCEL_FEEDBACK_REPORT_TO }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
         run: |

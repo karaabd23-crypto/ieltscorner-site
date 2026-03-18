@@ -11,8 +11,6 @@ import {
 const DEFAULT_FORM_NAME = 'subscription-cancel-feedback';
 const DEFAULT_STATE_FILE = '.cache/cancellation-feedback-state.json';
 const DEFAULT_REPORT_DIR = '.cache/cancellation-feedback-reports';
-const DEFAULT_MODEL = 'gpt-4.1-mini';
-
 function stripWrappingQuotes(value) {
   const trimmed = String(value || '').trim();
   if (
@@ -224,77 +222,8 @@ function fallbackActionPlan(summary) {
   };
 }
 
-function extractJson(text) {
-  const start = text.indexOf('{');
-  const end = text.lastIndexOf('}');
-  if (start === -1 || end === -1 || end <= start) {
-    throw new Error('No JSON object found in model response.');
-  }
-  return text.slice(start, end + 1);
-}
-
-async function generateActionPlanWithAI(summary) {
-  const apiKey = process.env.OPENAI_API_KEY || '';
-  if (!apiKey) {
-    return fallbackActionPlan(summary);
-  }
-
-  const model = process.env.OPENAI_MODEL || DEFAULT_MODEL;
-  const input = {
-    total: summary.total,
-    averageSatisfaction: summary.averageSatisfaction,
-    topReasons: summary.reasonCounts,
-    topPriorities: summary.priorityCounts,
-    usagePatterns: summary.usageCounts,
-    comments: summary.comments.slice(0, 15),
-    keepRequests: summary.keepRequests.slice(0, 15),
-  };
-
-  const response = await fetch('https://api.openai.com/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      model,
-      temperature: 0.2,
-      messages: [
-        {
-          role: 'system',
-          content: 'You are a product improvement analyst. Return strict JSON only.',
-        },
-        {
-          role: 'user',
-          content:
-            'Analyze cancellation feedback data and return JSON with keys: executiveSummary (string), actionItems (array of 3-6 strings), experiments (array of 2-4 strings). Data:\n'
-            + JSON.stringify(input),
-        },
-      ],
-    }),
-  });
-
-  if (!response.ok) {
-    const text = await response.text();
-    throw new Error(`OpenAI API failed (${response.status}): ${text}`);
-  }
-
-  const payload = await response.json();
-  const text = String(payload?.choices?.[0]?.message?.content || '').trim();
-  const parsed = JSON.parse(extractJson(text));
-  if (!parsed || typeof parsed !== 'object') {
-    throw new Error('Model returned empty action plan');
-  }
-
-  return {
-    executiveSummary: normalizeText(parsed.executiveSummary, 500),
-    actionItems: Array.isArray(parsed.actionItems)
-      ? parsed.actionItems.map((item) => normalizeText(item, 280)).filter(Boolean).slice(0, 6)
-      : [],
-    experiments: Array.isArray(parsed.experiments)
-      ? parsed.experiments.map((item) => normalizeText(item, 280)).filter(Boolean).slice(0, 4)
-      : [],
-  };
+function generateActionPlan(summary) {
+  return fallbackActionPlan(summary);
 }
 
 function formatCountLines(rows) {
@@ -455,7 +384,7 @@ async function main() {
   let actionPlan = fallbackActionPlan(summary);
 
   try {
-    actionPlan = await generateActionPlanWithAI(summary);
+    actionPlan = generateActionPlan(summary);
   } catch (error) {
     console.log(`[warn] AI action plan unavailable. Using fallback plan. Reason: ${error.message}`);
   }
