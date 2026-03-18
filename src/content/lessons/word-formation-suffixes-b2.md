@@ -41,13 +41,13 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The city needs a more effect response to late buses.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The city needs a more effect response to late buses.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The city needs a more effective response to late buses.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Regular speaking practice improved pronounce and confident.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Regular speaking practice improved pronounce and confident.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Regular speaking practice improved pronunciation and confidence.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -93,8 +93,8 @@ quiz:
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>using a suffix that does not match the sentence slot</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The city needs a more effect response to late buses.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The city needs a more effective response to late buses.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The new policy brought stable to the bus schedule.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The new policy brought stability to the bus schedule.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> identify the slot first, then choose the suffix for noun, adjective, adverb, or verb form</p>
 </article>
 <article class="lesson-error-card">

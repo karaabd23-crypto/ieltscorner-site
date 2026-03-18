@@ -41,15 +41,15 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Well, there are many perspectives and many factors, and in my opinion this topic is complex.</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Well, you know, I think it is good because it helps people in daily life.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>First of all, I support the idea because it improves reliability for daily commuters.</p>
-  <p class="lesson-card-note">The better answer starts doing the real speaking job immediately.</p>
+  <p class="lesson-card-note">The better answer stays on the same idea but starts doing the real speaking job immediately.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>It is good, and also, like, there are many reasons, and yes, that is all.</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>For example, one change in my area made transport better.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>For example, one new bus lane in my area reduced delays during rush hour.</p>
-  <p class="lesson-card-note">The stronger sentence adds meaning instead of filler.</p>
+  <p class="lesson-card-note">The stronger sentence keeps the same function but adds meaning instead of filler.</p>
 </article>
 </div>
 
@@ -92,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>delaying the direct answer</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Well, there are many sides to this question and it is hard to say.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>First of all, I support the idea because it improves reliability for daily commuters.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Answer first, then extend.</p>
+  <h3>opening with filler instead of a point</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Well, you know, there are many things to say about it.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The main reason I support it is that it saves commuters time every day.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Start with a real point, then add a linker if needed.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using fillers instead of content</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Like, you know, it is good because it is good for people.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>For example, one new bus lane in my area reduced delays during rush hour.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Replace filler with one real reason or detail.</p>
+  <h3>using an empty example</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>For example, something changed in my town and it became better.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>For example, a new bus lane near the station cut the morning queue in my area.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use a concrete example that adds real information.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>finishing without a clear final line</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>So yes, maybe, that is my idea.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Overall, that is why I think this option is more practical.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Prepare one short closing sentence you can use naturally.</p>
+  <h3>ending with a filler summary</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>So yeah, that is basically it, I think.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Overall, the change works because it makes daily travel more predictable.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Keep the final sentence short but meaningful.</p>
 </article>
 </div>
 

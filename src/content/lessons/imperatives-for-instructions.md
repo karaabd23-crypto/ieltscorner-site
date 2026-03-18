@@ -42,13 +42,13 @@ draft: false
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>You open the booklet and read question one.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>You open the booklet and read question one.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Open the booklet and read question one.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Do not to forget your ID on test day.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Do not to forget your ID on test day.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Do not forget your ID on test day.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -94,8 +94,8 @@ draft: false
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>adding an unnecessary subject or infinitive marker to an imperative</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>You open the booklet and read question one.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Open the booklet and read question one.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Please to check the heading before you write.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Please check the heading before you write.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> use the base verb directly for the instruction</p>
 </article>
 <article class="lesson-error-card">

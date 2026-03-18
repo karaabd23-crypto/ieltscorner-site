@@ -41,13 +41,13 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The meeting was putted off until Friday.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The meeting was putted off until Friday.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The meeting was put off until Friday.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Students need to find why the answer is wrong out.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Students need to find why the answer is wrong out.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Students need to find out why the answer is wrong.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -93,8 +93,8 @@ quiz:
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>breaking the phrasal verb form or word order</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The meeting was putted off until Friday.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The meeting was put off until Friday.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Please look the word up in your notes before class.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Please look up the word in your notes before class.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> learn the verb and particle together and check object position carefully</p>
 </article>
 <article class="lesson-error-card">

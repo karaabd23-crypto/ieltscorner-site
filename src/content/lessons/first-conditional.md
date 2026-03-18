@@ -42,13 +42,13 @@ draft: false
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>If governments invest in transit, traffic reduced quickly.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>If governments invest in transit, traffic reduced quickly.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>If governments invest in transit, traffic will reduce quickly.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>If students will review tonight, they will feel calmer tomorrow.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>If students will review tonight, they will feel calmer tomorrow.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>If students review tonight, they will feel calmer tomorrow.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -94,8 +94,8 @@ draft: false
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>breaking the normal first conditional pattern</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>If governments invest in transit, traffic reduced quickly.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>If governments invest in transit, traffic will reduce quickly.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>If students study consistently, they would improve their scores quickly.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>If students study consistently, they will improve their scores quickly.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> use present simple after if and a future result clause</p>
 </article>
 <article class="lesson-error-card">

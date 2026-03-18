@@ -41,13 +41,13 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>When Maria met Ana, she said she needed help.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>When Maria met Ana, she said she needed help.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>When Maria met Ana, Maria said she needed help.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The managers told the interns that they were unprepared.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The managers told the interns that they were unprepared.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The managers told the interns that the report was unprepared.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -93,8 +93,8 @@ quiz:
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>using unclear pronoun references in complex sentences</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>When Maria met Ana, she said she needed help.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>When Maria met Ana, Maria said she needed help.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>James told David that he should revise the introduction.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>James told David that David should revise the introduction.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> repeat the noun when a pronoun could refer to more than one person or thing</p>
 </article>
 <article class="lesson-error-card">

@@ -41,13 +41,13 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>This route is more cheap than the old one.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>This route is more cheap than the old one.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>This route is cheaper than the old one.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>It is the most easiest option for students.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>It is the most easiest option for students.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>It is the easiest option for students.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -93,8 +93,8 @@ quiz:
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>combining comparison forms incorrectly (more cheaper, most easiest)</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>This route is more cheap than the old one.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>This route is cheaper than the old one.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>This phone is more better than my old one.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>This phone is better than my old one.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> use either -er/-est or more/most, but not both together</p>
 </article>
 <article class="lesson-error-card">

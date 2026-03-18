@@ -41,13 +41,13 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I bought book and umbrella from market.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>I bought book and umbrella from market.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>I bought a book and an umbrella from the market.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Sun rises in east every day.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Sun rises in east every day.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The sun rises in the east every day.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -93,8 +93,8 @@ quiz:
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>omitting a, an, or the where a noun needs one</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>I bought book and umbrella from market.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>I bought a book and an umbrella from the market.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>She wants to become engineer in future.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>She wants to become an engineer in the future.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> check countable singular nouns and known specific references</p>
 </article>
 <article class="lesson-error-card">

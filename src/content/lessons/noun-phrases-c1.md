@@ -41,13 +41,13 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The city launched a policy transport new plan.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The city launched a policy transport new plan.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The city launched a new public transport plan.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The report discussed housing affordable long-term options.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The report discussed housing affordable long-term options.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The report discussed long-term affordable housing options.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -93,8 +93,8 @@ quiz:
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>stacking modifiers in an order that makes the noun phrase hard to read</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The city launched a policy transport new plan.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The city launched a new public transport plan.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The school announced a support reading after-class program.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The school announced an after-class reading support program.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> keep the head noun clear and move modifiers into a natural order</p>
 </article>
 <article class="lesson-error-card">

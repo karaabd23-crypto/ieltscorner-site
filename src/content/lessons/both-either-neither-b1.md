@@ -41,13 +41,13 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Both the teacher and the students was ready on time.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Both the teacher and the students was ready on time.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Both the teacher and the students were ready on time.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Either the library or the classrooms is open this evening.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Either the library or the classrooms is open this evening.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Either the library or the classrooms are open this evening.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -93,8 +93,8 @@ quiz:
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>breaking parallel structure or agreement in a correlative pair</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Both the teacher and the students was ready on time.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Both the teacher and the students were ready on time.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Neither the buses nor the train service were reliable today.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Neither the buses nor the train service was reliable today.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> keep the pair parallel and match the verb to the real subject near it when needed</p>
 </article>
 <article class="lesson-error-card">

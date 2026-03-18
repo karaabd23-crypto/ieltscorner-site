@@ -41,13 +41,13 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>She speaks English fluent during presentations.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>She speaks English fluent during presentations.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>She speaks English fluently during presentations.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I every day revise vocabulary on the bus.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>I every day revise vocabulary on the bus.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>I revise vocabulary every day on the bus.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -93,8 +93,8 @@ quiz:
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>using the wrong form or placing the adverb in an awkward position</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>She speaks English fluent during presentations.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>She speaks English fluently during presentations.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The train arrived lately, so many workers were delayed.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The train arrived late, so many workers were delayed.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> choose the correct adverb form and place it where the sentence sounds natural</p>
 </article>
 <article class="lesson-error-card">

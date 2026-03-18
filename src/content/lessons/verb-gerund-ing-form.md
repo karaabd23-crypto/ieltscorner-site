@@ -42,13 +42,13 @@ draft: false
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>She avoided to answer the question directly.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>She avoided to answer the question directly.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>She avoided answering the question directly.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>They decided expanding the program next term.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>They decided expanding the program next term.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>They decided to expand the program next term.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -94,8 +94,8 @@ draft: false
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>using the wrong form after the first verb or preposition</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>She avoided to answer the question directly.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>She avoided answering the question directly.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>He is interested to joining the evening class.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>He is interested in joining the evening class.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> learn each verb pattern as a chunk and keep the next form consistent</p>
 </article>
 <article class="lesson-error-card">

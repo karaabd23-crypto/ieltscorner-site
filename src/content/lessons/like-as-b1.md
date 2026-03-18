@@ -41,13 +41,13 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>She works like a teacher at the college.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>She works like a teacher at the college.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>She works as a teacher at the college.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Like the report shows, delays fell in May.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Like the report shows, delays fell in May.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>As the report shows, delays fell in May.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -93,8 +93,8 @@ quiz:
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>using like where English needs as</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>She works like a teacher at the college.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>She works as a teacher at the college.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>He spoke as a local resident, not like an expert witness.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>He spoke as a local resident, not as an expert witness.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> use like before a noun phrase and as before a clause or role</p>
 </article>
 <article class="lesson-error-card">

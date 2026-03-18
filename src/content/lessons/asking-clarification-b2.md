@@ -41,15 +41,15 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Well, there are many perspectives and many factors, and in my opinion this topic is complex.</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Sorry, I did not really understand what you said at the end, so maybe you can say it again somehow.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Sorry, could you repeat the last part of the question?</p>
-  <p class="lesson-card-note">The better answer starts doing the real speaking job immediately.</p>
+  <p class="lesson-card-note">The better answer stays on the same idea but starts doing the real speaking job immediately.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>It is good, and also, like, there are many reasons, and yes, that is all.</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>If the question is about public transport, I think it is good for many reasons.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>If you mean public transport, I would say it should receive more funding.</p>
-  <p class="lesson-card-note">The stronger sentence adds meaning instead of filler.</p>
+  <p class="lesson-card-note">The stronger sentence keeps the same function but adds meaning instead of filler.</p>
 </article>
 </div>
 
@@ -92,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>delaying the direct answer</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Well, there are many sides to this question and it is hard to say.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Sorry, could you repeat the last part of the question?</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Answer first, then extend.</p>
+  <h3>using a long apology instead of a quick repair</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Sorry, I did not really catch that question because there were many words and I got confused.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Sorry, did you mean the cost of transport or the quality of the service?</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use one short repair that targets the missing part.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using fillers instead of content</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Like, you know, it is good because it is good for people.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>If you mean public transport, I would say it should receive more funding.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Replace filler with one real reason or detail.</p>
+  <h3>returning with a vague answer</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>If it is about transport, I think it is good in general.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>If you are asking about buses, I think they need more evening routes.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Once the meaning is clear, answer with a specific point.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>finishing without a clear final line</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>So yes, maybe, that is my idea.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Overall, that is why I think this option is more practical.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Prepare one short closing sentence you can use naturally.</p>
+  <h3>ending the recovery without commitment</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>So yes, maybe that is what I think.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>So in that case, I would choose the second option.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Close the repaired answer with one clear decision.</p>
 </article>
 </div>
 

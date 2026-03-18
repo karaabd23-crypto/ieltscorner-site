@@ -41,15 +41,15 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Well, there are many perspectives and many factors, and in my opinion this topic is complex.</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I want to describe a place or event, and there are many things about it.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>I would like to describe a community festival I attended last summer in my neighborhood park.</p>
-  <p class="lesson-card-note">The better answer starts doing the real speaking job immediately.</p>
+  <p class="lesson-card-note">The better answer stays on the same idea but starts doing the real speaking job immediately.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>It is good, and also, like, there are many reasons, and yes, that is all.</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>It was good, and many things happened there.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>What made it memorable was not only the music but also the way local families worked together to organize the event.</p>
-  <p class="lesson-card-note">The stronger sentence adds meaning instead of filler.</p>
+  <p class="lesson-card-note">The stronger sentence keeps the same function but adds meaning instead of filler.</p>
 </article>
 </div>
 
@@ -92,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>delaying the direct answer</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Well, there are many sides to this question and it is hard to say.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>I would like to describe a community festival I attended last summer in my neighborhood park.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Answer first, then extend.</p>
+  <h3>starting the long turn without context</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>I want to talk about a place, and there are many things I can say.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I am going to describe a lakeside park near my home that I visit most weekends.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Open with when, where, or what the topic is.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using fillers instead of content</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Like, you know, it is good because it is good for people.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>What made it memorable was not only the music but also the way local families worked together to organize the event.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Replace filler with one real reason or detail.</p>
+  <h3>repeating general praise instead of detail</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>It was really nice, very interesting, and good in many ways.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>One detail I remember clearly is the wooden bridge that crosses the center of the park.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Add one concrete image or event to each content point.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>finishing without a clear final line</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>So yes, maybe, that is my idea.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Overall, that is why I think this option is more practical.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Prepare one short closing sentence you can use naturally.</p>
+  <h3>finishing without reflection</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>That is the place and those are the things about it.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>It still matters to me because it is where I go when I need a quiet break.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> End with why the place or event mattered to you.</p>
 </article>
 </div>
 

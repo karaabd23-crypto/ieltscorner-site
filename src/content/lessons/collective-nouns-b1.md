@@ -41,13 +41,13 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>A list of solutions are on the board.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>A list of solutions are on the board.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>A list of solutions is on the board.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The number of students have increased this year.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The number of students have increased this year.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The number of students has increased this year.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -93,8 +93,8 @@ quiz:
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>matching the verb to the nearest noun instead of the true subject</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>A list of solutions are on the board.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>A list of solutions is on the board.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>A series of workshops were added this term.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>A series of workshops was added this term.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> find the real subject first, then choose the verb form</p>
 </article>
 <article class="lesson-error-card">

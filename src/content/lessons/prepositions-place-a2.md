@@ -41,13 +41,13 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>She is interested on environmental policy.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>She is interested on environmental policy.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>She is interested in environmental policy.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>We discussed about the budget during class.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>We discussed about the budget during class.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>We discussed the budget during class.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -93,8 +93,8 @@ quiz:
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>using incorrect or unnecessary prepositions after common verbs and adjectives</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>She is interested on environmental policy.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>She is interested in environmental policy.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>He apologized on arriving late to class.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>He apologized for arriving late to class.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> learn high-frequency verb-preposition and adjective-preposition pairs</p>
 </article>
 <article class="lesson-error-card">

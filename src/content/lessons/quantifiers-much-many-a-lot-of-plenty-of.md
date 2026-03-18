@@ -42,13 +42,13 @@ draft: false
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>There are much reasons to improve public transport.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>There are much reasons to improve public transport.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>There are many reasons to improve public transport.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The city has few money for new rail lines.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The city has few money for new rail lines.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The city has little money for new rail lines.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -94,8 +94,8 @@ draft: false
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>mixing countable and uncountable quantifiers</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>There are much reasons to improve public transport.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>There are many reasons to improve public transport.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>We have many information about this proposal.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>We have much information about this proposal.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> use many/few with countable nouns and much/little with uncountable nouns</p>
 </article>
 <article class="lesson-error-card">

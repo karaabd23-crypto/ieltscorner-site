@@ -41,13 +41,13 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The committee will decide next week, and this decide may affect funding.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The committee will decide next week, and this decide may affect funding.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The committee will decide next week, and this decision may affect funding.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The company wants to expand, but the expand will take two years.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The company wants to expand, but the expand will take two years.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The company wants to expand, but the expansion will take two years.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -93,8 +93,8 @@ quiz:
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>keeping a verb form where a noun is required</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The committee will decide next week, and this decide may affect funding.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The committee will decide next week, and this decision may affect funding.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Their investigate into the accident took three months.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Their investigation into the accident took three months.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> check noun positions after determiners, possessives, and prepositions</p>
 </article>
 <article class="lesson-error-card">

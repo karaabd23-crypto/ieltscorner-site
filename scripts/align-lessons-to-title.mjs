@@ -1340,8 +1340,8 @@ function renderExampleCardsSection(title, examples) {
     .map(
       (example, index) => `<article class="lesson-example-card">
   <p class="lesson-card-label">Example ${index + 1}</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>${escapeHtml(stripMarkdownMarkers(example.weak))}</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>${escapeHtml(stripMarkdownMarkers(example.strong))}</p>
+  <p class="lesson-line lesson-line-weak"><span>${escapeHtml(stripMarkdownMarkers(example.weakLabel || 'Too weak'))}</span>${escapeHtml(stripMarkdownMarkers(example.weak))}</p>
+  <p class="lesson-line lesson-line-strong"><span>${escapeHtml(stripMarkdownMarkers(example.strongLabel || 'Better'))}</span>${escapeHtml(stripMarkdownMarkers(example.strong))}</p>
   <p class="lesson-card-note">${escapeHtml(stripMarkdownMarkers(example.why))}</p>
 </article>`
     )
@@ -3395,14 +3395,14 @@ function grammarExtraErrors(kind, topic) {
         return [
           {
             error: 'using would have in the if-clause',
-            weak: 'If we would have checked the address, we would have arrived on time.',
-            strong: 'If we had checked the address, we would have arrived on time.',
+            weak: 'If the driver would have checked the fuel level, the trip would have gone more smoothly.',
+            strong: 'If the driver had checked the fuel level, the trip would have gone more smoothly.',
             fix: 'use past perfect, not would have, in the if-clause',
           },
           {
             error: 'using a present or future result in an unreal past sentence',
-            weak: 'If she had left earlier, she will catch the train.',
-            strong: 'If she had left earlier, she would have caught the train.',
+            weak: 'If the team had booked earlier, they will get cheaper seats.',
+            strong: 'If the team had booked earlier, they would have got cheaper seats.',
             fix: 'keep the result in the unreal past with would have + past participle',
           },
         ];
@@ -4008,14 +4008,14 @@ function grammarBody(topic, level, examText) {
     modals: [
       {
         error: 'adding to after a modal verb',
-        weak: 'Students should to check the final paragraph.',
-        strong: 'Students should check the final paragraph.',
+        weak: 'She might to finish before lunch if the meeting ends early.',
+        strong: 'She might finish before lunch if the meeting ends early.',
         fix: 'use the base verb directly after the modal',
       },
       {
         error: 'choosing a modal with the wrong strength',
-        weak: 'You must bring an umbrella because it might rain later.',
-        strong: 'You should bring an umbrella because it might rain later.',
+        weak: 'Staff must carry a light jacket because the office may feel cold later.',
+        strong: 'Staff should carry a light jacket because the office may feel cold later.',
         fix: 'match the modal strength to the certainty or advice level you mean',
       },
     ],
@@ -4035,15 +4035,15 @@ function grammarBody(topic, level, examText) {
     ],
   }[family] || [
     {
-      error: `using ${focusTerm} in a way that changes the intended meaning`,
-      weak: pack.practice1[0],
-      strong: pack.answerHints[0],
-      fix: `start from the meaning first, then choose the ${focusTerm} form that fits naturally`,
-    },
-    {
       error: `using ${focusTerm} without checking natural sentence flow`,
       weak: pack.practice1[1],
       strong: pack.answerHints[1],
+      fix: `start from the meaning first, then choose the ${focusTerm} form that fits naturally`,
+    },
+    {
+      error: `building a sentence with ${focusTerm} that still sounds unstable after the first edit`,
+      weak: pack.practice1[2],
+      strong: pack.answerHints[2],
       fix: `read the full sentence after editing and keep the version that sounds clear and natural`,
     },
   ];
@@ -4061,17 +4061,19 @@ ${renderExampleCardsSection(`Real-World Examples with ${topic}`, [
     {
       weak: ex1Weak,
       strong: ex1Better,
+      weakLabel: 'Incorrect',
       why: 'This correction matches the intended meaning and sounds natural in context.',
     },
     {
       weak: ex2Weak,
       strong: ex2Better,
+      weakLabel: 'Incorrect',
       why: 'This version is clearer and shows the pattern more accurately.',
     },
   ])}
 
 ${renderVisibleErrorSection(`Common Errors with ${topic}`, [
-    { error: pack.err1, weak: ex1Weak, strong: ex1Better, fix: pack.fix1 },
+    { error: pack.err1, weak: pack.practice1[0], strong: pack.answerHints[0], fix: pack.fix1 },
     extraErrors[0],
     extraErrors[1],
   ])}
@@ -4730,14 +4732,14 @@ ${renderLessonSupportSection('Best when you need expert correction on punctuatio
 
 ${renderExampleCardsSection(`Real-World Examples with ${topic}`, [
     {
-      weak: 'This topic is important and has many effects.',
+      weak: 'This approach seems useful because it helps people in several ways.',
       strong: ctx.claim,
-      why: 'The better sentence gives the reader a direct, testable point.',
+      why: 'The better sentence states the same point with a clearer claim and a sharper focus.',
     },
     {
-      weak: 'I think this is good and bad in many ways.',
+      weak: 'For example, one local program made services better for residents.',
       strong: ctx.detail,
-      why: 'The stronger version adds a real detail instead of a vague opinion.',
+      why: 'The stronger version keeps the same example move but adds a real detail instead of vague praise.',
     },
   ])}
 
@@ -5282,8 +5284,8 @@ function writingBodyEnhanced(topic, level, examText) {
 
   const presentation = presentationByFamily[family] || {
     lead: 'This lesson focuses on one writing move that changes clarity and score at the same time.',
-    weakA: 'This topic is important and has many effects.',
-    weakB: 'I think this is good and bad in many ways.',
+    weakA: 'This approach seems useful because it helps people in several ways.',
+    weakB: 'For example, one local program made services better for residents.',
     errors: [
       {
         error: 'starting to write before deciding the task purpose',
@@ -5372,6 +5374,8 @@ function speakingBodyEnhanced(topic, level, examText) {
     ],
     exampleA: `I think this approach is useful because ${ctx.claim.charAt(0).toLowerCase()}${ctx.claim.slice(1)}`,
     exampleB: `For example, ${ctx.detail.charAt(0).toLowerCase()}${ctx.detail.slice(1)}`,
+    weakA: 'I think this approach is good because it helps people in many ways.',
+    weakB: 'For example, one local change made things better for some people.',
     prompt: ctx.prompt,
     answers: [
       'A clear opening answer gives the response direction immediately.',
@@ -5383,6 +5387,26 @@ function speakingBodyEnhanced(topic, level, examText) {
       'Did I add one reason and one example?',
       'Did I stay on topic?',
       'Did I close the answer clearly?',
+    ],
+    errors: [
+      {
+        error: 'delaying the direct answer',
+        weak: 'Well, there are many sides to this question and it is hard to say.',
+        strong: `My main point is that ${ctx.claim.charAt(0).toLowerCase()}${ctx.claim.slice(1)}`,
+        fix: 'Answer first, then extend.',
+      },
+      {
+        error: 'using fillers instead of content',
+        weak: 'Like, you know, it is good because it is good for people.',
+        strong: `A clear example is that ${ctx.detail.charAt(0).toLowerCase()}${ctx.detail.slice(1)}`,
+        fix: 'Replace filler with one real reason or detail.',
+      },
+      {
+        error: 'finishing without a clear final line',
+        weak: 'So yes, maybe, that is my idea.',
+        strong: 'Overall, that is why this option makes more sense in practice.',
+        fix: 'Prepare one short closing sentence you can use naturally.',
+      },
     ],
   };
 
@@ -5400,6 +5424,8 @@ function speakingBodyEnhanced(topic, level, examText) {
     ];
     guide.exampleA = 'Sorry, could you repeat the last part of the question?';
     guide.exampleB = 'If you mean public transport, I would say it should receive more funding.';
+    guide.weakA = 'Sorry, I did not really understand what you said at the end, so maybe you can say it again somehow.';
+    guide.weakB = 'If the question is about public transport, I think it is good for many reasons.';
     guide.prompt = 'What do you usually do if you do not understand part of a speaking question?';
     guide.answers = [
       'A good clarification phrase is short, polite, and specific.',
@@ -5411,6 +5437,26 @@ function speakingBodyEnhanced(topic, level, examText) {
       'Do I return to the answer immediately after the repair?',
       'Does my tone stay calm?',
       'Can I do this without sounding memorized?',
+    ];
+    guide.errors = [
+      {
+        error: 'using a long apology instead of a quick repair',
+        weak: 'Sorry, I did not really catch that question because there were many words and I got confused.',
+        strong: 'Sorry, did you mean the cost of transport or the quality of the service?',
+        fix: 'Use one short repair that targets the missing part.',
+      },
+      {
+        error: 'returning with a vague answer',
+        weak: 'If it is about transport, I think it is good in general.',
+        strong: 'If you are asking about buses, I think they need more evening routes.',
+        fix: 'Once the meaning is clear, answer with a specific point.',
+      },
+      {
+        error: 'ending the recovery without commitment',
+        weak: 'So yes, maybe that is what I think.',
+        strong: 'So in that case, I would choose the second option.',
+        fix: 'Close the repaired answer with one clear decision.',
+      },
     ];
   } else if (family === 'confidence') {
     guide.explanation =
@@ -5426,6 +5472,8 @@ function speakingBodyEnhanced(topic, level, examText) {
     ];
     guide.exampleA = 'Yes, I do, mainly because reliable transport saves time during the workweek.';
     guide.exampleB = 'For example, when the bus arrives on time, I can reach my office without extra stress.';
+    guide.weakA = 'Yes, I do, because it is good and useful in daily life.';
+    guide.weakB = 'For example, it helps me get to work more easily.';
     guide.answers = [
       'Direct answer first, then reason, then example is a safe confidence frame.',
       'Short pauses are better than filler words.',
@@ -5436,6 +5484,26 @@ function speakingBodyEnhanced(topic, level, examText) {
       'Did I add a reason and an example?',
       'Did I use pauses instead of filler sounds?',
       'Did I end clearly instead of fading out?',
+    ];
+    guide.errors = [
+      {
+        error: 'sounding unsure in the opening',
+        weak: 'Um, yes, maybe I do, but I am not completely sure.',
+        strong: 'Yes, I do, because reliable transport keeps my daily schedule under control.',
+        fix: 'Start with one direct sentence instead of a hesitant lead-in.',
+      },
+      {
+        error: 'giving a weak example',
+        weak: 'For example, it can help me sometimes.',
+        strong: 'For instance, an on-time train helped me reach an interview without rushing last month.',
+        fix: 'Use one concrete event instead of a vague possibility.',
+      },
+      {
+        error: 'letting the answer fade out',
+        weak: 'So yes, that is all, I guess.',
+        strong: 'That is why I usually trust public transport when I have an important appointment.',
+        fix: 'Finish with a firm closing sentence.',
+      },
     ];
   } else if (family === 'fluency') {
     guide.explanation =
@@ -5451,6 +5519,8 @@ function speakingBodyEnhanced(topic, level, examText) {
     ];
     guide.exampleA = 'First of all, I support the idea because it improves reliability for daily commuters.';
     guide.exampleB = 'For example, one new bus lane in my area reduced delays during rush hour.';
+    guide.weakA = 'Well, you know, I think it is good because it helps people in daily life.';
+    guide.weakB = 'For example, one change in my area made transport better.';
     guide.answers = [
       'Good linkers connect real ideas; they do not just fill silence.',
       'A direct opening makes the whole answer sound more fluent.',
@@ -5461,6 +5531,26 @@ function speakingBodyEnhanced(topic, level, examText) {
       'Did each linker add a real function?',
       'Did I avoid empty filler repetition?',
       'Did I close the answer clearly?',
+    ];
+    guide.errors = [
+      {
+        error: 'opening with filler instead of a point',
+        weak: 'Well, you know, there are many things to say about it.',
+        strong: 'The main reason I support it is that it saves commuters time every day.',
+        fix: 'Start with a real point, then add a linker if needed.',
+      },
+      {
+        error: 'using an empty example',
+        weak: 'For example, something changed in my town and it became better.',
+        strong: 'For example, a new bus lane near the station cut the morning queue in my area.',
+        fix: 'Use a concrete example that adds real information.',
+      },
+      {
+        error: 'ending with a filler summary',
+        weak: 'So yeah, that is basically it, I think.',
+        strong: 'Overall, the change works because it makes daily travel more predictable.',
+        fix: 'Keep the final sentence short but meaningful.',
+      },
     ];
   } else if (family === 'part1') {
     guide.explanation =
@@ -5476,6 +5566,8 @@ function speakingBodyEnhanced(topic, level, examText) {
     ];
     guide.exampleA = 'Yes, I do. I usually take the bus because parking near my office is expensive.';
     guide.exampleB = 'Not really. I prefer reading at home because it helps me relax after work.';
+    guide.weakA = 'Yes, maybe. It depends on the day and the situation.';
+    guide.weakB = 'Reading at home is nice because it is good and relaxing.';
     guide.prompt = 'Do you prefer studying alone or with other people?';
     guide.answers = [
       'A clear personal answer is better than a generic speech.',
@@ -5487,6 +5579,26 @@ function speakingBodyEnhanced(topic, level, examText) {
       'Did I add one personal detail?',
       'Did I keep the response short enough for Part 1?',
       'Does it sound like a real conversation answer?',
+    ];
+    guide.errors = [
+      {
+        error: 'giving an unclear personal answer',
+        weak: 'Yes, maybe, depending on many things and different situations.',
+        strong: 'Yes, I do, because studying alone helps me focus without distraction.',
+        fix: 'Give a direct personal answer before adding detail.',
+      },
+      {
+        error: 'adding a generic reason',
+        weak: 'It is better because it is good for me.',
+        strong: 'I usually study alone because I can control the pace and take short breaks when I need them.',
+        fix: 'Use one personal reason instead of a broad claim.',
+      },
+      {
+        error: 'speaking for too long without shape',
+        weak: 'There are many advantages and disadvantages, so it is difficult to explain everything now.',
+        strong: 'That is why I usually choose to work on my own for short tasks.',
+        fix: 'End once the short answer feels complete.',
+      },
     ];
   } else if (family === 'part2' || family === 'experience') {
     guide.explanation =
@@ -5502,6 +5614,8 @@ function speakingBodyEnhanced(topic, level, examText) {
     ];
     guide.exampleA = 'I would like to describe a community festival I attended last summer in my neighborhood park.';
     guide.exampleB = 'What made it memorable was not only the music but also the way local families worked together to organize the event.';
+    guide.weakA = 'I want to describe a place or event, and there are many things about it.';
+    guide.weakB = 'It was good, and many things happened there.';
     guide.prompt = 'Describe a place in your city that you enjoy visiting.';
     guide.answers = [
       'Three planned content points are usually enough for a full answer.',
@@ -5513,6 +5627,26 @@ function speakingBodyEnhanced(topic, level, examText) {
       'Did I move through them in a clear order?',
       'Did I add specific detail instead of repeating the same idea?',
       'Did I finish with a closing thought?',
+    ];
+    guide.errors = [
+      {
+        error: 'starting the long turn without context',
+        weak: 'I want to talk about a place, and there are many things I can say.',
+        strong: 'I am going to describe a lakeside park near my home that I visit most weekends.',
+        fix: 'Open with when, where, or what the topic is.',
+      },
+      {
+        error: 'repeating general praise instead of detail',
+        weak: 'It was really nice, very interesting, and good in many ways.',
+        strong: 'One detail I remember clearly is the wooden bridge that crosses the center of the park.',
+        fix: 'Add one concrete image or event to each content point.',
+      },
+      {
+        error: 'finishing without reflection',
+        weak: 'That is the place and those are the things about it.',
+        strong: 'It still matters to me because it is where I go when I need a quiet break.',
+        fix: 'End with why the place or event mattered to you.',
+      },
     ];
   } else if (family === 'part3' || family === 'speaking-opinion') {
     guide.explanation =
@@ -5528,6 +5662,8 @@ function speakingBodyEnhanced(topic, level, examText) {
     ];
     guide.exampleA = 'I support investing more in public transport because it helps a larger number of people every day.';
     guide.exampleB = 'For example, better bus service can reduce commuting stress for workers who do not own cars.';
+    guide.weakA = 'I think this idea is good for many reasons.';
+    guide.weakB = 'For example, it helps people and makes things better.';
     guide.answers = [
       'A clear opening opinion makes the whole response easier to build.',
       'One developed reason is stronger than several vague points.',
@@ -5538,6 +5674,26 @@ function speakingBodyEnhanced(topic, level, examText) {
       'Did I support it with at least one reason and one example?',
       'Did I stay on one clear line of thought?',
       'Did I close the answer cleanly?',
+    ];
+    guide.errors = [
+      {
+        error: 'postponing the opinion',
+        weak: 'This topic has many sides, so it is difficult to answer immediately.',
+        strong: 'I support more public transport investment because it helps more residents on a daily basis.',
+        fix: 'State the opinion in the first sentence.',
+      },
+      {
+        error: 'using an empty supporting example',
+        weak: 'For example, it helps people and improves things in society.',
+        strong: 'For instance, frequent bus service helps shift workers reach jobs outside the city center.',
+        fix: 'Choose one specific consequence or case.',
+      },
+      {
+        error: 'closing without a clear position',
+        weak: 'So yes, there are many reasons for that idea.',
+        strong: 'Overall, that is why I see transport funding as the more practical policy choice.',
+        fix: 'End by restating your position in one line.',
+      },
     ];
   } else if (family === 'pronunciation') {
     guide.explanation =
@@ -5553,6 +5709,8 @@ function speakingBodyEnhanced(topic, level, examText) {
     ];
     guide.exampleA = 'PUBLIC transport should receive MORE funding than new ROADS.';
     guide.exampleB = 'I LIKE it because it SAVES time and MAKES daily life EASier.';
+    guide.weakA = 'Public transport should receive more funding than new roads.';
+    guide.weakB = 'I like it because it saves time and makes daily life easier.';
     guide.prompt = 'Record yourself answering a 30-second question and mark the stressed words.';
     guide.answers = [
       'Stressed keywords carry the main meaning of the sentence.',
@@ -5565,28 +5723,27 @@ function speakingBodyEnhanced(topic, level, examText) {
       'Could a listener hear my sentence endings clearly?',
       'Did I record and listen back at least once?',
     ];
+    guide.errors = [
+      {
+        error: 'keeping all words equally flat',
+        weak: 'People should invest in public transport because it helps the city.',
+        strong: 'People should invest in PUBLIC transport because it helps the CITY.',
+        fix: 'Stress the words that carry the main meaning.',
+      },
+      {
+        error: 'losing the message in one long chunk',
+        weak: 'I like public transport because it saves time and makes life easier for people every day.',
+        strong: 'I like public transport | because it saves TIME | and makes daily life EASier.',
+        fix: 'Break the sentence into short spoken chunks.',
+      },
+      {
+        error: 'dropping the ending and final stress',
+        weak: 'It save time and make life easier.',
+        strong: 'It SAVES time and MAKES life easier.',
+        fix: 'Keep endings audible and stress the key verbs clearly.',
+      },
+    ];
   }
-
-  const errors = [
-    {
-      error: 'delaying the direct answer',
-      weak: 'Well, there are many sides to this question and it is hard to say.',
-      strong: guide.exampleA,
-      fix: 'Answer first, then extend.',
-    },
-    {
-      error: 'using fillers instead of content',
-      weak: 'Like, you know, it is good because it is good for people.',
-      strong: guide.exampleB,
-      fix: 'Replace filler with one real reason or detail.',
-    },
-    {
-      error: 'finishing without a clear final line',
-      weak: 'So yes, maybe, that is my idea.',
-      strong: 'Overall, that is why I think this option is more practical.',
-      fix: 'Prepare one short closing sentence you can use naturally.',
-    },
-  ];
 
   return `${renderTeachingSection({
     lead: 'This lesson helps you sound organized without sounding memorized.',
@@ -5604,18 +5761,18 @@ function speakingBodyEnhanced(topic, level, examText) {
 
 ${renderExampleCardsSection(`Real-World Examples with ${topic}`, [
     {
-      weak: 'Well, there are many perspectives and many factors, and in my opinion this topic is complex.',
+      weak: guide.weakA,
       strong: guide.exampleA,
-      why: 'The better answer starts doing the real speaking job immediately.',
+      why: 'The better answer stays on the same idea but starts doing the real speaking job immediately.',
     },
     {
-      weak: 'It is good, and also, like, there are many reasons, and yes, that is all.',
+      weak: guide.weakB,
       strong: guide.exampleB,
-      why: 'The stronger sentence adds meaning instead of filler.',
+      why: 'The stronger sentence keeps the same function but adds meaning instead of filler.',
     },
   ])}
 
-${renderVisibleErrorSection(`Common Errors with ${topic}`, errors)}
+${renderVisibleErrorSection(`Common Errors with ${topic}`, guide.errors)}
 
 ${buildSkillPracticeLab({
     topic,

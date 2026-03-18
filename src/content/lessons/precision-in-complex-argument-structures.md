@@ -42,13 +42,13 @@ draft: false
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I think this plan is kind of bad for cities.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>I think this plan is kind of bad for cities.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>This plan is unlikely to benefit cities in the long term.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>People absolutely hate the change, and it is a total disaster.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>People absolutely hate the change, and it is a total disaster.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Many residents appear dissatisfied with the change.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -94,8 +94,8 @@ draft: false
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>using casual or dramatic grammar in a task that needs measured formal English</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>I think this plan is kind of bad for cities.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>This plan is unlikely to benefit cities in the long term.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>This idea is super good because everybody will love it.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>This idea could be effective because it addresses a common local need.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> replace spoken-style wording with precise, supportable claims and more controlled sentence framing</p>
 </article>
 <article class="lesson-error-card">

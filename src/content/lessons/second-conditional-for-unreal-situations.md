@@ -42,13 +42,13 @@ draft: false
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>If I had more time, I will join the course.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>If I had more time, I will join the course.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>If I had more time, I would join the course.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>If I have a car, I would drive to work every day.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>If I have a car, I would drive to work every day.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>If I had a car, I would drive to work every day.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -94,8 +94,8 @@ draft: false
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>mixing real and unreal forms in a second conditional sentence</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>If I had more time, I will join the course.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>If I had more time, I would join the course.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>If I knew the answer, I will tell you now.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>If I knew the answer, I would tell you now.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> use if + past form and would + base verb for unreal present or future meaning</p>
 </article>
 <article class="lesson-error-card">

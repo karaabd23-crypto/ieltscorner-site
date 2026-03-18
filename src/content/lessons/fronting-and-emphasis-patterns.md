@@ -42,13 +42,13 @@ draft: false
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Never I have seen such a confusing timetable.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Never I have seen such a confusing timetable.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Never have I seen such a confusing timetable.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Only after the final practice she felt ready.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Only after the final practice she felt ready.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Only after the final practice did she feel ready.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -94,8 +94,8 @@ draft: false
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>changing word order for emphasis without keeping the grammar accurate</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Never I have seen such a confusing timetable.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Never have I seen such a confusing timetable.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Rarely we find such clear instructions in practice books.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Rarely do we find such clear instructions in practice books.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> when emphasis triggers inversion or a cleft pattern, rebuild the whole structure correctly</p>
 </article>
 <article class="lesson-error-card">

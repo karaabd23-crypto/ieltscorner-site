@@ -42,13 +42,13 @@ draft: false
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The pilot reduced delays, however the old route still needs repairs.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The pilot reduced delays, however the old route still needs repairs.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The pilot reduced delays; however, the old route still needs repairs.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The council approved three changes, more buses, better lighting and longer hours.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The council approved three changes, more buses, better lighting and longer hours.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The council approved three changes: more buses, better lighting, and longer hours.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -94,8 +94,8 @@ draft: false
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>using punctuation marks without checking the grammar on each side</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The pilot reduced delays, however the old route still needs repairs.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The pilot reduced delays; however, the old route still needs repairs.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The report was useful however it needed clearer headings.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The report was useful; however, it needed clearer headings.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> check clause completeness or list structure first, then choose the punctuation mark</p>
 </article>
 <article class="lesson-error-card">

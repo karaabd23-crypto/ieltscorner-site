@@ -41,15 +41,15 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Well, there are many perspectives and many factors, and in my opinion this topic is complex.</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I think this approach is good because it helps people in many ways.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>I think this approach is useful because focused investment can improve access, reliability, and quality of life.</p>
-  <p class="lesson-card-note">The better answer starts doing the real speaking job immediately.</p>
+  <p class="lesson-card-note">The better answer stays on the same idea but starts doing the real speaking job immediately.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>It is good, and also, like, there are many reasons, and yes, that is all.</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>For example, one local change made things better for some people.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>For example, a pilot program improved service response times in one local district.</p>
-  <p class="lesson-card-note">The stronger sentence adds meaning instead of filler.</p>
+  <p class="lesson-card-note">The stronger sentence keeps the same function but adds meaning instead of filler.</p>
 </article>
 </div>
 
@@ -94,21 +94,21 @@ quiz:
   <p class="lesson-card-label">Common problem 1</p>
   <h3>delaying the direct answer</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Well, there are many sides to this question and it is hard to say.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>I think this approach is useful because focused investment can improve access, reliability, and quality of life.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>My main point is that focused investment can improve access, reliability, and quality of life.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> Answer first, then extend.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
   <h3>using fillers instead of content</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Like, you know, it is good because it is good for people.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>For example, a pilot program improved service response times in one local district.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>A clear example is that a pilot program improved service response times in one local district.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> Replace filler with one real reason or detail.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
   <h3>finishing without a clear final line</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>So yes, maybe, that is my idea.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Overall, that is why I think this option is more practical.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Overall, that is why this option makes more sense in practice.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> Prepare one short closing sentence you can use naturally.</p>
 </article>
 </div>

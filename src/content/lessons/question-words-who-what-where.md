@@ -42,13 +42,13 @@ draft: false
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Why you are late for class today?</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Why you are late for class today?</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Why are you late for class today?</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Never I have seen such a clear explanation.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Never I have seen such a clear explanation.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Never have I seen such a clear explanation.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -94,8 +94,8 @@ draft: false
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>placing auxiliaries and subjects in the wrong sequence</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Why you are late for class today?</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Why are you late for class today?</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>What means this policy for low-income workers?</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>What does this policy mean for low-income workers?</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> check whether your sentence requires statement order or inversion</p>
 </article>
 <article class="lesson-error-card">

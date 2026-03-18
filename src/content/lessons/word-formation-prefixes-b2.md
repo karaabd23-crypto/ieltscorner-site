@@ -41,13 +41,13 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Several passengers understood the platform announcement because of the background noise.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Several passengers understood the platform announcement because of the background noise.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Several passengers misunderstood the platform announcement because of the background noise.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Please write the summary after the supervisor gives feedback.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Please write the summary after the supervisor gives feedback.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Please rewrite the summary after the supervisor gives feedback.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -93,8 +93,8 @@ quiz:
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>using the base word where the sentence needs a prefix meaning</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Several passengers understood the platform announcement because of the background noise.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Several passengers misunderstood the platform announcement because of the background noise.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The manager asked us to check the data again, so we had to view the file before submission.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The manager asked us to check the data again, so we had to review the file before submission.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> choose the prefix from meaning first: negative (un-/in-/im-), wrong (mis-), opposite (dis-), or repetition (re-)</p>
 </article>
 <article class="lesson-error-card">

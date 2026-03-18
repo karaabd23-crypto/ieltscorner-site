@@ -42,13 +42,13 @@ draft: false
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I believe whether the program needs more funding.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>I believe whether the program needs more funding.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>I believe that the program needs more funding.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The committee has not decided if the centre should stay open.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The committee has not decided if the centre should stay open.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The committee has not decided whether the centre should stay open.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -94,8 +94,8 @@ draft: false
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>choosing the wrong noun-clause opener</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>I believe whether the program needs more funding.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>I believe that the program needs more funding.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The teacher explained if the deadline had changed.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The teacher explained that the deadline had changed.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> use that for reported information and whether for a yes/no idea</p>
 </article>
 <article class="lesson-error-card">

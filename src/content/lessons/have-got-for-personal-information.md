@@ -42,13 +42,13 @@ draft: false
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>She do not need extra time for this section.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>She do not need extra time for this section.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>She does not need extra time for this section.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>There is many reasons to revise the final paragraph.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>There is many reasons to revise the final paragraph.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>There are many reasons to revise the final paragraph.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -94,8 +94,8 @@ draft: false
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>choosing the wrong helper verb or subject agreement in the clause</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>She do not need extra time for this section.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>She does not need extra time for this section.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>He do not understand the final instruction.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>He does not understand the final instruction.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> match the auxiliary to the subject and sentence job before you build the rest of the clause</p>
 </article>
 <article class="lesson-error-card">

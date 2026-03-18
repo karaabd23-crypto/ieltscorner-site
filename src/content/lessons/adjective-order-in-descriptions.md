@@ -42,13 +42,13 @@ draft: false
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>She bought a leather red bag for work.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>She bought a leather red bag for work.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>She bought a red leather bag for work.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>They live in a house modern large near downtown.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>They live in a house modern large near downtown.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>They live in a large modern house near downtown.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -94,8 +94,8 @@ draft: false
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>placing adjectives in a random order before the noun</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>She bought a leather red bag for work.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>She bought a red leather bag for work.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>He wore a cotton blue shirt to the interview.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>He wore a blue cotton shirt to the interview.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> follow a natural sequence such as opinion, size, age, shape, color, origin, material</p>
 </article>
 <article class="lesson-error-card">

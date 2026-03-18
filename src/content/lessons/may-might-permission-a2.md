@@ -41,13 +41,13 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Students should to check the final paragraph.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Students should to check the final paragraph.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Students should check the final paragraph.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The delays can to continue if repairs are postponed.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The delays can to continue if repairs are postponed.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The delays may continue if repairs are postponed.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -93,22 +93,22 @@ quiz:
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>using the wrong form or strength after a modal verb</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Students should to check the final paragraph.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Students should check the final paragraph.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>You must to submit the form before Friday.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>You must submit the form before Friday.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> use the base verb after the modal and choose the modal that matches the real meaning</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
   <h3>adding to after a modal verb</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Students should to check the final paragraph.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Students should check the final paragraph.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>She might to finish before lunch if the meeting ends early.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>She might finish before lunch if the meeting ends early.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> use the base verb directly after the modal</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
   <h3>choosing a modal with the wrong strength</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>You must bring an umbrella because it might rain later.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>You should bring an umbrella because it might rain later.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Staff must carry a light jacket because the office may feel cold later.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Staff should carry a light jacket because the office may feel cold later.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> match the modal strength to the certainty or advice level you mean</p>
 </article>
 </div>

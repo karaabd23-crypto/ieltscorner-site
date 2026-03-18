@@ -41,13 +41,13 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>If we would have checked the map, we would have avoided the traffic.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>If we would have checked the map, we would have avoided the traffic.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>If we had checked the map, we would have avoided the traffic.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>If she had left earlier, she will catch the train.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>If she had left earlier, she will catch the train.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>If she had left earlier, she would have caught the train.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -93,22 +93,22 @@ quiz:
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>using the wrong verb pattern in an unreal past sentence</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>If we would have checked the map, we would have avoided the traffic.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>If we had checked the map, we would have avoided the traffic.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>If they had studied earlier, they will have finished on time.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>If they had studied earlier, they would have finished on time.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> use past perfect after if and would have + past participle in the result clause</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
   <h3>using would have in the if-clause</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>If we would have checked the address, we would have arrived on time.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>If we had checked the address, we would have arrived on time.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>If the driver would have checked the fuel level, the trip would have gone more smoothly.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>If the driver had checked the fuel level, the trip would have gone more smoothly.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> use past perfect, not would have, in the if-clause</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
   <h3>using a present or future result in an unreal past sentence</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>If she had left earlier, she will catch the train.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>If she had left earlier, she would have caught the train.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>If the team had booked earlier, they will get cheaper seats.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>If the team had booked earlier, they would have got cheaper seats.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> keep the result in the unreal past with would have + past participle</p>
 </article>
 </div>

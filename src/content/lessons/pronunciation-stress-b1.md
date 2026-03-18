@@ -41,15 +41,15 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Well, there are many perspectives and many factors, and in my opinion this topic is complex.</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Public transport should receive more funding than new roads.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>PUBLIC transport should receive MORE funding than new ROADS.</p>
-  <p class="lesson-card-note">The better answer starts doing the real speaking job immediately.</p>
+  <p class="lesson-card-note">The better answer stays on the same idea but starts doing the real speaking job immediately.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>It is good, and also, like, there are many reasons, and yes, that is all.</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I like it because it saves time and makes daily life easier.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>I LIKE it because it SAVES time and MAKES daily life EASier.</p>
-  <p class="lesson-card-note">The stronger sentence adds meaning instead of filler.</p>
+  <p class="lesson-card-note">The stronger sentence keeps the same function but adds meaning instead of filler.</p>
 </article>
 </div>
 
@@ -92,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>delaying the direct answer</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Well, there are many sides to this question and it is hard to say.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>PUBLIC transport should receive MORE funding than new ROADS.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Answer first, then extend.</p>
+  <h3>keeping all words equally flat</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>People should invest in public transport because it helps the city.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>People should invest in PUBLIC transport because it helps the CITY.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Stress the words that carry the main meaning.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using fillers instead of content</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Like, you know, it is good because it is good for people.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>I LIKE it because it SAVES time and MAKES daily life EASier.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Replace filler with one real reason or detail.</p>
+  <h3>losing the message in one long chunk</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>I like public transport because it saves time and makes life easier for people every day.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I like public transport | because it saves TIME | and makes daily life EASier.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Break the sentence into short spoken chunks.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>finishing without a clear final line</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>So yes, maybe, that is my idea.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Overall, that is why I think this option is more practical.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Prepare one short closing sentence you can use naturally.</p>
+  <h3>dropping the ending and final stress</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>It save time and make life easier.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>It SAVES time and MAKES life easier.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Keep endings audible and stress the key verbs clearly.</p>
 </article>
 </div>
 

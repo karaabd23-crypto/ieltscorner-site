@@ -89,6 +89,35 @@ function countMatches(text, pattern) {
   return m ? m.length : 0;
 }
 
+function stripHtml(text) {
+  return String(text || '')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&#10024;|&#129517;|&#9888;&#65039;|&#129514;|&#127919;|&#128172;/g, ' ')
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&amp;/g, '&');
+}
+
+function normalizeLessonLine(text) {
+  return stripHtml(text)
+    .replace(/^\s*(too weak|better|weak|strong|incorrect|correct)\s*/i, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase();
+}
+
+function extractLessonLines(sectionText, kind) {
+  const pattern = new RegExp(
+    `<p class="lesson-line lesson-line-${kind}">[\\s\\S]*?<\\/p>`,
+    'gi'
+  );
+  const matches = String(sectionText || '').match(pattern) || [];
+  return matches
+    .map((match) => normalizeLessonLine(match))
+    .filter(Boolean);
+}
+
 function countPanelListItems(text, panelClass) {
   const match = String(text || '').match(
     new RegExp(`<section class="${panelClass}"[\\s\\S]*?<ul>([\\s\\S]*?)<\\/ul>`, 'i')
@@ -194,6 +223,26 @@ function checkFile(fileName, body, metadata) {
 
   if (!/^##\s+Examples\b/im.test(body)) {
     problems.push('missing section: Examples');
+  } else {
+    const examples = section(body, 'Examples');
+
+    if (metadata?.category?.toLowerCase() === 'grammar' && /<span>Too weak<\/span>/i.test(examples)) {
+      problems.push('grammar lesson examples must label bad model sentences as Incorrect, not Too weak');
+    }
+
+    const exampleLines = new Set([
+      ...extractLessonLines(examples, 'weak'),
+      ...extractLessonLines(examples, 'strong'),
+    ]);
+    const commonErrors = section(body, 'Common Mistakes');
+    const repeatedLines = [
+      ...extractLessonLines(commonErrors, 'weak'),
+      ...extractLessonLines(commonErrors, 'strong'),
+    ].filter((line) => exampleLines.has(line));
+
+    if (repeatedLines.length > 0) {
+      problems.push('Examples and Common Mistakes reuse the same model sentences; use distinct pairs');
+    }
   }
 
   const lessonMap = lessonMapBlock(body);

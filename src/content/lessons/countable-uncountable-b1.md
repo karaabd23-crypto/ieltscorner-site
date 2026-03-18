@@ -41,13 +41,13 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The city policy update improve commuter access, but the sentence form is unstable.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The city policy update improve commuter access, but the sentence form is unstable.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The city policy update improves commuter access, and the sentence form is stable.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Students in one district reported progress, but the structure of the explanation is unclear.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Students in one district reported progress, but the structure of the explanation is unclear.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Students in one district reported progress, and the explanation is grammatically clear.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -93,8 +93,8 @@ quiz:
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>using the correct idea with an incorrect form</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The city policy update improve commuter access, but the sentence form is unstable.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The city policy update improves commuter access, and the sentence form is stable.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The council approve the plan, but the timeline details remain unclear.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The council approved the plan, but the timeline details remain unclear.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> separate meaning choice from form checking, then edit for accuracy</p>
 </article>
 <article class="lesson-error-card">

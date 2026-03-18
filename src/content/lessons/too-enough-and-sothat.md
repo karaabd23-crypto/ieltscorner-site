@@ -42,13 +42,13 @@ draft: false
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The room was too noisy that we left early.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The room was too noisy that we left early.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The room was so noisy that we left early.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>There was not enough chairs for everyone.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>There was not enough chairs for everyone.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>There were not enough chairs for everyone.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -94,8 +94,8 @@ draft: false
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>mixing too, enough, and so ... that patterns</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The room was too noisy that we left early.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The room was so noisy that we left early.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>She was enough confident to lead the discussion.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>She was confident enough to lead the discussion.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> choose the structure from the exact meaning: excess, sufficiency, or full result clause</p>
 </article>
 <article class="lesson-error-card">

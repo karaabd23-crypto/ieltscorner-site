@@ -41,13 +41,13 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I do not understand what does the chart show.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>I do not understand what does the chart show.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>I do not understand what the chart shows.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>What students need are more quiet study space.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>What students need are more quiet study space.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>What students need is more quiet study space.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
@@ -93,8 +93,8 @@ quiz:
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>using question order inside a what-clause</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>I do not understand what does the chart show.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>I do not understand what the chart shows.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>She explained what did the graph mean in the final section.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>She explained what the graph meant in the final section.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> keep statement order after verbs like know, explain, and show</p>
 </article>
 <article class="lesson-error-card">

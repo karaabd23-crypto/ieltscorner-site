@@ -41,13 +41,13 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>This topic is important and has many effects.</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>This approach seems useful because it helps people in several ways.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>I completely agree that city budgets should prioritize public transport because it improves access for workers and reduces long-term congestion costs.</p>
   <p class="lesson-card-note">The stronger sentence gives the paragraph a clear direction.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I think this is good and bad in many ways.</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>For example, one local program made services better for residents.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>One practical reason is reliability: after one district added bus-only lanes, average commute delays fell by 18% during peak hours.</p>
   <p class="lesson-card-note">The better version develops the idea instead of circling around it.</p>
 </article>
