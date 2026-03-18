@@ -9,12 +9,13 @@ const pageStructuredData = [
   ]),
 ];
 
-const pageKeywords = "IELTS blog, CELPIP blog, IELTS writing tips, IELTS speaking tips, CELPIP writing tips, CELPIP speaking tips, IELTS strategy articles, CELPIP strategy articles";
+const pageKeywords =
+  "IELTS blog, CELPIP blog, IELTS writing tips, IELTS speaking tips, CELPIP writing tips, CELPIP speaking tips, IELTS strategy articles, CELPIP strategy articles";
 ---
 
 <Layout
   title="IELTS and CELPIP Blog | Strategy Guides and Exam Tips"
-  description="IELTS and CELPIP strategy guides, exam tips, and high-intent articles for writing, speaking, reading, and listening improvement."
+  description="IELTS and CELPIP strategy guides, exam tips, and practical articles for writing, speaking, reading, and listening improvement."
   type="page"
   keywords={pageKeywords}
   structuredData={pageStructuredData}
@@ -22,193 +23,173 @@ const pageKeywords = "IELTS blog, CELPIP blog, IELTS writing tips, IELTS speakin
   <section class="section" style="padding-top: var(--s-6);">
     <div class="hero" style={`--hero-bg: url('/heroes/blog.png');`}>
       <div class="hero-content">
-        <h1>IELTS & CELPIP strategy blog</h1>
-        <p>Task-level guides, score-improvement articles, and practical exam strategy for the queries students actually search.</p>
+        <h1>IELTS and CELPIP articles</h1>
+        <p>
+          Use these guides when you need a clear explanation of one task, one score problem,
+          or one study decision.
+        </p>
       </div>
     </div>
 
     <div style="height: var(--s-6);"></div>
 
-    <!-- FEATURED POST -->
     <div class="surface feature" style="padding: var(--s-5); margin-bottom: var(--s-6);">
       <div class="grid grid-2" style="align-items: center; gap: var(--s-4);">
         <div>
           <div style="display: inline-block; background: var(--accent); color: white; padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
-            FEATURED
+            Featured
           </div>
           <h2 style="margin-top: 0;">IELTS Writing Task 2 Structure: The Format That Keeps Scores Stable</h2>
-          <p style="color: var(--text-muted);">A direct guide to IELTS Writing Task 2 structure, paragraph flow, and the mistakes that drag essays down.</p>
-          <div style="display: flex; gap: var(--s-3); color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--s-2);">
-            <span>📅 March 14, 2026</span>
-            <span>⏱️ 7 min read</span>
+          <p style="color: var(--text-muted);">
+            A direct guide to IELTS Writing Task 2 structure, paragraph flow, and the mistakes that pull essays down.
+          </p>
+          <div style="display: flex; gap: var(--s-3); color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--s-2); flex-wrap: wrap;">
+            <span>March 14, 2026</span>
+            <span>7 min read</span>
           </div>
-          <a href="/blog/ielts-writing-task-2-structure" class="btn btn-primary">Read article →</a>
+          <a href="/blog/ielts-writing-task-2-structure" class="btn btn-primary">Read article</a>
         </div>
-        <div style="background: var(--accent-light); padding: var(--s-3); border-radius: 8px; text-align: center;">
-          <div style="font-size: 3rem;">📝</div>
+        <div style="background: var(--accent-light); padding: var(--s-5); border-radius: 12px;">
+          <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; color: var(--text-muted);">
+            Start here if your essays lose marks because the ideas are there but the organization is weak.
+          </p>
         </div>
       </div>
     </div>
 
-    <!-- BLOG POSTS GRID -->
     <h2>Recent articles</h2>
     <div class="grid grid-3" style="gap: var(--s-3); margin-bottom: var(--s-6);">
-      <!-- POST 1 -->
       <article class="card">
-        <div style="display: inline-block; background: var(--accent-light); color: var(--accent); padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
-          Strategy
-        </div>
+        <div class="blog-card-tag">Strategy</div>
         <h3 style="margin-top: 0;">How to Get Band 7 in IELTS Writing</h3>
-        <p style="color: var(--text-muted); flex: 1;">The exact structure and timing strategy that helps most students jump from Band 6 to Band 7.</p>
-        <div style="display: flex; gap: var(--s-2); color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--s-2);">
-          <span>📅 Feb 28, 2026</span>
-          <span>⏱️ 6 min</span>
+        <p style="color: var(--text-muted); flex: 1;">A practical guide to structure, timing, and the habits that help many students move from Band 6 to Band 7.</p>
+        <div class="blog-card-meta">
+          <span>February 28, 2026</span>
+          <span>6 min read</span>
         </div>
-        <a href="/blog/band-7-writing-strategy" class="btn btn-ghost">Read →</a>
+        <a href="/blog/band-7-writing-strategy" class="btn btn-ghost">Read</a>
       </article>
 
       <article class="card">
-        <div style="display: inline-block; background: var(--accent-light); color: var(--accent); padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
-          Writing
-        </div>
+        <div class="blog-card-tag">Writing</div>
         <h3 style="margin-top: 0;">IELTS Writing Task 2 Structure</h3>
-        <p style="color: var(--text-muted); flex: 1;">A high-intent page for students who specifically need essay structure, paragraph logic, and timing discipline.</p>
-        <div style="display: flex; gap: var(--s-2); color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--s-2);">
-          <span>📅 Mar 14, 2026</span>
-          <span>⏱️ 7 min</span>
+        <p style="color: var(--text-muted); flex: 1;">A clear guide to essay structure, paragraph balance, and timing control for Task 2.</p>
+        <div class="blog-card-meta">
+          <span>March 14, 2026</span>
+          <span>7 min read</span>
         </div>
-        <a href="/blog/ielts-writing-task-2-structure" class="btn btn-ghost">Read →</a>
+        <a href="/blog/ielts-writing-task-2-structure" class="btn btn-ghost">Read</a>
       </article>
 
-      <!-- POST 2 -->
       <article class="card">
-        <div style="display: inline-block; background: var(--accent-light); color: var(--accent); padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
-          Vocabulary
-        </div>
+        <div class="blog-card-tag">Vocabulary</div>
         <h3 style="margin-top: 0;">150 Collocations for IELTS Writing</h3>
-        <p style="color: var(--text-muted); flex: 1;">The exact collocations that IELTS examiners want to see. Practice these every day.</p>
-        <div style="display: flex; gap: var(--s-2); color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--s-2);">
-          <span>📅 Feb 25, 2026</span>
-          <span>⏱️ 8 min</span>
+        <p style="color: var(--text-muted); flex: 1;">Useful collocations for stronger essays, with a focus on natural phrasing instead of memorized lists.</p>
+        <div class="blog-card-meta">
+          <span>February 25, 2026</span>
+          <span>8 min read</span>
         </div>
-        <a href="/blog/collocations-ielts" class="btn btn-ghost">Read →</a>
+        <a href="/blog/collocations-ielts" class="btn btn-ghost">Read</a>
       </article>
 
-      <!-- POST 3 -->
       <article class="card">
-        <div style="display: inline-block; background: var(--accent-light); color: var(--accent); padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
-          Speaking
-        </div>
+        <div class="blog-card-tag">Speaking</div>
         <h3 style="margin-top: 0;">CELPIP Speaking Part 2: How to Score High</h3>
-        <p style="color: var(--text-muted); flex: 1;">Everything you need to know about Task 2, including common mistakes and what examiners listen for.</p>
-        <div style="display: flex; gap: var(--s-2); color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--s-2);">
-          <span>📅 Feb 20, 2026</span>
-          <span>⏱️ 7 min</span>
+        <p style="color: var(--text-muted); flex: 1;">What examiners listen for in Task 2, plus the mistakes that make answers sound weak or rushed.</p>
+        <div class="blog-card-meta">
+          <span>February 20, 2026</span>
+          <span>7 min read</span>
         </div>
-        <a href="/blog/celpip-speaking-part2" class="btn btn-ghost">Read →</a>
+        <a href="/blog/celpip-speaking-part2" class="btn btn-ghost">Read</a>
       </article>
 
       <article class="card">
-        <div style="display: inline-block; background: var(--accent-light); color: var(--accent); padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
-          Speaking
-        </div>
+        <div class="blog-card-tag">Speaking</div>
         <h3 style="margin-top: 0;">IELTS Speaking Part 2 Cue Card Guide</h3>
-        <p style="color: var(--text-muted); flex: 1;">Cue card strategy, 1-minute prep, and how to speak for the full 2 minutes without sounding memorized.</p>
-        <div style="display: flex; gap: var(--s-2); color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--s-2);">
-          <span>📅 Mar 14, 2026</span>
-          <span>⏱️ 6 min</span>
+        <p style="color: var(--text-muted); flex: 1;">How to use the 1-minute prep time and speak for the full 2 minutes without sounding memorized.</p>
+        <div class="blog-card-meta">
+          <span>March 14, 2026</span>
+          <span>6 min read</span>
         </div>
-        <a href="/blog/ielts-speaking-part-2-cue-card" class="btn btn-ghost">Read →</a>
+        <a href="/blog/ielts-speaking-part-2-cue-card" class="btn btn-ghost">Read</a>
       </article>
 
       <article class="card">
-        <div style="display: inline-block; background: var(--accent-light); color: var(--accent); padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
-          Speaking
-        </div>
+        <div class="blog-card-tag">Speaking</div>
         <h3 style="margin-top: 0;">IELTS Speaking Part 1 Topics Guide</h3>
-        <p style="color: var(--text-muted); flex: 1;">A practical page for part 1 topic prep, natural answer building, and common score-killing habits.</p>
-        <div style="display: flex; gap: var(--s-2); color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--s-2);">
-          <span>📅 Mar 14, 2026</span>
-          <span>⏱️ 6 min</span>
+        <p style="color: var(--text-muted); flex: 1;">Natural answer development for short personal questions without filler or memorized openings.</p>
+        <div class="blog-card-meta">
+          <span>March 14, 2026</span>
+          <span>6 min read</span>
         </div>
-        <a href="/blog/ielts-speaking-part-1-topics" class="btn btn-ghost">Read →</a>
+        <a href="/blog/ielts-speaking-part-1-topics" class="btn btn-ghost">Read</a>
       </article>
 
       <article class="card">
-        <div style="display: inline-block; background: var(--accent-light); color: var(--accent); padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
-          Reading
-        </div>
+        <div class="blog-card-tag">Reading</div>
         <h3 style="margin-top: 0;">IELTS Reading Question Types Guide</h3>
-        <p style="color: var(--text-muted); flex: 1;">How to approach IELTS reading question types with proof-first strategy and timing discipline.</p>
-        <div style="display: flex; gap: var(--s-2); color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--s-2);">
-          <span>📅 Mar 14, 2026</span>
-          <span>⏱️ 7 min</span>
+        <p style="color: var(--text-muted); flex: 1;">A practical approach to matching, completion, true-false-not-given, and the timing decisions behind them.</p>
+        <div class="blog-card-meta">
+          <span>March 14, 2026</span>
+          <span>7 min read</span>
         </div>
-        <a href="/blog/ielts-reading-question-types" class="btn btn-ghost">Read →</a>
+        <a href="/blog/ielts-reading-question-types" class="btn btn-ghost">Read</a>
       </article>
 
       <article class="card">
-        <div style="display: inline-block; background: var(--accent-light); color: var(--accent); padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
-          CELPIP Writing
-        </div>
+        <div class="blog-card-tag">CELPIP Writing</div>
         <h3 style="margin-top: 0;">CELPIP Writing Task 1 Email Guide</h3>
-        <p style="color: var(--text-muted); flex: 1;">Tone, structure, and what to include when students search specifically for CELPIP email writing help.</p>
-        <div style="display: flex; gap: var(--s-2); color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--s-2);">
-          <span>📅 Mar 14, 2026</span>
-          <span>⏱️ 6 min</span>
+        <p style="color: var(--text-muted); flex: 1;">Tone, structure, and the prompt details students often miss in Task 1 emails.</p>
+        <div class="blog-card-meta">
+          <span>March 14, 2026</span>
+          <span>6 min read</span>
         </div>
-        <a href="/blog/celpip-writing-task-1-email" class="btn btn-ghost">Read →</a>
+        <a href="/blog/celpip-writing-task-1-email" class="btn btn-ghost">Read</a>
       </article>
 
       <article class="card">
-        <div style="display: inline-block; background: var(--accent-light); color: var(--accent); padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
-          CELPIP Writing
-        </div>
+        <div class="blog-card-tag">CELPIP Writing</div>
         <h3 style="margin-top: 0;">CELPIP Writing Task 2 Survey Response Guide</h3>
-        <p style="color: var(--text-muted); flex: 1;">A task-level page for students who want stronger organization, clearer position, and CLB 9 writing control.</p>
-        <div style="display: flex; gap: var(--s-2); color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--s-2);">
-          <span>📅 Mar 14, 2026</span>
-          <span>⏱️ 6 min</span>
+        <p style="color: var(--text-muted); flex: 1;">How to build a clear position, organize support, and keep Task 2 responses controlled under time pressure.</p>
+        <div class="blog-card-meta">
+          <span>March 14, 2026</span>
+          <span>6 min read</span>
         </div>
-        <a href="/blog/celpip-writing-task-2-survey-response" class="btn btn-ghost">Read →</a>
+        <a href="/blog/celpip-writing-task-2-survey-response" class="btn btn-ghost">Read</a>
       </article>
 
       <article class="card">
-        <div style="display: inline-block; background: var(--accent-light); color: var(--accent); padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
-          CELPIP Speaking
-        </div>
+        <div class="blog-card-tag">CELPIP Speaking</div>
         <h3 style="margin-top: 0;">CELPIP Speaking Task 1 Guide</h3>
-        <p style="color: var(--text-muted); flex: 1;">How to structure personal-experience answers clearly and keep fluency under time pressure.</p>
-        <div style="display: flex; gap: var(--s-2); color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--s-2);">
-          <span>📅 Mar 14, 2026</span>
-          <span>⏱️ 6 min</span>
+        <p style="color: var(--text-muted); flex: 1;">A simple structure for personal-experience answers that stay clear and fluent.</p>
+        <div class="blog-card-meta">
+          <span>March 14, 2026</span>
+          <span>6 min read</span>
         </div>
-        <a href="/blog/celpip-speaking-task-1" class="btn btn-ghost">Read →</a>
+        <a href="/blog/celpip-speaking-task-1" class="btn btn-ghost">Read</a>
       </article>
 
       <article class="card">
-        <div style="display: inline-block; background: var(--accent-light); color: var(--accent); padding: var(--s-1) var(--s-2); border-radius: 4px; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
-          CELPIP Writing
-        </div>
+        <div class="blog-card-tag">CELPIP Writing</div>
         <h3 style="margin-top: 0;">CELPIP Sample Answers Guide</h3>
-        <p style="color: var(--text-muted); flex: 1;">How to use CELPIP sample answers strategically for writing and speaking without memorization traps.</p>
-        <div style="display: flex; gap: var(--s-2); color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--s-2);">
-          <span>📅 Mar 14, 2026</span>
-          <span>⏱️ 6 min</span>
+        <p style="color: var(--text-muted); flex: 1;">How to study sample answers without falling into memorization or copying habits.</p>
+        <div class="blog-card-meta">
+          <span>March 14, 2026</span>
+          <span>6 min read</span>
         </div>
-        <a href="/blog/celpip-sample-answers" class="btn btn-ghost">Read →</a>
+        <a href="/blog/celpip-sample-answers" class="btn btn-ghost">Read</a>
       </article>
     </div>
 
     <div class="surface" style="padding: var(--s-5); margin-bottom: var(--s-6);">
-      <h2 style="margin-top: 0;">New exam task guides (P1 cluster)</h2>
-      <p class="muted" style="margin-top: 0;">These high-intent pages are organized by exact IELTS and CELPIP task queries.</p>
+      <h2 style="margin-top: 0;">Browse by task</h2>
+      <p class="muted" style="margin-top: 0;">Use these links when you want one focused article for one specific exam task.</p>
       <div class="grid grid-3" style="gap: var(--s-2);">
         <a href="/blog/ielts-writing-task-1-academic-guide">IELTS Task 1 Academic</a>
         <a href="/blog/ielts-writing-task-1-general-training-letter">IELTS Task 1 GT Letter</a>
         <a href="/blog/ielts-writing-task-2-opinion-essay">IELTS Task 2 Opinion Essay</a>
         <a href="/blog/ielts-writing-task-2-discussion-essay">IELTS Task 2 Discussion Essay</a>
-        <a href="/blog/ielts-writing-task-2-advantages-disadvantages">IELTS Advantages/Disadvantages</a>
+        <a href="/blog/ielts-writing-task-2-advantages-disadvantages">IELTS Advantages and Disadvantages</a>
         <a href="/blog/ielts-writing-task-2-problem-solution">IELTS Problem Solution Essay</a>
         <a href="/blog/ielts-speaking-part-3-questions-guide">IELTS Speaking Part 3</a>
         <a href="/blog/ielts-listening-question-types">IELTS Listening Question Types</a>
@@ -222,9 +203,8 @@ const pageKeywords = "IELTS blog, CELPIP blog, IELTS writing tips, IELTS speakin
       </div>
     </div>
 
-    <!-- MORE ARTICLES -->
     <div style="text-align: center; padding: var(--s-4); background: var(--surface); border-radius: 8px;">
-      <p style="color: var(--text-muted);">More articles coming soon. <a href="/" style="color: var(--accent);">Subscribe to our newsletter →</a> to get the latest tips.</p>
+      <p style="color: var(--text-muted);">More articles are on the way. <a href="/" style="color: var(--accent);">Subscribe to the newsletter</a> to get new ones first.</p>
     </div>
 
     <div style="height: var(--s-6);"></div>
@@ -235,6 +215,27 @@ const pageKeywords = "IELTS blog, CELPIP blog, IELTS writing tips, IELTS speakin
   .card {
     display: flex;
     flex-direction: column;
+  }
+
+  .blog-card-tag {
+    display: inline-block;
+    width: fit-content;
+    background: var(--accent-light);
+    color: var(--accent);
+    padding: var(--s-1) var(--s-2);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: var(--s-2);
+  }
+
+  .blog-card-meta {
+    display: flex;
+    gap: var(--s-2);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: var(--s-2);
+    flex-wrap: wrap;
   }
 
   @media (max-width: 768px) {

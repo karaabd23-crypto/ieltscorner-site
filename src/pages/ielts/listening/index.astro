@@ -36,14 +36,15 @@ const pageKeywords = "IELTS listening, IELTS listening practice, IELTS listening
   <section class="section">
     <div class="hero" style={`--hero-bg: url('/heroes/listening.png');`}>
       <div class="hero-content">
-        <span class="pill">🎧 IELTS Listening</span>
+        <span class="pill">IELTS Listening</span>
         <h1>Predict early. Listen actively. Check carefully.</h1>
         <p class="muted" style="max-width: 62ch;">
-          IELTS listening rewards habits more than luck. Students who preview well, track signposts, and expect trap answers usually improve faster than students who only do more tests without changing technique.
+          IELTS listening rewards habits more than luck. Students who preview well, track signposts,
+          and expect trap answers usually improve faster than students who only do more tests without changing technique.
         </p>
         <div class="cluster">
-          <a class="btn btn-primary" href="/lessons/ielts/listening">Browse listening lessons →</a>
-          <a class="btn btn-ghost" href="/ielts">Back to IELTS →</a>
+          <a class="btn btn-primary" href="/lessons/ielts/listening">Browse listening lessons</a>
+          <a class="btn btn-ghost" href="/ielts">Back to IELTS</a>
         </div>
       </div>
     </div>
@@ -66,16 +67,16 @@ const pageKeywords = "IELTS listening, IELTS listening practice, IELTS listening
     <div class="surface" style="padding: var(--s-6);">
       <h2>Popular IELTS listening guides</h2>
       <p class="muted" style="margin-top: 0; max-width: 70ch;">
-        Start with these search-intent pages before drilling full listening sets.
+        Start with these two guides if you want clearer question-type strategy and a better understanding of common traps.
       </p>
       <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-4);">
         <a class="card" href="/blog/ielts-listening-question-types" style="display:block; text-decoration:none;">
           <h3>IELTS Listening Question Types Guide</h3>
-          <p class="muted">Format-specific tactics for completion, matching, and multiple choice.</p>
+          <p class="muted">Practical tactics for completion, matching, and multiple-choice questions.</p>
         </a>
         <a class="card" href="/blog/ielts-listening-common-traps" style="display:block; text-decoration:none;">
           <h3>IELTS Listening Common Traps</h3>
-          <p class="muted">Distractor patterns, corrections, and answer-transfer mistakes to avoid.</p>
+          <p class="muted">Distractor patterns, corrections, and answer-transfer mistakes to watch for.</p>
         </a>
       </div>
     </div>
@@ -87,19 +88,19 @@ const pageKeywords = "IELTS listening, IELTS listening practice, IELTS listening
       <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-4);">
         <div class="card">
           <h3>Late previewing</h3>
-          <p class="muted">Students hear the audio before they understand what they are listening for.</p>
+          <p class="muted">Students hear the audio before they understand exactly what they are listening for.</p>
         </div>
         <div class="card">
           <h3>Missing signposts</h3>
-          <p class="muted">The speaker often signals transitions, corrections, or changes of direction before the real answer appears.</p>
+          <p class="muted">Speakers often signal transitions, corrections, or changes of direction before the real answer appears.</p>
         </div>
         <div class="card">
           <h3>Trap answers</h3>
-          <p class="muted">The audio often mentions an answer candidate, then corrects or replaces it. Students need to expect that pattern.</p>
+          <p class="muted">The audio may mention one answer, then correct it or replace it. Students need to expect that pattern.</p>
         </div>
         <div class="card">
           <h3>Weak checking habits</h3>
-          <p class="muted">Spelling, plurals, dates, and number format can still cost marks after you understood the audio.</p>
+          <p class="muted">Spelling, plurals, dates, and number format still cost marks after you understood the audio.</p>
         </div>
       </div>
     </div>
@@ -112,8 +113,8 @@ const pageKeywords = "IELTS listening, IELTS listening practice, IELTS listening
         {relatedLessons.map((lesson) => (
           <a class="card" href={`/lessons/${lesson.data.category}/${lesson.slug}/`} style="display:block; text-decoration:none;">
             <div class="cluster" style="justify-content: space-between;">
-              <span class="pill">{lesson.data.category} • {getLessonTier(lesson.data.level)}</span>
-              <span class="pill">Open →</span>
+              <span class="pill">{lesson.data.category} | {getLessonTier(lesson.data.level)}</span>
+              <span class="pill">Open lesson</span>
             </div>
             <h3 style="margin-top: var(--s-3);">{getPublicLessonTitle(lesson.data.title, lesson.data.level)}</h3>
             <p class="muted" style="margin-bottom: 0;">{lesson.data.excerpt}</p>
@@ -127,13 +128,13 @@ const pageKeywords = "IELTS listening, IELTS listening practice, IELTS listening
     <div class="grid grid-2">
       <div class="card">
         <h3>Next skill: Reading</h3>
-        <p class="muted">If your listening drops because you miss evidence, the reading hub helps train the same proof-based mindset.</p>
-        <a class="btn btn-primary" href="/ielts/reading">Open IELTS reading →</a>
+        <p class="muted">If your listening drops because you miss evidence, the reading hub trains the same proof-based mindset.</p>
+        <a class="btn btn-primary" href="/ielts/reading">Open IELTS reading</a>
       </div>
       <div class="card">
         <h3>Need the full lesson archive?</h3>
         <p class="muted">Use the listening archive for all published IELTS listening lessons and drills.</p>
-        <a class="btn" href="/lessons/ielts/listening">Listening archive →</a>
+        <a class="btn" href="/lessons/ielts/listening">Listening archive</a>
       </div>
     </div>
   </section>

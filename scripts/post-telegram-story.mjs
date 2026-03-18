@@ -123,7 +123,34 @@ function pickDeterministicIndex(length, salt = 0) {
 }
 
 function fallbackStory(topicObj) {
-  const { type, emoji } = topicObj;
+  const { topic, emoji } = topicObj;
+  return {
+    content: `${emoji} ${topic}
+
+Why this matters:
+Many learners understand the idea when they read it, but still hesitate when they need to use it in conversation.
+
+Key point:
+Keep the meaning simple. Learn one natural example, then change that example to fit your own life.
+
+Try this:
+1. Read the example once.
+2. Say it aloud once.
+3. Replace one word with your own idea.
+
+That small change is often enough to move the phrase from passive vocabulary into active use.`,
+    quiz: {
+      question: `What is the best next step after learning "${topic}"?`,
+      options: [
+        'Use it in one short sentence about your life.',
+        'Memorize it without context.',
+        'Avoid using it until next month.',
+      ],
+      correctOptionId: 0,
+    },
+  };
+
+  const { type } = topicObj;
 
   const examples = {
     'vocab-tip': {
@@ -580,7 +607,42 @@ async function generateStoryWithOpenAI(topicObj, apiKey, model) {
 
   const { type, emoji, topic } = topicObj;
 
-  const prompt = `You are an engaging, funny, and knowledgeable English language coach creating LONG-FORM Telegram stories with personality!
+  const prompt = `You are an experienced English teacher creating a short Telegram teaching story.
+
+Topic: ${topic}
+Type: ${type}
+Emoji to start with: ${emoji}
+
+Write something that feels careful, useful, and easy to read.
+
+Create a response as VALID JSON:
+{
+  "content": "short teaching post",
+  "quiz": {
+    "question": "quiz question",
+    "options": ["option1", "option2", "option3"],
+    "correctOptionId": 0
+  }
+}
+
+CONTENT GUIDELINES:
+1. Start with a short useful hook, not a dramatic one.
+2. Explain the topic in plain language.
+3. Give one or two natural examples from daily life, work, or study.
+4. End with a small practice move the learner can do immediately.
+5. Use no more than 3 emojis in total.
+6. Keep the post between 180 and 320 words.
+7. Avoid hype, ALL CAPS, and repetitive motivation.
+8. If you include Persian support, keep it short and accurate.
+
+QUIZ GUIDELINES:
+1. Use a realistic situation.
+2. Give 3 plausible options.
+3. correctOptionId = array index (0, 1, or 2)
+
+Return ONLY valid JSON.`;
+
+  const legacyPrompt = `You are an engaging, funny, and knowledgeable English language coach creating LONG-FORM Telegram stories with personality!
 
 Topic: ${topic}
 Type: ${type}
@@ -632,7 +694,7 @@ Return ONLY valid JSON.`;
         messages: [
           {
             role: 'system',
-            content: 'You create long-form, engaging, funny, conversational English learning content with Persian. Return valid JSON only.',
+            content: 'You create concise teacher-style English learning posts. Return valid JSON only.',
           },
           { role: 'user', content: prompt },
         ],

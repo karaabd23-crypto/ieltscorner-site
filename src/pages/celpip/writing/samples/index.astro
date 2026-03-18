@@ -141,6 +141,9 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
         </div>
 
         <p id="sample-library-status" class="muted" style="margin: var(--s-2) 0 0; min-height: 1.2rem;"></p>
+        <p class="muted" style="margin: var(--s-2) 0 0; font-size: 0.92rem;">
+          Cancellation is immediate. After canceling, we ask 4 short exit questions to improve the service.
+        </p>
       </div>
 
       <div style="height: var(--s-4);"></div>
@@ -463,6 +466,110 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
         }
       };
 
+      const sanitizeFeedbackValue = (value, max = 360) => String(value || '').replace(/\s+/g, ' ').trim().slice(0, max);
+
+      const normalizeReasonCode = (rawValue) => {
+        const value = sanitizeFeedbackValue(rawValue, 80).toLowerCase();
+        if (!value) return 'not_specified';
+        if (value.includes('price') || value.includes('expensive') || value.includes('cost')) return 'too_expensive';
+        if (value.includes('not_using') || value.includes('rarely') || value.includes('unused')) return 'not_using_enough';
+        if (value.includes('quality') || value.includes('score') || value.includes('accuracy')) return 'quality_concern';
+        if (value.includes('clarity') || value.includes('explain')) return 'clarity_concern';
+        if (value.includes('technical') || value.includes('bug') || value.includes('error')) return 'technical_issue';
+        if (value.includes('complete') || value.includes('done') || value.includes('passed')) return 'goal_completed';
+        return 'other';
+      };
+
+      const normalizePriorityCode = (rawValue) => {
+        const value = sanitizeFeedbackValue(rawValue, 80).toLowerCase();
+        if (!value) return 'not_specified';
+        if (value.includes('score')) return 'scoring_accuracy';
+        if (value.includes('explain') || value.includes('clarity')) return 'clear_explanations';
+        if (value.includes('lesson') || value.includes('recommend')) return 'lesson_relevance';
+        if (value.includes('task') || value.includes('prompt') || value.includes('variety')) return 'task_variety';
+        if (value.includes('speed') || value.includes('bug') || value.includes('technical') || value.includes('stability')) return 'speed_stability';
+        if (value.includes('design') || value.includes('ux') || value.includes('interface') || value.includes('experience')) return 'user_experience';
+        if (value.includes('support') || value.includes('teacher') || value.includes('human')) return 'human_support';
+        return 'other';
+      };
+
+      const normalizeUsageCode = (rawValue) => {
+        const value = sanitizeFeedbackValue(rawValue, 80).toLowerCase();
+        if (!value) return 'not_specified';
+        if (value.includes('day')) return 'daily';
+        if (value.includes('week')) return 'weekly';
+        if (value.includes('month')) return 'monthly';
+        if (value.includes('first') || value.includes('once')) return 'first_week_only';
+        if (value.includes('rare')) return 'rarely';
+        return 'other';
+      };
+
+      const normalizeSatisfactionScore = (rawValue) => {
+        const match = String(rawValue || '').match(/[1-5]/);
+        return match ? match[0] : '';
+      };
+
+      const collectCancellationFeedback = () => {
+        const shouldShare = window.confirm(
+          'Your cancellation will still be immediate. Can you answer 4 short questions (about 20 seconds) so we can improve?'
+        );
+
+        if (!shouldShare) {
+          return null;
+        }
+
+        const reasonRaw = window.prompt(
+          '1/4 Main reason for canceling? Type one short code: price, not_using, quality, clarity, technical, completed, or other.'
+        );
+        const priorityRaw = window.prompt(
+          '2/4 What should we improve first? Type one code: scoring, explanations, lessons, variety, speed, design, or support.'
+        );
+        const usageRaw = window.prompt(
+          '3/4 How often did you use the service? Type one code: daily, weekly, monthly, rarely, or first_week.'
+        );
+        const keepYouRaw = window.prompt(
+          '4/4 What one change would make this worth keeping for you?'
+        );
+        const satisfactionRaw = window.prompt(
+          'Optional: satisfaction score before canceling (1=very poor, 5=excellent).'
+        );
+
+        return {
+          reason_code: normalizeReasonCode(reasonRaw),
+          reason_detail: sanitizeFeedbackValue(reasonRaw, 320),
+          improvement_priority: normalizePriorityCode(priorityRaw),
+          usage_frequency: normalizeUsageCode(usageRaw),
+          what_would_keep_you: sanitizeFeedbackValue(keepYouRaw, 520),
+          satisfaction_score: normalizeSatisfactionScore(satisfactionRaw),
+        };
+      };
+
+      const submitCancellationFeedback = async (feedback) => {
+        if (!feedback) return false;
+
+        const params = new URLSearchParams();
+        params.append('form-name', 'subscription-cancel-feedback');
+        params.append('source_page', window.location.pathname || '/celpip/writing/samples');
+        params.append('session_id', sanitizeFeedbackValue(sessionId, 160));
+        params.append('subscription_id', sanitizeFeedbackValue(subscriptionId, 160));
+        params.append('cancel_flow_version', 'v1_post_cancel_survey');
+        params.append('reason_code', sanitizeFeedbackValue(feedback.reason_code, 80));
+        params.append('reason_detail', sanitizeFeedbackValue(feedback.reason_detail, 320));
+        params.append('improvement_priority', sanitizeFeedbackValue(feedback.improvement_priority, 80));
+        params.append('usage_frequency', sanitizeFeedbackValue(feedback.usage_frequency, 80));
+        params.append('satisfaction_score', sanitizeFeedbackValue(feedback.satisfaction_score, 4));
+        params.append('what_would_keep_you', sanitizeFeedbackValue(feedback.what_would_keep_you, 520));
+        params.append('bot-field', '');
+
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: params.toString(),
+        });
+
+        return response.ok;
+      };
+
       const cancelInstantly = async () => {
         const confirmed = window.confirm('Cancel now? This will cancel your subscription immediately.');
         if (!confirmed) return;
@@ -481,6 +588,20 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
             throw new Error(data.error || 'Unable to cancel subscription');
           }
           setStatus('Your subscription was canceled instantly. Access will be removed on next request.');
+
+          const feedback = collectCancellationFeedback();
+          if (feedback) {
+            try {
+              const saved = await submitCancellationFeedback(feedback);
+              if (saved) {
+                setStatus('Your subscription is canceled. Thank you for sharing feedback to help us improve.');
+              } else {
+                setStatus('Your subscription is canceled. We could not save feedback this time.');
+              }
+            } catch {
+              setStatus('Your subscription is canceled. Feedback submission did not complete, but cancellation is done.');
+            }
+          }
         } catch (error) {
           const message = error instanceof Error ? error.message : 'Unable to cancel subscription.';
           setStatus(message, true);

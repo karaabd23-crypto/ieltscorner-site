@@ -1,19 +1,22 @@
-﻿---
+---
 import Layout from "../../layouts/Layout.astro";
 import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
 
 const pageFaqs = [
   {
-    question: "How should I use this guide effectively?",
-    answer: "Use the structure on one timed response, review where logic breaks, then revise the same response once. This loop builds score-related habits faster than writing many unchecked answers.",
+    question: "What is the main goal in IELTS General Training Task 1?",
+    answer:
+      "The main goal is to write a clear letter with the right tone, cover every bullet point, and make the purpose easy to understand from the start.",
   },
   {
-    question: "Is this enough for a high band or CLB score?",
-    answer: "This guide gives you a strong strategy baseline. Most candidates improve faster when they combine it with targeted lessons and feedback.",
+    question: "How do I know if the letter should be formal or informal?",
+    answer:
+      "Look at who you are writing to and why. A letter to a manager or company is usually formal or semi-formal. A letter to a friend is usually informal.",
   },
   {
-    question: "What should I do after reading this page?",
-    answer: "Practice one task immediately, then compare your draft against the checklist and linked resources below.",
+    question: "What lowers the score in IELTS Task 1 letters?",
+    answer:
+      "Students often lose marks when the tone is wrong, one bullet point is missing, or the paragraphs do not have a clear purpose.",
   },
 ];
 
@@ -28,95 +31,172 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="IELTS Writing Task 1 General Training Letter | Formal, Semi-Formal and Informal"
-  description="IELTS General Training Task 1 letter guide covering tone, structure, prompt coverage, and common Band 7 mistakes."
+  title="IELTS Writing Task 1 General Training Letter | Tone, Structure and Bullet Coverage"
+  description="A practical IELTS General Training Task 1 letter guide with tone control, paragraph structure, and advice for covering every bullet point clearly."
   type="article"
-  keywords="IELTS General Training letter, IELTS Task 1 GT, IELTS letter writing, IELTS writing task 1 general"
+  keywords="IELTS General Training letter, IELTS Task 1 GT, IELTS letter writing, IELTS writing Task 1 general"
   structuredData={pageStructuredData}
 >
-  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
-    <div style="margin-bottom: var(--s-4);">
-      <a href="/blog" style="color: var(--accent);">&larr; Back to blog</a>
-    </div>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
 
-    <header style="margin-bottom: var(--s-4);">
-      <h1 style="margin: 0;">IELTS Writing Task 1 General Training Letter</h1>
-      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
-        <span>March 14, 2026</span>
-        <span>IELTS Corner Team</span>
-        <span>6 min read</span>
+    <header class="guide-header">
+      <span class="guide-tag">IELTS writing guide</span>
+      <h1 style="margin: 0;">IELTS Writing Task 1 General Training letter</h1>
+      <div class="guide-meta">
+        <span>March 17, 2026</span>
+        <span>7 min read</span>
       </div>
     </header>
 
-    <div class="divider" style="margin: var(--s-4) 0; height: 2px; background: var(--text-muted-light);"></div>
+    <div class="guide-lead">
+      <p>
+        General Training Task 1 is practical writing. The best letters are easy to
+        understand, use the right tone, and cover all the bullet points without sounding
+        memorized.
+      </p>
+      <p>
+        Many students know enough English to do well, but the score drops because the tone
+        is wrong or one part of the task is missing.
+      </p>
+    </div>
 
-    <div class="article-content" style="line-height: 1.8;">
-      <p>General Training Task 1 rewards practical communication. If your tone and purpose are clear and all bullet points are covered, your score becomes much more stable.</p>
+    <div class="guide-grid guide-grid-2">
+      <section class="guide-card">
+        <h2>What a strong GT letter does</h2>
+        <ul class="guide-list">
+          <li>Makes the purpose clear in the opening.</li>
+          <li>Covers every bullet point fully.</li>
+          <li>Uses the correct level of formality.</li>
+          <li>Ends with a natural closing line.</li>
+        </ul>
+      </section>
 
-      <h2>Quick strategy framework</h2>
-      <ul>
-        <li>Plan before writing or speaking so your response has a clear structure.</li>
-        <li>Keep one main idea per paragraph or answer block.</li>
-        <li>Support claims with one relevant reason or example, not multiple weak points.</li>
-        <li>Leave time for a short review step to catch avoidable errors.</li>
-      </ul>
+      <section class="guide-card">
+        <h2>What often weakens the letter</h2>
+        <ul class="guide-list">
+          <li>The tone sounds too casual or too stiff.</li>
+          <li>One bullet point gets only one short sentence.</li>
+          <li>The letter has no clear paragraph plan.</li>
+          <li>The opening is too long and indirect.</li>
+        </ul>
+      </section>
+    </div>
 
-      <h2>Common mistakes to avoid</h2>
-      <table style="width: 100%; border-collapse: collapse; margin: var(--s-3) 0;">
-        <tr style="background: var(--surface);">
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Mistake</th>
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Better move</th>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>A simple Task 1 letter structure</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Opening</h3>
+            <p>Greet the reader and explain the reason for writing in the first one or two lines.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Body paragraph 1</h3>
+            <p>Cover the first main bullet point clearly.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Body paragraph 2</h3>
+            <p>Cover the remaining bullet points in a logical order.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Closing</h3>
+            <p>End politely and use a sign-off that matches the tone of the letter.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>How to choose the right tone</h2>
+      <div class="guide-example">
+        <p><strong>Formal:</strong> Dear Sir or Madam, I am writing to express my concern about...</p>
+        <p><strong>Semi-formal:</strong> Dear Mr. Ahmed, I am writing about the issue we discussed yesterday.</p>
+        <p><strong>Informal:</strong> Hi Sara, I just wanted to tell you about something that happened last week.</p>
+      </div>
+      <div class="guide-note" style="margin-top: var(--s-3);">
+        <p>
+          The relationship matters. Always ask yourself: Who am I writing to, and how well
+          do I know this person?
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>The most important check before you finish</h2>
+      <div class="guide-note">
+        <p>
+          Read the bullet points again. If the task gives you three things to include, make
+          sure all three are easy to find in the letter. Missing one point can lower the
+          score quickly.
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Common mistakes</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Mistake</th>
+          <th>Better move</th>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Starting without a plan</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Take 1-2 minutes to map your response first.</td>
+          <td>The opening sounds vague and indirect.</td>
+          <td>State the purpose early and clearly.</td>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Adding ideas without development</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Develop fewer ideas with clearer support.</td>
+          <td>The tone changes during the letter.</td>
+          <td>Keep the same level of formality from start to finish.</td>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Skipping review</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Reserve a short final check for clarity and errors.</td>
+          <td>One bullet point is too short or missing.</td>
+          <td>Check the task again before you finish.</td>
+        </tr>
+        <tr>
+          <td>The closing sounds unnatural.</td>
+          <td>Use a sign-off that matches the relationship and tone.</td>
         </tr>
       </table>
+    </section>
 
-      <h2>Related guides and next steps</h2>
-      <ul>
-        <li><a href="/ielts/writing">IELTS writing hub</a></li>
-        <li><a href="/blog/ielts-writing-task-1-academic-guide">IELTS Task 1 Academic guide</a></li>
-        <li><a href="/lessons/ielts/writing">IELTS writing lessons</a></li>
-        <li><a href="/essay-correction">Essay correction service</a></li>
-      </ul>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Next step</h2>
+      <div class="guide-links">
+        <a href="/blog/ielts-writing-task-1-academic-guide">
+          <strong>Read the Academic Task 1 guide</strong>
+          <span>Compare General Training letter writing with Academic report writing.</span>
+        </a>
+        <a href="/essay-correction">
+          <strong>Check your letter</strong>
+          <span>Find out whether your tone and bullet coverage are strong enough.</span>
+        </a>
+        <a href="/ielts/writing">
+          <strong>Go to the IELTS writing hub</strong>
+          <span>Move to Task 2 or the next writing lesson you need.</span>
+        </a>
+      </div>
+    </section>
 
+    <section class="guide-card" style="margin-top: var(--s-4);">
       <h2>FAQ</h2>
-      {pageFaqs.map((item) => (
-        <details class="card" style="margin-bottom: var(--s-3);">
-          <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
-          <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
-        </details>
-      ))}
-    </div>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
   </article>
 </Layout>
-
-<style>
-  .article-content {
-    color: var(--text);
-  }
-
-  .article-content h2 {
-    margin-top: var(--s-5);
-    margin-bottom: var(--s-2);
-  }
-
-  .article-content ul {
-    margin: var(--s-2) 0;
-    padding-left: var(--s-4);
-  }
-
-  .article-content li {
-    margin: var(--s-1) 0;
-  }
-</style>
-

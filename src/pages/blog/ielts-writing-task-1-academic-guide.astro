@@ -1,19 +1,22 @@
-﻿---
+---
 import Layout from "../../layouts/Layout.astro";
 import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
 
 const pageFaqs = [
   {
-    question: "How should I use this guide effectively?",
-    answer: "Use the structure on one timed response, review where logic breaks, then revise the same response once. This loop builds score-related habits faster than writing many unchecked answers.",
+    question: "What is the main goal in IELTS Academic Task 1?",
+    answer:
+      "The main goal is to describe the key features of the chart, table, map, or process clearly. You do not need to include every detail.",
   },
   {
-    question: "Is this enough for a high band or CLB score?",
-    answer: "This guide gives you a strong strategy baseline. Most candidates improve faster when they combine it with targeted lessons and feedback.",
+    question: "Do I need to give my opinion in IELTS Academic Task 1?",
+    answer:
+      "No. Academic Task 1 is an objective report. You should describe the information, not give personal views about it.",
   },
   {
-    question: "What should I do after reading this page?",
-    answer: "Practice one task immediately, then compare your draft against the checklist and linked resources below.",
+    question: "What is the most common mistake in IELTS Academic Task 1?",
+    answer:
+      "A very common mistake is listing numbers without showing the main trends or comparisons. The examiner wants a clear overview, not a data dump.",
   },
 ];
 
@@ -28,95 +31,173 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="IELTS Writing Task 1 Academic Guide | Charts, Reports and Band 7 Strategy"
-  description="IELTS Writing Task 1 Academic guide with chart structure, paragraph flow, data selection, and language patterns for stronger band scores."
+  title="IELTS Writing Task 1 Academic Guide | Charts, Tables, Maps and Processes"
+  description="A clear IELTS Academic Task 1 guide with overview writing, paragraph structure, and practical advice for describing visuals more effectively."
   type="article"
   keywords="IELTS Writing Task 1 Academic, IELTS chart report, IELTS Task 1 structure, Band 7 IELTS writing"
   structuredData={pageStructuredData}
 >
-  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
-    <div style="margin-bottom: var(--s-4);">
-      <a href="/blog" style="color: var(--accent);">&larr; Back to blog</a>
-    </div>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
 
-    <header style="margin-bottom: var(--s-4);">
-      <h1 style="margin: 0;">IELTS Writing Task 1 Academic Guide</h1>
-      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
-        <span>March 14, 2026</span>
-        <span>IELTS Corner Team</span>
-        <span>6 min read</span>
+    <header class="guide-header">
+      <span class="guide-tag">IELTS writing guide</span>
+      <h1 style="margin: 0;">IELTS Writing Task 1 Academic guide</h1>
+      <div class="guide-meta">
+        <span>March 17, 2026</span>
+        <span>7 min read</span>
       </div>
     </header>
 
-    <div class="divider" style="margin: var(--s-4) 0; height: 2px; background: var(--text-muted-light);"></div>
+    <div class="guide-lead">
+      <p>
+        IELTS Academic Task 1 is a report, not an essay. Your job is to identify the key
+        features of the visual and describe them clearly. Many students lose marks because
+        they try to mention every number instead of showing the main picture.
+      </p>
+      <p>
+        The best reports are selective. They show the important trends, comparisons, and
+        stages, then support them with useful details.
+      </p>
+    </div>
 
-    <div class="article-content" style="line-height: 1.8;">
-      <p>This page helps you handle IELTS Academic Task 1 with a repeatable structure for charts, tables, maps, and processes. The goal is clarity, not fancy vocabulary.</p>
+    <div class="guide-grid guide-grid-2">
+      <section class="guide-card">
+        <h2>What this task wants</h2>
+        <ul class="guide-list">
+          <li>A clear overview of the main trends or features.</li>
+          <li>Logical grouping of details.</li>
+          <li>Accurate comparisons.</li>
+          <li>Objective language with no personal opinion.</li>
+        </ul>
+      </section>
 
-      <h2>Quick strategy framework</h2>
-      <ul>
-        <li>Plan before writing or speaking so your response has a clear structure.</li>
-        <li>Keep one main idea per paragraph or answer block.</li>
-        <li>Support claims with one relevant reason or example, not multiple weak points.</li>
-        <li>Leave time for a short review step to catch avoidable errors.</li>
+      <section class="guide-card">
+        <h2>What often lowers the score</h2>
+        <ul class="guide-list">
+          <li>Too many numbers with no overview.</li>
+          <li>The report is organized like a list, not a paragraph plan.</li>
+          <li>The writer uses inaccurate comparisons.</li>
+          <li>Opinion language appears in the report.</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>A simple Task 1 Academic structure</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Introduction</h3>
+            <p>Paraphrase the task in one sentence. Say what the visual shows.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Overview</h3>
+            <p>Write the main trend, highest and lowest points, or biggest change without many numbers.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Body paragraph 1</h3>
+            <p>Group the first set of key details together and compare them clearly.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Body paragraph 2</h3>
+            <p>Group the remaining important details in a logical way.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>What to notice before you write</h2>
+      <ul class="guide-list">
+        <li>Which item is highest? Which is lowest?</li>
+        <li>What changes the most over time?</li>
+        <li>Which items are similar enough to group together?</li>
+        <li>What should go in the overview instead of the body?</li>
       </ul>
+    </section>
 
-      <h2>Common mistakes to avoid</h2>
-      <table style="width: 100%; border-collapse: collapse; margin: var(--s-3) 0;">
-        <tr style="background: var(--surface);">
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Mistake</th>
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Better move</th>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Overview example</h2>
+      <div class="guide-example">
+        <p>
+          <strong>Example overview:</strong> Overall, car ownership increased steadily in
+          all three countries, although Canada remained the highest throughout the period
+          while Japan had the lowest figures.
+        </p>
+      </div>
+      <div class="guide-note" style="margin-top: var(--s-3);">
+        <p>
+          This overview works because it highlights the biggest pattern without filling the
+          sentence with exact numbers.
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Common mistakes</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Mistake</th>
+          <th>Better move</th>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Starting without a plan</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Take 1-2 minutes to map your response first.</td>
+          <td>Writing only data and no overview.</td>
+          <td>State the main trend before you describe the details.</td>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Adding ideas without development</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Develop fewer ideas with clearer support.</td>
+          <td>Explaining every number in order.</td>
+          <td>Group similar information together instead.</td>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Skipping review</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Reserve a short final check for clarity and errors.</td>
+          <td>Using opinion phrases like "I think".</td>
+          <td>Keep the report factual and objective.</td>
+        </tr>
+        <tr>
+          <td>Making inaccurate comparisons.</td>
+          <td>Check whether the chart really shows more, less, higher, lower, or a change.</td>
         </tr>
       </table>
+    </section>
 
-      <h2>Related guides and next steps</h2>
-      <ul>
-        <li><a href="/ielts/writing">IELTS writing hub</a></li>
-        <li><a href="/blog/ielts-writing-task-2-structure">IELTS Task 2 structure guide</a></li>
-        <li><a href="/lessons/ielts/writing">IELTS writing lessons</a></li>
-        <li><a href="/essay-correction">Essay correction service</a></li>
-      </ul>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Next step</h2>
+      <div class="guide-links">
+        <a href="/blog/ielts-writing-task-1-general-training-letter">
+          <strong>Read the General Training letter guide</strong>
+          <span>Compare Academic Task 1 report writing with the letter format in GT.</span>
+        </a>
+        <a href="/essay-correction">
+          <strong>Check your Task 1 report</strong>
+          <span>Find out whether your overview and comparisons are clear enough.</span>
+        </a>
+        <a href="/ielts/writing">
+          <strong>Go to the IELTS writing hub</strong>
+          <span>Move to another writing task or a supporting lesson.</span>
+        </a>
+      </div>
+    </section>
 
+    <section class="guide-card" style="margin-top: var(--s-4);">
       <h2>FAQ</h2>
-      {pageFaqs.map((item) => (
-        <details class="card" style="margin-bottom: var(--s-3);">
-          <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
-          <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
-        </details>
-      ))}
-    </div>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
   </article>
 </Layout>
-
-<style>
-  .article-content {
-    color: var(--text);
-  }
-
-  .article-content h2 {
-    margin-top: var(--s-5);
-    margin-bottom: var(--s-2);
-  }
-
-  .article-content ul {
-    margin: var(--s-2) 0;
-    padding-left: var(--s-4);
-  }
-
-  .article-content li {
-    margin: var(--s-1) 0;
-  }
-</style>
-

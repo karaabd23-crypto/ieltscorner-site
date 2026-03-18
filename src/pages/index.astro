@@ -4,7 +4,8 @@ import Testimonials from "../components/Testimonials.astro";
 import Newsletter from "../components/Newsletter.astro";
 import { buildFAQSchema } from "../lib/seo";
 
-const homeKeywords = "IELTS preparation, CELPIP preparation, IELTS lessons, CELPIP lessons, IELTS writing, IELTS speaking, CELPIP writing, CELPIP speaking, IELTS tutor, CELPIP tutor, IELTS writing task 2, CELPIP writing examples, English test preparation";
+const homeKeywords =
+  "IELTS preparation, CELPIP preparation, IELTS lessons, CELPIP lessons, IELTS writing, IELTS speaking, CELPIP writing, CELPIP speaking, IELTS tutor, CELPIP tutor, IELTS writing task 2, CELPIP writing examples, English test preparation";
 
 const homeFaqs = [
   {
@@ -36,37 +37,30 @@ const homeStructuredData = [buildFAQSchema(homeFaqs)];
   structuredData={homeStructuredData}
 >
   <section class="section" style="padding-top: var(--s-6);">
-    <!-- HERO (background image) -->
-    <div
-      class="hero"
-      style={`--hero-bg: url('/heroes/home.png');`}
-    >
+    <div class="hero" style={`--hero-bg: url('/heroes/home.png');`}>
       <div class="hero-content">
-        <span class="pill">🎯 Band 7+ • IELTS &amp; CELPIP</span>
-
+        <span class="pill">Band 7+ | IELTS and CELPIP</span>
         <h1>Learn the English you need for a higher test score.</h1>
-
         <p class="muted" style="max-width: 56ch;">
           Start with free lessons and skill guides. Add tutoring only after you know exactly which score problem you need to fix.
         </p>
 
         <div class="cluster" style="margin-top: var(--s-2);">
-          <a class="btn btn-primary" href="/lessons">Start free lessons →</a>
+          <a class="btn btn-primary" href="/lessons">Start free lessons</a>
           <a class="btn btn-ghost" href="/ielts">Explore skill hubs</a>
         </div>
       </div>
     </div>
 
-    <!-- breathing room -->
     <div style="height: var(--s-8);"></div>
 
     <div class="surface feature" style="border: 2px solid color-mix(in srgb, var(--band) 30%, transparent);">
       <div class="feature-grid">
         <div class="stack">
-          <span class="pill">Search-intent shortcuts</span>
-          <h2>Start with the exact score problem you need to fix.</h2>
+          <span class="pill">Choose your starting point</span>
+          <h2>Start with the skill that is holding your score down.</h2>
           <p class="muted" style="max-width: 62ch;">
-            The fastest path to rankings and conversions is clear intent matching. These are the pages students usually want first: IELTS writing, IELTS speaking, CELPIP writing, and CELPIP speaking.
+            Most students improve faster when they focus on one weak area at a time. These are the four pages many students start with first.
           </p>
         </div>
 
@@ -93,12 +87,11 @@ const homeStructuredData = [buildFAQSchema(homeFaqs)];
 
     <div style="height: var(--s-8);"></div>
 
-    <!-- CELPIP SKILL HUBS -->
     <div class="surface feature" style="border: 2px solid var(--accent);">
       <div class="feature-grid">
         <div class="stack">
-          <span class="pill">⭐ Popular shortcuts</span>
-          <h2>Go directly to CELPIP Writing & Speaking hubs</h2>
+          <span class="pill">Popular pages</span>
+          <h2>Go directly to CELPIP Writing and Speaking.</h2>
           <p class="muted" style="max-width: 60ch;">
             Each hub starts with free lessons and examples, then gives you optional paid support if you want deeper feedback.
           </p>
@@ -107,16 +100,16 @@ const homeStructuredData = [buildFAQSchema(homeFaqs)];
         <div class="grid grid-2" style="gap: var(--s-3);">
           <a class="hub-link-card hub-link-card--writing" href="/celpip/writing" aria-label="Open CELPIP Writing Hub">
             <div class="card hub-link-card__inner">
-              <h3 style="margin-top: 0;">✍️ Writing Hub</h3>
+              <h3 style="margin-top: 0;">Writing Hub</h3>
               <p class="muted" style="margin-bottom: 0;">Get your writing scored by AI, then book a class for human feedback, lessons, and coaching.</p>
-              <span class="hub-link-card__cta">Open writing hub →</span>
+              <span class="hub-link-card__cta">Open writing hub</span>
             </div>
           </a>
           <a class="hub-link-card hub-link-card--speaking" href="/celpip/speaking" aria-label="Open CELPIP Speaking Hub">
             <div class="card hub-link-card__inner">
-              <h3 style="margin-top: 0;">🗣️ Speaking Hub</h3>
+              <h3 style="margin-top: 0;">Speaking Hub</h3>
               <p class="muted" style="margin-bottom: 0;">Task strategies, speaking lessons, tutoring, and webinar support.</p>
-              <span class="hub-link-card__cta">Open speaking hub →</span>
+              <span class="hub-link-card__cta">Open speaking hub</span>
             </div>
           </a>
         </div>
@@ -125,30 +118,29 @@ const homeStructuredData = [buildFAQSchema(homeFaqs)];
 
     <div style="height: var(--s-8);"></div>
 
-    <!-- TOP CATEGORY CARDS -->
     <div class="grid grid-4">
       <article class="card">
         <h3>Grammar</h3>
         <p>Learn the grammar structures you need for Band 7+ with clear examples.</p>
-        <a class="btn" href="/lessons/grammar">See lessons →</a>
+        <a class="btn" href="/lessons/grammar">See lessons</a>
       </article>
 
       <article class="card">
         <h3>Vocabulary</h3>
         <p>Learn the important words and phrases that will help you in the test.</p>
-        <a class="btn" href="/lessons/vocabulary">See lessons →</a>
+        <a class="btn" href="/lessons/vocabulary">See lessons</a>
       </article>
 
       <article class="card">
         <h3>Writing</h3>
         <p>Learn how to write better essays and answers that get higher scores.</p>
-        <a class="btn" href="/lessons/writing">See lessons →</a>
+        <a class="btn" href="/lessons/writing">See lessons</a>
       </article>
 
       <article class="card">
         <h3>Speaking</h3>
         <p>Learn how to give clear, natural answers that sound confident.</p>
-        <a class="btn" href="/lessons/speaking">See lessons →</a>
+        <a class="btn" href="/lessons/speaking">See lessons</a>
       </article>
     </div>
 
@@ -159,71 +151,69 @@ const homeStructuredData = [buildFAQSchema(homeFaqs)];
       <div class="grid grid-2" style="margin-top: var(--s-4); gap: var(--s-3);">
         <a class="card" href="/blog/band-7-writing-strategy" style="text-decoration:none;">
           <h3>How to get Band 7 in IELTS Writing</h3>
-          <p class="muted">High-intent writing strategy page with structure and timing guidance.</p>
+          <p class="muted">A practical guide to structure, timing, and the habits that move many students from Band 6 to Band 7.</p>
         </a>
         <a class="card" href="/blog/celpip-speaking-part2" style="text-decoration:none;">
           <h3>CELPIP Speaking Task 2 guide</h3>
-          <p class="muted">A focused article for one of the most searched CELPIP speaking tasks.</p>
+          <p class="muted">A clear guide to one of the tasks students often find difficult under time pressure.</p>
         </a>
         <a class="card" href="/celpip/writing/samples" style="text-decoration:none;">
           <h3>CELPIP sample essays</h3>
-          <p class="muted">Internal destination for students who specifically want model writing examples.</p>
+          <p class="muted">Sample responses with score-focused notes you can study before you write your own answer.</p>
         </a>
         <a class="card" href="/faq" style="text-decoration:none;">
           <h3>FAQ</h3>
-          <p class="muted">Trust-building answers about lessons, tutoring, writing help, and pricing.</p>
+          <p class="muted">Common questions about lessons, tutoring, writing help, and pricing.</p>
         </a>
       </div>
     </div>
 
     <div style="height: var(--s-8);"></div>
 
-    <!-- WEEKLY WEBINAR PROMOTION -->
     <div class="surface feature" style="border: 3px solid var(--accent); background: linear-gradient(135deg, rgba(217, 72, 72, 0.08) 0%, rgba(217, 72, 72, 0.04) 100%);">
       <div class="feature-grid">
         <div class="stack">
           <div style="display: inline-block; background: var(--accent); color: white; padding: var(--s-1) var(--s-2); border-radius: 999px; width: fit-content; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
-            🎓 LIVE EVERY SATURDAY
+            LIVE EVERY SATURDAY
           </div>
           <h2 style="margin-top: 0;">CELPIP Weekly Webinars</h2>
-          <p style="font-size: 1.1rem;">60-minute live sessions. Real strategies. Interactive Q&A.</p>
+          <p style="font-size: 1.1rem;">60-minute live sessions. Real strategies. Interactive Q and A.</p>
 
           <div class="checklist" style="margin: var(--s-3) 0;">
             <div class="check">
-              <div class="icon">✓</div>
+              <div class="icon">1</div>
               <div>
-                <strong>45 mins of focused teaching</strong>
-                <span>One skill per session. No fluff.</span>
+                <strong>45 minutes of focused teaching</strong>
+                <span>One skill per session. No filler.</span>
               </div>
             </div>
 
             <div class="check">
-              <div class="icon">✓</div>
+              <div class="icon">2</div>
               <div>
-                <strong>15 mins live Q&A</strong>
+                <strong>15 minutes of live questions</strong>
                 <span>Ask your specific questions.</span>
               </div>
             </div>
 
             <div class="check">
-              <div class="icon">✓</div>
+              <div class="icon">3</div>
               <div>
                 <strong>Only $12 per session</strong>
-                <span>Or attend the free livestream link.</span>
+                <span>Or attend through the free livestream link.</span>
               </div>
             </div>
           </div>
 
           <p style="margin-top: var(--s-3); margin-bottom: 0;">
             <a href="/webinar" style="color: var(--accent); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-              Learn more and register →
+              Learn more and register
             </a>
           </p>
         </div>
 
         <div style="display: flex; align-items: center; justify-content: center; padding: var(--s-5); background: rgba(217, 72, 72, 0.12); border-radius: 16px;">
           <div style="text-align: center;">
-            <div style="font-size: 4rem; margin-bottom: var(--s-2);">🎤</div>
             <p style="margin: 0; font-weight: 600; font-size: 1.1rem;">Weekly CELPIP<br/>Webinar</p>
             <p style="margin: var(--s-1) 0 0; color: var(--text-muted); font-size: 0.95rem;">Saturday 6:00 PM PST</p>
           </div>
@@ -233,44 +223,43 @@ const homeStructuredData = [buildFAQSchema(homeFaqs)];
 
     <div style="height: var(--s-8);"></div>
 
-    <!-- FEATURE SECTION -->
     <div class="surface feature">
       <div class="feature-grid">
         <div class="stack">
           <h2>Made for students who want better scores.</h2>
-          <p>Most students stop improving because they don't learn the right structures.</p>
+          <p>Most students stop improving because they do not learn the right structures in a clear way.</p>
 
           <div class="cluster" style="margin-top: var(--s-2);">
-            <a class="btn btn-primary" href="/celpip">CELPIP course →</a>
-            <a class="btn" href="/ielts">IELTS guide →</a>
+            <a class="btn btn-primary" href="/celpip">CELPIP course</a>
+            <a class="btn" href="/ielts">IELTS guide</a>
           </div>
         </div>
 
         <div>
-          <h3 style="margin: 0 0 var(--s-4);">What you’ll get</h3>
+          <h3 style="margin: 0 0 var(--s-4);">What you will get</h3>
 
           <div class="checklist">
             <div class="check">
-              <div class="icon">✓</div>
+              <div class="icon">1</div>
               <div>
-                <strong>Easy to understand</strong>
-                <span>Short lessons. Clear examples.</span>
+                <strong>Easy to understand lessons</strong>
+                <span>Short explanations and clear examples.</span>
               </div>
             </div>
 
             <div class="check">
-              <div class="icon">✓</div>
+              <div class="icon">2</div>
               <div>
                 <strong>Practice for real tests</strong>
-                <span>Learn what actually helps your score.</span>
+                <span>Study what actually helps your score.</span>
               </div>
             </div>
 
             <div class="check">
-              <div class="icon">✓</div>
+              <div class="icon">3</div>
               <div>
                 <strong>Simple patterns to use</strong>
-                <span>Templates you can use again and again.</span>
+                <span>Useful models you can apply again and again.</span>
               </div>
             </div>
           </div>
@@ -280,19 +269,17 @@ const homeStructuredData = [buildFAQSchema(homeFaqs)];
 
     <div style="height: var(--s-8);"></div>
 
-    <!-- TESTIMONIALS SECTION -->
     <div>
       <h2>Student results</h2>
       <p style="color: var(--text-muted); margin-bottom: var(--s-4);">Real students, real scores.</p>
       <Testimonials columns={3} />
       <div style="text-align: center; margin-top: var(--s-4);">
-        <a href="/success-stories" class="btn btn-ghost">See more success stories →</a>
+        <a href="/success-stories" class="btn btn-ghost">See more success stories</a>
       </div>
     </div>
 
     <div style="height: var(--s-8);"></div>
 
-    <!-- NEWSLETTER SECTION -->
     <Newsletter />
 
     <div style="height: var(--s-8);"></div>

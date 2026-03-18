@@ -46,6 +46,8 @@ const { Content, headings } = await item.render();
 const publicTitle = getPublicLessonTitle(item.data.title, item.data.level);
 const currentCategory = item.data.category;
 const slugText = item.slug.toLowerCase();
+const isLocalPreview = import.meta.env.DEV || ["localhost", "127.0.0.1"].includes(Astro.url.hostname);
+const showBottomLessonAd = !isLocalPreview;
 
 const sameCategoryLessons = (
   await getCollection(
@@ -151,7 +153,7 @@ if (slugText.includes("task2") && currentCategory === "writing") {
   addGuide({
     title: "IELTS Writing Task 2 Structure",
     href: "/blog/ielts-writing-task-2-structure",
-    description: "A reliable blueprint for high-intent essay preparation queries.",
+    description: "A reliable blueprint for essay structure, paragraph control, and timing.",
   });
 }
 
@@ -271,7 +273,25 @@ const seoKeywords = `${item.data.title}, ${item.data.category}, ${item.data.leve
 
   <section class="section-sm">
     <article class="surface lesson-content" style="padding: var(--s-6);">
+      <div class="lesson-divider" aria-hidden="true"></div>
       <Content />
+
+      {showBottomLessonAd && (
+        <div class="surface lesson-bottom-ad" style="padding: var(--s-3); margin-top: var(--s-5);">
+          <ins
+            class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-5615542310815721"
+            data-ad-slot="7254823697"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+          <script is:inline>
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+      )}
+
+      <div class="lesson-divider lesson-divider-soft" aria-hidden="true"></div>
 
       {guideLinks.length > 0 && (
         <div class="surface" style="padding: var(--s-4); margin-top: var(--s-6);">

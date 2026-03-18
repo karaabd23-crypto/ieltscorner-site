@@ -1,19 +1,22 @@
-﻿---
+---
 import Layout from "../../layouts/Layout.astro";
 import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
 
 const pageFaqs = [
   {
-    question: "How should I use this guide effectively?",
-    answer: "Use the structure on one timed response, review where logic breaks, then revise the same response once. This loop builds score-related habits faster than writing many unchecked answers.",
+    question: "What is the key to a strong IELTS opinion essay?",
+    answer:
+      "The key is to make your opinion clear early, keep it consistent, and support it with well-developed reasons instead of short, general points.",
   },
   {
-    question: "Is this enough for a high band or CLB score?",
-    answer: "This guide gives you a strong strategy baseline. Most candidates improve faster when they combine it with targeted lessons and feedback.",
+    question: "Should I discuss both sides in an opinion essay?",
+    answer:
+      "Only if the question asks you to. In a standard opinion essay, your main job is to defend your own position clearly and directly.",
   },
   {
-    question: "What should I do after reading this page?",
-    answer: "Practice one task immediately, then compare your draft against the checklist and linked resources below.",
+    question: "How many reasons should I give in an opinion essay?",
+    answer:
+      "Two strong reasons are usually enough. It is better to develop two ideas well than to mention four ideas briefly.",
   },
 ];
 
@@ -28,95 +31,171 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="IELTS Writing Task 2 Opinion Essay | Position, Support and Band 7 Control"
-  description="IELTS opinion essay strategy for clear position, paragraph unity, and argument development under exam timing."
+  title="IELTS Writing Task 2 Opinion Essay | Clear Position and Strong Support"
+  description="IELTS opinion essay guidance with a clear structure, stronger support, and practical advice for writing a direct Band 7 style response."
   type="article"
-  keywords="IELTS opinion essay, IELTS Task 2 opinion, IELTS writing task 2 guide"
+  keywords="IELTS opinion essay, IELTS Task 2 opinion essay, IELTS writing opinion structure"
   structuredData={pageStructuredData}
 >
-  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
-    <div style="margin-bottom: var(--s-4);">
-      <a href="/blog" style="color: var(--accent);">&larr; Back to blog</a>
-    </div>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
 
-    <header style="margin-bottom: var(--s-4);">
-      <h1 style="margin: 0;">IELTS Writing Task 2 Opinion Essay</h1>
-      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
-        <span>March 14, 2026</span>
-        <span>IELTS Corner Team</span>
-        <span>6 min read</span>
+    <header class="guide-header">
+      <span class="guide-tag">IELTS writing guide</span>
+      <h1 style="margin: 0;">IELTS Writing Task 2 opinion essay</h1>
+      <div class="guide-meta">
+        <span>March 17, 2026</span>
+        <span>7 min read</span>
       </div>
     </header>
 
-    <div class="divider" style="margin: var(--s-4) 0; height: 2px; background: var(--text-muted-light);"></div>
+    <div class="guide-lead">
+      <p>
+        An opinion essay looks simple, but many students lose marks because the opinion is
+        not strong enough. The introduction sounds neutral, the body paragraphs drift into
+        different directions, or the essay repeats the same point with different words.
+      </p>
+      <p>
+        A strong opinion essay is direct. The reader should know what you believe within
+        the first few lines.
+      </p>
+    </div>
 
-    <div class="article-content" style="line-height: 1.8;">
-      <p>Opinion essays are one of the most frequent IELTS Task 2 formats. The scoring difference usually comes from how clearly you state and defend your position.</p>
+    <div class="guide-grid guide-grid-2">
+      <section class="guide-card">
+        <h2>What this question is really testing</h2>
+        <ul class="guide-list">
+          <li>Can you take a clear position?</li>
+          <li>Can you support that position with useful reasons?</li>
+          <li>Can you keep the whole essay moving in one direction?</li>
+        </ul>
+      </section>
 
-      <h2>Quick strategy framework</h2>
-      <ul>
-        <li>Plan before writing or speaking so your response has a clear structure.</li>
-        <li>Keep one main idea per paragraph or answer block.</li>
-        <li>Support claims with one relevant reason or example, not multiple weak points.</li>
-        <li>Leave time for a short review step to catch avoidable errors.</li>
+      <section class="guide-card">
+        <h2>What usually goes wrong</h2>
+        <ul class="guide-list">
+          <li>The writer sounds unsure in the introduction.</li>
+          <li>The two body paragraphs repeat the same idea.</li>
+          <li>The examples are too general to be convincing.</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>A simple opinion essay plan</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Introduction</h3>
+            <p>Paraphrase the topic and state your opinion clearly. Do not wait until the conclusion.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Body paragraph 1</h3>
+            <p>Give your strongest reason first. Explain it and support it with one relevant example.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Body paragraph 2</h3>
+            <p>Give a different reason. Avoid repeating the same idea with slightly different words.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Conclusion</h3>
+            <p>Restate your opinion briefly. Keep it short and confident.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Example of a clear position</h2>
+      <div class="guide-example">
+        <p><strong>Question:</strong> Do the advantages of remote work outweigh the disadvantages?</p>
+        <p>
+          <strong>Clear opinion:</strong> In my view, the advantages of remote work do
+          outweigh the disadvantages because it gives workers more flexibility and reduces
+          wasted commuting time.
+        </p>
+      </div>
+      <div class="guide-note" style="margin-top: var(--s-3);">
+        <p>
+          This works because the writer chooses a side and previews the two body ideas at
+          the same time.
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>How to choose better reasons</h2>
+      <ul class="guide-list">
+        <li>Choose reasons that are easy to explain, not reasons that only sound impressive.</li>
+        <li>Make sure the two body ideas are different from each other.</li>
+        <li>Use examples that show a real effect, not just a vague opinion.</li>
       </ul>
+    </section>
 
-      <h2>Common mistakes to avoid</h2>
-      <table style="width: 100%; border-collapse: collapse; margin: var(--s-3) 0;">
-        <tr style="background: var(--surface);">
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Mistake</th>
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Better move</th>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Common mistakes</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Mistake</th>
+          <th>Better move</th>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Starting without a plan</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Take 1-2 minutes to map your response first.</td>
+          <td>The essay gives an opinion, then sounds neutral later.</td>
+          <td>Keep the same position all the way through the essay.</td>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Adding ideas without development</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Develop fewer ideas with clearer support.</td>
+          <td>Both body paragraphs support almost the same reason.</td>
+          <td>Choose two clearly different arguments.</td>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Skipping review</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Reserve a short final check for clarity and errors.</td>
+          <td>The example is too general.</td>
+          <td>Show a clear real-world effect or realistic situation.</td>
+        </tr>
+        <tr>
+          <td>The conclusion introduces a new idea.</td>
+          <td>Only restate the opinion and the logic already used.</td>
         </tr>
       </table>
+    </section>
 
-      <h2>Related guides and next steps</h2>
-      <ul>
-        <li><a href="/ielts/writing">IELTS writing hub</a></li>
-        <li><a href="/blog/ielts-writing-task-2-structure">Task 2 structure guide</a></li>
-        <li><a href="/blog/ielts-writing-task-2-discussion-essay">Discussion essay guide</a></li>
-        <li><a href="/essay-correction">Essay correction service</a></li>
-      </ul>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Next step</h2>
+      <div class="guide-links">
+        <a href="/blog/ielts-writing-task-2-discussion-essay">
+          <strong>Read the discussion essay guide</strong>
+          <span>See how the structure changes when you need to show both views.</span>
+        </a>
+        <a href="/essay-correction">
+          <strong>Check your own essay</strong>
+          <span>Get feedback on whether your position stays clear and well supported.</span>
+        </a>
+        <a href="/ielts/writing">
+          <strong>Go to the IELTS writing hub</strong>
+          <span>Move to the next writing task or supporting lesson.</span>
+        </a>
+      </div>
+    </section>
 
+    <section class="guide-card" style="margin-top: var(--s-4);">
       <h2>FAQ</h2>
-      {pageFaqs.map((item) => (
-        <details class="card" style="margin-bottom: var(--s-3);">
-          <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
-          <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
-        </details>
-      ))}
-    </div>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
   </article>
 </Layout>
-
-<style>
-  .article-content {
-    color: var(--text);
-  }
-
-  .article-content h2 {
-    margin-top: var(--s-5);
-    margin-bottom: var(--s-2);
-  }
-
-  .article-content ul {
-    margin: var(--s-2) 0;
-    padding-left: var(--s-4);
-  }
-
-  .article-content li {
-    margin: var(--s-1) 0;
-  }
-</style>
-

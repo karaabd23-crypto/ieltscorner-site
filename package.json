@@ -25,7 +25,11 @@
     "telegram:story:preview": "node scripts/post-telegram-story.mjs --preview",
     "telegram:story:dry": "node scripts/post-telegram-story.mjs --dry-run",
     "newsletter:digest": "node scripts/send-newsletter-digest.mjs",
-    "newsletter:digest:dry": "node scripts/send-newsletter-digest.mjs --dry-run"
+    "newsletter:digest:dry": "node scripts/send-newsletter-digest.mjs --dry-run",
+    "newsletter:stats": "node scripts/newsletter-stats.mjs",
+    "newsletter:stats:json": "node scripts/newsletter-stats.mjs --json",
+    "cancel:insights": "node scripts/monthly-cancellation-insights.mjs",
+    "cancel:insights:dry": "node scripts/monthly-cancellation-insights.mjs --dry-run"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.7",

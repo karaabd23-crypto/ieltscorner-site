@@ -5,6 +5,7 @@ import {
   CELPIP_WRITING_BILLING_INTERVAL,
   CELPIP_WRITING_PRODUCT_NAME,
 } from '../../src/lib/celpipWritingData.mjs';
+import { normalizeCelpipReport } from '../../src/lib/celpipWritingFeedback.mjs';
 
 const STRIPE_API_KEY = process.env.STRIPE_API_KEY;
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
@@ -64,11 +65,80 @@ async function validateSession(sessionId) {
 
 function buildPrompt({ taskType, promptTitle, promptText, promptInstructions, responseText, timeSpentSeconds, wordCount }) {
   const task = CELPIP_TASK_CONFIG[taskType] || CELPIP_TASK_CONFIG.task1;
-  const levelGuide = CELPIP_LEVEL_GUIDE.map((item) => `Level ${item.level}: ${item.label} — ${item.descriptor}`).join('\n');
+  const levelGuide = CELPIP_LEVEL_GUIDE
+    .map((item) => `Level ${item.level}: ${item.label} - ${item.descriptor}`)
+    .join('\n');
 
   return `You are a strict but fair CELPIP Writing examiner.
 
-Use the CELPIP level scale from 1 to 12. Base your judgment on task completion, organization/coherence, vocabulary, and grammar/language control. Use the following level guide inspired by CELPIP score comparison descriptors:\n${levelGuide}\n\nTask type: ${task.label}\nExpected timing: ${task.minutes} minutes\nTarget length: ${task.targetWords}\nTime used by student: ${Math.floor(Number(timeSpentSeconds || 0) / 60)} minutes ${Number(timeSpentSeconds || 0) % 60} seconds\nWord count: ${wordCount}\n\nPrompt title: ${promptTitle}\nPrompt: ${promptText}\nInstructions: ${(promptInstructions || []).join(' | ')}\n\nStudent response:\n${responseText}\n\nReturn ONLY valid JSON with this exact shape:\n{\n  "overallLevel": 8,\n  "descriptor": "short descriptor",\n  "overallSummary": "2-3 sentence summary",\n  "traitScores": {\n    "Task fulfillment": 8,\n    "Organization": 8,\n    "Vocabulary": 7,\n    "Grammar": 7\n  },\n  "strengths": ["bullet", "bullet", "bullet"],\n  "improvementPriorities": ["bullet", "bullet", "bullet"],\n  "rewriteSuggestions": ["original issue → better version", "original issue → better version"],\n  "nextPracticeSteps": ["step", "step", "step"]\n}\n\nRules:\n- Be conservative; do not inflate scores.\n- If the response misses instructions, reduce task fulfillment noticeably.\n- If tone is inappropriate for Task 1 email, mention it clearly.\n- If support is weak in Task 2, lower organization and task fulfillment.\n- Keep each list item concrete and specific to this response.\n- Every trait score must be an integer from 1 to 12.`;
+Use the CELPIP level scale from 1 to 12. Judge the response the way a serious CELPIP rater would: task completion, organization/coherence, vocabulary, and grammar/language control.
+
+Reference guide:
+${levelGuide}
+
+Task type: ${task.label}
+Expected timing: ${task.minutes} minutes
+Target length: ${task.targetWords}
+Time used by student: ${Math.floor(Number(timeSpentSeconds || 0) / 60)} minutes ${Number(timeSpentSeconds || 0) % 60} seconds
+Word count: ${wordCount}
+
+Prompt title: ${promptTitle}
+Prompt: ${promptText}
+Instructions: ${(promptInstructions || []).join(' | ')}
+
+Student response:
+${responseText}
+
+Return ONLY valid JSON with this exact shape:
+{
+  "overallLevel": 8,
+  "descriptor": "short descriptor",
+  "overallSummary": "2-3 sentence CELPIP-style summary",
+  "traitScores": {
+    "Task fulfillment": 8,
+    "Organization": 8,
+    "Vocabulary": 7,
+    "Grammar": 7
+  },
+  "criterionComments": {
+    "Task fulfillment": "1-2 sentence rater comment",
+    "Organization": "1-2 sentence rater comment",
+    "Vocabulary": "1-2 sentence rater comment",
+    "Grammar": "1-2 sentence rater comment"
+  },
+  "strengths": ["bullet", "bullet", "bullet"],
+  "improvementPriorities": ["bullet", "bullet", "bullet"],
+  "errorAnalysis": [
+    {
+      "category": "Prompt coverage",
+      "severity": "high",
+      "explanation": "clear ESL-friendly comment",
+      "evidence": "short quote or short description from the response",
+      "fixNow": "one practical revision step"
+    }
+  ],
+  "rewriteSuggestions": [
+    {
+      "before": "student wording",
+      "after": "better wording",
+      "why": "why the revision is stronger"
+    }
+  ],
+  "lessonNeeds": ["short lesson need", "short lesson need"],
+  "nextPracticeSteps": ["step", "step", "step"]
+}
+
+Rules:
+- Be conservative; do not inflate scores.
+- Think like a CELPIP rater first, a coach second.
+- If the response misses instructions, reduce task fulfillment noticeably.
+- If tone is inappropriate for Task 1 email, mention it clearly.
+- If support is weak in Task 2, lower organization and task fulfillment.
+- Keep comments simple enough for an ESL student at CLB 6 to understand.
+- Every trait score must be an integer from 1 to 12.
+- Give 3 to 6 errorAnalysis items.
+- Do not invent evidence. If evidence is missing, say briefly what is missing instead.
+- lessonNeeds should be short labels such as "email tone", "prompt coverage", "support and examples", "sentence boundaries".`;
 }
 
 function extractJson(text) {
@@ -95,7 +165,7 @@ async function callAnthropic(prompt) {
     },
     body: JSON.stringify({
       model: ANTHROPIC_MODEL,
-      max_tokens: 1400,
+      max_tokens: 1800,
       temperature: 0.2,
       messages: [{ role: 'user', content: prompt }],
     }),
@@ -115,7 +185,7 @@ async function callOpenAI(prompt) {
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: {
-      'Authorization': `Bearer ${OPENAI_API_KEY}`,
+      Authorization: `Bearer ${OPENAI_API_KEY}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
@@ -135,48 +205,71 @@ async function callOpenAI(prompt) {
   return extractJson(data?.choices?.[0]?.message?.content || '{}');
 }
 
-function normalizeReport(report) {
-  const level = Math.max(1, Math.min(12, Number(report?.overallLevel || 1)));
-  return {
-    overallLevel: level,
-    descriptor: String(report?.descriptor || ''),
-    overallSummary: String(report?.overallSummary || ''),
-    traitScores: report?.traitScores && typeof report.traitScores === 'object' ? report.traitScores : {},
-    strengths: Array.isArray(report?.strengths) ? report.strengths.slice(0, 5) : [],
-    improvementPriorities: Array.isArray(report?.improvementPriorities) ? report.improvementPriorities.slice(0, 5) : [],
-    rewriteSuggestions: Array.isArray(report?.rewriteSuggestions) ? report.rewriteSuggestions.slice(0, 4) : [],
-    nextPracticeSteps: Array.isArray(report?.nextPracticeSteps) ? report.nextPracticeSteps.slice(0, 4) : [],
-  };
-}
-
-function buildAdminFallbackReport({ taskType, responseText, wordCount }) {
+function buildAdminFallbackReport({ taskType, wordCount }) {
   const task = CELPIP_TASK_CONFIG[taskType] || CELPIP_TASK_CONFIG.task1;
   const level = wordCount >= 140 ? 8 : wordCount >= 90 ? 7 : 6;
 
   return {
     overallLevel: level,
     descriptor: 'Local admin preview report',
-    overallSummary: `This is a local admin fallback report for ${task.label}. Live AI grading is currently unavailable, but your end-to-end UI flow is working.`,
+    overallSummary: `This is a local admin fallback report for ${task.label}. Live AI grading is unavailable, but the full scoring flow is working.`,
     traitScores: {
       'Task fulfillment': level,
-      'Organization': Math.max(1, level - 1),
-      'Vocabulary': Math.max(1, level - 1),
-      'Grammar': Math.max(1, level - 1),
+      Organization: Math.max(1, level - 1),
+      Vocabulary: Math.max(1, level - 1),
+      Grammar: Math.max(1, level - 1),
+    },
+    criterionComments: {
+      'Task fulfillment': taskType === 'task1'
+        ? 'The email purpose is visible, but prompt coverage and tone still need closer control.'
+        : 'The position is understandable, but support still needs stronger development.',
+      Organization: 'The main order works, but the response still needs tighter paragraph control.',
+      Vocabulary: 'Word choice is understandable, but more precise language would help the score.',
+      Grammar: 'The meaning is clear overall, but grammar control still needs cleaner editing.',
     },
     strengths: [
       'Main message is understandable.',
-      'Tone is generally appropriate for the task.',
-      'You attempted clear purpose and audience awareness.',
+      'The response attempts an appropriate task shape.',
+      'The writing shows awareness of purpose and audience.',
     ],
     improvementPriorities: [
       'Expand supporting details with concrete examples.',
       'Improve sentence variety and transitions between ideas.',
       'Proofread for grammar and punctuation accuracy.',
     ],
-    rewriteSuggestions: [
-      'I am really bothered by the noise you are making → I am writing to report repeated late-night noise from the unit above mine.',
-      'Please help by speaking to the tenant upstairs → I would appreciate it if management could contact the tenant and enforce quiet hours after 10 PM.',
+    errorAnalysis: [
+      {
+        category: taskType === 'task1' ? 'Prompt coverage' : 'Support and examples',
+        severity: 'medium',
+        explanation: taskType === 'task1'
+          ? 'The response needs fuller coverage of the task points.'
+          : 'The response needs more specific support for the main position.',
+        evidence: '',
+        fixNow: 'Outline the job of each paragraph before you write again.',
+      },
+      {
+        category: 'Sentence control',
+        severity: 'medium',
+        explanation: 'Some sentences would be stronger with cleaner grammar and punctuation.',
+        evidence: '',
+        fixNow: 'Edit one paragraph slowly and check every sentence boundary.',
+      },
     ],
+    rewriteSuggestions: [
+      {
+        before: 'I am really bothered by the noise you are making.',
+        after: 'I am writing to report repeated late-night noise from the unit above mine.',
+        why: 'The revision sounds more professional and gives the task purpose immediately.',
+      },
+      {
+        before: 'Please help by speaking to the tenant upstairs.',
+        after: 'I would appreciate it if management could contact the tenant and enforce quiet hours after 10 PM.',
+        why: 'The revision is more specific and more appropriate for a formal email.',
+      },
+    ],
+    lessonNeeds: taskType === 'task1'
+      ? ['email tone', 'prompt coverage', 'sentence boundaries']
+      : ['support and examples', 'clear position', 'sentence boundaries'],
     nextPracticeSteps: [
       'Write one revised version using stronger topic sentences.',
       'Add one specific detail in each paragraph.',
@@ -224,7 +317,7 @@ export async function handler(event) {
         return {
           statusCode: 200,
           body: JSON.stringify({
-            report: buildAdminFallbackReport({ taskType, responseText, wordCount }),
+            report: normalizeCelpipReport(buildAdminFallbackReport({ taskType, wordCount }), { taskType }),
             fallback: true,
           }),
         };
@@ -250,15 +343,14 @@ export async function handler(event) {
 
     let report;
     try {
-      report = normalizeReport(
-        ANTHROPIC_API_KEY ? await callAnthropic(prompt) : await callOpenAI(prompt)
-      );
+      const rawReport = ANTHROPIC_API_KEY ? await callAnthropic(prompt) : await callOpenAI(prompt);
+      report = normalizeCelpipReport(rawReport, { taskType });
     } catch (error) {
       if (!isAdminBypass) {
         throw error;
       }
 
-      report = normalizeReport(buildAdminFallbackReport({ taskType, responseText, wordCount }));
+      report = normalizeCelpipReport(buildAdminFallbackReport({ taskType, wordCount }), { taskType });
     }
 
     return {

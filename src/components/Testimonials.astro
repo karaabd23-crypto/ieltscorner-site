@@ -14,90 +14,134 @@ const defaultTestimonials = [
   {
     name: "Priya M.",
     title: "Band 7.5 in IELTS",
-    score: "Improved from Band 6.5 → 7.5",
-    text: "The lessons are so clear. I finally understood conditionals after years of confusion. The tutor gave me real examples from actual tests.",
-    image: "/testimonials/priya.jpg"
+    score: "Improved from Band 6.5 to 7.5",
+    text: "The lessons were clear enough that I finally understood conditionals after years of confusion. The tutor used examples that actually matched the exam.",
+    image: "/testimonials/priya.jpg",
   },
   {
     name: "Ahmed K.",
     title: "CLB 9 in CELPIP",
-    score: "Improved from CLB 8 → 9",
-    text: "The structured lessons helped me improve my speaking. The tips about pausing and emphasizing words actually made a difference in my test.",
-    image: "/testimonials/ahmed.jpg"
+    score: "Improved from CLB 8 to 9",
+    text: "The speaking feedback helped me slow down, stress the right words, and organize my answers better. That made a real difference in the test.",
+    image: "/testimonials/ahmed.jpg",
   },
   {
     name: "Lisa C.",
     title: "Band 7 in IELTS (Writing 7.5)",
-    score: "First attempt: Band 7",
-    text: "The essay correction feedback was so detailed. I knew exactly what to fix. The band score prediction was spot-on too.",
-    image: "/testimonials/lisa.jpg"
+    score: "Band 7 on the first attempt",
+    text: "The essay correction feedback was detailed and specific. I knew exactly what to fix instead of guessing.",
+    image: "/testimonials/lisa.jpg",
   },
   {
     name: "Marco V.",
     title: "Band 6.5 in IELTS",
-    score: "Improved from Band 5.5 → 6.5",
-    text: "Tutoring was worth every dollar. One-on-one practice with someone patient who explained my mistakes clearly.",
-    image: "/testimonials/marco.jpg"
+    score: "Improved from Band 5.5 to 6.5",
+    text: "Private tutoring was worth it because every mistake was explained clearly, and I always left class knowing what to practice next.",
+    image: "/testimonials/marco.jpg",
   },
   {
     name: "Sarah T.",
     title: "Band 7.5 in IELTS (Reading 8)",
     score: "Strong vocabulary improvement",
-    text: "The vocabulary lessons taught me collocations I never learned in school. These words came up in my actual test!",
-    image: "/testimonials/sarah.jpg"
+    text: "The vocabulary lessons taught me collocations I had never learned in school, and some of them appeared in my actual test.",
+    image: "/testimonials/sarah.jpg",
   },
   {
     name: "Dev S.",
     title: "CLB 9 in CELPIP",
-    score: "Ideal Band Score Achieved",
-    text: "Everything I studied showed up in the test. The lessons are 100% aligned with what CELPIP actually tests.",
-    image: "/testimonials/dev.jpg"
-  }
+    score: "Target score achieved",
+    text: "The lessons felt closely connected to what CELPIP really tests. I studied the site and saw the same patterns on exam day.",
+    image: "/testimonials/dev.jpg",
+  },
 ];
 
-const { 
+const {
   testimonials = defaultTestimonials,
-  columns = 3
+  columns = 3,
 } = Astro.props;
 ---
 
-<div style={`display: grid; grid-template-columns: repeat(${columns}, 1fr); gap: var(--s-3);`}>
+<div class="testimonials-grid" style={`grid-template-columns: repeat(${columns}, 1fr);`}>
   {testimonials.map((testimonial) => (
-    <article
-      class="testimonial-card"
-      style="padding: var(--s-3); border-radius: 8px; background: var(--surface); border: 1px solid var(--text-muted-light); display: flex; flex-direction: column;"
-    >
-      <!-- STARS -->
-      <div style="display: flex; gap: 0.25rem; margin-bottom: var(--s-1);">
-        <span style="color: #fbbf24;">★</span>
-        <span style="color: #fbbf24;">★</span>
-        <span style="color: #fbbf24;">★</span>
-        <span style="color: #fbbf24;">★</span>
-        <span style="color: #fbbf24;">★</span>
+    <article class="testimonial-card">
+      <div class="testimonial-card__top">
+        <span class="testimonial-card__rating">5/5</span>
       </div>
 
-      <!-- TESTIMONIAL TEXT -->
-      <p style="flex: 1; font-style: italic; line-height: 1.6; margin: 0 0 var(--s-2);">"{testimonial.text}"</p>
+      <p class="testimonial-card__text">"{testimonial.text}"</p>
 
-      <!-- NAME & TITLE -->
-      <div style="border-top: 1px solid var(--text-muted-light); padding-top: var(--s-2);">
-        <p style="margin: 0; font-weight: 700;">{testimonial.name}</p>
-        <p style="margin: var(--s-1) 0 0; font-size: 0.9rem; color: var(--text-muted);">
-          {testimonial.title}
-        </p>
-        {testimonial.score && (
-          <p style="margin: var(--s-1) 0 0; font-size: 0.85rem; color: var(--accent); font-weight: 600;">
-            ✓ {testimonial.score}
-          </p>
-        )}
+      <div class="testimonial-card__meta">
+        <p class="testimonial-card__name">{testimonial.name}</p>
+        <p class="testimonial-card__title">{testimonial.title}</p>
+        {testimonial.score && <p class="testimonial-card__score">{testimonial.score}</p>}
       </div>
     </article>
   ))}
 </div>
 
 <style>
+  .testimonials-grid {
+    display: grid;
+    gap: var(--s-3);
+  }
+
+  .testimonial-card {
+    padding: var(--s-3);
+    border-radius: 14px;
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .testimonial-card__top {
+    margin-bottom: var(--s-2);
+  }
+
+  .testimonial-card__rating {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 9px;
+    border-radius: 999px;
+    background: #fff4d6;
+    color: #8b5a00;
+    font-size: 0.8rem;
+    font-weight: 800;
+  }
+
+  .testimonial-card__text {
+    flex: 1;
+    margin: 0 0 var(--s-2);
+    font-style: italic;
+    line-height: 1.7;
+  }
+
+  .testimonial-card__meta {
+    border-top: 1px solid var(--border);
+    padding-top: var(--s-2);
+  }
+
+  .testimonial-card__name {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  .testimonial-card__title {
+    margin: var(--s-1) 0 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .testimonial-card__score {
+    margin: var(--s-1) 0 0;
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
   @media (max-width: 768px) {
-    :global(div) {
+    .testimonials-grid {
       grid-template-columns: 1fr !important;
     }
   }

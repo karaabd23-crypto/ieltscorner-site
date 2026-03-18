@@ -1,26 +1,30 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import CelpipWritingBanner from "../../components/CelpipWritingBanner.astro";
 import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
 
-const pageKeywords = "CELPIP preparation, CELPIP writing, CELPIP speaking, CELPIP reading, CELPIP listening, CELPIP writing samples, CELPIP tutor, CELPIP webinar, CLB 9 CELPIP";
+const pageKeywords =
+  "CELPIP preparation, CELPIP writing, CELPIP speaking, CELPIP reading, CELPIP listening, CELPIP writing samples, CELPIP tutor, CELPIP webinar, CLB 9 CELPIP";
 
 const pageFaqs = [
   {
     question: "What is the best way to prepare for CELPIP?",
-    answer: "The best way to prepare for CELPIP is to learn the task format for each skill, practice under time pressure, and get feedback on writing or speaking if those are your weak areas.",
+    answer:
+      "The best way to prepare for CELPIP is to learn the task format for each skill, practice under time pressure, and review the weak areas that keep lowering your score.",
   },
   {
     question: "Does IELTS Corner cover all four CELPIP skills?",
-    answer: "Yes. IELTS Corner includes CELPIP writing, speaking, reading, and listening pages, lesson archives, webinars, tutoring, and writing support.",
+    answer:
+      "Yes. IELTS Corner has separate CELPIP pages for writing, speaking, reading, and listening, plus lessons, samples, AI feedback, webinars, and tutoring.",
   },
   {
     question: "Do you offer CELPIP writing feedback?",
-    answer: "Yes. IELTS Corner offers CELPIP writing AI feedback, sample essays, and private coaching for students who want deeper review.",
+    answer:
+      "Yes. You can use the AI writing tool, sample responses, essay correction, and private classes for deeper feedback.",
   },
   {
-    question: "Are the CELPIP webinars the only way to study here?",
-    answer: "No. The webinars are one support option. You can also use free lessons, skill hubs, sample essays, AI writing tools, and private tutoring.",
+    question: "Do I need paid support to start studying here?",
+    answer:
+      "No. You can start with the free skill hubs, lessons, and blog guides. Paid support is there only if you want feedback or a faster study path.",
   },
 ];
 
@@ -35,145 +39,129 @@ const pageStructuredData = [
 
 <Layout
   title="CELPIP Preparation | Writing, Speaking, Reading and Listening"
-  description="CELPIP preparation for writing, speaking, reading, and listening. Study CELPIP with free lessons, writing tools, webinars, tutoring, and sample responses."
+  description="CELPIP preparation for writing, speaking, reading, and listening. Study with free lessons, writing tools, skill guides, and optional feedback."
   keywords={pageKeywords}
   structuredData={pageStructuredData}
 >
   <section class="section">
     <div class="hero" style={`--hero-bg: url('/heroes/celpip.png');`}>
       <div class="hero-content" style="text-align: center; max-width: 64ch; margin: 0 auto;">
-        <span class="pill">CELPIP hub for free study resources</span>
-        <h1>Start free, build skills, then add support only if needed</h1>
-        <div class="cluster" style="margin-top: var(--s-3);">
-          <a class="btn btn-primary" href="/lessons/celpip">Browse free CELPIP lessons →</a>
-          <a class="btn btn-ghost" href="#celpip-skill-hubs">Choose your skill →</a>
+        <span class="pill">CELPIP preparation</span>
+        <h1>Start with the task you need to fix.</h1>
+        <p class="muted">
+          Keep your study path simple. Choose one skill, learn the format, practice with
+          clear models, and add feedback only when you need it.
+        </p>
+        <div class="cluster" style="margin-top: var(--s-3); justify-content: center;">
+          <a class="btn btn-primary" href="/celpip/writing">Start with CELPIP writing</a>
+          <a class="btn btn-ghost" href="/lessons/celpip">Browse CELPIP lessons</a>
         </div>
       </div>
     </div>
+  </section>
 
-    <div style="height: var(--s-5);"></div>
-
-    <div id="celpip-skill-hubs" class="surface" style="padding: var(--s-6);">
-      <h2 style="margin-top: 0; text-align: center;">Start with the exact CELPIP task you need to fix</h2>
-      <p class="muted" style="max-width: 72ch; margin: 0 auto; text-align: center;">
-        Pick one skill and keep your study path simple. Each page is focused, so you are not overloaded with too many options.
+  <section class="section-sm">
+    <div class="surface" style="padding: var(--s-6);">
+      <h2 style="margin-top: 0; text-align: center;">Choose your CELPIP skill</h2>
+      <p class="muted" style="max-width: 70ch; margin: 0 auto; text-align: center;">
+        These pages are organized around real student problems, not broad course labels.
+        That makes it easier to find the next useful step.
       </p>
       <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-5);">
         <a class="card" href="/celpip/writing" style="text-decoration:none;">
           <h3>CELPIP Writing</h3>
-          <p class="muted">Email and survey strategy, clear structure, and practice prompts.</p>
+          <p class="muted">
+            Email and survey response strategy, stronger structure, and better task
+            coverage.
+          </p>
         </a>
         <a class="card" href="/celpip/speaking" style="text-decoration:none;">
           <h3>CELPIP Speaking</h3>
-          <p class="muted">Task-by-task speaking structure and fluency guidance.</p>
+          <p class="muted">
+            Task-by-task speaking support for fluency, organization, and clearer answers.
+          </p>
         </a>
         <a class="card" href="/celpip/reading" style="text-decoration:none;">
           <h3>CELPIP Reading</h3>
-          <p class="muted">Reading tactics for speed, detail accuracy, and answer selection.</p>
+          <p class="muted">
+            Reading tactics for detail questions, skimming, timing, and careful answer
+            choice.
+          </p>
         </a>
         <a class="card" href="/celpip/listening" style="text-decoration:none;">
           <h3>CELPIP Listening</h3>
-          <p class="muted">Prediction, note-taking, and common trap awareness.</p>
+          <p class="muted">
+            Prediction, note-taking, and common traps that cause avoidable listening
+            mistakes.
+          </p>
         </a>
       </div>
     </div>
+  </section>
 
-    <div style="height: var(--s-5);"></div>
-
-    <CelpipWritingBanner />
-
-    <div style="height: var(--s-5);"></div>
-
-    <div class="surface" style="padding: var(--s-6);">
-      <h2 style="text-align: center; margin-top: 0;">Free CELPIP resources to use right now</h2>
-      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-4);">
-        <a class="card" href="/celpip/writing/samples" style="text-decoration:none;">
-          <h3>CELPIP sample essays</h3>
-          <p class="muted">Model responses with practical structure and language ideas.</p>
-        </a>
-        <a class="card" href="/blog/celpip-speaking-part2" style="text-decoration:none;">
-          <h3>CELPIP Speaking Task 2 guide</h3>
-          <p class="muted">A focused task guide with examples and a clear response pattern.</p>
-        </a>
-        <a class="card" href="/lessons/celpip" style="text-decoration:none;">
-          <h3>All CELPIP lessons</h3>
-          <p class="muted">Browse all CELPIP lesson categories in one place.</p>
-        </a>
-        <a class="card" href="/celpip/writing" style="text-decoration:none;">
-          <h3>CELPIP Writing hub</h3>
-          <p class="muted">Writing roadmap with free guidance before advanced support.</p>
-        </a>
-      </div>
-    </div>
-
-    <div style="height: var(--s-8);"></div>
-
-    <div class="surface" style="padding: var(--s-6);">
-      <h2 style="margin-top: 0; text-align: center;">Simple CELPIP study order</h2>
-      <div class="grid grid-2" style="margin-top: var(--s-4); gap: var(--s-4);">
-        <div class="card">
-          <h3>1) Learn the format</h3>
-          <p class="muted">Start with one skill page so you know what the task expects.</p>
-        </div>
-        <div class="card">
-          <h3>2) Practice with free resources</h3>
-          <p class="muted">Use free lessons and samples until your structure feels stable.</p>
-        </div>
-        <div class="card">
-          <h3>3) Review your weak points</h3>
-          <p class="muted">Track where you lose points: timing, clarity, grammar, or task response.</p>
-        </div>
-        <div class="card">
-          <h3>4) Add feedback if needed</h3>
-          <p class="muted">Only then choose AI scoring, webinars, or private tutoring.</p>
-        </div>
-      </div>
-    </div>
-
-    <div style="height: var(--s-8);"></div>
-
-    <div class="surface feature" style="border: 2px solid var(--accent);">
+  <section class="section-sm">
+    <div class="surface feature">
       <div class="feature-grid">
         <div class="stack">
-          <h2>Optional paid support</h2>
+          <h2>Simple CELPIP study order</h2>
           <p class="muted" style="max-width: 58ch;">
-            After you finish the free path, choose the support level that fits your timeline.
+            Students improve faster when the study order is clear. Learn the task first,
+            practice it, then review what is still weak.
           </p>
         </div>
+
         <div class="grid grid-2" style="gap: var(--s-3);">
-          <a class="card" href="/celpip/writing/ai-feedback" style="text-decoration:none;">
-            <h3>AI Writing Feedback</h3>
-            <p class="muted">Fast scoring and revision guidance for timed writing practice.</p>
-          </a>
-          <a class="card" href="/webinar" style="text-decoration:none;">
-            <h3>Weekly Webinar</h3>
-            <p class="muted">Live teaching and Q&A every Saturday.</p>
-          </a>
-          <a class="card" href="/essay-correction" style="text-decoration:none;">
-            <h3>Essay Correction</h3>
-            <p class="muted">Detailed written feedback on your response quality.</p>
-          </a>
-          <a class="card" href="/tutoring" style="text-decoration:none;">
-            <h3>1-on-1 Tutoring</h3>
-            <p class="muted">Personal coaching for your exact score bottleneck.</p>
-          </a>
+          <div class="card">
+            <h3>1. Learn the format</h3>
+            <p class="muted">Know what each task wants before you spend hours practicing it.</p>
+          </div>
+          <div class="card">
+            <h3>2. Use free models</h3>
+            <p class="muted">Study lessons, samples, and strategy guides until the structure feels natural.</p>
+          </div>
+          <div class="card">
+            <h3>3. Notice your weak point</h3>
+            <p class="muted">Track whether the problem is timing, grammar, clarity, or task completion.</p>
+          </div>
+          <div class="card">
+            <h3>4. Add feedback if needed</h3>
+            <p class="muted">Use AI scoring, a webinar, or a private class when you need targeted correction.</p>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div style="height: var(--s-8);"></div>
+  <section class="section-sm">
+    <div class="grid grid-2" style="gap: var(--s-4);">
+      <a class="card" href="/celpip/writing/samples" style="text-decoration:none;">
+        <h3>CELPIP sample answers</h3>
+        <p class="muted">
+          Study complete responses and see how structure, tone, and support work together.
+        </p>
+      </a>
+      <a class="card" href="/celpip/writing/ai-feedback" style="text-decoration:none;">
+        <h3>AI writing feedback</h3>
+        <p class="muted">
+          Get a score estimate, trait feedback, and lesson suggestions for CELPIP writing.
+        </p>
+      </a>
+    </div>
+  </section>
 
+  <section class="section-sm">
     <div class="surface" style="padding: var(--s-6);">
       <h2 style="margin-top: 0;">CELPIP preparation FAQ</h2>
       <div class="stack" style="gap: var(--s-3); margin-top: var(--s-4);">
         {pageFaqs.map((item) => (
           <details class="card">
             <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
-            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">
+              {item.answer}
+            </p>
           </details>
         ))}
       </div>
     </div>
-
   </section>
 </Layout>

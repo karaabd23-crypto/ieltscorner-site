@@ -1,19 +1,22 @@
-﻿---
+---
 import Layout from "../../layouts/Layout.astro";
 import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
 
 const pageFaqs = [
   {
-    question: "How should I use this guide effectively?",
-    answer: "Use the structure on one timed response, review where logic breaks, then revise the same response once. This loop builds score-related habits faster than writing many unchecked answers.",
+    question: "What is the main goal in a problem solution essay?",
+    answer:
+      "The main goal is to explain the problem clearly and give realistic solutions that actually match the causes or effects you describe.",
   },
   {
-    question: "Is this enough for a high band or CLB score?",
-    answer: "This guide gives you a strong strategy baseline. Most candidates improve faster when they combine it with targeted lessons and feedback.",
+    question: "Do I need to explain the causes before the solutions?",
+    answer:
+      "Not always, but many students write better essays when they explain the problem first and then give solutions that directly connect to it.",
   },
   {
-    question: "What should I do after reading this page?",
-    answer: "Practice one task immediately, then compare your draft against the checklist and linked resources below.",
+    question: "What kind of solutions sound weak in IELTS writing?",
+    answer:
+      "Very broad solutions like 'the government should do more' sound weak unless you explain what should be done and how it would help.",
   },
 ];
 
@@ -28,95 +31,162 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="IELTS Writing Task 2 Problem Solution Essay | High-Scoring Structure"
-  description="IELTS problem solution essay guide with cause analysis, realistic solutions, and paragraph logic for Band 7+ writing."
+  title="IELTS Writing Task 2 Problem Solution Essay | Clear Structure and Realistic Ideas"
+  description="A practical IELTS problem solution essay guide with clear paragraphing, stronger causes, and realistic solutions that support a higher score."
   type="article"
-  keywords="IELTS problem solution essay, IELTS task 2 problem solution"
+  keywords="IELTS problem solution essay, IELTS Task 2 problem solution"
   structuredData={pageStructuredData}
 >
-  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
-    <div style="margin-bottom: var(--s-4);">
-      <a href="/blog" style="color: var(--accent);">&larr; Back to blog</a>
-    </div>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
 
-    <header style="margin-bottom: var(--s-4);">
-      <h1 style="margin: 0;">IELTS Writing Task 2 Problem Solution Essay</h1>
-      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
-        <span>March 14, 2026</span>
-        <span>IELTS Corner Team</span>
-        <span>6 min read</span>
+    <header class="guide-header">
+      <span class="guide-tag">IELTS writing guide</span>
+      <h1 style="margin: 0;">IELTS Writing Task 2 problem solution essay</h1>
+      <div class="guide-meta">
+        <span>March 17, 2026</span>
+        <span>7 min read</span>
       </div>
     </header>
 
-    <div class="divider" style="margin: var(--s-4) 0; height: 2px; background: var(--text-muted-light);"></div>
+    <div class="guide-lead">
+      <p>
+        Problem solution essays often sound weak because the problem is described in a very
+        general way and the solution is even more general. A high-scoring response needs a
+        clear cause, a clear effect, and a realistic answer.
+      </p>
+      <p>
+        In other words, your solution should feel connected to the problem, not added at
+        the end just because the question asked for one.
+      </p>
+    </div>
 
-    <div class="article-content" style="line-height: 1.8;">
-      <p>Problem-solution essays score well when causes are specific and solutions are realistic. Vague social commentary usually weakens task response.</p>
+    <div class="guide-grid guide-grid-2">
+      <section class="guide-card">
+        <h2>What makes this essay type strong</h2>
+        <ul class="guide-list">
+          <li>The problem is specific, not vague.</li>
+          <li>The cause or effect is explained clearly.</li>
+          <li>The solution is realistic and easy to understand.</li>
+        </ul>
+      </section>
 
-      <h2>Quick strategy framework</h2>
-      <ul>
-        <li>Plan before writing or speaking so your response has a clear structure.</li>
-        <li>Keep one main idea per paragraph or answer block.</li>
-        <li>Support claims with one relevant reason or example, not multiple weak points.</li>
-        <li>Leave time for a short review step to catch avoidable errors.</li>
-      </ul>
+      <section class="guide-card">
+        <h2>What often goes wrong</h2>
+        <ul class="guide-list">
+          <li>The writer lists problems without developing them.</li>
+          <li>The solution does not match the problem well.</li>
+          <li>The ideas sound too broad or unrealistic.</li>
+        </ul>
+      </section>
+    </div>
 
-      <h2>Common mistakes to avoid</h2>
-      <table style="width: 100%; border-collapse: collapse; margin: var(--s-3) 0;">
-        <tr style="background: var(--surface);">
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Mistake</th>
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">Better move</th>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>A simple structure that works</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Introduction</h3>
+            <p>Paraphrase the topic and say that the issue has clear causes or solutions.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Body paragraph 1</h3>
+            <p>Explain the main problem or one important cause. Add one useful example.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Body paragraph 2</h3>
+            <p>Present one or two realistic solutions that directly respond to the problem.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Conclusion</h3>
+            <p>Summarize the problem and show why the solution matters.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>What a realistic solution sounds like</h2>
+      <div class="guide-example">
+        <p><strong>Weak:</strong> The government should solve this problem.</p>
+        <p>
+          <strong>Better:</strong> Local governments could improve public transport by
+          adding more low-cost bus routes, which would reduce the number of people who rely
+          on private cars for short daily trips.
+        </p>
+      </div>
+      <div class="guide-note" style="margin-top: var(--s-3);">
+        <p>
+          The second solution is stronger because it explains who should act, what they
+          should do, and how it would help.
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Common mistakes</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Mistake</th>
+          <th>Better move</th>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Starting without a plan</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Take 1-2 minutes to map your response first.</td>
+          <td>The problem is described in a broad, abstract way.</td>
+          <td>Choose one clear problem and explain it properly.</td>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Adding ideas without development</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Develop fewer ideas with clearer support.</td>
+          <td>The solution sounds ideal but not realistic.</td>
+          <td>Give a practical solution that could actually happen.</td>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Skipping review</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Reserve a short final check for clarity and errors.</td>
+          <td>The essay gives a solution without showing why the problem exists.</td>
+          <td>Connect the solution to a clear cause or effect.</td>
+        </tr>
+        <tr>
+          <td>Too many solutions are listed quickly.</td>
+          <td>Use fewer ideas and explain them better.</td>
         </tr>
       </table>
+    </section>
 
-      <h2>Related guides and next steps</h2>
-      <ul>
-        <li><a href="/ielts/writing">IELTS writing hub</a></li>
-        <li><a href="/blog/ielts-writing-task-2-structure">Task 2 structure guide</a></li>
-        <li><a href="/blog/ielts-writing-task-2-opinion-essay">Opinion essay guide</a></li>
-        <li><a href="/essay-correction">Essay correction service</a></li>
-      </ul>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Next step</h2>
+      <div class="guide-links">
+        <a href="/blog/ielts-writing-task-2-advantages-disadvantages">
+          <strong>Read the advantages and disadvantages guide</strong>
+          <span>Compare this structure with a different Task 2 essay type.</span>
+        </a>
+        <a href="/essay-correction">
+          <strong>Check your problem solution essay</strong>
+          <span>Find out whether your solutions really match the problem you wrote about.</span>
+        </a>
+        <a href="/ielts/writing">
+          <strong>Go to the IELTS writing hub</strong>
+          <span>Move to another essay type or a lesson that supports your writing.</span>
+        </a>
+      </div>
+    </section>
 
+    <section class="guide-card" style="margin-top: var(--s-4);">
       <h2>FAQ</h2>
-      {pageFaqs.map((item) => (
-        <details class="card" style="margin-bottom: var(--s-3);">
-          <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
-          <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
-        </details>
-      ))}
-    </div>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
   </article>
 </Layout>
-
-<style>
-  .article-content {
-    color: var(--text);
-  }
-
-  .article-content h2 {
-    margin-top: var(--s-5);
-    margin-bottom: var(--s-2);
-  }
-
-  .article-content ul {
-    margin: var(--s-2) 0;
-    padding-left: var(--s-4);
-  }
-
-  .article-content li {
-    margin: var(--s-1) 0;
-  }
-</style>
-

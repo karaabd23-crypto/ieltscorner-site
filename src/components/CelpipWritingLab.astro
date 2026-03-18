@@ -32,7 +32,7 @@ const taskConfig = CELPIP_TASK_CONFIG;
         <span class="pill">Paid access unlocked</span>
         <h2 style="margin: var(--s-2) 0 0;">Timed CELPIP Writing Practice</h2>
         <p class="muted" style="margin: var(--s-2) 0 0; max-width: 70ch;">
-          Choose a task, start the timer, write your answer, then get an AI estimate for your CELPIP level with detailed strengths, weaknesses, and revision advice.
+          Choose a task, start the timer, write your answer, then get an AI estimate for your CELPIP level with rater-style comments, language diagnosis, rewrites, and lesson recommendations.
         </p>
         <p class="muted" style="margin: var(--s-2) 0 0; max-width: 70ch;">
           Your plan includes {promptTotal} prompts (Task 1 + Task 2) and a sample response for every prompt. Secure billing is handled by Stripe.
@@ -41,6 +41,9 @@ const taskConfig = CELPIP_TASK_CONFIG;
           <button id="manage-billing" class="btn" type="button">Manage billing (Stripe)</button>
           <button id="cancel-subscription-now" class="btn" type="button">Cancel now (instant)</button>
         </div>
+        <p class="muted" style="margin: var(--s-2) 0 0; font-size: 0.92rem;">
+          Cancellation is immediate. After canceling, we ask 4 short exit questions to improve the service.
+        </p>
       </div>
       <div class="surface" style="padding: var(--s-3); min-width: 220px;">
         <p style="margin: 0; font-weight: 700;">Timer</p>
@@ -103,7 +106,7 @@ const taskConfig = CELPIP_TASK_CONFIG;
             <li>Task 1 focuses on purpose, tone, and completeness.</li>
             <li>Task 2 focuses on clear opinion, support, and comparison.</li>
             <li>The AI estimates a CELPIP level on a 1–12 scale.</li>
-            <li>You receive strengths, problem areas, and revision advice.</li>
+            <li>You receive strengths, problem areas, lesson links, and revision advice.</li>
           </ul>
         </div>
 
@@ -124,6 +127,11 @@ const taskConfig = CELPIP_TASK_CONFIG;
           <div id="results-traits" class="grid grid-2" style="margin-top: var(--s-3); gap: var(--s-2);"></div>
 
           <div style="margin-top: var(--s-4);">
+            <h4 style="margin-bottom: var(--s-2);">What a CELPIP rater would say</h4>
+            <div id="results-criteria" class="grid grid-2" style="gap: var(--s-2);"></div>
+          </div>
+
+          <div style="margin-top: var(--s-4);">
             <h4 style="margin-bottom: var(--s-2);">What is working</h4>
             <ul id="results-strengths" class="muted" style="margin: 0 0 0 var(--s-4);"></ul>
           </div>
@@ -135,7 +143,17 @@ const taskConfig = CELPIP_TASK_CONFIG;
 
           <div style="margin-top: var(--s-4);">
             <h4 style="margin-bottom: var(--s-2);">Suggested rewrites</h4>
-            <ul id="results-rewrites" class="muted" style="margin: 0 0 0 var(--s-4);"></ul>
+            <div id="results-rewrites" class="stack" style="gap: var(--s-2);"></div>
+          </div>
+
+          <div style="margin-top: var(--s-4);">
+            <h4 style="margin-bottom: var(--s-2);">Language issues to fix</h4>
+            <div id="results-errors" class="stack" style="gap: var(--s-2);"></div>
+          </div>
+
+          <div style="margin-top: var(--s-4);">
+            <h4 style="margin-bottom: var(--s-2);">Study these lessons next</h4>
+            <div id="results-lessons" class="grid grid-2" style="gap: var(--s-2);"></div>
           </div>
 
           <div style="margin-top: var(--s-4);">
@@ -183,9 +201,12 @@ const taskConfig = CELPIP_TASK_CONFIG;
       const resultsSampleHint = document.getElementById('results-sample-hint');
       const resultsOpenSampleBtn = document.getElementById('results-open-sample');
       const resultsTraits = document.getElementById('results-traits');
+      const resultsCriteria = document.getElementById('results-criteria');
       const resultsStrengths = document.getElementById('results-strengths');
       const resultsPriorities = document.getElementById('results-priorities');
       const resultsRewrites = document.getElementById('results-rewrites');
+      const resultsErrors = document.getElementById('results-errors');
+      const resultsLessons = document.getElementById('results-lessons');
       const resultsSteps = document.getElementById('results-steps');
 
       let sessionId = '';
@@ -369,6 +390,79 @@ const taskConfig = CELPIP_TASK_CONFIG;
         });
       };
 
+      const renderCriteriaComments = (comments) => {
+        if (!resultsCriteria) return;
+        resultsCriteria.innerHTML = '';
+        Object.entries(comments || {}).forEach(([label, comment]) => {
+          const card = document.createElement('div');
+          card.className = 'surface';
+          card.style.padding = 'var(--s-3)';
+          card.innerHTML = `<strong>${label}</strong><p class="muted" style="margin: 8px 0 0;">${comment}</p>`;
+          resultsCriteria.appendChild(card);
+        });
+      };
+
+      const renderRewriteCards = (items) => {
+        if (!resultsRewrites) return;
+        resultsRewrites.innerHTML = '';
+        (items || []).forEach((item) => {
+          const card = document.createElement('div');
+          card.className = 'surface';
+          card.style.padding = 'var(--s-3)';
+
+          const before = typeof item === 'string' ? item : (item.before || '');
+          const after = typeof item === 'string' ? '' : (item.after || '');
+          const why = typeof item === 'string' ? '' : (item.why || '');
+
+          const beforeHtml = before ? `<p style="margin: 0 0 8px;"><strong>Before:</strong> ${before}</p>` : '';
+          const afterHtml = after ? `<p style="margin: 0 0 8px;"><strong>After:</strong> ${after}</p>` : '';
+          const whyHtml = why ? `<p class="muted" style="margin: 0;"><strong>Why:</strong> ${why}</p>` : '';
+
+          card.innerHTML = `${beforeHtml}${afterHtml}${whyHtml}` || '<p class="muted" style="margin:0;">No rewrite suggestions yet.</p>';
+          resultsRewrites.appendChild(card);
+        });
+      };
+
+      const renderErrorCards = (items) => {
+        if (!resultsErrors) return;
+        resultsErrors.innerHTML = '';
+        (items || []).forEach((item) => {
+          const card = document.createElement('div');
+          card.className = 'surface';
+          card.style.padding = 'var(--s-3)';
+          const severity = String(item.severity || 'medium').toUpperCase();
+          const evidence = item.evidence ? `<p class="muted" style="margin: 8px 0 0;"><strong>Evidence:</strong> ${item.evidence}</p>` : '';
+          const fixNow = item.fixNow ? `<p class="muted" style="margin: 8px 0 0;"><strong>Fix now:</strong> ${item.fixNow}</p>` : '';
+          card.innerHTML = `
+            <div class="cluster" style="justify-content: space-between; align-items: center; gap: var(--s-2);">
+              <strong>${item.category || 'Language issue'}</strong>
+              <span class="pill">${severity}</span>
+            </div>
+            <p style="margin: 8px 0 0;">${item.explanation || ''}</p>
+            ${evidence}
+            ${fixNow}
+          `;
+          resultsErrors.appendChild(card);
+        });
+      };
+
+      const renderLessonCards = (items) => {
+        if (!resultsLessons) return;
+        resultsLessons.innerHTML = '';
+        (items || []).forEach((item) => {
+          const link = document.createElement('a');
+          link.className = 'card';
+          link.href = item.href;
+          link.style.display = 'block';
+          link.style.textDecoration = 'none';
+          link.innerHTML = `
+            <h5 style="margin: 0 0 8px;">${item.title}</h5>
+            <p class="muted" style="margin: 0;">${item.reason || ''}</p>
+          `;
+          resultsLessons.appendChild(link);
+        });
+      };
+
       const openSampleForComparison = () => {
         if (sampleResponseWrap instanceof HTMLDetailsElement) {
           sampleResponseWrap.open = true;
@@ -397,9 +491,12 @@ const taskConfig = CELPIP_TASK_CONFIG;
             resultsTraits.appendChild(card);
           });
         }
+        renderCriteriaComments(report.criterionComments || {});
         renderResultsList(resultsStrengths, report.strengths);
         renderResultsList(resultsPriorities, report.improvementPriorities);
-        renderResultsList(resultsRewrites, report.rewriteSuggestions);
+        renderRewriteCards(report.rewriteSuggestions);
+        renderErrorCards(report.errorAnalysis);
+        renderLessonCards(report.lessonRecommendations);
         renderResultsList(resultsSteps, report.nextPracticeSteps);
 
         if (prompt?.sampleResponse) {
@@ -541,6 +638,110 @@ const taskConfig = CELPIP_TASK_CONFIG;
         }
       };
 
+      const sanitizeFeedbackValue = (value, max = 360) => String(value || '').replace(/\s+/g, ' ').trim().slice(0, max);
+
+      const normalizeReasonCode = (rawValue) => {
+        const value = sanitizeFeedbackValue(rawValue, 80).toLowerCase();
+        if (!value) return 'not_specified';
+        if (value.includes('price') || value.includes('expensive') || value.includes('cost')) return 'too_expensive';
+        if (value.includes('not_using') || value.includes('rarely') || value.includes('unused')) return 'not_using_enough';
+        if (value.includes('quality') || value.includes('score') || value.includes('accuracy')) return 'quality_concern';
+        if (value.includes('clarity') || value.includes('explain')) return 'clarity_concern';
+        if (value.includes('technical') || value.includes('bug') || value.includes('error')) return 'technical_issue';
+        if (value.includes('complete') || value.includes('done') || value.includes('passed')) return 'goal_completed';
+        return 'other';
+      };
+
+      const normalizePriorityCode = (rawValue) => {
+        const value = sanitizeFeedbackValue(rawValue, 80).toLowerCase();
+        if (!value) return 'not_specified';
+        if (value.includes('score')) return 'scoring_accuracy';
+        if (value.includes('explain') || value.includes('clarity')) return 'clear_explanations';
+        if (value.includes('lesson') || value.includes('recommend')) return 'lesson_relevance';
+        if (value.includes('task') || value.includes('prompt') || value.includes('variety')) return 'task_variety';
+        if (value.includes('speed') || value.includes('bug') || value.includes('technical') || value.includes('stability')) return 'speed_stability';
+        if (value.includes('design') || value.includes('ux') || value.includes('interface') || value.includes('experience')) return 'user_experience';
+        if (value.includes('support') || value.includes('teacher') || value.includes('human')) return 'human_support';
+        return 'other';
+      };
+
+      const normalizeUsageCode = (rawValue) => {
+        const value = sanitizeFeedbackValue(rawValue, 80).toLowerCase();
+        if (!value) return 'not_specified';
+        if (value.includes('day')) return 'daily';
+        if (value.includes('week')) return 'weekly';
+        if (value.includes('month')) return 'monthly';
+        if (value.includes('first') || value.includes('once')) return 'first_week_only';
+        if (value.includes('rare')) return 'rarely';
+        return 'other';
+      };
+
+      const normalizeSatisfactionScore = (rawValue) => {
+        const match = String(rawValue || '').match(/[1-5]/);
+        return match ? match[0] : '';
+      };
+
+      const collectCancellationFeedback = () => {
+        const shouldShare = window.confirm(
+          'Your cancellation will still be immediate. Can you answer 4 short questions (about 20 seconds) so we can improve?'
+        );
+
+        if (!shouldShare) {
+          return null;
+        }
+
+        const reasonRaw = window.prompt(
+          '1/4 Main reason for canceling? Type one short code: price, not_using, quality, clarity, technical, completed, or other.'
+        );
+        const priorityRaw = window.prompt(
+          '2/4 What should we improve first? Type one code: scoring, explanations, lessons, variety, speed, design, or support.'
+        );
+        const usageRaw = window.prompt(
+          '3/4 How often did you use the service? Type one code: daily, weekly, monthly, rarely, or first_week.'
+        );
+        const keepYouRaw = window.prompt(
+          '4/4 What one change would make this worth keeping for you?'
+        );
+        const satisfactionRaw = window.prompt(
+          'Optional: satisfaction score before canceling (1=very poor, 5=excellent).'
+        );
+
+        return {
+          reason_code: normalizeReasonCode(reasonRaw),
+          reason_detail: sanitizeFeedbackValue(reasonRaw, 320),
+          improvement_priority: normalizePriorityCode(priorityRaw),
+          usage_frequency: normalizeUsageCode(usageRaw),
+          what_would_keep_you: sanitizeFeedbackValue(keepYouRaw, 520),
+          satisfaction_score: normalizeSatisfactionScore(satisfactionRaw),
+        };
+      };
+
+      const submitCancellationFeedback = async (feedback) => {
+        if (!feedback) return false;
+
+        const params = new URLSearchParams();
+        params.append('form-name', 'subscription-cancel-feedback');
+        params.append('source_page', window.location.pathname || '/celpip/writing/ai-feedback/success');
+        params.append('session_id', sanitizeFeedbackValue(sessionId, 160));
+        params.append('subscription_id', sanitizeFeedbackValue(subscriptionId, 160));
+        params.append('cancel_flow_version', 'v1_post_cancel_survey');
+        params.append('reason_code', sanitizeFeedbackValue(feedback.reason_code, 80));
+        params.append('reason_detail', sanitizeFeedbackValue(feedback.reason_detail, 320));
+        params.append('improvement_priority', sanitizeFeedbackValue(feedback.improvement_priority, 80));
+        params.append('usage_frequency', sanitizeFeedbackValue(feedback.usage_frequency, 80));
+        params.append('satisfaction_score', sanitizeFeedbackValue(feedback.satisfaction_score, 4));
+        params.append('what_would_keep_you', sanitizeFeedbackValue(feedback.what_would_keep_you, 520));
+        params.append('bot-field', '');
+
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: params.toString(),
+        });
+
+        return response.ok;
+      };
+
       const manageBilling = async () => {
         if (!customerId) {
           setStatus('Billing customer ID is missing. Refresh this page and try again.', true);
@@ -586,6 +787,20 @@ const taskConfig = CELPIP_TASK_CONFIG;
             throw new Error(data.error || 'Unable to cancel subscription');
           }
           setStatus('Your subscription was canceled instantly. Access will now be removed on next request.');
+
+          const feedback = collectCancellationFeedback();
+          if (feedback) {
+            try {
+              const saved = await submitCancellationFeedback(feedback);
+              if (saved) {
+                setStatus('Your subscription is canceled. Thank you for sharing feedback to help us improve.');
+              } else {
+                setStatus('Your subscription is canceled. We could not save feedback this time.');
+              }
+            } catch {
+              setStatus('Your subscription is canceled. Feedback submission did not complete, but cancellation is done.');
+            }
+          }
         } catch (error) {
           const message = error instanceof Error ? error.message : 'Unable to cancel subscription.';
           setStatus(message, true);

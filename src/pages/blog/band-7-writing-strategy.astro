@@ -1,186 +1,219 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "What usually stops students from reaching Band 7 in IELTS writing?",
+    answer:
+      "The most common reasons are weak paragraph development, unclear position, repetitive vocabulary, and grammar mistakes that appear when students try to sound too advanced.",
+  },
+  {
+    question: "Do I need very advanced vocabulary for Band 7?",
+    answer:
+      "No. You need precise vocabulary, not rare vocabulary. Clear, natural language is better than memorized words that do not fit the sentence well.",
+  },
+  {
+    question: "How can I move from Band 6 to Band 7 faster?",
+    answer:
+      "Use a repeatable structure, write fewer but better practice essays, and review the same errors until they stop happening.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "How to Get Band 7 in IELTS Writing", path: "/blog/band-7-writing-strategy/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
 ---
 
 <Layout
-  title="How to Get Band 7 in IELTS Writing — IELTS Corner Blog"
-  description="The exact structure and timing strategy to jump from Band 6 to Band 7 in IELTS Writing."
+  title="How to Get Band 7 in IELTS Writing | Clear Strategy That Works"
+  description="A practical Band 7 IELTS writing plan with stronger paragraphing, better grammar control, and study habits that help students move up from Band 6."
   type="article"
+  structuredData={pageStructuredData}
 >
-  <article class="section" style="max-width: 800px; margin: 0 auto; padding-top: var(--s-6);">
-    <div style="margin-bottom: var(--s-4);">
-      <a href="/blog" style="color: var(--accent);">← Back to blog</a>
-    </div>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
 
-    <header style="margin-bottom: var(--s-4);">
-      <h1 style="margin: 0;">How to Get Band 7 in IELTS Writing</h1>
-      <div style="display: flex; gap: var(--s-3); color: var(--text-muted); margin-top: var(--s-2); flex-wrap: wrap;">
-        <span>📅 February 28, 2026</span>
-        <span>✍️ IELTS Corner Team</span>
-        <span>⏱️ 6 min read</span>
+    <header class="guide-header">
+      <span class="guide-tag">IELTS writing guide</span>
+      <h1 style="margin: 0;">How to get Band 7 in IELTS Writing</h1>
+      <div class="guide-meta">
+        <span>March 17, 2026</span>
+        <span>8 min read</span>
       </div>
     </header>
 
-    <div class="divider" style="margin: var(--s-4) 0; height: 2px; background: var(--text-muted-light);"></div>
-
-    <div class="article-content" style="line-height: 1.8;">
+    <div class="guide-lead">
       <p>
-        Writing is the hardest section for most IELTS students. You write a great essay, but you get Band 6. What's missing? This article shows you the exact strategy to jump to Band 7.
+        Many students stay at Band 6 because the writing is not weak everywhere. It is weak
+        in a few important places: the answer is not direct enough, the body paragraphs are
+        too thin, or the grammar becomes less accurate when the student tries to sound more
+        advanced.
       </p>
+      <p>
+        The goal is not to make your essay look complicated. The goal is to make it clear,
+        organized, and controlled from the first sentence to the last.
+      </p>
+    </div>
 
-      <h2>What Band 7 Requires (Not Band 6)</h2>
-      <div class="tips-box" style="padding: var(--s-3); background: #dbeafe; border-left: 4px solid #0284c7; border-radius: 4px; margin: var(--s-3) 0;">
-        <p style="margin: 0;"><strong>Band 6:</strong> Clear ideas, mostly correct grammar, basic vocabulary, organized.</p>
-        <p style="margin: var(--s-2) 0 0;"><strong>Band 7:</strong> Clear + organized + complex sentences + sophisticated vocabulary + fewer errors.</p>
-      </div>
-
-      <p><strong>The difference?</strong> You need to:</p>
-      <ol>
-        <li>Use more complex grammar structures (not just simple sentences)</li>
-        <li>Use better vocabulary (synonyms, collocations, academic words)</li>
-        <li>Have fewer grammatical errors</li>
-        <li>Show better organization and flow</li>
-      </ol>
-
-      <h2>The Structure That Gets Band 7</h2>
-      <p><strong>IELTS Task 1 (Letter/Email/Report):</strong></p>
-      <ul>
-        <li><strong>Introduction:</strong> 1-2 sentences. What is your purpose?</li>
-        <li><strong>Body:</strong> 2-3 paragraphs. Each paragraph = 1 idea.</li>
-        <li><strong>Conclusion:</strong> 1 sentence. What do you want to happen?</li>
-      </ul>
-
-      <p><strong>IELTS Task 2 (Essay):</strong></p>
-      <ul>
-        <li><strong>Introduction:</strong> 2-3 sentences. Restate the question + your opinion.</li>
-        <li><strong>Body 1:</strong> 1 reason + 2 examples/explanations</li>
-        <li><strong>Body 2:</strong> Another reason + 2 examples/explanations</li>
-        <li><strong>Conclusion:</strong> 1-2 sentences. Summarize your opinion.</li>
-      </ul>
-
-      <h2>Task 1: Use These Sentence Patterns</h2>
-      <p><strong>Band 6 (Simple):</strong> "I am writing to complain about the service."</p>
-      <p><strong>Band 7 (Complex):</strong> "I am writing to bring to your attention a serious concern regarding the poor quality of service I experienced."</p>
-
-      <p><strong>More Band 7 patterns:</strong></p>
-      <ul>
-        <li>"I would like to draw your attention to..." (instead of "I want to say...")</li>
-        <li>"With reference to..." (instead of "About...")</li>
-        <li>"As a result of..." (instead of "Because...")</li>
-        <li>"Furthermore, it should be noted that..." (instead of "Also...")</li>
-      </ul>
-
-      <h2>Task 2: The Essay Structure That Works</h2>
-      <p><strong>Example: "Do you agree or disagree that technology harms family life?"</strong></p>
-
-      <p><strong>Introduction:</strong></p>
-      <p style="padding: var(--s-2); background: var(--surface); border-radius: 4px;">While it is often argued that modern technology negatively impacts family relationships, I believe the technology itself is neutral—how families use it determines its effect.</p>
-
-      <p><strong>Reason 1:</strong> Technology can reduce face-to-face interaction. Give examples (phones at dinner, social media scrolling). Explain the impact.</p>
-
-      <p><strong>Reason 2:</strong> Technology can also strengthen family bonds. Give examples (video calls with distant relatives, shared online gaming). Explain.</p>
-
-      <p><strong>Conclusion:</strong></p>
-      <p style="padding: var(--s-2); background: var(--surface); border-radius: 4px;">In conclusion, technology is neither good nor bad for families. The key is intentional, balanced use.</p>
-
-      <h2>Vocabulary for Band 7</h2>
-      <p><strong>Stop using:</strong> "good, bad, important, problem, people, in my opinion"</p>
-      <p><strong>Start using:</strong></p>
-      <ul>
-        <li>"beneficial" (instead of "good")</li>
-        <li>"detrimental" (instead of "bad")</li>
-        <li>"significant" (instead of "important")</li>
-        <li>"challenge" or "drawback" (instead of "problem")</li>
-        <li>"individuals" (instead of "people")</li>
-        <li>"It could be argued that..." (instead of "I think...")</li>
-      </ul>
-
-      <h2>Timing Strategy (40 minutes for Task 2)</h2>
-      <div style="padding: var(--s-3); background: var(--surface); border-radius: 4px; margin: var(--s-3) 0;">
-        <ul style="margin: 0;">
-          <li><strong>0-3 min:</strong> Read + plan (write outline)</li>
-          <li><strong>3-30 min:</strong> Write (2 body paragraphs + intro + conclusion)</li>
-          <li><strong>30-40 min:</strong> Check for errors</li>
+    <div class="guide-grid guide-grid-2">
+      <section class="guide-card">
+        <h2>What Band 7 usually does better</h2>
+        <ul class="guide-list">
+          <li>The position is clear early in the essay.</li>
+          <li>Each body paragraph has one main idea and supports it properly.</li>
+          <li>Grammar shows some range without falling apart.</li>
+          <li>Vocabulary is natural and specific, not forced.</li>
         </ul>
+      </section>
+
+      <section class="guide-card">
+        <h2>What keeps students at Band 6</h2>
+        <ul class="guide-list">
+          <li>Ideas are listed, but not developed.</li>
+          <li>The introduction sounds generic and does not show a strong position.</li>
+          <li>The same simple sentence pattern repeats too often.</li>
+          <li>Practice is not reviewed carefully enough.</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>The four habits that matter most</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Plan for two minutes</h3>
+            <p>
+              Decide your position and your two main body ideas before you start writing.
+              This prevents weak paragraphs and random examples.
+            </p>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Keep one clear job per paragraph</h3>
+            <p>
+              A good body paragraph does one thing well: it introduces one reason, explains
+              it, and supports it with one useful example.
+            </p>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Use grammar you can control</h3>
+            <p>
+              Mix simple and complex sentences, but do not force difficult patterns if they
+              create mistakes. Accuracy still matters at Band 7.
+            </p>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Rewrite after feedback</h3>
+            <p>
+              One corrected essay teaches more than three unchecked essays. Rewrite the same
+              response after you know what went wrong.
+            </p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <p><strong>What to check in the last 10 minutes:</strong></p>
-      <ul>
-        <li>Spelling (especially British: "colour," "organised")</li>
-        <li>Verb tenses (consistent?)</li>
-        <li>Punctuation (commas, periods)</li>
-        <li>Subject-verb agreement ("The group is..." not "group are...")</li>
-      </ul>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>How to sound stronger without sounding fake</h2>
+      <div class="guide-example">
+        <p><strong>Too simple:</strong> Technology is bad for families because people use phones a lot.</p>
+        <p>
+          <strong>Better:</strong> Technology can weaken family interaction when people spend
+          more time on their phones than on face-to-face conversation.
+        </p>
+      </div>
+      <div class="guide-note" style="margin-top: var(--s-3);">
+        <p>
+          Notice the difference. The second sentence is not full of difficult words. It is
+          just more precise and better organized.
+        </p>
+      </div>
+    </section>
 
-      <h2>Common Band 6 Mistakes to Avoid</h2>
-      <table style="width: 100%; border-collapse: collapse; margin: var(--s-3) 0;">
-        <tr style="background: var(--surface);">
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">❌ Band 6 Mistake</th>
-          <th style="text-align: left; padding: var(--s-2); border: 1px solid var(--text-muted-light);">✓ Band 7 Fix</th>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Common Band 6 mistakes</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Weak move</th>
+          <th>Better move</th>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Too short (250–280 words)</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Minimum 250, aim for 280–320</td>
+          <td>Writing a vague opinion in the introduction.</td>
+          <td>State a direct position and preview the main reasons.</td>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">One big paragraph</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Clear paragraphs (4 total)</td>
+          <td>Putting two or three unrelated ideas in one paragraph.</td>
+          <td>Give each paragraph one main reason only.</td>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Only simple sentences</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">Mix simple + complex sentences</td>
+          <td>Using advanced words incorrectly.</td>
+          <td>Choose simpler words that fit the meaning exactly.</td>
         </tr>
         <tr>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">No examples or evidence</td>
-          <td style="padding: var(--s-2); border: 1px solid var(--text-muted-light);">2 examples per reason</td>
+          <td>Practicing many essays without reviewing them well.</td>
+          <td>Write less, review more, and rewrite the corrected essay.</td>
         </tr>
       </table>
+    </section>
 
-      <h2>Action Plan</h2>
-      <ol>
-        <li><strong>This week:</strong> Practice 1 Task 2 essay using the structure above</li>
-        <li><strong>Get feedback:</strong> <a href="/essay-correction">Submit for essay correction</a> (CA$15)</li>
-        <li><strong>Implement feedback:</strong> Rewrite the essay using the feedback</li>
-        <li><strong>Repeat 3-4 times</strong> before your real test</li>
-        <li><strong>Optional:</strong> <a href="/tutoring">Book a writing tutor</a> for deeper help</li>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>A simple study plan for the next 7 days</h2>
+      <ol class="guide-list">
+        <li>Write one Task 2 essay using a clear four-paragraph structure.</li>
+        <li>Check whether each body paragraph has one main reason and one relevant example.</li>
+        <li>Underline grammar mistakes that repeat.</li>
+        <li>Rewrite the essay with those mistakes fixed.</li>
+        <li>Only then write a second essay.</li>
       </ol>
+    </section>
 
-      <p style="margin-top: var(--s-4);">Want to practice? <a href="/lessons/writing">Explore our 20 writing lessons →</a></p>
-    </div>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>Next step</h2>
+      <div class="guide-links">
+        <a href="/blog/ielts-writing-task-2-structure">
+          <strong>Read the Task 2 structure guide</strong>
+          <span>Use a stable essay shape before you worry about higher-level language.</span>
+        </a>
+        <a href="/essay-correction">
+          <strong>Use essay correction</strong>
+          <span>Get direct feedback on the exact habits that keep your score down.</span>
+        </a>
+        <a href="/lessons/ielts/writing">
+          <strong>Open IELTS writing lessons</strong>
+          <span>Study the grammar and vocabulary patterns that support stronger essays.</span>
+        </a>
+      </div>
+    </section>
 
-    <div class="divider" style="margin: var(--s-4) 0; height: 2px; background: var(--text-muted-light);"></div>
-
-    <div style="padding: var(--s-4); background: var(--accent-light); border-radius: 8px; text-align: center;">
-      <h3 style="margin-top: 0;">Get expert feedback on your essays</h3>
-      <p style="margin: var(--s-2) 0;">Submit your essays for detailed band-score feedback. CA$15 per essay, 24-48 hour turnaround.</p>
-      <a href="/essay-correction" class="btn btn-primary">Submit an essay →</a>
-    </div>
-
-    <div style="height: var(--s-6);"></div>
-
-    <div style="text-align: center;">
-      <a href="/blog" class="btn btn-ghost">← Back to all articles</a>
-    </div>
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2>FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
   </article>
 </Layout>
-
-<style>
-  .article-content {
-    color: var(--text);
-  }
-
-  .article-content h2 {
-    margin-top: var(--s-5);
-    margin-bottom: var(--s-2);
-  }
-
-  .article-content ul,
-  .article-content ol {
-    margin: var(--s-2) 0;
-    padding-left: var(--s-4);
-  }
-
-  .article-content li {
-    margin: var(--s-1) 0;
-  }
-</style>

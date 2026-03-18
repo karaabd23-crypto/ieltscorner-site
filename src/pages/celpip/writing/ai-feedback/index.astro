@@ -1,10 +1,10 @@
 ---
-import Layout from '../../../../layouts/Layout.astro';
+import Layout from "../../../../layouts/Layout.astro";
 import {
   CELPIP_PROMPT_TOTAL,
   CELPIP_TASK_CONFIG,
   CELPIP_WRITING_PRICE_CAD,
-} from '../../../../lib/celpipWritingData.mjs';
+} from "../../../../lib/celpipWritingData.mjs";
 
 const task1 = CELPIP_TASK_CONFIG.task1;
 const task2 = CELPIP_TASK_CONFIG.task2;
@@ -12,21 +12,41 @@ const promptTotal = CELPIP_PROMPT_TOTAL;
 ---
 
 <Layout
-  title="Have Your CELPIP Writing Scored by AI | Timed Practice + Analysis"
+  title="Have Your CELPIP Writing Scored by AI | Timed Practice and Analysis"
   description="Monthly CELPIP writing AI subscription with timed Task 1 and Task 2 practice, scoring, and instant cancellation."
 >
   <section class="section">
     <div class="hero" style={`--hero-bg: url('/heroes/writing.png');`}>
       <div class="hero-content">
         <span class="pill">CELPIP Writing AI Lab</span>
-        <h1>Get faster CELPIP writing feedback with timed AI analysis</h1>
-        <p class="muted" style="max-width: 68ch;">Start with one prompt, write under time pressure, and get clear score-focused revision guidance.</p>
+        <h1>Get CELPIP-style writing marks with timed AI analysis</h1>
+        <p class="muted" style="max-width: 68ch;">
+          Start with one prompt, write under time pressure, and get trait scores, error analysis, rewrite help, and lesson recommendations.
+        </p>
         <div class="cluster">
           <button id="buy-writing-lab" class="btn btn-primary" type="button">
-            Start for CA${CELPIP_WRITING_PRICE_CAD}/month →
+            Start for CA${CELPIP_WRITING_PRICE_CAD}/month
           </button>
-          <a class="btn" href="/tutoring">Book a class for human feedback →</a>
+          <a class="btn" href="/tutoring">Book a class for human feedback</a>
         </div>
+        <p class="muted" style="margin-top: var(--s-2); max-width: 68ch;">
+          You can also read more about Kara Abdolmaleki, exam background, and qualifications on the
+          <a href="/about">About page</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface" style="padding: var(--s-5); border: 1px solid rgba(23, 54, 86, 0.12); background: linear-gradient(145deg, #fffaf2 0%, #f8fbff 100%);">
+      <h2 style="margin-top: 0;">About the instructor</h2>
+      <p class="muted" style="margin-top: 0; max-width: 72ch;">
+        This writing lab is part of Kara Abdolmaleki's teaching site. The About page includes
+        exam results, training, and the wider teaching background behind the lessons and feedback.
+      </p>
+      <div class="cluster">
+        <a class="btn btn-primary" href="/about">About Kara</a>
+        <a class="btn" href="/about#evidence-and-qualifications">See background</a>
       </div>
     </div>
   </section>
@@ -46,17 +66,17 @@ const promptTotal = CELPIP_PROMPT_TOTAL;
       <article class="card">
         <h2 style="margin-top: 0;">Task 1</h2>
         <p><strong>{task1.label}</strong></p>
-        <p class="muted" style="margin-bottom: 0;">{task1.minutes} minutes · {task1.targetWords}</p>
+        <p class="muted" style="margin-bottom: 0;">{task1.minutes} minutes | {task1.targetWords}</p>
       </article>
       <article class="card">
         <h2 style="margin-top: 0;">Task 2</h2>
         <p><strong>{task2.label}</strong></p>
-        <p class="muted" style="margin-bottom: 0;">{task2.minutes} minutes · {task2.targetWords}</p>
+        <p class="muted" style="margin-bottom: 0;">{task2.minutes} minutes | {task2.targetWords}</p>
       </article>
       <article class="card">
         <h2 style="margin-top: 0;">Feedback</h2>
         <p><strong>Estimated CELPIP level</strong></p>
-        <p class="muted" style="margin-bottom: 0;">AI strengths, issues, rewrites, and next steps</p>
+        <p class="muted" style="margin-bottom: 0;">Rater-style comments, language issues, rewrites, and lessons to study next</p>
       </article>
     </div>
   </section>
@@ -72,6 +92,7 @@ const promptTotal = CELPIP_PROMPT_TOTAL;
             <div class="check"><div class="icon">3</div><div><strong>Write under pressure</strong><span>Use the built-in timer for the official task length.</span></div></div>
             <div class="check"><div class="icon">4</div><div><strong>Upload or paste a response</strong><span>Type directly or load a plain-text file.</span></div></div>
             <div class="check"><div class="icon">5</div><div><strong>Receive AI analysis</strong><span>See estimated level, trait scores, revision advice, and rewrite suggestions.</span></div></div>
+            <div class="check"><div class="icon">6</div><div><strong>Study the right lesson next</strong><span>Use the lesson recommendations when the report finds tone, support, or grammar problems.</span></div></div>
           </div>
         </div>
 
@@ -82,7 +103,7 @@ const promptTotal = CELPIP_PROMPT_TOTAL;
             <li>Official-style timed practice</li>
             <li><strong>{promptTotal} prompt bank</strong> for repeated practice</li>
             <li><strong>Sample response included for every prompt</strong></li>
-            <li>AI scoring + analysis based on CELPIP level descriptors</li>
+            <li>AI scoring and analysis based on CELPIP level descriptors</li>
             <li>Word count tracking and revision guidance</li>
             <li><strong>Cancel instantly anytime</strong> from inside your dashboard</li>
             <li><strong>No contracts. No hidden fees.</strong></li>
@@ -99,12 +120,12 @@ const promptTotal = CELPIP_PROMPT_TOTAL;
 
   <script>
     const buyButtons = [
-      document.getElementById('buy-writing-lab'),
-      document.getElementById('buy-writing-lab-secondary'),
+      document.getElementById("buy-writing-lab"),
+      document.getElementById("buy-writing-lab-secondary"),
     ].filter(Boolean);
     const statusEls = [
-      document.getElementById('checkout-status'),
-      document.getElementById('checkout-status-secondary'),
+      document.getElementById("checkout-status"),
+      document.getElementById("checkout-status-secondary"),
     ].filter(Boolean);
 
     const setCheckoutStatus = (message: string) => {
@@ -116,8 +137,8 @@ const promptTotal = CELPIP_PROMPT_TOTAL;
     };
 
     const readApiResponse = async (response: Response) => {
-      const contentType = response.headers.get('content-type') || '';
-      if (contentType.includes('application/json')) {
+      const contentType = response.headers.get("content-type") || "";
+      if (contentType.includes("application/json")) {
         return response.json();
       }
 
@@ -125,7 +146,7 @@ const promptTotal = CELPIP_PROMPT_TOTAL;
       const isHtml = /<!doctype html>|<html/i.test(text);
       if (isHtml) {
         throw new Error(
-          'Checkout endpoint returned HTML instead of JSON. Start the site with Netlify Functions enabled (use `netlify dev`) and confirm Stripe env vars are set.'
+          "Checkout endpoint returned HTML instead of JSON. Start the site with Netlify Functions enabled (use `netlify dev`) and confirm Stripe env vars are set."
         );
       }
 
@@ -134,28 +155,28 @@ const promptTotal = CELPIP_PROMPT_TOTAL;
       } catch {
       }
 
-      throw new Error(text?.trim() || 'Unexpected response from checkout endpoint.');
+      throw new Error(text?.trim() || "Unexpected response from checkout endpoint.");
     };
 
     const startCheckout = async () => {
-      setCheckoutStatus('Redirecting to secure checkout…');
+      setCheckoutStatus("Redirecting to secure checkout...");
       buyButtons.forEach((button) => {
         if (button instanceof HTMLButtonElement) button.disabled = true;
       });
 
       try {
-        const response = await fetch('/.netlify/functions/create-celpip-writing-checkout', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ product: 'celpip-writing-ai' }),
+        const response = await fetch("/.netlify/functions/create-celpip-writing-checkout", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ product: "celpip-writing-ai" }),
         });
         const data = await readApiResponse(response);
         if (!response.ok || !data.checkoutUrl) {
-          throw new Error(data.error || 'Unable to start checkout');
+          throw new Error(data.error || "Unable to start checkout");
         }
         window.location.href = data.checkoutUrl;
       } catch (error) {
-        const message = error instanceof Error ? error.message : 'Unable to start checkout.';
+        const message = error instanceof Error ? error.message : "Unable to start checkout.";
         setCheckoutStatus(message);
         buyButtons.forEach((button) => {
           if (button instanceof HTMLButtonElement) button.disabled = false;
@@ -163,10 +184,10 @@ const promptTotal = CELPIP_PROMPT_TOTAL;
       }
     };
 
-    buyButtons.forEach((button) => button?.addEventListener('click', startCheckout));
+    buyButtons.forEach((button) => button?.addEventListener("click", startCheckout));
 
-    if (new URLSearchParams(window.location.search).get('canceled') === '1') {
-      setCheckoutStatus('Checkout was canceled. You can try again anytime.');
+    if (new URLSearchParams(window.location.search).get("canceled") === "1") {
+      setCheckoutStatus("Checkout was canceled. You can try again anytime.");
     }
   </script>
 </Layout>

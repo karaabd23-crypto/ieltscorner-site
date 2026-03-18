@@ -3,138 +3,230 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
-  title="About — IELTS Corner"
-  description="Learn about IELTS Corner, our mission to help students achieve their test score goals, and our approach to English teaching."
+  title="About Me | IELTS Corner"
+  description="Meet Kara Abdolmaleki, the teacher behind IELTS Corner. Learn about his teaching standards, IELTS results, TESL Canada certification, and CELPIP instructor training."
   type="page"
 >
-  <section class="section" style="padding-top: var(--s-6);">
-    <div class="hero" style={`--hero-bg: url('/heroes/about.png');`}>
-      <div class="hero-content">
-        <h1>About IELTS Corner</h1>
-        <p>We help students get the test scores they need.</p>
-      </div>
-    </div>
-
-    <div style="height: var(--s-8);"></div>
-
-    <!-- ABOUT SECTION -->
-    <div class="grid grid-2">
-      <div>
-        <h2>Our mission</h2>
-        <p>Most students fail the IELTS and CELPIP because they don't learn the right things. They waste time on lessons that don't help their score.</p>
-        <p>At IELTS Corner, we focus on what matters: the structures, words, and strategies that actually improve test scores.</p>
-        <p>We believe every student can get Band 7+ (IELTS) or CLB 9+ (CELPIP). You just need the right lessons and the right practice.</p>
-      </div>
-
-      <div class="surface" style="padding: var(--s-4); border-radius: 8px; background: var(--accent-light);">
-        <h3 style="margin-top: 0;">What we offer</h3>
-        <div class="stack" style="gap: var(--s-2);">
-          <div>
-            <strong>502 free lessons</strong>
-            <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted);">Grammar, vocabulary, writing, and speaking lessons for all levels.</p>
+  <section class="section about-page" style="padding-top: var(--s-6);">
+    <div class="about-hero surface">
+      <div class="about-hero__copy">
+        <span class="pill">About the teacher</span>
+        <h1>I built IELTS Corner for students who need careful teaching, honest feedback, and materials that respect their time.</h1>
+        <p class="about-lead">
+          My name is Kara Abdolmaleki. I teach IELTS and CELPIP with one standard in mind:
+          if a student studies hard, the material should help them improve for real.
+          It should not confuse them, waste their time, or hide simple ideas behind vague language.
+        </p>
+        <div class="about-proof-strip">
+          <div class="about-proof">
+            <strong>IELTS Academic</strong>
+            <span>Overall 8.5</span>
           </div>
-          <div>
-            <strong>1-on-1 tutoring</strong>
-            <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted);">CA$30/hour live lessons with personalized feedback.</p>
+          <div class="about-proof">
+            <strong>TESL Canada</strong>
+            <span>Professional Certificate</span>
           </div>
-          <div>
-            <strong>Essay correction</strong>
-            <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted);">CA$15 per essay with detailed band-score feedback.</p>
-          </div>
-          <div>
-            <strong>Comprehensive eBook</strong>
-            <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted);">$19.99 complete grammar and writing guide for IELTS/CELPIP.</p>
+          <div class="about-proof">
+            <strong>CELPIP</strong>
+            <span>Instructor Training Level 1</span>
           </div>
         </div>
       </div>
-    </div>
 
-    <div style="height: var(--s-6);"></div>
+      <div class="about-hero__visual">
+        <figure class="about-portrait-card">
+          <img src="/about/kara-portrait.jpg" alt="Kara Abdolmaleki" class="about-portrait" loading="eager" />
+        </figure>
 
-    <!-- WHY CHOOSE US -->
-    <div>
-      <h2>Why students choose IELTS Corner</h2>
-      <div class="grid grid-3">
-        <article class="card">
-          <h3 style="margin-top: 0;">We focus on YOUR exam</h3>
-          <p>All our lessons are for IELTS and CELPIP. We don't teach general English—we teach what you need to pass.</p>
-        </article>
-
-        <article class="card">
-          <h3 style="margin-top: 0;">Clear, simple English</h3>
-          <p>Our lessons are written for students like you. No confusing grammar jargon. Just clear explanations and examples.</p>
-        </article>
-
-        <article class="card">
-          <h3 style="margin-top: 0;">Real examples and practice</h3>
-          <p>Every lesson uses real examples from IELTS/CELPIP tests. You practice with materials that match the actual exam.</p>
-        </article>
-
-        <article class="card">
-          <h3 style="margin-top: 0;">Organized by difficulty</h3>
-          <p>Lessons are arranged from A1 (beginner) to C1 (advanced). Start where you are. Move at your own pace.</p>
-        </article>
-
-        <article class="card">
-          <h3 style="margin-top: 0;">Quick and practical</h3>
-          <p>No long boring videos. Our lessons take 5–15 minutes. You leave with one useful thing you can use immediately.</p>
-        </article>
-
-        <article class="card">
-          <h3 style="margin-top: 0;">One-on-one support</h3>
-          <p>Want personal help? Book a tutor. Get individual attention. Get feedback on your writing. Be confident on test day.</p>
-        </article>
+        <aside class="about-hero__panel">
+          <p class="about-panel__label">My teaching position</p>
+          <h2>Clear language first. Real score improvement second. No generic filler at any point.</h2>
+          <p>
+            Most students do not fail because they are lazy. They fail because the material is unclear,
+            too generic, too advanced in its explanations, or disconnected from the exact skill that is lowering the score.
+          </p>
+          <p>
+            IELTS Corner exists to fix that. Every lesson, article, email, and feedback tool should feel like it was written by a teacher
+            who knows what students struggle with and cares enough to explain it properly.
+          </p>
+        </aside>
       </div>
     </div>
 
-    <div style="height: var(--s-6);"></div>
+    <div style="height: var(--s-7);"></div>
 
-    <!-- APPROACH SECTION -->
-    <div class="surface feature" style="padding: var(--s-5);">
-      <h2>Our teaching approach</h2>
-      <div class="grid grid-2">
-        <div class="stack">
-          <h3>1. Start with the structure</h3>
-          <p>We show you the grammar structure or rule first. You see exactly how it works, with simple examples.</p>
-        </div>
+    <div class="grid grid-2" style="align-items: start; gap: var(--s-5);">
+      <section class="surface about-story">
+        <p class="lesson-panel-label">Why I made this site</p>
+        <h2>Too much exam prep content sounds helpful without actually teaching.</h2>
+        <p>
+          I built IELTS Corner because I saw too many students studying from materials that looked polished
+          but did very little to improve writing, speaking, reading, or listening performance.
+          The explanations were vague. The examples were repetitive. The exercises were often disconnected from the lesson itself.
+        </p>
+        <p>
+          I wanted one place where students could open a page and quickly understand four things:
+          what the point means, when to use it, what mistakes to avoid, and what to study next.
+          That is still the benchmark I use for the site now.
+        </p>
+      </section>
 
-        <div class="stack">
-          <h3>2. Real exam examples</h3>
-          <p>Then we show real sentences from IELTS and CELPIP tests. You see the rule in action from actual exams.</p>
+      <section class="surface about-values">
+        <p class="lesson-panel-label">What I care about</p>
+        <div class="checklist">
+          <div class="check">
+            <div class="icon">1</div>
+            <div>
+              <strong>Clarity at CLB 6 level</strong>
+              <span>If the explanation is hard to understand, the lesson is not ready.</span>
+            </div>
+          </div>
+          <div class="check">
+            <div class="icon">2</div>
+            <div>
+              <strong>Test-linked teaching</strong>
+              <span>Every explanation should connect to a real IELTS or CELPIP score problem.</span>
+            </div>
+          </div>
+          <div class="check">
+            <div class="icon">3</div>
+            <div>
+              <strong>Immediate usefulness</strong>
+              <span>Students should leave a page knowing exactly what to do differently.</span>
+            </div>
+          </div>
         </div>
-
-        <div class="stack">
-          <h3>3. Common mistakes</h3>
-          <p>We show what students do wrong. You learn what NOT to do, so you avoid the mistakes others make.</p>
-        </div>
-
-        <div class="stack">
-          <h3>4. Practice and tips</h3>
-          <p>Finally, we give you practice exercises and IELTS/CELPIP tips. You apply what you learned right away.</p>
-        </div>
-      </div>
+      </section>
     </div>
 
-    <div style="height: var(--s-6);"></div>
+    <div style="height: var(--s-7);"></div>
 
-    <!-- CONTACT SECTION -->
-    <div style="text-align: center;">
-      <h2>Ready to get your score?</h2>
-      <p>Start with our free lessons. If you want personal help, book a tutor.</p>
-      <div class="cluster" style="justify-content: center; margin-top: var(--s-2);">
-        <a class="btn btn-primary" href="/lessons">Explore lessons →</a>
-        <a class="btn" href="/tutoring">See tutoring</a>
+    <section id="evidence-and-qualifications" class="about-credentials surface">
+      <div class="about-credentials__intro">
+        <p class="lesson-panel-label">Evidence and qualifications</p>
+        <h2>I keep my teaching background visible on the site.</h2>
+        <p>
+          These are the qualifications and score benchmarks that shape how I teach and how I design the site.
+          They show subject knowledge, teaching preparation, and real exam performance.
+        </p>
       </div>
-    </div>
 
-    <div style="height: var(--s-6);"></div>
+      <div class="about-credentials__grid">
+        <article class="about-credential-card about-credential-card--ielts">
+          <p class="about-credential-card__eyebrow">IELTS score evidence</p>
+          <img
+            src="/about/kara-ielts-score-report.jpg"
+            alt="IELTS Academic test report showing overall band 8.5"
+            class="about-credential-card__image"
+            loading="lazy"
+          />
+          <h3>IELTS Academic overall 8.5</h3>
+          <div class="about-score-grid">
+            <div><strong>Listening</strong><span>8.5</span></div>
+            <div><strong>Reading</strong><span>8.5</span></div>
+            <div><strong>Writing</strong><span>8.0</span></div>
+            <div><strong>Speaking</strong><span>9.0</span></div>
+          </div>
+          <p class="muted" style="margin-bottom: 0;">
+            This matters because I do not want the site to give writing and speaking advice in the abstract.
+            I want it grounded in real exam performance.
+          </p>
+        </article>
+
+        <article class="about-credential-card about-credential-card--tesl">
+          <p class="about-credential-card__eyebrow">Teaching qualification</p>
+          <img
+            src="/about/kara-tesl-canada-certificate.jpg"
+            alt="TESL Canada Professional Certificate for Kara Abdolmaleki"
+            class="about-credential-card__image"
+            loading="lazy"
+          />
+          <h3>TESL Canada Professional Certificate</h3>
+          <p class="about-credential-card__meta">Standard One, awarded February 5, 2021</p>
+          <p style="margin-bottom: 0;">
+            This reflects formal teaching preparation, not just test familiarity.
+            Good exam teaching still has to be good language teaching.
+          </p>
+        </article>
+
+        <article class="about-credential-card about-credential-card--celpip">
+          <p class="about-credential-card__eyebrow">CELPIP specialization</p>
+          <img
+            src="/about/kara-celpip-instructor-certificate.jpg"
+            alt="CELPIP Instructor Training Level 1 certificate for Kara Abdolmaleki"
+            class="about-credential-card__image"
+            loading="lazy"
+          />
+          <h3>CELPIP Instructor Training</h3>
+          <p class="about-credential-card__meta">Level 1 completed January 6, 2026</p>
+          <p style="margin-bottom: 0;">
+            This helps keep CELPIP instruction practical, current, and aligned with the exam's task expectations.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <div style="height: var(--s-7);"></div>
+
+    <section class="surface feature" style="padding: var(--s-6);">
+      <div class="feature-grid">
+        <div class="stack">
+          <p class="lesson-panel-label">How I teach</p>
+          <h2>I teach in this order: explain the pattern, show the mistake, then make the student use the fix.</h2>
+          <p>
+            Students improve faster when the lesson is direct. I do not believe in long explanations that never reach the point.
+            I want the rule to be visible, the example to be relevant, and the practice to tell the student immediately whether the answer works.
+          </p>
+        </div>
+
+        <div class="stack" style="gap: var(--s-3);">
+          <article class="card">
+            <h3 style="margin-top: 0;">1. Start from the real test problem</h3>
+            <p style="margin-bottom: 0;">If a student is losing marks for tone, task response, grammar control, or paragraph logic, the lesson should say that clearly.</p>
+          </article>
+          <article class="card">
+            <h3 style="margin-top: 0;">2. Keep the explanation simple</h3>
+            <p style="margin-bottom: 0;">Even B2 and C1 content should still be readable for a CLB 6 learner.</p>
+          </article>
+          <article class="card">
+            <h3 style="margin-top: 0;">3. Make practice diagnostic</h3>
+            <p style="margin-bottom: 0;">A good task does not just test memory. It shows the student what is right, what is wrong, and why.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div style="height: var(--s-7);"></div>
+
+    <section class="grid grid-3" style="gap: var(--s-4);">
+      <article class="card">
+        <h3 style="margin-top: 0;">Who this site is for</h3>
+        <p style="margin-bottom: 0;">Students aiming for immigration, licensing, work, university, or a stronger command of English for life in Canada.</p>
+      </article>
+      <article class="card">
+        <h3 style="margin-top: 0;">What you will find here</h3>
+        <p style="margin-bottom: 0;">Carefully written lessons, exam articles, writing analysis, tutoring, webinars, and study tools that connect to real score goals.</p>
+      </article>
+      <article class="card">
+        <h3 style="margin-top: 0;">What I expect from every page</h3>
+        <p style="margin-bottom: 0;">It should feel like a teacher sat down, thought carefully about the student, and wrote the page on purpose.</p>
+      </article>
+    </section>
+
+    <div style="height: var(--s-7);"></div>
+
+    <section class="surface about-next">
+      <p class="lesson-panel-label">What to do next</p>
+      <h2>If you are new here, start with one free page and one score problem.</h2>
+      <p style="max-width: 74ch;">
+        Open the skill area that is hurting your score most. Read one lesson carefully. Then decide whether you need
+        more structured practice, direct writing feedback, or one-to-one teaching support.
+      </p>
+      <div class="cluster" style="margin-top: var(--s-3);">
+        <a class="btn btn-primary" href="/lessons">Start free lessons</a>
+        <a class="btn" href="/essay-correction">Essay correction</a>
+        <a class="btn" href="/tutoring">Book tutoring</a>
+      </div>
+    </section>
   </section>
 </Layout>
-
-<style>
-  @media (max-width: 768px) {
-    .grid {
-      grid-template-columns: 1fr !important;
-    }
-  }
-</style>

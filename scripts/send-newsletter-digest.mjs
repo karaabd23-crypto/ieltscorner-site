@@ -2,89 +2,29 @@
 import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import nodemailer from 'nodemailer';
+import {
+  getNetlifyFormMatch,
+  getNetlifySiteInfo,
+  getSubscriberRecords,
+} from './lib/newsletter-audience.mjs';
+import {
+  getLatestInstagramPost,
+  getLatestYouTubeVideo,
+  getTelegramChannelSnapshot,
+} from './lib/social-feed.mjs';
 
 const DEFAULT_SITE_URL = 'https://ieltscorner.ca';
 const DEFAULT_FORM_NAME = 'newsletter';
 const DEFAULT_STATE_FILE = '.cache/newsletter-state.json';
 const DEFAULT_YOUTUBE_CHANNEL_URL = 'https://www.youtube.com/@KaraAbdolmaleki';
+const DEFAULT_TELEGRAM_CHANNEL_URL = 'https://t.me/Kaysenglishcorner';
+const DEFAULT_INSTAGRAM_USERNAME = 'ieltscorner.ca';
 
-function decodeXmlEntities(value) {
-  return String(value || '')
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'");
-}
-
-async function resolveYouTubeChannelId(channelUrl) {
-  const envChannelId = process.env.YOUTUBE_CHANNEL_ID?.trim();
-  if (envChannelId) {
-    return envChannelId;
-  }
-
-  const directMatch = String(channelUrl || '').match(/youtube\.com\/channel\/(UC[\w-]+)/i);
-  if (directMatch?.[1]) {
-    return directMatch[1];
-  }
-
-  try {
-    const response = await fetch(channelUrl, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (compatible; IELTSCornerDigest/1.0)',
-      },
-    });
-
-    if (!response.ok) {
-      return '';
-    }
-
-    const html = await response.text();
-    const channelMatch = html.match(/youtube\.com\/channel\/(UC[\w-]+)/i);
-    return channelMatch?.[1] || '';
-  } catch {
-    return '';
-  }
-}
-
-async function getLatestYouTubeVideo(channelUrl) {
-  const channelId = await resolveYouTubeChannelId(channelUrl);
-  if (!channelId) {
-    return null;
-  }
-
-  try {
-    const feedUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
-    const response = await fetch(feedUrl);
-    if (!response.ok) {
-      return null;
-    }
-
-    const xml = await response.text();
-    const entryMatch = xml.match(/<entry>([\s\S]*?)<\/entry>/i);
-    if (!entryMatch) {
-      return null;
-    }
-
-    const entry = entryMatch[1];
-    const videoId = entry.match(/<yt:videoId>([^<]+)<\/yt:videoId>/i)?.[1]?.trim();
-    const titleRaw = entry.match(/<title>([^<]+)<\/title>/i)?.[1]?.trim() || 'Latest YouTube lesson';
-    const title = decodeXmlEntities(titleRaw);
-    const url = entry.match(/<link[^>]*href="([^"]+)"/i)?.[1]?.trim()
-      || (videoId ? `https://www.youtube.com/watch?v=${videoId}` : channelUrl);
-
-    if (!videoId) {
-      return null;
-    }
-
-    return {
-      title,
-      url,
-      thumbnailUrl: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
-    };
-  } catch {
-    return null;
-  }
+function normalizeAbsoluteUrl(value) {
+  const raw = String(value || '').trim();
+  if (!raw) return '';
+  if (/^https?:\/\//i.test(raw)) return raw;
+  return `https://${raw.replace(/^\/+/, '')}`;
 }
 
 function stripWrappingQuotes(value) {
@@ -190,11 +130,24 @@ function toIsoDate(input) {
   return date.toISOString();
 }
 
+function formatShortDate(value) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) {
+    return '';
+  }
+
+  return date.toLocaleDateString('en-CA', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+}
+
 async function getLatestLessons(limit = 5) {
   const lessonsDir = path.join(process.cwd(), 'src', 'content', 'lessons');
   const files = await readdir(lessonsDir);
-
   const lessons = [];
+
   for (const fileName of files) {
     if (!fileName.endsWith('.md')) {
       continue;
@@ -224,6 +177,7 @@ async function getLatestLessons(limit = 5) {
       excerpt: String(frontmatter.excerpt || '').trim(),
       category,
       level: String(frontmatter.level || '').trim(),
+      heroTip: String(frontmatter.heroTip || '').trim(),
       slug,
       dateIso,
     });
@@ -231,109 +185,6 @@ async function getLatestLessons(limit = 5) {
 
   lessons.sort((a, b) => new Date(b.dateIso).getTime() - new Date(a.dateIso).getTime());
   return lessons.slice(0, limit);
-}
-
-async function fetchNetlifyJson(url, accessToken) {
-  const response = await fetch(url, {
-    headers: {
-      Authorization: `Bearer ${accessToken}`,
-      'Content-Type': 'application/json',
-    },
-  });
-
-  if (!response.ok) {
-    const text = await response.text();
-    throw new Error(`Netlify API failed (${response.status}): ${text}`);
-  }
-
-  return response.json();
-}
-
-async function getNetlifySiteInfo({ siteId, accessToken }) {
-  const site = await fetchNetlifyJson(`https://api.netlify.com/api/v1/sites/${siteId}`, accessToken);
-  return {
-    id: String(site?.id || siteId),
-    name: String(site?.name || ''),
-    url: String(site?.url || site?.ssl_url || ''),
-  };
-}
-
-function normalizeFormName(value) {
-  return String(value || '')
-    .trim()
-    .toLowerCase()
-    .replace(/[\s_-]+/g, '');
-}
-
-async function getNetlifyFormMatch({ siteId, accessToken, formName }) {
-  const forms = await fetchNetlifyJson(`https://api.netlify.com/api/v1/sites/${siteId}/forms`, accessToken);
-  const requested = normalizeFormName(formName);
-
-  const exact = forms.find((item) => String(item?.name || '').trim() === formName);
-  if (exact?.id) {
-    return {
-      formId: exact.id,
-      formName: String(exact.name || formName),
-      availableFormNames: forms.map((item) => String(item?.name || '').trim()).filter(Boolean),
-    };
-  }
-
-  const normalizedMatch = forms.find((item) => normalizeFormName(item?.name) === requested);
-  if (normalizedMatch?.id) {
-    return {
-      formId: normalizedMatch.id,
-      formName: String(normalizedMatch.name || formName),
-      availableFormNames: forms.map((item) => String(item?.name || '').trim()).filter(Boolean),
-    };
-  }
-
-  const newsletterLike = forms.find((item) => normalizeFormName(item?.name).includes('newsletter'));
-  if (newsletterLike?.id) {
-    return {
-      formId: newsletterLike.id,
-      formName: String(newsletterLike.name || formName),
-      availableFormNames: forms.map((item) => String(item?.name || '').trim()).filter(Boolean),
-    };
-  }
-
-  return {
-    formId: '',
-    formName,
-    availableFormNames: forms.map((item) => String(item?.name || '').trim()).filter(Boolean),
-  };
-}
-
-async function getSubscribers({ formId, accessToken }) {
-  const seen = new Set();
-  const subscribers = [];
-
-  for (let page = 1; page <= 10; page += 1) {
-    const submissions = await fetchNetlifyJson(
-      `https://api.netlify.com/api/v1/forms/${formId}/submissions?page=${page}&per_page=100`,
-      accessToken,
-    );
-
-    if (!Array.isArray(submissions) || submissions.length === 0) {
-      break;
-    }
-
-    for (const submission of submissions) {
-      const rawEmail = submission?.data?.email ?? submission?.email;
-      const email = String(rawEmail || '').trim().toLowerCase();
-      if (!email || !email.includes('@')) {
-        continue;
-      }
-
-      if (seen.has(email)) {
-        continue;
-      }
-
-      seen.add(email);
-      subscribers.push(email);
-    }
-  }
-
-  return subscribers;
 }
 
 function resolveStateFilePath() {
@@ -365,108 +216,281 @@ function buildLessonUrl(siteUrl, lesson) {
 }
 
 function getLessonTier(level) {
-  const n = String(level || '').trim().toUpperCase();
-  if (n === 'A1' || n === 'A2') return 'Basic';
-  if (n === 'B1' || n === 'B2') return 'Intermediate';
+  const normalized = String(level || '').trim().toUpperCase();
+  if (normalized === 'A1' || normalized === 'A2') return 'Basic';
+  if (normalized === 'B1' || normalized === 'B2') return 'Intermediate';
   return 'Advanced';
 }
 
-function getPublicLessonTitle(title, level) {
-  const cleaned = String(title || '')
-    .replace(/\s*\((A1|A2|B1|B2|C1|C2)\)\s*/gi, ' ')
-    .replace(/\s{2,}/g, ' ')
-    .trim();
-
-  const normalizedLevel = String(level || '').trim().toUpperCase();
-  const isEarlyLevel = normalizedLevel === 'A1' || normalizedLevel === 'A2' || normalizedLevel === 'B1';
-
-  let baseTitle = cleaned;
-
-  if (isEarlyLevel) {
-    if (/(conditional|if[-\s]?sentence|if[-\s]?statement)/i.test(cleaned)) {
-      baseTitle = 'How to use "if"';
-    } else {
-      const shortTitle = cleaned
-        .replace(/^How to\s+/i, '')
-        .replace(/^Using\s+/i, '')
-        .replace(/\s+for\s+.*$/i, '')
-        .replace(/\s+in\s+.*$/i, '')
-        .replace(/\s*[:\-–—]\s*.*/, '')
-        .replace(/\s{2,}/g, ' ')
-        .trim();
-
-      if (shortTitle.length >= 8) {
-        baseTitle = shortTitle;
-      }
-    }
-  }
-
-  if (normalizedLevel) {
-    return `${baseTitle} – ${getLessonTier(normalizedLevel)}`;
-  }
-
-  return baseTitle;
+function escapeHtml(value) {
+  return String(value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
 }
 
-function buildHtmlEmail({ siteUrl, lessons, latestYouTubeVideo, youtubeChannelUrl }) {
-  const listItems = lessons
+function buildLessonCards(siteUrl, lessons) {
+  return lessons
     .map((lesson) => {
       const url = buildLessonUrl(siteUrl, lesson);
-      const title = getPublicLessonTitle(lesson.title, lesson.level);
-      const excerpt = lesson.excerpt ? `<p style="margin:6px 0 0;color:#555;">${lesson.excerpt}</p>` : '';
-      return `<li style="margin:0 0 14px;"><a href="${url}" style="color:#d94848;font-weight:700;text-decoration:none;">${title}</a>${excerpt}</li>`;
+      const eyebrow = `${lesson.category.toUpperCase()} | ${getLessonTier(lesson.level)}`;
+      const body = lesson.excerpt || lesson.heroTip || 'Open the lesson for the full explanation and interactive practice.';
+      return `
+        <tr>
+          <td style="padding: 0 0 16px;">
+            <table role="presentation" width="100%" style="border-collapse: collapse; background: #ffffff; border: 1px solid #eadfd2; border-radius: 18px;">
+              <tr>
+                <td style="padding: 18px 18px 16px;">
+                  <div style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 800; color: #8d4d21; margin-bottom: 8px;">${escapeHtml(eyebrow)}</div>
+                  <div style="font-size: 21px; line-height: 1.25; font-weight: 800; color: #1f2b37; margin-bottom: 8px;">${escapeHtml(lesson.title)}</div>
+                  <div style="font-size: 14px; line-height: 1.7; color: #495566; margin-bottom: 12px;">${escapeHtml(body)}</div>
+                  <div style="font-size: 13px; color: #7a8491; margin-bottom: 14px;">${escapeHtml(formatShortDate(lesson.dateIso))}</div>
+                  <a href="${url}" style="display: inline-block; background: #d94848; color: #ffffff; text-decoration: none; font-weight: 800; border-radius: 999px; padding: 10px 16px;">Open lesson</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      `;
     })
     .join('');
+}
 
-  const latestVideoBlock = latestYouTubeVideo
-    ? `
-        <h3 style="margin:0 0 8px;color:#1f1f1f;">Latest YouTube lesson</h3>
-        <a href="${latestYouTubeVideo.url}" style="display:block;text-decoration:none;margin:0 0 16px;">
-          <img src="${latestYouTubeVideo.thumbnailUrl}" alt="${latestYouTubeVideo.title}" style="width:100%;max-width:560px;height:auto;border-radius:10px;border:1px solid #e9e1dc;display:block;" />
-          <p style="margin:8px 0 0;color:#d94848;font-weight:700;">${latestYouTubeVideo.title}</p>
-          <p style="margin:4px 0 0;color:#555;">Watch now on YouTube →</p>
-        </a>`
-    : '';
+function buildSocialCards({ youtubeVideo, telegramPost, instagramPost, youtubeChannelUrl, telegramChannelUrl, instagramUrl }) {
+  const cards = [];
+
+  if (youtubeVideo) {
+    cards.push(`
+      <td width="33.33%" valign="top" style="padding: 0 8px 12px 0;">
+        <table role="presentation" width="100%" style="border-collapse: collapse; background: #fff7f1; border: 1px solid #ead9ca; border-radius: 18px; overflow: hidden;">
+          <tr>
+            <td style="padding: 14px 14px 0;">
+              <div style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 800; color: #8d4d21;">YouTube</div>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 10px 14px 14px;">
+              <a href="${youtubeVideo.url}" style="text-decoration: none; color: inherit;">
+                <img src="${youtubeVideo.thumbnailUrl}" alt="${escapeHtml(youtubeVideo.title)}" style="display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid #e6d4c6;" />
+                <div style="font-size: 16px; line-height: 1.4; font-weight: 800; color: #1f2b37; margin-top: 12px;">${escapeHtml(youtubeVideo.title)}</div>
+                <div style="font-size: 13px; line-height: 1.6; color: #586577; margin-top: 8px;">Watch the newest lesson and keep your practice current.</div>
+              </a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    `);
+  }
+
+  if (telegramPost) {
+    const subscriberLine = telegramPost.subscriberCount
+      ? `Channel size: ${escapeHtml(telegramPost.subscriberCount)} subscribers`
+      : 'Daily teaching post on Telegram';
+
+    cards.push(`
+      <td width="33.33%" valign="top" style="padding: 0 8px 12px 0;">
+        <table role="presentation" width="100%" style="border-collapse: collapse; background: #f4f8ff; border: 1px solid #dbe6f5; border-radius: 18px;">
+          <tr>
+            <td style="padding: 14px 14px 0;">
+              <div style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 800; color: #24507d;">Telegram</div>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 10px 14px 14px;">
+              <div style="font-size: 15px; line-height: 1.5; font-weight: 800; color: #1f2b37;">${escapeHtml(telegramPost.title || "Kay's English Corner")}</div>
+              <div style="font-size: 13px; line-height: 1.6; color: #586577; margin-top: 8px;">${escapeHtml(telegramPost.preview || 'Open the latest channel post for a short daily lesson.')}</div>
+              <div style="font-size: 12px; line-height: 1.6; color: #6d7785; margin-top: 10px;">${subscriberLine}</div>
+              <a href="${telegramPost.url || telegramChannelUrl}" style="display: inline-block; margin-top: 12px; color: #24507d; font-weight: 800; text-decoration: none;">Open latest post</a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    `);
+  }
+
+  if (instagramPost || instagramUrl) {
+    const instagramHref = instagramPost?.url || instagramUrl;
+    const imageMarkup = instagramPost?.imageUrl
+      ? `<img src="${instagramPost.imageUrl}" alt="Latest Instagram post" style="display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid #ead9e8;" />`
+      : '';
+
+    cards.push(`
+      <td width="33.33%" valign="top" style="padding: 0 0 12px 0;">
+        <table role="presentation" width="100%" style="border-collapse: collapse; background: #fff5fa; border: 1px solid #efd8e6; border-radius: 18px; overflow: hidden;">
+          <tr>
+            <td style="padding: 14px 14px 0;">
+              <div style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 800; color: #8b3f63;">Instagram</div>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 10px 14px 14px;">
+              <a href="${instagramHref}" style="text-decoration: none; color: inherit;">
+                ${imageMarkup}
+                <div style="font-size: 15px; line-height: 1.6; color: #1f2b37; font-weight: 700; margin-top: ${imageMarkup ? '12px' : '0'};">${escapeHtml(instagramPost?.preview || 'Open the Instagram page for quick study visuals and short explanations.')}</div>
+                <div style="font-size: 13px; line-height: 1.6; color: #586577; margin-top: 8px;">Tap through for the latest reels, captions, and visual study posts.</div>
+              </a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    `);
+  }
+
+  if (cards.length === 0) {
+    return '';
+  }
+
+  return `
+    <table role="presentation" width="100%" style="border-collapse: separate; border-spacing: 0;">
+      <tr>
+        ${cards.join('')}
+      </tr>
+    </table>
+  `;
+}
+
+function buildHtmlEmail({
+  siteUrl,
+  lessons,
+  youtubeVideo,
+  telegramPost,
+  instagramPost,
+  youtubeChannelUrl,
+  telegramChannelUrl,
+  instagramUrl,
+}) {
+  const lessonCards = buildLessonCards(siteUrl, lessons);
+  const socialCards = buildSocialCards({
+    youtubeVideo,
+    telegramPost,
+    instagramPost,
+    youtubeChannelUrl,
+    telegramChannelUrl,
+    instagramUrl,
+  });
 
   return `<!doctype html>
 <html>
-  <body style="font-family:Arial,sans-serif;background:#f6f4f3;padding:16px;">
-    <table role="presentation" style="max-width:640px;margin:0 auto;background:#fff;border:1px solid #e9e1dc;border-radius:10px;padding:18px;">
-      <tr><td>
-        <h2 style="margin:0 0 8px;color:#1f1f1f;">Latest IELTS Corner Lessons</h2>
-        <p style="margin:0 0 16px;color:#444;">Here are the 5 most recent lessons:</p>
-        <ul style="padding-left:18px;margin:0 0 18px;">${listItems}</ul>
-        ${latestVideoBlock}
-        <h3 style="margin:0 0 8px;color:#1f1f1f;">Keep improving this week</h3>
-        <ul style="padding-left:18px;margin:0 0 18px;">
-          <li style="margin:0 0 8px;"><a href="${siteUrl}/webinar/" style="color:#d94848;font-weight:700;text-decoration:none;">Join the weekly webinar</a> for live score-raising strategies.</li>
-          <li style="margin:0 0 8px;"><a href="${youtubeChannelUrl}" style="color:#d94848;font-weight:700;text-decoration:none;">Watch YouTube lessons</a> for quick exam tips and practice.</li>
-          <li style="margin:0 0 8px;"><a href="https://t.me/Kaysenglishcorner" style="color:#d94848;font-weight:700;text-decoration:none;">Join our Telegram channel</a> for daily short tips and updates.</li>
-          <li style="margin:0;"><a href="${siteUrl}/tutoring/" style="color:#d94848;font-weight:700;text-decoration:none;">Book a private lesson</a> for personalized feedback.</li>
-        </ul>
-        <p style="margin:0;color:#666;">You are receiving this because you subscribed on ieltscorner.ca.</p>
-      </td></tr>
+  <body style="margin: 0; padding: 24px 12px; background: #f7f1ea; font-family: Arial, sans-serif; color: #1f2b37;">
+    <table role="presentation" width="100%" style="border-collapse: collapse;">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="100%" style="max-width: 720px; border-collapse: collapse; background: #fffaf5; border: 1px solid #eadfd2; border-radius: 28px; overflow: hidden;">
+            <tr>
+              <td style="padding: 34px 34px 26px; background: linear-gradient(135deg, #fff0df 0%, #fff8f1 50%, #f4f8ff 100%);">
+                <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 800; color: #8d4d21; margin-bottom: 10px;">IELTS Corner Weekly Digest</div>
+                <div style="font-size: 34px; line-height: 1.15; font-weight: 800; color: #1f2b37; margin-bottom: 12px;">Fresh lessons, clear study steps, and the newest channel updates.</div>
+                <div style="font-size: 16px; line-height: 1.7; color: #4e5a6b; max-width: 560px;">This week&apos;s digest is built to help you choose one useful lesson, one social post, and one next action instead of collecting random tips.</div>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding: 30px 34px 12px;">
+                <div style="font-size: 24px; line-height: 1.25; font-weight: 800; color: #1f2b37; margin-bottom: 8px;">Start with these new lessons</div>
+                <div style="font-size: 15px; line-height: 1.7; color: #586577; margin-bottom: 20px;">Open one lesson, do the interactive practice, and save the rest for later. Each lesson now follows the same clearer teacher-style structure.</div>
+                <table role="presentation" width="100%" style="border-collapse: collapse;">
+                  ${lessonCards}
+                </table>
+              </td>
+            </tr>
+
+            ${socialCards ? `
+            <tr>
+              <td style="padding: 12px 34px 16px;">
+                <div style="font-size: 24px; line-height: 1.25; font-weight: 800; color: #1f2b37; margin-bottom: 8px;">Latest on our channels</div>
+                <div style="font-size: 15px; line-height: 1.7; color: #586577; margin-bottom: 20px;">If you want short study boosts between lessons, use the newest post from each channel below.</div>
+                ${socialCards}
+              </td>
+            </tr>
+            ` : ''}
+
+            <tr>
+              <td style="padding: 12px 34px 34px;">
+                <table role="presentation" width="100%" style="border-collapse: collapse; background: linear-gradient(135deg, #173656 0%, #274c73 100%); border-radius: 22px; overflow: hidden;">
+                  <tr>
+                    <td style="padding: 24px;">
+                      <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 800; color: #ffd68d; margin-bottom: 10px;">Need direct feedback?</div>
+                      <div style="font-size: 28px; line-height: 1.2; font-weight: 800; color: #ffffff; margin-bottom: 10px;">Work with a teacher, not just a worksheet.</div>
+                      <div style="font-size: 15px; line-height: 1.7; color: #d8e6f4; margin-bottom: 18px;">Choose the support that matches your goal this week: essay correction, a private class, AI writing analysis, or the live webinar.</div>
+                      <a href="${siteUrl}/tutoring/" style="display: inline-block; background: #ffd68d; color: #173656; text-decoration: none; font-weight: 800; border-radius: 999px; padding: 11px 18px; margin-right: 10px;">Book tutoring</a>
+                      <a href="${siteUrl}/essay-correction/" style="display: inline-block; background: rgba(255,255,255,0.14); color: #ffffff; text-decoration: none; font-weight: 800; border-radius: 999px; padding: 11px 18px; margin-top: 10px;">Essay correction</a>
+                    </td>
+                  </tr>
+                </table>
+
+                <div style="font-size: 13px; line-height: 1.7; color: #7a8491; margin-top: 18px;">
+                  More ways to study:
+                  <a href="${siteUrl}/celpip/writing/ai-feedback/" style="color: #24507d; font-weight: 700; text-decoration: underline;">AI writing lab</a>,
+                  <a href="${siteUrl}/webinar/" style="color: #24507d; font-weight: 700; text-decoration: underline;">weekly webinar</a>,
+                  <a href="${youtubeChannelUrl}" style="color: #24507d; font-weight: 700; text-decoration: underline;">YouTube</a>,
+                  <a href="${telegramChannelUrl}" style="color: #24507d; font-weight: 700; text-decoration: underline;">Telegram</a>,
+                  <a href="${instagramUrl}" style="color: #24507d; font-weight: 700; text-decoration: underline;">Instagram</a>.
+                </div>
+
+                <div style="font-size: 12px; line-height: 1.7; color: #8d96a2; margin-top: 14px;">You are receiving this because you subscribed on ieltscorner.ca.</div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
     </table>
   </body>
 </html>`;
 }
 
-function buildTextEmail({ siteUrl, lessons, latestYouTubeVideo, youtubeChannelUrl }) {
-  const lines = lessons.map((lesson) => {
+function buildTextEmail({
+  siteUrl,
+  lessons,
+  youtubeVideo,
+  telegramPost,
+  instagramPost,
+  youtubeChannelUrl,
+  telegramChannelUrl,
+  instagramUrl,
+}) {
+  const lessonLines = lessons.map((lesson) => {
     const url = buildLessonUrl(siteUrl, lesson);
-    const title = getPublicLessonTitle(lesson.title, lesson.level);
-    const excerpt = lesson.excerpt ? `\n${lesson.excerpt}` : '';
-    return `- ${title}\n${url}${excerpt}`;
+    const support = lesson.excerpt || lesson.heroTip || '';
+    return `- ${lesson.title} (${lesson.category}, ${getLessonTier(lesson.level)})\n  ${url}${support ? `\n  ${support}` : ''}`;
   }).join('\n\n');
 
-  const latestVideoText = latestYouTubeVideo
-    ? `\n\nLatest YouTube lesson:\n- ${latestYouTubeVideo.title}\n${latestYouTubeVideo.url}`
-    : '';
+  const socialLines = [
+    youtubeVideo ? `YouTube: ${youtubeVideo.title}\n${youtubeVideo.url}` : `YouTube: ${youtubeChannelUrl}`,
+    telegramPost ? `Telegram: ${telegramPost.preview}\n${telegramPost.url || telegramChannelUrl}` : `Telegram: ${telegramChannelUrl}`,
+    instagramPost ? `Instagram: ${instagramPost.preview}\n${instagramPost.url || instagramUrl}` : `Instagram: ${instagramUrl}`,
+  ].join('\n\n');
 
-  return `Latest IELTS Corner Lessons\n\n${lines}${latestVideoText}\n\nKeep improving this week:\n- Weekly webinar: ${siteUrl}/webinar/\n- YouTube lessons: ${youtubeChannelUrl}\n- Telegram channel: https://t.me/Kaysenglishcorner\n- Private lessons: ${siteUrl}/tutoring/\n\nYou are receiving this because you subscribed on ieltscorner.ca.`;
+  return `IELTS Corner Weekly Digest
+
+Fresh lessons, clear study steps, and the newest channel updates.
+
+Start with these new lessons:
+
+${lessonLines}
+
+Latest on our channels:
+
+${socialLines}
+
+Need direct feedback?
+- Tutoring: ${siteUrl}/tutoring/
+- Essay correction: ${siteUrl}/essay-correction/
+- AI writing lab: ${siteUrl}/celpip/writing/ai-feedback/
+- Weekly webinar: ${siteUrl}/webinar/
+
+You are receiving this because you subscribed on ieltscorner.ca.`;
 }
 
-async function sendDigestEmails({ subscribers, lessons, gmailUser, gmailPassword, siteUrl, latestYouTubeVideo, youtubeChannelUrl }) {
+async function sendDigestEmails({
+  subscribers,
+  gmailUser,
+  gmailPassword,
+  html,
+  text,
+  subject,
+}) {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -476,13 +500,13 @@ async function sendDigestEmails({ subscribers, lessons, gmailUser, gmailPassword
   });
 
   let sentCount = 0;
-  for (const to of subscribers) {
+  for (const subscriber of subscribers) {
     await transporter.sendMail({
       from: `IELTS Corner <${gmailUser}>`,
-      to,
-      subject: `Your IELTS Corner update: latest ${lessons.length} lessons`,
-      text: buildTextEmail({ siteUrl, lessons, latestYouTubeVideo, youtubeChannelUrl }),
-      html: buildHtmlEmail({ siteUrl, lessons, latestYouTubeVideo, youtubeChannelUrl }),
+      to: subscriber.email,
+      subject,
+      text,
+      html,
     });
 
     sentCount += 1;
@@ -498,22 +522,49 @@ async function main() {
 
   const siteUrl = (process.env.SITE_URL || DEFAULT_SITE_URL).trim().replace(/\/$/, '');
   const youtubeChannelUrl = (process.env.YOUTUBE_CHANNEL_URL || DEFAULT_YOUTUBE_CHANNEL_URL).trim();
-  const latestYouTubeVideo = await getLatestYouTubeVideo(youtubeChannelUrl);
+  const telegramChannelUrl = normalizeAbsoluteUrl(process.env.TELEGRAM_CHANNEL_URL || DEFAULT_TELEGRAM_CHANNEL_URL);
+  const instagramUsername = (process.env.INSTAGRAM_USERNAME || DEFAULT_INSTAGRAM_USERNAME).trim().replace(/^@/, '');
+  const instagramUrl = `https://www.instagram.com/${instagramUsername}/`;
+
+  const [lessons, youtubeVideo, telegramPost, instagramPost] = await Promise.all([
+    getLatestLessons(5),
+    getLatestYouTubeVideo(youtubeChannelUrl),
+    getTelegramChannelSnapshot(telegramChannelUrl),
+    getLatestInstagramPost(instagramUsername),
+  ]);
+
+  const subject = `IELTS Corner weekly digest: ${lessons.length} fresh lessons and study links`;
+  const html = buildHtmlEmail({
+    siteUrl,
+    lessons,
+    youtubeVideo,
+    telegramPost,
+    instagramPost,
+    youtubeChannelUrl,
+    telegramChannelUrl,
+    instagramUrl,
+  });
+  const text = buildTextEmail({
+    siteUrl,
+    lessons,
+    youtubeVideo,
+    telegramPost,
+    instagramPost,
+    youtubeChannelUrl,
+    telegramChannelUrl,
+    instagramUrl,
+  });
 
   if (options.preview) {
-    const lessons = await getLatestLessons(5);
-    if (lessons.length === 0) {
-      console.log('[preview] No published lessons found.');
-      return;
-    }
-
-    console.log(`[preview] Subject: Your IELTS Corner update: latest ${lessons.length} lessons`);
-    console.log('[preview] Lesson titles:', lessons.map((item) => item.title));
-    console.log('[preview] Latest YouTube video:', latestYouTubeVideo ? latestYouTubeVideo.title : 'not found');
+    console.log(`[preview] Subject: ${subject}`);
+    console.log('[preview] Lessons:', lessons.map((item) => item.title));
+    console.log('[preview] YouTube:', youtubeVideo?.title || 'not found');
+    console.log('[preview] Telegram:', telegramPost?.preview || 'not found');
+    console.log('[preview] Instagram:', instagramPost?.preview || 'not found');
     console.log('\n[preview] Text email:\n');
-    console.log(buildTextEmail({ siteUrl, lessons, latestYouTubeVideo, youtubeChannelUrl }));
+    console.log(text);
     console.log('\n[preview] HTML email:\n');
-    console.log(buildHtmlEmail({ siteUrl, lessons, latestYouTubeVideo, youtubeChannelUrl }));
+    console.log(html);
     return;
   }
 
@@ -552,38 +603,37 @@ async function main() {
     console.log(`[info] Using Netlify form: ${formMatch.formName} (requested: ${formName})`);
   }
 
-  const subscribers = await getSubscribers({ formId: formMatch.formId, accessToken });
-
+  const subscribers = await getSubscriberRecords({ formId: formMatch.formId, accessToken });
   if (subscribers.length === 0) {
     console.log('[info] No newsletter subscribers found.');
     return;
   }
 
-  const lessons = await getLatestLessons(5);
   if (lessons.length === 0) {
     console.log('[info] No published lessons found.');
     return;
   }
 
   console.log(`[info] Subscribers: ${subscribers.length}`);
+  console.log(`[info] Latest subscriber: ${subscribers[0]?.submittedAt || 'unknown'}`);
   console.log(`[info] Latest lessons selected: ${lessons.length}`);
   console.log(`[info] Last sent at: ${state.lastSentAt || 'never'}`);
+  console.log(`[info] Social found: YouTube=${youtubeVideo ? 'yes' : 'no'} | Telegram=${telegramPost ? 'yes' : 'no'} | Instagram=${instagramPost ? 'yes' : 'no'}`);
 
   if (options.dryRun) {
-    console.log('[dry-run] First recipients:', subscribers.slice(0, 5));
+    console.log('[dry-run] First recipients:', subscribers.slice(0, 5).map((item) => item.email));
+    console.log('[dry-run] Subject:', subject);
     console.log('[dry-run] Lesson titles:', lessons.map((item) => item.title));
-    console.log('[dry-run] Latest YouTube video:', latestYouTubeVideo ? latestYouTubeVideo.title : 'not found');
     return;
   }
 
   const sentCount = await sendDigestEmails({
     subscribers,
-    lessons,
     gmailUser,
     gmailPassword,
-    siteUrl,
-    latestYouTubeVideo,
-    youtubeChannelUrl,
+    html,
+    text,
+    subject,
   });
 
   const newestLessonDate = lessons[0]?.dateIso || new Date().toISOString();
@@ -591,6 +641,7 @@ async function main() {
     lastSentAt: newestLessonDate,
     lastRunAt: new Date().toISOString(),
     lastSentCount: sentCount,
+    lastSubscriberCount: subscribers.length,
   });
 
   console.log(`[ok] Newsletter sent to ${sentCount} subscribers.`);

@@ -52,14 +52,16 @@ const pageKeywords = "IELTS speaking, IELTS speaking part 1, IELTS speaking part
   <section class="section">
     <div class="hero" style={`--hero-bg: url('/heroes/speaking.png');`}>
       <div class="hero-content">
-        <span class="pill">🗣️ IELTS Speaking</span>
+        <span class="pill">IELTS Speaking</span>
         <h1>Clear answers beat memorized answers.</h1>
         <p class="muted" style="max-width: 62ch;">
-          IELTS speaking is not about sounding impressive for 30 seconds. It is about staying clear, coherent, and natural across Parts 1, 2, and 3. This page gives you the core framework, then takes you to the right lessons for practice.
+          IELTS speaking is not about sounding impressive for 30 seconds. It is about staying clear,
+          coherent, and natural across Parts 1, 2, and 3. This page gives you the core framework,
+          then takes you to the right lessons for practice.
         </p>
         <div class="cluster">
-          <a class="btn btn-primary" href="/lessons/ielts/speaking">Browse speaking lessons →</a>
-          <a class="btn btn-ghost" href="/tutoring">Book speaking coaching →</a>
+          <a class="btn btn-primary" href="/lessons/ielts/speaking">Browse speaking lessons</a>
+          <a class="btn btn-ghost" href="/tutoring">Book speaking coaching</a>
         </div>
       </div>
     </div>
@@ -92,7 +94,7 @@ const pageKeywords = "IELTS speaking, IELTS speaking part 1, IELTS speaking part
         </div>
         <div class="card">
           <h3>Part 3</h3>
-          <p class="muted">More abstract discussion. Students need reason, explanation, and example under pressure.</p>
+          <p class="muted">A more abstract discussion. Students need reason, explanation, and example under pressure.</p>
         </div>
       </div>
     </div>
@@ -104,34 +106,35 @@ const pageKeywords = "IELTS speaking, IELTS speaking part 1, IELTS speaking part
         <div class="stack">
           <h2>What raises IELTS speaking scores fastest</h2>
           <p class="muted" style="max-width: 62ch;">
-            Students often chase idioms and rare vocabulary too early. The faster wins usually come from better structure, longer but relevant answers, and pronunciation that stays easy to understand.
+            Students often chase idioms and rare vocabulary too early. Faster improvements usually come from better structure,
+            longer but relevant answers, and pronunciation that stays easy to understand.
           </p>
         </div>
 
         <div class="checklist">
           <div class="check">
-            <div class="icon">✓</div>
+            <div class="icon">1</div>
             <div>
               <strong>Answer first</strong>
               <span>Do not circle the topic for too long. Give the main answer early.</span>
             </div>
           </div>
           <div class="check">
-            <div class="icon">✓</div>
+            <div class="icon">2</div>
             <div>
               <strong>Extend naturally</strong>
               <span>Add a reason, example, or comparison instead of memorized filler.</span>
             </div>
           </div>
           <div class="check">
-            <div class="icon">✓</div>
+            <div class="icon">3</div>
             <div>
               <strong>Use safe grammar</strong>
               <span>Complex grammar only helps when it stays accurate and fluent.</span>
             </div>
           </div>
           <div class="check">
-            <div class="icon">✓</div>
+            <div class="icon">4</div>
             <div>
               <strong>Record and review</strong>
               <span>Listening to your own answers exposes repetition, hesitation, and weak development.</span>
@@ -146,7 +149,7 @@ const pageKeywords = "IELTS speaking, IELTS speaking part 1, IELTS speaking part
     <div class="surface" style="padding: var(--s-6);">
       <h2>Popular IELTS speaking guides</h2>
       <p class="muted" style="margin-top: 0; max-width: 70ch;">
-        These speaking guides capture high-intent IELTS queries, especially around cue cards and answer development.
+        Start with these guides if you want stronger cue-card answers and better idea development.
       </p>
       <div class="grid grid-2" style="margin-bottom: var(--s-5);">
         <a class="card" href="/blog/ielts-speaking-part-2-cue-card" style="text-decoration:none;">
@@ -155,7 +158,7 @@ const pageKeywords = "IELTS speaking, IELTS speaking part 1, IELTS speaking part
         </a>
         <a class="card" href="/blog/celpip-speaking-part2" style="text-decoration:none;">
           <h3>Compare with CELPIP Speaking Task 2</h3>
-          <p class="muted">Useful if you teach both exams or want to compare task structure and fluency demands.</p>
+          <p class="muted">Useful if you compare both exams or want to see how fluency demands change across task types.</p>
         </a>
       </div>
       <div class="grid grid-2" style="margin-bottom: var(--s-5);">
@@ -165,7 +168,7 @@ const pageKeywords = "IELTS speaking, IELTS speaking part 1, IELTS speaking part
         </a>
         <a class="card" href="/blog/ielts-speaking-part-3-questions-guide" style="text-decoration:none;">
           <h3>IELTS Speaking Part 3 questions guide</h3>
-          <p class="muted">How to build abstract answers with stronger logic and support.</p>
+          <p class="muted">How to build more abstract answers with stronger logic and support.</p>
         </a>
       </div>
 
@@ -177,8 +180,8 @@ const pageKeywords = "IELTS speaking, IELTS speaking part 1, IELTS speaking part
         {relatedLessons.map((lesson) => (
           <a class="card" href={`/lessons/${lesson.data.category}/${lesson.slug}/`} style="display:block; text-decoration:none;">
             <div class="cluster" style="justify-content: space-between;">
-              <span class="pill">{lesson.data.category} • {getLessonTier(lesson.data.level)}</span>
-              <span class="pill">Open →</span>
+              <span class="pill">{lesson.data.category} | {getLessonTier(lesson.data.level)}</span>
+              <span class="pill">Open lesson</span>
             </div>
             <h3 style="margin-top: var(--s-3);">{getPublicLessonTitle(lesson.data.title, lesson.data.level)}</h3>
             <p class="muted" style="margin-bottom: 0;">{lesson.data.excerpt}</p>
@@ -193,12 +196,12 @@ const pageKeywords = "IELTS speaking, IELTS speaking part 1, IELTS speaking part
       <div class="card">
         <h3>Practice with feedback</h3>
         <p class="muted">Speaking improves faster when someone can tell you where your answer actually breaks down.</p>
-        <a class="btn btn-primary" href="/tutoring">Book IELTS tutoring →</a>
+        <a class="btn btn-primary" href="/tutoring">Book IELTS tutoring</a>
       </div>
       <div class="card">
-        <h3>See a focused CELPIP comparison</h3>
-        <p class="muted">If you also teach or compare both exams, the CELPIP speaking hub is structured the same way.</p>
-        <a class="btn" href="/celpip/speaking">CELPIP speaking →</a>
+        <h3>See a CELPIP comparison</h3>
+        <p class="muted">If you compare both exams, the CELPIP speaking hub is organized in a similar way.</p>
+        <a class="btn" href="/celpip/speaking">CELPIP speaking</a>
       </div>
     </div>
   </section>

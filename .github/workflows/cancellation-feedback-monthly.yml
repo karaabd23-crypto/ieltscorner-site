@@ -1,0 +1,88 @@
+name: Cancellation Feedback Monthly Insights
+
+on:
+  schedule:
+    # First day of each month at 16:00 UTC
+    - cron: '0 16 1 * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Generate report without updating monthly state'
+        required: false
+        default: 'false'
+      month:
+        description: 'Optional target month (YYYY-MM)'
+        required: false
+        default: ''
+
+jobs:
+  cancellation-insights:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Restore cancellation insights cache
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            .cache/cancellation-feedback-state.json
+            .cache/cancellation-feedback-reports
+          key: cancellation-insights-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            cancellation-insights-${{ github.ref_name }}-
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Generate monthly cancellation insights
+        env:
+          NETLIFY_ACCESS_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          CANCEL_FEEDBACK_FORM_NAME: subscription-cancel-feedback
+          CANCEL_FEEDBACK_STATE_FILE: .cache/cancellation-feedback-state.json
+          CANCEL_FEEDBACK_REPORT_DIR: .cache/cancellation-feedback-reports
+          CANCEL_FEEDBACK_REPORT_TO: ${{ secrets.CANCEL_FEEDBACK_REPORT_TO }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
+        run: |
+          ARGS=""
+          if [ "${{ github.event.inputs.dry_run || 'false' }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          if [ -n "${{ github.event.inputs.month || '' }}" ]; then
+            ARGS="$ARGS --month ${{ github.event.inputs.month }}"
+          fi
+          node scripts/monthly-cancellation-insights.mjs $ARGS
+
+      - name: Ensure cache paths exist
+        if: always()
+        run: |
+          mkdir -p .cache/cancellation-feedback-reports
+          if [ ! -f .cache/cancellation-feedback-state.json ]; then
+            echo '{"lastReportedMonth":null,"lastRunAt":null}' > .cache/cancellation-feedback-state.json
+          fi
+
+      - name: Save cancellation insights cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            .cache/cancellation-feedback-state.json
+            .cache/cancellation-feedback-reports
+          key: cancellation-insights-${{ github.ref_name }}-${{ github.run_id }}
+
+      - name: Upload report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cancellation-feedback-reports
+          path: .cache/cancellation-feedback-reports
+          if-no-files-found: ignore

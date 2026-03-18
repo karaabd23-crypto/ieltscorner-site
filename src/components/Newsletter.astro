@@ -9,25 +9,25 @@ interface Props {
 
 const {
   title = "Get weekly IELTS tips",
-  description = "Tips, strategies, and new lessons delivered to your inbox every week. Unsubscribe anytime.",
+  description = "Short study tips, strategy notes, and new lessons sent to your inbox each week.",
   placeholder = "Your email",
-  buttonText = "Join now →",
-  showBackground = true
+  buttonText = "Join now",
+  showBackground = true,
 } = Astro.props;
 ---
 
-<div 
+<div
   class:list={[
     "newsletter-signup",
-    { "with-background": showBackground }
+    { "with-background": showBackground },
   ]}
   style={showBackground ? "padding: var(--s-4); background: var(--accent-light); border-radius: 8px; text-align: center;" : ""}
 >
-  <h3 style={`margin-top: 0; ${showBackground ? '' : 'text-align: center;'}`}>{title}</h3>
-  <p style={`color: var(--text-muted); ${showBackground ? '' : 'text-align: center;'}`}>{description}</p>
-  
+  <h3 style={`margin-top: 0; ${showBackground ? "" : "text-align: center;"}`}>{title}</h3>
+  <p style={`color: var(--text-muted); ${showBackground ? "" : "text-align: center;"}`}>{description}</p>
+
   {/* @ts-ignore */}
-  <form 
+  <form
     name="newsletter"
     method="POST"
     action="/newsletter/thanks/"
@@ -38,16 +38,12 @@ const {
     class="newsletter-form"
     style="display: grid; grid-template-columns: 1fr auto; gap: var(--s-1); margin-top: var(--s-2);"
   >
-    <input 
-      type="hidden" 
-      name="form-name" 
-      value="newsletter" 
-    />
+    <input type="hidden" name="form-name" value="newsletter" />
 
     <p style="display:none;">
-      <label>Don’t fill this out: <input name="bot-field" /></label>
+      <label>Do not fill this out: <input name="bot-field" /></label>
     </p>
-    
+
     <input
       type="email"
       name="email"
@@ -55,8 +51,8 @@ const {
       required
       style="padding: var(--s-2); border: 1px solid var(--text-muted); border-radius: 4px; font-size: 1rem; background: white;"
     />
-    
-    <button 
+
+    <button
       type="submit"
       class="btn btn-primary"
       style="white-space: nowrap;"
@@ -73,17 +69,17 @@ const {
 </div>
 
 <script>
-  const storageKey = 'ieltscorner.newsletterSignup';
-  const form = document.getElementById('newsletter-form');
-  const status = document.getElementById('newsletter-status');
-  const normalizeEmail = (value: string) => String(value || '').trim().toLowerCase();
+  const storageKey = "ieltscorner.newsletterSignup";
+  const form = document.getElementById("newsletter-form");
+  const status = document.getElementById("newsletter-status");
+  const normalizeEmail = (value: string) => String(value || "").trim().toLowerCase();
   const readSignup = () => {
     try {
       const raw = localStorage.getItem(storageKey);
       if (!raw) return null;
 
       const parsed = JSON.parse(raw);
-      if (!parsed || typeof parsed !== 'object') return null;
+      if (!parsed || typeof parsed !== "object") return null;
 
       return parsed;
     } catch {
@@ -105,31 +101,31 @@ const {
     const savedSignup = readSignup();
     if (savedSignup?.email) {
       status.textContent = `You are already subscribed as ${savedSignup.email}.`;
-      status.style.color = 'var(--accent)';
+      status.style.color = "var(--accent)";
     }
 
-    form.addEventListener('submit', async (event) => {
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
 
-      const emailInput = form.elements.namedItem('email');
-      const email = emailInput instanceof HTMLInputElement ? normalizeEmail(emailInput.value) : '';
+      const emailInput = form.elements.namedItem("email");
+      const email = emailInput instanceof HTMLInputElement ? normalizeEmail(emailInput.value) : "";
 
       if (!email) {
-        status.textContent = 'Please enter a valid email.';
-        status.style.color = 'var(--text-muted)';
+        status.textContent = "Please enter a valid email.";
+        status.style.color = "var(--text-muted)";
         return;
       }
 
       const saved = readSignup();
       if (saved?.email === email) {
         saveSignup(email);
-        status.textContent = 'You are already subscribed. No need to sign up again.';
-        status.style.color = 'var(--accent)';
+        status.textContent = "You are already subscribed. No need to sign up again.";
+        status.style.color = "var(--accent)";
         return;
       }
 
-      status.textContent = 'Submitting...';
-      status.style.color = 'var(--text-muted)';
+      status.textContent = "Submitting...";
+      status.style.color = "var(--text-muted)";
 
       const formData = new FormData(form);
       const params = new URLSearchParams();
@@ -139,31 +135,31 @@ const {
       const encoded = params.toString();
 
       try {
-        const response = await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        const response = await fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: encoded,
         });
 
         if (!response.ok) {
-          throw new Error('Request failed');
+          throw new Error("Request failed");
         }
 
         saveSignup(email);
-        status.textContent = 'Thanks! You are subscribed.';
-        status.style.color = 'var(--accent)';
+        status.textContent = "Thanks. You are subscribed.";
+        status.style.color = "var(--accent)";
         form.reset();
-        window.location.href = '/newsletter/thanks/';
+        window.location.href = "/newsletter/thanks/";
       } catch {
         if (saved?.email === email) {
           saveSignup(email);
-          status.textContent = 'You are already subscribed. No duplicate signup was created.';
-          status.style.color = 'var(--accent)';
+          status.textContent = "You are already subscribed. No duplicate signup was created.";
+          status.style.color = "var(--accent)";
           return;
         }
 
-        status.textContent = 'Retrying with standard submit...';
-        status.style.color = 'var(--text-muted)';
+        status.textContent = "Retrying with standard submit...";
+        status.style.color = "var(--text-muted)";
         form.submit();
       }
     });

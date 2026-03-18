@@ -1,22 +1,25 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 
-const PRIVATE_CALENDLY_URL = 'https://calendly.com/ieltscorner/60min';
+const PRIVATE_CALENDLY_URL = "https://calendly.com/ieltscorner/60min";
 ---
 
 <Layout
-  title="Private Classes — IELTS & CELPIP"
-  description="Book one-on-one IELTS/CELPIP classes directly from the embedded Calendly calendar."
+  title="Private Classes | IELTS and CELPIP"
+  description="Book one-on-one IELTS and CELPIP classes directly from the embedded Calendly calendar."
 >
   <section class="section">
     <div class="hero" style={`--hero-bg: url('/heroes/tutoring.png');`}>
       <div class="hero-content">
-        <span class="pill">🎓 Private Classes • Google Meet</span>
+        <span class="pill">Private classes | Google Meet</span>
         <h1>Book Your Private Class</h1>
-
+        <p class="muted" style="max-width: 62ch;">
+          Work directly with Kara Abdolmaleki. You can also read more about the instructor,
+          exam background, and classroom experience on the <a href="/about">About page</a>.
+        </p>
 
         <div class="cluster">
-          <a class="btn btn-primary" href="#book-private-class">Open booking calendar ↓</a>
+          <a class="btn btn-primary" href="#book-private-class">Open booking calendar</a>
           <a class="btn btn-ghost" href={PRIVATE_CALENDLY_URL} target="_blank" rel="noreferrer">
             Open in new tab
           </a>
@@ -31,21 +34,21 @@ const PRIVATE_CALENDLY_URL = 'https://calendly.com/ieltscorner/60min';
         <h2 style="margin-top: 0;">Why private classes work</h2>
         <div class="checklist">
           <div class="check">
-            <div class="icon">✓</div>
+            <div class="icon">1</div>
             <div>
               <strong>Personalized strategy</strong>
               <span>Focused on your exact score target and weak points.</span>
             </div>
           </div>
           <div class="check">
-            <div class="icon">✓</div>
+            <div class="icon">2</div>
             <div>
               <strong>Direct corrections</strong>
               <span>Clear feedback on speaking, writing, grammar, and vocabulary.</span>
             </div>
           </div>
           <div class="check">
-            <div class="icon">✓</div>
+            <div class="icon">3</div>
             <div>
               <strong>Simple action plan</strong>
               <span>Know exactly what to practice before your next session.</span>
@@ -57,10 +60,24 @@ const PRIVATE_CALENDLY_URL = 'https://calendly.com/ieltscorner/60min';
 
     <div style="height: var(--s-7);"></div>
 
+    <div class="surface" style="padding: var(--s-5); border: 1px solid rgba(23, 54, 86, 0.12); background: linear-gradient(145deg, #fffaf2 0%, #f8fbff 100%);">
+      <h2 style="margin-top: 0;">Meet your instructor</h2>
+      <p class="muted" style="max-width: 68ch;">
+        If you like to know who you will be studying with, the About page shows Kara Abdolmaleki's
+        background, exam results, and teaching qualifications.
+      </p>
+      <div class="cluster">
+        <a class="btn btn-primary" href="/about">About Kara</a>
+        <a class="btn" href="/about#evidence-and-qualifications">See qualifications</a>
+      </div>
+    </div>
+
+    <div style="height: var(--s-7);"></div>
+
     <div id="book-private-class" class="surface calendly-wrap">
       <h2 style="margin-top: 0;">Private Class Booking Calendar</h2>
       <p class="muted" style="margin-top: 0;">
-        Select a date and time below to reserve your private IELTS/CELPIP session.
+        Select a date and time below to reserve your private IELTS or CELPIP session.
       </p>
 
       <div

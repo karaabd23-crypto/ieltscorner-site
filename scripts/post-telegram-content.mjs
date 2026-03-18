@@ -189,6 +189,67 @@ function extractJson(text) {
 }
 
 function fallbackContent({ type, level, topic, channelUrl }) {
+  const cleanTopic = String(topic || 'English topic').trim() || 'English topic';
+  const [topicHeadRaw, topicMeaningRaw] = cleanTopic.split(/\s+-\s+/, 2);
+  const topicHead = (topicHeadRaw || cleanTopic).trim();
+  const topicMeaning = (topicMeaningRaw || '').trim();
+  const introByType = {
+    vocab: 'Word of the day',
+    grammar: 'Grammar point',
+    idiom: 'Idiom focus',
+    expression: 'Useful expression',
+    phrasal: 'Phrasal verb focus',
+  };
+  const emojiByType = {
+    vocab: '📝',
+    grammar: '🔎',
+    idiom: '💬',
+    expression: '✨',
+    phrasal: '➡️',
+  };
+  const intro = introByType[type] || 'English tip';
+  const emoji = emojiByType[type] || '📘';
+  const meaningLine = topicMeaning
+    ? `${topicHead} means ${topicMeaning}.`
+    : `${topicHead} is useful because it appears often in real English.`;
+  const channelLine = channelUrl ? `\n\nMore short lessons: ${channelUrl}` : '';
+
+  return {
+    title: `${intro}: ${topicHead}`,
+    format: 'teacher-note',
+    level: String(level || 'B1'),
+    topic: cleanTopic,
+    postBody: `${emoji} ${intro}: ${topicHead}
+
+Why it matters:
+Students often understand this topic when reading, but hesitate when they need to use it in a real sentence.
+
+Key idea:
+${meaningLine}
+
+Simple examples:
+1. Use it in a short everyday sentence.
+2. Check the meaning, tone, and grammar around it.
+3. Say the sentence again with your own example.
+
+Quick study move:
+Write one sentence about work, study, or daily life. If the sentence still feels vague, make it more specific.${channelLine}`,
+    hashtags: ['#LearnEnglish', `#${String(level || 'B1').toUpperCase()}English`, '#DailyEnglish', '#IELTSCorner'],
+    quizzes: [
+      {
+        question: `Which sentence shows a clearer use of "${topicHead}"?`,
+        options: [
+          'The sentence matches the meaning and sounds natural.',
+          'The sentence uses the word with the wrong meaning.',
+          'The sentence is too vague to prove the point.',
+          'The sentence changes the topic completely.',
+        ],
+        correctIndex: 0,
+        explanation: `A good example should match the meaning of ${topicHead} and sound natural in context.`,
+      },
+    ],
+  };
+
   // 7 B1-level format templates rotating through diverse styles
   // All match Kay's English Corner enthusiastic voice
 
@@ -541,6 +602,56 @@ Natives say: "LIT-r'lly" (fast, smooth! ✨)
   };
 }
 function buildB1Prompt({ type, level, topic, templateHint, channelUrl }) {
+  return `You are an experienced English teacher writing a Telegram post for "Kay's English Corner."
+Your audience: Farsi-speaking English learners in Canada, mostly A2-B1 adults.
+
+Content Type: ${type}
+Specific Topic: ${topic}
+Level: ${level}
+${templateHint}
+
+STYLE:
+- Sound like a careful teacher, not a hype account.
+- Use short paragraphs, simple language, and only a few well-placed emojis.
+- Do not use ALL CAPS, spammy hooks, or exaggerated promises.
+- Be warm and direct. The learner should feel guided, not sold to.
+- Keep the language easy enough for a CLB 6 learner.
+
+STRUCTURE:
+1. A short clear title.
+2. One short opening that says why this topic matters.
+3. A plain-language explanation.
+4. Two useful examples from daily life, work, or study.
+5. One quick practice prompt the learner can try today.
+6. If you include Persian support, keep it short and accurate.
+
+Return STRICT JSON only:
+{
+  "title": string,
+  "type": "${type}",
+  "level": string,
+  "topic": string,
+  "postBody": string,
+  "hashtags": string[],
+  "quiz": {
+    "question": string,
+    "options": [string, string, string, string],
+    "correctIndex": number,
+    "explanation": string
+  }
+}
+
+Rules:
+- postBody max 1600 characters, plain text, no markdown tables.
+- Focus only on vocabulary, grammar, idioms, expressions, or speaking/writing language use.
+- Avoid repetition, generic exam cliches, and empty motivation.
+- quiz: simple best-choice or fill-in-the-blank from a real-life situation.
+- quiz options: clear, simple English. No trick answers.
+- Hashtags: 3 to 5 only.
+- quiz.correctIndex must be 0-3.
+- Do not mention bots, DMs, or "exclusive features."
+${channelUrl ? `- You may add this channel link once at the end if it fits naturally: ${channelUrl}` : ''}`;
+
   return `You are Kay, an enthusiastic and warm English teacher creating a Telegram post for your channel "Kay's English Corner."
 Your audience: Farsi-speaking English learners (mostly in Canada), level A2-B1.
 
