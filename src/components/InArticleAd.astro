@@ -1,0 +1,67 @@
+---
+const {
+  adId,
+  targetSelector,
+  anchorSelector,
+  label = "Sponsored",
+} = Astro.props;
+
+const isLocalPreview = import.meta.env.DEV || ["localhost", "127.0.0.1"].includes(Astro.url.hostname);
+---
+
+<div id={adId} class="content-ad content-ad--in-article" hidden>
+  {label && <p class="content-ad__label">{label}</p>}
+
+  {isLocalPreview ? (
+    <div class="content-ad__preview">In-article ad placeholder. The live unit will appear here on production.</div>
+  ) : (
+    <ins
+      class="adsbygoogle"
+      style="display:block; text-align:center;"
+      data-ad-layout="in-article"
+      data-ad-format="fluid"
+      data-ad-client="ca-pub-5615542310815721"
+      data-ad-slot="1334989000"
+    ></ins>
+  )}
+</div>
+
+<script is:inline define:vars={{ adId, targetSelector, anchorSelector, isLocalPreview }}>
+  (() => {
+    const adRoot = document.getElementById(adId);
+    if (!adRoot) return;
+
+    const target = document.querySelector(targetSelector);
+    if (!target) {
+      adRoot.remove();
+      return;
+    }
+
+    let anchor = null;
+
+    if (anchorSelector) {
+      anchor = target.querySelector(anchorSelector);
+    }
+
+    if (!anchor) {
+      const paragraphs = Array.from(target.querySelectorAll("p")).filter((paragraph) => {
+        return (paragraph.textContent || "").trim().length > 0;
+      });
+
+      anchor = paragraphs[1] || paragraphs[0];
+    }
+
+    if (!anchor) {
+      adRoot.remove();
+      return;
+    }
+
+    anchor.insertAdjacentElement("afterend", adRoot);
+    adRoot.hidden = false;
+
+    if (!isLocalPreview && !adRoot.dataset.initialized) {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      adRoot.dataset.initialized = "true";
+    }
+  })();
+</script>

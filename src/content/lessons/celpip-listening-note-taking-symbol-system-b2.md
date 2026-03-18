@@ -36,7 +36,40 @@ premium: false
 priceCAD: 12
 draft: false
 ---
-## Topic Explanation and Use
+<div class="lesson-context"><p class="lesson-context-lead"><strong>CELPIP Listening: Note-Taking with a Symbol System</strong> is a listening skill. This lesson helps you catch the right information, stay calm when you miss a word, and make better answer choices under time pressure.</p></div>
+
+## Examples
+<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>CELPIP Listening: Note-Taking with a Symbol System</u> in real sentences.</p>
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I try to hear every word and write full sentences while the speaker continues.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>I focus on the question type, track the signal words, and capture only the information I need.</p>
+  <p class="lesson-card-note">The stronger strategy protects attention and improves answer accuracy.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>When I miss one detail, I keep thinking about it and miss the next answer too.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>When I miss one detail, I stay with the audio and wait for the next clear signal or repetition.</p>
+  <p class="lesson-card-note">Recovery is built into the strategy instead of being treated like failure.</p>
+</article>
+</div>
+
+## Lesson Map
+<div class="lesson-map">
+  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+  <ul class="lesson-map-list">
+    <li><a href="#examples">&#10024; Examples</a></li>
+    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
+    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
+    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
+    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
+  </ul>
+</div>
+
+## Core Lesson
+<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Core idea</p>
@@ -60,23 +93,8 @@ draft: false
   </section>
 </div>
 
-## Real-World Examples with CELPIP Listening: Note-Taking with a Symbol System
-<div class="lesson-example-grid">
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I try to hear every word and write full sentences while the speaker continues.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>I focus on the question type, track the signal words, and capture only the information I need.</p>
-  <p class="lesson-card-note">The stronger strategy protects attention and improves answer accuracy.</p>
-</article>
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>When I miss one detail, I keep thinking about it and miss the next answer too.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>When I miss one detail, I stay with the audio and wait for the next clear signal or repetition.</p>
-  <p class="lesson-card-note">Recovery is built into the strategy instead of being treated like failure.</p>
-</article>
-</div>
-
-## Common Errors with CELPIP Listening: Note-Taking with a Symbol System
+## Common Mistakes
+<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -101,7 +119,8 @@ draft: false
 </article>
 </div>
 
-## Interactive Practice Lab
+## Practice Lab
+<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>
@@ -206,6 +225,9 @@ draft: false
 </article>
   </div>
 </div>
+
+## Why It Matters
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> listening is not about hearing every word. It is about catching the words that carry the answer. This skill helps you recover faster and protect marks when the audio moves quickly.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

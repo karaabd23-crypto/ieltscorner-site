@@ -226,7 +226,7 @@ function scoreExamples(examplesText) {
   const why = (examplesText.match(/-\s+Why it works:|class="lesson-card-note"/g) || []).length;
 
   if (weak >= 2 && strong >= 2 && weak === strong) score += 7;
-  else issues.push('Real-World Examples need at least 2 balanced Weak/Strong pairs.');
+  else issues.push('Examples need at least 2 balanced Weak/Strong pairs.');
 
   if (why >= 2) score += 3;
   else issues.push('Each model pair should include a short why-it-works line.');
@@ -271,10 +271,10 @@ function scorePractice(practiceText) {
 
   if (tasks >= 4) score += 3;
   else if (tasks >= 3) score += 2;
-  else issues.push('Interactive Practice Lab needs at least 3 task cards.');
+  else issues.push('Practice Lab needs at least 3 task cards.');
 
   if (typeCount >= 3) score += 2;
-  else issues.push('Interactive Practice Lab should use at least 3 task formats across the lesson.');
+  else issues.push('Practice Lab should use at least 3 task formats across the lesson.');
 
   return { score: Math.min(score, 5), issues };
 }
@@ -291,10 +291,10 @@ function scoreInteractiveFeedback(labText) {
   else issues.push('Each interactive task should include immediate feedback.');
 
   if (liveScore) score += 3;
-  else issues.push('Interactive Practice Lab needs a visible score counter.');
+  else issues.push('Practice Lab needs a visible score counter.');
 
   if (reset) score += 3;
-  else issues.push('Interactive Practice Lab needs a reset control.');
+  else issues.push('Practice Lab needs a reset control.');
 
   return { score: Math.min(score, 10), issues };
 }
@@ -303,39 +303,50 @@ function scoreForm(body) {
   let score = 0;
   const issues = [];
   const headings = h2Headings(body);
+  const introBlock = (() => {
+    const match = String(body || '').match(/^([\s\S]*?)(?=^##\s+)/m);
+    return match ? stripMarkdown(match[1]) : '';
+  })();
 
   const required = [
-    'Topic Explanation and Use',
-    'Real-World Examples',
-    'Common Errors with',
-    'Interactive Practice Lab',
+    'Examples',
+    'Lesson Map',
+    'Core Lesson',
+    'Common Mistakes',
+    'Practice Lab',
+    'Why It Matters',
   ];
 
   const missing = required.filter((name) => {
-    if (name === 'Real-World Examples') {
-      return !headings.some((h) => h.startsWith(name));
-    }
-    if (name.endsWith('with')) {
-      return !headings.some((h) => h.startsWith(name));
-    }
     return !headings.includes(name);
   });
 
   if (missing.length === 0) score += 10;
   else issues.push(`Missing key section(s): ${missing.join(', ')}`);
 
-  const forbidden = headings.filter((h) => /^(Goal|What\b|Key Rule in Plain Language)\b/i.test(h));
+  const forbidden = headings.filter((h) =>
+    /^(Goal|What\b|Key Rule in Plain Language|Topic Explanation and Use|Real-World Examples|Common Errors with|Interactive Practice Lab)\b/i.test(h)
+  );
   if (forbidden.length > 0) {
     issues.push(`Contains forbidden heading(s): ${forbidden.join(', ')}`);
   }
 
   const practiceBlocks = (body.match(/<div class="practice-lab" data-practice-lab>/g) || []).length;
+  const sectionLedes = (body.match(/class="lesson-section-lede"/g) || []).length;
+  const hasLessonMap = /class="lesson-map"/i.test(body);
+  const hasContext = /class="lesson-context"/i.test(body) && introBlock.length >= 120;
+  const hasImportance = /class="lesson-importance"/i.test(body);
   const visibleCards =
     (body.match(/class="lesson-example-card"/g) || []).length +
     (body.match(/class="lesson-error-card"/g) || []).length +
     (body.match(/class="lesson-panel /g) || []).length;
-  if (practiceBlocks === 1) score += 6;
+  if (practiceBlocks === 1) score += 2;
   else issues.push(`Interactive block count should be 1 (found ${practiceBlocks}).`);
+
+  if (sectionLedes >= 4) score += 1;
+  if (hasLessonMap) score += 1;
+  if (hasContext) score += 1;
+  if (hasImportance) score += 1;
 
   if (visibleCards >= 7) score += 4;
   else issues.push('Lesson should include multiple visible cards for guided reading.');
@@ -353,6 +364,11 @@ function scoreForm(body) {
     if (longSents > 8) issues.push(`Too many very long sentences (${longSents}).`);
     if (bullets < 12) issues.push(`Not enough scan-friendly bullets (${bullets}).`);
   }
+
+  if (!hasLessonMap) issues.push('Lesson Map block is missing.');
+  if (!hasContext) issues.push('The lesson needs a clear context paragraph before the first section.');
+  if (!hasImportance) issues.push('The lesson needs a Why It Matters block.');
+  if (sectionLedes < 4) issues.push('Major sections need short introductory lines.');
 
   return { score: Math.min(score, 30), issues };
 }
@@ -383,10 +399,10 @@ async function main() {
 
     const title = getField(parts.frontmatter, 'title');
     const body = parts.body;
-    const topic = section(body, 'Topic Explanation and Use');
-    const examples = section(body, 'Real-World Examples');
-    const errors = section(body, 'Common Errors with');
-    const practice = section(body, 'Interactive Practice Lab');
+    const topic = section(body, 'Core Lesson');
+    const examples = section(body, 'Examples');
+    const errors = section(body, 'Common Mistakes');
+    const practice = section(body, 'Practice Lab');
 
     const topicFidelity = scoreTopicFidelity({ title, topic, examples, errors, practice });
     const explanation = scoreExplanation(topic);

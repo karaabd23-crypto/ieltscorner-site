@@ -5,10 +5,10 @@ level: "C1"
 ieltsBand: "7.5-8.5"
 clb: "9-10"
 exam: ["IELTS", "CELPIP"]
-excerpt: "C1 writing lesson on Punctuation in Academic Writing with clearer structure, stronger support, and exam-focused review."
+excerpt: "Improve Punctuation in Academic Writing with clearer structure, stronger support, and cleaner paragraph control."
 date: "2026-03-02"
 tags: ["writing", "c1", "cefr-differentiated", "ielts", "celpip"]
-heroTip: "Plan the job of the response before you write the sentences."
+heroTip: "Plan the job of the paragraph before you write the sentences."
 videoEmbed: ""
 draft: false
 visualAids: ["Planning sequence", "Model paragraph frame", "Final editing checklist"]
@@ -35,7 +35,40 @@ quiz:
     correctIndex: 0
     explanation: "A paragraph reads better when each sentence does one clear piece of work."
 ---
-## Topic Explanation and Use
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Punctuation in Academic Writing</strong> is a writing skill for IELTS and CELPIP. This lesson shows what the skill does, what a strong response looks like, and what to check before you finish your answer.</p></div>
+
+## Examples
+<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>Punctuation in Academic Writing</u> in real sentences.</p>
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>This topic is important and has many effects.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Focused investment can improve access, reliability, and quality of life.</p>
+  <p class="lesson-card-note">The stronger sentence gives the paragraph a clear direction.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I think this is good and bad in many ways.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>A pilot program improved service response times in one local district.</p>
+  <p class="lesson-card-note">The better version develops the idea instead of circling around it.</p>
+</article>
+</div>
+
+## Lesson Map
+<div class="lesson-map">
+  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+  <ul class="lesson-map-list">
+    <li><a href="#examples">&#10024; Examples</a></li>
+    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
+    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
+    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
+    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
+  </ul>
+</div>
+
+## Core Lesson
+<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Core idea</p>
@@ -59,23 +92,8 @@ quiz:
   </section>
 </div>
 
-## Real-World Examples with Punctuation in Academic Writing
-<div class="lesson-example-grid">
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>This topic is important and has many effects.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Focused investment can improve access, reliability, and quality of life.</p>
-  <p class="lesson-card-note">The stronger sentence gives the paragraph a clear direction.</p>
-</article>
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I think this is good and bad in many ways.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>A pilot program improved service response times in one local district.</p>
-  <p class="lesson-card-note">The better version develops the idea instead of circling around it.</p>
-</article>
-</div>
-
-## Common Errors with Punctuation in Academic Writing
+## Common Mistakes
+<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -100,7 +118,8 @@ quiz:
 </article>
 </div>
 
-## Interactive Practice Lab
+## Practice Lab
+<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>
@@ -205,6 +224,9 @@ quiz:
 </article>
   </div>
 </div>
+
+## Why It Matters
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> strong ideas do not help enough if the writing skill is weak. In IELTS and CELPIP, this skill helps the examiner follow your position, support, and logic without extra work. That usually means a cleaner, stronger score.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

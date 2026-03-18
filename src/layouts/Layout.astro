@@ -1,5 +1,6 @@
 ﻿---
 import "../styles/global.css";
+import InArticleAd from "../components/InArticleAd.astro";
 
 // TypeScript declaration for AdSense
 declare global {
@@ -489,6 +490,10 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
         <slot />
 
         {isBlogArticle && (
+          <InArticleAd adId="blog-in-article-ad" targetSelector=".guide-article" />
+        )}
+
+        {isBlogArticle && (
           <section class="teacher-trust-banner surface">
             <div class="teacher-trust-banner__body">
               <p class="teacher-trust-banner__label">About The Instructor</p>
@@ -539,23 +544,9 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
             </div>
           </section>
         )}
+
       </div>
     </main>
-
-    <!-- AdSense Before Footer -->
-    {showAds && (
-      <div class="container ad-container-footer ad-shell ad-shell--line" style="padding: var(--s-3) 0;">
-        <ins class="adsbygoogle ad-unit-line"
-            style="display:block"
-            data-ad-format="horizontal"
-            data-full-width-responsive="false"
-            data-ad-client="ca-pub-5615542310815721"
-            data-ad-slot="7254823697"></ins>
-        <script is:inline>
-             (window.adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
-    )}
 
     <footer class="site-footer">
       <div class="container">

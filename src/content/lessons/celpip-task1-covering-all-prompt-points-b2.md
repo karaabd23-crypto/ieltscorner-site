@@ -5,144 +5,163 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B2 writing lesson on covering every CELPIP Task 1 prompt point clearly so the email feels complete and score-safe."
+excerpt: "Raise your CELPIP email score by covering every prompt point fully and clearly in the right place."
 date: "2026-03-17"
 tags: ["writing", "b2", "celpip", "task1", "prompt coverage"]
-heroTip: "Turn every prompt bullet into one clear job in the email."
+heroTip: "Tick off each bullet after you plan it, not after you finish the whole answer."
 videoEmbed: ""
 draft: false
-visualAids: ["Prompt-to-paragraph map", "Coverage checklist", "Missing-point warning signs"]
+visualAids: ["Prompt coverage checklist", "Bullet-to-paragraph map", "Task control reminder"]
 quiz:
-  - prompt: "What is the safest way to handle prompt bullets in Task 1?"
+  - prompt: "What should come before full drafting in CELPIP Task 1: Cover Every Prompt Point?"
     options:
-      - "Plan where each bullet will appear"
-      - "Answer one bullet very well and ignore the others"
-      - "Hide one bullet inside a vague sentence"
+      - "A quick plan with purpose and supporting points"
+      - "A long conclusion"
+      - "A list of rare words"
     correctIndex: 0
-    explanation: "Coverage improves when each prompt point has a clear place in the email."
-  - prompt: "What often happens when one prompt point is missing?"
+    explanation: "A short plan improves task control and paragraph direction immediately."
+  - prompt: "What makes support stronger in exam writing?"
     options:
-      - "The email feels incomplete"
-      - "The grammar score automatically rises"
-      - "The reader does not care"
+      - "Specific explanation and detail"
+      - "Repeating the same idea"
+      - "Keeping the point abstract"
     correctIndex: 0
-    explanation: "Missing one task point can lower the whole task response score."
-  - prompt: "What should you do before writing full sentences?"
+    explanation: "Specific support is easier for the examiner to trust."
+  - prompt: "What should you check before you finish the paragraph?"
     options:
-      - "Label the purpose, context, and request"
-      - "Write the sign-off first"
-      - "Collect ten rare synonyms"
+      - "Whether each sentence has a clear job"
+      - "Whether every sentence is very long"
+      - "Whether you used the rarest words possible"
     correctIndex: 0
-    explanation: "Simple planning protects coverage."
+    explanation: "A paragraph reads better when each sentence does one clear piece of work."
 ---
-## Topic Explanation and Use
-<div class="lesson-teach-grid">
-  <section class="lesson-panel lesson-panel-core">
-    <p class="lesson-panel-label">Core idea</p>
-    <p>CELPIP Task 1 usually gives you several jobs. You may need to explain a situation, describe the impact, and ask for one action. High-scoring emails do not guess. They cover each job clearly.</p>
-    <p>Prompt coverage does not mean copying the bullet points word for word. It means the reader can easily find the answer to each one. If the prompt asks why something happened, how it affected you, and what you want now, all three parts must appear in the email. Good grammar cannot fully save an incomplete response.</p>
-    <p>A practical method is to map the prompt before you write. Put one short note beside each bullet. Then decide where it belongs: opening, body, or closing. This stops you from forgetting a task point when the timer creates pressure.</p>
-    <p>At B2 level, complete coverage is often more valuable than longer language. A shorter complete answer is safer than a longer incomplete one.</p>
-  </section>
-  <section class="lesson-panel lesson-panel-when">
-    <p class="lesson-panel-label">Use it here</p>
-    <ul><li>Underline each job in the prompt before writing.</li><li>Give each prompt point one clear sentence or message block.</li><li>Check the full email at the end and ask: did I answer every job?</li></ul>
-  </section>
-  <section class="lesson-panel lesson-panel-pattern">
-    <p class="lesson-panel-label">Watch it work</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">I missed the workshop because I was in the hospital on Friday morning.</div>
-<div class="lesson-pattern-sentence">Could you please send me the presentation slides and let me know whether another session is available next week?</div></div>
-  </section>
-  <section class="lesson-panel lesson-panel-remember">
-    <p class="lesson-panel-label">Remember this</p>
-    <ul><li>One bullet point can equal one sentence or one short message block.</li><li>Do not bury an important task point inside vague language.</li><li>Check coverage before you check grammar.</li><li>If the request is missing, the email often feels unfinished.</li><li>Complete does not mean long. It means clear.</li></ul>
-  </section>
-</div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>CELPIP Task 1: Cover Every Prompt Point</strong> is about task control. In CELPIP email tasks, missing one prompt point can lower the score even if the grammar is good. In this lesson, you will learn how to plan each bullet and make sure nothing important is missing.</p></div>
 
-## Real-World Examples with CELPIP Task 1: Cover Every Prompt Point
+## Examples
+<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>CELPIP Task 1: Cover Every Prompt Point</u> in real sentences.</p>
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I missed the event, and I hope you understand. Thank you.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>I missed the event because I was ill, and I am writing to ask whether I can receive the materials and join the next session.</p>
-  <p class="lesson-card-note">The stronger line covers the reason and the request.</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>This topic is important and has many effects.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Focused investment can improve access, reliability, and quality of life.</p>
+  <p class="lesson-card-note">The stronger sentence gives the paragraph a clear direction.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The service caused problems for me.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>The repeated delay caused me to miss two deadlines at work and increased my transportation costs.</p>
-  <p class="lesson-card-note">The better line clearly answers the impact part of the prompt.</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I think this is good and bad in many ways.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>A pilot program improved service response times in one local district.</p>
+  <p class="lesson-card-note">The better version develops the idea instead of circling around it.</p>
 </article>
 </div>
 
-## Common Errors with CELPIP Task 1: Cover Every Prompt Point
+## Lesson Map
+<div class="lesson-map">
+  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+  <ul class="lesson-map-list">
+    <li><a href="#examples">&#10024; Examples</a></li>
+    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
+    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
+    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
+    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
+  </ul>
+</div>
+
+## Core Lesson
+<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
+<div class="lesson-teach-grid">
+  <section class="lesson-panel lesson-panel-core">
+    <p class="lesson-panel-label">Core idea</p>
+    <p>This lesson focuses on one writing move that changes clarity and score at the same time.</p>
+<p>This writing skill matters because exam readers reward control: clear task response, focused support, and readable structure. A strong response tells the reader exactly what it is doing and develops that message with specific support instead of vague general statements.</p>
+<p>Use this lesson when you want a more reliable writing process under time pressure. Plan the function of the response first, then build paragraphs that each do one job. That makes editing easier because you can test not only language but also structure.</p>
+<p>At B2 level, stronger writing comes from better paragraph control, not from simply making the language longer.</p>
+  </section>
+  <section class="lesson-panel lesson-panel-when">
+    <p class="lesson-panel-label">Use it here</p>
+    <ul><li>Start by identifying the exact job of the task or paragraph.</li><li>Keep support specific enough to prove the point rather than decorate it.</li><li>Check that every sentence moves the response toward its purpose.</li></ul>
+  </section>
+  <section class="lesson-panel lesson-panel-pattern">
+    <p class="lesson-panel-label">Watch it work</p>
+    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Focused investment can improve access, reliability, and quality of life.</div>
+<div class="lesson-pattern-sentence">A pilot program improved service response times in one local district.</div></div>
+  </section>
+  <section class="lesson-panel lesson-panel-remember">
+    <p class="lesson-panel-label">Remember this</p>
+    <ul><li>Turn the task into one clear response purpose.</li><li>Plan the main points before drafting sentences.</li><li>Develop each point with explanation and a concrete example or consequence.</li><li>Use transitions only when they reflect real logic.</li><li>Edit for clarity, support, and sentence control in that order.</li></ul>
+  </section>
+</div>
+
+## Common Mistakes
+<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>answering only the easiest bullet point</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>I am writing because I had a problem yesterday.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>I am writing to explain why I missed the appointment, describe the effect on my work schedule, and request a new time.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Identify every task job before drafting.</p>
+  <h3>starting to write before deciding the task purpose</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>This issue is important and has many sides.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>This essay argues that better transit investment improves daily life for workers.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Write one clear task sentence before the first full paragraph.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>covering the impact too vaguely</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>This situation was hard for me.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>This situation forced me to miss one work shift and arrange emergency child care.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Add one real effect the reader can picture.</p>
+  <h3>using examples that are too general to prove the point</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Many places improved after changes were made.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>One district reduced response times by 18% after introducing coordinated service planning.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Add a place, group, time, or measured result.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>forgetting the exact request</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>I hope you can help.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Please confirm whether I can attend the Thursday afternoon session instead.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Finish with the action, answer, or solution you need.</p>
+  <h3>losing paragraph control by adding every idea at once</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The policy is good, bad, expensive, helpful, and important for many people for many reasons.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The policy is expensive at first; however, it improves reliability for daily commuters.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Give each paragraph one job and one main idea.</p>
 </article>
 </div>
 
-## Interactive Practice Lab
+## Practice Lab
+<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">Map the prompt, then test whether every job appears clearly in the email.</p>
+      <p class="practice-lab-intro">Begin with purpose. Then check the order and cut anything that does not help the paragraph.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">If one task point is missing, the response is not complete yet.</p>
+  <p class="practice-lab-coach">If a sentence has no clear job, it should change or disappear.</p>
   <div class="practice-lab-grid">
 <article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Which sentence shows stronger prompt coverage?</h3>
+  <h3>Choose the stronger move for CELPIP Task 1: Cover Every Prompt Point.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  I had a problem and I hope something can be done.
+  Keep the idea vague and hope the reader understands.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  I missed the workshop because of illness, and I am writing to request the materials and information about the next session.
+  Focused investment can improve access, reliability, and quality of life.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Underline each prompt job.||Write one note for the reason.||Write one note for the impact.||Write one note for the request." data-task-id="1">
-  <p class="practice-task-label">2. Build the plan</p>
-  <h3>Put these planning steps in a useful order.</h3>
-  <p class="practice-task-note">Start with the prompt, not the full draft.</p>
+<article class="practice-task" data-task-type="order" data-task-answer="Turn the task into one clear response purpose.||Plan the main points before drafting sentences.||Develop each point with explanation and a concrete example or consequence.||Use transitions only when they reflect real logic." data-task-id="1">
+  <p class="practice-task-label">2. Build the flow</p>
+  <h3>Put these moves in a helpful order.</h3>
+  <p class="practice-task-note">Put the chunks in the natural order.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="Write one note for the request." data-chip-origin="bank-1" data-chip-id="1-0">
-  Write one note for the request.
+<button type="button" class="practice-chip" data-chip-value="Plan the main points before drafting sentences." data-chip-origin="bank-1" data-chip-id="1-0">
+  Plan the main points before drafting sentences.
 </button>
-<button type="button" class="practice-chip" data-chip-value="Write one note for the impact." data-chip-origin="bank-1" data-chip-id="1-1">
-  Write one note for the impact.
+<button type="button" class="practice-chip" data-chip-value="Turn the task into one clear response purpose." data-chip-origin="bank-1" data-chip-id="1-1">
+  Turn the task into one clear response purpose.
 </button>
-<button type="button" class="practice-chip" data-chip-value="Underline each prompt job." data-chip-origin="bank-1" data-chip-id="1-2">
-  Underline each prompt job.
+<button type="button" class="practice-chip" data-chip-value="Use transitions only when they reflect real logic." data-chip-origin="bank-1" data-chip-id="1-2">
+  Use transitions only when they reflect real logic.
 </button>
-<button type="button" class="practice-chip" data-chip-value="Write one note for the reason." data-chip-origin="bank-1" data-chip-id="1-3">
-  Write one note for the reason.
+<button type="button" class="practice-chip" data-chip-value="Develop each point with explanation and a concrete example or consequence." data-chip-origin="bank-1" data-chip-id="1-3">
+  Develop each point with explanation and a concrete example or consequence.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -152,31 +171,62 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="typing" data-task-answers="The delay caused me to miss two appointments and pay for another taxi." data-task-id="2">
-  <p class="practice-task-label">3. Write the impact</p>
-  <h3>Type a stronger version of the impact sentence.</h3>
-  <p class="practice-source-line"><span>Source</span>This delay was difficult for me.</p>
-  <div class="practice-input-row">
-    <input type="text" class="practice-input" data-typing-input placeholder="Type the full improved sentence" />
+<article class="practice-task" data-task-type="sort" data-task-id="2">
+  <p class="practice-task-label">3. Final sort</p>
+  <h3>Sort these habits into helpful or not helpful.</h3>
+  <div class="practice-sort-list">
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
+  <p>Turn the task into one clear response purpose.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="works" data-sort-row="1">
+  <p>Plan the main points before drafting sentences.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="2">
+  <p>Add a new reason in the middle of the paragraph to sound richer.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+  </div>
+</div>
+<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
+  <p>Use a broad example even when it does not prove the point clearly.</p>
+  <div class="practice-sort-actions">
+    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+  </div>
+</div>
+  </div>
+  <div class="practice-task-actions">
     <button type="button" class="practice-check-btn" data-task-check>Check</button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="choice" data-task-answer="0" data-task-id="3">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="3">
   <p class="practice-task-label">4. Last check</p>
-  <h3>Which final line answers the request most clearly?</h3>
+  <h3>Choose the sentence that sounds more controlled.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  Please let me know whether I can move my booking to next Tuesday afternoon.
+  This point is important in many ways and that is all.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  I hope this helps you understand my feelings.
+  A pilot program improved service response times in one local district.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
   </div>
 </div>
+
+## Why It Matters
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> in CELPIP writing, missing one bullet can hurt the task score immediately. Good task control shows the examiner that you understood the situation and answered every part on purpose.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">
@@ -207,5 +257,5 @@ quiz:
       <span>Join a guided session and learn with real exam-style examples.</span>
     </a>
   </div>
-  <p class="lesson-support-best">Best when you need feedback on task completion, prompt coverage, and score-safe planning.</p>
+  <p class="lesson-support-best">Best when you need detailed scoring guidance on clarity, cohesion, evidence use, and task achievement.</p>
 </div>

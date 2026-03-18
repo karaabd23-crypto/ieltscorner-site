@@ -45,6 +45,16 @@ function escapeYaml(value) {
     .replace(/"/g, '\\"');
 }
 
+function repairMojibake(text) {
+  return String(text ?? '')
+    .replace(/â€™/g, "'")
+    .replace(/â€˜/g, "'")
+    .replace(/â€œ/g, '"')
+    .replace(/â€/g, '"')
+    .replace(/Â/g, '')
+    .replace(/\u00A0/g, ' ');
+}
+
 function renderStringArrayField(key, items) {
   return `${key}: [${items.map((item) => `"${escapeYaml(item)}"`).join(', ')}]`;
 }
@@ -142,10 +152,14 @@ function detectTopicFamily(category, topic) {
     if (/task 2: opinion/.test(t)) return 'opinion-essay';
     if (/task 2: discussion/.test(t)) return 'discussion-essay';
     if (/task 2: advantage\/disadvantage/.test(t)) return 'advantages-disadvantages';
+    if (/task 2: problem-solution/.test(t)) return 'problem-solution';
     if (/task 1: maps/.test(t)) return 'task1-maps';
     if (/task 1: process/.test(t)) return 'task1-process';
     if (/task 1: email/.test(t)) return 'email';
     if (/task 2: survey/.test(t)) return 'survey';
+    if (/cover every prompt point/.test(t)) return 'cover-points';
+    if (/purpose and tone/.test(t)) return 'purpose-tone';
+    if (/support and examples/.test(t)) return 'support-examples';
     if (/introduction/.test(t)) return 'introduction';
     if (/body paragraphs/.test(t)) return 'body-paragraphs';
     if (/conclusion/.test(t)) return 'conclusion';
@@ -216,6 +230,10 @@ function levelFocus(level) {
 }
 
 function grammarFocusTerm(topic) {
+  const conditionalMatch = topic.match(/conditional sentences:\s*(zero|first|second|third)/i);
+  if (conditionalMatch) {
+    return `${conditionalMatch[1][0].toUpperCase()}${conditionalMatch[1].slice(1).toLowerCase()} conditional`;
+  }
   if (/\b(twelve\s+tenses|12\s+tenses|tense\s+review)\b/i.test(topic)) {
     return 'the full tense system';
   }
@@ -232,6 +250,17 @@ function grammarFocusTerm(topic) {
   if (ofMatch) return ofMatch[1].trim();
 
   return topic;
+}
+
+function detectConditionalSubtype(topic) {
+  const t = stripLevelTag(String(topic || '')).toLowerCase();
+
+  if (/(^|[\s:])zero conditional\b|conditional sentences:\s*zero/.test(t)) return 'zero';
+  if (/(^|[\s:])first conditional\b|conditional sentences:\s*first/.test(t)) return 'first';
+  if (/(^|[\s:])second conditional\b|conditional sentences:\s*second/.test(t)) return 'second';
+  if (/(^|[\s:])third conditional\b|conditional sentences:\s*third/.test(t)) return 'third';
+  if (/mixed conditional/.test(t)) return 'mixed';
+  return 'general';
 }
 
 function topicExplanation(topic, category) {
@@ -842,24 +871,122 @@ function pickGrammarPack(topic) {
   }
 
   if (t.includes('conditional')) {
-    return {
-      ex1Weak: 'If governments invest in transit, traffic reduced quickly.',
-      ex1Better: 'If governments invest in transit, traffic will reduce quickly.',
-      ex2Weak: 'If I knew the answer, I will tell you now.',
-      ex2Better: 'If I knew the answer, I would tell you now.',
-      err1: 'mixing first and second conditional forms in one sentence',
-      fix1: 'match the if-clause tense and result clause form correctly',
-      practice1: [
-        'If students study consistently, they would improve their scores quickly.',
-        'If I had enough money, I will travel this summer.',
-        'If the policy had started earlier, results are better now.',
-      ],
-      answerHints: [
-        'If students study consistently, they will improve their scores quickly.',
-        'If I had enough money, I would travel this summer.',
-        'If the policy had started earlier, results would be better now.',
-      ],
-    };
+    switch (detectConditionalSubtype(topic)) {
+      case 'zero':
+        return {
+          ex1Weak: 'If people will drive too fast, accidents happen more often.',
+          ex1Better: 'If people drive too fast, accidents happen more often.',
+          ex2Weak: 'If water reaches 100 degrees, it will boil.',
+          ex2Better: 'If water reaches 100 degrees, it boils.',
+          err1: 'using future forms in a sentence that states a general truth',
+          fix1: 'use present simple in both halves of a zero conditional sentence',
+          practice1: [
+            'If students revise regularly, they will remember more vocabulary.',
+            'If you heat ice, it will melt.',
+            'If people don\'t sleep enough, they feeling tired the next day.',
+          ],
+          answerHints: [
+            'If students revise regularly, they remember more vocabulary.',
+            'If you heat ice, it melts.',
+            'If people don\'t sleep enough, they feel tired the next day.',
+          ],
+        };
+      case 'first':
+        return {
+          ex1Weak: 'If governments invest in transit, traffic reduced quickly.',
+          ex1Better: 'If governments invest in transit, traffic will reduce quickly.',
+          ex2Weak: 'If students will review tonight, they will feel calmer tomorrow.',
+          ex2Better: 'If students review tonight, they will feel calmer tomorrow.',
+          err1: 'breaking the normal first conditional pattern',
+          fix1: 'use present simple after if and a future result clause',
+          practice1: [
+            'If students study consistently, they would improve their scores quickly.',
+            'If the bus arrives on time, I would get to class early.',
+            'If you leave now, you catch the early train.',
+          ],
+          answerHints: [
+            'If students study consistently, they will improve their scores quickly.',
+            'If the bus arrives on time, I will get to class early.',
+            'If you leave now, you will catch the early train.',
+          ],
+        };
+      case 'second':
+        return {
+          ex1Weak: 'If I had more time, I will join the course.',
+          ex1Better: 'If I had more time, I would join the course.',
+          ex2Weak: 'If I have a car, I would drive to work every day.',
+          ex2Better: 'If I had a car, I would drive to work every day.',
+          err1: 'mixing real and unreal forms in a second conditional sentence',
+          fix1: 'use if + past form and would + base verb for unreal present or future meaning',
+          practice1: [
+            'If I knew the answer, I will tell you now.',
+            'If she has more confidence, she would speak more clearly.',
+            'If we lived closer, we see each other more often.',
+          ],
+          answerHints: [
+            'If I knew the answer, I would tell you now.',
+            'If she had more confidence, she would speak more clearly.',
+            'If we lived closer, we would see each other more often.',
+          ],
+        };
+      case 'third':
+        return {
+          ex1Weak: 'If we would have checked the map, we would have avoided the traffic.',
+          ex1Better: 'If we had checked the map, we would have avoided the traffic.',
+          ex2Weak: 'If she had left earlier, she will catch the train.',
+          ex2Better: 'If she had left earlier, she would have caught the train.',
+          err1: 'using the wrong verb pattern in an unreal past sentence',
+          fix1: 'use past perfect after if and would have + past participle in the result clause',
+          practice1: [
+            'If they had studied earlier, they will have finished on time.',
+            'If I had knew about the delay, I would have left sooner.',
+            'If the team had practiced more, they win the match.',
+          ],
+          answerHints: [
+            'If they had studied earlier, they would have finished on time.',
+            'If I had known about the delay, I would have left sooner.',
+            'If the team had practiced more, they would have won the match.',
+          ],
+        };
+      case 'mixed':
+        return {
+          ex1Weak: 'If I had slept earlier, I would have felt better now.',
+          ex1Better: 'If I had slept earlier, I would have more energy now.',
+          ex2Weak: 'If she were more organized, she would not have missed the deadline yesterday.',
+          ex2Better: 'If she had been more organized, she would not have missed the deadline yesterday.',
+          err1: 'mixing the timeline without checking which part is past and which part is present',
+          fix1: 'decide the time of the condition and the time of the result before you choose the forms',
+          practice1: [
+            'If I had gone to bed earlier, I would have felt better now.',
+            'If he were more careful, he would not have broke the glass yesterday.',
+            'If they had taken the earlier bus, they are here now.',
+          ],
+          answerHints: [
+            'If I had gone to bed earlier, I would feel better now.',
+            'If he had been more careful, he would not have broken the glass yesterday.',
+            'If they had taken the earlier bus, they would be here now.',
+          ],
+        };
+      default:
+        return {
+          ex1Weak: 'If governments invest in transit, traffic reduced quickly.',
+          ex1Better: 'If governments invest in transit, traffic will reduce quickly.',
+          ex2Weak: 'If I knew the answer, I will tell you now.',
+          ex2Better: 'If I knew the answer, I would tell you now.',
+          err1: 'mixing first and second conditional forms in one sentence',
+          fix1: 'match the if-clause tense and result clause form correctly',
+          practice1: [
+            'If students study consistently, they would improve their scores quickly.',
+            'If I had enough money, I will travel this summer.',
+            'If the policy had started earlier, results are better now.',
+          ],
+          answerHints: [
+            'If students study consistently, they will improve their scores quickly.',
+            'If I had enough money, I would travel this summer.',
+            'If the policy had started earlier, results would be better now.',
+          ],
+        };
+    }
   }
 
   if (t.includes('passive')) {
@@ -1445,6 +1572,16 @@ function buildGrammarPracticeLab({ topic, focusTerm, pack }) {
 }
 
 function grammarLessonLead(topic, family, focusTerm) {
+  const conditionalSubtype = detectConditionalSubtype(topic);
+
+  if (family === 'conditionals') {
+    if (conditionalSubtype === 'zero') return 'Zero conditional is for things that are generally true, so the sentence should feel like a fact or rule.';
+    if (conditionalSubtype === 'first') return 'First conditional is for a real future possibility, so the result should sound possible, not imaginary.';
+    if (conditionalSubtype === 'second') return 'Second conditional is for unreal or unlikely present and future situations, so the sentence should sound imagined.';
+    if (conditionalSubtype === 'third') return 'Third conditional is for unreal past situations, so both parts need to point back to a different past result.';
+    if (conditionalSubtype === 'mixed') return 'Mixed conditionals connect two different time points, so the timeline has to stay very clear.';
+  }
+
   const leadByFamily = {
     articles: 'Articles look small, but they change what the noun means to the reader.',
     'adjective-order': 'Adjectives can all be correct on their own, but they still need a natural order.',
@@ -2215,19 +2352,92 @@ function grammarTopicExplanation(topic) {
         ],
       };
     case 'conditionals':
-      return {
-        definition: 'Conditionals connect a situation with its result. The verb forms show whether the situation is real, likely, imagined, or impossible in the past.',
-        use: 'Use conditionals to explain consequences clearly. Strong conditional writing depends on matching the condition and result to the same timeline and logic.',
-        conditions: [
-          'Decide first whether the meaning is real, likely, unreal, or impossible in the past.',
-          'Match the verb forms in both halves of the sentence.',
-          'Do not put will in a normal if-clause unless the structure has a special meaning.',
-        ],
-        examples: [
-          'If residents use the new route, commute times will fall.',
-          'If the council had acted earlier, the repairs would have cost less.',
-        ],
-      };
+      switch (detectConditionalSubtype(topic)) {
+        case 'zero':
+          return {
+            definition: 'Zero conditional shows things that are generally true. We use it for facts, rules, habits, and results that always happen in the same condition.',
+            use: 'Use zero conditional when the result is normal, expected, or scientific, not one future possibility. Both parts usually use the present simple.',
+            conditions: [
+              'Use present simple in the if-clause and the result clause.',
+              'Use it for general truths, rules, routines, and cause-and-effect facts.',
+              'Do not switch to will unless you are talking about one future case instead of a general truth.',
+            ],
+            examples: [
+              'If water reaches 100 degrees, it boils.',
+              'If students revise regularly, they remember more vocabulary.',
+            ],
+          };
+        case 'first':
+          return {
+            definition: 'First conditional shows a real or likely future result. The condition is possible, and the result is something that may really happen.',
+            use: 'Use first conditional for plans, warnings, promises, and likely future consequences. The normal pattern is if + present simple, then will + base verb.',
+            conditions: [
+              'Use present simple after if, not will, in the normal pattern.',
+              'Use will, can, may, or an imperative in the result clause when the situation is real and future.',
+              'Keep the meaning realistic: the condition and result should both sound possible.',
+            ],
+            examples: [
+              'If you leave now, you will catch the early bus.',
+              'If the weather improves, we can continue the event outside.',
+            ],
+          };
+        case 'second':
+          return {
+            definition: 'Second conditional shows an unreal or unlikely present or future situation. We use it to imagine a different reality, dream, or unlikely outcome.',
+            use: 'Use second conditional for advice, imagination, and hypothetical situations. The common pattern is if + past simple, then would + base verb.',
+            conditions: [
+              'Use a past form after if to show unreal meaning, not past time.',
+              'Use would, could, or might in the result clause.',
+              'Keep the whole sentence imaginary; do not mix it with a real future result unless you are using a true mixed conditional.',
+            ],
+            examples: [
+              'If I had more time, I would join the course.',
+              'If the city improved transit, more people could leave their cars at home.',
+            ],
+          };
+        case 'third':
+          return {
+            definition: 'Third conditional shows an unreal past. It imagines a different past condition and a different past result.',
+            use: 'Use third conditional to talk about regret, criticism, missed chances, and imagined past results. The common pattern is if + past perfect, then would have + past participle.',
+            conditions: [
+              'Use past perfect in the if-clause to show the unreal past condition.',
+              'Use would have, could have, or might have in the result clause.',
+              'Keep both parts in the past; if the result is now, you are probably using a mixed conditional instead.',
+            ],
+            examples: [
+              'If we had checked the map, we would have avoided the delay.',
+              'If she had studied earlier, she might have felt calmer in the test.',
+            ],
+          };
+        case 'mixed':
+          return {
+            definition: 'Mixed conditionals connect two different time points. One part refers to the past, and the other part refers to the present or future.',
+            use: 'Use mixed conditionals when a past situation changes a present result, or when a present condition explains a past result. The timeline must stay very clear.',
+            conditions: [
+              'Decide which part is past and which part is present or future before you write.',
+              'Use a past perfect clause only when you are really changing the past.',
+              'Check the meaning after writing because mixed conditionals are easy to build incorrectly.',
+            ],
+            examples: [
+              'If I had gone to bed earlier, I would feel better now.',
+              'If she were more organized, she would not have missed the deadline yesterday.',
+            ],
+          };
+        default:
+          return {
+            definition: 'Conditionals connect a situation with its result. The verb forms show whether the situation is real, likely, imagined, or impossible in the past.',
+            use: 'Use conditionals to explain consequences clearly. Strong conditional writing depends on matching the condition and result to the same timeline and logic.',
+            conditions: [
+              'Decide first whether the meaning is real, likely, unreal, or impossible in the past.',
+              'Match the verb forms in both halves of the sentence.',
+              'Do not put will in a normal if-clause unless the structure has a special meaning.',
+            ],
+            examples: [
+              'If residents use the new route, commute times will fall.',
+              'If the council had acted earlier, the repairs would have cost less.',
+            ],
+          };
+      }
     case 'passive':
       return {
         definition: 'The passive changes the focus of the sentence from the doer to the action or result. It is formed with be plus a past participle.',
@@ -2890,6 +3100,53 @@ function pickGrammarPackEnhanced(topic) {
 }
 
 function grammarKeySteps(kind, topic) {
+  if (kind === 'conditionals') {
+    switch (detectConditionalSubtype(topic)) {
+      case 'zero':
+        return [
+          'Ask whether the sentence is about a general truth, rule, or repeated result.',
+          'Use present simple in both halves of the sentence.',
+          'Check that the sentence sounds like something that is usually or always true.',
+          'Avoid adding will if the meaning is general rather than one future event.',
+          'Read both halves together and ask: does this happen every time?',
+        ];
+      case 'first':
+        return [
+          'Ask whether the condition is a real future possibility.',
+          'Use present simple after if.',
+          'Use will, can, may, or an imperative in the result clause.',
+          'Do not put will in the if-clause in the normal pattern.',
+          'Check that the whole sentence still sounds realistic and possible.',
+        ];
+      case 'second':
+        return [
+          'Ask whether the situation is unreal or unlikely now or in the future.',
+          'Use a past form after if to show unreal meaning.',
+          'Use would, could, or might in the result clause.',
+          'Keep the whole sentence hypothetical, not half real and half unreal.',
+          'Read the sentence again and ask whether it clearly sounds imagined.',
+        ];
+      case 'third':
+        return [
+          'Ask whether you are imagining a different past.',
+          'Use past perfect in the if-clause.',
+          'Use would have, could have, or might have in the result clause.',
+          'Keep both parts in the past unless you are using a true mixed conditional.',
+          'Check whether the sentence expresses regret, criticism, or a missed chance clearly.',
+        ];
+      case 'mixed':
+        return [
+          'Decide which part of the meaning is past and which part is present or future.',
+          'Choose the first clause from the real timeline you want to change.',
+          'Build the second clause from the result time you want to show.',
+          'Check both halves again because mixed timelines are easy to blur.',
+          'Keep only the version that feels clear on the first read.',
+        ];
+      default:
+        break;
+    }
+  }
+
   if (/what clauses/.test(topic.toLowerCase())) {
     return [
       'Build the clause as what + subject + verb.',
@@ -3085,6 +3342,88 @@ function grammarExtraErrors(kind, topic) {
         fix: 'treat the whole clause as one subject and choose the verb from the real complement',
       },
     ];
+  }
+
+  if (kind === 'conditionals') {
+    switch (detectConditionalSubtype(topic)) {
+      case 'zero':
+        return [
+          {
+            error: 'using will when the sentence is a general truth',
+            weak: 'If people will eat too much sugar, they feel tired later.',
+            strong: 'If people eat too much sugar, they feel tired later.',
+            fix: 'use present simple in both halves for zero conditional facts and routines',
+          },
+          {
+            error: 'using zero conditional for one future possibility',
+            weak: 'If you study tonight, you pass the exam tomorrow.',
+            strong: 'If you study tonight, you will pass the exam tomorrow.',
+            fix: 'use first conditional when you mean one real future result',
+          },
+        ];
+      case 'first':
+        return [
+          {
+            error: 'putting will inside a standard if-clause',
+            weak: 'If students will revise regularly, they will improve faster.',
+            strong: 'If students revise regularly, they will improve faster.',
+            fix: 'use present simple in the if-clause for first conditional',
+          },
+          {
+            error: 'using would in the result of a real future possibility',
+            weak: 'If the bus arrives on time, I would get to class early.',
+            strong: 'If the bus arrives on time, I will get to class early.',
+            fix: 'use will for the likely future result, not would',
+          },
+        ];
+      case 'second':
+        return [
+          {
+            error: 'using will instead of would in an unreal sentence',
+            weak: 'If I had more free time, I will take evening classes.',
+            strong: 'If I had more free time, I would take evening classes.',
+            fix: 'use would in the result clause of the second conditional',
+          },
+          {
+            error: 'using present simple after if when the meaning is unreal',
+            weak: 'If I have more money, I would move closer to work.',
+            strong: 'If I had more money, I would move closer to work.',
+            fix: 'use a past form after if to show unreal present or future meaning',
+          },
+        ];
+      case 'third':
+        return [
+          {
+            error: 'using would have in the if-clause',
+            weak: 'If we would have checked the address, we would have arrived on time.',
+            strong: 'If we had checked the address, we would have arrived on time.',
+            fix: 'use past perfect, not would have, in the if-clause',
+          },
+          {
+            error: 'using a present or future result in an unreal past sentence',
+            weak: 'If she had left earlier, she will catch the train.',
+            strong: 'If she had left earlier, she would have caught the train.',
+            fix: 'keep the result in the unreal past with would have + past participle',
+          },
+        ];
+      case 'mixed':
+        return [
+          {
+            error: 'using a past result when the result is about now',
+            weak: 'If I had slept earlier, I would have felt better now.',
+            strong: 'If I had slept earlier, I would feel better now.',
+            fix: 'use a present result clause when the effect is now',
+          },
+          {
+            error: 'using a present if-clause when the cause is in the past',
+            weak: 'If she were more organized, she would not have missed the deadline yesterday.',
+            strong: 'If she had been more organized, she would not have missed the deadline yesterday.',
+            fix: 'use a past perfect if-clause when the cause belongs to the past',
+          },
+        ];
+      default:
+        break;
+    }
   }
 
   const extra = {
@@ -3722,12 +4061,12 @@ ${renderExampleCardsSection(`Real-World Examples with ${topic}`, [
     {
       weak: ex1Weak,
       strong: ex1Better,
-      why: `This correction matches the intended meaning and keeps ${focusTerm} natural.`,
+      why: 'This correction matches the intended meaning and sounds natural in context.',
     },
     {
       weak: ex2Weak,
       strong: ex2Better,
-      why: `This version sounds more natural because ${focusTerm} fits the sentence clearly.`,
+      why: 'This version is clearer and shows the pattern more accurately.',
     },
   ])}
 
@@ -4810,29 +5149,172 @@ function writingBodyEnhanced(topic, level, examText) {
     ];
   }
 
-  const errors = [
-    {
-      error: 'starting to write before deciding the task purpose',
-      weak: 'This issue is important and has many sides.',
-      strong: 'This essay argues that better transit investment improves daily life for workers.',
-      fix: 'Write one clear task sentence before the first full paragraph.',
+  const presentationByFamily = {
+    email: {
+      lead: 'Email tasks are easiest when you treat the prompt like a real communication problem with clear jobs to complete.',
+      weakA: 'Hello. I want to talk about something important and many things happened.',
+      weakB: 'Please help me soon because this is a big issue for me.',
+      errors: [
+        {
+          error: 'opening without a clear purpose line',
+          weak: 'Hello. I want to talk about something important and many things happened.',
+          strong: 'I am writing to ask whether it would be possible to reschedule my appointment for next week.',
+          fix: 'State the purpose in the first one or two lines.',
+        },
+        {
+          error: 'missing one of the prompt bullets',
+          weak: 'I am sorry I missed the workshop. Please send me the slides.',
+          strong: 'I am sorry I missed the workshop because I was ill. Could you please send me the materials and let me know when the next session will be held?',
+          fix: 'Turn each bullet point into one clear message block before you write.',
+        },
+        {
+          error: 'using tone that is too direct for the situation',
+          weak: 'Send me the information today.',
+          strong: 'I would appreciate it if you could send me the information today.',
+          fix: 'Use polite request language when the task needs a respectful tone.',
+        },
+      ],
+      intro: 'Start with purpose. Then cover every bullet clearly and keep the tone polite all the way through.',
+      coach: 'In Task 1 email writing, missing one job can hurt the score even if the grammar is good.',
+      negatives: [
+        'Write a long background story before you explain why you are writing.',
+        'Ignore one bullet because the rest of the email sounds fluent enough.',
+      ],
+      support: 'Best when you need detailed scoring guidance on prompt coverage, tone control, and email organization.',
     },
-    {
-      error: 'using examples that are too general to prove the point',
-      weak: 'Many places improved after changes were made.',
-      strong: 'One district reduced response times by 18% after introducing coordinated service planning.',
-      fix: 'Add a place, group, time, or measured result.',
+    survey: {
+      lead: 'Survey responses work best when the reader can see your choice immediately and follow two clear reasons.',
+      weakA: 'This topic has good points and bad points in many ways.',
+      weakB: 'Both choices are important and it depends on many things.',
+      errors: [
+        {
+          error: 'waiting too long to choose one option',
+          weak: 'Both choices are useful and there are many things to discuss first.',
+          strong: 'I would choose the public transport plan because it helps more residents on a daily basis.',
+          fix: 'State your choice in the first sentence.',
+        },
+        {
+          error: 'repeating the same reason in different words',
+          weak: 'It is better because it is more useful, more helpful, and more beneficial.',
+          strong: 'It is better because it serves more residents and reduces daily commuting stress.',
+          fix: 'Give two different reasons, not one reason repeated three ways.',
+        },
+        {
+          error: 'finishing without a real example or consequence',
+          weak: 'This is why I think it is the better option.',
+          strong: 'For example, better transit can help workers arrive on time and lower transport costs over time.',
+          fix: 'Add one practical example or consequence to support the choice.',
+        },
+      ],
+      intro: 'Choose first. Then support the choice with two different reasons and one practical example.',
+      coach: 'A survey answer sounds stronger when it is direct and practical, not abstract.',
+      negatives: [
+        'Spend half the answer explaining the other option in the same detail.',
+        'Repeat your opinion without adding a real reason or example.',
+      ],
+      support: 'Best when you need detailed scoring guidance on direct choice, support quality, and short-answer organization.',
     },
-    {
-      error: 'losing paragraph control by adding every idea at once',
-      weak: 'The policy is good, bad, expensive, helpful, and important for many people for many reasons.',
-      strong: 'The policy is expensive at first; however, it improves reliability for daily commuters.',
-      fix: 'Give each paragraph one job and one main idea.',
+    'task1-maps': {
+      lead: 'Map reports become easier when you stop listing details and start grouping the biggest changes.',
+      weakA: 'There are many changes on the map and many things are different.',
+      weakB: 'On the left there is something and on the right there is something else.',
+      errors: [
+        {
+          error: 'listing small details before giving an overview',
+          weak: 'There is a road, a tree area, a car park, and a building on the map.',
+          strong: 'Overall, the area became more residential, while several industrial features were removed or relocated.',
+          fix: 'Write the big-picture overview before the smaller details.',
+        },
+        {
+          error: 'moving around the map randomly',
+          weak: 'The school changed, then the river, then the center, then the northern road.',
+          strong: 'In the northern section, the old factory was replaced by a housing complex and a small parking area.',
+          fix: 'Group details by area or by type of change.',
+        },
+        {
+          error: 'adding opinion to a report task',
+          weak: 'This was a very good development for the town.',
+          strong: 'The old industrial area was converted into a residential zone with new access roads.',
+          fix: 'Describe what changed. Do not evaluate it.',
+        },
+      ],
+      intro: 'See the big changes first. Then group the details in a way the reader can picture clearly.',
+      coach: 'A map report is descriptive, not personal. Accuracy and grouping matter more than long sentences.',
+      negatives: [
+        'Walk around the map randomly from one feature to another.',
+        'Add personal opinions about whether the changes are good or bad.',
+      ],
+      support: 'Best when you need detailed scoring guidance on overview quality, grouping, and location language.',
     },
-  ];
+    'task1-process': {
+      lead: 'Process reports are easiest when the reader can see the start, the order, and the final result without confusion.',
+      weakA: 'This process has many steps and some things happen during it.',
+      weakB: 'After that, many changes happen and it is completed somehow.',
+      errors: [
+        {
+          error: 'writing the steps without a start-to-finish overview',
+          weak: 'First this happens, then that happens, and later it ends.',
+          strong: 'Overall, the process begins with raw materials and ends with a packaged consumer product after six stages.',
+          fix: 'Give the reader the start, the end, and the total flow before the details.',
+        },
+        {
+          error: 'describing steps in the wrong order',
+          weak: 'The product is packaged before it is filtered and stored.',
+          strong: 'Next, the mixture is heated, filtered, and transferred to a storage tank before packaging.',
+          fix: 'Follow the real stage order exactly.',
+        },
+        {
+          error: 'adding reasons or opinions that the diagram does not show',
+          weak: 'This is a useful process because it saves money for companies.',
+          strong: 'The mixture is heated, filtered, and then moved to storage before the final stage.',
+          fix: 'Describe only what the diagram shows.',
+        },
+      ],
+      intro: 'Find the first stage, the last stage, and the order between them before you write full sentences.',
+      coach: 'If the order is wrong, the whole report becomes unreliable even if the language is accurate.',
+      negatives: [
+        'Jump forward and backward instead of following the real sequence.',
+        'Explain why the process is good or useful when the diagram does not show that.',
+      ],
+      support: 'Best when you need detailed scoring guidance on overview control, sequencing, and process language.',
+    },
+  };
+
+  const presentation = presentationByFamily[family] || {
+    lead: 'This lesson focuses on one writing move that changes clarity and score at the same time.',
+    weakA: 'This topic is important and has many effects.',
+    weakB: 'I think this is good and bad in many ways.',
+    errors: [
+      {
+        error: 'starting to write before deciding the task purpose',
+        weak: 'This issue is important and has many sides.',
+        strong: 'This essay argues that better transit investment improves daily life for workers.',
+        fix: 'Write one clear task sentence before the first full paragraph.',
+      },
+      {
+        error: 'using examples that are too general to prove the point',
+        weak: 'Many places improved after changes were made.',
+        strong: 'One district reduced response times by 18% after introducing coordinated service planning.',
+        fix: 'Add a place, group, time, or measured result.',
+      },
+      {
+        error: 'losing paragraph control by adding every idea at once',
+        weak: 'The policy is good, bad, expensive, helpful, and important for many people for many reasons.',
+        strong: 'The policy is expensive at first; however, it improves reliability for daily commuters.',
+        fix: 'Give each paragraph one job and one main idea.',
+      },
+    ],
+    intro: 'Begin with purpose. Then check the order and cut anything that does not help the paragraph.',
+    coach: 'If a sentence has no clear job, it should change or disappear.',
+    negatives: [
+      'Add a new reason in the middle of the paragraph to sound richer.',
+      'Use a broad example even when it does not prove the point clearly.',
+    ],
+    support: 'Best when you need detailed scoring guidance on clarity, cohesion, evidence use, and task achievement.',
+  };
 
   return `${renderTeachingSection({
-    lead: 'This lesson focuses on one writing move that changes clarity and score at the same time.',
+    lead: presentation.lead,
     definition: guide.explanation,
     use: guide.use,
     levelNote: `At ${level} level, stronger writing comes from better paragraph control, not from simply making the language longer.`,
@@ -4847,33 +5329,30 @@ function writingBodyEnhanced(topic, level, examText) {
 
 ${renderExampleCardsSection(`Real-World Examples with ${topic}`, [
     {
-      weak: 'This topic is important and has many effects.',
+      weak: presentation.weakA,
       strong: guide.exampleA,
       why: 'The stronger sentence gives the paragraph a clear direction.',
     },
     {
-      weak: 'I think this is good and bad in many ways.',
+      weak: presentation.weakB,
       strong: guide.exampleB,
       why: 'The better version develops the idea instead of circling around it.',
     },
   ])}
 
-${renderVisibleErrorSection(`Common Errors with ${topic}`, errors)}
+${renderVisibleErrorSection(`Common Errors with ${topic}`, presentation.errors)}
 
 ${buildSkillPracticeLab({
     topic,
-    intro: 'Begin with purpose. Then check the order and cut anything that does not help the paragraph.',
-    coach: 'If a sentence has no clear job, it should change or disappear.',
+    intro: presentation.intro,
+    coach: presentation.coach,
     strongSentence: guide.exampleA,
     comparisonSentence: guide.exampleB,
     steps: guide.steps,
-    negatives: [
-      'Add a new reason in the middle of the paragraph to sound richer.',
-      'Use a broad example even when it does not prove the point clearly.',
-    ],
+    negatives: presentation.negatives,
   })}
 
-${renderLessonSupportSection('Best when you need detailed scoring guidance on clarity, cohesion, evidence use, and task achievement.')}`;
+${renderLessonSupportSection(presentation.support)}`;
 }
 
 function speakingBodyEnhanced(topic, level, examText) {
@@ -5436,145 +5915,426 @@ ${buildSkillPracticeLab({
 ${renderLessonSupportSection('Best when you need guided feedback on reading accuracy, proof-finding, and timed section control.')}`;
 }
 
-function decorateLessonBody(body) {
-  const quizItems = [];
-  let next = body
+function parseTopLevelSections(text) {
+  const headingPattern = /^##\s+([^\r\n]+)\r?\n/gm;
+  const matches = [...String(text || '').matchAll(headingPattern)];
+  if (matches.length === 0) {
+    return { intro: String(text || '').trim(), sections: [] };
+  }
+
+  const intro = String(text || '').slice(0, matches[0].index ?? 0).trim();
+  const sections = matches.map((match, index) => {
+    const heading = (match[1] || '').trim();
+    const from = (match.index ?? 0) + match[0].length;
+    const to = index < matches.length - 1 ? (matches[index + 1].index ?? text.length) : text.length;
+    return {
+      heading,
+      content: String(text || '').slice(from, to).trim(),
+    };
+  });
+
+  return { intro, sections };
+}
+
+function findSectionContent(sections, patterns) {
+  const match = sections.find(({ heading }) =>
+    patterns.some((pattern) => (pattern instanceof RegExp ? pattern.test(heading) : heading === pattern))
+  );
+  return match?.content?.trim() || '';
+}
+
+function humanLessonTopic(topic, category) {
+  const clean = stripLevelTag(topic)
+    .replace(/^Conditional Sentences:\s*/i, '')
+    .replace(/^Word Formation:\s*/i, '')
+    .replace(/^Writing Transitions:\s*/i, '')
+    .replace(/^Task \d+:\s*/i, '')
+    .replace(/^Part \d+:\s*/i, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  if (/^zero$/i.test(clean)) return 'Zero conditional';
+  if (/^first$/i.test(clean)) return 'First conditional';
+  if (/^second$/i.test(clean)) return 'Second conditional';
+  if (/^third$/i.test(clean)) return 'Third conditional';
+
+  if (category === 'grammar') {
+    return grammarFocusTerm(clean);
+  }
+
+  return clean;
+}
+
+function buildLessonIntro(topic, category, level) {
+  const family = detectTopicFamily(category, topic);
+  const label = humanLessonTopic(topic, category);
+  const topicLabel = escapeHtml(stripMarkdownMarkers(label));
+  const lowerLabel = stripMarkdownMarkers(label).toLowerCase();
+
+  if (category === 'grammar') {
+    if (family === 'conditionals') {
+      if (lowerLabel.includes('zero conditional')) {
+        return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> talks about things that are generally true. We use it for facts, rules, and routines. In this lesson, you will learn the pattern and see how it works in clear everyday examples.</p></div>`;
+      }
+
+      if (lowerLabel.includes('first conditional')) {
+        return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> talks about a real future possibility. It shows what may happen if one condition happens first. In this lesson, you will learn the form, the meaning, and the mistakes students make most often.</p></div>`;
+      }
+
+      if (lowerLabel.includes('second conditional')) {
+        return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> talks about unreal or unlikely situations. We use it when we imagine a different present or future. In this lesson, you will see how the pattern works and when to use <em>would</em>.</p></div>`;
+      }
+
+      if (lowerLabel.includes('third conditional')) {
+        return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> talks about an unreal past. We use it to imagine a different result in a past situation. In this lesson, you will learn the pattern and the meaning behind it.</p></div>`;
+      }
+
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> has two parts: a condition and a result. It shows what happens, what might happen, or what would happen in another situation. In this lesson, you will see the pattern, the meaning, and the common mistakes.</p></div>`;
+    }
+
+    if (family === 'word-formation-prefixes') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> are letters added to the beginning of a word. They change meaning. In this lesson, you will learn how common prefixes like <em>un-</em>, <em>mis-</em>, <em>dis-</em>, and <em>re-</em> help you say exactly what you mean.</p></div>`;
+    }
+
+    if (family === 'word-formation-suffixes') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> are letters added to the end of a word. They often change the job of the word in the sentence. In this lesson, you will see how suffixes help you build nouns, adjectives, adverbs, and verbs clearly.</p></div>`;
+    }
+
+    if (family === 'articles') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> are small words before nouns: <em>a</em>, <em>an</em>, and <em>the</em>. They show whether something is general, one of many, or already known. In this lesson, you will learn the simple meaning behind each choice.</p></div>`;
+    }
+
+    if (family === 'tenses') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> helps you show <em>time</em> clearly. A good tense choice tells the reader or listener when something happens and whether it is finished, continuing, or connected to another time. In this lesson, you will match form to meaning.</p></div>`;
+    }
+
+    if (family === 'modals') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> helps you show ideas like advice, ability, possibility, or obligation. The word may look small, but it changes the whole meaning of the sentence. In this lesson, you will learn which form fits which message.</p></div>`;
+    }
+
+    if (family === 'passive') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> changes the focus of the sentence. Sometimes the action matters more than the doer. In this lesson, you will see when passive voice helps and when active voice is still the better choice.</p></div>`;
+    }
+
+    if (family === 'adjective-order') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> helps adjectives sound natural before a noun. English usually follows a familiar order, so the sentence feels smooth instead of random. In this lesson, you will learn the usual order and the mistakes learners make most often.</p></div>`;
+    }
+
+    if (family === 'comparison') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> helps you compare people, things, and ideas clearly. English uses special forms for <em>more</em>, <em>less</em>, and <em>the most</em>. In this lesson, you will learn how to compare without mixing the patterns.</p></div>`;
+    }
+
+    if (family === 'verb-patterns') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> is about the verb form that comes next. Some words are followed by <em>-ing</em>, some by <em>to + verb</em>, and some change meaning when the form changes. In this lesson, you will learn how to choose the right pattern with confidence.</p></div>`;
+    }
+
+    if (family === 'noun-formation' || family === 'noun-phrases') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> helps you build clearer noun ideas. Sometimes English needs a noun form, and sometimes the noun group becomes too long or too heavy. In this lesson, you will learn how to keep noun forms accurate and readable.</p></div>`;
+    }
+
+    if (family === 'agreement') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> helps the subject and the verb match each other correctly. A sentence can lose clarity fast when a singular subject takes a plural verb, or the other way around. In this lesson, you will learn how to keep the match stable.</p></div>`;
+    }
+
+    if (family === 'adverbs') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> adds detail to a verb, adjective, or whole sentence. It can show time, frequency, manner, degree, or attitude. In this lesson, you will learn where adverbs fit and how they change the meaning.</p></div>`;
+    }
+
+    if (family === 'correlatives') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> helps you talk about two people, two things, or two choices clearly. These words look simple, but each one gives a different meaning. In this lesson, you will learn how to choose the right one and keep the sentence natural.</p></div>`;
+    }
+
+    if (family === 'result-structures') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> helps you show enough, too much, or the result of a situation. These patterns are common in daily English and exam writing. In this lesson, you will learn how to link the cause and the result clearly.</p></div>`;
+    }
+
+    if (family === 'imperatives') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> is the form we use for instructions, warnings, and direct advice. The sentence is usually short, but the meaning has to stay clear and polite enough for the situation. In this lesson, you will learn how to give instructions naturally.</p></div>`;
+    }
+
+    if (family === 'connectors') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> helps ideas connect smoothly. These words show addition, contrast, result, reason, or sequence. In this lesson, you will learn how to join ideas without making the sentence heavy or repetitive.</p></div>`;
+    }
+
+    if (family === 'emphasis') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> changes the focus of the sentence. English can move words, repeat a pattern, or use a special structure to make one idea stand out more. In this lesson, you will learn how to add emphasis without sounding unnatural.</p></div>`;
+    }
+
+    if (family === 'clause-building') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> helps you combine ideas into longer sentences. The goal is not just to sound advanced. The goal is to connect ideas clearly while keeping the sentence easy to follow. In this lesson, you will learn how to build longer sentences without losing control.</p></div>`;
+    }
+
+    if (family === 'register-precision') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> helps your grammar sound more precise and more suitable for the situation. Sometimes the idea is clear, but the sentence still feels too vague, too direct, or too loose. In this lesson, you will learn how to make grammar choices that sound more controlled.</p></div>`;
+    }
+
+    if (family === 'relative-clauses') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> helps you add extra information about a person, thing, place, or idea without starting a whole new sentence. In this lesson, you will learn when the extra information is essential and how to connect it smoothly.</p></div>`;
+    }
+
+    if (family === 'pronouns') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> helps you point to people and things clearly without repeating the same noun again and again. In this lesson, you will learn how to keep reference clear so the reader always knows what each word points to.</p></div>`;
+    }
+
+    if (family === 'quantifiers') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> helps you talk about number and amount clearly. English changes the form depending on whether the noun is countable, uncountable, small in number, or large in amount. In this lesson, you will learn how to choose the right quantity word for the noun.</p></div>`;
+    }
+
+    if (family === 'punctuation') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> helps the reader see where ideas start, stop, and connect. Punctuation looks small, but it changes clarity quickly. In this lesson, you will learn how to use these marks to make your writing easier to follow.</p></div>`;
+    }
+
+    if (family === 'reporting') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> helps you report what someone said, thought, or wrote. English often changes the tense, the pronouns, or the time expression when you report another message. In this lesson, you will learn how to carry the meaning over clearly.</p></div>`;
+    }
+
+    if (family === 'auxiliaries') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> helps English sentences carry tense, negatives, questions, and emphasis. Small helper verbs like <em>be</em>, <em>do</em>, and <em>have</em> do a lot of work. In this lesson, you will learn how these forms support the sentence.</p></div>`;
+    }
+
+    return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> is a grammar topic that changes how a sentence works or what it means. Sometimes the change is small, but it can make the sentence clearer, more natural, or more accurate. In this lesson, you will learn the basic idea, see clear examples, and notice the mistakes learners make most often.</p></div>`;
+  }
+
+  if (category === 'vocabulary') {
+    return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> is about the words and phrases you need for real English. This lesson shows what the key words mean, where they fit, and how to use them in natural sentences without sounding forced.</p></div>`;
+  }
+
+  if (category === 'writing') {
+    if (family === 'email') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> asks you to write a clear email for a real situation. You need to understand the purpose, cover every bullet point, and keep the tone polite and natural. In this lesson, you will learn what to do first and what strong answers usually include.</p></div>`;
+    }
+
+    if (family === 'survey') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> asks you to choose an option and explain your choice clearly. A good answer is direct, supported, and easy to follow. In this lesson, you will learn how to choose, explain, and finish strongly without repeating yourself.</p></div>`;
+    }
+
+    if (family === 'task1-maps') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> is about describing change on a map. The job is not to mention every small detail. The job is to show the biggest changes clearly and group details in a way the reader can follow. In this lesson, you will learn how to write a useful overview and organize the details.</p></div>`;
+    }
+
+    if (family === 'task1-process') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> is about describing stages in a process. A strong answer shows where the process starts, how it moves, and what the final result is. In this lesson, you will learn how to describe the steps in order without adding your own opinion.</p></div>`;
+    }
+
+    if (family === 'opinion-essay') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> means you need a clear position. The examiner should know what you think early in the essay, and each body paragraph should support that position. In this lesson, you will learn how to stay clear, balanced, and easy to follow.</p></div>`;
+    }
+
+    if (family === 'discussion-essay') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> asks you to explain both sides and, in many tasks, give your own opinion too. The key is balance first, then clarity. In this lesson, you will learn how to organize both views without losing your own message.</p></div>`;
+    }
+
+    if (family === 'advantages-disadvantages') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> is about comparing positive and negative points clearly. A strong answer groups the ideas, explains their effect, and often finishes with a judgment. In this lesson, you will learn how to compare both sides without sounding repetitive.</p></div>`;
+    }
+
+    if (family === 'problem-solution') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> asks you to explain a problem clearly and give solutions that really match it. Strong answers define the problem well, then suggest practical solutions with clear results. In this lesson, you will learn how to keep the problem and solution connected from start to finish.</p></div>`;
+    }
+
+    if (family === 'cover-points') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> is about task control. In CELPIP email tasks, missing one prompt point can lower the score even if the grammar is good. In this lesson, you will learn how to plan each bullet and make sure nothing important is missing.</p></div>`;
+    }
+
+    if (family === 'purpose-tone') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> helps you match the message to the situation. In email tasks, the examiner checks whether your tone fits the purpose and the reader. In this lesson, you will learn how to sound polite, clear, and natural in the right situation.</p></div>`;
+    }
+
+    if (family === 'support-examples') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> is about proving your point, not just repeating it. A strong example makes the reason easier to trust and easier to follow. In this lesson, you will learn how to add support that is short, clear, and useful.</p></div>`;
+    }
+
+    if (family === 'body-paragraphs') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> is where your score is usually won or lost. A good body paragraph has one main idea, clear explanation, and one useful example or result. In this lesson, you will learn how to build a paragraph that stays focused from start to finish.</p></div>`;
+    }
+
+    if (family === 'introduction') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> should help the examiner understand your topic and direction quickly. A strong introduction is short, accurate, and connected to the body paragraphs that will follow. In this lesson, you will learn what to include and what to avoid.</p></div>`;
+    }
+
+    if (family === 'conclusion') {
+      return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> should close the answer clearly. A good conclusion reminds the reader of your main message without repeating the whole essay or adding a new idea. In this lesson, you will learn how to end in a simple, controlled way.</p></div>`;
+    }
+
+    return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> is a writing skill for IELTS and CELPIP. This lesson shows what the skill does, what a strong response looks like, and what to check before you finish your answer.</p></div>`;
+  }
+
+  if (category === 'speaking') {
+    return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> is a speaking skill. This lesson shows how to answer clearly, add support, and keep your response easy to follow even when you feel pressure.</p></div>`;
+  }
+
+  if (category === 'listening') {
+    return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> is a listening skill. This lesson helps you catch the right information, stay calm when you miss a word, and make better answer choices under time pressure.</p></div>`;
+  }
+
+  return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> is a reading skill. This lesson shows how to find proof, avoid trap answers, and keep your reading clear and efficient under exam time pressure.</p></div>`;
+}
+
+function renderSectionLede(kind, topic, category) {
+  const label = escapeHtml(stripMarkdownMarkers(humanLessonTopic(topic, category)));
+  const copy = {
+    examples: `&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>${label}</u> in real sentences.`,
+    core: `&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.`,
+    mistakes: `&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.`,
+    practice: `&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.`,
+  }[kind];
+
+  return `<p class="lesson-section-lede">${copy}</p>`;
+}
+
+function renderLessonMap() {
+  return `<div class="lesson-map">
+  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+  <ul class="lesson-map-list">
+    <li><a href="#examples">&#10024; Examples</a></li>
+    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
+    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
+    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
+    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
+  </ul>
+</div>`;
+}
+
+function buildWhyItMatters(topic, category, examText) {
+  const label = escapeHtml(stripMarkdownMarkers(humanLessonTopic(topic, category)));
+  const ctx = contextFromTopic(topic);
+
+  if (category === 'grammar') {
+    const family = detectTopicFamily(category, topic);
+
+    if (family === 'conditionals') {
+      return `<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> conditional sentences change the message fast. A small tense mistake can turn a fact into a future plan or an unreal idea into a real one. When you control <u>${label}</u>, your meaning stays clear in speaking, writing, and exam answers.</p>`;
+    }
+
+    if (family === 'articles' || family === 'quantifiers') {
+      return `<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> small words before nouns often decide whether the message sounds natural or strange. When you control <u>${label}</u>, your sentences become more accurate and much easier for the reader or listener to trust.</p>`;
+    }
+
+    if (family === 'verb-patterns' || family === 'tenses' || family === 'modals' || family === 'auxiliaries') {
+      return `<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> verb choices carry time, meaning, and attitude. One wrong form can change the whole message. When you control <u>${label}</u>, your writing and speaking become clearer, more natural, and more score-safe.</p>`;
+    }
+
+    if (family === 'adjective-order' || family === 'adverbs' || family === 'comparison' || family === 'connectors') {
+      return `<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> this topic helps English sound smooth, natural, and easy to follow. When the form is right, your sentence flows better and the examiner spends less effort decoding what you mean.</p>`;
+    }
+
+    if (family === 'relative-clauses' || family === 'clause-building' || family === 'noun-phrases' || family === 'emphasis') {
+      return `<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> longer grammar structures can raise your score only when they stay clear. When you control <u>${label}</u>, you can add detail and shape the message without losing the reader halfway through the sentence.</p>`;
+    }
+
+    if (family === 'punctuation' || family === 'reporting' || family === 'questions-word-order') {
+      return `<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> this topic affects clarity immediately. A small mistake can confuse the sentence, the speaker, or the exact meaning. Strong control makes your English easier to follow and easier to score positively.</p>`;
+    }
+
+    if (family === 'pronouns' || family === 'agreement' || family === 'correlatives') {
+      return `<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> these forms look small, but they keep the sentence stable. When you control <u>${label}</u>, the reader always knows who or what you mean, and the sentence feels more polished.</p>`;
+    }
+
+    if (family === 'word-formation-prefixes' || family === 'word-formation-suffixes' || family === 'noun-formation' || family === 'word-formation') {
+      return `<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> word formation helps you say exactly what you mean without using long explanations. When you choose the right form, your English becomes more precise, more natural, and stronger for IELTS and CELPIP tasks.</p>`;
+    }
+
+    if (family === 'register-precision') {
+      return `<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> high scores depend on more than correct grammar. They also depend on sounding precise, controlled, and appropriate for the situation. This topic helps your ideas sound more mature without becoming harder to understand.</p>`;
+    }
+
+    return `<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> this topic affects clarity more than many learners expect. A small grammar change can make the sentence more accurate, more natural, and easier for the examiner or listener to trust. Strong control of <u>${label}</u> helps your message stay clear from start to finish.</p>`;
+  }
+
+  if (category === 'vocabulary') {
+    return `<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> good vocabulary is not just about knowing a word. You need the <em>right</em> word in the <em>right</em> sentence. When you control ${label}, you sound clearer, more natural, and more precise in real English.</p>`;
+  }
+
+  if (category === 'writing') {
+    const family = detectTopicFamily(category, topic);
+
+    if (family === 'email') {
+      return `<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> in CELPIP email tasks, one missing bullet or one wrong tone choice can lower the score fast. When you control <u>${label}</u>, your answer feels complete, polite, and easy for the examiner to trust.</p>`;
+    }
+
+    if (family === 'survey') {
+      return `<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> survey responses are short, so every sentence has to work hard. A clear choice, clear reasons, and one practical example usually make the score much more stable.</p>`;
+    }
+
+    if (family === 'task1-maps' || family === 'task1-process') {
+      return `<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> task 1 scores improve when the reader can see the big picture quickly. A clear overview and well-grouped details make your report easier to follow and much easier to score positively.</p>`;
+    }
+
+    if (family === 'problem-solution') {
+      return `<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> problem-solution tasks lose marks fast when the solution does not really answer the problem. When you keep the link clear, your essay feels more logical, more complete, and much easier to score well.</p>`;
+    }
+
+    if (family === 'cover-points') {
+      return `<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> in CELPIP writing, missing one bullet can hurt the task score immediately. Good task control shows the examiner that you understood the situation and answered every part on purpose.</p>`;
+    }
+
+    if (family === 'purpose-tone') {
+      return `<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> the right grammar is not enough if the tone is wrong. When the tone matches the purpose and the reader, your email feels more natural, more professional, and much safer for the score.</p>`;
+    }
+
+    if (family === 'support-examples') {
+      return `<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> exam writing becomes stronger when the examiner can see why your point is true. Short, relevant support makes your answer more convincing without making it longer than it needs to be.</p>`;
+    }
+
+    return `<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> strong ideas do not help enough if the writing skill is weak. In ${escapeHtml(examText)}, this skill helps the examiner follow your position, support, and logic without extra work. That usually means a cleaner, stronger score.</p>`;
+  }
+
+  if (category === 'speaking') {
+    return `<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> speaking scores depend on clarity, not just confidence. This skill helps you stay organized, sound natural, and keep your answer moving even when you need a second to think.</p>`;
+  }
+
+  if (category === 'listening') {
+    return `<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> listening is not about hearing every word. It is about catching the words that carry the answer. This skill helps you recover faster and protect marks when the audio moves quickly.</p>`;
+  }
+
+  return `<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> reading scores improve when you stop guessing and start proving. This skill helps you find better evidence, manage time better, and avoid answer choices that only look right at first.</p>
+<p class="lesson-importance-note"><em>Real-life connection:</em> better control of ${escapeHtml(ctx.domain)} language also helps outside the test, especially when you need to read, write, or speak clearly in Canada.</p>`;
+}
+
+function rebuildLessonLayout(body, topic, category, level, examText) {
+  let next = String(body || '')
     .replace(/Real-world weak:/g, 'Weak:')
     .replace(/Real-world better:/g, 'Strong:')
     .replace(/-\s+Weaker:/g, '- Weak:')
-    .replace(/-\s+Better:/g, '- Strong:');
+    .replace(/-\s+Better:/g, '- Strong:')
+    .replace(/^## Want Personalized Score Feedback\?$/gm, '## Get Feedback');
 
-  const normalizeTopLevelSections = (text) => {
-    const headingPattern = /^##\s+([^\r\n]+)\r?\n/gm;
-    const matches = [...text.matchAll(headingPattern)];
-    if (matches.length === 0) return text;
+  const { sections } = parseTopLevelSections(next);
+  const examplesContent = findSectionContent(sections, [/^Real-World Examples\b/i, /^Examples\b/i]);
+  const coreContent = findSectionContent(sections, ['Topic Explanation and Use', /^Core Lesson$/i]);
+  const mistakesContent = findSectionContent(sections, [/^Common Errors with\b/i, /^Common Mistakes$/i]);
+  const practiceContent = findSectionContent(sections, ['Interactive Practice Lab', /^Practice\b/i, /^Practice Lab$/i]);
+  const feedbackContent = findSectionContent(sections, ['Get Feedback']);
 
-    const prefix = text.slice(0, matches[0].index).trim();
-    const sections = matches.map((m, idx) => {
-      const heading = (m[1] || '').trim();
-      const from = (m.index ?? 0) + m[0].length;
-      const to = idx < matches.length - 1 ? (matches[idx + 1].index ?? text.length) : text.length;
-      const content = text.slice(from, to).trim();
-      return { heading, content };
-    });
+  return [
+    buildLessonIntro(topic, category, level),
+    `## Examples
+${renderSectionLede('examples', topic, category)}
+${examplesContent}`.trim(),
+    `## Lesson Map
+${renderLessonMap()}`.trim(),
+    `## Core Lesson
+${renderSectionLede('core', topic, category)}
+${coreContent}`.trim(),
+    `## Common Mistakes
+${renderSectionLede('mistakes', topic, category)}
+${mistakesContent}`.trim(),
+    `## Practice Lab
+${renderSectionLede('practice', topic, category)}
+${practiceContent}`.trim(),
+    `## Why It Matters
+${buildWhyItMatters(topic, category, examText)}`.trim(),
+    `## Get Feedback
+${feedbackContent}`.trim(),
+  ]
+    .filter(Boolean)
+    .join('\n\n')
+    .trim();
+}
 
-    const topicIdx = sections.findIndex((s) => s.heading === 'Topic Explanation and Use');
-    const whatIdx = sections.findIndex((s) => /^What\b/i.test(s.heading));
-    const keyIdx = sections.findIndex((s) => s.heading === 'Key Rule in Plain Language');
-
-    if (topicIdx !== -1) {
-      const merged = [];
-      if (whatIdx !== -1 && sections[whatIdx].content) {
-        merged.push(sections[whatIdx].content);
-      }
-      if (sections[topicIdx].content) {
-        merged.push(sections[topicIdx].content);
-      }
-      if (keyIdx !== -1 && sections[keyIdx].content) {
-        const steps = sections[keyIdx].content
-          .split(/\r?\n/)
-          .map((line) => line.trim())
-          .map((line) => {
-            const m = line.match(/^\d+\.\s+(.+)$/);
-            return m ? m[1].trim() : '';
-          })
-          .filter(Boolean);
-        if (steps.length > 0) {
-          merged.push(`Keep these rules in mind:\n${steps.map((step) => `- ${step}`).join('\n')}`);
-        }
-      }
-      sections[topicIdx].content = merged.filter(Boolean).join('\n\n').trim();
-    }
-
-    const filtered = sections.filter((s) => {
-      if (s.heading === 'Goal') return false;
-      if (/^What\b/i.test(s.heading)) return false;
-      if (s.heading === 'Key Rule in Plain Language') return false;
-      return true;
-    });
-
-    const rebuilt = filtered
-      .map((s) => `## ${s.heading}\n${s.content}`.trim())
-      .filter(Boolean)
-      .join('\n\n')
-      .trim();
-
-    if (prefix && rebuilt) return `${prefix}\n\n${rebuilt}`;
-    return rebuilt || text;
-  };
-
-  next = normalizeTopLevelSections(next);
-
-  next = next.replace(/## Common Errors with ([^\n]+)\n([\s\S]*?)(?=\n##\s+)/g, (_m, topic, sectionBody) => {
-    const cards = [];
-    const errorPattern = /- Error:\s*([^\n]+)\n-\s*Weak:\s*([^\n]+)\n-\s*Strong:\s*([^\n]+)\n-\s*Fix:\s*([^\n]+)\n?/g;
-    let match;
-    let index = 1;
-
-    while ((match = errorPattern.exec(sectionBody)) !== null) {
-      const error = match[1].trim().replace(/\.$/, '');
-      const weak = match[2].trim();
-      const strong = match[3].trim();
-      const fix = match[4].trim();
-      if (quizItems.length < 3) {
-        quizItems.push({ error, weak, strong });
-      }
-      cards.push(`<details class="lesson-accordion lesson-error">\n<summary>Error ${index}: ${error}</summary>\n\n- Weak: ${weak}\n- Strong: ${strong}\n- Fix: ${fix}\n</details>`);
-      index += 1;
-    }
-
-    if (cards.length === 0) {
-      return `## Common Errors with ${topic}\n${sectionBody}`;
-    }
-
-    return `## Common Errors with ${topic}\n${cards.join('\n\n')}\n`;
-  });
-
-  next = next.replace(/## Practice\n([\s\S]*?)(?=\n##\s+)/g, (_m, sectionBody) => {
-    const intro = (() => {
-      const headingIndex = sectionBody.search(/^###\s+/m);
-      if (headingIndex === -1) return sectionBody.trim();
-      return sectionBody.slice(0, headingIndex).trim();
-    })();
-    const exercisePattern = /###\s+([^\n]+)\n([\s\S]*?)(?=\n###\s+|\s*$)/g;
-    const accordions = [];
-    let match;
-
-    while ((match = exercisePattern.exec(sectionBody)) !== null) {
-      const title = match[1].trim();
-      const content = match[2].trim();
-      accordions.push(`<details class="lesson-accordion lesson-practice">\n<summary>${title}</summary>\n\n${content}\n</details>`);
-    }
-
-    if (accordions.length === 0) {
-      return `## Practice\n${sectionBody}`;
-    }
-
-    const introBlock = intro ? `${intro}\n\n` : '';
-    return `## Practice\n${introBlock}${accordions.join('\n\n')}\n`;
-  });
-
-  next = next.replace(/## Answer Guide\n([\s\S]*?)(?=\n##\s+)/g, (_m, sectionBody) => {
-    return `## Answer Guide\n<details class="lesson-accordion lesson-answer">\n<summary>Open Answer Guide</summary>\n\n${sectionBody.trim()}\n</details>\n`;
-  });
-
-  if (quizItems.length > 0) {
-    const cards = quizItems
-      .map((item, idx) => {
-        const weak = item.weak.replace(/^\*/, '').replace(/\*$/, '');
-        const strong = item.strong.replace(/^\*/, '').replace(/\*$/, '');
-        return `<article class="mini-quiz-card" data-answer="B">\n<p class="mini-quiz-title">Q${idx + 1}. Choose the stronger version for: ${item.error}</p>\n<div class="mini-quiz-options">\n<button type="button" data-choice="A">A. ${weak}</button>\n<button type="button" data-choice="B">B. ${strong}</button>\n</div>\n<p class="mini-quiz-feedback" aria-live="polite"></p>\n</article>`;
-      })
-      .join('\n\n');
-
-    const checkpoint = `## Interactive Exercise Test\n<div class="mini-quiz" data-mini-quiz>\n<div class="mini-quiz-head">\n<p class="mini-quiz-intro">It's your turn. Choose the stronger sentence in each item.</p>\n<p class="mini-quiz-score" data-mini-quiz-score>Score: 0/${quizItems.length} | Attempted: 0/${quizItems.length}</p>\n<button type="button" class="mini-quiz-reset" data-mini-quiz-reset>Try again</button>\n</div>\n${cards}\n</div>\n`;
-
-    next = next.replace(/\n## (?:Want Personalized Score Feedback\?|Get Feedback)\b/m, `\n${checkpoint}\n## Get Feedback`);
-  }
-
-  next = next.replace(/^## Want Personalized Score Feedback\?$/gm, '## Get Feedback');
-
-  return next;
+function decorateLessonBody(body, topic, category, level, examText) {
+  return rebuildLessonLayout(body, topic, category, level, examText);
 }
 
 function buildBody(category, topic, level, examText) {
@@ -5588,7 +6348,7 @@ function buildBody(category, topic, level, examText) {
   else if (category === 'listening') body = listeningBody(topic, level, examText);
   else if (category === 'reading') body = readingBody(topic, level, examText);
   else body = writingBodyEnhanced(topic, level, examText);
-  return decorateLessonBody(body);
+  return decorateLessonBody(body, topic, category, level, examText);
 }
 
 function buildLessonMetadata(category, topic, level, examText) {
@@ -5760,10 +6520,116 @@ function buildLessonMetadata(category, topic, level, examText) {
   }
 
   if (category === 'writing') {
+    const metaByFamily = {
+      email: {
+        excerpt: 'Write clearer CELPIP emails by covering every bullet point, choosing the right tone, and organizing the message fast.',
+        heroTip: 'Before you write, underline the purpose, the reader, and every bullet you must answer.',
+        visualAids: ['Email planning strip', 'Opening-body-closing frame', 'Bullet coverage checklist'],
+      },
+      survey: {
+        excerpt: 'Write stronger survey responses by choosing one option clearly and supporting it with direct reasons and examples.',
+        heroTip: 'Choose your option first. Then plan two clear reasons before you start writing.',
+        visualAids: ['Choice-and-support planner', 'Reason-example frame', 'Strong ending checklist'],
+      },
+      'task1-maps': {
+        excerpt: 'Describe IELTS map changes clearly by grouping major changes, writing a simple overview, and comparing areas logically.',
+        heroTip: 'Look for the biggest changes first. Do not try to describe every tiny detail.',
+        visualAids: ['Map overview planner', 'Change grouping model', 'Before-and-after language bank'],
+      },
+      'task1-process': {
+        excerpt: 'Describe IELTS processes clearly by showing the start, the main stages, and the final result in the right order.',
+        heroTip: 'Mark the first stage, the last stage, and the key verbs before you write the report.',
+        visualAids: ['Process stage ladder', 'Sequencing language bank', 'Passive verb frame'],
+      },
+      'opinion-essay': {
+        excerpt: 'Write a clear IELTS opinion essay by stating your position early and supporting it with focused body paragraphs.',
+        heroTip: 'Decide your exact position before you write the introduction.',
+        visualAids: ['Opinion essay blueprint', 'Thesis-to-body map', 'Support sentence frame'],
+      },
+      'discussion-essay': {
+        excerpt: 'Write a balanced discussion essay by explaining both views clearly before you present your own position.',
+        heroTip: 'Plan one side, then the other side, then your own position.',
+        visualAids: ['Two-view paragraph map', 'Balanced discussion planner', 'Opinion placement guide'],
+      },
+      'advantages-disadvantages': {
+        excerpt: 'Write a stronger pros-and-cons essay by grouping advantages and disadvantages clearly and ending with a clear judgment.',
+        heroTip: 'Do not mix all ideas together. Group the positives and negatives before you draft.',
+        visualAids: ['Pros-and-cons organizer', 'Grouping checklist', 'Judgment sentence frame'],
+      },
+      'problem-solution': {
+        excerpt: 'Write clearer problem-solution essays by defining the main problem well and matching each solution to that problem.',
+        heroTip: 'Name the exact problem first. Then choose solutions that really fit that problem.',
+        visualAids: ['Problem-to-solution map', 'Cause-effect frame', 'Result sentence bank'],
+      },
+      'body-paragraphs': {
+        excerpt: 'Build stronger body paragraphs by giving each paragraph one clear main idea, explanation, and support.',
+        heroTip: 'If a sentence has no job in the paragraph, cut it or change it.',
+        visualAids: ['Body paragraph frame', 'Main idea-support map', 'Unity checklist'],
+      },
+      introduction: {
+        excerpt: 'Write clearer essay introductions by showing the topic and direction quickly without wasting words.',
+        heroTip: 'Keep the introduction short: topic, position, and direction.',
+        visualAids: ['Introduction formula', 'Good vs weak opening pairs', 'Fast planning checklist'],
+      },
+      conclusion: {
+        excerpt: 'Write stronger conclusions by closing the essay clearly without repeating too much or adding a new idea.',
+        heroTip: 'Restate the main message simply. Do not open a new discussion in the last lines.',
+        visualAids: ['Conclusion frame', 'Restatement examples', 'Do-not-add-new-ideas card'],
+      },
+      register: {
+        excerpt: 'Choose formal or informal writing more accurately by matching tone to the reader, task, and purpose.',
+        heroTip: 'Ask who you are writing to before you choose the tone.',
+        visualAids: ['Formal vs informal comparison', 'Tone shift examples', 'Useful phrase bank'],
+      },
+      'active-voice': {
+        excerpt: 'Use active voice to make your writing clearer, shorter, and easier to follow when the doer matters.',
+        heroTip: 'Find the doer first. If the doer matters, active voice is often the safer choice.',
+        visualAids: ['Active vs passive pairs', 'Sentence focus guide', 'Editing checklist'],
+      },
+      'avoid-repetition': {
+        excerpt: 'Avoid repetition by changing sentence shape, using pronouns carefully, and varying key words without losing meaning.',
+        heroTip: 'Notice repeated words early. Then change only what keeps the meaning clear.',
+        visualAids: ['Repetition fix chart', 'Pronoun substitution guide', 'Variation examples'],
+      },
+      hedging: {
+        excerpt: 'Use hedging to sound careful and academic without making your point weak or confusing.',
+        heroTip: 'Soften the claim only when the evidence is limited or the idea needs balance.',
+        visualAids: ['Strong vs hedged claim pairs', 'Useful hedging phrases', 'When-to-hedge checklist'],
+      },
+      'comma-usage': {
+        excerpt: 'Use commas more accurately so your ideas stay clear and your sentences do not run together.',
+        heroTip: 'Check where the pause helps meaning, not just where it sounds nice.',
+        visualAids: ['Comma decision chart', 'Clause examples', 'Common comma traps'],
+      },
+      'argument-organization': {
+        excerpt: 'Organize essay arguments more clearly by planning a logical order before you start the body paragraphs.',
+        heroTip: 'Decide the order of reasons before you write the first paragraph.',
+        visualAids: ['Argument flow map', 'Reason ordering guide', 'Paragraph progression chart'],
+      },
+      'cover-points': {
+        excerpt: 'Raise your CELPIP email score by covering every prompt point fully and clearly in the right place.',
+        heroTip: 'Tick off each bullet after you plan it, not after you finish the whole answer.',
+        visualAids: ['Prompt coverage checklist', 'Bullet-to-paragraph map', 'Task control reminder'],
+      },
+      'purpose-tone': {
+        excerpt: 'Choose the right purpose and tone in CELPIP emails so the message sounds polite, useful, and score-safe.',
+        heroTip: 'Read the situation first: are you requesting, apologizing, complaining, or inviting?',
+        visualAids: ['Purpose-tone table', 'Polite opening options', 'Tone adjustment examples'],
+      },
+      'support-examples': {
+        excerpt: 'Strengthen your writing support by adding short relevant examples that actually prove the point.',
+        heroTip: 'Do not add an example just to fill space. Add it only if it proves the reason clearly.',
+        visualAids: ['Reason-example bridge', 'Specific vs vague support pairs', 'Evidence checklist'],
+      },
+      'general-writing': {
+        excerpt: `Improve ${topic} with clearer structure, stronger support, and cleaner paragraph control.`,
+        heroTip: 'Plan the job of the paragraph before you write the sentences.',
+        visualAids: ['Planning sequence', 'Model paragraph frame', 'Final editing checklist'],
+      },
+    };
+    const selected = metaByFamily[family] || metaByFamily['general-writing'];
     return {
-      excerpt: `${level} writing lesson on ${topic} with clearer structure, stronger support, and exam-focused review.`,
-      heroTip: 'Plan the job of the response before you write the sentences.',
-      visualAids: ['Planning sequence', 'Model paragraph frame', 'Final editing checklist'],
+      ...selected,
       quiz: [
         {
           prompt: `What should come before full drafting in ${topic}?`,
@@ -5896,7 +6762,7 @@ async function main() {
     const metadata = buildLessonMetadata(category, topic, level, examText);
     const nextFrontmatter = updateLessonFrontmatter(parts.frontmatter, metadata);
     const newBody = buildBody(category, topic, level, examText);
-    const next = `${parts.head}${nextFrontmatter}${parts.sep}${newBody}\n`;
+    const next = repairMojibake(`${parts.head}${nextFrontmatter}${parts.sep}${newBody}\n`);
 
     if (next !== raw) {
       await writeFile(filePath, next, 'utf8');

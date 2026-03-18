@@ -35,7 +35,40 @@ quiz:
     correctIndex: 1
     explanation: "Option 2 repairs a typical Word Formation: Prefixes error and matches the target form."
 ---
-## Topic Explanation and Use
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Prefixes</strong> are letters added to the beginning of a word. They change meaning. In this lesson, you will learn how common prefixes like <em>un-</em>, <em>mis-</em>, <em>dis-</em>, and <em>re-</em> help you say exactly what you mean.</p></div>
+
+## Examples
+<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>Prefixes</u> in real sentences.</p>
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Several passengers understood the platform announcement because of the background noise.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Several passengers misunderstood the platform announcement because of the background noise.</p>
+  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Please write the summary after the supervisor gives feedback.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Please rewrite the summary after the supervisor gives feedback.</p>
+  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+</article>
+</div>
+
+## Lesson Map
+<div class="lesson-map">
+  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+  <ul class="lesson-map-list">
+    <li><a href="#examples">&#10024; Examples</a></li>
+    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
+    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
+    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
+    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
+  </ul>
+</div>
+
+## Core Lesson
+<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Core idea</p>
@@ -59,23 +92,8 @@ quiz:
   </section>
 </div>
 
-## Real-World Examples with Word Formation: Prefixes
-<div class="lesson-example-grid">
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Several passengers understood the platform announcement because of the background noise.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Several passengers misunderstood the platform announcement because of the background noise.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and keeps Prefixes natural.</p>
-</article>
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Please write the summary after the supervisor gives feedback.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Please rewrite the summary after the supervisor gives feedback.</p>
-  <p class="lesson-card-note">This version sounds more natural because Prefixes fits the sentence clearly.</p>
-</article>
-</div>
-
-## Common Errors with Word Formation: Prefixes
+## Common Mistakes
+<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -100,7 +118,8 @@ quiz:
 </article>
 </div>
 
-## Interactive Practice Lab
+## Practice Lab
+<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>
@@ -205,6 +224,9 @@ quiz:
 </article>
   </div>
 </div>
+
+## Why It Matters
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> word formation helps you say exactly what you mean without using long explanations. When you choose the right form, your English becomes more precise, more natural, and stronger for IELTS and CELPIP tasks.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

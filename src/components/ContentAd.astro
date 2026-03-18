@@ -1,0 +1,30 @@
+---
+const {
+  className = "",
+  label = "Sponsored",
+} = Astro.props;
+
+const isLocalPreview = import.meta.env.DEV || ["localhost", "127.0.0.1"].includes(Astro.url.hostname);
+---
+
+<div class:list={["content-ad", className]}>
+  {label && <p class="content-ad__label">{label}</p>}
+
+  {isLocalPreview ? (
+    <div class="content-ad__preview">Horizontal ad placeholder. The live AdSense unit will render here on production.</div>
+  ) : (
+    <>
+      <ins
+        class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-5615542310815721"
+        data-ad-slot="4359206194"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+      <script is:inline>
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </>
+  )}
+</div>

@@ -35,7 +35,40 @@ quiz:
     correctIndex: 1
     explanation: "Option 2 repairs a typical Would: Conditional and Habitual error and matches the target form."
 ---
-## Topic Explanation and Use
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Would</strong> has two parts: a condition and a result. It shows what happens, what might happen, or what would happen in another situation. In this lesson, you will see the pattern, the meaning, and the common mistakes.</p></div>
+
+## Examples
+<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>Would</u> in real sentences.</p>
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>When I was younger, I am playing outside every evening.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>When I was younger, I would play outside every evening.</p>
+  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>If I had more time, I go to the gym every day.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>If I had more time, I would go to the gym every day.</p>
+  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+</article>
+</div>
+
+## Lesson Map
+<div class="lesson-map">
+  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+  <ul class="lesson-map-list">
+    <li><a href="#examples">&#10024; Examples</a></li>
+    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
+    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
+    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
+    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
+  </ul>
+</div>
+
+## Core Lesson
+<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Core idea</p>
@@ -59,23 +92,8 @@ quiz:
   </section>
 </div>
 
-## Real-World Examples with Would: Conditional and Habitual
-<div class="lesson-example-grid">
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>When I was younger, I am playing outside every evening.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>When I was younger, I would play outside every evening.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and keeps Would natural.</p>
-</article>
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>If I had more time, I go to the gym every day.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>If I had more time, I would go to the gym every day.</p>
-  <p class="lesson-card-note">This version sounds more natural because Would fits the sentence clearly.</p>
-</article>
-</div>
-
-## Common Errors with Would: Conditional and Habitual
+## Common Mistakes
+<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -100,7 +118,8 @@ quiz:
 </article>
 </div>
 
-## Interactive Practice Lab
+## Practice Lab
+<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>
@@ -205,6 +224,9 @@ quiz:
 </article>
   </div>
 </div>
+
+## Why It Matters
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> conditional sentences change the message fast. A small tense mistake can turn a fact into a future plan or an unreal idea into a real one. When you control <u>Would</u>, your meaning stays clear in speaking, writing, and exam answers.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

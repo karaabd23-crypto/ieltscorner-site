@@ -16,6 +16,7 @@
     "lesson:qa": "npm run lesson:check:standards && npm run lesson:audit:topic",
     "lesson:qa:changed": "npm run lesson:check:standards:changed && npm run lesson:audit:topic",
     "lesson:qa:full": "npm run lesson:check:frontmatter && npm run lesson:qa",
+    "lesson:align": "node scripts/align-lessons-to-title.mjs",
     "lesson:generate": "node scripts/generate-lessons.mjs",
     "lesson:dry-run": "node scripts/generate-lessons.mjs --dry-run",
     "telegram:post": "node scripts/post-telegram-content.mjs",

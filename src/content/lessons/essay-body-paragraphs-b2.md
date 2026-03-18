@@ -5,13 +5,13 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B2 writing lesson on Essay Structure: Body Paragraphs with clearer structure, stronger support, and exam-focused review."
+excerpt: "Build stronger body paragraphs by giving each paragraph one clear main idea, explanation, and support."
 date: "2026-03-02"
 tags: ["writing", "b2", "cefr-differentiated", "ielts", "celpip"]
-heroTip: "Plan the job of the response before you write the sentences."
+heroTip: "If a sentence has no job in the paragraph, cut it or change it."
 videoEmbed: ""
 draft: false
-visualAids: ["Planning sequence", "Model paragraph frame", "Final editing checklist"]
+visualAids: ["Body paragraph frame", "Main idea-support map", "Unity checklist"]
 quiz:
   - prompt: "What should come before full drafting in Essay Structure: Body Paragraphs?"
     options:
@@ -35,7 +35,40 @@ quiz:
     correctIndex: 0
     explanation: "A paragraph reads better when each sentence does one clear piece of work."
 ---
-## Topic Explanation and Use
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Essay Structure: Body Paragraphs</strong> is where your score is usually won or lost. A good body paragraph has one main idea, clear explanation, and one useful example or result. In this lesson, you will learn how to build a paragraph that stays focused from start to finish.</p></div>
+
+## Examples
+<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>Essay Structure: Body Paragraphs</u> in real sentences.</p>
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>This topic is important and has many effects.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>A major reason to improve public transport is that it increases access for workers who cannot afford private cars.</p>
+  <p class="lesson-card-note">The stronger sentence gives the paragraph a clear direction.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I think this is good and bad in many ways.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>For example, when one district expanded bus frequency, commute delays fell and attendance improved among shift workers.</p>
+  <p class="lesson-card-note">The better version develops the idea instead of circling around it.</p>
+</article>
+</div>
+
+## Lesson Map
+<div class="lesson-map">
+  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+  <ul class="lesson-map-list">
+    <li><a href="#examples">&#10024; Examples</a></li>
+    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
+    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
+    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
+    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
+  </ul>
+</div>
+
+## Core Lesson
+<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Core idea</p>
@@ -59,23 +92,8 @@ quiz:
   </section>
 </div>
 
-## Real-World Examples with Essay Structure: Body Paragraphs
-<div class="lesson-example-grid">
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>This topic is important and has many effects.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>A major reason to improve public transport is that it increases access for workers who cannot afford private cars.</p>
-  <p class="lesson-card-note">The stronger sentence gives the paragraph a clear direction.</p>
-</article>
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I think this is good and bad in many ways.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>For example, when one district expanded bus frequency, commute delays fell and attendance improved among shift workers.</p>
-  <p class="lesson-card-note">The better version develops the idea instead of circling around it.</p>
-</article>
-</div>
-
-## Common Errors with Essay Structure: Body Paragraphs
+## Common Mistakes
+<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -100,7 +118,8 @@ quiz:
 </article>
 </div>
 
-## Interactive Practice Lab
+## Practice Lab
+<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>
@@ -205,6 +224,9 @@ quiz:
 </article>
   </div>
 </div>
+
+## Why It Matters
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> strong ideas do not help enough if the writing skill is weak. In IELTS and CELPIP, this skill helps the examiner follow your position, support, and logic without extra work. That usually means a cleaner, stronger score.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

@@ -13,9 +13,9 @@ visualAids: ["Conditional pattern ladder", "Timeline arrows", "If-clause/result-
 quiz:
   - prompt: "Which sentence uses Second Conditional for Unreal Situations correctly?"
     options:
-      - "If governments invest in transit, traffic reduced quickly."
-      - "If governments invest in transit, traffic will reduce quickly."
-      - "If I knew the answer, I will tell you now."
+      - "If I had more time, I will join the course."
+      - "If I had more time, I would join the course."
+      - "If I have a car, I would drive to work every day."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Second Conditional for Unreal Situations and keeps the sentence natural."
   - prompt: "What should you check first when editing Second Conditional for Unreal Situations?"
@@ -27,81 +27,100 @@ quiz:
     explanation: "Start from meaning and pattern; complexity is never the first goal."
   - prompt: "Which edit fixes a common Second Conditional for Unreal Situations mistake?"
     options:
-      - "If students study consistently, they would improve their scores quickly."
-      - "If students study consistently, they will improve their scores quickly."
-      - "If I had enough money, I will travel this summer."
+      - "If I knew the answer, I will tell you now."
+      - "If I knew the answer, I would tell you now."
+      - "If she has more confidence, she would speak more clearly."
     correctIndex: 1
     explanation: "Option 2 repairs a typical Second Conditional for Unreal Situations error and matches the target form."
 premium: false
 priceCAD: 0
 draft: false
 ---
-## Topic Explanation and Use
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Second Conditional for Unreal Situations</strong> talks about unreal or unlikely situations. We use it when we imagine a different present or future. In this lesson, you will see how the pattern works and when to use <em>would</em>.</p></div>
+
+## Examples
+<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>Second Conditional for Unreal Situations</u> in real sentences.</p>
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>If I had more time, I will join the course.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>If I had more time, I would join the course.</p>
+  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>If I have a car, I would drive to work every day.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>If I had a car, I would drive to work every day.</p>
+  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+</article>
+</div>
+
+## Lesson Map
+<div class="lesson-map">
+  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+  <ul class="lesson-map-list">
+    <li><a href="#examples">&#10024; Examples</a></li>
+    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
+    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
+    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
+    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
+  </ul>
+</div>
+
+## Core Lesson
+<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Core idea</p>
-    <p>Conditionals become easier when you match the time and the result carefully.</p>
-<p>Conditionals connect a situation with its result. The verb forms show whether the situation is real, likely, imagined, or impossible in the past.</p>
-<p>Use conditionals to explain consequences clearly. Strong conditional writing depends on matching the condition and result to the same timeline and logic.</p>
+    <p>Second conditional is for unreal or unlikely present and future situations, so the sentence should sound imagined.</p>
+<p>Second conditional shows an unreal or unlikely present or future situation. We use it to imagine a different reality, dream, or unlikely outcome.</p>
+<p>Use second conditional for advice, imagination, and hypothetical situations. The common pattern is if + past simple, then would + base verb.</p>
 <p>At B1 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it here</p>
-    <ul><li>Decide first whether the meaning is real, likely, unreal, or impossible in the past.</li><li>Match the verb forms in both halves of the sentence.</li><li>Do not put will in a normal if-clause unless the structure has a special meaning.</li></ul>
+    <ul><li>Use a past form after if to show unreal meaning, not past time.</li><li>Use would, could, or might in the result clause.</li><li>Keep the whole sentence imaginary; do not mix it with a real future result unless you are using a true mixed conditional.</li></ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">Watch it work</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">If residents use the new route, commute times will fall.</div>
-<div class="lesson-pattern-sentence">If the council had acted earlier, the repairs would have cost less.</div></div>
+    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">If I had more time, I would join the course.</div>
+<div class="lesson-pattern-sentence">If the city improved transit, more people could leave their cars at home.</div></div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Remember this</p>
-    <ul><li>Decide whether the situation is real, likely, unreal, or impossible in the past.</li><li>Match the if-clause tense to the correct result-clause form.</li><li>Use would, could, or might only when the logic is unreal or hypothetical.</li><li>Do not add will inside a standard if-clause.</li><li>Read both halves together to make sure timeline and probability match.</li></ul>
+    <ul><li>Ask whether the situation is unreal or unlikely now or in the future.</li><li>Use a past form after if to show unreal meaning.</li><li>Use would, could, or might in the result clause.</li><li>Keep the whole sentence hypothetical, not half real and half unreal.</li><li>Read the sentence again and ask whether it clearly sounds imagined.</li></ul>
   </section>
 </div>
 
-## Real-World Examples with Second Conditional for Unreal Situations
-<div class="lesson-example-grid">
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>If governments invest in transit, traffic reduced quickly.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>If governments invest in transit, traffic will reduce quickly.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and keeps Second Conditional for Unreal Situations natural.</p>
-</article>
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>If I knew the answer, I will tell you now.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>If I knew the answer, I would tell you now.</p>
-  <p class="lesson-card-note">This version sounds more natural because Second Conditional for Unreal Situations fits the sentence clearly.</p>
-</article>
-</div>
-
-## Common Errors with Second Conditional for Unreal Situations
+## Common Mistakes
+<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>mixing first and second conditional forms in one sentence</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>If governments invest in transit, traffic reduced quickly.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>If governments invest in transit, traffic will reduce quickly.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> match the if-clause tense and result clause form correctly</p>
+  <h3>mixing real and unreal forms in a second conditional sentence</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>If I had more time, I will join the course.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>If I had more time, I would join the course.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> use if + past form and would + base verb for unreal present or future meaning</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>putting will inside a standard if-clause</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>If students will revise regularly, they will improve faster.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>If students revise regularly, they will improve faster.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use the present form in the if-clause for likely future results</p>
+  <h3>using will instead of would in an unreal sentence</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>If I had more free time, I will take evening classes.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>If I had more free time, I would take evening classes.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> use would in the result clause of the second conditional</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>mixing unreal and real patterns without intention</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>If I studied harder, I will pass the exam.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>If I studied harder, I would pass the exam.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> keep the whole condition-result pair in the same logic pattern</p>
+  <h3>using present simple after if when the meaning is unreal</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>If I have more money, I would move closer to work.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>If I had more money, I would move closer to work.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> use a past form after if to show unreal present or future meaning</p>
 </article>
 </div>
 
-## Interactive Practice Lab
+## Practice Lab
+<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>
@@ -120,30 +139,30 @@ draft: false
   <h3>Choose the stronger sentence for Second Conditional for Unreal Situations.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  If students study consistently, they would improve their scores quickly.
+  If I knew the answer, I will tell you now.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  If students study consistently, they will improve their scores quickly.
+  If I knew the answer, I would tell you now.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="If I||had enough money,||I would travel||this summer." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="If she||had more confidence,||she would speak||more clearly." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put this Second Conditional for Unreal Situations sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="had enough money," data-chip-origin="bank-1" data-chip-id="1-0">
-  had enough money,
+<button type="button" class="practice-chip" data-chip-value="had more confidence," data-chip-origin="bank-1" data-chip-id="1-0">
+  had more confidence,
 </button>
-<button type="button" class="practice-chip" data-chip-value="this summer." data-chip-origin="bank-1" data-chip-id="1-1">
-  this summer.
+<button type="button" class="practice-chip" data-chip-value="If she" data-chip-origin="bank-1" data-chip-id="1-1">
+  If she
 </button>
-<button type="button" class="practice-chip" data-chip-value="If I" data-chip-origin="bank-1" data-chip-id="1-2">
-  If I
+<button type="button" class="practice-chip" data-chip-value="she would speak" data-chip-origin="bank-1" data-chip-id="1-2">
+  she would speak
 </button>
-<button type="button" class="practice-chip" data-chip-value="I would travel" data-chip-origin="bank-1" data-chip-id="1-3">
-  I would travel
+<button type="button" class="practice-chip" data-chip-value="more clearly." data-chip-origin="bank-1" data-chip-id="1-3">
+  more clearly.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -153,10 +172,10 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="typing" data-task-answers="If the policy had started earlier, results would be better now." data-task-id="2" data-correct-feedback="Correct. You repaired the sentence without changing the message." data-wrong-feedback="Not yet. Check the target form, then type the full corrected sentence.">
+<article class="practice-task" data-task-type="typing" data-task-answers="If we lived closer, we would see each other more often." data-task-id="2" data-correct-feedback="Correct. You repaired the sentence without changing the message." data-wrong-feedback="Not yet. Check the target form, then type the full corrected sentence.">
   <p class="practice-task-label">3. Type the fix</p>
   <h3>Rewrite the sentence so Second Conditional for Unreal Situations is correct.</h3>
-  <p class="practice-source-line"><span>Fix this:</span> If the policy had started earlier, results are better now.</p>
+  <p class="practice-source-line"><span>Fix this:</span> If we lived closer, we see each other more often.</p>
   <div class="practice-input-row">
     <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
     <button type="button" class="practice-check-btn" data-task-check>Check</button>
@@ -168,28 +187,28 @@ draft: false
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>If students study consistently, they will improve their scores quickly.</p>
+  <p>If I knew the answer, I would tell you now.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>If students study consistently, they would improve their scores quickly.</p>
+  <p>If I knew the answer, I will tell you now.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>If I had enough money, I would travel this summer.</p>
+  <p>If she had more confidence, she would speak more clearly.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>If I had enough money, I will travel this summer.</p>
+  <p>If she has more confidence, she would speak more clearly.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
@@ -203,6 +222,9 @@ draft: false
 </article>
   </div>
 </div>
+
+## Why It Matters
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> conditional sentences change the message fast. A small tense mistake can turn a fact into a future plan or an unreal idea into a real one. When you control <u>Second Conditional for Unreal Situations</u>, your meaning stays clear in speaking, writing, and exam answers.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

@@ -26,6 +26,13 @@ const FOOTER_LINES = [
   '🧑‍🏫 Tutoring | ✍️ Writing feedback: https://ieltscorner.ca/tutoring | https://ieltscorner.ca/essay-correction',
 ];
 
+const STANDARD_FOOTER_LINES = [
+  '🌈✨ Kay\'s English Corner 🇨🇦',
+  'Your Gateway to English Success',
+  '🌐 More lessons: https://ieltscorner.ca',
+  '👩‍🏫 Tutoring | ✍️ Writing feedback: https://ieltscorner.ca/tutoring | https://ieltscorner.ca/essay-correction',
+];
+
 const CHANNEL_TOPICS = [
   {
     id: 'both-either-neither',
@@ -790,11 +797,61 @@ function resolveLessonUrl(lessonSlugs) {
 
 function appendFooter(message, lessonSlugs = []) {
   const lessonUrl = resolveLessonUrl(lessonSlugs);
-  const footer = [...FOOTER_LINES];
+  const footer = [...STANDARD_FOOTER_LINES];
   if (lessonUrl) {
     footer.splice(2, 0, `📘 Full lesson: ${lessonUrl}`);
   }
   return `${message.trim()}\n\n${footer.join('\n')}`;
+}
+
+function escapeTelegramHtml(text = '') {
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+function normalizeTelegramLine(text = '') {
+  return String(text)
+    .replace(/^ðŸ“˜\s*/u, '&#128214; ')
+    .replace(/^ðŸŒˆâœ¨\s*/u, '&#127752;&#10024; ')
+    .replace(/^ðŸŒ\s*/u, '&#127760; ')
+    .replace(/^ðŸ§‘â€ðŸ«\s*/u, '&#128105;&#8205;&#127979; ')
+    .replace(/^âœï¸\s*/u, '&#9997;&#65039; ');
+}
+
+function formatTelegramLine(line, lineIndex) {
+  const trimmed = normalizeTelegramLine(String(line ?? '').trim());
+  if (!trimmed) return '';
+
+  if (lineIndex === 0) {
+    return `<b>${trimmed}</b>`;
+  }
+
+  if (/^Your Gateway to English Success$/i.test(trimmed)) {
+    return `<i>${escapeTelegramHtml(trimmed)}</i>`;
+  }
+
+  if (/^(More lessons|Full lesson|Tutoring \| Writing feedback)/i.test(trimmed.replace(/^[^A-Za-z]+/, ''))) {
+    return `<u>${escapeTelegramHtml(trimmed)}</u>`;
+  }
+
+  if (/^[^.!?]{1,70}:$/.test(trimmed)) {
+    return `<b>${escapeTelegramHtml(trimmed)}</b>`;
+  }
+
+  if (/^#/.test(trimmed)) {
+    return escapeTelegramHtml(trimmed);
+  }
+
+  return escapeTelegramHtml(trimmed);
+}
+
+function formatTelegramPost(text = '') {
+  return String(text)
+    .split(/\r?\n/)
+    .map((line, index) => formatTelegramLine(line, index))
+    .join('\n');
 }
 
 function buildMessage(topic, mode) {
@@ -862,7 +919,7 @@ function pickTopic(options, history, topicDedupeDays) {
 
 function buildPostMessage(content) {
   const hashLine = content.hashtags.length ? `\n\n${content.hashtags.join(' ')}` : '';
-  return `${content.postBody}${hashLine}`;
+  return `${formatTelegramPost(content.postBody)}${hashLine}`;
 }
 
 async function telegramRequest(method, payload, token) {
@@ -941,6 +998,7 @@ async function main() {
     const messageResult = await telegramRequest('sendMessage', {
       chat_id: chatId,
       text: messageText,
+      parse_mode: 'HTML',
       disable_web_page_preview: true,
     }, botToken);
 

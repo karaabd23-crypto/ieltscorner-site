@@ -6,8 +6,6 @@ import { getLessonTier, getPublicLessonTitle } from "../../../lib/lessonLevel";
 type LessonEntry = CollectionEntry<"lessons">;
 type Category = LessonEntry["data"]["category"];
 
-const categories: Category[] = ["grammar", "vocabulary", "writing", "speaking", "listening", "reading"];
-
 export const getStaticPaths = () => {
   return [
     { params: { category: "grammar" } },
@@ -23,57 +21,74 @@ const category = Astro.params.category as Category;
 
 const lessons = (
   await getCollection("lessons", ({ data }) => !data.draft && data.category === category)
-).sort((a: LessonEntry, b: LessonEntry) => (a.data.date < b.data.date ? 1 : -1));
+).sort((a: LessonEntry, b: LessonEntry) => {
+  if (category === "grammar" || category === "vocabulary") {
+    return getPublicLessonTitle(a.data.title, a.data.level).localeCompare(
+      getPublicLessonTitle(b.data.title, b.data.level),
+      "en",
+      { sensitivity: "base" }
+    );
+  }
+
+  return a.data.date < b.data.date ? 1 : -1;
+});
 
 const metaMap: Record<Category, { pill: string; h1: string; blurb: string; keywords: string }> = {
   grammar: {
-    pill: "🧩 Grammar • Band 7+ Focus",
+    pill: "Grammar | Band 7+ focus",
     h1: "Learn grammar that helps you get a higher score.",
     blurb:
-      "Learn the grammar you need for IELTS Band 7+ and CELPIP CLB 9+. We teach sentences, conditionals, passive voice, and other important structures with clear examples.",
-    keywords: "IELTS grammar, CELPIP grammar, Band 7 grammar, advanced English grammar, grammar for IELTS writing, grammar for IELTS speaking, C1 grammar lessons"
+      "Learn the grammar you need for IELTS Band 7+ and CELPIP CLB 9+. These lessons explain conditionals, articles, passive voice, sentence patterns, and other high-impact structures with clear examples.",
+    keywords:
+      "IELTS grammar, CELPIP grammar, Band 7 grammar, advanced English grammar, grammar for IELTS writing, grammar for IELTS speaking, C1 grammar lessons",
   },
   vocabulary: {
-    pill: "🧠 Vocabulary • Band 7+ Focus",
+    pill: "Vocabulary | Band 7+ focus",
     h1: "Learn the words you need for Band 7+ and CLB 9+.",
     blurb:
-      "Build your vocabulary for IELTS Band 7+ and CELPIP CLB 9+. Learn useful word groups, common phrases, and important expressions for all parts of the test.",
-    keywords: "IELTS vocabulary, CELPIP vocabulary, Band 7 vocabulary, academic vocabulary, IELTS word list, advanced English words, vocabulary for IELTS"
+      "Build vocabulary for IELTS Band 7+ and CELPIP CLB 9+. These lessons teach useful word groups, collocations, and expressions that help you sound more natural and precise.",
+    keywords:
+      "IELTS vocabulary, CELPIP vocabulary, Band 7 vocabulary, academic vocabulary, IELTS word list, advanced English words, vocabulary for IELTS",
   },
   writing: {
-    pill: "✍️ Writing • Band 7+ / CLB 9+",
+    pill: "Writing | Band 7+ / CLB 9+",
     h1: "Learn how to write better and get higher scores.",
     blurb:
-      "Get IELTS Band 7+ or CELPIP CLB 9+ in writing. Learn how to organize your essay, answer the question, connect your ideas, use good vocabulary, and write with correct grammar.",
-    keywords: "IELTS writing, CELPIP writing, Band 7 writing, IELTS essay, CELPIP email, task 2 writing, writing samples, IELTS writing tips"
+      "Improve IELTS and CELPIP writing with clearer structure, stronger task response, better paragraph flow, and more accurate grammar.",
+    keywords:
+      "IELTS writing, CELPIP writing, Band 7 writing, IELTS essay, CELPIP email, task 2 writing, writing samples, IELTS writing tips",
   },
   speaking: {
-    pill: "🎤 Speaking • Band 7+ / CLB 9+",
+    pill: "Speaking | Band 7+ / CLB 9+",
     h1: "Learn how to speak clearly and naturally in your test.",
     blurb:
-      "Improve your IELTS Band 7+ or CELPIP CLB 9+ speaking score. Learn how to speak smoothly, pronounce words correctly, use good vocabulary and grammar, and sound natural during the test.",
-    keywords: "IELTS speaking, CELPIP speaking, Band 7 speaking, speaking test tips, IELTS speaking part 2, CELPIP speaking practice, improve speaking scores"
+      "Improve IELTS and CELPIP speaking with lessons on fluency, idea development, pronunciation, structure, and natural delivery.",
+    keywords:
+      "IELTS speaking, CELPIP speaking, Band 7 speaking, speaking test tips, IELTS speaking part 2, CELPIP speaking practice, improve speaking scores",
   },
   listening: {
-    pill: "🎧 Listening • Band 7+ / CLB 9+",
+    pill: "Listening | Band 7+ / CLB 9+",
     h1: "Train your ear for faster, more accurate answers.",
     blurb:
-      "Improve IELTS and CELPIP listening with targeted practice in prediction, note-taking, and detail recognition. Build the habits you need to catch key information under time pressure.",
-    keywords: "IELTS listening, CELPIP listening, listening strategies, note-taking for listening, listening practice, Band 7 listening, CLB 9 listening"
+      "Improve IELTS and CELPIP listening with targeted practice in prediction, note-taking, signposts, and detail recognition.",
+    keywords:
+      "IELTS listening, CELPIP listening, listening strategies, note-taking for listening, listening practice, Band 7 listening, CLB 9 listening",
   },
   reading: {
-    pill: "📖 Reading • Band 7+ / CLB 9+",
+    pill: "Reading | Band 7+ / CLB 9+",
     h1: "Read with precision and choose evidence-based answers.",
     blurb:
-      "Build strong IELTS and CELPIP reading skills with scanning, inference, and time-management strategies. Learn how to avoid distractors and select answers based on text evidence.",
-    keywords: "IELTS reading, CELPIP reading, reading strategies, scanning and skimming, inference questions, Band 7 reading, CLB 9 reading"
+      "Build stronger IELTS and CELPIP reading skills with scanning, inference, timing control, and text-based answer selection.",
+    keywords:
+      "IELTS reading, CELPIP reading, reading strategies, scanning and skimming, inference questions, Band 7 reading, CLB 9 reading",
   },
 };
 
 const meta = metaMap[category];
 ---
+
 <Layout
-  title={`${category[0].toUpperCase() + category.slice(1)} Lessons for IELTS & CELPIP — Band 7+ / CLB 9+`}
+  title={`${category[0].toUpperCase() + category.slice(1)} Lessons for IELTS & CELPIP | Band 7+ / CLB 9+`}
   description={meta.blurb}
   keywords={meta.keywords}
 >
@@ -84,8 +99,8 @@ const meta = metaMap[category];
       <p class="muted" style="max-width: 75ch;">{meta.blurb}</p>
 
       <div class="cluster">
-        <a class="btn btn-primary" href="/celpip">CELPIP course →</a>
-        <a class="btn" href="/lessons">All lessons →</a>
+        <a class="btn btn-primary" href="/celpip">CELPIP course</a>
+        <a class="btn" href="/lessons">All lessons</a>
       </div>
     </div>
   </section>
@@ -96,7 +111,10 @@ const meta = metaMap[category];
 
       {lessons.length === 0 ? (
         <div class="surface" style="padding: var(--s-6);">
-          <p class="muted" style="margin:0;">There are no published lessons in this category yet, but new lesson posts are added regularly. You can continue with another category now and return here for fresh content.</p>
+          <p class="muted" style="margin: 0;">
+            There are no published lessons in this category yet, but new lesson posts are added regularly.
+            You can continue with another category now and return here for fresh content.
+          </p>
         </div>
       ) : (
         <>
@@ -108,46 +126,56 @@ const meta = metaMap[category];
               <input
                 id="lesson-search"
                 type="search"
-                placeholder="Type keywords (e.g., tense, article, conditionals)"
+                placeholder="Type keywords (for example: tense, article, conditionals)"
                 autocomplete="off"
                 style="flex: 1 1 320px; min-width: 220px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 10px; font: inherit;"
               />
               <button id="lesson-search-clear" class="btn" type="button">Clear</button>
             </div>
-            <p id="lesson-search-summary" class="muted" style="margin: var(--s-2) 0 0;">Showing {lessons.length} of {lessons.length} lessons.</p>
+            <p id="lesson-search-summary" class="muted" style="margin: var(--s-2) 0 0;">
+              Showing {lessons.length} of {lessons.length} lessons.
+            </p>
           </div>
 
           <div id="lesson-search-grid" class="grid grid-2" style="margin-top: var(--s-5);">
-            {lessons.map((l: LessonEntry) => {
+            {lessons.map((lesson: LessonEntry, index: number) => {
               const searchText = [
-                getPublicLessonTitle(l.data.title, l.data.level),
-                l.data.excerpt,
-                l.data.level,
-                l.data.category,
-                l.slug,
-                l.data.exam.join(" "),
-                ...(l.data.tags || []),
+                getPublicLessonTitle(lesson.data.title, lesson.data.level),
+                lesson.data.excerpt,
+                lesson.data.level,
+                lesson.data.category,
+                lesson.slug,
+                lesson.data.exam.join(" "),
+                ...(lesson.data.tags || []),
               ].join(" ").toLowerCase();
 
               return (
-            <a class="card lesson-search-item" data-search={searchText} href={`/lessons/${l.data.category}/${l.slug}/`} style="display:block;">
-              <div class="cluster" style="justify-content: space-between;">
-                <div class="cluster">
-                  <span class="pill">{getLessonTier(l.data.level)} • {l.data.exam.join(" & ")}</span>
-                  {l.data.tags?.length ? <span class="pill">{l.data.tags[0]}</span> : null}
-                </div>
-                <span class="pill">Open →</span>
-              </div>
+                <>
+                  <a
+                    class="card lesson-search-item"
+                    data-search={searchText}
+                    href={`/lessons/${lesson.data.category}/${lesson.slug}/`}
+                    style="display:block;"
+                  >
+                    <div class="cluster" style="justify-content: space-between;">
+                      <div class="cluster">
+                        <span class="pill">{getLessonTier(lesson.data.level)} | {lesson.data.exam.join(" & ")}</span>
+                        {lesson.data.tags?.length ? <span class="pill">{lesson.data.tags[0]}</span> : null}
+                      </div>
+                      <span class="pill">Open</span>
+                    </div>
 
-              <h3 style="margin-top: var(--s-3);">{getPublicLessonTitle(l.data.title, l.data.level)}</h3>
-              <p class="muted" style="margin-bottom: 0;">{l.data.excerpt}</p>
-            </a>
+                    <h3 style="margin-top: var(--s-3);">{getPublicLessonTitle(lesson.data.title, lesson.data.level)}</h3>
+                    <p class="muted" style="margin-bottom: 0;">{lesson.data.excerpt}</p>
+                  </a>
+
+                </>
               );
             })}
           </div>
 
           <div id="lesson-search-empty" class="surface" style="display:none; padding: var(--s-5); margin-top: var(--s-4);">
-            <p class="muted" style="margin:0;">No lessons match your search yet. Try a simpler keyword.</p>
+            <p class="muted" style="margin: 0;">No lessons match your search yet. Try a simpler keyword.</p>
           </div>
         </>
       )}
@@ -176,12 +204,12 @@ const meta = metaMap[category];
         cards.forEach((card) => {
           const text = (card.getAttribute("data-search") || "").toLowerCase();
           const matches = terms.every((term) => text.includes(term));
-          (card).style.display = matches ? "block" : "none";
+          (card as HTMLElement).style.display = matches ? "block" : "none";
           if (matches) visible += 1;
         });
 
         summary.textContent = `Showing ${visible} of ${total} lessons.`;
-        empty.style.display = visible === 0 ? "block" : "none";
+        (empty as HTMLElement).style.display = visible === 0 ? "block" : "none";
       };
 
       input.addEventListener("input", applyFilter);

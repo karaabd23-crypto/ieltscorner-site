@@ -35,7 +35,40 @@ quiz:
     correctIndex: 1
     explanation: "Option 2 repairs a typical Future Perfect Simple error and matches the target form."
 ---
-## Topic Explanation and Use
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Future Perfect Simple</strong> helps you show <em>time</em> clearly. A good tense choice tells the reader or listener when something happens and whether it is finished, continuing, or connected to another time. In this lesson, you will match form to meaning.</p></div>
+
+## Examples
+<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>Future Perfect Simple</u> in real sentences.</p>
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Last year, the council increases bus frequency in two districts.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Last year, the council increased bus frequency in two districts.</p>
+  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>By next month, we finish the pilot stage.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>By next month, we will have finished the pilot stage.</p>
+  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+</article>
+</div>
+
+## Lesson Map
+<div class="lesson-map">
+  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+  <ul class="lesson-map-list">
+    <li><a href="#examples">&#10024; Examples</a></li>
+    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
+    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
+    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
+    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
+  </ul>
+</div>
+
+## Core Lesson
+<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Core idea</p>
@@ -59,23 +92,8 @@ quiz:
   </section>
 </div>
 
-## Real-World Examples with Future Perfect Simple
-<div class="lesson-example-grid">
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Last year, the council increases bus frequency in two districts.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Last year, the council increased bus frequency in two districts.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and keeps Future Perfect Simple natural.</p>
-</article>
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>By next month, we finish the pilot stage.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>By next month, we will have finished the pilot stage.</p>
-  <p class="lesson-card-note">This version sounds more natural because Future Perfect Simple fits the sentence clearly.</p>
-</article>
-</div>
-
-## Common Errors with Future Perfect Simple
+## Common Mistakes
+<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -100,7 +118,8 @@ quiz:
 </article>
 </div>
 
-## Interactive Practice Lab
+## Practice Lab
+<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>
@@ -199,6 +218,9 @@ quiz:
 </article>
   </div>
 </div>
+
+## Why It Matters
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> verb choices carry time, meaning, and attitude. One wrong form can change the whole message. When you control <u>Future Perfect Simple</u>, your writing and speaking become clearer, more natural, and more score-safe.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

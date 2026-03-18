@@ -24,6 +24,13 @@ const SIGNATURE_BLOCK = [
   '🧑‍🏫 Tutoring | ✍️ Writing feedback: https://ieltscorner.ca/tutoring | https://ieltscorner.ca/essay-correction',
 ].join('\n');
 
+const STANDARD_SIGNATURE_BLOCK = [
+  '🌈✨ Kay\'s English Corner 🇨🇦',
+  'Your Gateway to English Success',
+  '🌐 More lessons: https://ieltscorner.ca',
+  '👩‍🏫 Tutoring | ✍️ Writing feedback: https://ieltscorner.ca/tutoring | https://ieltscorner.ca/essay-correction',
+].join('\n');
+
 const BOT_GUIDES = [
   {
     title: '🤖 Bot Guide: Start Here',
@@ -285,11 +292,52 @@ function resolveChatId(explicitChatId, channelUrl) {
 
 function appendFooter(body) {
   const cleanBody = String(body ?? '').trim();
-  if (!cleanBody) return SIGNATURE_BLOCK;
+  if (!cleanBody) return STANDARD_SIGNATURE_BLOCK;
   if (cleanBody.includes('Kay\'s English Corner') || cleanBody.includes('Kay’s English Corner')) {
     return cleanBody;
   }
-  return `${cleanBody}\n\n${SIGNATURE_BLOCK}`;
+  return `${cleanBody}\n\n${STANDARD_SIGNATURE_BLOCK}`;
+}
+
+function escapeTelegramHtml(text = '') {
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+function formatTelegramLine(line, lineIndex) {
+  const trimmed = String(line ?? '').trim();
+  if (!trimmed) return '';
+
+  if (lineIndex === 0) {
+    return `<b>${trimmed}</b>`;
+  }
+
+  if (/^Your Gateway to English Success$/i.test(trimmed)) {
+    return `<i>${escapeTelegramHtml(trimmed)}</i>`;
+  }
+
+  if (/^(More lessons|Tutoring \| Writing feedback)/i.test(trimmed.replace(/^[^A-Za-z]+/, ''))) {
+    return `<u>${escapeTelegramHtml(trimmed)}</u>`;
+  }
+
+  if (/^[^.!?]{1,70}:$/.test(trimmed)) {
+    return `<b>${escapeTelegramHtml(trimmed)}</b>`;
+  }
+
+  if (/^#/.test(trimmed)) {
+    return escapeTelegramHtml(trimmed);
+  }
+
+  return escapeTelegramHtml(trimmed);
+}
+
+function formatTelegramPost(text = '') {
+  return String(text)
+    .split(/\r?\n/)
+    .map((line, index) => formatTelegramLine(line, index))
+    .join('\n');
 }
 
 function buildPostMessage(guide) {
@@ -297,7 +345,7 @@ function buildPostMessage(guide) {
   const hashtags = Array.isArray(guide.hashtags) && guide.hashtags.length
     ? `\n\n${guide.hashtags.join(' ')}`
     : '';
-  return `${body}${hashtags}`;
+  return `${formatTelegramPost(body)}${hashtags}`;
 }
 
 async function telegramRequest(botToken, method, payload) {
@@ -398,6 +446,7 @@ async function main() {
     const contentResult = await telegramRequest(botToken, 'sendMessage', {
       chat_id: chatId,
       text: messageText,
+      parse_mode: 'HTML',
       disable_web_page_preview: true,
     });
 

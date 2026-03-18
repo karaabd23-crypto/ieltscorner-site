@@ -5,13 +5,13 @@ level: "C1"
 ieltsBand: "7.5-8.5"
 clb: "9-10"
 exam: ["IELTS", "CELPIP"]
-excerpt: "C1 writing lesson on IELTS Writing Task 1: Process Diagrams with clearer structure, stronger support, and exam-focused review."
+excerpt: "Describe IELTS processes clearly by showing the start, the main stages, and the final result in the right order."
 date: "2026-03-02"
 tags: ["writing", "c1", "cefr-differentiated", "ielts", "celpip"]
-heroTip: "Plan the job of the response before you write the sentences."
+heroTip: "Mark the first stage, the last stage, and the key verbs before you write the report."
 videoEmbed: ""
 draft: false
-visualAids: ["Planning sequence", "Model paragraph frame", "Final editing checklist"]
+visualAids: ["Process stage ladder", "Sequencing language bank", "Passive verb frame"]
 quiz:
   - prompt: "What should come before full drafting in IELTS Writing Task 1: Process Diagrams?"
     options:
@@ -35,11 +35,44 @@ quiz:
     correctIndex: 0
     explanation: "A paragraph reads better when each sentence does one clear piece of work."
 ---
-## Topic Explanation and Use
+<div class="lesson-context"><p class="lesson-context-lead"><strong>IELTS Writing Task 1: Process Diagrams</strong> is about describing stages in a process. A strong answer shows where the process starts, how it moves, and what the final result is. In this lesson, you will learn how to describe the steps in order without adding your own opinion.</p></div>
+
+## Examples
+<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>IELTS Writing Task 1: Process Diagrams</u> in real sentences.</p>
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>This process has many steps and some things happen during it.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Overall, the process begins with raw materials and ends with a packaged consumer product after six stages.</p>
+  <p class="lesson-card-note">The stronger sentence gives the paragraph a clear direction.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>After that, many changes happen and it is completed somehow.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Next, the mixture is heated, filtered, and transferred to a storage tank before packaging.</p>
+  <p class="lesson-card-note">The better version develops the idea instead of circling around it.</p>
+</article>
+</div>
+
+## Lesson Map
+<div class="lesson-map">
+  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+  <ul class="lesson-map-list">
+    <li><a href="#examples">&#10024; Examples</a></li>
+    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
+    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
+    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
+    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
+  </ul>
+</div>
+
+## Core Lesson
+<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Core idea</p>
-    <p>This lesson focuses on one writing move that changes clarity and score at the same time.</p>
+    <p>Process reports are easiest when the reader can see the start, the order, and the final result without confusion.</p>
 <p>Process reports explain how something is produced, transformed, or completed in stages. The overview usually states how many stages there are, where the process starts, and what the end product is. Strong descriptions use sequencing language and often rely on passive voice because the action matters more than the agent.</p>
 <p>Use this strategy for IELTS process diagrams. After the introduction, summarize the start and end of the process in the overview. In body paragraphs, describe the steps in sequence and group them if the process is long. Avoid adding opinions or reasons that the diagram does not show.</p>
 <p>At C1 level, stronger writing comes from better paragraph control, not from simply making the language longer.</p>
@@ -59,60 +92,46 @@ quiz:
   </section>
 </div>
 
-## Real-World Examples with IELTS Writing Task 1: Process Diagrams
-<div class="lesson-example-grid">
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>This topic is important and has many effects.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Overall, the process begins with raw materials and ends with a packaged consumer product after six stages.</p>
-  <p class="lesson-card-note">The stronger sentence gives the paragraph a clear direction.</p>
-</article>
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I think this is good and bad in many ways.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Next, the mixture is heated, filtered, and transferred to a storage tank before packaging.</p>
-  <p class="lesson-card-note">The better version develops the idea instead of circling around it.</p>
-</article>
-</div>
-
-## Common Errors with IELTS Writing Task 1: Process Diagrams
+## Common Mistakes
+<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>starting to write before deciding the task purpose</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>This issue is important and has many sides.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>This essay argues that better transit investment improves daily life for workers.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Write one clear task sentence before the first full paragraph.</p>
+  <h3>writing the steps without a start-to-finish overview</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>First this happens, then that happens, and later it ends.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Overall, the process begins with raw materials and ends with a packaged consumer product after six stages.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Give the reader the start, the end, and the total flow before the details.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using examples that are too general to prove the point</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Many places improved after changes were made.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>One district reduced response times by 18% after introducing coordinated service planning.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Add a place, group, time, or measured result.</p>
+  <h3>describing steps in the wrong order</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The product is packaged before it is filtered and stored.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Next, the mixture is heated, filtered, and transferred to a storage tank before packaging.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Follow the real stage order exactly.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>losing paragraph control by adding every idea at once</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The policy is good, bad, expensive, helpful, and important for many people for many reasons.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The policy is expensive at first; however, it improves reliability for daily commuters.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Give each paragraph one job and one main idea.</p>
+  <h3>adding reasons or opinions that the diagram does not show</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>This is a useful process because it saves money for companies.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The mixture is heated, filtered, and then moved to storage before the final stage.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Describe only what the diagram shows.</p>
 </article>
 </div>
 
-## Interactive Practice Lab
+## Practice Lab
+<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">Begin with purpose. Then check the order and cut anything that does not help the paragraph.</p>
+      <p class="practice-lab-intro">Find the first stage, the last stage, and the order between them before you write full sentences.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">If a sentence has no clear job, it should change or disappear.</p>
+  <p class="practice-lab-coach">If the order is wrong, the whole report becomes unreliable even if the language is accurate.</p>
   <div class="practice-lab-grid">
 <article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
   <p class="practice-task-label">1. Quick pick</p>
@@ -171,14 +190,14 @@ quiz:
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="2">
-  <p>Add a new reason in the middle of the paragraph to sound richer.</p>
+  <p>Jump forward and backward instead of following the real sequence.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>Use a broad example even when it does not prove the point clearly.</p>
+  <p>Explain why the process is good or useful when the diagram does not show that.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
@@ -205,6 +224,9 @@ quiz:
 </article>
   </div>
 </div>
+
+## Why It Matters
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> task 1 scores improve when the reader can see the big picture quickly. A clear overview and well-grouped details make your report easier to follow and much easier to score positively.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">
@@ -235,5 +257,5 @@ quiz:
       <span>Join a guided session and learn with real exam-style examples.</span>
     </a>
   </div>
-  <p class="lesson-support-best">Best when you need detailed scoring guidance on clarity, cohesion, evidence use, and task achievement.</p>
+  <p class="lesson-support-best">Best when you need detailed scoring guidance on overview control, sequencing, and process language.</p>
 </div>

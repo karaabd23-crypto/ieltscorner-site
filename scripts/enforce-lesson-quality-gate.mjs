@@ -90,17 +90,45 @@ function countPanelListItems(text, panelClass) {
 
 function checkFile(fileName, body, metadata) {
   const problems = [];
+  const introBeforeSections = (() => {
+    const match = String(body || '').match(/^([\s\S]*?)(?=^##\s+)/m);
+    return match ? match[1].trim() : '';
+  })();
 
   if (/with clearer explanations, structured practice, and exam-focused review\./i.test(metadata?.excerpt || '')) {
     problems.push('frontmatter excerpt still uses the old generic template');
+  }
+
+  if (/with clearer structure, stronger support, and exam-focused review\./i.test(metadata?.excerpt || '')) {
+    problems.push('frontmatter excerpt still uses the old generic writing template');
   }
 
   if (/Read the model, do the controlled practice, then check yourself before moving on\./i.test(metadata?.heroTip || '')) {
     problems.push('frontmatter heroTip still uses the old generic template');
   }
 
+  if (/Plan the job of the response before you write the sentences\./i.test(metadata?.heroTip || '')) {
+    problems.push('frontmatter heroTip still uses the old generic writing template');
+  }
+
   if (/^##\s+Real-World Focus\b/im.test(body)) {
     problems.push('contains forbidden heading: ## Real-World Focus');
+  }
+
+  if (/^##\s+Topic Explanation and Use\b/im.test(body)) {
+    problems.push('contains old heading: ## Topic Explanation and Use');
+  }
+
+  if (/^##\s+Real-World Examples\b/im.test(body)) {
+    problems.push('contains old heading: ## Real-World Examples ...');
+  }
+
+  if (/^##\s+Common Errors with\b/im.test(body)) {
+    problems.push('contains old heading: ## Common Errors with ...');
+  }
+
+  if (/^##\s+Interactive Practice Lab\b/im.test(body)) {
+    problems.push('contains old heading: ## Interactive Practice Lab');
   }
 
   if (/^##\s+Goal\b/im.test(body)) {
@@ -115,7 +143,7 @@ function checkFile(fileName, body, metadata) {
     problems.push('contains forbidden heading: ## Key Rule in Plain Language');
   }
 
-  if (/^##\s+Practice\b/im.test(body)) {
+  if (/^##\s+Practice\s*$/im.test(body)) {
     problems.push('contains forbidden heading: ## Practice');
   }
 
@@ -143,23 +171,77 @@ function checkFile(fileName, body, metadata) {
     problems.push('body still uses the old "This lesson treats" boilerplate');
   }
 
-  if (!/^##\s+Common Errors with\b/im.test(body)) {
-    problems.push('missing section: Common Errors with ...');
+  if (!/class="lesson-context"/i.test(body) || introBeforeSections.length < 120) {
+    problems.push('lesson must begin with a visible context paragraph before the first section');
+  }
+
+  if (!/^##\s+Examples\b/im.test(body)) {
+    problems.push('missing section: Examples');
+  }
+
+  if (!/^##\s+Lesson Map\b/im.test(body)) {
+    problems.push('missing section: Lesson Map');
   } else {
-    const commonErrors = section(body, 'Common Errors with');
+    const lessonMap = section(body, 'Lesson Map');
+    if (!/class="lesson-map"/i.test(lessonMap)) {
+      problems.push('Lesson Map must use the shared lesson-map block');
+    }
+    const requiredAnchors = [
+      /href="#examples"/i,
+      /href="#core-lesson"/i,
+      /href="#common-mistakes"/i,
+      /href="#practice-lab"/i,
+      /href="#why-it-matters"/i,
+    ];
+    if (!requiredAnchors.every((pattern) => pattern.test(lessonMap))) {
+      problems.push('Lesson Map is missing one or more required anchor links');
+    }
+  }
+
+  if (!/^##\s+Core Lesson\b/im.test(body)) {
+    problems.push('missing section: Core Lesson');
+  } else {
+    const explanation = section(body, 'Core Lesson').trim();
+    if (explanation.length < 280) {
+      problems.push('Core Lesson is too short (needs clear definition + usage conditions)');
+    }
+
+    const hasUseConditions =
+      countPanelListItems(explanation, 'lesson-panel lesson-panel-when') >= 3 ||
+      countMatches(explanation, /<li>/g) >= 6;
+    if (!hasUseConditions) {
+      problems.push('Core Lesson must include explicit usage conditions and remember rules');
+    }
+
+    const bannedGenericPatterns = [
+      /is a lexical field used to discuss a specific domain with precise meaning and natural collocations\./i,
+      /is a grammar control area in which form choice changes precision, logic, and readability\./i,
+      /Match form choice to the exact meaning you need to express\./i,
+      /Keep agreement, order, and reference stable within each clause\./i,
+      /Increase complexity only when it improves clarity and evidence delivery\./i,
+    ];
+    if (bannedGenericPatterns.some((pattern) => pattern.test(explanation))) {
+      problems.push('Core Lesson contains banned generic boilerplate; rewrite with topic-specific instruction');
+    }
+  }
+
+  if (!/^##\s+Common Mistakes\b/im.test(body)) {
+    problems.push('missing section: Common Mistakes');
+  } else {
+    const commonErrors = section(body, 'Common Mistakes');
     const legacyWeak = countMatches(commonErrors, /^-\s+Real-world weak:/gim);
     const legacyBetter = countMatches(commonErrors, /^-\s+Real-world better:/gim);
     if (legacyWeak > 0 || legacyBetter > 0) {
-      problems.push('Common Errors section uses legacy labels (Real-world weak/better); use Weak/Strong only');
+      problems.push('Common Mistakes uses legacy labels (Real-world weak/better); use Weak/Strong only');
     }
 
     const weakCount = countMatches(commonErrors, /(^-\s+Weak:|class="lesson-line lesson-line-weak")/gim);
     const strongCount = countMatches(commonErrors, /(^-\s+Strong:|class="lesson-line lesson-line-strong")/gim);
     if (weakCount === 0 || strongCount === 0) {
-      problems.push('Common Errors section must include Weak and Strong examples');
+      problems.push('Common Mistakes must include Weak and Strong examples');
     }
     if (weakCount !== strongCount) {
-      problems.push(`Common Errors examples are unbalanced (weak=${weakCount}, strong=${strongCount})`);
+      problems.push(`Common Mistakes examples are unbalanced (weak=${weakCount}, strong=${strongCount})`);
     }
 
     const bannedErrorFallbackPatterns = [
@@ -169,16 +251,12 @@ function checkFile(fileName, body, metadata) {
       /keep only forms that make your message clearer/i,
     ];
     if (bannedErrorFallbackPatterns.some((pattern) => pattern.test(commonErrors))) {
-      problems.push('Common Errors includes banned generic fallback content; rewrite with topic-specific errors');
+      problems.push('Common Mistakes includes banned generic fallback content; rewrite with topic-specific errors');
     }
   }
 
-  if (!/^##\s+Real-World Examples\b/im.test(body)) {
-    problems.push('missing section: Real-World Examples');
-  }
-
-  if (!/^##\s+Interactive Practice Lab\b/im.test(body)) {
-    problems.push('missing section: Interactive Practice Lab');
+  if (!/^##\s+Practice Lab\b/im.test(body)) {
+    problems.push('missing section: Practice Lab');
   }
 
   if (/^##\s+Want Personalized Score Feedback\?\s*$/im.test(body)) {
@@ -203,61 +281,43 @@ function checkFile(fileName, body, metadata) {
     }
   }
 
-  if (!/^##\s+Topic Explanation and Use\s*$/im.test(body)) {
-    problems.push('missing section: Topic Explanation and Use');
+  if (!/^##\s+Why It Matters\b/im.test(body)) {
+    problems.push('missing section: Why It Matters');
   } else {
-    const explanation = section(body, 'Topic Explanation and Use').trim();
-    if (explanation.length < 280) {
-      problems.push('Topic Explanation and Use is too short (needs clear definition + usage conditions)');
+    const importance = section(body, 'Why It Matters').trim();
+    if (importance.length < 120) {
+      problems.push('Why It Matters is too short');
     }
-
-    const hasUseConditions =
-      countPanelListItems(explanation, 'lesson-panel lesson-panel-when') >= 3 ||
-      (/(use conditions|use it when)\s*:/i.test(explanation) && countMatches(explanation, /^-\s+/gm) >= 3);
-    if (!hasUseConditions) {
-      problems.push('Topic Explanation and Use must include at least 3 explicit usage conditions');
-    }
-
-    if (/is a grammar form used to control meaning, time, relationship, or emphasis/i.test(explanation)) {
-      problems.push('Topic Explanation and Use is generic placeholder text; requires topic-specific explanation');
-    }
-
-    const bannedGenericPatterns = [
-      /is a lexical field used to discuss a specific domain with precise meaning and natural collocations\./i,
-      /is a grammar control area in which form choice changes precision, logic, and readability\./i,
-      /Use\s+.+\s+to build sentences that are structurally accurate and easy for exam readers to process on first read\./i,
-      /Match form choice to the exact meaning you need to express\./i,
-      /Keep agreement, order, and reference stable within each clause\./i,
-      /Increase complexity only when it improves clarity and evidence delivery\./i,
-      /When\s+.+\s+is controlled, the reader can track logic without re-reading\./i,
-      /In timed tasks, accurate\s+.+\s+supports concise and credible exam writing\./i,
-    ];
-    if (bannedGenericPatterns.some((pattern) => pattern.test(explanation))) {
-      problems.push('Topic Explanation and Use contains banned generic boilerplate; rewrite with topic-specific instruction and examples');
+    if (!/why it matters|why it matters:|why this matters/i.test(importance)) {
+      problems.push('Why It Matters should explain the value of the topic directly');
     }
   }
 
-  if (/^##\s+Interactive Practice Lab\b/im.test(body)) {
-    const lab = section(body, 'Interactive Practice Lab');
+  const sectionLedes = countMatches(body, /class="lesson-section-lede"/gim);
+  if (sectionLedes < 4) {
+    problems.push('lesson needs short section introductions for the major sections');
+  }
+
+  if (/^##\s+Practice Lab\b/im.test(body)) {
+    const lab = section(body, 'Practice Lab');
     const taskCount = countMatches(lab, /<article class="practice-task"/gim);
     if (taskCount < 3) {
-      problems.push('Interactive Practice Lab must include at least 3 interactive tasks');
+      problems.push('Practice Lab must include at least 3 interactive tasks');
     }
     if (!/data-practice-score/i.test(lab)) {
-      problems.push('Interactive Practice Lab must include a visible live score block');
+      problems.push('Practice Lab must include a visible live score block');
     }
     if (!/data-task-feedback/i.test(lab)) {
-      problems.push('Interactive Practice Lab must include immediate feedback areas');
+      problems.push('Practice Lab must include immediate feedback areas');
     }
   }
 
   const title = (metadata?.title || '').toLowerCase();
 
   if (/word formation:\s*prefix|prefixes/.test(title)) {
-    const explanation = section(body, 'Topic Explanation and Use').toLowerCase();
-    const keyRule = section(body, 'Key Rule in Plain Language').toLowerCase();
-    const examples = section(body, 'Real-World Examples').toLowerCase();
-    const combined = `${explanation}\n${keyRule}\n${examples}`;
+    const explanation = section(body, 'Core Lesson').toLowerCase();
+    const examples = section(body, 'Examples').toLowerCase();
+    const combined = `${explanation}\n${examples}`;
 
     if ((combined.match(/prefix/g) || []).length < 2) {
       problems.push('Prefix lesson lacks clear prefix-focused explanation (needs repeated prefix references)');
@@ -268,10 +328,9 @@ function checkFile(fileName, body, metadata) {
   }
 
   if (/word formation:\s*suffix|suffixes/.test(title)) {
-    const explanation = section(body, 'Topic Explanation and Use').toLowerCase();
-    const keyRule = section(body, 'Key Rule in Plain Language').toLowerCase();
-    const examples = section(body, 'Real-World Examples').toLowerCase();
-    const combined = `${explanation}\n${keyRule}\n${examples}`;
+    const explanation = section(body, 'Core Lesson').toLowerCase();
+    const examples = section(body, 'Examples').toLowerCase();
+    const combined = `${explanation}\n${examples}`;
 
     if ((combined.match(/suffix/g) || []).length < 2) {
       problems.push('Suffix lesson lacks clear suffix-focused explanation (needs repeated suffix references)');
@@ -282,10 +341,9 @@ function checkFile(fileName, body, metadata) {
   }
 
   if (/noun formation/.test(title)) {
-    const explanation = section(body, 'Topic Explanation and Use').toLowerCase();
-    const keyRule = section(body, 'Key Rule in Plain Language').toLowerCase();
-    const examples = section(body, 'Real-World Examples').toLowerCase();
-    const combined = `${explanation}\n${keyRule}\n${examples}`;
+    const explanation = section(body, 'Core Lesson').toLowerCase();
+    const examples = section(body, 'Examples').toLowerCase();
+    const combined = `${explanation}\n${examples}`;
 
     if (!/noun/.test(combined)) {
       problems.push('Noun formation lesson must explicitly explain noun slot usage');
@@ -296,9 +354,9 @@ function checkFile(fileName, body, metadata) {
   }
 
   if (/(semicolon|semicolons|colon|colons)/.test(title)) {
-    const explanation = section(body, 'Topic Explanation and Use');
-    const commonErrors = section(body, 'Common Errors with');
-    const examples = section(body, 'Real-World Examples');
+    const explanation = section(body, 'Core Lesson');
+    const commonErrors = section(body, 'Common Mistakes');
+    const examples = section(body, 'Examples');
 
     if (/decide your exact message/i.test(explanation + '\n' + commonErrors)) {
       problems.push('Punctuation lesson guidance is generic; requires punctuation-specific instruction');

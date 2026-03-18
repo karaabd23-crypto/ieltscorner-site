@@ -5,13 +5,13 @@ level: "B1"
 ieltsBand: "4.5-5.5"
 clb: "5-6"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B1 writing lesson on CELPIP Writing Task 1: Email with clearer structure, stronger support, and exam-focused review."
+excerpt: "Write clearer CELPIP emails by covering every bullet point, choosing the right tone, and organizing the message fast."
 date: "2026-03-02"
 tags: ["writing", "b1", "cefr-differentiated", "ielts", "celpip"]
-heroTip: "Plan the job of the response before you write the sentences."
+heroTip: "Before you write, underline the purpose, the reader, and every bullet you must answer."
 videoEmbed: ""
 draft: false
-visualAids: ["Planning sequence", "Model paragraph frame", "Final editing checklist"]
+visualAids: ["Email planning strip", "Opening-body-closing frame", "Bullet coverage checklist"]
 quiz:
   - prompt: "What should come before full drafting in CELPIP Writing Task 1: Email?"
     options:
@@ -35,11 +35,44 @@ quiz:
     correctIndex: 0
     explanation: "A paragraph reads better when each sentence does one clear piece of work."
 ---
-## Topic Explanation and Use
+<div class="lesson-context"><p class="lesson-context-lead"><strong>CELPIP Writing Task 1: Email</strong> asks you to write a clear email for a real situation. You need to understand the purpose, cover every bullet point, and keep the tone polite and natural. In this lesson, you will learn what to do first and what strong answers usually include.</p></div>
+
+## Examples
+<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>CELPIP Writing Task 1: Email</u> in real sentences.</p>
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Hello. I want to talk about something important and many things happened.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>I am writing to ask whether it would be possible to reschedule my appointment for next week.</p>
+  <p class="lesson-card-note">The stronger sentence gives the paragraph a clear direction.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Please help me soon because this is a big issue for me.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Thank you for considering my request. I would appreciate any available afternoon slot.</p>
+  <p class="lesson-card-note">The better version develops the idea instead of circling around it.</p>
+</article>
+</div>
+
+## Lesson Map
+<div class="lesson-map">
+  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+  <ul class="lesson-map-list">
+    <li><a href="#examples">&#10024; Examples</a></li>
+    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
+    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
+    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
+    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
+  </ul>
+</div>
+
+## Core Lesson
+<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Core idea</p>
-    <p>This lesson focuses on one writing move that changes clarity and score at the same time.</p>
+    <p>Email tasks are easiest when you treat the prompt like a real communication problem with clear jobs to complete.</p>
 <p>CELPIP email tasks reward completeness and tone control. The reader should understand why you are writing in the opening line, and every bullet point in the prompt should appear clearly in the body. Strong responses sound purposeful and polite without becoming stiff or repetitive.</p>
 <p>Use this structure for CELPIP Writing Task 1 emails. Begin with greeting and purpose, then cover the prompt points in a logical order, and finish with an appropriate closing line. If one prompt bullet is missing, the email usually feels incomplete even if the language is accurate.</p>
 <p>At B1 level, stronger writing comes from better paragraph control, not from simply making the language longer.</p>
@@ -59,60 +92,46 @@ quiz:
   </section>
 </div>
 
-## Real-World Examples with CELPIP Writing Task 1: Email
-<div class="lesson-example-grid">
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>This topic is important and has many effects.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>I am writing to ask whether it would be possible to reschedule my appointment for next week.</p>
-  <p class="lesson-card-note">The stronger sentence gives the paragraph a clear direction.</p>
-</article>
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I think this is good and bad in many ways.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Thank you for considering my request. I would appreciate any available afternoon slot.</p>
-  <p class="lesson-card-note">The better version develops the idea instead of circling around it.</p>
-</article>
-</div>
-
-## Common Errors with CELPIP Writing Task 1: Email
+## Common Mistakes
+<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>starting to write before deciding the task purpose</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>This issue is important and has many sides.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>This essay argues that better transit investment improves daily life for workers.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Write one clear task sentence before the first full paragraph.</p>
+  <h3>opening without a clear purpose line</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Hello. I want to talk about something important and many things happened.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I am writing to ask whether it would be possible to reschedule my appointment for next week.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> State the purpose in the first one or two lines.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using examples that are too general to prove the point</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Many places improved after changes were made.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>One district reduced response times by 18% after introducing coordinated service planning.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Add a place, group, time, or measured result.</p>
+  <h3>missing one of the prompt bullets</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>I am sorry I missed the workshop. Please send me the slides.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I am sorry I missed the workshop because I was ill. Could you please send me the materials and let me know when the next session will be held?</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Turn each bullet point into one clear message block before you write.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>losing paragraph control by adding every idea at once</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The policy is good, bad, expensive, helpful, and important for many people for many reasons.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The policy is expensive at first; however, it improves reliability for daily commuters.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Give each paragraph one job and one main idea.</p>
+  <h3>using tone that is too direct for the situation</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Send me the information today.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I would appreciate it if you could send me the information today.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use polite request language when the task needs a respectful tone.</p>
 </article>
 </div>
 
-## Interactive Practice Lab
+## Practice Lab
+<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">Begin with purpose. Then check the order and cut anything that does not help the paragraph.</p>
+      <p class="practice-lab-intro">Start with purpose. Then cover every bullet clearly and keep the tone polite all the way through.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">If a sentence has no clear job, it should change or disappear.</p>
+  <p class="practice-lab-coach">In Task 1 email writing, missing one job can hurt the score even if the grammar is good.</p>
   <div class="practice-lab-grid">
 <article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
   <p class="practice-task-label">1. Quick pick</p>
@@ -171,14 +190,14 @@ quiz:
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="2">
-  <p>Add a new reason in the middle of the paragraph to sound richer.</p>
+  <p>Write a long background story before you explain why you are writing.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>Use a broad example even when it does not prove the point clearly.</p>
+  <p>Ignore one bullet because the rest of the email sounds fluent enough.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
@@ -205,6 +224,9 @@ quiz:
 </article>
   </div>
 </div>
+
+## Why It Matters
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> in CELPIP email tasks, one missing bullet or one wrong tone choice can lower the score fast. When you control <u>CELPIP Writing Task 1: Email</u>, your answer feels complete, polite, and easy for the examiner to trust.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">
@@ -235,5 +257,5 @@ quiz:
       <span>Join a guided session and learn with real exam-style examples.</span>
     </a>
   </div>
-  <p class="lesson-support-best">Best when you need detailed scoring guidance on clarity, cohesion, evidence use, and task achievement.</p>
+  <p class="lesson-support-best">Best when you need detailed scoring guidance on prompt coverage, tone control, and email organization.</p>
 </div>

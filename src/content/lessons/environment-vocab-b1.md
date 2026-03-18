@@ -35,7 +35,40 @@ quiz:
     correctIndex: 0
     explanation: "A short model sentence makes the new language active instead of passive."
 ---
-## Topic Explanation and Use
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Environment and Ecology</strong> is about the words and phrases you need for real English. This lesson shows what the key words mean, where they fit, and how to use them in natural sentences without sounding forced.</p></div>
+
+## Examples
+<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>Environment and Ecology</u> in real sentences.</p>
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The city made dirty air lower with new rules.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>The city cut emissions and improved air quality with new rules.</p>
+  <p class="lesson-card-note">The stronger version names the real meaning instead of staying vague.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The country used cleaner power and that was better for nature.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>The country invested in renewable energy to support sustainability.</p>
+  <p class="lesson-card-note">The better sentence sounds more natural for a real task and a real reader.</p>
+</article>
+</div>
+
+## Lesson Map
+<div class="lesson-map">
+  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+  <ul class="lesson-map-list">
+    <li><a href="#examples">&#10024; Examples</a></li>
+    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
+    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
+    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
+    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
+  </ul>
+</div>
+
+## Core Lesson
+<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Core idea</p>
@@ -59,39 +92,8 @@ quiz:
   </section>
 </div>
 
-## Real-World Examples with Environment and Ecology
-<div class="lesson-example-grid">
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The city made dirty air lower with new rules.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>The city cut emissions and improved air quality with new rules.</p>
-  <p class="lesson-card-note">The stronger version names the real meaning instead of staying vague.</p>
-</article>
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The country used cleaner power and that was better for nature.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>The country invested in renewable energy to support sustainability.</p>
-  <p class="lesson-card-note">The better sentence sounds more natural for a real task and a real reader.</p>
-</article>
-</div>
-
-## Word Bank and Useful Chunks
-<div class="lesson-resource-grid">
-  <article class="lesson-resource-card">
-    <p class="lesson-card-label">Word bank</p>
-    <ul><li>emissions: gases released into the air</li><li>renewable energy: power from naturally replaced sources</li><li>waste management: systems for handling waste</li><li>air quality: how clean the air is</li><li>conservation: protection of natural resources</li><li>sustainability: meeting needs without long-term damage</li></ul>
-  </article>
-  <article class="lesson-resource-card">
-    <p class="lesson-card-label">Useful chunks</p>
-    <ul><li>use precise language</li><li>learn a natural phrase</li><li>match the register</li><li>give a real example</li></ul>
-  </article>
-  <article class="lesson-resource-card">
-    <p class="lesson-card-label">Sentence frames</p>
-    <ul><li>One useful term is...</li><li>A stronger way to say this is...</li><li>This word works when...</li></ul>
-  </article>
-</div>
-
-## Common Errors with Environment and Ecology
+## Common Mistakes
+<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -116,7 +118,8 @@ quiz:
 </article>
 </div>
 
-## Interactive Practice Lab
+## Practice Lab
+<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>
@@ -183,6 +186,9 @@ quiz:
 </article>
   </div>
 </div>
+
+## Why It Matters
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> good vocabulary is not just about knowing a word. You need the <em>right</em> word in the <em>right</em> sentence. When you control Environment and Ecology, you sound clearer, more natural, and more precise in real English.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

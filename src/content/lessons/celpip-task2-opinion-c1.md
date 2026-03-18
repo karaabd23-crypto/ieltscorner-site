@@ -35,13 +35,46 @@ quiz:
     correctIndex: 0
     explanation: "A simple reason-example extension makes the answer easier to follow."
 ---
-## Topic Explanation and Use
+<div class="lesson-context"><p class="lesson-context-lead"><strong>CELPIP Speaking Task 7: Expressing an Opinion</strong> is a speaking skill. This lesson shows how to answer clearly, add support, and keep your response easy to follow even when you feel pressure.</p></div>
+
+## Examples
+<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>CELPIP Speaking Task 7: Expressing an Opinion</u> in real sentences.</p>
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Well, there are many perspectives and many factors, and in my opinion this topic is complex.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>I think this approach is useful because focused investment can improve access, reliability, and quality of life.</p>
+  <p class="lesson-card-note">The better answer starts doing the real speaking job immediately.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>It is good, and also, like, there are many reasons, and yes, that is all.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>For example, a pilot program improved service response times in one local district.</p>
+  <p class="lesson-card-note">The stronger sentence adds meaning instead of filler.</p>
+</article>
+</div>
+
+## Lesson Map
+<div class="lesson-map">
+  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+  <ul class="lesson-map-list">
+    <li><a href="#examples">&#10024; Examples</a></li>
+    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
+    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
+    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
+    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
+  </ul>
+</div>
+
+## Core Lesson
+<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Core idea</p>
     <p>This lesson helps you sound organized without sounding memorized.</p>
-<p>Abstract or opinion speaking tasks reward speed of decision and organized support. A strong answer states the opinion early, gives one or two reasons, and adds a concrete example. Long introductions and repeated general statements usually weaken fluency and content at the same time.</p>
-<p>Use this lesson for Part 3 and opinion tasks. The safest frame is answer, reason, example, wider comment or close. This keeps the response focused and makes it easier to fill the time naturally.</p>
+<p>This speaking skill helps you sound organized under time pressure. Clear answers usually follow a simple pattern: direct response, one reason, one example, short conclusion. Even when the topic is unfamiliar, that pattern helps you stay fluent and focused.</p>
+<p>Use this lesson whenever you need a more reliable way to build spoken responses. Focus on structure first, then on vocabulary and style. A controlled simple answer is better than a long answer with weak logic.</p>
 <p>At C1 level, speaking improves when your answer pattern is stable and easy to repeat under time pressure.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
@@ -50,45 +83,30 @@ quiz:
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">Watch it work</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">I support investing more in public transport because it helps a larger number of people every day.</div>
-<div class="lesson-pattern-sentence">For example, better bus service can reduce commuting stress for workers who do not own cars.</div></div>
+    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">I think this approach is useful because focused investment can improve access, reliability, and quality of life.</div>
+<div class="lesson-pattern-sentence">For example, a pilot program improved service response times in one local district.</div></div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Remember this</p>
-    <ul><li>State your choice or opinion in the first sentence.</li><li>Add one strong reason immediately.</li><li>Support it with one example, comparison, or consequence.</li><li>If time remains, widen the answer with a broader comment.</li><li>Finish with a one-sentence summary of your view.</li></ul>
+    <ul><li>Answer directly in the first sentence.</li><li>Add one clear reason.</li><li>Support it with one example or consequence.</li><li>Use one short linker if it helps the flow.</li><li>Finish with a short closing message.</li></ul>
   </section>
 </div>
 
-## Real-World Examples with CELPIP Speaking Task 7: Expressing an Opinion
-<div class="lesson-example-grid">
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Well, there are many perspectives and many factors, and in my opinion this topic is complex.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>I support investing more in public transport because it helps a larger number of people every day.</p>
-  <p class="lesson-card-note">The better answer starts doing the real speaking job immediately.</p>
-</article>
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>It is good, and also, like, there are many reasons, and yes, that is all.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>For example, better bus service can reduce commuting stress for workers who do not own cars.</p>
-  <p class="lesson-card-note">The stronger sentence adds meaning instead of filler.</p>
-</article>
-</div>
-
-## Common Errors with CELPIP Speaking Task 7: Expressing an Opinion
+## Common Mistakes
+<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>delaying the direct answer</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Well, there are many sides to this question and it is hard to say.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>I support investing more in public transport because it helps a larger number of people every day.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I think this approach is useful because focused investment can improve access, reliability, and quality of life.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> Answer first, then extend.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
   <h3>using fillers instead of content</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Like, you know, it is good because it is good for people.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>For example, better bus service can reduce commuting stress for workers who do not own cars.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>For example, a pilot program improved service response times in one local district.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> Replace filler with one real reason or detail.</p>
 </article>
 <article class="lesson-error-card">
@@ -100,7 +118,8 @@ quiz:
 </article>
 </div>
 
-## Interactive Practice Lab
+## Practice Lab
+<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>
@@ -122,27 +141,27 @@ quiz:
   Talk around the question first and hope the listener finds your point.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  I support investing more in public transport because it helps a larger number of people every day.
+  I think this approach is useful because focused investment can improve access, reliability, and quality of life.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="State your choice or opinion in the first sentence.||Add one strong reason immediately.||Support it with one example, comparison, or consequence.||If time remains, widen the answer with a broader comment." data-task-id="1">
+<article class="practice-task" data-task-type="order" data-task-answer="Answer directly in the first sentence.||Add one clear reason.||Support it with one example or consequence.||Use one short linker if it helps the flow." data-task-id="1">
   <p class="practice-task-label">2. Build the flow</p>
   <h3>Put these moves in a helpful order.</h3>
   <p class="practice-task-note">Put the chunks in the natural order.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="State your choice or opinion in the first sentence." data-chip-origin="bank-1" data-chip-id="1-0">
-  State your choice or opinion in the first sentence.
+<button type="button" class="practice-chip" data-chip-value="Answer directly in the first sentence." data-chip-origin="bank-1" data-chip-id="1-0">
+  Answer directly in the first sentence.
 </button>
-<button type="button" class="practice-chip" data-chip-value="Support it with one example, comparison, or consequence." data-chip-origin="bank-1" data-chip-id="1-1">
-  Support it with one example, comparison, or consequence.
+<button type="button" class="practice-chip" data-chip-value="Support it with one example or consequence." data-chip-origin="bank-1" data-chip-id="1-1">
+  Support it with one example or consequence.
 </button>
-<button type="button" class="practice-chip" data-chip-value="Add one strong reason immediately." data-chip-origin="bank-1" data-chip-id="1-2">
-  Add one strong reason immediately.
+<button type="button" class="practice-chip" data-chip-value="Use one short linker if it helps the flow." data-chip-origin="bank-1" data-chip-id="1-2">
+  Use one short linker if it helps the flow.
 </button>
-<button type="button" class="practice-chip" data-chip-value="If time remains, widen the answer with a broader comment." data-chip-origin="bank-1" data-chip-id="1-3">
-  If time remains, widen the answer with a broader comment.
+<button type="button" class="practice-chip" data-chip-value="Add one clear reason." data-chip-origin="bank-1" data-chip-id="1-3">
+  Add one clear reason.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -157,14 +176,14 @@ quiz:
   <h3>Sort these habits into helpful or not helpful.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>State your choice or opinion in the first sentence.</p>
+  <p>Answer directly in the first sentence.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="1">
-  <p>Add one strong reason immediately.</p>
+  <p>Add one clear reason.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
@@ -198,13 +217,16 @@ quiz:
   It is good and there are many reasons, and that is all.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  For example, better bus service can reduce commuting stress for workers who do not own cars.
+  For example, a pilot program improved service response times in one local district.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
   </div>
 </div>
+
+## Why It Matters
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> speaking scores depend on clarity, not just confidence. This skill helps you stay organized, sound natural, and keep your answer moving even when you need a second to think.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

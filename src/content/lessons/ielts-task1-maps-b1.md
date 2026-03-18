@@ -5,13 +5,13 @@ level: "B1"
 ieltsBand: "4.5-5.5"
 clb: "5-6"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B1 writing lesson on IELTS Writing Task 1: Maps and Comparisons with clearer structure, stronger support, and exam-focused review."
+excerpt: "Describe IELTS map changes clearly by grouping major changes, writing a simple overview, and comparing areas logically."
 date: "2026-03-02"
 tags: ["writing", "b1", "cefr-differentiated", "ielts", "celpip"]
-heroTip: "Plan the job of the response before you write the sentences."
+heroTip: "Look for the biggest changes first. Do not try to describe every tiny detail."
 videoEmbed: ""
 draft: false
-visualAids: ["Planning sequence", "Model paragraph frame", "Final editing checklist"]
+visualAids: ["Map overview planner", "Change grouping model", "Before-and-after language bank"]
 quiz:
   - prompt: "What should come before full drafting in IELTS Writing Task 1: Maps and Comparisons?"
     options:
@@ -35,11 +35,44 @@ quiz:
     correctIndex: 0
     explanation: "A paragraph reads better when each sentence does one clear piece of work."
 ---
-## Topic Explanation and Use
+<div class="lesson-context"><p class="lesson-context-lead"><strong>IELTS Writing Task 1: Maps and Comparisons</strong> is about describing change on a map. The job is not to mention every small detail. The job is to show the biggest changes clearly and group details in a way the reader can follow. In this lesson, you will learn how to write a useful overview and organize the details.</p></div>
+
+## Examples
+<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>IELTS Writing Task 1: Maps and Comparisons</u> in real sentences.</p>
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>There are many changes on the map and many things are different.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Overall, the area became more residential, while several industrial features were removed or relocated.</p>
+  <p class="lesson-card-note">The stronger sentence gives the paragraph a clear direction.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>On the left there is something and on the right there is something else.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>In the northern section, the old factory was replaced by a housing complex and a small parking area.</p>
+  <p class="lesson-card-note">The better version develops the idea instead of circling around it.</p>
+</article>
+</div>
+
+## Lesson Map
+<div class="lesson-map">
+  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+  <ul class="lesson-map-list">
+    <li><a href="#examples">&#10024; Examples</a></li>
+    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
+    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
+    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
+    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
+  </ul>
+</div>
+
+## Core Lesson
+<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Core idea</p>
-    <p>This lesson focuses on one writing move that changes clarity and score at the same time.</p>
+    <p>Map reports become easier when you stop listing details and start grouping the biggest changes.</p>
 <p>Task 1 map reports are about change over time or between layouts. Strong responses group changes, highlight the biggest transformations, and use location language carefully. The overview should summarize the major pattern of change, not retell every detail.</p>
 <p>Use this strategy for IELTS map comparison tasks. Start with an introduction that paraphrases the prompt, then write an overview that identifies the largest changes, such as expansion, replacement, or movement of features. Body paragraphs should group related changes by area or by type.</p>
 <p>At B1 level, stronger writing comes from better paragraph control, not from simply making the language longer.</p>
@@ -59,60 +92,46 @@ quiz:
   </section>
 </div>
 
-## Real-World Examples with IELTS Writing Task 1: Maps and Comparisons
-<div class="lesson-example-grid">
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>This topic is important and has many effects.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Overall, the area became more residential, while several industrial features were removed or relocated.</p>
-  <p class="lesson-card-note">The stronger sentence gives the paragraph a clear direction.</p>
-</article>
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I think this is good and bad in many ways.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>In the northern section, the old factory was replaced by a housing complex and a small parking area.</p>
-  <p class="lesson-card-note">The better version develops the idea instead of circling around it.</p>
-</article>
-</div>
-
-## Common Errors with IELTS Writing Task 1: Maps and Comparisons
+## Common Mistakes
+<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>starting to write before deciding the task purpose</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>This issue is important and has many sides.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>This essay argues that better transit investment improves daily life for workers.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Write one clear task sentence before the first full paragraph.</p>
+  <h3>listing small details before giving an overview</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>There is a road, a tree area, a car park, and a building on the map.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Overall, the area became more residential, while several industrial features were removed or relocated.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Write the big-picture overview before the smaller details.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using examples that are too general to prove the point</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Many places improved after changes were made.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>One district reduced response times by 18% after introducing coordinated service planning.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Add a place, group, time, or measured result.</p>
+  <h3>moving around the map randomly</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The school changed, then the river, then the center, then the northern road.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>In the northern section, the old factory was replaced by a housing complex and a small parking area.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Group details by area or by type of change.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>losing paragraph control by adding every idea at once</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The policy is good, bad, expensive, helpful, and important for many people for many reasons.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The policy is expensive at first; however, it improves reliability for daily commuters.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Give each paragraph one job and one main idea.</p>
+  <h3>adding opinion to a report task</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>This was a very good development for the town.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The old industrial area was converted into a residential zone with new access roads.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Describe what changed. Do not evaluate it.</p>
 </article>
 </div>
 
-## Interactive Practice Lab
+## Practice Lab
+<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">Begin with purpose. Then check the order and cut anything that does not help the paragraph.</p>
+      <p class="practice-lab-intro">See the big changes first. Then group the details in a way the reader can picture clearly.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">If a sentence has no clear job, it should change or disappear.</p>
+  <p class="practice-lab-coach">A map report is descriptive, not personal. Accuracy and grouping matter more than long sentences.</p>
   <div class="practice-lab-grid">
 <article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
   <p class="practice-task-label">1. Quick pick</p>
@@ -171,14 +190,14 @@ quiz:
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="2">
-  <p>Add a new reason in the middle of the paragraph to sound richer.</p>
+  <p>Walk around the map randomly from one feature to another.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>Use a broad example even when it does not prove the point clearly.</p>
+  <p>Add personal opinions about whether the changes are good or bad.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
@@ -205,6 +224,9 @@ quiz:
 </article>
   </div>
 </div>
+
+## Why It Matters
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> task 1 scores improve when the reader can see the big picture quickly. A clear overview and well-grouped details make your report easier to follow and much easier to score positively.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">
@@ -235,5 +257,5 @@ quiz:
       <span>Join a guided session and learn with real exam-style examples.</span>
     </a>
   </div>
-  <p class="lesson-support-best">Best when you need detailed scoring guidance on clarity, cohesion, evidence use, and task achievement.</p>
+  <p class="lesson-support-best">Best when you need detailed scoring guidance on overview quality, grouping, and location language.</p>
 </div>

@@ -35,7 +35,40 @@ quiz:
     correctIndex: 1
     explanation: "Option 2 repairs a typical Question Formation error and matches the target form."
 ---
-## Topic Explanation and Use
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Question Formation</strong> is a grammar topic that changes how a sentence works or what it means. Sometimes the change is small, but it can make the sentence clearer, more natural, or more accurate. In this lesson, you will learn the basic idea, see clear examples, and notice the mistakes learners make most often.</p></div>
+
+## Examples
+<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>Question Formation</u> in real sentences.</p>
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Why you are late for class today?</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Why are you late for class today?</p>
+  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Never I have seen such a clear explanation.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Never have I seen such a clear explanation.</p>
+  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+</article>
+</div>
+
+## Lesson Map
+<div class="lesson-map">
+  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+  <ul class="lesson-map-list">
+    <li><a href="#examples">&#10024; Examples</a></li>
+    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
+    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
+    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
+    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
+  </ul>
+</div>
+
+## Core Lesson
+<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Core idea</p>
@@ -59,23 +92,8 @@ quiz:
   </section>
 </div>
 
-## Real-World Examples with Question Formation
-<div class="lesson-example-grid">
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Why you are late for class today?</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Why are you late for class today?</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and keeps Question Formation natural.</p>
-</article>
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Never I have seen such a clear explanation.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Never have I seen such a clear explanation.</p>
-  <p class="lesson-card-note">This version sounds more natural because Question Formation fits the sentence clearly.</p>
-</article>
-</div>
-
-## Common Errors with Question Formation
+## Common Mistakes
+<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -100,7 +118,8 @@ quiz:
 </article>
 </div>
 
-## Interactive Practice Lab
+## Practice Lab
+<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>
@@ -199,6 +218,9 @@ quiz:
 </article>
   </div>
 </div>
+
+## Why It Matters
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> this topic affects clarity immediately. A small mistake can confuse the sentence, the speaker, or the exact meaning. Strong control makes your English easier to follow and easier to score positively.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

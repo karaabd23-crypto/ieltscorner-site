@@ -36,7 +36,40 @@ premium: false
 priceCAD: 0
 draft: false
 ---
-## Topic Explanation and Use
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Parallelism for Clarity</strong> changes the focus of the sentence. English can move words, repeat a pattern, or use a special structure to make one idea stand out more. In this lesson, you will learn how to add emphasis without sounding unnatural.</p></div>
+
+## Examples
+<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>Parallelism for Clarity</u> in real sentences.</p>
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Never I have seen such a confusing timetable.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Never have I seen such a confusing timetable.</p>
+  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Only after the final practice she felt ready.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Only after the final practice did she feel ready.</p>
+  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+</article>
+</div>
+
+## Lesson Map
+<div class="lesson-map">
+  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+  <ul class="lesson-map-list">
+    <li><a href="#examples">&#10024; Examples</a></li>
+    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
+    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
+    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
+    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
+  </ul>
+</div>
+
+## Core Lesson
+<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Core idea</p>
@@ -60,23 +93,8 @@ draft: false
   </section>
 </div>
 
-## Real-World Examples with Parallelism for Clarity
-<div class="lesson-example-grid">
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Never I have seen such a confusing timetable.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Never have I seen such a confusing timetable.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and keeps Parallelism for Clarity natural.</p>
-</article>
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Only after the final practice she felt ready.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Only after the final practice did she feel ready.</p>
-  <p class="lesson-card-note">This version sounds more natural because Parallelism for Clarity fits the sentence clearly.</p>
-</article>
-</div>
-
-## Common Errors with Parallelism for Clarity
+## Common Mistakes
+<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -101,7 +119,8 @@ draft: false
 </article>
 </div>
 
-## Interactive Practice Lab
+## Practice Lab
+<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>
@@ -203,6 +222,9 @@ draft: false
 </article>
   </div>
 </div>
+
+## Why It Matters
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> longer grammar structures can raise your score only when they stay clear. When you control <u>Parallelism for Clarity</u>, you can add detail and shape the message without losing the reader halfway through the sentence.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

@@ -35,7 +35,40 @@ quiz:
     correctIndex: 0
     explanation: "A simple reason-example extension makes the answer easier to follow."
 ---
-## Topic Explanation and Use
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Paraphrasing and Rephrasing</strong> is a speaking skill. This lesson shows how to answer clearly, add support, and keep your response easy to follow even when you feel pressure.</p></div>
+
+## Examples
+<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>Paraphrasing and Rephrasing</u> in real sentences.</p>
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Well, there are many perspectives and many factors, and in my opinion this topic is complex.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>I think this approach is useful because focused investment can improve access, reliability, and quality of life.</p>
+  <p class="lesson-card-note">The better answer starts doing the real speaking job immediately.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>It is good, and also, like, there are many reasons, and yes, that is all.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>For example, a pilot program improved service response times in one local district.</p>
+  <p class="lesson-card-note">The stronger sentence adds meaning instead of filler.</p>
+</article>
+</div>
+
+## Lesson Map
+<div class="lesson-map">
+  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+  <ul class="lesson-map-list">
+    <li><a href="#examples">&#10024; Examples</a></li>
+    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
+    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
+    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
+    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
+  </ul>
+</div>
+
+## Core Lesson
+<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Core idea</p>
@@ -59,23 +92,8 @@ quiz:
   </section>
 </div>
 
-## Real-World Examples with Paraphrasing and Rephrasing
-<div class="lesson-example-grid">
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Well, there are many perspectives and many factors, and in my opinion this topic is complex.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>I think this approach is useful because focused investment can improve access, reliability, and quality of life.</p>
-  <p class="lesson-card-note">The better answer starts doing the real speaking job immediately.</p>
-</article>
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>It is good, and also, like, there are many reasons, and yes, that is all.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>For example, a pilot program improved service response times in one local district.</p>
-  <p class="lesson-card-note">The stronger sentence adds meaning instead of filler.</p>
-</article>
-</div>
-
-## Common Errors with Paraphrasing and Rephrasing
+## Common Mistakes
+<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -100,7 +118,8 @@ quiz:
 </article>
 </div>
 
-## Interactive Practice Lab
+## Practice Lab
+<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>
@@ -205,6 +224,9 @@ quiz:
 </article>
   </div>
 </div>
+
+## Why It Matters
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> speaking scores depend on clarity, not just confidence. This skill helps you stay organized, sound natural, and keep your answer moving even when you need a second to think.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

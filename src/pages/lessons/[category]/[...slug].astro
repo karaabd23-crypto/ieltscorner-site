@@ -1,4 +1,6 @@
 ---
+import ContentAd from "../../../components/ContentAd.astro";
+import InArticleAd from "../../../components/InArticleAd.astro";
 import Layout from "../../../layouts/Layout.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { getLessonTier, getPublicLessonTitle } from "../../../lib/lessonLevel";
@@ -46,8 +48,7 @@ const { Content, headings } = await item.render();
 const publicTitle = getPublicLessonTitle(item.data.title, item.data.level);
 const currentCategory = item.data.category;
 const slugText = item.slug.toLowerCase();
-const isLocalPreview = import.meta.env.DEV || ["localhost", "127.0.0.1"].includes(Astro.url.hostname);
-const showBottomLessonAd = !isLocalPreview;
+const showBottomLessonAd = true;
 
 const sameCategoryLessons = (
   await getCollection(
@@ -203,7 +204,7 @@ if (slugText.includes("part2") && currentCategory === "speaking") {
 const lessonSchema = {
   "@context": "https://schema.org",
   "@type": "LearningResource",
-  "name": item.data.title,
+  "name": publicTitle,
   "description": item.data.excerpt,
   "educationalLevel": item.data.level,
   "teaches": item.data.category,
@@ -248,14 +249,14 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       "position": 4,
-      "name": item.data.title,
+      "name": publicTitle,
       "item": new URL(`/lessons/${currentCategory}/${item.slug}`, Astro.site),
     },
   ],
 };
 
 // Enhanced meta keywords for SEO
-const seoKeywords = `${item.data.title}, ${item.data.category}, ${item.data.level}, ${item.data.exam.join(", ")}, IELTS lessons, CELPIP lessons, English test preparation`;
+const seoKeywords = `${publicTitle}, ${item.data.category}, ${item.data.level}, ${item.data.exam.join(", ")}, IELTS lessons, CELPIP lessons, English test preparation`;
 ---
 
 <Layout
@@ -303,18 +304,15 @@ const seoKeywords = `${item.data.title}, ${item.data.category}, ${item.data.leve
       <Content />
 
       {showBottomLessonAd && (
-        <div class="surface lesson-bottom-ad ad-shell ad-shell--line" style="padding: var(--s-3); margin-top: var(--s-5);">
-          <ins
-            class="adsbygoogle ad-unit-line"
-            style="display:block"
-            data-ad-client="ca-pub-5615542310815721"
-            data-ad-slot="7254823697"
-            data-ad-format="horizontal"
-            data-full-width-responsive="false"></ins>
-          <script is:inline>
-            (window.adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
-        </div>
+        <InArticleAd
+          adId="lesson-in-article-ad"
+          targetSelector=".lesson-content"
+          anchorSelector=".lesson-example-grid, #lesson-map, .lesson-teach-grid"
+        />
+      )}
+
+      {showBottomLessonAd && (
+        <ContentAd className="lesson-bottom-ad" />
       )}
 
       <div class="lesson-divider lesson-divider-soft" aria-hidden="true"></div>

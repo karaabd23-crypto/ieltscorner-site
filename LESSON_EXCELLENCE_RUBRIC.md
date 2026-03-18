@@ -1,73 +1,110 @@
-# Grammar Lesson Excellence Rubric
+# Lesson Excellence Rubric
 
-This is the quality bar for all grammar lessons going forward.  
-Target learner baseline for explanation clarity: **CLB 6 readability**, even for higher-level topics.
+This is the quality bar for all current and future lessons.
 
-## 1) Content Excellence (70 points)
+Target learner baseline:
+- explanation language should stay understandable for a **CLB 6 learner**
+- even higher-level topics must be explained in plain, concrete English
 
-1. Topic fidelity (20)
-- The lesson must teach exactly what the title promises.
-- Title keywords should appear in explanation, examples, errors, and practice.
-- No generic filler that could fit any random grammar topic.
+## Required Lesson Structure
 
-2. Explanation clarity (15)
-- `Topic Explanation and Use` must define the point in plain language.
-- Average sentence length should stay short enough for CLB 6 comprehension.
-- Avoid dense jargon and abstract metalanguage.
-- Include direct usage bullets and clear “rules to keep in mind.”
+Every lesson must follow this order:
 
-3. Real examples quality (10)
-- At least two high-quality weak/strong contrasts.
-- Examples must be real-world (daily life, school, work, civic context), not meta “about grammar itself.”
-- Each pair includes a short “why it works” line.
+1. Short, easy visible lesson title
+2. Context paragraph before the first section
+3. `## Examples`
+4. `## Lesson Map`
+5. `## Core Lesson`
+6. `## Common Mistakes`
+7. `## Practice Lab`
+8. `## Why It Matters`
+9. `## Get Feedback`
 
-4. Error coaching quality (10)
-- At least three error cards.
-- Every card has `Weak`, `Strong`, and `Fix`.
-- Fix lines are specific and actionable.
+## What Each Part Must Do
 
-5. Practice quality (5)
-- At least three structured practice cards.
-- Include both correction and production tasks (write/rewrite/build).
+### 1. Context paragraph
+- Explain what the topic is in very simple language.
+- Give the learner immediate context before any cards or rules.
+- Start the lesson in a calm teacher voice, not with boilerplate.
+- Sound like a real topic introduction, not a cold label plus a thin definition.
 
-6. Answer guidance quality (10)
-- Answers explain reasoning, not only final forms.
-- Guidance helps learners self-correct future attempts.
+### 2. Examples
+- Show the topic in real sentences early.
+- Use balanced weak/strong pairs.
+- Keep examples relevant to the topic and different from practice items.
 
-## 2) Form Excellence (30 points)
+### 3. Lesson Map
+- Must be clickable.
+- Must link to the major sections inside the lesson.
+- Should help scanning, not add clutter.
+- Should work like a simple table of contents the learner can actually use.
 
-1. Required structure (10)
-- Must include:
-  - `Topic Explanation and Use`
-  - `Real-World Examples ...`
-  - `Common Errors with ...`
-  - `Practice`
-  - `Answer Guide`
-  - `Interactive Exercise Test`
+### 4. Core Lesson
+- Explain the main rule or idea clearly.
+- Use short sentences, useful bullets, and visible cards.
+- Avoid jargon unless it is truly needed.
+- Major sections should begin with a short intro line so learners know what this part is doing.
 
-2. Forbidden headings (hard fail if present)
-- `Goal`
-- `What ...`
-- `Key Rule in Plain Language`
+### 5. Common Mistakes
+- Focus on topic-specific learner errors.
+- Each card must include:
+  - `Weak`
+  - `Strong`
+  - `Fix`
 
-3. Interaction quality (10)
-- Exactly one interactive exercise type per lesson page.
-- Accordion layout for errors/practice/answers must be present and clear.
+### 6. Practice Lab
+- One interactive practice area only.
+- No non-interactive duplicate practice sections.
+- Must give immediate feedback.
+- Must include a visible score and reset.
 
-4. Scanability and readability (10)
-- Strong bullet/list structure for quick navigation.
-- Limited long-sentence density.
-- Visual hierarchy should make reading feel guided, not wall-of-text.
+### 7. Why It Matters
+- Explain why the topic matters in real English and in IELTS/CELPIP performance.
+- This section should sound like a teacher, not a template.
 
-## 3) Pass Threshold
+### 8. Get Feedback
+- Use the shared support callout.
+- Keep it visually strong but still secondary to the lesson.
 
-- **Excellent threshold:** 85/100 minimum.
-- <85 requires rewrite before acceptance.
+## Writing Principles
 
-## 4) Enforcement
+- Use plain language first.
+- Teach meaning before terminology.
+- Avoid generic filler that could fit any lesson.
+- Avoid repeating the same example in explanation and practice.
+- Use formatting to guide the eye:
+  - bold
+  - italics
+  - underlines where useful
+  - small, purposeful emoji use
 
-- Automated audit script: `scripts/audit-grammar-lesson-excellence.mjs`
-- Command:
-  - `npm run lesson:audit:excellence`
-  - optional strict threshold: `npm run lesson:audit:excellence -- --fail-below=90`
+## Forbidden Patterns
 
+- `## Goal`
+- `## What ...`
+- `## Key Rule in Plain Language`
+- `## Practice`
+- `## Answer Guide`
+- `## Topic Explanation and Use`
+- `## Real-World Examples ...`
+- `## Common Errors with ...`
+- `## Interactive Practice Lab`
+- accordion-based hidden teaching content
+- generic boilerplate that could fit any topic
+
+## Publication Rule
+
+No lesson should be published unless it passes:
+
+- `npm run lesson:align`
+- `npm run lesson:check:standards`
+- `npm run lesson:audit:excellence`
+
+## Source Reference
+
+When structure or explanatory style is in doubt, use **Grammar Monster** as the reference point for:
+
+- context-first teaching
+- clear examples
+- sectioned explanation
+- explicit "why this matters" value

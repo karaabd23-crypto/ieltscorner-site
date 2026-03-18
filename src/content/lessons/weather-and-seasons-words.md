@@ -36,7 +36,40 @@ premium: false
 priceCAD: 0
 draft: false
 ---
-## Topic Explanation and Use
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Weather and Seasons Words</strong> is about the words and phrases you need for real English. This lesson shows what the key words mean, where they fit, and how to use them in natural sentences without sounding forced.</p></div>
+
+## Examples
+<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>Weather and Seasons Words</u> in real sentences.</p>
+<div class="lesson-example-grid">
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 1</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The weather report said very hot weather was coming.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>The forecast warned of a heatwave.</p>
+  <p class="lesson-card-note">The stronger version names the real meaning instead of staying vague.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 2</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The road was dangerous because it had ice on it.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Icy roads made the route dangerous.</p>
+  <p class="lesson-card-note">The better sentence sounds more natural for a real task and a real reader.</p>
+</article>
+</div>
+
+## Lesson Map
+<div class="lesson-map">
+  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+  <ul class="lesson-map-list">
+    <li><a href="#examples">&#10024; Examples</a></li>
+    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
+    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
+    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
+    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
+  </ul>
+</div>
+
+## Core Lesson
+<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Core idea</p>
@@ -60,39 +93,8 @@ draft: false
   </section>
 </div>
 
-## Real-World Examples with Weather and Seasons Words
-<div class="lesson-example-grid">
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The weather report said very hot weather was coming.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>The forecast warned of a heatwave.</p>
-  <p class="lesson-card-note">The stronger version names the real meaning instead of staying vague.</p>
-</article>
-<article class="lesson-example-card">
-  <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The road was dangerous because it had ice on it.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Icy roads made the route dangerous.</p>
-  <p class="lesson-card-note">The better sentence sounds more natural for a real task and a real reader.</p>
-</article>
-</div>
-
-## Word Bank and Useful Chunks
-<div class="lesson-resource-grid">
-  <article class="lesson-resource-card">
-    <p class="lesson-card-label">Word bank</p>
-    <ul><li>forecast: a prediction about weather</li><li>heatwave: a period of very hot weather</li><li>heavy rainfall: a lot of rain in a short time</li><li>icy roads: roads covered with ice</li><li>mild climate: weather that is not extreme</li><li>seasonal change: the shift from one season to another</li></ul>
-  </article>
-  <article class="lesson-resource-card">
-    <p class="lesson-card-label">Useful chunks</p>
-    <ul><li>use precise language</li><li>learn a natural phrase</li><li>match the register</li><li>give a real example</li></ul>
-  </article>
-  <article class="lesson-resource-card">
-    <p class="lesson-card-label">Sentence frames</p>
-    <ul><li>One useful term is...</li><li>A stronger way to say this is...</li><li>This word works when...</li></ul>
-  </article>
-</div>
-
-## Common Errors with Weather and Seasons Words
+## Common Mistakes
+<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -117,7 +119,8 @@ draft: false
 </article>
 </div>
 
-## Interactive Practice Lab
+## Practice Lab
+<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>
@@ -184,6 +187,9 @@ draft: false
 </article>
   </div>
 </div>
+
+## Why It Matters
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> good vocabulary is not just about knowing a word. You need the <em>right</em> word in the <em>right</em> sentence. When you control Weather and Seasons Words, you sound clearer, more natural, and more precise in real English.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">
