@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { readdir, readFile } from 'node:fs/promises';
+import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import {
   claimPostOwnership,
@@ -7,7 +7,6 @@ import {
   fetchRecentChannelTexts,
   hasFingerprint,
   hasRecentTopic,
-  htmlToPlainText,
   loadPostHistory,
   rememberFingerprint,
   releasePostOwnershipClaim,
@@ -17,72 +16,677 @@ import {
   toCanonicalPostText,
 } from './lib/telegram-dedupe.mjs';
 
-const LESSONS_DIR = path.join(process.cwd(), 'src', 'content', 'lessons');
+const SITE_URL = 'https://ieltscorner.ca';
+const CHANNEL_URL = 'https://t.me/kaysenglishcorner';
 
-const SIGNATURE_BLOCK = [
-  '🌈✨ Kay\'s English Corner',
-  'Your Gateway to English Success in Canada 🇨🇦',
-  '🌐 Lessons + services: https://ieltscorner.ca',
-  '🔗 Join us: https://t.me/kaysenglishcorner',
-].join('\n');
+const FOOTER_LINES = [
+  '🌈✨ Kay\'s English Corner 🇨🇦',
+  'Your Gateway to English Success',
+  '🌐 More lessons: https://ieltscorner.ca',
+  '🧑‍🏫 Tutoring | ✍️ Writing feedback: https://ieltscorner.ca/tutoring | https://ieltscorner.ca/essay-correction',
+];
 
-const CATEGORY_LABELS = {
-  grammar: { lesson: '🔎 Grammar Fix', mini: '⚡ Quick Grammar' },
-  vocabulary: { lesson: '🔄 Useful English', mini: '🔑 Word Power' },
-  writing: { lesson: '✍️ Writing Move', mini: '✍️ Quick Writing' },
-  speaking: { lesson: '🎤 Speaking Tip', mini: '🗣 Quick Speaking' },
-  reading: { lesson: '📘 Reading Skill', mini: '📘 Quick Reading' },
-  listening: { lesson: '🎧 Listening Tip', mini: '🎧 Quick Listening' },
-  exam: { lesson: '🎯 Exam Skill', mini: '🎯 Quick Skill' },
-};
-
-const CATEGORY_HOOKS = {
-  grammar: [
-    'This small change makes a big difference.',
-    'A lot of learners get this wrong at first.',
-    'This one looks small, but it changes the whole sentence.',
-  ],
-  vocabulary: [
-    'These words look similar, but they do different jobs.',
-    'This pair confuses a lot of learners.',
-    'If you mix these up, your English sounds less natural.',
-  ],
-  writing: [
-    'This is one of the easiest ways to make your writing stronger.',
-    'A better score often starts with one cleaner writing move.',
-    'This is not about longer sentences. It is about smarter ones.',
-  ],
-  speaking: [
-    'You do not need a long answer. You need a clear one.',
-    'A short clear answer is usually better than a messy long one.',
-    'This tip helps you sound more natural right away.',
-  ],
-  reading: [
-    'This skill saves time and stops panic in reading tasks.',
-    'A better reading score often comes from one smarter habit.',
-    'Do not read everything the same way. Read with a target.',
-  ],
-  listening: [
-    'This tip helps you stop chasing every single word.',
-    'A stronger listening score starts with better attention, not more stress.',
-    'You do not need every word. You need the right words.',
-  ],
-  exam: [
-    'A better exam result often comes from one simpler habit.',
-    'This is the kind of move that saves time under pressure.',
-    'Small strategy changes can raise your score fast.',
-  ],
-};
-
-const CATEGORY_PERSIAN_NOTES = {
-  grammar: 'اول معنی رو بگیر، بعد فرم درست رو بذار توی جمله.',
-  vocabulary: 'کلمه رو با جمله یاد بگیر، نه فقط با ترجمه.',
-  writing: 'قبل نوشتن، کار هر جمله و هر پاراگراف رو معلوم کن.',
-  speaking: 'کوتاه و واضح بگو، بعد یه دلیل یا مثال اضافه کن.',
-  reading: 'اول سوال رو بفهم، بعد برو سراغ کلمه یا ایده‌ی کلیدی.',
-  listening: 'دنبال تک‌تک کلمه‌ها نباش؛ معنی کلی و کلمات مهم رو بگیر.',
-  exam: 'اول هدف سوال رو بفهم، بعد با یه روش ساده جوابش کن.',
-};
+const CHANNEL_TOPICS = [
+  {
+    id: 'both-either-neither',
+    lessonSlugs: ['both-either-neither-b2'],
+    hashtags: ['#Grammar', '#CELPIP', '#B2English'],
+    lesson: {
+      title: '🔎 Grammar Fix: both, either, neither',
+      lines: [
+        'When your sentence is about 2 people or 2 choices, these 3 words do different jobs 👇',
+        '',
+        'Example situation:',
+        'You are talking about two job options, two people, or two answers.',
+        '',
+        '✅ both = هر دو',
+        '👉 either = یکی از دوتا',
+        '🚫 neither = هیچ‌کدوم از دوتا',
+        '',
+        '❌ Both the teacher and the students was ready on time.',
+        '✅ Both the teacher and the students were ready on time.',
+        '',
+        '💡 Quick rule:',
+        'After both A and B, the verb is usually plural.',
+        '',
+        '✅ Both my brother and my sister live in Calgary.',
+        '✅ Either answer is fine.',
+        '✅ Neither option works for me.',
+        '',
+        '📌 Where this helps:',
+        'very common in speaking, email writing, and opinion sentences with 2 options.',
+        '',
+        '🇮🇷 فارسیِ کاربردی:',
+        'both یعنی "هر دو". either یعنی "یکی از دوتا". neither یعنی "هیچ‌کدوم".',
+        'توی both A and B معمولا فعل جمع میاد.',
+        '',
+        '🎯 Your turn:',
+        'Write one sentence with both and one with neither.',
+      ],
+      quiz: {
+        question: 'Which sentence is correct?',
+        options: [
+          'Both the teacher and the students was ready.',
+          'Both the teacher and the students were ready.',
+          'Neither options are good.',
+        ],
+        correctIndex: 1,
+        explanation: 'With both A and B, the verb is usually plural.',
+      },
+    },
+    mini: {
+      title: '⚡ Quick Grammar: both / either / neither',
+      lines: [
+        'Two choices? Two people? Start here 👇',
+        '',
+        '👀 Mini scene:',
+        'Either day is fine for me, but neither time works.',
+        '',
+        '✅ Easy map:',
+        'both = هر دو',
+        'either = یکی از دوتا',
+        'neither = هیچ‌کدوم',
+        '',
+        '🇮🇷 فارسی کوتاه:',
+        'وقتی دو تا گزینه داری، اول معنی جمله رو مشخص کن.',
+        'ببین منظورت هر دو تاست، یکی از دوتاست، یا هیچ‌کدوم.',
+        '',
+        '🎯 Mini challenge:',
+        'Make a sentence with either.',
+      ],
+      quiz: {
+        question: 'What does neither mean?',
+        options: ['Both of them', 'One of the two', 'Not this one and not that one'],
+        correctIndex: 2,
+        explanation: 'Neither means not one and not the other.',
+      },
+    },
+  },
+  {
+    id: 'few-a-few-little-a-little',
+    lessonSlugs: ['few-a-few-little-a-little'],
+    hashtags: ['#Grammar', '#LearnEnglish', '#B1English'],
+    lesson: {
+      title: '🔎 Grammar Fix: few / a few / little / a little',
+      lines: [
+        'When you talk about small quantities, this tiny difference changes the whole feeling 👇',
+        '',
+        'This comes up a lot with time, money, friends, and chances.',
+        '',
+        'a few = some, enough',
+        'few = almost none',
+        'a little = some, enough',
+        'little = almost none',
+        '',
+        '✅ I have a few friends here, so I feel okay.',
+        '❌ I have few friends here. (This sounds negative.)',
+        '',
+        '✅ I have a little time before class.',
+        '❌ I have little time today. (Almost no time.)',
+        '',
+        '📌 Where this helps:',
+        'IELTS and CELPIP writing often needs careful quantity words.',
+        '',
+        '🇮🇷 فارسیِ کاربردی:',
+        'a few / a little یعنی "یه مقدار هست".',
+        'few / little یعنی "خیلی کمه، تقریبا هیچی".',
+        'اون a کوچیک، حس جمله رو عوض می‌کنه.',
+        '',
+        '🎯 Your turn:',
+        'Write one sentence with a few and one with little.',
+      ],
+      quiz: {
+        question: 'Which one sounds more positive?',
+        options: ['few friends', 'a few friends', 'little time'],
+        correctIndex: 1,
+        explanation: 'a few sounds positive because it means some, enough.',
+      },
+    },
+    mini: {
+      title: '⚡ Quick Grammar: the tiny a matters',
+      lines: [
+        'This is for quantity words like time, money, and friends 👇',
+        '',
+        '👀 Look at this:',
+        'a few friends = some friends',
+        'few friends = almost no friends',
+        '',
+        '✅ Quick feeling:',
+        'a few / a little = some',
+        'few / little = almost none',
+        '',
+        '🇮🇷 فارسی کوتاه:',
+        'اون a کوچیک خیلی مهمه.',
+        'با a، حس جمله معمولا بهتره. بدون a، کمبود رو می‌رسونه.',
+        '',
+        '🎯 Mini challenge:',
+        'Make a sentence with a little.',
+      ],
+      quiz: {
+        question: 'Which means almost no time?',
+        options: ['a little time', 'little time', 'a few time'],
+        correctIndex: 1,
+        explanation: 'little time means almost no time.',
+      },
+    },
+  },
+  {
+    id: 'should-base-verb',
+    lessonSlugs: ['should-for-advice'],
+    hashtags: ['#Grammar', '#DailyEnglish', '#B1English'],
+    lesson: {
+      title: '🔎 Grammar Fix: should + base verb',
+      lines: [
+        'When you give advice in English, this is one of the most common mistakes 👇',
+        '',
+        'You hear this in daily English, emails, and speaking tests all the time.',
+        '',
+        '❌ You should to call them.',
+        '✅ You should call them.',
+        '',
+        '💡 Rule:',
+        'After should, use the base verb.',
+        'should go / should wait / should ask',
+        '',
+        '✅ You should check the address first.',
+        '✅ He should call the clinic before he goes.',
+        '',
+        '📌 Where this helps:',
+        'advice, suggestions, and recommendations in speaking and writing.',
+        '',
+        '🇮🇷 فارسیِ کاربردی:',
+        'بعد از should، فعل ساده میاد.',
+        'نه to می‌ذاریم، نه ing.',
+        'مثلا: should study / should ask',
+        '',
+        '🎯 Your turn:',
+        'Write one sentence with should about tomorrow.',
+      ],
+      quiz: {
+        question: 'Which one is correct?',
+        options: ['You should to wait.', 'You should waiting.', 'You should wait.'],
+        correctIndex: 2,
+        explanation: 'After should, use the base verb.',
+      },
+    },
+    mini: {
+      title: '⚡ Quick Grammar: after should',
+      lines: [
+        'Giving advice? Keep this pattern in your head 👇',
+        '',
+        '✅ should call',
+        '❌ should to call',
+        '',
+        '🇮🇷 فارسی کوتاه:',
+        'بعد از should فقط فعل ساده میاد.',
+        'مثلا should wait / should ask',
+        '',
+        '🎯 Mini challenge:',
+        'Make one sentence with should.',
+      ],
+      quiz: {
+        question: 'What comes after should?',
+        options: ['to + verb', 'verb-ing', 'base verb'],
+        correctIndex: 2,
+        explanation: 'Use the base verb after should.',
+      },
+    },
+  },
+  {
+    id: 'borrow-vs-lend',
+    lessonSlugs: [],
+    hashtags: ['#Vocabulary', '#LearnEnglish', '#DailyEnglish'],
+    lesson: {
+      title: '🔄 Useful English: borrow vs lend',
+      lines: [
+        'At school, work, or with friends, this pair comes up all the time 👇',
+        '',
+        'The situation is the same. The direction changes.',
+        '',
+        'borrow = take and use for a short time',
+        'lend = give to someone for a short time',
+        '',
+        '✅ Can I borrow your charger?',
+        '✅ I can lend you mine.',
+        '❌ Can you borrow me your charger?',
+        '',
+        '📌 Easy way to remember it:',
+        'If it comes to you, borrow.',
+        'If it goes from you to another person, lend.',
+        '',
+        '🇮🇷 فارسیِ کاربردی:',
+        'اگه داری می‌گیری borrow.',
+        'اگه داری می‌دی lend.',
+        'یعنی جهت حرکت وسیله مهمه.',
+        '',
+        '🎯 Your turn:',
+        'Write one question with borrow and one offer with lend.',
+      ],
+      quiz: {
+        question: 'If I give you my book for a day, what do I do?',
+        options: ['borrow', 'lend', 'rent'],
+        correctIndex: 1,
+        explanation: 'If you give it, you lend it.',
+      },
+    },
+    mini: {
+      title: '🔑 Word Power: borrow or lend?',
+      lines: [
+        'One person gives it. One person receives it. That is the whole difference 👇',
+        '',
+        'You receive it = borrow',
+        'You give it = lend',
+        '',
+        '🇮🇷 فارسی کوتاه:',
+        'گرفتن = borrow',
+        'دادن = lend',
+        'پس اول ببین وسیله داره به سمت تو میاد یا از تو می‌ره.',
+        '',
+        '🎯 Mini challenge:',
+        'Make one sentence with borrow.',
+      ],
+      quiz: {
+        question: 'Which means گرفتن؟',
+        options: ['borrow', 'lend', 'return'],
+        correctIndex: 0,
+        explanation: 'borrow means گرفتن.',
+      },
+    },
+  },
+  {
+    id: 'make-vs-do',
+    lessonSlugs: [],
+    hashtags: ['#Vocabulary', '#WorkEnglish', '#DailyEnglish'],
+    lesson: {
+      title: '🔄 Useful English: make vs do',
+      lines: [
+        'These two are everywhere in daily English, especially in common collocations 👇',
+        '',
+        'A lot of mistakes happen because learners translate directly from Persian.',
+        '',
+        'make = create a result',
+        'do = an action, task, or job',
+        '',
+        '✅ make a plan',
+        '✅ make a mistake',
+        '✅ do homework',
+        '✅ do your best',
+        '',
+        '❌ do a mistake',
+        '✅ make a mistake',
+        '',
+        '📌 Where this helps:',
+        'homework, work English, and everyday speaking.',
+        '',
+        '🇮🇷 فارسیِ کاربردی:',
+        'make بیشتر حس "ساختن / ایجاد نتیجه" می‌ده.',
+        'do بیشتر با "کار / وظیفه / انجام دادن" میاد.',
+        '',
+        '🎯 Quick challenge:',
+        'Write one sentence with make and one with do.',
+      ],
+      quiz: {
+        question: 'Which one is correct?',
+        options: ['do a mistake', 'make a mistake', 'make homework'],
+        correctIndex: 1,
+        explanation: 'We say make a mistake.',
+      },
+    },
+    mini: {
+      title: '🔑 Word Power: make or do?',
+      lines: [
+        'If homework / mistake / plan keeps confusing you, use this map 👇',
+        '',
+        'result = make',
+        'task = do',
+        '',
+        '🇮🇷 فارسی کوتاه:',
+        'نتیجه یا ساختن = make',
+        'کار یا وظیفه = do',
+        'ولی بهتره کل عبارت رو با هم یاد بگیری: do homework / make a mistake',
+        '',
+        '🎯 Mini challenge:',
+        'Make a sentence with do homework.',
+      ],
+      quiz: {
+        question: 'Which collocation is correct?',
+        options: ['do a mistake', 'make a mistake', 'do a plan'],
+        correctIndex: 1,
+        explanation: 'We say make a mistake.',
+      },
+    },
+  },
+  {
+    id: 'used-to-vs-be-used-to',
+    lessonSlugs: ['used-to-for-past-habits'],
+    hashtags: ['#Grammar', '#B1English', '#LearnEnglish'],
+    lesson: {
+      title: '🔎 Grammar Fix: used to vs be used to',
+      lines: [
+        'Use this when you compare your old habits with what feels normal now 👇',
+        '',
+        'This is very common when people talk about life changes, moving, work shifts, or Canada life.',
+        '',
+        'used to + verb = a past habit or past state',
+        'be used to + noun / verb-ing = something feels normal now',
+        '',
+        '✅ I used to work nights.',
+        '✅ I am used to working nights now.',
+        '❌ I am used to work nights.',
+        '',
+        '📌 The core difference:',
+        'used to = past only',
+        'be used to = now it feels normal',
+        '',
+        '🇮🇷 فارسیِ کاربردی:',
+        'used to یعنی قبلا این کار رو می‌کردم.',
+        'be used to یعنی الان بهش عادت دارم.',
+        'بعد از be used to معمولا noun یا verb-ing میاد.',
+        '',
+        '🎯 Your turn:',
+        'Write one sentence with used to and one with be used to.',
+      ],
+      quiz: {
+        question: 'Which one means الان بهش عادت دارم؟',
+        options: ['I used to drive to work.', 'I am used to driving to work.', 'I use to drive to work.'],
+        correctIndex: 1,
+        explanation: 'be used to + ing means something feels normal now.',
+      },
+    },
+    mini: {
+      title: '⚡ Quick Grammar: used to / be used to',
+      lines: [
+        'Talking about before and now? Start here 👇',
+        '',
+        'used to = قبلا',
+        'be used to = الان عادت دارم',
+        '',
+        '🇮🇷 فارسی کوتاه:',
+        'used to = قبلا انجام می‌دادم',
+        'be used to = الان برام عادیه',
+        'بعد از be used to، فعل ساده نمیاد.',
+        '',
+        '🎯 Mini challenge:',
+        'Make one sentence with used to.',
+      ],
+      quiz: {
+        question: 'What comes after be used to?',
+        options: ['base verb', 'noun or verb-ing', 'to + verb only'],
+        correctIndex: 1,
+        explanation: 'Use a noun or verb-ing after be used to.',
+      },
+    },
+  },
+  {
+    id: 'articles-a-an-the',
+    lessonSlugs: ['a-an-and-the'],
+    hashtags: ['#Grammar', '#IELTS', '#B1English'],
+    lesson: {
+      title: '🔎 Grammar Fix: a / an / the',
+      lines: [
+        'Imagine you are telling a tiny story in English. First mention or specific thing? 👇',
+        '',
+        '👀 Look at this:',
+        'I saw a dog outside.',
+        'The dog was very friendly.',
+        '',
+        '✅ Easy feeling:',
+        'a / an = one thing, not specific yet',
+        'the = now we know exactly which one',
+        '',
+        '📌 Why this works:',
+        'first time you mention it = a/an',
+        'second time, when both people know which one = the',
+        '',
+        '🇮🇷 فارسی خودمونی:',
+        'a / an یعنی "یکی، ولی هنوز مشخص نیست کدوم".',
+        'the یعنی "همونی که الان مشخصه".',
+        'اول می‌گی a dog. بعد که معلوم شد همون سگه، می‌گی the dog.',
+        '',
+        '🎯 Your turn:',
+        'Make a 2-sentence mini story with a and then the.',
+      ],
+      quiz: {
+        question: 'Which sentence works best?',
+        options: ['I bought the book yesterday. It was just any book.', 'I bought a book yesterday. The book is on my desk now.', 'I bought an book yesterday.'],
+        correctIndex: 1,
+        explanation: 'Use a for first mention, then the for the specific book.',
+      },
+    },
+    mini: {
+      title: '⚡ Quick Grammar: first mention / second mention',
+      lines: [
+        'You mention something once, then mention the same thing again. That is where articles click 👇',
+        '',
+        '👀 Look at this:',
+        'I saw a cat. The cat ran away.',
+        '',
+        '✅ Quick rule:',
+        'first time = a / an',
+        'second time = the',
+        '',
+        '🇮🇷 فارسی کوتاه:',
+        'اول بار معرفی می‌کنی: a / an',
+        'دوباره به همون اشاره می‌کنی: the',
+        'پس فرق اصلیش مشخص بودن چیزیه که داری درباره‌ش حرف می‌زنی.',
+        '',
+        '🎯 Mini challenge:',
+        'Write a 2-sentence example.',
+      ],
+      quiz: {
+        question: 'Which comes first in a new story?',
+        options: ['the', 'a/an', 'no article always'],
+        correctIndex: 1,
+        explanation: 'Use a or an when you mention something for the first time.',
+      },
+    },
+  },
+  {
+    id: 'prepositions-in-context',
+    lessonSlugs: ['prepositions-context-b1'],
+    hashtags: ['#Vocabulary', '#IELTS', '#B1English'],
+    lesson: {
+      title: '🔄 Useful English: prepositions in context',
+      lines: [
+        'This matters when one English word always comes with a certain preposition 😵',
+        '',
+        'The trap is direct translation.',
+        '',
+        '❌ interested on',
+        '✅ interested in',
+        '',
+        '❌ arrive to the station',
+        '✅ arrive at the station',
+        '',
+        '💡 Better way to learn them:',
+        'Do not memorize one word alone.',
+        'Memorize the whole chunk.',
+        '',
+        '✅ interested in music',
+        '✅ good at math',
+        '✅ depend on your team',
+        '',
+        '📌 Where this helps:',
+        'IELTS/CELPIP writing, because the wrong preposition sounds unnatural fast.',
+        '',
+        '🇮🇷 فارسیِ کاربردی:',
+        'حرف اضافه رو تنها حفظ نکن.',
+        'کل عبارت رو با هم یاد بگیر.',
+        'مثلا interested in / good at / depend on',
+        '',
+        '🎯 Your turn:',
+        'Write one sentence with good at or interested in.',
+      ],
+      quiz: {
+        question: 'Which chunk is correct?',
+        options: ['interested on politics', 'interested in politics', 'interested at politics'],
+        correctIndex: 1,
+        explanation: 'We say interested in.',
+      },
+    },
+    mini: {
+      title: '🔑 Word Power: learn the whole chunk',
+      lines: [
+        'Word + preposition is one package. Learn it that way 👇',
+        '',
+        '✅ interested in',
+        '✅ good at',
+        '✅ depend on',
+        '',
+        '🇮🇷 فارسی کوتاه:',
+        'حرف اضافه رو با خودِ عبارت حفظ کن، نه جدا.',
+        'یعنی بگو interested in، نه فقط interested.',
+        '',
+        '🎯 Mini challenge:',
+        'Make one sentence with good at.',
+      ],
+      quiz: {
+        question: 'Which one is correct?',
+        options: ['good in math', 'good at math', 'good on math'],
+        correctIndex: 1,
+        explanation: 'We say good at.',
+      },
+    },
+  },
+  {
+    id: 'walk-in-clinic',
+    lessonSlugs: [],
+    hashtags: ['#RealCanada', '#CanadianEnglish', '#SpeakingEnglish'],
+    lesson: {
+      title: '🇨🇦 Real Canada: what to say at a walk-in clinic 🩺',
+      lines: [
+        'You feel sick... and suddenly you need English fast 😬',
+        '',
+        'In Canada, a walk-in clinic is a place you go when you need a doctor but do not have an appointment.',
+        '',
+        '👉 STEP 1: Start simply',
+        '"Hi, I\'d like to see a doctor."',
+        '',
+        '👉 STEP 2: Say the problem',
+        '"I have a fever."',
+        '"I have a sore throat."',
+        '"It started last night."',
+        '',
+        '👉 STEP 3: Ask one practical question',
+        '"Do I need an appointment?"',
+        '"Can I use my health card here?"',
+        '',
+        '💡 Best part:',
+        'You do not need perfect English.',
+        'You need short, clear English.',
+        '',
+        '🇮🇷 فارسیِ کاربردی:',
+        'لازم نیست خیلی رسمی یا پیچیده حرف بزنی.',
+        'کوتاه بگو مشکلت چیه و از کی شروع شده.',
+        'بعدش یه سوال ساده بپرس.',
+        '',
+        '🎯 Say this once out loud:',
+        '"Hi, I\'d like to see a doctor. I\'ve had a fever since yesterday."',
+      ],
+      quiz: {
+        question: 'Which opening line sounds natural at a clinic?',
+        options: ['I would like see doctor immediately now.', 'Hi, I\'d like to see a doctor.', 'Give me health card doctor.'],
+        correctIndex: 1,
+        explanation: 'Keep it short and clear.',
+      },
+    },
+    mini: {
+      title: '🇨🇦 Real Canada: clinic English in one line',
+      lines: [
+        'If you freeze at the front desk, start here 👇',
+        '',
+        '"Hi, I\'d like to see a doctor."',
+        '',
+        '🇮🇷 فارسی کوتاه:',
+        'اگه استرس گرفتی، با همین یه جمله شروع کن.',
+        'بعدش فقط علامت یا مشکلت رو اضافه کن.',
+        '',
+        '🎯 Mini challenge:',
+        'Add one symptom after it.',
+      ],
+      quiz: {
+        question: 'What is the safest first line?',
+        options: ['I need all medicine now.', 'Hi, I\'d like to see a doctor.', 'Doctor where?'],
+        correctIndex: 1,
+        explanation: 'That is the clearest polite opening line.',
+      },
+    },
+  },
+  {
+    id: 'celpip-cover-all-points',
+    lessonSlugs: ['celpip-task1-covering-all-prompt-points-b2'],
+    hashtags: ['#CELPIP', '#Writing', '#B2English'],
+    lesson: {
+      title: '✍️ CELPIP Writing Task 1: cover every prompt point',
+      lines: [
+        'In CELPIP Writing Task 1, the email prompt gives you jobs to do. Usually they are shown as bullet points 👇',
+        '',
+        '👀 Look at this kind of prompt:',
+        'explain the problem',
+        'apologize',
+        'ask for a next step',
+        '',
+        'If your email sounds fluent but one of these jobs is missing, the response feels incomplete.',
+        '',
+        '✅ Before you write, ask:',
+        '1) What do I need to do?',
+        '2) What details must I include?',
+        '3) Did I answer every bullet?',
+        '',
+        '💡 Strong habit:',
+        'Underline each prompt point first.',
+        'Then match one sentence group to each point.',
+        '',
+        '📌 Where this helps:',
+        'Task Response in CELPIP Writing Task 1.',
+        '',
+        '🇮🇷 فارسی خودمونی:',
+        'خیلی وقتا مشکل زبان نیست.',
+        'مشکل اینه که یکی از bulletها جا می‌مونه.',
+        'قبل از نوشتن، bulletها رو جدا کن.',
+        'بعد مطمئن شو برای هر کدوم توی جوابت یه بخش داری.',
+        '',
+        '🎯 Your turn:',
+        'Next time, count the prompt points before you start writing.',
+      ],
+      quiz: {
+        question: 'What should you check before writing?',
+        options: ['Only the greeting', 'Every prompt point', 'Only the last line'],
+        correctIndex: 1,
+        explanation: 'You need to cover every prompt point.',
+      },
+    },
+    mini: {
+      title: '✍️ CELPIP Writing Task 1: do not miss a bullet',
+      lines: [
+        'You open the email prompt and see 3 bullet points. That means the task has 3 jobs, not 1 👇',
+        '',
+        'If you miss one bullet, you lose easy marks.',
+        '',
+        '👀 Example prompt jobs:',
+        'explain the issue',
+        'apologize',
+        'ask for a next step',
+        '',
+        'If one of these is missing, your answer sounds incomplete.',
+        '',
+        '🇮🇷 فارسی کوتاه:',
+        'توی Task 1 ایمیل، اول bulletها رو بشمار.',
+        'بعد مطمئن شو برای هر bullet یه تیک توی برنامه‌ات داری.',
+        'جواب خوب ولی ناقص، نمره کامل نمی‌گیره.',
+        '',
+        '🎯 Mini challenge:',
+        'Underline each bullet in your next CELPIP email prompt.',
+      ],
+      quiz: {
+        question: 'What causes easy score loss?',
+        options: ['Covering all bullets', 'Missing one prompt point', 'Using a clear plan'],
+        correctIndex: 1,
+        explanation: 'Missing even one prompt point can hurt the score.',
+      },
+    },
+  },
+];
 
 function stripWrappingQuotes(value) {
   const trimmed = String(value ?? '').trim();
@@ -115,15 +719,13 @@ async function loadEnvFile(filePath) {
 }
 
 async function loadEnvFiles() {
-  const root = process.cwd();
-  await loadEnvFile(path.join(root, '.env'));
-  await loadEnvFile(path.join(root, '.env.local'));
+  await loadEnvFile(path.join(process.cwd(), '.env'));
+  await loadEnvFile(path.join(process.cwd(), '.env.local'));
 }
 
 function parseArgs(argv) {
   const options = {
     dryRun: false,
-    exam: 'AUTO',
     mode: 'lesson',
     topic: '',
   };
@@ -132,172 +734,24 @@ function parseArgs(argv) {
     const arg = argv[index];
     if (arg === '--dry-run') {
       options.dryRun = true;
-    } else if (arg === '--exam') {
-      options.exam = String(argv[index + 1] ?? 'auto').toUpperCase();
-      index += 1;
     } else if (arg === '--mode') {
       options.mode = String(argv[index + 1] ?? 'lesson').toLowerCase();
       index += 1;
     } else if (arg === '--topic') {
       options.topic = String(argv[index + 1] ?? '').trim();
       index += 1;
+    } else if (arg === '--exam') {
+      index += 1;
     } else {
       throw new Error(`Unknown argument: ${arg}`);
     }
   }
 
-  const validExams = new Set(['AUTO', 'IELTS', 'CELPIP', 'ESL']);
-  if (!validExams.has(options.exam)) {
-    throw new Error('--exam must be one of: auto, IELTS, CELPIP, ESL');
-  }
-
-  const validModes = new Set(['lesson', 'mini-tip']);
-  if (!validModes.has(options.mode)) {
+  if (!new Set(['lesson', 'mini-tip']).has(options.mode)) {
     throw new Error('--mode must be one of: lesson, mini-tip');
   }
 
   return options;
-}
-
-function extractScalar(frontmatter, fieldName) {
-  const quotedMatch = frontmatter.match(new RegExp(`^${fieldName}:\\s*"([^"]*)"\\s*$`, 'm'));
-  if (quotedMatch) return quotedMatch[1].trim();
-
-  const singleQuotedMatch = frontmatter.match(new RegExp(`^${fieldName}:\\s*'([^']*)'\\s*$`, 'm'));
-  if (singleQuotedMatch) return singleQuotedMatch[1].trim();
-
-  const plainMatch = frontmatter.match(new RegExp(`^${fieldName}:\\s*([^\\n]+?)\\s*$`, 'm'));
-  return plainMatch ? plainMatch[1].trim() : '';
-}
-
-function extractList(frontmatter, fieldName) {
-  const match = frontmatter.match(new RegExp(`^${fieldName}:\\s*\\[([^\\]]*)\\]\\s*$`, 'm'));
-  if (!match) return [];
-
-  return match[1]
-    .split(',')
-    .map((item) => stripWrappingQuotes(item))
-    .map((item) => item.trim())
-    .filter(Boolean);
-}
-
-function extractQuiz(frontmatter) {
-  const quizMatch = frontmatter.match(
-    /-\s*prompt:\s*"([^"]+)"[\s\S]*?options:\s*\n((?:\s*-\s*"[^"]+"\s*\n)+)\s*correctIndex:\s*(\d+)\s*\n\s*explanation:\s*"([^"]+)"/m,
-  );
-  if (!quizMatch) return null;
-
-  const [, question, optionsBlock, correctIndexRaw, explanation] = quizMatch;
-  const options = [...optionsBlock.matchAll(/-\s*"([^"]+)"/g)].map((match) => match[1].trim());
-  if (options.length < 2) return null;
-
-  const correctIndex = Math.max(0, Math.min(options.length - 1, Number.parseInt(correctIndexRaw, 10) || 0));
-  return {
-    question: question.trim().slice(0, 290),
-    options: options.slice(0, 10),
-    correctIndex,
-    explanation: explanation.trim().slice(0, 180),
-  };
-}
-
-function cleanupLessonTitle(title) {
-  return String(title ?? '')
-    .replace(/\s*\((A1|A2|B1|B2|C1|C2)\)\s*$/i, '')
-    .trim();
-}
-
-function firstSentence(value) {
-  const text = String(value ?? '').replace(/\s+/g, ' ').trim();
-  if (!text) return '';
-  const match = text.match(/^(.+?[.!?])(?:\s|$)/);
-  return (match?.[1] ?? text).trim();
-}
-
-function extractExamplesByClass(body, className) {
-  const collected = [];
-  const pattern = new RegExp(`${className}"><span>[^<]*<\\/span>([\\s\\S]*?)<\\/p>`, 'g');
-  for (const match of body.matchAll(pattern)) {
-    const text = htmlToPlainText(match[1] ?? '').replace(/\s+/g, ' ').trim();
-    if (text && !collected.includes(text)) {
-      collected.push(text);
-    }
-  }
-  return collected;
-}
-
-function extractPatternExamples(body) {
-  const collected = [];
-  for (const match of body.matchAll(/lesson-pattern-sentence">([\s\S]*?)<\/div>/g)) {
-    const text = htmlToPlainText(match[1] ?? '').replace(/\s+/g, ' ').trim();
-    if (text && !collected.includes(text)) {
-      collected.push(text);
-    }
-  }
-  return collected;
-}
-
-function extractFixTip(body) {
-  const match = body.match(/lesson-fix-line"><strong>Fix:<\/strong>\s*([\s\S]*?)<\/p>/);
-  if (!match) return '';
-  return htmlToPlainText(match[1] ?? '').replace(/\s+/g, ' ').trim();
-}
-
-function inferCategory(category, title) {
-  const normalized = String(category ?? '').trim().toLowerCase();
-  if (normalized) return normalized;
-
-  const titleText = String(title ?? '').toLowerCase();
-  if (titleText.includes('writing')) return 'writing';
-  if (titleText.includes('speaking')) return 'speaking';
-  if (titleText.includes('reading')) return 'reading';
-  if (titleText.includes('listening')) return 'listening';
-  if (titleText.includes('vocabulary') || titleText.includes('word formation')) return 'vocabulary';
-  return 'grammar';
-}
-
-function buildLessonHashtags(lesson) {
-  const category = inferCategory(lesson.category, lesson.title);
-  const level = String(lesson.level ?? '').toUpperCase();
-  const examList = Array.isArray(lesson.exam) ? lesson.exam : [];
-  const tags = [
-    {
-      grammar: '#Grammar',
-      vocabulary: '#Vocabulary',
-      writing: '#Writing',
-      speaking: '#Speaking',
-      reading: '#Reading',
-      listening: '#Listening',
-      exam: '#ExamEnglish',
-    }[category] ?? '#LearnEnglish',
-  ];
-
-  if (examList.includes('CELPIP')) {
-    tags.push('#CELPIP');
-  } else if (examList.includes('IELTS')) {
-    tags.push('#IELTS');
-  } else {
-    tags.push('#LearnEnglish');
-  }
-
-  if (level) {
-    tags.push(`#${level}English`);
-  }
-
-  return [...new Set(tags)].slice(0, 4);
-}
-
-function buildFallbackQuiz(lesson) {
-  const title = cleanupLessonTitle(lesson.title);
-  return {
-    question: `What is the main idea in ${title}?`,
-    options: [
-      lesson.heroTip || 'Understand the meaning first',
-      'Use the longest words possible',
-      'Make the sentence more confusing',
-    ],
-    correctIndex: 0,
-    explanation: 'Start with the main meaning and the real job of the sentence.',
-  };
 }
 
 function resolveChatId(explicitChatId, channelUrl) {
@@ -312,144 +766,68 @@ function resolveChatId(explicitChatId, channelUrl) {
   return slug.startsWith('@') ? slug : `@${slug}`;
 }
 
-function seedFromText(value) {
-  return [...String(value ?? '')].reduce((sum, char) => sum + char.codePointAt(0), 0);
-}
+function resolveLessonUrl(lessonSlugs) {
+  if (!Array.isArray(lessonSlugs) || lessonSlugs.length === 0) return '';
 
-function pickFromList(list, seed) {
-  if (!Array.isArray(list) || list.length === 0) return '';
-  return list[Math.abs(seed) % list.length];
-}
-
-function appendSignature(text) {
-  const body = String(text ?? '').trim();
-  if (!body) return SIGNATURE_BLOCK;
-  if (body.includes('Kay\'s English Corner') || body.includes('Kay’s English Corner')) {
-    return body;
-  }
-  return `${body}\n\n${SIGNATURE_BLOCK}`;
-}
-
-function normalizeActionLine(category, title) {
-  if (category === 'writing') {
-    return '🎯 Your turn:\nUse this move in one short IELTS or CELPIP paragraph.';
-  }
-  if (category === 'speaking') {
-    return `🎯 Your turn:\nSay one short answer out loud with ${title.toLowerCase()}.`;
-  }
-  if (category === 'reading' || category === 'listening') {
-    return '🎯 Your turn:\nTry this idea in your next practice set.';
-  }
-  if (category === 'vocabulary') {
-    return `🎯 Quick challenge:\nWrite one sentence with ${title.toLowerCase()}.`;
-  }
-  return `🎯 Your turn:\nMake one sentence with ${title.toLowerCase()}.`;
-}
-
-function buildLessonContent(lesson, mode) {
-  const category = inferCategory(lesson.category, lesson.title);
-  const labels = CATEGORY_LABELS[category] ?? CATEGORY_LABELS.exam;
-  const title = cleanupLessonTitle(lesson.title);
-  const seed = seedFromText(`${lesson.slug}:${mode}`);
-  const hook = pickFromList(CATEGORY_HOOKS[category] ?? CATEGORY_HOOKS.exam, seed);
-  const heroTip = firstSentence(lesson.heroTip) || 'Keep the meaning clear first.';
-  const strongExamples = Array.isArray(lesson.strongExamples) ? lesson.strongExamples : [];
-  const weakExamples = Array.isArray(lesson.weakExamples) ? lesson.weakExamples : [];
-  const patternExamples = Array.isArray(lesson.patternExamples) ? lesson.patternExamples : [];
-  const primaryStrong = strongExamples[0] || patternExamples[0] || '';
-  const secondaryStrong = strongExamples[1] || patternExamples[1] || '';
-  const primaryWeak = weakExamples[0] || '';
-  const fixTip = firstSentence(lesson.fixTip);
-  const persianNote = CATEGORY_PERSIAN_NOTES[category] ?? CATEGORY_PERSIAN_NOTES.exam;
-  const actionLine = normalizeActionLine(category, title);
-
-  const lines = [
-    `${mode === 'mini-tip' ? labels.mini : labels.lesson}: ${title}`,
-    '',
-    hook,
-    '',
+  const slug = lessonSlugs[0];
+  const categoryMap = [
+    ['both-either-neither', 'grammar'],
+    ['few-a-few-little-a-little', 'grammar'],
+    ['should', 'grammar'],
+    ['used-to', 'grammar'],
+    ['article', 'grammar'],
+    ['a-an-and-the', 'grammar'],
+    ['prepositions-context', 'vocabulary'],
+    ['borrow-vs-lend', 'vocabulary'],
+    ['make-vs-do', 'vocabulary'],
+    ['celpip-task1', 'writing'],
   ];
 
-  if (category === 'grammar' || category === 'vocabulary') {
-    if (primaryWeak && primaryStrong) {
-      lines.push('❌ Common mistake:', primaryWeak, '', '✅ Better:', primaryStrong, '');
-    }
-    lines.push('💡 Key point:', heroTip, '');
-    if (secondaryStrong && mode !== 'mini-tip') {
-      lines.push('✍️ One more example:', secondaryStrong, '');
-    }
-  } else if (category === 'writing') {
-    lines.push('💡 The move:', heroTip, '');
-    if (primaryStrong) {
-      lines.push('✅ Strong example:', primaryStrong, '');
-    }
-    if (secondaryStrong) {
-      lines.push(mode === 'mini-tip' ? '✍️ Another useful line:' : '✍️ One more example:', secondaryStrong, '');
-    }
-    if (primaryWeak && mode !== 'mini-tip') {
-      lines.push('❌ Watch for this:', primaryWeak, '');
-    }
-  } else {
-    lines.push('💡 Main tip:', heroTip, '');
-    if (primaryStrong) {
-      lines.push('✅ Example:', primaryStrong, '');
-    }
-    if (secondaryStrong) {
-      lines.push(mode === 'mini-tip' ? '✍️ Another example:' : '✅ Another example:', secondaryStrong, '');
-    }
+  const category = categoryMap.find(([needle]) => slug.includes(needle))?.[1];
+  if (!category) return SITE_URL;
+  return `${SITE_URL}/lessons/${category}/${slug}/`;
+}
+
+function appendFooter(message, lessonSlugs = []) {
+  const lessonUrl = resolveLessonUrl(lessonSlugs);
+  const footer = [...FOOTER_LINES];
+  if (lessonUrl) {
+    footer.splice(2, 0, `📘 Full lesson: ${lessonUrl}`);
   }
+  return `${message.trim()}\n\n${footer.join('\n')}`;
+}
 
-  if (fixTip && mode !== 'mini-tip') {
-    lines.push('🛠 Quick fix:', fixTip, '');
-  }
-
-  lines.push('🇮🇷 فارسی کوتاه:', persianNote, '', actionLine);
-
+function buildMessage(topic, mode) {
+  const variant = mode === 'mini-tip' ? topic.mini : topic.lesson;
+  const text = appendFooter(variant.lines.join('\n'), topic.lessonSlugs);
   return {
-    title,
-    topic: lesson.slug,
-    level: lesson.level || '',
-    postBody: appendSignature(lines.join('\n')),
-    hashtags: buildLessonHashtags(lesson),
-    quizzes: [lesson.quiz || buildFallbackQuiz(lesson)],
+    topicId: topic.id,
+    title: variant.title,
+    postBody: `${variant.title}\n\n${text}`,
+    hashtags: topic.hashtags ?? [],
+    quiz: variant.quiz ?? null,
   };
 }
 
-function buildCustomTopic(topic, mode) {
-  const cleanTopic = String(topic ?? '').trim();
-  const lines = [
-    `${mode === 'mini-tip' ? '⚡ Quick English' : '🔎 English Tip'}: ${cleanTopic}`,
-    '',
-    'This is a useful English point that can help you sound clearer right away.',
-    '',
-    '💡 Key idea:',
-    'Understand the meaning first, then use it in one natural sentence.',
-    '',
-    '🇮🇷 فارسی کوتاه:',
-    'اول معنی رو بگیر، بعد توی یه جمله‌ی طبیعی ازش استفاده کن.',
-    '',
-    `🎯 Your turn:\nMake one sentence with ${cleanTopic.toLowerCase()}.`,
-  ];
+function normalizeSearch(value) {
+  return String(value ?? '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+}
 
-  return {
-    slug: `custom:${cleanTopic.toLowerCase()}`,
-    title: cleanTopic,
-    category: 'grammar',
-    level: 'B1',
-    exam: [],
-    postBody: appendSignature(lines.join('\n')),
-    hashtags: ['#LearnEnglish', '#EnglishTips', '#DailyEnglish'],
-    quizzes: [{
-      question: `What should you do first with ${cleanTopic}?`,
-      options: [
-        'Understand the meaning and use it in one natural sentence',
-        'Memorize a hard definition only',
-        'Make the sentence more complicated than necessary',
-      ],
-      correctIndex: 0,
-      explanation: 'Real learning happens when you connect meaning to a natural example.',
-    }],
-  };
+function findTopicByQuery(query) {
+  const needle = normalizeSearch(query);
+  if (!needle) return null;
+
+  return CHANNEL_TOPICS.find((topic) => {
+    const haystacks = [
+      topic.id,
+      ...(topic.lessonSlugs ?? []),
+      topic.lesson?.title,
+      topic.mini?.title,
+      ...(topic.hashtags ?? []),
+    ].map(normalizeSearch);
+
+    return haystacks.some((haystack) => haystack.includes(needle));
+  }) ?? null;
 }
 
 function pickDeterministicIndex(length, salt = 0) {
@@ -466,194 +844,25 @@ function pickDeterministicIndex(length, salt = 0) {
   return (daySeed + salt) % length;
 }
 
-function normalizeTopicSearch(value) {
-  return String(value ?? '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
-}
-
-function matchesForcedTopic(lesson, topic) {
-  const needle = normalizeTopicSearch(topic);
-  if (!needle) return false;
-
-  const haystacks = [
-    lesson.slug,
-    lesson.title,
-    lesson.excerpt,
-    lesson.heroTip,
-  ].map(normalizeTopicSearch);
-
-  return haystacks.some((haystack) => haystack.includes(needle));
-}
-
-const TELEGRAM_POSITIVE_KEYWORDS = [
-  'article',
-  'articles',
-  'borrow',
-  'lend',
-  'make',
-  'do',
-  'few',
-  'little',
-  'should',
-  'can',
-  'could',
-  'adjective',
-  'adverb',
-  'preposition',
-  'question',
-  'request',
-  'email',
-  'letter',
-  'clinic',
-  'doctor',
-  'pharmacy',
-  'job',
-  'work',
-  'phone',
-  'appointment',
-  'conversation',
-  'speaking',
-  'vocab',
-  'vocabulary',
-  'grammar',
-  'time',
-  'tense',
-  'plural',
-  'singular',
-  'prefix',
-  'suffix',
-  'used to',
-  'present perfect',
-];
-
-const TELEGRAM_NEGATIVE_KEYWORDS = [
-  'advanced',
-  'cohesion',
-  'discourse',
-  'reformulation',
-  'techniques',
-  'ambiguity',
-  'argument structure',
-  'formal expression',
-  'formal essays',
-  'punctuation and sentence control',
-  'stance',
-  'inversion',
-  'emphasis',
-  'clause combinations',
-  'academic discussion',
-  'time management by question type',
-  'recover after missed detail',
-  'note taking symbol system',
-];
-
-function countKeywordHits(text, keywords) {
-  const haystack = normalizeTopicSearch(text);
-  if (!haystack) return 0;
-  return keywords.reduce((count, keyword) => (
-    haystack.includes(normalizeTopicSearch(keyword)) ? count + 1 : count
-  ), 0);
-}
-
-function scoreLessonForTelegram(lesson, mode) {
-  const composite = [
-    lesson.slug,
-    lesson.title,
-    lesson.excerpt,
-    lesson.heroTip,
-    ...(Array.isArray(lesson.strongExamples) ? lesson.strongExamples : []),
-  ].join(' ');
-
-  let score = 0;
-  const category = inferCategory(lesson.category, lesson.title);
-  const level = String(lesson.level ?? '').toUpperCase();
-  const strongExampleCount = Array.isArray(lesson.strongExamples) ? lesson.strongExamples.length : 0;
-  const weakExampleCount = Array.isArray(lesson.weakExamples) ? lesson.weakExamples.length : 0;
-
-  score += strongExampleCount * 8;
-  score += weakExampleCount * 3;
-  score += countKeywordHits(composite, TELEGRAM_POSITIVE_KEYWORDS) * 7;
-  score -= countKeywordHits(composite, TELEGRAM_NEGATIVE_KEYWORDS) * 12;
-
-  if (level === 'A1' || level === 'A2') score += 10;
-  if (level === 'B1' || level === 'B2') score += 16;
-  if (level === 'C1') score += 4;
-  if (level === 'C2') score -= 8;
-
-  if (category === 'grammar' || category === 'vocabulary') score += 14;
-  if (category === 'speaking') score += 10;
-  if (category === 'writing') score += mode === 'mini-tip' ? -6 : 2;
-  if (category === 'reading' || category === 'listening') score += mode === 'mini-tip' ? -2 : 0;
-
-  if (lesson.slug.includes('celpip-task1') || lesson.slug.includes('ielts-task-1')) score += 8;
-  if (lesson.slug.includes('walk-in') || lesson.slug.includes('pharmacy') || lesson.slug.includes('doctor')) score += 12;
-  if (lesson.slug.includes('advanced-')) score -= 14;
-
-  return score;
-}
-
-async function loadLessonBank() {
-  const fileNames = (await readdir(LESSONS_DIR))
-    .filter((fileName) => fileName.endsWith('.md'))
-    .sort((left, right) => left.localeCompare(right));
-
-  const lessons = [];
-  for (const fileName of fileNames) {
-    const raw = await readFile(path.join(LESSONS_DIR, fileName), 'utf8');
-    const frontmatterMatch = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
-    if (!frontmatterMatch) continue;
-
-    const frontmatter = frontmatterMatch[1];
-    if (/^draft:\s*true\s*$/m.test(frontmatter)) continue;
-
-    const title = extractScalar(frontmatter, 'title');
-    if (!title) continue;
-
-    const body = raw.slice(frontmatterMatch[0].length);
-    lessons.push({
-      slug: fileName.replace(/\.md$/i, ''),
-      title,
-      category: extractScalar(frontmatter, 'category'),
-      level: extractScalar(frontmatter, 'level'),
-      excerpt: extractScalar(frontmatter, 'excerpt'),
-      heroTip: extractScalar(frontmatter, 'heroTip'),
-      exam: extractList(frontmatter, 'exam'),
-      strongExamples: extractExamplesByClass(body, 'lesson-line-strong'),
-      weakExamples: extractExamplesByClass(body, 'lesson-line-weak'),
-      patternExamples: extractPatternExamples(body),
-      fixTip: extractFixTip(body),
-      quiz: extractQuiz(frontmatter),
-    });
-  }
-
-  return lessons;
-}
-
-function pickLesson(lessons, options, history, topicDedupeDays) {
+function pickTopic(options, history, topicDedupeDays) {
   if (options.topic) {
-    const matched = lessons.find((lesson) => matchesForcedTopic(lesson, options.topic));
-    return matched ?? null;
+    return findTopicByQuery(options.topic);
   }
 
-  const scoredLessons = [...lessons]
-    .map((lesson) => ({
-      lesson,
-      score: scoreLessonForTelegram(lesson, options.mode),
-    }))
-    .sort((left, right) => right.score - left.score || left.lesson.slug.localeCompare(right.lesson.slug));
-
-  const candidateCount = Math.min(scoredLessons.length, 80);
-  const candidateLessons = scoredLessons.slice(0, candidateCount).map((entry) => entry.lesson);
-  const salt = options.mode === 'mini-tip' ? 37 : 11;
-  const startIndex = pickDeterministicIndex(candidateLessons.length, salt);
-
-  for (let offset = 0; offset < candidateLessons.length; offset += 1) {
-    const selected = candidateLessons[(startIndex + offset) % candidateLessons.length];
-    if (!hasRecentTopic(history, selected.slug, { kind: 'content', maxAgeDays: topicDedupeDays })) {
-      return selected;
+  const startIndex = pickDeterministicIndex(CHANNEL_TOPICS.length, options.mode === 'mini-tip' ? 29 : 11);
+  for (let offset = 0; offset < CHANNEL_TOPICS.length; offset += 1) {
+    const candidate = CHANNEL_TOPICS[(startIndex + offset) % CHANNEL_TOPICS.length];
+    if (!hasRecentTopic(history, candidate.id, { kind: 'content', maxAgeDays: topicDedupeDays })) {
+      return candidate;
     }
   }
 
-  return candidateLessons[startIndex] ?? null;
+  return CHANNEL_TOPICS[startIndex] ?? null;
+}
+
+function buildPostMessage(content) {
+  const hashLine = content.hashtags.length ? `\n\n${content.hashtags.join(' ')}` : '';
+  return `${content.postBody}${hashLine}`;
 }
 
 async function telegramRequest(method, payload, token) {
@@ -670,31 +879,23 @@ async function telegramRequest(method, payload, token) {
   return data;
 }
 
-function buildPostMessage(content) {
-  const hashLine = content.hashtags.length ? `\n\n${content.hashtags.join(' ')}` : '';
-  return `${content.postBody}${hashLine}`;
-}
-
 async function main() {
   await loadEnvFiles();
   const options = parseArgs(process.argv);
   const channelUrl = process.env.TELEGRAM_CHANNEL_URL?.trim() ?? '';
   const historyFilePath = resolveHistoryFilePath();
   const history = await loadPostHistory(historyFilePath);
-  const topicDedupeDays = Math.max(7, Number.parseInt(process.env.TELEGRAM_TOPIC_DEDUPE_DAYS ?? '60', 10) || 60);
+  const topicDedupeDays = Math.max(30, Number.parseInt(process.env.TELEGRAM_TOPIC_DEDUPE_DAYS ?? '120', 10) || 120);
 
-  const lessonBank = await loadLessonBank();
-  if (lessonBank.length === 0) {
-    throw new Error('No lesson files found for Telegram content generation.');
+  const pickedTopic = pickTopic(options, history, topicDedupeDays);
+  if (!pickedTopic) {
+    throw new Error('No curated Telegram topic is available.');
   }
 
-  const pickedLesson = pickLesson(lessonBank, options, history, topicDedupeDays);
-  const content = pickedLesson
-    ? buildLessonContent(pickedLesson, options.mode)
-    : buildCustomTopic(options.topic || 'Daily English', options.mode);
+  const content = buildMessage(pickedTopic, options.mode);
 
   if (options.dryRun) {
-    console.log(JSON.stringify({ mode: 'dry-run', content, pickedLesson }, null, 2));
+    console.log(JSON.stringify({ mode: 'dry-run', pickedTopic: pickedTopic.id, content }, null, 2));
     return;
   }
 
@@ -705,22 +906,22 @@ async function main() {
   }
 
   const messageText = buildPostMessage(content);
-  const messageFingerprint = createContentFingerprint(messageText, { stripSignature: true });
+  const fingerprint = createContentFingerprint(messageText, { stripSignature: false });
 
-  if (hasFingerprint(history, messageFingerprint)) {
+  if (hasFingerprint(history, fingerprint)) {
     console.log('[skip] Duplicate content found in persistent history. Skipping publish.');
     return;
   }
 
-  if (hasRecentTopic(history, content.topic, { kind: 'content', maxAgeDays: topicDedupeDays })) {
+  if (hasRecentTopic(history, content.topicId, { kind: 'content', maxAgeDays: topicDedupeDays })) {
     console.log(`[skip] Topic already posted in the last ${topicDedupeDays} days. Skipping publish.`);
     return;
   }
 
   const claim = await claimPostOwnership({
     kind: 'content',
-    fingerprint: messageFingerprint,
-    topic: content.topic,
+    fingerprint,
+    topic: content.topicId,
   });
 
   if (!claim.claimed) {
@@ -730,9 +931,8 @@ async function main() {
 
   try {
     const publicSlug = resolvePublicChannelSlug(channelUrl, chatId);
-    const existingTexts = await fetchRecentChannelTexts(publicSlug, { stripSignature: true });
-    const normalizedMessage = toCanonicalPostText(messageText, { stripSignature: true });
-
+    const existingTexts = await fetchRecentChannelTexts(publicSlug, { stripSignature: false });
+    const normalizedMessage = toCanonicalPostText(messageText, { stripSignature: false });
     if (existingTexts.includes(normalizedMessage)) {
       console.log('[skip] Duplicate content detected in recent channel posts. Skipping publish.');
       return;
@@ -745,17 +945,15 @@ async function main() {
     }, botToken);
 
     const quizMessageIds = [];
-    for (const quiz of content.quizzes) {
-      if (!quiz || !Array.isArray(quiz.options) || quiz.options.length < 2) continue;
-
+    if (content.quiz && Array.isArray(content.quiz.options) && content.quiz.options.length >= 2) {
       await new Promise((resolve) => setTimeout(resolve, 700));
       const quizResult = await telegramRequest('sendPoll', {
         chat_id: chatId,
-        question: quiz.question,
-        options: quiz.options,
+        question: content.quiz.question,
+        options: content.quiz.options,
         type: 'quiz',
-        correct_option_id: quiz.correctIndex,
-        explanation: quiz.explanation,
+        correct_option_id: content.quiz.correctIndex,
+        explanation: content.quiz.explanation,
         is_anonymous: true,
       }, botToken);
 
@@ -764,16 +962,17 @@ async function main() {
       }
     }
 
-    rememberFingerprint(history, messageFingerprint, {
+    rememberFingerprint(history, fingerprint, {
       kind: 'content',
-      topic: content.topic,
+      topic: content.topicId,
+      title: content.title,
       messageId: messageResult?.result?.message_id ?? null,
       quizMessageIds,
       mode: options.mode,
     });
     await savePostHistory(historyFilePath, history);
 
-    console.log(`[ok] Posted Telegram ${options.mode} content for lesson topic: ${content.topic}`);
+    console.log(`[ok] Posted Telegram ${options.mode} content for topic: ${content.topicId}`);
   } finally {
     await releasePostOwnershipClaim(claim);
   }
