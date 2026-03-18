@@ -38,7 +38,6 @@ quiz:
 <div class="lesson-context"><p class="lesson-context-lead"><strong>CELPIP Writing Task 2: Survey Response</strong> asks you to choose an option and explain your choice clearly. A good answer is direct, supported, and easy to follow. In this lesson, you will learn how to choose, explain, and finish strongly without repeating yourself.</p></div>
 
 ## Examples
-<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>CELPIP Writing Task 2: Survey Response</u> in real sentences.</p>
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
@@ -54,46 +53,42 @@ quiz:
 </article>
 </div>
 
-## Lesson Map
-<div class="lesson-map">
-  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
   <ul class="lesson-map-list">
     <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#how-it-works">&#129517; How it works</a></li>
     <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
     <li><a href="#practice-lab">&#129514; Practice lab</a></li>
     <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
     <li><a href="#get-feedback">&#128172; Get feedback</a></li>
   </ul>
-</div>
+</nav>
 
-## Core Lesson
-<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
+## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
-    <p class="lesson-panel-label">Core idea</p>
+    <p class="lesson-panel-label">Meaning</p>
     <p>Survey responses work best when the reader can see your choice immediately and follow two clear reasons.</p>
 <p>CELPIP survey responses are short argument tasks. The safest structure is a clear choice, two supporting reasons, and a brief acknowledgment of the other option if useful. Strong responses sound practical and specific rather than philosophical or abstract.</p>
 <p>Use this approach for CELPIP survey prompts. State your choice in the opening sentence, then support it with real-life reasons or consequences. Avoid spending too much space summarizing both options equally because the task rewards a clear selection.</p>
 <p>At C1 level, stronger writing comes from better paragraph control, not from simply making the language longer.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
-    <p class="lesson-panel-label">Use it here</p>
+    <p class="lesson-panel-label">Use it when</p>
     <ul><li>Start by identifying the exact job of the task or paragraph.</li><li>Keep support specific enough to prove the point rather than decorate it.</li><li>Check that every sentence moves the response toward its purpose.</li></ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
-    <p class="lesson-panel-label">Watch it work</p>
+    <p class="lesson-panel-label">See it</p>
     <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">I would choose the public transport plan because it helps more residents on a daily basis.</div>
 <div class="lesson-pattern-sentence">In addition, the benefits are long-term: lower congestion can improve punctuality for workers and students.</div></div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
-    <p class="lesson-panel-label">Remember this</p>
+    <p class="lesson-panel-label">Quick rules</p>
     <ul><li>Choose one option and state it in the first sentence.</li><li>Give two distinct reasons that support the choice.</li><li>Add one concrete example or realistic consequence.</li><li>Mention the weaker option only if it helps contrast your main point.</li><li>Close with a short final sentence that confirms your preference.</li></ul>
   </section>
 </div>
 
 ## Common Mistakes
-<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -119,7 +114,6 @@ quiz:
 </div>
 
 ## Practice Lab
-<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>

@@ -38,7 +38,6 @@ quiz:
 <div class="lesson-context"><p class="lesson-context-lead"><strong>Do</strong> helps English sentences carry tense, negatives, questions, and emphasis. Small helper verbs like <em>be</em>, <em>do</em>, and <em>have</em> do a lot of work. In this lesson, you will learn how these forms support the sentence.</p></div>
 
 ## Examples
-<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>Do</u> in real sentences.</p>
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
@@ -54,46 +53,42 @@ quiz:
 </article>
 </div>
 
-## Lesson Map
-<div class="lesson-map">
-  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
   <ul class="lesson-map-list">
     <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#how-it-works">&#129517; How it works</a></li>
     <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
     <li><a href="#practice-lab">&#129514; Practice lab</a></li>
     <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
     <li><a href="#get-feedback">&#128172; Get feedback</a></li>
   </ul>
-</div>
+</nav>
 
-## Core Lesson
-<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
+## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
-    <p class="lesson-panel-label">Core idea</p>
+    <p class="lesson-panel-label">Meaning</p>
     <p>Helper verbs are small, but they control the grammar of the whole clause.</p>
 <p>Auxiliaries such as be, do, and have help build questions, negatives, emphasis, and tense forms. They look small, but they control the grammar of the whole clause.</p>
 <p>Use auxiliaries carefully because one missing helper verb can make the whole sentence ungrammatical. In basic English, accurate be, do, and have choices matter more than adding complexity.</p>
 <p>At A2 level, keep sentences short and clear first. Add extra words only when they help meaning.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
-    <p class="lesson-panel-label">Use it here</p>
+    <p class="lesson-panel-label">Use it when</p>
     <ul><li>Check whether the sentence needs a helper verb for a question, negative, or tense form.</li><li>Match the auxiliary to the subject and time reference.</li><li>Do not mix main-verb patterns and auxiliary patterns in the same clause.</li></ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
-    <p class="lesson-panel-label">Watch it work</p>
+    <p class="lesson-panel-label">See it</p>
     <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">She does not need extra time for this section.</div>
 <div class="lesson-pattern-sentence">There are two reasons why the plan failed.</div></div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
-    <p class="lesson-panel-label">Remember this</p>
+    <p class="lesson-panel-label">Quick rules</p>
     <ul><li>Decide whether the sentence needs a helper verb for a question, negative, or tense form.</li><li>Match the auxiliary to the subject.</li><li>Choose the right helper: be, do, or have.</li><li>Check the main verb form after the auxiliary is in place.</li><li>Read the finished clause once because one small auxiliary error can damage the whole sentence.</li></ul>
   </section>
 </div>
 
 ## Common Mistakes
-<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -119,7 +114,6 @@ quiz:
 </div>
 
 ## Practice Lab
-<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>

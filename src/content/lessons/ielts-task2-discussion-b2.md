@@ -38,7 +38,6 @@ quiz:
 <div class="lesson-context"><p class="lesson-context-lead"><strong>IELTS Writing Task 2: Discussion Essays</strong> asks you to explain both sides and, in many tasks, give your own opinion too. The key is balance first, then clarity. In this lesson, you will learn how to organize both views without losing your own message.</p></div>
 
 ## Examples
-<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>IELTS Writing Task 2: Discussion Essays</u> in real sentences.</p>
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
@@ -54,46 +53,42 @@ quiz:
 </article>
 </div>
 
-## Lesson Map
-<div class="lesson-map">
-  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
   <ul class="lesson-map-list">
     <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#how-it-works">&#129517; How it works</a></li>
     <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
     <li><a href="#practice-lab">&#129514; Practice lab</a></li>
     <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
     <li><a href="#get-feedback">&#128172; Get feedback</a></li>
   </ul>
-</div>
+</nav>
 
-## Core Lesson
-<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
+## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
-    <p class="lesson-panel-label">Core idea</p>
+    <p class="lesson-panel-label">Meaning</p>
     <p>This lesson focuses on one writing move that changes clarity and score at the same time.</p>
 <p>Discussion essays require balance, but balance does not mean vagueness. You need to explain both views clearly, then show where you stand and why. Strong responses show fair coverage of the two sides plus a controlled personal position.</p>
 <p>Use this approach when the task asks you to discuss both views and give your opinion. The safest structure is introduction, one paragraph for view A, one paragraph for view B plus your position, and a conclusion. Do not hide your view until the final line.</p>
 <p>At B2 level, stronger writing comes from better paragraph control, not from simply making the language longer.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
-    <p class="lesson-panel-label">Use it here</p>
+    <p class="lesson-panel-label">Use it when</p>
     <ul><li>Start by identifying the exact job of the task or paragraph.</li><li>Keep support specific enough to prove the point rather than decorate it.</li><li>Check that every sentence moves the response toward its purpose.</li></ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
-    <p class="lesson-panel-label">Watch it work</p>
+    <p class="lesson-panel-label">See it</p>
     <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Some people argue that private cars give families flexibility, while others believe public transport should receive more funding.</div>
 <div class="lesson-pattern-sentence">Although both views have logic, I believe public transport investment is the better long-term choice because it improves access for more people.</div></div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
-    <p class="lesson-panel-label">Remember this</p>
+    <p class="lesson-panel-label">Quick rules</p>
     <ul><li>Separate the two views before you start drafting.</li><li>Give each view its own paragraph or paragraph section.</li><li>Signal your own position clearly in the introduction and conclusion.</li><li>Use comparison language to show how the views differ.</li><li>Keep your examples attached to the correct side of the argument.</li></ul>
   </section>
 </div>
 
 ## Common Mistakes
-<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -119,7 +114,6 @@ quiz:
 </div>
 
 ## Practice Lab
-<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>

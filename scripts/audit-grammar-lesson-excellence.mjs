@@ -71,6 +71,15 @@ function section(body, headingStart) {
   return nextHeading === -1 ? rest : rest.slice(0, nextHeading);
 }
 
+function lessonMapBlock(body) {
+  const match = String(body || '').match(/<nav class="lesson-map"[\s\S]*?<\/nav>/i);
+  return match ? match[0] : '';
+}
+
+function explanationSection(body) {
+  return section(body, 'How It Works') || section(body, 'Core Lesson');
+}
+
 function stripMarkdown(text) {
   return (text || '')
     .replace(/```[\s\S]*?```/g, ' ')
@@ -310,8 +319,7 @@ function scoreForm(body) {
 
   const required = [
     'Examples',
-    'Lesson Map',
-    'Core Lesson',
+    'How It Works',
     'Common Mistakes',
     'Practice Lab',
     'Why It Matters',
@@ -325,14 +333,13 @@ function scoreForm(body) {
   else issues.push(`Missing key section(s): ${missing.join(', ')}`);
 
   const forbidden = headings.filter((h) =>
-    /^(Goal|What\b|Key Rule in Plain Language|Topic Explanation and Use|Real-World Examples|Common Errors with|Interactive Practice Lab)\b/i.test(h)
+    /^(Goal|What\b|Key Rule in Plain Language|Topic Explanation and Use|Real-World Examples|Common Errors with|Interactive Practice Lab|Lesson Map|Core Lesson)\b/i.test(h)
   );
   if (forbidden.length > 0) {
     issues.push(`Contains forbidden heading(s): ${forbidden.join(', ')}`);
   }
 
   const practiceBlocks = (body.match(/<div class="practice-lab" data-practice-lab>/g) || []).length;
-  const sectionLedes = (body.match(/class="lesson-section-lede"/g) || []).length;
   const hasLessonMap = /class="lesson-map"/i.test(body);
   const hasContext = /class="lesson-context"/i.test(body) && introBlock.length >= 120;
   const hasImportance = /class="lesson-importance"/i.test(body);
@@ -343,7 +350,6 @@ function scoreForm(body) {
   if (practiceBlocks === 1) score += 2;
   else issues.push(`Interactive block count should be 1 (found ${practiceBlocks}).`);
 
-  if (sectionLedes >= 4) score += 1;
   if (hasLessonMap) score += 1;
   if (hasContext) score += 1;
   if (hasImportance) score += 1;
@@ -368,7 +374,9 @@ function scoreForm(body) {
   if (!hasLessonMap) issues.push('Lesson Map block is missing.');
   if (!hasContext) issues.push('The lesson needs a clear context paragraph before the first section.');
   if (!hasImportance) issues.push('The lesson needs a Why It Matters block.');
-  if (sectionLedes < 4) issues.push('Major sections need short introductory lines.');
+  if (/class="lesson-section-lede"|class="lesson-map-intro"/i.test(body)) {
+    issues.push('Generic section-intro banners are still present.');
+  }
 
   return { score: Math.min(score, 30), issues };
 }
@@ -399,7 +407,7 @@ async function main() {
 
     const title = getField(parts.frontmatter, 'title');
     const body = parts.body;
-    const topic = section(body, 'Core Lesson');
+    const topic = explanationSection(body);
     const examples = section(body, 'Examples');
     const errors = section(body, 'Common Mistakes');
     const practice = section(body, 'Practice Lab');

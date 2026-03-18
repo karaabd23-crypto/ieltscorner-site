@@ -38,7 +38,6 @@ quiz:
 <div class="lesson-context"><p class="lesson-context-lead"><strong>Essay Structure: Body Paragraphs</strong> is where your score is usually won or lost. A good body paragraph has one main idea, clear explanation, and one useful example or result. In this lesson, you will learn how to build a paragraph that stays focused from start to finish.</p></div>
 
 ## Examples
-<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>Essay Structure: Body Paragraphs</u> in real sentences.</p>
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
@@ -54,46 +53,42 @@ quiz:
 </article>
 </div>
 
-## Lesson Map
-<div class="lesson-map">
-  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
   <ul class="lesson-map-list">
     <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#how-it-works">&#129517; How it works</a></li>
     <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
     <li><a href="#practice-lab">&#129514; Practice lab</a></li>
     <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
     <li><a href="#get-feedback">&#128172; Get feedback</a></li>
   </ul>
-</div>
+</nav>
 
-## Core Lesson
-<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
+## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
-    <p class="lesson-panel-label">Core idea</p>
+    <p class="lesson-panel-label">Meaning</p>
     <p>This lesson focuses on one writing move that changes clarity and score at the same time.</p>
 <p>Body paragraphs are where scores are won. Each paragraph should do one clear job: state a main point, explain it, and support it. When paragraphs combine too many reasons or move away from the thesis, the essay loses coherence even if the grammar is accurate.</p>
 <p>Use this structure in IELTS and CELPIP essays whenever you need to develop a reason or viewpoint. Topic sentences should carry the main point, and supporting sentences should stay attached to that same idea.</p>
 <p>At C1 level, stronger writing comes from better paragraph control, not from simply making the language longer.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
-    <p class="lesson-panel-label">Use it here</p>
+    <p class="lesson-panel-label">Use it when</p>
     <ul><li>Start by identifying the exact job of the task or paragraph.</li><li>Keep support specific enough to prove the point rather than decorate it.</li><li>Check that every sentence moves the response toward its purpose.</li></ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
-    <p class="lesson-panel-label">Watch it work</p>
+    <p class="lesson-panel-label">See it</p>
     <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">A major reason to improve public transport is that it increases access for workers who cannot afford private cars.</div>
 <div class="lesson-pattern-sentence">For example, when one district expanded bus frequency, commute delays fell and attendance improved among shift workers.</div></div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
-    <p class="lesson-panel-label">Remember this</p>
+    <p class="lesson-panel-label">Quick rules</p>
     <ul><li>Write a topic sentence that states one main reason.</li><li>Explain why that reason matters in one or two sentences.</li><li>Add a concrete example or realistic consequence.</li><li>Close the paragraph by linking the evidence back to the main point.</li><li>Cut any sentence that introduces a new reason.</li></ul>
   </section>
 </div>
 
 ## Common Mistakes
-<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -119,7 +114,6 @@ quiz:
 </div>
 
 ## Practice Lab
-<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>

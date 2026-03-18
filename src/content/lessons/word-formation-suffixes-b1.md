@@ -38,7 +38,6 @@ quiz:
 <div class="lesson-context"><p class="lesson-context-lead"><strong>Suffixes</strong> are letters added to the end of a word. They often change the job of the word in the sentence. In this lesson, you will see how suffixes help you build nouns, adjectives, adverbs, and verbs clearly.</p></div>
 
 ## Examples
-<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>Suffixes</u> in real sentences.</p>
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
@@ -54,46 +53,42 @@ quiz:
 </article>
 </div>
 
-## Lesson Map
-<div class="lesson-map">
-  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
   <ul class="lesson-map-list">
     <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#how-it-works">&#129517; How it works</a></li>
     <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
     <li><a href="#practice-lab">&#129514; Practice lab</a></li>
     <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
     <li><a href="#get-feedback">&#128172; Get feedback</a></li>
   </ul>
-</div>
+</nav>
 
-## Core Lesson
-<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
+## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
-    <p class="lesson-panel-label">Core idea</p>
+    <p class="lesson-panel-label">Meaning</p>
     <p>Suffixes often change the job of a word, so you need to watch the sentence slot carefully.</p>
 <p>A suffix is added to the end of a base word. Suffixes often change word class, for example verb to noun (inform -&gt; information), noun to adjective (help -&gt; helpful), or adjective to adverb (quick -&gt; quickly).</p>
 <p>Use suffixes when the sentence slot needs a different word class. First identify whether you need a noun, adjective, adverb, or verb. Then choose a suffix pattern that is common and natural.</p>
 <p>At B1 level, master high-frequency suffixes for noun, adjective, and adverb forms before attempting lower-frequency patterns.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
-    <p class="lesson-panel-label">Use it here</p>
+    <p class="lesson-panel-label">Use it when</p>
     <ul><li>Identify the sentence slot before changing the word (noun, adjective, adverb, or verb).</li><li>Use high-frequency suffix patterns such as -tion, -ment, -ness, -able, -ive, and -ly.</li><li>Check spelling changes after suffixes, for example happy -&gt; happiness and decide -&gt; decision.</li></ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
-    <p class="lesson-panel-label">Watch it work</p>
+    <p class="lesson-panel-label">See it</p>
     <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Regular speaking practice improved pronunciation and confidence.</div>
 <div class="lesson-pattern-sentence">The revised instructions made the registration process manageable.</div></div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
-    <p class="lesson-panel-label">Remember this</p>
+    <p class="lesson-panel-label">Quick rules</p>
     <ul><li>Find the sentence slot first: noun, adjective, adverb, or verb.</li><li>Choose a frequent suffix pattern that fits the slot (-tion, -ment, -ness, -able, -ive, -ly).</li><li>Apply spelling changes correctly when needed (happy -&gt; happiness, decide -&gt; decision).</li><li>Check the full clause to make sure the new form is grammatically correct and natural.</li><li>Keep the sentence concise; do not add extra formed words that do not improve meaning.</li></ul>
   </section>
 </div>
 
 ## Common Mistakes
-<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -119,7 +114,6 @@ quiz:
 </div>
 
 ## Practice Lab
-<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>

@@ -13,8 +13,8 @@ Every lesson must follow this order:
 1. Short, easy visible lesson title
 2. Context paragraph before the first section
 3. `## Examples`
-4. `## Lesson Map`
-5. `## Core Lesson`
+4. clickable lesson map block
+5. `## How It Works`
 6. `## Common Mistakes`
 7. `## Practice Lab`
 8. `## Why It Matters`
@@ -33,17 +33,18 @@ Every lesson must follow this order:
 - Use balanced weak/strong pairs.
 - Keep examples relevant to the topic and different from practice items.
 
-### 3. Lesson Map
+### 3. Lesson map block
 - Must be clickable.
 - Must link to the major sections inside the lesson.
 - Should help scanning, not add clutter.
 - Should work like a simple table of contents the learner can actually use.
+- Must not repeat itself with a heading plus another `Lesson map:` line.
 
-### 4. Core Lesson
+### 4. How It Works
 - Explain the main rule or idea clearly.
 - Use short sentences, useful bullets, and visible cards.
 - Avoid jargon unless it is truly needed.
-- Major sections should begin with a short intro line so learners know what this part is doing.
+- Do not use filler banners like `This is the main explanation.`
 
 ### 5. Common Mistakes
 - Focus on topic-specific learner errors.
@@ -89,6 +90,10 @@ Every lesson must follow this order:
 - `## Real-World Examples ...`
 - `## Common Errors with ...`
 - `## Interactive Practice Lab`
+- `## Lesson Map`
+- `## Core Lesson`
+- `Core idea`
+- duplicated `Lesson map:` intro lines
 - accordion-based hidden teaching content
 - generic boilerplate that could fit any topic
 

@@ -39,7 +39,6 @@ draft: false
 <div class="lesson-context"><p class="lesson-context-lead"><strong>Noun Clauses With That and Whether</strong> is a grammar topic that changes how a sentence works or what it means. Sometimes the change is small, but it can make the sentence clearer, more natural, or more accurate. In this lesson, you will learn the basic idea, see clear examples, and notice the mistakes learners make most often.</p></div>
 
 ## Examples
-<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>Noun Clauses With That and Whether</u> in real sentences.</p>
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
@@ -55,46 +54,42 @@ draft: false
 </article>
 </div>
 
-## Lesson Map
-<div class="lesson-map">
-  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
   <ul class="lesson-map-list">
     <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#how-it-works">&#129517; How it works</a></li>
     <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
     <li><a href="#practice-lab">&#129514; Practice lab</a></li>
     <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
     <li><a href="#get-feedback">&#128172; Get feedback</a></li>
   </ul>
-</div>
+</nav>
 
-## Core Lesson
-<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
+## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
-    <p class="lesson-panel-label">Core idea</p>
+    <p class="lesson-panel-label">Meaning</p>
     <p>This lesson shows how to turn a full idea into one clause that works like a noun.</p>
 <p>A noun clause is a clause that works like a noun. It can report information, questions, uncertainty, or beliefs, often with words such as that, whether, and what.</p>
 <p>Use noun clauses after verbs like know, think, explain, decide, and wonder when you want to report an idea rather than ask a direct question.</p>
 <p>At B2 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
-    <p class="lesson-panel-label">Use it here</p>
+    <p class="lesson-panel-label">Use it when</p>
     <ul><li>Keep normal statement order inside the noun clause.</li><li>Use that to report information and whether to report a yes/no idea.</li><li>Choose one noun-clause pattern that matches the exact meaning you want.</li></ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
-    <p class="lesson-panel-label">Watch it work</p>
+    <p class="lesson-panel-label">See it</p>
     <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">I believe that the policy needs more funding.</div>
 <div class="lesson-pattern-sentence">The committee has not decided whether the centre should stay open.</div></div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
-    <p class="lesson-panel-label">Remember this</p>
+    <p class="lesson-panel-label">Quick rules</p>
     <ul><li>Choose the clause opener from the meaning: what, that, or whether.</li><li>Keep normal statement order inside the clause.</li><li>Treat the whole clause as one noun unit in the sentence.</li><li>Check verb agreement in the main sentence after the clause is in place.</li><li>Use the clause only when it makes the message shorter or clearer.</li></ul>
   </section>
 </div>
 
 ## Common Mistakes
-<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -120,7 +115,6 @@ draft: false
 </div>
 
 ## Practice Lab
-<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>

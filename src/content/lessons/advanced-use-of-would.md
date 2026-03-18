@@ -39,7 +39,6 @@ draft: false
 <div class="lesson-context"><p class="lesson-context-lead"><strong>Advanced Uses of Would</strong> helps you show ideas like advice, ability, possibility, or obligation. The word may look small, but it changes the whole meaning of the sentence. In this lesson, you will learn which form fits which message.</p></div>
 
 ## Examples
-<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>Advanced Uses of Would</u> in real sentences.</p>
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
@@ -55,46 +54,42 @@ draft: false
 </article>
 </div>
 
-## Lesson Map
-<div class="lesson-map">
-  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
   <ul class="lesson-map-list">
     <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#how-it-works">&#129517; How it works</a></li>
     <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
     <li><a href="#practice-lab">&#129514; Practice lab</a></li>
     <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
     <li><a href="#get-feedback">&#128172; Get feedback</a></li>
   </ul>
-</div>
+</nav>
 
-## Core Lesson
-<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
+## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
-    <p class="lesson-panel-label">Core idea</p>
+    <p class="lesson-panel-label">Meaning</p>
     <p>Modal verbs are really about meaning strength: advice, possibility, ability, or obligation.</p>
 <p>Modal verbs show ability, advice, obligation, permission, possibility, and deduction. The important choice is the meaning strength, not the word alone.</p>
 <p>Use modals to show how certain, necessary, polite, or strong your message should sound. Different modals can change the tone even when the basic idea stays similar.</p>
 <p>At C1 level, use this structure for precision and logic, not for decorative complexity.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
-    <p class="lesson-panel-label">Use it here</p>
+    <p class="lesson-panel-label">Use it when</p>
     <ul><li>Pick the meaning first: ability, advice, obligation, possibility, or deduction.</li><li>Use the base verb after the modal in the normal pattern.</li><li>Choose a modal strength that matches the real level of certainty or force.</li></ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
-    <p class="lesson-panel-label">Watch it work</p>
+    <p class="lesson-panel-label">See it</p>
     <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Students should review the task before they start writing.</div>
 <div class="lesson-pattern-sentence">The delays may continue if repairs are postponed again.</div></div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
-    <p class="lesson-panel-label">Remember this</p>
+    <p class="lesson-panel-label">Quick rules</p>
     <ul><li>Choose the meaning first: ability, advice, obligation, possibility, or deduction.</li><li>Use the base verb after the modal in normal patterns.</li><li>Match the modal strength to the meaning you actually want.</li><li>Use past modal forms only when the time reference requires them.</li><li>Keep the sentence simple enough that the modal meaning stays obvious.</li></ul>
   </section>
 </div>
 
 ## Common Mistakes
-<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -120,7 +115,6 @@ draft: false
 </div>
 
 ## Practice Lab
-<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>

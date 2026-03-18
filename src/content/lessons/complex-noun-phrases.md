@@ -39,7 +39,6 @@ draft: false
 <div class="lesson-context"><p class="lesson-context-lead"><strong>Building Longer Noun Groups</strong> helps you build clearer noun ideas. Sometimes English needs a noun form, and sometimes the noun group becomes too long or too heavy. In this lesson, you will learn how to keep noun forms accurate and readable.</p></div>
 
 ## Examples
-<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>Building Longer Noun Groups</u> in real sentences.</p>
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
@@ -55,46 +54,42 @@ draft: false
 </article>
 </div>
 
-## Lesson Map
-<div class="lesson-map">
-  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
   <ul class="lesson-map-list">
     <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#how-it-works">&#129517; How it works</a></li>
     <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
     <li><a href="#practice-lab">&#129514; Practice lab</a></li>
     <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
     <li><a href="#get-feedback">&#128172; Get feedback</a></li>
   </ul>
-</div>
+</nav>
 
-## Core Lesson
-<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
+## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
-    <p class="lesson-panel-label">Core idea</p>
+    <p class="lesson-panel-label">Meaning</p>
     <p>A good noun phrase adds detail without hiding the main noun.</p>
 <p>A noun phrase is the noun plus the words that describe or limit it. Good noun phrases carry detail efficiently, but overloaded ones become hard to read.</p>
 <p>Use noun phrases to pack meaning into a short space, especially in summaries and formal writing. The key is to keep the head noun clear while adding only useful detail.</p>
 <p>At B2 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
-    <p class="lesson-panel-label">Use it here</p>
+    <p class="lesson-panel-label">Use it when</p>
     <ul><li>Keep the main noun easy to identify.</li><li>Place modifiers close to the noun they describe.</li><li>If the noun phrase becomes too heavy, turn part of it into a full clause.</li></ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
-    <p class="lesson-panel-label">Watch it work</p>
+    <p class="lesson-panel-label">See it</p>
     <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">The city introduced a long-term public transport plan.</div>
 <div class="lesson-pattern-sentence">Affordable housing options remain a major local issue.</div></div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
-    <p class="lesson-panel-label">Remember this</p>
+    <p class="lesson-panel-label">Quick rules</p>
     <ul><li>Find the head noun first.</li><li>Add only the modifiers that help the reader understand the noun.</li><li>Place modifiers in a natural order before the noun.</li><li>Move part of the phrase into a clause if the stack becomes hard to read.</li><li>Check that the noun phrase still points to one clear idea.</li></ul>
   </section>
 </div>
 
 ## Common Mistakes
-<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -120,7 +115,6 @@ draft: false
 </div>
 
 ## Practice Lab
-<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>

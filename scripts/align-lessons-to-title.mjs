@@ -1317,19 +1317,19 @@ function renderTeachingSection({ lead, definition, use, levelNote, useBullets, m
   return `## Topic Explanation and Use
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
-    <p class="lesson-panel-label">Core idea</p>
+    <p class="lesson-panel-label">Meaning</p>
     ${coreParagraphs}
   </section>
   <section class="lesson-panel lesson-panel-when">
-    <p class="lesson-panel-label">Use it here</p>
+    <p class="lesson-panel-label">Use it when</p>
     ${renderHtmlList(useBullets)}
   </section>
   <section class="lesson-panel lesson-panel-pattern">
-    <p class="lesson-panel-label">Watch it work</p>
+    <p class="lesson-panel-label">See it</p>
     <div class="lesson-pattern-stack">${sentenceCards}</div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
-    <p class="lesson-panel-label">Remember this</p>
+    <p class="lesson-panel-label">Quick rules</p>
     ${renderHtmlList(rememberBullets)}
   </section>
 </div>`;
@@ -6170,30 +6170,17 @@ function buildLessonIntro(topic, category, level) {
   return `<div class="lesson-context"><p class="lesson-context-lead"><strong>${topicLabel}</strong> is a reading skill. This lesson shows how to find proof, avoid trap answers, and keep your reading clear and efficient under exam time pressure.</p></div>`;
 }
 
-function renderSectionLede(kind, topic, category) {
-  const label = escapeHtml(stripMarkdownMarkers(humanLessonTopic(topic, category)));
-  const copy = {
-    examples: `&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>${label}</u> in real sentences.`,
-    core: `&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.`,
-    mistakes: `&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.`,
-    practice: `&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.`,
-  }[kind];
-
-  return `<p class="lesson-section-lede">${copy}</p>`;
-}
-
 function renderLessonMap() {
-  return `<div class="lesson-map">
-  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+  return `<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
   <ul class="lesson-map-list">
     <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#how-it-works">&#129517; How it works</a></li>
     <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
     <li><a href="#practice-lab">&#129514; Practice lab</a></li>
     <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
     <li><a href="#get-feedback">&#128172; Get feedback</a></li>
   </ul>
-</div>`;
+</nav>`;
 }
 
 function buildWhyItMatters(topic, category, examText) {
@@ -6302,7 +6289,7 @@ function rebuildLessonLayout(body, topic, category, level, examText) {
 
   const { sections } = parseTopLevelSections(next);
   const examplesContent = findSectionContent(sections, [/^Real-World Examples\b/i, /^Examples\b/i]);
-  const coreContent = findSectionContent(sections, ['Topic Explanation and Use', /^Core Lesson$/i]);
+  const coreContent = findSectionContent(sections, ['Topic Explanation and Use', /^Core Lesson$/i, /^How It Works$/i]);
   const mistakesContent = findSectionContent(sections, [/^Common Errors with\b/i, /^Common Mistakes$/i]);
   const practiceContent = findSectionContent(sections, ['Interactive Practice Lab', /^Practice\b/i, /^Practice Lab$/i]);
   const feedbackContent = findSectionContent(sections, ['Get Feedback']);
@@ -6310,18 +6297,13 @@ function rebuildLessonLayout(body, topic, category, level, examText) {
   return [
     buildLessonIntro(topic, category, level),
     `## Examples
-${renderSectionLede('examples', topic, category)}
 ${examplesContent}`.trim(),
-    `## Lesson Map
-${renderLessonMap()}`.trim(),
-    `## Core Lesson
-${renderSectionLede('core', topic, category)}
+    `${renderLessonMap()}`.trim(),
+    `## How It Works
 ${coreContent}`.trim(),
     `## Common Mistakes
-${renderSectionLede('mistakes', topic, category)}
 ${mistakesContent}`.trim(),
     `## Practice Lab
-${renderSectionLede('practice', topic, category)}
 ${practiceContent}`.trim(),
     `## Why It Matters
 ${buildWhyItMatters(topic, category, examText)}`.trim(),

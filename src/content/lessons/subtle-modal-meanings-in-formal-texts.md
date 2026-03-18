@@ -39,7 +39,6 @@ draft: false
 <div class="lesson-context"><p class="lesson-context-lead"><strong>Modal Verbs in Formal Writing</strong> helps your grammar sound more precise and more suitable for the situation. Sometimes the idea is clear, but the sentence still feels too vague, too direct, or too loose. In this lesson, you will learn how to make grammar choices that sound more controlled.</p></div>
 
 ## Examples
-<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>Modal Verbs in Formal Writing</u> in real sentences.</p>
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
@@ -55,46 +54,42 @@ draft: false
 </article>
 </div>
 
-## Lesson Map
-<div class="lesson-map">
-  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
   <ul class="lesson-map-list">
     <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#how-it-works">&#129517; How it works</a></li>
     <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
     <li><a href="#practice-lab">&#129514; Practice lab</a></li>
     <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
     <li><a href="#get-feedback">&#128172; Get feedback</a></li>
   </ul>
-</div>
+</nav>
 
-## Core Lesson
-<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
+## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
-    <p class="lesson-panel-label">Core idea</p>
+    <p class="lesson-panel-label">Meaning</p>
     <p>This lesson is about sounding clear, measured, and believable.</p>
 <p>Register and precision come from grammar choices that sound measured, clear, and appropriate for the task. In formal exam English, you usually need controlled claims rather than dramatic or casual ones.</p>
 <p>Use more careful grammar when you need to sound balanced, persuasive, or objective. Small changes such as hedging, reformulation, and sentence framing can make an answer sound much more credible.</p>
 <p>At C2 level, use this structure for precision and logic, not for decorative complexity.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
-    <p class="lesson-panel-label">Use it here</p>
+    <p class="lesson-panel-label">Use it when</p>
     <ul><li>Choose language that matches the task: cautious for academic claims, direct for clear instruction, balanced for argument.</li><li>Prefer precise claims you can support instead of dramatic statements you cannot prove.</li><li>Revise casual or spoken grammar if the task expects a more formal tone.</li></ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
-    <p class="lesson-panel-label">Watch it work</p>
+    <p class="lesson-panel-label">See it</p>
     <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">This suggests that the policy may be effective in the short term.</div>
 <div class="lesson-pattern-sentence">A more practical approach would be to improve route frequency before expansion.</div></div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
-    <p class="lesson-panel-label">Remember this</p>
+    <p class="lesson-panel-label">Quick rules</p>
     <ul><li>Decide what tone the task needs before you choose the sentence pattern.</li><li>Replace casual or dramatic claims with language you can support.</li><li>Use grammar that sounds measured when the task is formal or academic.</li><li>Cut vague intensifiers such as really, totally, or super if they weaken precision.</li><li>Read the sentence once and ask whether it sounds credible, not just strong.</li></ul>
   </section>
 </div>
 
 ## Common Mistakes
-<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -120,7 +115,6 @@ draft: false
 </div>
 
 ## Practice Lab
-<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>

@@ -123,14 +123,14 @@ const taskConfig = CELPIP_TASK_CONFIG;
               Compare your response with the sample for this prompt.
             </p>
             <div class="cluster" style="gap: var(--s-2);">
-              <button id="results-open-sample" class="btn" type="button">Compare with sample response ↓</button>
+              <button id="results-open-sample" class="btn" type="button">Jump to model answer ↓</button>
               <a id="results-open-sample-library" class="btn" href="/celpip/writing/samples">Open full sample library</a>
             </div>
           </div>
 
           <div id="results-traits" class="grid grid-2" style="margin-top: var(--s-3); gap: var(--s-2);"></div>
 
-          <div style="margin-top: var(--s-4);">
+          <div id="results-sample-section" style="margin-top: var(--s-4);">
             <h4 style="margin-bottom: var(--s-2);">Model answer for this exact prompt</h4>
             <div id="results-sample-card" class="surface" style="padding: var(--s-3);"></div>
           </div>
@@ -211,6 +211,7 @@ const taskConfig = CELPIP_TASK_CONFIG;
       const resultsSampleHint = document.getElementById('results-sample-hint');
       const resultsOpenSampleBtn = document.getElementById('results-open-sample');
       const resultsOpenSampleLibraryLink = document.getElementById('results-open-sample-library');
+      const resultsSampleSection = document.getElementById('results-sample-section');
       const resultsSampleCard = document.getElementById('results-sample-card');
       const resultsTraits = document.getElementById('results-traits');
       const resultsCriteria = document.getElementById('results-criteria');
@@ -540,11 +541,25 @@ const taskConfig = CELPIP_TASK_CONFIG;
         });
       };
 
-      const openSampleForComparison = () => {
+      const flashModelAnswer = () => {
+        if (!(resultsSampleSection instanceof HTMLElement)) return;
+        resultsSampleSection.style.transition = 'box-shadow 220ms ease, background-color 220ms ease';
+        resultsSampleSection.style.backgroundColor = '#f8fbff';
+        resultsSampleSection.style.boxShadow = '0 0 0 3px rgba(18, 99, 163, 0.16)';
+        window.setTimeout(() => {
+          resultsSampleSection.style.backgroundColor = '';
+          resultsSampleSection.style.boxShadow = '';
+        }, 1400);
+      };
+
+      const openSampleForComparison = ({ scroll = true } = {}) => {
         if (sampleResponseWrap instanceof HTMLDetailsElement) {
           sampleResponseWrap.open = true;
-          sampleResponseWrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
+        if (scroll && resultsSampleSection instanceof HTMLElement) {
+          resultsSampleSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        flashModelAnswer();
       };
 
       const renderResults = (report) => {
@@ -578,7 +593,10 @@ const taskConfig = CELPIP_TASK_CONFIG;
         renderResultsList(resultsSteps, report.nextPracticeSteps);
 
         if (prompt?.sampleResponse) {
-          openSampleForComparison();
+          openSampleForComparison({ scroll: false });
+          if (resultsCard instanceof HTMLElement) {
+            resultsCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         }
       };
 

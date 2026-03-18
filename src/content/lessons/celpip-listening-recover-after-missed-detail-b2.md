@@ -39,7 +39,6 @@ draft: false
 <div class="lesson-context"><p class="lesson-context-lead"><strong>CELPIP Listening: Recover Quickly After Missing a Detail</strong> is a listening skill. This lesson helps you catch the right information, stay calm when you miss a word, and make better answer choices under time pressure.</p></div>
 
 ## Examples
-<p class="lesson-section-lede">&#10024; <strong>Read the examples first.</strong> They show the pattern for <u>CELPIP Listening: Recover Quickly After Missing a Detail</u> in real sentences.</p>
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
@@ -55,46 +54,42 @@ draft: false
 </article>
 </div>
 
-## Lesson Map
-<div class="lesson-map">
-  <p class="lesson-map-intro"><strong>&#128450;&#65039; Lesson map:</strong> Jump to the part you need now, or read the lesson from top to bottom.</p>
+<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
   <ul class="lesson-map-list">
     <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#core-lesson">&#129517; Core lesson</a></li>
+    <li><a href="#how-it-works">&#129517; How it works</a></li>
     <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
     <li><a href="#practice-lab">&#129514; Practice lab</a></li>
     <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
     <li><a href="#get-feedback">&#128172; Get feedback</a></li>
   </ul>
-</div>
+</nav>
 
-## Core Lesson
-<p class="lesson-section-lede">&#129517; <strong>This is the main explanation.</strong> Read it once for meaning first. Then use the boxes as a quick guide.</p>
+## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
-    <p class="lesson-panel-label">Core idea</p>
+    <p class="lesson-panel-label">Meaning</p>
     <p>This lesson gives you one listening habit you can use before, during, and after the audio.</p>
 <p>Missing one detail is normal in listening tasks. The danger comes when you keep thinking about the missed word and stop following the next part of the audio. Strong listeners recover by returning to the main idea, tracking signpost words, and using later clarification or repetition to rebuild the missing information.</p>
 <p>Use recovery strategies whenever the audio feels too fast or one item is unclear. Listen for contrast words, repetition, examples, and corrections because speakers often restate the point in a simpler way.</p>
 <p>At B2 level, listening gains usually come from better attention control, not from trying to hear every word.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
-    <p class="lesson-panel-label">Use it here</p>
+    <p class="lesson-panel-label">Use it when</p>
     <ul><li>Read the question quickly before the audio whenever the task allows it.</li><li>Decide what information matters most for that item.</li><li>Stay with the message instead of fighting for every missed word.</li></ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
-    <p class="lesson-panel-label">Watch it work</p>
+    <p class="lesson-panel-label">See it</p>
     <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">missed price -&gt; keep listening -&gt; speaker repeats “so it costs eighteen dollars in total”</div>
 <div class="lesson-pattern-sentence">missed location -&gt; hear later “that is why we moved it to Room B”</div></div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
-    <p class="lesson-panel-label">Remember this</p>
+    <p class="lesson-panel-label">Quick rules</p>
     <ul><li>Accept the missed detail quickly and keep listening.</li><li>Listen for signposts such as however, actually, because, and for example.</li><li>Use later repetition or clarification to rebuild the idea.</li><li>Match your notes to the question focus again.</li><li>Guess only after you have used all later evidence in the audio.</li></ul>
   </section>
 </div>
 
 ## Common Mistakes
-<p class="lesson-section-lede">&#9888;&#65039; <strong>These are the mistakes learners make most often.</strong> Check the weak sentence, then notice the small change that fixes it.</p>
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
@@ -120,7 +115,6 @@ draft: false
 </div>
 
 ## Practice Lab
-<p class="lesson-section-lede">&#129514; <strong>Try the tasks in order.</strong> You get instant feedback, so fix each step before you move on.</p>
 <div class="practice-lab" data-practice-lab>
   <div class="practice-lab-head">
     <div>

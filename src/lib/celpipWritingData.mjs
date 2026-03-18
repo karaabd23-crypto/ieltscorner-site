@@ -114,7 +114,7 @@ const TASK1_RECIPIENTS = [
 ];
 
 const buildSampleLevelMeta = (taskType) => ({
-  sampleLevel: 'CLB 9',
+  sampleLevel: 'CLB 9+',
   sampleLevelWhy: taskType === 'task1'
     ? [
         'Uses formal tone and audience-appropriate register throughout the email.',

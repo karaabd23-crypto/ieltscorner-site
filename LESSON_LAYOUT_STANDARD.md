@@ -7,8 +7,8 @@ Use this layout for all lesson writing and lesson regeneration.
 1. Short, easy title
 2. One introductory context paragraph
 3. `Examples`
-4. `Lesson Map`
-5. `Core Lesson`
+4. clickable lesson map block
+5. `How It Works`
 6. `Common Mistakes`
 7. `Practice Lab`
 8. `Why It Matters`
@@ -27,17 +27,18 @@ Use this layout for all lesson writing and lesson regeneration.
 - Use real, relevant weak/strong contrasts.
 - Do not reuse the same examples in practice.
 
-### Lesson Map
+### Lesson map block
 - Must be clickable.
 - Must link to the major sections.
 - Should help scanning.
 - Use it like a simple table of contents, not a decorative block.
+- Do not add a duplicated visible heading like `Lesson Map` above it.
 
-### Core Lesson
+### How It Works
 - Explain the main idea simply.
 - Use bullets and cards for clarity.
 - Keep sentences short.
-- Start each major section with a short intro line that tells the learner what they are about to read.
+- Do not add filler lines like "This is the main explanation."
 
 ### Common Mistakes
 - Show the errors students really make.
@@ -57,4 +58,5 @@ Use this layout for all lesson writing and lesson regeneration.
 - Teach meaning first.
 - Avoid vague textbook language.
 - Use bold, italics, underlines, and emoji with purpose, not decoration only.
+- Avoid labels that say the obvious, like `Core Lesson`, `Core idea`, or duplicated `Lesson map:` lines.
 - When structure or wording is unclear, use Grammar Monster as the model for context-first teaching and section flow.

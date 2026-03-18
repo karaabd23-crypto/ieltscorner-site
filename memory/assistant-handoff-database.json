@@ -91,7 +91,7 @@
     {
       "theme": "Sample accessibility flow",
       "asked": "Students should access samples somewhere, perhaps after analysis",
-      "status": "partially done (samples visible in prompt panel; post-analysis-only placement not yet implemented)"
+      "status": "done (analysis now reveals the exact model answer in the report flow and keeps sample access low-friction)"
     }
   ],
   "acceptedDecisions": [
@@ -137,7 +137,7 @@
       "Hero styling less red and less cluttered",
       "Jump drawer moved to bottom-left and made more visible",
       "CELPIP lesson navigation reduced click depth",
-      "Paid lab now shows sample responses with CLB 9 label + rationale"
+      "Paid lab now reveals model answers in the report flow and shows CLB 9+ target labels with rationale"
     ],
     "monetizationOutcomes": [
       "Offer messaging includes 100 prompts and sample responses",
@@ -167,21 +167,13 @@
       "paidLabUnlock": "working in local admin mode",
       "analysisButton": "working path restored; local admin fallback available",
       "promptBank": "100 prompts available",
-      "sampleMetadata": "CLB 9 + rationale visible in UI"
+      "sampleMetadata": "CLB 9+ target label + rationale visible in UI"
     }
   },
   "pendingNextBestActions": [
     {
-      "priority": "high",
-      "item": "Implement post-analysis sample reveal pattern (auto-open sample response after first analysis run) to match explicit user preference."
-    },
-    {
       "priority": "medium",
-      "item": "Optionally relabel sample level text from CLB 9 to CLB 9+ if user wants stronger claim wording."
-    },
-    {
-      "priority": "medium",
-      "item": "Optionally tone down sticky webinar strip red if user requests further visual neutralization."
+      "item": "Webinar strip color remains deferred unless the user explicitly asks to revisit it."
     }
   ],
   "handoffInstructionsForAnyModel": [

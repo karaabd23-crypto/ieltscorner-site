@@ -1,5 +1,17 @@
 # AI Agent Instructions for ieltscorner-site
 
+## Persistent Memory
+
+Before starting substantial work in a new chat, read:
+
+1. `memory/project-brief.md`
+2. The newest note in `memory/chat-sessions/`
+3. `memory/session-catalog.md` when prior chat history is relevant to the task
+
+After meaningful work, add or update a dated note in `memory/chat-sessions/` so future chats can resume with the latest decisions, verification results, and unfinished work.
+
+For deployment in this repo, default to the GitHub push workflow on `main`. Do not use local Netlify CLI unless the user explicitly asks for it or the GitHub workflow path is unavailable.
+
 ## Project Overview
 
 **ieltscorner-site** is an Astro 5 static site builder for IELTS and CELPIP exam preparation. It delivers structured lessons via file-based content with dynamic routing and quiz components. The site is deployed to Netlify with strict TypeScript configuration.

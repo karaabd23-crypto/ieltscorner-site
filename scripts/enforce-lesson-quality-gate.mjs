@@ -75,6 +75,15 @@ function section(body, heading) {
   return nextHeading === -1 ? rest : rest.slice(0, nextHeading);
 }
 
+function lessonMapBlock(body) {
+  const match = String(body || '').match(/<nav class="lesson-map"[\s\S]*?<\/nav>/i);
+  return match ? match[0] : '';
+}
+
+function explanationSection(body) {
+  return section(body, 'How It Works') || section(body, 'Core Lesson');
+}
+
 function countMatches(text, pattern) {
   const m = text.match(pattern);
   return m ? m.length : 0;
@@ -117,6 +126,14 @@ function checkFile(fileName, body, metadata) {
 
   if (/^##\s+Topic Explanation and Use\b/im.test(body)) {
     problems.push('contains old heading: ## Topic Explanation and Use');
+  }
+
+  if (/^##\s+Lesson Map\b/im.test(body)) {
+    problems.push('contains old heading: ## Lesson Map');
+  }
+
+  if (/^##\s+Core Lesson\b/im.test(body)) {
+    problems.push('contains old heading: ## Core Lesson');
   }
 
   if (/^##\s+Real-World Examples\b/im.test(body)) {
@@ -179,38 +196,35 @@ function checkFile(fileName, body, metadata) {
     problems.push('missing section: Examples');
   }
 
-  if (!/^##\s+Lesson Map\b/im.test(body)) {
-    problems.push('missing section: Lesson Map');
+  const lessonMap = lessonMapBlock(body);
+  if (!lessonMap) {
+    problems.push('missing lesson map block');
   } else {
-    const lessonMap = section(body, 'Lesson Map');
-    if (!/class="lesson-map"/i.test(lessonMap)) {
-      problems.push('Lesson Map must use the shared lesson-map block');
-    }
     const requiredAnchors = [
       /href="#examples"/i,
-      /href="#core-lesson"/i,
+      /href="#how-it-works"/i,
       /href="#common-mistakes"/i,
       /href="#practice-lab"/i,
       /href="#why-it-matters"/i,
     ];
     if (!requiredAnchors.every((pattern) => pattern.test(lessonMap))) {
-      problems.push('Lesson Map is missing one or more required anchor links');
+      problems.push('lesson map is missing one or more required anchor links');
     }
   }
 
-  if (!/^##\s+Core Lesson\b/im.test(body)) {
-    problems.push('missing section: Core Lesson');
+  if (!/^##\s+How It Works\b/im.test(body)) {
+    problems.push('missing section: How It Works');
   } else {
-    const explanation = section(body, 'Core Lesson').trim();
+    const explanation = explanationSection(body).trim();
     if (explanation.length < 280) {
-      problems.push('Core Lesson is too short (needs clear definition + usage conditions)');
+      problems.push('How It Works is too short (needs clear definition + usage conditions)');
     }
 
     const hasUseConditions =
       countPanelListItems(explanation, 'lesson-panel lesson-panel-when') >= 3 ||
       countMatches(explanation, /<li>/g) >= 6;
     if (!hasUseConditions) {
-      problems.push('Core Lesson must include explicit usage conditions and remember rules');
+      problems.push('How It Works must include explicit usage conditions and remember rules');
     }
 
     const bannedGenericPatterns = [
@@ -221,7 +235,7 @@ function checkFile(fileName, body, metadata) {
       /Increase complexity only when it improves clarity and evidence delivery\./i,
     ];
     if (bannedGenericPatterns.some((pattern) => pattern.test(explanation))) {
-      problems.push('Core Lesson contains banned generic boilerplate; rewrite with topic-specific instruction');
+      problems.push('How It Works contains banned generic boilerplate; rewrite with topic-specific instruction');
     }
   }
 
@@ -293,9 +307,8 @@ function checkFile(fileName, body, metadata) {
     }
   }
 
-  const sectionLedes = countMatches(body, /class="lesson-section-lede"/gim);
-  if (sectionLedes < 4) {
-    problems.push('lesson needs short section introductions for the major sections');
+  if (/class="lesson-section-lede"/i.test(body) || /class="lesson-map-intro"/i.test(body)) {
+    problems.push('remove generic section intro banners and duplicated lesson-map labels');
   }
 
   if (/^##\s+Practice Lab\b/im.test(body)) {
@@ -315,7 +328,7 @@ function checkFile(fileName, body, metadata) {
   const title = (metadata?.title || '').toLowerCase();
 
   if (/word formation:\s*prefix|prefixes/.test(title)) {
-    const explanation = section(body, 'Core Lesson').toLowerCase();
+    const explanation = explanationSection(body).toLowerCase();
     const examples = section(body, 'Examples').toLowerCase();
     const combined = `${explanation}\n${examples}`;
 
@@ -328,7 +341,7 @@ function checkFile(fileName, body, metadata) {
   }
 
   if (/word formation:\s*suffix|suffixes/.test(title)) {
-    const explanation = section(body, 'Core Lesson').toLowerCase();
+    const explanation = explanationSection(body).toLowerCase();
     const examples = section(body, 'Examples').toLowerCase();
     const combined = `${explanation}\n${examples}`;
 
@@ -341,7 +354,7 @@ function checkFile(fileName, body, metadata) {
   }
 
   if (/noun formation/.test(title)) {
-    const explanation = section(body, 'Core Lesson').toLowerCase();
+    const explanation = explanationSection(body).toLowerCase();
     const examples = section(body, 'Examples').toLowerCase();
     const combined = `${explanation}\n${examples}`;
 
@@ -354,7 +367,7 @@ function checkFile(fileName, body, metadata) {
   }
 
   if (/(semicolon|semicolons|colon|colons)/.test(title)) {
-    const explanation = section(body, 'Core Lesson');
+    const explanation = explanationSection(body);
     const commonErrors = section(body, 'Common Mistakes');
     const examples = section(body, 'Examples');
 
