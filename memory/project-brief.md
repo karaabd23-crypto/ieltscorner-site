@@ -55,6 +55,7 @@ Avoid the older `## Lesson Map`, `## Core Lesson`, duplicated lesson-map intro l
 - `npm run build`
 - `npm run lesson:check:standards:working`
 - `npm run lesson:qa:changed`
+- `npm run session:starter`
 
 ## Working Rules For Future Chats
 

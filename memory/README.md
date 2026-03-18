@@ -14,11 +14,12 @@ Use it to keep future chats up to speed without relying on thread history.
 
 ## Workflow
 
-1. Start a new chat by reading `memory/project-brief.md`.
-2. Read the newest file in `memory/chat-sessions/`.
-3. Refresh `memory/session-catalog.*` with `npm run session:index` if prior session history matters.
-4. After meaningful work, update or add a dated session note.
-5. If a durable project rule changes, update `memory/project-brief.md`.
+1. Run `npm run session:starter` if you want a copyable new-chat starter prompt on this machine.
+2. Start a new chat by reading `memory/project-brief.md`.
+3. Read the newest file in `memory/chat-sessions/`.
+4. Refresh `memory/session-catalog.*` with `npm run session:index` if prior session history matters.
+5. After meaningful work, update or add a dated session note.
+6. If a durable project rule changes, update `memory/project-brief.md`.
 
 ## Scope
 

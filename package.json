@@ -31,6 +31,7 @@
     "newsletter:stats:json": "node scripts/newsletter-stats.mjs --json",
     "session:index": "node scripts/session-catalog.mjs",
     "session:show": "node scripts/session-catalog.mjs show",
+    "session:starter": "powershell -ExecutionPolicy Bypass -File scripts/copy-session-starter.ps1",
     "cancel:insights": "node scripts/monthly-cancellation-insights.mjs",
     "cancel:insights:dry": "node scripts/monthly-cancellation-insights.mjs --dry-run"
   },
