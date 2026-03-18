@@ -29,7 +29,7 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
       <div class="card" style="border-left: 4px solid #dc3545;">
         <h2 style="margin-top: 0; color: #dc3545;">Unlock 100 CELPIP sample essays</h2>
         <p id="sample-library-locked-reason" class="muted" style="margin-top: 0;">
-          Unlock all 100 CELPIP sample essays plus the timed AI writing lab for just CA$5/month.
+          Unlock all 100 CELPIP sample essays plus the timed writing lab for just CA$5/month.
         </p>
         <div class="cluster">
           <a class="btn btn-primary" href="/celpip/writing/ai-feedback">Subscribe for CA${CELPIP_WRITING_PRICE_CAD}/month</a>
@@ -76,7 +76,7 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
         <div id="free-sample-upsell" class="card" style="display:none; margin-top: var(--s-3); border-left: 4px solid #2ea369;">
           <h4 style="margin-top: 0;">Enjoyed your free essay?</h4>
           <p class="muted" style="margin-top: 0;">
-            Unlock all 100 CELPIP sample essays plus the timed AI writing lab for only CA${CELPIP_WRITING_PRICE_CAD}/month.
+            Unlock all 100 CELPIP sample essays plus the timed writing lab for only CA${CELPIP_WRITING_PRICE_CAD}/month.
           </p>
           <div class="cluster">
             <a class="btn btn-primary" href="/celpip/writing/ai-feedback">Unlock all essays for CA${CELPIP_WRITING_PRICE_CAD}/month</a>
@@ -406,7 +406,7 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
         const adminToken = (localStorage.getItem(adminTokenStorageKey) || '').trim();
 
         if (!sessionId && !adminToken) {
-          showLocked('Unlock all 100 CELPIP sample essays plus the timed AI writing lab for just CA$5/month.');
+          showLocked('Unlock all 100 CELPIP sample essays plus the timed writing lab for just CA$5/month.');
           return;
         }
 

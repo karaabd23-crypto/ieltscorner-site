@@ -32,12 +32,13 @@ const taskConfig = CELPIP_TASK_CONFIG;
         <span class="pill">Paid access unlocked</span>
         <h2 style="margin: var(--s-2) 0 0;">Timed CELPIP Writing Practice</h2>
         <p class="muted" style="margin: var(--s-2) 0 0; max-width: 70ch;">
-          Choose a task, start the timer, write your answer, then get an AI estimate for your CELPIP level with rater-style comments, language diagnosis, rewrites, and lesson recommendations.
+          Choose a task, start the timer, write your answer, then get a teacher-built CELPIP estimate with rater-style comments, language diagnosis, rewrites, and lesson recommendations.
         </p>
         <p class="muted" style="margin: var(--s-2) 0 0; max-width: 70ch;">
           Your plan includes {promptTotal} prompts (Task 1 + Task 2) and a sample response for every prompt. Secure billing is handled by Stripe.
         </p>
         <div class="cluster" style="margin-top: var(--s-2); gap: var(--s-2);">
+          <a id="open-sample-library" class="btn btn-primary" href="/celpip/writing/samples">Open 100 sample essays</a>
           <button id="manage-billing" class="btn" type="button">Manage billing (Stripe)</button>
           <button id="cancel-subscription-now" class="btn" type="button">Cancel now (instant)</button>
         </div>
@@ -93,7 +94,7 @@ const taskConfig = CELPIP_TASK_CONFIG;
           <textarea id="response-text" rows="16" style="width: 100%; margin-top: var(--s-1); padding: var(--s-3); border-radius: 10px; border: 1px solid var(--border); font: inherit; line-height: 1.55;" placeholder="Write your CELPIP response here or upload a .txt/.md file below."></textarea>
           <div class="cluster" style="margin-top: var(--s-2); gap: var(--s-2);">
             <input id="response-file" type="file" accept=".txt,.md,text/plain" />
-            <button id="analyze-response" class="btn btn-primary" type="button">Get AI marks & analysis</button>
+            <button id="analyze-response" class="btn btn-primary" type="button">Get marks & analysis</button>
           </div>
           <p id="lab-status" class="muted" style="min-height: 1.2rem; margin: var(--s-2) 0 0;"></p>
         </div>
@@ -105,14 +106,14 @@ const taskConfig = CELPIP_TASK_CONFIG;
           <ul class="muted" style="margin: 0 0 0 var(--s-4);">
             <li>Task 1 focuses on purpose, tone, and completeness.</li>
             <li>Task 2 focuses on clear opinion, support, and comparison.</li>
-            <li>The AI estimates a CELPIP level on a 1–12 scale.</li>
+            <li>The scoring engine estimates a CELPIP level on a 1–12 scale.</li>
             <li>You receive strengths, problem areas, lesson links, and revision advice.</li>
           </ul>
         </div>
 
         <div class="card" id="results-card" style="display:none;">
           <div class="cluster" style="justify-content: space-between; align-items: baseline; gap: var(--s-2);">
-            <h3 style="margin: 0;">AI score report</h3>
+            <h3 style="margin: 0;">Score report</h3>
             <span id="results-level" class="pill">Level --</span>
           </div>
           <p id="results-summary" class="muted" style="margin: var(--s-2) 0 0;"></p>
@@ -121,10 +122,18 @@ const taskConfig = CELPIP_TASK_CONFIG;
             <p id="results-sample-hint" class="muted" style="margin: 0 0 var(--s-2) 0;">
               Compare your response with the sample for this prompt.
             </p>
-            <button id="results-open-sample" class="btn" type="button">Compare with sample response ↓</button>
+            <div class="cluster" style="gap: var(--s-2);">
+              <button id="results-open-sample" class="btn" type="button">Compare with sample response ↓</button>
+              <a id="results-open-sample-library" class="btn" href="/celpip/writing/samples">Open full sample library</a>
+            </div>
           </div>
 
           <div id="results-traits" class="grid grid-2" style="margin-top: var(--s-3); gap: var(--s-2);"></div>
+
+          <div style="margin-top: var(--s-4);">
+            <h4 style="margin-bottom: var(--s-2);">Model answer for this exact prompt</h4>
+            <div id="results-sample-card" class="surface" style="padding: var(--s-3);"></div>
+          </div>
 
           <div style="margin-top: var(--s-4);">
             <h4 style="margin-bottom: var(--s-2);">What a CELPIP rater would say</h4>
@@ -193,6 +202,7 @@ const taskConfig = CELPIP_TASK_CONFIG;
       const timerNote = document.getElementById('writing-lab-timer-note');
       const wordCountEl = document.getElementById('word-count');
       const statusEl = document.getElementById('lab-status');
+      const sampleLibraryLink = document.getElementById('open-sample-library');
       const manageBillingBtn = document.getElementById('manage-billing');
       const cancelNowBtn = document.getElementById('cancel-subscription-now');
       const resultsCard = document.getElementById('results-card');
@@ -200,6 +210,8 @@ const taskConfig = CELPIP_TASK_CONFIG;
       const resultsSummary = document.getElementById('results-summary');
       const resultsSampleHint = document.getElementById('results-sample-hint');
       const resultsOpenSampleBtn = document.getElementById('results-open-sample');
+      const resultsOpenSampleLibraryLink = document.getElementById('results-open-sample-library');
+      const resultsSampleCard = document.getElementById('results-sample-card');
       const resultsTraits = document.getElementById('results-traits');
       const resultsCriteria = document.getElementById('results-criteria');
       const resultsStrengths = document.getElementById('results-strengths');
@@ -259,6 +271,24 @@ const taskConfig = CELPIP_TASK_CONFIG;
             savedAt: Date.now(),
           }));
         } catch {
+        }
+      };
+
+      const withSession = (basePath) => {
+        const cleanSession = String(sessionId || '').trim();
+        if (!cleanSession) {
+          return basePath;
+        }
+        return `${basePath}?session_id=${encodeURIComponent(cleanSession)}`;
+      };
+
+      const updateSampleLinks = () => {
+        const href = withSession('/celpip/writing/samples');
+        if (sampleLibraryLink instanceof HTMLAnchorElement) {
+          sampleLibraryLink.href = href;
+        }
+        if (resultsOpenSampleLibraryLink instanceof HTMLAnchorElement) {
+          resultsOpenSampleLibraryLink.href = href;
         }
       };
 
@@ -446,6 +476,53 @@ const taskConfig = CELPIP_TASK_CONFIG;
         });
       };
 
+      const renderSampleCard = (prompt) => {
+        if (!resultsSampleCard) return;
+
+        if (!prompt?.sampleResponse) {
+          resultsSampleCard.innerHTML = '<p class="muted" style="margin: 0;">No model answer is available for this prompt yet.</p>';
+          return;
+        }
+        resultsSampleCard.innerHTML = '';
+
+        if (prompt.sampleLevel) {
+          const level = document.createElement('p');
+          level.className = 'muted';
+          level.style.margin = '0 0 8px 0';
+          const strong = document.createElement('strong');
+          strong.textContent = 'Model level:';
+          level.appendChild(strong);
+          level.appendChild(document.createTextNode(` ${prompt.sampleLevel}`));
+          resultsSampleCard.appendChild(level);
+        }
+
+        if (prompt.scenario || prompt.question) {
+          const promptLine = document.createElement('p');
+          promptLine.className = 'muted';
+          promptLine.style.margin = '0 0 12px 0';
+          promptLine.textContent = prompt.scenario || prompt.question || '';
+          resultsSampleCard.appendChild(promptLine);
+        }
+
+        if (Array.isArray(prompt.sampleLevelWhy) && prompt.sampleLevelWhy.length > 0) {
+          const whyList = document.createElement('ul');
+          whyList.className = 'muted';
+          whyList.style.margin = '0 0 12px 18px';
+          prompt.sampleLevelWhy.forEach((reason) => {
+            const item = document.createElement('li');
+            item.textContent = reason;
+            whyList.appendChild(item);
+          });
+          resultsSampleCard.appendChild(whyList);
+        }
+
+        const sampleText = document.createElement('p');
+        sampleText.style.margin = '0';
+        sampleText.style.whiteSpace = 'pre-line';
+        sampleText.textContent = prompt.sampleResponse;
+        resultsSampleCard.appendChild(sampleText);
+      };
+
       const renderLessonCards = (items) => {
         if (!resultsLessons) return;
         resultsLessons.innerHTML = '';
@@ -481,6 +558,7 @@ const taskConfig = CELPIP_TASK_CONFIG;
             ? `Compare your response with the ${prompt.sampleLevel} sample for this exact prompt.`
             : 'Compare your response with the sample for this exact prompt.';
         }
+        renderSampleCard(prompt);
         if (resultsTraits) {
           resultsTraits.innerHTML = '';
           Object.entries(report.traitScores || {}).forEach(([label, value]) => {
@@ -577,6 +655,7 @@ const taskConfig = CELPIP_TASK_CONFIG;
           customerId = String(data.customerId || '');
           subscriptionId = String(data.subscriptionId || '');
           saveAccess();
+          updateSampleLinks();
 
           if (validationEl) validationEl.style.display = 'none';
           if (appEl) appEl.style.display = 'block';
@@ -853,6 +932,7 @@ const taskConfig = CELPIP_TASK_CONFIG;
       renderPrompt();
       renderTimer();
       updateWordCount();
+      updateSampleLinks();
       validatePaidAccess();
     })();
   </script>

@@ -5,7 +5,7 @@ on:
     # Full lessons: 15:00, 21:00 UTC (2x daily)
     # ≈ ET: 10am, 4pm | PT: 7am, 1pm
     - cron: '0 15,21 * * *'
-    # Mini-tips: 03:00, 18:00, 00:00 UTC (3x daily)
+    # Mini-tip channel posts: 03:00, 18:00, 00:00 UTC (3x daily)
     # ≈ ET: 10pm, 1pm, 7pm | PT: 7pm, 10am, 4pm
     - cron: '0 0,3,18 * * *'
   workflow_dispatch:
@@ -83,13 +83,10 @@ jobs:
 
       - name: Post full lesson content
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
           TELEGRAM_CHANNEL_URL: ${{ secrets.TELEGRAM_CHANNEL_URL }}
           TELEGRAM_HISTORY_FILE: .cache/telegram-post-history.json
-          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
         run: node scripts/post-telegram-content.mjs
 
       - name: Save Telegram history cache
@@ -123,17 +120,13 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
 
-      - name: Post mini-tip content
+      - name: Post mini-tip channel content
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
           TELEGRAM_CHANNEL_URL: ${{ secrets.TELEGRAM_CHANNEL_URL }}
-          TELEGRAM_STORY_FALLBACK_TO_POST: 'true'
           TELEGRAM_HISTORY_FILE: .cache/telegram-post-history.json
-          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
-        run: node scripts/post-telegram-story.mjs
+        run: node scripts/post-telegram-content.mjs --mode mini-tip
 
       - name: Save Telegram history cache
         if: always()

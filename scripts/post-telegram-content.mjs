@@ -1,56 +1,94 @@
 #!/usr/bin/env node
-import { readFile } from 'node:fs/promises';
+import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import {
   claimPostOwnership,
-  createContentFingerprint as createTelegramFingerprint,
-  fetchRecentChannelTexts as fetchRecentTelegramChannelTexts,
-  hasFingerprint as hasTelegramFingerprint,
-  hasRecentTopic as hasRecentTelegramTopic,
-  loadPostHistory as loadTelegramPostHistory,
-  rememberFingerprint as rememberTelegramFingerprint,
+  createContentFingerprint,
+  fetchRecentChannelTexts,
+  hasFingerprint,
+  hasRecentTopic,
+  htmlToPlainText,
+  loadPostHistory,
+  rememberFingerprint,
   releasePostOwnershipClaim,
-  resolveHistoryFilePath as resolveTelegramHistoryFilePath,
-  resolvePublicChannelSlug as resolveTelegramPublicChannelSlug,
-  savePostHistory as saveTelegramPostHistory,
-  toCanonicalPostText as toCanonicalTelegramPostText,
+  resolveHistoryFilePath,
+  resolvePublicChannelSlug,
+  savePostHistory,
+  toCanonicalPostText,
 } from './lib/telegram-dedupe.mjs';
 
-const DEFAULT_MODEL = 'gpt-4.1-mini';
-const DEFAULT_ANTHROPIC_MODEL = 'claude-3-5-sonnet-latest';
-const STANDARD_TELEGRAM_SIGNATURE = `✨ Kay's English Corner✨
-Your Gateway to English Success in Canada 🇨🇦
-🔗 Join us on Telegram
-https://t.me/Kaysenglishcorner`;
+const LESSONS_DIR = path.join(process.cwd(), 'src', 'content', 'lessons');
 
-const TOPIC_BANK = [
-  { type: 'vocab', level: 'B1', topic: 'Reliable - someone or something you can trust', lang: 'EN/FA' },
-  { type: 'vocab', level: 'B1', topic: 'Convenient - easy to use or good for your situation', lang: 'EN/FA' },
-  { type: 'vocab', level: 'B1', topic: 'Afford - have enough money to buy something', lang: 'EN/FA' },
-  { type: 'vocab', level: 'A2', topic: 'Nervous - feeling worried before something happens', lang: 'EN/FA' },
-  { type: 'vocab', level: 'B1', topic: 'Improve - make something better', lang: 'EN/FA' },
-  { type: 'grammar', level: 'B1', topic: 'Used to vs Would - past habits and states', lang: 'EN/FA' },
-  { type: 'grammar', level: 'A2', topic: 'Present Perfect vs Simple Past', lang: 'EN/FA' },
-  { type: 'grammar', level: 'B1', topic: 'First and Second Conditionals - real and unreal situations', lang: 'EN/FA' },
-  { type: 'grammar', level: 'A2', topic: 'Common preposition mistakes in English', lang: 'EN/FA' },
-  { type: 'grammar', level: 'B1', topic: 'Reported speech - telling someone what another person said', lang: 'EN/FA' },
-  { type: 'idiom', level: 'B1', topic: 'Hit the nail on the head - be exactly right', lang: 'EN/FA' },
-  { type: 'idiom', level: 'B1', topic: 'Break a leg - good luck or best wishes', lang: 'EN/FA' },
-  { type: 'idiom', level: 'A2', topic: 'Piece of cake - something very easy', lang: 'EN/FA' },
-  { type: 'idiom', level: 'B1', topic: 'Under the weather - feeling a little sick', lang: 'EN/FA' },
-  { type: 'expression', level: 'B1', topic: 'Better late than never - still good even if delayed', lang: 'EN/FA' },
-  { type: 'expression', level: 'A2', topic: 'What a coincidence! - expressing surprise at timing', lang: 'EN/FA' },
-  { type: 'expression', level: 'B1', topic: 'It depends - the answer changes based on the situation', lang: 'EN/FA' },
-  { type: 'phrasal', level: 'B1', topic: 'Get by - manage with difficulty or limited resources', lang: 'EN/FA' },
-  { type: 'phrasal', level: 'B1', topic: 'Look forward to - be excited about something in the future', lang: 'EN/FA' },
-  { type: 'phrasal', level: 'A2', topic: 'Turn off / Turn on - control a device or light', lang: 'EN/FA' },
-];
+const SIGNATURE_BLOCK = [
+  '🌈✨ Kay\'s English Corner',
+  'Your Gateway to English Success in Canada 🇨🇦',
+  '🌐 Lessons + services: https://ieltscorner.ca',
+  '🔗 Join us: https://t.me/kaysenglishcorner',
+].join('\n');
+
+const CATEGORY_LABELS = {
+  grammar: { lesson: '🔎 Grammar Fix', mini: '⚡ Quick Grammar' },
+  vocabulary: { lesson: '🔄 Useful English', mini: '🔑 Word Power' },
+  writing: { lesson: '✍️ Writing Move', mini: '✍️ Quick Writing' },
+  speaking: { lesson: '🎤 Speaking Tip', mini: '🗣 Quick Speaking' },
+  reading: { lesson: '📘 Reading Skill', mini: '📘 Quick Reading' },
+  listening: { lesson: '🎧 Listening Tip', mini: '🎧 Quick Listening' },
+  exam: { lesson: '🎯 Exam Skill', mini: '🎯 Quick Skill' },
+};
+
+const CATEGORY_HOOKS = {
+  grammar: [
+    'This small change makes a big difference.',
+    'A lot of learners get this wrong at first.',
+    'This one looks small, but it changes the whole sentence.',
+  ],
+  vocabulary: [
+    'These words look similar, but they do different jobs.',
+    'This pair confuses a lot of learners.',
+    'If you mix these up, your English sounds less natural.',
+  ],
+  writing: [
+    'This is one of the easiest ways to make your writing stronger.',
+    'A better score often starts with one cleaner writing move.',
+    'This is not about longer sentences. It is about smarter ones.',
+  ],
+  speaking: [
+    'You do not need a long answer. You need a clear one.',
+    'A short clear answer is usually better than a messy long one.',
+    'This tip helps you sound more natural right away.',
+  ],
+  reading: [
+    'This skill saves time and stops panic in reading tasks.',
+    'A better reading score often comes from one smarter habit.',
+    'Do not read everything the same way. Read with a target.',
+  ],
+  listening: [
+    'This tip helps you stop chasing every single word.',
+    'A stronger listening score starts with better attention, not more stress.',
+    'You do not need every word. You need the right words.',
+  ],
+  exam: [
+    'A better exam result often comes from one simpler habit.',
+    'This is the kind of move that saves time under pressure.',
+    'Small strategy changes can raise your score fast.',
+  ],
+};
+
+const CATEGORY_PERSIAN_NOTES = {
+  grammar: 'اول معنی رو بگیر، بعد فرم درست رو بذار توی جمله.',
+  vocabulary: 'کلمه رو با جمله یاد بگیر، نه فقط با ترجمه.',
+  writing: 'قبل نوشتن، کار هر جمله و هر پاراگراف رو معلوم کن.',
+  speaking: 'کوتاه و واضح بگو، بعد یه دلیل یا مثال اضافه کن.',
+  reading: 'اول سوال رو بفهم، بعد برو سراغ کلمه یا ایده‌ی کلیدی.',
+  listening: 'دنبال تک‌تک کلمه‌ها نباش؛ معنی کلی و کلمات مهم رو بگیر.',
+  exam: 'اول هدف سوال رو بفهم، بعد با یه روش ساده جوابش کن.',
+};
 
 function stripWrappingQuotes(value) {
-  const trimmed = value.trim();
+  const trimmed = String(value ?? '').trim();
   if (
     (trimmed.startsWith('"') && trimmed.endsWith('"'))
-    || (trimmed.startsWith("'") && trimmed.endsWith("'"))
+    || (trimmed.startsWith('\'') && trimmed.endsWith('\''))
   ) {
     return trimmed.slice(1, -1);
   }
@@ -60,27 +98,19 @@ function stripWrappingQuotes(value) {
 async function loadEnvFile(filePath) {
   try {
     const content = await readFile(filePath, 'utf8');
-    const lines = content.split(/\r?\n/);
-    for (const rawLine of lines) {
+    for (const rawLine of content.split(/\r?\n/)) {
       const line = rawLine.trim();
-      if (!line || line.startsWith('#')) {
-        continue;
-      }
-
+      if (!line || line.startsWith('#')) continue;
       const separatorIndex = line.indexOf('=');
-      if (separatorIndex <= 0) {
-        continue;
-      }
-
+      if (separatorIndex <= 0) continue;
       const key = line.slice(0, separatorIndex).trim();
       const value = stripWrappingQuotes(line.slice(separatorIndex + 1));
-
       if (key && process.env[key] === undefined) {
         process.env[key] = value;
       }
     }
   } catch {
-    // ignore missing env files
+    // optional env file
   }
 }
 
@@ -94,9 +124,8 @@ function parseArgs(argv) {
   const options = {
     dryRun: false,
     exam: 'AUTO',
+    mode: 'lesson',
     topic: '',
-    templateFile: '',
-    model: process.env.OPENAI_MODEL ?? DEFAULT_MODEL,
   };
 
   for (let index = 2; index < argv.length; index += 1) {
@@ -106,14 +135,11 @@ function parseArgs(argv) {
     } else if (arg === '--exam') {
       options.exam = String(argv[index + 1] ?? 'auto').toUpperCase();
       index += 1;
+    } else if (arg === '--mode') {
+      options.mode = String(argv[index + 1] ?? 'lesson').toLowerCase();
+      index += 1;
     } else if (arg === '--topic') {
-      options.topic = String(argv[index + 1] ?? '');
-      index += 1;
-    } else if (arg === '--template-file') {
-      options.templateFile = String(argv[index + 1] ?? '');
-      index += 1;
-    } else if (arg === '--model') {
-      options.model = String(argv[index + 1] ?? DEFAULT_MODEL);
+      options.topic = String(argv[index + 1] ?? '').trim();
       index += 1;
     } else {
       throw new Error(`Unknown argument: ${arg}`);
@@ -125,881 +151,515 @@ function parseArgs(argv) {
     throw new Error('--exam must be one of: auto, IELTS, CELPIP, ESL');
   }
 
+  const validModes = new Set(['lesson', 'mini-tip']);
+  if (!validModes.has(options.mode)) {
+    throw new Error('--mode must be one of: lesson, mini-tip');
+  }
+
   return options;
 }
 
-function pickTopic(forcedTopic) {
-  if (forcedTopic) {
-    return {
-      type: 'vocab',
-      level: 'B1',
-      topic: forcedTopic,
-    };
+function extractScalar(frontmatter, fieldName) {
+  const quotedMatch = frontmatter.match(new RegExp(`^${fieldName}:\\s*"([^"]*)"\\s*$`, 'm'));
+  if (quotedMatch) return quotedMatch[1].trim();
+
+  const singleQuotedMatch = frontmatter.match(new RegExp(`^${fieldName}:\\s*'([^']*)'\\s*$`, 'm'));
+  if (singleQuotedMatch) return singleQuotedMatch[1].trim();
+
+  const plainMatch = frontmatter.match(new RegExp(`^${fieldName}:\\s*([^\\n]+?)\\s*$`, 'm'));
+  return plainMatch ? plainMatch[1].trim() : '';
+}
+
+function extractList(frontmatter, fieldName) {
+  const match = frontmatter.match(new RegExp(`^${fieldName}:\\s*\\[([^\\]]*)\\]\\s*$`, 'm'));
+  if (!match) return [];
+
+  return match[1]
+    .split(',')
+    .map((item) => stripWrappingQuotes(item))
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function extractQuiz(frontmatter) {
+  const quizMatch = frontmatter.match(
+    /-\s*prompt:\s*"([^"]+)"[\s\S]*?options:\s*\n((?:\s*-\s*"[^"]+"\s*\n)+)\s*correctIndex:\s*(\d+)\s*\n\s*explanation:\s*"([^"]+)"/m,
+  );
+  if (!quizMatch) return null;
+
+  const [, question, optionsBlock, correctIndexRaw, explanation] = quizMatch;
+  const options = [...optionsBlock.matchAll(/-\s*"([^"]+)"/g)].map((match) => match[1].trim());
+  if (options.length < 2) return null;
+
+  const correctIndex = Math.max(0, Math.min(options.length - 1, Number.parseInt(correctIndexRaw, 10) || 0));
+  return {
+    question: question.trim().slice(0, 290),
+    options: options.slice(0, 10),
+    correctIndex,
+    explanation: explanation.trim().slice(0, 180),
+  };
+}
+
+function cleanupLessonTitle(title) {
+  return String(title ?? '')
+    .replace(/\s*\((A1|A2|B1|B2|C1|C2)\)\s*$/i, '')
+    .trim();
+}
+
+function firstSentence(value) {
+  const text = String(value ?? '').replace(/\s+/g, ' ').trim();
+  if (!text) return '';
+  const match = text.match(/^(.+?[.!?])(?:\s|$)/);
+  return (match?.[1] ?? text).trim();
+}
+
+function extractExamplesByClass(body, className) {
+  const collected = [];
+  const pattern = new RegExp(`${className}"><span>[^<]*<\\/span>([\\s\\S]*?)<\\/p>`, 'g');
+  for (const match of body.matchAll(pattern)) {
+    const text = htmlToPlainText(match[1] ?? '').replace(/\s+/g, ' ').trim();
+    if (text && !collected.includes(text)) {
+      collected.push(text);
+    }
+  }
+  return collected;
+}
+
+function extractPatternExamples(body) {
+  const collected = [];
+  for (const match of body.matchAll(/lesson-pattern-sentence">([\s\S]*?)<\/div>/g)) {
+    const text = htmlToPlainText(match[1] ?? '').replace(/\s+/g, ' ').trim();
+    if (text && !collected.includes(text)) {
+      collected.push(text);
+    }
+  }
+  return collected;
+}
+
+function extractFixTip(body) {
+  const match = body.match(/lesson-fix-line"><strong>Fix:<\/strong>\s*([\s\S]*?)<\/p>/);
+  if (!match) return '';
+  return htmlToPlainText(match[1] ?? '').replace(/\s+/g, ' ').trim();
+}
+
+function inferCategory(category, title) {
+  const normalized = String(category ?? '').trim().toLowerCase();
+  if (normalized) return normalized;
+
+  const titleText = String(title ?? '').toLowerCase();
+  if (titleText.includes('writing')) return 'writing';
+  if (titleText.includes('speaking')) return 'speaking';
+  if (titleText.includes('reading')) return 'reading';
+  if (titleText.includes('listening')) return 'listening';
+  if (titleText.includes('vocabulary') || titleText.includes('word formation')) return 'vocabulary';
+  return 'grammar';
+}
+
+function buildLessonHashtags(lesson) {
+  const category = inferCategory(lesson.category, lesson.title);
+  const level = String(lesson.level ?? '').toUpperCase();
+  const examList = Array.isArray(lesson.exam) ? lesson.exam : [];
+  const tags = [
+    {
+      grammar: '#Grammar',
+      vocabulary: '#Vocabulary',
+      writing: '#Writing',
+      speaking: '#Speaking',
+      reading: '#Reading',
+      listening: '#Listening',
+      exam: '#ExamEnglish',
+    }[category] ?? '#LearnEnglish',
+  ];
+
+  if (examList.includes('CELPIP')) {
+    tags.push('#CELPIP');
+  } else if (examList.includes('IELTS')) {
+    tags.push('#IELTS');
+  } else {
+    tags.push('#LearnEnglish');
   }
 
-  const selected = TOPIC_BANK[pickDeterministicIndex(TOPIC_BANK.length, 11)] ?? TOPIC_BANK[0];
-  return { ...selected };
+  if (level) {
+    tags.push(`#${level}English`);
+  }
+
+  return [...new Set(tags)].slice(0, 4);
+}
+
+function buildFallbackQuiz(lesson) {
+  const title = cleanupLessonTitle(lesson.title);
+  return {
+    question: `What is the main idea in ${title}?`,
+    options: [
+      lesson.heroTip || 'Understand the meaning first',
+      'Use the longest words possible',
+      'Make the sentence more confusing',
+    ],
+    correctIndex: 0,
+    explanation: 'Start with the main meaning and the real job of the sentence.',
+  };
+}
+
+function resolveChatId(explicitChatId, channelUrl) {
+  const direct = explicitChatId?.trim();
+  if (direct) return direct;
+
+  const url = channelUrl?.trim();
+  if (!url) return '';
+  const normalized = url.replace(/^https?:\/\//i, '').replace(/^t\.me\//i, '');
+  const slug = normalized.split(/[/?#]/)[0]?.trim();
+  if (!slug) return '';
+  return slug.startsWith('@') ? slug : `@${slug}`;
+}
+
+function seedFromText(value) {
+  return [...String(value ?? '')].reduce((sum, char) => sum + char.codePointAt(0), 0);
+}
+
+function pickFromList(list, seed) {
+  if (!Array.isArray(list) || list.length === 0) return '';
+  return list[Math.abs(seed) % list.length];
+}
+
+function appendSignature(text) {
+  const body = String(text ?? '').trim();
+  if (!body) return SIGNATURE_BLOCK;
+  if (body.includes('Kay\'s English Corner') || body.includes('Kay’s English Corner')) {
+    return body;
+  }
+  return `${body}\n\n${SIGNATURE_BLOCK}`;
+}
+
+function normalizeActionLine(category, title) {
+  if (category === 'writing') {
+    return '🎯 Your turn:\nUse this move in one short IELTS or CELPIP paragraph.';
+  }
+  if (category === 'speaking') {
+    return `🎯 Your turn:\nSay one short answer out loud with ${title.toLowerCase()}.`;
+  }
+  if (category === 'reading' || category === 'listening') {
+    return '🎯 Your turn:\nTry this idea in your next practice set.';
+  }
+  if (category === 'vocabulary') {
+    return `🎯 Quick challenge:\nWrite one sentence with ${title.toLowerCase()}.`;
+  }
+  return `🎯 Your turn:\nMake one sentence with ${title.toLowerCase()}.`;
+}
+
+function buildLessonContent(lesson, mode) {
+  const category = inferCategory(lesson.category, lesson.title);
+  const labels = CATEGORY_LABELS[category] ?? CATEGORY_LABELS.exam;
+  const title = cleanupLessonTitle(lesson.title);
+  const seed = seedFromText(`${lesson.slug}:${mode}`);
+  const hook = pickFromList(CATEGORY_HOOKS[category] ?? CATEGORY_HOOKS.exam, seed);
+  const heroTip = firstSentence(lesson.heroTip) || 'Keep the meaning clear first.';
+  const strongExamples = Array.isArray(lesson.strongExamples) ? lesson.strongExamples : [];
+  const weakExamples = Array.isArray(lesson.weakExamples) ? lesson.weakExamples : [];
+  const patternExamples = Array.isArray(lesson.patternExamples) ? lesson.patternExamples : [];
+  const primaryStrong = strongExamples[0] || patternExamples[0] || '';
+  const secondaryStrong = strongExamples[1] || patternExamples[1] || '';
+  const primaryWeak = weakExamples[0] || '';
+  const fixTip = firstSentence(lesson.fixTip);
+  const persianNote = CATEGORY_PERSIAN_NOTES[category] ?? CATEGORY_PERSIAN_NOTES.exam;
+  const actionLine = normalizeActionLine(category, title);
+
+  const lines = [
+    `${mode === 'mini-tip' ? labels.mini : labels.lesson}: ${title}`,
+    '',
+    hook,
+    '',
+  ];
+
+  if (category === 'grammar' || category === 'vocabulary') {
+    if (primaryWeak && primaryStrong) {
+      lines.push('❌ Common mistake:', primaryWeak, '', '✅ Better:', primaryStrong, '');
+    }
+    lines.push('💡 Key point:', heroTip, '');
+    if (secondaryStrong && mode !== 'mini-tip') {
+      lines.push('✍️ One more example:', secondaryStrong, '');
+    }
+  } else if (category === 'writing') {
+    lines.push('💡 The move:', heroTip, '');
+    if (primaryStrong) {
+      lines.push('✅ Strong example:', primaryStrong, '');
+    }
+    if (secondaryStrong) {
+      lines.push(mode === 'mini-tip' ? '✍️ Another useful line:' : '✍️ One more example:', secondaryStrong, '');
+    }
+    if (primaryWeak && mode !== 'mini-tip') {
+      lines.push('❌ Watch for this:', primaryWeak, '');
+    }
+  } else {
+    lines.push('💡 Main tip:', heroTip, '');
+    if (primaryStrong) {
+      lines.push('✅ Example:', primaryStrong, '');
+    }
+    if (secondaryStrong) {
+      lines.push(mode === 'mini-tip' ? '✍️ Another example:' : '✅ Another example:', secondaryStrong, '');
+    }
+  }
+
+  if (fixTip && mode !== 'mini-tip') {
+    lines.push('🛠 Quick fix:', fixTip, '');
+  }
+
+  lines.push('🇮🇷 فارسی کوتاه:', persianNote, '', actionLine);
+
+  return {
+    title,
+    topic: lesson.slug,
+    level: lesson.level || '',
+    postBody: appendSignature(lines.join('\n')),
+    hashtags: buildLessonHashtags(lesson),
+    quizzes: [lesson.quiz || buildFallbackQuiz(lesson)],
+  };
+}
+
+function buildCustomTopic(topic, mode) {
+  const cleanTopic = String(topic ?? '').trim();
+  const lines = [
+    `${mode === 'mini-tip' ? '⚡ Quick English' : '🔎 English Tip'}: ${cleanTopic}`,
+    '',
+    'This is a useful English point that can help you sound clearer right away.',
+    '',
+    '💡 Key idea:',
+    'Understand the meaning first, then use it in one natural sentence.',
+    '',
+    '🇮🇷 فارسی کوتاه:',
+    'اول معنی رو بگیر، بعد توی یه جمله‌ی طبیعی ازش استفاده کن.',
+    '',
+    `🎯 Your turn:\nMake one sentence with ${cleanTopic.toLowerCase()}.`,
+  ];
+
+  return {
+    slug: `custom:${cleanTopic.toLowerCase()}`,
+    title: cleanTopic,
+    category: 'grammar',
+    level: 'B1',
+    exam: [],
+    postBody: appendSignature(lines.join('\n')),
+    hashtags: ['#LearnEnglish', '#EnglishTips', '#DailyEnglish'],
+    quizzes: [{
+      question: `What should you do first with ${cleanTopic}?`,
+      options: [
+        'Understand the meaning and use it in one natural sentence',
+        'Memorize a hard definition only',
+        'Make the sentence more complicated than necessary',
+      ],
+      correctIndex: 0,
+      explanation: 'Real learning happens when you connect meaning to a natural example.',
+    }],
+  };
 }
 
 function pickDeterministicIndex(length, salt = 0) {
-  if (!Number.isInteger(length) || length <= 0) {
-    return 0;
-  }
+  if (!Number.isInteger(length) || length <= 0) return 0;
 
   const runNumber = Number.parseInt(process.env.GITHUB_RUN_NUMBER ?? '', 10);
   const runAttempt = Number.parseInt(process.env.GITHUB_RUN_ATTEMPT ?? '1', 10);
-
   if (Number.isFinite(runNumber) && runNumber > 0) {
     const attempt = Number.isFinite(runAttempt) && runAttempt > 0 ? runAttempt : 1;
-    const seed = (runNumber * 97) + (attempt * 13) + salt;
-    return seed % length;
+    return ((runNumber * 97) + (attempt * 13) + salt) % length;
   }
 
-  return Math.floor(Math.random() * length);
+  const daySeed = Number.parseInt(new Date().toISOString().slice(8, 10), 10) || 1;
+  return (daySeed + salt) % length;
 }
 
-async function readTemplate(templateFileArg) {
-  const templateFromEnv = process.env.TELEGRAM_POST_TEMPLATE?.trim();
-  if (templateFromEnv) {
-    return templateFromEnv;
+function normalizeTopicSearch(value) {
+  return String(value ?? '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+}
+
+function matchesForcedTopic(lesson, topic) {
+  const needle = normalizeTopicSearch(topic);
+  if (!needle) return false;
+
+  const haystacks = [
+    lesson.slug,
+    lesson.title,
+    lesson.excerpt,
+    lesson.heroTip,
+  ].map(normalizeTopicSearch);
+
+  return haystacks.some((haystack) => haystack.includes(needle));
+}
+
+const TELEGRAM_POSITIVE_KEYWORDS = [
+  'article',
+  'articles',
+  'borrow',
+  'lend',
+  'make',
+  'do',
+  'few',
+  'little',
+  'should',
+  'can',
+  'could',
+  'adjective',
+  'adverb',
+  'preposition',
+  'question',
+  'request',
+  'email',
+  'letter',
+  'clinic',
+  'doctor',
+  'pharmacy',
+  'job',
+  'work',
+  'phone',
+  'appointment',
+  'conversation',
+  'speaking',
+  'vocab',
+  'vocabulary',
+  'grammar',
+  'time',
+  'tense',
+  'plural',
+  'singular',
+  'prefix',
+  'suffix',
+  'used to',
+  'present perfect',
+];
+
+const TELEGRAM_NEGATIVE_KEYWORDS = [
+  'advanced',
+  'cohesion',
+  'discourse',
+  'reformulation',
+  'techniques',
+  'ambiguity',
+  'argument structure',
+  'formal expression',
+  'formal essays',
+  'punctuation and sentence control',
+  'stance',
+  'inversion',
+  'emphasis',
+  'clause combinations',
+  'academic discussion',
+  'time management by question type',
+  'recover after missed detail',
+  'note taking symbol system',
+];
+
+function countKeywordHits(text, keywords) {
+  const haystack = normalizeTopicSearch(text);
+  if (!haystack) return 0;
+  return keywords.reduce((count, keyword) => (
+    haystack.includes(normalizeTopicSearch(keyword)) ? count + 1 : count
+  ), 0);
+}
+
+function scoreLessonForTelegram(lesson, mode) {
+  const composite = [
+    lesson.slug,
+    lesson.title,
+    lesson.excerpt,
+    lesson.heroTip,
+    ...(Array.isArray(lesson.strongExamples) ? lesson.strongExamples : []),
+  ].join(' ');
+
+  let score = 0;
+  const category = inferCategory(lesson.category, lesson.title);
+  const level = String(lesson.level ?? '').toUpperCase();
+  const strongExampleCount = Array.isArray(lesson.strongExamples) ? lesson.strongExamples.length : 0;
+  const weakExampleCount = Array.isArray(lesson.weakExamples) ? lesson.weakExamples.length : 0;
+
+  score += strongExampleCount * 8;
+  score += weakExampleCount * 3;
+  score += countKeywordHits(composite, TELEGRAM_POSITIVE_KEYWORDS) * 7;
+  score -= countKeywordHits(composite, TELEGRAM_NEGATIVE_KEYWORDS) * 12;
+
+  if (level === 'A1' || level === 'A2') score += 10;
+  if (level === 'B1' || level === 'B2') score += 16;
+  if (level === 'C1') score += 4;
+  if (level === 'C2') score -= 8;
+
+  if (category === 'grammar' || category === 'vocabulary') score += 14;
+  if (category === 'speaking') score += 10;
+  if (category === 'writing') score += mode === 'mini-tip' ? -6 : 2;
+  if (category === 'reading' || category === 'listening') score += mode === 'mini-tip' ? -2 : 0;
+
+  if (lesson.slug.includes('celpip-task1') || lesson.slug.includes('ielts-task-1')) score += 8;
+  if (lesson.slug.includes('walk-in') || lesson.slug.includes('pharmacy') || lesson.slug.includes('doctor')) score += 12;
+  if (lesson.slug.includes('advanced-')) score -= 14;
+
+  return score;
+}
+
+async function loadLessonBank() {
+  const fileNames = (await readdir(LESSONS_DIR))
+    .filter((fileName) => fileName.endsWith('.md'))
+    .sort((left, right) => left.localeCompare(right));
+
+  const lessons = [];
+  for (const fileName of fileNames) {
+    const raw = await readFile(path.join(LESSONS_DIR, fileName), 'utf8');
+    const frontmatterMatch = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
+    if (!frontmatterMatch) continue;
+
+    const frontmatter = frontmatterMatch[1];
+    if (/^draft:\s*true\s*$/m.test(frontmatter)) continue;
+
+    const title = extractScalar(frontmatter, 'title');
+    if (!title) continue;
+
+    const body = raw.slice(frontmatterMatch[0].length);
+    lessons.push({
+      slug: fileName.replace(/\.md$/i, ''),
+      title,
+      category: extractScalar(frontmatter, 'category'),
+      level: extractScalar(frontmatter, 'level'),
+      excerpt: extractScalar(frontmatter, 'excerpt'),
+      heroTip: extractScalar(frontmatter, 'heroTip'),
+      exam: extractList(frontmatter, 'exam'),
+      strongExamples: extractExamplesByClass(body, 'lesson-line-strong'),
+      weakExamples: extractExamplesByClass(body, 'lesson-line-weak'),
+      patternExamples: extractPatternExamples(body),
+      fixTip: extractFixTip(body),
+      quiz: extractQuiz(frontmatter),
+    });
   }
 
-  const envTemplateFile = process.env.TELEGRAM_TEMPLATE_FILE?.trim();
-  const templateFile = templateFileArg || envTemplateFile;
+  return lessons;
+}
 
-  if (!templateFile) {
-    return '';
+function pickLesson(lessons, options, history, topicDedupeDays) {
+  if (options.topic) {
+    const matched = lessons.find((lesson) => matchesForcedTopic(lesson, options.topic));
+    return matched ?? null;
   }
 
-  try {
-    const content = await readFile(templateFile, 'utf8');
-    return content.trim();
-  } catch {
-    return '';
-  }
-}
-
-function extractJson(text) {
-  const start = text.indexOf('{');
-  const end = text.lastIndexOf('}');
-  if (start === -1 || end === -1 || end <= start) {
-    throw new Error('No JSON object found in model response.');
-  }
-  return text.slice(start, end + 1);
-}
-
-function fallbackContent({ type, level, topic, channelUrl }) {
-  const cleanTopic = String(topic || 'English topic').trim() || 'English topic';
-  const [topicHeadRaw, topicMeaningRaw] = cleanTopic.split(/\s+-\s+/, 2);
-  const topicHead = (topicHeadRaw || cleanTopic).trim();
-  const topicMeaning = (topicMeaningRaw || '').trim();
-  const introByType = {
-    vocab: 'Word of the day',
-    grammar: 'Grammar point',
-    idiom: 'Idiom focus',
-    expression: 'Useful expression',
-    phrasal: 'Phrasal verb focus',
-  };
-  const emojiByType = {
-    vocab: '📝',
-    grammar: '🔎',
-    idiom: '💬',
-    expression: '✨',
-    phrasal: '➡️',
-  };
-  const intro = introByType[type] || 'English tip';
-  const emoji = emojiByType[type] || '📘';
-  const meaningLine = topicMeaning
-    ? `${topicHead} means ${topicMeaning}.`
-    : `${topicHead} is useful because it appears often in real English.`;
-  const channelLine = channelUrl ? `\n\nMore short lessons: ${channelUrl}` : '';
-
-  return {
-    title: `${intro}: ${topicHead}`,
-    format: 'teacher-note',
-    level: String(level || 'B1'),
-    topic: cleanTopic,
-    postBody: `${emoji} ${intro}: ${topicHead}
-
-Why it matters:
-Students often understand this topic when reading, but hesitate when they need to use it in a real sentence.
-
-Key idea:
-${meaningLine}
-
-Simple examples:
-1. Use it in a short everyday sentence.
-2. Check the meaning, tone, and grammar around it.
-3. Say the sentence again with your own example.
-
-Quick study move:
-Write one sentence about work, study, or daily life. If the sentence still feels vague, make it more specific.${channelLine}`,
-    hashtags: ['#LearnEnglish', `#${String(level || 'B1').toUpperCase()}English`, '#DailyEnglish', '#IELTSCorner'],
-    quizzes: [
-      {
-        question: `Which sentence shows a clearer use of "${topicHead}"?`,
-        options: [
-          'The sentence matches the meaning and sounds natural.',
-          'The sentence uses the word with the wrong meaning.',
-          'The sentence is too vague to prove the point.',
-          'The sentence changes the topic completely.',
-        ],
-        correctIndex: 0,
-        explanation: `A good example should match the meaning of ${topicHead} and sound natural in context.`,
-      },
-    ],
-  };
-
-  // 7 B1-level format templates rotating through diverse styles
-  // All match Kay's English Corner enthusiastic voice
-
-  // FORMAT 1: Mini Story (narrative-based)
-  const storyFormats = [
-    {
-      title: '📖 Mini Story: The Job Interview Surprise',
-      format: 'story',
-      level: 'B1',
-      topic: 'Story about nervousness and success',
-      postBody: `📖 Mini Story: The Job Interview Surprise
-
-Sarah was SO nervous about her job interview! 😰
-
-She left her house 2 hours early (way too early! 😅) and arrived at the office building. But when she checked the address again... OH NO! 😱 Wrong building!
-
-She RAN to the correct address! Her heart was racing! 🏃‍♀️💨
-
-When she arrived, sweating and out of breath, the interviewer smiled and said: "Don't worry! You're actually 15 minutes EARLY!" 😊
-
-Sarah got the job! 🎉
-
-🇮🇷 سارا خیلی نگران مصاحبه کاریش بود! ۲ ساعت زودتر رفت ولی به آدرس اشتباه رفته بود! دوید و به موقع رسید! کار رو گرفت! 💪
-
-💡 What We Learn:
-✅ "Way too early" = خیلی خیلی زود 
-✅ "Out of breath" = نفس نفس زدن (من از نفس افتادم)
-✅ "Don't worry" = نگران نباش
-
-🎯 YOUR TURN: Have YOU ever gone to the wrong place? Tell us! 👇`,
-      hashtags: ['#EnglishStory', '#LearnEnglish', '#B1English', '#RealLife'],
-      quizzes: [
-        {
-          question: '❓ What does "out of breath" mean?',
-          options: ['Very angry', 'Breathing hard after running', 'Holding your breath', 'Speaking quietly'],
-          correctIndex: 1,
-          explanation: '"Out of breath" = نفس نفس زدن! After running or exercise! 🏃‍♀️💨',
-        },
-      ],
-    },
-  ];
-
-  // FORMAT 2: Visual Comparison (side-by-side)
-  const comparisonFormats = [
-    {
-      title: '⚡ Quick Fix: Stop Saying "Very"!',
-      format: 'comparison',
-      level: 'B1',
-      topic: 'Power words instead of very',
-      postBody: `⚡ Quick Fix: Stop Saying "Very"!
-
-Native speakers DON'T say "very" all the time! 😅
-They use POWER WORDS instead! 💪
-
-Here's the upgrade! ⬆️
-
-❌ Very tired → ✅ EXHAUSTED 😴
-❌ Very hungry → ✅ STARVING 🍕
-❌ Very cold → ✅ FREEZING 🥶
-❌ Very hot → ✅ BOILING 🔥
-❌ Very funny → ✅ HILARIOUS 😂
-❌ Very scared → ✅ TERRIFIED 😱
-
-🇮🇷 فارسی:
-❌ خیلی خسته → ✅ خسته مرده (exhausted)
-❌ خیلی گرسنه → ✅ دارم از گرسنگی میمیرم (starving)
-❌ خیلی سرد → ✅ یخ زده (freezing)
-
-💡 Pro Tip: These words are MORE expressive and make you sound SO much more natural! 🌟
-
-🎯 Try it NOW: Make a sentence with ONE power word! 👇`,
-      hashtags: ['#VocabularyTips', '#PowerWords', '#B1English', '#StopSayingVery'],
-      quizzes: [
-        {
-          question: '❓ "I\'m not just tired, I\'m _____!" (Super tired)',
-          options: ['very tired', 'exhausted', 'sleeping', 'boring'],
-          correctIndex: 1,
-          explanation: '"Exhausted" = خسته مرده! Much stronger than "very tired!" 💪',
-        },
-      ],
-    },
-  ];
-
-  // FORMAT 3: Ultra-Short Tip
-  const quickTipFormats = [
-    {
-      title: '💬 Say It Right: "I\'m good" vs "I\'m well"',
-      format: 'quick-tip',
-      level: 'B1',
-      topic: 'Common greeting responses',
-      postBody: `💬 Say It Right: "I'm good" vs "I'm well"
-
-Someone asks: "How are you?" 👋
-
-Which is correct? BOTH! But different! 😊
-
-✅ "I'm good!" = I'm feeling fine/happy (CASUAL, friendly) 😄
-✅ "I'm well!" = I'm healthy (FORMAL, polite) 🎩
-
-🇮🇷 فارسی:
-"I'm good" = حالم خوبه (خودمونی) 😊
-"I'm well" = سلامتم (رسمی) 👔
-
-💡 99% of the time → "I'm good!" is perfect! ✨
-
-🎯 Next time someone asks "How are you?" → try "I'm good, thanks!" 👇`,
-      hashtags: ['#QuickTip', '#B1English', '#SayItRight', '#DailyEnglish'],
-      quizzes: [
-        {
-          question: '❓ Your friend asks "How are you?" What sounds most natural?',
-          options: ["I'm good, thanks!", "I'm well, thank you.", "I'm fine.", "I have good."],
-          correctIndex: 0,
-          explanation: '"I\'m good!" is the most natural casual response! 99% of native speakers use it! 😊',
-        },
-      ],
-    },
-  ];
-
-  // FORMAT 4: Common Mistake Deep Dive
-  const mistakeFocusFormats = [
-    {
-      title: '🔍 One Mistake Everyone Makes: "Bored" vs "Boring"',
-      format: 'mistake-focus',
-      level: 'B1',
-      topic: '-ed vs -ing adjectives',
-      postBody: `🔍 One Mistake Everyone Makes: "Bored" vs "Boring"
-
-This trips up EVERYONE! Even advanced students! 😅
-
-❌ "The movie was bored." ← WRONG! ✗
-✅ "The movie was boring." ← RIGHT! ✓
-
-❌ "I was boring at the party." ← WRONG! ✗
-✅ "I was bored at the party." ← RIGHT! ✓
-
-📌 THE RULE (memorize this!):
-
-🔹 BORING = the thing that CAUSES boredom (it makes YOU bored!)
-→ The movie is boring. (فیلم کسل کننده است)
-
-🔹 BORED = YOU feel boredom (you ARE experiencing it!)
-→ I am bored. (من خسته شدم / حوصله‌ام سر رفت)
-
-🇮🇷 به فارسی:
-Boring = چیزی که کسل کننده است (فیلم، کتاب، درس)
-Bored = تو احساس کسلی میکنی
-
-✨ More examples:
-✅ "This book is interesting!" (کتاب جالبه)
-✅ "I am interested in science!" (من به علم علاقه دارم)
-
-✅ "That lesson was confusing!" (درس گیج کننده بود)
-✅ "I was confused!" (من گیج شدم)
-
-💡 Remember: -ING describes the THING, -ED describes YOUR FEELING! 🎯
-
-🎯 YOUR TURN: Make a sentence with "bored" or "boring"! 👇`,
-      hashtags: ['#CommonMistakes', '#BoredVsBoring', '#B1Grammar', '#EnglishGrammar'],
-      quizzes: [
-        {
-          question: '❓ "That class was so _____. I almost fell asleep!" 😴',
-          options: ['bored', 'boring', 'bore', 'to bore'],
-          correctIndex: 1,
-          explanation: 'The CLASS causes boredom → "boring"! YOU feel bored! 💤',
-        },
-      ],
-    },
-  ];
-
-  // FORMAT 5: Idiom with Story/Origin
-  const idiomOriginFormats = [
-    {
-      title: '🎭 Idiom Story: "Piece of cake!"',
-      format: 'idiom-origin',
-      level: 'B1',
-      topic: 'Idiom meaning very easy',
-      postBody: `🎭 Idiom Story: "Piece of cake!" 🍰
-
-"That test was a piece of cake!" 
-
-Wait... what?! 🤔 A test is a CAKE?! 😂
-
-Nope! "Piece of cake" = SUPER EASY! ✨
-
-🎂 The Story Behind It:
-In the 1870s in America, there were "cake walk" competitions! 🚶‍♀️ The couple who walked the most gracefully won a CAKE as a prize! 🏆
-
-It was SO easy (just walk nicely!) that people started saying "That's a piece of cake!" = That's SO simple! 😄
-
-✍️ Real Examples:
-✅ "The IELTS speaking test? Piece of cake!" 🍰
-✅ "Don't worry about driving in Canada — it's a piece of cake!" 🚗
-✅ "Cooking rice? Piece of cake!" 🍚
-
-🇮🇷 شرح فارسی:
-"Piece of cake" یعنی خیلی آسون! مث آب خوردن! 🍰
-✅ "نگران نباش، این تست خیلی آسونه!" = "Don't worry, this test is a piece of cake!"
-✅ "رانندگی تو کانادا؟ آسونه!" = "Driving in Canada? Piece of cake!"
-
-💡 Similar phrases:
-• "It's easy as pie!" 🥧
-• "It's a walk in the park!" 🌳
-• "It's a breeze!" 💨
-
-🎯 What's something that's a "piece of cake" for YOU? Share! 👇`,
-      hashtags: ['#EnglishIdioms', '#PieceOfCake', '#B1English', '#IdiomStory'],
-      quizzes: [
-        {
-          question: '❓ "Don\'t worry, this exam is a piece of ___!"',
-          options: ['bread', 'cake', 'candy', 'cookie'],
-          correctIndex: 1,
-          explanation: '"Piece of CAKE" = super easy! خیلی آسون! 🍰✨',
-        },
-      ],
-    },
-  ];
-
-  // FORMAT 6: Canadian Context / Real-Life
-  const culturalPracticalFormats = [
-    {
-      title: '🇨🇦 Real Canada: What to Say at Tim Hortons',
-      format: 'cultural-practical',
-      level: 'B1',
-      topic: 'Ordering coffee in Canada',
-      postBody: `🇨🇦 Real Canada: What to Say at Tim Hortons ☕
-
-You walk into Tim Hortons (Canada's #1 coffee shop!) and... freeze! 😅 What do you SAY?!
-
-Don't panic! Here's EXACTLY what to say! 💪
-
-👉 STEP 1: The barista says "Hi! What can I get for you?"
-
-YOU say: "Can I have a _____, please?" ✨
-(medium coffee, large latte, small hot chocolate, etc.)
-
-👉 STEP 2: They ask: "For here or to go?"
-
-• "For here" = eat/drink inside 🏪
-• "To go" = take it with you 📦
-
-YOU say: "To go, please!" 
-
-👉 STEP 3: They tell you the price: "That'll be $3.50"
-
-YOU say: "Here you go!" 💳 (when giving money/card)
-
-They say: "Thank you! Have a great day!" ☀️
-
-YOU say: "You too!" 😊
-
-✅ DONE! 🎉
-
-🇮🇷 به فارسی:
-"Can I have..." = میتونم ... داشته باشم؟
-"For here or to go?" = اینجا میخورید یا میبرید؟
-"Here you go" = بفرمایید (وقتی پول میدی)
-
-💡 BONUS Canadian Phrase:
-"Double-double" = coffee with 2 creams + 2 sugars! 🇨🇦☕
-Super common! Everyone knows it!
-
-🎯 Next time you order coffee, use these phrases! 💪👇`,
-      hashtags: ['#CanadianEnglish', '#TimHortons', '#B1Speaking', '#RealCanada'],
-      quizzes: [
-        {
-          question: '❓ What does "for here or to go?" mean?',
-          options: ['Hot or cold?', 'Eat inside or take with you?', 'Large or small?', 'With sugar or no sugar?'],
-          correctIndex: 1,
-          explanation: '"For here" = inside! "To go" = take it! 📦☕',
-        },
-      ],
-    },
-  ];
-
-  // FORMAT 7: Pronunciation Challenge
-  const pronunciationFormats = [
-    {
-      title: '🔊 Pronunciation Challenge: "Literally"',
-      format: 'pronunciation',
-      level: 'B1',
-      topic: 'How native speakers say literally',
-      postBody: `🔊 Pronunciation Challenge: "Literally" 🤯
-
-How do YOU say "literally"? 🤔
-
-Most people say: LIT-er-AL-ly (4 syllables) ❌
-Native speakers say: LIT-rally (2 syllables!) ✅
-
-Wait... WHAT?! Only 2 syllables?! 😱 YES! 
-
-We skip the "er-al" sounds! It becomes: "LIT-r'lly" 🎯
-
-Try it 5 times FAST:
-"Literally, literally, literally, literally, literally!" 🗣️💨
-
-✍️ Real Examples:
-✅ "I <b>literally</b> ran to the bus stop!" 🏃‍♀️
-→ LIT-rally ran!
-
-✅ "This is <b>literally</b> the best coffee ever!" ☕
-→ LIT-rally the best!
-
-🇮🇷 به فارسی:
-Literally یعنی واقعاً، مستقیماً (تأکید روی حقیقت)
-ولی تلفظش فقط ۲ بخشه: "لیت-رُلی" 🗣️
-
-⚠️ Common mistake:
-Learners say: "LIT-er-AL-ly" (too long! Sounds unnatural! 😅)
-Natives say: "LIT-r'lly" (fast, smooth! ✨)
-
-💡 Pro Tip: Say it FAST and let your mouth skip the middle part! Your tongue will learn the shortcut! 💪
-
-🎯 Say it OUT LOUD right now: "I literally can't believe it!" Try 3 times! 👇`,
-      hashtags: ['#Pronunciation', '#Literally', '#B1English', '#SayItRight'],
-      quizzes: [
-        {
-          question: '❓ How many syllables do native speakers use for "literally"?',
-          options: ['4 syllables', '3 syllables', '2 syllables', '1 syllable'],
-          correctIndex: 2,
-          explanation: 'Only 2 syllables! "LIT-r\'lly" — we skip the middle! 🗣️✨',
-        },
-      ],
-    },
-  ];
-
-  // Combine all 7 format types
-  const allFormats = [
-    ...storyFormats,
-    ...comparisonFormats,
-    ...quickTipFormats,
-    ...mistakeFocusFormats,
-    ...idiomOriginFormats,
-    ...culturalPracticalFormats,
-    ...pronunciationFormats,
-  ];
-
-  // Rotate formats per workflow run to avoid repeated identical posts
-  const selectedLesson = allFormats[pickDeterministicIndex(allFormats.length, 37)];
-
-  const signature = `\n\n✨ Kay's English Corner✨\nYour Gateway to English Success in Canada 🇨🇦\n🔗 Join us on Telegram\nhttps://t.me/Kaysenglishcorner`;
-
-  return {
-    title: selectedLesson.title,
-    format: selectedLesson.format,
-    level: selectedLesson.level,
-    topic: selectedLesson.topic,
-    postBody: `${selectedLesson.postBody}${signature}`,
-    hashtags: selectedLesson.hashtags,
-    quizzes: selectedLesson.quizzes || [selectedLesson.quiz],
-  };
-}
-function buildB1Prompt({ type, level, topic, templateHint, channelUrl }) {
-  return `You are an experienced English teacher writing a Telegram post for "Kay's English Corner."
-Your audience: Farsi-speaking English learners in Canada, mostly A2-B1 adults.
-
-Content Type: ${type}
-Specific Topic: ${topic}
-Level: ${level}
-${templateHint}
-
-STYLE:
-- Sound like a careful teacher, not a hype account.
-- Use short paragraphs, simple language, and only a few well-placed emojis.
-- Do not use ALL CAPS, spammy hooks, or exaggerated promises.
-- Be warm and direct. The learner should feel guided, not sold to.
-- Keep the language easy enough for a CLB 6 learner.
-
-STRUCTURE:
-1. A short clear title.
-2. One short opening that says why this topic matters.
-3. A plain-language explanation.
-4. Two useful examples from daily life, work, or study.
-5. One quick practice prompt the learner can try today.
-6. If you include Persian support, keep it short and accurate.
-
-Return STRICT JSON only:
-{
-  "title": string,
-  "type": "${type}",
-  "level": string,
-  "topic": string,
-  "postBody": string,
-  "hashtags": string[],
-  "quiz": {
-    "question": string,
-    "options": [string, string, string, string],
-    "correctIndex": number,
-    "explanation": string
-  }
-}
-
-Rules:
-- postBody max 1600 characters, plain text, no markdown tables.
-- Focus only on vocabulary, grammar, idioms, expressions, or speaking/writing language use.
-- Avoid repetition, generic exam cliches, and empty motivation.
-- quiz: simple best-choice or fill-in-the-blank from a real-life situation.
-- quiz options: clear, simple English. No trick answers.
-- Hashtags: 3 to 5 only.
-- quiz.correctIndex must be 0-3.
-- Do not mention bots, DMs, or "exclusive features."
-${channelUrl ? `- You may add this channel link once at the end if it fits naturally: ${channelUrl}` : ''}`;
-
-  return `You are Kay, an enthusiastic and warm English teacher creating a Telegram post for your channel "Kay's English Corner."
-Your audience: Farsi-speaking English learners (mostly in Canada), level A2-B1.
-
-Content Type: ${type}
-Specific Topic: ${topic}
-Level: ${level}
-${templateHint}
-
-YOUR VOICE AND STYLE (this is critical — match this exactly):
-- You are EXCITED to teach. You use lots of exclamation marks!
-- You scatter emojis THROUGHOUT the text (not just in headers). Every 2-3 lines should have at least one emoji.
-- You use ALL CAPS for key words and emphasis: "This is SO important!", "Here's the SECRET:"
-- You build up excitement before revealing the answer: "Here's the thing that trips everyone up... 😅", "But don't worry — the rule is actually SO simple! 💡"
-- You talk directly to the reader: "You know that feeling when...", "Have you ever noticed..."
-- You are warm and encouraging, like a friend helping a friend. Never formal or academic.
-- Keep explanations at A2 level even if content is B1 — use the simplest words possible.
-
-FARSI SECTIONS:
-- Include a 🇮🇷 section with Farsi explanation
-- Translate at least 2 full example sentences into Farsi (not just the word definition)
-- Write Farsi naturally, the way people actually talk
-
-STRUCTURE:
-1) Catchy emoji-rich title for ${type}
-2) Hook that builds excitement ("This one confuses SO many students! 😅")
-3) Clear explanation with ❌ WRONG / ✅ RIGHT examples from daily life
-4) 🇮🇷 Farsi companion section with translated examples
-5) 💡 Practical tip or "Pro Tip" they can use TODAY
-6) 🎯 Call-to-action: ask them to try using it and share in comments
-7) Footer: "🤖 Want interactive quizzes & personalized tips? DM the bot for exclusive features!"
-
-Return STRICT JSON only:
-{
-  "title": string,
-  "type": "${type}",
-  "level": string,
-  "topic": string,
-  "postBody": string,
-  "hashtags": string[],
-  "quiz": {
-    "question": string,
-    "options": [string, string, string, string],
-    "correctIndex": number,
-    "explanation": string
-  }
-}
-
-Rules:
-- postBody max 2200 characters, plain text, no markdown tables.
-- Focus ONLY on vocabulary, grammar, idioms, expressions — NOT exam tips.
-- quiz: simple fill-in-the-blank or best-choice from a real-life scenario.
-- quiz options: clear, simple English. No trick answers.
-- Hashtags: 3 to 6, e.g. #LearnEnglish #B1English #DailyEnglish
-- quiz.correctIndex must be 0-3.
-- NEVER use academic words like: paradigm, methodology, furthermore, consequently, albeit, whereas, circumlocution, epistemic.
-${channelUrl ? `- Include this channel link naturally near the end: ${channelUrl}` : ''}`;
-}
-
-async function generateContentWithOpenAI({ model, type, level, topic, template, channelUrl }) {
-  const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey) {
-    throw new Error('Missing OPENAI_API_KEY');
-  }
-
-  const templateHint = template
-    ? `Use this style template while keeping factual clarity:\n${template}`
-    : 'Use concise, encouraging micro-lesson style for Telegram channels.';
-
-  const prompt = buildB1Prompt({ type, level, topic, templateHint, channelUrl });
-
-  const response = await fetch('https://api.openai.com/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      model,
-      messages: [{ role: 'user', content: prompt }],
-      max_tokens: 900,
-      temperature: 0.8,
-    }),
-  });
-
-  if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(`OpenAI request failed (${response.status}): ${errorText}`);
-  }
-
-  const data = await response.json();
-  const outputText = data?.choices?.[0]?.message?.content;
-  if (!outputText || typeof outputText !== 'string') {
-    throw new Error('OpenAI response did not include valid message content.');
-  }
-
-  const parsed = JSON.parse(extractJson(outputText));
-  return parsed;
-}
-
-async function generateContentWithAnthropic({ model, type, level, topic, template, channelUrl }) {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) {
-    throw new Error('Missing ANTHROPIC_API_KEY');
-  }
-
-  const templateHint = template
-    ? `Use this style template while keeping factual clarity:\n${template}`
-    : 'Use concise, encouraging micro-lesson style for Telegram channels.';
-
-  const prompt = buildB1Prompt({ type, level, topic, templateHint, channelUrl });
-
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
-    },
-    body: JSON.stringify({
-      model: model || process.env.ANTHROPIC_MODEL || DEFAULT_ANTHROPIC_MODEL,
-      max_tokens: 1200,
-      temperature: 0.8,
-      messages: [
-        {
-          role: 'user',
-          content: prompt,
-        },
-      ],
-    }),
-  });
-
-  if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(`Anthropic request failed (${response.status}): ${errorText}`);
-  }
-
-  const data = await response.json();
-  const outputText = Array.isArray(data?.content)
-    ? data.content.filter((item) => item?.type === 'text').map((item) => item.text).join('\n')
-    : '';
-
-  if (!outputText || typeof outputText !== 'string') {
-    throw new Error('Anthropic response did not include valid text content.');
-  }
-
-  const parsed = JSON.parse(extractJson(outputText));
-  return parsed;
-}
-
-function normalizeContent(content, fallback) {
-  const safe = content && typeof content === 'object' ? content : fallback;
-  const fallbackQuiz = fallback?.quiz && typeof fallback.quiz === 'object'
-    ? fallback.quiz
-    : null; // Changed from generic quiz to null
-  
-  // Handle both old single quiz and new quizzes array
-  let quizzes = [];
-  if (Array.isArray(safe.quizzes) && safe.quizzes.length > 0) {
-    quizzes = safe.quizzes;
-  } else if (safe.quiz) {
-    quizzes = [safe.quiz];
-  } else if (Array.isArray(fallback.quizzes) && fallback.quizzes.length > 0) {
-    quizzes = fallback.quizzes;
-  } else if (fallbackQuiz) {
-    quizzes = [fallbackQuiz];
-  }
-
-  const validQuizObjects = quizzes.filter((quiz) => {
-    // Only include quizzes that have real content (not generic placeholders)
-    if (!quiz || typeof quiz !== 'object') return false;
-    const hasQuestion = quiz.question && quiz.question !== 'Quick check';
-    const hasValidOptions = Array.isArray(quiz.options) && 
-      quiz.options.length >= 2 && 
-      !quiz.options[0].startsWith('Option '); // Filter out generic "Option X" placeholders
-    return hasQuestion && hasValidOptions;
-  });
-
-  // Normalize quiz objects - only process if we have valid quizzes
-  const normalizedQuizzes = validQuizObjects.slice(0, 3).map((quiz) => {
-    const options = Array.isArray(quiz.options) ? quiz.options.slice(0, 4).map((item) => String(item)) : [];
-    // Ensure we have at least 2 options for a valid quiz
-    if (options.length < 2) return null;
-    
-    return {
-      question: String(quiz.question || '').slice(0, 290),
-      options: options.slice(0, 4), // Use actual options, don't pad with generic ones
-      correctIndex: Math.max(0, Math.min(options.length - 1, Number(quiz.correctIndex ?? 0))),
-      explanation: String(quiz.explanation || '').slice(0, 180),
-    };
-  }).filter(Boolean); // Remove any null entries
-
-  const hashtags = Array.isArray(safe.hashtags)
-    ? safe.hashtags.map((tag) => String(tag).trim()).filter(Boolean).slice(0, 6)
-    : fallback.hashtags;
-
-  return {
-    title: String(safe.title ?? fallback.title),
-    examFocus: String(safe.examFocus ?? fallback.examFocus),
-    level: String(safe.level ?? fallback.level),
-    topic: String(safe.topic ?? fallback.topic),
-    postBody: String(safe.postBody ?? fallback.postBody).slice(0, 3500),
-    hashtags: hashtags.length ? hashtags : fallback.hashtags,
-    quizzes: normalizedQuizzes,
-    quiz: normalizedQuizzes[0], // Keep for backwards compatibility
-  };
-}
-
-function htmlToPlainText(value) {
-  return String(value ?? '')
-    .replace(/<br\s*\/?\s*>/gi, '\n')
-    .replace(/<[^>]+>/g, '')
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&#39;/g, "'")
-    .replace(/&quot;/g, '"');
-}
-
-function normalizeForDedupe(text) {
-  return String(text ?? '')
-    .replace(/\r\n/g, '\n')
-    .replace(/[ \t]+/g, ' ')
-    .replace(/\n{3,}/g, '\n\n')
-    .trim();
-}
-
-function ensureStandardSignature(text) {
-  const body = String(text ?? '').trim();
-  if (!body) {
-    return STANDARD_TELEGRAM_SIGNATURE;
-  }
-
-  if (body.includes(`https://t.me/Kaysenglishcorner`) || body.includes(`Kay's English Corner`)) {
-    return body;
-  }
-
-  return `${body}\n\n${STANDARD_TELEGRAM_SIGNATURE}`;
-}
-
-function stripSignatureForDedupe(text) {
-  return String(text ?? '')
-    .replace(/\n?✨ Kay's English Corner✨[\s\S]*?https:\/\/t\.me\/Kaysenglishcorner/gi, '')
-    .replace(/\n?🌈✨ Kay's English Corner[\s\S]*?https:\/\/t\.me\/Kaysenglishcorner/gi, '')
-    .trim();
-}
-
-function createContentFingerprint(text) {
-  const normalized = normalizeForDedupe(stripSignatureForDedupe(text));
-  return createHash('sha256').update(normalized).digest('hex');
-}
-
-function resolveHistoryFilePath() {
-  const configured = process.env.TELEGRAM_HISTORY_FILE?.trim();
-  if (!configured) {
-    return path.join(process.cwd(), DEFAULT_HISTORY_FILE);
-  }
-
-  return path.isAbsolute(configured)
-    ? configured
-    : path.join(process.cwd(), configured);
-}
-
-async function loadPostHistory(filePath) {
-  try {
-    const raw = await readFile(filePath, 'utf8');
-    const parsed = JSON.parse(raw);
-    if (parsed && typeof parsed === 'object' && Array.isArray(parsed.items)) {
-      return parsed;
-    }
-  } catch {
-    // ignore missing/invalid history file
-  }
-
-  return { items: [] };
-}
-
-function hasFingerprint(history, fingerprint) {
-  return history.items.some((item) => item?.fingerprint === fingerprint);
-}
-
-function rememberFingerprint(history, fingerprint, meta = {}) {
-  const next = {
-    fingerprint,
-    kind: 'content',
-    topic: String(meta.topic ?? ''),
-    createdAt: new Date().toISOString(),
-  };
-
-  history.items.push(next);
-  if (history.items.length > HISTORY_MAX_ITEMS) {
-    history.items = history.items.slice(history.items.length - HISTORY_MAX_ITEMS);
-  }
-}
-
-async function savePostHistory(filePath, history) {
-  await mkdir(path.dirname(filePath), { recursive: true });
-  await writeFile(filePath, `${JSON.stringify(history, null, 2)}\n`, 'utf8');
-}
-
-function resolvePublicChannelSlug(channelUrl, chatId) {
-  const fromUrl = String(channelUrl ?? '').trim();
-  if (fromUrl) {
-    const normalized = fromUrl
-      .replace(/^https?:\/\//i, '')
-      .replace(/^t\.me\//i, '')
-      .replace(/^s\//i, '');
-    const slug = normalized.split(/[/?#]/)[0]?.trim();
-    if (slug && !slug.startsWith('+')) {
-      return slug.replace(/^@/, '');
+  const scoredLessons = [...lessons]
+    .map((lesson) => ({
+      lesson,
+      score: scoreLessonForTelegram(lesson, options.mode),
+    }))
+    .sort((left, right) => right.score - left.score || left.lesson.slug.localeCompare(right.lesson.slug));
+
+  const candidateCount = Math.min(scoredLessons.length, 80);
+  const candidateLessons = scoredLessons.slice(0, candidateCount).map((entry) => entry.lesson);
+  const salt = options.mode === 'mini-tip' ? 37 : 11;
+  const startIndex = pickDeterministicIndex(candidateLessons.length, salt);
+
+  for (let offset = 0; offset < candidateLessons.length; offset += 1) {
+    const selected = candidateLessons[(startIndex + offset) % candidateLessons.length];
+    if (!hasRecentTopic(history, selected.slug, { kind: 'content', maxAgeDays: topicDedupeDays })) {
+      return selected;
     }
   }
 
-  const fromChat = String(chatId ?? '').trim();
-  if (fromChat.startsWith('@')) {
-    return fromChat.slice(1);
-  }
-
-  return '';
-}
-
-async function fetchRecentChannelTexts(slug) {
-  if (!slug) {
-    return [];
-  }
-
-  try {
-    const response = await fetch(`https://t.me/s/${slug}`);
-    if (!response.ok) {
-      return [];
-    }
-
-    const html = await response.text();
-    const blocks = [...html.matchAll(/<div class="tgme_widget_message_text[\s\S]*?>([\s\S]*?)<\/div>/g)];
-    return blocks
-      .map((match) => normalizeForDedupe(htmlToPlainText(match[1] ?? '')))
-      .filter(Boolean);
-  } catch {
-    return [];
-  }
+  return candidateLessons[startIndex] ?? null;
 }
 
 async function telegramRequest(method, payload, token) {
   const response = await fetch(`https://api.telegram.org/bot${token}/${method}`, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload),
   });
 
@@ -1007,7 +667,6 @@ async function telegramRequest(method, payload, token) {
   if (!response.ok || !data.ok) {
     throw new Error(`Telegram ${method} failed: ${JSON.stringify(data)}`);
   }
-
   return data;
 }
 
@@ -1016,108 +675,44 @@ function buildPostMessage(content) {
   return `${content.postBody}${hashLine}`;
 }
 
-function resolveChatId(explicitChatId, channelUrl) {
-  const direct = explicitChatId?.trim();
-  if (direct) {
-    return direct;
-  }
-
-  const url = channelUrl?.trim();
-  if (!url) {
-    return '';
-  }
-
-  const normalized = url.replace(/^https?:\/\//i, '').replace(/^t\.me\//i, '');
-  const slug = normalized.split(/[/?#]/)[0]?.trim();
-  if (!slug) {
-    return '';
-  }
-
-  return slug.startsWith('@') ? slug : `@${slug}`;
-}
-
 async function main() {
   await loadEnvFiles();
   const options = parseArgs(process.argv);
-  const pick = pickTopic(options.topic);
-  const template = await readTemplate(options.templateFile);
   const channelUrl = process.env.TELEGRAM_CHANNEL_URL?.trim() ?? '';
+  const historyFilePath = resolveHistoryFilePath();
+  const history = await loadPostHistory(historyFilePath);
+  const topicDedupeDays = Math.max(7, Number.parseInt(process.env.TELEGRAM_TOPIC_DEDUPE_DAYS ?? '60', 10) || 60);
 
-  const fallback = fallbackContent({
-    exam: pick.exam,
-    level: pick.level,
-    topic: pick.topic,
-    channelUrl,
-  });
-
-  let generated;
-  let generationError = '';
-
-  if (process.env.OPENAI_API_KEY) {
-    try {
-      generated = await generateContentWithOpenAI({
-        model: options.model,
-        exam: pick.exam,
-        level: pick.level,
-        topic: pick.topic,
-        template,
-        channelUrl,
-      });
-    } catch (error) {
-      generationError = error.message;
-      console.warn(`[warn] OpenAI generation failed: ${error.message}`);
-    }
+  const lessonBank = await loadLessonBank();
+  if (lessonBank.length === 0) {
+    throw new Error('No lesson files found for Telegram content generation.');
   }
 
-  if (!generated && process.env.ANTHROPIC_API_KEY) {
-    try {
-      generated = await generateContentWithAnthropic({
-        model: process.env.ANTHROPIC_MODEL || DEFAULT_ANTHROPIC_MODEL,
-        exam: pick.exam,
-        level: pick.level,
-        topic: pick.topic,
-        template,
-        channelUrl,
-      });
-      console.log('[ok] Generated content using Anthropic fallback');
-    } catch (error) {
-      generationError = generationError ? `${generationError} | ${error.message}` : error.message;
-      console.warn(`[warn] Anthropic generation failed: ${error.message}`);
-    }
-  }
-
-  if (!generated) {
-    if (generationError) {
-      console.warn(`[warn] Falling back to template content: ${generationError}`);
-    }
-    generated = fallback;
-  }
-
-  const content = normalizeContent(generated, fallback);
+  const pickedLesson = pickLesson(lessonBank, options, history, topicDedupeDays);
+  const content = pickedLesson
+    ? buildLessonContent(pickedLesson, options.mode)
+    : buildCustomTopic(options.topic || 'Daily English', options.mode);
 
   if (options.dryRun) {
-    console.log(JSON.stringify({ mode: 'dry-run', content }, null, 2));
+    console.log(JSON.stringify({ mode: 'dry-run', content, pickedLesson }, null, 2));
     return;
   }
 
   const botToken = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = resolveChatId(process.env.TELEGRAM_CHAT_ID, channelUrl);
-
   if (!botToken || !chatId) {
     throw new Error('Missing TELEGRAM_BOT_TOKEN and/or target channel (TELEGRAM_CHAT_ID or TELEGRAM_CHANNEL_URL).');
   }
 
   const messageText = buildPostMessage(content);
-  const historyFilePath = resolveTelegramHistoryFilePath();
-  const history = await loadTelegramPostHistory(historyFilePath);
-  const messageFingerprint = createTelegramFingerprint(messageText, { stripSignature: true });
-  const topicDedupeDays = Math.max(1, Number.parseInt(process.env.TELEGRAM_TOPIC_DEDUPE_DAYS ?? '60', 10) || 60);
-  console.log(`[dedup] Message fingerprint: ${messageFingerprint.slice(0, 12)}... | History size: ${history.items?.length ?? 0} items`);
-  if (hasTelegramFingerprint(history, messageFingerprint)) {
+  const messageFingerprint = createContentFingerprint(messageText, { stripSignature: true });
+
+  if (hasFingerprint(history, messageFingerprint)) {
     console.log('[skip] Duplicate content found in persistent history. Skipping publish.');
     return;
   }
-  if (hasRecentTelegramTopic(history, content.topic, { kind: 'content', maxAgeDays: topicDedupeDays })) {
+
+  if (hasRecentTopic(history, content.topic, { kind: 'content', maxAgeDays: topicDedupeDays })) {
     console.log(`[skip] Topic already posted in the last ${topicDedupeDays} days. Skipping publish.`);
     return;
   }
@@ -1127,22 +722,21 @@ async function main() {
     fingerprint: messageFingerprint,
     topic: content.topic,
   });
+
   if (!claim.claimed) {
     console.log('[skip] Another Telegram content run already owns this topic or fingerprint. Skipping publish.');
     return;
   }
 
   try {
-    console.log('[post] Message is unique. Proceeding with post.');
+    const publicSlug = resolvePublicChannelSlug(channelUrl, chatId);
+    const existingTexts = await fetchRecentChannelTexts(publicSlug, { stripSignature: true });
+    const normalizedMessage = toCanonicalPostText(messageText, { stripSignature: true });
 
-    const publicSlug = resolveTelegramPublicChannelSlug(channelUrl, chatId);
-    const existingTexts = await fetchRecentTelegramChannelTexts(publicSlug, { stripSignature: true });
-    const normalizedMessage = toCanonicalTelegramPostText(messageText, { stripSignature: true });
     if (existingTexts.includes(normalizedMessage)) {
       console.log('[skip] Duplicate content detected in recent channel posts. Skipping publish.');
       return;
     }
-    console.log('[post] Channel check passed. Posting to Telegram...');
 
     const messageResult = await telegramRequest('sendMessage', {
       chat_id: chatId,
@@ -1151,13 +745,10 @@ async function main() {
     }, botToken);
 
     const quizMessageIds = [];
-    for (let i = 0; i < content.quizzes.length; i += 1) {
-      const quiz = content.quizzes[i];
-      const delayMs = i > 0 ? 500 : 0;
-      if (delayMs > 0) {
-        await new Promise((resolve) => setTimeout(resolve, delayMs));
-      }
+    for (const quiz of content.quizzes) {
+      if (!quiz || !Array.isArray(quiz.options) || quiz.options.length < 2) continue;
 
+      await new Promise((resolve) => setTimeout(resolve, 700));
       const quizResult = await telegramRequest('sendPoll', {
         chat_id: chatId,
         question: quiz.question,
@@ -1167,22 +758,22 @@ async function main() {
         explanation: quiz.explanation,
         is_anonymous: true,
       }, botToken);
+
       if (quizResult?.result?.message_id) {
         quizMessageIds.push(quizResult.result.message_id);
       }
     }
 
-    rememberTelegramFingerprint(history, messageFingerprint, {
+    rememberFingerprint(history, messageFingerprint, {
       kind: 'content',
       topic: content.topic,
       messageId: messageResult?.result?.message_id ?? null,
       quizMessageIds,
+      mode: options.mode,
     });
-    await saveTelegramPostHistory(historyFilePath, history);
+    await savePostHistory(historyFilePath, history);
 
-    const quizCount = content.quizzes.length;
-    const quizMsg = quizCount === 0 ? 'no quiz' : `${quizCount} quiz poll${quizCount > 1 ? 's' : ''}`;
-    console.log(`[ok] Posted content with ${quizMsg} for topic: ${content.topic}`);
+    console.log(`[ok] Posted Telegram ${options.mode} content for lesson topic: ${content.topic}`);
   } finally {
     await releasePostOwnershipClaim(claim);
   }

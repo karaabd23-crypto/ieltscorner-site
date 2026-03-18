@@ -413,7 +413,7 @@ function buildHtmlEmail({
                     <td style="padding: 24px;">
                       <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 800; color: #ffd68d; margin-bottom: 10px;">Need direct feedback?</div>
                       <div style="font-size: 28px; line-height: 1.2; font-weight: 800; color: #ffffff; margin-bottom: 10px;">Work with a teacher, not just a worksheet.</div>
-                      <div style="font-size: 15px; line-height: 1.7; color: #d8e6f4; margin-bottom: 18px;">Choose the support that matches your goal this week: essay correction, a private class, AI writing analysis, or the live webinar.</div>
+                      <div style="font-size: 15px; line-height: 1.7; color: #d8e6f4; margin-bottom: 18px;">Choose the support that matches your goal this week: essay correction, a private class, the writing score lab, or the live webinar.</div>
                       <a href="${siteUrl}/tutoring/" style="display: inline-block; background: #ffd68d; color: #173656; text-decoration: none; font-weight: 800; border-radius: 999px; padding: 11px 18px; margin-right: 10px;">Book tutoring</a>
                       <a href="${siteUrl}/essay-correction/" style="display: inline-block; background: rgba(255,255,255,0.14); color: #ffffff; text-decoration: none; font-weight: 800; border-radius: 999px; padding: 11px 18px; margin-top: 10px;">Essay correction</a>
                     </td>
@@ -422,7 +422,7 @@ function buildHtmlEmail({
 
                 <div style="font-size: 13px; line-height: 1.7; color: #7a8491; margin-top: 18px;">
                   More ways to study:
-                  <a href="${siteUrl}/celpip/writing/ai-feedback/" style="color: #24507d; font-weight: 700; text-decoration: underline;">AI writing lab</a>,
+                  <a href="${siteUrl}/celpip/writing/ai-feedback/" style="color: #24507d; font-weight: 700; text-decoration: underline;">writing score lab</a>,
                   <a href="${siteUrl}/webinar/" style="color: #24507d; font-weight: 700; text-decoration: underline;">weekly webinar</a>,
                   <a href="${youtubeChannelUrl}" style="color: #24507d; font-weight: 700; text-decoration: underline;">YouTube</a>,
                   <a href="${telegramChannelUrl}" style="color: #24507d; font-weight: 700; text-decoration: underline;">Telegram</a>,
@@ -477,7 +477,7 @@ ${socialLines}
 Need direct feedback?
 - Tutoring: ${siteUrl}/tutoring/
 - Essay correction: ${siteUrl}/essay-correction/
-- AI writing lab: ${siteUrl}/celpip/writing/ai-feedback/
+- Writing score lab: ${siteUrl}/celpip/writing/ai-feedback/
 - Weekly webinar: ${siteUrl}/webinar/
 
 You are receiving this because you subscribed on ieltscorner.ca.`;

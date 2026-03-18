@@ -206,7 +206,7 @@ function canForwardDM(text, userId, config) {
 async function sendWelcomeMessage(chatId, config, botToken) {
   const welcomeText = `👋 Welcome to Kay's English Corner!
 
-I'm your AI English companion. Here's what I can help with:
+I'm Kay's English study bot. Here's what I can help with:
 
 📚 **Vocabulary** - Daily words & phrases
 ✏️ **Grammar** - Practical tips & explanations

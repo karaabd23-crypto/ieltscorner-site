@@ -1,0 +1,45 @@
+name: Telegram Weekly Bot Guide
+
+on:
+  schedule:
+    # Every Monday at 17:00 UTC
+    - cron: '0 17 * * 1'
+  workflow_dispatch:
+
+jobs:
+  post-bot-guide:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Restore Telegram history cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/telegram-post-history.json
+          key: telegram-history-${{ github.ref_name }}-${{ github.run_id }}-${{ github.job }}
+          restore-keys: |
+            telegram-history-${{ github.ref_name }}-
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Post weekly bot guide
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          TELEGRAM_CHANNEL_URL: ${{ secrets.TELEGRAM_CHANNEL_URL }}
+          TELEGRAM_HISTORY_FILE: .cache/telegram-post-history.json
+        run: node scripts/post-bot-tutorial.mjs
+
+      - name: Save Telegram history cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/telegram-post-history.json
+          key: telegram-history-${{ github.ref_name }}-${{ github.run_id }}-${{ github.job }}
