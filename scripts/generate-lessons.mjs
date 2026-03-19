@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 // load environment variables from .env if present (safe to keep out of repo via .gitignore)
-import { mkdir, readdir, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 const CATEGORIES = ['grammar', 'vocabulary', 'writing', 'speaking'];
 const LESSON_DIR = path.resolve('src/content/lessons');
 const LEECH_OUT_DIR = path.resolve('src/content/lessons/ielts/writing');
+const DEFAULT_MODEL = process.env.OPENAI_MODEL || 'gpt-4o-mini';
 const TOPIC_BANK = {
   grammar: {
     A1: [
@@ -302,7 +303,69 @@ function shouldBePremium(level, seed) {
   return seed % 2 === 0;
 }
 
-// Lesson generation is intentionally local and deterministic.
+async function callOpenAI({ topic, level, category, model }) {
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) throw new Error('OPENAI_API_KEY not set');
+
+  const promptFile = path.resolve('prompts/lesson-generator.md');
+  let systemPrompt;
+  try {
+    systemPrompt = await readFile(promptFile, 'utf8');
+    console.log(`[openai] Loaded system prompt from ${promptFile}`);
+  } catch {
+    throw new Error(`Missing prompt file: ${promptFile}. Create prompts/lesson-generator.md to define the lesson instructions.`);
+  }
+
+  const userMessage = `Create a ${category} lesson on the topic: "${topic}" (level: ${level}).
+Target exams: IELTS and CELPIP.`;
+
+  const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model,
+      response_format: { type: 'json_object' },
+      messages: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userMessage },
+      ],
+      temperature: 0.7,
+      max_tokens: 12000,
+    }),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`OpenAI API error ${response.status}: ${errorText}`);
+  }
+
+  const data = await response.json();
+  const content = data.choices?.[0]?.message?.content;
+  if (!content) throw new Error('Empty response from OpenAI API');
+
+  const parsed = JSON.parse(content);
+
+  const required = ['title', 'excerpt', 'tags', 'quiz', 'body'];
+  for (const field of required) {
+    if (!parsed[field]) throw new Error(`OpenAI response missing required field: "${field}"`);
+  }
+
+  // Provide defaults for optional fields
+  parsed.heroTip = parsed.heroTip || '';
+  parsed.visualAids = parsed.visualAids || [];
+  parsed.slug = parsed.slug || '';
+  parsed.lessonType = parsed.lessonType || '';
+  parsed.grammarFocus = parsed.grammarFocus || '';
+  parsed.topic = parsed.topic || '';
+  parsed.relatedTopics = parsed.relatedTopics || [];
+
+  return parsed;
+}
+
+// Lesson generation: uses OpenAI API when OPENAI_API_KEY is set, otherwise falls back to built-in templates.
 
 function fallbackLesson({ level, category, topic }) {
   const title = buildClearTitle({ category, topic });
@@ -462,7 +525,27 @@ priceCAD: ${priceCAD}
 draft: false
 ---
 
-${body.trim()}\n`;
+${sanitizePracticeLabHtml(body.trim())}\n`;
+}
+
+/**
+ * Fix common AI-generated HTML formatting issues that break markdown rendering.
+ * Inside practice-lab blocks, reduce 4+ space indentation to 2 spaces and
+ * remove blank lines between HTML tags so markdown doesn't treat them as code blocks.
+ */
+function sanitizePracticeLabHtml(body) {
+  // Split on practice-lab boundaries
+  const parts = body.split(/(<div class="practice-lab"[\s\S]*?<\/div>\s*<\/div>)/);
+  return parts.map((part) => {
+    if (!part.includes('data-practice-lab')) return part;
+    // Remove blank lines between HTML tags
+    let fixed = part.replace(/>\s*\n\s*\n\s*</g, '>\n<');
+    // Reduce deep indentation: replace 4+ leading spaces with 2
+    fixed = fixed.replace(/^( {4,})/gm, (match) => {
+      return '  '.repeat(Math.ceil(match.length / 4));
+    });
+    return fixed;
+  }).join('');
 }
 
 function twoDigit(n) {
@@ -651,6 +734,8 @@ async function main() {
 
   const today = new Date().toISOString().slice(0, 10);
 
+  console.log(`[info] Using ${process.env.OPENAI_API_KEY ? `OpenAI API (model: ${opts.model})` : 'built-in lesson templates (no OPENAI_API_KEY set)'}.`);
+
   const created = [];
   for (let i = 0; i < opts.count; i += 1) {
     const { level, category, seed } = pickLevelAndCategory(currentFiles.length, i, selectedCategories);
@@ -659,11 +744,21 @@ async function main() {
     const priceCAD = premium ? 12 : 0;
     const score = scoreMap(level);
 
-    const lessonData = fallbackLesson({ level, category, topic });
+    let lessonData;
+    if (process.env.OPENAI_API_KEY) {
+      try {
+        console.log(`[openai] Generating: "${topic}" (${level} ${category})`);
+        lessonData = await callOpenAI({ topic, level, category, model: opts.model });
+        console.log(`[openai] ✅ Done`);
+      } catch (err) {
+        console.warn(`[openai] ⚠️  API call failed: ${err.message}. Falling back to template.`);
+        lessonData = fallbackLesson({ level, category, topic });
+      }
+    } else {
+      lessonData = fallbackLesson({ level, category, topic });
+    }
 
-    lessonData.title = ensureClearTitle({ title: lessonData.title, category, topic });
-
-    const baseSlug = slugify(lessonData.title);
+    const baseSlug = (lessonData.slug && slugify(lessonData.slug)) || slugify(lessonData.title);
     const filename = `${today}-${category}-${level.toLowerCase()}-${baseSlug}.md`;
     const filePath = path.join(LESSON_DIR, filename);
 
