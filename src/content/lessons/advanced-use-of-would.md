@@ -5,51 +5,51 @@ level: "C1"
 ieltsBand: "7.5-8.5"
 clb: "9-10"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Use modal verbs to show ability, advice, obligation, possibility, and deduction with the right strength."
+excerpt: "Master advanced would for hypotheticals, polite distance, reported speech backshifting, and past habits."
 date: "2025-12-23"
 tags: ["modality", "stance", "politeness"]
-heroTip: "Choose the meaning first, then choose the modal. Do not start from the word."
-visualAids: ["Modal meaning scale", "Advice vs obligation examples", "Modal + base verb reminder"]
+heroTip: "Decide what would is doing: hypothetical result, past habit, polite tone, or reported future-in-the-past."
+visualAids: ["Would meaning map", "Hypothetical timeline", "Polite distance phrase bank"]
 quiz:
-  - prompt: "Which sentence uses Advanced Uses of Would correctly?"
+  - prompt: "Which sentence uses would for a hypothetical present result correctly?"
     options:
-      - "Students should to check the final paragraph."
-      - "Students should check the final paragraph."
-      - "The delays can to continue if repairs are postponed."
+      - "If I had more time, I would join the webinar every week."
+      - "If I had more time, I will join the webinar every week."
+      - "If I had more time, I would joined the webinar every week."
     correctIndex: 1
-    explanation: "Option 2 matches the main rule for Advanced Uses of Would and keeps the sentence natural."
-  - prompt: "What should you check first when editing Advanced Uses of Would?"
+    explanation: "After an unreal if-clause in the present, use would + base verb in the result clause."
+  - prompt: "What should you check first when choosing would?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
-    explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Advanced Uses of Would mistake?"
+    explanation: "Would has multiple functions; choose the function first, then the form."
+  - prompt: "Which edit fixes a common would-form mistake?"
     options:
-      - "You must to submit the form before Friday."
-      - "You must submit the form before Friday."
-      - "Residents should stay home tonight because the storm may be severe."
+      - "When I was a child, I would played outside after school."
+      - "When I was a child, I would play outside after school."
+      - "When I was a child, I would to play outside after school."
     correctIndex: 1
-    explanation: "Option 2 repairs a typical Advanced Uses of Would error and matches the target form."
+    explanation: "Would is followed by the base verb: would play, would go, would study."
 premium: false
 priceCAD: 0
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Advanced Uses of Would</strong> helps you show ideas like advice, ability, possibility, or obligation. The word may look small, but it changes the whole meaning of the sentence. In this lesson, you will learn which form fits which message.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Advanced Uses of Would</strong> helps you express hypotheticals, past habits, polite distance, and reported future-in-the-past. One form carries different meanings, so context is everything.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Students should to check the final paragraph.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Students should check the final paragraph.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>If she had more practice, she will perform better.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>If she had more practice, she would perform better.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The delays can to continue if repairs are postponed.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>The delays may continue if repairs are postponed.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>When I was younger, I would played football every evening.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>When I was younger, I would play football every evening.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
 </div>
@@ -69,23 +69,23 @@ draft: false
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Modal verbs are really about meaning strength: advice, possibility, ability, or obligation.</p>
-<p>Modal verbs show ability, advice, obligation, permission, possibility, and deduction. The important choice is the meaning strength, not the word alone.</p>
-<p>Use modals to show how certain, necessary, polite, or strong your message should sound. Different modals can change the tone even when the basic idea stays similar.</p>
+    <p>Would is flexible, but each use has a clear grammar signal.</p>
+<p>Use would for hypothetical results (If I had more time, I would study longer), repeated past habits (When we lived there, we would walk to school), and polite distance (I would like to ask about your policy).</p>
+<p>At advanced level, would also appears in reported speech to show future-in-the-past: She said she would call later. Your goal is to match meaning, timeline, and form precisely.</p>
 <p>At C1 level, use this structure for precision and logic, not for decorative complexity.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Pick the meaning first: ability, advice, obligation, possibility, or deduction.</li><li>Use the base verb after the modal in the normal pattern.</li><li>Choose a modal strength that matches the real level of certainty or force.</li></ul>
+    <ul><li>Choose the function first: hypothetical result, past habit, polite request, or reported future.</li><li>Use would + base verb (would go, would study, would improve).</li><li>Keep the timeline consistent between the if-clause and result clause.</li></ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Students should review the task before they start writing.</div>
-<div class="lesson-pattern-sentence">The delays may continue if repairs are postponed again.</div></div>
+    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">If the city invested more in transit, residents would save time every day.</div>
+<div class="lesson-pattern-sentence">My teacher said the committee would review our proposal next week.</div></div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Choose the meaning first: ability, advice, obligation, possibility, or deduction.</li><li>Use the base verb after the modal in normal patterns.</li><li>Match the modal strength to the meaning you actually want.</li><li>Use past modal forms only when the time reference requires them.</li><li>Keep the sentence simple enough that the modal meaning stays obvious.</li></ul>
+    <ul><li>Use would + base verb, never would + to or would + past form.</li><li>Use would in unreal condition results: If + past, would + base.</li><li>Use would for repeated past habits only when the context is clear.</li><li>Use would in reported speech for future-in-the-past.</li><li>Use would like for polite tone in requests and offers.</li></ul>
   </section>
 </div>
 
@@ -93,24 +93,24 @@ draft: false
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>using the wrong form or strength after a modal verb</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>You must to submit the form before Friday.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>You must submit the form before Friday.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use the base verb after the modal and choose the modal that matches the real meaning</p>
+  <h3>using will instead of would in unreal present conditionals</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>If I had more time, I will join the workshop.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>If I had more time, I would join the workshop.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> in unreal present conditionals, use would + base verb in the result clause.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>adding to after a modal verb</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>She might to finish before lunch if the meeting ends early.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>She might finish before lunch if the meeting ends early.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use the base verb directly after the modal</p>
+  <h3>using a past form after would in habitual past structures</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>When I was a child, I would played outside every evening.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>When I was a child, I would play outside every evening.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> after would, use the base verb only.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>choosing a modal with the wrong strength</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Staff must carry a light jacket because the office may feel cold later.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Staff should carry a light jacket because the office may feel cold later.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> match the modal strength to the certainty or advice level you mean</p>
+  <h3>forgetting would in reported future-in-the-past</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>She said she will send the revised draft by Monday.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>She said she would send the revised draft by Monday.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> backshift will to would when reporting future from a past reporting verb.</p>
 </article>
 </div>
 
@@ -128,35 +128,35 @@ draft: false
   </div>
   <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Advanced Uses of Would form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The sentence uses would for an unreal present result." data-wrong-feedback="Not yet. Check the if-clause timeline and the result form.">
   <p class="practice-task-label">1. Quick pick</p>
   <h3>Choose the stronger sentence for Advanced Uses of Would.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  You must to submit the form before Friday.
+  If I had more time, I will join the webinar every week.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  You must submit the form before Friday.
+  If I had more time, I would join the webinar every week.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Residents should stay||home tonight because||the storm may||be severe." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="She said||she would call||after the meeting||ended." data-task-id="1" data-correct-feedback="Correct. This is future-in-the-past in reported speech." data-wrong-feedback="Not yet. Keep would attached to the reported future action.">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put this Advanced Uses of Would sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="the storm may" data-chip-origin="bank-1" data-chip-id="1-0">
-  the storm may
+<button type="button" class="practice-chip" data-chip-value="after the meeting" data-chip-origin="bank-1" data-chip-id="1-0">
+  after the meeting
 </button>
-<button type="button" class="practice-chip" data-chip-value="be severe." data-chip-origin="bank-1" data-chip-id="1-1">
-  be severe.
+<button type="button" class="practice-chip" data-chip-value="ended." data-chip-origin="bank-1" data-chip-id="1-1">
+  ended.
 </button>
-<button type="button" class="practice-chip" data-chip-value="home tonight because" data-chip-origin="bank-1" data-chip-id="1-2">
-  home tonight because
+<button type="button" class="practice-chip" data-chip-value="she would call" data-chip-origin="bank-1" data-chip-id="1-2">
+  she would call
 </button>
-<button type="button" class="practice-chip" data-chip-value="Residents should stay" data-chip-origin="bank-1" data-chip-id="1-3">
-  Residents should stay
+<button type="button" class="practice-chip" data-chip-value="She said" data-chip-origin="bank-1" data-chip-id="1-3">
+  She said
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -166,10 +166,10 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="typing" data-task-answers="She might finish early if the meeting is short." data-task-id="2" data-correct-feedback="Correct. You repaired the sentence without changing the message." data-wrong-feedback="Not yet. Check the target form, then type the full corrected sentence.">
+<article class="practice-task" data-task-type="typing" data-task-answers="When I was a child, I would play outside every evening." data-task-id="2" data-correct-feedback="Correct. You repaired the would form accurately." data-wrong-feedback="Not yet. After would, use the base verb.">
   <p class="practice-task-label">3. Type the fix</p>
   <h3>Rewrite the sentence so Advanced Uses of Would is correct.</h3>
-  <p class="practice-source-line"><span>Fix this:</span> She might finishes early if the meeting is short.</p>
+  <p class="practice-source-line"><span>Fix this:</span> When I was a child, I would played outside every evening.</p>
   <div class="practice-input-row">
     <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
     <button type="button" class="practice-check-btn" data-task-check>Check</button>
@@ -181,28 +181,28 @@ draft: false
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>You must submit the form before Friday.</p>
+  <p>If she had more support, she would finish faster.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>You must to submit the form before Friday.</p>
+  <p>If she had more support, she will finish faster.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>Residents should stay home tonight because the storm may be severe.</p>
+  <p>He said he would send the final version on Friday.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>Residents should stay home tonight because the storm may be severe.</p>
+  <p>He said he will send the final version on Friday.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>

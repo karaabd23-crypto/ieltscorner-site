@@ -92,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>delaying the direct answer</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Well, there are many sides to this question and it is hard to say.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>My main point is that focused investment can improve access, reliability, and quality of life.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Answer first, then extend.</p>
+  <h3>repeating the question word-for-word instead of paraphrasing</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The question says we should talk about whether technology is good or bad.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I will discuss the advantages and drawbacks of modern technology.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Replace key nouns and verbs with synonyms — do not echo the question text.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using fillers instead of content</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Like, you know, it is good because it is good for people.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>A clear example is that a pilot program improved service response times in one local district.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Replace filler with one real reason or detail.</p>
+  <h3>paraphrasing by only deleting words, leaving the sentence broken</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Technology is... good because... helps people a lot.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Digital tools have transformed how people communicate and learn.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Write a new sentence from scratch using the same idea in different words.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>finishing without a clear final line</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>So yes, maybe, that is my idea.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Overall, that is why this option makes more sense in practice.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Prepare one short closing sentence you can use naturally.</p>
+  <h3>using unnatural or overly formal vocabulary that sounds memorised</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The aforementioned technology is profoundly beneficial for all inhabitants.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Technology benefits most people in their daily lives.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Choose words you would say naturally — natural phrasing scores higher than memorised phrases.</p>
 </article>
 </div>
 

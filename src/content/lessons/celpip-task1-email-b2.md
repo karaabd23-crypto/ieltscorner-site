@@ -93,8 +93,8 @@ quiz:
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>opening without a clear purpose line</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Hello. I want to talk about something important and many things happened.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>I am writing to ask whether it would be possible to reschedule my appointment for next week.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Hello. I have a problem and I need your help with it.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I am writing to request a new appointment date because I will be out of town on the original day.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> State the purpose in the first one or two lines.</p>
 </article>
 <article class="lesson-error-card">

@@ -92,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>starting to write before deciding the task purpose</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>This issue is important and has many sides.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>This essay argues that better transit investment improves daily life for workers.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Write one clear task sentence before the first full paragraph.</p>
+  <h3>listing points without linking them to the paragraph topic</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>People exercise more. Diet is also important. Sleep matters too.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Better fitness starts with exercise, but diet and sleep are equally essential for recovery.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Connect each point back to the paragraph topic using a linking word or phrase.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using examples that are too general to prove the point</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Many places improved after changes were made.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>One district reduced response times by 18% after introducing coordinated service planning.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Add a place, group, time, or measured result.</p>
+  <h3>using transition words incorrectly, making the logic unclear</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Exercise is healthy. However, it reduces the risk of disease.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Exercise is healthy; in fact, regular activity reduces the risk of several chronic diseases.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Match the linker to the logic: "however" = contrast, "in fact" = emphasis, "therefore" = result.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>losing paragraph control by adding every idea at once</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The policy is good, bad, expensive, helpful, and important for many people for many reasons.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The policy is expensive at first; however, it improves reliability for daily commuters.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Give each paragraph one job and one main idea.</p>
+  <h3>repeating the same sentence structure for every point</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Exercise is good. Diet is good. Sleep is good. Rest is good.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Regular exercise, combined with a balanced diet and adequate sleep, supports long-term health.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Vary sentence length and structure — combine short related points into one compound sentence.</p>
 </article>
 </div>
 

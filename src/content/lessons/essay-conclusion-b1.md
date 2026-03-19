@@ -92,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>starting to write before deciding the task purpose</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>This issue is important and has many sides.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>This essay argues that better transit investment improves daily life for workers.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Write one clear task sentence before the first full paragraph.</p>
+  <h3>ending the essay without restating the main position</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>In conclusion, there are many points. It is a complex topic.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>In conclusion, urban cycling infrastructure is the most practical way to reduce city traffic.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Restate your thesis in different words in the first sentence of the conclusion.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using examples that are too general to prove the point</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Many places improved after changes were made.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>One district reduced response times by 18% after introducing coordinated service planning.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Add a place, group, time, or measured result.</p>
+  <h3>introducing a brand-new argument in the conclusion</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>In conclusion, public transport is important. Also, governments should tax cars more.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>In conclusion, public transport investment reduces congestion, as the evidence above shows.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> The conclusion should summarise, not introduce. Save new arguments for body paragraphs.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>losing paragraph control by adding every idea at once</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The policy is good, bad, expensive, helpful, and important for many people for many reasons.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The policy is expensive at first; however, it improves reliability for daily commuters.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Give each paragraph one job and one main idea.</p>
+  <h3>copying the introduction almost word-for-word as the conclusion</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>To conclude, technology has changed education in many ways, both positive and negative.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>To conclude, while technology creates distractions, its benefits for self-paced learning outweigh the costs.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Paraphrase your introduction and add a forward-looking or evaluative remark.</p>
 </article>
 </div>
 

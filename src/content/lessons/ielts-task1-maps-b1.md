@@ -94,14 +94,14 @@ quiz:
   <p class="lesson-card-label">Common problem 1</p>
   <h3>listing small details before giving an overview</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>There is a road, a tree area, a car park, and a building on the map.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Overall, the area became more residential, while several industrial features were removed or relocated.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Overall, the town shifted toward residential use, with industrial spaces reduced and new housing introduced.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> Write the big-picture overview before the smaller details.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
   <h3>moving around the map randomly</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The school changed, then the river, then the center, then the northern road.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>In the northern section, the old factory was replaced by a housing complex and a small parking area.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>In the northern area, the former warehouse site was converted into apartments connected by a new access road.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> Group details by area or by type of change.</p>
 </article>
 <article class="lesson-error-card">

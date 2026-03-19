@@ -94,14 +94,14 @@ quiz:
   <p class="lesson-card-label">Common problem 1</p>
   <h3>writing the steps without a start-to-finish overview</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>First this happens, then that happens, and later it ends.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Overall, the process begins with raw materials and ends with a packaged consumer product after six stages.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Overall, production moves from raw input to packaged output through six connected stages.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> Give the reader the start, the end, and the total flow before the details.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
   <h3>describing steps in the wrong order</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The product is packaged before it is filtered and stored.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Next, the mixture is heated, filtered, and transferred to a storage tank before packaging.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>After heating, the material is filtered and stored before it is sent to the packaging line.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> Follow the real stage order exactly.</p>
 </article>
 <article class="lesson-error-card">

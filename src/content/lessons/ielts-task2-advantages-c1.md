@@ -92,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>starting to write before deciding the task purpose</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>This issue is important and has many sides.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>This essay argues that better transit investment improves daily life for workers.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Write one clear task sentence before the first full paragraph.</p>
+  <h3>listing advantages and disadvantages without developing either</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>There are many advantages. Also there are disadvantages. It depends.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The main advantage is increased efficiency: companies can automate routine tasks, freeing staff for creative work.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> For each advantage or disadvantage, add a "why" or "how" explanation before moving to the next.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using examples that are too general to prove the point</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Many places improved after changes were made.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>One district reduced response times by 18% after introducing coordinated service planning.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Add a place, group, time, or measured result.</p>
+  <h3>writing an unbalanced essay that only addresses one side</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>There are so many advantages that it is hard to see any disadvantages.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Although automation reduces some jobs, it creates new roles in maintenance and software development.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Dedicate at least one paragraph to each side — use "although" or "however" to signal the contrast.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>losing paragraph control by adding every idea at once</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The policy is good, bad, expensive, helpful, and important for many people for many reasons.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The policy is expensive at first; however, it improves reliability for daily commuters.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Give each paragraph one job and one main idea.</p>
+  <h3>using general nouns ('people', 'society') instead of specific groups</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>This helps people and society in many ways.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Remote workers, in particular, benefit from reduced daily commute time.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Replace "people" with a specific group: workers, students, elderly residents, local businesses.</p>
 </article>
 </div>
 

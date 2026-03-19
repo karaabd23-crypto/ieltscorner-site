@@ -92,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>starting to write before deciding the task purpose</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>This issue is important and has many sides.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>This essay argues that better transit investment improves daily life for workers.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Write one clear task sentence before the first full paragraph.</p>
+  <h3>writing a body paragraph without a clear topic sentence</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>There are many things to consider. People have different views. Some agree, others do not.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>One reason people prefer online learning is the flexibility it offers.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Begin every body paragraph with one sentence that states its single main idea.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using examples that are too general to prove the point</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Many places improved after changes were made.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>One district reduced response times by 18% after introducing coordinated service planning.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Add a place, group, time, or measured result.</p>
+  <h3>adding a supporting point without an explanation or example</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Online learning is flexible. Many people use it.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Online learning is flexible: students can pause and replay lectures, which suits different learning speeds.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Follow each supporting point with a because, for example, or consequence explanation.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>losing paragraph control by adding every idea at once</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The policy is good, bad, expensive, helpful, and important for many people for many reasons.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The policy is expensive at first; however, it improves reliability for daily commuters.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Give each paragraph one job and one main idea.</p>
+  <h3>introducing a new topic inside a paragraph that already has one</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Online learning is flexible. Also, it is cheaper. And teachers can use technology.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Online learning is flexible and cheaper than traditional courses, making it accessible to more students.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Keep each paragraph focused on one idea — move extra points to a new paragraph.</p>
 </article>
 </div>
 

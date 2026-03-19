@@ -92,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>starting to write before deciding the task purpose</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>This issue is important and has many sides.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>This essay argues that better transit investment improves daily life for workers.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Write one clear task sentence before the first full paragraph.</p>
+  <h3>joining two sentences with only a comma (comma splice)</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The exam was difficult, many students did not finish.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The exam was difficult; many students did not finish.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Replace the comma with a semicolon, a full stop, or add a conjunction (so, but, and).</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using examples that are too general to prove the point</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Many places improved after changes were made.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>One district reduced response times by 18% after introducing coordinated service planning.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Add a place, group, time, or measured result.</p>
+  <h3>writing a dependent clause as if it were a complete sentence</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Because the deadline was moved forward.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Production slowed because the deadline was moved forward.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> A clause starting with because, although, or when cannot stand alone — attach it to a main clause.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>losing paragraph control by adding every idea at once</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The policy is good, bad, expensive, helpful, and important for many people for many reasons.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The policy is expensive at first; however, it improves reliability for daily commuters.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Give each paragraph one job and one main idea.</p>
+  <h3>stringing too many "and" clauses into one run-on sentence</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The team worked hard and they finished early and they submitted the report and the client was happy.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The team worked hard and finished early. After submitting the report, they received positive feedback from the client.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Break chains of "and" into two or three shorter sentences for easier reading.</p>
 </article>
 </div>
 

@@ -92,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>starting to write before deciding the task purpose</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>This issue is important and has many sides.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>This essay argues that better transit investment improves daily life for workers.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Write one clear task sentence before the first full paragraph.</p>
+  <h3>missing a comma after an introductory clause or phrase</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Although the deadline was close the team finished on time.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Although the deadline was close, the team finished on time.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Place a comma after any introductory clause (although, because, when, if…) before the main clause.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using examples that are too general to prove the point</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Many places improved after changes were made.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>One district reduced response times by 18% after introducing coordinated service planning.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Add a place, group, time, or measured result.</p>
+  <h3>using a comma instead of a semicolon to join two full sentences</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The results were positive, the team decided to continue.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The results were positive; the team decided to continue.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Two independent clauses need a semicolon, a conjunction (and, but, so), or a full stop — not a comma alone.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>losing paragraph control by adding every idea at once</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The policy is good, bad, expensive, helpful, and important for many people for many reasons.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The policy is expensive at first; however, it improves reliability for daily commuters.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Give each paragraph one job and one main idea.</p>
+  <h3>adding an unnecessary comma between the subject and its verb</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The students who studied the hardest, passed the exam.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The students who studied the hardest passed the exam.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Do not put a comma between the subject and the main verb — even if the subject is long.</p>
 </article>
 </div>
 

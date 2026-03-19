@@ -92,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>delaying the direct answer</h3>
+  <h3>hedging instead of stating your opinion directly</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Well, there are many sides to this question and it is hard to say.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>My main point is that focused investment can improve access, reliability, and quality of life.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Answer first, then extend.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>In my opinion, remote work is better for employees with long commutes.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> State your opinion clearly in the first sentence using "I think" or "In my opinion".</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using fillers instead of content</h3>
+  <h3>giving circular reasons with no real content</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Like, you know, it is good because it is good for people.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>A clear example is that a pilot program improved service response times in one local district.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Replace filler with one real reason or detail.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Remote work reduces commute stress, which improves focus during work hours.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Replace the circular reason with a cause-and-effect chain: [change] → [specific benefit].</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>finishing without a clear final line</h3>
+  <h3>finishing without a statement that closes your opinion</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>So yes, maybe, that is my idea.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Overall, that is why this option makes more sense in practice.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Prepare one short closing sentence you can use naturally.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>That is why I believe this option leads to better outcomes overall.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> End with one sentence that restates your opinion in different words.</p>
 </article>
 </div>
 

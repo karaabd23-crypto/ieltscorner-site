@@ -93,24 +93,24 @@ draft: false
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>starting to write before deciding the task purpose</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>This issue is important and has many sides.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>This essay argues that better transit investment improves daily life for workers.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Write one clear task sentence before the first full paragraph.</p>
+  <h3>hedging so much the position disappears entirely</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>It could possibly be argued that this might perhaps be somewhat beneficial in some cases.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>While this policy may not suit every context, it generally improves service quality.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use one hedging word per claim (may, might, tend to) — stacking hedges weakens, not strengthens, the argument.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using examples that are too general to prove the point</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Many places improved after changes were made.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>One district reduced response times by 18% after introducing coordinated service planning.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Add a place, group, time, or measured result.</p>
+  <h3>using the same hedging phrase in every sentence</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>This may be good. It may also save time. It may reduce costs.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>This policy may reduce costs and tends to improve response times across departments.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Vary your hedging vocabulary: may, might, tends to, is likely to, appears to.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>losing paragraph control by adding every idea at once</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The policy is good, bad, expensive, helpful, and important for many people for many reasons.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The policy is expensive at first; however, it improves reliability for daily commuters.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Give each paragraph one job and one main idea.</p>
+  <h3>using hedges in conclusions where a clear statement is expected</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>In conclusion, this might possibly be a good idea perhaps.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>In conclusion, this approach is likely to improve outcomes for most users.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Conclusions can use one confident hedge (likely, generally) — avoid stacking uncertain language.</p>
 </article>
 </div>
 

@@ -92,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>starting to write before deciding the task purpose</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>This issue is important and has many sides.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>This essay argues that better transit investment improves daily life for workers.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Write one clear task sentence before the first full paragraph.</p>
+  <h3>using a semicolon where a comma is correct</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The report covered three areas; cost; time; and quality.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The report covered three areas: cost, time, and quality.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use a colon to introduce a list; use commas within the list — reserving semicolons for complex list items.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using examples that are too general to prove the point</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Many places improved after changes were made.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>One district reduced response times by 18% after introducing coordinated service planning.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Add a place, group, time, or measured result.</p>
+  <h3>omitting punctuation between two independent clauses</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The budget was approved the project started the following month.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The budget was approved; the project started the following month.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Two complete sentences joined without a conjunction need a semicolon or a full stop between them.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>losing paragraph control by adding every idea at once</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The policy is good, bad, expensive, helpful, and important for many people for many reasons.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The policy is expensive at first; however, it improves reliability for daily commuters.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Give each paragraph one job and one main idea.</p>
+  <h3>using a comma after every "however" or "therefore" but not before them</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The plan was ready however the funding was delayed.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The plan was ready; however, the funding was delayed.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> When "however" or "therefore" joins two clauses, put a semicolon before and a comma after.</p>
 </article>
 </div>
 

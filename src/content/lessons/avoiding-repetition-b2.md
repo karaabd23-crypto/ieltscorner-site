@@ -92,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>starting to write before deciding the task purpose</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>This issue is important and has many sides.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>This essay argues that better transit investment improves daily life for workers.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Write one clear task sentence before the first full paragraph.</p>
+  <h3>repeating the exact same noun in every sentence</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Education is important. Education helps people. Education creates opportunities.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Education is important because it helps people and creates new opportunities.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Combine repeated ideas into one sentence or replace the noun with a pronoun or synonym.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using examples that are too general to prove the point</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Many places improved after changes were made.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>One district reduced response times by 18% after introducing coordinated service planning.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Add a place, group, time, or measured result.</p>
+  <h3>using a pronoun whose reference is ambiguous</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Teachers help students because they know the subject.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Teachers help students because teachers have specialised subject knowledge.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> If two nouns could match the pronoun, replace it with the exact noun you mean.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>losing paragraph control by adding every idea at once</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The policy is good, bad, expensive, helpful, and important for many people for many reasons.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The policy is expensive at first; however, it improves reliability for daily commuters.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Give each paragraph one job and one main idea.</p>
+  <h3>echoing the task question word-for-word instead of paraphrasing</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Some people think that technology is good. Do you agree that technology is good?</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Some people argue that technology benefits society. I largely agree with this view.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Paraphrase the question using synonyms and a different sentence structure.</p>
 </article>
 </div>
 

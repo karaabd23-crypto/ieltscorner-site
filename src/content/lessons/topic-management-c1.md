@@ -92,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>delaying the direct answer</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Well, there are many sides to this question and it is hard to say.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>My main point is that focused investment can improve access, reliability, and quality of life.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Answer first, then extend.</p>
+  <h3>changing the topic mid-answer without a clear transition</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>I like reading. Also cooking is good. My city has parks.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Reading helps me relax; similarly, cooking gives me a creative outlet at home.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Finish one idea before introducing the next and use a linking phrase to connect them.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using fillers instead of content</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Like, you know, it is good because it is good for people.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>A clear example is that a pilot program improved service response times in one local district.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Replace filler with one real reason or detail.</p>
+  <h3>losing the original question after the first sentence</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>So, there are many things to say. And yes, it is hard to choose.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Returning to the question — I think public parks matter most for families.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> After each supporting point, check that your sentence still relates to the question topic.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>finishing without a clear final line</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>So yes, maybe, that is my idea.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Overall, that is why this option makes more sense in practice.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Prepare one short closing sentence you can use naturally.</p>
+  <h3>piling up unconnected points without linking them</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>And also there is this. And one more thing. And in addition also.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>First, traffic improves. As a result, fewer accidents happen downtown.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use one logical linker (because, so, however, as a result) between each pair of ideas.</p>
 </article>
 </div>
 

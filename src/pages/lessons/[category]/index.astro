@@ -204,12 +204,12 @@ const meta = metaMap[category];
         cards.forEach((card) => {
           const text = (card.getAttribute("data-search") || "").toLowerCase();
           const matches = terms.every((term) => text.includes(term));
-          (card as HTMLElement).style.display = matches ? "block" : "none";
+          card.style.display = matches ? "block" : "none";
           if (matches) visible += 1;
         });
 
         summary.textContent = `Showing ${visible} of ${total} lessons.`;
-        (empty as HTMLElement).style.display = visible === 0 ? "block" : "none";
+        empty.style.display = visible === 0 ? "block" : "none";
       };
 
       input.addEventListener("input", applyFilter);

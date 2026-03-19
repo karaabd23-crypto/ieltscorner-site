@@ -93,24 +93,24 @@ draft: false
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>starting to write before deciding the task purpose</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>This issue is important and has many sides.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>This essay argues that better transit investment improves daily life for workers.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Write one clear task sentence before the first full paragraph.</p>
+  <h3>presenting a claim with no warrant or logical connection to the evidence</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Universities are expensive. Therefore, students are less creative.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>High tuition fees force students to work part-time, leaving less time for exploratory projects and creative pursuits.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Add the logical bridge between evidence and conclusion: show HOW the evidence leads to the claim.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using examples that are too general to prove the point</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Many places improved after changes were made.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>One district reduced response times by 18% after introducing coordinated service planning.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Add a place, group, time, or measured result.</p>
+  <h3>countering an opposing view by dismissing it rather than refuting it</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Some people say automation is bad. They are wrong and do not understand the issue.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>While critics argue that automation displaces workers, evidence suggests those workers shift to higher-skilled roles over time.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Acknowledge the opposing view fairly (While others argue…), then provide evidence that undermines it.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>losing paragraph control by adding every idea at once</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The policy is good, bad, expensive, helpful, and important for many people for many reasons.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The policy is expensive at first; however, it improves reliability for daily commuters.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Give each paragraph one job and one main idea.</p>
+  <h3>overloading a body paragraph with multiple separate arguments</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Education improves income. Also, it reduces crime. And it increases voter participation.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Higher education correlates with increased earnings: graduates earn, on average, 65% more than non-graduates over their careers.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Each body paragraph makes ONE argument. Move other claims to their own paragraphs.</p>
 </article>
 </div>
 

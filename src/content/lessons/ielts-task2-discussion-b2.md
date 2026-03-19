@@ -92,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>starting to write before deciding the task purpose</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>This issue is important and has many sides.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>This essay argues that better transit investment improves daily life for workers.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Write one clear task sentence before the first full paragraph.</p>
+  <h3>treating a "discuss both views" as an opinion essay</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>In my opinion, working from home is much better and everyone should do it.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Proponents of remote work value its flexibility, while critics argue it reduces team cohesion.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> "Discuss both views" means present both sides fairly — do not argue for one side from the start.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using examples that are too general to prove the point</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Many places improved after changes were made.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>One district reduced response times by 18% after introducing coordinated service planning.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Add a place, group, time, or measured result.</p>
+  <h3>using the same argument template for both views</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Some people think this. Others think the opposite. Both have good points.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Some people prioritise economic growth, arguing that it funds public services. Others prioritise environmental health, contending that growth without sustainability causes long-term harm.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Give each side its own specific argument and explanation — avoid mirroring the same structure.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>losing paragraph control by adding every idea at once</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The policy is good, bad, expensive, helpful, and important for many people for many reasons.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The policy is expensive at first; however, it improves reliability for daily commuters.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Give each paragraph one job and one main idea.</p>
+  <h3>forgetting to give your own opinion when the question asks for it</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Both sides have valid points. It is a complex issue with many factors.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Considering both views, I believe the environmental argument is more compelling in the long term.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Check the question. If it says "discuss and give your opinion", you must state and support your view.</p>
 </article>
 </div>
 

@@ -92,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>starting to write before deciding the task purpose</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>This issue is important and has many sides.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>This essay argues that better transit investment improves daily life for workers.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Write one clear task sentence before the first full paragraph.</p>
+  <h3>giving a reason without explaining why it is true</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Working from home is better. It helps people and saves time.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Working from home eliminates daily commutes, which gives employees an average of 90 extra minutes per day.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> After each reason, add a "because" or "since" clause that explains the mechanism.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using examples that are too general to prove the point</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Many places improved after changes were made.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>One district reduced response times by 18% after introducing coordinated service planning.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Add a place, group, time, or measured result.</p>
+  <h3>using the word "example" but not actually giving one</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>For example, many people prefer this option and it is popular.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>For example, a 2022 company survey found that 70% of remote workers reported higher job satisfaction.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> A real example includes a who, where, when, or measurable result — not just a general statement.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>losing paragraph control by adding every idea at once</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The policy is good, bad, expensive, helpful, and important for many people for many reasons.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The policy is expensive at first; however, it improves reliability for daily commuters.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Give each paragraph one job and one main idea.</p>
+  <h3>repeating the same example in different words across the essay</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>People are happier working from home. Also, employees have more happiness at home. Workers are more satisfied remotely.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Remote workers report higher job satisfaction; additionally, companies see lower staff turnover when flexible arrangements are offered.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Each paragraph should introduce a new piece of evidence or a different aspect of the same point.</p>
 </article>
 </div>
 

@@ -94,7 +94,7 @@ quiz:
   <p class="lesson-card-label">Common problem 1</p>
   <h3>waiting too long to choose one option</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Both choices are useful and there are many things to discuss first.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>I would choose the public transport plan because it helps more residents on a daily basis.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I would choose the public transport option because it serves a larger number of daily commuters.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> State your choice in the first sentence.</p>
 </article>
 <article class="lesson-error-card">

@@ -15,40 +15,40 @@ visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
   - prompt: "Which sentence uses Apostrophe and Possession correctly?"
     options:
-      - "The pilot reduced delays, however the old route still needs repairs."
-      - "The pilot reduced delays; however, the old route still needs repairs."
-      - "The council approved three changes, more buses, better lighting and longer hours."
+      - "The students books were left on the back table."
+      - "The students' books were left on the back table."
+      - "The students's books were left on the back table."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Apostrophe and Possession and keeps the sentence natural."
   - prompt: "What should you check first when editing Apostrophe and Possession?"
     options:
-      - "The meaning you want and the sentence pattern you need"
+      - "Whether you are showing possession or a contraction"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
   - prompt: "Which edit fixes a common Apostrophe and Possession mistake?"
     options:
-      - "The report was useful however it needed clearer headings."
-      - "The report was useful; however, it needed clearer headings."
-      - "She has one goal improve route safety near schools."
+      - "Its clear that the writer revised the paragraph."
+      - "It's clear that the writer revised the paragraph."
+      - "Its' clear that the writer revised the paragraph."
     correctIndex: 1
     explanation: "Option 2 repairs a typical Apostrophe and Possession error and matches the target form."
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Apostrophe and Possession</strong> helps the reader see where ideas start, stop, and connect. Punctuation looks small, but it changes clarity quickly. In this lesson, you will learn how to use these marks to make your writing easier to follow.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Apostrophe and Possession</strong> shows ownership and missing letters. One small mark can change meaning fast. In this lesson, you will learn when to use apostrophes correctly in exam writing.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The pilot reduced delays, however the old route still needs repairs.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>The pilot reduced delays; however, the old route still needs repairs.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The students books were left on the back table.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>The students' books were left on the back table.</p>
   <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The council approved three changes, more buses, better lighting and longer hours.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>The council approved three changes: more buses, better lighting, and longer hours.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Its important that the team checks every heading.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>It's important that the team checks every heading.</p>
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
 </div>
@@ -68,23 +68,23 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Punctuation should guide the reader through the sentence, not decorate it.</p>
-<p>Punctuation controls how ideas are separated, linked, and highlighted on the page. It is not decoration; it tells the reader how the sentence should be read.</p>
-<p>Use punctuation to show complete clauses, lists, possession, pauses, and emphasis more clearly. The correct mark depends on the grammar around it, not on where you want to pause when speaking.</p>
+    <p>Apostrophes show either possession or missing letters.</p>
+<p>Use <strong>'s</strong> for one owner (the teacher's notes), and use <strong>s'</strong> for plural owners (the teachers' notes). Do not use apostrophes to make normal plurals.</p>
+<p>Use apostrophes in contractions when letters are missing (it's, don't, can't). Keep possession and contraction meanings separate: <strong>its</strong> (possessive) versus <strong>it's</strong> (it is).</p>
 <p>At B2 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Check clause completeness before you choose marks such as semicolons or colons.</li><li>Use commas only when the grammar calls for them, not just because the sentence feels long.</li><li>Treat apostrophes and capital letters as meaning signals, not style choices.</li></ul>
+    <ul><li>Decide first: is this ownership or a contraction?</li><li>Add 's for a single owner and s' for plural owners that already end in s.</li><li>Use apostrophes in contractions only when letters are actually missing.</li></ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">The route was improved; however, late-evening service still needs work.</div>
-<div class="lesson-pattern-sentence">The council approved one priority: safer crossings near schools.</div></div>
+    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">The manager's report included the team's recommendations.</div>
+<div class="lesson-pattern-sentence">It's clear that the students' notes are more organized this week.</div></div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Find the clause or list structure first.</li><li>Choose the punctuation mark from the grammar, not from the pause in your voice.</li><li>Use semicolons and colons only after you confirm clause completeness.</li><li>Check apostrophes and capitals as meaning signals, not decoration.</li><li>Read the sentence again to see whether the punctuation guides the reader clearly.</li></ul>
+    <ul><li>Use 's for one owner.</li><li>Use s' for plural owners ending in s.</li><li>Never add apostrophes to regular plurals.</li><li>Separate its (possessive) and it's (it is).</li><li>Read the sentence again and ask: ownership or missing letters?</li></ul>
   </section>
 </div>
 
@@ -92,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>using punctuation marks without checking the grammar on each side</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The report was useful however it needed clearer headings.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The report was useful; however, it needed clearer headings.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> check clause completeness or list structure first, then choose the punctuation mark</p>
+  <h3>adding apostrophes to plural nouns that are not possessive</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The teacher collected three essay's before lunch.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The teacher collected three essays before lunch.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> do not use apostrophes for simple plurals.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using a comma where a semicolon is needed between full clauses</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The route is faster, however it is less reliable at night.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The route is faster; however, it is less reliable at night.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use a semicolon before however when both sides are full clauses</p>
+  <h3>mixing up its and it's</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The company changed it's policy last month.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The company changed its policy last month.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> use it's only for it is or it has; use its for possession.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>using a colon after an incomplete clause</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The committee discussed: new buses, cleaner stations, and safer crossings.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The committee discussed three priorities: new buses, cleaner stations, and safer crossings.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use a colon only after a complete clause</p>
+  <h3>choosing the wrong apostrophe form for plural ownership</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The students's projects were displayed in the hall.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The students' projects were displayed in the hall.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> for plural owners ending in s, place the apostrophe after s.</p>
 </article>
 </div>
 
@@ -127,35 +127,35 @@ quiz:
   </div>
   <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Apostrophe and Possession form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The better sentence uses possession correctly." data-wrong-feedback="Not yet. Check whether the apostrophe should show possession or contraction.">
   <p class="practice-task-label">1. Quick pick</p>
   <h3>Choose the stronger sentence for Apostrophe and Possession.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  The report was useful however it needed clearer headings.
+  The students books were left on the back table.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  The report was useful; however, it needed clearer headings.
+  The students' books were left on the back table.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="She has one||goal: improve route||safety near||schools." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="The writer||checked the students'||drafts before||class." data-task-id="1" data-correct-feedback="Correct. The sentence now uses plural possession correctly." data-wrong-feedback="Not yet. Keep the owner and apostrophe together.">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put this Apostrophe and Possession sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="goal: improve route" data-chip-origin="bank-1" data-chip-id="1-0">
-  goal: improve route
+<button type="button" class="practice-chip" data-chip-value="checked the students'" data-chip-origin="bank-1" data-chip-id="1-0">
+  checked the students'
 </button>
-<button type="button" class="practice-chip" data-chip-value="safety near" data-chip-origin="bank-1" data-chip-id="1-1">
-  safety near
+<button type="button" class="practice-chip" data-chip-value="drafts before" data-chip-origin="bank-1" data-chip-id="1-1">
+  drafts before
 </button>
-<button type="button" class="practice-chip" data-chip-value="schools." data-chip-origin="bank-1" data-chip-id="1-2">
-  schools.
+<button type="button" class="practice-chip" data-chip-value="class." data-chip-origin="bank-1" data-chip-id="1-2">
+  class.
 </button>
-<button type="button" class="practice-chip" data-chip-value="She has one" data-chip-origin="bank-1" data-chip-id="1-3">
-  She has one
+<button type="button" class="practice-chip" data-chip-value="The writer" data-chip-origin="bank-1" data-chip-id="1-3">
+  The writer
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -180,28 +180,28 @@ quiz:
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>The report was useful; however, it needed clearer headings.</p>
+  <p>The students' books were left on the back table.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>The report was useful however it needed clearer headings.</p>
+  <p>The students books were left on the back table.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>She has one goal: improve route safety near schools.</p>
+  <p>It's clear that the writer revised the paragraph.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>She has one goal improve route safety near schools.</p>
+  <p>Its clear that the writer revised the paragraph.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>

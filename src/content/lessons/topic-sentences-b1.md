@@ -92,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>starting to write before deciding the task purpose</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>This issue is important and has many sides.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>This essay argues that better transit investment improves daily life for workers.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Write one clear task sentence before the first full paragraph.</p>
+  <h3>starting a body paragraph with a fact instead of a controlling idea</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Many people use social media every day.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Social media has changed how people maintain long-distance friendships.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> A topic sentence should state the paragraph's argument, not just a fact. Ask: "What point am I making?"</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using examples that are too general to prove the point</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Many places improved after changes were made.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>One district reduced response times by 18% after introducing coordinated service planning.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Add a place, group, time, or measured result.</p>
+  <h3>writing a topic sentence that is too broad to focus the paragraph</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Technology affects many things in society.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Smartphones have reduced the need for face-to-face interaction among teenagers.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Narrow the topic sentence to the single idea you will develop in that paragraph.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>losing paragraph control by adding every idea at once</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The policy is good, bad, expensive, helpful, and important for many people for many reasons.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The policy is expensive at first; however, it improves reliability for daily commuters.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Give each paragraph one job and one main idea.</p>
+  <h3>forgetting the topic sentence and starting with a detail</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>For example, in 2023, a study showed a 20% drop in face-to-face socialization.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Smartphone use has reduced face-to-face socialisation. For example, a 2023 study found a 20% drop among teenagers.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Always write the main claim first, then the evidence or example that supports it.</p>
 </article>
 </div>
 

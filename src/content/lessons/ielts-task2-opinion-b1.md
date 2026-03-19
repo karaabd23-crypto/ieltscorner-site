@@ -92,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>starting to write before deciding the task purpose</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>This issue is important and has many sides.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>This essay argues that better transit investment improves daily life for workers.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Write one clear task sentence before the first full paragraph.</p>
+  <h3>failing to state a clear opinion in the introduction</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>There are many views on this topic. Some agree, some disagree.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I strongly believe that governments should invest in renewable energy rather than subsidise fossil fuels.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> State your opinion directly in the introduction using "I believe", "I think", or "In my view".</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using examples that are too general to prove the point</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Many places improved after changes were made.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>One district reduced response times by 18% after introducing coordinated service planning.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Add a place, group, time, or measured result.</p>
+  <h3>writing "to some extent I agree" and then only arguing one side</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>To some extent I agree. It is good because it helps people a lot.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I partially agree: while the proposal reduces costs, it may disadvantage smaller businesses.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> If you partially agree, explain both what you agree with and what you disagree with.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>losing paragraph control by adding every idea at once</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The policy is good, bad, expensive, helpful, and important for many people for many reasons.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The policy is expensive at first; however, it improves reliability for daily commuters.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Give each paragraph one job and one main idea.</p>
+  <h3>giving a personal example that sounds invented and lowers credibility</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>For example, my friend became very successful after this policy changed.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>For example, countries that introduced free university tuition saw 15% higher graduate employment rates.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use general group-level examples (countries, industries, studies) rather than individual anecdotes.</p>
 </article>
 </div>
 

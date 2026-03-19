@@ -92,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>delaying the direct answer</h3>
+  <h3>stalling before giving a direct answer</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Well, there are many sides to this question and it is hard to say.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>My main point is that focused investment can improve access, reliability, and quality of life.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Answer first, then extend.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I would choose the outdoor option because fresh air helps me focus.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Answer the question directly in your opening sentence — pick a side.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using fillers instead of content</h3>
+  <h3>using vague filler instead of a real reason</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Like, you know, it is good because it is good for people.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>A clear example is that a pilot program improved service response times in one local district.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Replace filler with one real reason or detail.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>A shorter daily commute gives me an extra hour for exercise each morning.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> State one specific, personal reason — something observable or measurable.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>finishing without a clear final line</h3>
+  <h3>ending the turn with an unfinished-sounding phrase</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>So yes, maybe, that is my idea.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Overall, that is why this option makes more sense in practice.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Prepare one short closing sentence you can use naturally.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>So that is why this choice fits my lifestyle better.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Close with one confirming sentence that refers back to your reason.</p>
 </article>
 </div>
 

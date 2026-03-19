@@ -92,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>delaying the direct answer</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Well, there are many sides to this question and it is hard to say.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>My main point is that focused investment can improve access, reliability, and quality of life.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Answer first, then extend.</p>
+  <h3>opening with a vague comment instead of a direct answer</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Well, there are many sides to this experience and it is hard to say.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>My most memorable experience was working abroad for three months.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Name the specific experience in your first sentence — do not delay.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using fillers instead of content</h3>
+  <h3>using empty filler phrases to buy time</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Like, you know, it is good because it is good for people.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>A clear example is that a pilot program improved service response times in one local district.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Replace filler with one real reason or detail.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>That job taught me to solve unexpected problems without panicking.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Replace fillers with one concrete detail: a place, action, or result.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>finishing without a clear final line</h3>
+  <h3>ending with a trailing-off phrase instead of a clear close</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>So yes, maybe, that is my idea.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Overall, that is why this option makes more sense in practice.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Prepare one short closing sentence you can use naturally.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>That experience shaped the way I handle challenges today.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Prepare one short closing sentence that links back to how the experience matters.</p>
 </article>
 </div>
 
