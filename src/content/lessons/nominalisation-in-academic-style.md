@@ -1,11 +1,11 @@
 ---
 title: "Turning Verbs Into Nouns"
 category: "grammar"
-level: "C1"
+level: "B2"
 ieltsBand: "7.0-8.0"
 clb: "9-10"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Build strong noun forms from verbs and adjectives to express results, causes, and trends with clearer control."
+excerpt: "Learn how to convert verbs into nouns to enhance clarity and precision in your writing."
 date: "2026-02-27"
 tags: ["grammar", "c1", "exam-prep", "ielts", "celpip"]
 heroTip: "After articles, possessives, and many prepositions, check if English needs a noun form."
@@ -36,56 +36,54 @@ premium: true
 priceCAD: 12
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Turning Verbs Into Nouns</strong> helps you build clearer noun ideas. Sometimes English needs a noun form, and sometimes the noun group becomes too long or too heavy. In this lesson, you will learn how to keep noun forms accurate and readable.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Turning Verbs Into Nouns</strong> helps you construct clearer and more precise sentences by converting verbs into their noun forms. This skill is essential for achieving clarity and precision in complex sentences, especially in academic and professional writing.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The committee will decide next week, and this decide may affect funding.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>The committee will decide next week, and this decision may affect funding.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Their discuss was lengthy and inconclusive.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Their discussion was lengthy and inconclusive.</p>
+  <p class="lesson-card-note">The verb "discuss" needs to be converted to the noun "discussion" to fit the sentence structure.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The company wants to expand, but the expand will take two years.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>The company wants to expand, but the expansion will take two years.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Her perform in the concert was remarkable.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Her performance in the concert was remarkable.</p>
+  <p class="lesson-card-note">The verb "perform" is correctly turned into the noun "performance" for clarity.</p>
 </article>
 </div>
-
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Noun formation helps you name actions, results, and ideas more clearly.</p>
-<p>Noun formation means building nouns from verbs or adjectives, often with suffixes like -tion, -ment, -ness, and -ity. This helps you name actions, results, and abstract ideas clearly.</p>
-<p>Use noun formation when the sentence position requires a noun, such as after articles, possessives, and many prepositions. In exam writing, strong noun control helps you describe trends, causes, and outcomes with precision.</p>
-<p>At C1 level, balance nominal style and verbal style. Use noun formation for precision, but keep sentences readable and direct.</p>
+    <p>Turning verbs into nouns involves converting verbs into their noun forms using suffixes like -tion, -ment, and -ance. This process, known as nominalization, allows for more abstract and concise expression of ideas, especially in formal and academic writing. At the B2 level, mastering this skill helps in crafting more sophisticated sentences.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Check whether the slot needs a noun after the determiner or preposition.</li><li>Choose a natural noun form from the same word family (decide -&gt; decision, improve -&gt; improvement).</li><li>Keep noun phrases readable; avoid heavy chains of abstract nouns.</li></ul>
+    <ul>
+      <li>You need to express an action or process as a concept or thing.</li>
+      <li>Writing academic essays where abstract concepts are discussed.</li>
+      <li>Summarizing research findings or reports.</li>
+      <li>Creating formal business documents that require precision.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Their decision to extend library hours increased attendance.</div>
-<div class="lesson-pattern-sentence">The rapid expansion of bus routes reduced commute times.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">The <strong>decision</strong> to expand the business was unanimous.</div>
+      <div class="lesson-pattern-sentence">Her <strong>performance</strong> in the play was outstanding.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Locate positions where English expects a noun: after determiners, possessives, and many prepositions.</li><li>Convert the base word to a natural noun form (decide -&gt; decision, improve -&gt; improvement).</li><li>Check agreement and article use around the new noun phrase.</li><li>Keep noun groups readable; split heavy noun chains when needed.</li><li>Re-read for clarity and replace abstract nouns with verbs if the sentence becomes too dense.</li></ul>
+    <ul>
+      <li>Use noun forms when the context requires a noun, such as after articles or prepositions.</li>
+      <li>Choose the correct noun form from the verb's word family (e.g., "decide" becomes "decision").</li>
+      <li>Ensure that noun phrases are clear and not overly complex.</li>
+      <li>Rephrase if the sentence becomes too abstract or difficult to read.</li>
+    </ul>
   </section>
 </div>
 
@@ -93,24 +91,24 @@ draft: false
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>keeping a verb form where a noun is required</h3>
+  <h3>Using a verb form instead of a noun</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Their investigate into the accident took three months.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>Their investigation into the accident took three months.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> check noun positions after determiners, possessives, and prepositions</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Convert verbs to nouns where a noun is needed, such as after prepositions.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>leaving adjective form where the sentence requires a noun</h3>
+  <h3>Leaving an adjective form where a noun is required</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The policy produced stable in small towns.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>The policy produced stability in small towns.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> convert the base adjective to a noun before the sentence is finalized</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Ensure adjectives are converted to nouns when the context demands it.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>building an unreadable noun chain</h3>
+  <h3>Constructing a complex noun chain</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The council discussed transport improve plan funding.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>The council discussed funding for a transport improvement plan.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> keep noun phrases readable by moving part of the chain into a prepositional phrase</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Break down noun chains into simpler, more readable phrases.</p>
 </article>
 </div>
 
@@ -122,41 +120,41 @@ draft: false
       <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
   <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Turning Verbs Into Nouns form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence uses the noun form appropriately." data-wrong-feedback="Not yet. Ensure the noun form fits the sentence context.">
   <p class="practice-task-label">1. Quick pick</p>
   <h3>Choose the stronger sentence for Turning Verbs Into Nouns.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  Their investigate into the accident took three months.
+  Their discuss was lengthy and inconclusive.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  Their investigation into the accident took three months.
+  Their discussion was lengthy and inconclusive.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="The city announced||an improvement in||weekend bus||service." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="The manager announced||a reduction in||work hours||for the summer." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put this Turning Verbs Into Nouns sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="an improvement in" data-chip-origin="bank-1" data-chip-id="1-0">
-  an improvement in
+<button type="button" class="practice-chip" data-chip-value="a reduction in" data-chip-origin="bank-1" data-chip-id="1-0">
+  a reduction in
 </button>
-<button type="button" class="practice-chip" data-chip-value="service." data-chip-origin="bank-1" data-chip-id="1-1">
-  service.
+<button type="button" class="practice-chip" data-chip-value="for the summer." data-chip-origin="bank-1" data-chip-id="1-1">
+  for the summer.
 </button>
-<button type="button" class="practice-chip" data-chip-value="weekend bus" data-chip-origin="bank-1" data-chip-id="1-2">
-  weekend bus
+<button type="button" class="practice-chip" data-chip-value="work hours" data-chip-origin="bank-1" data-chip-id="1-2">
+  work hours
 </button>
-<button type="button" class="practice-chip" data-chip-value="The city announced" data-chip-origin="bank-1" data-chip-id="1-3">
-  The city announced
+<button type="button" class="practice-chip" data-chip-value="The manager announced" data-chip-origin="bank-1" data-chip-id="1-3">
+  The manager announced
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -166,43 +164,33 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="typing" data-task-answers="After a long discussion, the board approved the budget." data-task-id="2" data-correct-feedback="Correct. You repaired the sentence without changing the message." data-wrong-feedback="Not yet. Check the target form, then type the full corrected sentence.">
-  <p class="practice-task-label">3. Type the fix</p>
-  <h3>Rewrite the sentence so Turning Verbs Into Nouns is correct.</h3>
-  <p class="practice-source-line"><span>Fix this:</span> After a long discuss, the board approved the budget.</p>
-  <div class="practice-input-row">
-    <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
-    <button type="button" class="practice-check-btn" data-task-check>Check</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
 <article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
-  <p class="practice-task-label">4. Final sort</p>
+  <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>Their investigation into the accident took three months.</p>
+  <p>Their discussion was lengthy and inconclusive.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>Their investigate into the accident took three months.</p>
+  <p>Their discuss was lengthy and inconclusive.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>The city announced an improvement in weekend bus service.</p>
+  <p>The manager announced a reduction in work hours for the summer.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>The city announced an improve in weekend bus service.</p>
+  <p>The manager announced a reduce in work hours for the summer.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
@@ -218,7 +206,7 @@ draft: false
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> word formation helps you say exactly what you mean without using long explanations. When you choose the right form, your English becomes more precise, more natural, and stronger for IELTS and CELPIP tasks.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering the conversion of verbs into nouns allows you to articulate ideas succinctly and with precision, enhancing the quality of your writing in IELTS and CELPIP tasks.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

@@ -1,11 +1,11 @@
 ---
-title: "Academic Discussion"
+title: "Key Verbs for Academic Discussions"
 category: "vocabulary"
-level: "C1"
+level: "B2"
 ieltsBand: "7.0-8.0"
 clb: "9-10"
 exam: ["IELTS", "CELPIP"]
-excerpt: "C1 vocabulary lesson on Academic Discussion with a practical word bank, collocations, and retrieval practice."
+excerpt: "Learn key verbs to enhance clarity and precision in academic discussions by explaining evidence, interpreting data, and justifying claims effectively."
 date: "2026-02-27"
 tags: ["vocabulary", "c1", "exam-prep", "ielts", "celpip"]
 heroTip: "Learn words with their partner phrases and one model sentence, not as isolated items."
@@ -36,7 +36,7 @@ premium: true
 priceCAD: 12
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Academic Discussion</strong> is about the words and phrases you need for real English. This lesson shows what the key words mean, where they fit, and how to use them in natural sentences without sounding forced.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Academic Discussion</strong> focuses on using precise vocabulary to enhance clarity and effectiveness in academic settings. This lesson teaches key verbs for explaining evidence, interpreting data, and justifying claims naturally and accurately.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
@@ -44,48 +44,55 @@ draft: false
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>The chart says bus use went up in May.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The chart indicates that bus use rose in May.</p>
-  <p class="lesson-card-note">The stronger version names the real meaning instead of staying vague.</p>
+  <p class="lesson-card-note">The stronger version uses "indicates" to convey a precise observation.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>The writer says there is a reason for the change.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The writer explains one reason for the change.</p>
-  <p class="lesson-card-note">The better sentence sounds more natural for a real task and a real reader.</p>
+  <p class="lesson-card-note">"Explains" provides a clearer and more specific description of the writer's action.</p>
+</article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 3</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The study shows the policy is effective.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>The study demonstrates the policy's effectiveness.</p>
+  <p class="lesson-card-note">"Demonstrates" is more precise and academically appropriate than "shows."</p>
 </article>
 </div>
-
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>This lesson helps you say the same idea with sharper, more natural vocabulary.</p>
-<p>Academic Discussion teaches verbs that help you explain evidence, interpret data, and justify claims more precisely.</p>
-<p>Use this vocabulary when you need to describe what evidence shows or what a writer is doing, instead of relying on vague verbs like say or do.</p>
-<p>At C1 level, learn fewer words but learn them well: meaning, collocation, and one model sentence.</p>
+    <p>This lesson focuses on using precise verbs in academic discussions to convey specific actions or observations clearly and effectively. These verbs replace vague terms like "say" or "do" and are crucial for explaining evidence, interpreting data, and justifying claims at a B2 level, where clarity and precision in communication are essential.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Choose the verb from the job you need: indicate, evaluate, justify, or interpret.</li><li>Follow the verb with real evidence or a clear idea.</li><li>Use the word that fits the meaning, not the word that only sounds more advanced.</li></ul>
+    <ul>
+      <li>Describing what evidence shows in academic writing or presentations.</li>
+      <li>Interpreting data in research papers or reports.</li>
+      <li>Justifying claims in essays or debates.</li>
+      <li>Engaging in formal discussions or academic dialogues.</li>
+      <li>Writing academic essays or delivering presentations.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">The chart indicates that bus use rose after the route change.</div>
-<div class="lesson-pattern-sentence">The writer evaluates both the short-term cost and the long-term benefit.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">The chart <strong>indicates</strong> that bus use rose after the route change.</div>
+      <div class="lesson-pattern-sentence">The writer <strong>evaluates</strong> both the short-term cost and the long-term benefit.</div>
+      <div class="lesson-pattern-sentence">The study <strong>demonstrates</strong> the impact of the new policy on productivity.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Choose the meaning first before you choose the word.</li><li>Learn the word with a natural collocation or partner phrase.</li><li>Use the new word in one short sentence right away.</li><li>Replace vague words only when the new word stays accurate.</li><li>Keep the register stable so the language fits the task.</li></ul>
+    <ul>
+      <li>Choose verbs that precisely convey the intended meaning in academic contexts.</li>
+      <li>Pair verbs with appropriate collocations or partner phrases for clarity.</li>
+      <li>Use new verbs in sentences immediately to reinforce learning.</li>
+      <li>Replace vague words with precise verbs only if accuracy is maintained.</li>
+      <li>Ensure the verb's register matches the academic setting.</li>
+    </ul>
   </section>
 </div>
 
@@ -119,24 +126,24 @@ draft: false
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">Start with meaning. Then move to collocations and sentence control for Academic Discussion.</p>
+      <p class="practice-lab-intro">Focus on using precise verbs to enhance clarity in Academic Discussions.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Use words that sound natural together. Precision is more important than difficulty.</p>
+  <p class="practice-lab-coach">Choose verbs that precisely fit the context of academic discussions.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>The graph ___ that bus use increased after the route change.</h3>
+  <h3>The research ___ that the new policy will reduce costs.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
   says
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  indicates
+  suggests
 </button>
 <button type="button" class="practice-choice" data-choice-index="2">
   does
@@ -144,22 +151,22 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Analyze works best||when the meaning||is clear in||the sentence." data-task-id="1">
+<article class="practice-task" data-task-type="order" data-task-answer="The data||supports the claim||that the new system||is more efficient." data-task-id="2">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put the sentence in a natural order.</h3>
   <p class="practice-task-note">Put the chunks in the natural order.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="Analyze works best" data-chip-origin="bank-1" data-chip-id="1-0">
-  Analyze works best
+<button type="button" class="practice-chip" data-chip-value="The data" data-chip-origin="bank-1" data-chip-id="1-0">
+  The data
 </button>
-<button type="button" class="practice-chip" data-chip-value="is clear in" data-chip-origin="bank-1" data-chip-id="1-1">
-  is clear in
+<button type="button" class="practice-chip" data-chip-value="supports the claim" data-chip-origin="bank-1" data-chip-id="1-1">
+  supports the claim
 </button>
-<button type="button" class="practice-chip" data-chip-value="when the meaning" data-chip-origin="bank-1" data-chip-id="1-2">
-  when the meaning
+<button type="button" class="practice-chip" data-chip-value="that the new system" data-chip-origin="bank-1" data-chip-id="1-2">
+  that the new system
 </button>
-<button type="button" class="practice-chip" data-chip-value="the sentence." data-chip-origin="bank-1" data-chip-id="1-3">
-  the sentence.
+<button type="button" class="practice-chip" data-chip-value="is more efficient." data-chip-origin="bank-1" data-chip-id="1-3">
+  is more efficient.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -169,13 +176,27 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="typing" data-task-answers="data" data-task-id="2">
-  <p class="practice-task-label">3. Type the missing word</p>
-  <h3>Complete the useful chunk: analyze _____</h3>
-  <p class="practice-source-line"><span>Fix this:</span> analyze: examine information carefully</p>
-  <div class="practice-input-row">
-    <input type="text" class="practice-input" data-typing-input placeholder="Type one word" />
+<article class="practice-task" data-task-type="sort" data-task-answer="Academic:analyzes,interprets||Everyday:says,does" data-sort-categories="Academic||Everyday" data-task-id="3">
+  <p class="practice-task-label">3. Sort it</p>
+  <h3>Sort the verbs into academic and everyday categories.</h3>
+  <div class="practice-sort-bank" data-sort-bank>
+<button type="button" class="practice-chip" data-chip-value="analyzes" data-chip-origin="bank-1" data-chip-id="1-0">
+  analyzes
+</button>
+<button type="button" class="practice-chip" data-chip-value="says" data-chip-origin="bank-1" data-chip-id="1-1">
+  says
+</button>
+<button type="button" class="practice-chip" data-chip-value="interprets" data-chip-origin="bank-1" data-chip-id="1-2">
+  interprets
+</button>
+<button type="button" class="practice-chip" data-chip-value="does" data-chip-origin="bank-1" data-chip-id="1-3">
+  does
+</button>
+  </div>
+  <div class="practice-sort-answer" data-sort-answer></div>
+  <div class="practice-task-actions">
     <button type="button" class="practice-check-btn" data-task-check>Check</button>
+    <button type="button" class="practice-clear-btn" data-task-clear>Clear</button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
@@ -183,7 +204,7 @@ draft: false
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> good vocabulary is not just about knowing a word. You need the <em>right</em> word in the <em>right</em> sentence. When you control Academic Discussion, you sound clearer, more natural, and more precise in real English.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering precise verbs for academic discussions allows you to communicate more clearly and effectively, which is essential for success in academic and professional environments where detailed analysis and justification are required.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

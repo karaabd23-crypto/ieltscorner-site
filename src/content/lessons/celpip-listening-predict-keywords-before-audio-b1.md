@@ -1,11 +1,11 @@
 ---
-title: "CELPIP Listening: Predict Keywords Before the Audio (B1)"
+title: "CELPIP Listening: Predict Keywords Before the Audio"
 category: "listening"
-level: "B1"
+level: "B2"
 ieltsBand: "5.5-6.5"
 clb: "6-8"
 exam: ["CELPIP"]
-excerpt: "B1 listening lesson on CELPIP Listening: Predict Keywords Before the Audio with task strategy, attention control, and review routines."
+excerpt: "Learn to predict keywords before the audio in CELPIP Listening to enhance focus and comprehension."
 date: "2026-03-09"
 tags: ["celpip", "listening", "prediction", "keywords", "note-taking"]
 heroTip: "Do not try to catch every word. Track the question focus and the signal words that carry the answer."
@@ -36,7 +36,7 @@ premium: false
 priceCAD: 12
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>CELPIP Listening: Predict Keywords Before the Audio</strong> is a listening skill. This lesson helps you catch the right information, stay calm when you miss a word, and make better answer choices under time pressure.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>CELPIP Listening: Predict Keywords Before the Audio</strong> is a listening skill that enhances your ability to focus on relevant information, manage time efficiently, and maintain composure under exam conditions. This lesson is designed to improve your listening strategy by teaching you how to anticipate key information before it is spoken.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
@@ -54,38 +54,38 @@ draft: false
 </article>
 </div>
 
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>This lesson gives you one listening habit you can use before, during, and after the audio.</p>
-<p>Prediction is a listening preparation skill. Before the audio begins, the question usually tells you what type of information to expect: a reason, a number, a location, a problem, or an opinion. When you predict the information type, your attention becomes more selective.</p>
-<p>Use prediction during the short reading time before the audio. Underline key nouns, identify likely synonyms, and guess the information type. This does not mean choosing the answer early; it means preparing your brain to notice the right part of the audio when it arrives.</p>
-<p>At B1 level, listening gains usually come from better attention control, not from trying to hear every word.</p>
+    <p>Predicting keywords before the audio is a strategic listening skill used in the CELPIP exam. It involves anticipating key information types, such as reasons, numbers, or opinions, based on the question prompts. This skill helps you focus your attention on relevant parts of the audio, improving comprehension and efficiency. At the B2 level, mastering this skill is crucial for managing complex listening tasks effectively.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Read the question quickly before the audio whenever the task allows it.</li><li>Decide what information matters most for that item.</li><li>Stay with the message instead of fighting for every missed word.</li></ul>
+    <ul>
+      <li>Reading the question before the audio starts to identify expected information types.</li>
+      <li>Preparing to listen for specific details like numbers, reasons, or opinions.</li>
+      <li>Engaging in CELPIP listening tasks that require quick comprehension of spoken information.</li>
+      <li>Managing time efficiently during exam conditions by focusing on key details.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Question asks about cost -&gt; expect number, money word, or price comparison.</div>
-<div class="lesson-pattern-sentence">Question asks why someone changed plans -&gt; expect reason language such as because or the problem was.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">Question asks about cost -&gt; expect <strong>number</strong>, <strong>money word</strong>, or <strong>price comparison</strong>.</div>
+      <div class="lesson-pattern-sentence">Question asks why someone changed plans -&gt; expect <strong>reason language</strong> such as <strong>because</strong> or <strong>the problem was</strong>.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Read the question and answer choices before the audio begins.</li><li>Underline the key nouns and verbs.</li><li>Predict likely synonyms or paraphrases you may hear.</li><li>Decide what information type the answer probably is.</li><li>Listen for the relevant section instead of trying to memorize everything.</li></ul>
+    <ul>
+      <li>Always read the question and answer choices before the audio begins.</li>
+      <li>Underline key nouns and verbs to focus your listening.</li>
+      <li>Predict likely synonyms or paraphrases you may hear in the audio.</li>
+      <li>Identify the type of information the answer will likely be.</li>
+      <li>Focus on listening for relevant sections instead of trying to memorize everything.</li>
+    </ul>
   </section>
 </div>
 
@@ -122,13 +122,13 @@ draft: false
       <p class="practice-lab-intro">First notice what matters. Then check your sequence and your recovery habits.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
   <p class="practice-lab-coach">The question should control your attention. If it does not, the audio will feel harder than it really is.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1">
   <p class="practice-task-label">1. Quick pick</p>
   <h3>Choose the stronger move for CELPIP Listening: Predict Keywords Before the Audio.</h3>
   <div class="practice-choice-grid">
@@ -141,7 +141,7 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Read the question and answer choices before the audio begins.||Underline the key nouns and verbs.||Predict likely synonyms or paraphrases you may hear.||Decide what information type the answer probably is." data-task-id="1">
+<article class="practice-task" data-task-type="order" data-task-answer="Read the question and answer choices before the audio begins.||Underline the key nouns and verbs.||Predict likely synonyms or paraphrases you may hear.||Decide what information type the answer probably is." data-task-id="2">
   <p class="practice-task-label">2. Build the flow</p>
   <h3>Put these moves in a helpful order.</h3>
   <p class="practice-task-note">Put the chunks in the natural order.</p>
@@ -166,7 +166,7 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="sort" data-task-id="2">
+<article class="practice-task" data-task-type="sort" data-task-id="3">
   <p class="practice-task-label">3. Final sort</p>
   <h3>Sort these habits into helpful or not helpful.</h3>
   <div class="practice-sort-list">
@@ -204,24 +204,11 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="3">
-  <p class="practice-task-label">4. Last check</p>
-  <h3>Choose the sentence that sounds more controlled.</h3>
-  <div class="practice-choice-grid">
-<button type="button" class="practice-choice" data-choice-index="0">
-  If I miss one word, I stop and think about it until I understand it.
-</button>
-<button type="button" class="practice-choice" data-choice-index="1">
-  When I miss one detail, I stay with the audio and wait for the next clear signal or repetition.
-</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
   </div>
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> listening is not about hearing every word. It is about catching the words that carry the answer. This skill helps you recover faster and protect marks when the audio moves quickly.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Effective listening is about identifying and understanding the key information that answers the question. This skill helps you manage your focus and recover quickly, ensuring you capture the essential details even when the audio is fast-paced.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

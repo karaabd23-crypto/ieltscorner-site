@@ -1,11 +1,11 @@
 ---
-title: "Advanced Formal Expression"
+title: "Advanced Formal Vocabulary for Professional Writing"
 category: "vocabulary"
-level: "C2"
+level: "B2"
 ieltsBand: "8.5-9.0"
 clb: "11-12"
 exam: ["IELTS", "CELPIP"]
-excerpt: "C2 vocabulary lesson on Advanced Formal Expression with a practical word bank, collocations, and retrieval practice."
+excerpt: "This lesson helps you master advanced formal vocabulary for professional and academic writing, enhancing clarity and precision."
 date: "2026-02-27"
 tags: ["vocabulary", "c2", "exam-prep", "ielts", "celpip"]
 heroTip: "Learn words with their partner phrases and one model sentence, not as isolated items."
@@ -36,7 +36,7 @@ premium: false
 priceCAD: 0
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Advanced Formal Expression</strong> is about the words and phrases you need for real English. This lesson shows what the key words mean, where they fit, and how to use them in natural sentences without sounding forced.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Mastering Advanced Formal Vocabulary</strong> equips you with the precise words and phrases needed for effective communication in professional and academic settings. This lesson focuses on understanding key vocabulary, its appropriate context, and how to incorporate it naturally into your writing.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
@@ -44,48 +44,48 @@ draft: false
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>I want you to fix this problem fast.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>I would appreciate a prompt response to this issue.</p>
-  <p class="lesson-card-note">The stronger version names the real meaning instead of staying vague.</p>
+  <p class="lesson-card-note">The stronger version uses a formal request frame, suitable for professional communication.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>I am writing about the bad service yesterday.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>I am writing regarding the poor service I received yesterday.</p>
-  <p class="lesson-card-note">The better sentence sounds more natural for a real task and a real reader.</p>
+  <p class="lesson-card-note">The improved sentence uses formal vocabulary to convey dissatisfaction professionally.</p>
 </article>
 </div>
-
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>This lesson helps you say the same idea with sharper, more natural vocabulary.</p>
-<p>Advanced Formal Expression focuses on polite, controlled language for emails, letters, and formal writing tasks.</p>
-<p>Use this vocabulary when the task expects professional or respectful communication rather than casual spoken wording.</p>
-<p>At C2 level, learn fewer words but learn them well: meaning, collocation, and one model sentence.</p>
+    <p>Advanced formal vocabulary comprises words and phrases that elevate the tone of professional and academic writing, ensuring communication is respectful, precise, and clear. At the B2 level, mastering this vocabulary is essential for articulating complex ideas and maintaining a formal tone in diverse professional contexts.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Prefer polite request frames over direct demands.</li><li>Use clear purpose phrases such as regarding or I am writing to.</li><li>Keep the tone professional without adding unnecessary long words.</li></ul>
+    <ul>
+      <li>Drafting formal business emails or letters.</li>
+      <li>Writing academic essays or scholarly articles.</li>
+      <li>Engaging in professional negotiations or presentations.</li>
+      <li>Preparing for formal exams or assessments.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">I am writing regarding the delay in my order.</div>
-<div class="lesson-pattern-sentence">I would appreciate a prompt response to this issue.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">I am writing to <strong>inquire about</strong> the status of my application.</div>
+      <div class="lesson-pattern-sentence">We <strong>regret to inform</strong> you that your request has been denied.</div>
+      <div class="lesson-pattern-sentence">Please <strong>advise</strong> on the next steps regarding this matter.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Choose the meaning first before you choose the word.</li><li>Learn the word with a natural collocation or partner phrase.</li><li>Use the new word in one short sentence right away.</li><li>Replace vague words only when the new word stays accurate.</li><li>Keep the register stable so the language fits the task.</li></ul>
+    <ul>
+      <li>Choose vocabulary that aligns with the formal tone required.</li>
+      <li>Pair advanced words with appropriate collocations for natural usage.</li>
+      <li>Use formal vocabulary to replace casual terms for precision.</li>
+      <li>Maintain a consistent tone throughout your document.</li>
+      <li>Avoid overcomplicating sentences; prioritize clarity.</li>
+    </ul>
   </section>
 </div>
 
@@ -93,24 +93,24 @@ draft: false
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>using direct spoken commands in a formal message</h3>
+  <h3>Using direct spoken commands in a formal message</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Send me the details today.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>Could you please send me the details today?</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> replace direct commands with polite request frames</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Replace direct commands with polite request frames.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using casual negative words when a neutral formal one is better</h3>
+  <h3>Using casual negative words when a neutral formal one is better</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>I am unhappy about the bad service.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>I am dissatisfied with the poor service I received.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> choose controlled formal wording</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Choose controlled formal wording.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>starting without a clear purpose phrase</h3>
+  <h3>Starting without a clear purpose phrase</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>I have a problem with my booking.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>I am writing regarding a problem with my booking.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> open with a phrase that signals your purpose</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Open with a phrase that signals your purpose.</p>
 </article>
 </div>
 
@@ -119,16 +119,16 @@ draft: false
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">Start with meaning. Then move to collocations and sentence control for Advanced Formal Expression.</p>
+      <p class="practice-lab-intro">Focus on using precise and formal vocabulary in professional contexts. Practice collocations and sentence structure for clarity and formality.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Use words that sound natural together. Precision is more important than difficulty.</p>
+  <p class="practice-lab-coach">Choose words that naturally fit formal contexts. Precision and clarity are key.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1">
   <p class="practice-task-label">1. Quick pick</p>
   <h3>Which phrase is best for a formal request?</h3>
   <div class="practice-choice-grid">
@@ -144,25 +144,19 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="I would||appreciate works best||when the meaning||is clear in||the sentence." data-task-id="1">
+<article class="practice-task" data-task-type="order" data-task-answer="Please advise||on the next steps||regarding this matter." data-task-id="2">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put the sentence in a natural order.</h3>
   <p class="practice-task-note">Put the chunks in the natural order.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="the sentence." data-chip-origin="bank-1" data-chip-id="1-0">
-  the sentence.
+<button type="button" class="practice-chip" data-chip-value="Please advise" data-chip-origin="bank-1" data-chip-id="1-0">
+  Please advise
 </button>
-<button type="button" class="practice-chip" data-chip-value="I would" data-chip-origin="bank-1" data-chip-id="1-1">
-  I would
+<button type="button" class="practice-chip" data-chip-value="on the next steps" data-chip-origin="bank-1" data-chip-id="1-1">
+  on the next steps
 </button>
-<button type="button" class="practice-chip" data-chip-value="appreciate works best" data-chip-origin="bank-1" data-chip-id="1-2">
-  appreciate works best
-</button>
-<button type="button" class="practice-chip" data-chip-value="when the meaning" data-chip-origin="bank-1" data-chip-id="1-3">
-  when the meaning
-</button>
-<button type="button" class="practice-chip" data-chip-value="is clear in" data-chip-origin="bank-1" data-chip-id="1-4">
-  is clear in
+<button type="button" class="practice-chip" data-chip-value="regarding this matter." data-chip-origin="bank-1" data-chip-id="1-2">
+  regarding this matter.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -172,13 +166,16 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="typing" data-task-answers="issue" data-task-id="2">
-  <p class="practice-task-label">3. Type the missing word</p>
-  <h3>Complete the useful chunk: address an _____</h3>
-  <p class="practice-source-line"><span>Fix this:</span> I would appreciate: a polite way to request action</p>
-  <div class="practice-input-row">
-    <input type="text" class="practice-input" data-typing-input placeholder="Type one word" />
-    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+<article class="practice-task" data-task-type="sort" data-task-answer="Formal:regarding,advise,appreciate||Informal:want,now,unhappy" data-sort-categories="Formal||Informal" data-task-id="3">
+  <p class="practice-task-label">3. Sort it</p>
+  <h3>Sort the words into formal and informal categories.</h3>
+  <div class="practice-sort-grid">
+<button type="button" class="practice-sort-item" data-sort-value="regarding">regarding</button>
+<button type="button" class="practice-sort-item" data-sort-value="advise">advise</button>
+<button type="button" class="practice-sort-item" data-sort-value="appreciate">appreciate</button>
+<button type="button" class="practice-sort-item" data-sort-value="want">want</button>
+<button type="button" class="practice-sort-item" data-sort-value="now">now</button>
+<button type="button" class="practice-sort-item" data-sort-value="unhappy">unhappy</button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
@@ -186,7 +183,7 @@ draft: false
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> good vocabulary is not just about knowing a word. You need the <em>right</em> word in the <em>right</em> sentence. When you control Advanced Formal Expression, you sound clearer, more natural, and more precise in real English.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering advanced formal vocabulary is crucial for clear and effective communication in professional and academic contexts. It allows you to express ideas respectfully and precisely, which is essential for high-level English proficiency and success in formal environments.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

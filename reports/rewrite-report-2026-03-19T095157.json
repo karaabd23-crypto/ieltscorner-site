@@ -1,0 +1,23 @@
+[
+  {
+    "file": "transitions-addition-b1.md",
+    "title": "Using Addition Transitions in Writing",
+    "titleVerdict": "needs-improvement",
+    "suggestedTitle": "Using Addition Transitions Effectively",
+    "titleReason": "The original title is somewhat vague and does not emphasize the focus on effective use of addition transitions, which is the core of the lesson.",
+    "relevanceIssues": [
+      "The Examples section focuses on contrast and result transitions rather than addition transitions, which is off-topic.",
+      "The How It Works section discusses multiple types of transitions (addition, contrast, example, result) rather than focusing solely on addition transitions.",
+      "The Practice Lab includes exercises on contrast transitions, which are not relevant to the lesson's focus on addition transitions."
+    ],
+    "changes": [
+      "Rewrote How It Works teach-grid",
+      "Rewrote Examples section",
+      "Rewrote Common Mistakes section",
+      "Rewrote lesson context",
+      "Rewrote Why It Matters",
+      "Rewrote excerpt",
+      "Title: \"Using Addition Transitions in Writing\" → \"Using Addition Transitions Effectively\""
+    ]
+  }
+]

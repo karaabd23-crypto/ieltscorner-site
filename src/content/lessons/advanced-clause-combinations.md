@@ -1,11 +1,11 @@
 ---
 title: "Combining Clauses Effectively"
 category: "grammar"
-level: "C1"
+level: "B2"
 ieltsBand: "7.0-8.0"
 clb: "9-10"
 exam: ["IELTS", "CELPIP"]
-excerpt: "C1 lesson on Combining Clauses Effectively with teacher-style explanation, guided practice, and topic-linked review."
+excerpt: "Learn how to combine clauses effectively to create clear and complex sentences, enhancing your writing's coherence and clarity."
 date: "2026-02-27"
 tags: ["grammar", "c1", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
@@ -36,7 +36,7 @@ premium: true
 priceCAD: 12
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Combining Clauses Effectively</strong> helps you combine ideas into longer sentences. The goal is not just to sound advanced. The goal is to connect ideas clearly while keeping the sentence easy to follow. In this lesson, you will learn how to build longer sentences without losing control.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Combining Clauses Effectively</strong> helps you merge ideas into longer, more complex sentences. The goal is to connect ideas clearly while keeping the sentence easy to follow. In this lesson, you will learn how to construct longer sentences without losing clarity or control.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
@@ -44,48 +44,50 @@ draft: false
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Because the buses were delayed. Many workers missed the meeting.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Because the buses were delayed, many workers missed the meeting.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-card-note">"Because the buses were delayed" is a subordinate clause that needs a main clause to complete the sentence.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The report was clear although the final paragraph was weak it still helped the reader.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Although the final paragraph was weak, the report still helped the reader.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-card-note">The use of "although" introduces a contrast, making the relationship between ideas clearer.</p>
 </article>
 </div>
-
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>A longer sentence is only better if the reader can still follow it easily.</p>
-<p>Clause-building means combining one clear main idea with supporting clauses without losing control of the sentence. A strong complex sentence still feels easy to follow on the first read.</p>
-<p>Use extra clauses to show time, reason, condition, contrast, or added detail. If the link between the clauses is weak, split the sentence and rebuild it.</p>
-<p>At C1 level, use this structure for precision and logic, not for decorative complexity.</p>
+    <p>Combining clauses effectively means merging main and subordinate clauses to convey complex ideas in a clear and concise manner.</p>
+    <p>This structure helps express relationships like time, reason, condition, contrast, or detail within a single sentence.</p>
+    <p>The typical pattern is: main clause + conjunction + subordinate clause.</p>
+    <p>At the B2 level, mastering this skill enhances your ability to write logically connected and coherent sentences.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Start with a complete main clause before you add support.</li><li>Make the link between clauses visible with punctuation or a clear linker.</li><li>Cut extra material if the sentence becomes harder to scan than the meaning is worth.</li></ul>
+    <ul>
+      <li>You need to explain cause and effect in academic writing or reports.</li>
+      <li>Describing sequences of events in narratives or instructions.</li>
+      <li>Highlighting contrasts or exceptions in opinion essays.</li>
+      <li>Adding additional information or detail to support a main idea.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Because the buses were delayed, many workers arrived late to the meeting.</div>
-<div class="lesson-pattern-sentence">The report was clear, although the conclusion needed more evidence.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence"><strong>Although</strong> the weather was bad, we decided to continue with the hike.</div>
+      <div class="lesson-pattern-sentence">She was late <strong>because</strong> the train was delayed.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Write one complete main clause first.</li><li>Add the support clause only after the main clause is stable.</li><li>Show the relationship between clauses clearly with punctuation or a linker.</li><li>Check that each clause is attached to the correct part of the sentence.</li><li>Split the sentence if the reader has to work too hard to follow it.</li></ul>
+    <ul>
+      <li>Start with a complete main clause before adding subordinate clauses.</li>
+      <li>Use conjunctions like "because," "although," and "if" to connect clauses.</li>
+      <li>Ensure each clause logically supports or relates to the main idea.</li>
+      <li>Use commas to separate clauses when necessary for clarity.</li>
+      <li>If a sentence becomes too complex, consider splitting it into simpler sentences.</li>
+    </ul>
   </section>
 </div>
 
@@ -93,24 +95,24 @@ draft: false
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>adding extra clauses without controlling how they connect to the main clause</h3>
+  <h3>Adding extra clauses without controlling how they connect to the main clause</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>When the route changed many residents complained because they had not been warned.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>When the route changed, many residents complained because they had not been warned.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> build one complete main clause first, then attach support clauses with a clear link</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use a comma to separate the introductory clause from the main clause for clarity.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>creating a sentence fragment with a subordinate clause</h3>
+  <h3>Creating a sentence fragment with a subordinate clause</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Because the new route was cheaper.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>Because the new route was cheaper, more commuters started using it.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> a subordinate clause needs a main clause to complete the sentence</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> A subordinate clause needs a main clause to complete the sentence.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>overloading one sentence with too many weakly linked clauses</h3>
+  <h3>Overloading one sentence with too many weakly linked clauses</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The school added tutors and students felt calmer and scores improved and parents were happier.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>The school added tutors, so students felt calmer and scores improved.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> keep only the clauses that carry the core logic, then split anything extra</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Keep only the clauses that carry the core logic, then split anything extra into separate sentences.</p>
 </article>
 </div>
 
@@ -119,47 +121,50 @@ draft: false
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+      <p class="practice-lab-intro">Identify the correct form, build sentences, and fix errors related to combining clauses effectively.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Ensure the meaning is clear and the clauses are logically connected.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Combining Clauses Effectively form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The sentence maintains clarity and logical connection between clauses." data-wrong-feedback="Not yet. Ensure the clauses are clearly linked.">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger sentence for Combining Clauses Effectively.</h3>
+  <h3>Choose the sentence that effectively combines clauses.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  When the route changed many residents complained because they had not been warned.
+  The project was successful, it was completed on time and under budget.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  When the route changed, many residents complained because they had not been warned.
+  The project was successful because it was completed on time and under budget.
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  The project was successful, because it was completed on time and under budget.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="The article explained||the problem, which||made the solution||easier to||understand." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="The manager approved||the proposal, which||led to||increased funding||for the project." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
   <p class="practice-task-label">2. Build it</p>
-  <h3>Put this Combining Clauses Effectively sentence in the correct order.</h3>
+  <h3>Put this sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="understand." data-chip-origin="bank-1" data-chip-id="1-0">
-  understand.
+<button type="button" class="practice-chip" data-chip-value="for the project." data-chip-origin="bank-1" data-chip-id="1-0">
+  for the project.
 </button>
-<button type="button" class="practice-chip" data-chip-value="easier to" data-chip-origin="bank-1" data-chip-id="1-1">
-  easier to
+<button type="button" class="practice-chip" data-chip-value="increased funding" data-chip-origin="bank-1" data-chip-id="1-1">
+  increased funding
 </button>
-<button type="button" class="practice-chip" data-chip-value="The article explained" data-chip-origin="bank-1" data-chip-id="1-2">
-  The article explained
+<button type="button" class="practice-chip" data-chip-value="The manager approved" data-chip-origin="bank-1" data-chip-id="1-2">
+  The manager approved
 </button>
-<button type="button" class="practice-chip" data-chip-value="the problem, which" data-chip-origin="bank-1" data-chip-id="1-3">
-  the problem, which
+<button type="button" class="practice-chip" data-chip-value="the proposal, which" data-chip-origin="bank-1" data-chip-id="1-3">
+  the proposal, which
 </button>
-<button type="button" class="practice-chip" data-chip-value="made the solution" data-chip-origin="bank-1" data-chip-id="1-4">
-  made the solution
+<button type="button" class="practice-chip" data-chip-value="led to" data-chip-origin="bank-1" data-chip-id="1-4">
+  led to
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -169,43 +174,33 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="typing" data-task-answers="Although the school added tutors, the timetable still remained confusing for new students." data-task-id="2" data-correct-feedback="Correct. You repaired the sentence without changing the message." data-wrong-feedback="Not yet. Check the target form, then type the full corrected sentence.">
-  <p class="practice-task-label">3. Type the fix</p>
-  <h3>Rewrite the sentence so Combining Clauses Effectively is correct.</h3>
-  <p class="practice-source-line"><span>Fix this:</span> Although the school added tutors the timetable still remained confusing for new students.</p>
-  <div class="practice-input-row">
-    <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
-    <button type="button" class="practice-check-btn" data-task-check>Check</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
-<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
-  <p class="practice-task-label">4. Final sort</p>
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-task-answer="Works:When the meeting ended, everyone felt relieved.||Needs Fixing:When the meeting ended everyone felt relieved." data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
+  <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>When the route changed, many residents complained because they had not been warned.</p>
+  <p>When the meeting ended, everyone felt relieved.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>When the route changed many residents complained because they had not been warned.</p>
+  <p>When the meeting ended everyone felt relieved.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>The article explained the problem, which made the solution easier to understand.</p>
+  <p>The manager approved the proposal, which led to increased funding for the project.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>The article explained the problem. Which made the solution easier to understand.</p>
+  <p>The manager approved the proposal which led to increased funding for the project.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
@@ -221,7 +216,7 @@ draft: false
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> longer grammar structures can raise your score only when they stay clear. When you control <u>Combining Clauses Effectively</u>, you can add detail and shape the message without losing the reader halfway through the sentence.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering the art of combining clauses effectively can significantly enhance your writing by allowing you to convey complex ideas clearly and concisely. This skill is crucial for academic and professional writing, where clarity and coherence are paramount.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

@@ -1,11 +1,11 @@
 ---
-title: "Moving Words for Emphasis"
+title: "Using Inversion for Emphasis"
 category: "grammar"
-level: "C1"
+level: "B2"
 ieltsBand: "7.0-8.0"
 clb: "9-10"
 exam: ["IELTS", "CELPIP"]
-excerpt: "C1 lesson on Moving Words for Emphasis with teacher-style explanation, guided practice, and topic-linked review."
+excerpt: "Learn how to use inversion and cleft sentences to emphasize key details in your writing."
 date: "2026-02-27"
 tags: ["grammar", "c1", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
@@ -36,7 +36,9 @@ premium: true
 priceCAD: 12
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Moving Words for Emphasis</strong> changes the focus of the sentence. English can move words, repeat a pattern, or use a special structure to make one idea stand out more. In this lesson, you will learn how to add emphasis without sounding unnatural.</p></div>
+<div class="lesson-context">
+  <p class="lesson-context-lead"><strong>Using Inversion for Emphasis</strong> involves changing the usual word order to draw attention to a specific idea or detail. This lesson will guide you on how to effectively use inversion and cleft sentences to emphasize parts of your sentences without losing clarity or naturalness.</p>
+</div>
 
 ## Examples
 <div class="lesson-example-grid">
@@ -44,48 +46,47 @@ draft: false
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Never I have seen such a confusing timetable.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Never have I seen such a confusing timetable.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-card-note">Inversion is needed after 'never' for correct emphasis.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Only after the final practice she felt ready.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Only after the final practice did she feel ready.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-card-note">The auxiliary 'did' is required for inversion after 'only after'.</p>
 </article>
 </div>
-
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Emphasis is useful only when the stronger form also stays clear.</p>
-<p>English can shift word order or use patterns such as cleft sentences and inversion to put one idea in the spotlight. The grammar changes because the writer wants the reader to notice one detail more strongly.</p>
-<p>Use emphasis only when you have a clear reason to highlight one detail. If the sentence becomes harder to follow, the emphasis is not helping.</p>
-<p>At C1 level, use this structure for precision and logic, not for decorative complexity.</p>
+    <p>Inversion involves changing the usual subject-verb order to emphasize a particular part of a sentence. This often occurs after negative adverbs or in certain conditional sentences. Cleft sentences use structures like 'It is/was' or 'What' to spotlight specific information. Mastery of these structures is important at the B2 level to enhance clarity and impact in communication.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Decide what deserves the spotlight before you change the sentence shape.</li><li>Keep the grammar accurate when you move or split sentence parts for emphasis.</li><li>Use emphatic structures sparingly so the effect still feels natural.</li></ul>
+    <ul>
+      <li>Emphasizing a point by starting a sentence with a negative adverb (e.g., 'Never have I seen').</li>
+      <li>Highlighting information using cleft sentences (e.g., 'It was John who called').</li>
+      <li>Creating dramatic effect in storytelling or formal writing.</li>
+      <li>Responding to questions with emphasis (e.g., 'What I need is a vacation').</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">What students need most is clearer feedback.</div>
-<div class="lesson-pattern-sentence">Only after the final practice did she feel ready.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence"><strong>Never</strong> have I seen such dedication from a team.</div>
+      <div class="lesson-pattern-sentence"><strong>It was</strong> the manager <strong>who</strong> made the final decision.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Choose the word or idea you want to highlight.</li><li>Select one structure that creates emphasis naturally, such as inversion or a cleft sentence.</li><li>Rebuild the sentence carefully because emphasis often changes word order.</li><li>Check agreement and auxiliary use after the sentence moves.</li><li>Keep the sentence only if the emphasis makes the meaning clearer or stronger.</li></ul>
+    <ul>
+      <li>Use inversion after negative adverbs for emphasis.</li>
+      <li>Begin cleft sentences with 'It is/was' or 'What' to highlight information.</li>
+      <li>Ensure subject-verb agreement when word order changes.</li>
+      <li>Apply these structures sparingly to maintain clarity.</li>
+      <li>Remember that not all sentences benefit from emphasis; use it purposefully.</li>
+    </ul>
   </section>
 </div>
 
@@ -93,24 +94,24 @@ draft: false
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>changing word order for emphasis without keeping the grammar accurate</h3>
+  <h3>Incorrect inversion with negative adverbs</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Rarely we find such clear instructions in practice books.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>Rarely do we find such clear instructions in practice books.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> when emphasis triggers inversion or a cleft pattern, rebuild the whole structure correctly</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use auxiliary verbs like 'do' for inversion after negative adverbs.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>forgetting inversion after a negative fronted phrase</h3>
+  <h3>Forgetting inversion after fronted negative phrases</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Rarely we see such a clear chart in class.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>Rarely do we see such a clear chart in class.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> fronted negative expressions often trigger auxiliary inversion</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Ensure auxiliary inversion follows negative fronted phrases.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>breaking agreement inside a cleft-like structure</h3>
+  <h3>Incorrect subject-verb agreement in cleft sentences</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>What students need most are clearer homework instructions.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>What students need most is clearer homework instruction.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> treat the whole fronted clause as one subject and check the complement carefully</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Treat the entire clause as a singular subject for agreement.</p>
 </article>
 </div>
 
@@ -119,44 +120,44 @@ draft: false
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+      <p class="practice-lab-intro">Identify the correct form of inversion or cleft sentence, then apply it in new contexts.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Focus on how inversion changes the emphasis and clarity of the sentence.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Moving Words for Emphasis form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The sentence uses inversion correctly for emphasis." data-wrong-feedback="Not quite. Remember to use inversion after negative adverbs.">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger sentence for Moving Words for Emphasis.</h3>
+  <h3>Choose the sentence with correct inversion.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  Rarely we find such clear instructions in practice books.
+  Seldom I have seen such dedication.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  Rarely do we find such clear instructions in practice books.
+  Seldom have I seen such dedication.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="What students need||most is clearer||feedback from||teachers." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="It was||the manager||who made||the final decision." data-task-id="2" data-correct-feedback="Correct. The cleft sentence structure is now clear and emphatic." data-wrong-feedback="Not yet. Remember the cleft structure starts with 'It was'.">
   <p class="practice-task-label">2. Build it</p>
-  <h3>Put this Moving Words for Emphasis sentence in the correct order.</h3>
+  <h3>Put this cleft sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="most is clearer" data-chip-origin="bank-1" data-chip-id="1-0">
-  most is clearer
+<button type="button" class="practice-chip" data-chip-value="the manager" data-chip-origin="bank-1" data-chip-id="1-0">
+  the manager
 </button>
-<button type="button" class="practice-chip" data-chip-value="teachers." data-chip-origin="bank-1" data-chip-id="1-1">
-  teachers.
+<button type="button" class="practice-chip" data-chip-value="It was" data-chip-origin="bank-1" data-chip-id="1-1">
+  It was
 </button>
-<button type="button" class="practice-chip" data-chip-value="What students need" data-chip-origin="bank-1" data-chip-id="1-2">
-  What students need
+<button type="button" class="practice-chip" data-chip-value="who made" data-chip-origin="bank-1" data-chip-id="1-2">
+  who made
 </button>
-<button type="button" class="practice-chip" data-chip-value="feedback from" data-chip-origin="bank-1" data-chip-id="1-3">
-  feedback from
+<button type="button" class="practice-chip" data-chip-value="the final decision." data-chip-origin="bank-1" data-chip-id="1-3">
+  the final decision.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -166,46 +167,22 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="typing" data-task-answers="Only then did the team understand the scale of the problem." data-task-id="2" data-correct-feedback="Correct. You repaired the sentence without changing the message." data-wrong-feedback="Not yet. Check the target form, then type the full corrected sentence.">
-  <p class="practice-task-label">3. Type the fix</p>
-  <h3>Rewrite the sentence so Moving Words for Emphasis is correct.</h3>
-  <p class="practice-source-line"><span>Fix this:</span> Only then the team understood the scale of the problem.</p>
-  <div class="practice-input-row">
-    <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
-    <button type="button" class="practice-check-btn" data-task-check>Check</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
-<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
-  <p class="practice-task-label">4. Final sort</p>
-  <h3>Mark each sentence as correct or needing a fix.</h3>
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-task-answer="Correct:Rarely do we find||Incorrect:Rarely we find" data-correct-feedback="Correct. You have identified the sentences that need inversion." data-wrong-feedback="Some choices are off. Check the inversion structure again.">
+  <p class="practice-task-label">3. Final sort</p>
+  <h3>Identify which sentences use inversion correctly.</h3>
   <div class="practice-sort-list">
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>Rarely do we find such clear instructions in practice books.</p>
+<div class="practice-sort-row" data-sort-target="Correct" data-sort-row="0">
+  <p>Rarely do we find such dedication in the team.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Correct">Correct</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Incorrect">Incorrect</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>Rarely we find such clear instructions in practice books.</p>
+<div class="practice-sort-row" data-sort-target="Incorrect" data-sort-row="1">
+  <p>Rarely we find such dedication in the team.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
-  </div>
-</div>
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>What students need most is clearer feedback from teachers.</p>
-  <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
-  </div>
-</div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>What students need most are clearer feedback from teachers.</p>
-  <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Correct">Correct</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Incorrect">Incorrect</button>
   </div>
 </div>
   </div>
@@ -218,7 +195,7 @@ draft: false
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> longer grammar structures can raise your score only when they stay clear. When you control <u>Moving Words for Emphasis</u>, you can add detail and shape the message without losing the reader halfway through the sentence.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering inversion and cleft sentences allows you to highlight important details, enhancing the clarity and impact of your communication. This skill is crucial for achieving higher scores in exams and for effective communication in professional settings.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

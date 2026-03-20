@@ -1,11 +1,11 @@
 ---
-title: "CELPIP Listening: Recover Quickly After Missing a Detail (B2)"
+title: "CELPIP Listening: Recover Quickly After Missing a Detail"
 category: "listening"
 level: "B2"
 ieltsBand: "6.5-7.5"
 clb: "8-9"
 exam: ["CELPIP"]
-excerpt: "B2 listening lesson on CELPIP Listening: Recover Quickly After Missing a Detail with task strategy, attention control, and review routines."
+excerpt: "Develop strategies to recover quickly after missing details in the CELPIP Listening test, enhancing comprehension and accuracy."
 date: "2026-03-09"
 tags: ["celpip", "listening", "recovery", "focus", "test-strategy"]
 heroTip: "Do not try to catch every word. Track the question focus and the signal words that carry the answer."
@@ -36,7 +36,7 @@ premium: false
 priceCAD: 12
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>CELPIP Listening: Recover Quickly After Missing a Detail</strong> is a listening skill. This lesson helps you catch the right information, stay calm when you miss a word, and make better answer choices under time pressure.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>CELPIP Listening: Recover Quickly After Missing a Detail</strong> is a listening skill focused on maintaining comprehension and accuracy even when some information is missed. This lesson helps you stay calm, focus on the main ideas, and make informed answer choices under time pressure.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
@@ -54,38 +54,38 @@ draft: false
 </article>
 </div>
 
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>This lesson gives you one listening habit you can use before, during, and after the audio.</p>
-<p>Missing one detail is normal in listening tasks. The danger comes when you keep thinking about the missed word and stop following the next part of the audio. Strong listeners recover by returning to the main idea, tracking signpost words, and using later clarification or repetition to rebuild the missing information.</p>
-<p>Use recovery strategies whenever the audio feels too fast or one item is unclear. Listen for contrast words, repetition, examples, and corrections because speakers often restate the point in a simpler way.</p>
-<p>At B2 level, listening gains usually come from better attention control, not from trying to hear every word.</p>
+    <p>This lesson focuses on strategies to maintain comprehension in the CELPIP Listening test, even after missing a detail. It involves focusing on main ideas, using context clues, and listening for key signpost words to regain context. Mastering this skill at the B2 level enhances accuracy and confidence under time constraints.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Read the question quickly before the audio whenever the task allows it.</li><li>Decide what information matters most for that item.</li><li>Stay with the message instead of fighting for every missed word.</li></ul>
+    <ul>
+      <li>Taking the CELPIP Listening test with limited time.</li>
+      <li>Missing a detail but needing to understand the main message.</li>
+      <li>Listening to fast-paced or complex audio content.</li>
+      <li>Encountering unfamiliar vocabulary or unexpected information.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">missed price -&gt; keep listening -&gt; speaker repeats “so it costs eighteen dollars in total”</div>
-<div class="lesson-pattern-sentence">missed location -&gt; hear later “that is why we moved it to Room B”</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">Missed the speaker's name -&gt; focus on the topic -&gt; hear later "As Dr. Smith mentioned, ..."</div>
+      <div class="lesson-pattern-sentence">Missed the date -&gt; stay attentive -&gt; hear "The event is scheduled for next Friday."</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Accept the missed detail quickly and keep listening.</li><li>Listen for signposts such as however, actually, because, and for example.</li><li>Use later repetition or clarification to rebuild the idea.</li><li>Match your notes to the question focus again.</li><li>Guess only after you have used all later evidence in the audio.</li></ul>
+    <ul>
+      <li>Accept missed details and continue focusing on the audio.</li>
+      <li>Listen for signpost words like "however," "for example," and "because."</li>
+      <li>Use repetition or clarification to regain context.</li>
+      <li>Focus your notes on key points related to the questions.</li>
+      <li>Make educated guesses only after considering all available information.</li>
+    </ul>
   </section>
 </div>
 
@@ -93,21 +93,21 @@ draft: false
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>trying to catch every word instead of the answer focus</h3>
+  <h3>Trying to catch every word instead of the answer focus</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>I write everything I hear, so I miss the next sentence.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>I track only the key information linked to the question.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> Use the question to decide what matters most.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>panicking after one missed detail</h3>
+  <h3>Panicking after one missed detail</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>I stop following the audio because of one unknown word.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>I let the missed word go and listen for the next signpost or repetition.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> Stay with the message and recover from later evidence.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>using notes that are too long to read back quickly</h3>
+  <h3>Using notes that are too long to read back quickly</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>I write complete sentences that I cannot process in time.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>I use short keywords, arrows, numbers, and contrast markers.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> Make notes usable, not beautiful.</p>
@@ -122,13 +122,13 @@ draft: false
       <p class="practice-lab-intro">First notice what matters. Then check your sequence and your recovery habits.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
   <p class="practice-lab-coach">The question should control your attention. If it does not, the audio will feel harder than it really is.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1">
   <p class="practice-task-label">1. Quick pick</p>
   <h3>Choose the stronger move for CELPIP Listening: Recover Quickly After Missing a Detail.</h3>
   <div class="practice-choice-grid">
@@ -141,21 +141,21 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Accept the missed detail quickly and keep listening.||Listen for signposts such as however, actually, because, and for example.||Use later repetition or clarification to rebuild the idea.||Match your notes to the question focus again." data-task-id="1">
+<article class="practice-task" data-task-type="order" data-task-answer="Accept the missed detail quickly and keep listening.||Listen for signposts such as however, actually, because, and for example.||Use later repetition or clarification to rebuild the idea.||Match your notes to the question focus again." data-task-id="2">
   <p class="practice-task-label">2. Build the flow</p>
   <h3>Put these moves in a helpful order.</h3>
   <p class="practice-task-note">Put the chunks in the natural order.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="Accept the missed detail quickly and keep listening." data-chip-origin="bank-1" data-chip-id="1-0">
+<button type="button" class="practice-chip" data-chip-value="Accept the missed detail quickly and keep listening." data-chip-origin="bank-2" data-chip-id="2-0">
   Accept the missed detail quickly and keep listening.
 </button>
-<button type="button" class="practice-chip" data-chip-value="Match your notes to the question focus again." data-chip-origin="bank-1" data-chip-id="1-1">
+<button type="button" class="practice-chip" data-chip-value="Match your notes to the question focus again." data-chip-origin="bank-2" data-chip-id="2-1">
   Match your notes to the question focus again.
 </button>
-<button type="button" class="practice-chip" data-chip-value="Use later repetition or clarification to rebuild the idea." data-chip-origin="bank-1" data-chip-id="1-2">
+<button type="button" class="practice-chip" data-chip-value="Use later repetition or clarification to rebuild the idea." data-chip-origin="bank-2" data-chip-id="2-2">
   Use later repetition or clarification to rebuild the idea.
 </button>
-<button type="button" class="practice-chip" data-chip-value="Listen for signposts such as however, actually, because, and for example." data-chip-origin="bank-1" data-chip-id="1-3">
+<button type="button" class="practice-chip" data-chip-value="Listen for signposts such as however, actually, because, and for example." data-chip-origin="bank-2" data-chip-id="2-3">
   Listen for signposts such as however, actually, because, and for example.
 </button>
   </div>
@@ -166,36 +166,36 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="sort" data-task-id="2">
+<article class="practice-task" data-task-type="sort" data-task-answer="Helpful:Accept the missed detail quickly and keep listening.,Listen for signposts such as however, actually, because, and for example.||Not helpful:Write every word because more notes always mean better listening.,Replay the missed word in your head even if the speaker has moved on." data-sort-categories="Helpful||Not helpful" data-task-id="3">
   <p class="practice-task-label">3. Final sort</p>
   <h3>Sort these habits into helpful or not helpful.</h3>
   <div class="practice-sort-list">
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
+<div class="practice-sort-row" data-sort-target="Helpful" data-sort-row="0">
   <p>Accept the missed detail quickly and keep listening.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Not helpful">Not helpful</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="1">
+<div class="practice-sort-row" data-sort-target="Helpful" data-sort-row="1">
   <p>Listen for signposts such as however, actually, because, and for example.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Not helpful">Not helpful</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="2">
+<div class="practice-sort-row" data-sort-target="Not helpful" data-sort-row="2">
   <p>Write every word because more notes always mean better listening.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Not helpful">Not helpful</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
+<div class="practice-sort-row" data-sort-target="Not helpful" data-sort-row="3">
   <p>Replay the missed word in your head even if the speaker has moved on.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Not helpful">Not helpful</button>
   </div>
 </div>
   </div>
@@ -204,24 +204,11 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="3">
-  <p class="practice-task-label">4. Last check</p>
-  <h3>Choose the sentence that sounds more controlled.</h3>
-  <div class="practice-choice-grid">
-<button type="button" class="practice-choice" data-choice-index="0">
-  If I miss one word, I stop and think about it until I understand it.
-</button>
-<button type="button" class="practice-choice" data-choice-index="1">
-  When I miss one detail, I stay with the audio and wait for the next clear signal or repetition.
-</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
   </div>
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> listening is not about hearing every word. It is about catching the words that carry the answer. This skill helps you recover faster and protect marks when the audio moves quickly.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Listening is about understanding the main ideas and key details that answer the questions, not about hearing every word. This skill helps you recover faster and maintain accuracy when the audio is fast-paced or complex.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

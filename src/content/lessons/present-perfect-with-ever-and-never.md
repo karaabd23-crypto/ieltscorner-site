@@ -1,11 +1,11 @@
 ---
-title: "Present perfect with ever and never"
+title: "Using 'Ever' and 'Never' with Present Perfect Tense"
 category: "grammar"
-level: "A2"
+level: "B2"
 ieltsBand: "4.0-5.0"
 clb: "4-5"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Match tense choice to time meaning so the reader never has to guess your timeline."
+excerpt: "Learn to use 'ever' and 'never' with the present perfect tense to discuss past experiences and emphasize whether something has occurred."
 date: "2026-02-27"
 tags: ["grammar", "a2", "exam-prep", "ielts", "celpip"]
 heroTip: "Circle the time marker before you choose the verb form."
@@ -36,56 +36,59 @@ premium: false
 priceCAD: 0
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Present perfect with ever and never</strong> helps you show <em>time</em> clearly. A good tense choice tells the reader or listener when something happens and whether it is finished, continuing, or connected to another time. In this lesson, you will match form to meaning.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Present perfect with 'ever' and 'never'</strong> helps you express experiences and events that have occurred at any time up to now or not at all. This lesson focuses on accurately using these terms to convey clear and precise meanings in your communication.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>I lived here since 2020.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>I have lived here since 2020.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Have you ever been to Japan last year?</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Have you ever been to Japan?</p>
+  <p class="lesson-card-note">'Ever' should not be used with a specific past time expression like 'last year'.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>She has finished her task yesterday.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>She finished her task yesterday.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>I never have seen that movie.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>I have never seen that movie.</p>
+  <p class="lesson-card-note">The correct placement of 'never' is between 'have' and the past participle.</p>
 </article>
 </div>
-
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Tense choice becomes easier when you decide the timeline before the verb form.</p>
-<p>Tense choices place actions on a timeline and show whether they are finished, ongoing, repeated, or connected to another time point.</p>
-<p>Use tense accurately by deciding the time first and the meaning second. Readers should be able to follow your timeline without stopping to reinterpret the verb forms.</p>
-<p>At A2 level, keep sentences short and clear first. Add extra words only when they help meaning.</p>
+    <p>The words <strong>'ever'</strong> and <strong>'never'</strong> are used with the present perfect tense to talk about experiences at any time in the past (ever) or to emphasize that something has not happened at any time in the past (never).</p>
+    <p>Formation: <strong>have/has + past participle</strong> with 'ever' or 'never'.</p>
+    <p>This is important at the B2 level as it helps in expressing nuanced experiences and clarifying whether something has happened or not.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Find the time signal or implied timeline before you choose the verb.</li><li>Keep the tense stable until the timeline genuinely changes.</li><li>Use perfect forms when you need to connect an earlier action to another time point.</li></ul>
+    <ul>
+      <li>Describing experiences that might have occurred at any time up to now.</li>
+      <li>Emphasizing that an experience has not happened at any point in the past.</li>
+      <li>Asking about someone's life experiences.</li>
+      <li>Writing formal reports or narratives about past experiences.</li>
+      <li>In spoken responses during exams or interviews to discuss past experiences.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Since January, attendance has improved every week.</div>
-<div class="lesson-pattern-sentence">By the end of the year, the team will have completed the trial.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">Have you <strong>ever</strong> visited Paris?</div>
+      <div class="lesson-pattern-sentence">I have <strong>never</strong> eaten sushi.</div>
+      <div class="lesson-pattern-sentence">She has <strong>never</strong> traveled by plane.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Mark the timeline first with a time word or situation clue.</li><li>Choose simple, continuous, perfect, or perfect continuous from the meaning.</li><li>Keep the reference point stable inside the sentence.</li><li>Use tense shifts only when the timeline really changes.</li><li>Check that the final verb form agrees with the time marker.</li></ul>
+    <ul>
+      <li>Use 'ever' in questions to ask about experiences.</li>
+      <li>Use 'never' to emphasize the absence of an experience.</li>
+      <li>Always pair 'ever' and 'never' with the present perfect tense.</li>
+      <li>Do not use 'ever' and 'never' with specific past time expressions like 'yesterday'.</li>
+      <li>Remember: 'ever' is for questions and 'never' for negative statements.</li>
+    </ul>
   </section>
 </div>
 
@@ -93,24 +96,24 @@ draft: false
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>mixing present perfect with finished time markers like yesterday</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>We have seen that movie last week.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>We saw that movie last week.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use present perfect for unfinished time or life experience</p>
+  <h3>Using 'ever' with specific past time markers</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Have you ever traveled to Italy last summer?</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Have you ever traveled to Italy?</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Avoid using 'ever' with specific past time markers like 'last summer'.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using present perfect with a finished time marker</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>She has finished the report yesterday.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>She finished the report yesterday.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use a past form with finished time markers like yesterday or last week</p>
+  <h3>Misplacing 'never' in the sentence</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>I never have visited the museum.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I have never visited the museum.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Place 'never' between 'have' and the past participle.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>switching tense without a time reason</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The study started in May and shows strong results in June.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The study started in May and showed strong results in June.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> keep the tense stable unless the timeline genuinely changes</p>
+  <h3>Using 'never' with a positive statement</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>I have never enjoyed the concert yesterday.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I did not enjoy the concert yesterday.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use past simple for specific past events with 'never'.</p>
 </article>
 </div>
 
@@ -119,41 +122,44 @@ draft: false
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+      <p class="practice-lab-intro">Practice using 'ever' and 'never' with the present perfect tense to express past experiences.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Focus on using 'ever' and 'never' correctly to convey experiences.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Present perfect with ever and never form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="2" data-task-id="1" data-correct-feedback="Correct. The sentence uses 'ever' appropriately with the present perfect tense." data-wrong-feedback="Not quite. Remember to use 'ever' for asking about experiences.">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger sentence for Present perfect with ever and never.</h3>
+  <h3>Choose the correct sentence using 'ever' with present perfect.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  We have seen that movie last week.
+  Have you ever been to Spain last year?
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  We saw that movie last week.
+  Did you ever go to Spain?
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  Have you ever been to Spain?
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="I have||been here since||early morning." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="I have||never||tried sushi." data-task-id="2" data-correct-feedback="Correct. The sentence is now in the correct order." data-wrong-feedback="Try again. Remember the placement of 'never' in the sentence.">
   <p class="practice-task-label">2. Build it</p>
-  <h3>Put this Present perfect with ever and never sentence in the correct order.</h3>
+  <h3>Put this sentence in the correct order using 'never'.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
 <button type="button" class="practice-chip" data-chip-value="I have" data-chip-origin="bank-1" data-chip-id="1-0">
   I have
 </button>
-<button type="button" class="practice-chip" data-chip-value="early morning." data-chip-origin="bank-1" data-chip-id="1-1">
-  early morning.
+<button type="button" class="practice-chip" data-chip-value="tried sushi." data-chip-origin="bank-1" data-chip-id="1-1">
+  tried sushi.
 </button>
-<button type="button" class="practice-chip" data-chip-value="been here since" data-chip-origin="bank-1" data-chip-id="1-2">
-  been here since
+<button type="button" class="practice-chip" data-chip-value="never" data-chip-origin="bank-1" data-chip-id="1-2">
+  never
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -163,43 +169,33 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="typing" data-task-answers="She has never tried sushi before." data-task-id="2" data-correct-feedback="Correct. You repaired the sentence without changing the message." data-wrong-feedback="Not yet. Check the target form, then type the full corrected sentence.">
-  <p class="practice-task-label">3. Type the fix</p>
-  <h3>Rewrite the sentence so Present perfect with ever and never is correct.</h3>
-  <p class="practice-source-line"><span>Fix this:</span> She has never try sushi before.</p>
-  <div class="practice-input-row">
-    <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
-    <button type="button" class="practice-check-btn" data-task-check>Check</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
-<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
-  <p class="practice-task-label">4. Final sort</p>
-  <h3>Mark each sentence as correct or needing a fix.</h3>
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. The sentences are now correctly categorized." data-wrong-feedback="Some choices are incorrect. Review the use of 'ever' and 'never'.">
+  <p class="practice-task-label">3. Final sort</p>
+  <h3>Sort each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>We saw that movie last week.</p>
+  <p>Have you ever tried skydiving?</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>We have seen that movie last week.</p>
+  <p>I have ever been to the USA.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>I have been here since early morning.</p>
+  <p>I have never seen a shooting star.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>I am here since early morning.</p>
+  <p>Did you never go to the party?</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
@@ -215,7 +211,7 @@ draft: false
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> verb choices carry time, meaning, and attitude. One wrong form can change the whole message. When you control <u>Present perfect with ever and never</u>, your writing and speaking become clearer, more natural, and more score-safe.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering the use of <u>Present perfect with 'ever' and 'never'</u> allows you to effectively discuss past experiences and convey whether something has occurred or not, enhancing clarity and precision in both written and spoken English.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

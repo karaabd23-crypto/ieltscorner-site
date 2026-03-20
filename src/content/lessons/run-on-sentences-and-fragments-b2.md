@@ -1,5 +1,5 @@
 ---
-title: "Run-On Sentences and Fragments (B2)"
+title: "Avoiding Run-On Sentences and Fragments"
 category: "writing"
 level: "B2"
 ieltsBand: "6.0-7.0"
@@ -35,7 +35,7 @@ quiz:
     correctIndex: 0
     explanation: "A paragraph reads better when each sentence does one clear piece of work."
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Run-On Sentences and Fragments</strong> is a writing skill for IELTS and CELPIP. This lesson shows what the skill does, what a strong response looks like, and what to check before you finish your answer.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Run-On Sentences and Fragments</strong> are common writing errors that can confuse readers and weaken the clarity of your writing. This lesson will help you identify and correct these issues, improving your writing for IELTS and CELPIP exams.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
@@ -53,16 +53,6 @@ quiz:
 </article>
 </div>
 
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
@@ -220,7 +210,7 @@ quiz:
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> strong ideas do not help enough if the writing skill is weak. In IELTS and CELPIP, this skill helps the examiner follow your position, support, and logic without extra work. That usually means a cleaner, stronger score.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Clear and concise writing is crucial in IELTS and CELPIP exams. Avoiding run-on sentences and fragments helps ensure that your ideas are communicated effectively, leading to a stronger score.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

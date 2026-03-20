@@ -1,5 +1,5 @@
 ---
-title: "Social Issues Vocabulary (B2)"
+title: "Social Issues Vocabulary"
 category: "vocabulary"
 level: "B2"
 ieltsBand: "6.0-7.0"
@@ -35,7 +35,7 @@ quiz:
     correctIndex: 0
     explanation: "A short model sentence makes the new language active instead of passive."
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Social Issues Vocabulary</strong> is about the words and phrases you need for real English. This lesson shows what the key words mean, where they fit, and how to use them in natural sentences without sounding forced.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Social Issues Vocabulary</strong> focuses on the essential terms and phrases needed to discuss societal challenges effectively in English. This lesson guides you in understanding key words, their contexts, and how to use them naturally in sentences.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
@@ -52,17 +52,6 @@ quiz:
   <p class="lesson-card-note">The better sentence sounds more natural for a real task and a real reader.</p>
 </article>
 </div>
-
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
@@ -121,13 +110,13 @@ quiz:
       <p class="practice-lab-intro">Start with meaning. Then move to collocations and sentence control for Social Issues Vocabulary.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/2</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
   <p class="practice-lab-coach">Use words that sound natural together. Precision is more important than difficulty.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="0" data-task-id="0">
+<article class="practice-task" data-task-type="choice" data-task-answer="0" data-task-id="1">
   <p class="practice-task-label">1. Quick pick</p>
   <h3>Which term means money from the government?</h3>
   <div class="practice-choice-grid">
@@ -143,7 +132,7 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Social support works||best when the||meaning is clear||in the||sentence." data-task-id="1">
+<article class="practice-task" data-task-type="order" data-task-answer="Social support works||best when the||meaning is clear||in the||sentence." data-task-id="2">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put the sentence in a natural order.</h3>
   <p class="practice-task-note">Put the chunks in the natural order.</p>
@@ -171,21 +160,12 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="typing" data-task-answers="language" data-task-id="2">
-  <p class="practice-task-label">3. Type the missing word</p>
-  <h3>Complete the useful chunk: use precise _____</h3>
-  <p class="practice-source-line"><span>Fix this:</span> social support: help for people in difficulty</p>
-  <div class="practice-input-row">
-    <input type="text" class="practice-input" data-typing-input placeholder="Type one word" />
-    <button type="button" class="practice-check-btn" data-task-check>Check</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
+
   </div>
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> good vocabulary is not just about knowing a word. You need the <em>right</em> word in the <em>right</em> sentence. When you control Social Issues Vocabulary, you sound clearer, more natural, and more precise in real English.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering Social Issues Vocabulary is crucial for clear and precise communication on societal topics. It enables you to articulate complex issues effectively, enhancing both written and spoken English skills.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

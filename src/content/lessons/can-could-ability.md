@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn to use Can, Could, and Be Able To to accurately express ability in various contexts."
+excerpt: "Learn to master 'Can', 'Could', and 'Be Able To' for expressing ability and possibility accurately in English."
 date: "2026-03-02"
 tags: ["grammar", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Choose the meaning first, then choose the modal. Do not start from the word."
@@ -57,16 +57,16 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>"Can", "Could", and "Be Able To" are used to express ability in different contexts. "Can" is used for present ability, "Could" for past ability or polite requests, and "Be Able To" can be used in all tenses to indicate ability.</p>
-    <p>At the B2 level, understanding the nuances between these forms helps convey the correct degree of ability or possibility in your communication.</p>
+    <p>"Can", "Could", and "Be Able To" are modal verbs used to express ability and possibility. "Can" indicates present ability, "Could" is used for past ability or polite requests, and "Be Able To" is versatile across tenses to show ability. At the B2 level, mastering these forms helps you accurately express different degrees of ability and adapt to various contexts.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
     <ul>
       <li>Expressing present ability or possibility with "Can".</li>
       <li>Indicating past ability or making polite requests with "Could".</li>
-      <li>Using "Be Able To" for future ability or when a different tense is required.</li>
-      <li>Formally expressing ability in writing or speaking exams.</li>
+      <li>Using "Be Able To" for future abilities or when a specific tense is needed.</li>
+      <li>Formally expressing ability in academic writing or exams.</li>
+      <li>Conveying nuanced meanings in professional or formal settings.</li>
     </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
@@ -82,9 +82,9 @@ quiz:
     <ul>
       <li>Use "Can" for present ability or informal requests.</li>
       <li>Use "Could" for past ability or polite requests.</li>
-      <li>Use "Be Able To" when specific tenses are needed.</li>
+      <li>Use "Be Able To" for tense precision across different time frames.</li>
       <li>"Could" is often more polite than "Can" in requests.</li>
-      <li>"Be Able To" can replace "Can" or "Could" when tense precision is necessary.</li>
+      <li>"Be Able To" can replace "Can" or "Could" when specific tense usage is necessary.</li>
     </ul>
   </section>
 </div>

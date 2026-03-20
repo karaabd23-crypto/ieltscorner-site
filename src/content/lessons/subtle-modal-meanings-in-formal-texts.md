@@ -1,7 +1,7 @@
 ---
-title: "Modal Verbs in Formal Writing"
+title: "Using Modal Verbs for Formal Precision"
 category: "grammar"
-level: "C2"
+level: "B2"
 ieltsBand: "8.5-9.0"
 clb: "11-12"
 exam: ["IELTS", "CELPIP"]
@@ -36,7 +36,7 @@ premium: false
 priceCAD: 0
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Modal Verbs in Formal Writing</strong> helps your grammar sound more precise and more suitable for the situation. Sometimes the idea is clear, but the sentence still feels too vague, too direct, or too loose. In this lesson, you will learn how to make grammar choices that sound more controlled.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Using Modal Verbs for Formal Precision</strong> enhances your ability to convey nuanced meaning in formal writing. Mastering modal verbs allows you to express degrees of certainty, obligation, and possibility with clarity and appropriateness, making your writing sound more professional and credible.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
@@ -53,17 +53,6 @@ draft: false
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
 </div>
-
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
@@ -122,13 +111,13 @@ draft: false
       <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
   <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Modal Verbs in Formal Writing form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Modal Verbs in Formal Writing form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
   <p class="practice-task-label">1. Quick pick</p>
   <h3>Choose the stronger sentence for Modal Verbs in Formal Writing.</h3>
   <div class="practice-choice-grid">
@@ -141,7 +130,7 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="The council seems||to have handled||this issue||poorly." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="The council seems||to have handled||this issue||poorly." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put this Modal Verbs in Formal Writing sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
@@ -166,18 +155,9 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="typing" data-task-answers="This suggests the project could benefit many communities." data-task-id="2" data-correct-feedback="Correct. You repaired the sentence without changing the message." data-wrong-feedback="Not yet. Check the target form, then type the full corrected sentence.">
-  <p class="practice-task-label">3. Type the fix</p>
-  <h3>Rewrite the sentence so Modal Verbs in Formal Writing is correct.</h3>
-  <p class="practice-source-line"><span>Fix this:</span> This proves the project is perfect for every community.</p>
-  <div class="practice-input-row">
-    <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
-    <button type="button" class="practice-check-btn" data-task-check>Check</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
+
 <article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
-  <p class="practice-task-label">4. Final sort</p>
+  <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
@@ -218,7 +198,7 @@ draft: false
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> high scores depend on more than correct grammar. They also depend on sounding precise, controlled, and appropriate for the situation. This topic helps your ideas sound more mature without becoming harder to understand.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastery of modal verbs is essential for achieving high scores in formal writing tasks. They help convey precision, control, and appropriateness, which are crucial for academic and professional communication. This lesson ensures your ideas are presented with the necessary subtlety and sophistication.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

@@ -59,7 +59,8 @@ Avoid the older `## Lesson Map`, `## Core Lesson`, duplicated lesson-map intro l
 
 ## Working Rules For Future Chats
 
-- Read this file and the latest note in `memory/chat-sessions/` before making assumptions.
+- **MANDATORY FIRST ACTION**: At the start of every new chat, silently read: (1) this file, (2) the newest file in `memory/chat-sessions/`, and (3) `memory/session-catalog.md`. Do not skip this. Do not summarize it back to the user unless asked.
+- After meaningful work, update or create a dated note in `memory/chat-sessions/` and run `npm run session:index`.
 - If cross-session history matters, refresh and read `memory/session-catalog.md`.
 - Record important decisions, validations, and unfinished work in a dated session note.
 - Treat `.cache/` as local runtime state, not project source.

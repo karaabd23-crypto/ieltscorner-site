@@ -40,8 +40,9 @@ Use emojis naturally where helpful.
 
 ## EXERCISES — CRITICAL REQUIREMENTS
 
-Every lesson MUST include a Practice Lab section with at least 3 interactive exercises.
-Use EXACTLY 3 different task types from the 4 available types below. The exercises are self-marking — the page checks answers automatically when the user clicks or interacts.
+Every lesson MUST include a Practice Lab section with exactly 3 interactive exercises.
+Use ALL 3 task types below (one of each). The exercises are self-marking — the page checks answers automatically when the user clicks or interacts.
+Do NOT use typing/text-input exercises — they have been removed from the site.
 
 ### CRITICAL HTML FORMATTING RULES (the page breaks without these):
 1. NO blank line between `## Practice Lab` and the opening `<div>` — they must be on consecutive lines.
@@ -128,29 +129,7 @@ Replace the score number with the actual total number of tasks (e.g., Score: 0/3
 - Split sentences into 3–5 meaningful chunks (not single words).
 - Each `<button>` must start at column 0.
 
-### Task Type 3: TYPING (user types an answer, page checks it)
-
-```
-<article class="practice-task" data-task-type="typing" data-task-answers="answer1||answer2" data-task-id="TASK_NUM" data-correct-feedback="Correct. BRIEF_REASON." data-wrong-feedback="Not yet. BRIEF_HINT.">
-  <p class="practice-task-label">TASK_NUM. Type the fix</p>
-  <h3>INSTRUCTION_TEXT</h3>
-  <p class="practice-source-line"><span>Fix this:</span> SENTENCE_WITH_ERROR</p>
-  <div class="practice-input-row">
-    <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
-    <button type="button" class="practice-check-btn" data-task-check>Check</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
-```
-
-- data-task-answers uses || to separate multiple acceptable answers.
-- Answers are compared case-insensitively with punctuation stripped.
-- Keep expected answers short (a word or short phrase) so users can type them easily.
-- For fill-in-the-blank: ask users to type just the missing word(s), not the entire sentence.
-- ALWAYS also include the full corrected sentence as an accepted answer (users often type the whole thing).
-- Make the question VERY clear about what to type, e.g., "What word should replace X?" not "Type the correct form."
-
-### Task Type 4: SORT (user categorizes items into two groups)
+### Task Type 3: SORT (user categorizes items into two groups)
 
 ```
 <article class="practice-task" data-task-type="sort" data-task-id="TASK_NUM" data-correct-feedback="Correct. BRIEF_REASON." data-wrong-feedback="Some rows are in the wrong column. Try again.">
@@ -186,9 +165,10 @@ Replace the score number with the actual total number of tasks (e.g., Score: 0/3
 - Each `<div class="practice-sort-row">` must start at column 0.
 
 ### Exercise rules:
-- Use at least 3 different task types per lesson.
+- Use all 3 task types (choice, order, sort) in every lesson.
 - Number tasks sequentially starting from 1 (data-task-id="1", data-task-id="2", etc.).
 - Make exercises directly relevant to the lesson topic — test what was taught.
+- NEVER recycle sentences from the Examples, How It Works, or Common Mistakes sections. Every exercise must use fresh, original sentences.
 - Keep feedback messages specific to the grammar/vocabulary point.
 - NEVER use blank lines between HTML elements inside the practice lab.
 - NEVER indent any line by 4 or more spaces.

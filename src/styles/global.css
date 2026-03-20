@@ -2357,9 +2357,13 @@ hr {
 
 .lesson-example-grid,
 .lesson-error-grid,
-.lesson-resource-grid,
-.practice-lab-grid {
+.lesson-resource-grid {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: var(--s-4);
+}
+
+.practice-lab-grid {
+  grid-template-columns: 1fr;
   margin-top: var(--s-4);
 }
 

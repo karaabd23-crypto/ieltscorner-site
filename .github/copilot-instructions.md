@@ -1,14 +1,30 @@
 # AI Agent Instructions for ieltscorner-site
 
-## Persistent Memory
+## MANDATORY First Action — Context Loading
 
-Before starting substantial work in a new chat, read:
+**BEFORE doing anything else in every new chat** (including answering questions, writing code, or planning), you MUST silently read these files in order:
 
-1. `memory/project-brief.md`
-2. The newest note in `memory/chat-sessions/`
-3. `memory/session-catalog.md` when prior chat history is relevant to the task
+1. `memory/project-brief.md` — project overview, architecture, deploy path, content standards
+2. The **newest** file in `memory/chat-sessions/` (sort by filename descending; currently `memory/chat-sessions/2026-03-20.md`) — latest decisions, repo state, unfinished work, and summaries of all prior sessions
+3. `memory/session-catalog.md` — full index of every prior Copilot and Codex session with titles, dates, and summaries
 
-After meaningful work, add or update a dated note in `memory/chat-sessions/` so future chats can resume with the latest decisions, verification results, and unfinished work.
+Do NOT skip this step. Do NOT summarize what you read back to the user unless asked. Just absorb the context and proceed with the user's request.
+
+If any of these files are missing, tell the user immediately.
+
+## Session Logging — End of Chat
+
+After meaningful work in any chat, **always** create or update a dated note in `memory/chat-sessions/` (format: `YYYY-MM-DD.md`). Include:
+
+- What was done
+- What files were changed
+- Current repo state (commits, dirty files)
+- Unfinished work / next steps
+- Summaries of decisions made
+
+Then run `npm run session:index` to refresh the session catalog.
+
+## Deployment Default
 
 For deployment in this repo, default to the GitHub push workflow on `main`. Do not use local Netlify CLI unless the user explicitly asks for it or the GitHub workflow path is unavailable.
 

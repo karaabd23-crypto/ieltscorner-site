@@ -1,11 +1,11 @@
 ---
-title: "Can and cannot for ability"
+title: "Using 'Can' and 'Cannot' to Express Ability"
 category: "grammar"
-level: "A1"
+level: "B2"
 ieltsBand: "3.0-4.0"
 clb: "2-3"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Use modal verbs to show ability, advice, obligation, possibility, and deduction with the right strength."
+excerpt: "Learn how to use 'can' and 'cannot' to express abilities and limitations effectively in various contexts."
 date: "2026-02-27"
 tags: ["grammar", "a1", "exam-prep", "ielts", "celpip"]
 heroTip: "Choose the meaning first, then choose the modal. Do not start from the word."
@@ -36,56 +36,60 @@ premium: false
 priceCAD: 0
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Can and cannot for ability</strong> helps you show ideas like advice, ability, possibility, or obligation. The word may look small, but it changes the whole meaning of the sentence. In this lesson, you will learn which form fits which message.</p></div>
+<div class="lesson-context">
+  <p class="lesson-context-lead"><strong>Using 'Can' and 'Cannot' to Express Ability</strong> allows you to clearly state what you or others are capable of doing or not doing. This is crucial for effective communication in both personal and professional settings.</p>
+</div>
 
 ## Examples
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Students should to check the final paragraph.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Students should check the final paragraph.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>She can to drive a car.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>She can drive a car.</p>
+  <p class="lesson-card-note">'Can' is followed directly by the base verb without 'to'.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The delays can to continue if repairs are postponed.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>The delays may continue if repairs are postponed.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>He cannot to play the guitar.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>He cannot play the guitar.</p>
+  <p class="lesson-card-note">'Cannot' is followed directly by the base verb without 'to'.</p>
 </article>
 </div>
-
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Modal verbs are really about meaning strength: advice, possibility, ability, or obligation.</p>
-<p>Modal verbs show ability, advice, obligation, permission, possibility, and deduction. The important choice is the meaning strength, not the word alone.</p>
-<p>Use modals to show how certain, necessary, polite, or strong your message should sound. Different modals can change the tone even when the basic idea stays similar.</p>
-<p>At A1 level, keep sentences short and clear first. Add extra words only when they help meaning.</p>
+    <p>The modal verbs <strong>'can'</strong> and <strong>'cannot'</strong> are used to express someone's ability or inability to perform an action. They help convey what someone is capable of doing or not doing.</p>
+    <p>The structure is: subject + <strong>'can'</strong>/<strong>'cannot'</strong> + base verb.</p>
+    <p>Understanding this structure is crucial at the B2 level to effectively communicate skills and limitations in various contexts.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Pick the meaning first: ability, advice, obligation, possibility, or deduction.</li><li>Use the base verb after the modal in the normal pattern.</li><li>Choose a modal strength that matches the real level of certainty or force.</li></ul>
+    <ul>
+      <li>Describing your own or someone else's abilities in personal or professional settings.</li>
+      <li>Discussing limitations or restrictions on actions.</li>
+      <li>Expressing potential or capability in hypothetical situations.</li>
+      <li>Answering questions about what you or others can do in interviews or exams.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Students should review the task before they start writing.</div>
-<div class="lesson-pattern-sentence">The delays may continue if repairs are postponed again.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">I <strong>can</strong> swim across the lake.</div>
+      <div class="lesson-pattern-sentence">She <strong>cannot</strong> attend the meeting tomorrow.</div>
+      <div class="lesson-pattern-sentence">They <strong>can</strong> solve complex problems quickly.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Choose the meaning first: ability, advice, obligation, possibility, or deduction.</li><li>Use the base verb after the modal in normal patterns.</li><li>Match the modal strength to the meaning you actually want.</li><li>Use past modal forms only when the time reference requires them.</li><li>Keep the sentence simple enough that the modal meaning stays obvious.</li></ul>
+    <ul>
+      <li>Use <strong>'can'</strong> to express ability or possibility.</li>
+      <li>Use <strong>'cannot'</strong> or <strong>'can't'</strong> to express inability.</li>
+      <li>Always follow <strong>'can'</strong> and <strong>'cannot'</strong> with the base form of the verb.</li>
+      <li>Do not add 'to' after <strong>'can'</strong> or <strong>'cannot'</strong>.</li>
+      <li>Remember that <strong>'can'</strong> and <strong>'cannot'</strong> do not change form for different subjects.</li>
+    </ul>
   </section>
 </div>
 
@@ -93,24 +97,17 @@ draft: false
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>using the wrong form or strength after a modal verb</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>You must to submit the form before Friday.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>You must submit the form before Friday.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use the base verb after the modal and choose the modal that matches the real meaning</p>
+  <h3>Adding 'to' after 'can' or 'cannot'</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>I can to speak three languages.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I can speak three languages.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use the base verb directly after 'can' or 'cannot'.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>adding to after a modal verb</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>She might to finish before lunch if the meeting ends early.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>She might finish before lunch if the meeting ends early.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use the base verb directly after the modal</p>
-</article>
-<article class="lesson-error-card">
-  <p class="lesson-card-label">Common problem 3</p>
-  <h3>choosing a modal with the wrong strength</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Staff must carry a light jacket because the office may feel cold later.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Staff should carry a light jacket because the office may feel cold later.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> match the modal strength to the certainty or advice level you mean</p>
+  <h3>Using 'can' or 'cannot' incorrectly with subject</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>She can sings well.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>She can sing well.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use the base verb form after 'can' or 'cannot'.</p>
 </article>
 </div>
 
@@ -119,44 +116,47 @@ draft: false
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+      <p class="practice-lab-intro">Focus on using 'can' and 'cannot' correctly to express ability or inability in different contexts.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Ensure the correct use of 'can' and 'cannot' when expressing abilities.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Can and cannot for ability form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
-  <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger sentence for Can and cannot for ability.</h3>
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. This sentence correctly uses 'can' to express ability." data-wrong-feedback="Not yet. Remember to use 'can' directly with the base verb.">
+  <p class="practice-task-label">1. Choose the correct sentence</p>
+  <h3>Select the sentence that correctly uses 'can'.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  You must to submit the form before Friday.
+  She can to dance beautifully.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  You must submit the form before Friday.
+  She can dance beautifully.
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  She can dances beautifully.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Residents should stay||home tonight because||the storm may||be severe." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
-  <p class="practice-task-label">2. Build it</p>
-  <h3>Put this Can and cannot for ability sentence in the correct order.</h3>
+<article class="practice-task" data-task-type="order" data-task-answer="He cannot||attend the meeting||because he is||busy." data-task-id="2" data-correct-feedback="Correct. The sentence is now in a logical and grammatically correct order." data-wrong-feedback="Not yet. Arrange the sentence parts to form a correct sentence.">
+  <p class="practice-task-label">2. Arrange the sentence</p>
+  <h3>Put the sentence in the correct order to express inability.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="the storm may" data-chip-origin="bank-1" data-chip-id="1-0">
-  the storm may
+<button type="button" class="practice-chip" data-chip-value="because he is" data-chip-origin="bank-1" data-chip-id="1-0">
+  because he is
 </button>
-<button type="button" class="practice-chip" data-chip-value="be severe." data-chip-origin="bank-1" data-chip-id="1-1">
-  be severe.
+<button type="button" class="practice-chip" data-chip-value="busy." data-chip-origin="bank-1" data-chip-id="1-1">
+  busy.
 </button>
-<button type="button" class="practice-chip" data-chip-value="Residents should stay" data-chip-origin="bank-1" data-chip-id="1-2">
-  Residents should stay
+<button type="button" class="practice-chip" data-chip-value="He cannot" data-chip-origin="bank-1" data-chip-id="1-2">
+  He cannot
 </button>
-<button type="button" class="practice-chip" data-chip-value="home tonight because" data-chip-origin="bank-1" data-chip-id="1-3">
-  home tonight because
+<button type="button" class="practice-chip" data-chip-value="attend the meeting" data-chip-origin="bank-1" data-chip-id="1-3">
+  attend the meeting
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -166,46 +166,36 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="typing" data-task-answers="She might finish early if the meeting is short." data-task-id="2" data-correct-feedback="Correct. You repaired the sentence without changing the message." data-wrong-feedback="Not yet. Check the target form, then type the full corrected sentence.">
-  <p class="practice-task-label">3. Type the fix</p>
-  <h3>Rewrite the sentence so Can and cannot for ability is correct.</h3>
-  <p class="practice-source-line"><span>Fix this:</span> She might finishes early if the meeting is short.</p>
-  <div class="practice-input-row">
-    <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
-    <button type="button" class="practice-check-btn" data-task-check>Check</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
-<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
-  <p class="practice-task-label">4. Final sort</p>
-  <h3>Mark each sentence as correct or needing a fix.</h3>
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-task-answer="Correct:He can solve the puzzle quickly.||Incorrect:He can to solve the puzzle quickly." data-correct-feedback="Correct. You have correctly identified the sentences that work and those that need fixing." data-wrong-feedback="Some choices are incorrect. Review the sentences and try again.">
+  <p class="practice-task-label">3. Sort the sentences</p>
+  <h3>Identify which sentences correctly use 'can' or 'cannot'.</h3>
   <div class="practice-sort-list">
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>You must submit the form before Friday.</p>
+<div class="practice-sort-row" data-sort-target="Correct" data-sort-row="0">
+  <p>He can solve the puzzle quickly.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Correct">Correct</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Incorrect">Incorrect</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>You must to submit the form before Friday.</p>
+<div class="practice-sort-row" data-sort-target="Incorrect" data-sort-row="1">
+  <p>He can to solve the puzzle quickly.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Correct">Correct</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Incorrect">Incorrect</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>Residents should stay home tonight because the storm may be severe.</p>
+<div class="practice-sort-row" data-sort-target="Correct" data-sort-row="2">
+  <p>She cannot attend the event.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Correct">Correct</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Incorrect">Incorrect</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>Residents should stay home tonight because the storm may be severe.</p>
+<div class="practice-sort-row" data-sort-target="Incorrect" data-sort-row="3">
+  <p>She cannot to attend the event.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Correct">Correct</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Incorrect">Incorrect</button>
   </div>
 </div>
   </div>
@@ -218,7 +208,7 @@ draft: false
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> verb choices carry time, meaning, and attitude. One wrong form can change the whole message. When you control <u>Can and cannot for ability</u>, your writing and speaking become clearer, more natural, and more score-safe.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering 'can' and 'cannot' helps you express abilities and limitations clearly, which is essential for effective communication in various contexts, whether discussing skills in a job interview or planning activities with friends.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

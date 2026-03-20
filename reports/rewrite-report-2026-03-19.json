@@ -1,0 +1,18 @@
+[
+  {
+    "file": "transitions-addition-b1.md",
+    "title": "Writing Transitions: Addition (B1)",
+    "titleVerdict": "needs-improvement",
+    "suggestedTitle": "Writing Transitions: Addition Words",
+    "titleReason": "The current title suggests a focus on addition transitions, but the lesson content covers various types of transitions, not just addition. The title should reflect the specific focus on addition transitions.",
+    "relevanceIssues": [
+      "The Examples section includes examples that focus on contrast and result rather than addition transitions, which is off-topic for a lesson on addition transitions.",
+      "The How It Works section discusses multiple types of transitions (addition, contrast, example, result) rather than focusing solely on addition transitions.",
+      "The Practice Lab includes tasks that test contrast transitions rather than addition transitions, which is not aligned with the lesson's focus."
+    ],
+    "changes": [
+      "Rewrote lesson context",
+      "Title: \"Writing Transitions: Addition (B1)\" → \"Writing Transitions: Addition Words\""
+    ]
+  }
+]

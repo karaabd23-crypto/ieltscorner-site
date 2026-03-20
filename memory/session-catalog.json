@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-18T23:22:59.236Z",
+  "generatedAt": "2026-03-20T07:54:50.354Z",
   "sources": {
     "codex": {
       "root": "C:\\Users\\Karaa\\.codex",
@@ -11,21 +11,54 @@
     }
   },
   "counts": {
-    "total": 23,
+    "total": 26,
     "codex": 2,
-    "vscode": 21
+    "vscode": 24
   },
   "sessions": [
     {
       "source": "vscode-chat",
-      "id": "afda6c70-53a6-4fc4-a25f-b7c8cdc7a128",
-      "title": "afda6c70-53a6-4fc4-a25f-b7c8cdc7a128",
-      "createdAt": "2026-03-18T23:08:40.482Z",
-      "updatedAt": "2026-03-18T23:09:38.165Z",
+      "id": "aab3290b-f54e-418a-a15f-0bf4a05fef14",
+      "title": "Automatically save chat history for new conversations",
+      "createdAt": "2026-03-20T07:50:23.910Z",
+      "updatedAt": "2026-03-20T07:54:46.855Z",
+      "cwd": null,
+      "initialPrompt": "add everything in this conversation to the record because I am going to start a new chat and I",
+      "finalAnswer": "Now let me refresh the session catalog one final time so it includes this session's work:",
+      "filePath": "C:\\Users\\Karaa\\AppData\\Roaming\\Code\\User\\workspaceStorage\\99c7524e034dea3b9bb59bd56c463b99\\chatSessions\\aab3290b-f54e-418a-a15f-0bf4a05fef14.jsonl"
+    },
+    {
+      "source": "vscode-chat",
+      "id": "e551877e-766a-4d03-afea-8a74b51a024d",
+      "title": "Automating lesson creation and upload without API key",
+      "createdAt": "2026-03-19T06:43:44.722Z",
+      "updatedAt": "2026-03-20T07:18:45.429Z",
+      "cwd": null,
+      "initialPrompt": "/ini",
+      "finalAnswer": "<skills> Skills provide specialized capabilities, domain knowledge, and refined workflows for producing high-quality outputs. Each skill folder contains tested instructions for specific domains like testing strategies,…",
+      "filePath": "C:\\Users\\Karaa\\AppData\\Roaming\\Code\\User\\workspaceStorage\\99c7524e034dea3b9bb59bd56c463b99\\chatSessions\\e551877e-766a-4d03-afea-8a74b51a024d.jsonl"
+    },
+    {
+      "source": "vscode-chat",
+      "id": "cbc17054-341f-47b5-8af9-85538a6457d5",
+      "title": "Improving Weak Sentences in Lessons",
+      "createdAt": "2026-03-18T23:47:58.659Z",
+      "updatedAt": "2026-03-19T06:19:54.429Z",
+      "cwd": null,
+      "initialPrompt": "look at this screenshot. In this case, you can't really improve those \"weak\" sentences because they have no content, so the lesson should tell students to avoid them because improving them needs too much context from th…",
+      "finalAnswer": "**Verification** 1. Template check on working lessons passes: - npm run lesson:check:template:working → pass for 284 files. 2. Build passes: - npm run build → 409 pages built. 3. Phrase scans for the major generic conta…",
+      "filePath": "C:\\Users\\Karaa\\AppData\\Roaming\\Code\\User\\workspaceStorage\\99c7524e034dea3b9bb59bd56c463b99\\chatSessions\\cbc17054-341f-47b5-8af9-85538a6457d5.jsonl"
+    },
+    {
+      "source": "vscode-chat",
+      "id": "d43559f2-4d05-4652-b9e6-d59fe12e10f8",
+      "title": "d43559f2-4d05-4652-b9e6-d59fe12e10f8",
+      "createdAt": "2026-03-19T02:37:18.560Z",
+      "updatedAt": "2026-03-19T02:37:22.568Z",
       "cwd": null,
       "initialPrompt": "",
       "finalAnswer": "",
-      "filePath": "C:\\Users\\Karaa\\AppData\\Roaming\\Code\\User\\workspaceStorage\\99c7524e034dea3b9bb59bd56c463b99\\chatSessions\\afda6c70-53a6-4fc4-a25f-b7c8cdc7a128.jsonl"
+      "filePath": "C:\\Users\\Karaa\\AppData\\Roaming\\Code\\User\\workspaceStorage\\99c7524e034dea3b9bb59bd56c463b99\\chatSessions\\d43559f2-4d05-4652-b9e6-d59fe12e10f8.jsonl"
     },
     {
       "source": "codex",
@@ -35,7 +68,7 @@
       "updatedAt": "2026-03-18T23:09:11.5455649Z",
       "cwd": "c:\\Users\\Karaa\\Documents\\ieltscorner-site",
       "initialPrompt": "Are there any uncommited changes?",
-      "finalAnswer": "From the IELTS Corner sessions, the clear leftovers are: - The current lesson-format migration is not finished operationally yet. The changes are in the repo and already passed local checks, but commit, push, and deploy…",
+      "finalAnswer": "I fixed the lesson-example system at the generator level and pushed it. Commit `eff06f7` is on `main` and `origin/main`, and the working tree is clean. The changes do three things: weak/better pairs now stay on the same…",
       "filePath": "C:\\Users\\Karaa\\.codex\\sessions\\2026\\03\\18\\rollout-2026-03-18T16-09-01-019d0335-a7e7-7280-93c3-46035f4ea421.jsonl"
     },
     {

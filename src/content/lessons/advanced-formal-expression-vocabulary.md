@@ -1,11 +1,11 @@
 ---
 title: "Formal Words and Phrases"
 category: "vocabulary"
-level: "C2"
+level: "B2"
 ieltsBand: "8.5-9.0"
 clb: "11-12"
 exam: ["IELTS", "CELPIP"]
-excerpt: "C2 vocabulary lesson on Formal Words and Phrases with a practical word bank, collocations, and retrieval practice."
+excerpt: "Learn to use formal words and phrases to enhance your professional and academic communication."
 date: "2026-03-01"
 tags: ["vocabulary", "c2", "exam-prep", "ielts", "celpip"]
 heroTip: "Learn words with their partner phrases and one model sentence, not as isolated items."
@@ -36,7 +36,7 @@ premium: false
 priceCAD: 0
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Formal Words and Phrases</strong> is about the words and phrases you need for real English. This lesson shows what the key words mean, where they fit, and how to use them in natural sentences without sounding forced.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Formal Words and Phrases</strong> focuses on enhancing your vocabulary for professional and academic communication. This lesson teaches you how to use key formal words and phrases effectively in sentences to maintain a respectful and polished tone.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
@@ -44,48 +44,49 @@ draft: false
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>I want you to fix this problem fast.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>I would appreciate a prompt response to this issue.</p>
-  <p class="lesson-card-note">The stronger version names the real meaning instead of staying vague.</p>
+  <p class="lesson-card-note">The stronger version uses a formal request frame, making it more appropriate for professional communication.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>I am writing about the bad service yesterday.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>I am writing regarding the poor service I received yesterday.</p>
-  <p class="lesson-card-note">The better sentence sounds more natural for a real task and a real reader.</p>
+  <p class="lesson-card-note">The improved sentence uses formal language, suitable for addressing service issues in a professional manner.</p>
 </article>
 </div>
-
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>This lesson helps you say the same idea with sharper, more natural vocabulary.</p>
-<p>Formal Words and Phrases focuses on polite, controlled language for emails, letters, and formal writing tasks.</p>
-<p>Use this vocabulary when the task expects professional or respectful communication rather than casual spoken wording.</p>
-<p>At C2 level, learn fewer words but learn them well: meaning, collocation, and one model sentence.</p>
+    <p>Formal Words and Phrases are vocabulary elements used to convey respect and professionalism in communication. They replace casual or informal language with more polished expressions, enhancing the tone of emails, letters, and other formal writing tasks.</p>
+    <p>This vocabulary is crucial at the B2 proficiency level, where learners are expected to communicate effectively in professional and academic settings.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Prefer polite request frames over direct demands.</li><li>Use clear purpose phrases such as regarding or I am writing to.</li><li>Keep the tone professional without adding unnecessary long words.</li></ul>
+    <ul>
+      <li>Writing formal emails or letters in a professional setting.</li>
+      <li>Communicating in academic contexts, such as reports or essays.</li>
+      <li>Making polite requests or inquiries.</li>
+      <li>Addressing complaints or issues with a respectful tone.</li>
+      <li>Engaging in any situation where maintaining a formal tone is necessary.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">I am writing regarding the delay in my order.</div>
-<div class="lesson-pattern-sentence">I would appreciate a prompt response to this issue.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence"><strong>I am writing regarding</strong> the delay in my order.</div>
+      <div class="lesson-pattern-sentence"><strong>I would appreciate</strong> a prompt response to this issue.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Choose the meaning first before you choose the word.</li><li>Learn the word with a natural collocation or partner phrase.</li><li>Use the new word in one short sentence right away.</li><li>Replace vague words only when the new word stays accurate.</li><li>Keep the register stable so the language fits the task.</li></ul>
+    <ul>
+      <li>Use polite request frames instead of direct commands.</li>
+      <li>Start communications with a clear purpose phrase.</li>
+      <li>Choose words that naturally fit the context and maintain formality.</li>
+      <li>Avoid overly complex words that do not add clarity.</li>
+      <li>Ensure consistency in tone throughout your communication.</li>
+    </ul>
   </section>
 </div>
 
@@ -119,16 +120,16 @@ draft: false
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">Start with meaning. Then move to collocations and sentence control for Formal Words and Phrases.</p>
+      <p class="practice-lab-intro">Practice using formal words and phrases to enhance your professional and academic communication.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Use words that sound natural together. Precision is more important than difficulty.</p>
+  <p class="practice-lab-coach">Select and arrange words that maintain a formal tone. Precision is key.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1">
   <p class="practice-task-label">1. Quick pick</p>
   <h3>Which phrase is best for a formal request?</h3>
   <div class="practice-choice-grid">
@@ -144,7 +145,7 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="I would||appreciate works best||when the meaning||is clear in||the sentence." data-task-id="1">
+<article class="practice-task" data-task-type="order" data-task-answer="I would||appreciate works best||when the meaning||is clear in||the sentence." data-task-id="2">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put the sentence in a natural order.</h3>
   <p class="practice-task-note">Put the chunks in the natural order.</p>
@@ -172,13 +173,26 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="typing" data-task-answers="issue" data-task-id="2">
-  <p class="practice-task-label">3. Type the missing word</p>
-  <h3>Complete the useful chunk: address an _____</h3>
-  <p class="practice-source-line"><span>Fix this:</span> I would appreciate: a polite way to request action</p>
-  <div class="practice-input-row">
-    <input type="text" class="practice-input" data-typing-input placeholder="Type one word" />
+<article class="practice-task" data-task-type="sort" data-task-answer="Formal:request,appreciate||Informal:want,reply" data-sort-categories="Formal||Informal" data-task-id="3">
+  <p class="practice-task-label">3. Sort it</p>
+  <h3>Sort the words into formal and informal categories.</h3>
+  <div class="practice-sort-grid">
+<button type="button" class="practice-chip" data-chip-value="request" data-chip-origin="bank-2" data-chip-id="2-0">
+  request
+</button>
+<button type="button" class="practice-chip" data-chip-value="want" data-chip-origin="bank-2" data-chip-id="2-1">
+  want
+</button>
+<button type="button" class="practice-chip" data-chip-value="appreciate" data-chip-origin="bank-2" data-chip-id="2-2">
+  appreciate
+</button>
+<button type="button" class="practice-chip" data-chip-value="reply" data-chip-origin="bank-2" data-chip-id="2-3">
+  reply
+</button>
+  </div>
+  <div class="practice-task-actions">
     <button type="button" class="practice-check-btn" data-task-check>Check</button>
+    <button type="button" class="practice-clear-btn" data-task-clear>Clear</button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
@@ -186,7 +200,7 @@ draft: false
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> good vocabulary is not just about knowing a word. You need the <em>right</em> word in the <em>right</em> sentence. When you control Formal Words and Phrases, you sound clearer, more natural, and more precise in real English.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering formal vocabulary ensures you can communicate with clarity and professionalism in various contexts, making your interactions more effective and respectful.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

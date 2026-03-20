@@ -2,17 +2,18 @@ name: Publish Weekly lessons
 
 on:
   schedule:
-    - cron: "30 14 * * 0"
+    - cron: "30 14 * * 2"   # Tuesday 2:30 PM UTC
+    - cron: "30 14 * * 5"   # Friday 2:30 PM UTC
   workflow_dispatch:
     inputs:
       per_category_count:
         description: "How many lessons to generate per category"
         required: false
-        default: "3"
+        default: "1"
       categories:
-        description: "Comma-separated categories (grammar,vocabulary,writing,speaking)"
+        description: "Comma-separated categories (grammar,vocabulary)"
         required: false
-        default: "grammar,vocabulary,writing,speaking"
+        default: "grammar,vocabulary"
 
 permissions:
   contents: write
@@ -37,8 +38,8 @@ jobs:
         env:
           LESSON_GENERATOR_MODE: fallback
         run: |
-          COUNT="${{ github.event.inputs.per_category_count || '3' }}"
-          CATEGORIES_INPUT="${{ github.event.inputs.categories || 'grammar,vocabulary,writing,speaking' }}"
+          COUNT="${{ github.event.inputs.per_category_count || '1' }}"
+          CATEGORIES_INPUT="${{ github.event.inputs.categories || 'grammar,vocabulary' }}"
           echo "Lesson generation mode: fallback"
 
           IFS=',' read -ra CATEGORIES <<< "$CATEGORIES_INPUT"

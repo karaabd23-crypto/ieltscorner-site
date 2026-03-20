@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-6.5"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B2 lesson on Connecting Words for Essays with teacher-style explanation, guided practice, and topic-linked review."
+excerpt: "Learn to use connecting words effectively to enhance the coherence and flow of your essays at the B2 level."
 date: "2026-02-27"
 tags: ["grammar", "b2", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
@@ -36,7 +36,7 @@ premium: false
 priceCAD: 0
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Connecting Words for Essays</strong> helps ideas connect smoothly. These words show addition, contrast, result, reason, or sequence. In this lesson, you will learn how to join ideas without making the sentence heavy or repetitive.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Connecting Words for Essays</strong> are essential for creating smooth transitions between ideas. These words and phrases help convey addition, contrast, result, reason, or sequence, making your writing more coherent and engaging. Mastering them at a B2 level ensures your essays are clear and logical, facilitating better understanding for your readers.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
@@ -44,48 +44,46 @@ draft: false
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The route is cheaper however it takes longer in the morning.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The route is cheaper; however, it takes longer in the morning.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-card-note">"However" is used to show contrast and requires a semicolon before it when joining two independent clauses.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The buses were delayed because therefore many students were late.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The buses were delayed; therefore, many students were late.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-card-note">"Therefore" indicates a cause and effect relationship and needs a semicolon before it when connecting two independent clauses.</p>
 </article>
 </div>
-
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Connectors should make the logic easier to follow, not harder.</p>
-<p>Connectors show the relationship between ideas. They tell the reader whether you are adding information, contrasting, giving a reason, or showing a result.</p>
-<p>Use connectors to guide the reader through your logic. The best connector is the one that matches the real relationship between the ideas, not the one that sounds most formal.</p>
-<p>At B2 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+    <p>Connecting words, also known as conjunctions or transition words, are essential tools for linking sentences and paragraphs. They clarify the relationship between ideas, such as addition, contrast, cause and effect, or sequence, enhancing the coherence and flow of your writing. At the B2 level, mastering these words is crucial for producing clear, logical essays.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Choose the connector after you decide the relationship: addition, contrast, reason, or result.</li><li>Do not force a formal connector if a simple one like but or so is clearer.</li><li>Check punctuation because some connectors join full clauses and some do not.</li></ul>
+    <ul>
+      <li>Adding information: Use words like <strong>furthermore</strong> or <strong>in addition</strong> to expand on a point.</li>
+      <li>Showing contrast: Use words like <strong>however</strong> or <strong>on the other hand</strong> to highlight differences.</li>
+      <li>Explaining cause and effect: Use words like <strong>therefore</strong> or <strong>as a result</strong> to show consequences.</li>
+      <li>Indicating sequence: Use words like <strong>firstly</strong>, <strong>next</strong>, or <strong>finally</strong> to order events.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">The route is cheaper, but it takes longer during rush hour.</div>
-<div class="lesson-pattern-sentence">The pilot improved reliability; therefore, fewer passengers complained.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">The project was successful; <strong>therefore</strong>, the team received a bonus.</div>
+      <div class="lesson-pattern-sentence"><strong>However</strong>, the weather was unpredictable, causing delays.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Decide the relationship first: addition, contrast, reason, or result.</li><li>Choose a connector that matches that relationship exactly.</li><li>Check whether the connector joins words, phrases, or full clauses.</li><li>Fix punctuation after the connector pattern is chosen.</li><li>Read the whole sentence to make sure the logic is easy to follow.</li></ul>
+    <ul>
+      <li>Identify the relationship you want to express: addition, contrast, cause and effect, or sequence.</li>
+      <li>Choose a connecting word that accurately reflects that relationship.</li>
+      <li>Use a semicolon before connecting words like "however" and "therefore" when linking two independent clauses.</li>
+      <li>Read your sentences aloud to ensure smooth transitions and logical flow.</li>
+    </ul>
   </section>
 </div>
 
@@ -93,24 +91,24 @@ draft: false
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>choosing a connector or punctuation pattern that does not match the relationship</h3>
+  <h3>Choosing a connector or punctuation pattern that does not match the relationship</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The library opens earlier however the study rooms still fill quickly.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>The library opens earlier; however, the study rooms still fill quickly.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> decide the relationship first, then use a connector and punctuation pattern that fits it</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use a semicolon before "however" to properly connect two independent clauses showing contrast.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using a connector that shows the wrong relationship</h3>
+  <h3>Using a connector that shows the wrong relationship</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The route became cheaper; however, more people started using it.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>The route became cheaper, so more people started using it.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> choose the connector from the real logic between the ideas</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> "So" better reflects the cause and effect relationship between the clauses.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>joining full clauses with connector punctuation that does not work</h3>
+  <h3>Joining full clauses with connector punctuation that does not work</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The buses improved however the station remained crowded.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>The buses improved; however, the station remained crowded.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> when however joins full clauses, use punctuation that marks the clause boundary</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use a semicolon before "however" to connect full clauses correctly.</p>
 </article>
 </div>
 
@@ -122,38 +120,38 @@ draft: false
       <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
   <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Connecting Words for Essays form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence uses the appropriate connector and punctuation for clarity." data-wrong-feedback="Not yet. Check the relationship between the ideas and choose the correct connector.">
   <p class="practice-task-label">1. Quick pick</p>
   <h3>Choose the stronger sentence for Connecting Words for Essays.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  The library opens earlier however the study rooms still fill quickly.
+  The weather was unpredictable therefore the event was postponed.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  The library opens earlier; however, the study rooms still fill quickly.
+  The weather was unpredictable; therefore, the event was postponed.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="The policy was||expensive, but it||reduced congestion." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="The new policy||was effective; however,||it was unpopular." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put this Connecting Words for Essays sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="expensive, but it" data-chip-origin="bank-1" data-chip-id="1-0">
-  expensive, but it
+<button type="button" class="practice-chip" data-chip-value="was effective; however," data-chip-origin="bank-1" data-chip-id="1-0">
+  was effective; however,
 </button>
-<button type="button" class="practice-chip" data-chip-value="The policy was" data-chip-origin="bank-1" data-chip-id="1-1">
-  The policy was
+<button type="button" class="practice-chip" data-chip-value="The new policy" data-chip-origin="bank-1" data-chip-id="1-1">
+  The new policy
 </button>
-<button type="button" class="practice-chip" data-chip-value="reduced congestion." data-chip-origin="bank-1" data-chip-id="1-2">
-  reduced congestion.
+<button type="button" class="practice-chip" data-chip-value="it was unpopular." data-chip-origin="bank-1" data-chip-id="1-2">
+  it was unpopular.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -163,43 +161,33 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="typing" data-task-answers="Students revised carefully; as a result, they felt calmer in the test." data-task-id="2" data-correct-feedback="Correct. You repaired the sentence without changing the message." data-wrong-feedback="Not yet. Check the target form, then type the full corrected sentence.">
-  <p class="practice-task-label">3. Type the fix</p>
-  <h3>Rewrite the sentence so Connecting Words for Essays is correct.</h3>
-  <p class="practice-source-line"><span>Fix this:</span> Students revised carefully as a result they felt calmer in the test.</p>
-  <div class="practice-input-row">
-    <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
-    <button type="button" class="practice-check-btn" data-task-check>Check</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
-<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
-  <p class="practice-task-label">4. Final sort</p>
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-task-answer="Works:The new policy was effective; however, it was unpopular.||Needs fixing:The new policy was effective however it was unpopular.||Works:The team worked hard; therefore, they achieved their goals.||Needs fixing:The team worked hard therefore they achieved their goals." data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
+  <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>The library opens earlier; however, the study rooms still fill quickly.</p>
+  <p>The new policy was effective; however, it was unpopular.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>The library opens earlier however the study rooms still fill quickly.</p>
+  <p>The new policy was effective however it was unpopular.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>The policy was expensive, but it reduced congestion.</p>
+  <p>The team worked hard; therefore, they achieved their goals.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>The policy was expensive because it reduced congestion.</p>
+  <p>The team worked hard therefore they achieved their goals.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
@@ -215,7 +203,7 @@ draft: false
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> this topic helps English sound smooth, natural, and easy to follow. When the form is right, your sentence flows better and the examiner spends less effort decoding what you mean.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering connecting words ensures your essays are clear and logical, making it easier for readers, including examiners, to follow your arguments and ideas without confusion. This skill is crucial for achieving higher scores in writing exams and for effective communication in academic and professional settings.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

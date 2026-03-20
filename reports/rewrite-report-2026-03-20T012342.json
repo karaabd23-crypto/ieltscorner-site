@@ -1,0 +1,25 @@
+[
+  {
+    "file": "past-simple-a1.md",
+    "title": "Understanding Past Simple Tense",
+    "titleVerdict": "needs-improvement",
+    "suggestedTitle": "Mastering the Past Simple Tense",
+    "titleReason": "The original title is clear but could be more engaging. 'Mastering' suggests a more comprehensive understanding and application of the tense, which may attract more students.",
+    "relevanceIssues": [
+      "Example 2 discusses future perfect tense, which is unrelated to the Past Simple tense.",
+      "The 'How It Works' section discusses tense choice in general rather than focusing on the Past Simple tense specifically.",
+      "The 'See it' panel examples are not relevant to the Past Simple tense.",
+      "The Practice Lab includes an order task with a sentence in the present perfect tense, which is off-topic."
+    ],
+    "changes": [
+      "Rewrote How It Works teach-grid",
+      "Rewrote Examples section",
+      "Rewrote Common Mistakes section",
+      "Rewrote lesson context",
+      "Rewrote Why It Matters",
+      "Rewrote Practice Lab",
+      "Rewrote excerpt",
+      "Title: \"Understanding Past Simple Tense\" → \"Mastering the Past Simple Tense\""
+    ]
+  }
+]

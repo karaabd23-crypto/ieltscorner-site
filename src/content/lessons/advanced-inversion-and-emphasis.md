@@ -1,11 +1,11 @@
 ---
 title: "Word Order for Emphasis"
 category: "grammar"
-level: "C2"
+level: "B2"
 ieltsBand: "8.5-9.0"
 clb: "11-12"
 exam: ["IELTS", "CELPIP"]
-excerpt: "C2 lesson on Word Order for Emphasis with teacher-style explanation, guided practice, and topic-linked review."
+excerpt: "Learn how to use word order for emphasis to highlight key information and convey nuanced meanings in your writing."
 date: "2026-02-27"
 tags: ["grammar", "c2", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
@@ -36,56 +36,54 @@ premium: false
 priceCAD: 0
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Word Order for Emphasis</strong> changes the focus of the sentence. English can move words, repeat a pattern, or use a special structure to make one idea stand out more. In this lesson, you will learn how to add emphasis without sounding unnatural.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Word Order for Emphasis</strong> involves rearranging sentence elements to highlight a particular part of the sentence. This technique can involve inversion, cleft sentences, or fronting. It allows the speaker or writer to draw attention to specific information, enhancing clarity and impact. At the B2 level, mastering this skill helps convey nuanced meanings and maintain reader engagement.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Never I have seen such a confusing timetable.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Never have I seen such a confusing timetable.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Never <strong>have I seen</strong> such a confusing timetable.</p>
+  <p class="lesson-card-note">Inversion is used after 'Never' to emphasize the surprising nature of the timetable.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Only after the final practice she felt ready.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Only after the final practice did she feel ready.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Only after the final practice <strong>did she feel</strong> ready.</p>
+  <p class="lesson-card-note">Inversion after 'Only after' emphasizes the timing of her readiness.</p>
 </article>
 </div>
-
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Emphasis is useful only when the stronger form also stays clear.</p>
-<p>English can shift word order or use patterns such as cleft sentences and inversion to put one idea in the spotlight. The grammar changes because the writer wants the reader to notice one detail more strongly.</p>
-<p>Use emphasis only when you have a clear reason to highlight one detail. If the sentence becomes harder to follow, the emphasis is not helping.</p>
-<p>At C2 level, use this structure for precision and logic, not for decorative complexity.</p>
+    <p>Word order for emphasis involves rearranging elements of a sentence to highlight specific information. This can include techniques like inversion, cleft sentences, or fronting. The purpose is to draw attention to key details, enhancing clarity and impact. At the B2 level, mastering this skill helps convey nuanced meanings and maintain reader engagement.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Decide what deserves the spotlight before you change the sentence shape.</li><li>Keep the grammar accurate when you move or split sentence parts for emphasis.</li><li>Use emphatic structures sparingly so the effect still feels natural.</li></ul>
+    <ul>
+      <li>Emphasizing a surprising fact or important detail in a sentence.</li>
+      <li>Writing formal or academic texts where emphasis is needed.</li>
+      <li>Engaging readers by varying sentence structure for effect.</li>
+      <li>Responding to exam prompts that require detailed explanations.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">What students need most is clearer feedback.</div>
-<div class="lesson-pattern-sentence">Only after the final practice did she feel ready.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence"><strong>Rarely</strong> do we find such clear instructions in practice books.</div>
+      <div class="lesson-pattern-sentence"><strong>What</strong> students need most <strong>is</strong> clearer feedback.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Choose the word or idea you want to highlight.</li><li>Select one structure that creates emphasis naturally, such as inversion or a cleft sentence.</li><li>Rebuild the sentence carefully because emphasis often changes word order.</li><li>Check agreement and auxiliary use after the sentence moves.</li><li>Keep the sentence only if the emphasis makes the meaning clearer or stronger.</li></ul>
+    <ul>
+      <li>Use inversion after negative adverbs for emphasis.</li>
+      <li>Start cleft sentences with "What" to highlight the subject.</li>
+      <li>Ensure subject-verb agreement remains correct after reordering.</li>
+      <li>Use emphasis sparingly to maintain natural flow.</li>
+    </ul>
   </section>
 </div>
 
@@ -93,24 +91,17 @@ draft: false
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>changing word order for emphasis without keeping the grammar accurate</h3>
+  <h3>Incorrect inversion after negative adverbs</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Rarely we find such clear instructions in practice books.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Rarely do we find such clear instructions in practice books.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> when emphasis triggers inversion or a cleft pattern, rebuild the whole structure correctly</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Rarely <strong>do we find</strong> such clear instructions in practice books.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use auxiliary inversion after negative adverbs for emphasis.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>forgetting inversion after a negative fronted phrase</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Rarely we see such a clear chart in class.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Rarely do we see such a clear chart in class.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> fronted negative expressions often trigger auxiliary inversion</p>
-</article>
-<article class="lesson-error-card">
-  <p class="lesson-card-label">Common problem 3</p>
-  <h3>breaking agreement inside a cleft-like structure</h3>
+  <h3>Incorrect subject-verb agreement in cleft sentences</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>What students need most are clearer homework instructions.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>What students need most is clearer homework instruction.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> treat the whole fronted clause as one subject and check the complement carefully</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>What students need most <strong>is</strong> clearer homework instruction.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Ensure the verb agrees with the subject in cleft sentences.</p>
 </article>
 </div>
 
@@ -122,41 +113,41 @@ draft: false
       <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Focus on how word order changes emphasize specific parts of the sentence.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Word Order for Emphasis form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Word Order for Emphasis form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
   <p class="practice-task-label">1. Quick pick</p>
   <h3>Choose the stronger sentence for Word Order for Emphasis.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  Rarely we find such clear instructions in practice books.
+  Hardly had she finished her homework when the power went out.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  Rarely do we find such clear instructions in practice books.
+  Hardly she had finished her homework when the power went out.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="What students need||most is clearer||feedback from||teachers." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="What he wanted||most was a||chance to||explain." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put this Word Order for Emphasis sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="feedback from" data-chip-origin="bank-1" data-chip-id="1-0">
-  feedback from
+<button type="button" class="practice-chip" data-chip-value="What he wanted" data-chip-origin="bank-1" data-chip-id="1-0">
+  What he wanted
 </button>
-<button type="button" class="practice-chip" data-chip-value="teachers." data-chip-origin="bank-1" data-chip-id="1-1">
-  teachers.
+<button type="button" class="practice-chip" data-chip-value="most was a" data-chip-origin="bank-1" data-chip-id="1-1">
+  most was a
 </button>
-<button type="button" class="practice-chip" data-chip-value="What students need" data-chip-origin="bank-1" data-chip-id="1-2">
-  What students need
+<button type="button" class="practice-chip" data-chip-value="chance to" data-chip-origin="bank-1" data-chip-id="1-2">
+  chance to
 </button>
-<button type="button" class="practice-chip" data-chip-value="most is clearer" data-chip-origin="bank-1" data-chip-id="1-3">
-  most is clearer
+<button type="button" class="practice-chip" data-chip-value="explain." data-chip-origin="bank-1" data-chip-id="1-3">
+  explain.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -166,43 +157,33 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="typing" data-task-answers="Only then did the team understand the scale of the problem." data-task-id="2" data-correct-feedback="Correct. You repaired the sentence without changing the message." data-wrong-feedback="Not yet. Check the target form, then type the full corrected sentence.">
-  <p class="practice-task-label">3. Type the fix</p>
-  <h3>Rewrite the sentence so Word Order for Emphasis is correct.</h3>
-  <p class="practice-source-line"><span>Fix this:</span> Only then the team understood the scale of the problem.</p>
-  <div class="practice-input-row">
-    <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
-    <button type="button" class="practice-check-btn" data-task-check>Check</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
 <article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
-  <p class="practice-task-label">4. Final sort</p>
+  <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>Rarely do we find such clear instructions in practice books.</p>
+  <p>Only after the meeting ended <strong>did she feel</strong> relieved.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>Rarely we find such clear instructions in practice books.</p>
+  <p>Only after the meeting ended she felt relieved.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>What students need most is clearer feedback from teachers.</p>
+  <p>What he wanted most was a chance to explain.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>What students need most are clearer feedback from teachers.</p>
+  <p>What he wanted most were a chance to explain.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
@@ -218,7 +199,7 @@ draft: false
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> longer grammar structures can raise your score only when they stay clear. When you control <u>Word Order for Emphasis</u>, you can add detail and shape the message without losing the reader halfway through the sentence.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering <u>Word Order for Emphasis</u> allows you to convey nuanced meanings and maintain reader engagement by effectively highlighting key information in your sentences.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

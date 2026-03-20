@@ -1,11 +1,11 @@
 ---
-title: "Past continuous and past simple together"
+title: "Using Past Continuous and Past Simple Together"
 category: "grammar"
-level: "B1"
+level: "B2"
 ieltsBand: "5.0-6.0"
 clb: "6-7"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Match tense choice to time meaning so the reader never has to guess your timeline."
+excerpt: "Learn how to use past continuous and past simple together to clearly narrate past events and show how actions overlap or interrupt each other."
 date: "2026-02-27"
 tags: ["grammar", "b1", "exam-prep", "ielts", "celpip"]
 heroTip: "Circle the time marker before you choose the verb form."
@@ -36,56 +36,57 @@ premium: false
 priceCAD: 0
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Past continuous and past simple together</strong> helps you show <em>time</em> clearly. A good tense choice tells the reader or listener when something happens and whether it is finished, continuing, or connected to another time. In this lesson, you will match form to meaning.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Using Past Continuous and Past Simple Together</strong> helps you clearly convey the timing and sequence of past events. This lesson will guide you in using these tenses to show how actions overlap or interrupt each other in past narratives.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Last year, the council increases bus frequency in two districts.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Last year, the council increased bus frequency in two districts.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>While I cooked, the phone rang.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>While I <strong>was cooking</strong>, the phone <strong>rang</strong>.</p>
+  <p class="lesson-card-note">The past continuous 'was cooking' describes the ongoing action, while the past simple 'rang' shows the interruption.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>By next month, we finish the pilot stage.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>By next month, we will have finished the pilot stage.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>She watched TV when I arrived.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>She <strong>was watching</strong> TV when I <strong>arrived</strong>.</p>
+  <p class="lesson-card-note">'Was watching' indicates the action in progress, and 'arrived' is the action that interrupts.</p>
 </article>
 </div>
-
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Tense choice becomes easier when you decide the timeline before the verb form.</p>
-<p>Tense choices place actions on a timeline and show whether they are finished, ongoing, repeated, or connected to another time point.</p>
-<p>Use tense accurately by deciding the time first and the meaning second. Readers should be able to follow your timeline without stopping to reinterpret the verb forms.</p>
-<p>At B1 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+    <p>The past continuous tense describes actions that were ongoing at a specific time in the past, while the past simple tense describes completed actions. When used together, they show how a longer action was interrupted by a shorter one.</p>
+    <p>Form: <strong>subject + was/were + verb-ing</strong> (past continuous) and <strong>subject + verb-ed</strong> (past simple).</p>
+    <p>This combination is crucial at the B2 level for narrating past events clearly and effectively.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Find the time signal or implied timeline before you choose the verb.</li><li>Keep the tense stable until the timeline genuinely changes.</li><li>Use perfect forms when you need to connect an earlier action to another time point.</li></ul>
+    <ul>
+      <li>Describing an action that was interrupted by another action.</li>
+      <li>Narrating a sequence of events where one action was ongoing.</li>
+      <li>Providing background information in a story or report.</li>
+      <li>Explaining circumstances that changed due to a sudden event.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Since January, attendance has improved every week.</div>
-<div class="lesson-pattern-sentence">By the end of the year, the team will have completed the trial.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">I <strong>was reading</strong> when the phone <strong>rang</strong>.</div>
+      <div class="lesson-pattern-sentence">While she <strong>was cooking</strong>, the guests <strong>arrived</strong>.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Mark the timeline first with a time word or situation clue.</li><li>Choose simple, continuous, perfect, or perfect continuous from the meaning.</li><li>Keep the reference point stable inside the sentence.</li><li>Use tense shifts only when the timeline really changes.</li><li>Check that the final verb form agrees with the time marker.</li></ul>
+    <ul>
+      <li>Use past continuous for ongoing actions and past simple for interruptions.</li>
+      <li>Always pair these tenses to show a clear sequence of events.</li>
+      <li>Remember: 'was/were' + verb-ing for actions in progress.</li>
+      <li>Use past simple for actions that start and finish in the past.</li>
+      <li>Common mistake: using past simple for both actions.</li>
+    </ul>
   </section>
 </div>
 
@@ -93,24 +94,17 @@ draft: false
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>choosing tense forms that do not match time references</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>In 2024, the team launch a revised curriculum model.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>In 2024, the team launched a revised curriculum model.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> match verb tense to the timeline signal in each sentence</p>
+  <h3>Using past simple for both actions</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>He played the guitar when I entered the room.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>He <strong>was playing</strong> the guitar when I <strong>entered</strong> the room.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use past continuous for the ongoing action and past simple for the interruption.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using present perfect with a finished time marker</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>She has finished the report yesterday.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>She finished the report yesterday.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use a past form with finished time markers like yesterday or last week</p>
-</article>
-<article class="lesson-error-card">
-  <p class="lesson-card-label">Common problem 3</p>
-  <h3>switching tense without a time reason</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The study started in May and shows strong results in June.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The study started in May and showed strong results in June.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> keep the tense stable unless the timeline genuinely changes</p>
+  <h3>Mixing up the sequence of tenses</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>When the phone rang, I was answering it.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>When the phone <strong>rang</strong>, I <strong>answered</strong> it.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use past simple for actions that follow each other directly.</p>
 </article>
 </div>
 
@@ -119,41 +113,41 @@ draft: false
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+      <p class="practice-lab-intro">Practice using past continuous and past simple together to narrate past events effectively.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Focus on how the actions overlap or interrupt each other in past narratives.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Past continuous and past simple together form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="2" data-task-id="1" data-correct-feedback="Correct. This sentence correctly uses past continuous and past simple together." data-wrong-feedback="Not quite. Remember to use past continuous for ongoing actions and past simple for interruptions.">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger sentence for Past continuous and past simple together.</h3>
+  <h3>Choose the sentence that correctly uses past continuous and past simple together.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  In 2024, the team launch a revised curriculum model.
+  I was reading when the phone rings.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  In 2024, the team launched a revised curriculum model.
+  I read when the phone rang.
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  I was reading when the phone rang.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Since January,||attendance has improved||every week." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="While I was walking,||it started to rain." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Remember to place the ongoing action first.">
   <p class="practice-task-label">2. Build it</p>
-  <h3>Put this Past continuous and past simple together sentence in the correct order.</h3>
+  <h3>Put this sentence in the correct order using past continuous and past simple.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="attendance has improved" data-chip-origin="bank-1" data-chip-id="1-0">
-  attendance has improved
+<button type="button" class="practice-chip" data-chip-value="it started to rain." data-chip-origin="bank-1" data-chip-id="1-0">
+  it started to rain.
 </button>
-<button type="button" class="practice-chip" data-chip-value="Since January," data-chip-origin="bank-1" data-chip-id="1-1">
-  Since January,
-</button>
-<button type="button" class="practice-chip" data-chip-value="every week." data-chip-origin="bank-1" data-chip-id="1-2">
-  every week.
+<button type="button" class="practice-chip" data-chip-value="While I was walking," data-chip-origin="bank-1" data-chip-id="1-1">
+  While I was walking,
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -163,43 +157,19 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="typing" data-task-answers="By the end of this year, the city will reduce emissions by 10 percent." data-task-id="2" data-correct-feedback="Correct. You repaired the sentence without changing the message." data-wrong-feedback="Not yet. Check the target form, then type the full corrected sentence.">
-  <p class="practice-task-label">3. Type the fix</p>
-  <h3>Rewrite the sentence so Past continuous and past simple together is correct.</h3>
-  <p class="practice-source-line"><span>Fix this:</span> By the end of this year, the city reduce emissions by 10 percent.</p>
-  <div class="practice-input-row">
-    <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
-    <button type="button" class="practice-check-btn" data-task-check>Check</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
-<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
-  <p class="practice-task-label">4. Final sort</p>
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-task-answer="Works:She was studying when her friend called.||Fix:She studied when her friend was calling." data-sort-categories="Works||Fix">
+  <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>In 2024, the team launched a revised curriculum model.</p>
+  <p>She was studying when her friend called.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>In 2024, the team launch a revised curriculum model.</p>
-  <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
-  </div>
-</div>
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>Since January, attendance has improved every week.</p>
-  <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
-  </div>
-</div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>Since January, attendance improved every week.</p>
+  <p>She studied when her friend was calling.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
@@ -215,7 +185,7 @@ draft: false
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> verb choices carry time, meaning, and attitude. One wrong form can change the whole message. When you control <u>Past continuous and past simple together</u>, your writing and speaking become clearer, more natural, and more score-safe.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering the use of past continuous and past simple together enhances your ability to narrate past events with clarity and precision. This skill is crucial for effective storytelling, clear communication, and achieving higher scores in exams.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

@@ -1,7 +1,7 @@
 ---
-title: "Question words: who, what, where"
+title: "Using 'Who,' 'What,' and 'Where' in Questions"
 category: "grammar"
-level: "A1"
+level: "B2"
 ieltsBand: "3.0-4.0"
 clb: "2-3"
 exam: ["IELTS", "CELPIP"]
@@ -36,7 +36,7 @@ premium: false
 priceCAD: 0
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Question words</strong> is a grammar topic that changes how a sentence works or what it means. Sometimes the change is small, but it can make the sentence clearer, more natural, or more accurate. In this lesson, you will learn the basic idea, see clear examples, and notice the mistakes learners make most often.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Question words</strong> like 'who,' 'what,' and 'where' are essential for asking questions in English. They help you gather specific information about people, objects, and places, making your communication clearer and more effective. This lesson will guide you through the basics, provide examples, and highlight common mistakes to avoid.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
@@ -53,17 +53,6 @@ draft: false
   <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
 </article>
 </div>
-
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
@@ -122,13 +111,13 @@ draft: false
       <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
   <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Question words form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Question words form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
   <p class="practice-task-label">1. Quick pick</p>
   <h3>Choose the stronger sentence for Question words.</h3>
   <div class="practice-choice-grid">
@@ -141,7 +130,7 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Rarely do||we consider the||long-term effects." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="Rarely do||we consider the||long-term effects." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put this Question words sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
@@ -163,18 +152,9 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="typing" data-task-answers="How many students actually completed the assignment?" data-task-id="2" data-correct-feedback="Correct. You repaired the sentence without changing the message." data-wrong-feedback="Not yet. Check the target form, then type the full corrected sentence.">
-  <p class="practice-task-label">3. Type the fix</p>
-  <h3>Rewrite the sentence so Question words is correct.</h3>
-  <p class="practice-source-line"><span>Fix this:</span> How many students completed actually the assignment?</p>
-  <div class="practice-input-row">
-    <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
-    <button type="button" class="practice-check-btn" data-task-check>Check</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
+
 <article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
-  <p class="practice-task-label">4. Final sort</p>
+  <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
@@ -215,7 +195,7 @@ draft: false
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> this topic affects clarity immediately. A small mistake can confuse the sentence, the speaker, or the exact meaning. Strong control makes your English easier to follow and easier to score positively.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering 'who,' 'what,' and 'where' in questions is crucial for effective communication. These question words help you gather precise information, making interactions smoother and more informative.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

@@ -1,11 +1,11 @@
 ---
-title: "CELPIP Reading: Scan for Proof, Not Just Keyword Match (B1)"
+title: "CELPIP Reading: Scan for Proof, Not Just Keyword Match"
 category: "reading"
-level: "B1"
+level: "B2"
 ieltsBand: "5.5-6.5"
 clb: "6-8"
 exam: ["CELPIP"]
-excerpt: "B1 reading lesson on CELPIP Reading: Scan for Proof, Not Just Keyword Match with proof-finding, time control, and trap awareness."
+excerpt: "Learn how to scan for proof in CELPIP Reading to avoid trap answers and improve efficiency under exam conditions."
 date: "2026-03-09"
 tags: ["celpip", "reading", "scanning", "evidence", "distractors"]
 heroTip: "A matching word is not proof. Stay until you find the sentence that actually answers the question."
@@ -54,38 +54,39 @@ draft: false
 </article>
 </div>
 
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>This lesson focuses on one reading decision that can save marks right away.</p>
-<p>Reading traps often appear when a word in the question also appears in the text. That feels safe, but the surrounding sentence may actually give a different meaning. Strong readers look for proof, not just matching vocabulary. Proof usually comes from the whole sentence or nearby lines, not from one repeated word.</p>
-<p>Use this strategy whenever answer options look familiar too quickly. After spotting a possible location, read the sentence around it and ask what the text really says. That extra check prevents many keyword-match mistakes, especially in inference and detail questions.</p>
-<p>At B1 level, reading gains often come from better proof-checking and time control, not only from vocabulary.</p>
+    <p>Scanning for proof in reading involves finding direct evidence in the text to support your answer, rather than relying solely on keyword matches. This strategy helps avoid trap answers and enhances comprehension.</p>
+    <p>To apply this, locate the keyword in the text, then read the surrounding sentences to confirm the context and meaning. This approach is crucial at the B2 level, as it enhances accuracy and efficiency under exam conditions.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Start from the question, not from a full reread of the passage.</li><li>Use the text to prove the answer, not only to locate a keyword.</li><li>Protect your time so one hard item does not damage the full section.</li></ul>
+    <ul>
+      <li>Answering questions that require inference or detailed understanding.</li>
+      <li>Encountering familiar keywords in both the question and the text.</li>
+      <li>Managing time efficiently by avoiding lengthy rereads.</li>
+      <li>Faced with multiple-choice questions that seem deceptively simple.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Question says “main reason”; text repeats the keyword but actually gives an example, not the reason.</div>
-<div class="lesson-pattern-sentence">Question says “not recommended”; text contains the keyword recommended but the sentence is a warning, so the answer changes.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">The question asks for the <strong>main reason</strong>; the text repeats the keyword but provides an example, not the reason.</div>
+      <div class="lesson-pattern-sentence">The question states <strong>not recommended</strong>; the text mentions recommended but in a context of warning, altering the meaning.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Use keywords only to locate the likely area of the text.</li><li>Read the sentence and nearby lines for the full meaning.</li><li>Check whether the text actually proves the answer choice.</li><li>Watch for contrast words that reverse or limit the meaning.</li><li>Choose the option only after you can explain the proof in your own words.</li></ul>
+    <ul>
+      <li>Use keywords to locate, not decide.</li>
+      <li>Read the full sentence for context.</li>
+      <li>Verify that the text supports the answer.</li>
+      <li>Be cautious of contrast words that change meaning.</li>
+      <li>Explain the proof in your own words before choosing.</li>
+    </ul>
   </section>
 </div>
 
@@ -122,13 +123,13 @@ draft: false
       <p class="practice-lab-intro">Start by finding proof. Then check your reading sequence and your timing decisions.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
   <p class="practice-lab-coach">A repeated keyword is only a map. The answer still needs proof.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1">
   <p class="practice-task-label">1. Quick pick</p>
   <h3>Choose the stronger move for CELPIP Reading: Scan for Proof, Not Just Keyword Match.</h3>
   <div class="practice-choice-grid">
@@ -138,10 +139,13 @@ draft: false
 <button type="button" class="practice-choice" data-choice-index="1">
   I used the keyword to find the area, then checked the sentence that actually proved the answer.
 </button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  I guessed based on my first impression of the text.
+</button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Use keywords only to locate the likely area of the text.||Read the sentence and nearby lines for the full meaning.||Check whether the text actually proves the answer choice.||Watch for contrast words that reverse or limit the meaning." data-task-id="1">
+<article class="practice-task" data-task-type="order" data-task-answer="Use keywords only to locate the likely area of the text.||Read the sentence and nearby lines for the full meaning.||Check whether the text actually proves the answer choice." data-task-id="2">
   <p class="practice-task-label">2. Build the flow</p>
   <h3>Put these moves in a helpful order.</h3>
   <p class="practice-task-note">Put the chunks in the natural order.</p>
@@ -152,10 +156,7 @@ draft: false
 <button type="button" class="practice-chip" data-chip-value="Check whether the text actually proves the answer choice." data-chip-origin="bank-1" data-chip-id="1-1">
   Check whether the text actually proves the answer choice.
 </button>
-<button type="button" class="practice-chip" data-chip-value="Watch for contrast words that reverse or limit the meaning." data-chip-origin="bank-1" data-chip-id="1-2">
-  Watch for contrast words that reverse or limit the meaning.
-</button>
-<button type="button" class="practice-chip" data-chip-value="Use keywords only to locate the likely area of the text." data-chip-origin="bank-1" data-chip-id="1-3">
+<button type="button" class="practice-chip" data-chip-value="Use keywords only to locate the likely area of the text." data-chip-origin="bank-1" data-chip-id="1-2">
   Use keywords only to locate the likely area of the text.
 </button>
   </div>
@@ -166,36 +167,36 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="sort" data-task-id="2">
+<article class="practice-task" data-task-type="sort" data-task-answer="Helpful:Use keywords only to locate the likely area of the text.,Read the sentence and nearby lines for the full meaning.||Not helpful:Choose the answer as soon as you spot one familiar word.,Stay on the hardest item first because solving it feels efficient." data-sort-categories="Helpful||Not helpful" data-task-id="3">
   <p class="practice-task-label">3. Final sort</p>
   <h3>Sort these habits into helpful or not helpful.</h3>
   <div class="practice-sort-list">
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
+<div class="practice-sort-row" data-sort-target="Helpful" data-sort-row="0">
   <p>Use keywords only to locate the likely area of the text.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Not helpful">Not helpful</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="1">
+<div class="practice-sort-row" data-sort-target="Helpful" data-sort-row="1">
   <p>Read the sentence and nearby lines for the full meaning.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Not helpful">Not helpful</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="2">
+<div class="practice-sort-row" data-sort-target="Not helpful" data-sort-row="2">
   <p>Choose the answer as soon as you spot one familiar word.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Not helpful">Not helpful</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
+<div class="practice-sort-row" data-sort-target="Not helpful" data-sort-row="3">
   <p>Stay on the hardest item first because solving it feels efficient.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Not helpful">Not helpful</button>
   </div>
 </div>
   </div>
@@ -204,24 +205,14 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="3">
-  <p class="practice-task-label">4. Last check</p>
-  <h3>Choose the sentence that sounds more controlled.</h3>
-  <div class="practice-choice-grid">
-<button type="button" class="practice-choice" data-choice-index="0">
-  I stayed on one hard question because solving it first felt efficient.
-</button>
-<button type="button" class="practice-choice" data-choice-index="1">
-  I used a time limit, skipped when necessary, and returned after securing easier marks.
-</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
   </div>
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> reading scores improve when you stop guessing and start proving. This skill helps you find better evidence, manage time better, and avoid answer choices that only look right at first.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Reading scores improve when you stop guessing and start proving. This skill helps you find better evidence, manage time better, and avoid answer choices that only look right at first.</p>
+<p class="lesson-importance-note"><em>Real-life connection:</em> Mastering this skill helps in understanding complex texts and making informed decisions in everyday life, especially in environments that require precise reading comprehension.</p>
+<p class="lesson-importance-note"><em>Real-life connection:</em> better control of public policy and daily life language also helps outside the test, especially when you need to read, write, or speak clearly in Canada.</p>
+<p class="lesson-importance-note"><em>Real-life connection:</em> better control of public policy and daily life language also helps outside the test, especially when you need to read, write, or speak clearly in Canada.</p>
 <p class="lesson-importance-note"><em>Real-life connection:</em> better control of public policy and daily life language also helps outside the test, especially when you need to read, write, or speak clearly in Canada.</p>
 
 ## Get Feedback

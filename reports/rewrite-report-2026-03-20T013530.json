@@ -1,0 +1,100 @@
+[
+  {
+    "file": "2026-03-19-grammar-c2-precision-timed-exam-conditions.md",
+    "title": "Enhancing Grammar Precision for IELTS/CELPIP Exams",
+    "titleVerdict": "needs-improvement",
+    "suggestedTitle": "Grammar Precision for IELTS/CELPIP",
+    "titleReason": "The current title is too broad and doesn't clearly specify the focus on grammar precision in exam contexts.",
+    "relevanceIssues": [
+      "The lesson content is generally relevant to grammar precision, but the examples and strategies could be more focused on specific grammar points rather than general writing advice.",
+      "The practice lab exercises are somewhat generic and do not directly address specific grammar precision techniques under exam conditions."
+    ],
+    "changes": [
+      "Rewrote Practice Lab",
+      "Rewrote excerpt",
+      "Title: \"Enhancing Grammar Precision for IELTS/CELPIP Exams\" → \"Grammar Precision for IELTS/CELPIP\""
+    ]
+  },
+  {
+    "file": "a-an-and-the.md",
+    "title": "A, an, and the",
+    "titleVerdict": "good",
+    "suggestedTitle": "A, An, and The: Basic Article Usage",
+    "titleReason": "The title clearly identifies the grammar point being taught (articles 'a,' 'an,' and 'the') and is concise and relevant to the content of the lesson.",
+    "relevanceIssues": [
+      "The example explanations are generic and do not specifically explain why the corrections are necessary in terms of article usage.",
+      "The 'How It Works' section is mostly relevant but lacks specificity in explaining the function of articles in sentences.",
+      "The practice lab exercises use some repetitive sentences from the examples and common mistakes sections."
+    ],
+    "changes": [
+      "Rewrote How It Works teach-grid",
+      "Rewrote Examples section",
+      "Rewrote Common Mistakes section",
+      "Rewrote lesson context",
+      "Rewrote Why It Matters",
+      "Rewrote Practice Lab",
+      "Rewrote excerpt"
+    ]
+  },
+  {
+    "file": "abstract-noun-structures-with-accuracy.md",
+    "title": "Using Abstract Nouns for Precision",
+    "titleVerdict": "needs-improvement",
+    "suggestedTitle": "Using Abstract Nouns for Clarity and Precision",
+    "titleReason": "The current title is slightly misleading as it suggests a focus on precision alone, whereas the lesson also emphasizes clarity in using abstract nouns.",
+    "relevanceIssues": [
+      "Examples section: The examples provided do not focus on abstract nouns but rather on noun phrase structure and modifier order.",
+      "How It Works panels: The content primarily discusses noun phrases and modifier order rather than the use of abstract nouns specifically.",
+      "Common Mistakes section: Mistakes focus on noun phrase structure rather than errors related to abstract nouns.",
+      "Practice Lab: Exercises test noun phrase structure and modifier order, not specifically the use of abstract nouns."
+    ],
+    "changes": [
+      "Rewrote How It Works teach-grid",
+      "Rewrote Examples section",
+      "Rewrote Common Mistakes section",
+      "Rewrote lesson context",
+      "Rewrote Why It Matters",
+      "Rewrote Practice Lab",
+      "Rewrote excerpt",
+      "Title: \"Using Abstract Nouns for Precision\" → \"Using Abstract Nouns for Clarity and Precision\""
+    ]
+  },
+  {
+    "file": "academic-discussion.md",
+    "title": "Effective Vocabulary for Academic Discussions",
+    "titleVerdict": "good",
+    "suggestedTitle": "Effective Vocabulary for Academic Discussions",
+    "titleReason": "The title is clear, concise, and accurately reflects the lesson's focus on vocabulary for academic discussions, which is appropriate for the C1 level.",
+    "relevanceIssues": [],
+    "changes": [
+      "Rewrote How It Works teach-grid",
+      "Rewrote Examples section",
+      "Rewrote Common Mistakes section",
+      "Rewrote lesson context",
+      "Rewrote Why It Matters",
+      "Rewrote Practice Lab",
+      "Rewrote excerpt"
+    ]
+  },
+  {
+    "file": "academic-verbs-b1.md",
+    "title": "Academic Verbs (B1)",
+    "titleVerdict": "good",
+    "suggestedTitle": "Academic Verbs (B1)",
+    "titleReason": "The title clearly indicates the focus on academic verbs, which is appropriate for the B1 level vocabulary lesson.",
+    "relevanceIssues": [
+      "The 'How It Works' section lacks specific details about academic verbs and their usage.",
+      "The 'Common Mistakes' section is relevant but could be more specific about academic verbs.",
+      "The 'Practice Lab' exercises are relevant but could benefit from more variety and specificity in testing academic verbs."
+    ],
+    "changes": [
+      "Rewrote How It Works teach-grid",
+      "Rewrote Examples section",
+      "Rewrote Common Mistakes section",
+      "Rewrote lesson context",
+      "Rewrote Why It Matters",
+      "Rewrote Practice Lab",
+      "Rewrote excerpt"
+    ]
+  }
+]

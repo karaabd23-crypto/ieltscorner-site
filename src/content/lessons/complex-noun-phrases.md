@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-6.5"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B2 lesson on Building Longer Noun Groups with teacher-style explanation, guided practice, and topic-linked review."
+excerpt: "Learn to construct detailed noun phrases for clearer and more effective communication."
 date: "2026-02-27"
 tags: ["grammar", "b2", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
@@ -36,7 +36,7 @@ premium: false
 priceCAD: 0
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Building Longer Noun Groups</strong> helps you build clearer noun ideas. Sometimes English needs a noun form, and sometimes the noun group becomes too long or too heavy. In this lesson, you will learn how to keep noun forms accurate and readable.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Building Longer Noun Groups</strong> helps you construct detailed and clear noun phrases. Mastering this skill allows you to convey complex ideas succinctly, which is essential in both written and spoken English.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
@@ -44,48 +44,47 @@ draft: false
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The city launched a policy transport new plan.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The city launched a new public transport plan.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-card-note">The corrected sentence places the adjectives in a logical order, making the noun phrase clear and natural.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The report discussed housing affordable long-term options.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The report discussed long-term affordable housing options.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-card-note">This version correctly orders the modifiers to enhance clarity and readability.</p>
 </article>
 </div>
-
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>A good noun phrase adds detail without hiding the main noun.</p>
-<p>A noun phrase is the noun plus the words that describe or limit it. Good noun phrases carry detail efficiently, but overloaded ones become hard to read.</p>
-<p>Use noun phrases to pack meaning into a short space, especially in summaries and formal writing. The key is to keep the head noun clear while adding only useful detail.</p>
-<p>At B2 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+    <p>Building longer noun groups involves creating detailed noun phrases by adding adjectives and other modifiers to a noun. This structure allows for the succinct and clear conveyance of complex ideas in both written and spoken English. At the B2 level, mastering this skill enhances clarity and efficiency in communication.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Keep the main noun easy to identify.</li><li>Place modifiers close to the noun they describe.</li><li>If the noun phrase becomes too heavy, turn part of it into a full clause.</li></ul>
+    <ul>
+      <li>Describing complex ideas in academic writing or reports.</li>
+      <li>Summarizing detailed information in a concise manner.</li>
+      <li>Writing formal letters or professional emails.</li>
+      <li>Enhancing clarity in spoken presentations or discussions.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">The city introduced a long-term public transport plan.</div>
-<div class="lesson-pattern-sentence">Affordable housing options remain a major local issue.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">The city introduced a <strong>comprehensive urban development plan</strong>.</div>
+      <div class="lesson-pattern-sentence">The report highlighted <strong>significant environmental policy changes</strong>.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Find the head noun first.</li><li>Add only the modifiers that help the reader understand the noun.</li><li>Place modifiers in a natural order before the noun.</li><li>Move part of the phrase into a clause if the stack becomes hard to read.</li><li>Check that the noun phrase still points to one clear idea.</li></ul>
+    <ul>
+      <li>Identify the head noun first and ensure it's clear.</li>
+      <li>Place adjectives and modifiers in a logical order before the noun.</li>
+      <li>Avoid overloading the noun phrase with unnecessary details.</li>
+      <li>Convert part of the phrase into a clause if it becomes too complex.</li>
+      <li>Ensure the noun group conveys a single, clear idea.</li>
+    </ul>
   </section>
 </div>
 
@@ -122,38 +121,38 @@ draft: false
       <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
   <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Building Longer Noun Groups form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Building Longer Noun Groups form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
   <p class="practice-task-label">1. Quick pick</p>
   <h3>Choose the stronger sentence for Building Longer Noun Groups.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  The school announced a support reading after-class program.
+  The manager proposed a budget increase significant policy.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  The school announced an after-class reading support program.
+  The manager proposed a significant budget increase policy.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Residents want||a fair neighbourhood||parking system." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="The committee approved||a comprehensive||environmental strategy." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put this Building Longer Noun Groups sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="parking system." data-chip-origin="bank-1" data-chip-id="1-0">
-  parking system.
+<button type="button" class="practice-chip" data-chip-value="environmental strategy." data-chip-origin="bank-1" data-chip-id="1-0">
+  environmental strategy.
 </button>
-<button type="button" class="practice-chip" data-chip-value="a fair neighbourhood" data-chip-origin="bank-1" data-chip-id="1-1">
-  a fair neighbourhood
+<button type="button" class="practice-chip" data-chip-value="a comprehensive" data-chip-origin="bank-1" data-chip-id="1-1">
+  a comprehensive
 </button>
-<button type="button" class="practice-chip" data-chip-value="Residents want" data-chip-origin="bank-1" data-chip-id="1-2">
-  Residents want
+<button type="button" class="practice-chip" data-chip-value="The committee approved" data-chip-origin="bank-1" data-chip-id="1-2">
+  The committee approved
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -163,43 +162,34 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="typing" data-task-answers="The article described recent education policy reforms." data-task-id="2" data-correct-feedback="Correct. You repaired the sentence without changing the message." data-wrong-feedback="Not yet. Check the target form, then type the full corrected sentence.">
-  <p class="practice-task-label">3. Type the fix</p>
-  <h3>Rewrite the sentence so Building Longer Noun Groups is correct.</h3>
-  <p class="practice-source-line"><span>Fix this:</span> The article described policy education recent reforms.</p>
-  <div class="practice-input-row">
-    <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
-    <button type="button" class="practice-check-btn" data-task-check>Check</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
+
 <article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
-  <p class="practice-task-label">4. Final sort</p>
+  <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>The school announced an after-class reading support program.</p>
+  <p>The committee approved a comprehensive environmental strategy.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>The school announced a support reading after-class program.</p>
+  <p>The committee approved a strategy comprehensive environmental.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>Residents want a fair neighbourhood parking system.</p>
+  <p>The manager proposed a significant budget increase policy.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>Residents want a parking neighbourhood fair system.</p>
+  <p>The manager proposed a budget increase significant policy.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
@@ -215,7 +205,7 @@ draft: false
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> longer grammar structures can raise your score only when they stay clear. When you control <u>Building Longer Noun Groups</u>, you can add detail and shape the message without losing the reader halfway through the sentence.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering longer noun groups enhances your ability to communicate complex ideas clearly and effectively. This skill is crucial for achieving higher scores in exams and for professional communication where precision and detail are valued.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

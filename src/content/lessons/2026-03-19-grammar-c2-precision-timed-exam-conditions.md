@@ -1,11 +1,11 @@
 ---
-title: "Precision Under Timed Exam Conditions"
+title: "Enhancing Grammar Precision for IELTS/CELPIP"
 category: "grammar"
-level: "C2"
+level: "B2"
 ieltsBand: "8.5-9.0"
 clb: "11-12"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Master precision in grammar for success in IELTS and CELPIP under timed conditions."
+excerpt: "Learn how to enhance grammatical precision for IELTS and CELPIP exams, focusing on tense consistency, specific vocabulary, and sentence clarity."
 date: "2026-03-19"
 tags: ["grammar", "IELTS", "CELPIP", "exam preparation", "advanced English"]
 heroTip: "⏳ Practice makes perfect: refine your grammar under pressure!"
@@ -67,7 +67,7 @@ Precision in grammar involves using the correct structures and tenses to express
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">Self-mark each task. You can retry until every answer is correct.</p>
+      <p class="practice-lab-intro">Test your ability to enhance grammatical precision under exam conditions. Self-mark each task and aim for accuracy.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
@@ -75,50 +75,57 @@ Precision in grammar involves using the correct structures and tenses to express
     </div>
   </div>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The second sentence specifies the type of store, enhancing precision." data-wrong-feedback="Not yet. Consider how specificity improves clarity.">
-  <p class="practice-task-label">1. Quick pick</p>
-  <h3>Which sentence is more precise?</h3>
-  <div class="practice-choice-grid">
-<button type="button" class="practice-choice" data-choice-index="0">
-  He went to the store.
-</button>
-<button type="button" class="practice-choice" data-choice-index="1">
-  He went to the grocery store.
-</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
-<article class="practice-task" data-task-type="typing" data-task-answers="doesn't||does not||she doesn't like apples||she does not like apples" data-task-id="2" data-correct-feedback="Correct. The correct form is 'doesn't' for third-person singular." data-wrong-feedback="Not yet. Replace 'don't' with the correct third-person form.">
-  <p class="practice-task-label">2. Type the fix</p>
-  <h3>What word should replace "don't" in this sentence?</h3>
-  <p class="practice-source-line"><span>Fix this:</span> She don't like apples.</p>
-  <div class="practice-input-row">
-    <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
-    <button type="button" class="practice-check-btn" data-task-check>Check</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
-<article class="practice-task" data-task-type="order" data-task-answer="The cake||was eaten||by the children." data-task-id="3" data-correct-feedback="Correct. This sentence is in the passive voice, emphasizing the action." data-wrong-feedback="Not yet. Review how passive voice structures work.">
-  <p class="practice-task-label">3. Build it</p>
-  <h3>Put the sentence in the correct order.</h3>
-  <p class="practice-task-note">Tap a chunk to move it between the bank and answer area.</p>
-  <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="was eaten" data-chip-id="3-0">
-  was eaten
-</button>
-<button type="button" class="practice-chip" data-chip-value="The cake" data-chip-id="3-1">
-  The cake
-</button>
-<button type="button" class="practice-chip" data-chip-value="by the children." data-chip-id="3-2">
-  by the children.
-</button>
-  </div>
-  <div class="practice-chip-answer" data-order-answer></div>
-  <div class="practice-task-actions">
-    <button type="button" class="practice-check-btn" data-task-check>Check</button>
-    <button type="button" class="practice-clear-btn" data-task-clear>Clear</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
+    <article class="practice-task" data-task-type="choice" data-task-answer="0" data-task-id="1" data-correct-feedback="Correct. The first sentence uses specific vocabulary for clarity." data-wrong-feedback="Not yet. Consider how specificity improves clarity.">
+      <p class="practice-task-label">1. Quick pick</p>
+      <h3>Which sentence is more precise?</h3>
+      <div class="practice-choice-grid">
+        <button type="button" class="practice-choice" data-choice-index="0">
+          The scientist conducted an experiment on climate change.
+        </button>
+        <button type="button" class="practice-choice" data-choice-index="1">
+          The scientist did something about the environment.
+        </button>
+      </div>
+      <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+    </article>
+    <article class="practice-task" data-task-type="order" data-task-answer="The presentation||was delivered||by the professor." data-task-id="2" data-correct-feedback="Correct. This sentence uses the passive voice to emphasize the action." data-wrong-feedback="Not yet. Review how passive voice structures work.">
+      <p class="practice-task-label">2. Build it</p>
+      <h3>Put the sentence in the correct order.</h3>
+      <p class="practice-task-note">Tap a chunk to move it between the bank and answer area.</p>
+      <div class="practice-chip-bank" data-order-bank>
+        <button type="button" class="practice-chip" data-chip-value="was delivered" data-chip-id="3-0">
+          was delivered
+        </button>
+        <button type="button" class="practice-chip" data-chip-value="The presentation" data-chip-id="3-1">
+          The presentation
+        </button>
+        <button type="button" class="practice-chip" data-chip-value="by the professor." data-chip-id="3-2">
+          by the professor.
+        </button>
+      </div>
+      <div class="practice-chip-answer" data-order-answer></div>
+      <div class="practice-task-actions">
+        <button type="button" class="practice-check-btn" data-task-check>Check</button>
+        <button type="button" class="practice-clear-btn" data-task-clear>Clear</button>
+      </div>
+      <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+    </article>
+    <article class="practice-task" data-task-type="sort" data-task-answer="Correct:She has completed the assignment||Incorrect:She have completed the assignment" data-task-id="3" data-correct-feedback="Correct. Subject-verb agreement is essential for precision." data-wrong-feedback="Not yet. Pay attention to subject-verb agreement.">
+      <p class="practice-task-label">3. Sort it</p>
+      <h3>Sort the sentences into correct and incorrect categories.</h3>
+      <div class="practice-sort-categories" data-sort-categories="Correct||Incorrect">
+        <button type="button" class="practice-sort-item" data-sort-value="She has completed the assignment">
+          She has completed the assignment
+        </button>
+        <button type="button" class="practice-sort-item" data-sort-value="She have completed the assignment">
+          She have completed the assignment
+        </button>
+      </div>
+      <div class="practice-task-actions">
+        <button type="button" class="practice-check-btn" data-task-check>Check</button>
+        <button type="button" class="practice-clear-btn" data-task-clear>Clear</button>
+      </div>
+      <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+    </article>
   </div>
 </div>

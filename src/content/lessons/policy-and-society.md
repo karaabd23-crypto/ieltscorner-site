@@ -1,11 +1,11 @@
 ---
-title: "Policy and Society"
+title: "Key Vocabulary for Policy and Society"
 category: "vocabulary"
-level: "C1"
+level: "B2"
 ieltsBand: "7.0-8.0"
 clb: "9-10"
 exam: ["IELTS", "CELPIP"]
-excerpt: "C1 vocabulary lesson on Policy and Society with a practical word bank, collocations, and retrieval practice."
+excerpt: "Enhance your vocabulary for discussing societal issues and government policies with key terms for clarity and precision."
 date: "2026-02-27"
 tags: ["vocabulary", "c1", "exam-prep", "ielts", "celpip"]
 heroTip: "Learn words with their partner phrases and one model sentence, not as isolated items."
@@ -36,56 +36,57 @@ premium: true
 priceCAD: 12
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Policy and Society</strong> is about the words and phrases you need for real English. This lesson shows what the key words mean, where they fit, and how to use them in natural sentences without sounding forced.</p></div>
+<div class="lesson-context">
+  <p class="lesson-context-lead"><strong>Policy and Society</strong> focuses on vocabulary essential for discussing societal issues and government policies. This lesson helps you understand key terms and use them effectively in sentences to enhance clarity and precision.</p>
+</div>
 
 ## Examples
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>The city spent money on help for local people.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>The city increased public funding for a community program.</p>
-  <p class="lesson-card-note">The stronger version names the real meaning instead of staying vague.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>The city increased <strong>public funding</strong> for a <strong>community program</strong>.</p>
+  <p class="lesson-card-note">The stronger version specifies the type of funding and program, making it more precise.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>Not enough houses made life hard for many families.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>A housing shortage placed pressure on many families.</p>
-  <p class="lesson-card-note">The better sentence sounds more natural for a real task and a real reader.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>A <strong>housing shortage</strong> placed pressure on many families.</p>
+  <p class="lesson-card-note">The improved sentence uses precise vocabulary to describe the issue.</p>
 </article>
 </div>
-
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>This lesson helps you say the same idea with sharper, more natural vocabulary.</p>
-<p>Policy and Society teaches topic words and useful chunks that help you describe a real everyday subject more clearly.</p>
-<p>Use this vocabulary when you need topic-appropriate wording instead of vague general words in speaking or writing.</p>
-<p>At C1 level, learn fewer words but learn them well: meaning, collocation, and one model sentence.</p>
+    <p>This lesson focuses on vocabulary related to policy and society, crucial for discussing government actions and societal issues.</p>
+    <p>These terms help articulate complex ideas with clarity and precision, enhancing both written and spoken communication.</p>
+    <p>Understanding these words at a B2 level is essential for engaging in informed discussions and academic writing.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Choose the word from the exact meaning you need.</li><li>Learn each word with a collocation or model sentence.</li><li>Replace vague language only when the new word is accurate and natural.</li></ul>
+    <ul>
+      <li>Discussing government policies or societal challenges in essays or reports.</li>
+      <li>Engaging in debates or discussions about social issues.</li>
+      <li>Writing formal letters or applications related to public policy.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">A more precise word usually makes a sentence about Policy and Society easier to trust.</div>
-<div class="lesson-pattern-sentence">Topic vocabulary becomes useful when you can use it in a real sentence quickly.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">The government <strong>implemented</strong> a new policy to address climate change.</div>
+      <div class="lesson-pattern-sentence">There is a significant <strong>income disparity</strong> affecting urban areas.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Choose the meaning first before you choose the word.</li><li>Learn the word with a natural collocation or partner phrase.</li><li>Use the new word in one short sentence right away.</li><li>Replace vague words only when the new word stays accurate.</li><li>Keep the register stable so the language fits the task.</li></ul>
+    <ul>
+      <li>Use precise vocabulary to clearly convey policy impacts.</li>
+      <li>Combine terms with appropriate collocations for natural expression.</li>
+      <li>Avoid vague terms; specify the issue or policy.</li>
+      <li>Ensure the vocabulary matches the formality of the context.</li>
+    </ul>
   </section>
 </div>
 
@@ -95,7 +96,7 @@ draft: false
   <p class="lesson-card-label">Common problem 1</p>
   <h3>using broad policy words instead of the exact social issue</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The city tried to fix community problems.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The city launched a youth support program to reduce dropout rates.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The city launched a <strong>youth support program</strong> to reduce <strong>dropout rates</strong>.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> name the exact service or issue directly</p>
 </article>
 <article class="lesson-error-card">
@@ -109,7 +110,7 @@ draft: false
   <p class="lesson-card-label">Common problem 3</p>
   <h3>treating social vocabulary like abstract labels</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Funding, support, housing, awareness.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>More public funding improved housing support for low-income families.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>More <strong>public funding</strong> improved <strong>housing support</strong> for low-income families.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> build a real policy sentence with the topic words</p>
 </article>
 </div>
@@ -128,7 +129,7 @@ draft: false
   </div>
   <p class="practice-lab-coach">Use words that sound natural together. Precision is more important than difficulty.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="0" data-task-id="0">
+<article class="practice-task" data-task-type="choice" data-task-answer="0" data-task-id="1">
   <p class="practice-task-label">1. Quick pick</p>
   <h3>Which term means money from the government?</h3>
   <div class="practice-choice-grid">
@@ -144,25 +145,22 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Social support works||best when the||meaning is clear||in the||sentence." data-task-id="1">
+<article class="practice-task" data-task-type="order" data-task-answer="The government implemented||a new policy||to address||climate change." data-task-id="2">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put the sentence in a natural order.</h3>
   <p class="practice-task-note">Put the chunks in the natural order.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="in the" data-chip-origin="bank-1" data-chip-id="1-0">
-  in the
+<button type="button" class="practice-chip" data-chip-value="a new policy" data-chip-origin="bank-1" data-chip-id="1-0">
+  a new policy
 </button>
-<button type="button" class="practice-chip" data-chip-value="Social support works" data-chip-origin="bank-1" data-chip-id="1-1">
-  Social support works
+<button type="button" class="practice-chip" data-chip-value="The government implemented" data-chip-origin="bank-1" data-chip-id="1-1">
+  The government implemented
 </button>
-<button type="button" class="practice-chip" data-chip-value="best when the" data-chip-origin="bank-1" data-chip-id="1-2">
-  best when the
+<button type="button" class="practice-chip" data-chip-value="to address" data-chip-origin="bank-1" data-chip-id="1-2">
+  to address
 </button>
-<button type="button" class="practice-chip" data-chip-value="sentence." data-chip-origin="bank-1" data-chip-id="1-3">
-  sentence.
-</button>
-<button type="button" class="practice-chip" data-chip-value="meaning is clear" data-chip-origin="bank-1" data-chip-id="1-4">
-  meaning is clear
+<button type="button" class="practice-chip" data-chip-value="climate change." data-chip-origin="bank-1" data-chip-id="1-3">
+  climate change.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -172,13 +170,22 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="typing" data-task-answers="language" data-task-id="2">
-  <p class="practice-task-label">3. Type the missing word</p>
-  <h3>Complete the useful chunk: use precise _____</h3>
-  <p class="practice-source-line"><span>Fix this:</span> social support: help for people in difficulty</p>
-  <div class="practice-input-row">
-    <input type="text" class="practice-input" data-typing-input placeholder="Type one word" />
-    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+<article class="practice-task" data-task-type="sort" data-task-answer="Positive:public funding,community support||Negative:housing shortage,income disparity" data-sort-categories="Positive||Negative" data-task-id="3">
+  <p class="practice-task-label">3. Sort it</p>
+  <h3>Sort the terms into positive and negative impacts.</h3>
+  <div class="practice-sort-grid">
+<button type="button" class="practice-sort-item" data-sort-value="public funding">
+  public funding
+</button>
+<button type="button" class="practice-sort-item" data-sort-value="housing shortage">
+  housing shortage
+</button>
+<button type="button" class="practice-sort-item" data-sort-value="community support">
+  community support
+</button>
+<button type="button" class="practice-sort-item" data-sort-value="income disparity">
+  income disparity
+</button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
@@ -186,7 +193,7 @@ draft: false
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> good vocabulary is not just about knowing a word. You need the <em>right</em> word in the <em>right</em> sentence. When you control Policy and Society, you sound clearer, more natural, and more precise in real English.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering vocabulary related to policy and society allows you to communicate complex ideas clearly and accurately. This precision is crucial for academic writing, professional communication, and informed discussions.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

@@ -1,11 +1,11 @@
 ---
-title: "Communication"
+title: "Key Vocabulary for Effective Communication"
 category: "vocabulary"
-level: "B1"
+level: "B2"
 ieltsBand: "5.0-6.0"
 clb: "6-7"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B1 vocabulary lesson on Communication with a practical word bank, collocations, and retrieval practice."
+excerpt: "Learn key vocabulary to express ideas clearly and effectively in English communication."
 date: "2026-02-27"
 tags: ["vocabulary", "b1", "exam-prep", "ielts", "celpip"]
 heroTip: "Learn words with their partner phrases and one model sentence, not as isolated items."
@@ -36,56 +36,56 @@ premium: false
 priceCAD: 0
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Communication</strong> is about the words and phrases you need for real English. This lesson shows what the key words mean, where they fit, and how to use them in natural sentences without sounding forced.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Communication</strong> focuses on essential vocabulary for expressing ideas clearly and effectively in English. This lesson helps you understand key terms, their contexts, and how to use them naturally in sentences.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>Her speaking style caused people to not understand her.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Her unclear tone of voice caused a misunderstanding.</p>
-  <p class="lesson-card-note">The stronger version names the real meaning instead of staying vague.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Her <strong>inarticulate</strong> speaking style led to misunderstandings.</p>
+  <p class="lesson-card-note">The stronger version uses a precise adjective to describe her speaking style.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>He is good in group work because people can trust him.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>He is reliable in group work and gives clear feedback.</p>
-  <p class="lesson-card-note">The better sentence sounds more natural for a real task and a real reader.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>He is <strong>dependable</strong> in group work and provides <strong>clear</strong> feedback.</p>
+  <p class="lesson-card-note">The improved sentence uses specific vocabulary to describe his qualities.</p>
 </article>
 </div>
-
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>This lesson helps you say the same idea with sharper, more natural vocabulary.</p>
-<p>Communication teaches topic words and useful chunks that help you describe a real everyday subject more clearly.</p>
-<p>Use this vocabulary when you need topic-appropriate wording instead of vague general words in speaking or writing.</p>
-<p>At B1 level, learn fewer words but learn them well: meaning, collocation, and one model sentence.</p>
+    <p>This lesson focuses on vocabulary that enhances clarity and precision in communication, crucial for expressing ideas effectively in English.</p>
+    <p>It highlights words and phrases that facilitate understanding in both spoken and written forms.</p>
+    <p>At a B2 level, mastering this vocabulary enables more nuanced and complex discussions.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Choose the word from the exact meaning you need.</li><li>Learn each word with a collocation or model sentence.</li><li>Replace vague language only when the new word is accurate and natural.</li></ul>
+    <ul>
+      <li>Describing specific traits or actions in professional or academic settings.</li>
+      <li>Providing detailed feedback or instructions in a work environment.</li>
+      <li>Engaging in debates or discussions that require precise language.</li>
+      <li>Writing reports or essays where clarity and detail are essential.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">A more precise word usually makes a sentence about Communication easier to trust.</div>
-<div class="lesson-pattern-sentence">Topic vocabulary becomes useful when you can use it in a real sentence quickly.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">Her <strong>articulate</strong> explanation made the complex topic easy to understand.</div>
+      <div class="lesson-pattern-sentence">Providing <strong>constructive feedback</strong> is essential for team improvement.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Choose the meaning first before you choose the word.</li><li>Learn the word with a natural collocation or partner phrase.</li><li>Use the new word in one short sentence right away.</li><li>Replace vague words only when the new word stays accurate.</li><li>Keep the register stable so the language fits the task.</li></ul>
+    <ul>
+      <li>Use specific vocabulary to replace vague terms for clarity.</li>
+      <li>Pair new words with common collocations for natural use.</li>
+      <li>Ensure vocabulary fits the context and audience for effective communication.</li>
+      <li>Practice using new terms in sentences to reinforce learning and retention.</li>
+    </ul>
   </section>
 </div>
 
@@ -93,24 +93,24 @@ draft: false
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>using abstract praise instead of a visible behavior or trait</h3>
+  <h3>Using vague adjectives instead of precise descriptors</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>She is nice in groups.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>She is thoughtful and gives useful feedback in group discussions.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> choose the word that names the actual behavior</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>She is <strong>supportive</strong> and provides <strong>valuable insights</strong> in group discussions.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use adjectives that specify the behavior or trait.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using communication words without the real situation</h3>
+  <h3>Using general terms without context</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Feedback is important.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Clear feedback helped the team correct the final slide before the meeting.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> attach the term to a real interaction</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span><strong>Constructive feedback</strong> helped the team enhance the project outcome.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Attach the term to a specific situation or outcome.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>mixing personality and communication vocabulary loosely</h3>
+  <h3>Mixing unrelated vocabulary</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>He is adaptable in feedback and active listening personality.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>He is adaptable, and his active listening helps the team solve problems quickly.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> keep each term in a sentence where its role is clear</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>He is <strong>adaptable</strong>, and his <strong>active listening skills</strong> enhance team collaboration.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Ensure each term fits the context and complements the sentence.</p>
 </article>
 </div>
 
@@ -119,16 +119,16 @@ draft: false
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">Start with meaning. Then move to collocations and sentence control for Communication.</p>
+      <p class="practice-lab-intro">Focus on using precise vocabulary in communication contexts.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Use words that sound natural together. Precision is more important than difficulty.</p>
+  <p class="practice-lab-coach">Choose words that convey precise meanings in context.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="0" data-task-id="0">
+<article class="practice-task" data-task-type="choice" data-task-answer="0" data-task-id="1">
   <p class="practice-task-label">1. Quick pick</p>
   <h3>Which term means comments used for improvement?</h3>
   <div class="practice-choice-grid">
@@ -144,22 +144,22 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Clarify works best||when the meaning||is clear in||the sentence." data-task-id="1">
+<article class="practice-task" data-task-type="order" data-task-answer="Effective communication||requires clear||and precise vocabulary||use." data-task-id="2">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put the sentence in a natural order.</h3>
   <p class="practice-task-note">Put the chunks in the natural order.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="is clear in" data-chip-origin="bank-1" data-chip-id="1-0">
-  is clear in
+<button type="button" class="practice-chip" data-chip-value="Effective communication" data-chip-origin="bank-1" data-chip-id="1-0">
+  Effective communication
 </button>
-<button type="button" class="practice-chip" data-chip-value="the sentence." data-chip-origin="bank-1" data-chip-id="1-1">
-  the sentence.
+<button type="button" class="practice-chip" data-chip-value="requires clear" data-chip-origin="bank-1" data-chip-id="1-1">
+  requires clear
 </button>
-<button type="button" class="practice-chip" data-chip-value="Clarify works best" data-chip-origin="bank-1" data-chip-id="1-2">
-  Clarify works best
+<button type="button" class="practice-chip" data-chip-value="and precise vocabulary" data-chip-origin="bank-1" data-chip-id="1-2">
+  and precise vocabulary
 </button>
-<button type="button" class="practice-chip" data-chip-value="when the meaning" data-chip-origin="bank-1" data-chip-id="1-3">
-  when the meaning
+<button type="button" class="practice-chip" data-chip-value="use." data-chip-origin="bank-1" data-chip-id="1-3">
+  use.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -169,13 +169,14 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="typing" data-task-answers="language" data-task-id="2">
-  <p class="practice-task-label">3. Type the missing word</p>
-  <h3>Complete the useful chunk: use precise _____</h3>
-  <p class="practice-source-line"><span>Fix this:</span> clarify: make a point easier to understand</p>
-  <div class="practice-input-row">
-    <input type="text" class="practice-input" data-typing-input placeholder="Type one word" />
-    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+<article class="practice-task" data-task-type="sort" data-task-answer="Positive Traits:articulate,dependable||Negative Traits:inarticulate,unreliable" data-sort-categories="Positive Traits||Negative Traits" data-task-id="3">
+  <p class="practice-task-label">3. Sort it</p>
+  <h3>Sort the words into positive and negative communication traits.</h3>
+  <div class="practice-sort-grid">
+<button type="button" class="practice-sort-item" data-sort-index="0">articulate</button>
+<button type="button" class="practice-sort-item" data-sort-index="1">inarticulate</button>
+<button type="button" class="practice-sort-item" data-sort-index="2">dependable</button>
+<button type="button" class="practice-sort-item" data-sort-index="3">unreliable</button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
@@ -183,7 +184,7 @@ draft: false
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> good vocabulary is not just about knowing a word. You need the <em>right</em> word in the <em>right</em> sentence. When you control Communication, you sound clearer, more natural, and more precise in real English.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering communication vocabulary is crucial for expressing yourself clearly and effectively in English. It enables you to convey precise meanings and engage confidently in various real-world situations, from professional environments to everyday interactions.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

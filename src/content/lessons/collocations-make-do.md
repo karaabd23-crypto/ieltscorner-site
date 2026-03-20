@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Master the collocations with make and do to enhance your fluency and naturalness in English communication."
+excerpt: "Master the collocations 'make' and 'do' to enhance fluency and naturalness in English communication."
 date: "2026-03-02"
 tags: ["vocabulary", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Learn words with their partner phrases and one model sentence, not as isolated items."
@@ -57,8 +57,7 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Collocations with "make" and "do" refer to specific word pairings that are commonly used in English. They help convey precise meaning and sound natural in conversation.</p>
-    <p>For example, we say "make a decision" instead of "do a decision." Understanding these collocations is crucial at the B2 level to enhance fluency and accuracy.</p>
+    <p>Collocations with "make" and "do" are specific word pairings commonly used in English to convey precise meanings and sound natural. For example, we say "make a decision" instead of "do a decision." Mastery of these collocations is crucial at the B2 level to enhance fluency and accuracy.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>

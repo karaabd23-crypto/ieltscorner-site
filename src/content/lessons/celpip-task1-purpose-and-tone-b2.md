@@ -1,11 +1,11 @@
 ---
-title: "CELPIP Task 1: Purpose and Tone (B2)"
+title: "CELPIP Task 1: Matching Purpose and Tone"
 category: "writing"
 level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Choose the right purpose and tone in CELPIP emails so the message sounds polite, useful, and score-safe."
+excerpt: "Learn to align your message's purpose and tone for CELPIP Task 1, ensuring clarity and professionalism to enhance your exam score."
 date: "2026-03-17"
 tags: ["writing", "b2", "celpip", "email", "tone", "task1"]
 heroTip: "Read the situation first: are you requesting, apologizing, complaining, or inviting?"
@@ -35,56 +35,57 @@ quiz:
     correctIndex: 0
     explanation: "A paragraph reads better when each sentence does one clear piece of work."
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>CELPIP Task 1: Purpose and Tone</strong> helps you match the message to the situation. In email tasks, the examiner checks whether your tone fits the purpose and the reader. In this lesson, you will learn how to sound polite, clear, and natural in the right situation.</p></div>
+<div class="lesson-context">
+  <p class="lesson-context-lead"><strong>CELPIP Task 1: Matching Purpose and Tone</strong> helps you align your message with the situation, ensuring your tone fits both the purpose and the reader. In this lesson, you'll learn how to sound polite, clear, and natural in the appropriate context.</p>
+</div>
 
 ## Examples
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>This approach seems useful because it helps people in several ways.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Focused investment can improve access, reliability, and quality of life.</p>
-  <p class="lesson-card-note">The stronger sentence gives the paragraph a clear direction.</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Hey! Just wanted to check if u got my stuff. Let me know ASAP!</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>I am writing to confirm whether my documents have been received. I would appreciate a response at your earliest convenience.</p>
+  <p class="lesson-card-note">The stronger sentence matches the formal tone required for professional communication.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>For example, one local program made services better for residents.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>A pilot program improved service response times in one local district.</p>
-  <p class="lesson-card-note">The better version develops the idea instead of circling around it.</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Just checking in to see if you got my email.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>I am writing to follow up on the email I sent last week regarding the meeting schedule.</p>
+  <p class="lesson-card-note">The better version states the purpose clearly and uses a formal tone.</p>
 </article>
 </div>
 
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>This lesson focuses on one writing move that changes clarity and score at the same time.</p>
-<p>This writing skill matters because exam readers reward control: clear task response, focused support, and readable structure. A strong response tells the reader exactly what it is doing and develops that message with specific support instead of vague general statements.</p>
-<p>Use this lesson when you want a more reliable writing process under time pressure. Plan the function of the response first, then build paragraphs that each do one job. That makes editing easier because you can test not only language but also structure.</p>
-<p>At B2 level, stronger writing comes from better paragraph control, not from simply making the language longer.</p>
+    <p>Matching purpose and tone in writing ensures that your language and style align with your message's goal and audience. This skill is essential for effective communication in CELPIP Task 1, where clarity and appropriateness of tone can significantly impact your score.</p>
+    <p>At the B2 level, mastering this skill helps you produce responses that are not only grammatically correct but also contextually appropriate, enhancing the overall quality of your writing.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Start by identifying the exact job of the task or paragraph.</li><li>Keep support specific enough to prove the point rather than decorate it.</li><li>Check that every sentence moves the response toward its purpose.</li></ul>
+    <ul>
+      <li>Writing formal emails or letters where the tone must match the recipient's expectations.</li>
+      <li>Responding to tasks that require a specific tone, such as complaints or requests.</li>
+      <li>Ensuring your writing is clear and professional in exam settings.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Focused investment can improve access, reliability, and quality of life.</div>
-<div class="lesson-pattern-sentence">A pilot program improved service response times in one local district.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence"><strong>I am writing to request</strong> a one-week extension on my project submission.</div>
+      <div class="lesson-pattern-sentence"><strong>I would appreciate a response</strong> at your earliest convenience.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Turn the task into one clear response purpose.</li><li>Plan the main points before drafting sentences.</li><li>Develop each point with explanation and a concrete example or consequence.</li><li>Use transitions only when they reflect real logic.</li><li>Edit for clarity, support, and sentence control in that order.</li></ul>
+    <ul>
+      <li>Always identify the purpose of your message before writing.</li>
+      <li>Match your tone to the audience and purpose of the task.</li>
+      <li>Use formal language for professional or academic contexts.</li>
+      <li>Ensure every sentence supports the overall purpose of the message.</li>
+    </ul>
   </section>
 </div>
 
@@ -92,21 +93,21 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>using informal language in a formal email context</h3>
+  <h3>Using informal language in a formal email context</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Hey! Just wanted to check if u got my stuff. Let me know ASAP!</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>I am writing to confirm whether my documents have been received. I would appreciate a response at your earliest convenience.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Match the tone to the audience: formal register for supervisors, clients, or landlords; informal only for close friends.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Match the tone to the audience: use a formal register for supervisors, clients, or landlords; informal only for close friends.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>failing to state the purpose of the email in the first sentence</h3>
+  <h3>Failing to state the purpose of the email in the first sentence</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>I hope you are doing well. The weather has been nice lately.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>I am writing to request a one-week extension on my project submission.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> State the email's purpose in the first sentence — do not lead with pleasantries in a formal task.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>mixing formal and informal tone in the same email</h3>
+  <h3>Mixing formal and informal tone in the same email</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>I am writing to formally request a refund. Also, this is super annoying and I can't believe it happened.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>I am writing to request a refund for the damaged item I received. I was disappointed by the condition of the package upon delivery.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> Choose one tone and maintain it throughout. Formal complaints use measured, factual language.</p>
@@ -118,44 +119,44 @@ quiz:
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">Begin with purpose. Then check the order and cut anything that does not help the paragraph.</p>
+      <p class="practice-lab-intro">Begin with purpose. Then check the tone and ensure it aligns with the intended audience.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">If a sentence has no clear job, it should change or disappear.</p>
+  <p class="practice-lab-coach">If a sentence does not match the intended tone, it should be revised.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger move for CELPIP Task 1: Purpose and Tone.</h3>
+  <h3>Choose the sentence that best matches a formal tone.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  Keep the idea vague and hope the reader understands.
+  Hey! Just checking if you got my stuff.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  Focused investment can improve access, reliability, and quality of life.
+  I am writing to confirm whether my documents have been received.
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  Let me know if you got it.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Turn the task into one clear response purpose.||Plan the main points before drafting sentences.||Develop each point with explanation and a concrete example or consequence.||Use transitions only when they reflect real logic." data-task-id="1">
+<article class="practice-task" data-task-type="order" data-task-answer="State the purpose clearly in the first sentence.||Use formal language throughout.||Ensure all sentences support the main purpose." data-task-id="2">
   <p class="practice-task-label">2. Build the flow</p>
-  <h3>Put these moves in a helpful order.</h3>
-  <p class="practice-task-note">Put the chunks in the natural order.</p>
+  <h3>Put these steps in the correct order for writing a formal email.</h3>
+  <p class="practice-task-note">Arrange the steps logically.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="Plan the main points before drafting sentences." data-chip-origin="bank-1" data-chip-id="1-0">
-  Plan the main points before drafting sentences.
+<button type="button" class="practice-chip" data-chip-value="State the purpose clearly in the first sentence." data-chip-origin="bank-2" data-chip-id="2-0">
+  State the purpose clearly in the first sentence.
 </button>
-<button type="button" class="practice-chip" data-chip-value="Turn the task into one clear response purpose." data-chip-origin="bank-1" data-chip-id="1-1">
-  Turn the task into one clear response purpose.
+<button type="button" class="practice-chip" data-chip-value="Use formal language throughout." data-chip-origin="bank-2" data-chip-id="2-1">
+  Use formal language throughout.
 </button>
-<button type="button" class="practice-chip" data-chip-value="Use transitions only when they reflect real logic." data-chip-origin="bank-1" data-chip-id="1-2">
-  Use transitions only when they reflect real logic.
-</button>
-<button type="button" class="practice-chip" data-chip-value="Develop each point with explanation and a concrete example or consequence." data-chip-origin="bank-1" data-chip-id="1-3">
-  Develop each point with explanation and a concrete example or consequence.
+<button type="button" class="practice-chip" data-chip-value="Ensure all sentences support the main purpose." data-chip-origin="bank-2" data-chip-id="2-2">
+  Ensure all sentences support the main purpose.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -165,33 +166,33 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="sort" data-task-id="2">
+<article class="practice-task" data-task-type="sort" data-task-answer="Helpful:Use formal language throughout,Ensure all sentences support the main purpose||Not helpful:Add informal comments,Use vague language" data-task-id="3">
   <p class="practice-task-label">3. Final sort</p>
-  <h3>Sort these habits into helpful or not helpful.</h3>
+  <h3>Sort these habits into helpful or not helpful for maintaining a formal tone.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>Turn the task into one clear response purpose.</p>
+  <p>Use formal language throughout.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="1">
-  <p>Plan the main points before drafting sentences.</p>
+  <p>Ensure all sentences support the main purpose.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="2">
-  <p>Add a new reason in the middle of the paragraph to sound richer.</p>
+  <p>Add informal comments.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>Use a broad example even when it does not prove the point clearly.</p>
+  <p>Use vague language.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
@@ -203,24 +204,11 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="3">
-  <p class="practice-task-label">4. Last check</p>
-  <h3>Choose the sentence that sounds more controlled.</h3>
-  <div class="practice-choice-grid">
-<button type="button" class="practice-choice" data-choice-index="0">
-  This point is important in many ways and that is all.
-</button>
-<button type="button" class="practice-choice" data-choice-index="1">
-  A pilot program improved service response times in one local district.
-</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
   </div>
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> the right grammar is not enough if the tone is wrong. When the tone matches the purpose and the reader, your email feels more natural, more professional, and much safer for the score.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> The right tone enhances clarity and professionalism. When your tone matches the purpose and audience, your message is more likely to be understood and well-received, which can significantly improve your score in CELPIP Task 1 by demonstrating effective communication skills.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

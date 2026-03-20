@@ -1,0 +1,22 @@
+[
+  {
+    "file": "transitions-addition-b1.md",
+    "title": "Using Addition Transitions Effectively",
+    "titleVerdict": "good",
+    "suggestedTitle": "Using Addition Transitions Effectively",
+    "titleReason": "The title is clear, concise, and accurately reflects the lesson's focus on teaching how to use addition transitions in writing.",
+    "relevanceIssues": [
+      "The Practice Lab includes a task on contrast linkers, which is off-topic for a lesson on addition transitions.",
+      "The Practice Lab intro text is generic and does not specifically reference addition transitions."
+    ],
+    "changes": [
+      "Rewrote How It Works teach-grid",
+      "Rewrote Examples section",
+      "Rewrote Common Mistakes section",
+      "Rewrote lesson context",
+      "Rewrote Why It Matters",
+      "Rewrote Practice Lab",
+      "Rewrote excerpt"
+    ]
+  }
+]

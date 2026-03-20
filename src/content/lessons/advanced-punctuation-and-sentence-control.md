@@ -1,11 +1,11 @@
 ---
-title: "Punctuation and Sentence Control"
+title: "Effective Punctuation for Sentence Clarity"
 category: "grammar"
-level: "C1"
+level: "B2"
 ieltsBand: "7.0-8.0"
 clb: "9-10"
 exam: ["IELTS", "CELPIP"]
-excerpt: "C1 lesson on Punctuation and Sentence Control with teacher-style explanation, guided practice, and topic-linked review."
+excerpt: "Learn how effective punctuation enhances sentence clarity and professionalism at the B2 level."
 date: "2026-02-27"
 tags: ["grammar", "c1", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
@@ -36,7 +36,7 @@ premium: true
 priceCAD: 12
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Punctuation and Sentence Control</strong> helps the reader see where ideas start, stop, and connect. Punctuation looks small, but it changes clarity quickly. In this lesson, you will learn how to use these marks to make your writing easier to follow.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Effective Punctuation for Sentence Clarity</strong> ensures that your writing is easily understood and professional. Proper punctuation marks help readers navigate through your ideas, enhancing both clarity and coherence. This lesson will guide you in using punctuation marks effectively to improve the readability and precision of your sentences.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
@@ -44,48 +44,48 @@ draft: false
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The pilot reduced delays, however the old route still needs repairs.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The pilot reduced delays; however, the old route still needs repairs.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-card-note">A semicolon is needed before 'however' to correctly link two independent clauses.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The council approved three changes, more buses, better lighting and longer hours.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The council approved three changes: more buses, better lighting, and longer hours.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-card-note">A colon introduces the list, and commas separate the items clearly.</p>
 </article>
 </div>
-
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Punctuation should guide the reader through the sentence, not decorate it.</p>
-<p>Punctuation controls how ideas are separated, linked, and highlighted on the page. It is not decoration; it tells the reader how the sentence should be read.</p>
-<p>Use punctuation to show complete clauses, lists, possession, pauses, and emphasis more clearly. The correct mark depends on the grammar around it, not on where you want to pause when speaking.</p>
-<p>At C1 level, use this structure for precision and logic, not for decorative complexity.</p>
+    <p>Punctuation involves using symbols like commas, semicolons, and colons to organize and clarify written communication. It defines sentence structure, indicating where ideas begin and end, and how they relate to each other. At the B2 level, mastering punctuation is essential for writing clear, coherent, and professional texts.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Check clause completeness before you choose marks such as semicolons or colons.</li><li>Use commas only when the grammar calls for them, not just because the sentence feels long.</li><li>Treat apostrophes and capital letters as meaning signals, not style choices.</li></ul>
+    <ul>
+      <li>Linking independent clauses with a semicolon.</li>
+      <li>Introducing a list or explanation with a colon.</li>
+      <li>Separating items in a list with commas.</li>
+      <li>Indicating possession or contractions with apostrophes.</li>
+      <li>Emphasizing a point with dashes or parentheses.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">The route was improved; however, late-evening service still needs work.</div>
-<div class="lesson-pattern-sentence">The council approved one priority: safer crossings near schools.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">The project is complete; however, further improvements are planned.</div>
+      <div class="lesson-pattern-sentence">The report includes three sections: introduction, analysis, and conclusion.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Find the clause or list structure first.</li><li>Choose the punctuation mark from the grammar, not from the pause in your voice.</li><li>Use semicolons and colons only after you confirm clause completeness.</li><li>Check apostrophes and capitals as meaning signals, not decoration.</li><li>Read the sentence again to see whether the punctuation guides the reader clearly.</li></ul>
+    <ul>
+      <li>Use semicolons to link related independent clauses.</li>
+      <li>Introduce lists or explanations with colons after a complete clause.</li>
+      <li>Use commas to separate items in a list or to set off non-essential information.</li>
+      <li>Ensure apostrophes are correctly placed for possession and contractions.</li>
+      <li>Review sentences to ensure punctuation enhances clarity.</li>
+    </ul>
   </section>
 </div>
 
@@ -96,21 +96,21 @@ draft: false
   <h3>using punctuation marks without checking the grammar on each side</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The report was useful however it needed clearer headings.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>The report was useful; however, it needed clearer headings.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> check clause completeness or list structure first, then choose the punctuation mark</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Ensure both sides of 'however' are independent clauses and use a semicolon.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
   <h3>using a comma where a semicolon is needed between full clauses</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The route is faster, however it is less reliable at night.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>The route is faster; however, it is less reliable at night.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use a semicolon before however when both sides are full clauses</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use a semicolon before 'however' to connect two independent clauses.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
   <h3>using a colon after an incomplete clause</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The committee discussed: new buses, cleaner stations, and safer crossings.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>The committee discussed three priorities: new buses, cleaner stations, and safer crossings.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use a colon only after a complete clause</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Ensure the clause before the colon is complete.</p>
 </article>
 </div>
 
@@ -119,29 +119,32 @@ draft: false
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+      <p class="practice-lab-intro">Identify the correct punctuation, then apply it in new sentences.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Focus on how punctuation affects sentence clarity and meaning.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Punctuation and Sentence Control form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The semicolon correctly links two independent clauses." data-wrong-feedback="Not yet. A semicolon is needed to connect the clauses.">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger sentence for Punctuation and Sentence Control.</h3>
+  <h3>Choose the sentence with correct punctuation.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  The report was useful however it needed clearer headings.
+  The project was delayed however it was eventually completed.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  The report was useful; however, it needed clearer headings.
+  The project was delayed; however, it was eventually completed.
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  The project was delayed: however it was eventually completed.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="She has one||goal: improve route||safety near||schools." data-task-id="1" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="She has one||goal: improve route||safety near||schools." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put this Punctuation and Sentence Control sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
@@ -166,18 +169,8 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="typing" data-task-answers="The students&#39; books were left on the back table." data-task-id="2" data-correct-feedback="Correct. You repaired the sentence without changing the message." data-wrong-feedback="Not yet. Check the target form, then type the full corrected sentence.">
-  <p class="practice-task-label">3. Type the fix</p>
-  <h3>Rewrite the sentence so Punctuation and Sentence Control is correct.</h3>
-  <p class="practice-source-line"><span>Fix this:</span> The students books were left on the back table.</p>
-  <div class="practice-input-row">
-    <input type="text" class="practice-input" data-typing-input placeholder="Type your answer here" />
-    <button type="button" class="practice-check-btn" data-task-check>Check</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
 <article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
-  <p class="practice-task-label">4. Final sort</p>
+  <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
@@ -218,7 +211,7 @@ draft: false
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> this topic affects clarity immediately. A small mistake can confuse the sentence, the speaker, or the exact meaning. Strong control makes your English easier to follow and easier to score positively.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Proper punctuation is essential for clear and precise communication. Misuse can lead to confusion and misinterpretation, affecting both the reader's understanding and your credibility. Mastering punctuation ensures your English is clear, professional, and effective.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

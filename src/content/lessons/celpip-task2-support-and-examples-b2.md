@@ -1,11 +1,11 @@
 ---
-title: "CELPIP Task 2: Support and Examples (B2)"
+title: "CELPIP Task 2: Support and Examples"
 category: "writing"
 level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Strengthen your writing support by adding short relevant examples that actually prove the point."
+excerpt: "Learn how to effectively use support and examples in CELPIP Task 2 to enhance your writing's clarity and persuasiveness."
 date: "2026-03-17"
 tags: ["writing", "b2", "celpip", "task2", "support", "examples"]
 heroTip: "Do not add an example just to fill space. Add it only if it proves the reason clearly."
@@ -35,56 +35,59 @@ quiz:
     correctIndex: 0
     explanation: "A paragraph reads better when each sentence does one clear piece of work."
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>CELPIP Task 2: Support and Examples</strong> is about proving your point, not just repeating it. A strong example makes the reason easier to trust and easier to follow. In this lesson, you will learn how to add support that is short, clear, and useful.</p></div>
+<div class="lesson-context">
+  <p class="lesson-context-lead"><strong>CELPIP Task 2: Support and Examples</strong> focuses on enhancing your writing by using specific support and examples to substantiate your arguments. This approach helps to make your writing more convincing and coherent, which is essential for achieving a higher score.</p>
+</div>
 
 ## Examples
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>This approach seems useful because it helps people in several ways.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Focused investment can improve access, reliability, and quality of life.</p>
-  <p class="lesson-card-note">The stronger sentence gives the paragraph a clear direction.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Focused investment can improve access, reliability, and quality of life by providing necessary resources.</p>
+  <p class="lesson-card-note">The stronger sentence provides specific examples, making the argument more convincing.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>For example, one local program made services better for residents.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>A pilot program improved service response times in one local district.</p>
-  <p class="lesson-card-note">The better version develops the idea instead of circling around it.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>A pilot program improved service response times in one local district by implementing new technology.</p>
+  <p class="lesson-card-note">The better version provides a specific example that clearly supports the point.</p>
 </article>
 </div>
 
-<nav class="lesson-map" id="lesson-map" aria-label="Lesson sections">
-  <ul class="lesson-map-list">
-    <li><a href="#examples">&#10024; Examples</a></li>
-    <li><a href="#how-it-works">&#129517; How it works</a></li>
-    <li><a href="#common-mistakes">&#9888;&#65039; Common mistakes</a></li>
-    <li><a href="#practice-lab">&#129514; Practice lab</a></li>
-    <li><a href="#why-it-matters">&#127919; Why it matters</a></li>
-    <li><a href="#get-feedback">&#128172; Get feedback</a></li>
-  </ul>
-</nav>
 
 ## How It Works
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>This lesson focuses on one writing move that changes clarity and score at the same time.</p>
-<p>This writing skill matters because exam readers reward control: clear task response, focused support, and readable structure. A strong response tells the reader exactly what it is doing and develops that message with specific support instead of vague general statements.</p>
-<p>Use this lesson when you want a more reliable writing process under time pressure. Plan the function of the response first, then build paragraphs that each do one job. That makes editing easier because you can test not only language but also structure.</p>
-<p>At B2 level, stronger writing comes from better paragraph control, not from simply making the language longer.</p>
+    <p>In CELPIP Task 2, providing specific support and examples is essential for substantiating your arguments. This skill enhances the clarity and persuasiveness of your writing by offering concrete evidence for your claims.</p>
+    <p>At the B2 level, demonstrating control over your argument through detailed support is crucial for achieving a higher score, as it shows your ability to construct a coherent and convincing response.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Start by identifying the exact job of the task or paragraph.</li><li>Keep support specific enough to prove the point rather than decorate it.</li><li>Check that every sentence moves the response toward its purpose.</li></ul>
+    <ul>
+      <li>Developing an argument in your essay that requires evidence.</li>
+      <li>Writing a paragraph that needs to demonstrate a specific point.</li>
+      <li>Responding to questions that ask for examples to support your opinion.</li>
+      <li>Ensuring your writing is persuasive and well-structured.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Focused investment can improve access, reliability, and quality of life.</div>
-<div class="lesson-pattern-sentence">A pilot program improved service response times in one local district.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence"><strong>Focused investment</strong> can improve access, reliability, and quality of life by <strong>providing necessary resources</strong>.</div>
+      <div class="lesson-pattern-sentence">A <strong>pilot program</strong> improved service response times in one local district by <strong>implementing new technology</strong>.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Turn the task into one clear response purpose.</li><li>Plan the main points before drafting sentences.</li><li>Develop each point with explanation and a concrete example or consequence.</li><li>Use transitions only when they reflect real logic.</li><li>Edit for clarity, support, and sentence control in that order.</li></ul>
+    <ul>
+      <li>Always back up your claims with specific examples or evidence.</li>
+      <li>Ensure each example directly supports the point you are making.</li>
+      <li>Use examples to clarify complex ideas and make your writing more relatable.</li>
+      <li>Avoid vague statements; be precise in your support.</li>
+      <li>Vary your examples to maintain reader interest and strengthen your argument.</li>
+    </ul>
   </section>
 </div>
 
@@ -121,13 +124,13 @@ quiz:
       <p class="practice-lab-intro">Begin with purpose. Then check the order and cut anything that does not help the paragraph.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
   <p class="practice-lab-coach">If a sentence has no clear job, it should change or disappear.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1">
   <p class="practice-task-label">1. Quick pick</p>
   <h3>Choose the stronger move for CELPIP Task 2: Support and Examples.</h3>
   <div class="practice-choice-grid">
@@ -135,27 +138,27 @@ quiz:
   Keep the idea vague and hope the reader understands.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  Focused investment can improve access, reliability, and quality of life.
+  Use specific examples to illustrate your point clearly.
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  Add more words to make the paragraph longer.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Turn the task into one clear response purpose.||Plan the main points before drafting sentences.||Develop each point with explanation and a concrete example or consequence.||Use transitions only when they reflect real logic." data-task-id="1">
+<article class="practice-task" data-task-type="order" data-task-answer="Identify the main argument.||Provide specific examples to support the argument.||Conclude with a summary that reinforces the examples." data-task-id="2">
   <p class="practice-task-label">2. Build the flow</p>
-  <h3>Put these moves in a helpful order.</h3>
+  <h3>Put these steps in the correct order for developing a paragraph with strong support and examples.</h3>
   <p class="practice-task-note">Put the chunks in the natural order.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="Plan the main points before drafting sentences." data-chip-origin="bank-1" data-chip-id="1-0">
-  Plan the main points before drafting sentences.
+<button type="button" class="practice-chip" data-chip-value="Provide specific examples to support the argument." data-chip-origin="bank-2" data-chip-id="2-0">
+  Provide specific examples to support the argument.
 </button>
-<button type="button" class="practice-chip" data-chip-value="Turn the task into one clear response purpose." data-chip-origin="bank-1" data-chip-id="1-1">
-  Turn the task into one clear response purpose.
+<button type="button" class="practice-chip" data-chip-value="Conclude with a summary that reinforces the examples." data-chip-origin="bank-2" data-chip-id="2-1">
+  Conclude with a summary that reinforces the examples.
 </button>
-<button type="button" class="practice-chip" data-chip-value="Use transitions only when they reflect real logic." data-chip-origin="bank-1" data-chip-id="1-2">
-  Use transitions only when they reflect real logic.
-</button>
-<button type="button" class="practice-chip" data-chip-value="Develop each point with explanation and a concrete example or consequence." data-chip-origin="bank-1" data-chip-id="1-3">
-  Develop each point with explanation and a concrete example or consequence.
+<button type="button" class="practice-chip" data-chip-value="Identify the main argument." data-chip-origin="bank-2" data-chip-id="2-2">
+  Identify the main argument.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -165,36 +168,36 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="sort" data-task-id="2">
+<article class="practice-task" data-task-type="sort" data-task-id="3">
   <p class="practice-task-label">3. Final sort</p>
-  <h3>Sort these habits into helpful or not helpful.</h3>
+  <h3>Sort these habits into helpful or not helpful when writing with support and examples.</h3>
   <div class="practice-sort-list">
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>Turn the task into one clear response purpose.</p>
+<div class="practice-sort-row" data-sort-target="helpful" data-sort-row="0">
+  <p>Use specific data or anecdotes to back up your points.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="not helpful">Not helpful</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="1">
-  <p>Plan the main points before drafting sentences.</p>
+<div class="practice-sort-row" data-sort-target="helpful" data-sort-row="1">
+  <p>Ensure each example directly relates to the argument.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="not helpful">Not helpful</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="2">
-  <p>Add a new reason in the middle of the paragraph to sound richer.</p>
+<div class="practice-sort-row" data-sort-target="not helpful" data-sort-row="2">
+  <p>Add examples that are unrelated to the main point.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="not helpful">Not helpful</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>Use a broad example even when it does not prove the point clearly.</p>
+<div class="practice-sort-row" data-sort-target="not helpful" data-sort-row="3">
+  <p>Repeat the same example in different words.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="not helpful">Not helpful</button>
   </div>
 </div>
   </div>
@@ -203,24 +206,11 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="3">
-  <p class="practice-task-label">4. Last check</p>
-  <h3>Choose the sentence that sounds more controlled.</h3>
-  <div class="practice-choice-grid">
-<button type="button" class="practice-choice" data-choice-index="0">
-  This point is important in many ways and that is all.
-</button>
-<button type="button" class="practice-choice" data-choice-index="1">
-  A pilot program improved service response times in one local district.
-</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
   </div>
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> exam writing becomes stronger when the examiner can see why your point is true. Short, relevant support makes your answer more convincing without making it longer than it needs to be.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> In exam writing, providing specific support and examples makes your arguments more credible and persuasive, which is crucial for achieving a high score in CELPIP Task 2.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">
