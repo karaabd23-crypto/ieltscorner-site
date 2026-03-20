@@ -6,6 +6,32 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Domain aliases — redirect celpipcorner.com/celpipcorner.ca to ieltscorner.ca
+# These domains must be added in Netlify dashboard + DNS pointed to Netlify
+[[redirects]]
+  from = "https://celpipcorner.com/*"
+  to = "https://ieltscorner.ca/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.celpipcorner.com/*"
+  to = "https://ieltscorner.ca/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://celpipcorner.ca/*"
+  to = "https://ieltscorner.ca/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.celpipcorner.ca/*"
+  to = "https://ieltscorner.ca/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/blog/celpip-speaking-task-2-opinion-strategy"
   to = "/blog/celpip-speaking-task-7-opinion-strategy"
