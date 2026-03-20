@@ -3,28 +3,43 @@ import Layout from "../../layouts/Layout.astro";
 import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
 
 const pageKeywords =
-  "CELPIP preparation, CELPIP writing, CELPIP speaking, CELPIP reading, CELPIP listening, CELPIP writing samples, CELPIP tutor, CELPIP webinar, CLB 9 CELPIP";
+  "CELPIP preparation, CLB 9 CELPIP, CELPIP writing, CELPIP speaking, CELPIP reading, CELPIP listening, CELPIP tutor, CELPIP webinar, CELPIP CLB score, CELPIP strategy, CELPIP speaking tasks, CELPIP writing tasks, CELPIP study plan";
 
 const pageFaqs = [
   {
-    question: "What is the best way to prepare for CELPIP?",
+    question: "What CLB score do I need for Canadian PR?",
     answer:
-      "The best way to prepare for CELPIP is to learn the task format for each skill, practice under time pressure, and review the weak areas that keep lowering your score.",
+      "Most Express Entry streams require CLB 7 in all four skills. However, scoring CLB 9 or higher significantly boosts your CRS points and speeds up your application.",
   },
   {
-    question: "Does IELTS Corner cover all four CELPIP skills?",
+    question: "Is CELPIP easier than IELTS?",
     answer:
-      "Yes. IELTS Corner has separate CELPIP pages for writing, speaking, reading, and listening, plus lessons, samples, the writing lab, webinars, and tutoring.",
+      "CELPIP is fully computer-based and uses Canadian English. Many test-takers find the format more predictable because each task type stays the same across every test.",
+  },
+  {
+    question: "How long does it take to go from CLB 7 to CLB 9?",
+    answer:
+      "With focused, task-based practice, most students can improve from CLB 7 to CLB 9 in 4 to 8 weeks. The key is targeting structure and vocabulary precision, not general English study.",
   },
   {
     question: "Do you offer CELPIP writing feedback?",
     answer:
-      "Yes. You can use the writing lab, sample responses, essay correction, and private classes for deeper feedback.",
+      "Yes. You can use the AI writing lab, sample responses, essay correction, and private classes for targeted CELPIP writing feedback.",
   },
   {
-    question: "Do I need paid support to start studying here?",
+    question: "Can I prepare for CELPIP for free here?",
     answer:
-      "No. You can start with the free skill hubs, lessons, and blog guides. Paid support is there only if you want feedback or a faster study path.",
+      "Yes. Start with the free skill pages, lessons, and strategy guides. Paid support like tutoring and writing correction is available when you want faster, more targeted results.",
+  },
+  {
+    question: "What CELPIP speaking tasks are there?",
+    answer:
+      "CELPIP speaking has 8 tasks: Giving Advice, Personal Experience, Describing a Scene, Making Predictions, Comparing and Persuading, Dealing with a Difficult Situation, Expressing Opinions, and Describing an Unusual Situation. Each task has its own strategy and structure.",
+  },
+  {
+    question: "How should I study for CELPIP?",
+    answer:
+      "Study by task, not by general skill. Learn the structure each task expects, practice with timed responses, and get feedback on your weakest areas. Start with the tasks that affect your score the most — usually speaking and writing.",
   },
 ];
 
@@ -38,120 +53,384 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="CELPIP Preparation | Writing, Speaking, Reading and Listening"
-  description="CELPIP preparation for writing, speaking, reading, and listening. Study with free lessons, writing tools, skill guides, and optional feedback."
+  title="CELPIP Preparation Hub — Every Task, Strategy & Study Path to CLB 9"
+  description="The complete CELPIP preparation system. All 8 speaking tasks, both writing tasks, CLB score strategies, study paths, and expert support — organized so you know exactly where to start."
   keywords={pageKeywords}
   structuredData={pageStructuredData}
 >
+  <!-- ===== ON-PAGE NAVIGATION ===== -->
+  <section class="section-sm" style="padding-bottom: 0;">
+    <div class="surface" style="padding: var(--s-4) var(--s-5);">
+      <div class="cluster quick-nav" style="justify-content: center;">
+        <a class="btn" href="#start">How to Start</a>
+        <a class="btn" href="#speaking-tasks">Speaking Tasks</a>
+        <a class="btn" href="#writing-tasks">Writing Tasks</a>
+        <a class="btn" href="#strategy">Strategy</a>
+        <a class="btn" href="#study-paths">Study Paths</a>
+        <a class="btn" href="#support">Get Help</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION A — HERO ===== -->
   <section class="section">
     <div class="hero" style={`--hero-bg: url('/heroes/celpip.png');`}>
       <div class="hero-content" style="text-align: center; max-width: 64ch; margin: 0 auto;">
-        <span class="pill">CELPIP preparation</span>
-        <h1>Start with the task you need to fix.</h1>
+        <span class="pill">CELPIP Command Center</span>
+        <h1>Your Complete CELPIP System — Every Task, Every Strategy, One Place</h1>
         <p class="muted">
-          Keep your study path simple. Choose one skill, learn the format, practice with
-          clear models, and add feedback only when you need it.
+          This is the central hub for your entire CELPIP preparation. Every speaking task,
+          both writing tasks, score-based strategies, and expert support — organized so you
+          always know exactly what to study next. Whether you need CLB 7 for PR or CLB 9
+          for maximum CRS points, start here.
         </p>
         <div class="cluster" style="margin-top: var(--s-3); justify-content: center;">
-          <a class="btn btn-primary" href="/celpip/writing">Start with CELPIP writing</a>
-          <a class="btn btn-ghost" href="/lessons/celpip">Browse CELPIP lessons</a>
+          <a class="btn btn-primary" href="#speaking-tasks">Start with CELPIP Speaking</a>
+          <a class="btn btn-ghost" href="#writing-tasks">Start with CELPIP Writing</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section-sm">
+  <!-- ===== SECTION B — CHOOSE HOW TO START ===== -->
+  <section class="section-sm" id="start">
     <div class="surface" style="padding: var(--s-6);">
-      <h2 style="margin-top: 0; text-align: center;">Choose your CELPIP skill</h2>
+      <h2 style="margin-top: 0; text-align: center;">Choose How You Want to Start</h2>
       <p class="muted" style="max-width: 70ch; margin: 0 auto; text-align: center;">
-        These pages are organized around real student problems, not broad course labels.
-        That makes it easier to find the next useful step.
+        Different students need different entry points. Pick the approach that matches
+        where you are right now.
       </p>
-      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-5);">
-        <a class="card" href="/celpip/writing" style="text-decoration:none;">
-          <h3>CELPIP Writing</h3>
-          <p class="muted">
-            Email and survey response strategy, stronger structure, and better task
-            coverage.
-          </p>
-        </a>
-        <a class="card" href="/celpip/speaking" style="text-decoration:none;">
-          <h3>CELPIP Speaking</h3>
-          <p class="muted">
-            Task-by-task speaking support for fluency, organization, and clearer answers.
-          </p>
-        </a>
-        <a class="card" href="/celpip/reading" style="text-decoration:none;">
-          <h3>CELPIP Reading</h3>
-          <p class="muted">
-            Reading tactics for detail questions, skimming, timing, and careful answer
-            choice.
-          </p>
-        </a>
-        <a class="card" href="/celpip/listening" style="text-decoration:none;">
-          <h3>CELPIP Listening</h3>
-          <p class="muted">
-            Prediction, note-taking, and common traps that cause avoidable listening
-            mistakes.
-          </p>
-        </a>
+
+      <!-- Start by Skill -->
+      <div style="margin-top: var(--s-6);">
+        <h3 style="margin-bottom: var(--s-3);">Start by Skill</h3>
+        <div class="grid grid-2" style="gap: var(--s-3);">
+          <a class="card" href="/celpip/speaking" style="text-decoration:none;">
+            <h3>Speaking</h3>
+            <p class="muted">8 task types. Learn the structure for each one and practice under time pressure.</p>
+          </a>
+          <a class="card" href="/celpip/writing" style="text-decoration:none;">
+            <h3>Writing</h3>
+            <p class="muted">Email and survey tasks. Learn tone, coverage, and paragraph control.</p>
+          </a>
+          <a class="card" href="/celpip/reading" style="text-decoration:none;">
+            <h3>Reading</h3>
+            <p class="muted">Skimming, detail questions, timing, and answer-choice traps.</p>
+          </a>
+          <a class="card" href="/celpip/listening" style="text-decoration:none;">
+            <h3>Listening</h3>
+            <p class="muted">Prediction, note-taking, and common traps that cost avoidable points.</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Start by Score Goal -->
+      <div style="margin-top: var(--s-6);">
+        <h3 style="margin-bottom: var(--s-3);">Start by Score Goal</h3>
+        <div class="grid grid-2" style="gap: var(--s-3);">
+          <a class="card" href="/celpip/writing" style="text-decoration:none;">
+            <span class="pill" style="margin-bottom: var(--s-2);">CLB 7</span>
+            <h3>Reach CLB 7 for PR</h3>
+            <p class="muted">Focus on task completion, basic structure, and covering all prompt points. Start with writing — it is the easiest to improve quickly.</p>
+          </a>
+          <a class="card" href="/celpip/clb-9-strategy" style="text-decoration:none;">
+            <span class="pill" style="margin-bottom: var(--s-2);">CLB 9</span>
+            <h3>Reach CLB 9 for CRS</h3>
+            <p class="muted">Structure, vocabulary precision, and full task development. The CLB 9 strategy guide shows you exactly what changes between CLB 7 and CLB 9.</p>
+          </a>
+          <a class="card" href="/celpip/writing/ai-feedback" style="text-decoration:none;">
+            <h3>Improve Writing Score</h3>
+            <p class="muted">Get instant feedback on your writing with score estimates and trait-level analysis. See exactly where you lose points.</p>
+          </a>
+          <a class="card" href="/celpip/speaking/task-1-advice" style="text-decoration:none;">
+            <h3>Improve Speaking Score</h3>
+            <p class="muted">Start with Task 1 (the most common entry point) and learn the structure examiners reward at every CLB level.</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Start by Problem -->
+      <div style="margin-top: var(--s-6);">
+        <h3 style="margin-bottom: var(--s-3);">Start by Problem</h3>
+        <div class="grid grid-3" style="gap: var(--s-3);">
+          <a class="card" href="/celpip/speaking/task-1-advice#prep-strategy" style="text-decoration:none;">
+            <h3>I run out of ideas</h3>
+            <p class="muted">Learn the 30-second prep strategy that prevents freezing and generates 2–3 strong points every time.</p>
+          </a>
+          <a class="card" href="/celpip/speaking/task-1-advice#common-mistakes" style="text-decoration:none;">
+            <h3>I finish too early</h3>
+            <p class="muted">The fix is developing each idea — not adding more ideas. Learn how to turn 40-second responses into 85-second ones.</p>
+          </a>
+          <a class="card" href="/celpip/writing" style="text-decoration:none;">
+            <h3>My writing lacks structure</h3>
+            <p class="muted">CELPIP writing has a clear expected format. Learn the paragraph patterns for email and survey tasks.</p>
+          </a>
+          <a class="card" href="/celpip/clb-9-strategy" style="text-decoration:none;">
+            <h3>I am stuck at CLB 7</h3>
+            <p class="muted">Your English is good enough. The problem is task strategy — not grammar. The CLB 9 guide shows exactly what to change.</p>
+          </a>
+          <a class="card" href="#speaking-tasks" style="text-decoration:none;">
+            <h3>I do not understand the task types</h3>
+            <p class="muted">CELPIP has 8 speaking tasks and 2 writing tasks. Each one has different rules. Start with the task map below.</p>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section-sm">
+  <!-- ===== SECTION C — CELPIP SPEAKING TASK MAP ===== -->
+  <section class="section-sm" id="speaking-tasks">
+    <div class="surface" style="padding: var(--s-6);">
+      <h2 style="margin-top: 0; text-align: center;">CELPIP Speaking: All 8 Tasks</h2>
+      <p class="muted" style="max-width: 70ch; margin: 0 auto; text-align: center;">
+        CELPIP speaking has 8 task types. Each one tests a different communication skill.
+        Master the structure for each task — that is what separates CLB 7 from CLB 9.
+      </p>
+      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-5);">
+        <!-- Task 1 — LIVE -->
+        <a class="card" href="/celpip/speaking/task-1-advice" style="text-decoration:none;">
+          <span class="pill" style="margin-bottom: var(--s-2);">Task 1</span>
+          <h3>Giving Advice</h3>
+          <p class="muted">Read a situation and give clear, structured advice. 30s prep, 90s response. Learn the exact structure that scores CLB 9.</p>
+        </a>
+
+        <!-- Task 2 — LIVE -->
+        <a class="card" href="/celpip/speaking/task-2-personal-experience" style="text-decoration:none;">
+          <span class="pill" style="margin-bottom: var(--s-2);">Task 2</span>
+          <h3>Talking About a Personal Experience</h3>
+          <p class="muted">Tell a clear, chronological story about something that happened to you. Structure and detail matter more than drama.</p>
+        </a>
+
+        <!-- Task 3 — LIVE -->
+        <a class="card" href="/celpip/speaking/task-3-scene" style="text-decoration:none;">
+          <span class="pill" style="margin-bottom: var(--s-2);">Task 3</span>
+          <h3>Describing a Scene</h3>
+          <p class="muted">Describe what you see in an image so the listener can picture it. Organized description beats random detail.</p>
+        </a>
+
+        <!-- Task 4 — LIVE -->
+        <a class="card" href="/celpip/speaking/task-4-prediction" style="text-decoration:none;">
+          <span class="pill" style="margin-bottom: var(--s-2);">Task 4</span>
+          <h3>Making Predictions</h3>
+          <p class="muted">Look at a situation and predict what will happen next. Strong predictions use evidence from the prompt, not imagination.</p>
+        </a>
+
+        <!-- Task 5 — LIVE -->
+        <a class="card" href="/celpip/speaking/task-5-comparison" style="text-decoration:none;">
+          <span class="pill" style="margin-bottom: var(--s-2);">Task 5</span>
+          <h3>Comparing and Persuading</h3>
+          <p class="muted">Compare two options and convince the listener to pick one. The hardest speaking task — requires clear reasoning under pressure.</p>
+        </a>
+
+        <!-- Task 6 — LIVE -->
+        <a class="card" href="/celpip/speaking/task-6-difficult-situation" style="text-decoration:none;">
+          <span class="pill" style="margin-bottom: var(--s-2);">Task 6</span>
+          <h3>Dealing with a Difficult Situation</h3>
+          <p class="muted">Respond to a complaint or conflict with appropriate tone and a clear solution. Politeness and problem-solving both matter.</p>
+        </a>
+
+        <!-- Task 7 — LIVE -->
+        <a class="card" href="/celpip/speaking/task-7-opinion" style="text-decoration:none;">
+          <span class="pill" style="margin-bottom: var(--s-2);">Task 7</span>
+          <h3>Expressing Opinions</h3>
+          <p class="muted">Give your opinion on a topic with clear reasons and supporting details. Structure your argument so the examiner can follow it instantly.</p>
+        </a>
+
+        <!-- Task 8 — LIVE -->
+        <a class="card" href="/celpip/speaking/task-8-unusual-situation" style="text-decoration:none;">
+          <span class="pill" style="margin-bottom: var(--s-2);">Task 8</span>
+          <h3>Describing an Unusual Situation</h3>
+          <p class="muted">Describe something unexpected and explain what you would do. Clarity and calmness score higher than creativity.</p>
+        </a>
+      </div>
+      <div style="text-align: center; margin-top: var(--s-4);">
+        <a class="btn btn-primary" href="/celpip/speaking">Go to Speaking Hub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION D — CELPIP WRITING MAP ===== -->
+  <section class="section-sm" id="writing-tasks">
+    <div class="surface" style="padding: var(--s-6);">
+      <h2 style="margin-top: 0; text-align: center;">CELPIP Writing: Tasks & Tools</h2>
+      <p class="muted" style="max-width: 70ch; margin: 0 auto; text-align: center;">
+        CELPIP writing has 2 tasks. Your score depends on task coverage, tone, and
+        organization — not on complex grammar. These resources cover the full writing system.
+      </p>
+      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-5);">
+        <a class="card" href="/blog/celpip-writing-task-1-email" style="text-decoration:none;">
+          <span class="pill" style="margin-bottom: var(--s-2);">Task 1</span>
+          <h3>Writing an Email</h3>
+          <p class="muted">Write a response email with appropriate tone, clear structure, and full prompt coverage. Learn the format examiners expect.</p>
+        </a>
+        <a class="card" href="/blog/celpip-writing-task-2-survey-response" style="text-decoration:none;">
+          <span class="pill" style="margin-bottom: var(--s-2);">Task 2</span>
+          <h3>Responding to a Survey</h3>
+          <p class="muted">Choose a position and support it with organized paragraphs. The survey task rewards clarity over length.</p>
+        </a>
+        <a class="card" href="/celpip/writing/ai-feedback" style="text-decoration:none;">
+          <h3>AI Writing Score Lab</h3>
+          <p class="muted">Submit a timed writing response and get instant score estimates with trait-level feedback on structure, vocabulary, and task fulfillment.</p>
+        </a>
+        <a class="card" href="/celpip/writing/samples" style="text-decoration:none;">
+          <h3>Sample Responses</h3>
+          <p class="muted">Read real writing samples at different CLB levels. See exactly what separates a CLB 7 response from a CLB 9 response.</p>
+        </a>
+      </div>
+      <div style="text-align: center; margin-top: var(--s-4);">
+        <a class="btn btn-primary" href="/celpip/writing">Go to Writing Hub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION E — STRATEGY / SCORE PATH ===== -->
+  <section class="section-sm" id="strategy">
     <div class="surface feature">
       <div class="feature-grid">
         <div class="stack">
-          <h2>Simple CELPIP study order</h2>
+          <h2>CELPIP Strategy & Score Improvement</h2>
           <p class="muted" style="max-width: 58ch;">
-            Students improve faster when the study order is clear. Learn the task first,
-            practice it, then review what is still weak.
+            These guides explain <em>how</em> to use this site effectively. If you are not
+            sure where to start or why your score is stuck, begin here.
+          </p>
+          <p class="muted" style="max-width: 58ch;">
+            <strong style="color: var(--text);">You do NOT need perfect English to get CLB 9.</strong>
+            You need clear structure, precise vocabulary, and full task completion. That is
+            what separates CLB 7 from CLB 9.
           </p>
         </div>
-
-        <div class="grid grid-2" style="gap: var(--s-3);">
+        <div class="stack" style="gap: var(--s-3);">
+          <a class="card" href="/celpip/clb-9-strategy" style="text-decoration:none;">
+            <h3>CLB 9 Strategy Guide</h3>
+            <p class="muted">The complete system for reaching CLB 9 — what to focus on, what to ignore, and exactly how structure and vocabulary create the score difference.</p>
+          </a>
           <div class="card">
-            <h3>1. Learn the format</h3>
-            <p class="muted">Know what each task wants before you spend hours practicing it.</p>
+            <h3>Common CELPIP Mistakes</h3>
+            <p class="muted">The scoring traps that cost the most points: giving opinions instead of advice, finishing early, missing prompt requirements, and using memorized templates.</p>
+            <div class="cluster" style="margin-top: var(--s-2);">
+              <a href="/celpip/speaking/task-1-advice#common-mistakes" style="color: var(--accent); font-weight: 700; font-size: var(--step--1);">Speaking mistakes</a>
+              <a href="/celpip/writing" style="color: var(--accent); font-weight: 700; font-size: var(--step--1);">Writing mistakes</a>
+            </div>
           </div>
           <div class="card">
-            <h3>2. Use free models</h3>
-            <p class="muted">Study lessons, samples, and strategy guides until the structure feels natural.</p>
-          </div>
-          <div class="card">
-            <h3>3. Notice your weak point</h3>
-            <p class="muted">Track whether the problem is timing, grammar, clarity, or task completion.</p>
-          </div>
-          <div class="card">
-            <h3>4. Add feedback if needed</h3>
-            <p class="muted">Use the writing lab, a webinar, or a private class when you need targeted correction.</p>
+            <h3>How to Study in the Right Order</h3>
+            <p class="muted">Start with the tasks that affect your score the most (speaking and writing), learn the structure first, then add vocabulary and fluency. See the study paths below.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section-sm">
-    <div class="grid grid-2" style="gap: var(--s-4);">
-      <a class="card" href="/celpip/writing/samples" style="text-decoration:none;">
-        <h3>CELPIP sample answers</h3>
-        <p class="muted">
-          Study complete responses and see how structure, tone, and support work together.
-        </p>
-      </a>
-      <a class="card" href="/celpip/writing/ai-feedback" style="text-decoration:none;">
-        <h3>Writing score lab</h3>
-        <p class="muted">
-          Get a score estimate, trait feedback, and lesson suggestions for CELPIP writing.
-        </p>
-      </a>
+  <!-- ===== SECTION F — RECOMMENDED STUDY PATHS ===== -->
+  <section class="section-sm" id="study-paths">
+    <div class="surface" style="padding: var(--s-6);">
+      <h2 style="margin-top: 0; text-align: center;">Recommended Study Paths</h2>
+      <p class="muted" style="max-width: 70ch; margin: 0 auto; text-align: center;">
+        Not sure where to start? Pick the path that matches your situation. Each one gives
+        you a clear sequence of steps.
+      </p>
+      <div class="grid grid-3" style="gap: var(--s-4); margin-top: var(--s-5);">
+
+        <!-- Path 1: Beginner / Overwhelmed -->
+        <div class="card">
+          <span class="pill" style="margin-bottom: var(--s-2);">Beginner</span>
+          <h3>New to CELPIP or Feeling Overwhelmed</h3>
+          <div class="stack" style="gap: var(--s-2); margin-top: var(--s-3);">
+            <p class="muted" style="margin: 0;"><strong style="color: var(--text);">1.</strong> <a href="/celpip/writing" style="color: var(--accent); font-weight: 600;">Learn the writing format</a> — email and survey structure</p>
+            <p class="muted" style="margin: 0;"><strong style="color: var(--text);">2.</strong> <a href="/celpip/speaking/task-1-advice" style="color: var(--accent); font-weight: 600;">Study Speaking Task 1</a> — the simplest speaking task</p>
+            <p class="muted" style="margin: 0;"><strong style="color: var(--text);">3.</strong> <a href="/celpip/writing/ai-feedback" style="color: var(--accent); font-weight: 600;">Try the AI writing lab</a> — see where you stand</p>
+            <p class="muted" style="margin: 0;"><strong style="color: var(--text);">4.</strong> <a href="/celpip/reading" style="color: var(--accent); font-weight: 600;">Review reading tactics</a> — learn answer-choice traps</p>
+            <p class="muted" style="margin: 0;"><strong style="color: var(--text);">5.</strong> <a href="/webinar" style="color: var(--accent); font-weight: 600;">Join the weekly webinar</a> — ask questions live</p>
+          </div>
+        </div>
+
+        <!-- Path 2: Stuck at CLB 7 -->
+        <div class="card">
+          <span class="pill" style="margin-bottom: var(--s-2);">Plateau</span>
+          <h3>Stuck at CLB 7 — Need CLB 9</h3>
+          <div class="stack" style="gap: var(--s-2); margin-top: var(--s-3);">
+            <p class="muted" style="margin: 0;"><strong style="color: var(--text);">1.</strong> <a href="/celpip/clb-9-strategy" style="color: var(--accent); font-weight: 600;">Read the CLB 9 strategy</a> — understand the score gap</p>
+            <p class="muted" style="margin: 0;"><strong style="color: var(--text);">2.</strong> <a href="/celpip/speaking/task-1-advice" style="color: var(--accent); font-weight: 600;">Study Task 1 sample answers</a> — see the CLB 7 vs 9 difference</p>
+            <p class="muted" style="margin: 0;"><strong style="color: var(--text);">3.</strong> <a href="/celpip/writing/ai-feedback" style="color: var(--accent); font-weight: 600;">Test your writing</a> — get a score estimate</p>
+            <p class="muted" style="margin: 0;"><strong style="color: var(--text);">4.</strong> <a href="/essay-correction" style="color: var(--accent); font-weight: 600;">Get expert writing correction</a> — find hidden scoring gaps</p>
+            <p class="muted" style="margin: 0;"><strong style="color: var(--text);">5.</strong> <a href="/tutoring" style="color: var(--accent); font-weight: 600;">Book a tutoring session</a> — targeted feedback on your weakest task</p>
+          </div>
+        </div>
+
+        <!-- Path 3: Close to CLB 9 -->
+        <div class="card">
+          <span class="pill" style="margin-bottom: var(--s-2);">Advanced</span>
+          <h3>Close to CLB 9 — Need Final Push</h3>
+          <div class="stack" style="gap: var(--s-2); margin-top: var(--s-3);">
+            <p class="muted" style="margin: 0;"><strong style="color: var(--text);">1.</strong> <a href="/celpip/speaking/task-1-advice#score-analysis" style="color: var(--accent); font-weight: 600;">Study the score analysis</a> — learn what examiners see</p>
+            <p class="muted" style="margin: 0;"><strong style="color: var(--text);">2.</strong> <a href="/celpip/writing/samples" style="color: var(--accent); font-weight: 600;">Read CLB 9 writing samples</a> — calibrate your expectations</p>
+            <p class="muted" style="margin: 0;"><strong style="color: var(--text);">3.</strong> <a href="/essay-correction" style="color: var(--accent); font-weight: 600;">Submit your best writing</a> — find the last 2–3 scoring gaps</p>
+            <p class="muted" style="margin: 0;"><strong style="color: var(--text);">4.</strong> <a href="/tutoring" style="color: var(--accent); font-weight: 600;">Book a speaking session</a> — fine-tune fluency and delivery</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- ===== SECTION G — PAID HELP INTEGRATED INTO FLOW ===== -->
+  <section class="section-sm" id="support">
+    <div class="surface" style="padding: var(--s-6);">
+      <h2 style="margin-top: 0; text-align: center;">Get Targeted Help Where You Need It</h2>
+      <p class="muted" style="max-width: 70ch; margin: 0 auto; text-align: center;">
+        Free resources build your foundation. But if you are plateau'd or running out of
+        time before your test, targeted expert feedback is the fastest way to close the gap.
+        Each option below connects directly to the most common CELPIP bottlenecks.
+      </p>
+      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-5);">
+        <div class="card">
+          <h3>Private CELPIP Tutoring</h3>
+          <p class="muted">
+            <strong style="color: var(--text);">Best for:</strong> students stuck at CLB 7
+            who need someone to identify their specific scoring gaps. Your tutor targets
+            the exact tasks and habits that are holding your score down — hedging in
+            speaking, weak structure in writing, incomplete task coverage — and gives you
+            real-time correction you can apply immediately.
+          </p>
+          <a class="btn btn-primary" href="/tutoring" style="margin-top: auto;">Book a Session</a>
+        </div>
+        <div class="card">
+          <h3>Writing Correction</h3>
+          <p class="muted">
+            <strong style="color: var(--text);">Best for:</strong> students who think their
+            writing is "okay" but keep scoring CLB 7. Submit a real CELPIP response and get
+            detailed scoring on structure, vocabulary, grammar, tone, and task fulfillment.
+            Most students discover 2–3 scoring gaps they did not know existed.
+          </p>
+          <a class="btn btn-primary" href="/essay-correction" style="margin-top: auto;">Submit Your Writing</a>
+        </div>
+        <div class="card">
+          <h3>Weekly CELPIP Webinar</h3>
+          <p class="muted">
+            <strong style="color: var(--text);">Best for:</strong> students who want
+            regular practice with group accountability. Live sessions every week covering
+            CELPIP speaking and writing tasks. Hear real student responses, get
+            examiner-perspective feedback, and ask questions in real time.
+          </p>
+          <a class="btn btn-primary" href="/webinar" style="margin-top: auto;">Join This Week</a>
+        </div>
+        <div class="card">
+          <h3>AI Writing Score Lab</h3>
+          <p class="muted">
+            <strong style="color: var(--text);">Best for:</strong> students who want to
+            practice writing tasks independently. Submit timed responses and get instant
+            score estimates with trait-level feedback. Use it to track your progress before
+            investing in expert feedback.
+          </p>
+          <a class="btn btn-primary" href="/celpip/writing/ai-feedback" style="margin-top: auto;">Try the Writing Lab</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
   <section class="section-sm">
     <div class="surface" style="padding: var(--s-6);">
-      <h2 style="margin-top: 0;">CELPIP preparation FAQ</h2>
+      <h2 style="margin-top: 0;">CELPIP Preparation FAQ</h2>
       <div class="stack" style="gap: var(--s-3); margin-top: var(--s-4);">
         {pageFaqs.map((item) => (
           <details class="card">
