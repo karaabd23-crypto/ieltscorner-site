@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Improve Reducing Wordiness with clearer structure, stronger support, and cleaner paragraph control."
+excerpt: "Learn how to enhance clarity and precision in writing by reducing wordiness, a vital skill for IELTS and CELPIP exams."
 date: "2026-03-02"
 tags: ["writing", "b2", "grammar", "esl", "examples", "practice", "exam-prep"]
 heroTip: "Plan the job of the paragraph before you write the sentences."
@@ -51,6 +51,12 @@ quiz:
   <p class="lesson-line lesson-line-strong"><span>Better</span>A pilot program improved service response times in one local district.</p>
   <p class="lesson-card-note">The better version develops the idea instead of circling around it.</p>
 </article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 3</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>There are many factors that contribute to this issue.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Several factors contribute to this issue.</p>
+  <p class="lesson-card-note">The improved sentence removes unnecessary words for clarity.</p>
+</article>
 </div>
 
 
@@ -58,23 +64,34 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>This lesson focuses on one writing move that changes clarity and score at the same time.</p>
-<p>This writing skill matters because exam readers reward control: clear task response, focused support, and readable structure. A strong response tells the reader exactly what it is doing and develops that message with specific support instead of vague general statements.</p>
-<p>Use this lesson when you want a more reliable writing process under time pressure. Plan the function of the response first, then build paragraphs that each do one job. That makes editing easier because you can test not only language but also structure.</p>
-<p>At B2 level, stronger writing comes from better paragraph control, not from simply making the language longer.</p>
+    <p>Reducing wordiness involves eliminating unnecessary words to enhance clarity and precision in writing. It helps convey ideas more effectively by focusing on essential information. This skill is crucial at the B2 level, where clarity and conciseness can significantly impact the quality of written responses in exams like IELTS and CELPIP.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Start by identifying the exact job of the task or paragraph.</li><li>Keep support specific enough to prove the point rather than decorate it.</li><li>Check that every sentence moves the response toward its purpose.</li></ul>
+    <ul>
+      <li>Writing exam responses under time constraints to ensure clarity.</li>
+      <li>Editing drafts to improve readability and coherence.</li>
+      <li>Responding to formal prompts where precision is valued.</li>
+      <li>Developing arguments that require clear and direct support.</li>
+      <li>Ensuring each sentence contributes directly to the main point.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Focused investment can improve access, reliability, and quality of life.</div>
-<div class="lesson-pattern-sentence">A pilot program improved service response times in one local district.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence"><strong>Because</strong> the budget was limited, the project was delayed.</div>
+      <div class="lesson-pattern-sentence">The <strong>innovation</strong> was unprecedented.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Turn the task into one clear response purpose.</li><li>Plan the main points before drafting sentences.</li><li>Develop each point with explanation and a concrete example or consequence.</li><li>Use transitions only when they reflect real logic.</li><li>Edit for clarity, support, and sentence control in that order.</li></ul>
+    <ul>
+      <li>Use precise words instead of long phrases.</li>
+      <li>Avoid redundant expressions that repeat the same idea.</li>
+      <li>Lead with the main subject to maintain focus.</li>
+      <li>Ensure every sentence serves a clear purpose.</li>
+      <li>Edit rigorously to enhance clarity and coherence.</li>
+    </ul>
   </section>
 </div>
 
@@ -111,13 +128,13 @@ quiz:
       <p class="practice-lab-intro">Begin with purpose. Then check the order and cut anything that does not help the paragraph.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
   <p class="practice-lab-coach">If a sentence has no clear job, it should change or disappear.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1">
   <p class="practice-task-label">1. Quick pick</p>
   <h3>Choose the stronger move for Reducing Wordiness.</h3>
   <div class="practice-choice-grid">
@@ -125,27 +142,27 @@ quiz:
   Keep the idea vague and hope the reader understands.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  Focused investment can improve access, reliability, and quality of life.
+  Use precise language to convey the main point clearly.
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  Add more details to make the paragraph longer.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Turn the task into one clear response purpose.||Plan the main points before drafting sentences.||Develop each point with explanation and a concrete example or consequence.||Use transitions only when they reflect real logic." data-task-id="1">
+<article class="practice-task" data-task-type="order" data-task-answer="Plan the main points before drafting sentences.||Develop each point with explanation and a concrete example or consequence.||Use transitions only when they reflect real logic." data-task-id="2">
   <p class="practice-task-label">2. Build the flow</p>
   <h3>Put these moves in a helpful order.</h3>
   <p class="practice-task-note">Put the chunks in the natural order.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="Plan the main points before drafting sentences." data-chip-origin="bank-1" data-chip-id="1-0">
+<button type="button" class="practice-chip" data-chip-value="Plan the main points before drafting sentences." data-chip-origin="bank-2" data-chip-id="2-0">
   Plan the main points before drafting sentences.
 </button>
-<button type="button" class="practice-chip" data-chip-value="Turn the task into one clear response purpose." data-chip-origin="bank-1" data-chip-id="1-1">
-  Turn the task into one clear response purpose.
-</button>
-<button type="button" class="practice-chip" data-chip-value="Use transitions only when they reflect real logic." data-chip-origin="bank-1" data-chip-id="1-2">
-  Use transitions only when they reflect real logic.
-</button>
-<button type="button" class="practice-chip" data-chip-value="Develop each point with explanation and a concrete example or consequence." data-chip-origin="bank-1" data-chip-id="1-3">
+<button type="button" class="practice-chip" data-chip-value="Develop each point with explanation and a concrete example or consequence." data-chip-origin="bank-2" data-chip-id="2-1">
   Develop each point with explanation and a concrete example or consequence.
+</button>
+<button type="button" class="practice-chip" data-chip-value="Use transitions only when they reflect real logic." data-chip-origin="bank-2" data-chip-id="2-2">
+  Use transitions only when they reflect real logic.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -155,7 +172,7 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="sort" data-task-id="2">
+<article class="practice-task" data-task-type="sort" data-task-id="3">
   <p class="practice-task-label">3. Final sort</p>
   <h3>Sort these habits into helpful or not helpful.</h3>
   <div class="practice-sort-list">
@@ -190,19 +207,6 @@ quiz:
   </div>
   <div class="practice-task-actions">
     <button type="button" class="practice-check-btn" data-task-check>Check</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="3">
-  <p class="practice-task-label">4. Last check</p>
-  <h3>Choose the sentence that sounds more controlled.</h3>
-  <div class="practice-choice-grid">
-<button type="button" class="practice-choice" data-choice-index="0">
-  This point is important in many ways and that is all.
-</button>
-<button type="button" class="practice-choice" data-choice-index="1">
-  A pilot program improved service response times in one local district.
-</button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>

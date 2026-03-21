@@ -19,45 +19,69 @@ const promptTotal = CELPIP_PROMPT_TOTAL;
     <div class="hero" style={`--hero-bg: url('/heroes/writing.png');`}>
       <div class="hero-content">
         <span class="pill">CELPIP Writing Lab</span>
-        <h1>Get CELPIP-style writing marks with timed score analysis</h1>
-        <p class="muted" style="max-width: 68ch;">
-          Start with one prompt, write under time pressure, and get trait scores, error analysis, rewrite help, and lesson recommendations.
+        <h1>Practice CELPIP writing and get your score</h1>
+        <p style="max-width: 68ch; font-size: 1.15rem; line-height: 1.7;">
+          Pick a prompt. Write your answer. Get a score, feedback, and a sample response
+          that shows you what a strong answer looks like.
         </p>
-        <div class="cluster">
-          <button id="buy-writing-lab" class="btn btn-primary" type="button">
-            Start for CA${CELPIP_WRITING_PRICE_CAD}/month
-          </button>
-          <a class="btn" href="/tutoring">Book a class for human feedback</a>
-        </div>
-        <p class="muted" style="margin-top: var(--s-2); max-width: 68ch;">
-          You can also read more about Kara Abdolmaleki, exam background, and qualifications on the
-          <a href="/about">About page</a>.
+        <p style="margin-top: var(--s-2); max-width: 68ch; font-size: 1rem; line-height: 1.7;">
+          This tool was built by <a href="/about">Kara Abdolmaleki</a>, who personally
+          trained the AI on the official CELPIP writing level descriptors.
         </p>
       </div>
     </div>
   </section>
 
   <section class="section-sm">
-    <div class="surface" style="padding: var(--s-5); border: 1px solid rgba(23, 54, 86, 0.12); background: linear-gradient(145deg, #fffaf2 0%, #f8fbff 100%);">
-      <h2 style="margin-top: 0;">About the instructor</h2>
-      <p class="muted" style="margin-top: 0; max-width: 72ch;">
-        This writing lab is part of Kara Abdolmaleki's teaching site. The About page includes
-        exam results, training, and the wider teaching background behind the lessons and feedback.
+    <div class="surface" style="padding: var(--s-5);">
+      <h2 style="margin-top: 0;">How it works</h2>
+      <p style="margin-top: 0; max-width: 72ch; font-size: 1.15rem; line-height: 1.7;">
+        You choose a writing prompt and write your answer with a timer, just like the
+        real test. When you finish, you submit your response. The AI reads it and gives
+        you a CLB level for four areas: how well you answered the question, how clear
+        your writing is, how good your words are, and how correct your grammar is. For
+        each area, it tells you what you did well and what you need to fix. It also finds
+        your mistakes, shows you better sentences, and tells you which free lessons to
+        study next.
       </p>
-      <div class="cluster">
-        <a class="btn btn-primary" href="/about">About Kara</a>
-        <a class="btn" href="/about#evidence-and-qualifications">See background</a>
-      </div>
+      <p style="margin-top: 0; max-width: 72ch; font-size: 1.15rem; line-height: 1.7;">
+        After you get your score, the system also shows you a sample response for the
+        same prompt. This is a CLB 9+ model answer so you can see exactly what a top
+        score looks like. You can compare your writing to the sample and understand the
+        difference. Kara personally trained the AI using the official CELPIP writing
+        descriptors, so it scores your work the same way a real CELPIP rater would — not
+        just grammar, but the full picture.
+      </p>
     </div>
   </section>
 
   <section class="section-sm">
-    <div class="surface" style="padding: var(--s-5); border: 1px solid var(--border-strong);">
-      <h2 style="margin-top: 0;">Plan and pricing details</h2>
-      <p class="muted" style="margin-top: 0; max-width: 72ch;">
-        <strong>CA$5/month.</strong> Includes {promptTotal} writing prompts and CLB 9+ sample responses for every prompt, with level rationale.
+    <div class="surface" style="padding: var(--s-5);">
+      <h2 style="margin-top: 0;">What you get for CA${CELPIP_WRITING_PRICE_CAD}/month</h2>
+      <p style="margin-top: 0; max-width: 72ch; font-size: 1.15rem; line-height: 1.7;">
+        Your subscription gives you everything you need to practise CELPIP writing and
+        improve your score. You get {promptTotal} writing prompts — both Task 1 emails and
+        Task 2 survey responses. Every prompt comes with a CLB 9+ sample answer so you
+        always know what a strong response looks like. You can submit as many responses
+        as you want each month and get scored every time.
       </p>
-      <p id="checkout-status" class="muted" style="margin: var(--s-2) 0 0; min-height: 1.2rem;"></p>
+      <p style="margin-top: 0; max-width: 72ch; font-size: 1.15rem; line-height: 1.7;">
+        You also get full access to the <a href="/celpip/writing/samples">sample essay
+        library</a> — 100 model answers you can search by task type, topic, and CLB
+        level. Use them to study patterns, compare your writing, and learn what examiners
+        want to see. There are no contracts and no hidden fees. You can cancel instantly
+        from your dashboard at any time.
+      </p>
+      <div class="surface feature" style="margin-top: var(--s-5); padding: var(--s-5); border: 2px solid var(--accent); text-align: center;">
+        <p style="margin: 0; font-size: 1.35rem; line-height: 1.6; font-weight: 700;">
+          Get access to the AI rater and sample essays for only $5 per month.<br />
+          Cancel anytime with one click.
+        </p>
+        <button id="buy-writing-lab" class="btn btn-primary" type="button" style="margin-top: var(--s-4); font-size: 1.15rem; padding: var(--s-3) var(--s-6);">
+          Get Access
+        </button>
+        <p id="checkout-status" class="muted" style="margin: var(--s-2) 0 0; min-height: 1.2rem;"></p>
+      </div>
     </div>
   </section>
 
@@ -65,18 +89,18 @@ const promptTotal = CELPIP_PROMPT_TOTAL;
     <div class="grid grid-3">
       <article class="card">
         <h2 style="margin-top: 0;">Task 1</h2>
-        <p><strong>{task1.label}</strong></p>
-        <p class="muted" style="margin-bottom: 0;">{task1.minutes} minutes | {task1.targetWords}</p>
+        <p style="font-size: 1.1rem;"><strong>{task1.label}</strong></p>
+        <p style="margin-bottom: 0; font-size: 1.05rem;">{task1.minutes} minutes | {task1.targetWords}</p>
       </article>
       <article class="card">
         <h2 style="margin-top: 0;">Task 2</h2>
-        <p><strong>{task2.label}</strong></p>
-        <p class="muted" style="margin-bottom: 0;">{task2.minutes} minutes | {task2.targetWords}</p>
+        <p style="font-size: 1.1rem;"><strong>{task2.label}</strong></p>
+        <p style="margin-bottom: 0; font-size: 1.05rem;">{task2.minutes} minutes | {task2.targetWords}</p>
       </article>
       <article class="card">
-        <h2 style="margin-top: 0;">Feedback</h2>
-        <p><strong>Estimated CELPIP level</strong></p>
-        <p class="muted" style="margin-bottom: 0;">Rater-style comments, language issues, rewrites, and lessons to study next</p>
+        <h2 style="margin-top: 0;">After you submit</h2>
+        <p style="font-size: 1.1rem;"><strong>Score + sample response</strong></p>
+        <p style="margin-bottom: 0; font-size: 1.05rem;">Your CLB level, feedback on each area, mistakes, better sentences, and a model answer for the same prompt</p>
       </article>
     </div>
   </section>
@@ -85,29 +109,26 @@ const promptTotal = CELPIP_PROMPT_TOTAL;
     <div class="surface" style="padding: var(--s-6);">
       <div class="grid grid-2" style="align-items:start; gap: var(--s-5);">
         <div>
-          <h2>What students can do inside the lab</h2>
+          <h2>How you use the writing lab</h2>
           <div class="checklist">
-            <div class="check"><div class="icon">1</div><div><strong>Generate a prompt</strong><span>Choose from Task 1 email prompts and Task 2 survey prompts.</span></div></div>
-            <div class="check"><div class="icon">2</div><div><strong>Open a CLB 9+ sample response</strong><span>Every prompt includes target level and why it meets that level.</span></div></div>
-            <div class="check"><div class="icon">3</div><div><strong>Write under pressure</strong><span>Use the built-in timer for the official task length.</span></div></div>
-            <div class="check"><div class="icon">4</div><div><strong>Upload or paste a response</strong><span>Type directly or load a plain-text file.</span></div></div>
-            <div class="check"><div class="icon">5</div><div><strong>Receive a full score report</strong><span>See estimated level, trait scores, revision advice, and rewrite suggestions.</span></div></div>
-            <div class="check"><div class="icon">6</div><div><strong>Study the right lesson next</strong><span>Use the lesson recommendations when the report finds tone, support, or grammar problems.</span></div></div>
+            <div class="check"><div class="icon">1</div><div><strong>Pick a prompt</strong><span>Choose a Task 1 email or a Task 2 survey question.</span></div></div>
+            <div class="check"><div class="icon">2</div><div><strong>Write your answer</strong><span>Use the timer to practise under real test conditions.</span></div></div>
+            <div class="check"><div class="icon">3</div><div><strong>Submit and get your score</strong><span>See your CLB level for each area, your mistakes, and better sentences.</span></div></div>
+            <div class="check"><div class="icon">4</div><div><strong>Read the sample response</strong><span>See a CLB 9+ model answer for the same prompt and compare it to yours.</span></div></div>
+            <div class="check"><div class="icon">5</div><div><strong>Study the lessons it recommends</strong><span>The system tells you which free lessons to read based on your weak areas.</span></div></div>
+            <div class="check"><div class="icon">6</div><div><strong>Browse the sample library</strong><span>Search 100 model essays by task, topic, and level whenever you want.</span></div></div>
           </div>
         </div>
 
         <div class="card" style="border: 2px solid var(--accent);">
-          <h3 style="margin-top: 0;">Included in your monthly plan</h3>
-          <ul class="muted" style="margin: 0 0 0 var(--s-4);">
-            <li>Access to both CELPIP writing task types</li>
-            <li>Official-style timed practice</li>
-            <li><strong>{promptTotal} prompt bank</strong> for repeated practice</li>
-            <li><strong>Sample response included for every prompt</strong></li>
-            <li>Teacher-built scoring and analysis based on CELPIP level descriptors</li>
-            <li>Word count tracking and revision guidance</li>
-            <li><strong>Cancel instantly anytime</strong> from inside your dashboard</li>
-            <li><strong>No contracts. No hidden fees.</strong></li>
-          </ul>
+          <h3 style="margin-top: 0;">Everything in your plan</h3>
+          <p style="margin: 0; font-size: 1.05rem; line-height: 1.7;">
+            Task 1 and Task 2 prompts with a timed writing screen. {promptTotal} prompts
+            you can practise again and again. A CLB 9+ sample response for every prompt.
+            Full score reports with feedback, mistakes, rewrites, and lesson links. Access
+            to 100 searchable sample essays organized by task, topic, and level. Word count
+            tracking. Cancel any time — no contracts, no hidden fees.
+          </p>
           <div style="height: var(--s-4);"></div>
           <button id="buy-writing-lab-secondary" class="btn btn-primary" type="button" style="width: 100%;">
             Subscribe for CA${CELPIP_WRITING_PRICE_CAD}/month

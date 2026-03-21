@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "4.0-5.0"
 clb: "4-5"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn how to use 'going to' for expressing future plans and intentions effectively."
+excerpt: "Learn to use 'going to' for expressing future plans and intentions effectively at the B2 level."
 date: "2026-02-27"
 tags: ["grammar", "a2", "exam-prep", "ielts", "celpip"]
 heroTip: "Circle the time marker before you choose the verb form."

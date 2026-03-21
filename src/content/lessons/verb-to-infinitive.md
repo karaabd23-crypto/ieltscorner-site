@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "4.0-5.0"
 clb: "4-5"
 exam: ["IELTS", "CELPIP"]
-excerpt: "A2 lesson on Verb + to infinitive with teacher-style explanation, guided practice, and topic-linked review."
+excerpt: "Learn how to use the Verb + to infinitive structure to express intentions, decisions, and purposes clearly."
 date: "2026-02-27"
 tags: ["grammar", "a2", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
@@ -36,21 +36,21 @@ premium: false
 priceCAD: 0
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Verb + to infinitive</strong> involves using a verb followed by 'to' and the base form of another verb. This structure is essential for expressing intentions, decisions, and purposes clearly and accurately.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Verb + to infinitive</strong> involves using a verb followed by 'to' and the base form of another verb. This structure is essential for expressing intentions, decisions, and purposes clearly and accurately, especially in formal and academic contexts.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>She avoided to answer the question directly.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>She avoided answering the question directly.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>She wanted going to the party.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>She wanted <strong>to go</strong> to the party.</p>
+  <p class="lesson-card-note">'Wanted' requires the 'to' infinitive form to express intention.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>They decided expanding the program next term.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>They decided to expand the program next term.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>They decided <strong>to expand</strong> the program next term.</p>
+  <p class="lesson-card-note">'Decided' is followed by 'to' + base verb to indicate a decision.</p>
 </article>
 </div>
 
@@ -58,23 +58,34 @@ draft: false
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>After some verbs, only one grammar pattern sounds natural.</p>
-<p>Some verbs are followed by a gerund (-ing), some by an infinitive (to + base verb), and some patterns change after prepositions. These are fixed grammar patterns, not free choices.</p>
-<p>Use the right verb pattern after the first word. If the first verb is wrong, the whole sentence will sound off even if the meaning is clear.</p>
-<p>At A2 level, keep sentences short and clear first. Add extra words only when they help meaning.</p>
+    <p>The <strong>Verb + to infinitive</strong> structure involves using a verb followed by 'to' and the base form of another verb. It is used to express intentions, decisions, and purposes.</p>
+    <p>Common verbs that use this pattern include 'decide', 'plan', 'want', and 'hope'.</p>
+    <p>At the B2 level, mastering this structure helps convey clear intentions and plans in both spoken and written communication.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>After a preposition, use the -ing form.</li><li>Learn common verb partners as full chunks: decide to, avoid doing, interested in doing.</li><li>Check whether changing from -ing to infinitive changes the meaning of the sentence.</li></ul>
+    <ul>
+      <li>Expressing decisions, e.g., "They decided <strong>to expand</strong> the program."</li>
+      <li>Stating intentions, e.g., "I plan <strong>to travel</strong> next year."</li>
+      <li>Indicating purpose, e.g., "She went to the store <strong>to buy</strong> groceries."</li>
+      <li>After certain verbs like 'hope', 'want', 'need', and 'expect'.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">She avoided answering the question directly.</div>
-<div class="lesson-pattern-sentence">They decided to expand the program next term.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">They decided <strong>to expand</strong> the program next term.</div>
+      <div class="lesson-pattern-sentence">She wants <strong>to learn</strong> French.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Learn the first word and the next verb form together as one chunk.</li><li>Use the -ing form after prepositions.</li><li>Check whether the first verb takes -ing, to + verb, or both with a meaning change.</li><li>Test the sentence slot again after you change the verb form.</li><li>Keep the pattern simple enough that the meaning stays clear.</li></ul>
+    <ul>
+      <li>Use 'to' + base verb after verbs like 'decide', 'plan', 'want'.</li>
+      <li>Do not confuse with gerund forms (e.g., 'avoid doing').</li>
+      <li>Check if the verb requires a specific form to avoid changing meaning.</li>
+      <li>Remember: 'to' is part of the infinitive form, not a preposition here.</li>
+    </ul>
   </section>
 </div>
 
@@ -82,24 +93,24 @@ draft: false
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>using the wrong form after the first verb or preposition</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>He is interested to joining the evening class.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>He is interested in joining the evening class.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> learn each verb pattern as a chunk and keep the next form consistent</p>
+  <h3>Using the wrong form after the verb</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>She wants learning French.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>She wants <strong>to learn</strong> French.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use 'to' + base verb after 'wants'.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using the infinitive after a preposition</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>She is interested in to join the course.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>She is interested in joining the course.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use the -ing form after prepositions</p>
+  <h3>Using gerund instead of infinitive</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>They hope seeing you soon.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>They hope <strong>to see</strong> you soon.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use 'to' + base verb after 'hope'.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>changing meaning by choosing the wrong verb pattern</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>He stopped to smoke in the office.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>He stopped smoking in the office.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> check whether the verb pattern changes the meaning</p>
+  <h3>Confusing infinitive with preposition</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>He went to the store for buy milk.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>He went to the store <strong>to buy</strong> milk.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use 'to' + base verb to express purpose.</p>
 </article>
 </div>
 
@@ -115,34 +126,37 @@ draft: false
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Focus on the verb + to infinitive structure to ensure clarity in expressing intentions and plans.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Verb + to infinitive form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="2" data-task-id="1" data-correct-feedback="Correct. The sentence uses the verb + to infinitive structure correctly." data-wrong-feedback="Not yet. Remember to use 'to' + base verb after certain verbs.">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger sentence for Verb + to infinitive.</h3>
+  <h3>Choose the correct sentence using Verb + to infinitive.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  He is interested to joining the evening class.
+  She avoided to answer the question.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  He is interested in joining the evening class.
+  She avoided answering the question.
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  She decided <strong>to answer</strong> the question.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="We discussed||moving the workshop||to Friday." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="They plan||to visit||the museum." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put this Verb + to infinitive sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="moving the workshop" data-chip-origin="bank-1" data-chip-id="1-0">
-  moving the workshop
+<button type="button" class="practice-chip" data-chip-value="to visit" data-chip-origin="bank-1" data-chip-id="1-0">
+  to visit
 </button>
-<button type="button" class="practice-chip" data-chip-value="We discussed" data-chip-origin="bank-1" data-chip-id="1-1">
-  We discussed
+<button type="button" class="practice-chip" data-chip-value="They plan" data-chip-origin="bank-1" data-chip-id="1-1">
+  They plan
 </button>
-<button type="button" class="practice-chip" data-chip-value="to Friday." data-chip-origin="bank-1" data-chip-id="1-2">
-  to Friday.
+<button type="button" class="practice-chip" data-chip-value="the museum." data-chip-origin="bank-1" data-chip-id="1-2">
+  the museum.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -158,28 +172,28 @@ draft: false
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>He is interested in joining the evening class.</p>
+  <p>She wants <strong>to go</strong> to the party.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>He is interested to joining the evening class.</p>
+  <p>She wanted going to the party.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>We discussed moving the workshop to Friday.</p>
+  <p>They decided <strong>to expand</strong> the program next term.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>We discussed to move the workshop to Friday.</p>
+  <p>They decided expanding the program next term.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>

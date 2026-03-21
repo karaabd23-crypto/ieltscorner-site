@@ -1,11 +1,11 @@
 ---
-title: "Essential Vocabulary for Work and Study"
+title: "Key Vocabulary for Professional and Academic Success"
 category: "vocabulary"
 level: "B2"
 ieltsBand: "4.0-5.0"
 clb: "4-5"
 exam: ["IELTS", "CELPIP"]
-excerpt: "A2 vocabulary lesson on Work and Study Words with a practical word bank, collocations, and retrieval practice."
+excerpt: "Learn essential vocabulary for effective communication in professional and academic settings."
 date: "2026-02-27"
 tags: ["vocabulary", "a2", "exam-prep", "ielts", "celpip"]
 heroTip: "Learn words with their partner phrases and one model sentence, not as isolated items."
@@ -36,7 +36,7 @@ premium: false
 priceCAD: 0
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Essential Vocabulary for Work and Study</strong> focuses on the key words and phrases necessary for effective communication in educational and professional settings. This lesson helps you understand the meaning of these terms, how they fit into sentences, and how to use them naturally.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Key Vocabulary for Professional and Academic Success</strong> focuses on the essential words and phrases needed for effective communication in educational and professional settings. This lesson helps you understand the meaning of these terms, how they fit into sentences, and how to use them naturally to enhance your communication skills.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
@@ -44,13 +44,13 @@ draft: false
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>The school helped students do better things.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The school improved learning outcomes through targeted instructional support.</p>
-  <p class="lesson-card-note">The stronger version names the real meaning instead of staying vague.</p>
+  <p class="lesson-card-note">The stronger version specifies the type of support and its impact on learning outcomes.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>Teachers checked students with many tests.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Teachers used regular assessment to monitor student progress.</p>
-  <p class="lesson-card-note">The better sentence sounds more natural for a real task and a real reader.</p>
+  <p class="lesson-card-note">The better sentence uses precise vocabulary to describe the monitoring process.</p>
 </article>
 </div>
 
@@ -58,23 +58,33 @@ draft: false
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>This lesson helps you say the same idea with sharper, more natural vocabulary.</p>
-<p>Work and Study Words teaches the words learners need to talk about study, assessment, support, and achievement more clearly.</p>
-<p>Use this vocabulary when describing how students learn, how schools measure progress, and what support improves outcomes.</p>
-<p>At A2 level, learn fewer words but learn them well: meaning, collocation, and one model sentence.</p>
+    <p>This lesson focuses on vocabulary that is essential for clear communication in professional and academic settings. These words and phrases help articulate ideas about learning, assessment, and support more precisely.</p>
+    <p>The vocabulary includes terms used to describe educational processes and workplace dynamics, crucial for B2 level learners aiming to improve their language proficiency in these contexts.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Learn each topic word with one practical school-based example.</li><li>Notice which nouns and verbs often appear together, such as improve attendance or support learning outcomes.</li><li>Use only the words that fit the exact school context you are describing.</li></ul>
+    <ul>
+      <li>Writing essays or reports in an academic setting.</li>
+      <li>Communicating in professional environments, such as meetings or presentations.</li>
+      <li>Discussing educational strategies or outcomes.</li>
+      <li>Preparing for exams that test language proficiency in work and study contexts.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Regular assessment helped teachers identify gaps in reading.</div>
-<div class="lesson-pattern-sentence">Targeted instructional support improved student attendance.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">The <strong>assessment</strong> process identified key areas for improvement in student performance.</div>
+      <div class="lesson-pattern-sentence">Effective <strong>communication</strong> skills are vital for success in the workplace.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Choose the meaning first before you choose the word.</li><li>Learn the word with a natural collocation or partner phrase.</li><li>Use the new word in one short sentence right away.</li><li>Replace vague words only when the new word stays accurate.</li><li>Keep the register stable so the language fits the task.</li></ul>
+    <ul>
+      <li>Choose precise vocabulary to convey specific meanings.</li>
+      <li>Pair new words with common collocations for natural usage.</li>
+      <li>Practice using new vocabulary in sentences related to your field.</li>
+      <li>Avoid vague terms; opt for words that enhance clarity and precision.</li>
+    </ul>
   </section>
 </div>
 
@@ -111,7 +121,7 @@ draft: false
       <p class="practice-lab-intro">Start with meaning. Then move to collocations and sentence control for Work and Study Words.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/2</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
@@ -133,22 +143,19 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Productivity works best||when the meaning||is clear in||the sentence." data-task-id="2">
+<article class="practice-task" data-task-type="order" data-task-answer="Regular assessment helps||teachers identify||gaps in learning." data-task-id="2">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put the sentence in a natural order.</h3>
   <p class="practice-task-note">Put the chunks in the natural order.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="is clear in" data-chip-origin="bank-1" data-chip-id="1-0">
-  is clear in
+<button type="button" class="practice-chip" data-chip-value="teachers identify" data-chip-origin="bank-1" data-chip-id="1-0">
+  teachers identify
 </button>
-<button type="button" class="practice-chip" data-chip-value="when the meaning" data-chip-origin="bank-1" data-chip-id="1-1">
-  when the meaning
+<button type="button" class="practice-chip" data-chip-value="Regular assessment helps" data-chip-origin="bank-1" data-chip-id="1-1">
+  Regular assessment helps
 </button>
-<button type="button" class="practice-chip" data-chip-value="Productivity works best" data-chip-origin="bank-1" data-chip-id="1-2">
-  Productivity works best
-</button>
-<button type="button" class="practice-chip" data-chip-value="the sentence." data-chip-origin="bank-1" data-chip-id="1-3">
-  the sentence.
+<button type="button" class="practice-chip" data-chip-value="gaps in learning." data-chip-origin="bank-1" data-chip-id="1-2">
+  gaps in learning.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -158,12 +165,30 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-
+<article class="practice-task" data-task-type="sort" data-task-answer="Academic:curriculum,assessment||Professional:communication,collaboration" data-sort-categories="Academic||Professional" data-task-id="3">
+  <p class="practice-task-label">3. Sort it</p>
+  <h3>Sort the terms into academic and professional categories.</h3>
+  <div class="practice-sort-grid">
+<button type="button" class="practice-sort" data-sort-index="0">
+  curriculum
+</button>
+<button type="button" class="practice-sort" data-sort-index="1">
+  assessment
+</button>
+<button type="button" class="practice-sort" data-sort-index="2">
+  communication
+</button>
+<button type="button" class="practice-sort" data-sort-index="3">
+  collaboration
+</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
   </div>
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering work and study vocabulary is crucial for clear and effective communication in educational and professional contexts. Using the right words allows you to convey your ideas more precisely and naturally, enhancing your ability to succeed in real-world situations.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering key vocabulary for professional and academic contexts is crucial for clear and effective communication. Using the right words allows you to convey your ideas more precisely and naturally, enhancing your ability to succeed in real-world situations and meet the demands of professional and educational environments.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Match tense choice to time meaning so the reader never has to guess your timeline."
+excerpt: "Learn how to use 'will' and 'going to' for future predictions and intentions effectively."
 date: "2026-03-02"
 tags: ["grammar", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Circle the time marker before you choose the verb form."
@@ -41,15 +41,15 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The city policy update improve commuter access, but the sentence form is unstable.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>The city policy update improves commuter access, and the sentence form is stable.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span> It will rain because the sky is clear.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span> It is going to rain because the sky is clear.</p>
+  <p class="lesson-card-note">Use 'going to' for predictions based on present evidence.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Students in one district reported progress, but the structure of the explanation is unclear.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Students in one district reported progress, and the explanation is grammatically clear.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span> I am going to help you with that right now.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span> I will help you with that right now.</p>
+  <p class="lesson-card-note">Use 'will' for spontaneous decisions.</p>
 </article>
 </div>
 
@@ -57,23 +57,34 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Tense choice becomes easier when you decide the timeline before the verb form.</p>
-<p>Tense choices place actions on a timeline and show whether they are finished, ongoing, repeated, or connected to another time point.</p>
-<p>Use tense accurately by deciding the time first and the meaning second. Readers should be able to follow your timeline without stopping to reinterpret the verb forms.</p>
-<p>At B2 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+    <p>The future forms <strong>'will'</strong> and <strong>'going to'</strong> are used to express predictions about the future. <strong>'Will'</strong> is often used for spontaneous decisions or predictions not based on current evidence, while <strong>'going to'</strong> is used for plans and predictions based on present evidence.</p>
+    <p>At the B2 level, understanding these distinctions helps in making your future intentions and predictions clear in both writing and speaking.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Find the time signal or implied timeline before you choose the verb.</li><li>Keep the tense stable until the timeline genuinely changes.</li><li>Use perfect forms when you need to connect an earlier action to another time point.</li></ul>
+    <ul>
+      <li>Expressing a spontaneous decision: "I <strong>will</strong> help you with that."</li>
+      <li>Making a prediction without evidence: "It <strong>will</strong> rain tomorrow."</li>
+      <li>Describing a plan or intention based on current evidence: "I am <strong>going to</strong> start a new job next week."</li>
+      <li>Predicting something based on what you see: "Look at those clouds! It is <strong>going to</strong> rain."</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Since January, attendance has improved every week.</div>
-<div class="lesson-pattern-sentence">By the end of the year, the team will have completed the trial.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">I <strong>will</strong> call you later.</div>
+      <div class="lesson-pattern-sentence">She is <strong>going to</strong> visit her grandparents tomorrow.</div>
+      <div class="lesson-pattern-sentence">They <strong>will</strong> probably win the match.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Mark the timeline first with a time word or situation clue.</li><li>Choose simple, continuous, perfect, or perfect continuous from the meaning.</li><li>Keep the reference point stable inside the sentence.</li><li>Use tense shifts only when the timeline really changes.</li><li>Check that the final verb form agrees with the time marker.</li></ul>
+    <ul>
+      <li>Use <strong>'will'</strong> for spontaneous decisions and predictions without evidence.</li>
+      <li>Use <strong>'going to'</strong> for plans and predictions based on current evidence.</li>
+      <li>Both forms can express future actions, but the context determines the choice.</li>
+      <li>Do not use <strong>'will'</strong> for actions based on present evidence; use <strong>'going to'</strong> instead.</li>
+    </ul>
   </section>
 </div>
 
@@ -81,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>using the correct idea with an incorrect form</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The council approve the plan, but the timeline details remain unclear.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The council approved the plan, but the timeline details remain unclear.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> separate meaning choice from form checking, then edit for accuracy</p>
+  <h3>Using 'will' for planned actions</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span> I will visit my parents this weekend.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span> I am going to visit my parents this weekend.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use 'going to' for planned actions.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using present perfect with a finished time marker</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>She has finished the report yesterday.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>She finished the report yesterday.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use a past form with finished time markers like yesterday or last week</p>
+  <h3>Using 'going to' for spontaneous decisions</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span> I am going to help you with that right now.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span> I will help you with that right now.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use 'will' for spontaneous decisions.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>switching tense without a time reason</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The study started in May and shows strong results in June.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The study started in May and showed strong results in June.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> keep the tense stable unless the timeline genuinely changes</p>
+  <h3>Confusing predictions with plans</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span> It will rain because of the dark clouds.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span> It is going to rain because of the dark clouds.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use 'going to' for predictions based on evidence.</p>
 </article>
 </div>
 
@@ -107,44 +118,41 @@ quiz:
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+      <p class="practice-lab-intro">Choose the correct form for future predictions and plans. Then, arrange sentences and identify errors.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Focus on the context to decide between 'will' and 'going to'.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Will vs Going To form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="0" data-task-id="1" data-correct-feedback="Correct. 'Will' is suitable for spontaneous decisions." data-wrong-feedback="Not quite. Consider if the decision is spontaneous.">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger sentence for Will vs Going To.</h3>
+  <h3>Choose the stronger sentence for a spontaneous decision.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  The council approve the plan, but the timeline details remain unclear.
+  I will help you with that right now.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  The council approved the plan, but the timeline details remain unclear.
+  I am going to help you with that right now.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="If schools add||tutoring support, more||students will improve||exam performance." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="The sky is dark||It is going to rain||soon." data-task-id="2" data-correct-feedback="Correct. The sentence reflects a prediction based on evidence." data-wrong-feedback="Try again. Consider the evidence for the prediction.">
   <p class="practice-task-label">2. Build it</p>
-  <h3>Put this Will vs Going To sentence in the correct order.</h3>
+  <h3>Put this prediction sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="tutoring support, more" data-chip-origin="bank-1" data-chip-id="1-0">
-  tutoring support, more
+<button type="button" class="practice-chip" data-chip-value="The sky is dark" data-chip-origin="bank-2" data-chip-id="2-0">
+  The sky is dark
 </button>
-<button type="button" class="practice-chip" data-chip-value="If schools add" data-chip-origin="bank-1" data-chip-id="1-1">
-  If schools add
+<button type="button" class="practice-chip" data-chip-value="It is going to rain" data-chip-origin="bank-2" data-chip-id="2-1">
+  It is going to rain
 </button>
-<button type="button" class="practice-chip" data-chip-value="students will improve" data-chip-origin="bank-1" data-chip-id="1-2">
-  students will improve
-</button>
-<button type="button" class="practice-chip" data-chip-value="exam performance." data-chip-origin="bank-1" data-chip-id="1-3">
-  exam performance.
+<button type="button" class="practice-chip" data-chip-value="soon." data-chip-origin="bank-2" data-chip-id="2-2">
+  soon.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -154,37 +162,22 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-
-<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-task-answer="Correct:I will help you with that right now||Needs fixing:I am going to help you with that right now." data-sort-categories="Correct||Needs fixing" data-correct-feedback="Correct. You correctly identified the sentences." data-wrong-feedback="Check again. Consider the context of each sentence.">
   <p class="practice-task-label">3. Final sort</p>
-  <h3>Mark each sentence as correct or needing a fix.</h3>
+  <h3>Identify if the sentence is correct or needs fixing.</h3>
   <div class="practice-sort-list">
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>The council approved the plan, but the timeline details remain unclear.</p>
+<div class="practice-sort-row" data-sort-target="Correct" data-sort-row="0">
+  <p>I will help you with that right now.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Correct">Correct</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Needs fixing">Needs fixing</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>The council approve the plan, but the timeline details remain unclear.</p>
+<div class="practice-sort-row" data-sort-target="Needs fixing" data-sort-row="1">
+  <p>I am going to help you with that right now.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
-  </div>
-</div>
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>If schools add tutoring support, more students will improve exam performance.</p>
-  <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
-  </div>
-</div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>If schools add tutoring support, more students improve exam performance.</p>
-  <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Correct">Correct</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Needs fixing">Needs fixing</button>
   </div>
 </div>
   </div>

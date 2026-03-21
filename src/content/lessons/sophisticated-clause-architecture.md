@@ -1,11 +1,11 @@
 ---
-title: "Advanced Sentence Structure"
+title: "Mastering Complex Sentences for Clarity"
 category: "grammar"
 level: "B2"
 ieltsBand: "8.5-9.0"
 clb: "11-12"
 exam: ["IELTS", "CELPIP"]
-excerpt: "C2 lesson on Advanced Sentence Structure with teacher-style explanation, guided practice, and topic-linked review."
+excerpt: "Learn to construct complex sentences that convey sophisticated ideas clearly and effectively."
 date: "2026-02-27"
 tags: ["grammar", "c2", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
@@ -36,21 +36,21 @@ premium: false
 priceCAD: 0
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Advanced Sentence Structure</strong> helps you combine ideas into longer sentences effectively. The goal is not just to sound sophisticated but to connect ideas clearly while ensuring the sentence remains easy to follow. In this lesson, you will learn how to construct longer sentences without losing clarity or control.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Mastering Complex Sentences for Clarity</strong> helps you effectively combine ideas into longer sentences. The aim is to express sophisticated thoughts clearly and logically, without losing the reader. This lesson will guide you in constructing complex sentences that maintain clarity and control.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Because the buses were delayed. Many workers missed the meeting.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Because the buses were delayed, many workers missed the meeting.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Although it was raining. We went for a walk.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Although it was raining, we went for a walk.</p>
+  <p class="lesson-card-note">The subordinate clause 'Although it was raining' needs to be connected to the main clause with a comma.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The report was clear although the final paragraph was weak it still helped the reader.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Although the final paragraph was weak, the report still helped the reader.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>She didn't attend the meeting she was feeling unwell.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>She didn't attend the meeting because she was feeling unwell.</p>
+  <p class="lesson-card-note">The conjunction 'because' clarifies the cause and effect relationship.</p>
 </article>
 </div>
 
@@ -58,23 +58,35 @@ draft: false
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>A longer sentence is only better if the reader can still follow it easily.</p>
-<p>Clause-building means combining one clear main idea with supporting clauses without losing control of the sentence. A strong complex sentence still feels easy to follow on the first read.</p>
-<p>Use extra clauses to show time, reason, condition, contrast, or added detail. If the link between the clauses is weak, split the sentence and rebuild it.</p>
-<p>At C2 level, use this structure for precision and logic, not for decorative complexity.</p>
+    <p>Complex sentences combine multiple ideas into a single sentence, using main and subordinate clauses. They help express detailed and nuanced thoughts clearly and logically.</p>
+    <p>In English, a complex sentence typically includes a main clause and one or more subordinate clauses, connected by conjunctions or relative pronouns.</p>
+    <p>At B2 level, mastering complex sentences is crucial for expressing sophisticated ideas clearly in both written and spoken communication.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Start with a complete main clause before you add support.</li><li>Make the link between clauses visible with punctuation or a clear linker.</li><li>Cut extra material if the sentence becomes harder to scan than the meaning is worth.</li></ul>
+    <ul>
+      <li>Expressing cause and effect relationships in writing or speech.</li>
+      <li>Providing additional information or context without starting a new sentence.</li>
+      <li>Contrasting different ideas within a single sentence for clarity.</li>
+      <li>Writing formal reports or essays where nuanced expression is required.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Because the buses were delayed, many workers arrived late to the meeting.</div>
-<div class="lesson-pattern-sentence">The report was clear, although the conclusion needed more evidence.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence"><strong>Although</strong> the weather was bad, <strong>we decided to go hiking.</strong></div>
+      <div class="lesson-pattern-sentence"><strong>Because</strong> she studied hard, <strong>she passed the exam with flying colors.</strong></div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Write one complete main clause first.</li><li>Add the support clause only after the main clause is stable.</li><li>Show the relationship between clauses clearly with punctuation or a linker.</li><li>Check that each clause is attached to the correct part of the sentence.</li><li>Split the sentence if the reader has to work too hard to follow it.</li></ul>
+    <ul>
+      <li>Start with a clear main clause; add subordinate clauses for detail.</li>
+      <li>Use conjunctions like 'because', 'although', 'if', to connect clauses.</li>
+      <li>Ensure each clause contributes to the overall meaning of the sentence.</li>
+      <li>Use punctuation correctly to separate clauses and improve readability.</li>
+      <li>If a sentence becomes too complex, consider splitting it for clarity.</li>
+    </ul>
   </section>
 </div>
 
@@ -82,24 +94,24 @@ draft: false
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>adding extra clauses without controlling how they connect to the main clause</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>When the route changed many residents complained because they had not been warned.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>When the route changed, many residents complained because they had not been warned.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> build one complete main clause first, then attach support clauses with a clear link</p>
+  <h3>Not connecting clauses properly</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>She was late the bus was delayed.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>She was late because the bus was delayed.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use 'because' to connect the cause and effect.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>creating a sentence fragment with a subordinate clause</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Because the new route was cheaper.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Because the new route was cheaper, more commuters started using it.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> a subordinate clause needs a main clause to complete the sentence</p>
+  <h3>Creating sentence fragments</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>If the weather improves.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>If the weather improves, we will go to the park.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Complete the thought by adding a main clause.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>overloading one sentence with too many weakly linked clauses</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The school added tutors and students felt calmer and scores improved and parents were happier.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The school added tutors, so students felt calmer and scores improved.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> keep only the clauses that carry the core logic, then split anything extra</p>
+  <h3>Overloading sentences with clauses</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>He was tired and hungry and the meeting was boring and he wanted to leave.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>He was tired and hungry, so he wanted to leave the boring meeting.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Simplify by focusing on the main ideas and using conjunctions appropriately.</p>
 </article>
 </div>
 
@@ -108,47 +120,44 @@ draft: false
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+      <p class="practice-lab-intro">Identify the correct complex sentence structures and practice constructing them yourself.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Focus on how clauses are connected to express complex ideas clearly.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Advanced Sentence Structure form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="2" data-task-id="1" data-correct-feedback="Correct. The sentence clearly connects the clauses." data-wrong-feedback="Not quite. Look for the sentence that properly links the ideas.">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger sentence for Advanced Sentence Structure.</h3>
+  <h3>Choose the sentence with the correct complex structure.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  When the route changed many residents complained because they had not been warned.
+  The project was delayed, it rained heavily.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  When the route changed, many residents complained because they had not been warned.
+  The project was delayed because it rained heavily.
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  Because it rained heavily, the project was delayed.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="The article explained||the problem, which||made the solution||easier to||understand." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="Although the weather was cold||we decided to go hiking||and enjoyed the scenery." data-task-id="2" data-correct-feedback="Correct. The sentence is now logically ordered." data-wrong-feedback="Not yet. Arrange the sentence to make logical sense.">
   <p class="practice-task-label">2. Build it</p>
-  <h3>Put this Advanced Sentence Structure sentence in the correct order.</h3>
+  <h3>Put this complex sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="made the solution" data-chip-origin="bank-1" data-chip-id="1-0">
-  made the solution
+<button type="button" class="practice-chip" data-chip-value="Although the weather was cold" data-chip-origin="bank-1" data-chip-id="1-0">
+  Although the weather was cold
 </button>
-<button type="button" class="practice-chip" data-chip-value="understand." data-chip-origin="bank-1" data-chip-id="1-1">
-  understand.
+<button type="button" class="practice-chip" data-chip-value="we decided to go hiking" data-chip-origin="bank-1" data-chip-id="1-1">
+  we decided to go hiking
 </button>
-<button type="button" class="practice-chip" data-chip-value="The article explained" data-chip-origin="bank-1" data-chip-id="1-2">
-  The article explained
-</button>
-<button type="button" class="practice-chip" data-chip-value="the problem, which" data-chip-origin="bank-1" data-chip-id="1-3">
-  the problem, which
-</button>
-<button type="button" class="practice-chip" data-chip-value="easier to" data-chip-origin="bank-1" data-chip-id="1-4">
-  easier to
+<button type="button" class="practice-chip" data-chip-value="and enjoyed the scenery." data-chip-origin="bank-1" data-chip-id="1-2">
+  and enjoyed the scenery.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -158,36 +167,21 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-
-<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-sort-categories="Correct||Needs Fixing" data-task-answer="Correct:Although it was late, she continued working||Needs Fixing:Although it was late. She continued working.">
   <p class="practice-task-label">3. Final sort</p>
-  <h3>Mark each sentence as correct or needing a fix.</h3>
+  <h3>Sort the sentences into correct or needing a fix.</h3>
   <div class="practice-sort-list">
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>When the route changed, many residents complained because they had not been warned.</p>
+<div class="practice-sort-row" data-sort-target="correct" data-sort-row="0">
+  <p>Although it was late, she continued working.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="correct">Correct</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>When the route changed many residents complained because they had not been warned.</p>
+  <p>Although it was late. She continued working.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
-  </div>
-</div>
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>The article explained the problem, which made the solution easier to understand.</p>
-  <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
-  </div>
-</div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>The article explained the problem. Which made the solution easier to understand.</p>
-  <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="correct">Correct</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
@@ -201,7 +195,7 @@ draft: false
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering advanced sentence structures can enhance your writing by allowing you to convey complex ideas clearly and persuasively. This skill is crucial for high-level academic and professional communication, where precision and clarity are essential.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering complex sentence structures enhances your ability to convey detailed and nuanced ideas clearly. This skill is vital for advanced academic and professional communication, where clarity and precision are key to effective expression.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

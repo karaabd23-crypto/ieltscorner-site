@@ -1,0 +1,23 @@
+[
+  {
+    "file": "relative-clauses-with-who-and-which.md",
+    "title": "Relative clauses with who and which",
+    "titleVerdict": "good",
+    "suggestedTitle": "Relative Clauses with 'Who' and 'Which'",
+    "titleReason": "The title clearly identifies the grammar point being taught, is concise, and matches the lesson content.",
+    "relevanceIssues": [
+      "Example 1 uses 'that' instead of 'who' or 'which', which is off-topic for this lesson.",
+      "The Meaning panel refers to A2 level, while the lesson is aimed at B2 learners.",
+      "The Practice Lab uses 'that' in examples, which is not the focus of this lesson."
+    ],
+    "changes": [
+      "Rewrote How It Works teach-grid",
+      "Rewrote Examples section",
+      "Rewrote Common Mistakes section",
+      "Rewrote lesson context",
+      "Rewrote Why It Matters",
+      "Rewrote Practice Lab",
+      "Rewrote excerpt"
+    ]
+  }
+]

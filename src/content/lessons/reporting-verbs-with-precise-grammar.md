@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "7.0-8.0"
 clb: "9-10"
 exam: ["IELTS", "CELPIP"]
-excerpt: "C1 lesson on Reporting What Others Said with teacher-style explanation, guided practice, and topic-linked review."
+excerpt: "Learn how to accurately report what others have said, adjusting grammar for clarity and precision."
 date: "2026-02-27"
 tags: ["grammar", "c1", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
@@ -44,13 +44,13 @@ draft: false
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The witness said me that the road was closed.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The witness told me that the road was closed.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-card-note">"Told" is used because it requires an indirect object, "me."</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>She explained that why the original plan had failed.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>She explained why the original plan had failed.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-card-note">Remove "that" before "why" to correctly form the clause.</p>
 </article>
 </div>
 
@@ -58,23 +58,38 @@ draft: false
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Reporting grammar is about repeating an idea accurately in a new sentence.</p>
-<p>Reporting structures let you repeat what someone said, thought, asked, or concluded. The challenge is choosing the right reporting verb and keeping the grammar after it accurate.</p>
-<p>Use reporting grammar when you summarize other people&#39;s words or ideas. This is common in speaking, writing, and source-based tasks.</p>
-<p>At C1 level, use this structure for precision and logic, not for decorative complexity.</p>
+    <p>Reporting speech involves conveying what someone else has said, thought, or asked, often requiring changes in tense, pronouns, and time expressions.</p>
+    <p>It allows you to accurately communicate another person's message in a new context, maintaining the original meaning.</p>
+    <p>The typical structure includes a reporting verb (e.g., say, tell, ask) followed by a clause that may require adjustments in tense and pronouns.</p>
+    <p>At the B2 level, mastering this skill is crucial for clear and accurate communication in both spoken and written English.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Choose the reporting verb from the meaning: say, tell, explain, ask, suggest, or report.</li><li>Check whether the structure after the reporting verb needs that, whether, or a wh-clause.</li><li>Shift tense only when the timeline and context require it.</li></ul>
+    <ul>
+      <li>Conveying someone else's words or thoughts in writing or speech.</li>
+      <li>Summarizing information from sources, such as news articles or academic texts.</li>
+      <li>Reporting conversations in formal reports or presentations.</li>
+      <li>Answering questions in exams that require paraphrasing or summarizing spoken or written content.</li>
+      <li>Incorporating quotes or statements into essays or reports.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">The witness said that the road had been closed for two hours.</div>
-<div class="lesson-pattern-sentence">She explained why the original plan had failed.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">The manager <strong>said</strong> that the meeting <strong>had been</strong> postponed.</div>
+      <div class="lesson-pattern-sentence">He <strong>told</strong> her <strong>to</strong> submit the report by Friday.</div>
+      <div class="lesson-pattern-sentence">She <strong>asked</strong> if the results <strong>were</strong> available.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Choose the reporting verb from the meaning you want.</li><li>Check the clause pattern the reporting verb needs after it.</li><li>Keep normal statement order inside reported clauses and reported questions.</li><li>Shift tense only when the timeline really calls for it.</li><li>Make sure the reported version still matches the original idea accurately.</li></ul>
+    <ul>
+      <li>Use "say" without an indirect object; use "tell" with an indirect object.</li>
+      <li>Change the tense in reported speech if the reporting verb is in the past tense.</li>
+      <li>Maintain statement word order in reported questions.</li>
+      <li>Adjust pronouns and time expressions to fit the context of the report.</li>
+      <li>Ensure the reported speech accurately reflects the original message.</li>
+    </ul>
   </section>
 </div>
 
@@ -82,24 +97,24 @@ draft: false
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>choosing the wrong reporting verb or clause pattern after it</h3>
+  <h3>Choosing the wrong reporting verb or clause pattern after it</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The teacher said us that the deadline had changed.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>The teacher told us that the deadline had changed.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> match the reporting verb to the message, then use the clause pattern it actually needs</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use "tell" when the listener is specified ("us").</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using say with an indirect object</h3>
+  <h3>Using "say" with an indirect object</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The officer said us that the road was closed.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>The officer told us that the road was closed.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use tell when the listener is named directly</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use "tell" when mentioning the listener directly.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>keeping direct-question word order inside a reported question</h3>
+  <h3>Keeping direct-question word order inside a reported question</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>She asked where was the nearest station.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>She asked where the nearest station was.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> reported questions use statement order, not direct-question order</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use statement order in reported questions.</p>
 </article>
 </div>
 
@@ -115,31 +130,34 @@ draft: false
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Focus on the meaning first. If the meaning changes, the grammar usually has to change too.</p>
   <div class="practice-lab-grid">
 <article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Reporting What Others Said form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
   <p class="practice-task-label">1. Quick pick</p>
   <h3>Choose the stronger sentence for Reporting What Others Said.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  The teacher said us that the deadline had changed.
+  The manager said me that the meeting was cancelled.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  The teacher told us that the deadline had changed.
+  The manager told me that the meeting was cancelled.
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  The manager announced me that the meeting was cancelled.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="He asked||where the nearest||station was." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="He asked||when the report||would be ready." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put this Reporting What Others Said sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="where the nearest" data-chip-origin="bank-1" data-chip-id="1-0">
-  where the nearest
+<button type="button" class="practice-chip" data-chip-value="when the report" data-chip-origin="bank-1" data-chip-id="1-0">
+  when the report
 </button>
-<button type="button" class="practice-chip" data-chip-value="station was." data-chip-origin="bank-1" data-chip-id="1-1">
-  station was.
+<button type="button" class="practice-chip" data-chip-value="would be ready." data-chip-origin="bank-1" data-chip-id="1-1">
+  would be ready.
 </button>
 <button type="button" class="practice-chip" data-chip-value="He asked" data-chip-origin="bank-1" data-chip-id="1-2">
   He asked
@@ -152,34 +170,33 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-
 <article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
   <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>The teacher told us that the deadline had changed.</p>
+  <p>The manager told me that the meeting was cancelled.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>The teacher said us that the deadline had changed.</p>
+  <p>The manager said me that the meeting was cancelled.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>He asked where the nearest station was.</p>
+  <p>He asked when the report would be ready.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>He asked where was the nearest station.</p>
+  <p>He asked when would be the report ready.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
@@ -195,7 +212,7 @@ draft: false
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering reported speech is essential for clear communication. Misreporting can lead to misunderstandings, affecting both personal and professional interactions. Accurate reporting ensures your English is precise and easily understood.</p>
+<p class="lesson-importance"><strong>🎯 Why it matters:</strong> Mastering reported speech is essential for clear communication. Misreporting can lead to misunderstandings, affecting both personal and professional interactions. Accurate reporting ensures your English is precise and easily understood.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

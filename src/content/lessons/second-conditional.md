@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Control if-sentences by matching the condition and result to the same timeline and logic."
+excerpt: "Learn how to use the second conditional to discuss unreal or unlikely situations in English."
 date: "2026-03-02"
 tags: ["grammar", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Name the situation first: real, likely, unreal, or impossible in the past."
@@ -35,7 +35,7 @@ quiz:
     correctIndex: 1
     explanation: "Option 2 repairs a typical Conditional Sentences: Second error and matches the target form."
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Second conditional</strong> talks about unreal or unlikely situations. We use it when we imagine a different present or future. In this lesson, you will see how the pattern works and when to use <em>would</em>.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Second conditional</strong> sentences describe unreal or unlikely situations in the present or future. They help us imagine different scenarios and discuss hypothetical outcomes. This lesson will show you how to use <em>would</em> effectively in these contexts.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
@@ -43,13 +43,13 @@ quiz:
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>If I had more time, I will join the course.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>If I had more time, I would join the course.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-card-note">The sentence correctly uses the second conditional to express an unreal present situation.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>If I have a car, I would drive to work every day.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>If I had a car, I would drive to work every day.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-card-note">This correction uses the past simple after 'if' to indicate an unreal situation.</p>
 </article>
 </div>
 
@@ -57,23 +57,33 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Second conditional is for unreal or unlikely present and future situations, so the sentence should sound imagined.</p>
-<p>Second conditional shows an unreal or unlikely present or future situation. We use it to imagine a different reality, dream, or unlikely outcome.</p>
-<p>Use second conditional for advice, imagination, and hypothetical situations. The common pattern is if + past simple, then would + base verb.</p>
-<p>At B2 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+    <p>The <strong>second conditional</strong> is used to describe unreal or unlikely situations in the present or future. It allows us to imagine different realities or outcomes. The structure is: <em>if + past simple</em>, followed by <em>would + base verb</em>.</p>
+    <p>This structure is important at the B2 level to express hypothetical scenarios and to discuss possibilities that are not currently true or likely.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Use a past form after if to show unreal meaning, not past time.</li><li>Use would, could, or might in the result clause.</li><li>Keep the whole sentence imaginary; do not mix it with a real future result unless you are using a true mixed conditional.</li></ul>
+    <ul>
+      <li>Imagining a different present or future reality.</li>
+      <li>Giving advice based on hypothetical situations.</li>
+      <li>Discussing dreams or unlikely outcomes.</li>
+      <li>Writing or speaking about scenarios that are not true now.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">If I had more time, I would join the course.</div>
-<div class="lesson-pattern-sentence">If the city improved transit, more people could leave their cars at home.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">If I <strong>had</strong> more time, I <strong>would join</strong> the course.</div>
+      <div class="lesson-pattern-sentence">If the city <strong>improved</strong> transit, more people <strong>could leave</strong> their cars at home.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Ask whether the situation is unreal or unlikely now or in the future.</li><li>Use a past form after if to show unreal meaning.</li><li>Use would, could, or might in the result clause.</li><li>Keep the whole sentence hypothetical, not half real and half unreal.</li><li>Read the sentence again and ask whether it clearly sounds imagined.</li></ul>
+    <ul>
+      <li>Use the past simple after <em>if</em> to indicate an unreal situation.</li>
+      <li>Use <em>would, could,</em> or <em>might</em> in the main clause to express the imagined result.</li>
+      <li>Ensure the entire sentence remains hypothetical.</li>
+      <li>Avoid mixing real and unreal forms within the same sentence.</li>
+    </ul>
   </section>
 </div>
 
@@ -81,24 +91,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>mixing real and unreal forms in a second conditional sentence</h3>
+  <h3>Mixing real and unreal forms in a second conditional sentence</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>If I knew the answer, I will tell you now.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>If I knew the answer, I would tell you now.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use if + past form and would + base verb for unreal present or future meaning</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use <em>if + past form</em> and <em>would + base verb</em> for unreal present or future meaning.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using will instead of would in an unreal sentence</h3>
+  <h3>Using 'will' instead of 'would' in an unreal sentence</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>If I had more free time, I will take evening classes.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>If I had more free time, I would take evening classes.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use would in the result clause of the second conditional</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use <em>would</em> in the result clause of the second conditional.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>using present simple after if when the meaning is unreal</h3>
+  <h3>Using present simple after 'if' when the meaning is unreal</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>If I have more money, I would move closer to work.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>If I had more money, I would move closer to work.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use a past form after if to show unreal present or future meaning</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use a past form after <em>if</em> to show unreal present or future meaning.</p>
 </article>
 </div>
 
@@ -107,18 +117,18 @@ quiz:
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+      <p class="practice-lab-intro">First, identify the correct form. Then, construct it yourself. Finally, correct it in a full sentence.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Focus on the meaning first. If the meaning changes, the grammar usually needs to change too.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Second conditional form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the second conditional form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger sentence for Second conditional.</h3>
+  <h3>Choose the stronger sentence for the second conditional.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
   If I knew the answer, I will tell you now.
@@ -131,7 +141,7 @@ quiz:
 </article>
 <article class="practice-task" data-task-type="order" data-task-answer="If she||had more confidence,||she would speak||more clearly." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
   <p class="practice-task-label">2. Build it</p>
-  <h3>Put this Second conditional sentence in the correct order.</h3>
+  <h3>Put this second conditional sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
 <button type="button" class="practice-chip" data-chip-value="had more confidence," data-chip-origin="bank-1" data-chip-id="1-0">
@@ -197,7 +207,7 @@ quiz:
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Conditional sentences can quickly change the meaning of a statement. A small tense mistake can turn a hypothetical idea into a real one or vice versa. Mastering the <u>Second conditional</u> ensures clarity in your communication, especially in speaking, writing, and exam answers.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering the <u>second conditional</u> is crucial for clear communication. It helps differentiate between real and hypothetical scenarios, ensuring your intended meaning is conveyed accurately in both spoken and written English, particularly in exams and professional settings.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

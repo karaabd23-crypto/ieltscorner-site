@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "4.5-5.5"
 clb: "5-6"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B1 lesson on There is, There are with teacher-style explanation, guided practice, and topic-linked review."
+excerpt: "Learn to use 'There is' and 'There are' correctly to clearly indicate the presence or absence of items or people in your sentences."
 date: "2026-03-02"
 tags: ["grammar", "b1", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
@@ -41,15 +41,15 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>She do not need extra time for this section.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>She does not need extra time for this section.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>There is many reasons to revise the final paragraph.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>There are many reasons to revise the final paragraph.</p>
+  <p class="lesson-card-note">'There are' is used because 'reasons' is plural, matching the verb to the noun.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>There is many reasons to revise the final paragraph.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>There are many reasons to revise the final paragraph.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>There are a cat in the garden.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>There is a cat in the garden.</p>
+  <p class="lesson-card-note">'There is' is used because 'a cat' is singular, matching the verb to the noun.</p>
 </article>
 </div>
 
@@ -57,23 +57,32 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Helper verbs are small, but they control the grammar of the whole clause.</p>
-<p>Auxiliaries such as be, do, and have help build questions, negatives, emphasis, and tense forms. They look small, but they control the grammar of the whole clause.</p>
-<p>Use auxiliaries carefully because one missing helper verb can make the whole sentence ungrammatical. In basic English, accurate be, do, and have choices matter more than adding complexity.</p>
-<p>At B1 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+    <p>'There is' and 'There are' are used to indicate the existence or presence of something. 'There is' is used with singular nouns, and 'There are' is used with plural nouns. This structure helps in making statements about the presence or absence of items or people. Understanding this distinction is important at the B2 level to ensure clarity in communication.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Check whether the sentence needs a helper verb for a question, negative, or tense form.</li><li>Match the auxiliary to the subject and time reference.</li><li>Do not mix main-verb patterns and auxiliary patterns in the same clause.</li></ul>
+    <ul>
+      <li>Describing the existence of a single item or person (use 'There is').</li>
+      <li>Describing the existence of multiple items or people (use 'There are').</li>
+      <li>Writing or speaking about what is present or available in a particular location.</li>
+      <li>Answering questions about the presence of something.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">She does not need extra time for this section.</div>
-<div class="lesson-pattern-sentence">There are two reasons why the plan failed.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence"><strong>There is</strong> a book on the table.</div>
+      <div class="lesson-pattern-sentence"><strong>There are</strong> several options available.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Decide whether the sentence needs a helper verb for a question, negative, or tense form.</li><li>Match the auxiliary to the subject.</li><li>Choose the right helper: be, do, or have.</li><li>Check the main verb form after the auxiliary is in place.</li><li>Read the finished clause once because one small auxiliary error can damage the whole sentence.</li></ul>
+    <ul>
+      <li>Use 'There is' with singular nouns.</li>
+      <li>Use 'There are' with plural nouns.</li>
+      <li>Always match the verb form to the noun following 'There is/are'.</li>
+      <li>Be cautious of singular/plural mismatches, especially in complex sentences.</li>
+    </ul>
   </section>
 </div>
 
@@ -81,24 +90,17 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>choosing the wrong helper verb or subject agreement in the clause</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>He do not understand the final instruction.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>He does not understand the final instruction.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> match the auxiliary to the subject and sentence job before you build the rest of the clause</p>
+  <h3>Using 'there is' with a plural noun</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>There is many reasons to expand the service.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>There are many reasons to expand the service.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use 'there are' for plural nouns like 'reasons'.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using do with the wrong subject form</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>She do not agree with the final decision.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>She does not agree with the final decision.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> match do and does to the subject before you build the negative</p>
-</article>
-<article class="lesson-error-card">
-  <p class="lesson-card-label">Common problem 3</p>
-  <h3>using there is with a plural complement</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>There is many reasons to expand the service.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>There are many reasons to expand the service.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> match the form of be to the real noun after there</p>
+  <h3>Using 'there are' with a singular noun</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>There are a problem with the report.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>There is a problem with the report.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use 'there is' for singular nouns like 'a problem'.</p>
 </article>
 </div>
 
@@ -107,44 +109,44 @@ quiz:
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+      <p class="practice-lab-intro">Learn to use 'There is' and 'There are' correctly by choosing, ordering, and sorting sentences.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Focus on matching the verb form to the noun to ensure grammatical accuracy.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the There is, There are form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="2" data-task-id="1" data-correct-feedback="Correct. 'There are' matches the plural noun 'books'." data-wrong-feedback="Not yet. Remember to match the verb to the noun.">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger sentence for There is, There are.</h3>
+  <h3>Choose the correct sentence.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  He do not understand the final instruction.
+  There is many books on the shelf.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  He does not understand the final instruction.
+  There is a book on the shelf.
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  There are many books on the shelf.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="There were too||many errors in||the first||draft." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="There is a||meeting scheduled||for tomorrow." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
   <p class="practice-task-label">2. Build it</p>
-  <h3>Put this There is, There are sentence in the correct order.</h3>
+  <h3>Put this sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="the first" data-chip-origin="bank-1" data-chip-id="1-0">
-  the first
+<button type="button" class="practice-chip" data-chip-value="There is a" data-chip-origin="bank-1" data-chip-id="1-0">
+  There is a
 </button>
-<button type="button" class="practice-chip" data-chip-value="draft." data-chip-origin="bank-1" data-chip-id="1-1">
-  draft.
+<button type="button" class="practice-chip" data-chip-value="meeting scheduled" data-chip-origin="bank-1" data-chip-id="1-1">
+  meeting scheduled
 </button>
-<button type="button" class="practice-chip" data-chip-value="There were too" data-chip-origin="bank-1" data-chip-id="1-2">
-  There were too
-</button>
-<button type="button" class="practice-chip" data-chip-value="many errors in" data-chip-origin="bank-1" data-chip-id="1-3">
-  many errors in
+<button type="button" class="practice-chip" data-chip-value="for tomorrow." data-chip-origin="bank-1" data-chip-id="1-2">
+  for tomorrow.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -154,34 +156,33 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-
 <article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
   <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>He does not understand the final instruction.</p>
+  <p>There are several opportunities available.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>He do not understand the final instruction.</p>
+  <p>There is many opportunities available.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>There were too many errors in the first draft.</p>
+  <p>There is a solution to this problem.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>There was too many errors in the first draft.</p>
+  <p>There are a solution to this problem.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>

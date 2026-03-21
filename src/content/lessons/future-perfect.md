@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn to use the Future Perfect Simple tense to express actions completed before a specific future time."
+excerpt: "Learn to use the Future Perfect Simple tense to express actions completed before a future time."
 date: "2026-03-02"
 tags: ["grammar", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Circle the time marker before you choose the verb form."
@@ -57,14 +57,15 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>The <strong>Future Perfect Simple</strong> tense is used to describe actions that will be completed before a specific point in the future. It is formed with 'will have' followed by the past participle of the verb. At the B2 level, this tense helps in planning and projecting future events with clarity.</p>
+    <p>The <strong>Future Perfect Simple</strong> tense describes actions that will be completed before a specific point in the future. It is formed with 'will have' followed by the past participle of the verb. This tense is crucial at the B2 level for planning and projecting future events with clarity and precision.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
     <ul>
-      <li>You want to express an action that will be completed before a specific future time.</li>
-      <li>Discussing future deadlines or goals, e.g., "By next year, I will have finished my degree."</li>
-      <li>Making predictions about completed actions in the future, e.g., "By 2030, scientists will have found a cure for the disease."</li>
+      <li>Expressing an action that will be completed before a specific future time.</li>
+      <li>Discussing future deadlines or goals, such as project completion dates.</li>
+      <li>Making predictions about completed actions by a future date.</li>
+      <li>Planning future events that will be finished before another future event.</li>
     </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
@@ -81,6 +82,7 @@ quiz:
       <li>Always pair with a future time reference, e.g., "by next week," "by 2025."</li>
       <li>Do not use for ongoing actions; it indicates completion.</li>
       <li>Ensure the action is expected to be completed before the specified time.</li>
+      <li>Avoid using simple future when an action is to be completed by a future time.</li>
     </ul>
   </section>
 </div>

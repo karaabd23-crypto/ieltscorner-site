@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn how to use 'for' and 'since' in time expressions to indicate duration and starting points accurately."
+excerpt: "Learn to accurately use 'for' and 'since' in time expressions to enhance clarity in communication."
 date: "2026-03-02"
 tags: ["grammar", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Study prepositions in chunks, not alone: interested in, responsible for, arrive at."
@@ -57,7 +57,7 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>'For' and 'Since' are prepositions used in time expressions to indicate duration and starting points. 'For' is used to specify the length of time an action has been happening, while 'Since' indicates the starting point of an action that continues to the present.</p>
+    <p>'For' and 'Since' are prepositions used in time expressions to indicate duration and starting points. 'For' specifies the length of time an action has been happening, while 'Since' indicates the starting point of an action that continues to the present.</p>
     <p>Formation: 'For' + duration (e.g., hours, days), 'Since' + specific starting point (e.g., a date, a time).</p>
     <p>Understanding these distinctions is crucial at the B2 level to ensure clarity in both spoken and written communication.</p>
   </section>

@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "4.0-5.0"
 clb: "4-5"
 exam: ["IELTS", "CELPIP"]
-excerpt: "A2 lesson on Too and enough with teacher-style explanation, guided practice, and topic-linked review."
+excerpt: "Learn how to use 'too' and 'enough' to express degrees of quantity or quality accurately, enhancing clarity and precision in your communication."
 date: "2026-02-27"
 tags: ["grammar", "a2", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
@@ -42,15 +42,15 @@ draft: false
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The room was too noisy that we left early.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>The room was so noisy that we left early.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The soup is too much salty to eat.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>The soup is <strong>too salty</strong> to eat.</p>
+  <p class="lesson-card-note">Use <strong>too</strong> with adjectives to indicate excessiveness.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>There was not enough chairs for everyone.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>There were not enough chairs for everyone.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>He is strong enough to lift the box.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>He is <strong>strong enough</strong> to lift the box.</p>
+  <p class="lesson-card-note">Place <strong>enough</strong> after adjectives to indicate sufficiency.</p>
 </article>
 </div>
 
@@ -58,23 +58,35 @@ draft: false
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>These forms help you show enough, too much, or a clear result.</p>
-<p>Result structures such as too, enough, and so ... that show whether a quality reaches a limit or produces a result. They are useful when you want to show capacity, failure, or consequence clearly.</p>
-<p>Use too when something passes a negative limit, enough when it reaches a needed level, and so ... that when you want to show a full result clause.</p>
-<p>At A2 level, keep sentences short and clear first. Add extra words only when they help meaning.</p>
+    <p><strong>Too</strong> and <strong>enough</strong> are used to express degrees of quantity or quality. <strong>Too</strong> indicates an excessive amount or degree, while <strong>enough</strong> indicates sufficiency. These structures help clarify whether something is more than necessary or just sufficient.</p>
+    <p>The pattern for <strong>too</strong> is: too + adjective/adverb + (for someone) + to + verb. For <strong>enough</strong>, it is: adjective/adverb + enough + (for someone) + to + verb.</p>
+    <p>Understanding these structures is crucial at the B2 level to enhance clarity and precision in communication.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Use too + adjective/adverb + to + verb for negative limits.</li><li>Use adjective/adverb + enough + to + verb for sufficient level.</li><li>Use so + adjective/adverb + that + clause when you need a full result clause.</li></ul>
+    <ul>
+      <li>Describing something that exceeds a desired or acceptable level.</li>
+      <li>Indicating that something is sufficient to meet a need or requirement.</li>
+      <li>Writing formal letters or essays where precision is important.</li>
+      <li>Discussing capabilities or limitations in workplace settings.</li>
+      <li>Expressing dissatisfaction or adequacy in daily conversations.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">The room was so noisy that we left early.</div>
-<div class="lesson-pattern-sentence">She was confident enough to answer without notes.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">The coffee was <strong>too hot</strong> to drink immediately.</div>
+      <div class="lesson-pattern-sentence">He is <strong>experienced enough</strong> to handle the project alone.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Decide whether you mean excess, sufficiency, or a full result clause.</li><li>Use too for excess and enough for sufficient level.</li><li>Use so ... that when you need a full result clause after the adjective or adverb.</li><li>Check the noun or verb pattern after enough carefully.</li><li>Keep the whole sentence focused on one result only.</li></ul>
+    <ul>
+      <li>Use <strong>too</strong> to indicate excess; use <strong>enough</strong> to indicate sufficiency.</li>
+      <li>Place <strong>enough</strong> after adjectives and adverbs, but before nouns.</li>
+      <li>Always follow <strong>too</strong> and <strong>enough</strong> with an infinitive verb when indicating purpose.</li>
+      <li>Be cautious of using <strong>too</strong> when you mean <strong>enough</strong> and vice versa.</li>
+    </ul>
   </section>
 </div>
 
@@ -84,22 +96,22 @@ draft: false
   <p class="lesson-card-label">Common problem 1</p>
   <h3>mixing too, enough, and so ... that patterns</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>She was enough confident to lead the discussion.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>She was confident enough to lead the discussion.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> choose the structure from the exact meaning: excess, sufficiency, or full result clause</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>She was <strong>confident enough</strong> to lead the discussion.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use <strong>enough</strong> after adjectives to indicate sufficiency.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
   <h3>placing enough in the wrong position</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The room was enough quiet to record the interview.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The room was quiet enough to record the interview.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> place enough after the adjective or adverb it describes</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The room was <strong>quiet enough</strong> to record the interview.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Place <strong>enough</strong> after the adjective it describes.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
   <h3>using too when the sentence means sufficient level</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>We were too prepared to finish the task on time.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>We were prepared enough to finish the task on time.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use enough for a positive sufficient level</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>We were <strong>prepared enough</strong> to finish the task on time.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use <strong>enough</strong> for a positive sufficient level.</p>
 </article>
 </div>
 
@@ -108,44 +120,44 @@ draft: false
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+      <p class="practice-lab-intro">Identify the correct use of 'too' and 'enough' in various contexts. Then apply them in different sentence structures.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Focus on the meaning conveyed by 'too' and 'enough' in each sentence.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Too and enough form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The sentence uses 'enough' correctly to indicate sufficiency." data-wrong-feedback="Not yet. Consider whether the sentence indicates excess or sufficiency.">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger sentence for Too and enough.</h3>
+  <h3>Choose the correct sentence with 'enough'.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  She was enough confident to lead the discussion.
+  The coffee is enough hot to drink.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  She was confident enough to lead the discussion.
+  The coffee is hot enough to drink.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="The bus was||so full that||nobody else could||get on." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="The project was||too complex||for the team||to complete on time." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
   <p class="practice-task-label">2. Build it</p>
-  <h3>Put this Too and enough sentence in the correct order.</h3>
+  <h3>Put this 'too' sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="so full that" data-chip-origin="bank-1" data-chip-id="1-0">
-  so full that
+<button type="button" class="practice-chip" data-chip-value="too complex" data-chip-origin="bank-1" data-chip-id="1-0">
+  too complex
 </button>
-<button type="button" class="practice-chip" data-chip-value="The bus was" data-chip-origin="bank-1" data-chip-id="1-1">
-  The bus was
+<button type="button" class="practice-chip" data-chip-value="The project was" data-chip-origin="bank-1" data-chip-id="1-1">
+  The project was
 </button>
-<button type="button" class="practice-chip" data-chip-value="get on." data-chip-origin="bank-1" data-chip-id="1-2">
-  get on.
+<button type="button" class="practice-chip" data-chip-value="to complete on time." data-chip-origin="bank-1" data-chip-id="1-2">
+  to complete on time.
 </button>
-<button type="button" class="practice-chip" data-chip-value="nobody else could" data-chip-origin="bank-1" data-chip-id="1-3">
-  nobody else could
+<button type="button" class="practice-chip" data-chip-value="for the team" data-chip-origin="bank-1" data-chip-id="1-3">
+  for the team
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -155,37 +167,22 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-
-<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-task-answer="Correct:He was too tired to continue working.||Fix:She was enough tired to continue working." data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
   <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>She was confident enough to lead the discussion.</p>
+<div class="practice-sort-row" data-sort-target="Correct" data-sort-row="0">
+  <p>He was too tired to continue working.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Correct">Correct</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Fix">Needs fixing</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>She was enough confident to lead the discussion.</p>
+<div class="practice-sort-row" data-sort-target="Fix" data-sort-row="1">
+  <p>She was enough tired to continue working.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
-  </div>
-</div>
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>The bus was so full that nobody else could get on.</p>
-  <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
-  </div>
-</div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>The bus was too full that nobody else could get on.</p>
-  <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Correct">Correct</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Fix">Needs fixing</button>
   </div>
 </div>
   </div>

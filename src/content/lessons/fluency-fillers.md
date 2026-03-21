@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn how to enhance your speaking fluency with effective use of fillers and linking phrases, ensuring clarity and coherence in your responses."
+excerpt: "Learn how to enhance your speaking fluency using fillers and linking phrases to maintain clarity and coherence."
 date: "2026-03-02"
 tags: ["speaking", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Start with a direct answer. Most speaking problems get smaller once the opening sentence is clear."
@@ -58,16 +58,16 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Fluency involves speaking smoothly and coherently by effectively connecting ideas. At the B2 level, this skill is crucial for maintaining clarity in communication. Linking phrases help transition between ideas, while fillers can provide thinking time without losing the listener's attention.</p>
-    <p>Common linking phrases include <strong>first of all</strong>, <strong>for example</strong>, and <strong>overall</strong>. These phrases ensure your speech is structured and meaningful.</p>
+    <p>Fluency in speaking involves the smooth and coherent connection of ideas. At the B2 level, using linking phrases and fillers is crucial for maintaining clarity and coherence. Linking phrases help transition between ideas, while fillers give you time to think without losing the listener's attention.</p>
+    <p>Examples of linking phrases include <strong>first of all</strong>, <strong>for example</strong>, and <strong>overall</strong>, which help structure your speech and make it more meaningful.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
     <ul>
-      <li>Providing a structured response in speaking exams or presentations.</li>
-      <li>Needing to pause and think without breaking the flow of speech.</li>
-      <li>Introducing examples or reasons to support your main point.</li>
-      <li>Summarizing your thoughts at the end of a response.</li>
+      <li>Giving structured responses in speaking exams or presentations.</li>
+      <li>Pausing to think without breaking the flow of speech.</li>
+      <li>Introducing examples or reasons to support your argument.</li>
+      <li>Summarizing your thoughts at the end of a discussion.</li>
     </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
@@ -80,7 +80,7 @@ quiz:
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
     <ul>
-      <li>Start with a clear point before using linkers.</li>
+      <li>Begin with a clear point before using linkers.</li>
       <li>Use linkers to introduce reasons or examples.</li>
       <li>Avoid excessive fillers; use meaningful phrases instead.</li>
       <li>Keep sentences concise to maintain fluency.</li>

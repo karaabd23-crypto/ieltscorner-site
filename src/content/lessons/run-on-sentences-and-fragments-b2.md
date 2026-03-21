@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Improve Run-On Sentences and Fragments with clearer structure, stronger support, and cleaner paragraph control."
+excerpt: "Learn to identify and correct run-on sentences and fragments for clearer, more effective writing in IELTS and CELPIP exams."
 date: "2026-03-17"
 tags: ["writing", "b2", "sentence control", "fragments", "run-ons", "punctuation"]
 heroTip: "Plan the job of the paragraph before you write the sentences."
@@ -35,21 +35,21 @@ quiz:
     correctIndex: 0
     explanation: "A paragraph reads better when each sentence does one clear piece of work."
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Run-On Sentences and Fragments</strong> are common writing errors that can confuse readers and weaken the clarity of your writing. This lesson will help you identify and correct these issues, improving your writing for IELTS and CELPIP exams.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Run-On Sentences and Fragments</strong> are common writing errors that can confuse readers and weaken the clarity of your writing. This lesson will help you identify and correct these issues, improving your writing for IELTS and CELPIP exams by ensuring each sentence is complete and properly structured.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>This approach seems useful because it helps people in several ways.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Focused investment can improve access, reliability, and quality of life.</p>
-  <p class="lesson-card-note">The stronger sentence gives the paragraph a clear direction.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The meeting was long, everyone was tired.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The meeting was long<strong>; everyone was tired.</strong></p>
+  <p class="lesson-card-note">The strong sentence uses a semicolon to properly separate two independent clauses.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>For example, one local program made services better for residents.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>A pilot program improved service response times in one local district.</p>
-  <p class="lesson-card-note">The better version develops the idea instead of circling around it.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Although it was raining.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Although it was raining<strong>, we decided to go for a walk.</strong></p>
+  <p class="lesson-card-note">The strong sentence completes the thought by adding a main clause.</p>
 </article>
 </div>
 
@@ -58,23 +58,34 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>This lesson focuses on one writing move that changes clarity and score at the same time.</p>
-<p>This writing skill matters because exam readers reward control: clear task response, focused support, and readable structure. A strong response tells the reader exactly what it is doing and develops that message with specific support instead of vague general statements.</p>
-<p>Use this lesson when you want a more reliable writing process under time pressure. Plan the function of the response first, then build paragraphs that each do one job. That makes editing easier because you can test not only language but also structure.</p>
-<p>At B2 level, stronger writing comes from better paragraph control, not from simply making the language longer.</p>
+    <p>Run-on sentences occur when two or more independent clauses are improperly joined without punctuation or conjunctions. Sentence fragments are incomplete sentences that lack a main clause. Both errors can confuse readers and weaken the clarity of writing.</p>
+    <p>At the B2 level, understanding and correcting these errors is crucial for clear communication, especially in exam settings where clarity and coherence are assessed.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Start by identifying the exact job of the task or paragraph.</li><li>Keep support specific enough to prove the point rather than decorate it.</li><li>Check that every sentence moves the response toward its purpose.</li></ul>
+    <ul>
+      <li>Writing complex sentences that combine multiple ideas.</li>
+      <li>Editing your writing for clarity and coherence.</li>
+      <li>Preparing for IELTS or CELPIP writing tasks where sentence structure impacts scores.</li>
+      <li>Ensuring each sentence has a subject and a verb, forming a complete thought.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Focused investment can improve access, reliability, and quality of life.</div>
-<div class="lesson-pattern-sentence">A pilot program improved service response times in one local district.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">The exam was difficult<strong>; many students did not finish.</strong></div>
+      <div class="lesson-pattern-sentence">Because the deadline was moved forward<strong>, production slowed.</strong></div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Turn the task into one clear response purpose.</li><li>Plan the main points before drafting sentences.</li><li>Develop each point with explanation and a concrete example or consequence.</li><li>Use transitions only when they reflect real logic.</li><li>Edit for clarity, support, and sentence control in that order.</li></ul>
+    <ul>
+      <li>Use a semicolon or conjunction to join independent clauses.</li>
+      <li>Avoid starting a sentence with a conjunction unless it completes a thought.</li>
+      <li>Ensure every sentence has a subject and a verb.</li>
+      <li>Break long sentences into shorter ones for clarity.</li>
+      <li>Review sentences for completeness and proper punctuation.</li>
+    </ul>
   </section>
 </div>
 
@@ -82,23 +93,23 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>joining two sentences with only a comma (comma splice)</h3>
+  <h3>Comma splice</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The exam was difficult, many students did not finish.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The exam was difficult; many students did not finish.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Replace the comma with a semicolon, a full stop, or add a conjunction (so, but, and).</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The exam was difficult<strong>; many students did not finish.</strong></p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use a semicolon, period, or conjunction to separate independent clauses.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>writing a dependent clause as if it were a complete sentence</h3>
+  <h3>Sentence fragment</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Because the deadline was moved forward.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Production slowed because the deadline was moved forward.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> A clause starting with because, although, or when cannot stand alone — attach it to a main clause.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Production slowed<strong> because the deadline was moved forward.</strong></p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Attach the dependent clause to a main clause.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>stringing too many "and" clauses into one run-on sentence</h3>
+  <h3>Run-on sentence</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The team worked hard and they finished early and they submitted the report and the client was happy.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The team worked hard and finished early. After submitting the report, they received positive feedback from the client.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The team worked hard and finished early<strong>. After submitting the report, they received positive feedback from the client.</strong></p>
   <p class="lesson-fix-line"><strong>Fix:</strong> Break chains of "and" into two or three shorter sentences for easier reading.</p>
 </article>
 </div>
@@ -108,44 +119,44 @@ quiz:
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">Begin with purpose. Then check the order and cut anything that does not help the paragraph.</p>
+      <p class="practice-lab-intro">Identify and correct run-on sentences and fragments to enhance clarity.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">If a sentence has no clear job, it should change or disappear.</p>
+  <p class="practice-lab-coach">Ensure every sentence is complete and properly joined.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger move for Run-On Sentences and Fragments.</h3>
+  <h3>Choose the correct sentence structure.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  Keep the idea vague and hope the reader understands.
+  The project was delayed, it was raining.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  Focused investment can improve access, reliability, and quality of life.
+  The project was delayed<strong> because it was raining.</strong>
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  The project was delayed it was raining.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Turn the task into one clear response purpose.||Plan the main points before drafting sentences.||Develop each point with explanation and a concrete example or consequence.||Use transitions only when they reflect real logic." data-task-id="1">
+<article class="practice-task" data-task-type="order" data-task-answer="The report was submitted.||It was reviewed by the client.||The client provided feedback." data-task-id="2">
   <p class="practice-task-label">2. Build the flow</p>
-  <h3>Put these moves in a helpful order.</h3>
-  <p class="practice-task-note">Put the chunks in the natural order.</p>
+  <h3>Put these sentences in a logical order.</h3>
+  <p class="practice-task-note">Arrange the sentences to form a coherent paragraph.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="Plan the main points before drafting sentences." data-chip-origin="bank-1" data-chip-id="1-0">
-  Plan the main points before drafting sentences.
+<button type="button" class="practice-chip" data-chip-value="The report was submitted." data-chip-origin="bank-2" data-chip-id="2-0">
+  The report was submitted.
 </button>
-<button type="button" class="practice-chip" data-chip-value="Turn the task into one clear response purpose." data-chip-origin="bank-1" data-chip-id="1-1">
-  Turn the task into one clear response purpose.
+<button type="button" class="practice-chip" data-chip-value="The client provided feedback." data-chip-origin="bank-2" data-chip-id="2-1">
+  The client provided feedback.
 </button>
-<button type="button" class="practice-chip" data-chip-value="Use transitions only when they reflect real logic." data-chip-origin="bank-1" data-chip-id="1-2">
-  Use transitions only when they reflect real logic.
-</button>
-<button type="button" class="practice-chip" data-chip-value="Develop each point with explanation and a concrete example or consequence." data-chip-origin="bank-1" data-chip-id="1-3">
-  Develop each point with explanation and a concrete example or consequence.
+<button type="button" class="practice-chip" data-chip-value="It was reviewed by the client." data-chip-origin="bank-2" data-chip-id="2-2">
+  It was reviewed by the client.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -155,36 +166,36 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="sort" data-task-id="2">
+<article class="practice-task" data-task-type="sort" data-task-answer="Helpful:Use a semicolon to join related independent clauses,Ensure each sentence has a subject and a verb||Not helpful:Write long sentences without punctuation,Use conjunctions randomly" data-task-id="3" data-sort-categories="Helpful||Not helpful">
   <p class="practice-task-label">3. Final sort</p>
-  <h3>Sort these habits into helpful or not helpful.</h3>
+  <h3>Sort these practices into helpful or not helpful.</h3>
   <div class="practice-sort-list">
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>Turn the task into one clear response purpose.</p>
+<div class="practice-sort-row" data-sort-target="Helpful" data-sort-row="0">
+  <p>Use a semicolon to join related independent clauses.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Not helpful">Not helpful</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="1">
-  <p>Plan the main points before drafting sentences.</p>
+<div class="practice-sort-row" data-sort-target="Helpful" data-sort-row="1">
+  <p>Ensure each sentence has a subject and a verb.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Not helpful">Not helpful</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="2">
-  <p>Add a new reason in the middle of the paragraph to sound richer.</p>
+<div class="practice-sort-row" data-sort-target="Not helpful" data-sort-row="2">
+  <p>Write long sentences without punctuation.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Not helpful">Not helpful</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>Use a broad example even when it does not prove the point clearly.</p>
+<div class="practice-sort-row" data-sort-target="Not helpful" data-sort-row="3">
+  <p>Use conjunctions randomly.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Not helpful">Not helpful</button>
   </div>
 </div>
   </div>
@@ -193,24 +204,11 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="3">
-  <p class="practice-task-label">4. Last check</p>
-  <h3>Choose the sentence that sounds more controlled.</h3>
-  <div class="practice-choice-grid">
-<button type="button" class="practice-choice" data-choice-index="0">
-  This point is important in many ways and that is all.
-</button>
-<button type="button" class="practice-choice" data-choice-index="1">
-  A pilot program improved service response times in one local district.
-</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
   </div>
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Clear and concise writing is crucial in IELTS and CELPIP exams. Avoiding run-on sentences and fragments helps ensure that your ideas are communicated effectively, leading to a stronger score.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Clear and concise writing is crucial in IELTS and CELPIP exams. Avoiding run-on sentences and fragments ensures your ideas are communicated effectively, leading to a stronger score by maintaining clarity and coherence.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

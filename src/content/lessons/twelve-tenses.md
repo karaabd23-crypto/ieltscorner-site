@@ -1,11 +1,11 @@
 ---
-title: "Tense Review: The 12 Tenses"
+title: "Mastering the 12 English Tenses"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Match tense choice to time meaning so the reader never has to guess your timeline."
+excerpt: "Master the 12 English tenses to enhance your communication skills by accurately conveying time and aspect in various contexts."
 date: "2026-03-02"
 tags: ["grammar", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Circle the time marker before you choose the verb form."
@@ -35,7 +35,9 @@ quiz:
     correctIndex: 1
     explanation: "Option 2 repairs a typical Tense Review: The 12 Tenses error and matches the target form."
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>The full tense system</strong> helps you show <em>time</em> clearly. A good tense choice tells the reader or listener when something happens and whether it is finished, continuing, or connected to another time. In this lesson, you will match form to meaning and improve your control over tense usage.</p></div>
+<div class="lesson-context">
+  <p class="lesson-context-lead"><strong>The full tense system</strong> helps you show <em>time</em> clearly. A good tense choice tells the reader or listener when something happens and whether it is finished, continuing, or connected to another time. In this lesson, you will match form to meaning and improve your control over tense usage, enhancing your ability to communicate effectively in both written and spoken English.</p>
+</div>
 
 ## Examples
 <div class="lesson-example-grid">
@@ -43,13 +45,13 @@ quiz:
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Last year, the council increases bus frequency in two districts.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Last year, the council increased bus frequency in two districts.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-card-note">The past simple tense is used here to indicate a completed action in the past.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>By next month, we finish the pilot stage.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>By next month, we will have finished the pilot stage.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-card-note">The future perfect tense is appropriate for actions that will be completed before a specific future time.</p>
 </article>
 </div>
 
@@ -57,23 +59,34 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Tense choice becomes easier when you decide the timeline before the verb form.</p>
-<p>English has 12 main tense-aspect combinations: simple, continuous, perfect, and perfect continuous across present, past, and future time. The real skill is not memorizing a chart. The real skill is choosing the form that matches the timeline and the relationship between actions.</p>
-<p>Start by asking when the action happens. Then ask what kind of meaning you need: a fact, an action in progress, a finished action connected to another time, or a duration. In exam writing and speaking, tense choice helps the reader follow your timeline without guessing.</p>
-<p>At B2 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+    <p>The English tense system includes 12 forms that express time and aspect: simple, continuous, perfect, and perfect continuous in present, past, and future. These forms allow speakers to indicate when an action occurs and its relation to other actions.</p>
+    <p>At the B2 level, mastering these tenses is essential for clear communication, especially in academic and professional settings. Understanding each tense's function helps in choosing the right form to convey precise meaning.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Use time markers such as yesterday, now, since, and by next year to anchor the timeline first.</li><li>Use perfect forms when you need to show an earlier action connected to another time point.</li><li>Keep tense shifts deliberate. If the timeline has not changed, the verb form usually should not change either.</li></ul>
+    <ul>
+      <li>Describing habitual actions or general truths (Present Simple).</li>
+      <li>Indicating actions in progress at a specific time (Present Continuous).</li>
+      <li>Connecting past actions to the present (Present Perfect).</li>
+      <li>Discussing future plans or predictions (Future Simple).</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Since January, attendance has improved every week.</div>
-<div class="lesson-pattern-sentence">By next month, the team will have finished the pilot.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">Every morning, she <strong>drinks</strong> coffee before work.</div>
+      <div class="lesson-pattern-sentence">Right now, they <strong>are discussing</strong> the project details.</div>
+      <div class="lesson-pattern-sentence">By tomorrow, he <strong>will have completed</strong> the report.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Mark the timeline first with a time word or situation clue.</li><li>Choose simple, continuous, perfect, or perfect continuous from the meaning.</li><li>Keep the reference point stable inside the sentence.</li><li>Use tense shifts only when the timeline really changes.</li><li>Check that the final verb form agrees with the time marker.</li></ul>
+    <ul>
+      <li>Use simple tenses for facts and routines.</li>
+      <li>Use continuous tenses for ongoing actions.</li>
+      <li>Use perfect tenses to connect different time points.</li>
+      <li>Ensure the verb tense matches the time markers in your sentence.</li>
+    </ul>
   </section>
 </div>
 
@@ -83,22 +96,22 @@ quiz:
   <p class="lesson-card-label">Common problem 1</p>
   <h3>choosing tense forms that do not match time references</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>In 2024, the team launch a revised curriculum model.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>In 2024, the team launched a revised curriculum model.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> match verb tense to the timeline signal in each sentence</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>In 2024, the team will launch a revised curriculum model.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use future simple for actions planned or predicted to occur in the future.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
   <h3>using present perfect with a finished time marker</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>She has finished the report yesterday.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>She finished the report yesterday.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use a past form with finished time markers like yesterday or last week</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use past simple with finished time markers like 'yesterday'.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
   <h3>switching tense without a time reason</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The study started in May and shows strong results in June.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>The study started in May and showed strong results in June.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> keep the tense stable unless the timeline genuinely changes</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Keep the tense consistent unless there's a clear time shift.</p>
 </article>
 </div>
 
@@ -107,41 +120,41 @@ quiz:
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+      <p class="practice-lab-intro">Identify the correct tense form, then apply it in new sentences.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Consider the time context before choosing the tense.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the the full tense system form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="0" data-task-id="1" data-correct-feedback="Correct. The past simple tense matches the time reference 'last year'." data-wrong-feedback="Not yet. Consider the time reference given.">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger sentence for the full tense system.</h3>
+  <h3>Select the correct sentence for the past event.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  In 2024, the team launch a revised curriculum model.
+  Last year, the council increased bus frequency in two districts.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  In 2024, the team launched a revised curriculum model.
+  Last year, the council increases bus frequency in two districts.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Since January,||attendance has improved||every week." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="By next month,||we will have completed||the project." data-task-id="2" data-correct-feedback="Correct. The sentence now follows a logical order for future perfect tense." data-wrong-feedback="Not yet. Arrange the sentence to reflect future completion.">
   <p class="practice-task-label">2. Build it</p>
-  <h3>Put this the full tense system sentence in the correct order.</h3>
+  <h3>Put this future perfect sentence in order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="attendance has improved" data-chip-origin="bank-1" data-chip-id="1-0">
-  attendance has improved
+<button type="button" class="practice-chip" data-chip-value="By next month," data-chip-origin="bank-1" data-chip-id="1-0">
+  By next month,
 </button>
-<button type="button" class="practice-chip" data-chip-value="every week." data-chip-origin="bank-1" data-chip-id="1-1">
-  every week.
+<button type="button" class="practice-chip" data-chip-value="we will have completed" data-chip-origin="bank-1" data-chip-id="1-1">
+  we will have completed
 </button>
-<button type="button" class="practice-chip" data-chip-value="Since January," data-chip-origin="bank-1" data-chip-id="1-2">
-  Since January,
+<button type="button" class="practice-chip" data-chip-value="the project." data-chip-origin="bank-1" data-chip-id="1-2">
+  the project.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -151,34 +164,33 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-
-<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You have categorized the sentences based on their accuracy." data-wrong-feedback="Some choices are incorrect. Review the tense and meaning.">
   <p class="practice-task-label">3. Final sort</p>
-  <h3>Mark each sentence as correct or needing a fix.</h3>
+  <h3>Sort each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>In 2024, the team launched a revised curriculum model.</p>
+  <p>By next month, we will have completed the project.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>In 2024, the team launch a revised curriculum model.</p>
+  <p>By next month, we complete the project.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>Since January, attendance has improved every week.</p>
+  <p>Every morning, she drinks coffee before work.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>Since January, attendance improved every week.</p>
+  <p>Every morning, she drink coffee before work.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
@@ -194,7 +206,7 @@ quiz:
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Verb choices carry time, meaning, and attitude. One wrong form can change the whole message. Mastering <u>the full tense system</u> ensures your writing and speaking are clearer, more natural, and more effective in communication.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastery of the full tense system allows you to convey precise time relationships and nuances in meaning, which is crucial for effective communication in academic, professional, and everyday contexts.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

@@ -1,11 +1,11 @@
 ---
-title: "Non-restrictive Relative Clauses"
+title: "Mastering Non-restrictive Relative Clauses"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Use relative clauses to add detail without repeating the subject or losing clarity."
+excerpt: "Learn to use non-restrictive relative clauses to add extra details to sentences without changing their main meaning."
 date: "2026-03-02"
 tags: ["grammar", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Underline the noun you are describing before you add the relative clause."
@@ -41,15 +41,13 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The teacher gave feedback was very specific.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>The teacher gave feedback that was very specific.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-line lesson-line-strong">My car, <strong>which I bought last year</strong>, is already having problems.</p>
+  <p class="lesson-card-note">The clause "which I bought last year" adds extra information about the car without altering the main point.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Students who study consistently they usually improve faster.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Students who study consistently usually improve faster.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-line lesson-line-strong">Our professor, <strong>who has written several books</strong>, is an expert in medieval history.</p>
+  <p class="lesson-card-note">The clause "who has written several books" provides additional information about the professor.</p>
 </article>
 </div>
 
@@ -57,23 +55,33 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Relative clauses help you join ideas smoothly without repeating the noun.</p>
-<p>A relative clause adds information about a noun. It lets you connect two ideas without repeating the noun in a second full sentence.</p>
-<p>Use relative clauses to describe or identify people, things, and places more efficiently. The key decision is whether the clause is essential or extra information.</p>
-<p>At B2 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+    <p>Non-restrictive relative clauses add extra information to a sentence without altering its core meaning. They are typically set off by commas and provide additional details about a noun.</p>
+    <p>These clauses use relative pronouns like <strong>who</strong>, <strong>which</strong>, or <strong>whose</strong> and are crucial at the B2 level for enhancing writing sophistication.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Attach the clause directly to the noun it describes.</li><li>Choose who, which, or that from the noun and the style you need.</li><li>Do not repeat the subject inside the relative clause.</li></ul>
+    <ul>
+      <li>Adding non-essential information about a noun.</li>
+      <li>Writing formal or academic texts where detail is important.</li>
+      <li>Clarifying a point without changing the main message.</li>
+      <li>Enhancing narrative or descriptive writing.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Students who revise consistently usually feel calmer in the exam.</div>
-<div class="lesson-pattern-sentence">The route that connects the station to campus is often overcrowded.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">The Eiffel Tower, <strong>which is in Paris</strong>, attracts millions of tourists each year.</div>
+      <div class="lesson-pattern-sentence">My brother, <strong>who lives in New York</strong>, is visiting us next week.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Choose the noun you want to describe before you add the clause.</li><li>Use who for people, which for things, and that where natural.</li><li>Do not repeat the subject inside the relative clause.</li><li>Use commas only when the clause adds extra information rather than identifying the noun.</li><li>Cut the clause if it does not help the reader understand the noun more clearly.</li></ul>
+    <ul>
+      <li>Use commas to set off non-restrictive clauses.</li>
+      <li>Do not use "that" in non-restrictive clauses.</li>
+      <li>Ensure the clause can be removed without changing the sentence's main meaning.</li>
+      <li>Use "which" for things and "who" for people.</li>
+    </ul>
   </section>
 </div>
 
@@ -81,24 +89,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>omitting or duplicating elements in relative clause structure</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The course provides materials are easy to review at home.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The course provides materials that are easy to review at home.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> attach the clause to the noun once and avoid repeating the subject</p>
+  <h3>Missing commas in non-restrictive clauses</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>My sister who lives in London is visiting.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>My sister, who lives in London, is visiting.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use commas to set off the non-restrictive clause.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>repeating the subject inside the relative clause</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The student who she won the prize thanked her teacher.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The student who won the prize thanked her teacher.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use the relative pronoun or the subject noun once, not twice</p>
+  <h3>Using "that" instead of "which"</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The book that I borrowed from you is fascinating.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The book, which I borrowed from you, is fascinating.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use "which" for non-restrictive clauses.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>using commas in a clause that identifies the noun</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Students, who arrive early, usually get the front seats.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Students who arrive early usually get the front seats.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> remove commas when the clause is necessary to identify the noun</p>
+  <h3>Confusing restrictive with non-restrictive clauses</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The team who won the championship celebrated all night.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The team, who won the championship, celebrated all night.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use commas to indicate non-essential information.</p>
 </article>
 </div>
 
@@ -107,44 +115,44 @@ quiz:
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+      <p class="practice-lab-intro">Recognize and correctly use non-restrictive relative clauses in sentences.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Focus on identifying non-essential information and using commas correctly.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Relative Clauses form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="2" data-task-id="1" data-correct-feedback="Correct. The sentence uses a non-restrictive clause correctly." data-wrong-feedback="Not yet. Look for the sentence that uses commas to add extra information.">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger sentence for Relative Clauses.</h3>
+  <h3>Choose the sentence with a non-restrictive clause.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  The course provides materials are easy to review at home.
+  The cat that I adopted is very playful.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  The course provides materials that are easy to review at home.
+  The cat, which I adopted, is very playful.
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  The cat which I adopted is very playful.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="People who||live near stations||often use public||transport more." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="The book||which I borrowed from you,||is fascinating." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Arrange the sentence to correctly use a non-restrictive clause.">
   <p class="practice-task-label">2. Build it</p>
-  <h3>Put this Relative Clauses sentence in the correct order.</h3>
+  <h3>Put this sentence with a non-restrictive clause in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="People who" data-chip-origin="bank-1" data-chip-id="1-0">
-  People who
+<button type="button" class="practice-chip" data-chip-value="The book" data-chip-origin="bank-1" data-chip-id="1-0">
+  The book
 </button>
-<button type="button" class="practice-chip" data-chip-value="often use public" data-chip-origin="bank-1" data-chip-id="1-1">
-  often use public
+<button type="button" class="practice-chip" data-chip-value="which I borrowed from you," data-chip-origin="bank-1" data-chip-id="1-1">
+  which I borrowed from you,
 </button>
-<button type="button" class="practice-chip" data-chip-value="live near stations" data-chip-origin="bank-1" data-chip-id="1-2">
-  live near stations
-</button>
-<button type="button" class="practice-chip" data-chip-value="transport more." data-chip-origin="bank-1" data-chip-id="1-3">
-  transport more.
+<button type="button" class="practice-chip" data-chip-value="is fascinating." data-chip-origin="bank-1" data-chip-id="1-2">
+  is fascinating.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -155,33 +163,19 @@ quiz:
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
 
-<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-task-answer="Works:The Eiffel Tower, which is in Paris, attracts millions of tourists each year.||Fix:The Eiffel Tower which is in Paris attracts millions of tourists each year." data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
   <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>The course provides materials that are easy to review at home.</p>
+  <p>The Eiffel Tower, which is in Paris, attracts millions of tourists each year.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>The course provides materials are easy to review at home.</p>
-  <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
-  </div>
-</div>
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>People who live near stations often use public transport more.</p>
-  <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
-  </div>
-</div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>People which live near stations often use public transport more.</p>
+  <p>The Eiffel Tower which is in Paris attracts millions of tourists each year.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>

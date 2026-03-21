@@ -11,10 +11,10 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
     <div class="hero" style={`--hero-bg: url('/heroes/writing.png');`}>
       <div class="hero-content">
         <span class="pill">100 CELPIP sample essays</span>
-        <h1>100 CELPIP Sample Essays</h1>
-        <p class="muted" style="max-width: 68ch;">
-          Access model responses for the full CELPIP writing prompt bank.
-          Access is available only to active subscribers.
+        <h1>Read 100 sample answers for CELPIP writing</h1>
+        <p style="max-width: 68ch; font-size: 1.15rem; line-height: 1.7;">
+          See what strong CELPIP writing looks like. Search by task, topic, or level.
+          Every essay is a CLB 9+ model with a short note on why it scores well.
         </p>
       </div>
     </div>
@@ -27,9 +27,11 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
 
     <div id="sample-library-locked" style="display:none;">
       <div class="card" style="border-left: 4px solid #dc3545;">
-        <h2 style="margin-top: 0; color: #dc3545;">Unlock 100 CELPIP sample essays</h2>
-        <p id="sample-library-locked-reason" class="muted" style="margin-top: 0;">
-          Unlock all 100 CELPIP sample essays plus the timed writing lab for just CA$5/month.
+        <h2 style="margin-top: 0; color: #dc3545;">Get access to all 100 sample essays</h2>
+        <p id="sample-library-locked-reason" style="margin-top: 0; font-size: 1.1rem; line-height: 1.7;">
+          For CA$5/month, you get 100 model answers you can search by task, topic, and
+          level. You also get the timed writing lab with scoring and feedback. Cancel any
+          time — no contracts.
         </p>
         <div class="cluster">
           <a class="btn btn-primary" href="/celpip/writing/ai-feedback">Subscribe for CA${CELPIP_WRITING_PRICE_CAD}/month</a>
@@ -87,9 +89,11 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
       <div style="height: var(--s-4);"></div>
 
       <div class="surface" style="padding: var(--s-5);">
-        <h3 style="margin-top: 0;">Preview style of the essays you will unlock</h3>
-        <p class="muted" style="margin-top: 0; max-width: 72ch;">
-          Subscribers get all 100 complete model essays with task context, CLB 9+ target labels, and rationale.
+        <h3 style="margin-top: 0;">What the sample essays look like</h3>
+        <p style="margin-top: 0; max-width: 72ch; font-size: 1.1rem; line-height: 1.7;">
+          Every essay has the task type, the topic, a CLB 9+ label, and a short note on
+          why it scores well. You can read the full response and use it as a model for
+          your own writing.
         </p>
 
         <div class="grid grid-3" style="gap: var(--s-3);">
@@ -120,8 +124,9 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
 
         <ul class="muted" style="margin: var(--s-3) 0 0 var(--s-4);">
           <li>50 Task 1 email essays + 50 Task 2 survey essays</li>
-          <li>CLB 9+ target label and short quality rationale for each model</li>
-          <li>Use the same subscription to access writing lab + essay bank</li>
+          <li>Search by task, topic, or CLB level</li>
+          <li>CLB 9+ label and short explanation for each essay</li>
+          <li>Same subscription gives you the writing lab too</li>
         </ul>
       </div>
     </div>
@@ -144,6 +149,33 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
         <p class="muted" style="margin: var(--s-2) 0 0; font-size: 0.92rem;">
           Cancellation is immediate. After canceling, we ask 4 short exit questions to improve the service.
         </p>
+      </div>
+
+      <div style="height: var(--s-4);"></div>
+
+      <div class="surface" style="padding: var(--s-4);">
+        <div class="cluster" style="gap: var(--s-3); flex-wrap: wrap;">
+          <input
+            id="sample-library-search"
+            type="search"
+            placeholder="Search by topic…"
+            autocomplete="off"
+            style="flex: 1; min-width: 200px; padding: var(--s-2) var(--s-3); border: 1px solid #ccc; border-radius: 6px; font: inherit;"
+          />
+          <select id="sample-library-filter-task" style="padding: var(--s-2) var(--s-3); border: 1px solid #ccc; border-radius: 6px; font: inherit;">
+            <option value="all">All tasks</option>
+            <option value="task1">Task 1 — Email</option>
+            <option value="task2">Task 2 — Survey</option>
+          </select>
+          <select id="sample-library-filter-level" style="padding: var(--s-2) var(--s-3); border: 1px solid #ccc; border-radius: 6px; font: inherit;">
+            <option value="all">All levels</option>
+            <option value="CLB 9">CLB 9</option>
+            <option value="CLB 10">CLB 10</option>
+            <option value="CLB 11">CLB 11</option>
+            <option value="CLB 12">CLB 12</option>
+          </select>
+        </div>
+        <p id="sample-library-filter-count" class="muted" style="margin: var(--s-2) 0 0;"></p>
       </div>
 
       <div style="height: var(--s-4);"></div>
@@ -363,25 +395,55 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
         return article;
       };
 
-      const renderLibrary = (data) => {
-        const task1 = Array.isArray(data.task1) ? data.task1 : [];
-        const task2 = Array.isArray(data.task2) ? data.task2 : [];
+      const searchInput = document.getElementById('sample-library-search');
+      const filterTask = document.getElementById('sample-library-filter-task');
+      const filterLevel = document.getElementById('sample-library-filter-level');
+      const filterCountEl = document.getElementById('sample-library-filter-count');
 
-        if (task1CountEl) task1CountEl.textContent = `${task1.length} email essays`; 
-        if (task2CountEl) task2CountEl.textContent = `${task2.length} survey essays`;
-        if (summaryEl) {
-          summaryEl.textContent = `${data.promptTotal || task1.length + task2.length} essays unlocked for this active subscription.`;
-        }
+      let allTask1 = [];
+      let allTask2 = [];
+
+      const applyFilters = () => {
+        const query = (searchInput?.value || '').trim().toLowerCase();
+        const taskFilter = filterTask?.value || 'all';
+        const levelFilter = filterLevel?.value || 'all';
+
+        const matches = (prompt, taskType) => {
+          if (taskFilter !== 'all' && taskFilter !== taskType) return false;
+          if (levelFilter !== 'all' && (prompt.sampleLevel || '').indexOf(levelFilter) === -1) return false;
+          if (query && !(prompt.title || '').toLowerCase().includes(query) && !(prompt.scenario || '').toLowerCase().includes(query)) return false;
+          return true;
+        };
+
+        const shown1 = allTask1.filter((p) => matches(p, 'task1'));
+        const shown2 = allTask2.filter((p) => matches(p, 'task2'));
 
         if (task1ListEl) {
           task1ListEl.innerHTML = '';
-          task1.forEach((prompt) => task1ListEl.appendChild(buildPromptCard(prompt)));
+          shown1.forEach((p) => task1ListEl.appendChild(buildPromptCard(p)));
         }
-
         if (task2ListEl) {
           task2ListEl.innerHTML = '';
-          task2.forEach((prompt) => task2ListEl.appendChild(buildPromptCard(prompt)));
+          shown2.forEach((p) => task2ListEl.appendChild(buildPromptCard(p)));
         }
+        if (task1CountEl) task1CountEl.textContent = `${shown1.length} email essays`;
+        if (task2CountEl) task2CountEl.textContent = `${shown2.length} survey essays`;
+        if (filterCountEl) filterCountEl.textContent = `Showing ${shown1.length + shown2.length} of ${allTask1.length + allTask2.length} essays`;
+      };
+
+      if (searchInput) searchInput.addEventListener('input', applyFilters);
+      if (filterTask) filterTask.addEventListener('change', applyFilters);
+      if (filterLevel) filterLevel.addEventListener('change', applyFilters);
+
+      const renderLibrary = (data) => {
+        allTask1 = Array.isArray(data.task1) ? data.task1 : [];
+        allTask2 = Array.isArray(data.task2) ? data.task2 : [];
+
+        if (summaryEl) {
+          summaryEl.textContent = `${data.promptTotal || allTask1.length + allTask2.length} essays unlocked for this active subscription.`;
+        }
+
+        applyFilters();
       };
 
       const loadLibrary = async () => {

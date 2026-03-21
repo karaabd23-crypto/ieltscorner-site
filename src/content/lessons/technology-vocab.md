@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B2 vocabulary lesson on Technology Vocabulary with a practical word bank, collocations, and retrieval practice."
+excerpt: "This lesson equips you with precise technology vocabulary to enhance clarity and precision in discussions about digital tools and systems at the B2 level."
 date: "2026-03-02"
 tags: ["vocabulary", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Learn words with their partner phrases and one model sentence, not as isolated items."
@@ -35,7 +35,7 @@ quiz:
     correctIndex: 0
     explanation: "A short model sentence makes the new language active instead of passive."
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Technology Vocabulary</strong> equips you with the precise terms needed to discuss digital tools, systems, and concepts effectively. This lesson focuses on using these words naturally in sentences to enhance clarity and precision in your communication.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Technology Vocabulary</strong> equips you with the precise terms needed to discuss digital tools, systems, and concepts effectively. This lesson focuses on using these words naturally in sentences to enhance clarity and precision in your communication, particularly in professional and academic settings.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
@@ -43,13 +43,13 @@ quiz:
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>The company used more computer systems to work together.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The company improved remote collaboration through a shared digital platform.</p>
-  <p class="lesson-card-note">The stronger version names the real meaning instead of staying vague.</p>
+  <p class="lesson-card-note">The stronger version specifies the technology used for collaboration.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>Workers needed to know technology better.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Workers needed stronger digital literacy.</p>
-  <p class="lesson-card-note">The better sentence sounds more natural for a real task and a real reader.</p>
+  <p class="lesson-card-note">The better sentence uses a precise term to describe the skill needed.</p>
 </article>
 </div>
 
@@ -57,23 +57,33 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>This lesson helps you say the same idea with sharper, more natural vocabulary.</p>
-<p>Technology Vocabulary teaches useful words for systems, tools, privacy, access, and digital skills so you can talk about technology more accurately.</p>
-<p>Use this vocabulary when describing online services, digital tools, remote work, and user experience.</p>
-<p>At B2 level, learn fewer words but learn them well: meaning, collocation, and one model sentence.</p>
+    <p>Technology Vocabulary focuses on precise terms related to digital tools, systems, and concepts. It helps you communicate effectively about technology by using specific vocabulary that enhances clarity and precision in your discussions and writing.</p>
+    <p>At the B2 level, mastering these terms is crucial for participating in conversations about technology in academic and professional settings.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Link each term to a real use case such as study, work, or customer support.</li><li>Check whether the word describes a tool, an action, or a problem.</li><li>Use simple sentence frames so the technology word stays clear.</li></ul>
+    <ul>
+      <li>Discussing digital tools and platforms in a work or academic setting.</li>
+      <li>Writing reports or essays on technology-related topics.</li>
+      <li>Engaging in conversations about user experience and digital literacy.</li>
+      <li>Explaining the impact of technology on daily life or business operations.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Digital literacy helps workers adapt to new software quickly.</div>
-<div class="lesson-pattern-sentence">The platform improved remote collaboration across three offices.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence"><strong>Digital literacy</strong> is essential for adapting to new <strong>software</strong> in the workplace.</div>
+      <div class="lesson-pattern-sentence">Our company uses a <strong>cloud-based platform</strong> to enhance <strong>remote collaboration</strong>.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Choose the meaning first before you choose the word.</li><li>Learn the word with a natural collocation or partner phrase.</li><li>Use the new word in one short sentence right away.</li><li>Replace vague words only when the new word stays accurate.</li><li>Keep the register stable so the language fits the task.</li></ul>
+    <ul>
+      <li>Choose precise vocabulary to describe specific technological tools and concepts.</li>
+      <li>Pair technology terms with appropriate collocations for clarity.</li>
+      <li>Use context to decide which technology term fits best.</li>
+      <li>Avoid vague terms; specify the technology or digital skill.</li>
+    </ul>
   </section>
 </div>
 
@@ -107,10 +117,10 @@ quiz:
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">Start with meaning. Then move to collocations and sentence control for Technology Vocabulary.</p>
+      <p class="practice-lab-intro">Focus on using precise technology vocabulary in context. Practice collocations and sentence construction for clarity.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/2</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
@@ -118,36 +128,36 @@ quiz:
   <div class="practice-lab-grid">
 <article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Which term means the ability to use digital tools well?</h3>
+  <h3>Which term describes a system that stores and manages data online?</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  automation
+  interface
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  digital literacy
+  cloud computing
 </button>
 <button type="button" class="practice-choice" data-choice-index="2">
-  platform
+  hardware
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Automation works best||when the meaning||is clear in||the sentence." data-task-id="2">
+<article class="practice-task" data-task-type="order" data-task-answer="The user interface||was designed||to be intuitive||and user-friendly." data-task-id="2">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put the sentence in a natural order.</h3>
-  <p class="practice-task-note">Put the chunks in the natural order.</p>
+  <p class="practice-task-note">Arrange the chunks to form a coherent sentence.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="the sentence." data-chip-origin="bank-1" data-chip-id="1-0">
-  the sentence.
+<button type="button" class="practice-chip" data-chip-value="The user interface" data-chip-origin="bank-2" data-chip-id="2-0">
+  The user interface
 </button>
-<button type="button" class="practice-chip" data-chip-value="Automation works best" data-chip-origin="bank-1" data-chip-id="1-1">
-  Automation works best
+<button type="button" class="practice-chip" data-chip-value="was designed" data-chip-origin="bank-2" data-chip-id="2-1">
+  was designed
 </button>
-<button type="button" class="practice-chip" data-chip-value="when the meaning" data-chip-origin="bank-1" data-chip-id="1-2">
-  when the meaning
+<button type="button" class="practice-chip" data-chip-value="to be intuitive" data-chip-origin="bank-2" data-chip-id="2-2">
+  to be intuitive
 </button>
-<button type="button" class="practice-chip" data-chip-value="is clear in" data-chip-origin="bank-1" data-chip-id="1-3">
-  is clear in
+<button type="button" class="practice-chip" data-chip-value="and user-friendly." data-chip-origin="bank-2" data-chip-id="2-3">
+  and user-friendly.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -157,12 +167,35 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-
+<article class="practice-task" data-task-type="sort" data-task-answer="Tools:cloud computing,platform||Skills:digital literacy,programming" data-sort-categories="Tools||Skills" data-task-id="3">
+  <p class="practice-task-label">3. Sort it</p>
+  <h3>Sort the terms into the correct categories.</h3>
+  <div class="practice-sort-bank" data-sort-bank>
+<button type="button" class="practice-sort-chip" data-chip-value="cloud computing" data-chip-origin="bank-3" data-chip-id="3-0">
+  cloud computing
+</button>
+<button type="button" class="practice-sort-chip" data-chip-value="digital literacy" data-chip-origin="bank-3" data-chip-id="3-1">
+  digital literacy
+</button>
+<button type="button" class="practice-sort-chip" data-chip-value="platform" data-chip-origin="bank-3" data-chip-id="3-2">
+  platform
+</button>
+<button type="button" class="practice-sort-chip" data-chip-value="programming" data-chip-origin="bank-3" data-chip-id="3-3">
+  programming
+</button>
+  </div>
+  <div class="practice-sort-answer" data-sort-answer></div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+    <button type="button" class="practice-clear-btn" data-task-clear>Clear</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
   </div>
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering technology vocabulary allows you to communicate effectively about digital topics, enhancing your ability to engage in discussions, write reports, and understand technical information with clarity and precision.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering technology vocabulary allows you to communicate effectively about digital topics, enhancing your ability to engage in discussions, write reports, and understand technical information with clarity and precision, which is essential in today's technology-driven world.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

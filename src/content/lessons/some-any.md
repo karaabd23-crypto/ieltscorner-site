@@ -1,11 +1,11 @@
 ---
-title: "Using 'Some' and 'Any' Correctly"
+title: "Mastering 'Some' and 'Any' Usage"
 category: "grammar"
 level: "B2"
 ieltsBand: "4.5-5.5"
 clb: "5-6"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B1 lesson on Some and Any with teacher-style explanation, guided practice, and topic-linked review."
+excerpt: "Learn how to correctly use 'Some' and 'Any' to enhance clarity and precision in your sentences."
 date: "2026-03-02"
 tags: ["grammar", "b1", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
@@ -41,15 +41,15 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The city policy update improve commuter access, but the sentence form is unstable.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>The city policy update improves commuter access, and the sentence form is stable.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Do you have some questions?</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Do you have <strong>any</strong> questions?</p>
+  <p class="lesson-card-note">Use 'any' in questions to indicate an indefinite quantity.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Students in one district reported progress, but the structure of the explanation is unclear.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Students in one district reported progress, and the explanation is grammatically clear.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>I don't have some money.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>I don't have <strong>any</strong> money.</p>
+  <p class="lesson-card-note">Use 'any' in negative statements to indicate an absence of quantity.</p>
 </article>
 </div>
 
@@ -57,23 +57,36 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Quantifiers become easier when you check countable and uncountable meaning first.</p>
-<p>Quantifiers show how much or how many. The main choice depends on whether the noun is countable, uncountable, singular, or plural.</p>
-<p>Use quantifiers to make amounts accurate. A small form change, such as many instead of much, can turn an unnatural sentence into a natural one immediately.</p>
-<p>At B1 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+    <p><strong>Some</strong> and <strong>Any</strong> are quantifiers used to indicate an indefinite quantity or number of items. 'Some' is typically used in positive statements, while 'Any' is used in questions and negative statements. Understanding their correct usage is crucial for forming grammatically accurate sentences.</p>
+    <p>Formation: 'Some' or 'Any' + noun (e.g., some water, any questions).</p>
+    <p>This is important at the B2 level to enhance clarity and precision in communication.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Use countable quantifiers with plural count nouns and uncountable quantifiers with mass nouns.</li><li>Notice the difference between little and a little, or few and a few.</li><li>Check agreement after quantifier phrases when the noun changes form.</li></ul>
+    <ul>
+      <li>Using 'some' in positive statements (e.g., I have some friends coming over).</li>
+      <li>Using 'any' in negative statements (e.g., I don't have any money).</li>
+      <li>Using 'any' in questions (e.g., Do you have any questions?).</li>
+      <li>Offering something (e.g., Would you like some tea?).</li>
+      <li>Asking for something in a polite way (e.g., Could I have some water?).</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">There are many reasons to improve public transport.</div>
-<div class="lesson-pattern-sentence">We have little time left before the test begins.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence"><strong>Some</strong> people prefer tea over coffee.</div>
+      <div class="lesson-pattern-sentence">I don't have <strong>any</strong> questions about the report.</div>
+      <div class="lesson-pattern-sentence">Do you have <strong>any</strong> advice for me?</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Decide whether the noun is countable or uncountable.</li><li>Choose the quantifier that matches that noun type.</li><li>Check whether the phrase shows a small amount, enough, too much, or a general number.</li><li>Watch for meaning differences such as few vs a few and little vs a little.</li><li>Read the full noun phrase once to confirm it sounds natural.</li></ul>
+    <ul>
+      <li>Use 'some' in positive statements and offers.</li>
+      <li>Use 'any' in negative statements and questions.</li>
+      <li>Remember: 'some' can also be used in polite requests.</li>
+      <li>Don't confuse 'some' and 'any' with countable and uncountable nouns.</li>
+    </ul>
   </section>
 </div>
 
@@ -81,24 +94,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>using the correct idea with an incorrect form</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The council approve the plan, but the timeline details remain unclear.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The council approved the plan, but the timeline details remain unclear.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> separate meaning choice from form checking, then edit for accuracy</p>
+  <h3>Using 'some' in negative statements</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>She doesn't have some time to meet today.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>She doesn't have <strong>any</strong> time to meet today.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use 'any' in negative statements.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using a countable quantifier with an uncountable noun</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>We do not have many equipment for the science room.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>We do not have much equipment for the science room.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> match many/few with countable nouns and much/little with uncountable nouns</p>
+  <h3>Using 'any' in positive statements</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>I have any friends coming over.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I have <strong>some</strong> friends coming over.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use 'some' in positive statements.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>using few or little when the meaning is actually positive</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>A little students asked for extra practice after class.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>A few students asked for extra practice after class.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use a few with countable plural nouns and a little with uncountable nouns</p>
+  <h3>Using 'some' in questions</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Do you have some advice for me?</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Do you have <strong>any</strong> advice for me?</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use 'any' in questions.</p>
 </article>
 </div>
 
@@ -107,44 +120,44 @@ quiz:
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+      <p class="practice-lab-intro">First, identify the correct usage of 'Some' and 'Any'. Then, apply it in sentences.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Focus on the context to determine if 'Some' or 'Any' is appropriate.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Some and Any form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="2" data-task-id="1" data-correct-feedback="Correct. 'Any' is used in questions to suggest an indefinite quantity." data-wrong-feedback="Not quite. Remember, 'Any' is typically used in questions.">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger sentence for Some and Any.</h3>
+  <h3>Choose the correct sentence.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  The council approve the plan, but the timeline details remain unclear.
+  I have any friends visiting.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  The council approved the plan, but the timeline details remain unclear.
+  Do you have some questions?
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  Do you have any questions?
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="If schools add||tutoring support, more||students will improve||exam performance." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="I don't have||any money||left for lunch." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Remember to place 'any' correctly in negative sentences.">
   <p class="practice-task-label">2. Build it</p>
-  <h3>Put this Some and Any sentence in the correct order.</h3>
+  <h3>Put this sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="tutoring support, more" data-chip-origin="bank-1" data-chip-id="1-0">
-  tutoring support, more
+<button type="button" class="practice-chip" data-chip-value="I don't have" data-chip-origin="bank-1" data-chip-id="1-0">
+  I don't have
 </button>
-<button type="button" class="practice-chip" data-chip-value="exam performance." data-chip-origin="bank-1" data-chip-id="1-1">
-  exam performance.
+<button type="button" class="practice-chip" data-chip-value="any money" data-chip-origin="bank-1" data-chip-id="1-1">
+  any money
 </button>
-<button type="button" class="practice-chip" data-chip-value="If schools add" data-chip-origin="bank-1" data-chip-id="1-2">
-  If schools add
-</button>
-<button type="button" class="practice-chip" data-chip-value="students will improve" data-chip-origin="bank-1" data-chip-id="1-3">
-  students will improve
+<button type="button" class="practice-chip" data-chip-value="left for lunch." data-chip-origin="bank-1" data-chip-id="1-2">
+  left for lunch.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -154,34 +167,33 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-
-<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences correctly use 'Some' and 'Any'." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
   <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>The council approved the plan, but the timeline details remain unclear.</p>
+  <p>I have some friends coming over tonight.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>The council approve the plan, but the timeline details remain unclear.</p>
+  <p>I don't have some money left.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>If schools add tutoring support, more students will improve exam performance.</p>
+  <p>Do you have any advice for me?</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>If schools add tutoring support, more students improve exam performance.</p>
+  <p>Do you have some advice for me?</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
@@ -197,7 +209,7 @@ quiz:
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering the use of <u>Some and Any</u> enhances clarity and precision in communication, making your sentences more reliable and understandable to the reader or listener.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering the use of <u>Some and Any</u> enhances clarity and precision in communication, making your sentences more reliable and understandable to the reader or listener, especially in formal and academic contexts.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

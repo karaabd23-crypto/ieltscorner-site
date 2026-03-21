@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "4.0-5.0"
 clb: "4-5"
 exam: ["IELTS", "CELPIP"]
-excerpt: "A2 lesson on Verb + gerund (ing form) with teacher-style explanation, guided practice, and topic-linked review."
+excerpt: "Learn how to use verbs followed by gerunds to form clear and grammatically correct sentences at the B2 level."
 date: "2026-02-27"
 tags: ["grammar", "a2", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
@@ -36,7 +36,7 @@ premium: false
 priceCAD: 0
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Verb + gerund (ing form)</strong> involves using specific verbs that naturally pair with gerunds. Mastering this pattern helps in constructing sentences that are grammatically correct and convey the intended meaning effectively.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Verb + gerund (ing form)</strong> involves using specific verbs that naturally pair with gerunds. Mastering this pattern helps in constructing sentences that are grammatically correct and convey the intended meaning effectively. This is especially important at the B2 level for achieving fluency and precision in English.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
@@ -44,13 +44,13 @@ draft: false
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>She avoided to answer the question directly.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>She avoided answering the question directly.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-card-note">'Avoid' is followed by a gerund to express the action being avoided.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>They decided expanding the program next term.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>They decided to expand the program next term.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>He enjoys to play basketball on weekends.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>He enjoys playing basketball on weekends.</p>
+  <p class="lesson-card-note">'Enjoy' requires a gerund to indicate the activity enjoyed.</p>
 </article>
 </div>
 
@@ -58,23 +58,31 @@ draft: false
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>After some verbs, only one grammar pattern sounds natural.</p>
-<p>Some verbs are followed by a gerund (-ing), some by an infinitive (to + base verb), and some patterns change after prepositions. These are fixed grammar patterns, not free choices.</p>
-<p>Use the right verb pattern after the first word. If the first verb is wrong, the whole sentence will sound off even if the meaning is clear.</p>
-<p>At A2 level, keep sentences short and clear first. Add extra words only when they help meaning.</p>
+    <p>Verbs followed by gerunds use the gerund form (-ing) after specific verbs to express actions or states. This structure is important for forming grammatically correct sentences and is commonly used in English at the B2 level to ensure clarity and precision in communication.</p>
+    <p>Formation pattern: verb + gerund (e.g., enjoy + swimming).</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>After a preposition, use the -ing form.</li><li>Learn common verb partners as full chunks: decide to, avoid doing, interested in doing.</li><li>Check whether changing from -ing to infinitive changes the meaning of the sentence.</li></ul>
+    <ul>
+      <li>After verbs that naturally pair with gerunds, such as 'enjoy,' 'avoid,' and 'consider.'</li>
+      <li>When describing activities or actions that are ongoing or habitual.</li>
+      <li>In formal writing and academic contexts to express actions clearly.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">She avoided answering the question directly.</div>
-<div class="lesson-pattern-sentence">They decided to expand the program next term.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">She <strong>enjoys</strong> <strong>reading</strong> novels in her free time.</div>
+      <div class="lesson-pattern-sentence">He <strong>avoided</strong> <strong>talking</strong> about the issue.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Learn the first word and the next verb form together as one chunk.</li><li>Use the -ing form after prepositions.</li><li>Check whether the first verb takes -ing, to + verb, or both with a meaning change.</li><li>Test the sentence slot again after you change the verb form.</li><li>Keep the pattern simple enough that the meaning stays clear.</li></ul>
+    <ul>
+      <li>Use the gerund form after verbs like 'enjoy,' 'avoid,' 'consider.'</li>
+      <li>Remember that changing the verb form can alter the meaning.</li>
+      <li>Practice common verb + gerund combinations to build fluency.</li>
+    </ul>
   </section>
 </div>
 
@@ -85,7 +93,7 @@ draft: false
   <h3>using the wrong form after the first verb or preposition</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>He is interested to joining the evening class.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>He is interested in joining the evening class.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> learn each verb pattern as a chunk and keep the next form consistent</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> use the gerund form after prepositions like 'in.'</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
@@ -108,41 +116,44 @@ draft: false
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+      <p class="practice-lab-intro">Identify the correct verb + gerund form, arrange sentences, and distinguish correct sentences from incorrect ones.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Focus on the verb + gerund structure to ensure grammatical accuracy.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Verb + gerund (ing form) form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. This sentence uses the appropriate verb + gerund structure." data-wrong-feedback="Not yet. Ensure the verb is followed by the correct gerund form.">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger sentence for Verb + gerund (ing form).</h3>
+  <h3>Select the correct sentence with verb + gerund.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  He is interested to joining the evening class.
+  He considered to leave the party early.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  He is interested in joining the evening class.
+  He considered leaving the party early.
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  He considered leave the party early.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="We discussed||moving the workshop||to Friday." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="She enjoys||running||in the park every morning." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Arrange the sentence to reflect the correct verb + gerund structure.">
   <p class="practice-task-label">2. Build it</p>
-  <h3>Put this Verb + gerund (ing form) sentence in the correct order.</h3>
+  <h3>Arrange the words to form a correct sentence using verb + gerund.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="We discussed" data-chip-origin="bank-1" data-chip-id="1-0">
-  We discussed
+<button type="button" class="practice-chip" data-chip-value="She enjoys" data-chip-origin="bank-1" data-chip-id="1-0">
+  She enjoys
 </button>
-<button type="button" class="practice-chip" data-chip-value="to Friday." data-chip-origin="bank-1" data-chip-id="1-1">
-  to Friday.
+<button type="button" class="practice-chip" data-chip-value="running" data-chip-origin="bank-1" data-chip-id="1-1">
+  running
 </button>
-<button type="button" class="practice-chip" data-chip-value="moving the workshop" data-chip-origin="bank-1" data-chip-id="1-2">
-  moving the workshop
+<button type="button" class="practice-chip" data-chip-value="in the park every morning." data-chip-origin="bank-1" data-chip-id="1-2">
+  in the park every morning.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -152,20 +163,19 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-
 <article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
   <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>He is interested in joining the evening class.</p>
+  <p>She enjoys running in the park every morning.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>He is interested to joining the evening class.</p>
+  <p>She enjoys to run in the park every morning.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
@@ -195,7 +205,7 @@ draft: false
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering the verb + gerund structure is crucial for clear and natural communication. It ensures that your sentences convey the correct meaning and tone, which is essential for both written and spoken English.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering the verb + gerund structure is crucial for clear and natural communication. It ensures that your sentences convey the correct meaning and tone, which is essential for both written and spoken English. This understanding is vital for academic, professional, and everyday interactions.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn to use the Future Perfect Continuous tense to express ongoing actions up to a future point, enhancing your communication clarity."
+excerpt: "Learn to express ongoing actions and their duration up to a future point with the Future Perfect Continuous tense."
 date: "2026-03-02"
 tags: ["grammar", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Circle the time marker before you choose the verb form."
@@ -57,7 +57,7 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>The <strong>Future Perfect Continuous</strong> tense describes actions that will have been ongoing up to a specific point in the future. It highlights the duration of an activity. Formed with 'will have been' + present participle (verb + -ing), it is crucial at the B2 level for expressing complex future timelines.</p>
+    <p>The <strong>Future Perfect Continuous</strong> tense describes actions that will have been ongoing up to a specific point in the future. It highlights the duration and continuity of an activity. Formed with 'will have been' + present participle (verb + -ing), it is crucial at the B2 level for expressing complex future timelines and emphasizing the duration of actions.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
@@ -66,6 +66,7 @@ quiz:
       <li>Emphasizing the duration of an activity before a specified future time.</li>
       <li>In future projections or plans where the duration is relevant.</li>
       <li>In formal writing to express future actions with precision.</li>
+      <li>When predicting future outcomes based on ongoing actions.</li>
     </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
@@ -73,6 +74,7 @@ quiz:
     <div class="lesson-pattern-stack">
       <div class="lesson-pattern-sentence">By next year, <strong>she will have been working</strong> at the company for a decade.</div>
       <div class="lesson-pattern-sentence">When he retires, <strong>he will have been teaching</strong> for over 40 years.</div>
+      <div class="lesson-pattern-sentence">By the time the meeting starts, <strong>they will have been discussing</strong> the project for two hours.</div>
     </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
@@ -82,7 +84,7 @@ quiz:
       <li>Always specify a future time point to anchor the action.</li>
       <li>Emphasize the duration leading up to the future time.</li>
       <li>Avoid using this tense for actions that do not emphasize duration.</li>
-      <li>Check that the future time point is clear in your sentence.</li>
+      <li>Ensure the future time point is clear in your sentence.</li>
     </ul>
   </section>
 </div>
@@ -93,7 +95,7 @@ quiz:
   <p class="lesson-card-label">Common problem 1</p>
   <h3>Using simple future instead of Future Perfect Continuous</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>By 5 PM, they will finish the project.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>By 5 PM, they <strong>will have been finishing</strong> the project.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>By 5 PM, they <strong>will have been working</strong> on the project.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> Use Future Perfect Continuous to emphasize the duration of the project work up to 5 PM.</p>
 </article>
 <article class="lesson-error-card">

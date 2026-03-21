@@ -1,11 +1,11 @@
 ---
-title: "Using 'This', 'That', 'These', and 'Those' Correctly"
+title: "Mastering 'This', 'That', 'These', and 'Those'"
 category: "grammar"
 level: "B2"
 ieltsBand: "3.0-4.0"
 clb: "2-3"
 exam: ["IELTS", "CELPIP"]
-excerpt: "A1 lesson on This, that, these, and those with teacher-style explanation, guided practice, and topic-linked review."
+excerpt: "Learn how to use 'this', 'that', 'these', and 'those' to make your references clear and precise in English."
 date: "2026-02-27"
 tags: ["grammar", "a1", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
@@ -42,15 +42,15 @@ draft: false
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The city policy update improve commuter access, but the sentence form is unstable.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>The city policy update improves commuter access, and the sentence form is stable.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span> This are my keys.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span> <strong>These</strong> are my keys.</p>
+  <p class="lesson-card-note">'These' is used for plural nouns, while 'this' is for singular nouns.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Students in one district reported progress, but the structure of the explanation is unclear.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Students in one district reported progress, and the explanation is grammatically clear.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span> That books are on the table.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span> <strong>Those</strong> books are on the table.</p>
+  <p class="lesson-card-note">'Those' is used for plural nouns, while 'that' is for singular nouns.</p>
 </article>
 </div>
 
@@ -58,23 +58,33 @@ draft: false
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Pronouns save repetition, but only when the reference stays clear.</p>
-<p>Pronouns replace nouns so you do not have to repeat the same word again and again. They help sentences flow, but they create problems when the reference is unclear.</p>
-<p>Use pronouns only when the reader can identify exactly who or what the pronoun refers to. If two possible meanings are competing, repeat the noun.</p>
-<p>At A1 level, keep sentences short and clear first. Add extra words only when they help meaning.</p>
+    <p><strong>This</strong>, <strong>that</strong>, <strong>these</strong>, and <strong>those</strong> are demonstrative pronouns used to point to specific people, objects, or ideas. They help clarify which noun you are referring to in a sentence. 'This' and 'these' refer to things that are near in time or space, while 'that' and 'those' refer to things that are farther away.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Check whether the pronoun has one clear reference.</li><li>Match the pronoun type to the job: subject, object, possessive, reflexive, or demonstrative.</li><li>Repeat the noun when the sentence would otherwise be ambiguous.</li></ul>
+    <ul>
+      <li>Referring to something close to you ('this' for singular, 'these' for plural).</li>
+      <li>Referring to something farther away ('that' for singular, 'those' for plural).</li>
+      <li>Distinguishing between two different sets of items or ideas.</li>
+      <li>Emphasizing a particular item or idea in a sentence.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Maria called the manager because she needed an update.</div>
-<div class="lesson-pattern-sentence">This option is cheaper, but that one is more reliable.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence"><strong>This</strong> book is interesting, but <strong>that</strong> one is boring.</div>
+      <div class="lesson-pattern-sentence"><strong>These</strong> documents need to be signed, and <strong>those</strong> can be filed.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Find the noun each pronoun refers to.</li><li>Check whether the reference is still clear after the noun is replaced.</li><li>Match the pronoun type to the sentence job.</li><li>Repeat the noun if two possible references compete.</li><li>Keep pronouns only when they genuinely make the sentence smoother.</li></ul>
+    <ul>
+      <li>Use 'this' and 'these' for items close to you in space or time.</li>
+      <li>Use 'that' and 'those' for items farther away in space or time.</li>
+      <li>Ensure the pronoun clearly points to the intended noun.</li>
+      <li>Use 'these' and 'those' for plural nouns; 'this' and 'that' for singular nouns.</li>
+      <li>Clarify your reference if the context is ambiguous.</li>
+    </ul>
   </section>
 </div>
 
@@ -82,24 +92,17 @@ draft: false
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>using the correct idea with an incorrect form</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The council approve the plan, but the timeline details remain unclear.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The council approved the plan, but the timeline details remain unclear.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> separate meaning choice from form checking, then edit for accuracy</p>
+  <h3>Using singular pronouns for plural nouns</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span> This are my shoes.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span> <strong>These</strong> are my shoes.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use 'these' for plural nouns.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using a pronoun with more than one possible reference</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>When Sara met Lina, she looked worried.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>When Sara met Lina, Lina looked worried.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> repeat the noun if the pronoun could point to two different people</p>
-</article>
-<article class="lesson-error-card">
-  <p class="lesson-card-label">Common problem 3</p>
-  <h3>choosing the wrong pronoun form after a preposition or verb</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The teacher spoke to he after class.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The teacher spoke to him after class.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> check whether the sentence needs a subject, object, or possessive pronoun</p>
+  <h3>Using plural pronouns for singular nouns</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span> Those is my pen.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span> <strong>That</strong> is my pen.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use 'that' for singular nouns.</p>
 </article>
 </div>
 
@@ -108,44 +111,47 @@ draft: false
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+      <p class="practice-lab-intro">Identify the correct demonstrative pronoun and apply it in sentences.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Focus on whether the noun is singular or plural and its proximity to you.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the This, that, these, and those form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="2" data-task-id="1" data-correct-feedback="Correct. 'Those' is used for plural nouns that are farther away.">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger sentence for This, that, these, and those.</h3>
+  <h3>Choose the correct pronoun: <em>Those</em> shoes are old.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  The council approve the plan, but the timeline details remain unclear.
+  This
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  The council approved the plan, but the timeline details remain unclear.
+  That
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  Those
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="If schools add||tutoring support, more||students will improve||exam performance." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="This book||is very interesting||and that one||is not." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order.">
   <p class="practice-task-label">2. Build it</p>
-  <h3>Put this This, that, these, and those sentence in the correct order.</h3>
+  <h3>Put this sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="If schools add" data-chip-origin="bank-1" data-chip-id="1-0">
-  If schools add
+<button type="button" class="practice-chip" data-chip-value="is very interesting" data-chip-origin="bank-1" data-chip-id="1-0">
+  is very interesting
 </button>
-<button type="button" class="practice-chip" data-chip-value="students will improve" data-chip-origin="bank-1" data-chip-id="1-1">
-  students will improve
+<button type="button" class="practice-chip" data-chip-value="and that one" data-chip-origin="bank-1" data-chip-id="1-1">
+  and that one
 </button>
-<button type="button" class="practice-chip" data-chip-value="exam performance." data-chip-origin="bank-1" data-chip-id="1-2">
-  exam performance.
+<button type="button" class="practice-chip" data-chip-value="This book" data-chip-origin="bank-1" data-chip-id="1-2">
+  This book
 </button>
-<button type="button" class="practice-chip" data-chip-value="tutoring support, more" data-chip-origin="bank-1" data-chip-id="1-3">
-  tutoring support, more
+<button type="button" class="practice-chip" data-chip-value="is not." data-chip-origin="bank-1" data-chip-id="1-3">
+  is not.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -155,37 +161,36 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-
-<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-task-answer="Correct:This is my car,These are my keys||Incorrect:This are my keys,Those is my pen" data-sort-categories="Correct||Incorrect">
   <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>The council approved the plan, but the timeline details remain unclear.</p>
+<div class="practice-sort-row" data-sort-target="Correct" data-sort-row="0">
+  <p>This is my car.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Correct">Correct</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Incorrect">Needs fixing</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>The council approve the plan, but the timeline details remain unclear.</p>
+<div class="practice-sort-row" data-sort-target="Incorrect" data-sort-row="1">
+  <p>This are my keys.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Correct">Correct</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Incorrect">Needs fixing</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>If schools add tutoring support, more students will improve exam performance.</p>
+<div class="practice-sort-row" data-sort-target="Correct" data-sort-row="2">
+  <p>These are my keys.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Correct">Correct</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Incorrect">Needs fixing</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>If schools add tutoring support, more students improve exam performance.</p>
+<div class="practice-sort-row" data-sort-target="Incorrect" data-sort-row="3">
+  <p>Those is my pen.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Correct">Correct</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Incorrect">Needs fixing</button>
   </div>
 </div>
   </div>

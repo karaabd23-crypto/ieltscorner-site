@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B2 vocabulary lesson on Travel and Tourism with a practical word bank, collocations, and retrieval practice."
+excerpt: "Enhance your communication about travel experiences with precise vocabulary in this Travel and Tourism lesson."
 date: "2026-03-02"
 tags: ["vocabulary", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Learn words with their partner phrases and one model sentence, not as isolated items."
@@ -42,14 +42,14 @@ quiz:
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>We had a travel plan with city visits and places to stay.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Our itinerary included two guided tours and pre-booked accommodation.</p>
-  <p class="lesson-card-note">The stronger version names the real meaning instead of staying vague.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Our <strong>itinerary</strong> included two guided tours and pre-booked accommodation.</p>
+  <p class="lesson-card-note">The stronger version uses specific travel vocabulary to enhance clarity.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>The flight was late and people missed things.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>The delayed flight disrupted the rest of the journey.</p>
-  <p class="lesson-card-note">The better sentence sounds more natural for a real task and a real reader.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>The <strong>delayed flight</strong> disrupted the rest of the journey.</p>
+  <p class="lesson-card-note">The improved sentence uses precise vocabulary to convey the impact of the delay.</p>
 </article>
 </div>
 
@@ -57,23 +57,33 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>This lesson helps you say the same idea with sharper, more natural vocabulary.</p>
-<p>Travel and Tourism teaches topic words and useful chunks that help you describe a real everyday subject more clearly.</p>
-<p>Use this vocabulary when you need topic-appropriate wording instead of vague general words in speaking or writing.</p>
-<p>At B2 level, learn fewer words but learn them well: meaning, collocation, and one model sentence.</p>
+    <p>Travel and Tourism vocabulary includes specific terms and phrases used to discuss travel plans, experiences, and services. It helps you communicate precisely and effectively about these topics.</p>
+    <p>At the B2 level, mastering this vocabulary is crucial for enhancing clarity and precision in both written and spoken communication.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Choose the word from the exact meaning you need.</li><li>Learn each word with a collocation or model sentence.</li><li>Replace vague language only when the new word is accurate and natural.</li></ul>
+    <ul>
+      <li>Discussing travel itineraries, bookings, and accommodations.</li>
+      <li>Writing travel blogs or reviews.</li>
+      <li>Planning trips and describing travel experiences.</li>
+      <li>Engaging in conversations about tourism services and destinations.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">A more precise word usually makes a sentence about Travel and Tourism easier to trust.</div>
-<div class="lesson-pattern-sentence">Topic vocabulary becomes useful when you can use it in a real sentence quickly.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">Our <strong>itinerary</strong> included visits to several historic landmarks.</div>
+      <div class="lesson-pattern-sentence">The <strong>accommodation</strong> was conveniently located near the city center.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Choose the meaning first before you choose the word.</li><li>Learn the word with a natural collocation or partner phrase.</li><li>Use the new word in one short sentence right away.</li><li>Replace vague words only when the new word stays accurate.</li><li>Keep the register stable so the language fits the task.</li></ul>
+    <ul>
+      <li>Use specific travel terms to replace vague descriptions.</li>
+      <li>Pair vocabulary with appropriate collocations for natural usage.</li>
+      <li>Ensure the vocabulary fits the context of travel and tourism discussions.</li>
+      <li>Avoid using general terms when a specific travel term is available.</li>
+    </ul>
   </section>
 </div>
 
@@ -83,21 +93,21 @@ quiz:
   <p class="lesson-card-label">Common problem 1</p>
   <h3>using general travel words instead of the exact service term</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>We had a place to stay near the station.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>We booked accommodation near the station.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>We booked <strong>accommodation</strong> near the station.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> replace general phrases with the standard travel term</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
   <h3>using a topic word without the trip context</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Itinerary is important.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>A clear itinerary helped us avoid missing the last train.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span><strong>Itinerary</strong> is important.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>A clear <strong>itinerary</strong> helped us avoid missing the last train.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> put the travel term into a real journey situation</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
   <h3>using tourism vocabulary as a list instead of as description</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Destination, airport, hotel, delay.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The destination was attractive, but the airport transfer was poorly organized.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The <strong>destination</strong> was attractive, but the <strong>airport transfer</strong> was poorly organized.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> link the travel words inside one real account</p>
 </article>
 </div>
@@ -110,7 +120,7 @@ quiz:
       <p class="practice-lab-intro">Start with meaning. Then move to collocations and sentence control for Travel and Tourism.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/2</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
@@ -132,22 +142,19 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Itinerary works best||when the meaning||is clear in||the sentence." data-task-id="2">
+<article class="practice-task" data-task-type="order" data-task-answer="The itinerary||included visits to||several historic landmarks." data-task-id="2">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put the sentence in a natural order.</h3>
   <p class="practice-task-note">Put the chunks in the natural order.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="is clear in" data-chip-origin="bank-1" data-chip-id="1-0">
-  is clear in
+<button type="button" class="practice-chip" data-chip-value="The itinerary" data-chip-origin="bank-1" data-chip-id="1-0">
+  The itinerary
 </button>
-<button type="button" class="practice-chip" data-chip-value="the sentence." data-chip-origin="bank-1" data-chip-id="1-1">
-  the sentence.
+<button type="button" class="practice-chip" data-chip-value="included visits to" data-chip-origin="bank-1" data-chip-id="1-1">
+  included visits to
 </button>
-<button type="button" class="practice-chip" data-chip-value="when the meaning" data-chip-origin="bank-1" data-chip-id="1-2">
-  when the meaning
-</button>
-<button type="button" class="practice-chip" data-chip-value="Itinerary works best" data-chip-origin="bank-1" data-chip-id="1-3">
-  Itinerary works best
+<button type="button" class="practice-chip" data-chip-value="several historic landmarks." data-chip-origin="bank-1" data-chip-id="1-2">
+  several historic landmarks.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -157,7 +164,30 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-
+<article class="practice-task" data-task-type="sort" data-task-answer="Specific Terms:itinerary,accommodation||General Terms:place,thing" data-sort-categories="Specific Terms||General Terms" data-task-id="3">
+  <p class="practice-task-label">3. Sort it</p>
+  <h3>Sort the terms into specific travel vocabulary and general terms.</h3>
+  <div class="practice-sort-bank" data-sort-bank>
+<button type="button" class="practice-sort-chip" data-sort-value="itinerary">
+  itinerary
+</button>
+<button type="button" class="practice-sort-chip" data-sort-value="accommodation">
+  accommodation
+</button>
+<button type="button" class="practice-sort-chip" data-sort-value="place">
+  place
+</button>
+<button type="button" class="practice-sort-chip" data-sort-value="thing">
+  thing
+</button>
+  </div>
+  <div class="practice-sort-answer" data-sort-answer></div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+    <button type="button" class="practice-clear-btn" data-task-clear>Clear</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
   </div>
 </div>
 

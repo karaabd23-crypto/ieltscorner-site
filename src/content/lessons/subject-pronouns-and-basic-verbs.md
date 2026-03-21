@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "3.0-4.0"
 clb: "2-3"
 exam: ["IELTS", "CELPIP"]
-excerpt: "A1 lesson on Subject Pronouns and Basic Verbs with teacher-style explanation, guided practice, and topic-linked review."
+excerpt: "Learn how to use subject pronouns effectively to maintain clarity and avoid ambiguity in sentences."
 date: "2026-03-01"
 tags: ["grammar", "a1", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
@@ -36,7 +36,9 @@ premium: false
 priceCAD: 0
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Subject Pronouns and Clear References</strong> helps you refer to people and things clearly without repeating the same noun unnecessarily. In this lesson, you will learn how to use subject pronouns effectively to maintain clarity and avoid ambiguity in sentences.</p></div>
+<div class="lesson-context">
+  <p class="lesson-context-lead"><strong>Subject Pronouns and Clear References</strong> helps you refer to people and things clearly without repeating the same noun unnecessarily. In this lesson, you will learn how to use subject pronouns effectively to maintain clarity and avoid ambiguity in sentences.</p>
+</div>
 
 ## Examples
 <div class="lesson-example-grid">
@@ -44,13 +46,13 @@ draft: false
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>When Maria met Ana, she said she needed help.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>When Maria met Ana, Maria said she needed help.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-card-note">Repeating 'Maria' clarifies who needs help.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The managers told the interns that they were unprepared.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The managers told the interns that the report was unprepared.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-card-note">Replacing 'they' with 'the report' specifies what was unprepared.</p>
 </article>
 </div>
 
@@ -58,23 +60,35 @@ draft: false
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Pronouns save repetition, but only when the reference stays clear.</p>
-<p>Pronouns replace nouns so you do not have to repeat the same word again and again. They help sentences flow, but they create problems when the reference is unclear.</p>
-<p>Use pronouns only when the reader can identify exactly who or what the pronoun refers to. If two possible meanings are competing, repeat the noun.</p>
-<p>At A1 level, keep sentences short and clear first. Add extra words only when they help meaning.</p>
+    <p>Subject pronouns replace nouns to avoid repetition and maintain sentence flow. They must clearly refer to a specific noun to prevent ambiguity.</p>
+    <p>Subject pronouns include words like 'he', 'she', 'it', 'they', etc., and are used to indicate who or what performs the action in a sentence.</p>
+    <p>At the B2 level, mastering subject pronouns helps in constructing complex sentences with clarity and precision.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Check whether the pronoun has one clear reference.</li><li>Match the pronoun type to the job: subject, object, possessive, reflexive, or demonstrative.</li><li>Repeat the noun when the sentence would otherwise be ambiguous.</li></ul>
+    <ul>
+      <li>Referring back to a noun already mentioned in the text.</li>
+      <li>Constructing sentences where the subject is clear and unambiguous.</li>
+      <li>Writing essays or reports to maintain a smooth narrative flow.</li>
+      <li>Engaging in conversations where context has been established.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Maria called the manager because she needed an update.</div>
-<div class="lesson-pattern-sentence">This option is cheaper, but that one is more reliable.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence"><strong>He</strong> finished the report before the deadline.</div>
+      <div class="lesson-pattern-sentence"><strong>They</strong> are planning the next project phase.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Find the noun each pronoun refers to.</li><li>Check whether the reference is still clear after the noun is replaced.</li><li>Match the pronoun type to the sentence job.</li><li>Repeat the noun if two possible references compete.</li><li>Keep pronouns only when they genuinely make the sentence smoother.</li></ul>
+    <ul>
+      <li>Use subject pronouns to replace nouns when the subject is clear.</li>
+      <li>Ensure each pronoun clearly refers to a specific noun.</li>
+      <li>Repeat the noun if the pronoun could refer to more than one subject.</li>
+      <li>Choose the correct pronoun form based on its function in the sentence.</li>
+      <li>Pronouns should enhance clarity, not create confusion.</li>
+    </ul>
   </section>
 </div>
 
@@ -85,21 +99,21 @@ draft: false
   <h3>using unclear pronoun references in complex sentences</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>James told David that he should revise the introduction.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>James told David that David should revise the introduction.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> repeat the noun when a pronoun could refer to more than one person or thing</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> repeat the noun when a pronoun could refer to more than one person or thing.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
   <h3>using a pronoun with more than one possible reference</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>When Sara met Lina, she looked worried.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>When Sara met Lina, Lina looked worried.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> repeat the noun if the pronoun could point to two different people</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> repeat the noun if the pronoun could point to two different people.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
   <h3>choosing the wrong pronoun form after a preposition or verb</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The teacher spoke to he after class.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>The teacher spoke to him after class.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> check whether the sentence needs a subject, object, or possessive pronoun</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> check whether the sentence needs a subject, object, or possessive pronoun.</p>
 </article>
 </div>
 
@@ -115,40 +129,37 @@ draft: false
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Focus on ensuring each pronoun has a clear reference.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Subject Pronouns and Basic Verbs form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. Repeating the noun clarifies the subject." data-wrong-feedback="Not yet. Consider the clarity of the pronoun's reference.">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger sentence for Subject Pronouns and Basic Verbs.</h3>
+  <h3>Choose the clearer sentence regarding pronoun reference.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  James told David that he should revise the introduction.
+  When Alex met Jordan, he was late.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  James told David that David should revise the introduction.
+  When Alex met Jordan, Alex was late.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="The team||presented the plan||to the board,||and the board||rejected it." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="The committee||reviewed the proposal,||and they||approved it." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
   <p class="practice-task-label">2. Build it</p>
-  <h3>Put this Subject Pronouns and Basic Verbs sentence in the correct order.</h3>
+  <h3>Put this sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="rejected it." data-chip-origin="bank-1" data-chip-id="1-0">
-  rejected it.
+<button type="button" class="practice-chip" data-chip-value="approved it." data-chip-origin="bank-1" data-chip-id="1-0">
+  approved it.
 </button>
-<button type="button" class="practice-chip" data-chip-value="and the board" data-chip-origin="bank-1" data-chip-id="1-1">
-  and the board
+<button type="button" class="practice-chip" data-chip-value="and they" data-chip-origin="bank-1" data-chip-id="1-1">
+  and they
 </button>
-<button type="button" class="practice-chip" data-chip-value="The team" data-chip-origin="bank-1" data-chip-id="1-2">
-  The team
+<button type="button" class="practice-chip" data-chip-value="The committee" data-chip-origin="bank-1" data-chip-id="1-2">
+  The committee
 </button>
-<button type="button" class="practice-chip" data-chip-value="to the board," data-chip-origin="bank-1" data-chip-id="1-3">
-  to the board,
-</button>
-<button type="button" class="practice-chip" data-chip-value="presented the plan" data-chip-origin="bank-1" data-chip-id="1-4">
-  presented the plan
+<button type="button" class="practice-chip" data-chip-value="reviewed the proposal," data-chip-origin="bank-1" data-chip-id="1-3">
+  reviewed the proposal,
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -158,34 +169,33 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-
 <article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
   <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>James told David that David should revise the introduction.</p>
+  <p>Alex told Jamie that Jamie should prepare the presentation.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>James told David that he should revise the introduction.</p>
+  <p>Alex told Jamie that he should prepare the presentation.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>The team presented the plan to the board, and the board rejected it.</p>
+  <p>The committee reviewed the proposal, and they approved it.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>The team presented the plan to the board, and they rejected it.</p>
+  <p>The committee reviewed the proposal, and it approved it.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>

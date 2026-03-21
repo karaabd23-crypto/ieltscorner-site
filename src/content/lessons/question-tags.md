@@ -1,11 +1,11 @@
 ---
-title: "Mastering Question Tags"
+title: "Mastering Question Tags: Confirm and Engage"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Build correct English questions by controlling auxiliaries, inversion, and tag patterns."
+excerpt: "Learn to use question tags to confirm information and engage listeners effectively."
 date: "2026-03-02"
 tags: ["grammar", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Find the auxiliary first. If you cannot find one, your question probably needs do, does, or did."
@@ -41,15 +41,15 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Why you are late for class today?</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Why are you late for class today?</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>She can drive, can she?</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>She can drive, can't she?</p>
+  <p class="lesson-card-note">The tag should be negative because the statement is positive.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Never I have seen such a clear explanation.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Never have I seen such a clear explanation.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>You're not going to the party, aren't you?</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>You're not going to the party, are you?</p>
+  <p class="lesson-card-note">The tag should be positive because the statement is negative.</p>
 </article>
 </div>
 
@@ -57,23 +57,34 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Question forms depend on word order, not only on adding a question word.</p>
-<p>English questions often require auxiliary movement or inversion. The main task is to control word order without turning statement order into a direct question by mistake.</p>
-<p>Use question word order in direct questions, tag questions, and inversion patterns. In reported questions, switch back to normal statement order.</p>
-<p>At B2 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+    <p>Question tags are short questions added to the end of statements to confirm information or seek agreement. They are formed by using an auxiliary verb and a pronoun that matches the subject of the statement.</p>
+    <p>For example, in the sentence "You are coming, <strong>aren't you</strong>?" the question tag "aren't you" confirms the statement.</p>
+    <p>At the B2 level, mastering question tags enhances conversational skills by making interactions more engaging and interactive.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Find the auxiliary first; if there is none, use do, does, or did where needed.</li><li>Put the auxiliary before the subject in direct questions.</li><li>Keep normal statement order inside reported questions and noun clauses.</li></ul>
+    <ul>
+      <li>Confirming information or seeking agreement in conversations.</li>
+      <li>Engaging listeners by turning statements into questions.</li>
+      <li>Ensuring clarity and encouraging participation in dialogues.</li>
+      <li>In both formal and informal spoken contexts.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Why did the service change last month?</div>
-<div class="lesson-pattern-sentence">She asked why the service had changed last month.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">You have finished your work, <strong>haven't you</strong>?</div>
+      <div class="lesson-pattern-sentence">They will attend the meeting, <strong>won't they</strong>?</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Decide whether you need a yes/no question, wh-question, or tag question.</li><li>Find the auxiliary verb; if none exists, add do, does, or did.</li><li>Put the auxiliary before the subject in direct questions.</li><li>Keep question order after the question word unless the question word is the subject.</li><li>Read the whole question aloud once to catch word-order mistakes quickly.</li></ul>
+    <ul>
+      <li>Use a negative tag with a positive statement and vice versa.</li>
+      <li>Match the auxiliary verb in the tag to the main verb in the statement.</li>
+      <li>If there is no auxiliary verb, use "do/does/did" in the tag.</li>
+      <li>Ensure the pronoun in the tag matches the subject of the statement.</li>
+    </ul>
   </section>
 </div>
 
@@ -81,24 +92,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>placing auxiliaries and subjects in the wrong sequence</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>What means this policy for low-income workers?</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>What does this policy mean for low-income workers?</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> check whether your sentence requires statement order or inversion</p>
+  <h3>Using the wrong auxiliary in the tag</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>She has finished her work, hasn't she?</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>She has finished her work, hasn't she?</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Ensure the auxiliary in the tag matches the auxiliary in the statement.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>keeping statement order inside a direct question</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>Why you missed the bus this morning?</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Why did you miss the bus this morning?</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> move the auxiliary before the subject in direct questions</p>
+  <h3>Mismatch between statement and tag</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>He isn't coming, isn't he?</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>He isn't coming, is he?</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use a positive tag with a negative statement.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>building a tag question with the wrong auxiliary</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>She is ready for the exam, doesn&#39;t she?</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>She is ready for the exam, isn&#39;t she?</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> match the auxiliary in the tag to the main clause</p>
+  <h3>Incorrect pronoun in the tag</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The children are playing, isn't it?</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The children are playing, aren't they?</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Match the pronoun in the tag to the subject of the statement.</p>
 </article>
 </div>
 
@@ -114,34 +125,37 @@ quiz:
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Focus on the correct use of question tags to confirm statements effectively.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Question Tags form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="2" data-task-id="1" data-correct-feedback="Correct. The tag matches the statement's auxiliary and polarity." data-wrong-feedback="Not yet. Ensure the tag's auxiliary and polarity match the statement.">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger sentence for Question Tags.</h3>
+  <h3>Choose the correct question tag.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  What means this policy for low-income workers?
+  She is coming, isn't she?
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  What does this policy mean for low-income workers?
+  She is coming, is she?
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  She is coming, aren't she?
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Rarely do||we consider the||long-term effects." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="You have||finished your work,||haven't you?" data-task-id="2" data-correct-feedback="Correct. The sentence now reads with the appropriate question tag." data-wrong-feedback="Not yet. Ensure the question tag matches the statement's auxiliary and polarity.">
   <p class="practice-task-label">2. Build it</p>
-  <h3>Put this Question Tags sentence in the correct order.</h3>
+  <h3>Put this sentence in the correct order with a question tag.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="we consider the" data-chip-origin="bank-1" data-chip-id="1-0">
-  we consider the
+<button type="button" class="practice-chip" data-chip-value="You have" data-chip-origin="bank-1" data-chip-id="1-0">
+  You have
 </button>
-<button type="button" class="practice-chip" data-chip-value="Rarely do" data-chip-origin="bank-1" data-chip-id="1-1">
-  Rarely do
+<button type="button" class="practice-chip" data-chip-value="finished your work," data-chip-origin="bank-1" data-chip-id="1-1">
+  finished your work,
 </button>
-<button type="button" class="practice-chip" data-chip-value="long-term effects." data-chip-origin="bank-1" data-chip-id="1-2">
-  long-term effects.
+<button type="button" class="practice-chip" data-chip-value="haven't you?" data-chip-origin="bank-1" data-chip-id="1-2">
+  haven't you?
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -151,34 +165,33 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-
 <article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
   <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>What does this policy mean for low-income workers?</p>
+  <p>You have finished your work, haven't you?</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>What means this policy for low-income workers?</p>
+  <p>You have finished your work, have you?</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>Rarely do we consider the long-term effects.</p>
+  <p>They will attend the meeting, won't they?</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>Rarely we consider the long-term effects.</p>
+  <p>They will attend the meeting, will they?</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>

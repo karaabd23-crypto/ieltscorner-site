@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "7.0-8.0"
 clb: "9-10"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn how to use inversion and cleft sentences to emphasize key details in your writing."
+excerpt: "Learn to use inversion to emphasize key details in your sentences, enhancing clarity and impact at a B2 level."
 date: "2026-02-27"
 tags: ["grammar", "c1", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
@@ -37,7 +37,7 @@ priceCAD: 12
 draft: false
 ---
 <div class="lesson-context">
-  <p class="lesson-context-lead"><strong>Using Inversion for Emphasis</strong> involves changing the usual word order to draw attention to a specific idea or detail. This lesson will guide you on how to effectively use inversion and cleft sentences to emphasize parts of your sentences without losing clarity or naturalness.</p>
+  <p class="lesson-context-lead"><strong>Using Inversion for Emphasis</strong> involves changing the usual word order to draw attention to a specific idea or detail. This lesson will guide you on how to effectively use inversion to emphasize parts of your sentences without losing clarity or naturalness.</p>
 </div>
 
 ## Examples
@@ -60,32 +60,32 @@ draft: false
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Inversion involves changing the usual subject-verb order to emphasize a particular part of a sentence. This often occurs after negative adverbs or in certain conditional sentences. Cleft sentences use structures like 'It is/was' or 'What' to spotlight specific information. Mastery of these structures is important at the B2 level to enhance clarity and impact in communication.</p>
+    <p>Inversion involves changing the usual subject-verb order to emphasize a particular part of a sentence. This is often used after negative adverbs or in conditional sentences to create emphasis or dramatic effect. Mastery of inversion is important at the B2 level to enhance clarity and impact in communication.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
     <ul>
       <li>Emphasizing a point by starting a sentence with a negative adverb (e.g., 'Never have I seen').</li>
-      <li>Highlighting information using cleft sentences (e.g., 'It was John who called').</li>
       <li>Creating dramatic effect in storytelling or formal writing.</li>
-      <li>Responding to questions with emphasis (e.g., 'What I need is a vacation').</li>
+      <li>Responding to questions with emphasis (e.g., 'Not only did she win, but she also broke the record').</li>
+      <li>Highlighting unexpected outcomes (e.g., 'Little did they know what was coming').</li>
     </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
     <div class="lesson-pattern-stack">
       <div class="lesson-pattern-sentence"><strong>Never</strong> have I seen such dedication from a team.</div>
-      <div class="lesson-pattern-sentence"><strong>It was</strong> the manager <strong>who</strong> made the final decision.</div>
+      <div class="lesson-pattern-sentence"><strong>Little</strong> did they realize the impact of their decision.</div>
     </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
     <ul>
       <li>Use inversion after negative adverbs for emphasis.</li>
-      <li>Begin cleft sentences with 'It is/was' or 'What' to highlight information.</li>
-      <li>Ensure subject-verb agreement when word order changes.</li>
-      <li>Apply these structures sparingly to maintain clarity.</li>
-      <li>Remember that not all sentences benefit from emphasis; use it purposefully.</li>
+      <li>Ensure auxiliary verbs are used correctly in inversion.</li>
+      <li>Maintain subject-verb agreement even when order changes.</li>
+      <li>Apply inversion sparingly to avoid confusion.</li>
+      <li>Use inversion purposefully to enhance sentence impact.</li>
     </ul>
   </section>
 </div>
@@ -120,7 +120,7 @@ draft: false
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">Identify the correct form of inversion or cleft sentence, then apply it in new contexts.</p>
+      <p class="practice-lab-intro">Identify the correct form of inversion, then apply it in new contexts.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
@@ -139,25 +139,28 @@ draft: false
 <button type="button" class="practice-choice" data-choice-index="1">
   Seldom have I seen such dedication.
 </button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  I seldom have seen such dedication.
+</button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="It was||the manager||who made||the final decision." data-task-id="2" data-correct-feedback="Correct. The cleft sentence structure is now clear and emphatic." data-wrong-feedback="Not yet. Remember the cleft structure starts with 'It was'.">
+<article class="practice-task" data-task-type="order" data-task-answer="Little did||they know||how much||it would cost." data-task-id="2" data-correct-feedback="Correct. The sentence structure is now clear and emphatic." data-wrong-feedback="Not yet. Remember the inversion structure starts with 'Little did'.">
   <p class="practice-task-label">2. Build it</p>
-  <h3>Put this cleft sentence in the correct order.</h3>
+  <h3>Put this sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="the manager" data-chip-origin="bank-1" data-chip-id="1-0">
-  the manager
+<button type="button" class="practice-chip" data-chip-value="how much" data-chip-origin="bank-1" data-chip-id="1-0">
+  how much
 </button>
-<button type="button" class="practice-chip" data-chip-value="It was" data-chip-origin="bank-1" data-chip-id="1-1">
-  It was
+<button type="button" class="practice-chip" data-chip-value="Little did" data-chip-origin="bank-1" data-chip-id="1-1">
+  Little did
 </button>
-<button type="button" class="practice-chip" data-chip-value="who made" data-chip-origin="bank-1" data-chip-id="1-2">
-  who made
+<button type="button" class="practice-chip" data-chip-value="they know" data-chip-origin="bank-1" data-chip-id="1-2">
+  they know
 </button>
-<button type="button" class="practice-chip" data-chip-value="the final decision." data-chip-origin="bank-1" data-chip-id="1-3">
-  the final decision.
+<button type="button" class="practice-chip" data-chip-value="it would cost." data-chip-origin="bank-1" data-chip-id="1-3">
+  it would cost.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -167,19 +170,19 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="sort" data-task-id="3" data-task-answer="Correct:Rarely do we find||Incorrect:Rarely we find" data-correct-feedback="Correct. You have identified the sentences that need inversion." data-wrong-feedback="Some choices are off. Check the inversion structure again.">
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-task-answer="Correct:Never have we seen||Incorrect:Never we have seen" data-correct-feedback="Correct. You have identified the sentences that need inversion." data-wrong-feedback="Some choices are off. Check the inversion structure again.">
   <p class="practice-task-label">3. Final sort</p>
   <h3>Identify which sentences use inversion correctly.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="Correct" data-sort-row="0">
-  <p>Rarely do we find such dedication in the team.</p>
+  <p>Never have we seen such enthusiasm in the audience.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="Correct">Correct</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="Incorrect">Incorrect</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="Incorrect" data-sort-row="1">
-  <p>Rarely we find such dedication in the team.</p>
+  <p>Never we have seen such enthusiasm in the audience.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="Correct">Correct</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="Incorrect">Incorrect</button>
@@ -195,7 +198,7 @@ draft: false
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering inversion and cleft sentences allows you to highlight important details, enhancing the clarity and impact of your communication. This skill is crucial for achieving higher scores in exams and for effective communication in professional settings.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering inversion allows you to highlight important details, enhancing the clarity and impact of your communication. This skill is crucial for achieving higher scores in exams and for effective communication in professional settings.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn when to use gerunds and infinitives to enhance your grammatical precision and fluency."
+excerpt: "Learn when to use gerunds and infinitives to enhance your grammatical precision and fluency in English."
 date: "2026-03-02"
 tags: ["grammar", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
@@ -58,16 +58,16 @@ quiz:
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
     <p>Gerunds are verb forms ending in -ing that function as nouns, while infinitives are the base form of the verb preceded by 'to'.</p>
-    <p>Gerunds and infinitives can follow certain verbs, adjectives, or expressions, and choosing the correct form is crucial for grammatical accuracy.</p>
-    <p>At the B2 level, understanding these forms helps in crafting sentences that are both precise and fluent.</p>
+    <p>They follow certain verbs, adjectives, or expressions, and choosing the correct form is crucial for grammatical accuracy.</p>
+    <p>At the B2 level, mastering these forms helps create precise and fluent sentences.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
     <ul>
-      <li>After certain verbs like 'enjoy', 'avoid', or 'consider', use a gerund.</li>
+      <li>After verbs like 'enjoy', 'avoid', or 'consider', use a gerund.</li>
       <li>After verbs like 'decide', 'plan', or 'want', use an infinitive.</li>
-      <li>When the verb is followed by a preposition, use a gerund.</li>
-      <li>When expressing purpose, use an infinitive.</li>
+      <li>Use a gerund after a verb followed by a preposition.</li>
+      <li>Use an infinitive to express purpose.</li>
     </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
@@ -81,7 +81,7 @@ quiz:
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
     <ul>
-      <li>Use gerunds after verbs that express likes or dislikes.</li>
+      <li>Use gerunds after verbs expressing likes or dislikes.</li>
       <li>Use infinitives to express intentions or plans.</li>
       <li>After prepositions, always use gerunds.</li>
       <li>Be aware of verbs that can take both forms but change meaning (e.g., 'stop').</li>

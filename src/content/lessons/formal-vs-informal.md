@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn to distinguish between formal and informal writing styles for IELTS and CELPIP to enhance your communication skills and exam scores."
+excerpt: "Learn to distinguish and apply formal and informal writing styles for IELTS and CELPIP exams."
 date: "2026-03-02"
 tags: ["writing", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Ask who you are writing to before you choose the tone."
@@ -58,14 +58,14 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Formal writing involves using a structured, objective, and precise language style, often required in academic and professional settings. Informal writing is more relaxed, personal, and conversational, suitable for casual communication. Mastering both styles is essential for IELTS and CELPIP as they test your ability to adapt your writing to different contexts.</p>
+    <p>Formal writing uses structured, objective, and precise language, often necessary for academic and professional contexts. Informal writing is more relaxed and conversational, suitable for casual communication. Mastering both styles is crucial for IELTS and CELPIP, as these exams assess your ability to adapt writing to different contexts and audiences.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
     <ul>
-      <li>Writing essays or reports in a formal tone for exams or professional settings.</li>
-      <li>Crafting emails or letters where a conversational tone is appropriate.</li>
-      <li>Responding to different writing tasks in IELTS or CELPIP that specify a tone.</li>
+      <li>Writing essays, reports, or formal letters in exams or professional settings.</li>
+      <li>Crafting emails or messages where a conversational tone is more appropriate.</li>
+      <li>Responding to IELTS or CELPIP tasks that specify a required tone.</li>
     </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
@@ -82,6 +82,7 @@ quiz:
       <li>Informal language is suitable for personal and casual communication.</li>
       <li>Avoid contractions and slang in formal writing.</li>
       <li>Adapt your tone to match the audience and purpose of your writing.</li>
+      <li>Maintain consistency in tone throughout your writing.</li>
     </ul>
   </section>
 </div>
@@ -125,7 +126,7 @@ quiz:
   </div>
   <p class="practice-lab-coach">Choose the tone that matches the given context.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1">
   <p class="practice-task-label">1. Formal or Informal?</p>
   <h3>Select the appropriate tone for a business email.</h3>
   <div class="practice-choice-grid">
@@ -138,7 +139,7 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="choice" data-task-answer="0" data-task-id="1">
+<article class="practice-task" data-task-type="choice" data-task-answer="0" data-task-id="2">
   <p class="practice-task-label">2. Formal or Informal?</p>
   <h3>Choose the appropriate tone for a text to a friend.</h3>
   <div class="practice-choice-grid">
@@ -151,7 +152,7 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="2">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="3">
   <p class="practice-task-label">3. Formal or Informal?</p>
   <h3>Select the appropriate tone for a university application letter.</h3>
   <div class="practice-choice-grid">

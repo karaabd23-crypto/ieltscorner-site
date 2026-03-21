@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B2 lesson on Direct and Indirect Speech with teacher-style explanation, guided practice, and topic-linked review."
+excerpt: "Learn to accurately report speech by mastering direct and indirect speech, adjusting pronouns, tense, and expressions for clear communication."
 date: "2026-03-02"
 tags: ["grammar", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
@@ -35,21 +35,21 @@ quiz:
     correctIndex: 1
     explanation: "Option 2 repairs a typical Direct and Indirect Speech error and matches the target form."
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Direct and Indirect Speech</strong> helps you report what someone said, thought, or wrote. English often changes the tense, pronouns, or time expressions when you report another message. In this lesson, you will learn how to carry the meaning over clearly and accurately.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Direct and Indirect Speech</strong> allows you to accurately report what someone has said, thought, or written by adjusting pronouns, tense, and time expressions to fit the context. This lesson will guide you in maintaining clarity and accuracy in your reports.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The witness said me that the road was closed.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>The witness told me that the road was closed.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>"I will call you tomorrow," she said.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>She said that she <strong>would call</strong> me the next day.</p>
+  <p class="lesson-card-note">The tense and time expression have been adjusted to fit the indirect speech format.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>She explained that why the original plan had failed.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>She explained why the original plan had failed.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>"Do you know where the station is?" he asked.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>He asked if I <strong>knew where</strong> the station <strong>was</strong>.</p>
+  <p class="lesson-card-note">The question format is adjusted for indirect speech, maintaining the original meaning.</p>
 </article>
 </div>
 
@@ -57,23 +57,35 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Reporting grammar is about repeating an idea accurately in a new sentence.</p>
-<p>Reporting structures let you repeat what someone said, thought, asked, or concluded. The challenge is choosing the right reporting verb and keeping the grammar after it accurate.</p>
-<p>Use reporting grammar when you summarize other people&#39;s words or ideas. This is common in speaking, writing, and source-based tasks.</p>
-<p>At B2 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+    <p>Direct and indirect speech are used to report what someone has said, thought, or written. Direct speech quotes the exact words, while indirect speech paraphrases them, often changing pronouns, tense, and time expressions to fit the context of the report.</p>
+    <p>At the B2 level, mastering this skill is important for clear and accurate communication in both spoken and written English.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Choose the reporting verb from the meaning: say, tell, explain, ask, suggest, or report.</li><li>Check whether the structure after the reporting verb needs that, whether, or a wh-clause.</li><li>Shift tense only when the timeline and context require it.</li></ul>
+    <ul>
+      <li>Quoting someone's exact words in direct speech.</li>
+      <li>Paraphrasing someone's words in indirect speech.</li>
+      <li>Reporting questions, commands, or requests.</li>
+      <li>Writing essays or reports where you need to reference others' statements.</li>
+      <li>Conveying information in formal and informal conversations.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">The witness said that the road had been closed for two hours.</div>
-<div class="lesson-pattern-sentence">She explained why the original plan had failed.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence"><strong>Direct:</strong> "I am going to the market," he said.</div>
+      <div class="lesson-pattern-sentence"><strong>Indirect:</strong> He said that he <strong>was going</strong> to the market.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Choose the reporting verb from the meaning you want.</li><li>Check the clause pattern the reporting verb needs after it.</li><li>Keep normal statement order inside reported clauses and reported questions.</li><li>Shift tense only when the timeline really calls for it.</li><li>Make sure the reported version still matches the original idea accurately.</li></ul>
+    <ul>
+      <li>Use quotation marks for direct speech.</li>
+      <li>Change pronouns and tense for indirect speech.</li>
+      <li>Use 'that' for indirect statements, and adjust word order for questions.</li>
+      <li>Do not change the tense if the reporting verb is in the present, future, or present perfect tense.</li>
+      <li>Be mindful of time expressions and how they change in indirect speech.</li>
+    </ul>
   </section>
 </div>
 
@@ -81,24 +93,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>choosing the wrong reporting verb or clause pattern after it</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The teacher said us that the deadline had changed.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The teacher told us that the deadline had changed.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> match the reporting verb to the message, then use the clause pattern it actually needs</p>
+  <h3>Incorrect tense shift in indirect speech</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>She said that she <strong>is</strong> going to the market.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>She said that she <strong>was going</strong> to the market.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Ensure the tense in indirect speech reflects the past context.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using say with an indirect object</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The officer said us that the road was closed.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The officer told us that the road was closed.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use tell when the listener is named directly</p>
+  <h3>Incorrect pronoun usage in indirect speech</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>He said, "I will see you tomorrow."</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>He said that he <strong>would see</strong> me the next day.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Adjust pronouns to match the perspective of the reporter.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>keeping direct-question word order inside a reported question</h3>
+  <h3>Incorrect word order in reported questions</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>She asked where was the nearest station.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>She asked where the nearest station was.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> reported questions use statement order, not direct-question order</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>She asked where the nearest station <strong>was</strong>.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use statement word order in reported questions.</p>
 </article>
 </div>
 
@@ -121,27 +133,27 @@ quiz:
   <h3>Choose the stronger sentence for Direct and Indirect Speech.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  The teacher said us that the deadline had changed.
+  He said, "I am going to the store."
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  The teacher told us that the deadline had changed.
+  He said that he <strong>was going</strong> to the store.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="He asked||where the nearest||station was." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="She asked||if he had seen||the movie." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put this Direct and Indirect Speech sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="where the nearest" data-chip-origin="bank-1" data-chip-id="1-0">
-  where the nearest
+<button type="button" class="practice-chip" data-chip-value="She asked" data-chip-origin="bank-1" data-chip-id="1-0">
+  She asked
 </button>
-<button type="button" class="practice-chip" data-chip-value="He asked" data-chip-origin="bank-1" data-chip-id="1-1">
-  He asked
+<button type="button" class="practice-chip" data-chip-value="if he had seen" data-chip-origin="bank-1" data-chip-id="1-1">
+  if he had seen
 </button>
-<button type="button" class="practice-chip" data-chip-value="station was." data-chip-origin="bank-1" data-chip-id="1-2">
-  station was.
+<button type="button" class="practice-chip" data-chip-value="the movie." data-chip-origin="bank-1" data-chip-id="1-2">
+  the movie.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -151,34 +163,33 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-
 <article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
   <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>The teacher told us that the deadline had changed.</p>
+  <p>He said that he <strong>was going</strong> to the store.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>The teacher said us that the deadline had changed.</p>
+  <p>He said that he <strong>is going</strong> to the store.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>He asked where the nearest station was.</p>
+  <p>She asked if he had seen the movie.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>He asked where was the nearest station.</p>
+  <p>She asked if he has seen the movie.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
@@ -194,7 +205,7 @@ quiz:
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Accurate use of Direct and Indirect Speech ensures your communication is clear and precise, preventing misunderstandings and improving your credibility in both spoken and written English.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering Direct and Indirect Speech is crucial for effective communication, ensuring that you convey others' words accurately, which is vital in academic writing, professional settings, and everyday interactions.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

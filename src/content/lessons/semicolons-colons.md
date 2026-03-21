@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Improve Semicolons and Colons with clearer structure, stronger support, and cleaner paragraph control."
+excerpt: "Learn how to use semicolons and colons effectively to enhance clarity and coherence in your writing for IELTS and CELPIP."
 date: "2026-03-02"
 tags: ["writing", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Plan the job of the paragraph before you write the sentences."
@@ -41,15 +41,15 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The bus reform reduced delays, residents reported better reliability.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>The bus reform reduced delays; residents reported better reliability.</p>
-  <p class="lesson-card-note">The semicolon joins two full clauses that belong closely together.</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The presentation was informative, the audience was engaged throughout.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>The presentation was informative; the audience was engaged throughout.</p>
+  <p class="lesson-card-note">The semicolon connects two related independent clauses.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>The city prioritized one objective, to improve route reliability.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>The city prioritized one objective: improving route reliability.</p>
-  <p class="lesson-card-note">The colon introduces a clear explanation after a complete lead-in.</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>He had one priority, to finish the report by Friday.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>He had one priority: to finish the report by Friday.</p>
+  <p class="lesson-card-note">The colon introduces a specific explanation following a complete clause.</p>
 </article>
 </div>
 
@@ -58,23 +58,35 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>This lesson helps you use semicolons and colons only when they make the logic clearer.</p>
-<p>A semicolon joins two closely related full clauses. A colon introduces an explanation, list, or clear result after a full clause.</p>
-<p>Good punctuation should help the reader move through the sentence quickly. If the mark does not clarify the logic, it should not be there.</p>
-<p>In IELTS and CELPIP writing, punctuation should make the sentence easier to trust on first reading.</p>
+    <p>Semicolons and colons are punctuation marks that help clarify relationships between clauses and introduce explanations or lists.</p>
+    <p>A <strong>semicolon</strong> joins two closely related independent clauses, enhancing the flow of the sentence. A <strong>colon</strong> introduces an explanation, list, or result following a complete statement.</p>
+    <p>Understanding these punctuation marks is crucial at the B2 level, as they enhance clarity and sophistication in writing.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Use a semicolon between two related full clauses.</li><li>Use a semicolon before however, therefore, or moreover when both sides are full clauses.</li><li>Use a colon after a full clause to introduce a list, explanation, or conclusion.</li></ul>
+    <ul>
+      <li>Use a semicolon to link two related independent clauses.</li>
+      <li>Use a semicolon before transition words like "however" or "therefore" when they connect full clauses.</li>
+      <li>Use a colon after a complete sentence to introduce a list, explanation, or conclusion.</li>
+      <li>Use a colon to emphasize a particular point or result.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">The pilot reduced delays; commuter satisfaction increased in the next survey cycle.</div>
-<div class="lesson-pattern-sentence">The committee reached one conclusion: route reliability must improve before expansion.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">The project was a success; the team celebrated their achievement.</div>
+      <div class="lesson-pattern-sentence">She had one main goal: to finish her degree by the end of the year.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Check clause completeness first.</li><li>Use a semicolon only when both sides are full clauses.</li><li>Use a colon only after a complete lead-in clause.</li><li>Choose punctuation from logic, not decoration.</li><li>If the sentence is weak, rewrite it before you punctuate it.</li></ul>
+    <ul>
+      <li>Ensure both sides of a semicolon are complete sentences.</li>
+      <li>Use a colon only after a complete sentence.</li>
+      <li>Choose punctuation based on the logical relationship between ideas.</li>
+      <li>Avoid using semicolons with conjunctions like "and" or "but."</li>
+      <li>Rephrase if the sentence feels awkward with punctuation.</li>
+    </ul>
   </section>
 </div>
 
@@ -83,23 +95,23 @@ quiz:
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
   <h3>using a semicolon between a full clause and a fragment</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The council changed the schedule; because delays were increasing.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The council changed the schedule because delays were increasing.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The manager approved the plan; because it was cost-effective.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The manager approved the plan because it was cost-effective.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> Use semicolons only when both sides are complete clauses.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
   <h3>using a colon after an incomplete lead-in</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The committee recommended: increasing peak-hour services.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The committee made one recommendation: increase peak-hour services.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Make sure the words before the colon can stand as a complete clause.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The director suggested: hiring more staff.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The director made a suggestion: hire more staff.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Ensure the words before the colon form a complete clause.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
   <h3>using a comma where a semicolon is needed</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The trial lowered costs, service quality improved in three districts.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The trial lowered costs; service quality improved in three districts.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Replace comma splices with semicolons or split the sentence.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The policy was effective, employee satisfaction increased.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The policy was effective; employee satisfaction increased.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Replace comma splices with semicolons or separate sentences.</p>
 </article>
 </div>
 
@@ -111,13 +123,13 @@ quiz:
       <p class="practice-lab-intro">Start by noticing the stronger sentence. Then move to structure and editing.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
   <p class="practice-lab-coach">Check whether each side of the punctuation mark is a full clause before you choose the mark.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1">
   <p class="practice-task-label">1. Quick pick</p>
   <h3>Choose the stronger move for Semicolons and Colons.</h3>
   <div class="practice-choice-grid">
@@ -125,12 +137,15 @@ quiz:
   Add a punctuation mark because it looks advanced.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  The route improved; however, evening delays remained a problem.
+  The report was thorough; however, it missed key data.
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  Use a colon whenever you want to pause.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Check clause completeness first.||Use a semicolon only when both sides are full clauses.||Use a colon only after a complete lead-in clause.||Choose punctuation from logic, not decoration." data-task-id="1">
+<article class="practice-task" data-task-type="order" data-task-answer="Check clause completeness first.||Use a semicolon only when both sides are full clauses.||Use a colon only after a complete lead-in clause.||Choose punctuation from logic, not decoration." data-task-id="2">
   <p class="practice-task-label">2. Build the flow</p>
   <h3>Put these moves in a helpful order.</h3>
   <p class="practice-task-note">Put the chunks in the natural order.</p>
@@ -155,7 +170,7 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="sort" data-task-id="2">
+<article class="practice-task" data-task-type="sort" data-task-id="3">
   <p class="practice-task-label">3. Final sort</p>
   <h3>Sort these habits into helpful or not helpful.</h3>
   <div class="practice-sort-list">
@@ -190,19 +205,6 @@ quiz:
   </div>
   <div class="practice-task-actions">
     <button type="button" class="practice-check-btn" data-task-check>Check</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="3">
-  <p class="practice-task-label">4. Last check</p>
-  <h3>Choose the sentence that sounds more controlled.</h3>
-  <div class="practice-choice-grid">
-<button type="button" class="practice-choice" data-choice-index="0">
-  The council had a point, and there were some ideas.
-</button>
-<button type="button" class="practice-choice" data-choice-index="1">
-  The council agreed on one point: service reliability comes first.
-</button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>

@@ -1,11 +1,11 @@
 ---
-title: "Using Prepositions in Relative Clauses"
+title: "Prepositions in Relative Clauses"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-6.5"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Choose prepositions by relationship and fixed pattern instead of translating word for word."
+excerpt: "Learn how to use prepositions in relative clauses to enhance clarity and formality in your writing."
 date: "2026-02-27"
 tags: ["grammar", "b2", "exam-prep", "ielts", "celpip"]
 heroTip: "Study prepositions in chunks, not alone: interested in, responsible for, arrive at."
@@ -37,22 +37,22 @@ priceCAD: 0
 draft: false
 ---
 <div class="lesson-context">
-  <p class="lesson-context-lead"><strong>Using Prepositions in Relative Clauses</strong> is essential for creating precise and formal sentences. This lesson will guide you through understanding and correctly applying this structure to enhance your writing and speaking skills.</p>
+  <p class="lesson-context-lead"><strong>Using Prepositions in Relative Clauses</strong> enhances sentence precision and formality. This lesson focuses on mastering this structure to improve your writing and speaking clarity.</p>
 </div>
 
 ## Examples
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>She is interested on environmental policy.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>She is interested in environmental policy.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The house which I live in is old.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>The house <strong>in which</strong> I live is old.</p>
+  <p class="lesson-card-note">Placing the preposition before the relative pronoun is more formal.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>We discussed about the budget during class.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>We discussed the budget during class.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The company which she works for is expanding.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>The company <strong>for which</strong> she works is expanding.</p>
+  <p class="lesson-card-note">This structure is preferred in formal contexts.</p>
 </article>
 </div>
 
@@ -60,23 +60,33 @@ draft: false
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Prepositions are small, but they carry exact meaning and often come in fixed patterns.</p>
-<p>Prepositions show relationships such as time, place, direction, cause, and pattern. Many preposition choices are fixed, so they need to be learned in chunks.</p>
-<p>Use prepositions by asking what relationship you need first, then checking whether the verb, adjective, or noun has a fixed partner.</p>
-<p>At B2 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+    <p>Prepositions in relative clauses help specify relationships between the clause and the noun it modifies, often indicating time, place, or reason.</p>
+    <p>In relative clauses, prepositions can precede the relative pronoun or be placed at the end of the clause.</p>
+    <p>This structure is important at the B2 level for creating more complex and precise sentences.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Choose the preposition from the relationship, not from direct translation.</li><li>Learn common chunks such as interested in, responsible for, and depend on.</li><li>Remove extra prepositions after verbs that do not take them.</li></ul>
+    <ul>
+      <li>Describing the location or time related to the noun in the main clause.</li>
+      <li>Indicating a reason or method linked to the noun in the main clause.</li>
+      <li>Forming formal written or spoken responses where clarity is crucial.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">She is interested in urban planning.</div>
-<div class="lesson-pattern-sentence">The lecture starts on Monday at nine.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">The book <strong>in which</strong> she is interested is on the table.</div>
+      <div class="lesson-pattern-sentence">The city <strong>where</strong> I grew up has changed a lot.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Find the relationship first: time, place, direction, cause, or fixed pattern.</li><li>Check whether the verb or adjective needs a specific preposition.</li><li>Use at/on/in by precision and scale, not by guesswork.</li><li>Remove extra prepositions after verbs like discuss or enter.</li><li>Study the full phrase, not the single preposition on its own.</li></ul>
+    <ul>
+      <li>Prepositions can precede the relative pronoun or follow the clause.</li>
+      <li>Use "in which," "on which," etc., for more formal writing.</li>
+      <li>Ensure the preposition fits the relationship between the clause and the noun.</li>
+      <li>"Where" and "when" can often replace "in which" or "at which."</li>
+    </ul>
   </section>
 </div>
 
@@ -84,24 +94,17 @@ draft: false
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>using incorrect or unnecessary prepositions after common verbs and adjectives</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>He apologized on arriving late to class.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>He apologized for arriving late to class.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> learn high-frequency verb-preposition and adjective-preposition pairs</p>
+  <h3>placing prepositions incorrectly in formal writing</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The meeting which I was at was productive.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The meeting <strong>at which</strong> I was was productive.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> use "at which" for formal contexts.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using a preposition after a verb that does not need one</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>We discussed about the proposal for thirty minutes.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>We discussed the proposal for thirty minutes.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> learn verbs that take no preposition after them</p>
-</article>
-<article class="lesson-error-card">
-  <p class="lesson-card-label">Common problem 3</p>
-  <h3>choosing the wrong time preposition</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The lecture starts in Monday at 9 a.m.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The lecture starts on Monday at 9 a.m.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use on for days and at for exact times</p>
+  <h3>using "where" incorrectly for non-physical locations</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The situation where we find ourselves is challenging.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The situation <strong>in which</strong> we find ourselves is challenging.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> use "in which" for abstract or non-physical locations.</p>
 </article>
 </div>
 
@@ -110,41 +113,41 @@ draft: false
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+      <p class="practice-lab-intro">Practice placing prepositions correctly in relative clauses to enhance your formal writing skills.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Consider the formal context and choose the correct preposition placement.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Relative Clauses With Prepositions form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The sentence uses the preposition in a formal context correctly." data-wrong-feedback="Not yet. Remember to place the preposition before the relative pronoun in formal writing.">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger sentence for Relative Clauses With Prepositions.</h3>
+  <h3>Choose the correct sentence for formal writing.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  He apologized on arriving late to class.
+  The project which I am involved in is complex.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  He apologized for arriving late to class.
+  The project <strong>in which</strong> I am involved is complex.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="They are||responsible for managing||the event." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="The city||where I grew up||has changed a lot." data-task-id="2" data-correct-feedback="Correct. The sentence now reads naturally." data-wrong-feedback="Not yet. Ensure the sentence structure is clear and correct.">
   <p class="practice-task-label">2. Build it</p>
-  <h3>Put this Relative Clauses With Prepositions sentence in the correct order.</h3>
+  <h3>Put this sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="responsible for managing" data-chip-origin="bank-1" data-chip-id="1-0">
-  responsible for managing
+<button type="button" class="practice-chip" data-chip-value="where I grew up" data-chip-origin="bank-1" data-chip-id="1-0">
+  where I grew up
 </button>
-<button type="button" class="practice-chip" data-chip-value="They are" data-chip-origin="bank-1" data-chip-id="1-1">
-  They are
+<button type="button" class="practice-chip" data-chip-value="The city" data-chip-origin="bank-1" data-chip-id="1-1">
+  The city
 </button>
-<button type="button" class="practice-chip" data-chip-value="the event." data-chip-origin="bank-1" data-chip-id="1-2">
-  the event.
+<button type="button" class="practice-chip" data-chip-value="has changed a lot." data-chip-origin="bank-1" data-chip-id="1-2">
+  has changed a lot.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -154,34 +157,33 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-
 <article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
   <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>He apologized for arriving late to class.</p>
+  <p>The house in which I live is spacious.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>He apologized on arriving late to class.</p>
+  <p>The house which I live in is spacious.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>They are responsible for managing the event.</p>
+  <p>The company for which she works is expanding.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>They are responsible of managing the event.</p>
+  <p>The company which she works for is expanding.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
@@ -197,7 +199,7 @@ draft: false
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering the use of prepositions in relative clauses is crucial for formal writing and speaking. It enhances clarity and precision, making your communication more professional and trustworthy.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering prepositions in relative clauses is crucial for formal writing and speaking. It ensures clarity and precision, making your communication more professional and effective.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

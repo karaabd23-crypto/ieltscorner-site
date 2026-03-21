@@ -1,11 +1,11 @@
 ---
-title: "Using 'Will' for Quick Decisions"
+title: "Using 'Will' for Spontaneous Decisions"
 category: "grammar"
 level: "B2"
 ieltsBand: "4.0-5.0"
 clb: "4-5"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Match tense choice to time meaning so the reader never has to guess your timeline."
+excerpt: "Learn to use 'will' for expressing spontaneous decisions and offers in English."
 date: "2026-02-27"
 tags: ["grammar", "a2", "exam-prep", "ielts", "celpip"]
 heroTip: "Circle the time marker before you choose the verb form."
@@ -36,21 +36,21 @@ premium: false
 priceCAD: 0
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Using 'Will' for Quick Decisions</strong> helps you express spontaneous decisions or offers clearly. It is crucial for indicating immediate future actions or intentions in your writing and speaking.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Using 'Will' for Spontaneous Decisions</strong> helps you express on-the-spot decisions or offers clearly. It is crucial for indicating immediate future actions or intentions in your writing and speaking.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The city policy update improve commuter access, but the sentence form is unstable.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>The city policy update improves commuter access, and the sentence form is stable.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>I think I call you later.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>I think I <strong>will call</strong> you later.</p>
+  <p class="lesson-card-note">Use 'will' to indicate a decision made at the moment of speaking.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Students in one district reported progress, but the structure of the explanation is unclear.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Students in one district reported progress, and the explanation is grammatically clear.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Okay, I help you with your bags.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Okay, I <strong>will help</strong> you with your bags.</p>
+  <p class="lesson-card-note">'Will' is used here to offer help spontaneously.</p>
 </article>
 </div>
 
@@ -58,23 +58,34 @@ draft: false
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Tense choice becomes easier when you decide the timeline before the verb form.</p>
-<p>Tense choices place actions on a timeline and show whether they are finished, ongoing, repeated, or connected to another time point.</p>
-<p>Use tense accurately by deciding the time first and the meaning second. Readers should be able to follow your timeline without stopping to reinterpret the verb forms.</p>
-<p>At A2 level, keep sentences short and clear first. Add extra words only when they help meaning.</p>
+    <p>The future simple tense using <strong>'will'</strong> is used to express decisions made at the moment of speaking. It indicates a spontaneous decision or offer.</p>
+    <p>Formation: <strong>subject + will + base verb</strong>.</p>
+    <p>This is important at the B2 level as it helps convey immediate intentions clearly in both spoken and written communication.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Find the time signal or implied timeline before you choose the verb.</li><li>Keep the tense stable until the timeline genuinely changes.</li><li>Use perfect forms when you need to connect an earlier action to another time point.</li></ul>
+    <ul>
+      <li>Making a decision at the moment of speaking.</li>
+      <li>Offering to do something immediately.</li>
+      <li>Agreeing to a suggestion or request spontaneously.</li>
+      <li>Predicting a future event based on immediate evidence.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Since January, attendance has improved every week.</div>
-<div class="lesson-pattern-sentence">By the end of the year, the team will have completed the trial.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">"I <strong>will call</strong> you right now."</div>
+      <div class="lesson-pattern-sentence">"Don't worry, I <strong>will help</strong> you with that."</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Mark the timeline first with a time word or situation clue.</li><li>Choose simple, continuous, perfect, or perfect continuous from the meaning.</li><li>Keep the reference point stable inside the sentence.</li><li>Use tense shifts only when the timeline really changes.</li><li>Check that the final verb form agrees with the time marker.</li></ul>
+    <ul>
+      <li>Use 'will' for decisions made at the moment of speaking.</li>
+      <li>Do not use 'will' for planned or scheduled actions.</li>
+      <li>Use 'will' to offer help or agree spontaneously.</li>
+      <li>Remember: 'will' is not used for habitual actions.</li>
+    </ul>
   </section>
 </div>
 
@@ -82,24 +93,24 @@ draft: false
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>using the correct idea with an incorrect form</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The council approve the plan, but the timeline details remain unclear.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The council approved the plan, but the timeline details remain unclear.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> separate meaning choice from form checking, then edit for accuracy</p>
+  <h3>forgetting 'will' for spontaneous offers</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>I carry your bag for you.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I <strong>will carry</strong> your bag for you.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use 'will' to make an offer at the moment of speaking.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>using present perfect with a finished time marker</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>She has finished the report yesterday.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>She finished the report yesterday.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use a past form with finished time markers like yesterday or last week</p>
+  <h3>using present tense for immediate decisions</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>I go to the store now.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I <strong>will go</strong> to the store now.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use 'will' for decisions made on the spot.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>switching tense without a time reason</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>The study started in May and shows strong results in June.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The study started in May and showed strong results in June.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> keep the tense stable unless the timeline genuinely changes</p>
+  <h3>using 'will' for planned actions</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>I will visit my grandmother next weekend.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I am going to visit my grandmother next weekend.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use 'going to' for planned actions, not 'will'.</p>
 </article>
 </div>
 
@@ -108,44 +119,47 @@ draft: false
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+      <p class="practice-lab-intro">Identify the correct use of 'will' for spontaneous decisions. Then, practice forming sentences with it.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Focus on decisions made at the moment of speaking. Use 'will' to reflect spontaneity.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Will for quick decisions form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
-  <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger sentence for Will for quick decisions.</h3>
+<article class="practice-task" data-task-type="choice" data-task-answer="2" data-task-id="1" data-correct-feedback="Correct. This sentence uses 'will' to indicate a spontaneous decision." data-wrong-feedback="Not quite. Remember, 'will' is used for decisions made at the moment.">
+  <p class="practice-task-label">1. Quick choice</p>
+  <h3>Select the sentence that correctly uses 'will' for a spontaneous decision.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  The council approve the plan, but the timeline details remain unclear.
+  I am going to help you with that.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  The council approved the plan, but the timeline details remain unclear.
+  I help you with that.
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  I <strong>will help</strong> you with that.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="If schools add||tutoring support, more||students will improve||exam performance." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
-  <p class="practice-task-label">2. Build it</p>
-  <h3>Put this Will for quick decisions sentence in the correct order.</h3>
+<article class="practice-task" data-task-type="order" data-task-answer="I think||I will||go to the store||now." data-task-id="2" data-correct-feedback="Correct. The sentence now reflects a spontaneous decision." data-wrong-feedback="Not yet. Arrange the sentence to show the decision made at the moment.">
+  <p class="practice-task-label">2. Sentence order</p>
+  <h3>Arrange the sentence to correctly use 'will' for a spontaneous decision.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="tutoring support, more" data-chip-origin="bank-1" data-chip-id="1-0">
-  tutoring support, more
+<button type="button" class="practice-chip" data-chip-value="I think" data-chip-origin="bank-1" data-chip-id="1-0">
+  I think
 </button>
-<button type="button" class="practice-chip" data-chip-value="exam performance." data-chip-origin="bank-1" data-chip-id="1-1">
-  exam performance.
+<button type="button" class="practice-chip" data-chip-value="I will" data-chip-origin="bank-1" data-chip-id="1-1">
+  I will
 </button>
-<button type="button" class="practice-chip" data-chip-value="If schools add" data-chip-origin="bank-1" data-chip-id="1-2">
-  If schools add
+<button type="button" class="practice-chip" data-chip-value="go to the store" data-chip-origin="bank-1" data-chip-id="1-2">
+  go to the store
 </button>
-<button type="button" class="practice-chip" data-chip-value="students will improve" data-chip-origin="bank-1" data-chip-id="1-3">
-  students will improve
+<button type="button" class="practice-chip" data-chip-value="now." data-chip-origin="bank-1" data-chip-id="1-3">
+  now.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -155,37 +169,22 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-
-<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
-  <p class="practice-task-label">3. Final sort</p>
-  <h3>Mark each sentence as correct or needing a fix.</h3>
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-task-answer="Correct:I'll help you now.||Incorrect:I help you now." data-correct-feedback="Correct. You've sorted the sentences based on their proper use of 'will'." data-wrong-feedback="Some choices are off. Ensure 'will' is used for spontaneous decisions.">
+  <p class="practice-task-label">3. Sort it out</p>
+  <h3>Sort the sentences into correct and incorrect uses of 'will' for spontaneous decisions.</h3>
   <div class="practice-sort-list">
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>The council approved the plan, but the timeline details remain unclear.</p>
+<div class="practice-sort-row" data-sort-target="Correct" data-sort-row="0">
+  <p>I'll help you now.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Correct">Correct</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Incorrect">Incorrect</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>The council approve the plan, but the timeline details remain unclear.</p>
+<div class="practice-sort-row" data-sort-target="Incorrect" data-sort-row="1">
+  <p>I help you now.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
-  </div>
-</div>
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>If schools add tutoring support, more students will improve exam performance.</p>
-  <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
-  </div>
-</div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>If schools add tutoring support, more students improve exam performance.</p>
-  <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Correct">Correct</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Incorrect">Incorrect</button>
   </div>
 </div>
   </div>
@@ -198,7 +197,7 @@ draft: false
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Using 'will' correctly for quick decisions ensures your communication is clear and immediate, reflecting your intentions accurately in both speaking and writing.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Using 'will' correctly for spontaneous decisions ensures your communication is clear and immediate, accurately reflecting your intentions in both speaking and writing.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

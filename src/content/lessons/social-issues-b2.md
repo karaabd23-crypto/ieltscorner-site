@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B2 vocabulary lesson on Social Issues Vocabulary with a practical word bank, collocations, and retrieval practice."
+excerpt: "Enhance your ability to discuss societal challenges with precise and effective social issues vocabulary."
 date: "2026-03-02"
 tags: ["vocabulary", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Learn words with their partner phrases and one model sentence, not as isolated items."
@@ -35,21 +35,21 @@ quiz:
     correctIndex: 0
     explanation: "A short model sentence makes the new language active instead of passive."
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Social Issues Vocabulary</strong> focuses on the essential terms and phrases needed to discuss societal challenges effectively in English. This lesson guides you in understanding key words, their contexts, and how to use them naturally in sentences.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Social Issues Vocabulary</strong> focuses on the essential terms and phrases needed to discuss societal challenges effectively in English. This lesson guides you in understanding key words, their contexts, and how to use them naturally in sentences about social issues.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>The city spent money on help for local people.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>The city increased public funding for a community program.</p>
-  <p class="lesson-card-note">The stronger version names the real meaning instead of staying vague.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>The city increased <strong>public funding</strong> for a <strong>community program</strong>.</p>
+  <p class="lesson-card-note">The stronger version specifies the type of funding and program, making it clearer.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>Not enough houses made life hard for many families.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>A housing shortage placed pressure on many families.</p>
-  <p class="lesson-card-note">The better sentence sounds more natural for a real task and a real reader.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>A <strong>housing shortage</strong> placed pressure on many families.</p>
+  <p class="lesson-card-note">The improved sentence uses specific vocabulary to describe the issue.</p>
 </article>
 </div>
 
@@ -57,23 +57,33 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>This lesson helps you say the same idea with sharper, more natural vocabulary.</p>
-<p>Social Issues Vocabulary teaches topic words and useful chunks that help you describe a real everyday subject more clearly.</p>
-<p>Use this vocabulary when you need topic-appropriate wording instead of vague general words in speaking or writing.</p>
-<p>At B2 level, learn fewer words but learn them well: meaning, collocation, and one model sentence.</p>
+    <p>Social Issues Vocabulary focuses on specific terms and phrases used to discuss societal challenges. These words help articulate complex social topics clearly and effectively.</p>
+    <p>At the B2 level, mastering this vocabulary is essential for engaging in discussions about social policies, community programs, and societal impacts.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Choose the word from the exact meaning you need.</li><li>Learn each word with a collocation or model sentence.</li><li>Replace vague language only when the new word is accurate and natural.</li></ul>
+    <ul>
+      <li>Discussing societal challenges in essays or reports.</li>
+      <li>Participating in debates or discussions about social policies.</li>
+      <li>Writing about community programs or initiatives.</li>
+      <li>Explaining the impact of social issues in presentations.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">A more precise word usually makes a sentence about Social Issues Vocabulary easier to trust.</div>
-<div class="lesson-pattern-sentence">Topic vocabulary becomes useful when you can use it in a real sentence quickly.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence"><strong>Public funding</strong> is crucial for sustaining community programs.</div>
+      <div class="lesson-pattern-sentence">A <strong>housing shortage</strong> can lead to increased homelessness.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Choose the meaning first before you choose the word.</li><li>Learn the word with a natural collocation or partner phrase.</li><li>Use the new word in one short sentence right away.</li><li>Replace vague words only when the new word stays accurate.</li><li>Keep the register stable so the language fits the task.</li></ul>
+    <ul>
+      <li>Use specific terms to accurately describe social issues.</li>
+      <li>Pair vocabulary with appropriate collocations for clarity.</li>
+      <li>Avoid vague language; be precise and contextual.</li>
+      <li>Ensure the vocabulary fits the tone and formality of the context.</li>
+    </ul>
   </section>
 </div>
 
@@ -83,22 +93,22 @@ quiz:
   <p class="lesson-card-label">Common problem 1</p>
   <h3>using broad policy words instead of the exact social issue</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The city tried to fix community problems.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>The city launched a youth support program to reduce dropout rates.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> name the exact service or issue directly</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The city launched a <strong>youth support program</strong> to reduce dropout rates.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> name the exact service or issue directly.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
   <h3>using a social term with no visible effect</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Public awareness increased.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>Public awareness increased after the campaign used local radio and school events.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> show what changed and why</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> show what changed and why.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
   <h3>treating social vocabulary like abstract labels</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Funding, support, housing, awareness.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>More public funding improved housing support for low-income families.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> build a real policy sentence with the topic words</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>More <strong>public funding</strong> improved <strong>housing support</strong> for low-income families.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> build a real policy sentence with the topic words.</p>
 </article>
 </div>
 
@@ -110,7 +120,7 @@ quiz:
       <p class="practice-lab-intro">Start with meaning. Then move to collocations and sentence control for Social Issues Vocabulary.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/2</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
@@ -160,12 +170,27 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="3">
+  <p class="practice-task-label">3. Identify it</p>
+  <h3>Which phrase describes a lack of affordable housing?</h3>
+  <div class="practice-choice-grid">
+<button type="button" class="practice-choice" data-choice-index="0">
+  community pressure
+</button>
+<button type="button" class="practice-choice" data-choice-index="1">
+  housing shortage
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  public awareness
+</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
   </div>
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering Social Issues Vocabulary is crucial for clear and precise communication on societal topics. It enables you to articulate complex issues effectively, enhancing both written and spoken English skills.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering Social Issues Vocabulary is crucial for clear and precise communication on societal topics. It enables you to articulate complex issues effectively, enhancing both written and spoken English skills, particularly in academic and professional settings.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Master formal letter writing vocabulary for clear, respectful, and professional communication."
+excerpt: "Master the vocabulary and phrases needed for effective formal letter writing at a B2 level."
 date: "2026-03-02"
 tags: ["vocabulary", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Learn words with their partner phrases and one model sentence, not as isolated items."

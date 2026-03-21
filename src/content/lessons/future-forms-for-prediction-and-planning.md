@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-6.5"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn how to use future tenses to express predictions and plans effectively."
+excerpt: "Learn to use future tenses for predictions and plans, ensuring clear communication of your intentions."
 date: "2026-03-01"
 tags: ["grammar", "b2", "exam-prep", "ielts", "celpip"]
 heroTip: "Circle the time marker before you choose the verb form."
@@ -58,17 +58,17 @@ draft: false
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Future tenses help express actions or events that will happen at a later time. They are used to make predictions, discuss plans, and describe scheduled events.</p>
-    <p>Common future forms include 'will' for predictions and decisions made at the moment of speaking, 'going to' for plans or intentions, and the present continuous for fixed future arrangements.</p>
-    <p>Understanding these forms is crucial at the B2 level to ensure clarity in communication about future events.</p>
+    <p>Future tenses express actions or events that will occur after the present moment. They are essential for making predictions, outlining plans, and describing scheduled events.</p>
+    <p>The main future forms include 'will' for predictions and spontaneous decisions, 'going to' for premeditated plans or intentions, and the present continuous for definite future arrangements.</p>
+    <p>Mastering these forms at the B2 level is crucial for effective communication about future events.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
     <ul>
-      <li>Making predictions about the future based on personal opinion or evidence.</li>
-      <li>Describing plans or intentions that have already been decided.</li>
-      <li>Talking about scheduled events or timetables.</li>
-      <li>Making spontaneous decisions.</li>
+      <li>Predicting future events based on evidence or opinion.</li>
+      <li>Describing plans or intentions that have been decided beforehand.</li>
+      <li>Discussing scheduled events or timetables.</li>
+      <li>Making decisions at the moment of speaking.</li>
     </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">

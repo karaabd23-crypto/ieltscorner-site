@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B2 speaking lesson on Pronunciation: Stress and Intonation with clearer response frames, practice prompts, and self-checks."
+excerpt: "Learn to use stress and intonation to enhance your speech clarity and engagement, crucial for effective communication at the B2 level."
 date: "2026-03-02"
 tags: ["speaking", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Start with a direct answer. Most speaking problems get smaller once the opening sentence is clear."
@@ -41,15 +41,15 @@ quiz:
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Public transport should receive more funding than new roads.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>PUBLIC transport should receive MORE funding than new ROADS.</p>
-  <p class="lesson-card-note">The better answer stays on the same idea but starts doing the real speaking job immediately.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>The project was successful because of teamwork.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>The <strong>PROJECT</strong> was a <strong>SUCCESS</strong> because of our <strong>TEAMWORK</strong>.</p>
+  <p class="lesson-card-note">The strong version emphasizes the key elements, making the message clearer and more engaging.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I like it because it saves time and makes daily life easier.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>I LIKE it because it SAVES time and MAKES daily life EASier.</p>
-  <p class="lesson-card-note">The stronger sentence keeps the same function but adds meaning instead of filler.</p>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>I love the new design; it's innovative and fresh.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>I <strong>LOVE</strong> the new design; it's <strong>INNOVATIVE</strong> and <strong>FRESH</strong>.</p>
+  <p class="lesson-card-note">The strong sentence uses stress to highlight enthusiasm and key qualities of the design.</p>
 </article>
 </div>
 
@@ -58,23 +58,32 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>This lesson helps you sound organized without sounding memorized.</p>
-<p>Pronunciation for exams is about intelligibility, not accent imitation. Listeners need to hear word stress, sentence stress, and clear chunk boundaries so they can process your ideas quickly. Problems usually come from flat rhythm, missing endings, or unclear linking between words.</p>
-<p>Use this lesson when people understand your grammar on paper but struggle to follow you in speech. Practice small chunks, stressed keywords, and sentence endings. Recording yourself is one of the fastest ways to hear where your speech becomes unclear.</p>
-<p>At B2 level, speaking improves when your answer pattern is stable and easy to repeat under time pressure.</p>
+    <p>Stress and intonation are key elements of spoken English that help convey meaning and emotion. Stress involves emphasizing certain syllables or words, while intonation refers to the rise and fall of pitch in speech. At the B2 level, mastering these elements helps improve clarity and engagement in communication.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Give a direct answer before adding background.</li><li>Extend with one reason, detail, or example at a time.</li><li>Use short signposts only when they help the listener follow the answer.</li></ul>
+    <ul>
+      <li>Emphasizing important points in a presentation or speech.</li>
+      <li>Expressing emotions or attitudes in conversation.</li>
+      <li>Clarifying meaning in complex sentences.</li>
+      <li>Engaging listeners during storytelling or explanations.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">PUBLIC transport should receive MORE funding than new ROADS.</div>
-<div class="lesson-pattern-sentence">I LIKE it because it SAVES time and MAKES daily life EASier.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">The <strong>PROJECT</strong> was a <strong>SUCCESS</strong> because of our <strong>TEAMWORK</strong>.</div>
+      <div class="lesson-pattern-sentence">I <strong>LOVE</strong> the new design; it's <strong>INNOVATIVE</strong> and <strong>FRESH</strong>.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Mark the key stress in important words and phrases.</li><li>Break long answers into short spoken chunks.</li><li>Keep final consonants and grammar endings audible.</li><li>Use rising and falling intonation to show meaning, not randomness.</li><li>Record, listen, and repeat one short answer until it sounds clearer.</li></ul>
+    <ul>
+      <li>Stress key words to highlight their importance.</li>
+      <li>Use rising intonation for questions and falling for statements.</li>
+      <li>Vary your pitch to maintain listener interest.</li>
+      <li>Practice with recordings to identify areas for improvement.</li>
+    </ul>
   </section>
 </div>
 
@@ -82,24 +91,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>keeping all words equally flat</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>People should invest in public transport because it helps the city.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>People should invest in PUBLIC transport because it helps the CITY.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Stress the words that carry the main meaning.</p>
+  <h3>Monotonous delivery</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Our team did a great job on the project.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Our <strong>TEAM</strong> did a <strong>GREAT</strong> job on the <strong>PROJECT</strong>.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use stress to emphasize the achievements and key contributors.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>losing the message in one long chunk</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>I like public transport because it saves time and makes life easier for people every day.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>I like public transport | because it saves TIME | and makes daily life EASier.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Break the sentence into short spoken chunks.</p>
+  <h3>Flat intonation</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>Do you think we should continue with this plan?</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Do you <strong>THINK</strong> we should <strong>CONTINUE</strong> with this <strong>PLAN</strong>?</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use rising intonation for questions to engage the listener.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>dropping the ending and final stress</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>It save time and make life easier.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>It SAVES time and MAKES life easier.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Keep endings audible and stress the key verbs clearly.</p>
+  <h3>Unclear emphasis</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>It's important to focus on the details.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>It's <strong>IMPORTANT</strong> to focus on the <strong>DETAILS</strong>.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Stress the key points to clarify the message.</p>
 </article>
 </div>
 
@@ -108,44 +117,44 @@ quiz:
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">Start with the opening move, then check the answer shape from start to finish.</p>
+      <p class="practice-lab-intro">Practice emphasizing key words and varying intonation to enhance your speech clarity and engagement.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">If a line does not add meaning, cut it and replace it with one clear reason or example.</p>
+  <p class="practice-lab-coach">Focus on stressing important words and using intonation to convey meaning effectively.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger move for Pronunciation: Stress and Intonation.</h3>
+  <h3>Choose the sentence with better stress and intonation.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  Talk around the question first and hope the listener finds your point.
+  The project was successful because of teamwork.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  PUBLIC transport should receive MORE funding than new ROADS.
+  The <strong>PROJECT</strong> was a <strong>SUCCESS</strong> because of our <strong>TEAMWORK</strong>.
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  Our team did a great job on the project.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Mark the key stress in important words and phrases.||Break long answers into short spoken chunks.||Keep final consonants and grammar endings audible.||Use rising and falling intonation to show meaning, not randomness." data-task-id="1">
+<article class="practice-task" data-task-type="order" data-task-answer="Use rising intonation for questions.||Stress key words for emphasis.||Vary pitch to maintain interest." data-task-id="2">
   <p class="practice-task-label">2. Build the flow</p>
-  <h3>Put these moves in a helpful order.</h3>
-  <p class="practice-task-note">Put the chunks in the natural order.</p>
+  <h3>Put these strategies in a helpful order.</h3>
+  <p class="practice-task-note">Organize the strategies to improve speech delivery.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="Break long answers into short spoken chunks." data-chip-origin="bank-1" data-chip-id="1-0">
-  Break long answers into short spoken chunks.
+<button type="button" class="practice-chip" data-chip-value="Stress key words for emphasis." data-chip-origin="bank-1" data-chip-id="2-0">
+  Stress key words for emphasis.
 </button>
-<button type="button" class="practice-chip" data-chip-value="Use rising and falling intonation to show meaning, not randomness." data-chip-origin="bank-1" data-chip-id="1-1">
-  Use rising and falling intonation to show meaning, not randomness.
+<button type="button" class="practice-chip" data-chip-value="Use rising intonation for questions." data-chip-origin="bank-1" data-chip-id="2-1">
+  Use rising intonation for questions.
 </button>
-<button type="button" class="practice-chip" data-chip-value="Mark the key stress in important words and phrases." data-chip-origin="bank-1" data-chip-id="1-2">
-  Mark the key stress in important words and phrases.
-</button>
-<button type="button" class="practice-chip" data-chip-value="Keep final consonants and grammar endings audible." data-chip-origin="bank-1" data-chip-id="1-3">
-  Keep final consonants and grammar endings audible.
+<button type="button" class="practice-chip" data-chip-value="Vary pitch to maintain interest." data-chip-origin="bank-1" data-chip-id="2-2">
+  Vary pitch to maintain interest.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -155,36 +164,36 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="sort" data-task-id="2">
+<article class="practice-task" data-task-type="sort" data-task-answer="Helpful:Stress key words for emphasis,Use rising intonation for questions||Not helpful:Speak in a monotone,Ignore pitch variation" data-sort-categories="Helpful||Not helpful" data-task-id="3">
   <p class="practice-task-label">3. Final sort</p>
-  <h3>Sort these habits into helpful or not helpful.</h3>
+  <h3>Sort these habits into helpful or not helpful for stress and intonation.</h3>
   <div class="practice-sort-list">
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>Mark the key stress in important words and phrases.</p>
+<div class="practice-sort-row" data-sort-target="Helpful" data-sort-row="0">
+  <p>Stress key words for emphasis.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Not helpful">Not helpful</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="1">
-  <p>Break long answers into short spoken chunks.</p>
+<div class="practice-sort-row" data-sort-target="Helpful" data-sort-row="1">
+  <p>Use rising intonation for questions.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Not helpful">Not helpful</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="2">
-  <p>Keep talking around the topic until an answer appears.</p>
+<div class="practice-sort-row" data-sort-target="Not helpful" data-sort-row="2">
+  <p>Speak in a monotone.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Not helpful">Not helpful</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>Use fillers because they sound more natural than silence.</p>
+<div class="practice-sort-row" data-sort-target="Not helpful" data-sort-row="3">
+  <p>Ignore pitch variation.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Not helpful">Not helpful</button>
   </div>
 </div>
   </div>
@@ -193,24 +202,11 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="3">
-  <p class="practice-task-label">4. Last check</p>
-  <h3>Choose the sentence that sounds more controlled.</h3>
-  <div class="practice-choice-grid">
-<button type="button" class="practice-choice" data-choice-index="0">
-  It is good and there are many reasons, and that is all.
-</button>
-<button type="button" class="practice-choice" data-choice-index="1">
-  I LIKE it because it SAVES time and MAKES daily life EASier.
-</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
   </div>
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering stress and intonation is essential for effective communication. It helps ensure your message is understood clearly and keeps the listener engaged, which is crucial for high speaking scores in exams.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering stress and intonation is essential for effective communication. It ensures your message is understood clearly and keeps the listener engaged, which is crucial for high speaking scores in exams and professional settings.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

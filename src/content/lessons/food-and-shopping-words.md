@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "3.0-4.0"
 clb: "2-3"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Master essential vocabulary for food and shopping to communicate more effectively in everyday scenarios."
+excerpt: "Master essential vocabulary for food and shopping to enhance communication in everyday scenarios."
 date: "2026-02-27"
 tags: ["vocabulary", "a1", "exam-prep", "ielts", "celpip"]
 heroTip: "Learn words with their partner phrases and one model sentence, not as isolated items."
@@ -58,8 +58,8 @@ draft: false
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Essential vocabulary for food and shopping includes words and phrases that describe food items, shopping experiences, and related transactions.</p>
-    <p>These terms help you communicate effectively when discussing purchases, ingredients, and dining experiences.</p>
+    <p>Essential vocabulary for food and shopping includes specific terms and phrases that describe food items, shopping experiences, and related transactions.</p>
+    <p>These terms enable effective communication when discussing purchases, ingredients, and dining experiences.</p>
     <p>At the B2 level, mastering this vocabulary allows for more precise and natural conversations in everyday situations.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
@@ -119,14 +119,14 @@ draft: false
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">Start with meaning. Then move to collocations and sentence control for Food and Shopping Words.</p>
+      <p class="practice-lab-intro">Focus on using precise vocabulary for food and shopping contexts.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Use words that sound natural together. Precision is more important than difficulty.</p>
+  <p class="practice-lab-coach">Choose words that fit naturally in food and shopping contexts. Precision is key.</p>
   <div class="practice-lab-grid">
 <article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1">
   <p class="practice-task-label">1. Quick pick</p>
@@ -144,22 +144,22 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="The supermarket offers||a wide range of||organic produce||at competitive prices." data-task-id="2">
+<article class="practice-task" data-task-type="order" data-task-answer="We decided to try||a new restaurant||that specializes in||locally-sourced ingredients." data-task-id="2">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put the sentence in a natural order.</h3>
   <p class="practice-task-note">Put the chunks in the natural order.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="at competitive prices." data-chip-origin="bank-1" data-chip-id="1-0">
-  at competitive prices.
+<button type="button" class="practice-chip" data-chip-value="We decided to try" data-chip-origin="bank-2" data-chip-id="2-0">
+  We decided to try
 </button>
-<button type="button" class="practice-chip" data-chip-value="The supermarket offers" data-chip-origin="bank-1" data-chip-id="1-1">
-  The supermarket offers
+<button type="button" class="practice-chip" data-chip-value="a new restaurant" data-chip-origin="bank-2" data-chip-id="2-1">
+  a new restaurant
 </button>
-<button type="button" class="practice-chip" data-chip-value="a wide range of" data-chip-origin="bank-1" data-chip-id="1-2">
-  a wide range of
+<button type="button" class="practice-chip" data-chip-value="that specializes in" data-chip-origin="bank-2" data-chip-id="2-2">
+  that specializes in
 </button>
-<button type="button" class="practice-chip" data-chip-value="organic produce" data-chip-origin="bank-1" data-chip-id="1-3">
-  organic produce
+<button type="button" class="practice-chip" data-chip-value="locally-sourced ingredients." data-chip-origin="bank-2" data-chip-id="2-3">
+  locally-sourced ingredients.
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>

@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B2 speaking lesson on Pronunciation: Connected Speech with clearer response frames, practice prompts, and self-checks."
+excerpt: "Learn how to use connected speech to enhance your pronunciation clarity and fluency in English."
 date: "2026-03-02"
 tags: ["speaking", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Start with a direct answer. Most speaking problems get smaller once the opening sentence is clear."
@@ -35,21 +35,21 @@ quiz:
     correctIndex: 0
     explanation: "A simple reason-example extension makes the answer easier to follow."
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Pronunciation: Connected Speech</strong> is a crucial speaking skill that enhances fluency and naturalness in English. This lesson focuses on how to seamlessly join words in speech, making your communication clearer and more effective.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Pronunciation: Connected Speech</strong> is a crucial speaking skill that enhances fluency and naturalness in English. This lesson focuses on how to seamlessly join words in speech, making your communication clearer and more effective through techniques like linking, elision, and contraction.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Public transport should receive more funding than new roads.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>PUBLIC transport should receive MORE funding than new ROADS.</p>
-  <p class="lesson-card-note">The better answer stays on the same idea but starts doing the real speaking job immediately.</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Do you want to eat?</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Do you <strong>wanna</strong> eat?</p>
+  <p class="lesson-card-note">The stronger sentence uses connected speech to sound more natural.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
-  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I like it because it saves time and makes daily life easier.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>I LIKE it because it SAVES time and MAKES daily life EASier.</p>
-  <p class="lesson-card-note">The stronger sentence keeps the same function but adds meaning instead of filler.</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>I am going to go.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>I’m <strong>gonna</strong> go.</p>
+  <p class="lesson-card-note">Using contractions and reductions makes the speech flow better.</p>
 </article>
 </div>
 
@@ -58,23 +58,32 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>This lesson helps you sound organized without sounding memorized.</p>
-<p>Pronunciation for exams is about intelligibility, not accent imitation. Listeners need to hear word stress, sentence stress, and clear chunk boundaries so they can process your ideas quickly. Problems usually come from flat rhythm, missing endings, or unclear linking between words.</p>
-<p>Use this lesson when people understand your grammar on paper but struggle to follow you in speech. Practice small chunks, stressed keywords, and sentence endings. Recording yourself is one of the fastest ways to hear where your speech becomes unclear.</p>
-<p>At B2 level, speaking improves when your answer pattern is stable and easy to repeat under time pressure.</p>
+    <p>Connected speech refers to the way words are joined together in spoken English, which often changes their pronunciation. This includes linking sounds, eliding sounds, and using contractions. Mastering connected speech enhances fluency and makes communication more natural. At the B2 level, understanding and using connected speech can significantly improve clarity and listener comprehension.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Give a direct answer before adding background.</li><li>Extend with one reason, detail, or example at a time.</li><li>Use short signposts only when they help the listener follow the answer.</li></ul>
+    <ul>
+      <li>Speaking in fast-paced conversations where natural flow is important.</li>
+      <li>Giving presentations to maintain audience engagement.</li>
+      <li>Preparing for speaking exams to demonstrate fluency.</li>
+      <li>Engaging in casual conversations to sound more like a native speaker.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">PUBLIC transport should receive MORE funding than new ROADS.</div>
-<div class="lesson-pattern-sentence">I LIKE it because it SAVES time and MAKES daily life EASier.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">I <strong>don’t know</strong> what you <strong>mean</strong>.</div>
+      <div class="lesson-pattern-sentence">She <strong>isn’t</strong> going to <strong>come</strong>.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Mark the key stress in important words and phrases.</li><li>Break long answers into short spoken chunks.</li><li>Keep final consonants and grammar endings audible.</li><li>Use rising and falling intonation to show meaning, not randomness.</li><li>Record, listen, and repeat one short answer until it sounds clearer.</li></ul>
+    <ul>
+      <li>Link final consonants to initial vowels in the next word.</li>
+      <li>Use contractions to speed up speech naturally.</li>
+      <li>Drop silent letters to maintain speech flow.</li>
+      <li>Practice with tongue twisters to improve linking skills.</li>
+    </ul>
   </section>
 </div>
 
@@ -82,24 +91,24 @@ quiz:
 <div class="lesson-error-grid">
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 1</p>
-  <h3>keeping all words equally flat</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>People should invest in public transport because it helps the city.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>People should invest in PUBLIC transport because it helps the CITY.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Stress the words that carry the main meaning.</p>
+  <h3>Not linking words</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>He is a good actor.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>He’s a <strong>good actor</strong>.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Link words to maintain natural speech flow.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
-  <h3>losing the message in one long chunk</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>I like public transport because it saves time and makes life easier for people every day.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>I like public transport | because it saves TIME | and makes daily life EASier.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Break the sentence into short spoken chunks.</p>
+  <h3>Ignoring contractions</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>She will not come today.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>She <strong>won’t</strong> come today.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use contractions to sound more fluent.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
-  <h3>dropping the ending and final stress</h3>
-  <p class="lesson-line lesson-line-weak"><span>Weak</span>It save time and make life easier.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>It SAVES time and MAKES life easier.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Keep endings audible and stress the key verbs clearly.</p>
+  <h3>Dropping linking sounds</h3>
+  <p class="lesson-line lesson-line-weak"><span>Weak</span>It is an apple.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>It’s <strong>an apple</strong>.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Ensure linking sounds are present to connect words smoothly.</p>
 </article>
 </div>
 
@@ -108,109 +117,89 @@ quiz:
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">Start with the opening move, then check the answer shape from start to finish.</p>
+      <p class="practice-lab-intro">Practice linking words and using contractions to improve your connected speech.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">If a line does not add meaning, cut it and replace it with one clear reason or example.</p>
+  <p class="practice-lab-coach">Focus on how words connect in natural speech.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
-  <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger move for Pronunciation: Connected Speech.</h3>
-  <div class="practice-choice-grid">
-<button type="button" class="practice-choice" data-choice-index="0">
-  Talk around the question first and hope the listener finds your point.
-</button>
-<button type="button" class="practice-choice" data-choice-index="1">
-  PUBLIC transport should receive MORE funding than new ROADS.
-</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
-<article class="practice-task" data-task-type="order" data-task-answer="Mark the key stress in important words and phrases.||Break long answers into short spoken chunks.||Keep final consonants and grammar endings audible.||Use rising and falling intonation to show meaning, not randomness." data-task-id="1">
-  <p class="practice-task-label">2. Build the flow</p>
-  <h3>Put these moves in a helpful order.</h3>
-  <p class="practice-task-note">Put the chunks in the natural order.</p>
-  <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="Break long answers into short spoken chunks." data-chip-origin="bank-1" data-chip-id="1-0">
-  Break long answers into short spoken chunks.
-</button>
-<button type="button" class="practice-chip" data-chip-value="Use rising and falling intonation to show meaning, not randomness." data-chip-origin="bank-1" data-chip-id="1-1">
-  Use rising and falling intonation to show meaning, not randomness.
-</button>
-<button type="button" class="practice-chip" data-chip-value="Mark the key stress in important words and phrases." data-chip-origin="bank-1" data-chip-id="1-2">
-  Mark the key stress in important words and phrases.
-</button>
-<button type="button" class="practice-chip" data-chip-value="Keep final consonants and grammar endings audible." data-chip-origin="bank-1" data-chip-id="1-3">
-  Keep final consonants and grammar endings audible.
-</button>
-  </div>
-  <div class="practice-chip-answer" data-order-answer></div>
-  <div class="practice-task-actions">
-    <button type="button" class="practice-check-btn" data-task-check>Check</button>
-    <button type="button" class="practice-clear-btn" data-task-clear>Clear</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
-<article class="practice-task" data-task-type="sort" data-task-id="2">
-  <p class="practice-task-label">3. Final sort</p>
-  <h3>Sort these habits into helpful or not helpful.</h3>
-  <div class="practice-sort-list">
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>Mark the key stress in important words and phrases.</p>
-  <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
-  </div>
-</div>
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="1">
-  <p>Break long answers into short spoken chunks.</p>
-  <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
-  </div>
-</div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="2">
-  <p>Keep talking around the topic until an answer appears.</p>
-  <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
-  </div>
-</div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>Use fillers because they sound more natural than silence.</p>
-  <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
-  </div>
-</div>
-  </div>
-  <div class="practice-task-actions">
-    <button type="button" class="practice-check-btn" data-task-check>Check</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="3">
-  <p class="practice-task-label">4. Last check</p>
-  <h3>Choose the sentence that sounds more controlled.</h3>
-  <div class="practice-choice-grid">
-<button type="button" class="practice-choice" data-choice-index="0">
-  It is good and there are many reasons, and that is all.
-</button>
-<button type="button" class="practice-choice" data-choice-index="1">
-  I LIKE it because it SAVES time and MAKES daily life EASier.
-</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
+    <article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1">
+      <p class="practice-task-label">1. Quick pick</p>
+      <h3>Choose the sentence that uses connected speech effectively.</h3>
+      <div class="practice-choice-grid">
+        <button type="button" class="practice-choice" data-choice-index="0">
+          I am going to the store.
+        </button>
+        <button type="button" class="practice-choice" data-choice-index="1">
+          I’m <strong>gonna</strong> go to the store.
+        </button>
+        <button type="button" class="practice-choice" data-choice-index="2">
+          I will go to the store.
+        </button>
+      </div>
+      <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+    </article>
+    <article class="practice-task" data-task-type="order" data-task-answer="Link words together in speech.||Use contractions for a natural flow.||Practice with tongue twisters." data-task-id="2">
+      <p class="practice-task-label">2. Build the flow</p>
+      <h3>Put these tips for connected speech in order.</h3>
+      <p class="practice-task-note">Organize the tips logically.</p>
+      <div class="practice-chip-bank" data-order-bank>
+        <button type="button" class="practice-chip" data-chip-value="Link words together in speech." data-chip-origin="bank-2" data-chip-id="2-0">
+          Link words together in speech.
+        </button>
+        <button type="button" class="practice-chip" data-chip-value="Use contractions for a natural flow." data-chip-origin="bank-2" data-chip-id="2-1">
+          Use contractions for a natural flow.
+        </button>
+        <button type="button" class="practice-chip" data-chip-value="Practice with tongue twisters." data-chip-origin="bank-2" data-chip-id="2-2">
+          Practice with tongue twisters.
+        </button>
+      </div>
+      <div class="practice-chip-answer" data-order-answer></div>
+      <div class="practice-task-actions">
+        <button type="button" class="practice-check-btn" data-task-check>Check</button>
+        <button type="button" class="practice-clear-btn" data-task-clear>Clear</button>
+      </div>
+      <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+    </article>
+    <article class="practice-task" data-task-type="sort" data-task-id="3">
+      <p class="practice-task-label">3. Final sort</p>
+      <h3>Sort these phrases into connected or not connected speech.</h3>
+      <div class="practice-sort-list">
+        <div class="practice-sort-row" data-sort-target="connected" data-sort-row="0">
+          <p>What do you <strong>wanna</strong> do?</p>
+          <div class="practice-sort-actions">
+            <button type="button" class="practice-sort-btn" data-sort-choice="connected">Connected</button>
+            <button type="button" class="practice-sort-btn" data-sort-choice="not connected">Not connected</button>
+          </div>
+        </div>
+        <div class="practice-sort-row" data-sort-target="not connected" data-sort-row="1">
+          <p>What do you want to do?</p>
+          <div class="practice-sort-actions">
+            <button type="button" class="practice-sort-btn" data-sort-choice="connected">Connected</button>
+            <button type="button" class="practice-sort-btn" data-sort-choice="not connected">Not connected</button>
+          </div>
+        </div>
+        <div class="practice-sort-row" data-sort-target="connected" data-sort-row="2">
+          <p>He <strong>isn’t</strong> here.</p>
+          <div class="practice-sort-actions">
+            <button type="button" class="practice-sort-btn" data-sort-choice="connected">Connected</button>
+            <button type="button" class="practice-sort-btn" data-sort-choice="not connected">Not connected</button>
+          </div>
+        </div>
+      </div>
+      <div class="practice-task-actions">
+        <button type="button" class="practice-check-btn" data-task-check>Check</button>
+      </div>
+      <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+    </article>
   </div>
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastery of connected speech is essential for achieving clarity and fluency in spoken English, which are critical components of high speaking scores in exams and effective communication in real-world situations.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastery of connected speech is essential for achieving clarity and fluency in spoken English, which are critical components of high speaking scores in exams and effective communication in real-world situations. It helps convey messages smoothly and naturally, making interactions more engaging and understandable.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

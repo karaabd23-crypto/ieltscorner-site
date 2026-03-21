@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "4.5-5.5"
 clb: "5-6"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Control if-sentences by matching the condition and result to the same timeline and logic."
+excerpt: "Learn how to use the zero conditional to express general truths and cause-and-effect relationships effectively."
 date: "2026-03-02"
 tags: ["grammar", "b1", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Name the situation first: real, likely, unreal, or impossible in the past."
@@ -43,13 +43,13 @@ quiz:
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>If people will drive too fast, accidents happen more often.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>If people drive too fast, accidents happen more often.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-card-note">The zero conditional is used because the sentence describes a general truth that always applies.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>If water reaches 100 degrees, it will boil.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>If water reaches 100 degrees, it boils.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-card-note">The present simple is used in both clauses to express a scientific fact.</p>
 </article>
 </div>
 
@@ -57,23 +57,34 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Zero conditional is for things that are generally true, so the sentence should feel like a fact or rule.</p>
-<p>Zero conditional shows things that are generally true. We use it for facts, rules, habits, and results that always happen in the same condition.</p>
-<p>Use zero conditional when the result is normal, expected, or scientific, not one future possibility. Both parts usually use the present simple.</p>
-<p>At B1 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+    <p>The zero conditional is used to express general truths, scientific facts, and situations that are always true. It describes a cause-and-effect relationship where both clauses use the present simple tense.</p>
+    <p>Formation: <strong>if + present simple</strong>, <strong>present simple</strong>.</p>
+    <p>This structure is crucial at the B2 level for expressing certainty and factual information in both written and spoken English.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Use present simple in the if-clause and the result clause.</li><li>Use it for general truths, rules, routines, and cause-and-effect facts.</li><li>Do not switch to will unless you are talking about one future case instead of a general truth.</li></ul>
+    <ul>
+      <li>Describing scientific facts or laws (e.g., If you heat water to 100°C, it boils).</li>
+      <li>Stating general truths (e.g., If it rains, the ground gets wet).</li>
+      <li>Explaining routines or habits (e.g., If I wake up early, I drink coffee).</li>
+      <li>Writing or speaking about cause-and-effect relationships in exams or reports.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">If water reaches 100 degrees, it boils.</div>
-<div class="lesson-pattern-sentence">If students revise regularly, they remember more vocabulary.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">If the sun sets, it gets dark.</div>
+      <div class="lesson-pattern-sentence">If you mix red and blue, you get purple.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Ask whether the sentence is about a general truth, rule, or repeated result.</li><li>Use present simple in both halves of the sentence.</li><li>Check that the sentence sounds like something that is usually or always true.</li><li>Avoid adding will if the meaning is general rather than one future event.</li><li>Read both halves together and ask: does this happen every time?</li></ul>
+    <ul>
+      <li>Use present simple in both clauses.</li>
+      <li>Ensure the sentence describes a general truth or routine.</li>
+      <li>Avoid using 'will' unless referring to a specific future event.</li>
+      <li>Check if the sentence describes something that always happens under the given condition.</li>
+    </ul>
   </section>
 </div>
 
@@ -84,21 +95,21 @@ quiz:
   <h3>using future forms in a sentence that states a general truth</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>If students revise regularly, they will remember more vocabulary.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>If students revise regularly, they remember more vocabulary.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use present simple in both halves of a zero conditional sentence</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use present simple in both halves of a zero conditional sentence to indicate a general truth.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
   <h3>using will when the sentence is a general truth</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>If people will eat too much sugar, they feel tired later.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>If people eat too much sugar, they feel tired later.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use present simple in both halves for zero conditional facts and routines</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use present simple in both halves for zero conditional facts and routines.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
   <h3>using zero conditional for one future possibility</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>If you study tonight, you pass the exam tomorrow.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>If you study tonight, you will pass the exam tomorrow.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use first conditional when you mean one real future result</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use first conditional when you mean one real future result.</p>
 </article>
 </div>
 
@@ -151,8 +162,7 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-
-<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
+<article class="practice-task" data-task-type="sort" data-task-answer="Category A:If students revise regularly, they remember more vocabulary,If you heat ice, it melts.||Category B:If students revise regularly, they will remember more vocabulary,If you heat ice, it will melt." data-task-id="3" data-sort-categories="Category A||Category B" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
   <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
@@ -194,7 +204,7 @@ quiz:
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering the zero conditional allows you to express general truths and cause-and-effect relationships clearly. This is crucial for effective communication in both spoken and written English, ensuring your intended meaning is understood in exams, professional settings, and daily interactions.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering the zero conditional allows you to clearly express general truths and cause-and-effect relationships. This is crucial for effective communication in both spoken and written English, ensuring your intended meaning is understood in exams, professional settings, and daily interactions.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

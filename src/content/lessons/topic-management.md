@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B2 speaking lesson on Topic Management in Speaking with clearer response frames, practice prompts, and self-checks."
+excerpt: "Learn how to manage topics effectively in speaking to deliver clear and coherent responses, even under pressure."
 date: "2026-03-02"
 tags: ["speaking", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Start with a direct answer. Most speaking problems get smaller once the opening sentence is clear."
@@ -43,13 +43,13 @@ quiz:
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>I think this approach is good because it helps people in many ways.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>I think this approach is useful because focused investment can improve access, reliability, and quality of life.</p>
-  <p class="lesson-card-note">The better answer stays on the same idea but starts doing the real speaking job immediately.</p>
+  <p class="lesson-card-note">The better answer provides a clear structure with a direct response, reason, and example.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>For example, one local change made things better for some people.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>For example, a pilot program improved service response times in one local district.</p>
-  <p class="lesson-card-note">The stronger sentence keeps the same function but adds meaning instead of filler.</p>
+  <p class="lesson-card-note">The stronger sentence maintains focus and provides specific details that enhance clarity.</p>
 </article>
 </div>
 
@@ -58,23 +58,33 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>This lesson helps you sound organized without sounding memorized.</p>
-<p>This speaking skill helps you sound organized under time pressure. Clear answers usually follow a simple pattern: direct response, one reason, one example, short conclusion. Even when the topic is unfamiliar, that pattern helps you stay fluent and focused.</p>
-<p>Use this lesson whenever you need a more reliable way to build spoken responses. Focus on structure first, then on vocabulary and style. A controlled simple answer is better than a long answer with weak logic.</p>
-<p>At B2 level, speaking improves when your answer pattern is stable and easy to repeat under time pressure.</p>
+    <p>Topic management in speaking involves organizing your thoughts to deliver clear and coherent responses. It ensures that your answers are structured logically, helping you stay on topic and communicate effectively. At the B2 level, mastering this skill is crucial for maintaining fluency and coherence under time pressure.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Give a direct answer before adding background.</li><li>Extend with one reason, detail, or example at a time.</li><li>Use short signposts only when they help the listener follow the answer.</li></ul>
+    <ul>
+      <li>Responding to open-ended questions in exams or interviews.</li>
+      <li>Delivering presentations or speeches.</li>
+      <li>Engaging in discussions where clarity and coherence are essential.</li>
+      <li>Answering questions with multiple parts or complex ideas.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">I think this approach is useful because focused investment can improve access, reliability, and quality of life.</div>
-<div class="lesson-pattern-sentence">For example, a pilot program improved service response times in one local district.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence"><strong>I believe this policy is beneficial</strong> because it increases efficiency and reduces costs.</div>
+      <div class="lesson-pattern-sentence">For instance, <strong>implementing this policy</strong> led to a 20% decrease in expenses in one department.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Answer directly in the first sentence.</li><li>Add one clear reason.</li><li>Support it with one example or consequence.</li><li>Use one short linker if it helps the flow.</li><li>Finish with a short closing message.</li></ul>
+    <ul>
+      <li>Start with a direct answer to the question.</li>
+      <li>Include one clear reason to support your answer.</li>
+      <li>Provide an example or consequence to illustrate your point.</li>
+      <li>Use linking words to connect ideas logically.</li>
+      <li>Conclude with a brief summary or closing statement.</li>
+    </ul>
   </section>
 </div>
 
@@ -111,13 +121,13 @@ quiz:
       <p class="practice-lab-intro">Start with the opening move, then check the answer shape from start to finish.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
   <p class="practice-lab-coach">If a line does not add meaning, cut it and replace it with one clear reason or example.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="0">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1">
   <p class="practice-task-label">1. Quick pick</p>
   <h3>Choose the stronger move for Topic Management in Speaking.</h3>
   <div class="practice-choice-grid">
@@ -127,24 +137,27 @@ quiz:
 <button type="button" class="practice-choice" data-choice-index="1">
   I think this approach is useful because focused investment can improve access, reliability, and quality of life.
 </button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  Use fillers to sound more natural.
+</button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Answer directly in the first sentence.||Add one clear reason.||Support it with one example or consequence.||Use one short linker if it helps the flow." data-task-id="1">
+<article class="practice-task" data-task-type="order" data-task-answer="Answer directly in the first sentence.||Add one clear reason.||Support it with one example or consequence.||Use one short linker if it helps the flow." data-task-id="2">
   <p class="practice-task-label">2. Build the flow</p>
   <h3>Put these moves in a helpful order.</h3>
   <p class="practice-task-note">Put the chunks in the natural order.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="Answer directly in the first sentence." data-chip-origin="bank-1" data-chip-id="1-0">
+<button type="button" class="practice-chip" data-chip-value="Answer directly in the first sentence." data-chip-origin="bank-2" data-chip-id="2-0">
   Answer directly in the first sentence.
 </button>
-<button type="button" class="practice-chip" data-chip-value="Support it with one example or consequence." data-chip-origin="bank-1" data-chip-id="1-1">
+<button type="button" class="practice-chip" data-chip-value="Support it with one example or consequence." data-chip-origin="bank-2" data-chip-id="2-1">
   Support it with one example or consequence.
 </button>
-<button type="button" class="practice-chip" data-chip-value="Use one short linker if it helps the flow." data-chip-origin="bank-1" data-chip-id="1-2">
+<button type="button" class="practice-chip" data-chip-value="Use one short linker if it helps the flow." data-chip-origin="bank-2" data-chip-id="2-2">
   Use one short linker if it helps the flow.
 </button>
-<button type="button" class="practice-chip" data-chip-value="Add one clear reason." data-chip-origin="bank-1" data-chip-id="1-3">
+<button type="button" class="practice-chip" data-chip-value="Add one clear reason." data-chip-origin="bank-2" data-chip-id="2-3">
   Add one clear reason.
 </button>
   </div>
@@ -155,54 +168,41 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="sort" data-task-id="2">
+<article class="practice-task" data-task-type="sort" data-task-answer="Helpful:Answer directly in the first sentence.,Add one clear reason.||Not helpful:Keep talking around the topic until an answer appears.,Use fillers because they sound more natural than silence." data-sort-categories="Helpful||Not helpful" data-task-id="3">
   <p class="practice-task-label">3. Final sort</p>
   <h3>Sort these habits into helpful or not helpful.</h3>
   <div class="practice-sort-list">
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
+<div class="practice-sort-row" data-sort-target="Helpful" data-sort-row="0">
   <p>Answer directly in the first sentence.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Not helpful">Not helpful</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="works" data-sort-row="1">
+<div class="practice-sort-row" data-sort-target="Helpful" data-sort-row="1">
   <p>Add one clear reason.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Not helpful">Not helpful</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="2">
+<div class="practice-sort-row" data-sort-target="Not helpful" data-sort-row="2">
   <p>Keep talking around the topic until an answer appears.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Not helpful">Not helpful</button>
   </div>
 </div>
-<div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
+<div class="practice-sort-row" data-sort-target="Not helpful" data-sort-row="3">
   <p>Use fillers because they sound more natural than silence.</p>
   <div class="practice-sort-actions">
-    <button type="button" class="practice-sort-btn" data-sort-choice="works">Helpful</button>
-    <button type="button" class="practice-sort-btn" data-sort-choice="fix">Not helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Helpful">Helpful</button>
+    <button type="button" class="practice-sort-btn" data-sort-choice="Not helpful">Not helpful</button>
   </div>
 </div>
   </div>
   <div class="practice-task-actions">
     <button type="button" class="practice-check-btn" data-task-check>Check</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="3">
-  <p class="practice-task-label">4. Last check</p>
-  <h3>Choose the sentence that sounds more controlled.</h3>
-  <div class="practice-choice-grid">
-<button type="button" class="practice-choice" data-choice-index="0">
-  It is good and there are many reasons, and that is all.
-</button>
-<button type="button" class="practice-choice" data-choice-index="1">
-  For example, a pilot program improved service response times in one local district.
-</button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>

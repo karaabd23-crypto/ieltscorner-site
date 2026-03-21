@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "4.5-5.5"
 clb: "5-6"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Build correct English questions by controlling auxiliaries, inversion, and tag patterns."
+excerpt: "Learn how to form questions correctly in English to improve clarity and avoid misunderstandings."
 date: "2026-03-02"
 tags: ["grammar", "b1", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Find the auxiliary first. If you cannot find one, your question probably needs do, does, or did."
@@ -43,13 +43,13 @@ quiz:
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Why you are late for class today?</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Why are you late for class today?</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-card-note">The auxiliary verb "are" should precede the subject "you" to form a correct question.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>Never I have seen such a clear explanation.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>Never have I seen such a clear explanation.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-card-note">Inversion is needed after "never" for emphasis, placing "have" before "I".</p>
 </article>
 </div>
 
@@ -57,23 +57,35 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Question forms depend on word order, not only on adding a question word.</p>
-<p>English questions often require auxiliary movement or inversion. The main task is to control word order without turning statement order into a direct question by mistake.</p>
-<p>Use question word order in direct questions, tag questions, and inversion patterns. In reported questions, switch back to normal statement order.</p>
-<p>At B1 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+    <p>Question formation involves arranging words in a sentence to ask something clearly and correctly. This typically requires changing the usual word order by placing an auxiliary verb before the subject. Mastering this helps in forming both direct and indirect questions effectively.</p>
+    <p>At the B2 level, students need to be proficient in forming various types of questions, including yes/no questions, wh-questions, and tag questions, as these are crucial for both spoken and written communication.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Find the auxiliary first; if there is none, use do, does, or did where needed.</li><li>Put the auxiliary before the subject in direct questions.</li><li>Keep normal statement order inside reported questions and noun clauses.</li></ul>
+    <ul>
+      <li>Forming direct questions in conversations or exams.</li>
+      <li>Writing essays or reports that include questions.</li>
+      <li>Creating tag questions to confirm information.</li>
+      <li>Reporting speech where questions are involved.</li>
+      <li>Engaging in interviews or discussions where clarity is essential.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Why did the service change last month?</div>
-<div class="lesson-pattern-sentence">She asked why the service had changed last month.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence"><strong>Why did</strong> the service change last month?</div>
+      <div class="lesson-pattern-sentence">She asked <strong>why the service had</strong> changed last month.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Decide whether you need a yes/no question, wh-question, or tag question.</li><li>Find the auxiliary verb; if none exists, add do, does, or did.</li><li>Put the auxiliary before the subject in direct questions.</li><li>Keep question order after the question word unless the question word is the subject.</li><li>Read the whole question aloud once to catch word-order mistakes quickly.</li></ul>
+    <ul>
+      <li>Use an auxiliary verb before the subject in direct questions.</li>
+      <li>For wh-questions, place the question word at the start.</li>
+      <li>In tag questions, match the auxiliary to the main clause.</li>
+      <li>Maintain statement order in reported questions.</li>
+      <li>Read questions aloud to catch any word order errors.</li>
+    </ul>
   </section>
 </div>
 
@@ -84,21 +96,21 @@ quiz:
   <h3>placing auxiliaries and subjects in the wrong sequence</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>What means this policy for low-income workers?</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>What does this policy mean for low-income workers?</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> check whether your sentence requires statement order or inversion</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use "does" before the subject to form a correct question.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
   <h3>keeping statement order inside a direct question</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Why you missed the bus this morning?</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>Why did you miss the bus this morning?</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> move the auxiliary before the subject in direct questions</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Place "did" before the subject for proper question formation.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
   <h3>building a tag question with the wrong auxiliary</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>She is ready for the exam, doesn&#39;t she?</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>She is ready for the exam, isn&#39;t she?</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> match the auxiliary in the tag to the main clause</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Match the auxiliary "is" with "isn't" in the tag question.</p>
 </article>
 </div>
 
@@ -114,7 +126,7 @@ quiz:
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Focus on the correct question structure to ensure clarity in communication.</p>
   <div class="practice-lab-grid">
 <article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Question Formation form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
   <p class="practice-task-label">1. Quick pick</p>
@@ -151,8 +163,7 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-
-<article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
+<article class="practice-task" data-task-type="sort" data-task-id="3" data-task-answer="Works:What does this policy mean for low-income workers?,Rarely do we consider the long-term effects.||Needs fixing:What means this policy for low-income workers?,Rarely we consider the long-term effects." data-sort-categories="Works||Needs fixing" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
   <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">

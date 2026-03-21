@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B2 lesson on What Clauses with teacher-style explanation, guided practice, and topic-linked review."
+excerpt: "Learn how to use what clauses to enhance sentence clarity and precision at the B2 level."
 date: "2026-03-02"
 tags: ["grammar", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
@@ -35,7 +35,9 @@ quiz:
     correctIndex: 1
     explanation: "Option 2 repairs a typical What Clauses error and matches the target form."
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>What Clauses</strong> are a key grammar topic that can significantly alter a sentence's clarity and precision. Mastering these clauses helps articulate ideas more naturally and accurately. This lesson will guide you through understanding their structure, usage, and common pitfalls.</p></div>
+<div class="lesson-context">
+  <p class="lesson-context-lead"><strong>What Clauses</strong> are a key grammar topic that can significantly alter a sentence's clarity and precision. Mastering these clauses helps articulate ideas more naturally and accurately. This lesson will guide you through understanding their structure, usage, and common pitfalls.</p>
+</div>
 
 ## Examples
 <div class="lesson-example-grid">
@@ -43,13 +45,13 @@ quiz:
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>I do not understand what does the chart show.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>I do not understand what the chart shows.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-card-note">'What the chart shows' uses statement order, making the sentence grammatically correct.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>What students need are more quiet study space.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>What students need is more quiet study space.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-card-note">The verb 'is' agrees with the singular noun phrase 'more quiet study space.'</p>
 </article>
 </div>
 
@@ -57,23 +59,33 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>This lesson shows how to turn a full idea into one clause that works like a noun.</p>
-<p>A what-clause begins with what and contains its own subject and verb. The whole clause acts like a noun, so it can be the subject, object, or complement of a sentence.</p>
-<p>Use a what-clause when you want to name a thing, idea, need, or result without repeating a longer noun phrase. In other words, what often means the thing that or the information that.</p>
-<p>At B2 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+    <p>A <strong>what-clause</strong> functions as a noun in a sentence, beginning with 'what' and containing its own subject and verb. It allows you to express a complete idea succinctly, often replacing longer noun phrases. This structure is crucial at the B2 level for creating complex sentences that are clear and precise.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Keep statement order inside the clause: what the chart shows, not what does the chart show.</li><li>Treat the whole what-clause as one unit in the sentence.</li><li>Use what when the clause itself names the thing or idea; use that or whether for other noun-clause jobs.</li></ul>
+    <ul>
+      <li>Expressing a need or requirement, e.g., 'What we need is more time.'</li>
+      <li>Describing a result or outcome, e.g., 'What happened was unexpected.'</li>
+      <li>Clarifying information, e.g., 'What she said was very insightful.'</li>
+      <li>Stating preferences or opinions, e.g., 'What I prefer is a quiet environment.'</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">What students need most is clearer feedback.</div>
-<div class="lesson-pattern-sentence">The report explained what caused the delay.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence"><strong>What</strong> we need <strong>is</strong> a new strategy.</div>
+      <div class="lesson-pattern-sentence">He explained <strong>what</strong> caused the issue.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Build the clause as what + subject + verb.</li><li>Keep statement order inside the clause, not question order.</li><li>Use the whole what-clause as one noun unit in the sentence.</li><li>Check the main verb agreement after the clause is in place.</li><li>Read the sentence once and ask whether what means the thing that here.</li></ul>
+    <ul>
+      <li>Begin with 'what' followed by subject + verb.</li>
+      <li>Maintain statement order, not question order, within the clause.</li>
+      <li>Treat the what-clause as a single noun unit in the sentence.</li>
+      <li>Ensure verb agreement aligns with the clause's function in the sentence.</li>
+      <li>Use 'what' to replace longer noun phrases for clarity and precision.</li>
+    </ul>
   </section>
 </div>
 
@@ -84,21 +96,21 @@ quiz:
   <h3>using question order inside a what-clause</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>She explained what did the graph mean in the final section.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>She explained what the graph meant in the final section.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> keep statement order after verbs like know, explain, and show</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use statement order, not question order, within the clause.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
   <h3>treating the what-clause like a direct question</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>I cannot see what does the final column mean.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>I cannot see what the final column means.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> keep statement order inside the clause</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Keep statement order inside the clause.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
   <h3>using the wrong verb agreement after a what-clause</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>What the school need are better reading materials.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>What the school needs is better reading material.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> treat the whole clause as one subject and choose the verb from the real complement</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Ensure verb agreement matches the singular or plural nature of the subject.</p>
 </article>
 </div>
 
@@ -114,37 +126,40 @@ quiz:
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Focus on maintaining statement order within what-clauses for clarity.</p>
   <div class="practice-lab-grid">
 <article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the What Clauses form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
   <p class="practice-task-label">1. Quick pick</p>
   <h3>Choose the stronger sentence for What Clauses.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
-  She explained what did the graph mean in the final section.
+  The report showed what did the results indicate.
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
-  She explained what the graph meant in the final section.
+  The report showed what the results indicated.
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  The report showed what indicated the results.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="What the school||needs is a||clearer homework||system." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
+<article class="practice-task" data-task-type="order" data-task-answer="What the committee||decided was||to postpone||the meeting." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put this What Clauses sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="clearer homework" data-chip-origin="bank-1" data-chip-id="1-0">
-  clearer homework
+<button type="button" class="practice-chip" data-chip-value="the meeting." data-chip-origin="bank-1" data-chip-id="1-0">
+  the meeting.
 </button>
-<button type="button" class="practice-chip" data-chip-value="needs is a" data-chip-origin="bank-1" data-chip-id="1-1">
-  needs is a
+<button type="button" class="practice-chip" data-chip-value="What the committee" data-chip-origin="bank-1" data-chip-id="1-1">
+  What the committee
 </button>
-<button type="button" class="practice-chip" data-chip-value="What the school" data-chip-origin="bank-1" data-chip-id="1-2">
-  What the school
+<button type="button" class="practice-chip" data-chip-value="decided was" data-chip-origin="bank-1" data-chip-id="1-2">
+  decided was
 </button>
-<button type="button" class="practice-chip" data-chip-value="system." data-chip-origin="bank-1" data-chip-id="1-3">
-  system.
+<button type="button" class="practice-chip" data-chip-value="to postpone" data-chip-origin="bank-1" data-chip-id="1-3">
+  to postpone
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -154,34 +169,33 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-
 <article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
   <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>She explained what the graph meant in the final section.</p>
+  <p>What the manager suggested was implemented immediately.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>She explained what did the graph mean in the final section.</p>
+  <p>What did the manager suggest was implemented immediately.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>What the school needs is a clearer homework system.</p>
+  <p>What the team needs is a new project leader.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>What the school need is a clearer homework system.</p>
+  <p>What the team need is a new project leader.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>

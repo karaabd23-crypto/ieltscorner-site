@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Improve Topic Sentences and Supporting Details with clearer structure, stronger support, and cleaner paragraph control."
+excerpt: "Learn to construct effective paragraphs with clear topic sentences and supporting details for improved coherence in IELTS and CELPIP writing tasks."
 date: "2026-03-02"
 tags: ["writing", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Plan the job of the paragraph before you write the sentences."
@@ -51,6 +51,12 @@ quiz:
   <p class="lesson-line lesson-line-strong"><span>Better</span>A support team reduced response time after introducing a centralized ticket platform.</p>
   <p class="lesson-card-note">The better version develops the idea instead of circling around it.</p>
 </article>
+<article class="lesson-example-card">
+  <p class="lesson-card-label">Example 3</p>
+  <p class="lesson-line lesson-line-weak"><span>Too weak</span>Many people use smartphones daily.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>Smartphone use has significantly reduced face-to-face interaction among teenagers.</p>
+  <p class="lesson-card-note">The improved version provides a specific focus for the paragraph.</p>
+</article>
 </div>
 
 
@@ -58,23 +64,35 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>This lesson focuses on one writing move that changes clarity and score at the same time.</p>
-<p>This writing skill matters because exam readers reward control: clear task response, focused support, and readable structure. A strong response tells the reader exactly what it is doing and develops that message with specific support instead of vague general statements.</p>
-<p>Use this lesson when you want a more reliable writing process under time pressure. Plan the function of the response first, then build paragraphs that each do one job. That makes editing easier because you can test not only language but also structure.</p>
-<p>At B2 level, stronger writing comes from better paragraph control, not from simply making the language longer.</p>
+    <p>Topic sentences are crucial for guiding the reader through your paragraph's main idea, while supporting details provide evidence and elaboration. Together, they ensure clarity and coherence in writing.</p>
+    <p>In a paragraph, the topic sentence states the main idea, and the supporting details expand on it with examples, explanations, or evidence.</p>
+    <p>This skill is vital at the B2 level to improve coherence and cohesion in writing, particularly for exams like IELTS and CELPIP.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Start by identifying the exact job of the task or paragraph.</li><li>Keep support specific enough to prove the point rather than decorate it.</li><li>Check that every sentence moves the response toward its purpose.</li></ul>
+    <ul>
+      <li>Writing essays for IELTS or CELPIP to ensure each paragraph has a clear focus.</li>
+      <li>Developing arguments in academic writing.</li>
+      <li>Creating structured reports or articles where clarity is essential.</li>
+      <li>Responding to tasks that require detailed explanations or examples.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Digital workflows can improve efficiency when teams have clear communication norms.</div>
-<div class="lesson-pattern-sentence">A support team reduced response time after introducing a centralized ticket platform.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence"><strong>Social media has transformed communication</strong> by making it easier to maintain long-distance relationships.</div>
+      <div class="lesson-pattern-sentence"><strong>Implementing a centralized ticket platform</strong> reduced response times by 30%.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Turn the task into one clear response purpose.</li><li>Plan the main points before drafting sentences.</li><li>Develop each point with explanation and a concrete example or consequence.</li><li>Use transitions only when they reflect real logic.</li><li>Edit for clarity, support, and sentence control in that order.</li></ul>
+    <ul>
+      <li>Start each paragraph with a clear topic sentence that states the main idea.</li>
+      <li>Follow the topic sentence with specific supporting details.</li>
+      <li>Avoid starting paragraphs with facts or examples without a topic sentence.</li>
+      <li>Ensure supporting details are directly related to the topic sentence.</li>
+      <li>Edit to ensure each paragraph has one clear focus.</li>
+    </ul>
   </section>
 </div>
 
@@ -111,7 +129,7 @@ quiz:
       <p class="practice-lab-intro">Begin with purpose. Then check the order and cut anything that does not help the paragraph.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/4</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
@@ -126,6 +144,9 @@ quiz:
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
   Digital workflows can improve efficiency when teams have clear communication norms.
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  Many people use social media every day.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
@@ -155,7 +176,7 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="sort" data-task-id="2">
+<article class="practice-task" data-task-type="sort" data-task-answer="Helpful:Turn the task into one clear response purpose,Plan the main points before drafting sentences||Not helpful:Add a new reason in the middle of the paragraph to sound richer,Use a broad example even when it does not prove the point clearly" data-sort-categories="Helpful||Not helpful" data-task-id="2">
   <p class="practice-task-label">3. Final sort</p>
   <h3>Sort these habits into helpful or not helpful.</h3>
   <div class="practice-sort-list">
@@ -190,19 +211,6 @@ quiz:
   </div>
   <div class="practice-task-actions">
     <button type="button" class="practice-check-btn" data-task-check>Check</button>
-  </div>
-  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
-</article>
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="3">
-  <p class="practice-task-label">4. Last check</p>
-  <h3>Choose the sentence that sounds more controlled.</h3>
-  <div class="practice-choice-grid">
-<button type="button" class="practice-choice" data-choice-index="0">
-  This point is important in many ways and that is all.
-</button>
-<button type="button" class="practice-choice" data-choice-index="1">
-  A support team reduced response time after introducing a centralized ticket platform.
-</button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>

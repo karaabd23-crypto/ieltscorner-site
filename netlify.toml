@@ -34,7 +34,125 @@
 
 [[redirects]]
   from = "/blog/celpip-speaking-task-2-opinion-strategy"
-  to = "/blog/celpip-speaking-task-7-opinion-strategy"
+  to = "/celpip/speaking/task-7-opinion"
+  status = 301
+  force = true
+
+# P0B — Blog-to-canonical speaking task redirects
+[[redirects]]
+  from = "/blog/celpip-speaking-task-1"
+  to = "/celpip/speaking/task-1-advice"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/celpip-speaking-part2"
+  to = "/celpip/speaking/task-2-personal-experience"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/celpip-speaking-task-5-comparing-options"
+  to = "/celpip/speaking/task-5-comparison"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/celpip-speaking-task-7-opinion-strategy"
+  to = "/celpip/speaking/task-7-opinion"
+  status = 301
+  force = true
+
+# P0A — Duplicate hub redirects (IELTS uppercase from build output)
+[[redirects]]
+  from = "/lessons/IELTS"
+  to = "/ielts"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/IELTS/listening"
+  to = "/ielts/listening"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/IELTS/reading"
+  to = "/ielts/reading"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/IELTS/speaking"
+  to = "/ielts/speaking"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/IELTS/writing"
+  to = "/ielts/writing"
+  status = 301
+  force = true
+
+# P0A — Duplicate hub redirects (IELTS lowercase from internal links)
+[[redirects]]
+  from = "/lessons/ielts"
+  to = "/ielts"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/ielts/listening"
+  to = "/ielts/listening"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/ielts/reading"
+  to = "/ielts/reading"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/ielts/speaking"
+  to = "/ielts/speaking"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/ielts/writing"
+  to = "/ielts/writing"
+  status = 301
+  force = true
+
+# P0A — Duplicate hub redirects (CELPIP)
+[[redirects]]
+  from = "/lessons/celpip"
+  to = "/celpip"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/celpip/listening"
+  to = "/celpip/listening"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/celpip/reading"
+  to = "/celpip/reading"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/celpip/speaking"
+  to = "/celpip/speaking"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/celpip/writing"
+  to = "/celpip/writing"
   status = 301
   force = true
 

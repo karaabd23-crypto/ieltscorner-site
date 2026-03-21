@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn to use gerunds after prepositions to enhance clarity and grammatical precision in your English communication."
+excerpt: "Learn how to correctly use gerunds after prepositions to enhance your grammatical precision in English."
 date: "2026-03-02"
 tags: ["grammar", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
@@ -57,15 +57,15 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>When a verb follows a preposition, it is typically in the gerund form (-ing). This structure helps express actions related to the preposition. Mastering this pattern at the B2 level enhances grammatical precision and fluency in both writing and speaking.</p>
+    <p>Using a gerund (-ing form) after a preposition indicates an action related to the preposition. This structure is essential for expressing nuanced relationships between actions and their contexts, enhancing grammatical accuracy and fluency at the B2 level.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
     <ul>
-      <li>After prepositions like 'in', 'on', 'at', 'with', 'about', etc.</li>
-      <li>In formal writing and speaking to ensure grammatical accuracy.</li>
-      <li>When describing actions related to specific nouns or pronouns.</li>
-      <li>When constructing complex sentences with multiple clauses.</li>
+      <li>After prepositions such as 'in', 'on', 'at', 'with', 'about', 'for', etc.</li>
+      <li>In formal writing and speaking to ensure grammatical correctness.</li>
+      <li>When describing actions linked to specific nouns or pronouns.</li>
+      <li>When constructing complex sentences that involve multiple clauses.</li>
     </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">

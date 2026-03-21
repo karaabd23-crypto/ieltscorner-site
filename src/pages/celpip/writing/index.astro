@@ -3,6 +3,7 @@ import Layout from "../../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { getLessonTier, getPublicLessonTitle } from "../../../lib/lessonLevel";
 import { buildBreadcrumbSchema } from "../../../lib/seo";
+import LeadMagnet from "../../../components/LeadMagnet.astro";
 
 const skillLessons = (
   await getCollection(
@@ -43,7 +44,7 @@ const pageStructuredData = [
         </p>
         <div class="cluster">
           <a class="btn btn-primary" href="/celpip/writing/ai-feedback">Try the writing lab</a>
-          <a class="btn btn-ghost" href="/lessons/celpip/writing">Browse writing lessons</a>
+          <a class="btn btn-ghost" href="/celpip/writing">Browse writing lessons</a>
         </div>
       </div>
     </div>
@@ -57,68 +58,45 @@ const pageStructuredData = [
         <a class="btn" href="/celpip/reading">Reading</a>
         <a class="btn" href="/celpip/speaking">Speaking</a>
         <a class="btn btn-primary" href="/celpip/writing">Writing</a>
-        <a class="btn" href="/lessons/celpip">All CELPIP lessons</a>
+        <a class="btn" href="/celpip">All CELPIP lessons</a>
       </div>
     </div>
   </section>
 
-  <section class="section-sm">
-    <div class="surface feature" style="border: 2px solid var(--accent);">
-      <div class="feature-grid">
-        <div class="stack">
-          <h2>Use the support that fits your next step</h2>
-          <p class="muted" style="max-width: 60ch;">
-            Start with free guides and lessons. Add feedback when you want a score estimate
-            or direct correction on your writing.
-          </p>
-        </div>
-
-        <div class="grid grid-2" style="gap: var(--s-3);">
-          <a class="card" href="/celpip/writing/ai-feedback" style="text-decoration:none;">
-            <h3>Writing score lab</h3>
-            <p class="muted">
-              Timed practice with score estimates, trait feedback, and lesson suggestions.
-            </p>
-          </a>
-          <a class="card" href="/tutoring" style="text-decoration:none;">
-            <h3>Private writing class</h3>
-            <p class="muted">
-              Get direct help with tone, grammar, organization, and revision.
-            </p>
-          </a>
-          <a class="card" href="/lessons/celpip/writing" style="text-decoration:none;">
-            <h3>Free writing lessons</h3>
-            <p class="muted">
-              Learn the format, sentence patterns, and task rules before you pay for help.
-            </p>
-          </a>
-          <a class="card" href="/webinar" style="text-decoration:none;">
-            <h3>Weekly webinar</h3>
-            <p class="muted">
-              Join live sessions if you want teacher guidance and regular accountability.
-            </p>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <!-- Section 1: Learn the structure (primary) -->
   <section class="section-sm">
     <div class="surface" style="padding: var(--s-6);">
-      <h2 style="margin-top: 0;">Start with one writing guide</h2>
+      <span class="pill">Start here</span>
+      <h2 style="margin-top: var(--s-2);">Learn the full strategy</h2>
       <p class="muted" style="margin-top: 0; max-width: 68ch;">
-        These pages explain the two writing tasks in clear language and give you a simple
-        structure to follow.
+        These guides explain the two writing tasks in clear language and give you a
+        complete structure, tone rules, and prompt coverage strategy.
       </p>
       <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-4);">
-        <a class="card" href="/blog/celpip-writing-task-1-email" style="display:block; text-decoration:none;">
+        <a class="card" href="/blog/celpip-writing-task-1-email" style="display:block; text-decoration:none; border: 2px solid var(--accent);">
           <h3>CELPIP Writing Task 1 email guide</h3>
           <p class="muted">Tone, structure, and complete prompt coverage for Task 1 emails.</p>
         </a>
-        <a class="card" href="/blog/celpip-writing-task-2-survey-response" style="display:block; text-decoration:none;">
+        <a class="card" href="/blog/celpip-writing-task-2-survey-response" style="display:block; text-decoration:none; border: 2px solid var(--accent);">
           <h3>CELPIP Writing Task 2 survey guide</h3>
           <p class="muted">Clear position, useful support, and paragraph control for Task 2.</p>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <LeadMagnet />
+
+  <!-- Section 2: Quick templates (secondary) -->
+  <section class="section-sm">
+    <div class="surface" style="padding: var(--s-6);">
+      <span class="pill">Quick reference</span>
+      <h2 style="margin-top: var(--s-2);">Paragraph templates</h2>
+      <p class="muted" style="margin-top: 0; max-width: 68ch;">
+        Already read the full guides? Use these reusable sentence frames and paragraph
+        patterns during timed practice.
+      </p>
+      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-4);">
         <a class="card" href="/blog/celpip-writing-task-1-templates" style="display:block; text-decoration:none;">
           <h3>Task 1 templates</h3>
           <p class="muted">Reusable frameworks for complete, calm, well-organized emails.</p>
@@ -127,6 +105,36 @@ const pageStructuredData = [
           <h3>Task 2 templates</h3>
           <p class="muted">Simple paragraph patterns for stronger survey responses.</p>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Practice & feedback (conversion) -->
+  <section class="section-sm">
+    <div class="surface feature" style="border: 2px solid var(--accent); padding: var(--s-6);">
+      <span class="pill">Practice & feedback</span>
+      <h2 style="margin-top: var(--s-2);">Get feedback on your writing</h2>
+      <p class="muted" style="margin-top: 0; max-width: 68ch;">
+        After learning the strategy, use these tools to practise under timed conditions
+        and study high-scoring model responses.
+      </p>
+      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-4);">
+        <a class="card" href="/celpip/writing/ai-feedback" style="display:block; text-decoration:none;">
+          <h3>Writing score lab</h3>
+          <p class="muted">
+            Timed practice with score estimates, trait feedback, and lesson suggestions.
+          </p>
+        </a>
+        <a class="card" href="/celpip/writing/samples" style="display:block; text-decoration:none;">
+          <h3>100 sample essays</h3>
+          <p class="muted">
+            CLB 9+ model responses for Task 1 and Task 2 with quality rationale.
+          </p>
+        </a>
+      </div>
+      <div class="cluster" style="margin-top: var(--s-4);">
+        <a class="btn" href="/tutoring" style="text-decoration:none;">Book a private writing class</a>
+        <a class="btn" href="/webinar" style="text-decoration:none;">Join the weekly webinar</a>
       </div>
     </div>
   </section>

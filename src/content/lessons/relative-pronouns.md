@@ -1,11 +1,11 @@
 ---
-title: "Relative Pronouns: Clarifying References"
+title: "Using Pronouns Clearly: Avoiding Ambiguity"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "B2 lesson on Pronouns: Relative with teacher-style explanation, guided practice, and topic-linked review."
+excerpt: "This lesson teaches how to use pronouns clearly to avoid ambiguity, enhancing sentence clarity and precision."
 date: "2026-03-02"
 tags: ["grammar", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
@@ -35,7 +35,7 @@ quiz:
     correctIndex: 1
     explanation: "Option 2 repairs a typical Pronouns: Relative error and matches the target form."
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Relative pronouns</strong> help connect clauses and provide additional information about a noun, ensuring clarity and detail in your writing. This lesson focuses on using relative pronouns to avoid ambiguity and enhance sentence structure.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Pronouns</strong> are essential for connecting ideas and avoiding repetition in sentences. This lesson focuses on using pronouns clearly to prevent ambiguity and ensure your writing is precise and understandable.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
@@ -43,13 +43,13 @@ quiz:
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>When Maria met Ana, she said she needed help.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>When Maria met Ana, Maria said she needed help.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-card-note">Repeating "Maria" clarifies who needed help.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>The managers told the interns that they were unprepared.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>The managers told the interns that the report was unprepared.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-card-note">Specifying "the report" avoids ambiguity about who or what was unprepared.</p>
 </article>
 </div>
 
@@ -57,23 +57,34 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Pronouns save repetition, but only when the reference stays clear.</p>
-<p>Pronouns replace nouns so you do not have to repeat the same word again and again. They help sentences flow, but they create problems when the reference is unclear.</p>
-<p>Use pronouns only when the reader can identify exactly who or what the pronoun refers to. If two possible meanings are competing, repeat the noun.</p>
-<p>At B2 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+    <p>Pronouns are words that replace nouns in a sentence to avoid repetition. They must clearly refer to a specific noun to maintain clarity in communication.</p>
+    <p>Pronouns can be subject, object, possessive, reflexive, or demonstrative, and they help link ideas smoothly when used correctly.</p>
+    <p>At the B2 level, using pronouns effectively means ensuring they have a clear antecedent to avoid confusion in complex sentences.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Check whether the pronoun has one clear reference.</li><li>Match the pronoun type to the job: subject, object, possessive, reflexive, or demonstrative.</li><li>Repeat the noun when the sentence would otherwise be ambiguous.</li></ul>
+    <ul>
+      <li>Clarifying who or what is performing an action in a sentence.</li>
+      <li>Replacing a noun that has already been mentioned to avoid repetition.</li>
+      <li>Ensuring that the pronoun's reference is clear in sentences with multiple subjects or objects.</li>
+      <li>Writing complex sentences where clarity is crucial, such as in academic or professional contexts.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">Maria called the manager because she needed an update.</div>
-<div class="lesson-pattern-sentence">This option is cheaper, but that one is more reliable.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence"><strong>Maria</strong> called the manager because <strong>she</strong> needed an update.</div>
+      <div class="lesson-pattern-sentence"><strong>The team</strong> presented the plan to the board, and <strong>they</strong> rejected it.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Find the noun each pronoun refers to.</li><li>Check whether the reference is still clear after the noun is replaced.</li><li>Match the pronoun type to the sentence job.</li><li>Repeat the noun if two possible references compete.</li><li>Keep pronouns only when they genuinely make the sentence smoother.</li></ul>
+    <ul>
+      <li>Always ensure the pronoun has a clear antecedent.</li>
+      <li>Repeat the noun if the pronoun could refer to more than one noun.</li>
+      <li>Choose the correct pronoun type based on its role in the sentence (subject, object, etc.).</li>
+      <li>Use pronouns to enhance sentence flow, but not at the cost of clarity.</li>
+    </ul>
   </section>
 </div>
 
@@ -107,18 +118,18 @@ quiz:
   <div class="practice-lab-head">
     <div>
       <h3>Practice</h3>
-      <p class="practice-lab-intro">First notice the right form. Then build it yourself. Then fix it in a full sentence.</p>
+      <p class="practice-lab-intro">Identify the correct pronoun usage, then apply it in sentences to ensure clarity.</p>
     </div>
     <div class="practice-lab-status">
       <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
-  <p class="practice-lab-coach">Read for meaning first. If the meaning changes, the grammar usually has to change too.</p>
+  <p class="practice-lab-coach">Focus on ensuring each pronoun has a clear antecedent to avoid confusion.</p>
   <div class="practice-lab-grid">
-<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The better sentence keeps the intended meaning and the Pronouns form fits naturally." data-wrong-feedback="Not yet. Check what the sentence really means before you choose the form.">
+<article class="practice-task" data-task-type="choice" data-task-answer="1" data-task-id="1" data-correct-feedback="Correct. The sentence clearly indicates who should revise the introduction." data-wrong-feedback="Not quite. Make sure the pronoun's reference is clear.">
   <p class="practice-task-label">1. Quick pick</p>
-  <h3>Choose the stronger sentence for Pronouns.</h3>
+  <h3>Choose the clearer sentence.</h3>
   <div class="practice-choice-grid">
 <button type="button" class="practice-choice" data-choice-index="0">
   James told David that he should revise the introduction.
@@ -131,7 +142,7 @@ quiz:
 </article>
 <article class="practice-task" data-task-type="order" data-task-answer="The team||presented the plan||to the board,||and the board||rejected it." data-task-id="2" data-correct-feedback="Correct. The sentence now reads in a natural English order." data-wrong-feedback="Not yet. Build the sentence around the main subject and verb first.">
   <p class="practice-task-label">2. Build it</p>
-  <h3>Put this Pronouns sentence in the correct order.</h3>
+  <h3>Put this sentence in the correct order.</h3>
   <p class="practice-task-note">Tap a chunk to move it down. Tap it again to send it back.</p>
   <div class="practice-chip-bank" data-order-bank>
 <button type="button" class="practice-chip" data-chip-value="rejected it." data-chip-origin="bank-1" data-chip-id="1-0">
@@ -157,7 +168,6 @@ quiz:
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-
 <article class="practice-task" data-task-type="sort" data-task-id="3" data-correct-feedback="Correct. You can now see which sentences already work and which ones still need repair." data-wrong-feedback="Some choices are off. Compare the meaning and grammar in each pair again.">
   <p class="practice-task-label">3. Final sort</p>
   <h3>Mark each sentence as correct or needing a fix.</h3>
@@ -200,7 +210,7 @@ quiz:
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering relative pronouns enhances your ability to write complex and clear sentences, crucial for effective communication in academic and professional settings.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering the use of pronouns to avoid ambiguity is crucial for clear communication, especially in academic and professional writing where precision is key.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">

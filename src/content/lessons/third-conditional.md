@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Control if-sentences by matching the condition and result to the same timeline and logic."
+excerpt: "Learn to use the third conditional to discuss hypothetical past situations and their imagined outcomes."
 date: "2026-03-02"
 tags: ["grammar", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Name the situation first: real, likely, unreal, or impossible in the past."
@@ -43,13 +43,13 @@ quiz:
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>If we would have checked the map, we would have avoided the traffic.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>If we had checked the map, we would have avoided the traffic.</p>
-  <p class="lesson-card-note">This correction matches the intended meaning and sounds natural in context.</p>
+  <p class="lesson-card-note">The correction uses the correct third conditional structure: past perfect in the if-clause and would have in the result clause.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Incorrect</span>If she had left earlier, she will catch the train.</p>
   <p class="lesson-line lesson-line-strong"><span>Better</span>If she had left earlier, she would have caught the train.</p>
-  <p class="lesson-card-note">This version is clearer and shows the pattern more accurately.</p>
+  <p class="lesson-card-note">The improved sentence correctly uses would have to indicate an unreal past result.</p>
 </article>
 </div>
 
@@ -57,23 +57,33 @@ quiz:
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>Third conditional is for unreal past situations, so both parts need to point back to a different past result.</p>
-<p>Third conditional shows an unreal past. It imagines a different past condition and a different past result.</p>
-<p>Use third conditional to talk about regret, criticism, missed chances, and imagined past results. The common pattern is if + past perfect, then would have + past participle.</p>
-<p>At B2 level, build one correct base sentence first, then add detail without breaking grammar control.</p>
+    <p>The <strong>third conditional</strong> is used to discuss hypothetical situations in the past that did not happen. It allows us to imagine a different outcome in a past situation. The standard formation is <strong>if + past perfect</strong> in the condition clause and <strong>would have + past participle</strong> in the result clause. This structure is crucial at the B2 level to express complex ideas about past events that are contrary to reality.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Use past perfect in the if-clause to show the unreal past condition.</li><li>Use would have, could have, or might have in the result clause.</li><li>Keep both parts in the past; if the result is now, you are probably using a mixed conditional instead.</li></ul>
+    <ul>
+      <li>Describing a past event that did not happen but imagining a different outcome.</li>
+      <li>Expressing regret or missed opportunities in the past.</li>
+      <li>Critiquing past decisions or actions with hypothetical alternatives.</li>
+      <li>Discussing historical events with alternative outcomes in academic writing.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">If we had checked the map, we would have avoided the delay.</div>
-<div class="lesson-pattern-sentence">If she had studied earlier, she might have felt calmer in the test.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">If we <strong>had known</strong> about the meeting, we <strong>would have attended</strong>.</div>
+      <div class="lesson-pattern-sentence">If she <strong>had applied</strong> for the job, she <strong>might have been</strong> successful.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Ask whether you are imagining a different past.</li><li>Use past perfect in the if-clause.</li><li>Use would have, could have, or might have in the result clause.</li><li>Keep both parts in the past unless you are using a true mixed conditional.</li><li>Check whether the sentence expresses regret, criticism, or a missed chance clearly.</li></ul>
+    <ul>
+      <li>Use <strong>past perfect</strong> in the if-clause to indicate the unreal past condition.</li>
+      <li>Use <strong>would have, could have,</strong> or <strong>might have</strong> in the result clause to show the imagined outcome.</li>
+      <li>Keep both clauses in the past to maintain the hypothetical nature.</li>
+      <li>Avoid using <strong>would have</strong> in the if-clause.</li>
+      <li>Ensure the sentence clearly reflects a hypothetical past scenario.</li>
+    </ul>
   </section>
 </div>
 
@@ -84,21 +94,21 @@ quiz:
   <h3>using the wrong verb pattern in an unreal past sentence</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>If they had studied earlier, they will have finished on time.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>If they had studied earlier, they would have finished on time.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use past perfect after if and would have + past participle in the result clause</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> use past perfect after if and would have + past participle in the result clause.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
   <h3>using would have in the if-clause</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>If the driver would have checked the fuel level, the trip would have gone more smoothly.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>If the driver had checked the fuel level, the trip would have gone more smoothly.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> use past perfect, not would have, in the if-clause</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> use past perfect, not would have, in the if-clause.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
   <h3>using a present or future result in an unreal past sentence</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>If the team had booked earlier, they will get cheaper seats.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>If the team had booked earlier, they would have got cheaper seats.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> keep the result in the unreal past with would have + past participle</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> keep the result in the unreal past with would have + past participle.</p>
 </article>
 </div>
 
@@ -125,6 +135,9 @@ quiz:
 </button>
 <button type="button" class="practice-choice" data-choice-index="1">
   If they had studied earlier, they would have finished on time.
+</button>
+<button type="button" class="practice-choice" data-choice-index="2">
+  If they studied earlier, they would finish on time.
 </button>
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
@@ -163,28 +176,28 @@ quiz:
   <h3>Mark each sentence as correct or needing a fix.</h3>
   <div class="practice-sort-list">
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="0">
-  <p>If they had studied earlier, they would have finished on time.</p>
+  <p>If we had known about the storm, we would have postponed the trip.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="1">
-  <p>If they had studied earlier, they will have finished on time.</p>
+  <p>If we knew about the storm, we would have postponed the trip.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="works" data-sort-row="2">
-  <p>If I had known about the delay, I would have left sooner.</p>
+  <p>If they had prepared better, they would have succeeded.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>
   </div>
 </div>
 <div class="practice-sort-row" data-sort-target="fix" data-sort-row="3">
-  <p>If I had knew about the delay, I would have left sooner.</p>
+  <p>If they prepared better, they would succeed.</p>
   <div class="practice-sort-actions">
     <button type="button" class="practice-sort-btn" data-sort-choice="works">Works</button>
     <button type="button" class="practice-sort-btn" data-sort-choice="fix">Needs fixing</button>

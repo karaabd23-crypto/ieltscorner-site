@@ -5,7 +5,7 @@ level: "B2"
 ieltsBand: "4.0-5.0"
 clb: "4-5"
 exam: ["IELTS", "CELPIP"]
-excerpt: "A2 vocabulary lesson on Weather and Seasons Words with a practical word bank, collocations, and retrieval practice."
+excerpt: "Learn essential vocabulary for discussing weather conditions and seasonal changes, enhancing your clarity in communication."
 date: "2026-02-27"
 tags: ["vocabulary", "a2", "exam-prep", "ielts", "celpip"]
 heroTip: "Learn words with their partner phrases and one model sentence, not as isolated items."
@@ -36,21 +36,21 @@ premium: false
 priceCAD: 0
 draft: false
 ---
-<div class="lesson-context"><p class="lesson-context-lead"><strong>Weather and Seasons Words</strong> focuses on essential vocabulary for discussing weather conditions and seasonal changes. This lesson helps you use precise terms to communicate effectively in real-world situations.</p></div>
+<div class="lesson-context"><p class="lesson-context-lead"><strong>Weather and Seasons Words</strong> focuses on essential vocabulary for discussing weather conditions and seasonal changes. This lesson helps you use precise terms to communicate effectively in real-world situations, enhancing clarity and understanding in both spoken and written forms.</p></div>
 
 ## Examples
 <div class="lesson-example-grid">
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 1</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>The weather report said very hot weather was coming.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>The forecast warned of a heatwave.</p>
-  <p class="lesson-card-note">The stronger version names the real meaning instead of staying vague.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span>The forecast warned of a <strong>heatwave</strong>.</p>
+  <p class="lesson-card-note">The stronger version uses a specific term to convey the intensity of the weather.</p>
 </article>
 <article class="lesson-example-card">
   <p class="lesson-card-label">Example 2</p>
   <p class="lesson-line lesson-line-weak"><span>Too weak</span>The road was dangerous because it had ice on it.</p>
-  <p class="lesson-line lesson-line-strong"><span>Better</span>Icy roads made the route dangerous.</p>
-  <p class="lesson-card-note">The better sentence sounds more natural for a real task and a real reader.</p>
+  <p class="lesson-line lesson-line-strong"><span>Better</span><strong>Icy roads</strong> made the route dangerous.</p>
+  <p class="lesson-card-note">The improved sentence uses a precise term to describe the condition of the roads.</p>
 </article>
 </div>
 
@@ -58,23 +58,34 @@ draft: false
 <div class="lesson-teach-grid">
   <section class="lesson-panel lesson-panel-core">
     <p class="lesson-panel-label">Meaning</p>
-    <p>This lesson helps you say the same idea with sharper, more natural vocabulary.</p>
-<p>Weather and Seasons Words teaches topic words and useful chunks that help you describe a real everyday subject more clearly.</p>
-<p>Use this vocabulary when you need topic-appropriate wording instead of vague general words in speaking or writing.</p>
-<p>At A2 level, learn fewer words but learn them well: meaning, collocation, and one model sentence.</p>
+    <p>Weather and Seasons Words focus on vocabulary that describes weather conditions and seasonal changes. This vocabulary helps articulate environmental conditions accurately, enhancing clarity in communication.</p>
+    <p>Formation: Use specific terms like 'heatwave' or 'icy' to replace vague descriptions such as 'very hot' or 'ice on the road.'</p>
+    <p>At the B2 level, mastering these words is crucial for precise and effective communication in both spoken and written contexts.</p>
   </section>
   <section class="lesson-panel lesson-panel-when">
     <p class="lesson-panel-label">Use it when</p>
-    <ul><li>Choose the word from the exact meaning you need.</li><li>Learn each word with a collocation or model sentence.</li><li>Replace vague language only when the new word is accurate and natural.</li></ul>
+    <ul>
+      <li>Describing weather conditions in conversations or reports.</li>
+      <li>Writing essays or articles about climate or seasonal changes.</li>
+      <li>Discussing travel plans or outdoor activities affected by weather.</li>
+      <li>Engaging in formal discussions about environmental issues.</li>
+    </ul>
   </section>
   <section class="lesson-panel lesson-panel-pattern">
     <p class="lesson-panel-label">See it</p>
-    <div class="lesson-pattern-stack"><div class="lesson-pattern-sentence">A more precise word usually makes a sentence about Weather and Seasons Words easier to trust.</div>
-<div class="lesson-pattern-sentence">Topic vocabulary becomes useful when you can use it in a real sentence quickly.</div></div>
+    <div class="lesson-pattern-stack">
+      <div class="lesson-pattern-sentence">The <strong>forecast</strong> predicted a <strong>heatwave</strong> for the weekend.</div>
+      <div class="lesson-pattern-sentence">During winter, <strong>icy roads</strong> can be hazardous.</div>
+    </div>
   </section>
   <section class="lesson-panel lesson-panel-remember">
     <p class="lesson-panel-label">Quick rules</p>
-    <ul><li>Choose the meaning first before you choose the word.</li><li>Learn the word with a natural collocation or partner phrase.</li><li>Use the new word in one short sentence right away.</li><li>Replace vague words only when the new word stays accurate.</li><li>Keep the register stable so the language fits the task.</li></ul>
+    <ul>
+      <li>Use specific weather terms to replace vague descriptions.</li>
+      <li>Pair weather terms with real-life effects for clarity.</li>
+      <li>Ensure the vocabulary matches the context and register.</li>
+      <li>Learn collocations to use terms naturally in sentences.</li>
+    </ul>
   </section>
 </div>
 
@@ -84,7 +95,7 @@ draft: false
   <p class="lesson-card-label">Common problem 1</p>
   <h3>using a long explanation instead of the exact weather term</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>There was a lot of rain in a short time.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>There was heavy rainfall in the afternoon.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>There was <strong>heavy rainfall</strong> in the afternoon.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> replace the explanation with the exact weather phrase</p>
 </article>
 <article class="lesson-error-card">
@@ -111,7 +122,7 @@ draft: false
       <p class="practice-lab-intro">Start with meaning. Then move to collocations and sentence control for Weather and Seasons Words.</p>
     </div>
     <div class="practice-lab-status">
-      <p class="practice-lab-score" data-practice-score>Score: 0/2</p>
+      <p class="practice-lab-score" data-practice-score>Score: 0/3</p>
       <button type="button" class="practice-reset-btn" data-practice-reset>Reset</button>
     </div>
   </div>
@@ -133,22 +144,19 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-<article class="practice-task" data-task-type="order" data-task-answer="Forecast works best||when the meaning||is clear in||the sentence." data-task-id="2">
+<article class="practice-task" data-task-type="order" data-task-answer="Heavy rainfall||caused flooding||in the city" data-task-id="2">
   <p class="practice-task-label">2. Build it</p>
   <h3>Put the sentence in a natural order.</h3>
   <p class="practice-task-note">Put the chunks in the natural order.</p>
   <div class="practice-chip-bank" data-order-bank>
-<button type="button" class="practice-chip" data-chip-value="is clear in" data-chip-origin="bank-1" data-chip-id="1-0">
-  is clear in
+<button type="button" class="practice-chip" data-chip-value="in the city" data-chip-origin="bank-1" data-chip-id="1-0">
+  in the city
 </button>
-<button type="button" class="practice-chip" data-chip-value="the sentence." data-chip-origin="bank-1" data-chip-id="1-1">
-  the sentence.
+<button type="button" class="practice-chip" data-chip-value="caused flooding" data-chip-origin="bank-1" data-chip-id="1-1">
+  caused flooding
 </button>
-<button type="button" class="practice-chip" data-chip-value="when the meaning" data-chip-origin="bank-1" data-chip-id="1-2">
-  when the meaning
-</button>
-<button type="button" class="practice-chip" data-chip-value="Forecast works best" data-chip-origin="bank-1" data-chip-id="1-3">
-  Forecast works best
+<button type="button" class="practice-chip" data-chip-value="Heavy rainfall" data-chip-origin="bank-1" data-chip-id="1-2">
+  Heavy rainfall
 </button>
   </div>
   <div class="practice-chip-answer" data-order-answer></div>
@@ -158,12 +166,35 @@ draft: false
   </div>
   <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
 </article>
-
+<article class="practice-task" data-task-type="sort" data-task-answer="Weather:heatwave,forecast||Seasons:winter,spring" data-sort-categories="Weather||Seasons" data-task-id="3">
+  <p class="practice-task-label">3. Sort it</p>
+  <h3>Sort the words into the correct categories.</h3>
+  <div class="practice-sort-bank" data-sort-bank>
+<button type="button" class="practice-chip" data-chip-value="heatwave" data-chip-origin="bank-2" data-chip-id="2-0">
+  heatwave
+</button>
+<button type="button" class="practice-chip" data-chip-value="winter" data-chip-origin="bank-2" data-chip-id="2-1">
+  winter
+</button>
+<button type="button" class="practice-chip" data-chip-value="forecast" data-chip-origin="bank-2" data-chip-id="2-2">
+  forecast
+</button>
+<button type="button" class="practice-chip" data-chip-value="spring" data-chip-origin="bank-2" data-chip-id="2-3">
+  spring
+</button>
+  </div>
+  <div class="practice-sort-answer" data-sort-answer></div>
+  <div class="practice-task-actions">
+    <button type="button" class="practice-check-btn" data-task-check>Check</button>
+    <button type="button" class="practice-clear-btn" data-task-clear>Clear</button>
+  </div>
+  <p class="practice-task-feedback" data-task-feedback aria-live="polite"></p>
+</article>
   </div>
 </div>
 
 ## Why It Matters
-<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering Weather and Seasons Words allows you to describe environmental conditions accurately, making your communication clearer and more relatable in everyday conversations and writing.</p>
+<p class="lesson-importance"><strong>&#127919; Why it matters:</strong> Mastering Weather and Seasons Words allows you to describe environmental conditions accurately, making your communication clearer and more relatable in everyday conversations, academic writing, and professional discussions.</p>
 
 ## Get Feedback
 <div class="lesson-support-callout">
