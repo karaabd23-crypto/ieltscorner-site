@@ -208,24 +208,73 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
       gtag('config', 'G-XXXXXXXXXX');
     </script>
 
-    <!-- Calendly global badge -->
+    <!-- Calendly popup support -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+    <style is:inline>
+      /* Hide the Calendly auto-badge entirely — we use our own button */
+      .calendly-badge-widget { display: none !important; }
+
+      .floating-cta-btn {
+        position: fixed;
+        bottom: 24px;
+        z-index: 1000;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        box-sizing: border-box;
+        height: 48px;
+        padding: 0 28px;
+        font-size: 0.95rem;
+        font-weight: 800;
+        font-family: inherit;
+        line-height: 1;
+        background: transparent;
+        color: #d94848;
+        border: 2px solid #d94848;
+        border-radius: 999px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+        text-decoration: none;
+        white-space: nowrap;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        cursor: pointer;
+        transition: background 140ms ease, color 140ms ease, transform 140ms ease, box-shadow 140ms ease;
+      }
+      .floating-cta-btn:hover {
+        background: #d94848;
+        color: #fff;
+        transform: scale(1.05);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+      }
+      .floating-cta-btn--left { left: 24px; }
+      .floating-cta-btn--right { right: 24px; }
+
+      @media (max-width: 600px) {
+        .floating-cta-btn {
+          bottom: 16px;
+          height: 42px;
+          padding: 0 20px;
+          font-size: 0.85rem;
+        }
+        .floating-cta-btn--left { left: 16px; }
+        .floating-cta-btn--right { right: 16px; }
+      }
+    </style>
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async is:inline></script>
     <script is:inline>
       window.addEventListener('load', () => {
         const allowBadge = document.body?.dataset.mainPage === '1';
-        if (!allowBadge || !window.Calendly || window.__ieltscornerCalendlyBadgeInit) {
-          return;
+        if (!allowBadge || window.__ieltscornerCalendlyBadgeInit) return;
+        // Still init the badge so popup works, but it's hidden via CSS
+        if (window.Calendly) {
+          window.Calendly.initBadgeWidget({
+            url: "https://calendly.com/ieltscorner/weekly_webinar",
+            text: "Join Weekly Webinar",
+            color: '#c48787',
+            textColor: '#ffffff',
+            branding: false,
+          });
         }
-
-        window.Calendly.initBadgeWidget({
-          url: "https://calendly.com/ieltscorner/weekly_webinar",
-          text: "Weekly webinar",
-          color: '#c48787',
-          textColor: '#ffffff',
-          branding: true,
-        });
-
         window.__ieltscornerCalendlyBadgeInit = true;
       });
     </script>
@@ -257,16 +306,16 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
     </form>
 
     <!-- WEBINAR BANNER (Sticky) -->
-    <div class="top-drawer-banner" style="position: relative; z-index: 40; background: linear-gradient(90deg, var(--accent) 0%, rgba(217, 72, 72, 0.9) 100%); color: white; padding: 12px 0; text-align: center; border-bottom: 1px solid rgba(255, 255, 255, 0.2);">
+    <div class="top-drawer-banner" style="position: relative; z-index: 40; background: transparent; color: var(--accent); padding: 12px 0; text-align: center; border-bottom: 2px solid var(--accent);">
       <div class="container" style="display: flex; align-items: center; justify-content: center; gap: var(--s-2); flex-wrap: wrap;">
         <span style="font-size: 14px;"><strong>Weekly webinar | 100 CELPIP writing prompts + sample responses for CA$5/month</strong></span>
-        <a href="/webinar" style="color: white; font-weight: 700; font-size: 13px; text-decoration: none; background: rgba(255, 255, 255, 0.2); padding: 6px 12px; border-radius: 999px; transition: background 140ms ease;">
+        <a href="/webinar" style="color: var(--accent); font-weight: 700; font-size: 13px; text-decoration: none; background: transparent; border: 1.5px solid var(--accent); padding: 6px 12px; border-radius: 999px; transition: background 140ms ease, color 140ms ease;">
           Webinar
         </a>
-        <a href="/celpip/writing/ai-feedback" style="color: white; font-weight: 700; font-size: 13px; text-decoration: none; background: rgba(255, 255, 255, 0.2); padding: 6px 12px; border-radius: 999px; transition: background 140ms ease;">
+        <a href="/celpip/writing/ai-feedback" style="color: var(--accent); font-weight: 700; font-size: 13px; text-decoration: none; background: transparent; border: 1.5px solid var(--accent); padding: 6px 12px; border-radius: 999px; transition: background 140ms ease, color 140ms ease;">
           Writing hub
         </a>
-        <a href="/celpip/writing/samples" style="color: white; font-weight: 700; font-size: 13px; text-decoration: none; background: rgba(255, 255, 255, 0.2); padding: 6px 12px; border-radius: 999px; transition: background 140ms ease;">
+        <a href="/celpip/writing/samples" style="color: var(--accent); font-weight: 700; font-size: 13px; text-decoration: none; background: transparent; border: 1.5px solid var(--accent); padding: 6px 12px; border-radius: 999px; transition: background 140ms ease, color 140ms ease;">
           Sample essays
         </a>
       </div>
@@ -747,6 +796,15 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
           }
         }
       </style>
+    )}
+
+    {showFloatingWebinarCta && (
+      <button
+        class="floating-cta-btn floating-cta-btn--right"
+        type="button"
+        onclick="window.Calendly ? window.Calendly.initPopupWidget({url:'https://calendly.com/ieltscorner/weekly_webinar'}) : window.open('https://calendly.com/ieltscorner/weekly_webinar','_blank','noopener,noreferrer')"
+        aria-label="Join Weekly Webinar"
+      >🎥 Join Weekly Webinar</button>
     )}
   </body>
 </html>
