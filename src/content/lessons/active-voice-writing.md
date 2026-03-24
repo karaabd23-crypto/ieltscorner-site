@@ -109,7 +109,7 @@ quiz:
   <h3>choosing passive voice to sound formal and ending up vague</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Improvements have been made and results have been achieved.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>The team improved the process and reduced errors by 30%.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Add a real subject and a measurable result — specificity reads as confident, not casual.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Add a real subject and a measurable result. specificity reads as confident, not casual.</p>
 </article>
 </div>
 

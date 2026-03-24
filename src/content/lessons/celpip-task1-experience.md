@@ -93,7 +93,7 @@ quiz:
   <h3>opening with a vague comment instead of a direct answer</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Well, there are many sides to this experience and it is hard to say.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>My most memorable experience was working abroad for three months.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Name the specific experience in your first sentence — do not delay.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Name the specific experience in your first sentence. do not delay.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>

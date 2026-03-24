@@ -84,7 +84,7 @@ draft: false
       <li>Use inversion after negative adverbs at the start of a sentence.</li>
       <li>Place the auxiliary verb before the subject.</li>
       <li>Ensure the main verb follows the subject.</li>
-      <li>Remember that not all negative words trigger inversion—only those at the beginning of a sentence.</li>
+      <li>Remember that not all negative words trigger inversion, only those at the beginning of a sentence.</li>
     </ul>
   </section>
 </div>

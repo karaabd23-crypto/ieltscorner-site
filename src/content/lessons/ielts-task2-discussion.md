@@ -95,14 +95,14 @@ quiz:
   <h3>Treating a "discuss both views" as an opinion essay</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>In my opinion, working from home is much better and everyone should do it.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>Proponents of remote work value its flexibility, while critics argue it reduces team cohesion.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> "Discuss both views" means present both sides fairly — do not argue for one side from the start.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> "Discuss both views" means present both sides fairly. do not argue for one side from the start.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
   <h3>Using the same argument template for both views</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Some people think this. Others think the opposite. Both have good points.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>Some people prioritise economic growth, arguing that it funds public services. Others prioritise environmental health, contending that growth without sustainability causes long-term harm.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Give each side its own specific argument and explanation — avoid mirroring the same structure.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Give each side its own specific argument and explanation. avoid mirroring the same structure.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>

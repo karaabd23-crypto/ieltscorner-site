@@ -102,7 +102,7 @@ quiz:
   <h3>mentioning a bullet point with a single vague word</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The date is Friday. The place is the office. The topic is discussed.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>I suggest we meet on Friday 14th in the third-floor conference room to finalise the project timeline.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Expand each point with specific details — dates, names, reasons, or next steps.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Expand each point with specific details. dates, names, reasons, or next steps.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>

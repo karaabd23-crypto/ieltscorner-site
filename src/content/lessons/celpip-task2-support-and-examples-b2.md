@@ -105,7 +105,7 @@ quiz:
   <h3>using the word "example" but not actually giving one</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>For example, many people prefer this option and it is popular.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>For example, a 2022 company survey found that 70% of remote workers reported higher job satisfaction.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> A real example includes a who, where, when, or measurable result — not just a general statement.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> A real example includes a who, where, when, or measurable result. not just a general statement.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>

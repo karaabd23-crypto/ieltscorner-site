@@ -116,7 +116,7 @@ quiz:
   <h3>starting sentences with empty subject phrases</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>It is the case that technology improves productivity.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>Technology improves productivity.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Delete "It is clear that", "It is the case that", and "The fact is that" — lead with the real subject.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Delete "It is clear that", "It is the case that", and "The fact is that". lead with the real subject.</p>
 </article>
 </div>
 

@@ -103,7 +103,7 @@ quiz:
   <h3>Failing to state the purpose of the email in the first sentence</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>I hope you are doing well. The weather has been nice lately.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>I am writing to request a one-week extension on my project submission.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> State the email's purpose in the first sentence — do not lead with pleasantries in a formal task.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> State the email's purpose in the first sentence. do not lead with pleasantries in a formal task.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>

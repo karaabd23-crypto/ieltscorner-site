@@ -103,14 +103,14 @@ quiz:
   <h3>using a comma instead of a semicolon to join two full sentences</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The results were positive, the team decided to continue.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>The results were positive; the team decided to continue.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Two independent clauses need a semicolon, a conjunction (and, but, so), or a full stop — not a comma alone.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Two independent clauses need a semicolon, a conjunction (and, but, so), or a full stop. not a comma alone.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>
   <h3>adding an unnecessary comma between the subject and its verb</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The students who studied the hardest, passed the exam.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>The students who studied the hardest passed the exam.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Do not put a comma between the subject and the main verb — even if the subject is long.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Do not put a comma between the subject and the main verb. even if the subject is long.</p>
 </article>
 </div>
 

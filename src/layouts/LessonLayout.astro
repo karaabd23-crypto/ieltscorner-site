@@ -314,7 +314,7 @@ const {
             if (title) {
               const badge = document.createElement('span');
               badge.className = 'mini-quiz-status status-not-attempted';
-              badge.textContent = `${index + 1}. not attempted`;
+              badge.textContent = `${index + 1}, not attempted`;
               title.prepend(badge);
             }
           });
@@ -338,7 +338,7 @@ const {
               badge.textContent = `${badge.textContent.split('.')[0]}. wrong`;
             } else {
               badge.classList.add('status-not-attempted');
-              badge.textContent = `${badge.textContent.split('.')[0]}. not attempted`;
+              badge.textContent = `${badge.textContent.split('.')[0]}, not attempted`;
             }
           };
 
@@ -385,7 +385,7 @@ const {
                 b.classList.remove('is-correct', 'is-wrong');
               });
               const badge = card.querySelector('.mini-quiz-status');
-              if (badge) badge.textContent = `${index + 1}. not attempted`;
+              if (badge) badge.textContent = `${index + 1}, not attempted`;
             });
             refreshScore();
           });

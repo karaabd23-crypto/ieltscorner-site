@@ -498,7 +498,7 @@ button{
   background-repeat: no-repeat;
   background-position: var(--hero-bg-position, center center);
   background-size: var(--hero-bg-size, cover);
-  opacity: var(--hero-bg-opacity, 0.95);
+  opacity: var(--hero-bg-opacity, 0.55);
   pointer-events:none;
 }
 

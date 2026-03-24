@@ -101,7 +101,7 @@ quiz:
   <p class="lesson-card-label">Common problem 2</p>
   <h3>losing the original question after the first sentence</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>So, there are many things to say. And yes, it is hard to choose.</p>
-  <p class="lesson-line lesson-line-strong"><span>Strong</span>Returning to the question — I think public parks matter most for families.</p>
+  <p class="lesson-line lesson-line-strong"><span>Strong</span>Returning to the question. I think public parks matter most for families.</p>
   <p class="lesson-fix-line"><strong>Fix:</strong> After each supporting point, check that your sentence still relates to the question topic.</p>
 </article>
 <article class="lesson-error-card">

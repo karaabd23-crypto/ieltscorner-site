@@ -97,7 +97,7 @@ quiz:
   <h3>Repeating the question word-for-word instead of paraphrasing</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The question says we should talk about whether technology is good or bad.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>I will discuss the advantages and drawbacks of modern technology.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Replace key nouns and verbs with synonyms — do not echo the question text.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Replace key nouns and verbs with synonyms. do not echo the question text.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>
@@ -111,7 +111,7 @@ quiz:
   <h3>Using unnatural or overly formal vocabulary that sounds memorized</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The aforementioned technology is profoundly beneficial for all inhabitants.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>Technology benefits most people in their daily lives.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Choose words you would say naturally — natural phrasing scores higher than memorized phrases.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Choose words you would say naturally. natural phrasing scores higher than memorized phrases.</p>
 </article>
 </div>
 

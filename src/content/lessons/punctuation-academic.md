@@ -96,7 +96,7 @@ quiz:
   <h3>using a semicolon where a comma is correct</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>The report covered three areas; cost; time; and quality.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>The report covered three areas: cost, time, and quality.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Use a colon to introduce a list; use commas within the list — reserving semicolons for complex list items.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Use a colon to introduce a list; use commas within the list. reserving semicolons for complex list items.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 2</p>

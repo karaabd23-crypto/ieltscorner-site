@@ -112,7 +112,7 @@ quiz:
   <h3>introducing a new topic inside a paragraph that already has one</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Online learning is flexible. Also, it is cheaper. And teachers can use technology.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>Online learning is flexible and cheaper than traditional courses, making it accessible to more students.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Keep each paragraph focused on one idea — move extra points to a new paragraph.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Keep each paragraph focused on one idea. move extra points to a new paragraph.</p>
 </article>
 </div>
 

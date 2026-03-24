@@ -105,7 +105,7 @@ quiz:
   <h3>Writing an unbalanced essay that only addresses one side</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>There are so many advantages that it is hard to see any disadvantages.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>Although automation reduces some jobs, it creates new roles in maintenance and software development.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Dedicate at least one paragraph to each side — use "although" or "however" to signal the contrast.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Dedicate at least one paragraph to each side. use "although" or "however" to signal the contrast.</p>
 </article>
 <article class="lesson-error-card">
   <p class="lesson-card-label">Common problem 3</p>

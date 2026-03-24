@@ -108,7 +108,7 @@ quiz:
   <h3>Repeating the same sentence structure for every point</h3>
   <p class="lesson-line lesson-line-weak"><span>Weak</span>Exercise is good. Diet is good. Sleep is good. Rest is good.</p>
   <p class="lesson-line lesson-line-strong"><span>Strong</span>Regular exercise, combined with a balanced diet and adequate sleep, supports long-term health.</p>
-  <p class="lesson-fix-line"><strong>Fix:</strong> Vary sentence length and structure — combine short related points into one compound sentence.</p>
+  <p class="lesson-fix-line"><strong>Fix:</strong> Vary sentence length and structure. combine short related points into one compound sentence.</p>
 </article>
 </div>
 
