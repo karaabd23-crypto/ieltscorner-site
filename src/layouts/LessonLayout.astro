@@ -1,5 +1,9 @@
 ---
 import Layout from "./Layout.astro";
+import LeadCaptureForm from "../components/LeadCaptureForm.astro";
+import LeadMagnetCard from "../components/LeadMagnetCard.astro";
+import OfferLadderBlock from "../components/OfferLadderBlock.astro";
+import OfferSequenceBlock from "../components/OfferSequenceBlock.astro";
 import WebinarCTA from "../components/WebinarCTA.astro";
 
 // TypeScript declaration for AdSense
@@ -132,7 +136,94 @@ const {
 
         <div class="panel lesson-content-wrap">
           <article class="lesson-content">
-            <slot />
+            <div class="lesson-body-content" data-lesson-body>
+              <slot />
+            </div>
+            <div id="lesson-mid-cta-template" hidden aria-hidden="true">
+              <section class="lesson-inline-cta lesson-inline-cta--mid">
+                <p class="lesson-inline-cta__kicker">Direct Essay Feedback</p>
+                <a
+                  class="btn btn-primary lesson-inline-cta__button"
+                  href="/essay-correction?src=lesson-layout-mid-writing"
+                  data-track-click="lesson-layout-mid-essay-correction"
+                  data-track-page-type="lesson"
+                  data-track-offer="essay_correction"
+                  data-track-test="ielts"
+                  data-track-skill="writing"
+                  data-track-position="mid"
+                >
+                  Want direct feedback on your writing? Submit one essay for score-focused correction.
+                </a>
+              </section>
+            </div>
+            <section class="lesson-inline-cta lesson-inline-cta--end">
+              <p class="lesson-inline-cta__kicker">Stop Guessing</p>
+              <a
+                class="btn btn-primary lesson-inline-cta__button"
+                href="/essay-correction?src=lesson-layout-end-writing"
+                data-track-click="lesson-layout-end-essay-correction"
+                data-track-page-type="lesson"
+                data-track-offer="essay_correction"
+                data-track-test="ielts"
+                data-track-skill="writing"
+                data-track-position="end"
+              >
+                Get your essay corrected with detailed grammar and structure feedback.
+              </a>
+            </section>
+            <LeadCaptureForm
+              heading="Get free Band 7+ strategies every week"
+              message="Get free Band 7+ strategies every week"
+              buttonLabel="Send Me Weekly Strategies"
+              source={`lesson-layout-${title}`}
+              formName="lesson-lead-capture"
+              formType="lead_capture_general"
+              pageType="lesson"
+              offer="lead_capture"
+              test="ielts"
+              skill="writing"
+              position="form_section"
+              className="lesson-lead-capture"
+            />
+
+            <LeadMagnetCard
+              headline="IELTS Writing Band 7+ Structure Guide"
+              bullets={[
+                "Use a repeatable structure for clear Task 2 argument flow.",
+                "Fix paragraph and grammar mistakes that cap your score.",
+                "Apply a fast final check before you submit under exam timing.",
+              ]}
+              formName="lead-magnet-ielts-writing-structure-guide"
+              formType="lead_magnet_ielts_writing_structure_guide"
+              successPath="/thank-you/ielts-writing-structure-guide/"
+              source={`lesson-layout-${title}`}
+              magnetId="ielts_writing_band7_structure_guide"
+              buttonLabel="Send Me The Band 7+ Guide"
+              pageType="lesson"
+              offer="lead_magnet"
+              test="ielts"
+              skill="writing"
+              position="end"
+              className="lesson-lead-magnet"
+            />
+
+            <OfferLadderBlock
+              test="ielts"
+              skill="writing"
+              pageType="lesson"
+              position="end"
+              className="lesson-offer-ladder"
+              heading="Choose the fastest way to improve"
+            />
+
+            <OfferSequenceBlock
+              test="ielts"
+              skill="writing"
+              pageType="lesson"
+              position="end"
+              className="lesson-offer-sequence"
+              heading="What to do next"
+            />
           </article>
         </div>
       </main>
@@ -226,6 +317,29 @@ const {
           // Ignore storage failures (private mode / restricted contexts)
         }
       };
+
+      const injectMidLessonCta = () => {
+        const template = document.getElementById('lesson-mid-cta-template');
+        if (!(template instanceof HTMLElement)) return;
+
+        const bodies = Array.from(document.querySelectorAll('[data-lesson-body]'));
+        bodies.forEach((body) => {
+          if (!(body instanceof HTMLElement)) return;
+          if (body.dataset.midCtaInjected === 'true') return;
+
+          const blocks = Array.from(body.children).filter((child) => child instanceof HTMLElement);
+          if (blocks.length === 0) return;
+
+          const insertionIndex = Math.max(0, Math.floor(blocks.length / 2) - 1);
+          const ctaNode = template.firstElementChild?.cloneNode(true);
+          if (!(ctaNode instanceof HTMLElement)) return;
+
+          blocks[insertionIndex].insertAdjacentElement('afterend', ctaNode);
+          body.dataset.midCtaInjected = 'true';
+        });
+      };
+
+      injectMidLessonCta();
 
       const roots = Array.from(document.querySelectorAll('.lesson-content'));
       if (roots.length === 0) return;

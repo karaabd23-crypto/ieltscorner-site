@@ -1,6 +1,10 @@
 ---
 import ContentAd from "../../../components/ContentAd.astro";
+import LeadCaptureForm from "../../../components/LeadCaptureForm.astro";
 import InArticleAd from "../../../components/InArticleAd.astro";
+import LeadMagnetCard from "../../../components/LeadMagnetCard.astro";
+import OfferLadderBlock from "../../../components/OfferLadderBlock.astro";
+import OfferSequenceBlock from "../../../components/OfferSequenceBlock.astro";
 import Layout from "../../../layouts/Layout.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { getLessonTier, getPublicLessonTitle } from "../../../lib/lessonLevel";
@@ -10,6 +14,29 @@ type GuideLink = {
   title: string;
   href: string;
   description: string;
+};
+
+type ServiceLink = {
+  title: string;
+  href: string;
+  description: string;
+};
+
+type CtaBlock = {
+  kicker: string;
+  text: string;
+  href: string;
+  offer: string;
+};
+
+type LeadMagnetBlock = {
+  headline: string;
+  bullets: string[];
+  formName: string;
+  formType: string;
+  successPath: string;
+  magnetId: string;
+  buttonLabel: string;
 };
 
 const categories: LessonEntry["data"]["category"][] = [
@@ -31,6 +58,18 @@ const cleanHeadingText = (text: string) =>
     .replace(/\s{2,}/g, " ")
     .trim();
 
+const getLessonTests = (lesson: LessonEntry): ("IELTS" | "CELPIP")[] => {
+  if (lesson.data.test) return [lesson.data.test];
+  return lesson.data.exam;
+};
+
+const getLessonSkill = (lesson: LessonEntry) => lesson.data.skill ?? lesson.data.category;
+
+const toTimeValue = (dateValue: string) => {
+  const parsed = Date.parse(dateValue);
+  return Number.isNaN(parsed) ? 0 : parsed;
+};
+
 export async function getStaticPaths() {
   const items = await getCollection(
     "lessons",
@@ -48,14 +87,11 @@ const { Content, headings } = await item.render();
 const publicTitle = getPublicLessonTitle(item.data.title, item.data.level);
 const currentCategory = item.data.category;
 const slugText = item.slug.toLowerCase();
-const showBottomLessonAd = true;
 
-const sameCategoryLessons = (
-  await getCollection(
-    "lessons",
-    ({ data }) => !data.draft && data.category === currentCategory
-  )
-).sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
+const allLessons = await getCollection("lessons", ({ data }) => !data.draft);
+const sameCategoryLessons = allLessons
+  .filter((lesson) => lesson.data.category === currentCategory)
+  .sort((a, b) => (toTimeValue(b.data.date) - toTimeValue(a.data.date)));
 
 const currentIndex = sameCategoryLessons.findIndex((lesson) => lesson.slug === item.slug);
 const newerLesson = currentIndex > 0 ? sameCategoryLessons[currentIndex - 1] : null;
@@ -63,6 +99,169 @@ const olderLesson =
   currentIndex >= 0 && currentIndex < sameCategoryLessons.length - 1
     ? sameCategoryLessons[currentIndex + 1]
     : null;
+
+const currentTests = getLessonTests(item);
+const currentSkill = getLessonSkill(item);
+const currentTestSet = new Set(currentTests);
+
+const relatedCandidates = allLessons
+  .filter((lesson) => lesson.slug !== item.slug)
+  .map((lesson) => {
+    const candidateTests = getLessonTests(lesson);
+    const candidateSkill = getLessonSkill(lesson);
+    const sharedTests = candidateTests.filter((test) => currentTestSet.has(test));
+    const skillMatch = candidateSkill === currentSkill;
+    const categoryMatch = lesson.data.category === currentCategory;
+
+    let score = 0;
+    if (sharedTests.length > 0) score += 4;
+    if (skillMatch) score += 4;
+    if (categoryMatch) score += 2;
+
+    return { lesson, score };
+  })
+  .filter((itemScore) => itemScore.score > 0)
+  .sort((a, b) => b.score - a.score || toTimeValue(b.lesson.data.date) - toTimeValue(a.lesson.data.date));
+
+const relatedLessons: LessonEntry[] = [];
+for (const candidate of relatedCandidates) {
+  if (relatedLessons.length >= 2) break;
+  if (relatedLessons.some((lesson) => lesson.slug === candidate.lesson.slug)) continue;
+  relatedLessons.push(candidate.lesson);
+}
+
+if (relatedLessons.length < 2) {
+  for (const fallbackLesson of sameCategoryLessons) {
+    if (fallbackLesson.slug === item.slug) continue;
+    if (relatedLessons.some((lesson) => lesson.slug === fallbackLesson.slug)) continue;
+    relatedLessons.push(fallbackLesson);
+    if (relatedLessons.length >= 2) break;
+  }
+}
+
+const currentPathHint = `${currentCategory}-${slugText}`;
+const likelyCelpip =
+  currentTests.includes("CELPIP") &&
+  (!currentTests.includes("IELTS") || currentPathHint.includes("celpip"));
+
+const serviceLink: ServiceLink = likelyCelpip
+  ? {
+      title: "CELPIP Writing Help",
+      href: "/celpip-writing-help",
+      description: "Reach CLB 9 faster with live training, tutoring, and essay correction.",
+    }
+  : {
+      title: "IELTS Writing Help",
+      href: "/ielts-writing-help",
+      description: "Get Band 7+ faster with structured feedback and targeted writing support.",
+    };
+
+const isWritingLesson = currentSkill === "writing" || currentCategory === "writing";
+const trackTest = likelyCelpip ? "celpip" : currentTests.includes("IELTS") ? "ielts" : "general";
+const readingRescueLesson = likelyCelpip && currentSkill === "reading";
+const showIntentStack = isWritingLesson || readingRescueLesson;
+const ladderSkill = readingRescueLesson ? "reading" : "writing";
+const showBottomLessonAd = !showIntentStack;
+
+const leadMagnetBlock: LeadMagnetBlock | null = readingRescueLesson
+  ? {
+      headline: "CELPIP Reading CLB 6->8 Mistake Checklist",
+      bullets: [
+        "Catch distractor and inference traps before they steal points.",
+        "Use a timing map that protects accuracy in the final section.",
+        "Apply an error-review loop that turns misses into score gains.",
+      ],
+      formName: "lead-magnet-celpip-reading-checklist",
+      formType: "lead_magnet_celpip_reading_checklist",
+      successPath: "/thank-you/celpip-reading-checklist/",
+      magnetId: "celpip_reading_clb6_to_8_checklist",
+      buttonLabel: "Send Me The Reading Checklist",
+    }
+  : isWritingLesson
+    ? likelyCelpip
+      ? {
+          headline: "CELPIP Writing Score-Boost Checklist",
+          bullets: [
+            "Run a pre-write task-coverage check before your timer starts.",
+            "Use tone and structure checks that prevent CLB-limiting errors.",
+            "Apply a final revision sequence for cleaner grammar and clarity.",
+          ],
+          formName: "lead-magnet-celpip-writing-score-boost-checklist",
+          formType: "lead_magnet_celpip_writing_score_boost_checklist",
+          successPath: "/thank-you/celpip-writing-score-boost/",
+          magnetId: "celpip_writing_score_boost_checklist",
+          buttonLabel: "Send Me The Score-Boost Checklist",
+        }
+      : {
+          headline: "IELTS Writing Band 7+ Structure Guide",
+          bullets: [
+            "Use a paragraph plan that keeps your response coherent under pressure.",
+            "Avoid the structure mistakes that cap Task 2 scores around Band 6.",
+            "Apply a fast final check for grammar, support, and task response.",
+          ],
+          formName: "lead-magnet-ielts-writing-structure-guide",
+          formType: "lead_magnet_ielts_writing_structure_guide",
+          successPath: "/thank-you/ielts-writing-structure-guide/",
+          magnetId: "ielts_writing_band7_structure_guide",
+          buttonLabel: "Send Me The Band 7+ Guide",
+        }
+    : null;
+
+const midLessonCta: CtaBlock = isWritingLesson
+  ? likelyCelpip
+    ? {
+        kicker: "CELPIP Writing Rescue",
+        text: "Want direct feedback on your CELPIP writing? Get one essay corrected with score-focused comments.",
+        href: "/essay-correction?src=lesson-mid-celpip-writing",
+        offer: "essay_correction",
+      }
+    : {
+        kicker: "IELTS Writing Rescue",
+        text: "Get Band 7+ writing feedback on one essay and stop repeating hidden scoring mistakes.",
+        href: "/essay-correction?src=lesson-mid-ielts-writing",
+        offer: "essay_correction",
+      }
+  : likelyCelpip
+    ? {
+        kicker: "Live CELPIP Support",
+        text: "Fix your next CELPIP weak point in this week's live training session.",
+        href: "/webinar?src=lesson-mid-celpip",
+        offer: "weekly_training",
+      }
+    : {
+        kicker: "Live IELTS Support",
+        text: "Join live training to fix the patterns that keep your IELTS score from moving.",
+        href: "/webinar?src=lesson-mid-ielts",
+        offer: "weekly_training",
+      };
+
+const endLessonCta: CtaBlock = isWritingLesson
+  ? likelyCelpip
+    ? {
+        kicker: "Personal Essay Feedback",
+        text: "Submit one CELPIP essay for detailed grammar, structure, and score-focused correction.",
+        href: "/essay-correction?src=lesson-end-celpip-writing",
+        offer: "essay_correction",
+      }
+    : {
+        kicker: "Personal Essay Feedback",
+        text: "Submit one IELTS essay for detailed grammar, structure, and Band-focused correction.",
+        href: "/essay-correction?src=lesson-end-ielts-writing",
+        offer: "essay_correction",
+      }
+  : likelyCelpip
+    ? {
+        kicker: "Personalized Coaching",
+        text: "Need faster CELPIP improvement? Book a focused 1:1 strategy session.",
+        href: "/tutoring?src=lesson-end-celpip",
+        offer: "tutoring",
+      }
+    : {
+        kicker: "Personalized Coaching",
+        text: "Need faster IELTS improvement? Book a focused 1:1 strategy session.",
+        href: "/tutoring?src=lesson-end-ielts",
+        offer: "tutoring",
+      };
 
 const guideLinks: GuideLink[] = [];
 const seenGuideHrefs = new Set<string>();
@@ -301,7 +500,27 @@ const seoKeywords = `${publicTitle}, ${item.data.category}, ${item.data.level}, 
   <section class="section-sm">
     <article class="surface lesson-content" style="padding: var(--s-6);">
       <div class="lesson-divider" aria-hidden="true"></div>
-      <Content />
+      <div class="lesson-body-content" data-lesson-body>
+        <Content />
+      </div>
+
+      <div id="lesson-mid-cta-template" hidden aria-hidden="true">
+        <section class="lesson-inline-cta lesson-inline-cta--mid">
+          <p class="lesson-inline-cta__kicker">{midLessonCta.kicker}</p>
+          <a
+            class="btn btn-primary lesson-inline-cta__button"
+            href={midLessonCta.href}
+            data-track-click="lesson-mid-primary-cta"
+            data-track-page-type="lesson"
+            data-track-offer={midLessonCta.offer}
+            data-track-test={trackTest}
+            data-track-skill={currentSkill}
+            data-track-position="mid"
+          >
+            {midLessonCta.text}
+          </a>
+        </section>
+      </div>
 
       {showBottomLessonAd && (
         <InArticleAd
@@ -315,7 +534,54 @@ const seoKeywords = `${publicTitle}, ${item.data.category}, ${item.data.level}, 
         <ContentAd className="lesson-bottom-ad" />
       )}
 
+      <section class="lesson-inline-cta lesson-inline-cta--end">
+        <p class="lesson-inline-cta__kicker">{endLessonCta.kicker}</p>
+        <a
+          class="btn btn-primary lesson-inline-cta__button"
+          href={endLessonCta.href}
+          data-track-click="lesson-end-primary-cta"
+          data-track-page-type="lesson"
+          data-track-offer={endLessonCta.offer}
+          data-track-test={trackTest}
+          data-track-skill={currentSkill}
+          data-track-position="end"
+        >
+          {endLessonCta.text}
+        </a>
+      </section>
+
       <div class="lesson-divider lesson-divider-soft" aria-hidden="true"></div>
+
+      <section class="surface lesson-related-system">
+        <h3>Related lessons and your next support option</h3>
+        <p class="muted" style="margin-top: 0;">
+          These recommendations are matched by test focus and skill level for this lesson.
+        </p>
+        <div class="lesson-related-grid">
+          {relatedLessons.map((relatedLesson) => (
+            <a
+              class="lesson-related-card"
+              href={`/lessons/${relatedLesson.data.category}/${relatedLesson.slug}/`}
+            >
+              <h4>{getPublicLessonTitle(relatedLesson.data.title, relatedLesson.data.level)}</h4>
+              <p>{relatedLesson.data.description ?? relatedLesson.data.excerpt}</p>
+            </a>
+          ))}
+          <a
+            class="lesson-related-card"
+            href={serviceLink.href}
+            data-track-click="lesson-service-link"
+            data-track-page-type="lesson"
+            data-track-offer="writing_help"
+            data-track-test={trackTest}
+            data-track-skill={currentSkill}
+            data-track-position="end"
+          >
+            <h4>{serviceLink.title}</h4>
+            <p>{serviceLink.description}</p>
+          </a>
+        </div>
+      </section>
 
       {guideLinks.length > 0 && (
         <div class="surface" style="padding: var(--s-4); margin-top: var(--s-6);">
@@ -330,6 +596,63 @@ const seoKeywords = `${publicTitle}, ${item.data.category}, ${item.data.level}, 
             ))}
           </div>
         </div>
+      )}
+
+      <LeadCaptureForm
+        heading="Get free Band 7+ strategies every week"
+        message="Get free Band 7+ strategies every week"
+        buttonLabel="Send Me Weekly Strategies"
+        source={`lesson-${currentCategory}-${item.slug}`}
+        formName="lesson-lead-capture"
+        formType="lead_capture_general"
+        pageType="lesson"
+        offer="lead_capture"
+        test={trackTest}
+        skill={currentSkill}
+        position="form_section"
+        className="lesson-lead-capture"
+      />
+
+      {leadMagnetBlock && (
+        <div style="margin-top: var(--s-6);">
+          <LeadMagnetCard
+            headline={leadMagnetBlock.headline}
+            bullets={leadMagnetBlock.bullets}
+            formName={leadMagnetBlock.formName}
+            formType={leadMagnetBlock.formType}
+            successPath={leadMagnetBlock.successPath}
+            source={`lesson-${currentCategory}-${item.slug}`}
+            magnetId={leadMagnetBlock.magnetId}
+            buttonLabel={leadMagnetBlock.buttonLabel}
+            pageType="lesson"
+            offer="lead_magnet"
+            test={trackTest}
+            skill={ladderSkill}
+            position="end"
+          />
+        </div>
+      )}
+
+      {showIntentStack && (
+        <OfferLadderBlock
+          test={trackTest}
+          skill={ladderSkill}
+          pageType="lesson"
+          position="end"
+          className="lesson-offer-ladder"
+          heading="Choose the fastest way to improve"
+        />
+      )}
+
+      {showIntentStack && (
+        <OfferSequenceBlock
+          test={trackTest}
+          skill={ladderSkill}
+          pageType="lesson"
+          position="end"
+          className="lesson-offer-sequence"
+          heading="What to do next"
+        />
       )}
 
       <div class="surface" style="padding: var(--s-3); margin-top: var(--s-6);">
@@ -395,6 +718,27 @@ const seoKeywords = `${publicTitle}, ${item.data.category}, ${item.data.level}, 
           .replace(/[^\w\s]/g, " ")
           .replace(/\s+/g, " ")
           .trim();
+
+      const injectMidLessonCta = () => {
+        const template = document.getElementById("lesson-mid-cta-template");
+        if (!(template instanceof HTMLElement)) return;
+
+        const roots = Array.from(document.querySelectorAll("[data-lesson-body]"));
+        roots.forEach((root) => {
+          if (!(root instanceof HTMLElement)) return;
+          if (root.dataset.midCtaInjected === "true") return;
+
+          const blocks = Array.from(root.children).filter((child) => child instanceof HTMLElement);
+          if (blocks.length === 0) return;
+
+          const insertionIndex = Math.max(0, Math.floor(blocks.length / 2) - 1);
+          const ctaNode = template.firstElementChild?.cloneNode(true);
+          if (!(ctaNode instanceof HTMLElement)) return;
+
+          blocks[insertionIndex].insertAdjacentElement("afterend", ctaNode);
+          root.dataset.midCtaInjected = "true";
+        });
+      };
 
       const initializePracticeLab = () => {
         const roots = Array.from(document.querySelectorAll(".lesson-content"));
@@ -637,8 +981,13 @@ const seoKeywords = `${publicTitle}, ${item.data.category}, ${item.data.level}, 
         });
       };
 
-      initializePracticeLab();
-      document.addEventListener("astro:page-load", initializePracticeLab);
+      const initializeLessonEnhancements = () => {
+        injectMidLessonCta();
+        initializePracticeLab();
+      };
+
+      initializeLessonEnhancements();
+      document.addEventListener("astro:page-load", initializeLessonEnhancements);
     })();
   </script>
 </Layout>
