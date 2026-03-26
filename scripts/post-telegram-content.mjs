@@ -28,11 +28,19 @@ const FOOTER_LINES = [
 ];
 
 const STANDARD_FOOTER_LINES = [
-  '🌈✨ Kay\'s English Corner 🇨🇦',
-  'Your Gateway to English Success',
+  '✨ Kay\'s English Corner',
   '🌐 More lessons: https://ieltscorner.ca',
-  '👩‍🏫 Tutoring | ✍️ Writing feedback: https://ieltscorner.ca/tutoring | https://ieltscorner.ca/essay-correction',
+  '✍️ Feedback + tutoring: https://ieltscorner.ca/essay-correction | https://ieltscorner.ca/tutoring',
 ];
+
+const TELEGRAM_LIMITS = {
+  messageCharsHard: 4096,
+  messageCharsSoftLesson: 1500,
+  messageCharsSoftMini: 900,
+  pollQuestionChars: 300,
+  pollOptionChars: 100,
+  maxPollOptions: 10,
+};
 
 const CHANNEL_TOPICS = [
   {
@@ -696,6 +704,605 @@ const CHANNEL_TOPICS = [
   },
 ];
 
+const EXAM_CHANNEL_TOPICS = [
+  {
+    id: 'ielts-task2-clear-position',
+    examFocus: true,
+    lessonSlugs: [],
+    hashtags: ['#IELTS', '#Writing', '#Band7'],
+    lesson: {
+      title: '🧭 IELTS Task 2: make your position obvious early',
+      lines: [
+        'A lot of Band 6 essays are not weak because the grammar is terrible. They are weak because the examiner cannot see the writer\'s position fast enough 👇',
+        '',
+        'Common problem:',
+        'The introduction repeats the topic, but the opinion stays vague.',
+        '',
+        '❌ This essay will discuss both views and provide reasons.',
+        '✅ While both sides have merit, I believe public transport investment should come before highway expansion.',
+        '',
+        'Why this matters:',
+        'In Task Response, your opinion should be easy to find and consistent from start to finish.',
+        '',
+        'Better pattern:',
+        '1) paraphrase the issue',
+        '2) state your position clearly',
+        '3) keep body paragraphs aligned with that position',
+        '',
+        '🎯 Exam move:',
+        'After writing your intro, ask: can a tired examiner tell my answer in 5 seconds?',
+      ],
+      quiz: {
+        question: 'Which thesis is clearer for IELTS Task 2?',
+        options: [
+          'This essay will discuss the topic in detail.',
+          'Although both views exist, I believe stricter traffic laws are the more effective solution.',
+          'There are many opinions about this issue nowadays.',
+        ],
+        correctIndex: 1,
+        explanation: 'A clear IELTS thesis shows your position, not just the topic.',
+      },
+    },
+    mini: {
+      title: '⚡ IELTS Writing: do not hide your opinion',
+      lines: [
+        'In IELTS Task 2, a vague intro can quietly cap your score 👇',
+        '',
+        '❌ This essay will discuss both sides.',
+        '✅ I believe online learning should supplement, not replace, classroom teaching.',
+        '',
+        'Quick rule:',
+        'If the examiner cannot find your position fast, Task Response suffers.',
+        '',
+        '🎯 Mini challenge:',
+        'Write one clear opinion sentence on any education topic.',
+      ],
+      quiz: {
+        question: 'What must a strong IELTS intro include?',
+        options: ['Only background', 'A clear position', 'Three body examples'],
+        correctIndex: 1,
+        explanation: 'Your position should be visible early in the response.',
+      },
+    },
+  },
+  {
+    id: 'ielts-task1-overview-first',
+    examFocus: true,
+    lessonSlugs: [],
+    hashtags: ['#IELTS', '#AcademicWriting', '#Task1'],
+    lesson: {
+      title: '📊 IELTS Task 1: write the overview before details',
+      lines: [
+        'Many Task 1 answers lose marks because students jump into numbers without telling the big story first 👇',
+        '',
+        'The overview is not optional.',
+        'It shows the major trend, comparison, or contrast across the chart.',
+        '',
+        '❌ In 2000, sales were 20%, then 24%, then 19%...',
+        '✅ Overall, online sales rose steadily, while store sales declined after a brief peak.',
+        '',
+        'Why this matters:',
+        'Without a clear overview, Task Achievement usually stays limited.',
+        '',
+        'Good overview questions:',
+        'What went up?',
+        'What went down?',
+        'What stayed highest or lowest?',
+        '',
+        '🎯 Exam move:',
+        'Write the overview sentence before the body so your detail paragraphs stay controlled.',
+      ],
+      quiz: {
+        question: 'What belongs in an IELTS Task 1 overview?',
+        options: ['Every number from the chart', 'The main trends and comparisons', 'Your opinion about the data'],
+        correctIndex: 1,
+        explanation: 'The overview summarizes the big picture, not every figure.',
+      },
+    },
+    mini: {
+      title: '⚡ IELTS Task 1: overview first, numbers second',
+      lines: [
+        'If your Task 1 starts with random data, stop and do this instead 👇',
+        '',
+        'First write one sentence with the main trend.',
+        'Then add the numbers that prove it.',
+        '',
+        '✅ Overall, X rose while Y fell.',
+        '',
+        '🎯 Mini challenge:',
+        'Describe one chart trend in a single overview sentence.',
+      ],
+      quiz: {
+        question: 'What should usually come before detail figures?',
+        options: ['Overview', 'Conclusion opinion', 'Extra example'],
+        correctIndex: 0,
+        explanation: 'The overview gives structure to the rest of the answer.',
+      },
+    },
+  },
+  {
+    id: 'ielts-reading-tfng-logic',
+    examFocus: true,
+    lessonSlugs: [],
+    hashtags: ['#IELTS', '#Reading', '#Band7'],
+    lesson: {
+      title: '🔍 IELTS Reading: true / false / not given logic',
+      lines: [
+        'Students often lose easy IELTS reading marks because they treat Not Given like False 👇',
+        '',
+        'Use this logic:',
+        'True = the statement matches the text.',
+        'False = the text clearly contradicts it.',
+        'Not Given = the text does not tell you enough.',
+        '',
+        '🎯 Exam move:',
+        'Always point to one exact line before choosing True or False. If you cannot, Not Given becomes more likely.',
+      ],
+      quiz: {
+        question: 'When should you choose Not Given?',
+        options: ['When the statement is negative', 'When the text does not give enough information', 'When the statement seems unusual'],
+        correctIndex: 1,
+        explanation: 'Not Given means there is not enough evidence in the passage.',
+      },
+    },
+    mini: {
+      title: '⚡ IELTS Reading: Not Given is not False',
+      lines: [
+        'One quick IELTS trap fix 👇',
+        '',
+        'False = the text says the opposite.',
+        'Not Given = the text does not say enough.',
+        '',
+        '🎯 Mini challenge:',
+        'Before answering, ask: do I see contradiction, or just missing information?',
+      ],
+      quiz: {
+        question: 'What is the difference?',
+        options: ['They are the same', 'False is contradiction; Not Given is missing information', 'Not Given is stronger than True'],
+        correctIndex: 1,
+        explanation: 'That distinction is the core of this question type.',
+      },
+    },
+  },
+  {
+    id: 'ielts-listening-distractor-fix',
+    examFocus: true,
+    lessonSlugs: [],
+    hashtags: ['#IELTS', '#Listening', '#ExamStrategy'],
+    lesson: {
+      title: '🎧 IELTS Listening: catch the distractor before it catches you',
+      lines: [
+        'In IELTS Listening, the first answer you hear is often the trap, not the final answer 👇',
+        '',
+        'Example audio pattern:',
+        '"It was on Tuesday... sorry, no, they moved it to Thursday."',
+        '',
+        'Better habit:',
+        'Expect correction words like: sorry, actually, no, rather, instead, changed to.',
+        '',
+        '🎯 Exam move:',
+        'When you hear an answer, keep listening for 2-3 more seconds before locking it in.',
+      ],
+      quiz: {
+        question: 'Which word often signals a listening distractor?',
+        options: ['because', 'actually', 'therefore'],
+        correctIndex: 1,
+        explanation: 'Correction markers like actually often signal the real answer is coming next.',
+      },
+    },
+    mini: {
+      title: '⚡ IELTS Listening: do not trust the first number',
+      lines: [
+        'A fast listening rule for exam day 👇',
+        '',
+        'First answer heard does not always mean final answer.',
+        'Stay alert for: sorry, actually, no, changed to.',
+        '',
+        '🎯 Mini challenge:',
+        'Train yourself to wait for the correction marker.',
+      ],
+      quiz: {
+        question: 'What should you expect after a distractor?',
+        options: ['Silence', 'A correction', 'A new topic only'],
+        correctIndex: 1,
+        explanation: 'The speaker often corrects or replaces the first detail.',
+      },
+    },
+  },
+  {
+    id: 'ielts-speaking-part3-depth',
+    examFocus: true,
+    lessonSlugs: [],
+    hashtags: ['#IELTS', '#Speaking', '#Band7'],
+    lesson: {
+      title: '🗣️ IELTS Speaking Part 3: add depth, not just length',
+      lines: [
+        'Long answers do not automatically score high in IELTS Speaking Part 3. Depth matters more than rambling 👇',
+        '',
+        'Better pattern:',
+        'state an idea -> explain why -> give an example -> compare or qualify it',
+        '',
+        '🎯 Exam move:',
+        'If your answer feels short, add one reason and one real-world example before stopping.',
+      ],
+      quiz: {
+        question: 'What usually makes a Part 3 answer stronger?',
+        options: ['Speaking faster', 'Adding explanation and example', 'Using only advanced words'],
+        correctIndex: 1,
+        explanation: 'Depth comes from development, not speed or decoration.',
+      },
+    },
+    mini: {
+      title: '⚡ IELTS Speaking Part 3: answer + why + example',
+      lines: [
+        'A simple Band 7 speaking frame 👇',
+        '',
+        '1) answer the question',
+        '2) say why',
+        '3) add one example',
+        '',
+        '🎯 Mini challenge:',
+        'Try this frame on one Part 3 question today.',
+      ],
+      quiz: {
+        question: 'Which structure helps development most?',
+        options: ['Answer only', 'Answer + why + example', 'Three synonyms'],
+        correctIndex: 1,
+        explanation: 'That structure adds useful depth without overcomplicating the answer.',
+      },
+    },
+  },
+  {
+    id: 'ielts-writing-idea-support',
+    examFocus: true,
+    lessonSlugs: [],
+    hashtags: ['#IELTS', '#Writing', '#Task2'],
+    lesson: {
+      title: '✍️ IELTS Task 2: one clear idea beats three weak ones',
+      lines: [
+        'Students often try to sound smart by adding too many ideas in one paragraph. The result is usually thin support and weak logic 👇',
+        '',
+        'Strong pattern:',
+        'topic sentence -> explanation -> concrete example -> link back to question',
+        '',
+        '🎯 Exam move:',
+        'Before writing each paragraph, ask: what is this paragraph trying to prove?',
+      ],
+      quiz: {
+        question: 'What usually makes a Task 2 body paragraph stronger?',
+        options: ['Many undeveloped ideas', 'One main idea with support', 'A memorized quote'],
+        correctIndex: 1,
+        explanation: 'Depth and clarity beat idea overload.',
+      },
+    },
+    mini: {
+      title: '⚡ IELTS Writing: do less, support more',
+      lines: [
+        'A quick paragraph rule for Task 2 👇',
+        '',
+        'Do not pack 3 weak reasons into one paragraph.',
+        'Use 1 clear reason and support it properly.',
+        '',
+        '🎯 Mini challenge:',
+        'Write one topic sentence and one example that proves it.',
+      ],
+      quiz: {
+        question: 'What should one body paragraph usually contain?',
+        options: ['One main idea', 'Five unrelated points', 'Only a conclusion'],
+        correctIndex: 0,
+        explanation: 'A clear paragraph normally develops one main idea.',
+      },
+    },
+  },
+  {
+    id: 'celpip-task1-tone-and-purpose',
+    examFocus: true,
+    lessonSlugs: [],
+    hashtags: ['#CELPIP', '#Writing', '#CLB9'],
+    lesson: {
+      title: '📧 CELPIP Task 1: match the tone to the situation',
+      lines: [
+        'A surprising number of CELPIP Task 1 emails lose marks because the tone does not match the purpose 👇',
+        '',
+        '❌ Hey, I want you to fix this problem now.',
+        '✅ I am writing to report an issue and request a prompt solution.',
+        '',
+        '🎯 Exam move:',
+        'Underline the relationship first: friend, company, manager, school, community group.',
+      ],
+      quiz: {
+        question: 'Which line suits a formal complaint email better?',
+        options: ['Fix this now.', 'I am writing to express concern about the recent service issue.', 'What is going on here?'],
+        correctIndex: 1,
+        explanation: 'Formal complaint emails need controlled, appropriate tone.',
+      },
+    },
+    mini: {
+      title: '⚡ CELPIP Task 1: tone first, sentences second',
+      lines: [
+        'Before you write a CELPIP email, identify the relationship 👇',
+        '',
+        'Manager or company = formal',
+        'Friend or close contact = less formal',
+        '',
+        '🎯 Mini challenge:',
+        'Rewrite one rude request as a professional email sentence.',
+      ],
+      quiz: {
+        question: 'What should you check first in Task 1?',
+        options: ['Font style', 'Relationship and tone', 'Essay conclusion'],
+        correctIndex: 1,
+        explanation: 'Tone depends on who you are writing to and why.',
+      },
+    },
+  },
+  {
+    id: 'celpip-task2-pick-a-side',
+    examFocus: true,
+    lessonSlugs: [],
+    hashtags: ['#CELPIP', '#Writing', '#Task2'],
+    lesson: {
+      title: '🧱 CELPIP Task 2: choose a side and stay there',
+      lines: [
+        'Many CELPIP Task 2 responses sound weak because the writer keeps switching position in the middle of the answer 👇',
+        '',
+        '❌ Online classes are good, but in-person classes are also good, and both have benefits.',
+        '✅ Although both formats help learners, in-person classes are usually more effective because students receive immediate feedback and stronger accountability.',
+        '',
+        '🎯 Exam move:',
+        'If you mention the other side, do it briefly. Most of the paragraph should support your chosen option.',
+      ],
+      quiz: {
+        question: 'What usually helps a CELPIP Task 2 response most?',
+        options: ['Switching sides repeatedly', 'A clear choice with support', 'Using four unrelated examples'],
+        correctIndex: 1,
+        explanation: 'A clear, supported position creates stronger organization.',
+      },
+    },
+    mini: {
+      title: '⚡ CELPIP Task 2: stop wobbling between both sides',
+      lines: [
+        'One direct CELPIP fix 👇',
+        '',
+        'Choose one side.',
+        'Support it with reasons.',
+        'Do not keep changing your answer mid-response.',
+        '',
+        '🎯 Mini challenge:',
+        'Write one sentence that clearly chooses option A or B.',
+      ],
+      quiz: {
+        question: 'What weakens Task 2 organization?',
+        options: ['Clear decision', 'Switching position repeatedly', 'One main reason'],
+        correctIndex: 1,
+        explanation: 'Frequent position changes make the response unstable.',
+      },
+    },
+  },
+  {
+    id: 'celpip-speaking-task5-framework',
+    examFocus: true,
+    lessonSlugs: [],
+    hashtags: ['#CELPIP', '#Speaking', '#CLB9'],
+    lesson: {
+      title: '🎙️ CELPIP Speaking Task 5: compare, choose, justify',
+      lines: [
+        'Task 5 gets easier when you stop describing both options equally and start making a decision clearly 👇',
+        '',
+        'Good structure:',
+        '1) compare both options briefly',
+        '2) choose one',
+        '3) justify it with 2 practical reasons',
+        '',
+        '🎯 Exam move:',
+        'Use recommendation language early: I would choose, I would recommend, the better option is.',
+      ],
+      quiz: {
+        question: 'What is the key job in CELPIP Speaking Task 5?',
+        options: ['Only describe both options', 'Choose and justify one option', 'Tell a personal story only'],
+        correctIndex: 1,
+        explanation: 'Task 5 is not just comparison; it is comparison plus recommendation.',
+      },
+    },
+    mini: {
+      title: '⚡ CELPIP Speaking Task 5: do not end with “both are good”',
+      lines: [
+        'A fast fix for Task 5 👇',
+        '',
+        'Compare briefly.',
+        'Choose clearly.',
+        'Give 2 reasons.',
+        '',
+        '🎯 Mini challenge:',
+        'Recommend one of two phones in one sentence.',
+      ],
+      quiz: {
+        question: 'What should appear in a strong Task 5 answer?',
+        options: ['A recommendation', 'No clear choice', 'Only description'],
+        correctIndex: 0,
+        explanation: 'The task expects a choice and justification.',
+      },
+    },
+  },
+  {
+    id: 'celpip-reading-proof-not-keywords',
+    examFocus: true,
+    lessonSlugs: [],
+    hashtags: ['#CELPIP', '#Reading', '#CLB8'],
+    lesson: {
+      title: '📖 CELPIP Reading: proof beats keyword matching',
+      lines: [
+        'A common CELPIP reading problem is choosing the option that repeats a keyword, even when the meaning is wrong 👇',
+        '',
+        'Keyword match is only the start.',
+        'Meaning match is the real check.',
+        '',
+        '🎯 Exam move:',
+        'After finding the keyword, read one sentence before and one sentence after. Then ask: does this option match the meaning exactly?',
+      ],
+      quiz: {
+        question: 'What should decide your answer in CELPIP reading?',
+        options: ['Shared keywords only', 'Exact meaning and proof', 'Longest option'],
+        correctIndex: 1,
+        explanation: 'Shared vocabulary is not enough without meaning match.',
+      },
+    },
+    mini: {
+      title: '⚡ CELPIP Reading: matching words is not enough',
+      lines: [
+        'One reading rule that saves marks 👇',
+        '',
+        'Do not choose an answer only because it repeats a word from the passage.',
+        'Check whether it matches the idea exactly.',
+        '',
+        '🎯 Mini challenge:',
+        'For your next reading set, justify each answer with one proof line.',
+      ],
+      quiz: {
+        question: 'What is more important than keyword overlap?',
+        options: ['Exact meaning', 'Fast guessing', 'Option length'],
+        correctIndex: 0,
+        explanation: 'Meaning and proof determine the correct answer.',
+      },
+    },
+  },
+  {
+    id: 'celpip-listening-speaker-attitude',
+    examFocus: true,
+    lessonSlugs: [],
+    hashtags: ['#CELPIP', '#Listening', '#CLB9'],
+    lesson: {
+      title: '🎧 CELPIP Listening: hear the speaker attitude, not just the words',
+      lines: [
+        'Some CELPIP listening answers depend more on attitude and intention than on direct facts 👇',
+        '',
+        'Listen for:',
+        'tone changes',
+        'stress on key words',
+        'phrases like “I guess”, “fortunately”, “to be honest”, “that is disappointing”',
+        '',
+        '🎯 Exam move:',
+        'When you hear emotional language, pause mentally and label the feeling in one word.',
+      ],
+      quiz: {
+        question: 'What helps most with speaker attitude questions?',
+        options: ['Listening only for numbers', 'Tracking tone and intention', 'Ignoring stressed words'],
+        correctIndex: 1,
+        explanation: 'These questions often depend on tone, not just facts.',
+      },
+    },
+    mini: {
+      title: '⚡ CELPIP Listening: tone carries meaning too',
+      lines: [
+        'A fast listening reminder 👇',
+        '',
+        'Do not only hear the words.',
+        'Hear the attitude behind them: annoyed, relieved, excited, unsure.',
+        '',
+        '🎯 Mini challenge:',
+        'Label the speaker feeling in one word during your next practice audio.',
+      ],
+      quiz: {
+        question: 'What do attitude questions test?',
+        options: ['Tone and intention', 'Spelling only', 'Grammar rules'],
+        correctIndex: 0,
+        explanation: 'They test whether you can interpret the speaker’s tone and purpose.',
+      },
+    },
+  },
+  {
+    id: 'celpip-task1-bullets-plan',
+    examFocus: true,
+    lessonSlugs: [],
+    hashtags: ['#CELPIP', '#Writing', '#Task1'],
+    lesson: {
+      title: '📝 CELPIP Task 1: turn bullet points into paragraph jobs',
+      lines: [
+        'Students know they must cover all Task 1 bullets, but many still miss one because they never convert the bullets into a writing plan 👇',
+        '',
+        'Better method:',
+        'Bullet 1 = paragraph job 1',
+        'Bullet 2 = paragraph job 2',
+        'Bullet 3 = paragraph job 3',
+        '',
+        '🎯 Exam move:',
+        'Before writing, jot 3 tiny notes beside the bullets so no job disappears under time pressure.',
+      ],
+      quiz: {
+        question: 'What is a safer planning method for Task 1?',
+        options: ['Ignore the bullets after reading them', 'Convert each bullet into a job in your answer', 'Memorize one generic email'],
+        correctIndex: 1,
+        explanation: 'Turning bullets into clear jobs helps prevent missing content.',
+      },
+    },
+    mini: {
+      title: '⚡ CELPIP Task 1: each bullet needs visible language',
+      lines: [
+        'Quick Task 1 planning rule 👇',
+        '',
+        'Do not just read the bullets.',
+        'Turn them into writing jobs before you start.',
+        '',
+        '🎯 Mini challenge:',
+        'Take one Task 1 prompt and write a 3-point plan from the bullets.',
+      ],
+      quiz: {
+        question: 'What helps you avoid missing a prompt point?',
+        options: ['A bullet-to-job plan', 'Writing immediately with no plan', 'Only checking grammar'],
+        correctIndex: 0,
+        explanation: 'Planning from the bullets helps you cover all required points.',
+      },
+    },
+  },
+  {
+    id: 'ielts-task2-example-quality',
+    examFocus: true,
+    lessonSlugs: [],
+    hashtags: ['#IELTS', '#Writing', '#Band7'],
+    lesson: {
+      title: '💡 IELTS Task 2: one specific example is better than a vague generality',
+      lines: [
+        'Many IELTS essays sound reasonable until the example arrives. Then the support becomes generic and weak 👇',
+        '',
+        'Weak support:',
+        'For example, this is helpful for society in many ways.',
+        '',
+        'Stronger support:',
+        'For example, when cities expand bus routes to industrial areas, workers without private cars can reach jobs more reliably and at lower cost.',
+        '',
+        '🎯 Exam move:',
+        'After each example, ask: could this happen in a real place with real people? If not, make it more concrete.',
+      ],
+      quiz: {
+        question: 'What kind of example usually helps more in IELTS Task 2?',
+        options: ['A vague general statement', 'A concrete and relevant example', 'No example at all'],
+        correctIndex: 1,
+        explanation: 'Specific, relevant examples strengthen argument quality.',
+      },
+    },
+    mini: {
+      title: '⚡ IELTS Task 2: make your example real',
+      lines: [
+        'A fast writing quality check 👇',
+        '',
+        'If your example could apply to anything, it is too vague.',
+        'Add a place, group, situation, or clear result.',
+        '',
+        '🎯 Mini challenge:',
+        'Rewrite one vague example so it sounds real and testable.',
+      ],
+      quiz: {
+        question: 'What improves example quality most?',
+        options: ['Specific detail', 'Longer sentence length', 'More memorized phrases'],
+        correctIndex: 0,
+        explanation: 'Specific detail makes the example more credible and useful.',
+      },
+    },
+  },
+];
+
+const TOPIC_POOL = [...EXAM_CHANNEL_TOPICS, ...CHANNEL_TOPICS];
+
 function stripWrappingQuotes(value) {
   const trimmed = String(value ?? '').trim();
   if (
@@ -813,12 +1420,7 @@ function escapeTelegramHtml(text = '') {
 }
 
 function normalizeTelegramLine(text = '') {
-  return String(text)
-    .replace(/^ðŸ“˜\s*/u, '&#128214; ')
-    .replace(/^ðŸŒˆâœ¨\s*/u, '&#127752;&#10024; ')
-    .replace(/^ðŸŒ\s*/u, '&#127760; ')
-    .replace(/^ðŸ§‘â€ðŸ«\s*/u, '&#128105;&#8205;&#127979; ')
-    .replace(/^âœï¸\s*/u, '&#9997;&#65039; ');
+  return String(text ?? '');
 }
 
 function formatTelegramLine(line, lineIndex) {
@@ -829,11 +1431,11 @@ function formatTelegramLine(line, lineIndex) {
     return `<b>${trimmed}</b>`;
   }
 
-  if (/^Your Gateway to English Success$/i.test(trimmed)) {
+  if (/^✨\s*Kay's English Corner$/i.test(trimmed)) {
     return `<i>${escapeTelegramHtml(trimmed)}</i>`;
   }
 
-  if (/^(More lessons|Full lesson|Tutoring \| Writing feedback)/i.test(trimmed.replace(/^[^A-Za-z]+/, ''))) {
+  if (/^(More lessons|Full lesson|Feedback \+ tutoring)/i.test(trimmed.replace(/^[^A-Za-z]+/, ''))) {
     return `<u>${escapeTelegramHtml(trimmed)}</u>`;
   }
 
@@ -853,6 +1455,55 @@ function formatTelegramPost(text = '') {
     .split(/\r?\n/)
     .map((line, index) => formatTelegramLine(line, index))
     .join('\n');
+}
+
+function compactTelegramText(text = '') {
+  return String(text)
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+function validateTelegramPayload(content, messageText, mode) {
+  const warnings = [];
+  const plainText = htmlToPlainText(messageText);
+  const softLimit = mode === 'mini-tip'
+    ? TELEGRAM_LIMITS.messageCharsSoftMini
+    : TELEGRAM_LIMITS.messageCharsSoftLesson;
+
+  if (messageText.length > TELEGRAM_LIMITS.messageCharsHard) {
+    throw new Error(`Telegram message too long: ${messageText.length} chars (max ${TELEGRAM_LIMITS.messageCharsHard}).`);
+  }
+
+  if (plainText.length > softLimit) {
+    warnings.push(`message is ${plainText.length} chars; target for ${mode} is <= ${softLimit}`);
+  }
+
+  if (content.quiz) {
+    if (String(content.quiz.question ?? '').length > TELEGRAM_LIMITS.pollQuestionChars) {
+      throw new Error(`Telegram poll question too long: ${String(content.quiz.question).length} chars.`);
+    }
+
+    if (!Array.isArray(content.quiz.options) || content.quiz.options.length < 2) {
+      throw new Error('Telegram quiz must have at least 2 options.');
+    }
+
+    if (content.quiz.options.length > TELEGRAM_LIMITS.maxPollOptions) {
+      throw new Error(`Telegram quiz has too many options: ${content.quiz.options.length}.`);
+    }
+
+    for (const option of content.quiz.options) {
+      if (String(option ?? '').length > TELEGRAM_LIMITS.pollOptionChars) {
+        throw new Error(`Telegram poll option too long: ${String(option).length} chars.`);
+      }
+    }
+  }
+
+  return {
+    htmlChars: messageText.length,
+    plainChars: plainText.length,
+    warnings,
+  };
 }
 
 function buildMessage(topic, mode) {
@@ -875,7 +1526,7 @@ function findTopicByQuery(query) {
   const needle = normalizeSearch(query);
   if (!needle) return null;
 
-  return CHANNEL_TOPICS.find((topic) => {
+  return TOPIC_POOL.find((topic) => {
     const haystacks = [
       topic.id,
       ...(topic.lessonSlugs ?? []),
@@ -908,21 +1559,32 @@ function pickTopic(options, history, topicDedupeDays) {
   }
 
   const postKind = options.mode === 'mini-tip' ? 'mini-tip' : 'lesson';
-  const startIndex = pickDeterministicIndex(CHANNEL_TOPICS.length, options.mode === 'mini-tip' ? 29 : 11);
-  for (let offset = 0; offset < CHANNEL_TOPICS.length; offset += 1) {
-    const candidate = CHANNEL_TOPICS[(startIndex + offset) % CHANNEL_TOPICS.length];
-    if (!hasRecentTopic(history, candidate.id, { kind: postKind, maxAgeDays: topicDedupeDays })) {
-      return candidate;
-    }
+  const eligibleTopics = TOPIC_POOL.filter(
+    (candidate) => !hasRecentTopic(history, candidate.id, { kind: postKind, maxAgeDays: topicDedupeDays })
+  );
+
+  if (eligibleTopics.length === 0) {
+    console.log(`[skip] All ${TOPIC_POOL.length} topics were already posted as ${postKind} in the last ${topicDedupeDays} days.`);
+    return null;
   }
 
-  console.log(`[skip] All ${CHANNEL_TOPICS.length} topics were already posted as ${postKind} in the last ${topicDedupeDays} days.`);
-  return null;
+  const examFocusedTopics = eligibleTopics.filter((candidate) => candidate.examFocus === true);
+  const shouldPreferExamFocus =
+    examFocusedTopics.length > 0
+    && pickDeterministicIndex(5, options.mode === 'mini-tip' ? 41 : 17) !== 0;
+
+  const selectionPool = shouldPreferExamFocus ? examFocusedTopics : eligibleTopics;
+  const startIndex = pickDeterministicIndex(selectionPool.length, options.mode === 'mini-tip' ? 29 : 11);
+  return selectionPool[startIndex] ?? null;
 }
 
-function buildPostMessage(content) {
+function buildPostMessage(content, mode) {
   const hashLine = content.hashtags.length ? `\n\n${content.hashtags.join(' ')}` : '';
-  return `${formatTelegramPost(content.postBody)}${hashLine}`;
+  const formatted = compactTelegramText(`${formatTelegramPost(content.postBody)}${hashLine}`);
+  return {
+    messageText: formatted,
+    compatibility: validateTelegramPayload(content, formatted, mode),
+  };
 }
 
 async function telegramRequest(method, payload, token) {
@@ -957,9 +1619,10 @@ async function main() {
 
   const postKind = options.mode === 'mini-tip' ? 'mini-tip' : 'lesson';
   const content = buildMessage(pickedTopic, options.mode);
+  const { messageText, compatibility } = buildPostMessage(content, options.mode);
 
   if (options.dryRun) {
-    console.log(JSON.stringify({ mode: 'dry-run', pickedTopic: pickedTopic.id, content }, null, 2));
+    console.log(JSON.stringify({ mode: 'dry-run', pickedTopic: pickedTopic.id, content, compatibility, messageText }, null, 2));
     return;
   }
 
@@ -969,8 +1632,11 @@ async function main() {
     throw new Error('Missing TELEGRAM_BOT_TOKEN and/or target channel (TELEGRAM_CHAT_ID or TELEGRAM_CHANNEL_URL).');
   }
 
-  const messageText = buildPostMessage(content);
   const fingerprint = createContentFingerprint(messageText, { stripSignature: false });
+
+  for (const warning of compatibility.warnings) {
+    console.warn(`[warn] Telegram compatibility: ${warning}`);
+  }
 
   if (hasFingerprint(history, fingerprint)) {
     console.log('[skip] Duplicate content found in persistent history. Skipping publish.');

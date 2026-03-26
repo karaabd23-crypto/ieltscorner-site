@@ -1,32 +1,112 @@
 # Session Catalog
 
-Generated: 2026-03-20T07:54:50.354Z
+Generated: 2026-03-26T01:52:55.066Z
 
 ## Counts
 
-- Total: 26
-- Codex: 2
-- VS Code chat: 24
+- Total: 35
+- Codex: 3
+- VS Code chat: 32
 
 ## Sessions
 
-### Automatically save chat history for new conversations
+### Fixing repeated posts in Telegram scheduler
 - Source: vscode-chat
-- ID: aab3290b-f54e-418a-a15f-0bf4a05fef14
-- Created: 2026-03-20T07:50:23.910Z
-- Updated: 2026-03-20T07:54:46.855Z
-- Prompt: add everything in this conversation to the record because I am going to start a new chat and I
-- Final: Now let me refresh the session catalog one final time so it includes this session's work:
-- File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\99c7524e034dea3b9bb59bd56c463b99\chatSessions\aab3290b-f54e-418a-a15f-0bf4a05fef14.jsonl
+- ID: 1ebc05b3-eee8-4887-8bbe-c62d4c8ec65b
+- Created: 2026-03-24T03:36:01.444Z
+- Updated: 2026-03-26T01:52:25.473Z
+- Prompt: The telegram post scheduler is posting repeated posts. Don't let i
+- Final: Searched for text `examFocus: true` (`**/scripts/post-telegram-content.mjs`), 13 results
+- File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\99c7524e034dea3b9bb59bd56c463b99\chatSessions\1ebc05b3-eee8-4887-8bbe-c62d4c8ec65b.jsonl
+
+### Add landing pages for CELPIP and IEL
+- Source: codex
+- ID: 019d2353-7041-78b3-b4d7-1e00ade15a68
+- Created: 2026-03-25T04:49:24.037Z
+- Updated: 2026-03-25T04:49:32.2608704Z
+- CWD: c:\Users\Karaa\Documents\ieltscorner-site
+- Prompt: # Context from my IDE setup: ## Open tabs: - delete-duplicates.mjs: scripts/delete-duplicates.mjs ## My request for Codex: You are an expert full-stack developer, conversion strategist, and SEO architect working inside…
+- Final: Fixed and now live. What I did: - Fixed malformed lesson CTA markup that caused the broken pill/button layout. - Standardized CTA button sizing in global styles. - Replaced old `bottleneck` CTA variation text with `prob…
+- File: C:\Users\Karaa\.codex\sessions\2026\03\24\rollout-2026-03-24T21-49-24-019d2353-7041-78b3-b4d7-1e00ade15a68.jsonl
+
+### Adding "Book a Class" Button to CELPIP Page
+- Source: vscode-chat
+- ID: 36823848-616d-4757-ac4b-a68a08e687f8
+- Created: 2026-03-24T02:02:00.240Z
+- Updated: 2026-03-24T03:36:01.506Z
+- Prompt: Add a "Book a Class" button to /celpip because I usually
+- Final: Committed and pushed (`600cfce`). 52 files changed across the site — all em/en dashes removed, hero images faded to 55%, and the top banner made transparent with red outline. The Netlify deploy should trigger automatica…
+- File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\99c7524e034dea3b9bb59bd56c463b99\chatSessions\36823848-616d-4757-ac4b-a68a08e687f8.jsonl
+
+### 7bf63009-f9e7-4397-a091-ae76e639b858
+- Source: vscode-chat
+- ID: 7bf63009-f9e7-4397-a091-ae76e639b858
+- Created: 2026-03-23T03:32:00.262Z
+- Updated: 2026-03-23T03:33:11.315Z
+- Prompt: d
+- Final: <skills> Skills provide specialized capabilities, domain knowledge, and refined workflows for producing high-quality outputs. Each skill folder contains tested instructions for specific domains like testing strategies,…
+- File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\99c7524e034dea3b9bb59bd56c463b99\chatSessions\7bf63009-f9e7-4397-a091-ae76e639b858.jsonl
 
 ### Automating lesson creation and upload without API key
 - Source: vscode-chat
 - ID: e551877e-766a-4d03-afea-8a74b51a024d
 - Created: 2026-03-19T06:43:44.722Z
-- Updated: 2026-03-20T07:18:45.429Z
+- Updated: 2026-03-21T15:57:13.334Z
 - Prompt: /ini
 - Final: <skills> Skills provide specialized capabilities, domain knowledge, and refined workflows for producing high-quality outputs. Each skill folder contains tested instructions for specific domains like testing strategies,…
 - File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\99c7524e034dea3b9bb59bd56c463b99\chatSessions\e551877e-766a-4d03-afea-8a74b51a024d.jsonl
+
+### CELPIP Positioning Overhaul Phase 1 Execution
+- Source: vscode-chat
+- ID: f4c8bf89-4be1-4ea4-8f5c-a0215097895b
+- Created: 2026-03-20T09:19:11.923Z
+- Updated: 2026-03-21T03:35:35.510Z
+- Prompt: You are an AI coding agent working inside an Astro project for a live production website. Your task is to execute **Phase 1: CELPIP Positioning Overhaul**. ⚠️ CRITICAL RULES (DO NOT BREAK THESE): * DO NOT modify global.…
+- Final: ** — template-driven feedback strings So the page says *"Kara personally trained the AI"* — but there is **no AI**. It's a deterministic heuristic engine using regex, word lists, and weighted scoring formulas. No machin…
+- File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\99c7524e034dea3b9bb59bd56c463b99\chatSessions\f4c8bf89-4be1-4ea4-8f5c-a0215097895b.jsonl
+
+### Building a Simple OpenAI-Powered Tool
+- Source: vscode-chat
+- ID: dd3e076d-afc9-49a3-b2cd-d3d529b26667
+- Created: 2026-03-20T16:23:48.970Z
+- Updated: 2026-03-20T16:42:44.798Z
+- Prompt: Yes. Paste this into your VS Code agent exactly as a single task. ```text You are helping a beginner build a very small OpenAI-powered helper tool on a local computer. Your job is NOT to over-engineer. Your job is to cr…
+- Final: + `python-dotenv 1.2.2` + all transitive deps — all succeeded. **Note:** The venv activation failed (no `venv` folder exists — you were running with your system Python from the Microsoft Store). The packages installed g…
+- File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\74dca58894403bbebe31e736c240bd27\chatSessions\dd3e076d-afc9-49a3-b2cd-d3d529b26667.jsonl
+
+### Fixing URL redirection issue on WhatsApp
+- Source: vscode-chat
+- ID: 45b6a2ae-27dc-48a2-9018-384949c67a72
+- Created: 2026-03-20T08:11:32.029Z
+- Updated: 2026-03-20T09:01:02.098Z
+- Prompt: I own celpip.com and .ca but sometimes, when I share those urls on whatsapp, they don't open. I think its because they re
+- Final: Pushed. The deploy workflow should trigger automatically. Once Netlify finishes building and you've added the domain aliases in the Netlify dashboard, test by sharing `https://celpipcorner.com` in a WhatsApp chat — it s…
+- File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\99c7524e034dea3b9bb59bd56c463b99\chatSessions\45b6a2ae-27dc-48a2-9018-384949c67a72.jsonl
+
+### Automatically save chat history for new conversations
+- Source: vscode-chat
+- ID: aab3290b-f54e-418a-a15f-0bf4a05fef14
+- Created: 2026-03-20T07:50:23.910Z
+- Updated: 2026-03-20T08:10:03.924Z
+- Prompt: add everything in this conversation to the record because I am going to start a new chat and I
+- Final: <skills> Skills provide specialized capabilities, domain knowledge, and refined workflows for producing high-quality outputs. Each skill folder contains tested instructions for specific domains like testing strategies,…
+- File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\99c7524e034dea3b9bb59bd56c463b99\chatSessions\aab3290b-f54e-418a-a15f-0bf4a05fef14.jsonl
+
+### 92182e92-2c33-4a00-870e-20800ddac6bb
+- Source: vscode-chat
+- ID: 92182e92-2c33-4a00-870e-20800ddac6bb
+- Created: 2026-03-20T08:06:27.095Z
+- Updated: 2026-03-20T08:06:41.350Z
+- File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\99c7524e034dea3b9bb59bd56c463b99\chatSessions\92182e92-2c33-4a00-870e-20800ddac6bb.jsonl
+
+### Running the development server command
+- Source: vscode-chat
+- ID: b53a607f-c11c-40b3-9de3-095c114d8363
+- Created: 2026-03-20T07:55:23.927Z
+- Updated: 2026-03-20T08:02:04.681Z
+- Prompt: Yes. Is it because of the background process that
+- Final: Yes — the Astro dev server (`npm run dev`) is still running in the background on `localhost:4321`. No other background tasks are active.
+- File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\99c7524e034dea3b9bb59bd56c463b99\chatSessions\b53a607f-c11c-40b3-9de3-095c114d8363.jsonl
 
 ### Improving Weak Sentences in Lessons
 - Source: vscode-chat
