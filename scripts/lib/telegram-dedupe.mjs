@@ -5,7 +5,7 @@ import path from 'node:path';
 const DEFAULT_HISTORY_FILE = '.cache/telegram-post-history.json';
 const DEFAULT_CLAIMS_DIR = '.cache/telegram-post-claims';
 const HISTORY_MAX_ITEMS = 5000;
-const DEFAULT_TOPIC_DEDUPE_DAYS = 60;
+const DEFAULT_TOPIC_DEDUPE_DAYS = 7;
 
 export function htmlToPlainText(value) {
   return String(value ?? '')

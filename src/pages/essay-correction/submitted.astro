@@ -1,0 +1,58 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Essay Submitted | Next Step"
+  description="Your essay submission has been received. Here is the recommended next action."
+  noindex={true}
+>
+  <section class="section">
+    <div class="landing-shell">
+      <section class="landing-hero">
+        <p class="landing-eyebrow">Submission Confirmed</p>
+        <h1>Your Essay Submission Was Received</h1>
+        <p class="landing-subheadline">
+          Your essay is queued for review. We will email your corrected essay and score-focused feedback to the email you submitted in the form.
+        </p>
+        <p class="muted" style="margin: var(--s-2) 0 0;">
+          Next: watch for our email, then apply the revision priorities in your next writing practice.
+        </p>
+      </section>
+
+      <section class="landing-section">
+        <h2>Next step while your essay is being reviewed</h2>
+        <a
+          class="btn btn-primary"
+          href="/webinar?src=essay-submitted-next-step"
+          data-track-click="essay-submitted-next-step-webinar"
+          data-track-page-type="landing"
+          data-track-offer="weekly_training"
+          data-track-test="ielts_celpip"
+          data-track-skill="writing"
+          data-track-position="hero"
+          data-track-intent="purchase"
+        >
+          Join Weekly Live Training ($12)
+        </a>
+      </section>
+
+      <section class="landing-section">
+        <h2>Need private support on top of your report?</h2>
+        <a
+          class="btn btn-primary"
+          href="/tutoring?src=essay-submitted-upsell"
+          data-track-click="essay-submitted-upsell-tutoring"
+          data-track-page-type="landing"
+          data-track-offer="tutoring"
+          data-track-test="ielts_celpip"
+          data-track-skill="writing"
+          data-track-position="mid"
+          data-track-intent="booking"
+        >
+          Book 1:1 Writing Session
+        </a>
+      </section>
+    </div>
+  </section>
+</Layout>

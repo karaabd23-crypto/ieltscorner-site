@@ -10,7 +10,7 @@ const skillLessons = (
     ({ data }) =>
       !data.draft &&
       data.exam.includes("CELPIP") &&
-      ["vocabulary", "grammar", "speaking"].includes(data.category)
+      ["reading", "vocabulary", "grammar"].includes(data.category)
   )
 )
   .sort((a, b) => (a.data.date < b.data.date ? 1 : -1))
@@ -25,7 +25,36 @@ const skillLessons = (
     <div class="hero" style={`--hero-bg: url('/heroes/reading.png');`}>
       <div class="hero-content">
         <span class="pill">📖 CELPIP Reading</span>
-        <h1>Read faster, understand deeper, score higher</h1>
+        <h1>Break the CLB 6 reading ceiling and push toward CLB 8</h1>
+        <p class="muted" style="max-width: 62ch;">
+          Use focused reading strategy for distractors, inference, timing, and viewpoint questions so your score stops stalling.
+        </p>
+        <div class="cluster">
+          <a
+            class="btn btn-primary"
+            href="/celpip/reading/clb-6-to-8"
+            data-track-click="celpip-reading-hero-rescue"
+            data-track-page-type="hub"
+            data-track-offer="reading_rescue"
+            data-track-test="celpip"
+            data-track-skill="reading"
+            data-track-position="hero"
+          >
+            Open CLB 6 to 8 Rescue Hub
+          </a>
+          <a
+            class="btn"
+            href="/tutoring"
+            data-track-click="celpip-reading-hero-tutoring"
+            data-track-page-type="hub"
+            data-track-offer="tutoring"
+            data-track-test="celpip"
+            data-track-skill="reading"
+            data-track-position="hero"
+          >
+            Get Reading-Focused Tutoring
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -40,6 +69,7 @@ const skillLessons = (
         <a class="btn" href="/celpip">CELPIP Home</a>
         <a class="btn" href="/celpip/listening">Listening</a>
         <a class="btn btn-primary" href="/celpip/reading">Reading</a>
+        <a class="btn btn-primary" href="/celpip/reading/clb-6-to-8">CLB 6 to 8 Rescue</a>
         <a class="btn" href="/celpip/speaking">Speaking</a>
         <a class="btn" href="/celpip/writing">Writing</a>
         <a class="btn" href="/lessons">All Lessons</a>
@@ -154,11 +184,33 @@ const skillLessons = (
       <!-- CTA -->
       <div class="surface" style="padding: var(--s-6);">
         <div class="stack" style="gap: var(--s-4); text-align: center;">
-          <h2>Ready to boost your reading score?</h2>
-          <p class="muted">Practice with real CELPIP-style passages and timed question sets.</p>
+          <h2>Need to move from CLB 6 reading to CLB 8?</h2>
+          <p class="muted">Use the rescue hub, then get targeted support for your weakest reading question types.</p>
           <div class="cluster" style="justify-content: center;">
-            <a class="btn btn-primary" href="/celpip/reading">Free reading lessons →</a>
-            <a class="btn" href="/tutoring">1:1 practice support →</a>
+            <a
+              class="btn btn-primary"
+              href="/celpip/reading/clb-6-to-8"
+              data-track-click="celpip-reading-end-rescue"
+              data-track-page-type="hub"
+              data-track-offer="reading_rescue"
+              data-track-test="celpip"
+              data-track-skill="reading"
+              data-track-position="end"
+            >
+              Start the Reading Rescue Pathway
+            </a>
+            <a
+              class="btn"
+              href="/tutoring"
+              data-track-click="celpip-reading-end-tutoring"
+              data-track-page-type="hub"
+              data-track-offer="tutoring"
+              data-track-test="celpip"
+              data-track-skill="reading"
+              data-track-position="end"
+            >
+              Book 1:1 Reading Support
+            </a>
           </div>
         </div>
       </div>

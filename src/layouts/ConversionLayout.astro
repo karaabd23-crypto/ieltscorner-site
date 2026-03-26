@@ -1,0 +1,74 @@
+---
+import "../styles/global.css";
+import ConversionTrackingScript from "../components/ConversionTrackingScript.astro";
+
+const {
+  title = "IELTS Corner",
+  description = "IELTS and CELPIP training pages with clear next steps.",
+  canonical = Astro.url.pathname,
+  keywords = "IELTS writing help, CELPIP writing help, Band 7 writing, CLB 9 writing",
+  noindex = false,
+} = Astro.props;
+
+const fullTitle = title.includes("IELTS Corner") ? title : `${title} | IELTS Corner`;
+const canonicalURL = new URL(canonical, Astro.site);
+const robots = noindex ? "noindex, nofollow" : "index, follow";
+const normalizedPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+
+const highIntentTrackingPaths = new Set([
+  "/celpip/reading/clb-6-to-8",
+  "/celpip-writing-help",
+  "/ielts-writing-help",
+  "/essay-correction",
+  "/essay-correction/submit",
+]);
+
+const inferTrackingTest = (path: string) => {
+  if (path.includes("/celpip")) return "celpip";
+  if (path.includes("/ielts")) return "ielts";
+  return "general";
+};
+
+const inferTrackingSkill = (path: string) => {
+  if (path.includes("/writing")) return "writing";
+  if (path.includes("/reading")) return "reading";
+  if (path.includes("/speaking")) return "speaking";
+  if (path.includes("/listening")) return "listening";
+  return "general";
+};
+
+const trackingIntentLevel = highIntentTrackingPaths.has(normalizedPath) ? "high" : "medium";
+const trackingTest = inferTrackingTest(normalizedPath);
+const trackingSkill = inferTrackingSkill(normalizedPath);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="robots" content={robots} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+  </head>
+  <body
+    data-intent-level={trackingIntentLevel}
+    data-page-type="landing"
+    data-test={trackingTest}
+    data-skill={trackingSkill}
+  >
+    <main class="conversion-main">
+      <div class="container">
+        <slot />
+      </div>
+    </main>
+    <ConversionTrackingScript />
+  </body>
+</html>

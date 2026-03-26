@@ -1,0 +1,149 @@
+---
+type PathStep = {
+  stepLabel: string;
+  title: string;
+  copy: string;
+  ctaLabel: string;
+  href: string;
+  offer: string;
+};
+
+type Props = {
+  test?: "ielts" | "celpip" | "general";
+  skill?: "reading" | "writing" | "speaking" | "listening" | "general";
+  pageType?: string;
+  position?: string;
+  className?: string;
+  heading?: string;
+};
+
+const {
+  test = "general",
+  skill = "general",
+  pageType = "hub",
+  position = "end",
+  className = "",
+  heading = "Choose the fastest way to improve",
+} = Astro.props as Props;
+
+const scenarioKey = `${test}-${skill}`;
+
+const buildSteps = (): PathStep[] => {
+  if (scenarioKey === "celpip-reading") {
+    return [
+      {
+        stepLabel: "Free starter",
+        title: "CLB 6 to 8 Reading Checklist",
+        copy: "Find your exact reading trap patterns before you spend more study hours.",
+        ctaLabel: "Get Reading Checklist",
+        href: "/celpip/reading/clb-6-to-8#celpip-reading-checklist",
+        offer: "lead_magnet",
+      },
+      {
+        stepLabel: "Guided practice",
+        title: "Weekly Reading Rescue Training ($12)",
+        copy: "Practice timing, inference, and distractor elimination with guided examples.",
+        ctaLabel: "Join Paid Reading Training",
+        href: "/webinar?src=offer-ladder-reading",
+        offer: "weekly_training",
+      },
+      {
+        stepLabel: "Private coaching",
+        title: "Reading-Focused 1:1 Session ($30)",
+        copy: "Fix your exact reading problem with a private strategy plan.",
+        ctaLabel: "Book Reading Session",
+        href: "/tutoring?src=offer-ladder-reading",
+        offer: "tutoring",
+      },
+    ];
+  }
+
+  if (scenarioKey === "celpip-writing") {
+    return [
+      {
+        stepLabel: "Free starter",
+        title: "CELPIP Writing Score-Boost Checklist",
+        copy: "Use a pre-write checklist that catches tone, structure, and grammar mistakes early.",
+        ctaLabel: "Get Writing Checklist",
+        href: "/celpip-writing-help#celpip-writing-checklist-optin",
+        offer: "lead_magnet",
+      },
+      {
+        stepLabel: "Direct feedback",
+        title: "Essay Correction",
+        copy: "Submit one draft and get direct comments on score-impact fixes.",
+        ctaLabel: "Get Essay Feedback",
+        href: "/essay-correction?src=offer-ladder-celpip-writing",
+        offer: "essay_correction",
+      },
+      {
+        stepLabel: "Private coaching",
+        title: "1:1 CELPIP Writing Coaching ($30)",
+        copy: "Turn weak responses into a personal score plan in a focused session.",
+        ctaLabel: "Book Writing Session",
+        href: "/tutoring?src=offer-ladder-celpip-writing",
+        offer: "tutoring",
+      },
+    ];
+  }
+
+  return [
+    {
+      stepLabel: "Free starter",
+      title: "IELTS Band 7+ Structure Guide",
+      copy: "Get a practical structure checklist for higher-scoring writing responses.",
+      ctaLabel: "Get Band 7+ Guide",
+      href: "/ielts-writing-help#ielts-writing-structure-guide-optin",
+      offer: "lead_magnet",
+    },
+    {
+      stepLabel: "Direct feedback",
+      title: "Essay Correction",
+      copy: "Submit one essay and get clear grammar and structure feedback.",
+      ctaLabel: "Submit One Essay",
+      href: "/essay-correction?src=offer-ladder-ielts-writing",
+      offer: "essay_correction",
+    },
+    {
+      stepLabel: "Private coaching",
+      title: "1:1 Writing Coaching ($30)",
+      copy: "Get a private plan to move from repeated mistakes to stable score gains.",
+      ctaLabel: "Book 1:1 Coaching",
+      href: "/tutoring?src=offer-ladder-ielts-writing",
+      offer: "tutoring",
+    },
+  ];
+};
+
+const steps = buildSteps();
+---
+
+<section class:list={["surface offer-ladder", className]}>
+  <h3>{heading}</h3>
+  <p class="muted offer-ladder__intro">
+    Start with the free tool, then choose feedback or coaching if you want faster score gains.
+  </p>
+  <div class="offer-ladder__grid">
+    {steps.map((step, index) => (
+      <article class="offer-ladder__card">
+        <p class="offer-ladder__tier">
+          Step {index + 1}: {step.stepLabel}
+        </p>
+        <h4>{step.title}</h4>
+        <p>{step.copy}</p>
+        <a
+          class="btn btn-primary"
+          href={step.href}
+          data-track-click={`offer-ladder-step-${index + 1}`}
+          data-track-page-type={pageType}
+          data-track-offer={step.offer}
+          data-track-test={test}
+          data-track-skill={skill}
+          data-track-position={position}
+        >
+          {step.ctaLabel}
+        </a>
+      </article>
+    ))}
+  </div>
+</section>

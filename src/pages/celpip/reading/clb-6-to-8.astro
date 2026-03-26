@@ -1,0 +1,359 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import LeadCaptureForm from "../../../components/LeadCaptureForm.astro";
+import LeadMagnetCard from "../../../components/LeadMagnetCard.astro";
+import OfferLadderBlock from "../../../components/OfferLadderBlock.astro";
+import OfferSequenceBlock from "../../../components/OfferSequenceBlock.astro";
+import { getCollection } from "astro:content";
+import { getLessonTier, getPublicLessonTitle } from "../../../lib/lessonLevel";
+import { buildBreadcrumbSchema } from "../../../lib/seo";
+
+const allReadingLessons = (
+  await getCollection(
+    "lessons",
+    ({ data }) =>
+      !data.draft &&
+      (data.exam.includes("CELPIP") || data.test === "CELPIP") &&
+      (data.category === "reading" || data.skill === "reading")
+  )
+).sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
+
+const pathwayTopics = [
+  {
+    id: "main-problem",
+    title: "Why strong students still get CLB 6 in reading",
+    description: "Find the main problem when your other skills are already 8+.",
+    keywords: ["clb 6", "problem", "stuck", "gap", "score"],
+  },
+  {
+    id: "distractor",
+    title: "Distractor traps",
+    description: "Stop choosing options that look right but are not proven by the text.",
+    keywords: ["distractor", "trap", "proof", "keyword", "not given"],
+  },
+  {
+    id: "inference",
+    title: "Inference questions",
+    description: "Answer inference questions from evidence instead of assumptions.",
+    keywords: ["inference", "implied", "viewpoint", "intent"],
+  },
+  {
+    id: "timing",
+    title: "Timing strategy",
+    description: "Control pacing so one hard item does not destroy section scores.",
+    keywords: ["time", "timing", "pace", "management"],
+  },
+  {
+    id: "viewpoint",
+    title: "Viewpoint confusion",
+    description: "Separate author opinion, quoted opinion, and facts under pressure.",
+    keywords: ["viewpoint", "opinion", "author", "fact"],
+  },
+  {
+    id: "diagram",
+    title: "Diagram reading",
+    description: "Decode diagrams quickly without losing key instructions or units.",
+    keywords: ["diagram", "apply a diagram", "label", "map"],
+  },
+  {
+    id: "specific-vs-general",
+    title: "Specific information vs general meaning",
+    description: "Know when to scan for detail and when to read for main meaning.",
+    keywords: ["specific", "general", "main idea", "detail"],
+  },
+  {
+    id: "review",
+    title: "Error review strategy",
+    description: "Turn every wrong answer into a repeatable correction rule.",
+    keywords: ["review", "error", "mistake", "analyze", "correction"],
+  },
+];
+
+const scoreLesson = (lesson, topicKeywords) => {
+  const haystack = `${lesson.slug} ${lesson.data.title} ${lesson.data.description || ""} ${lesson.data.excerpt}`.toLowerCase();
+  return topicKeywords.reduce((score, keyword) => (haystack.includes(keyword) ? score + 1 : score), 0);
+};
+
+const usedSlugs = new Set<string>();
+const pathwayLessons = pathwayTopics
+  .map((topic) => {
+    const best = allReadingLessons
+      .map((lesson) => ({ lesson, score: scoreLesson(lesson, topic.keywords) }))
+      .filter((entry) => entry.score > 0 && !usedSlugs.has(entry.lesson.slug))
+      .sort((a, b) => b.score - a.score)[0];
+
+    if (!best) return null;
+    usedSlugs.add(best.lesson.slug);
+    return { topic, lesson: best.lesson };
+  })
+  .filter(
+    (entry): entry is { topic: (typeof pathwayTopics)[number]; lesson: (typeof allReadingLessons)[number] } =>
+      Boolean(entry)
+  );
+
+const fallbackLessons = allReadingLessons
+  .filter((lesson) => !usedSlugs.has(lesson.slug))
+  .slice(0, Math.max(0, 8 - pathwayLessons.length));
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "CELPIP", path: "/celpip/" },
+    { name: "Reading", path: "/celpip/reading/" },
+    { name: "CLB 6 to 8", path: "/celpip/reading/clb-6-to-8/" },
+  ]),
+];
+---
+
+<Layout
+  title="CELPIP Reading CLB 6 to 8 Rescue | IELTS Corner"
+  description="Stuck at CELPIP Reading CLB 6 while other skills are higher? Use this focused rescue hub to fix distractors, timing, and inference errors."
+  keywords="CELPIP reading CLB 6 to 8, CELPIP reading rescue, CELPIP reading distractor strategy, CELPIP reading inference"
+  structuredData={pageStructuredData}
+>
+  <section class="section">
+    <div class="landing-shell">
+      <section class="landing-hero">
+        <p class="landing-eyebrow">CELPIP Reading Rescue Hub</p>
+        <h1>Stuck at CELPIP Reading CLB 6 While Your Other Skills Are 8+?</h1>
+        <p class="landing-subheadline">
+          Reading is often the last big problem. This hub shows the exact trap patterns that block CLB 8 and gives you a focused pathway to fix them.
+        </p>
+        <div class="landing-hero__actions">
+          <a
+            class="btn btn-primary landing-cta"
+            href="/webinar?src=reading-rescue-hero-webinar"
+            data-track-click="reading-rescue-hero-webinar"
+            data-track-page-type="hub"
+            data-track-offer="weekly_training"
+            data-track-test="celpip"
+            data-track-skill="reading"
+            data-track-position="hero"
+            data-track-intent="purchase"
+          >
+            Join Reading Rescue Live Training ($12)
+          </a>
+          <a
+            class="btn landing-cta landing-cta--alt"
+            href="#rescue-pathway"
+            data-track-click="reading-rescue-hero-pathway"
+            data-track-page-type="hub"
+            data-track-offer="rescue_pathway"
+            data-track-test="celpip"
+            data-track-skill="reading"
+            data-track-position="hero"
+          >
+            Start the CLB 6->8 Pathway
+          </a>
+        </div>
+      </section>
+
+      <section class="landing-section">
+        <h2>Why This Happens</h2>
+        <div class="landing-offer-grid">
+          <article class="landing-offer"><h3>Distractors</h3><p>Answers look familiar but are not actually proven by text evidence.</p></article>
+          <article class="landing-offer"><h3>Timing Collapse</h3><p>One hard block consumes time and lowers accuracy in later questions.</p></article>
+          <article class="landing-offer"><h3>Inference Errors</h3><p>Students choose assumptions, not what the passage implies.</p></article>
+          <article class="landing-offer"><h3>Viewpoint Confusion</h3><p>Author opinion, quoted opinion, and facts get mixed together.</p></article>
+          <article class="landing-offer"><h3>Diagram Mistakes</h3><p>Instructions and labels are skimmed too fast, causing avoidable misses.</p></article>
+          <article class="landing-offer"><h3>Answer Switching</h3><p>Correct answers are changed during review without evidence.</p></article>
+        </div>
+      </section>
+
+      <section class="landing-section">
+        <h2>What You Need To Fix For CLB 8</h2>
+        <ol style="margin: var(--s-2) 0 0; padding-left: 1.2rem;">
+          <li>Use proof-first answering instead of keyword matching.</li>
+          <li>Run a timed approach for each question type, not one pace for all.</li>
+          <li>Train inference and viewpoint recognition separately from detail questions.</li>
+          <li>Use a strict review routine that protects correct answers.</li>
+        </ol>
+      </section>
+
+      <section class="landing-section reading-diagnostic-placeholder">
+        <p class="landing-eyebrow">Coming Next</p>
+        <h2>Reading Diagnostic (Placeholder)</h2>
+        <p class="muted" style="margin-top: 0;">
+          This block is ready for the upcoming diagnostic engine. It will map your weak sections, weak question types, and likely trap patterns.
+        </p>
+        <div class="landing-offer-grid">
+          <article class="landing-offer"><h3>Section Weakness</h3><p>Correspondence, diagram, information, or viewpoints.</p></article>
+          <article class="landing-offer"><h3>Question-Type Weakness</h3><p>Inference, detail, intent, and elimination errors.</p></article>
+          <article class="landing-offer"><h3>Trap Pattern Detection</h3><p>Over-selection, over-reading, and confidence drift patterns.</p></article>
+        </div>
+      </section>
+
+      <section id="rescue-pathway" class="landing-section">
+        <h2>CLB 6->8 Lesson Pathway</h2>
+        <p class="muted" style="margin-top: 0;">
+          Work through these lessons in order. The sequence is built to remove common CLB 6 reading failure patterns.
+        </p>
+        <div class="lesson-related-grid">
+          {pathwayLessons.map((entry) => (
+            <a class="lesson-related-card" href={`/lessons/${entry.lesson.data.category}/${entry.lesson.slug}/`}>
+              <h4>{entry.topic.title}</h4>
+              <p style="margin-bottom: var(--s-2);">{entry.topic.description}</p>
+              <p class="muted" style="margin: 0;">
+                {getPublicLessonTitle(entry.lesson.data.title, entry.lesson.data.level)} | {getLessonTier(entry.lesson.data.level)}
+              </p>
+            </a>
+          ))}
+          {fallbackLessons.map((lesson) => (
+            <a class="lesson-related-card" href={`/lessons/${lesson.data.category}/${lesson.slug}/`}>
+              <h4>{getPublicLessonTitle(lesson.data.title, lesson.data.level)}</h4>
+              <p>{lesson.data.description ?? lesson.data.excerpt}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section class="landing-section" id="celpip-reading-checklist">
+        <LeadMagnetCard
+          headline="CELPIP Reading CLB 6->8 Mistake Checklist"
+          bullets={[
+            "Spot the exact distractor and inference mistakes that freeze scores at CLB 6.",
+            "Use a proof-check routine before locking answers in high-pressure sections.",
+            "Follow a timing and review plan built for CLB 8 consistency.",
+          ]}
+          formName="lead-magnet-celpip-reading-checklist"
+          formType="lead_magnet_celpip_reading_checklist"
+          successPath="/thank-you/celpip-reading-checklist/"
+          source="celpip-reading-clb6-to-8"
+          magnetId="celpip_reading_clb6_to_8_checklist"
+          buttonLabel="Send Me The Reading Checklist"
+          pageType="hub"
+          offer="lead_magnet"
+          test="celpip"
+          skill="reading"
+          position="mid"
+        />
+      </section>
+
+      <section class="landing-section">
+        <h2>Pick the support that fits your reading problem</h2>
+        <div class="landing-offer-grid">
+          <article class="landing-offer">
+            <h3>Weekly Reading Rescue Training ($12)</h3>
+            <p>Fix reading traps in guided weekly sessions with real examples.</p>
+            <a
+              class="btn btn-primary"
+              href="/webinar"
+              data-track-click="reading-rescue-ladder-webinar"
+              data-track-page-type="hub"
+              data-track-offer="weekly_training"
+              data-track-test="celpip"
+              data-track-skill="reading"
+              data-track-position="mid"
+              data-track-intent="purchase"
+            >
+              Join Reading Rescue Live Training ($12)
+            </a>
+          </article>
+          <article class="landing-offer">
+            <h3>Reading-Focused 1:1 Support ($30)</h3>
+            <p>Target your weakest reading question types with a private plan.</p>
+            <a
+              class="btn btn-primary"
+              href="/tutoring"
+              data-track-click="reading-rescue-ladder-tutoring"
+              data-track-page-type="hub"
+              data-track-offer="tutoring"
+              data-track-test="celpip"
+              data-track-skill="reading"
+              data-track-position="mid"
+              data-track-intent="booking"
+            >
+              Book Reading Rescue Tutoring
+            </a>
+          </article>
+          <article class="landing-offer">
+            <h3>Reading Rescue Pack (Upcoming)</h3>
+            <p>Join the waitlist for the diagnostic + targeted rescue product.</p>
+            <a
+              class="btn btn-primary"
+              href="#reading-rescue-lead-form"
+              data-track-click="reading-rescue-ladder-upcoming"
+              data-track-page-type="hub"
+              data-track-offer="reading_rescue_pack_upcoming"
+              data-track-test="celpip"
+              data-track-skill="reading"
+              data-track-position="mid"
+            >
+              Get Notified When Rescue Pack Opens
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <div id="reading-rescue-lead-form">
+        <LeadCaptureForm
+          heading="Get CLB 8 Reading Strategies Every Week"
+          message="Get CELPIP reading strategy emails and updates when the reading diagnostic opens."
+          buttonLabel="Send Me CLB 8 Reading Emails"
+          source="celpip-reading-clb6-to-8"
+          formName="celpip-reading-rescue-leads"
+          formType="lead_capture_celpip_reading"
+          pageType="hub"
+          offer="lead_capture"
+          test="celpip"
+          skill="reading"
+          position="form_section"
+          className="landing-lead-form"
+        />
+      </div>
+
+      <OfferLadderBlock
+        test="celpip"
+        skill="reading"
+        pageType="hub"
+        position="end"
+        heading="Choose the fastest way to improve"
+      />
+
+      <section class="landing-section">
+        <h2>Keep your CELPIP scores moving</h2>
+        <div class="landing-offer-grid">
+          <article class="landing-offer">
+            <h3>CELPIP Reading Hub</h3>
+            <p>Open the full reading hub and continue with related strategy content.</p>
+            <a
+              class="btn btn-primary"
+              href="/celpip/reading"
+              data-track-click="reading-rescue-internal-reading-hub"
+              data-track-page-type="hub"
+              data-track-offer="internal_navigation"
+              data-track-test="celpip"
+              data-track-skill="reading"
+              data-track-position="end"
+            >
+              Open CELPIP Reading Hub
+            </a>
+          </article>
+          <article class="landing-offer">
+            <h3>CELPIP Writing Help</h3>
+            <p>If reading is fixed, writing often becomes the next score problem.</p>
+            <a
+              class="btn btn-primary"
+              href="/celpip-writing-help"
+              data-track-click="reading-rescue-internal-writing-help"
+              data-track-page-type="hub"
+              data-track-offer="writing_help"
+              data-track-test="celpip"
+              data-track-skill="writing"
+              data-track-position="end"
+            >
+              Open CELPIP Writing Help
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <OfferSequenceBlock
+        test="celpip"
+        skill="reading"
+        pageType="hub"
+        position="end"
+      />
+    </div>
+  </section>
+</Layout>

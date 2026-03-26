@@ -1,0 +1,493 @@
+<script is:inline>
+  (() => {
+    const MAJOR_OFFERS = ["essay_correction", "weekly_training", "tutoring"];
+    const HIGH_INTENT_PATHS = new Set([
+      "/celpip/reading/clb-6-to-8",
+      "/celpip-writing-help",
+      "/ielts-writing-help",
+      "/essay-correction",
+      "/essay-correction/submit",
+    ]);
+
+    const CTA_VARIATIONS = {
+      essay_correction: {
+        A: { theme: "direct", text: () => "Submit an Essay for Correction" },
+        B: { theme: "pain", text: () => "Stop Guessing: Get Direct Writing Feedback" },
+        C: {
+          theme: "result",
+          text: (context) => `Get Score-Focused Essay Feedback for ${context.scoreGoal}`,
+        },
+      },
+      weekly_training: {
+        A: { theme: "direct", text: () => "Join This Week's Live Training ($12)" },
+        B: {
+          theme: "pain",
+          text: (context) => `Fix ${context.testLabel} ${context.skillLabel} traps in live training`,
+        },
+        C: {
+          theme: "result",
+          text: (context) => `Train weekly to reach ${context.scoreGoal} faster`,
+        },
+      },
+      tutoring: {
+        A: { theme: "direct", text: () => "Book a 1:1 Session ($30)" },
+        B: {
+          theme: "pain",
+          text: (context) => `Get 1:1 help for your ${context.skillLabel} problem`,
+        },
+        C: {
+          theme: "result",
+          text: (context) => `Build a personal plan for ${context.scoreGoal}`,
+        },
+      },
+    };
+
+    const PAGE_TYPE_VARIANT_MAP = {
+      landing: "A",
+      lesson: "B",
+      hub: "C",
+      blog: "B",
+      site: "A",
+    };
+
+    const seenCtaVisibility = new WeakSet();
+    const firedScrollDepth = new Set();
+    const firedTimeBuckets = new Set();
+    const scrollThresholds = [25, 50, 75, 100];
+    const timeBuckets = [
+      { ms: 30000, label: "30s" },
+      { ms: 90000, label: "90s" },
+      { ms: 180000, label: "180s" },
+    ];
+
+    const normalizePath = (path) => {
+      const cleanPath = String(path || "/").split("?")[0].split("#")[0];
+      if (cleanPath.length > 1 && cleanPath.endsWith("/")) return cleanPath.slice(0, -1);
+      return cleanPath || "/";
+    };
+
+    const normalizePageType = (pageType) => {
+      if (!pageType) return "site";
+      const normalized = String(pageType).toLowerCase();
+      if (normalized === "service") return "landing";
+      if (normalized === "content") return "lesson";
+      return normalized;
+    };
+
+    const pushEvent = (event, payload = {}) => {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event, ...payload });
+    };
+
+    const inferTest = (path) => {
+      if (path.includes("/celpip")) return "celpip";
+      if (path.includes("/ielts")) return "ielts";
+      return "general";
+    };
+
+    const inferSkill = (path) => {
+      if (path.includes("/writing")) return "writing";
+      if (path.includes("/reading")) return "reading";
+      if (path.includes("/speaking")) return "speaking";
+      if (path.includes("/listening")) return "listening";
+      if (path.includes("/grammar")) return "grammar";
+      if (path.includes("/vocabulary")) return "vocabulary";
+      return "general";
+    };
+
+    const inferPageType = (path) => {
+      if (path.startsWith("/lessons/")) return "lesson";
+      if (path.startsWith("/blog/")) return "blog";
+      if (path.includes("-help") || path.startsWith("/essay-correction") || path.startsWith("/tutoring") || path.startsWith("/webinar")) return "landing";
+      if (path.startsWith("/celpip/") || path.startsWith("/ielts/")) return "hub";
+      return "site";
+    };
+
+    const inferIntentLevel = (path, pageType) => {
+      const normalizedPath = normalizePath(path);
+      if (HIGH_INTENT_PATHS.has(normalizedPath)) return "high";
+      if (["landing", "hub", "lesson"].includes(pageType)) return "medium";
+      return "low";
+    };
+
+    const inferOffer = (element, path) => {
+      const href = (element.getAttribute("href") || "").toLowerCase();
+      if (href.includes("essay-correction")) return "essay_correction";
+      if (href.includes("/webinar")) return "weekly_training";
+      if (href.includes("/tutoring")) return "tutoring";
+      if (href.includes("ai-feedback")) return "ai_feedback";
+      if (path.includes("/essay-correction")) return "essay_correction";
+      return "general";
+    };
+
+    const inferOfferType = (offer) => {
+      if (offer === "essay_correction") return "essay";
+      if (offer === "weekly_training") return "webinar";
+      if (offer === "tutoring") return "tutoring";
+      return offer || "general";
+    };
+
+    const inferScoreGoal = (test, skill) => {
+      if (test === "ielts") return skill === "writing" ? "Band 7+" : "Band 7";
+      if (test === "celpip") return skill === "reading" ? "CLB 8" : "CLB 9";
+      return "your target score";
+    };
+
+    const parseVariationOverride = (offer) => {
+      const url = new URL(window.location.href);
+      const globalVariation = (url.searchParams.get("cta_var") || "").toUpperCase();
+      const offerVariation = (url.searchParams.get(`cta_var_${offer}`) || "").toUpperCase();
+      const candidate = offerVariation || globalVariation;
+      if (candidate === "A" || candidate === "B" || candidate === "C") return candidate;
+      return null;
+    };
+
+    const stableHash = (input) => {
+      let hash = 0;
+      for (let i = 0; i < input.length; i += 1) {
+        hash = (hash << 5) - hash + input.charCodeAt(i);
+        hash |= 0;
+      }
+      return Math.abs(hash);
+    };
+
+    const getVariationId = ({ offer, pageType, path, position }) => {
+      const override = parseVariationOverride(offer);
+      if (override) return override;
+
+      const variations = CTA_VARIATIONS[offer];
+      if (!variations) return "A";
+
+      const mapped = PAGE_TYPE_VARIANT_MAP[pageType];
+      if (mapped && variations[mapped]) return mapped;
+
+      const keys = Object.keys(variations);
+      if (keys.length === 0) return "A";
+      const index = stableHash(`${path}|${offer}|${position || "unknown"}`) % keys.length;
+      return keys[index];
+    };
+
+    const getPageContext = () => {
+      const pagePath = normalizePath(window.location.pathname);
+      const rawBodyPageType = document.body?.dataset.pageType || "";
+      const bodyPageType = rawBodyPageType ? normalizePageType(rawBodyPageType) : "";
+      const bodyTest = document.body?.dataset.test || "";
+      const bodySkill = document.body?.dataset.skill || "";
+      const inferredPageType = bodyPageType || normalizePageType(inferPageType(pagePath));
+      const bodyIntent = document.body?.dataset.intentLevel;
+      return {
+        page_path: pagePath,
+        page_url: window.location.href,
+        page_type: inferredPageType,
+        intent_level: bodyIntent || inferIntentLevel(pagePath, inferredPageType),
+        test: bodyTest || inferTest(pagePath),
+        skill: bodySkill || inferSkill(pagePath),
+      };
+    };
+
+    const buildEventContext = (element) => {
+      const base = getPageContext();
+      const offer = element.dataset.trackOffer || inferOffer(element, base.page_path);
+      const pageType = normalizePageType(element.dataset.trackPageType || base.page_type);
+      const test = element.dataset.trackTest || base.test;
+      const skill = element.dataset.trackSkill || base.skill;
+
+      return {
+        page_path: base.page_path,
+        page_url: base.page_url,
+        page_type: pageType,
+        intent_level: base.intent_level,
+        offer,
+        offer_type: inferOfferType(offer),
+        test,
+        skill,
+        position: element.dataset.trackPosition || "unknown",
+      };
+    };
+
+    const getElementVisibleText = (element) => {
+      const text = (element.textContent || "").replace(/\s+/g, " ").trim();
+      return text.slice(0, 140);
+    };
+
+    const getCtaId = (element, context) => {
+      const href = (element.getAttribute("href") || "").replace(window.location.origin, "");
+      const parts = [
+        context.page_path,
+        context.offer || "offer",
+        context.position || "position",
+        element.dataset.trackClick || "click",
+        href || "nohref",
+      ];
+      return parts.join("|").toLowerCase();
+    };
+
+    const getPurchaseIntentEventName = (element, context) => {
+      const explicitIntentEvent = element.dataset.trackIntentEvent || "";
+      if (explicitIntentEvent) return explicitIntentEvent;
+
+      const href = (element.getAttribute("href") || "").toLowerCase();
+      const explicitIntent = (element.dataset.trackIntent || "").toLowerCase();
+
+      if (
+        context.offer === "essay_correction" &&
+        (explicitIntent === "checkout" ||
+          href.includes("checkout") ||
+          href.includes("stripe.com") ||
+          href.includes("buy.stripe"))
+      ) {
+        return "checkout_click";
+      }
+
+      if (
+        context.offer === "tutoring" &&
+        (explicitIntent === "booking" || href.includes("/tutoring"))
+      ) {
+        return "booking_click";
+      }
+
+      if (
+        context.offer === "weekly_training" &&
+        (explicitIntent === "purchase" || href.includes("/webinar"))
+      ) {
+        return "purchase_intent_click";
+      }
+
+      return "";
+    };
+
+    const maybeApplyCtaVariation = (element) => {
+      const context = buildEventContext(element);
+      const offer = context.offer;
+      if (!MAJOR_OFFERS.includes(offer)) return null;
+
+      const variationSet = CTA_VARIATIONS[offer];
+      if (!variationSet) return null;
+
+      const variationId = getVariationId({
+        offer,
+        pageType: context.page_type,
+        path: context.page_path,
+        position: context.position,
+      });
+      const variation = variationSet[variationId];
+      if (!variation) return null;
+
+      const scoreGoal = inferScoreGoal(context.test, context.skill);
+      const testLabel =
+        context.test === "celpip"
+          ? "CELPIP"
+          : context.test === "ielts"
+            ? "IELTS"
+            : "IELTS/CELPIP";
+      const skillLabel = context.skill === "general" ? "score" : context.skill;
+
+      const ctaText = variation.text({ scoreGoal, testLabel, skillLabel });
+
+      element.dataset.trackVariationId = variationId;
+      element.dataset.trackVariationTheme = variation.theme;
+      element.dataset.trackVariationText = ctaText;
+      element.dataset.trackExperiment = "cta_copy_v1";
+
+      const shouldReplaceText =
+        element.dataset.ctaStatic !== "true" &&
+        element.dataset.ctaAllowTextReplace !== "false" &&
+        element instanceof HTMLAnchorElement &&
+        element.children.length === 0;
+
+      if (shouldReplaceText && ctaText) {
+        element.textContent = ctaText;
+      }
+
+      return {
+        cta_variation_id: variationId,
+        cta_variation_theme: variation.theme,
+        cta_variation_text: ctaText,
+        cta_experiment: "cta_copy_v1",
+      };
+    };
+
+    const applyCtaVariations = () => {
+      const candidates = Array.from(
+        document.querySelectorAll("[data-track-click][data-track-offer]")
+      );
+      candidates.forEach((element) => {
+        if (!(element instanceof HTMLElement)) return;
+        maybeApplyCtaVariation(element);
+      });
+    };
+
+    const trackScrollDepth = () => {
+      const context = getPageContext();
+      const doc = document.documentElement;
+      const body = document.body;
+      const viewportHeight = window.innerHeight || doc.clientHeight || 0;
+      const pageHeight = Math.max(
+        doc.scrollHeight,
+        doc.offsetHeight,
+        body ? body.scrollHeight : 0,
+        body ? body.offsetHeight : 0
+      );
+      const scrollTop = window.scrollY || doc.scrollTop || 0;
+      const scrollable = Math.max(1, pageHeight - viewportHeight);
+      const depth = Math.min(100, Math.round(((scrollTop + viewportHeight) / scrollable) * 100));
+
+      scrollThresholds.forEach((threshold) => {
+        if (depth < threshold || firedScrollDepth.has(threshold)) return;
+        firedScrollDepth.add(threshold);
+        pushEvent("scroll_depth", {
+          ...context,
+          depth_percent: threshold,
+        });
+      });
+    };
+
+    const trackTimeBuckets = () => {
+      const context = getPageContext();
+      timeBuckets.forEach((bucket) => {
+        window.setTimeout(() => {
+          if (firedTimeBuckets.has(bucket.label)) return;
+          firedTimeBuckets.add(bucket.label);
+          pushEvent("time_on_page", {
+            ...context,
+            time_bucket: bucket.label,
+            seconds: Math.round(bucket.ms / 1000),
+          });
+        }, bucket.ms);
+      });
+    };
+
+    const trackCtaVisibility = () => {
+      if (!("IntersectionObserver" in window)) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting || entry.intersectionRatio < 0.5) return;
+            const element = entry.target;
+            if (!(element instanceof HTMLElement)) return;
+            if (seenCtaVisibility.has(element)) return;
+
+            seenCtaVisibility.add(element);
+            const variation = maybeApplyCtaVariation(element) || {};
+            const context = buildEventContext(element);
+
+            pushEvent("cta_visibility", {
+              ...context,
+              cta_id: getCtaId(element, context),
+              cta_label: element.dataset.trackClick || "unknown",
+              cta_text: getElementVisibleText(element),
+              ...variation,
+            });
+          });
+        },
+        { threshold: [0.5] }
+      );
+
+      const ctas = Array.from(
+        document.querySelectorAll("[data-track-click][data-track-offer]")
+      );
+      ctas.forEach((element) => {
+        if (!(element instanceof HTMLElement)) return;
+        const context = buildEventContext(element);
+        if (!MAJOR_OFFERS.includes(context.offer)) return;
+        observer.observe(element);
+      });
+    };
+
+    let scrollTicking = false;
+    const onScroll = () => {
+      if (scrollTicking) return;
+      scrollTicking = true;
+      window.requestAnimationFrame(() => {
+        trackScrollDepth();
+        scrollTicking = false;
+      });
+    };
+
+    document.addEventListener(
+      "click",
+      (event) => {
+        const target = event.target;
+        if (!(target instanceof HTMLElement)) return;
+        const clickable = target.closest("[data-track-click]");
+        if (!(clickable instanceof HTMLElement)) return;
+
+        const variation = maybeApplyCtaVariation(clickable) || {};
+        const context = buildEventContext(clickable);
+        const variationPayload = {
+          cta_variation_id:
+            variation.cta_variation_id ||
+            clickable.dataset.trackVariationId ||
+            "control",
+          cta_variation_text:
+            variation.cta_variation_text ||
+            clickable.dataset.trackVariationText ||
+            getElementVisibleText(clickable),
+          cta_variation_theme:
+            variation.cta_variation_theme ||
+            clickable.dataset.trackVariationTheme ||
+            "control",
+          cta_experiment:
+            variation.cta_experiment ||
+            clickable.dataset.trackExperiment ||
+            "cta_copy_v1",
+        };
+
+        pushEvent("cta_click", {
+          ...context,
+          cta_id: getCtaId(clickable, context),
+          cta_label: clickable.dataset.trackClick || "unknown",
+          cta_text: getElementVisibleText(clickable),
+          cta_seen_before_click: seenCtaVisibility.has(clickable),
+          ...variationPayload,
+        });
+
+        const purchaseIntentEventName = getPurchaseIntentEventName(clickable, context);
+        if (purchaseIntentEventName) {
+          pushEvent(purchaseIntentEventName, {
+            ...context,
+            cta_id: getCtaId(clickable, context),
+            cta_label: clickable.dataset.trackClick || "unknown",
+            cta_text: getElementVisibleText(clickable),
+            ...variationPayload,
+          });
+        }
+      },
+      { passive: true }
+    );
+
+    document.addEventListener("submit", (event) => {
+      const target = event.target;
+      if (!(target instanceof HTMLFormElement)) return;
+
+      const context = buildEventContext(target);
+      const formName = target.dataset.trackForm || target.getAttribute("name") || "unknown";
+      const formType = target.dataset.trackFormType || formName;
+      const eventName = formType === "essay_submission_form" ? "essay_submit" : "form_submit";
+
+      pushEvent(eventName, {
+        ...context,
+        form_name: formName,
+        form_type: formType,
+        position: target.dataset.trackPosition || "form_section",
+      });
+    });
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    document.addEventListener("astro:page-load", () => {
+      applyCtaVariations();
+      trackCtaVisibility();
+      trackScrollDepth();
+    });
+
+    applyCtaVariations();
+    trackCtaVisibility();
+    trackScrollDepth();
+    trackTimeBuckets();
+    window.setTimeout(() => {
+      applyCtaVariations();
+      trackCtaVisibility();
+    }, 350);
+  })();
+</script>

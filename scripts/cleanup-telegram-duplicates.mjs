@@ -1,7 +1,21 @@
 #!/usr/bin/env node
 
+/**
+ * Cleanup duplicate Telegram channel posts by scraping the public channel page.
+ * Works even when a webhook is active (does not use getUpdates).
+ *
+ * Usage:
+ *   node scripts/cleanup-telegram-duplicates.mjs            # dry-run
+ *   node scripts/cleanup-telegram-duplicates.mjs --apply    # actually delete
+ */
+
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
+import {
+  htmlToPlainText,
+  resolvePublicChannelSlug,
+  toCanonicalPostText,
+} from './lib/telegram-dedupe.mjs';
 
 function stripWrappingQuotes(value) {
   const trimmed = value.trim();
@@ -17,21 +31,13 @@ function stripWrappingQuotes(value) {
 async function loadEnvFile(filePath) {
   try {
     const content = await readFile(filePath, 'utf8');
-    const lines = content.split(/\r?\n/);
-    for (const rawLine of lines) {
+    for (const rawLine of content.split(/\r?\n/)) {
       const line = rawLine.trim();
-      if (!line || line.startsWith('#')) {
-        continue;
-      }
-
+      if (!line || line.startsWith('#')) continue;
       const separatorIndex = line.indexOf('=');
-      if (separatorIndex <= 0) {
-        continue;
-      }
-
+      if (separatorIndex <= 0) continue;
       const key = line.slice(0, separatorIndex).trim();
       const value = stripWrappingQuotes(line.slice(separatorIndex + 1));
-
       if (key && process.env[key] === undefined) {
         process.env[key] = value;
       }
@@ -48,84 +54,139 @@ async function loadEnvFiles() {
 }
 
 function parseArgs(argv) {
-  const options = {
-    apply: false,
-  };
-
-  for (let index = 2; index < argv.length; index += 1) {
-    const arg = argv[index];
+  const options = { apply: false };
+  for (let i = 2; i < argv.length; i += 1) {
+    const arg = argv[i];
     if (arg === '--apply') {
       options.apply = true;
     } else if (arg === '--help' || arg === '-h') {
-      console.log(`Usage: node scripts/cleanup-telegram-duplicates.mjs [--apply]\n\nDefault mode is dry-run.\nUse --apply to actually delete duplicate messages.`);
+      console.log('Usage: node scripts/cleanup-telegram-duplicates.mjs [--apply]\n\nDry-run by default. Use --apply to delete duplicates.');
       process.exit(0);
     } else {
       throw new Error(`Unknown argument: ${arg}`);
     }
   }
-
   return options;
 }
 
 function resolveChatId(explicitChatId, channelUrl) {
   const direct = explicitChatId?.trim();
-  if (direct) {
-    return direct;
-  }
-
+  if (direct) return direct;
   const url = channelUrl?.trim();
-  if (!url) {
-    return '';
-  }
-
+  if (!url) return '';
   const normalized = url.replace(/^https?:\/\//i, '').replace(/^t\.me\//i, '');
   const slug = normalized.split(/[/?#]/)[0]?.trim();
-  if (!slug) {
-    return '';
-  }
-
+  if (!slug) return '';
   return slug.startsWith('@') ? slug : `@${slug}`;
 }
 
-function normalizeForDedupe(text) {
-  return String(text ?? '')
-    .replace(/\r\n/g, '\n')
-    .replace(/[ \t]+/g, ' ')
-    .replace(/\n{3,}/g, '\n\n')
-    .trim();
+/**
+ * Scrape the public channel preview page and extract messages with IDs.
+ * Paginates backwards using ?before=MSG_ID to load older posts.
+ * Returns array of { messageId: number, text: string, textPreview: string }
+ */
+async function scrapeChannelMessages(slug, { maxPages = 10 } = {}) {
+  if (!slug) return [];
+
+  const allMessages = [];
+  let beforeId = null;
+
+  for (let page = 0; page < maxPages; page += 1) {
+    const url = beforeId
+      ? `https://t.me/s/${slug}?before=${beforeId}`
+      : `https://t.me/s/${slug}`;
+
+    const response = await fetch(url);
+    if (!response.ok) {
+      if (page === 0) {
+        throw new Error(`Failed to fetch channel page: HTTP ${response.status}`);
+      }
+      break;
+    }
+
+    const html = await response.text();
+
+    // Each message block has a data-post attribute like "kaysenglishcorner/123"
+    const messagePattern = /<div[^>]+class="tgme_widget_message_wrap[^"]*"[^>]*>[\s\S]*?<div[^>]+class="tgme_widget_message[^"]*"[^>]+data-post="[^/]+\/(\d+)"[\s\S]*?<div class="tgme_widget_message_text[^"]*"[^>]*>([\s\S]*?)<\/div>/g;
+
+    const pageMessages = [];
+    let match;
+    while ((match = messagePattern.exec(html)) !== null) {
+      const messageId = Number.parseInt(match[1], 10);
+      const rawHtml = match[2];
+      const plainText = toCanonicalPostText(htmlToPlainText(rawHtml), { stripSignature: true });
+      if (plainText && Number.isFinite(messageId)) {
+        pageMessages.push({
+          messageId,
+          text: plainText,
+          textPreview: plainText.slice(0, 120).replace(/\n/g, ' '),
+        });
+      }
+    }
+
+    if (pageMessages.length === 0) break;
+
+    allMessages.push(...pageMessages);
+
+    // Find lowest messageId on this page for pagination
+    const lowestId = Math.min(...pageMessages.map((m) => m.messageId));
+    if (beforeId !== null && lowestId >= beforeId) break; // no progress
+    beforeId = lowestId;
+
+    // Brief delay between page fetches
+    if (page < maxPages - 1) {
+      await new Promise((r) => setTimeout(r, 500));
+    }
+  }
+
+  // Deduplicate by messageId (pages may overlap)
+  const seen = new Set();
+  return allMessages.filter((msg) => {
+    if (seen.has(msg.messageId)) return false;
+    seen.add(msg.messageId);
+    return true;
+  });
 }
 
-function chatMatches(updateChat, targetChatId) {
-  const target = String(targetChatId ?? '').trim();
-  if (!updateChat || !target) {
-    return false;
+/**
+ * Group messages by normalized text and return duplicates to delete
+ * (keeps the newest message in each group, marks older ones for deletion).
+ */
+function findDuplicates(messages) {
+  const groups = new Map();
+
+  for (const msg of messages) {
+    const key = msg.text;
+    if (!groups.has(key)) {
+      groups.set(key, []);
+    }
+    groups.get(key).push(msg);
   }
 
-  const updateId = String(updateChat.id ?? '').trim();
-  if (target === updateId) {
-    return true;
+  const toDelete = [];
+  for (const [, group] of groups) {
+    if (group.length < 2) continue;
+    // Sort by messageId descending — keep the newest
+    group.sort((a, b) => b.messageId - a.messageId);
+    // Mark all but the first (newest) for deletion
+    for (let i = 1; i < group.length; i += 1) {
+      toDelete.push(group[i]);
+    }
   }
 
-  if (target.startsWith('@')) {
-    return `@${String(updateChat.username ?? '').trim()}`.toLowerCase() === target.toLowerCase();
-  }
-
-  return false;
+  return toDelete.sort((a, b) => a.messageId - b.messageId);
 }
 
 async function telegramRequest(botToken, method, payload) {
-  const url = `https://api.telegram.org/bot${botToken}/${method}`;
-  const response = await fetch(url, {
+  const response = await fetch(`https://api.telegram.org/bot${botToken}/${method}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload),
   });
-
   const data = await response.json();
   if (!data.ok) {
     throw new Error(`Telegram API error (${method}): ${JSON.stringify(data)}`);
   }
-
   return data.result;
 }
 
@@ -141,52 +202,6 @@ async function deleteMessage(botToken, chatId, messageId) {
   }
 }
 
-function findDuplicateMessages(updates, targetChatId) {
-  const map = new Map();
-  const candidates = [];
-
-  for (const item of updates) {
-    const message = item?.channel_post;
-    if (!message) {
-      continue;
-    }
-
-    if (!chatMatches(message.chat, targetChatId)) {
-      continue;
-    }
-
-    const contentText = normalizeForDedupe(message.text || message.caption || '');
-    if (!contentText) {
-      continue;
-    }
-
-    const key = contentText;
-    const existing = map.get(key);
-
-    if (!existing) {
-      map.set(key, message);
-      continue;
-    }
-
-    const existingScore = Number(existing.message_id ?? 0);
-    const currentScore = Number(message.message_id ?? 0);
-
-    if (currentScore > existingScore) {
-      candidates.push(existing);
-      map.set(key, message);
-    } else {
-      candidates.push(message);
-    }
-  }
-
-  return candidates
-    .sort((a, b) => Number(a.message_id ?? 0) - Number(b.message_id ?? 0))
-    .map((msg) => ({
-      messageId: msg.message_id,
-      textPreview: normalizeForDedupe(msg.text || msg.caption || '').slice(0, 120),
-    }));
-}
-
 async function main() {
   await loadEnvFiles();
   const options = parseArgs(process.argv);
@@ -198,34 +213,40 @@ async function main() {
   if (!botToken) {
     throw new Error('Missing TELEGRAM_BOT_TOKEN');
   }
-
   if (!chatId) {
     throw new Error('Missing target channel (TELEGRAM_CHAT_ID or TELEGRAM_CHANNEL_URL)');
   }
 
-  console.log(`[info] Target channel: ${chatId}`);
-  console.log('[info] Fetching recent updates visible to the bot...');
+  const slug = resolvePublicChannelSlug(channelUrl, chatId);
+  if (!slug) {
+    throw new Error('Cannot resolve public channel slug from TELEGRAM_CHANNEL_URL or TELEGRAM_CHAT_ID');
+  }
 
-  const updates = await telegramRequest(botToken, 'getUpdates', {
-    allowed_updates: ['channel_post', 'edited_channel_post'],
-    limit: 100,
-    timeout: 0,
-  });
+  console.log(`[info] Target channel: ${chatId} (public slug: ${slug})`);
+  console.log('[info] Scraping recent channel posts from t.me/s/...');
 
-  const duplicates = findDuplicateMessages(updates, chatId);
+  const messages = await scrapeChannelMessages(slug);
+  console.log(`[info] Found ${messages.length} text posts in the public channel preview.`);
 
-  if (duplicates.length === 0) {
-    console.log('✅ No duplicate text posts found in current update window.');
+  if (messages.length === 0) {
+    console.log('[warn] No posts found. The channel may be private or empty.');
     return;
   }
 
-  console.log(`\n[info] Found ${duplicates.length} duplicate messages:`);
-  duplicates.forEach((item) => {
-    console.log(`- message_id=${item.messageId} | ${item.textPreview}`);
-  });
+  const duplicates = findDuplicates(messages);
+
+  if (duplicates.length === 0) {
+    console.log('✅ No duplicate posts found.');
+    return;
+  }
+
+  console.log(`\n[info] Found ${duplicates.length} duplicate post(s) to delete:`);
+  for (const dup of duplicates) {
+    console.log(`  - message_id=${dup.messageId} | ${dup.textPreview}`);
+  }
 
   if (!options.apply) {
-    console.log('\n[dry-run] No deletions were performed. Re-run with --apply to delete.');
+    console.log('\n[dry-run] No deletions performed. Re-run with --apply to delete.');
     return;
   }
 
@@ -233,15 +254,17 @@ async function main() {
   let deleted = 0;
   let failed = 0;
 
-  for (const item of duplicates) {
-    const result = await deleteMessage(botToken, chatId, item.messageId);
+  for (const dup of duplicates) {
+    const result = await deleteMessage(botToken, chatId, dup.messageId);
     if (result.success) {
       deleted += 1;
-      console.log(`✅ Deleted message_id=${item.messageId}`);
+      console.log(`  ✅ Deleted message_id=${dup.messageId}`);
     } else {
       failed += 1;
-      console.log(`❌ Failed message_id=${item.messageId}: ${result.error}`);
+      console.log(`  ❌ Failed message_id=${dup.messageId}: ${result.error}`);
     }
+    // Brief delay to avoid rate limits
+    await new Promise((r) => setTimeout(r, 300));
   }
 
   console.log(`\n[summary] deleted=${deleted} failed=${failed}`);

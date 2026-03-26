@@ -9,11 +9,20 @@
   <div class="webinar-cta-content">
     <div class="webinar-cta-text">
       <p class="webinar-cta-label">Live Session</p>
-      <p class="webinar-cta-title">Join the CELPIP Webinar</p>
-      <p class="webinar-cta-schedule">Every Saturday at 6:00 PM PST • $12/session</p>
+      <p class="webinar-cta-title">Fix Score-Limiting Patterns in Weekly Training</p>
+      <p class="webinar-cta-schedule">Every Saturday at 6:00 PM PST | $12/session</p>
     </div>
-    <a href="/webinar" class="btn btn-primary webinar-cta-btn">
-      Register now →
+    <a
+      href="/webinar"
+      class="btn btn-primary webinar-cta-btn"
+      data-track-click="webinar-cta-register"
+      data-track-page-type="content"
+      data-track-offer="weekly_training"
+      data-track-test="general"
+      data-track-skill="writing"
+      data-track-position="mid"
+    >
+      Save My Webinar Seat
     </a>
   </div>
 </div>
@@ -76,7 +85,6 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
-  /* Tablet: stack vertically */
   @media (max-width: 768px) {
     .webinar-cta {
       padding: var(--s-2) var(--s-3);
@@ -104,7 +112,6 @@
     }
   }
 
-  /* Mobile: make it even tighter */
   @media (max-width: 560px) {
     .webinar-cta {
       padding: var(--s-2);

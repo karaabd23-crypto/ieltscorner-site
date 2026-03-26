@@ -3,22 +3,51 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
-  title="You're in | IELTS Corner"
-  description="Thank you for signing up. Your CLB 9 Writing System is on its way."
+  title="Thanks | Next Step"
+  description="Your request was received. Use this page to pick your next score-improvement step."
 >
   <section class="section">
-    <div class="surface" style="max-width: 540px; margin: 0 auto; text-align: center;">
-      <div class="stack" style="align-items: center;">
-        <span class="pill">Confirmed</span>
-        <h1>You're in.</h1>
-        <p class="muted">You'll receive the CLB 9 Writing System shortly. Check your email.</p>
-        <hr style="width: 100%; border: none; border-top: 1px solid #ddd;" />
-        <p class="muted">While you're here, start improving your score right away:</p>
-        <div class="cluster" style="justify-content: center;">
-          <a class="btn btn-primary" href="/celpip/writing/ai-feedback">Try AI Writing Feedback</a>
-          <a class="btn" href="/celpip/writing/samples">See Band 9 Samples</a>
-        </div>
-      </div>
+    <div class="landing-shell">
+      <section class="landing-hero">
+        <p class="landing-eyebrow">Confirmed</p>
+        <h1>Your request was received</h1>
+        <p class="landing-subheadline">
+          Check your inbox for the resource. While you wait, choose one focused next step so your score keeps moving.
+        </p>
+      </section>
+
+      <section class="landing-section">
+        <h2>Next step for faster score progress</h2>
+        <a
+          class="btn btn-primary"
+          href="/essay-correction"
+          data-track-click="thank-you-next-step-essay-correction"
+          data-track-page-type="landing"
+          data-track-offer="essay_correction"
+          data-track-test="general"
+          data-track-skill="writing"
+          data-track-position="hero"
+        >
+          Get Direct Essay Feedback
+        </a>
+      </section>
+
+      <section class="landing-section">
+        <h2>Prefer live support this week?</h2>
+        <a
+          class="btn btn-primary"
+          href="/webinar"
+          data-track-click="thank-you-upsell-webinar"
+          data-track-page-type="landing"
+          data-track-offer="weekly_training"
+          data-track-test="general"
+          data-track-skill="writing"
+          data-track-position="mid"
+          data-track-intent="purchase"
+        >
+          Join Weekly Live Training ($12)
+        </a>
+      </section>
     </div>
   </section>
 </Layout>

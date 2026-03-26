@@ -7,6 +7,7 @@ import {
   fetchRecentChannelTexts,
   hasFingerprint,
   hasRecentTopic,
+  htmlToPlainText,
   loadPostHistory,
   rememberFingerprint,
   releasePostOwnershipClaim,
@@ -906,15 +907,17 @@ function pickTopic(options, history, topicDedupeDays) {
     return findTopicByQuery(options.topic);
   }
 
+  const postKind = options.mode === 'mini-tip' ? 'mini-tip' : 'lesson';
   const startIndex = pickDeterministicIndex(CHANNEL_TOPICS.length, options.mode === 'mini-tip' ? 29 : 11);
   for (let offset = 0; offset < CHANNEL_TOPICS.length; offset += 1) {
     const candidate = CHANNEL_TOPICS[(startIndex + offset) % CHANNEL_TOPICS.length];
-    if (!hasRecentTopic(history, candidate.id, { kind: 'content', maxAgeDays: topicDedupeDays })) {
+    if (!hasRecentTopic(history, candidate.id, { kind: postKind, maxAgeDays: topicDedupeDays })) {
       return candidate;
     }
   }
 
-  return CHANNEL_TOPICS[startIndex] ?? null;
+  console.log(`[skip] All ${CHANNEL_TOPICS.length} topics were already posted as ${postKind} in the last ${topicDedupeDays} days.`);
+  return null;
 }
 
 function buildPostMessage(content) {
@@ -942,13 +945,17 @@ async function main() {
   const channelUrl = process.env.TELEGRAM_CHANNEL_URL?.trim() ?? '';
   const historyFilePath = resolveHistoryFilePath();
   const history = await loadPostHistory(historyFilePath);
-  const topicDedupeDays = Math.max(30, Number.parseInt(process.env.TELEGRAM_TOPIC_DEDUPE_DAYS ?? '120', 10) || 120);
+  // With 10 topics, dedup window must be shorter than (topics / posts-per-day-per-mode) days
+  // Default 7 days prevents repeats within a week while allowing the topic pool to recycle
+  const topicDedupeDays = Math.max(3, Number.parseInt(process.env.TELEGRAM_TOPIC_DEDUPE_DAYS ?? '7', 10) || 7);
 
   const pickedTopic = pickTopic(options, history, topicDedupeDays);
   if (!pickedTopic) {
-    throw new Error('No curated Telegram topic is available.');
+    console.log('[done] No new topic available. Exiting without posting.');
+    return;
   }
 
+  const postKind = options.mode === 'mini-tip' ? 'mini-tip' : 'lesson';
   const content = buildMessage(pickedTopic, options.mode);
 
   if (options.dryRun) {
@@ -970,13 +977,13 @@ async function main() {
     return;
   }
 
-  if (hasRecentTopic(history, content.topicId, { kind: 'content', maxAgeDays: topicDedupeDays })) {
-    console.log(`[skip] Topic already posted in the last ${topicDedupeDays} days. Skipping publish.`);
+  if (hasRecentTopic(history, content.topicId, { kind: postKind, maxAgeDays: topicDedupeDays })) {
+    console.log(`[skip] Topic "${content.topicId}" already posted as ${postKind} in the last ${topicDedupeDays} days. Skipping publish.`);
     return;
   }
 
   const claim = await claimPostOwnership({
-    kind: 'content',
+    kind: postKind,
     fingerprint,
     topic: content.topicId,
   });
@@ -989,9 +996,21 @@ async function main() {
   try {
     const publicSlug = resolvePublicChannelSlug(channelUrl, chatId);
     const existingTexts = await fetchRecentChannelTexts(publicSlug, { stripSignature: false });
-    const normalizedMessage = toCanonicalPostText(messageText, { stripSignature: false });
+    // Strip HTML from the formatted message so it matches the plain-text scraped posts
+    const normalizedMessage = toCanonicalPostText(htmlToPlainText(messageText), { stripSignature: false });
     if (existingTexts.includes(normalizedMessage)) {
       console.log('[skip] Duplicate content detected in recent channel posts. Skipping publish.');
+      return;
+    }
+
+    // Also check if the topic title already appears in recent channel posts
+    const variant = options.mode === 'mini-tip' ? pickedTopic.mini : pickedTopic.lesson;
+    const normalizedTitle = toCanonicalPostText(variant.title, { stripSignature: false }).toLowerCase();
+    const titleAlreadyPosted = existingTexts.some(
+      (text) => text.toLowerCase().includes(normalizedTitle)
+    );
+    if (titleAlreadyPosted) {
+      console.log(`[skip] Topic title "${variant.title}" found in recent channel posts. Skipping publish.`);
       return;
     }
 
@@ -1021,7 +1040,7 @@ async function main() {
     }
 
     rememberFingerprint(history, fingerprint, {
-      kind: 'content',
+      kind: postKind,
       topic: content.topicId,
       title: content.title,
       messageId: messageResult?.result?.message_id ?? null,

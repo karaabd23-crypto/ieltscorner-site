@@ -3,7 +3,13 @@ import { defineCollection, z } from "astro:content";
 const lessons = defineCollection({
   type: "content",
   schema: z.object({
+    test: z
+      .enum(["IELTS", "CELPIP", "ielts", "celpip"])
+      .optional()
+      .transform((value) => (value ? (value.toUpperCase() as "IELTS" | "CELPIP") : value)),
+    skill: z.enum(["grammar", "vocabulary", "writing", "speaking", "listening", "reading"]).optional(),
     title: z.string(),
+    description: z.string().optional(),
     category: z.enum(["grammar", "vocabulary", "writing", "speaking", "listening", "reading"]),
     level: z.enum(["A1", "A2", "B1", "B2", "C1", "C2"]).default("C1"),
     ieltsBand: z.string().default("6.0-6.5"),

@@ -1,0 +1,92 @@
+---
+type Props = {
+  kicker?: string;
+  headline: string;
+  bullets: string[];
+  formName: string;
+  formType: string;
+  successPath: string;
+  source: string;
+  magnetId: string;
+  buttonLabel?: string;
+  pageType?: string;
+  offer?: string;
+  test?: string;
+  skill?: string;
+  position?: string;
+  className?: string;
+};
+
+const {
+  kicker = "Free study tool",
+  headline,
+  bullets,
+  formName,
+  formType,
+  successPath,
+  source,
+  magnetId,
+  buttonLabel = "Send It To My Email",
+  pageType = "hub",
+  offer = "lead_magnet",
+  test = "general",
+  skill = "general",
+  position = "form_section",
+  className = "",
+} = Astro.props as Props;
+---
+
+<section class:list={["surface lead-magnet-card", className]}>
+  <p class="lead-magnet-card__kicker">{kicker}</p>
+  <h3>{headline}</h3>
+  <ul class="lead-magnet-card__list">
+    {bullets.map((bullet) => <li>{bullet}</li>)}
+  </ul>
+
+  <form
+    name={formName}
+    method="POST"
+    action={successPath}
+    netlify
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+    data-track-form={formName}
+    data-track-form-type={formType}
+    data-track-page-type={pageType}
+    data-track-offer={offer}
+    data-track-test={test}
+    data-track-skill={skill}
+    data-track-position={position}
+    class="lead-magnet-card__form"
+  >
+    <input type="hidden" name="form-name" value={formName} />
+    <input type="hidden" name="source" value={source} />
+    <input type="hidden" name="lead_magnet_id" value={magnetId} />
+    <p class="lead-capture__honeypot">
+      <label>Do not fill this out: <input name="bot-field" /></label>
+    </p>
+    <label class="lead-capture__field">
+      <span>Name</span>
+      <input type="text" name="name" required autocomplete="name" />
+    </label>
+    <label class="lead-capture__field">
+      <span>Email</span>
+      <input type="email" name="email" required autocomplete="email" />
+    </label>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      data-track-click={`${formName}-submit`}
+      data-track-page-type={pageType}
+      data-track-offer={offer}
+      data-track-test={test}
+      data-track-skill={skill}
+      data-track-position={position}
+    >
+      {buttonLabel}
+    </button>
+  </form>
+  <p class="lead-magnet-card__footnote">
+    You will get this resource by email plus short weekly score-improvement tips.
+  </p>
+</section>

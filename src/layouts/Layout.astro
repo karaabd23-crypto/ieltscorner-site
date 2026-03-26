@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import InArticleAd from "../components/InArticleAd.astro";
+import ConversionTrackingScript from "../components/ConversionTrackingScript.astro";
 
 // TypeScript declaration for AdSense
 declare global {
@@ -33,6 +34,46 @@ const robotsContent = noindex ? "noindex, nofollow" : "index, follow";
 const normalizedPath = Astro.url.pathname.replace(/\/$/, "") || "/";
 const floatingCtaPaths = new Set(["/", "/ielts", "/celpip", "/webinar"]);
 const showFloatingWebinarCta = floatingCtaPaths.has(normalizedPath);
+const highIntentTrackingPaths = new Set([
+  "/celpip/reading/clb-6-to-8",
+  "/celpip-writing-help",
+  "/ielts-writing-help",
+  "/essay-correction",
+  "/essay-correction/submit",
+]);
+
+const inferTrackingPageType = (path: string) => {
+  if (path.startsWith("/lessons/")) return "lesson";
+  if (path.startsWith("/blog/")) return "blog";
+  if (path.includes("-help") || path.startsWith("/essay-correction") || path.startsWith("/tutoring") || path.startsWith("/webinar")) return "landing";
+  if (path.startsWith("/celpip/") || path.startsWith("/ielts/")) return "hub";
+  return "site";
+};
+
+const inferTrackingTest = (path: string) => {
+  if (path.includes("/celpip")) return "celpip";
+  if (path.includes("/ielts")) return "ielts";
+  return "general";
+};
+
+const inferTrackingSkill = (path: string) => {
+  if (path.includes("/writing")) return "writing";
+  if (path.includes("/reading")) return "reading";
+  if (path.includes("/speaking")) return "speaking";
+  if (path.includes("/listening")) return "listening";
+  if (path.includes("/grammar")) return "grammar";
+  if (path.includes("/vocabulary")) return "vocabulary";
+  return "general";
+};
+
+const trackingPageType = inferTrackingPageType(normalizedPath);
+const trackingIntentLevel = highIntentTrackingPaths.has(normalizedPath)
+  ? "high"
+  : ["landing", "hub", "lesson"].includes(trackingPageType)
+    ? "medium"
+    : "low";
+const trackingTest = inferTrackingTest(normalizedPath);
+const trackingSkill = inferTrackingSkill(normalizedPath);
 
 const navGroups = [
   {
@@ -280,7 +321,13 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
     </script>
   </head>
 
-  <body data-main-page={showFloatingWebinarCta ? "1" : "0"}>
+  <body
+    data-main-page={showFloatingWebinarCta ? "1" : "0"}
+    data-intent-level={trackingIntentLevel}
+    data-page-type={trackingPageType}
+    data-test={trackingTest}
+    data-skill={trackingSkill}
+  >
     <form
       name="subscription-cancel-feedback"
       method="POST"
@@ -806,5 +853,7 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
         aria-label="Join Weekly Webinar"
       >🎥 Join Weekly Webinar</button>
     )}
+
+    <ConversionTrackingScript />
   </body>
 </html>

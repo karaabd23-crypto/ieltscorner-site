@@ -1,0 +1,70 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import {
+  ESSAY_CORRECTION_CHECKOUT_ENV_KEY,
+  ESSAY_CORRECTION_CHECKOUT_IS_CONFIGURED,
+  ESSAY_CORRECTION_STRIPE_SUCCESS_PATH,
+  ESSAY_CORRECTION_STRIPE_PRODUCT_ID,
+  getEssayCorrectionCheckoutLinkProps,
+} from "../../lib/offers";
+
+const checkoutLink = getEssayCorrectionCheckoutLinkProps();
+---
+
+<Layout
+  title="Continue To Checkout | Essay Correction"
+  description="Continue to essay correction checkout and follow the next action to submit your essay."
+  noindex={true}
+>
+  <section class="section">
+    <div class="landing-shell">
+      <section class="landing-hero">
+        <p class="landing-eyebrow">Optional Checkout Step</p>
+        <h1>You Are One Step Away From Direct Essay Feedback</h1>
+        <p class="landing-subheadline">
+          Continue to secure checkout. After payment, Stripe should return you to the final submission step automatically.
+        </p>
+        <div class="landing-hero__actions">
+          <a
+            class="btn btn-primary landing-cta"
+            href={checkoutLink.href}
+            data-track-click="essay-checkout-intent-continue"
+            data-track-page-type="landing"
+            data-track-offer="essay_correction"
+            data-track-test="ielts_celpip"
+            data-track-skill="writing"
+            data-track-position="hero"
+            data-track-intent="checkout"
+            data-track-intent-event="checkout_click"
+          >
+            Continue To Secure Checkout
+          </a>
+        </div>
+      </section>
+
+      {!ESSAY_CORRECTION_CHECKOUT_IS_CONFIGURED && (
+        <section id="payment-link-pending" class="landing-section">
+          <h2>Checkout link pending</h2>
+          <p class="muted" style="margin-bottom: 0;">
+            The Stripe checkout URL for product <strong>{ESSAY_CORRECTION_STRIPE_PRODUCT_ID}</strong> is not set yet.
+            Add <code>{ESSAY_CORRECTION_CHECKOUT_ENV_KEY}</code> to activate checkout. Stripe should return paid users to
+            <code>{ESSAY_CORRECTION_STRIPE_SUCCESS_PATH}</code>.
+          </p>
+        </section>
+      )}
+
+      <section class="landing-section">
+        <h2>What happens after checkout</h2>
+        <p class="muted">
+          After payment, Stripe sends you to the final submission step so you can paste your essay text and task details without delay.
+        </p>
+        <ol style="margin: var(--s-2) 0 0; padding-left: 1.2rem;">
+          <li>Complete secure checkout.</li>
+          <li>Land on the final submission page.</li>
+          <li>Paste your essay text and send it for review.</li>
+          <li>Receive your corrected essay by email at the address you submit in the form.</li>
+        </ol>
+      </section>
+    </div>
+  </section>
+</Layout>

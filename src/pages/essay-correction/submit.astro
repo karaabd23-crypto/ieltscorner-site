@@ -1,0 +1,263 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import {
+  ESSAY_CORRECTION_CHECKOUT_ENV_KEY,
+  ESSAY_CORRECTION_CHECKOUT_IS_CONFIGURED,
+  ESSAY_CORRECTION_STRIPE_PRODUCT_ID,
+  ESSAY_CORRECTION_STRIPE_SUCCESS_PATH,
+  ESSAY_CORRECTION_SUBMIT_ACCESS_PARAM,
+  ESSAY_CORRECTION_SUBMIT_ACCESS_VALUE,
+  ESSAY_CORRECTION_SUBMIT_STORAGE_KEY,
+  ESSAY_CORRECTION_SUBMITTED_PAGE_PATH,
+} from "../../lib/offers";
+---
+
+<Layout
+  title="Submit Your Essay | Essay Correction"
+  description="Final step after payment: paste your IELTS or CELPIP essay and submit it for detailed score-focused feedback."
+  keywords="submit essay correction, IELTS writing feedback submission, CELPIP writing feedback submission"
+>
+  <script
+    is:inline
+    slot="head"
+    define:vars={{
+      accessParam: ESSAY_CORRECTION_SUBMIT_ACCESS_PARAM,
+      accessValue: ESSAY_CORRECTION_SUBMIT_ACCESS_VALUE,
+      storageKey: ESSAY_CORRECTION_SUBMIT_STORAGE_KEY,
+    }}
+  >
+    (() => {
+      const root = document.documentElement;
+      const params = new URLSearchParams(window.location.search);
+      const hasAccessSignal = params.get(accessParam) === accessValue;
+      let hasStoredAccess = false;
+
+      try {
+        hasStoredAccess = window.localStorage.getItem(storageKey) === "granted";
+      } catch {
+        hasStoredAccess = false;
+      }
+
+      if (hasAccessSignal) {
+        try {
+          window.localStorage.setItem(storageKey, "granted");
+          hasStoredAccess = true;
+        } catch {
+          // Ignore storage failures and allow this visit through.
+        }
+
+        if (window.history?.replaceState) {
+          const nextUrl = new URL(window.location.href);
+          nextUrl.searchParams.delete(accessParam);
+          const nextSearch = nextUrl.search ? nextUrl.search : "";
+          window.history.replaceState({}, "", `${nextUrl.pathname}${nextSearch}${nextUrl.hash}`);
+        }
+      }
+
+      root.dataset.essaySubmitAccess = hasAccessSignal || hasStoredAccess ? "granted" : "locked";
+    })();
+  </script>
+
+  <section class="section">
+    <div class="landing-shell essay-submit-guard essay-submit-guard__locked">
+      <section class="landing-hero">
+        <p class="landing-eyebrow">Payment Required First</p>
+        <h1>Complete payment before submitting your essay</h1>
+        <p class="landing-subheadline">
+          This page is the final step after checkout. Once payment is complete, Stripe should send you here automatically so you can paste your essay and finish the process.
+        </p>
+        <div class="landing-hero__actions">
+          <a
+            class="btn btn-primary landing-cta"
+            href="/essay-correction"
+            data-track-click="essay-submit-locked-return-sales"
+            data-track-page-type="service"
+            data-track-offer="essay_correction"
+            data-track-test="ielts_celpip"
+            data-track-skill="writing"
+            data-track-position="hero"
+          >
+            Go to Essay Correction
+          </a>
+        </div>
+        <p class="muted" style="margin: var(--s-2) 0 0;">
+          If you already paid, reopen the page you reached after checkout so the final submission step can unlock.
+        </p>
+      </section>
+
+      <section class="landing-section">
+        <h2>How the flow works</h2>
+        <ol style="margin: var(--s-2) 0 0; padding-left: 1.2rem;">
+          <li>Pay on the essay correction page.</li>
+          <li>Stripe returns you to this final step.</li>
+          <li>Paste your essay and send it for review.</li>
+        </ol>
+      </section>
+
+      {!ESSAY_CORRECTION_CHECKOUT_IS_CONFIGURED && (
+        <section id="payment-link-pending" class="landing-section">
+          <h2>Checkout link pending</h2>
+          <p class="muted" style="margin-bottom: 0;">
+            Add <code>{ESSAY_CORRECTION_CHECKOUT_ENV_KEY}</code> to activate the essay correction payment button. Stripe should return paid users to
+            <code>{ESSAY_CORRECTION_STRIPE_SUCCESS_PATH}</code>.
+          </p>
+        </section>
+      )}
+    </div>
+
+    <div class="landing-shell essay-submit-guard essay-submit-guard__open">
+      <section class="landing-hero">
+        <p class="landing-eyebrow">Final Step After Payment</p>
+        <h1>You&apos;re almost done. Paste your essay below.</h1>
+        <p class="landing-subheadline">
+          This is the final step. Submit one IELTS or CELPIP response with the exact task details. Your corrected essay is sent to the same email address you enter in this form.
+        </p>
+      </section>
+
+      <section class="landing-section essay-submit-status">
+        <h2>What you will receive</h2>
+        <ul class="landing-list">
+          <li>Detailed comments on grammar, structure, and task response.</li>
+          <li>Clear score-focused priorities for your next revision.</li>
+          <li>Feedback on one essay for IELTS or CELPIP writing.</li>
+        </ul>
+      </section>
+
+      <section class="landing-grid">
+        <section class="landing-section">
+          <h2>What to paste</h2>
+          <ul class="landing-list">
+            <li>Your full essay text in plain text format.</li>
+            <li>Your test type and task type.</li>
+            <li>Any note about your target score or main concern.</li>
+          </ul>
+        </section>
+        <section class="landing-section">
+          <h2>Turnaround and next step</h2>
+          <p style="margin-top: 0;">
+            Turnaround is confirmed after submission based on current workload. Once you send the form, your essay enters the review queue and your correction report is emailed to the address in this form.
+          </p>
+        </section>
+      </section>
+
+      <section class="landing-section">
+        <h2>Paste your essay here</h2>
+        <p class="muted" style="margin-top: 0;">
+          Use plain text, not screenshots. Use the email where you want your corrected essay delivered.
+        </p>
+        <form
+          name="essay-submission-form"
+          method="POST"
+          action={ESSAY_CORRECTION_SUBMITTED_PAGE_PATH}
+          netlify
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          data-track-form="essay-submission-form"
+          data-track-form-type="essay_submission_form"
+          data-track-page-type="service"
+          data-track-offer="essay_correction"
+          data-track-test="ielts_celpip"
+          data-track-skill="writing"
+          data-track-position="form_section"
+          class="essay-submit-form"
+        >
+          <input type="hidden" name="form-name" value="essay-submission-form" />
+          <input type="hidden" name="product_id" value={ESSAY_CORRECTION_STRIPE_PRODUCT_ID} />
+          <p class="lead-capture__honeypot">
+            <label>Do not fill this out: <input name="bot-field" /></label>
+          </p>
+
+          <label class="lead-capture__field">
+            <span>Full Name</span>
+            <input type="text" name="full_name" required autocomplete="name" />
+          </label>
+
+          <label class="lead-capture__field">
+            <span>Email</span>
+            <input type="email" name="email" required autocomplete="email" />
+            <small class="muted">We send your corrected essay to this email address.</small>
+          </label>
+
+          <label class="lead-capture__field">
+            <span>Test Type</span>
+            <select name="test_type" required>
+              <option value="">Select one</option>
+              <option value="IELTS">IELTS</option>
+              <option value="CELPIP">CELPIP</option>
+            </select>
+          </label>
+
+          <label class="lead-capture__field">
+            <span>Task Type</span>
+            <select name="task_type" required>
+              <option value="">Select one</option>
+              <option value="IELTS Task 1">IELTS Task 1</option>
+              <option value="IELTS Task 2">IELTS Task 2</option>
+              <option value="CELPIP Task 1 Email">CELPIP Task 1 Email</option>
+              <option value="CELPIP Task 2 Survey Response">CELPIP Task 2 Survey Response</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+
+          <label class="lead-capture__field essay-submit-form__textarea">
+            <span>Essay Text</span>
+            <textarea
+              name="essay_text"
+              required
+              rows={14}
+              placeholder="Paste your full essay here..."
+            ></textarea>
+          </label>
+
+          <label class="lead-capture__field essay-submit-form__textarea">
+            <span>Optional Notes</span>
+            <textarea
+              name="optional_notes"
+              rows={5}
+              placeholder="Target score, concerns, or areas you want prioritized."
+            ></textarea>
+          </label>
+
+          <button
+            type="submit"
+            class="btn btn-primary"
+            data-track-click="essay-submission-send"
+            data-track-page-type="service"
+            data-track-offer="essay_correction"
+            data-track-test="ielts_celpip"
+            data-track-skill="writing"
+            data-track-position="form_section"
+          >
+            Send Essay for Correction
+          </button>
+        </form>
+      </section>
+
+      <section class="landing-section">
+        <h2>What happens next</h2>
+        <ol style="margin: var(--s-2) 0 0; padding-left: 1.2rem;">
+          <li>Your submission is received through our secure Netlify form and queued for review.</li>
+          <li>Your corrected essay and score-focused feedback are emailed to your submitted address.</li>
+          <li>You revise using clear priorities instead of guessing what to fix.</li>
+        </ol>
+      </section>
+
+      <section class="landing-section">
+        <h2>Want to keep improving while you wait?</h2>
+        <a
+          class="btn btn-primary"
+          href="/webinar"
+          data-track-click="essay-submit-secondary-webinar"
+          data-track-page-type="service"
+          data-track-offer="weekly_training"
+          data-track-test="ielts_celpip"
+          data-track-skill="writing"
+          data-track-position="end"
+          data-track-intent="purchase"
+        >
+          Join Weekly Live Training ($12)
+        </a>
+      </section>
+    </div>
+  </section>
+</Layout>
