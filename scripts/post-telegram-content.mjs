@@ -42,6 +42,8 @@ const TELEGRAM_LIMITS = {
   maxPollOptions: 10,
 };
 
+const TELEGRAM_EXAM_TOPIC_SHARE = 0.7;
+
 const CHANNEL_TOPICS = [
   {
     id: 'both-either-neither',
@@ -1569,11 +1571,19 @@ function pickTopic(options, history, topicDedupeDays) {
   }
 
   const examFocusedTopics = eligibleTopics.filter((candidate) => candidate.examFocus === true);
-  const shouldPreferExamFocus =
-    examFocusedTopics.length > 0
-    && pickDeterministicIndex(5, options.mode === 'mini-tip' ? 41 : 17) !== 0;
+  const languageSupportTopics = eligibleTopics.filter((candidate) => candidate.examFocus !== true);
+  const ratioBucket = pickDeterministicIndex(10, options.mode === 'mini-tip' ? 41 : 17);
+  const shouldPreferExamFocus = ratioBucket < Math.round(TELEGRAM_EXAM_TOPIC_SHARE * 10);
 
-  const selectionPool = shouldPreferExamFocus ? examFocusedTopics : eligibleTopics;
+  let selectionPool = eligibleTopics;
+  if (examFocusedTopics.length > 0 && languageSupportTopics.length > 0) {
+    selectionPool = shouldPreferExamFocus ? examFocusedTopics : languageSupportTopics;
+  } else if (examFocusedTopics.length > 0) {
+    selectionPool = examFocusedTopics;
+  } else if (languageSupportTopics.length > 0) {
+    selectionPool = languageSupportTopics;
+  }
+
   const startIndex = pickDeterministicIndex(selectionPool.length, options.mode === 'mini-tip' ? 29 : 11);
   return selectionPool[startIndex] ?? null;
 }
