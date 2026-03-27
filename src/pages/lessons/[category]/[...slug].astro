@@ -22,6 +22,11 @@ type ServiceLink = {
   description: string;
 };
 
+type HubLink = {
+  label: string;
+  href: string;
+};
+
 type CtaBlock = {
   kicker: string;
   text: string;
@@ -103,6 +108,31 @@ const olderLesson =
 const currentTests = getLessonTests(item);
 const currentSkill = getLessonSkill(item);
 const currentTestSet = new Set(currentTests);
+const skillHubCategories = new Set<LessonEntry["data"]["category"]>([
+  "writing",
+  "speaking",
+  "reading",
+  "listening",
+]);
+
+const buildTestHubLink = (test: "IELTS" | "CELPIP"): HubLink => {
+  const base = `/${test.toLowerCase()}`;
+  if (skillHubCategories.has(currentCategory)) {
+    return {
+      label: `${test} ${categoryLabel(currentCategory)} hub`,
+      href: `${base}/${currentCategory}`,
+    };
+  }
+
+  return {
+    label: `${test} hub`,
+    href: base,
+  };
+};
+
+const testHubLinks: HubLink[] = Array.from(new Set(currentTests)).map((test) =>
+  buildTestHubLink(test)
+);
 
 const relatedCandidates = allLessons
   .filter((lesson) => lesson.slug !== item.slug)
@@ -472,15 +502,15 @@ const seoKeywords = `${publicTitle}, ${item.data.category}, ${item.data.level}, 
   <section class="section">
     <div class="stack">
       <!-- SEO Breadcrumbs -->
-      <nav aria-label="Breadcrumb" style="font-size: 14px;">
-        <ol style="display: flex; gap: 8px; list-style: none; padding: 0; margin: 0; color: var(--muted);">
+      <nav aria-label="Breadcrumb" style="font-size: 14px;" class="lesson-breadcrumbs">
+        <ol class="lesson-breadcrumbs__list">
           <li><a href="/">Home</a></li>
           <li>&gt;</li>
           <li><a href="/lessons">Lessons</a></li>
           <li>&gt;</li>
           <li><a href={`/lessons/${currentCategory}`}>{categoryLabel(currentCategory)}</a></li>
           <li>&gt;</li>
-          <li>{publicTitle}</li>
+          <li class="lesson-breadcrumbs__current">{publicTitle}</li>
         </ol>
       </nav>
 
@@ -494,6 +524,13 @@ const seoKeywords = `${publicTitle}, ${item.data.category}, ${item.data.level}, 
         </a>
         <a class="btn" href="/lessons">All lessons</a>
       </div>
+      {testHubLinks.length > 0 && (
+        <div class="cluster" style="margin-top: var(--s-2);">
+          {testHubLinks.map((hubLink) => (
+            <a class="btn" href={hubLink.href}>{hubLink.label}</a>
+          ))}
+        </div>
+      )}
     </div>
   </section>
 

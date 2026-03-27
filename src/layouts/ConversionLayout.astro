@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import ConversionTrackingScript from "../components/ConversionTrackingScript.astro";
+import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 
 const {
   title = "IELTS Corner",
@@ -45,6 +46,7 @@ const trackingSkill = inferTrackingSkill(normalizedPath);
 <!doctype html>
 <html lang="en">
   <head>
+    <GoogleAnalytics measurementId="G-G0WCV3WJ44" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
