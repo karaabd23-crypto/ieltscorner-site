@@ -105,6 +105,8 @@ button{
 .stack{ display:flex; flex-direction:column; gap: var(--s-3); }
 .cluster{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
 .surface{
+  min-width: 0;
+  max-width: 100%;
   background: rgba(255,255,255,0.86);
   border: 1px solid var(--border-strong);
   border-radius: calc(var(--radius) + 6px);
@@ -598,6 +600,7 @@ button{
 
 /* ---- Grids & Cards ---- */
 .grid{ display:grid; gap: var(--s-5); }
+.grid > *{ min-width: 0; }
 .grid-4{ grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .grid-3{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .grid-2{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -617,6 +620,15 @@ button{
   .grid-3{ grid-template-columns: 1fr; }
   .grid-2{ grid-template-columns: 1fr; }
   .grid { gap: var(--s-3); }
+
+  #lesson-search {
+    min-width: 0 !important;
+    width: 100%;
+  }
+
+  #lesson-search-clear {
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -696,12 +708,15 @@ button{
   }
 
 .card{
+  min-width: 0;
+  max-width: 100%;
   background: rgba(255,255,255,0.92);
   border:1px solid var(--border-strong);
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
   padding: 20px;
   transition: transform 140ms ease, box-shadow 140ms ease;
+  overflow-wrap: anywhere;
 }
 .card:hover{
   transform: translateY(-2px);
@@ -716,6 +731,17 @@ button{
 .card p{
   margin:0 0 14px;
   color: var(--muted);
+}
+
+.card > *{
+  min-width: 0;
+  max-width: 100%;
+}
+
+input,
+select,
+textarea {
+  max-width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -754,6 +780,7 @@ button{
   gap: var(--s-7);
   align-items:start;
 }
+.feature-grid > *{ min-width: 0; }
 .feature h2{ margin:0 0 10px; font-size: clamp(26px, 2.4vw, 34px); }
 .feature p{ margin:0 0 14px; max-width: 60ch; color: var(--muted); }
 
@@ -2110,6 +2137,18 @@ hr {
   display: grid;
   gap: var(--s-4);
   position: relative;
+  min-width: 0;
+}
+
+.lesson-content > *,
+.lesson-body-content,
+.lesson-body-content > *,
+.lesson-teach-grid,
+.lesson-example-grid,
+.lesson-error-grid,
+.lesson-resource-grid,
+.practice-lab-grid {
+  min-width: 0;
 }
 
 .lesson-content h2 {
@@ -2333,11 +2372,14 @@ hr {
 .lesson-error-card,
 .lesson-resource-card,
 .practice-task {
+  min-width: 0;
+  max-width: 100%;
   border-radius: 18px;
   border: 1px solid #d7dfeb;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, #fdfefe 100%);
   box-shadow: 0 18px 40px rgba(19, 47, 78, 0.08);
   animation: lessonCardIn 0.45s ease both;
+  overflow-wrap: anywhere;
 }
 
 .lesson-panel {
@@ -2400,6 +2442,9 @@ hr {
   padding: 14px 16px;
   font-weight: 600;
   color: #163752;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .lesson-example-grid,
@@ -2443,6 +2488,9 @@ hr {
   padding: 12px 14px;
   border-radius: 14px;
   line-height: 1.7;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .lesson-line span,
@@ -2480,6 +2528,7 @@ hr {
 .lesson-fix-line {
   margin: 0;
   color: #294764;
+  overflow-wrap: anywhere;
 }
 
 .practice-lab {
