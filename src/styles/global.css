@@ -1380,6 +1380,12 @@ button{
   min-height: 274px;
 }
 
+.ad-shell--side {
+  min-height: 240px;
+  max-height: 240px;
+  overflow: hidden;
+}
+
 .ad-unit-line {
   width: min(100%, 728px);
   max-width: 728px;
@@ -1392,6 +1398,40 @@ button{
   max-width: 300px;
   min-height: 250px;
   max-height: 250px;
+}
+
+.ad-unit-side {
+  width: 120px;
+  max-width: 120px;
+  height: 240px;
+  min-height: 240px;
+  max-height: 240px;
+}
+
+.page-side-ad {
+  position: fixed;
+  top: 58vh;
+  bottom: auto;
+  z-index: 30;
+  width: 120px;
+  height: 240px;
+  max-height: 240px;
+  overflow: hidden;
+  display: none;
+}
+
+.page-side-ad--left {
+  left: max(8px, calc((100vw - var(--container)) / 2 - 132px));
+}
+
+.page-side-ad--right {
+  right: max(8px, calc((100vw - var(--container)) / 2 - 132px));
+}
+
+@media (min-width: 1280px) {
+  .page-side-ad {
+    display: block;
+  }
 }
 
 /* Responsive ad spacing */
@@ -1422,6 +1462,12 @@ button{
 
   .ad-shell--square {
     min-height: 260px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .page-side-ad {
+    display: none !important;
   }
 }
 

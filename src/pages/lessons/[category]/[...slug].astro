@@ -165,45 +165,45 @@ const showBottomLessonAd = !showIntentStack;
 
 const leadMagnetBlock: LeadMagnetBlock | null = readingRescueLesson
   ? {
-      headline: "CELPIP Reading CLB 6->8 Mistake Checklist",
+      headline: "Subscribe for Weekly CELPIP Reading Emails",
       bullets: [
-        "Catch distractor and inference traps before they steal points.",
-        "Use a timing map that protects accuracy in the final section.",
-        "Apply an error-review loop that turns misses into score gains.",
+        "Receive one practical CELPIP reading strategy each week.",
+        "Get lesson updates focused on traps that hold CLB 6 scores down.",
+        "Be notified when new tools and downloads are ready.",
       ],
-      formName: "lead-magnet-celpip-reading-checklist",
-      formType: "lead_magnet_celpip_reading_checklist",
-      successPath: "/thank-you/celpip-reading-checklist/",
-      magnetId: "celpip_reading_clb6_to_8_checklist",
-      buttonLabel: "Send Me The Reading Checklist",
+      formName: "lead-subscribe-celpip-reading-updates",
+      formType: "lead_capture_celpip_reading_updates",
+      successPath: "/newsletter/thanks/",
+      magnetId: "celpip_reading_updates_subscription",
+      buttonLabel: "Subscribe for Weekly Emails",
     }
   : isWritingLesson
     ? likelyCelpip
       ? {
-          headline: "CELPIP Writing Score-Boost Checklist",
+          headline: "Subscribe for Weekly CELPIP Writing Emails",
           bullets: [
-            "Run a pre-write task-coverage check before your timer starts.",
-            "Use tone and structure checks that prevent CLB-limiting errors.",
-            "Apply a final revision sequence for cleaner grammar and clarity.",
+            "Receive one practical CELPIP writing strategy each week.",
+            "Get lesson updates focused on the mistakes that block CLB 9.",
+            "Be notified when new tools and downloads are ready.",
           ],
-          formName: "lead-magnet-celpip-writing-score-boost-checklist",
-          formType: "lead_magnet_celpip_writing_score_boost_checklist",
-          successPath: "/thank-you/celpip-writing-score-boost/",
-          magnetId: "celpip_writing_score_boost_checklist",
-          buttonLabel: "Send Me The Score-Boost Checklist",
+          formName: "lead-subscribe-celpip-writing-updates",
+          formType: "lead_capture_celpip_writing_updates",
+          successPath: "/newsletter/thanks/",
+          magnetId: "celpip_writing_updates_subscription",
+          buttonLabel: "Subscribe for Weekly Emails",
         }
       : {
-          headline: "IELTS Writing Band 7+ Structure Guide",
+          headline: "Subscribe for Weekly IELTS Writing Emails",
           bullets: [
-            "Use a paragraph plan that keeps your response coherent under pressure.",
-            "Avoid the structure mistakes that cap Task 2 scores around Band 6.",
-            "Apply a fast final check for grammar, support, and task response.",
+            "Receive one practical IELTS writing strategy each week.",
+            "Get lesson updates focused on the mistakes that block Band 7.",
+            "Be notified when new tools and downloads are ready.",
           ],
-          formName: "lead-magnet-ielts-writing-structure-guide",
-          formType: "lead_magnet_ielts_writing_structure_guide",
-          successPath: "/thank-you/ielts-writing-structure-guide/",
-          magnetId: "ielts_writing_band7_structure_guide",
-          buttonLabel: "Send Me The Band 7+ Guide",
+          formName: "lead-subscribe-ielts-writing-updates",
+          formType: "lead_capture_ielts_writing_updates",
+          successPath: "/newsletter/thanks/",
+          magnetId: "ielts_writing_updates_subscription",
+          buttonLabel: "Subscribe for Weekly Emails",
         }
     : null;
 
@@ -525,8 +525,8 @@ const seoKeywords = `${publicTitle}, ${item.data.category}, ${item.data.level}, 
       {showBottomLessonAd && (
         <InArticleAd
           adId="lesson-in-article-ad"
-          targetSelector=".lesson-content"
-          anchorSelector=".lesson-example-grid, #lesson-map, .lesson-teach-grid"
+          targetSelector=".lesson-body-content"
+          anchorSelector=".lesson-teach-grid, .lesson-example-grid, .lesson-error-grid, .lesson-resource-grid, .practice-lab-grid, #lesson-map"
         />
       )}
 
@@ -625,7 +625,7 @@ const seoKeywords = `${publicTitle}, ${item.data.category}, ${item.data.level}, 
             magnetId={leadMagnetBlock.magnetId}
             buttonLabel={leadMagnetBlock.buttonLabel}
             pageType="lesson"
-            offer="lead_magnet"
+            offer="lead_capture"
             test={trackTest}
             skill={ladderSkill}
             position="end"

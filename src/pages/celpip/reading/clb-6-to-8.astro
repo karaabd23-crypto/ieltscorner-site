@@ -69,9 +69,11 @@ const pathwayTopics = [
   },
 ];
 
-const scoreLesson = (lesson, topicKeywords) => {
+type ReadingLesson = (typeof allReadingLessons)[number];
+
+const scoreLesson = (lesson: ReadingLesson, topicKeywords: string[]) => {
   const haystack = `${lesson.slug} ${lesson.data.title} ${lesson.data.description || ""} ${lesson.data.excerpt}`.toLowerCase();
-  return topicKeywords.reduce((score, keyword) => (haystack.includes(keyword) ? score + 1 : score), 0);
+  return topicKeywords.reduce((score: number, keyword: string) => (haystack.includes(keyword) ? score + 1 : score), 0);
 };
 
 const usedSlugs = new Set<string>();
@@ -209,20 +211,20 @@ const pageStructuredData = [
 
       <section class="landing-section" id="celpip-reading-checklist">
         <LeadMagnetCard
-          headline="CELPIP Reading CLB 6->8 Mistake Checklist"
+          headline="Subscribe for Weekly CELPIP Reading Emails"
           bullets={[
-            "Spot the exact distractor and inference mistakes that freeze scores at CLB 6.",
-            "Use a proof-check routine before locking answers in high-pressure sections.",
-            "Follow a timing and review plan built for CLB 8 consistency.",
+            "Receive one practical CELPIP reading strategy each week.",
+            "Get lesson updates focused on traps that hold CLB 6 scores down.",
+            "Be notified when new tools and downloads are ready.",
           ]}
-          formName="lead-magnet-celpip-reading-checklist"
-          formType="lead_magnet_celpip_reading_checklist"
-          successPath="/thank-you/celpip-reading-checklist/"
+          formName="lead-subscribe-celpip-reading-updates"
+          formType="lead_capture_celpip_reading_updates"
+          successPath="/newsletter/thanks/"
           source="celpip-reading-clb6-to-8"
-          magnetId="celpip_reading_clb6_to_8_checklist"
-          buttonLabel="Send Me The Reading Checklist"
+          magnetId="celpip_reading_updates_subscription"
+          buttonLabel="Subscribe for Weekly Emails"
           pageType="hub"
-          offer="lead_magnet"
+          offer="lead_capture"
           test="celpip"
           skill="reading"
           position="mid"

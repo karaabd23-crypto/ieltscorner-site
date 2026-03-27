@@ -8,10 +8,10 @@ interface Props {
 }
 
 const {
-  title = "Reach CLB 9 in CELPIP Writing",
-  text = "Download the exact structure, templates, and strategies used to score CLB 9+ in CELPIP Writing.",
-  buttonLabel = "Get the free guide",
-  formName = "clb9-writing-guide",
+  title = "Get CELPIP writing updates by email",
+  text = "Subscribe for weekly CELPIP writing strategies, lesson updates, and new resources when they are ready.",
+  buttonLabel = "Subscribe",
+  formName = "newsletter-subscribe",
   redirectTo = "/thank-you",
 } = Astro.props;
 ---
@@ -19,7 +19,7 @@ const {
 <section class="section-sm">
   <div class="surface feature">
     <div class="stack lead-magnet">
-      <span class="pill">Free download</span>
+      <span class="pill">Free subscription</span>
       <h2>{title}</h2>
       <p class="muted">{text}</p>
       <form
@@ -42,7 +42,7 @@ const {
           {buttonLabel}
         </button>
       </form>
-      <p class="muted lead-magnet-disclaimer">No spam, just high-quality strategies.</p>
+      <p class="muted lead-magnet-disclaimer">No spam. Unsubscribe anytime.</p>
     </div>
   </div>
 </section>

@@ -18,7 +18,7 @@ type Props = {
 };
 
 const {
-  kicker = "Free study tool",
+  kicker = "Free study emails",
   headline,
   bullets,
   formName,
@@ -26,9 +26,9 @@ const {
   successPath,
   source,
   magnetId,
-  buttonLabel = "Send It To My Email",
+  buttonLabel = "Subscribe",
   pageType = "hub",
-  offer = "lead_magnet",
+  offer = "lead_capture",
   test = "general",
   skill = "general",
   position = "form_section",
@@ -47,7 +47,6 @@ const {
     name={formName}
     method="POST"
     action={successPath}
-    netlify
     data-netlify="true"
     data-netlify-honeypot="bot-field"
     data-track-form={formName}
@@ -87,6 +86,6 @@ const {
     </button>
   </form>
   <p class="lead-magnet-card__footnote">
-    You will get this resource by email plus short weekly score-improvement tips.
+    You are subscribing to weekly score-improvement emails.
   </p>
 </section>

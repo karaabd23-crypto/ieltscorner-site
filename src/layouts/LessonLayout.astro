@@ -74,21 +74,6 @@ const {
     </div>
   </section>
 
-  <!-- AdSense After Hero -->
-  <section style="padding: var(--s-3) 0;">
-    <div class="shell ad-shell ad-shell--line">
-      <ins class="adsbygoogle ad-unit-line"
-           style="display:block; text-align:center;"
-           data-ad-format="horizontal"
-           data-full-width-responsive="false"
-           data-ad-client="ca-pub-5615542310815721"
-           data-ad-slot="4411874215"></ins>
-      <script is:inline>
-           (window.adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    </div>
-  </section>
-
   <!-- Content -->
   <section class="section-sm">
     <div class="shell split">
@@ -116,23 +101,23 @@ const {
             Continue CELPIP course →
           </a>
         </div>
-      </aside>
 
-      <!-- Main -->
-      <main class="stack">
-        {videoEmbed && <div class="video-frame" set:html={videoEmbed}></div>}
-
-        <div class="panel ad-shell ad-shell--line" style="padding: var(--s-2) var(--s-3);">
-          <ins class="adsbygoogle ad-unit-line"
-               style="display:block;"
+        <div class="panel ad-shell ad-shell--square" style="padding: var(--s-3); background: var(--surface);">
+          <ins class="adsbygoogle ad-unit-square"
+               style="display:block"
                data-ad-client="ca-pub-5615542310815721"
-               data-ad-slot="9664200893"
-               data-ad-format="horizontal"
+               data-ad-slot="5544332211"
+               data-ad-format="rectangle"
                data-full-width-responsive="false"></ins>
           <script is:inline>
                (window.adsbygoogle = window.adsbygoogle || []).push({});
           </script>
         </div>
+      </aside>
+
+      <!-- Main -->
+      <main class="stack">
+        {videoEmbed && <div class="video-frame" set:html={videoEmbed}></div>}
 
         <div class="panel lesson-content-wrap">
           <article class="lesson-content">
@@ -187,20 +172,20 @@ const {
             />
 
             <LeadMagnetCard
-              headline="IELTS Writing Band 7+ Structure Guide"
+              headline="Get Weekly IELTS Writing Strategy Emails"
               bullets={[
-                "Use a repeatable structure for clear Task 2 argument flow.",
-                "Fix paragraph and grammar mistakes that cap your score.",
-                "Apply a fast final check before you submit under exam timing.",
+                "Receive one practical writing strategy each week.",
+                "Get lesson updates focused on common Band 6 to 7 mistakes.",
+                "Be notified when new tools and downloads are ready.",
               ]}
-              formName="lead-magnet-ielts-writing-structure-guide"
-              formType="lead_magnet_ielts_writing_structure_guide"
-              successPath="/thank-you/ielts-writing-structure-guide/"
+              formName="lead-subscribe-ielts-writing-updates"
+              formType="lead_capture_ielts_writing_updates"
+              successPath="/newsletter/thanks/"
               source={`lesson-layout-${title}`}
-              magnetId="ielts_writing_band7_structure_guide"
-              buttonLabel="Send Me The Band 7+ Guide"
+              magnetId="ielts_writing_updates_subscription"
+              buttonLabel="Subscribe for Weekly Emails"
               pageType="lesson"
-              offer="lead_magnet"
+              offer="lead_capture"
               test="ielts"
               skill="writing"
               position="end"
@@ -226,23 +211,22 @@ const {
             />
           </article>
         </div>
-      </main>
 
-      <!-- Right rail -->
-      <aside class="sidebar">
-        <!-- AdSense Sidebar -->
-        <div class="panel ad-shell ad-shell--square" style="padding: var(--s-3); background: var(--surface);">
-          <ins class="adsbygoogle ad-unit-square"
-               style="display:block"
+        <div class="panel ad-shell ad-shell--line" style="padding: var(--s-2) var(--s-3);">
+          <ins class="adsbygoogle ad-unit-line"
+               style="display:block;"
                data-ad-client="ca-pub-5615542310815721"
-               data-ad-slot="5544332211"
-               data-ad-format="rectangle"
+               data-ad-slot="9664200893"
+               data-ad-format="horizontal"
                data-full-width-responsive="false"></ins>
           <script is:inline>
                (window.adsbygoogle = window.adsbygoogle || []).push({});
           </script>
         </div>
+      </main>
 
+      <!-- Right rail -->
+      <aside class="sidebar">
         <div class="panel">
           <h3 class="panel-title">Quick check</h3>
           {quickCheck ? (
@@ -255,6 +239,18 @@ const {
         <div class="panel">
           <h3 class="panel-title">Download</h3>
           <p class="muted" style="margin:0;">If you need a printable worksheet for this topic, send a request through tutoring and include the lesson title so the material can match your current level.</p>
+        </div>
+
+        <div class="panel ad-shell ad-shell--square" style="padding: var(--s-3); background: var(--surface);">
+          <ins class="adsbygoogle ad-unit-square"
+               style="display:block"
+               data-ad-client="ca-pub-5615542310815721"
+               data-ad-slot="5544332211"
+               data-ad-format="rectangle"
+               data-full-width-responsive="false"></ins>
+          <script is:inline>
+               (window.adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
         </div>
       </aside>
     </div>

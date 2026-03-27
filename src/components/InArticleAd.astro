@@ -37,21 +37,56 @@ const isLocalPreview = import.meta.env.DEV || ["localhost", "127.0.0.1"].include
       return;
     }
 
-    let anchor = null;
+    const cardSelector = [
+      ".card",
+      ".card-item",
+      ".lesson-example-card",
+      ".lesson-error-card",
+      ".lesson-resource-card",
+      ".lesson-support-card",
+      ".lesson-related-card",
+      ".blog-post-cta__card",
+      ".mini-quiz-card",
+    ].join(",");
 
-    if (anchorSelector) {
-      anchor = target.querySelector(anchorSelector);
-    }
+    const isElementNode = (node) => node instanceof HTMLElement;
+    const isCardLike = (node) => node.matches(cardSelector);
+    const isAdContainer = (node) => node.classList.contains("content-ad");
 
-    if (!anchor) {
-      const paragraphs = Array.from(target.querySelectorAll("p")).filter((paragraph) => {
-        return (paragraph.textContent || "").trim().length > 0;
-      });
+    const toDirectChild = (node) => {
+      let cursor = node;
+      while (isElementNode(cursor) && cursor.parentElement && cursor.parentElement !== target) {
+        cursor = cursor.parentElement;
+      }
+      return isElementNode(cursor) && cursor.parentElement === target ? cursor : null;
+    };
 
-      anchor = paragraphs[1] || paragraphs[0];
-    }
+    const directBlocks = Array.from(target.children).filter(isElementNode);
+    const safeBlocks = directBlocks.filter((block) => {
+      if (isAdContainer(block)) return false;
+      if (block.hidden) return false;
+      if (isCardLike(block) || block.closest(cardSelector)) return false;
+      return (block.textContent || "").trim().length > 0;
+    });
 
-    if (!anchor) {
+    const fromSelector = (() => {
+      if (!anchorSelector) return null;
+      const matches = Array.from(target.querySelectorAll(anchorSelector)).filter(isElementNode);
+      for (const match of matches) {
+        if (isCardLike(match) || match.closest(cardSelector)) continue;
+        const directMatch = toDirectChild(match);
+        if (directMatch && safeBlocks.includes(directMatch)) return directMatch;
+      }
+      return null;
+    })();
+
+    const fallbackIndex = safeBlocks.length > 1
+      ? Math.max(0, Math.floor(safeBlocks.length * 0.6) - 1)
+      : 0;
+    const fallbackAnchor = safeBlocks[fallbackIndex] || safeBlocks[safeBlocks.length - 1] || null;
+    const anchor = fromSelector || fallbackAnchor;
+
+    if (!isElementNode(anchor)) {
       adRoot.remove();
       return;
     }

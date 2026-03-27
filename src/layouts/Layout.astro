@@ -187,7 +187,7 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
   <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-G0WCV3WJ44"></script>
-    <script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -334,7 +334,6 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
       action="/"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-      netlify
       hidden
       aria-hidden="true"
     >
@@ -557,13 +556,11 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
             Enter your email once to unlock free lesson access. You will also receive lesson updates twice a week.
           </p>
 
-          {/* @ts-ignore */}
           <form
             id="lesson-email-gate-form"
             name="newsletter"
             method="POST"
             action="/newsletter/thanks/"
-            netlify
             data-netlify="true"
             data-netlify-honeypot="bot-field"
             class="lesson-email-gate__form"
@@ -588,6 +585,81 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
           <p class="muted" style="font-size: 0.9rem; margin-bottom: 0;">By continuing, you agree to receive lesson emails. You can unsubscribe any time.</p>
         </div>
       </div>
+    )}
+
+    {showAds && (
+      <>
+        <aside class="page-side-ad page-side-ad--left" aria-label="Sponsored">
+          <div class="ad-shell ad-shell--side">
+            <ins class="adsbygoogle ad-unit-side"
+                 style="display:block"
+                 data-ad-client="ca-pub-5615542310815721"
+                 data-ad-slot="5544332211"
+                 data-ad-format="vertical"
+                 data-full-width-responsive="false"></ins>
+          </div>
+        </aside>
+
+        <aside class="page-side-ad page-side-ad--right" aria-label="Sponsored">
+          <div class="ad-shell ad-shell--side">
+            <ins class="adsbygoogle ad-unit-side"
+                 style="display:block"
+                 data-ad-client="ca-pub-5615542310815721"
+                 data-ad-slot="5544332211"
+                 data-ad-format="vertical"
+                 data-full-width-responsive="false"></ins>
+          </div>
+        </aside>
+
+        <script is:inline>
+          (() => {
+            const enforceSideRailBounds = () => {
+              const rails = Array.from(document.querySelectorAll('.page-side-ad'));
+              rails.forEach((rail) => {
+                if (!(rail instanceof HTMLElement)) return;
+                rail.style.setProperty('top', '58vh', 'important');
+                rail.style.setProperty('bottom', 'auto', 'important');
+                rail.style.setProperty('height', '240px', 'important');
+                rail.style.setProperty('max-height', '240px', 'important');
+                rail.style.setProperty('overflow', 'hidden', 'important');
+              });
+
+              const shells = Array.from(document.querySelectorAll('.ad-shell--side'));
+              shells.forEach((shell) => {
+                if (!(shell instanceof HTMLElement)) return;
+                shell.style.setProperty('height', '240px', 'important');
+                shell.style.setProperty('max-height', '240px', 'important');
+                shell.style.setProperty('min-height', '240px', 'important');
+                shell.style.setProperty('overflow', 'hidden', 'important');
+              });
+
+              const sideUnits = Array.from(document.querySelectorAll('.ad-unit-side'));
+              sideUnits.forEach((unit) => {
+                if (!(unit instanceof HTMLElement)) return;
+                unit.style.setProperty('height', '240px', 'important');
+                unit.style.setProperty('max-height', '240px', 'important');
+                unit.style.setProperty('min-height', '240px', 'important');
+              });
+            };
+
+            const initSideAds = () => {
+              enforceSideRailBounds();
+              const sideUnits = Array.from(document.querySelectorAll('.ad-unit-side'));
+              sideUnits.forEach((unit) => {
+                if (!(unit instanceof HTMLElement)) return;
+                if (unit.dataset.initialized === 'true') return;
+                (window.adsbygoogle = window.adsbygoogle || []).push({});
+                unit.dataset.initialized = 'true';
+              });
+              window.setTimeout(enforceSideRailBounds, 250);
+              window.setTimeout(enforceSideRailBounds, 1200);
+            };
+
+            initSideAds();
+            document.addEventListener('astro:page-load', initSideAds);
+          })();
+        </script>
+      </>
     )}
 
     <main class="site-main">
