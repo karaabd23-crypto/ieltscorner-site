@@ -748,26 +748,27 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
               status.textContent = 'Unlocking...';
             }
 
-            const formData = new FormData(form);
-            const params = new URLSearchParams();
-            formData.forEach((value, key) => {
-              params.append(key, String(value));
-            });
-
             try {
-              const response = await fetch('/', {
+              const response = await fetch('/.netlify/functions/subscribe-newsletter', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: params.toString(),
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  email,
+                  source: 'lesson-email-gate',
+                }),
               });
 
               if (!response.ok) {
                 throw new Error('Request failed');
               }
 
+              const data = await response.json().catch(() => null);
+
               saveSignup(email);
               if (status instanceof HTMLElement) {
-                status.textContent = 'Success! Your lessons are unlocked.';
+                status.textContent = data?.duplicate
+                  ? 'Welcome back! Your lessons are unlocked.'
+                  : 'Success! Your lessons are unlocked.';
               }
               unlockGate();
             } catch {

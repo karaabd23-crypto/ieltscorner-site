@@ -7,6 +7,12 @@ export function normalizeFormName(value) {
     .replace(/[\s_-]+/g, '');
 }
 
+export function normalizeSubscriberEmail(value) {
+  return String(value || '')
+    .trim()
+    .toLowerCase();
+}
+
 export async function fetchNetlifyJson(url, accessToken) {
   const response = await fetch(url, {
     headers: {
@@ -87,9 +93,7 @@ export async function getSubscriberRecords({ formId, accessToken, maxPages = 20,
     }
 
     for (const submission of submissions) {
-      const email = String(submission?.data?.email ?? submission?.email ?? '')
-        .trim()
-        .toLowerCase();
+      const email = normalizeSubscriberEmail(submission?.data?.email ?? submission?.email ?? '');
       if (!email || !email.includes('@')) {
         continue;
       }
@@ -131,6 +135,67 @@ export async function getSubscriberRecords({ formId, accessToken, maxPages = 20,
     if (!Number.isFinite(bTime)) return -1;
     return bTime - aTime;
   });
+}
+
+export async function findSubscriberRecordByEmail({
+  formId,
+  accessToken,
+  email,
+  maxPages = 20,
+  perPage = 100,
+}) {
+  const normalizedEmail = normalizeSubscriberEmail(email);
+  if (!normalizedEmail || !normalizedEmail.includes('@')) {
+    return null;
+  }
+
+  let newestMatch = null;
+
+  for (let page = 1; page <= maxPages; page += 1) {
+    const submissions = await fetchNetlifyJson(
+      `${NETLIFY_API_BASE}/forms/${formId}/submissions?page=${page}&per_page=${perPage}`,
+      accessToken,
+    );
+
+    if (!Array.isArray(submissions) || submissions.length === 0) {
+      break;
+    }
+
+    for (const submission of submissions) {
+      const submissionEmail = normalizeSubscriberEmail(submission?.data?.email ?? submission?.email ?? '');
+      if (submissionEmail !== normalizedEmail) {
+        continue;
+      }
+
+      const submittedAt = String(
+        submission?.created_at
+        || submission?.createdAt
+        || submission?.updated_at
+        || ''
+      ).trim();
+
+      if (!newestMatch) {
+        newestMatch = {
+          email: submissionEmail,
+          submittedAt,
+          submissionId: String(submission?.id || ''),
+        };
+        continue;
+      }
+
+      const nextTime = Date.parse(submittedAt || '');
+      const currentTime = Date.parse(newestMatch.submittedAt || '');
+      if (Number.isFinite(nextTime) && (!Number.isFinite(currentTime) || nextTime > currentTime)) {
+        newestMatch = {
+          email: submissionEmail,
+          submittedAt,
+          submissionId: String(submission?.id || newestMatch.submissionId || ''),
+        };
+      }
+    }
+  }
+
+  return newestMatch;
 }
 
 export async function getSubscriberEmails(options) {

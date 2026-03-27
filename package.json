@@ -28,6 +28,8 @@
     "newsletter:digest": "node scripts/send-newsletter-digest.mjs",
     "newsletter:digest:dry": "node scripts/send-newsletter-digest.mjs --dry-run",
     "newsletter:digest:preview": "node scripts/send-newsletter-digest.mjs --preview",
+    "newsletter:dedupe": "node scripts/dedupe-newsletter-subscribers.mjs",
+    "newsletter:dedupe:apply": "node scripts/dedupe-newsletter-subscribers.mjs --apply",
     "newsletter:stats": "node scripts/newsletter-stats.mjs",
     "newsletter:stats:json": "node scripts/newsletter-stats.mjs --json",
     "session:index": "node scripts/session-catalog.mjs",

@@ -135,18 +135,25 @@ const {
       const encoded = params.toString();
 
       try {
-        const response = await fetch("/", {
+        const response = await fetch("/.netlify/functions/subscribe-newsletter", {
           method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encoded,
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email,
+            source: "newsletter-component",
+          }),
         });
 
         if (!response.ok) {
           throw new Error("Request failed");
         }
 
+        const data = await response.json().catch(() => null);
+
         saveSignup(email);
-        status.textContent = "Thanks. You are subscribed.";
+        status.textContent = data?.duplicate
+          ? "You are already subscribed. No duplicate signup was created."
+          : "Thanks. You are subscribed.";
         status.style.color = "var(--accent)";
         form.reset();
         window.location.href = "/newsletter/thanks/";
@@ -158,9 +165,8 @@ const {
           return;
         }
 
-        status.textContent = "Retrying with standard submit...";
+        status.textContent = "We could not save your signup right now. Please try again in a moment.";
         status.style.color = "var(--text-muted)";
-        form.submit();
       }
     });
   }
