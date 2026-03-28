@@ -197,7 +197,6 @@ def is_allowed_post(entry: dict[str, Any]) -> bool:
     haystack_parts = [
         normalize_text(entry.get("topic_id")),
         normalize_text(entry.get("title")),
-        " ".join(entry.get("lines", [])),
         " ".join(entry.get("hashtags", [])),
         " ".join(entry.get("lesson_slugs", [])),
     ]
@@ -337,29 +336,6 @@ def pick_url(entry: dict[str, Any], lesson_lookup: dict[str, str], site_url: str
     return f"{clean_site}/lessons/"
 
 
-def build_quiz_block(quiz: dict[str, Any] | None) -> list[str]:
-    if not quiz:
-        return []
-
-    labels = ["A", "B", "C", "D", "E"]
-    options = quiz["options"]
-
-    lines = ["📝 *Quick Quiz*", f"❓ {quiz['question']}"]
-    for idx, option in enumerate(options):
-        label = labels[idx] if idx < len(labels) else str(idx + 1)
-        lines.append(f"{label}) {option}")
-
-    answer_idx = quiz["correct_index"]
-    answer_label = labels[answer_idx] if answer_idx < len(labels) else str(answer_idx + 1)
-    lines.append(f"✅ Answer: {answer_label}) {options[answer_idx]}")
-
-    explanation = normalize_text(quiz.get("explanation"))
-    if explanation:
-        lines.append(f"💡 {explanation}")
-
-    return lines
-
-
 def build_message(entry: dict[str, Any], url: str) -> str:
     lines = entry.get("lines", [])
     summary_lines = lines[:4]
@@ -375,10 +351,9 @@ def build_message(entry: dict[str, Any], url: str) -> str:
     for extra_line in summary_lines[1:]:
         parts.append(f"• {extra_line}")
 
-    quiz_block = build_quiz_block(entry.get("quiz"))
-    if quiz_block:
-        parts.append("")
-        parts.extend(quiz_block)
+    explanation = normalize_text((entry.get("quiz") or {}).get("explanation"))
+    if explanation:
+        parts.append(f"💡 {explanation}")
 
     parts.append("")
     parts.append(f"🔗 {url}")
@@ -388,6 +363,54 @@ def build_message(entry: dict[str, Any], url: str) -> str:
         parts.append(" ".join(hashtags[:5]))
 
     return "\n".join(parts)
+
+
+def build_question_interaction(entry: dict[str, Any]) -> dict[str, Any]:
+    title = normalize_text(entry.get("title"))
+    prompt = "Which part of this tip do you want another example for?"
+
+    haystack = " ".join(
+        [
+            normalize_text(entry.get("topic_id")),
+            title,
+            " ".join(entry.get("hashtags", [])),
+        ]
+    ).lower()
+    if "celpip" in haystack:
+        prompt = "Which part of this CELPIP tip do you want another example for?"
+    elif "grammar" in haystack:
+        prompt = "Which grammar point here do you want another example for?"
+    elif "vocab" in haystack or "vocabulary" in haystack:
+        prompt = "Which word or phrase here do you want to use this week?"
+
+    if title:
+        prompt = f"{prompt} ({title})"
+
+    return {
+        "type": "question",
+        "prompt": prompt,
+    }
+
+
+def build_interaction(entry: dict[str, Any]) -> dict[str, Any]:
+    quiz = entry.get("quiz")
+    if quiz:
+        if entry.get("variant") == "mini":
+            return {
+                "type": "poll",
+                "question": quiz["question"],
+                "options": quiz["options"],
+                "allow_multiple": False,
+            }
+        return {
+            "type": "quiz",
+            "question": quiz["question"],
+            "options": quiz["options"],
+            "correct_index": quiz["correct_index"],
+            "explanation": quiz.get("explanation", ""),
+        }
+
+    return build_question_interaction(entry)
 
 
 def build_queue(entries: list[dict[str, Any]], lesson_lookup: dict[str, str], site_url: str, max_posts: int | None) -> list[dict[str, Any]]:
@@ -423,6 +446,8 @@ def build_queue(entries: list[dict[str, Any]], lesson_lookup: dict[str, str], si
                 "title": entry["title"],
                 "url": url,
                 "message": message,
+                "quiz": entry.get("quiz"),
+                "interaction": build_interaction(entry),
             }
         )
 

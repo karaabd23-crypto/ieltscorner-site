@@ -1,0 +1,856 @@
+[
+  {
+    "id": "telegram:celpip-task1-tone-and-purpose:lesson",
+    "source": "telegram",
+    "topic_id": "celpip-task1-tone-and-purpose",
+    "variant": "lesson",
+    "title": "📧 CELPIP Task 1: match the tone to the situation",
+    "url": "https://ieltscorner.ca/celpip/",
+    "message": "🚀 *📧 CELPIP Task 1: match the tone to the situation*\n✨ A surprising number of CELPIP Task 1 emails lose marks because the tone does not match the purpose 👇\n• ❌ Hey, I want you to fix this problem now.\n• ✅ I am writing to report an issue and request a prompt solution.\n• 🎯 Exam move:\n💡 Formal complaint emails need controlled, appropriate tone.\n\n🔗 https://ieltscorner.ca/celpip/\n#CELPIP #Writing #CLB9",
+    "quiz": {
+      "question": "Which line suits a formal complaint email better?",
+      "options": [
+        "Fix this now.",
+        "I am writing to express concern about the recent service issue.",
+        "What is going on here?"
+      ],
+      "correct_index": 1,
+      "explanation": "Formal complaint emails need controlled, appropriate tone."
+    },
+    "interaction": {
+      "type": "quiz",
+      "question": "Which line suits a formal complaint email better?",
+      "options": [
+        "Fix this now.",
+        "I am writing to express concern about the recent service issue.",
+        "What is going on here?"
+      ],
+      "correct_index": 1,
+      "explanation": "Formal complaint emails need controlled, appropriate tone."
+    }
+  },
+  {
+    "id": "telegram:celpip-task1-tone-and-purpose:mini",
+    "source": "telegram",
+    "topic_id": "celpip-task1-tone-and-purpose",
+    "variant": "mini",
+    "title": "⚡ CELPIP Task 1: tone first, sentences second",
+    "url": "https://ieltscorner.ca/celpip/",
+    "message": "📌 *⚡ CELPIP Task 1: tone first, sentences second*\n✨ Before you write a CELPIP email, identify the relationship 👇\n• Manager or company = formal\n• Friend or close contact = less formal\n• 🎯 Mini challenge:\n💡 Tone depends on who you are writing to and why.\n\n🔗 https://ieltscorner.ca/celpip/\n#CELPIP #Writing #CLB9",
+    "quiz": {
+      "question": "What should you check first in Task 1?",
+      "options": [
+        "Font style",
+        "Relationship and tone",
+        "Essay conclusion"
+      ],
+      "correct_index": 1,
+      "explanation": "Tone depends on who you are writing to and why."
+    },
+    "interaction": {
+      "type": "poll",
+      "question": "What should you check first in Task 1?",
+      "options": [
+        "Font style",
+        "Relationship and tone",
+        "Essay conclusion"
+      ],
+      "allow_multiple": false
+    }
+  },
+  {
+    "id": "telegram:celpip-task2-pick-a-side:lesson",
+    "source": "telegram",
+    "topic_id": "celpip-task2-pick-a-side",
+    "variant": "lesson",
+    "title": "🧱 CELPIP Task 2: choose a side and stay there",
+    "url": "https://ieltscorner.ca/celpip/",
+    "message": "🚀 *🧱 CELPIP Task 2: choose a side and stay there*\n✨ Many CELPIP Task 2 responses sound weak because the writer keeps switching position in the middle of the answer 👇\n• ❌ Online classes are good, but in-person classes are also good, and both have benefits.\n• ✅ Although both formats help learners, in-person classes are usually more effective because students receive immediate feedback and stronger accountability.\n• 🎯 Exam move:\n💡 A clear, supported position creates stronger organization.\n\n🔗 https://ieltscorner.ca/celpip/\n#CELPIP #Writing #Task2",
+    "quiz": {
+      "question": "What usually helps a CELPIP Task 2 response most?",
+      "options": [
+        "Switching sides repeatedly",
+        "A clear choice with support",
+        "Using four unrelated examples"
+      ],
+      "correct_index": 1,
+      "explanation": "A clear, supported position creates stronger organization."
+    },
+    "interaction": {
+      "type": "quiz",
+      "question": "What usually helps a CELPIP Task 2 response most?",
+      "options": [
+        "Switching sides repeatedly",
+        "A clear choice with support",
+        "Using four unrelated examples"
+      ],
+      "correct_index": 1,
+      "explanation": "A clear, supported position creates stronger organization."
+    }
+  },
+  {
+    "id": "telegram:celpip-task2-pick-a-side:mini",
+    "source": "telegram",
+    "topic_id": "celpip-task2-pick-a-side",
+    "variant": "mini",
+    "title": "⚡ CELPIP Task 2: stop wobbling between both sides",
+    "url": "https://ieltscorner.ca/celpip/",
+    "message": "📌 *⚡ CELPIP Task 2: stop wobbling between both sides*\n✨ One direct CELPIP fix 👇\n• Choose one side.\n• Support it with reasons.\n• Do not keep changing your answer mid-response.\n💡 Frequent position changes make the response unstable.\n\n🔗 https://ieltscorner.ca/celpip/\n#CELPIP #Writing #Task2",
+    "quiz": {
+      "question": "What weakens Task 2 organization?",
+      "options": [
+        "Clear decision",
+        "Switching position repeatedly",
+        "One main reason"
+      ],
+      "correct_index": 1,
+      "explanation": "Frequent position changes make the response unstable."
+    },
+    "interaction": {
+      "type": "poll",
+      "question": "What weakens Task 2 organization?",
+      "options": [
+        "Clear decision",
+        "Switching position repeatedly",
+        "One main reason"
+      ],
+      "allow_multiple": false
+    }
+  },
+  {
+    "id": "telegram:celpip-speaking-task5-framework:lesson",
+    "source": "telegram",
+    "topic_id": "celpip-speaking-task5-framework",
+    "variant": "lesson",
+    "title": "🎙️ CELPIP Speaking Task 5: compare, choose, justify",
+    "url": "https://ieltscorner.ca/celpip/",
+    "message": "🚀 *🎙️ CELPIP Speaking Task 5: compare, choose, justify*\n✨ Task 5 gets easier when you stop describing both options equally and start making a decision clearly 👇\n• Good structure:\n• 1) compare both options briefly\n• 2) choose one\n💡 Task 5 is not just comparison; it is comparison plus recommendation.\n\n🔗 https://ieltscorner.ca/celpip/\n#CELPIP #Speaking #CLB9",
+    "quiz": {
+      "question": "What is the key job in CELPIP Speaking Task 5?",
+      "options": [
+        "Only describe both options",
+        "Choose and justify one option",
+        "Tell a personal story only"
+      ],
+      "correct_index": 1,
+      "explanation": "Task 5 is not just comparison; it is comparison plus recommendation."
+    },
+    "interaction": {
+      "type": "quiz",
+      "question": "What is the key job in CELPIP Speaking Task 5?",
+      "options": [
+        "Only describe both options",
+        "Choose and justify one option",
+        "Tell a personal story only"
+      ],
+      "correct_index": 1,
+      "explanation": "Task 5 is not just comparison; it is comparison plus recommendation."
+    }
+  },
+  {
+    "id": "telegram:celpip-speaking-task5-framework:mini",
+    "source": "telegram",
+    "topic_id": "celpip-speaking-task5-framework",
+    "variant": "mini",
+    "title": "⚡ CELPIP Speaking Task 5: do not end with “both are good”",
+    "url": "https://ieltscorner.ca/celpip/",
+    "message": "📌 *⚡ CELPIP Speaking Task 5: do not end with “both are good”*\n✨ A fast fix for Task 5 👇\n• Compare briefly.\n• Choose clearly.\n• Give 2 reasons.\n💡 The task expects a choice and justification.\n\n🔗 https://ieltscorner.ca/celpip/\n#CELPIP #Speaking #CLB9",
+    "quiz": {
+      "question": "What should appear in a strong Task 5 answer?",
+      "options": [
+        "A recommendation",
+        "No clear choice",
+        "Only description"
+      ],
+      "correct_index": 0,
+      "explanation": "The task expects a choice and justification."
+    },
+    "interaction": {
+      "type": "poll",
+      "question": "What should appear in a strong Task 5 answer?",
+      "options": [
+        "A recommendation",
+        "No clear choice",
+        "Only description"
+      ],
+      "allow_multiple": false
+    }
+  },
+  {
+    "id": "telegram:celpip-reading-proof-not-keywords:lesson",
+    "source": "telegram",
+    "topic_id": "celpip-reading-proof-not-keywords",
+    "variant": "lesson",
+    "title": "📖 CELPIP Reading: proof beats keyword matching",
+    "url": "https://ieltscorner.ca/celpip/",
+    "message": "🚀 *📖 CELPIP Reading: proof beats keyword matching*\n✨ A common CELPIP reading problem is choosing the option that repeats a keyword, even when the meaning is wrong 👇\n• Keyword match is only the start.\n• Meaning match is the real check.\n• 🎯 Exam move:\n💡 Shared vocabulary is not enough without meaning match.\n\n🔗 https://ieltscorner.ca/celpip/\n#CELPIP #Reading #CLB8",
+    "quiz": {
+      "question": "What should decide your answer in CELPIP reading?",
+      "options": [
+        "Shared keywords only",
+        "Exact meaning and proof",
+        "Longest option"
+      ],
+      "correct_index": 1,
+      "explanation": "Shared vocabulary is not enough without meaning match."
+    },
+    "interaction": {
+      "type": "quiz",
+      "question": "What should decide your answer in CELPIP reading?",
+      "options": [
+        "Shared keywords only",
+        "Exact meaning and proof",
+        "Longest option"
+      ],
+      "correct_index": 1,
+      "explanation": "Shared vocabulary is not enough without meaning match."
+    }
+  },
+  {
+    "id": "telegram:celpip-reading-proof-not-keywords:mini",
+    "source": "telegram",
+    "topic_id": "celpip-reading-proof-not-keywords",
+    "variant": "mini",
+    "title": "⚡ CELPIP Reading: matching words is not enough",
+    "url": "https://ieltscorner.ca/celpip/",
+    "message": "📌 *⚡ CELPIP Reading: matching words is not enough*\n✨ One reading rule that saves marks 👇\n• Do not choose an answer only because it repeats a word from the passage.\n• Check whether it matches the idea exactly.\n• 🎯 Mini challenge:\n💡 Meaning and proof determine the correct answer.\n\n🔗 https://ieltscorner.ca/celpip/\n#CELPIP #Reading #CLB8",
+    "quiz": {
+      "question": "What is more important than keyword overlap?",
+      "options": [
+        "Exact meaning",
+        "Fast guessing",
+        "Option length"
+      ],
+      "correct_index": 0,
+      "explanation": "Meaning and proof determine the correct answer."
+    },
+    "interaction": {
+      "type": "poll",
+      "question": "What is more important than keyword overlap?",
+      "options": [
+        "Exact meaning",
+        "Fast guessing",
+        "Option length"
+      ],
+      "allow_multiple": false
+    }
+  },
+  {
+    "id": "telegram:celpip-listening-speaker-attitude:lesson",
+    "source": "telegram",
+    "topic_id": "celpip-listening-speaker-attitude",
+    "variant": "lesson",
+    "title": "🎧 CELPIP Listening: hear the speaker attitude, not just the words",
+    "url": "https://ieltscorner.ca/celpip/",
+    "message": "🚀 *🎧 CELPIP Listening: hear the speaker attitude, not just the words*\n✨ Some CELPIP listening answers depend more on attitude and intention than on direct facts 👇\n• Listen for:\n• tone changes\n• stress on key words\n💡 These questions often depend on tone, not just facts.\n\n🔗 https://ieltscorner.ca/celpip/\n#CELPIP #Listening #CLB9",
+    "quiz": {
+      "question": "What helps most with speaker attitude questions?",
+      "options": [
+        "Listening only for numbers",
+        "Tracking tone and intention",
+        "Ignoring stressed words"
+      ],
+      "correct_index": 1,
+      "explanation": "These questions often depend on tone, not just facts."
+    },
+    "interaction": {
+      "type": "quiz",
+      "question": "What helps most with speaker attitude questions?",
+      "options": [
+        "Listening only for numbers",
+        "Tracking tone and intention",
+        "Ignoring stressed words"
+      ],
+      "correct_index": 1,
+      "explanation": "These questions often depend on tone, not just facts."
+    }
+  },
+  {
+    "id": "telegram:celpip-listening-speaker-attitude:mini",
+    "source": "telegram",
+    "topic_id": "celpip-listening-speaker-attitude",
+    "variant": "mini",
+    "title": "⚡ CELPIP Listening: tone carries meaning too",
+    "url": "https://ieltscorner.ca/celpip/",
+    "message": "📌 *⚡ CELPIP Listening: tone carries meaning too*\n✨ A fast listening reminder 👇\n• Do not only hear the words.\n• Hear the attitude behind them: annoyed, relieved, excited, unsure.\n• 🎯 Mini challenge:\n💡 They test whether you can interpret the speaker’s tone and purpose.\n\n🔗 https://ieltscorner.ca/celpip/\n#CELPIP #Listening #CLB9",
+    "quiz": {
+      "question": "What do attitude questions test?",
+      "options": [
+        "Tone and intention",
+        "Spelling only",
+        "Grammar rules"
+      ],
+      "correct_index": 0,
+      "explanation": "They test whether you can interpret the speaker’s tone and purpose."
+    },
+    "interaction": {
+      "type": "poll",
+      "question": "What do attitude questions test?",
+      "options": [
+        "Tone and intention",
+        "Spelling only",
+        "Grammar rules"
+      ],
+      "allow_multiple": false
+    }
+  },
+  {
+    "id": "telegram:celpip-task1-bullets-plan:lesson",
+    "source": "telegram",
+    "topic_id": "celpip-task1-bullets-plan",
+    "variant": "lesson",
+    "title": "📝 CELPIP Task 1: turn bullet points into paragraph jobs",
+    "url": "https://ieltscorner.ca/celpip/",
+    "message": "🚀 *📝 CELPIP Task 1: turn bullet points into paragraph jobs*\n✨ Students know they must cover all Task 1 bullets, but many still miss one because they never convert the bullets into a writing plan 👇\n• Better method:\n• Bullet 1 = paragraph job 1\n• Bullet 2 = paragraph job 2\n💡 Turning bullets into clear jobs helps prevent missing content.\n\n🔗 https://ieltscorner.ca/celpip/\n#CELPIP #Writing #Task1",
+    "quiz": {
+      "question": "What is a safer planning method for Task 1?",
+      "options": [
+        "Ignore the bullets after reading them",
+        "Convert each bullet into a job in your answer",
+        "Memorize one generic email"
+      ],
+      "correct_index": 1,
+      "explanation": "Turning bullets into clear jobs helps prevent missing content."
+    },
+    "interaction": {
+      "type": "quiz",
+      "question": "What is a safer planning method for Task 1?",
+      "options": [
+        "Ignore the bullets after reading them",
+        "Convert each bullet into a job in your answer",
+        "Memorize one generic email"
+      ],
+      "correct_index": 1,
+      "explanation": "Turning bullets into clear jobs helps prevent missing content."
+    }
+  },
+  {
+    "id": "telegram:celpip-task1-bullets-plan:mini",
+    "source": "telegram",
+    "topic_id": "celpip-task1-bullets-plan",
+    "variant": "mini",
+    "title": "⚡ CELPIP Task 1: each bullet needs visible language",
+    "url": "https://ieltscorner.ca/celpip/",
+    "message": "📌 *⚡ CELPIP Task 1: each bullet needs visible language*\n✨ Quick Task 1 planning rule 👇\n• Do not just read the bullets.\n• Turn them into writing jobs before you start.\n• 🎯 Mini challenge:\n💡 Planning from the bullets helps you cover all required points.\n\n🔗 https://ieltscorner.ca/celpip/\n#CELPIP #Writing #Task1",
+    "quiz": {
+      "question": "What helps you avoid missing a prompt point?",
+      "options": [
+        "A bullet-to-job plan",
+        "Writing immediately with no plan",
+        "Only checking grammar"
+      ],
+      "correct_index": 0,
+      "explanation": "Planning from the bullets helps you cover all required points."
+    },
+    "interaction": {
+      "type": "poll",
+      "question": "What helps you avoid missing a prompt point?",
+      "options": [
+        "A bullet-to-job plan",
+        "Writing immediately with no plan",
+        "Only checking grammar"
+      ],
+      "allow_multiple": false
+    }
+  },
+  {
+    "id": "telegram:both-either-neither:lesson",
+    "source": "telegram",
+    "topic_id": "both-either-neither",
+    "variant": "lesson",
+    "title": "🔎 Grammar Fix: both, either, neither",
+    "url": "https://ieltscorner.ca/lessons/grammar/",
+    "message": "🚀 *🔎 Grammar Fix: both, either, neither*\n✨ When your sentence is about 2 people or 2 choices, these 3 words do different jobs 👇\n• Example situation:\n• You are talking about two job options, two people, or two answers.\n• ❌ Both the teacher and the students was ready on time.\n💡 With both A and B, the verb is usually plural.\n\n🔗 https://ieltscorner.ca/lessons/grammar/\n#Grammar #CELPIP #B2English",
+    "quiz": {
+      "question": "Which sentence is correct?",
+      "options": [
+        "Both the teacher and the students was ready.",
+        "Both the teacher and the students were ready.",
+        "Neither options are good."
+      ],
+      "correct_index": 1,
+      "explanation": "With both A and B, the verb is usually plural."
+    },
+    "interaction": {
+      "type": "quiz",
+      "question": "Which sentence is correct?",
+      "options": [
+        "Both the teacher and the students was ready.",
+        "Both the teacher and the students were ready.",
+        "Neither options are good."
+      ],
+      "correct_index": 1,
+      "explanation": "With both A and B, the verb is usually plural."
+    }
+  },
+  {
+    "id": "telegram:both-either-neither:mini",
+    "source": "telegram",
+    "topic_id": "both-either-neither",
+    "variant": "mini",
+    "title": "⚡ Quick Grammar: both / either / neither",
+    "url": "https://ieltscorner.ca/lessons/grammar/",
+    "message": "📌 *⚡ Quick Grammar: both / either / neither*\n✨ Two choices? Two people? Start here 👇\n• 👀 Mini scene:\n• Either day is fine for me, but neither time works.\n• ✅ Easy map:\n💡 Neither means not one and not the other.\n\n🔗 https://ieltscorner.ca/lessons/grammar/\n#Grammar #CELPIP #B2English",
+    "quiz": {
+      "question": "What does neither mean?",
+      "options": [
+        "Both of them",
+        "One of the two",
+        "Not this one and not that one"
+      ],
+      "correct_index": 2,
+      "explanation": "Neither means not one and not the other."
+    },
+    "interaction": {
+      "type": "poll",
+      "question": "What does neither mean?",
+      "options": [
+        "Both of them",
+        "One of the two",
+        "Not this one and not that one"
+      ],
+      "allow_multiple": false
+    }
+  },
+  {
+    "id": "telegram:few-a-few-little-a-little:lesson",
+    "source": "telegram",
+    "topic_id": "few-a-few-little-a-little",
+    "variant": "lesson",
+    "title": "🔎 Grammar Fix: few / a few / little / a little",
+    "url": "https://ieltscorner.ca/lessons/grammar/",
+    "message": "🚀 *🔎 Grammar Fix: few / a few / little / a little*\n✨ When you talk about small quantities, this tiny difference changes the whole feeling 👇\n• This comes up a lot with time, money, friends, and chances.\n• a few = some, enough\n• few = almost none\n💡 a few sounds positive because it means some, enough.\n\n🔗 https://ieltscorner.ca/lessons/grammar/\n#Grammar #LearnEnglish #B1English",
+    "quiz": {
+      "question": "Which one sounds more positive?",
+      "options": [
+        "few friends",
+        "a few friends",
+        "little time"
+      ],
+      "correct_index": 1,
+      "explanation": "a few sounds positive because it means some, enough."
+    },
+    "interaction": {
+      "type": "quiz",
+      "question": "Which one sounds more positive?",
+      "options": [
+        "few friends",
+        "a few friends",
+        "little time"
+      ],
+      "correct_index": 1,
+      "explanation": "a few sounds positive because it means some, enough."
+    }
+  },
+  {
+    "id": "telegram:few-a-few-little-a-little:mini",
+    "source": "telegram",
+    "topic_id": "few-a-few-little-a-little",
+    "variant": "mini",
+    "title": "⚡ Quick Grammar: the tiny a matters",
+    "url": "https://ieltscorner.ca/lessons/grammar/",
+    "message": "📌 *⚡ Quick Grammar: the tiny a matters*\n✨ This is for quantity words like time, money, and friends 👇\n• 👀 Look at this:\n• a few friends = some friends\n• few friends = almost no friends\n💡 little time means almost no time.\n\n🔗 https://ieltscorner.ca/lessons/grammar/\n#Grammar #LearnEnglish #B1English",
+    "quiz": {
+      "question": "Which means almost no time?",
+      "options": [
+        "a little time",
+        "little time",
+        "a few time"
+      ],
+      "correct_index": 1,
+      "explanation": "little time means almost no time."
+    },
+    "interaction": {
+      "type": "poll",
+      "question": "Which means almost no time?",
+      "options": [
+        "a little time",
+        "little time",
+        "a few time"
+      ],
+      "allow_multiple": false
+    }
+  },
+  {
+    "id": "telegram:should-base-verb:lesson",
+    "source": "telegram",
+    "topic_id": "should-base-verb",
+    "variant": "lesson",
+    "title": "🔎 Grammar Fix: should + base verb",
+    "url": "https://ieltscorner.ca/lessons/grammar/should-for-advice/",
+    "message": "🚀 *🔎 Grammar Fix: should + base verb*\n✨ When you give advice in English, this is one of the most common mistakes 👇\n• You hear this in daily English, emails, and speaking tests all the time.\n• ❌ You should to call them.\n• ✅ You should call them.\n💡 After should, use the base verb.\n\n🔗 https://ieltscorner.ca/lessons/grammar/should-for-advice/\n#Grammar #DailyEnglish #B1English",
+    "quiz": {
+      "question": "Which one is correct?",
+      "options": [
+        "You should to wait.",
+        "You should waiting.",
+        "You should wait."
+      ],
+      "correct_index": 2,
+      "explanation": "After should, use the base verb."
+    },
+    "interaction": {
+      "type": "quiz",
+      "question": "Which one is correct?",
+      "options": [
+        "You should to wait.",
+        "You should waiting.",
+        "You should wait."
+      ],
+      "correct_index": 2,
+      "explanation": "After should, use the base verb."
+    }
+  },
+  {
+    "id": "telegram:should-base-verb:mini",
+    "source": "telegram",
+    "topic_id": "should-base-verb",
+    "variant": "mini",
+    "title": "⚡ Quick Grammar: after should",
+    "url": "https://ieltscorner.ca/lessons/grammar/should-for-advice/",
+    "message": "📌 *⚡ Quick Grammar: after should*\n✨ Giving advice? Keep this pattern in your head 👇\n• ✅ should call\n• ❌ should to call\n• 🎯 Mini challenge:\n💡 Use the base verb after should.\n\n🔗 https://ieltscorner.ca/lessons/grammar/should-for-advice/\n#Grammar #DailyEnglish #B1English",
+    "quiz": {
+      "question": "What comes after should?",
+      "options": [
+        "to + verb",
+        "verb-ing",
+        "base verb"
+      ],
+      "correct_index": 2,
+      "explanation": "Use the base verb after should."
+    },
+    "interaction": {
+      "type": "poll",
+      "question": "What comes after should?",
+      "options": [
+        "to + verb",
+        "verb-ing",
+        "base verb"
+      ],
+      "allow_multiple": false
+    }
+  },
+  {
+    "id": "telegram:borrow-vs-lend:lesson",
+    "source": "telegram",
+    "topic_id": "borrow-vs-lend",
+    "variant": "lesson",
+    "title": "🔄 Useful English: borrow vs lend",
+    "url": "https://ieltscorner.ca/lessons/vocabulary/",
+    "message": "🚀 *🔄 Useful English: borrow vs lend*\n✨ At school, work, or with friends, this pair comes up all the time 👇\n• The situation is the same. The direction changes.\n• borrow = take and use for a short time\n• lend = give to someone for a short time\n💡 If you give it, you lend it.\n\n🔗 https://ieltscorner.ca/lessons/vocabulary/\n#Vocabulary #LearnEnglish #DailyEnglish",
+    "quiz": {
+      "question": "If I give you my book for a day, what do I do?",
+      "options": [
+        "borrow",
+        "lend",
+        "rent"
+      ],
+      "correct_index": 1,
+      "explanation": "If you give it, you lend it."
+    },
+    "interaction": {
+      "type": "quiz",
+      "question": "If I give you my book for a day, what do I do?",
+      "options": [
+        "borrow",
+        "lend",
+        "rent"
+      ],
+      "correct_index": 1,
+      "explanation": "If you give it, you lend it."
+    }
+  },
+  {
+    "id": "telegram:borrow-vs-lend:mini",
+    "source": "telegram",
+    "topic_id": "borrow-vs-lend",
+    "variant": "mini",
+    "title": "🔑 Word Power: borrow or lend?",
+    "url": "https://ieltscorner.ca/lessons/vocabulary/",
+    "message": "📌 *🔑 Word Power: borrow or lend?*\n✨ One person gives it. One person receives it. That is the whole difference 👇\n• You receive it = borrow\n• You give it = lend\n• 🎯 Mini challenge:\n\n🔗 https://ieltscorner.ca/lessons/vocabulary/\n#Vocabulary #LearnEnglish #DailyEnglish",
+    "quiz": null,
+    "interaction": {
+      "type": "question",
+      "prompt": "Which word or phrase here do you want to use this week? (🔑 Word Power: borrow or lend?)"
+    }
+  },
+  {
+    "id": "telegram:make-vs-do:lesson",
+    "source": "telegram",
+    "topic_id": "make-vs-do",
+    "variant": "lesson",
+    "title": "🔄 Useful English: make vs do",
+    "url": "https://ieltscorner.ca/lessons/vocabulary/",
+    "message": "🚀 *🔄 Useful English: make vs do*\n✨ These two are everywhere in daily English, especially in common collocations 👇\n• A lot of mistakes happen because learners translate directly from Persian.\n• make = create a result\n• do = an action, task, or job\n💡 We say make a mistake.\n\n🔗 https://ieltscorner.ca/lessons/vocabulary/\n#Vocabulary #WorkEnglish #DailyEnglish",
+    "quiz": {
+      "question": "Which one is correct?",
+      "options": [
+        "do a mistake",
+        "make a mistake",
+        "make homework"
+      ],
+      "correct_index": 1,
+      "explanation": "We say make a mistake."
+    },
+    "interaction": {
+      "type": "quiz",
+      "question": "Which one is correct?",
+      "options": [
+        "do a mistake",
+        "make a mistake",
+        "make homework"
+      ],
+      "correct_index": 1,
+      "explanation": "We say make a mistake."
+    }
+  },
+  {
+    "id": "telegram:make-vs-do:mini",
+    "source": "telegram",
+    "topic_id": "make-vs-do",
+    "variant": "mini",
+    "title": "🔑 Word Power: make or do?",
+    "url": "https://ieltscorner.ca/lessons/vocabulary/",
+    "message": "📌 *🔑 Word Power: make or do?*\n✨ If homework / mistake / plan keeps confusing you, use this map 👇\n• result = make\n• task = do\n• 🎯 Mini challenge:\n💡 We say make a mistake.\n\n🔗 https://ieltscorner.ca/lessons/vocabulary/\n#Vocabulary #WorkEnglish #DailyEnglish",
+    "quiz": {
+      "question": "Which collocation is correct?",
+      "options": [
+        "do a mistake",
+        "make a mistake",
+        "do a plan"
+      ],
+      "correct_index": 1,
+      "explanation": "We say make a mistake."
+    },
+    "interaction": {
+      "type": "poll",
+      "question": "Which collocation is correct?",
+      "options": [
+        "do a mistake",
+        "make a mistake",
+        "do a plan"
+      ],
+      "allow_multiple": false
+    }
+  },
+  {
+    "id": "telegram:used-to-vs-be-used-to:lesson",
+    "source": "telegram",
+    "topic_id": "used-to-vs-be-used-to",
+    "variant": "lesson",
+    "title": "🔎 Grammar Fix: used to vs be used to",
+    "url": "https://ieltscorner.ca/lessons/grammar/used-to-for-past-habits/",
+    "message": "🚀 *🔎 Grammar Fix: used to vs be used to*\n✨ Use this when you compare your old habits with what feels normal now 👇\n• This is very common when people talk about life changes, moving, work shifts, or Canada life.\n• used to + verb = a past habit or past state\n• be used to + noun / verb-ing = something feels normal now\n\n🔗 https://ieltscorner.ca/lessons/grammar/used-to-for-past-habits/\n#Grammar #B1English #LearnEnglish",
+    "quiz": null,
+    "interaction": {
+      "type": "question",
+      "prompt": "Which grammar point here do you want another example for? (🔎 Grammar Fix: used to vs be used to)"
+    }
+  },
+  {
+    "id": "telegram:used-to-vs-be-used-to:mini",
+    "source": "telegram",
+    "topic_id": "used-to-vs-be-used-to",
+    "variant": "mini",
+    "title": "⚡ Quick Grammar: used to / be used to",
+    "url": "https://ieltscorner.ca/lessons/grammar/used-to-for-past-habits/",
+    "message": "📌 *⚡ Quick Grammar: used to / be used to*\n✨ Talking about before and now? Start here 👇\n• 🎯 Mini challenge:\n• Make one sentence with used to.\n💡 Use a noun or verb-ing after be used to.\n\n🔗 https://ieltscorner.ca/lessons/grammar/used-to-for-past-habits/\n#Grammar #B1English #LearnEnglish",
+    "quiz": {
+      "question": "What comes after be used to?",
+      "options": [
+        "base verb",
+        "noun or verb-ing",
+        "to + verb only"
+      ],
+      "correct_index": 1,
+      "explanation": "Use a noun or verb-ing after be used to."
+    },
+    "interaction": {
+      "type": "poll",
+      "question": "What comes after be used to?",
+      "options": [
+        "base verb",
+        "noun or verb-ing",
+        "to + verb only"
+      ],
+      "allow_multiple": false
+    }
+  },
+  {
+    "id": "telegram:articles-a-an-the:lesson",
+    "source": "telegram",
+    "topic_id": "articles-a-an-the",
+    "variant": "lesson",
+    "title": "🔎 Grammar Fix: a / an / the",
+    "url": "https://ieltscorner.ca/lessons/grammar/",
+    "message": "🚀 *🔎 Grammar Fix: a / an / the*\n✨ Imagine you are telling a tiny story in English. First mention or specific thing? 👇\n• 👀 Look at this:\n• I saw a dog outside.\n• The dog was very friendly.\n💡 Use a for first mention, then the for the specific book.\n\n🔗 https://ieltscorner.ca/lessons/grammar/\n#Grammar #IELTS #B1English",
+    "quiz": {
+      "question": "Which sentence works best?",
+      "options": [
+        "I bought the book yesterday. It was just any book.",
+        "I bought a book yesterday. The book is on my desk now.",
+        "I bought an book yesterday."
+      ],
+      "correct_index": 1,
+      "explanation": "Use a for first mention, then the for the specific book."
+    },
+    "interaction": {
+      "type": "quiz",
+      "question": "Which sentence works best?",
+      "options": [
+        "I bought the book yesterday. It was just any book.",
+        "I bought a book yesterday. The book is on my desk now.",
+        "I bought an book yesterday."
+      ],
+      "correct_index": 1,
+      "explanation": "Use a for first mention, then the for the specific book."
+    }
+  },
+  {
+    "id": "telegram:articles-a-an-the:mini",
+    "source": "telegram",
+    "topic_id": "articles-a-an-the",
+    "variant": "mini",
+    "title": "⚡ Quick Grammar: first mention / second mention",
+    "url": "https://ieltscorner.ca/lessons/grammar/",
+    "message": "📌 *⚡ Quick Grammar: first mention / second mention*\n✨ You mention something once, then mention the same thing again. That is where articles click 👇\n• 👀 Look at this:\n• I saw a cat. The cat ran away.\n• ✅ Quick rule:\n💡 Use a or an when you mention something for the first time.\n\n🔗 https://ieltscorner.ca/lessons/grammar/\n#Grammar #IELTS #B1English",
+    "quiz": {
+      "question": "Which comes first in a new story?",
+      "options": [
+        "the",
+        "a/an",
+        "no article always"
+      ],
+      "correct_index": 1,
+      "explanation": "Use a or an when you mention something for the first time."
+    },
+    "interaction": {
+      "type": "poll",
+      "question": "Which comes first in a new story?",
+      "options": [
+        "the",
+        "a/an",
+        "no article always"
+      ],
+      "allow_multiple": false
+    }
+  },
+  {
+    "id": "telegram:prepositions-in-context:lesson",
+    "source": "telegram",
+    "topic_id": "prepositions-in-context",
+    "variant": "lesson",
+    "title": "🔄 Useful English: prepositions in context",
+    "url": "https://ieltscorner.ca/lessons/vocabulary/",
+    "message": "🚀 *🔄 Useful English: prepositions in context*\n✨ This matters when one English word always comes with a certain preposition 😵\n• The trap is direct translation.\n• ❌ interested on\n• ✅ interested in\n💡 We say interested in.\n\n🔗 https://ieltscorner.ca/lessons/vocabulary/\n#Vocabulary #IELTS #B1English",
+    "quiz": {
+      "question": "Which chunk is correct?",
+      "options": [
+        "interested on politics",
+        "interested in politics",
+        "interested at politics"
+      ],
+      "correct_index": 1,
+      "explanation": "We say interested in."
+    },
+    "interaction": {
+      "type": "quiz",
+      "question": "Which chunk is correct?",
+      "options": [
+        "interested on politics",
+        "interested in politics",
+        "interested at politics"
+      ],
+      "correct_index": 1,
+      "explanation": "We say interested in."
+    }
+  },
+  {
+    "id": "telegram:prepositions-in-context:mini",
+    "source": "telegram",
+    "topic_id": "prepositions-in-context",
+    "variant": "mini",
+    "title": "🔑 Word Power: learn the whole chunk",
+    "url": "https://ieltscorner.ca/lessons/vocabulary/",
+    "message": "📌 *🔑 Word Power: learn the whole chunk*\n✨ Word + preposition is one package. Learn it that way 👇\n• ✅ interested in\n• ✅ good at\n• ✅ depend on\n💡 We say good at.\n\n🔗 https://ieltscorner.ca/lessons/vocabulary/\n#Vocabulary #IELTS #B1English",
+    "quiz": {
+      "question": "Which one is correct?",
+      "options": [
+        "good in math",
+        "good at math",
+        "good on math"
+      ],
+      "correct_index": 1,
+      "explanation": "We say good at."
+    },
+    "interaction": {
+      "type": "poll",
+      "question": "Which one is correct?",
+      "options": [
+        "good in math",
+        "good at math",
+        "good on math"
+      ],
+      "allow_multiple": false
+    }
+  },
+  {
+    "id": "telegram:celpip-cover-all-points:lesson",
+    "source": "telegram",
+    "topic_id": "celpip-cover-all-points",
+    "variant": "lesson",
+    "title": "✍️ CELPIP Writing Task 1: cover every prompt point",
+    "url": "https://ieltscorner.ca/lessons/writing/celpip-task1-covering-all-prompt-points-b2/",
+    "message": "🚀 *✍️ CELPIP Writing Task 1: cover every prompt point*\n✨ In CELPIP Writing Task 1, the email prompt gives you jobs to do. Usually they are shown as bullet points 👇\n• 👀 Look at this kind of prompt:\n• explain the problem\n• apologize\n💡 You need to cover every prompt point.\n\n🔗 https://ieltscorner.ca/lessons/writing/celpip-task1-covering-all-prompt-points-b2/\n#CELPIP #Writing #B2English",
+    "quiz": {
+      "question": "What should you check before writing?",
+      "options": [
+        "Only the greeting",
+        "Every prompt point",
+        "Only the last line"
+      ],
+      "correct_index": 1,
+      "explanation": "You need to cover every prompt point."
+    },
+    "interaction": {
+      "type": "quiz",
+      "question": "What should you check before writing?",
+      "options": [
+        "Only the greeting",
+        "Every prompt point",
+        "Only the last line"
+      ],
+      "correct_index": 1,
+      "explanation": "You need to cover every prompt point."
+    }
+  },
+  {
+    "id": "telegram:celpip-cover-all-points:mini",
+    "source": "telegram",
+    "topic_id": "celpip-cover-all-points",
+    "variant": "mini",
+    "title": "✍️ CELPIP Writing Task 1: do not miss a bullet",
+    "url": "https://ieltscorner.ca/lessons/writing/celpip-task1-covering-all-prompt-points-b2/",
+    "message": "📌 *✍️ CELPIP Writing Task 1: do not miss a bullet*\n✨ You open the email prompt and see 3 bullet points. That means the task has 3 jobs, not 1 👇\n• If you miss one bullet, you lose easy marks.\n• 👀 Example prompt jobs:\n• explain the issue\n💡 Missing even one prompt point can hurt the score.\n\n🔗 https://ieltscorner.ca/lessons/writing/celpip-task1-covering-all-prompt-points-b2/\n#CELPIP #Writing #B2English",
+    "quiz": {
+      "question": "What causes easy score loss?",
+      "options": [
+        "Covering all bullets",
+        "Missing one prompt point",
+        "Using a clear plan"
+      ],
+      "correct_index": 1,
+      "explanation": "Missing even one prompt point can hurt the score."
+    },
+    "interaction": {
+      "type": "poll",
+      "question": "What causes easy score loss?",
+      "options": [
+        "Covering all bullets",
+        "Missing one prompt point",
+        "Using a clear plan"
+      ],
+      "allow_multiple": false
+    }
+  }
+]

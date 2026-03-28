@@ -1,0 +1,110 @@
+[
+  {
+    "id": "service:webinar:weekly-training",
+    "source": "service",
+    "service": "webinar",
+    "title": "Weekly CELPIP Webinar",
+    "url": "https://ieltscorner.ca/webinar/",
+    "message": "🎯 *Weekly CELPIP Webinar*\n✨ Join one live session that clears up one real score problem instead of trying to cover everything at once.\n• One focused teaching topic\n• Clear examples and guided explanation\n• Questions at the end before you study alone again\n• Every Saturday at 6:00 PM PST | $12/session\n\n🔗 https://ieltscorner.ca/webinar/",
+    "interaction": {
+      "type": "poll",
+      "prompt": "What would help you most in the live webinar this week?",
+      "options": [
+        "Writing strategy",
+        "Speaking guidance",
+        "Reading or listening timing"
+      ],
+      "allow_multiple": false
+    }
+  },
+  {
+    "id": "service:tutoring:private-class",
+    "source": "service",
+    "service": "tutoring",
+    "title": "Private IELTS / CELPIP Class",
+    "url": "https://ieltscorner.ca/tutoring/",
+    "message": "🧑‍🏫 *Private IELTS / CELPIP Class*\n✨ Work directly with Kara Abdolmaleki in a one-on-one session focused on your exact score target and weak points.\n• Personalized strategy\n• Direct corrections on speaking, writing, grammar, and vocabulary\n• Simple action plan before your next session\n• 1:1 coaching ($30) | Google Meet\n\n🔗 https://ieltscorner.ca/tutoring/",
+    "interaction": {
+      "type": "question",
+      "prompt": "Which weak area would you want fixed first in a private class?"
+    }
+  },
+  {
+    "id": "service:essay-correction:direct-feedback",
+    "source": "service",
+    "service": "essay_correction",
+    "title": "Essay Correction",
+    "url": "https://ieltscorner.ca/essay-correction/",
+    "message": "✍️ *Essay Correction*\n✨ Submit one IELTS or CELPIP essay and get score-focused feedback you can use immediately.\n• One complete essay review\n• Detailed comments on grammar, structure, task response, and clarity\n• Good if you want direct feedback before private tutoring\n• Returned by email after you submit\n\n🔗 https://ieltscorner.ca/essay-correction/",
+    "interaction": {
+      "type": "poll",
+      "prompt": "What would you want essay feedback on first?",
+      "options": [
+        "Grammar and language errors",
+        "Structure and organization",
+        "Task response and clarity"
+      ],
+      "allow_multiple": false
+    }
+  },
+  {
+    "id": "service:ai-writing-lab:subscription",
+    "source": "service",
+    "service": "ai_writing_lab",
+    "title": "CELPIP Writing Lab",
+    "url": "https://ieltscorner.ca/celpip/writing/ai-feedback/",
+    "message": "🤖 *CELPIP Writing Lab*\n✨ Practice timed Task 1 and Task 2 prompts and get scoring, feedback, rewrites, and lesson links.\n• CA$5/month\n• Unlimited monthly submissions\n• 100 CELPIP sample essays included\n• Cancel anytime\n\n🔗 https://ieltscorner.ca/celpip/writing/ai-feedback/",
+    "interaction": {
+      "type": "poll",
+      "prompt": "What would you use first in the CELPIP Writing Lab?",
+      "options": [
+        "Timed Task 1 practice",
+        "Timed Task 2 practice",
+        "Score report and feedback"
+      ],
+      "allow_multiple": false
+    }
+  },
+  {
+    "id": "service:sample-essays:library",
+    "source": "service",
+    "service": "sample_essays",
+    "title": "100 CELPIP Sample Essays",
+    "url": "https://ieltscorner.ca/celpip/writing/samples/",
+    "message": "📚 *100 CELPIP Sample Essays*\n✨ Read CLB 9+ model answers by task, topic, or level and study what strong writing looks like.\n• 50 Task 1 essays + 50 Task 2 essays\n• Search by task, topic, or CLB level\n• Included in the same CA$5/month writing subscription\n\n🔗 https://ieltscorner.ca/celpip/writing/samples/",
+    "interaction": {
+      "type": "question",
+      "prompt": "What kind of sample essay would help you most right now?"
+    }
+  },
+  {
+    "id": "service:webinar:seat-reminder",
+    "source": "service",
+    "service": "webinar",
+    "title": "Live Webinar Seat",
+    "url": "https://ieltscorner.ca/webinar/",
+    "message": "🗓️ *Save Your Webinar Seat*\n✨ Use the weekly webinar when you want direct answers on one confusing exam skill before paying for longer coaching.\n• Live online\n• One focused score problem\n• Practical Q and A at the end\n• $12/session\n\n🔗 https://ieltscorner.ca/webinar/",
+    "interaction": {
+      "type": "question",
+      "prompt": "If you joined the live webinar, what would you want clarified first?"
+    }
+  },
+  {
+    "id": "service:tutoring:score-plan",
+    "source": "service",
+    "service": "tutoring",
+    "title": "Private Score Plan",
+    "url": "https://ieltscorner.ca/tutoring/",
+    "message": "📈 *Turn a Weak Area into a Score Plan*\n✨ Private classes are best when you already know your score is stuck and want a focused plan for faster improvement.\n• IELTS or CELPIP\n• Speaking, writing, grammar, or vocabulary\n• 1:1 coaching ($30)\n\n🔗 https://ieltscorner.ca/tutoring/",
+    "interaction": {
+      "type": "poll",
+      "prompt": "Which skill would you fix first in private coaching?",
+      "options": [
+        "Writing",
+        "Speaking",
+        "Grammar or vocabulary"
+      ],
+      "allow_multiple": false
+    }
+  }
+]

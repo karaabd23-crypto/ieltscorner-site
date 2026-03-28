@@ -1,0 +1,394 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - strong [ref=e5]: Weekly webinar | 100 CELPIP writing prompts + sample responses for CA$5/month
+    - link "Webinar" [ref=e6] [cursor=pointer]:
+      - /url: /webinar
+    - link "Writing hub" [ref=e7] [cursor=pointer]:
+      - /url: /celpip/writing/ai-feedback
+    - link "Sample essays" [ref=e8] [cursor=pointer]:
+      - /url: /celpip/writing/samples
+  - banner [ref=e9]:
+    - generic [ref=e10]:
+      - link "IELTS Corner home" [ref=e11] [cursor=pointer]:
+        - /url: /
+        - img "IELTS Corner" [ref=e12]
+        - generic [ref=e13]:
+          - strong [ref=e14]: IELTS Corner
+          - generic [ref=e15]: IELTS & CELPIP prep
+      - generic [ref=e16]:
+        - navigation "Primary navigation" [ref=e17]:
+          - link "IELTS" [ref=e20] [cursor=pointer]:
+            - /url: /ielts
+            - generic [ref=e21]: IELTS
+          - link "CELPIP" [ref=e24] [cursor=pointer]:
+            - /url: /celpip
+            - generic [ref=e25]: CELPIP
+          - link "Services" [ref=e28] [cursor=pointer]:
+            - /url: /tutoring
+            - generic [ref=e29]: Services
+          - link "Resources" [ref=e32] [cursor=pointer]:
+            - /url: /lessons
+            - generic [ref=e33]: Resources
+          - link "Writing Hub" [ref=e34] [cursor=pointer]:
+            - /url: /celpip/writing/ai-feedback
+        - generic [ref=e35]:
+          - generic "Social links" [ref=e36]:
+            - link "Instagram" [ref=e37] [cursor=pointer]:
+              - /url: https://www.instagram.com/ieltscorner.ca
+              - text: IG
+            - link "YouTube" [ref=e38] [cursor=pointer]:
+              - /url: https://www.youtube.com/@KaraAbdolmaleki
+              - text: YT
+            - link "Telegram" [ref=e39] [cursor=pointer]:
+              - /url: https://t.me/Kaysenglishcorner
+              - text: TG
+          - link "About" [ref=e40] [cursor=pointer]:
+            - /url: /about
+          - link "Book a class" [ref=e41] [cursor=pointer]:
+            - /url: /tutoring
+  - main [ref=e42]:
+    - generic [ref=e43]:
+      - generic [ref=e45]:
+        - navigation "Breadcrumb" [ref=e46]:
+          - list [ref=e47]:
+            - listitem [ref=e48]:
+              - link "Home" [ref=e49] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e50]: ">"
+            - listitem [ref=e51]:
+              - link "Lessons" [ref=e52] [cursor=pointer]:
+                - /url: /lessons
+            - listitem [ref=e53]: ">"
+            - listitem [ref=e54]:
+              - link "Grammar" [ref=e55] [cursor=pointer]:
+                - /url: /lessons/grammar
+            - listitem [ref=e56]: ">"
+            - listitem [ref=e57]: Agreement of Subject and Verb
+        - generic [ref=e58]: Intermediate | IELTS & CELPIP
+        - heading "Agreement of Subject and Verb" [level=1] [ref=e59]
+        - paragraph [ref=e60]: Learn how to ensure subject-verb agreement for clear and precise communication in complex sentences.
+        - generic [ref=e61]:
+          - link "<- Back to Grammar lessons" [ref=e62] [cursor=pointer]:
+            - /url: /lessons/grammar
+          - link "All lessons" [ref=e63] [cursor=pointer]:
+            - /url: /lessons
+        - generic [ref=e64]:
+          - link "IELTS hub" [ref=e65] [cursor=pointer]:
+            - /url: /ielts
+          - link "CELPIP hub" [ref=e66] [cursor=pointer]:
+            - /url: /celpip
+      - article [ref=e68]:
+        - generic [ref=e70]:
+          - paragraph [ref=e72]:
+            - strong [ref=e73]: Subject and Verb Agreement
+            - text: ensures that the subject and the verb in a sentence match in number. This agreement is essential for clear and precise communication, particularly in complex sentences. In this lesson, you will learn how to maintain this agreement effectively.
+          - heading "Examples" [level=2] [ref=e74]
+          - generic [ref=e75]:
+            - article [ref=e76]:
+              - paragraph [ref=e77]: Example 1
+              - paragraph [ref=e78]:
+                - generic [ref=e79]: Incorrect
+                - text: A list of solutions are on the board.
+              - paragraph [ref=e80]:
+                - generic [ref=e81]: Better
+                - text: A list of solutions is on the board.
+              - paragraph [ref=e82]: The verb 'is' agrees with the singular subject 'list', not the plural 'solutions'.
+            - article [ref=e83]:
+              - paragraph [ref=e84]: Example 2
+              - paragraph [ref=e85]:
+                - generic [ref=e86]: Incorrect
+                - text: The number of students have increased this year.
+              - paragraph [ref=e87]:
+                - generic [ref=e88]: Better
+                - text: The number of students has increased this year.
+              - paragraph [ref=e89]: The verb 'has' agrees with 'the number', which is singular, not 'students'.
+          - generic [ref=e90]:
+            - paragraph [ref=e91]: Sponsored
+            - generic [ref=e92]: In-article ad placeholder. The live unit will appear here on production.
+          - heading "How It Works" [level=2] [ref=e93]
+          - generic [ref=e94]:
+            - generic [ref=e95]:
+              - paragraph [ref=e96]: Meaning
+              - paragraph [ref=e97]: Subject-verb agreement refers to the grammatical rule that the verb must match the subject in number and person. This ensures clarity in communication, especially in complex sentences where the subject may not be immediately obvious. At the B2 level, mastering this helps in constructing grammatically correct and sophisticated sentences.
+            - generic [ref=e98]:
+              - paragraph [ref=e99]: Use it when
+              - list [ref=e100]:
+                - listitem [ref=e101]: The subject is separated from the verb by additional phrases or clauses.
+                - listitem [ref=e102]: Using collective nouns that can be singular or plural based on context.
+                - listitem [ref=e103]: Constructing sentences with complex noun phrases.
+                - listitem [ref=e104]: Writing formal documents where precision is crucial.
+            - generic [ref=e105]:
+              - paragraph [ref=e106]: See it
+              - generic [ref=e107]:
+                - generic [ref=e108]:
+                  - text: A list of solutions
+                  - strong [ref=e109]: is
+                  - text: on the board.
+                - generic [ref=e110]:
+                  - text: The number of applicants
+                  - strong [ref=e111]: has
+                  - text: increased this year.
+                - generic [ref=e112]:
+                  - text: Either the manager or the employees
+                  - strong [ref=e113]: are
+                  - text: responsible.
+            - generic [ref=e114]:
+              - paragraph [ref=e115]: Quick rules
+              - list [ref=e116]:
+                - listitem [ref=e117]: Identify the true subject before selecting the verb form.
+                - listitem [ref=e118]: Ignore intervening phrases that do not affect subject number.
+                - listitem [ref=e119]: With either/or, neither/nor, match the verb to the nearest subject.
+                - listitem [ref=e120]: Collective nouns may require singular or plural verbs based on context.
+          - heading "Common Mistakes" [level=2] [ref=e121]
+          - generic [ref=e122]:
+            - paragraph [ref=e123]: Live IELTS Support
+            - link "Fix IELTS grammar traps in live training" [ref=e124] [cursor=pointer]:
+              - /url: /webinar?src=lesson-mid-ielts
+          - generic [ref=e125]:
+            - article [ref=e126]:
+              - paragraph [ref=e127]: Common problem 1
+              - heading "Matching the verb to the nearest noun instead of the true subject" [level=3] [ref=e128]
+              - paragraph [ref=e129]:
+                - generic [ref=e130]: Weak
+                - text: A series of workshops were added this term.
+              - paragraph [ref=e131]:
+                - generic [ref=e132]: Strong
+                - text: A series of workshops was added this term.
+              - paragraph [ref=e133]:
+                - strong [ref=e134]: "Fix:"
+                - text: Identify 'series' as the singular subject, not 'workshops'.
+            - article [ref=e135]:
+              - paragraph [ref=e136]: Common problem 2
+              - heading "Matching the verb to the noun after 'of'" [level=3] [ref=e137]
+              - paragraph [ref=e138]:
+                - generic [ref=e139]: Weak
+                - text: A range of options are available to applicants.
+              - paragraph [ref=e140]:
+                - generic [ref=e141]: Strong
+                - text: A range of options is available to applicants.
+              - paragraph [ref=e142]:
+                - strong [ref=e143]: "Fix:"
+                - text: Match the verb to 'range', which is singular.
+            - article [ref=e144]:
+              - paragraph [ref=e145]: Common problem 3
+              - heading "Ignoring the nearer subject in either/or patterns" [level=3] [ref=e146]
+              - paragraph [ref=e147]:
+                - generic [ref=e148]: Weak
+                - text: Either the students or the tutor are presenting first.
+              - paragraph [ref=e149]:
+                - generic [ref=e150]: Strong
+                - text: Either the students or the tutor is presenting first.
+              - paragraph [ref=e151]:
+                - strong [ref=e152]: "Fix:"
+                - text: In either/or, the verb agrees with the subject closest to it.
+          - heading "Practice Lab" [level=2] [ref=e153]
+          - generic [ref=e154]:
+            - generic [ref=e155]:
+              - generic [ref=e156]:
+                - heading "Practice" [level=3] [ref=e157]
+                - paragraph [ref=e158]: First notice the right form. Then build it yourself. Then fix it in a full sentence.
+              - generic [ref=e159]:
+                - paragraph [ref=e160]: "Score: 0/3"
+                - button "Reset" [ref=e161] [cursor=pointer]
+            - paragraph [ref=e162]: Focus on identifying the true subject to ensure correct verb agreement.
+            - generic [ref=e163]:
+              - article [ref=e164]:
+                - paragraph [ref=e165]: 1. Quick pick
+                - heading "Choose the sentence with correct subject-verb agreement." [level=3] [ref=e166]
+                - generic [ref=e167]:
+                  - button "The team of players have won the match." [ref=e168] [cursor=pointer]
+                  - button "The team of players has won the match." [ref=e169] [cursor=pointer]
+                  - button "The team of players is winning the match." [ref=e170] [cursor=pointer]
+                - paragraph [ref=e171]
+              - article [ref=e172]:
+                - paragraph [ref=e173]: 2. Build it
+                - heading "Put this sentence in the correct order." [level=3] [ref=e174]
+                - paragraph [ref=e175]: Tap a chunk to move it down. Tap it again to send it back.
+                - generic [ref=e176]:
+                  - button "A group of" [ref=e177] [cursor=pointer]
+                  - button "students is" [ref=e178] [cursor=pointer]
+                  - button "waiting outside." [ref=e179] [cursor=pointer]
+                - generic [ref=e181]:
+                  - button "Check" [ref=e182] [cursor=pointer]
+                  - button "Clear" [ref=e183] [cursor=pointer]
+                - paragraph [ref=e184]
+              - article [ref=e185]:
+                - paragraph [ref=e186]: 3. Final sort
+                - heading "Mark each sentence as correct or needing a fix." [level=3] [ref=e187]
+                - generic [ref=e188]:
+                  - generic [ref=e189]:
+                    - paragraph [ref=e190]: The group is meeting today.
+                    - generic [ref=e191]:
+                      - button "Works" [ref=e192] [cursor=pointer]
+                      - button "Needs fixing" [ref=e193] [cursor=pointer]
+                  - generic [ref=e194]:
+                    - paragraph [ref=e195]: The group are meeting today.
+                    - generic [ref=e196]:
+                      - button "Works" [ref=e197] [cursor=pointer]
+                      - button "Needs fixing" [ref=e198] [cursor=pointer]
+                  - generic [ref=e199]:
+                    - paragraph [ref=e200]: The committee has decided.
+                    - generic [ref=e201]:
+                      - button "Works" [ref=e202] [cursor=pointer]
+                      - button "Needs fixing" [ref=e203] [cursor=pointer]
+                  - generic [ref=e204]:
+                    - paragraph [ref=e205]: The committee have decided.
+                    - generic [ref=e206]:
+                      - button "Works" [ref=e207] [cursor=pointer]
+                      - button "Needs fixing" [ref=e208] [cursor=pointer]
+                - button "Check" [ref=e210] [cursor=pointer]
+                - paragraph [ref=e211]
+          - heading "Why It Matters" [level=2] [ref=e212]
+          - paragraph [ref=e213]:
+            - strong [ref=e214]: "🎯 Why it matters:"
+            - text: Subject-verb agreement is crucial for clarity and professionalism in writing. Correct agreement helps the reader easily understand who or what is performing the action, making your writing more polished and effective.
+          - heading "Get Feedback" [level=2] [ref=e215]
+          - generic [ref=e216]:
+            - generic [ref=e217]:
+              - paragraph [ref=e218]: Personalized score feedback
+              - heading "Get clear next-step advice." [level=3] [ref=e219]
+              - paragraph [ref=e220]: Choose the support that matches your study goal. You get direct correction, clear scoring language, and a simple next step.
+            - generic [ref=e221]:
+              - link "Essay Correction Detailed comments on one draft with band-style scoring." [ref=e222] [cursor=pointer]:
+                - /url: /essay-correction
+                - generic [ref=e223]: A+
+                - strong [ref=e224]: Essay Correction
+                - generic [ref=e225]: Detailed comments on one draft with band-style scoring.
+              - link "1-on-1 Tutoring Live help when you want guided practice and fast correction." [ref=e226] [cursor=pointer]:
+                - /url: /tutoring
+                - generic [ref=e227]: 1:1
+                - strong [ref=e228]: 1-on-1 Tutoring
+                - generic [ref=e229]: Live help when you want guided practice and fast correction.
+              - link "AI Writing Feedback Quick checks when you want to test ideas before a full review." [ref=e230] [cursor=pointer]:
+                - /url: /celpip/writing/ai-feedback
+                - generic [ref=e231]: AI
+                - strong [ref=e232]: AI Writing Feedback
+                - generic [ref=e233]: Quick checks when you want to test ideas before a full review.
+              - link "Weekly Webinar Join a guided session and learn with real exam-style examples." [ref=e234] [cursor=pointer]:
+                - /url: /webinar
+                - generic [ref=e235]: Live
+                - strong [ref=e236]: Weekly Webinar
+                - generic [ref=e237]: Join a guided session and learn with real exam-style examples.
+            - paragraph [ref=e238]: Best when you need precise correction on grammar control, task response quality, and exam-style scoring.
+        - generic [ref=e239]:
+          - paragraph [ref=e240]: Sponsored
+          - generic [ref=e241]: Horizontal ad placeholder. The live AdSense unit will render here on production.
+        - generic [ref=e242]:
+          - paragraph [ref=e243]: Personalized Coaching
+          - link "Get 1:1 help for your grammar problem" [ref=e244] [cursor=pointer]:
+            - /url: /tutoring?src=lesson-end-ielts
+        - generic [ref=e246]:
+          - heading "Related lessons and your next support option" [level=3] [ref=e247]
+          - paragraph [ref=e248]: These recommendations are matched by test focus and skill level for this lesson.
+          - generic [ref=e249]:
+            - link "Enhancing Grammar Precision for IELTS/CELPIP Learn how to enhance grammatical precision for IELTS and CELPIP exams, focusing on tense consistency, specific vocabulary, and sentence clarity." [ref=e250] [cursor=pointer]:
+              - /url: /lessons/grammar/2026-03-19-grammar-c2-precision-timed-exam-conditions/
+              - heading "Enhancing Grammar Precision for IELTS/CELPIP" [level=4] [ref=e251]
+              - paragraph [ref=e252]: Learn how to enhance grammatical precision for IELTS and CELPIP exams, focusing on tense consistency, specific vocabulary, and sentence clarity.
+            - link "Adjective Order Learn the correct order of adjectives in English to make your sentences sound natural and clear." [ref=e253] [cursor=pointer]:
+              - /url: /lessons/grammar/adjective-order/
+              - heading "Adjective Order" [level=4] [ref=e254]
+              - paragraph [ref=e255]: Learn the correct order of adjectives in English to make your sentences sound natural and clear.
+            - link "IELTS Writing Help Get Band 7+ faster with structured feedback and targeted writing support." [ref=e256] [cursor=pointer]:
+              - /url: /ielts-writing-help
+              - heading "IELTS Writing Help" [level=4] [ref=e257]
+              - paragraph [ref=e258]: Get Band 7+ faster with structured feedback and targeted writing support.
+        - generic [ref=e259]:
+          - heading "Get free Band 7+ strategies every week" [level=3] [ref=e260]
+          - paragraph [ref=e261]: Get free Band 7+ strategies every week
+          - generic [ref=e262]:
+            - generic [ref=e263]:
+              - generic [ref=e264]: Name
+              - textbox "Name" [ref=e265]
+            - generic [ref=e266]:
+              - generic [ref=e267]: Email
+              - textbox "Email" [ref=e268]
+            - button "Send Me Weekly Strategies" [ref=e269] [cursor=pointer]
+        - generic [ref=e270]:
+          - paragraph [ref=e271]: "Explore another category:"
+          - generic "Explore lesson categories" [ref=e272]:
+            - link "Grammar" [ref=e273] [cursor=pointer]:
+              - /url: /lessons/grammar
+            - link "Vocabulary" [ref=e274] [cursor=pointer]:
+              - /url: /lessons/vocabulary
+            - link "Writing" [ref=e275] [cursor=pointer]:
+              - /url: /lessons/writing
+            - link "Speaking" [ref=e276] [cursor=pointer]:
+              - /url: /lessons/speaking
+            - link "Listening" [ref=e277] [cursor=pointer]:
+              - /url: /lessons/listening
+            - link "Reading" [ref=e278] [cursor=pointer]:
+              - /url: /lessons/reading
+        - generic [ref=e279]:
+          - generic [ref=e280]:
+            - link "<- Newer lesson" [ref=e281] [cursor=pointer]:
+              - /url: /lessons/grammar/some-any/
+            - link "Older lesson ->" [ref=e282] [cursor=pointer]:
+              - /url: /lessons/grammar/subordinate-clauses/
+          - link "Explore all categories ->" [ref=e283] [cursor=pointer]:
+            - /url: /lessons
+      - generic "Lesson sections quick navigation" [ref=e284]:
+        - generic [ref=e285] [cursor=pointer]: Jump to
+        - list:
+          - listitem:
+            - link "Examples":
+              - /url: "#examples"
+          - listitem:
+            - link "How It Works":
+              - /url: "#how-it-works"
+          - listitem:
+            - link "Common Mistakes":
+              - /url: "#common-mistakes"
+          - listitem:
+            - link "Practice Lab":
+              - /url: "#practice-lab"
+          - listitem:
+            - link "Why It Matters":
+              - /url: "#why-it-matters"
+          - listitem:
+            - link "Get Feedback":
+              - /url: "#get-feedback"
+  - contentinfo [ref=e286]:
+    - generic [ref=e287]:
+      - generic [ref=e288]:
+        - generic [ref=e289]:
+          - heading "IELTS Corner" [level=3] [ref=e290]
+          - generic [ref=e291]: Band 7+ focused lessons for IELTS & CELPIP.
+        - generic [ref=e292]:
+          - heading "Explore" [level=3] [ref=e293]
+          - generic [ref=e294]:
+            - link "Lessons" [ref=e295] [cursor=pointer]:
+              - /url: /lessons
+            - link "Tutoring" [ref=e296] [cursor=pointer]:
+              - /url: /tutoring
+            - link "Essay correction" [ref=e297] [cursor=pointer]:
+              - /url: /essay-correction
+            - link "eBook" [ref=e298] [cursor=pointer]:
+              - /url: /ebook
+            - link "About" [ref=e299] [cursor=pointer]:
+              - /url: /about
+        - generic [ref=e300]:
+          - heading "Social" [level=3] [ref=e301]
+          - generic [ref=e302]:
+            - link "Instagram" [ref=e303] [cursor=pointer]:
+              - /url: https://www.instagram.com/ieltscorner.ca
+            - link "YouTube" [ref=e304] [cursor=pointer]:
+              - /url: https://www.youtube.com/@KaraAbdolmaleki
+            - link "Telegram" [ref=e305] [cursor=pointer]:
+              - /url: https://t.me/Kaysenglishcorner
+      - generic [ref=e306]:
+        - generic [ref=e307]: © 2026 IELTS Corner
+        - generic [ref=e308]: ieltscorner.com redirects to ieltscorner.ca
+  - generic [ref=e311]:
+    - button "Menu" [ref=e312]:
+      - img [ref=e314]
+      - generic: Menu
+    - button "Inspect" [ref=e318]:
+      - img [ref=e320]
+      - generic: Inspect
+    - button "Audit" [ref=e322]:
+      - img [ref=e324]
+      - generic: Audit
+    - button "Settings" [ref=e327]:
+      - img [ref=e329]
+      - generic: Settings

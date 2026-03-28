@@ -1,0 +1,110 @@
+[
+  {
+    "id": "cleanup:repost:01:telegram:celpip-reading-proof-not-keywords:lesson",
+    "source": "cleanup-repost",
+    "title": "📖 CELPIP Reading: proof beats keyword matching",
+    "message": "🚀 *📖 CELPIP Reading: proof beats keyword matching*\n✨ A common CELPIP reading problem is choosing the option that repeats a keyword, even when the meaning is wrong 👇\n• Keyword match is only the start.\n• Meaning match is the real check.\n• 🎯 Exam move:\n💡 Shared vocabulary is not enough without meaning match.\n\n🔗 https://ieltscorner.ca/celpip/\n#CELPIP #Reading #CLB8",
+    "url": "https://ieltscorner.ca/celpip/",
+    "interaction": {
+      "type": "quiz",
+      "question": "What should decide your answer in CELPIP reading?",
+      "options": [
+        "Shared keywords only",
+        "Exact meaning and proof",
+        "Longest option"
+      ],
+      "correct_index": 1,
+      "explanation": "Shared vocabulary is not enough without meaning match."
+    }
+  },
+  {
+    "id": "cleanup:repost:02:telegram:celpip-reading-proof-not-keywords:mini",
+    "source": "cleanup-repost",
+    "title": "⚡ CELPIP Reading: matching words is not enough",
+    "message": "📌 *⚡ CELPIP Reading: matching words is not enough*\n✨ One reading rule that saves marks 👇\n• Do not choose an answer only because it repeats a word from the passage.\n• Check whether it matches the idea exactly.\n• 🎯 Mini challenge:\n💡 Meaning and proof determine the correct answer.\n\n🔗 https://ieltscorner.ca/celpip/\n#CELPIP #Reading #CLB8",
+    "url": "https://ieltscorner.ca/celpip/",
+    "interaction": {
+      "type": "quiz",
+      "question": "What is more important than keyword overlap?",
+      "options": [
+        "Exact meaning",
+        "Fast guessing",
+        "Option length"
+      ],
+      "correct_index": 0,
+      "explanation": "Meaning and proof determine the correct answer."
+    }
+  },
+  {
+    "id": "cleanup:repost:03:telegram:celpip-listening-speaker-attitude:lesson",
+    "source": "cleanup-repost",
+    "title": "🎧 CELPIP Listening: hear the speaker attitude, not just the words",
+    "message": "🚀 *🎧 CELPIP Listening: hear the speaker attitude, not just the words*\n✨ Some CELPIP listening answers depend more on attitude and intention than on direct facts 👇\n• Listen for:\n• tone changes\n• stress on key words\n💡 These questions often depend on tone, not just facts.\n\n🔗 https://ieltscorner.ca/celpip/\n#CELPIP #Listening #CLB9",
+    "url": "https://ieltscorner.ca/celpip/",
+    "interaction": {
+      "type": "quiz",
+      "question": "What helps most with speaker attitude questions?",
+      "options": [
+        "Listening only for numbers",
+        "Tracking tone and intention",
+        "Ignoring stressed words"
+      ],
+      "correct_index": 1,
+      "explanation": "These questions often depend on tone, not just facts."
+    }
+  },
+  {
+    "id": "cleanup:repost:04:telegram:celpip-listening-speaker-attitude:mini",
+    "source": "cleanup-repost",
+    "title": "⚡ CELPIP Listening: tone carries meaning too",
+    "message": "📌 *⚡ CELPIP Listening: tone carries meaning too*\n✨ A fast listening reminder 👇\n• Do not only hear the words.\n• Hear the attitude behind them: annoyed, relieved, excited, unsure.\n• 🎯 Mini challenge:\n💡 They test whether you can interpret the speaker’s tone and purpose.\n\n🔗 https://ieltscorner.ca/celpip/\n#CELPIP #Listening #CLB9",
+    "url": "https://ieltscorner.ca/celpip/",
+    "interaction": {
+      "type": "quiz",
+      "question": "What do attitude questions test?",
+      "options": [
+        "Tone and intention",
+        "Spelling only",
+        "Grammar rules"
+      ],
+      "correct_index": 0,
+      "explanation": "They test whether you can interpret the speaker's tone and purpose."
+    }
+  },
+  {
+    "id": "cleanup:repost:05:telegram:celpip-task1-tone-and-purpose:lesson",
+    "source": "cleanup-repost",
+    "title": "📧 CELPIP Task 1: match the tone to the situation",
+    "message": "🚀 *📧 CELPIP Task 1: match the tone to the situation*\n✨ A surprising number of CELPIP Task 1 emails lose marks because the tone does not match the purpose 👇\n• ❌ Hey, I want you to fix this problem now.\n• ✅ I am writing to report an issue and request a prompt solution.\n• 🎯 Exam move:\n💡 Formal complaint emails need controlled, appropriate tone.\n\n🔗 https://ieltscorner.ca/celpip/\n#CELPIP #Writing #CLB9",
+    "url": "https://ieltscorner.ca/celpip/",
+    "interaction": {
+      "type": "quiz",
+      "question": "Which line suits a formal complaint email better?",
+      "options": [
+        "Fix this now.",
+        "I am writing to express concern about the recent service issue.",
+        "What is going on here?"
+      ],
+      "correct_index": 1,
+      "explanation": "Formal complaint emails need controlled, appropriate tone."
+    }
+  },
+  {
+    "id": "cleanup:repost:06:telegram:celpip-task1-bullets-plan:lesson",
+    "source": "cleanup-repost",
+    "title": "📝 CELPIP Task 1: turn bullet points into paragraph jobs",
+    "message": "🚀 *📝 CELPIP Task 1: turn bullet points into paragraph jobs*\n✨ Students know they must cover all Task 1 bullets, but many still miss one because they never convert the bullets into a writing plan 👇\n• Better method:\n• Bullet 1 = paragraph job 1\n• Bullet 2 = paragraph job 2\n💡 Turning bullets into clear jobs helps prevent missing content.\n\n🔗 https://ieltscorner.ca/celpip/\n#CELPIP #Writing #Task1",
+    "url": "https://ieltscorner.ca/celpip/",
+    "interaction": {
+      "type": "quiz",
+      "question": "What is a safer planning method for Task 1?",
+      "options": [
+        "Ignore the bullets after reading them",
+        "Convert each bullet into a job in your answer",
+        "Memorize one generic email"
+      ],
+      "correct_index": 1,
+      "explanation": "Turning bullets into clear jobs helps prevent missing content."
+    }
+  }
+]

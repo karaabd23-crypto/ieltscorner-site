@@ -7,7 +7,7 @@ on:
     - cron: '0 15,21 * * *'
     # Mini-tip channel posts: 03:00, 18:00, 00:00 UTC (3x daily)
     # ≈ ET: 10pm, 1pm, 7pm | PT: 7pm, 10am, 4pm
-    - cron: '0 0,3,18 * * *'
+    - cron: '0 3,18 * * *'
   workflow_dispatch:
     inputs:
       content_type:

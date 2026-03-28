@@ -16,6 +16,12 @@ import {
   savePostHistory,
   toCanonicalPostText,
 } from './lib/telegram-dedupe.mjs';
+import {
+  appendTelegramSignature,
+  formatTelegramSignatureLine,
+  hasTelegramSignature,
+} from './lib/telegram-signature.mjs';
+const BOT_DIRECT_URL = 'https://t.me/Ewithkpaybot';
 
 const SIGNATURE_BLOCK = [
   '🌈✨ Kay\'s English Corner 🇨🇦',
@@ -30,6 +36,48 @@ const STANDARD_SIGNATURE_BLOCK = [
   '🌐 More lessons: https://ieltscorner.ca',
   '👩‍🏫 Tutoring | ✍️ Writing feedback: https://ieltscorner.ca/tutoring | https://ieltscorner.ca/essay-correction',
 ].join('\n');
+
+const UPDATED_STANDARD_SIGNATURE_BLOCK = [
+  '🌈 Kay’s English Corner 🇨🇦',
+  '📅 Book your free consultation: 👉 https://calendar.app.google/nzoni849GjBUfEac6',
+  '📲 WhatsApp (direct support): 👉 https://wa.me/17789942315',
+  `🤖 Ask the robot anything: grammar, vocabulary, sentence fixes, and quick study help 👉 ${BOT_DIRECT_URL}`,
+  '🌐 https://celpipcorner.ca',
+  '📢 Channel: https://whatsapp.com/channel/0029VbBlsh87tkjFAkYchn19',
+  '📸 IG: https://instagram.com/ieltscorner.ca',
+].join('\n');
+
+const UPDATED_SIGNATURE_HEADER = "➖➖➖🇨🇦 K A Y ' S    E N G L I S H    C O R N E R 🇨🇦➖➖➖";
+const UPDATED_SIGNATURE_LINKS = [
+  {
+    text: '📅   Book your free consultation',
+    href: 'https://calendar.app.google/nzoni849GjBUfEac6',
+  },
+  {
+    text: '📲   Question? Ask us on WhatsApp',
+    href: 'https://wa.me/17789942315',
+  },
+  {
+    text: '🤖   Use the Channel Robot',
+    href: BOT_DIRECT_URL,
+  },
+  {
+    text: '🌐   Website: https://celpipcorner.ca',
+    href: 'https://ieltscorner.ca',
+  },
+  {
+    text: '📢   Follow our WhatsApp Channel',
+    href: 'https://whatsapp.com/channel/0029VbBlsh87tkjFAkYchn19',
+  },
+  {
+    text: '📸   Instagram',
+    href: 'https://instagram.com/ieltscorner.ca',
+  },
+];
+const UPDATED_SIGNATURE_TEXT = [
+  UPDATED_SIGNATURE_HEADER,
+  ...UPDATED_SIGNATURE_LINKS.map((item) => item.text),
+].join('\n\n');
 
 const BOT_GUIDES = [
   {
@@ -290,13 +338,13 @@ function resolveChatId(explicitChatId, channelUrl) {
   return slug.startsWith('@') ? slug : `@${slug}`;
 }
 
-function appendFooter(body) {
+function legacyAppendFooter(body) {
   const cleanBody = String(body ?? '').trim();
-  if (!cleanBody) return STANDARD_SIGNATURE_BLOCK;
+  if (!cleanBody) return UPDATED_STANDARD_SIGNATURE_BLOCK;
   if (cleanBody.includes('Kay\'s English Corner') || cleanBody.includes('Kay’s English Corner')) {
     return cleanBody;
   }
-  return `${cleanBody}\n\n${STANDARD_SIGNATURE_BLOCK}`;
+  return `${cleanBody}\n\n${UPDATED_STANDARD_SIGNATURE_BLOCK}`;
 }
 
 function escapeTelegramHtml(text = '') {
@@ -306,12 +354,15 @@ function escapeTelegramHtml(text = '') {
     .replace(/>/g, '&gt;');
 }
 
-function formatTelegramLine(line, lineIndex) {
+function legacyFormatTelegramLine(line, lineIndex) {
   const trimmed = String(line ?? '').trim();
   if (!trimmed) return '';
 
   if (lineIndex === 0) {
     return `<b>${trimmed}</b>`;
+  }
+  if (/^(📅|📲|🤖|🌐|📢|📸)/u.test(trimmed)) {
+    return `<u>${escapeTelegramHtml(trimmed)}</u>`;
   }
 
   if (/^Your Gateway to English Success$/i.test(trimmed)) {
@@ -338,6 +389,39 @@ function formatTelegramPost(text = '') {
     .split(/\r?\n/)
     .map((line, index) => formatTelegramLine(line, index))
     .join('\n');
+}
+
+function appendFooter(body) {
+  const cleanBody = String(body ?? '').trim();
+  if (!cleanBody) return appendTelegramSignature('');
+  if (hasTelegramSignature(cleanBody)) {
+    return cleanBody;
+  }
+  return appendTelegramSignature(cleanBody);
+}
+
+function formatTelegramLine(line, lineIndex) {
+  const trimmed = String(line ?? '').trim();
+  if (!trimmed) return '';
+
+  if (lineIndex === 0) {
+    return `<b>${escapeTelegramHtml(trimmed)}</b>`;
+  }
+
+  const formattedSignatureLine = formatTelegramSignatureLine(trimmed, escapeTelegramHtml);
+  if (formattedSignatureLine) {
+    return formattedSignatureLine;
+  }
+
+  if (/^[^.!?]{1,70}:$/.test(trimmed)) {
+    return `<b>${escapeTelegramHtml(trimmed)}</b>`;
+  }
+
+  if (/^#/.test(trimmed)) {
+    return escapeTelegramHtml(trimmed);
+  }
+
+  return escapeTelegramHtml(trimmed);
 }
 
 function buildPostMessage(guide) {

@@ -16,9 +16,14 @@ import {
   savePostHistory,
   toCanonicalPostText,
 } from './lib/telegram-dedupe.mjs';
+import {
+  appendTelegramSignature,
+  formatTelegramSignatureLine,
+} from './lib/telegram-signature.mjs';
 
 const SITE_URL = 'https://ieltscorner.ca';
 const CHANNEL_URL = 'https://t.me/kaysenglishcorner';
+const BOT_DIRECT_URL = 'https://t.me/Ewithkpaybot';
 
 const FOOTER_LINES = [
   '🌈✨ Kay\'s English Corner 🇨🇦',
@@ -31,6 +36,48 @@ const STANDARD_FOOTER_LINES = [
   '✨ Kay\'s English Corner',
   '🌐 More lessons: https://ieltscorner.ca',
   '✍️ Feedback + tutoring: https://ieltscorner.ca/essay-correction | https://ieltscorner.ca/tutoring',
+];
+
+const UPDATED_STANDARD_FOOTER_LINES = [
+  '🌈 Kay’s English Corner 🇨🇦',
+  '📅 Book your free consultation: 👉 https://calendar.app.google/nzoni849GjBUfEac6',
+  '📲 WhatsApp (direct support): 👉 https://wa.me/17789942315',
+  `🤖 Ask the robot anything: grammar, vocabulary, sentence fixes, and quick study help 👉 ${BOT_DIRECT_URL}`,
+  '🌐 https://celpipcorner.ca',
+  '📢 Channel: https://whatsapp.com/channel/0029VbBlsh87tkjFAkYchn19',
+  '📸 IG: https://instagram.com/ieltscorner.ca',
+];
+
+const UPDATED_SIGNATURE_HEADER = "➖➖➖🇨🇦 K A Y ' S    E N G L I S H    C O R N E R 🇨🇦➖➖➖";
+const UPDATED_SIGNATURE_LINKS = [
+  {
+    text: '📅   Book your free consultation',
+    href: 'https://calendar.app.google/nzoni849GjBUfEac6',
+  },
+  {
+    text: '📲   Question? Ask us on WhatsApp',
+    href: 'https://wa.me/17789942315',
+  },
+  {
+    text: '🤖   Use the Channel Robot',
+    href: BOT_DIRECT_URL,
+  },
+  {
+    text: '🌐   Website: https://celpipcorner.ca',
+    href: 'https://ieltscorner.ca',
+  },
+  {
+    text: '📢   Follow our WhatsApp Channel',
+    href: 'https://whatsapp.com/channel/0029VbBlsh87tkjFAkYchn19',
+  },
+  {
+    text: '📸   Instagram',
+    href: 'https://instagram.com/ieltscorner.ca',
+  },
+];
+const UPDATED_SIGNATURE_LINES = [
+  UPDATED_SIGNATURE_HEADER,
+  ...UPDATED_SIGNATURE_LINKS.map((item) => item.text),
 ];
 
 const TELEGRAM_LIMITS = {
@@ -1405,9 +1452,9 @@ function resolveLessonUrl(lessonSlugs) {
   return `${SITE_URL}/lessons/${category}/${slug}/`;
 }
 
-function appendFooter(message, lessonSlugs = []) {
+function legacyAppendFooter(message, lessonSlugs = []) {
   const lessonUrl = resolveLessonUrl(lessonSlugs);
-  const footer = [...STANDARD_FOOTER_LINES];
+  const footer = [...UPDATED_STANDARD_FOOTER_LINES];
   if (lessonUrl) {
     footer.splice(2, 0, `📘 Full lesson: ${lessonUrl}`);
   }
@@ -1425,12 +1472,15 @@ function normalizeTelegramLine(text = '') {
   return String(text ?? '');
 }
 
-function formatTelegramLine(line, lineIndex) {
+function legacyFormatTelegramLine(line, lineIndex) {
   const trimmed = normalizeTelegramLine(String(line ?? '').trim());
   if (!trimmed) return '';
 
   if (lineIndex === 0) {
     return `<b>${trimmed}</b>`;
+  }
+  if (/^(📅|📲|📘|🤖|🌐|📢|📸)/u.test(trimmed)) {
+    return `<u>${escapeTelegramHtml(trimmed)}</u>`;
   }
 
   if (/^✨\s*Kay's English Corner$/i.test(trimmed)) {
@@ -1457,6 +1507,34 @@ function formatTelegramPost(text = '') {
     .split(/\r?\n/)
     .map((line, index) => formatTelegramLine(line, index))
     .join('\n');
+}
+
+function appendFooter(message, lessonSlugs = []) {
+  return appendTelegramSignature(message);
+}
+
+function formatTelegramLine(line, lineIndex) {
+  const trimmed = normalizeTelegramLine(String(line ?? '').trim());
+  if (!trimmed) return '';
+
+  if (lineIndex === 0) {
+    return `<b>${escapeTelegramHtml(trimmed)}</b>`;
+  }
+
+  const formattedSignatureLine = formatTelegramSignatureLine(trimmed, escapeTelegramHtml);
+  if (formattedSignatureLine) {
+    return formattedSignatureLine;
+  }
+
+  if (/^[^.!?]{1,70}:$/.test(trimmed)) {
+    return `<b>${escapeTelegramHtml(trimmed)}</b>`;
+  }
+
+  if (/^#/.test(trimmed)) {
+    return escapeTelegramHtml(trimmed);
+  }
+
+  return escapeTelegramHtml(trimmed);
 }
 
 function compactTelegramText(text = '') {

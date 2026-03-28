@@ -177,6 +177,25 @@ def build_lesson_message(frontmatter: dict[str, Any], slug: str, site_url: str) 
     return "\n".join(message_lines)
 
 
+def build_lesson_interaction(frontmatter: dict[str, Any], slug: str) -> dict[str, Any]:
+    title = normalize_text(frontmatter.get("title") or slug.replace("-", " ").title())
+    category = normalize_text(frontmatter.get("category") or "grammar").lower()
+
+    prompt_map = {
+        "grammar": f"Which grammar point from {title} do you want another example for?",
+        "vocabulary": f"Which word or phrase from {title} do you want to use this week?",
+        "writing": f"Which writing move from {title} needs another example?",
+        "speaking": f"Which speaking move from {title} do you want to practise next?",
+        "reading": f"Which reading skill from {title} feels hardest right now?",
+        "listening": f"Which listening skill from {title} do you want more practice with?",
+    }
+    prompt = prompt_map.get(category) or f"Which part of {title} do you want another example for?"
+    return {
+        "type": "question",
+        "prompt": prompt,
+    }
+
+
 def lesson_sort_key(frontmatter: dict[str, Any], slug: str) -> tuple[str, str]:
     date_value = normalize_text(frontmatter.get("date"))
     return (date_value or "9999-12-31", slug)
@@ -229,6 +248,7 @@ def build_queue(lessons: list[dict[str, Any]], site_url: str, max_lessons: int |
                 "date": lesson["date"],
                 "message": message,
                 "url": lesson_url(site_url, lesson["category"], lesson["slug"]),
+                "interaction": build_lesson_interaction(lesson["frontmatter"], lesson["slug"]),
             }
         )
 

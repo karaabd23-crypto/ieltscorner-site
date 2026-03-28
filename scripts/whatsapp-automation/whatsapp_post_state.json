@@ -1,0 +1,160 @@
+{
+  "posted_ids": [
+    "lesson:abstract-noun-structures-with-accuracy:bae7e6e6a34b",
+    "lesson:academic-discussion:02a4900ac301",
+    "lesson:adjectives-in-simple-descriptions:649ee1b7e5f0",
+    "lesson:advanced-clause-combinations:39f0803792bd",
+    "lesson:advanced-comparison-structures:fa18ba4a0bc6",
+    "lesson:advanced-discourse-grammar:0c7105148b8b",
+    "lesson:advanced-formal-expression:0d783aff5792",
+    "lesson:advanced-grammar-essential:7984ca8c45ca",
+    "lesson:advanced-use-of-would:2b835f5b783c",
+    "lesson:hedging-in-opinion-writing:f149b5c521c4",
+    "telegram:celpip-listening-speaker-attitude:lesson",
+    "telegram:celpip-reading-proof-not-keywords:lesson",
+    "telegram:celpip-reading-proof-not-keywords:mini",
+    "telegram:celpip-speaking-task5-framework:lesson",
+    "telegram:celpip-speaking-task5-framework:mini",
+    "telegram:celpip-task1-tone-and-purpose:lesson",
+    "telegram:celpip-task1-tone-and-purpose:mini",
+    "telegram:celpip-task2-pick-a-side:lesson",
+    "telegram:celpip-task2-pick-a-side:mini",
+    "telegram:ielts-task2-clear-position:lesson",
+    "test:whatsapp:001",
+    "test:whatsapp:015"
+  ],
+  "history": [
+    {
+      "id": "test:whatsapp:001",
+      "source": "manual-test",
+      "title": "WhatsApp Test Post",
+      "posted_at": "2026-03-27T09:26:28.614456+00:00"
+    },
+    {
+      "id": "test:whatsapp:015",
+      "source": "manual-test",
+      "title": "WhatsApp Test Post 15",
+      "posted_at": "2026-03-27T18:54:10.880037+00:00"
+    },
+    {
+      "id": "telegram:ielts-task2-clear-position:lesson",
+      "source": "telegram",
+      "title": "🧭 IELTS Task 2: make your position obvious early",
+      "posted_at": "2026-03-27T18:58:01.184226+00:00"
+    },
+    {
+      "id": "lesson:advanced-use-of-would:2b835f5b783c",
+      "source": "lesson",
+      "title": "Advanced Uses of 'Would' in English",
+      "posted_at": "2026-03-27T18:58:06.097141+00:00"
+    },
+    {
+      "id": "telegram:celpip-task1-tone-and-purpose:lesson",
+      "source": "telegram",
+      "title": "📧 CELPIP Task 1: match the tone to the situation",
+      "posted_at": "2026-03-27T18:58:17.914312+00:00"
+    },
+    {
+      "id": "lesson:hedging-in-opinion-writing:f149b5c521c4",
+      "source": "lesson",
+      "title": "Using Hedging in Opinion Essays",
+      "posted_at": "2026-03-27T18:58:26.604195+00:00"
+    },
+    {
+      "id": "telegram:celpip-task1-tone-and-purpose:mini",
+      "source": "telegram",
+      "title": "⚡ CELPIP Task 1: tone first, sentences second",
+      "posted_at": "2026-03-27T18:58:39.432814+00:00"
+    },
+    {
+      "id": "lesson:abstract-noun-structures-with-accuracy:bae7e6e6a34b",
+      "source": "lesson",
+      "title": "Using Abstract Nouns for Clarity and Precision",
+      "posted_at": "2026-03-27T18:58:48.191551+00:00"
+    },
+    {
+      "id": "telegram:celpip-task2-pick-a-side:lesson",
+      "source": "telegram",
+      "title": "🧱 CELPIP Task 2: choose a side and stay there",
+      "posted_at": "2026-03-27T18:59:00.658331+00:00"
+    },
+    {
+      "id": "lesson:academic-discussion:02a4900ac301",
+      "source": "lesson",
+      "title": "Key Verbs for Academic Discussions",
+      "posted_at": "2026-03-27T18:59:09.070399+00:00"
+    },
+    {
+      "id": "telegram:celpip-task2-pick-a-side:mini",
+      "source": "telegram",
+      "title": "⚡ CELPIP Task 2: stop wobbling between both sides",
+      "posted_at": "2026-03-27T18:59:21.012918+00:00"
+    },
+    {
+      "id": "lesson:adjectives-in-simple-descriptions:649ee1b7e5f0",
+      "source": "lesson",
+      "title": "Using Adjectives for Effective Descriptions",
+      "posted_at": "2026-03-27T18:59:25.883328+00:00"
+    },
+    {
+      "id": "telegram:celpip-speaking-task5-framework:lesson",
+      "source": "telegram",
+      "title": "🎙️ CELPIP Speaking Task 5: compare, choose, justify",
+      "posted_at": "2026-03-27T18:59:35.704030+00:00"
+    },
+    {
+      "id": "lesson:advanced-clause-combinations:39f0803792bd",
+      "source": "lesson",
+      "title": "Combining Clauses Effectively",
+      "posted_at": "2026-03-27T18:59:44.788278+00:00"
+    },
+    {
+      "id": "telegram:celpip-speaking-task5-framework:mini",
+      "source": "telegram",
+      "title": "⚡ CELPIP Speaking Task 5: do not end with “both are good”",
+      "posted_at": "2026-03-27T18:59:55.973406+00:00"
+    },
+    {
+      "id": "lesson:advanced-comparison-structures:fa18ba4a0bc6",
+      "source": "lesson",
+      "title": "Advanced Comparative Structures in English",
+      "posted_at": "2026-03-27T19:00:04.310855+00:00"
+    },
+    {
+      "id": "telegram:celpip-reading-proof-not-keywords:lesson",
+      "source": "telegram",
+      "title": "📖 CELPIP Reading: proof beats keyword matching",
+      "posted_at": "2026-03-27T19:00:16.450361+00:00"
+    },
+    {
+      "id": "lesson:advanced-discourse-grammar:0c7105148b8b",
+      "source": "lesson",
+      "title": "Academic Sentence Patterns",
+      "posted_at": "2026-03-27T19:00:25.220211+00:00"
+    },
+    {
+      "id": "telegram:celpip-reading-proof-not-keywords:mini",
+      "source": "telegram",
+      "title": "⚡ CELPIP Reading: matching words is not enough",
+      "posted_at": "2026-03-27T19:00:33.327577+00:00"
+    },
+    {
+      "id": "lesson:advanced-formal-expression:0d783aff5792",
+      "source": "lesson",
+      "title": "Advanced Formal Vocabulary for Professional Writing",
+      "posted_at": "2026-03-27T19:00:38.292232+00:00"
+    },
+    {
+      "id": "telegram:celpip-listening-speaker-attitude:lesson",
+      "source": "telegram",
+      "title": "🎧 CELPIP Listening: hear the speaker attitude, not just the words",
+      "posted_at": "2026-03-27T19:00:51.728576+00:00"
+    },
+    {
+      "id": "lesson:advanced-grammar-essential:7984ca8c45ca",
+      "source": "lesson",
+      "title": "Mastering Complex Sentences for Clarity",
+      "posted_at": "2026-03-27T19:01:01.343108+00:00"
+    }
+  ]
+}
