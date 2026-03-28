@@ -1,8 +1,8 @@
 ---
 import "../styles/global.css";
-import InArticleAd from "../components/InArticleAd.astro";
 import ConversionTrackingScript from "../components/ConversionTrackingScript.astro";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
+import ContentAd from "../components/ContentAd.astro";
 
 // TypeScript declaration for AdSense
 declare global {
@@ -576,10 +576,6 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
         <slot />
 
         {isBlogArticle && (
-          <InArticleAd adId="blog-in-article-ad" targetSelector=".guide-article" />
-        )}
-
-        {isBlogArticle && (
           <section class="teacher-trust-banner surface">
             <div class="teacher-trust-banner__body">
               <p class="teacher-trust-banner__label">About The Instructor</p>
@@ -633,6 +629,14 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
 
       </div>
     </main>
+
+    {showAds && (
+      <section class="section-sm page-bottom-ad-band" aria-label="Sponsored">
+        <div class="container">
+          <ContentAd className="page-bottom-ad" />
+        </div>
+      </section>
+    )}
 
     <footer class="site-footer">
       <div class="container">

@@ -1,7 +1,5 @@
 ---
-import ContentAd from "../../../components/ContentAd.astro";
 import LeadCaptureForm from "../../../components/LeadCaptureForm.astro";
-import InArticleAd from "../../../components/InArticleAd.astro";
 import LeadMagnetCard from "../../../components/LeadMagnetCard.astro";
 import OfferLadderBlock from "../../../components/OfferLadderBlock.astro";
 import OfferSequenceBlock from "../../../components/OfferSequenceBlock.astro";
@@ -191,8 +189,6 @@ const trackTest = likelyCelpip ? "celpip" : currentTests.includes("IELTS") ? "ie
 const readingRescueLesson = likelyCelpip && currentSkill === "reading";
 const showIntentStack = isWritingLesson || readingRescueLesson;
 const ladderSkill = readingRescueLesson ? "reading" : "writing";
-const showBottomLessonAd = !showIntentStack;
-
 const leadMagnetBlock: LeadMagnetBlock | null = readingRescueLesson
   ? {
       headline: "Subscribe for Weekly CELPIP Reading Emails",
@@ -558,18 +554,6 @@ const seoKeywords = `${publicTitle}, ${item.data.category}, ${item.data.level}, 
           </a>
         </section>
       </div>
-
-      {showBottomLessonAd && (
-        <InArticleAd
-          adId="lesson-in-article-ad"
-          targetSelector=".lesson-body-content"
-          anchorSelector=".lesson-teach-grid, .lesson-example-grid, .lesson-error-grid, .lesson-resource-grid, .practice-lab-grid, #lesson-map"
-        />
-      )}
-
-      {showBottomLessonAd && (
-        <ContentAd className="lesson-bottom-ad" />
-      )}
 
       <section class="lesson-inline-cta lesson-inline-cta--end">
         <p class="lesson-inline-cta__kicker">{endLessonCta.kicker}</p>

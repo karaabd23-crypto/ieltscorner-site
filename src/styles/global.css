@@ -1545,8 +1545,17 @@ textarea {
   line-height: 1.6;
 }
 
-.content-ad--in-article {
-  margin: var(--s-5) 0;
+.page-bottom-ad-band {
+  padding-top: 0;
+}
+
+.page-bottom-ad {
+  max-width: min(100%, 860px);
+  margin: 0 auto;
+}
+
+.page-bottom-ad .content-ad__label {
+  text-align: center;
 }
 
 @media (max-width: 560px) {
@@ -3722,10 +3731,6 @@ hr {
   letter-spacing: 0.04em;
   background: #eef5ff;
   color: #1d5f99;
-}
-
-.lesson-bottom-ad {
-  border-style: dashed;
 }
 
 @media (prefers-reduced-motion: reduce) {
