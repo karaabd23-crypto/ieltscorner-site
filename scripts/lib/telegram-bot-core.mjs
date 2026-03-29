@@ -1,7 +1,113 @@
 const TELEGRAM_API_BASE = 'https://api.telegram.org';
 
-// Ephemeral state only. This matches the current Netlify behavior and is enough
-// for the first Cloudflare migration step.
+const DEFAULT_LOCALE = 'en';
+const LANGUAGE_OPTIONS = [
+  { code: 'en', label: 'English' },
+  { code: 'fa', label: 'فارسی' },
+  { code: 'uk', label: 'Українська' },
+  { code: 'es', label: 'Español' },
+  { code: 'zh', label: '中文' },
+];
+
+const STRINGS = {
+  en: {
+    languagePrompt:
+      'Please choose your language first. After that, I will show you the right menu and explain how this bot works.',
+    languageSaved: 'Language saved.',
+    webinar: '🔥 Live Webinar - Only $12',
+    consultation: '📅 Free Consultation',
+    privateClasses: '👩‍🏫 Private Classes',
+    essayCorrection: '✍️ AI Essay Correction',
+    lessons: '📚 Lessons',
+    ebook: '📘 CELPIP eBook',
+    youtube: '🎥 YouTube Channel',
+    greeting:
+      "✨ KAY'S ENGLISH CORNER BOT ✨\n━━━━━━━━━━\n\nHi! I am Kay's helper bot.\nI make it easy to find the right service without getting lost.\n\n📌 WHAT THESE BUTTONS DO\n• 📅 Free Consultation: talk to Kay before you buy anything\n• 👩‍🏫 Private Classes: book one-to-one lessons\n• ✍️ AI Essay Correction: get writing feedback fast\n• 📚 Lessons: open the free study lessons\n• 📘 CELPIP eBook: open the book page\n• 🎥 YouTube Channel: watch free videos\n\n━━━━━━━━━━\n✅ You do not need to type a long message here.\n👉 Just tap the button that matches what you need.\n🌍 To change language, send /start.",
+    stats:
+      '📊 Bot Stats:\n• Messages received: {messages}\n• Quiz responses: {quiz}\n• Total users: {users}\n• Active today: {active}',
+    announce:
+      '📣 Broadcast feature demo.\n\nIn production, use:\n/announce [message]\n\nThe bot will send it to all subscribers.',
+    dmForward: '📩 DM from {username}:\n\n"{text}"',
+  },
+  fa: {
+    languagePrompt:
+      'لطفا اول زبان خود را انتخاب کنید. بعد از آن، من منوی مناسب را نشان می‌دهم و خیلی ساده توضیح می‌دهم این ربات چطور کار می‌کند.',
+    languageSaved: 'زبان ذخیره شد.',
+    webinar: '🔥 وبینار زنده - فقط 12 دلار',
+    consultation: '📅 مشاوره رایگان',
+    privateClasses: '👩‍🏫 کلاس خصوصی',
+    essayCorrection: '✍️ تصحیح انشا با هوش مصنوعی',
+    lessons: '📚 درس‌ها',
+    ebook: '📘 کتاب CELPIP',
+    youtube: '🎥 کانال یوتیوب',
+    greeting:
+      '✨ ربات KAY’S ENGLISH CORNER ✨\n━━━━━━━━━━\n\nسلام! من ربات کمکی Kay هستم.\nمن کمک می‌کنم سریع سرویس درست را پیدا کنید و سردرگم نشوید.\n\n📌 دکمه‌ها چه کار می‌کنند\n• 📅 مشاوره رایگان: قبل از خرید با Kay صحبت کنید\n• 👩‍🏫 کلاس خصوصی: کلاس یک‌به‌یک رزرو کنید\n• ✍️ تصحیح انشا با هوش مصنوعی: برای رایتینگ سریع بازخورد بگیرید\n• 📚 درس‌ها: درس‌های رایگان را باز کنید\n• 📘 کتاب CELPIP: صفحه کتاب را ببینید\n• 🎥 کانال یوتیوب: ویدیوهای رایگان را ببینید\n\n━━━━━━━━━━\n✅ لازم نیست اینجا پیام طولانی بفرستید.\n👉 فقط روی دکمه مناسب بزنید.\n🌍 برای تغییر زبان، /start را بفرستید.',
+    stats:
+      '📊 آمار ربات:\n• تعداد پیام‌ها: {messages}\n• پاسخ‌های آزمون: {quiz}\n• تعداد کاربران: {users}\n• فعال امروز: {active}',
+    announce:
+      '📣 دموی پیام همگانی.\n\nدر حالت واقعی از این استفاده کنید:\n/announce [message]\n\nربات آن را برای همه مشترک‌ها می‌فرستد.',
+    dmForward: '📩 پیام از {username}:\n\n"{text}"',
+  },
+  uk: {
+    languagePrompt:
+      'Спочатку виберіть мову. Після цього я покажу правильне меню і просто поясню, як працює цей бот.',
+    languageSaved: 'Мову збережено.',
+    webinar: '🔥 Живий вебінар - лише 12 $',
+    consultation: '📅 Безкоштовна консультація',
+    privateClasses: '👩‍🏫 Приватні заняття',
+    essayCorrection: '✍️ Перевірка есе з ШІ',
+    lessons: '📚 Уроки',
+    ebook: '📘 Книга CELPIP',
+    youtube: '🎥 Канал YouTube',
+    greeting:
+      "✨ БОТ KAY'S ENGLISH CORNER ✨\n━━━━━━━━━━\n\nПривіт! Я бот-помічник Kay.\nЯ допомагаю швидко знайти потрібну послугу без плутанини.\n\n📌 ЩО РОБЛЯТЬ ЦІ КНОПКИ\n• 📅 Безкоштовна консультація: поговоріть з Kay перед оплатою\n• 👩‍🏫 Приватні заняття: запишіться на індивідуальні уроки\n• ✍️ Перевірка есе з ШІ: швидко отримайте відгук на письмо\n• 📚 Уроки: відкрийте безкоштовні матеріали\n• 📘 Книга CELPIP: відкрийте сторінку книги\n• 🎥 Канал YouTube: дивіться безкоштовні відео\n\n━━━━━━━━━━\n✅ Не потрібно писати довге повідомлення.\n👉 Просто натисніть потрібну кнопку.\n🌍 Щоб змінити мову, надішліть /start.",
+    stats:
+      '📊 Статистика бота:\n• Отримано повідомлень: {messages}\n• Відповідей на тести: {quiz}\n• Усього користувачів: {users}\n• Активних сьогодні: {active}',
+    announce:
+      '📣 Демонстрація розсилки.\n\nУ реальному режимі використовуйте:\n/announce [message]\n\nБот надішле це всім підписникам.',
+    dmForward: '📩 Повідомлення від {username}:\n\n"{text}"',
+  },
+  es: {
+    languagePrompt:
+      'Primero elige tu idioma. Después te mostraré el menú correcto y te explicaré de forma simple cómo funciona este bot.',
+    languageSaved: 'Idioma guardado.',
+    webinar: '🔥 Webinar en vivo - solo $12',
+    consultation: '📅 Consulta gratis',
+    privateClasses: '👩‍🏫 Clases privadas',
+    essayCorrection: '✍️ Corrección de ensayo con IA',
+    lessons: '📚 Lecciones',
+    ebook: '📘 eBook CELPIP',
+    youtube: '🎥 Canal de YouTube',
+    greeting:
+      '✨ BOT DE KAY’S ENGLISH CORNER ✨\n━━━━━━━━━━\n\n¡Hola! Soy el bot de ayuda de Kay.\nTe ayudo a encontrar el servicio correcto sin complicarte.\n\n📌 QUÉ HACEN ESTOS BOTONES\n• 📅 Consulta gratis: habla con Kay antes de pagar\n• 👩‍🏫 Clases privadas: reserva clases uno a uno\n• ✍️ Corrección de ensayo con IA: recibe feedback rápido sobre tu writing\n• 📚 Lecciones: abre las lecciones gratis\n• 📘 eBook CELPIP: abre la página del libro\n• 🎥 Canal de YouTube: mira videos gratis\n\n━━━━━━━━━━\n✅ No necesitas escribir un mensaje largo aquí.\n👉 Solo toca el botón correcto.\n🌍 Si quieres cambiar el idioma, envía /start.',
+    stats:
+      '📊 Estadísticas del bot:\n• Mensajes recibidos: {messages}\n• Respuestas de quiz: {quiz}\n• Usuarios totales: {users}\n• Activos hoy: {active}',
+    announce:
+      '📣 Demostración de difusión.\n\nEn producción usa:\n/announce [message]\n\nEl bot lo enviará a todos los suscriptores.',
+    dmForward: '📩 Mensaje de {username}:\n\n"{text}"',
+  },
+  zh: {
+    languagePrompt:
+      '请先选择你的语言。选好以后，我会显示正确的菜单，并用很简单的方式解释这个机器人怎么用。',
+    languageSaved: '语言已保存。',
+    webinar: '🔥 直播讲座 - 仅需 $12',
+    consultation: '📅 免费咨询',
+    privateClasses: '👩‍🏫 私人课程',
+    essayCorrection: '✍️ AI作文批改',
+    lessons: '📚 课程',
+    ebook: '📘 CELPIP电子书',
+    youtube: '🎥 YouTube频道',
+    greeting:
+      '✨ KAY\'S ENGLISH CORNER 机器人 ✨\n━━━━━━━━━━\n\n你好！我是 Kay 的帮助机器人。\n我会帮你快速找到合适的服务，不用到处找。\n\n📌 这些按钮的作用\n• 📅 免费咨询：购买前先和 Kay 聊一聊\n• 👩‍🏫 私人课程：预约一对一课程\n• ✍️ AI作文批改：快速获得写作反馈\n• 📚 课程：打开免费学习课程\n• 📘 CELPIP电子书：打开电子书页面\n• 🎥 YouTube频道：观看免费视频\n\n━━━━━━━━━━\n✅ 你不需要在这里写很长的消息。\n👉 只要点击你需要的按钮就可以。\n🌍 如果想更改语言，请发送 /start。',
+    stats:
+      '📊 机器人统计：\n• 收到的消息：{messages}\n• 测验回复：{quiz}\n• 用户总数：{users}\n• 今日活跃：{active}',
+    announce:
+      '📣 群发功能演示。\n\n正式使用时请输入：\n/announce [message]\n\n机器人会把消息发送给所有订阅用户。',
+    dmForward: '📩 来自 {username} 的消息：\n\n"{text}"',
+  },
+};
+
+// Ephemeral state only. This matches the current Cloudflare/Netlify behavior.
 const botState = {
   users: {},
   stats: { messagesReceived: 0, quizResponses: 0 },
@@ -39,52 +145,58 @@ function normalizeText(input) {
 function getConfig(env = {}) {
   return {
     botToken: String(env.TELEGRAM_BOT_TOKEN ?? '').trim(),
-    channelUrl: String(env.TELEGRAM_CHANNEL_URL ?? '').trim(),
     websiteUrl: String(env.WEBSITE_URL ?? 'https://ieltscorner.ca').trim(),
-    ownerUsername: String(env.TELEGRAM_OWNER_USERNAME ?? '').trim(),
     ownerChatId: String(env.TELEGRAM_OWNER_CHAT_ID ?? '').trim(),
-    contactEmail: String(env.CONTACT_EMAIL ?? '').trim(),
     webhookSecret: String(env.TELEGRAM_WEBHOOK_SECRET ?? '').trim(),
   };
 }
 
-function buildMainKeyboard(config) {
+function getStrings(locale = DEFAULT_LOCALE) {
+  return STRINGS[locale] || STRINGS[DEFAULT_LOCALE];
+}
+
+function interpolate(template, values) {
+  return String(template).replace(/\{(\w+)\}/g, (_match, key) => String(values[key] ?? ''));
+}
+
+function buildLanguageKeyboard() {
   return {
     inline_keyboard: [
-      [{ text: '🔥 Register for Live Webinar → Only $12', url: `${config.websiteUrl}/webinar` }],
       [
-        { text: '🌐 Visit Website', url: config.websiteUrl },
-        { text: '📣 Telegram Channel', url: config.channelUrl },
+        { text: 'English', callback_data: 'lang:en' },
+        { text: 'فارسی', callback_data: 'lang:fa' },
       ],
       [
-        { text: '📚 Vocabulary', callback_data: 'vocab' },
-        { text: '🎯 Grammar Tips', callback_data: 'grammar' },
+        { text: 'Українська', callback_data: 'lang:uk' },
+        { text: 'Español', callback_data: 'lang:es' },
       ],
       [
-        { text: '💡 Idioms & Expressions', callback_data: 'idioms' },
-        { text: '✉️ Contact Kay', callback_data: 'contact' },
-      ],
-      [
-        { text: '🎥 YouTube Channel', url: 'https://www.youtube.com/@KaraAbdolmaleki' },
-        { text: '📘 CELPIP eBook', url: `${config.websiteUrl}/ebook` },
+        { text: '中文', callback_data: 'lang:zh' },
       ],
     ],
   };
 }
 
-function contactMessage(config) {
-  const lines = ['🔗 Connect with Kay:'];
+function buildMainKeyboard(config, locale) {
+  const text = getStrings(locale);
 
-  if (config.ownerUsername) {
-    lines.push(`📱 Telegram: @${config.ownerUsername.replace(/^@/, '')}`);
-  }
-
-  if (config.contactEmail) {
-    lines.push(`📧 Email: ${config.contactEmail}`);
-  }
-
-  lines.push('', '💬 Share your language goal and current level for guidance.');
-  return lines.join('\n');
+  return {
+    inline_keyboard: [
+      [{ text: text.webinar, url: `${config.websiteUrl}/webinar` }],
+      [
+        { text: text.consultation, url: 'https://calendar.app.google/nzoni849GjBUfEac6' },
+        { text: text.privateClasses, url: `${config.websiteUrl}/tutoring` },
+      ],
+      [
+        { text: text.essayCorrection, url: `${config.websiteUrl}/celpip/writing/ai-feedback` },
+        { text: text.lessons, url: `${config.websiteUrl}/lessons` },
+      ],
+      [
+        { text: text.ebook, url: `${config.websiteUrl}/ebook` },
+        { text: text.youtube, url: 'https://www.youtube.com/@KaraAbdolmaleki' },
+      ],
+    ],
+  };
 }
 
 function buildUserData(userId) {
@@ -97,6 +209,7 @@ function buildUserData(userId) {
       joinedAt: new Date().toISOString(),
       lastActive: new Date().toISOString(),
       referralCode: `ref_${key}_${Math.random().toString(36).slice(2, 6)}`,
+      locale: '',
     };
   }
 
@@ -104,93 +217,47 @@ function buildUserData(userId) {
   return botState.users[key];
 }
 
-function keywordReply(text, config, userId) {
-  const normalized = normalizeText(text);
-  if (!normalized) return null;
+function getUserLocale(userId) {
+  const user = buildUserData(userId);
+  return user?.locale || '';
+}
 
-  buildUserData(userId);
+function setUserLocale(userId, locale) {
+  const user = buildUserData(userId);
+  if (!user) return DEFAULT_LOCALE;
 
-  if (normalized.startsWith('/start') || normalized.startsWith('/help')) {
-    return {
-      text: `Welcome to Kay's English Corner! 👋\n\nI help you build vocabulary, master grammar, learn idioms, and grow your English naturally.\n\nWhat interests you?`,
-      reply_markup: buildMainKeyboard(config),
-    };
-  }
+  user.locale = STRINGS[locale] ? locale : DEFAULT_LOCALE;
+  return user.locale;
+}
 
-  if (normalized.includes('/stats') && String(userId) === config.ownerChatId) {
-    const activeToday = Object.values(botState.users).filter((user) => {
-      const lastActive = Date.parse(user.lastActive || '');
-      return Number.isFinite(lastActive) && (Date.now() - lastActive) < 86400000;
-    }).length;
-
-    return {
-      text: `📊 Bot Stats:\n• Messages received: ${botState.stats.messagesReceived}\n• Quiz responses: ${botState.stats.quizResponses}\n• Total users: ${Object.keys(botState.users).length}\n• Active today: ${activeToday}`,
-      reply_markup: buildMainKeyboard(config),
-    };
-  }
-
-  if (normalized.includes('/announce') && String(userId) === config.ownerChatId) {
-    return {
-      text: '📣 Broadcast feature demo.\n\nIn production, use:\n/announce [message]\n\nThe bot will send it to all subscribers.',
-      reply_markup: buildMainKeyboard(config),
-    };
-  }
-
-  if (normalized.includes('vocab') || normalized.includes('vocabulary')) {
-    return {
-      text: `📚 Vocabulary Builder:\nWe post 1 new word daily with context and Persian translation.\n\n💡 Tip: collect 5 words and use them in your own sentences.\n\nNext: check the channel for today's word.`,
-      reply_markup: buildMainKeyboard(config),
-    };
-  }
-
-  if (normalized.includes('grammar')) {
-    return {
-      text: `🧠 Grammar Nuggets:\nShort, actionable grammar rules that stick.\n\nExamples:\n• "Will" vs "going to"\n• Common preposition mistakes\n• Verb tense differences`,
-      reply_markup: buildMainKeyboard(config),
-    };
-  }
-
-  if (normalized.includes('idiom') || normalized.includes('expression')) {
-    return {
-      text: `🎭 Idioms & Expressions:\nLearn how native speakers talk.\n\nRecent examples:\n• "Hit the nail on the head" = be exactly right\n• "Break a leg" = good luck\n• "Piece of cake" = very easy`,
-      reply_markup: buildMainKeyboard(config),
-    };
-  }
-
-  if (normalized.includes('contact') || normalized.includes('dm')) {
-    return {
-      text: contactMessage(config),
-      reply_markup: buildMainKeyboard(config),
-    };
-  }
-
+function buildLanguagePrompt() {
   return {
-    text: 'I can help with vocabulary, grammar, idioms, webinars, and eBooks. Choose an option below 👇',
-    reply_markup: buildMainKeyboard(config),
+    text: STRINGS[DEFAULT_LOCALE].languagePrompt,
+    reply_markup: buildLanguageKeyboard(),
   };
 }
 
-function callbackReply(data, config, userId) {
-  buildUserData(userId);
+function buildGreeting(config, locale) {
+  const text = getStrings(locale);
+  return {
+    text: text.greeting,
+    reply_markup: buildMainKeyboard(config, locale),
+  };
+}
 
-  switch (data) {
-    case 'vocab':
-      return {
-        text: `📚 Latest vocabulary:\n\nSerendipity (noun)\nFinding good things by chance.\n\nExample: "Meeting my best friend was pure serendipity."\n\n💬 Try using it today.`,
-      };
-    case 'grammar':
-      return {
-        text: `✏️ Today's Grammar Tip:\n\n"Used to" vs "Would"\n\n• Used to = past habit or state\n  "I used to live in Tehran."\n  "I used to drink coffee daily."\n\n• Would = repeated past action only\n  ✓ "I would visit grandma weekly."\n  ✗ "I would be shy." (use "used to")`,
-      };
-    case 'idioms':
-      return {
-        text: `🎭 Idiom of the Day:\n\n"Put all your eggs in one basket"\n\nMeaning: depend entirely on one thing, which is risky.\n\nExample: "Don't focus only on IELTS. Explore other paths too."`,
-      };
-    case 'contact':
-      return { text: contactMessage(config) };
-    default:
-      return { text: 'Option received. More is coming soon.' };
-  }
+function buildStatsMessage(userId, locale) {
+  const activeToday = Object.values(botState.users).filter((user) => {
+    const lastActive = Date.parse(user.lastActive || '');
+    return Number.isFinite(lastActive) && (Date.now() - lastActive) < 86400000;
+  }).length;
+
+  return interpolate(getStrings(locale).stats, {
+    messages: botState.stats.messagesReceived,
+    quiz: botState.stats.quizResponses,
+    users: Object.keys(botState.users).length,
+    active: activeToday,
+    userId,
+  });
 }
 
 async function telegramCall(method, payload, botToken, fetchImpl) {
@@ -231,6 +298,89 @@ async function sendMessage(chatId, text, config, fetchImpl, extra = {}) {
   }, config.botToken, fetchImpl);
 }
 
+async function sendLanguagePrompt(chatId, config, fetchImpl) {
+  const prompt = buildLanguagePrompt();
+  return sendMessage(chatId, prompt.text, config, fetchImpl, {
+    reply_markup: prompt.reply_markup,
+  });
+}
+
+async function sendGreeting(chatId, config, fetchImpl, locale) {
+  const reply = buildGreeting(config, locale);
+  return sendMessage(chatId, reply.text, config, fetchImpl, {
+    reply_markup: reply.reply_markup,
+  });
+}
+
+async function processTextMessage(update, config, fetchImpl) {
+  const userId = update.message.from?.id;
+  const text = String(update.message.text || '');
+  const normalized = normalizeText(text);
+  const locale = getUserLocale(userId);
+
+  if (normalized === '/start' || normalized === '/language' || !locale) {
+    await sendLanguagePrompt(update.message.chat.id, config, fetchImpl);
+    return;
+  }
+
+  if (normalized === '/stats' && String(userId) === config.ownerChatId) {
+    await sendMessage(
+      update.message.chat.id,
+      buildStatsMessage(userId, locale || DEFAULT_LOCALE),
+      config,
+      fetchImpl,
+      { reply_markup: buildMainKeyboard(config, locale || DEFAULT_LOCALE) },
+    );
+    return;
+  }
+
+  if (normalized.startsWith('/announce') && String(userId) === config.ownerChatId) {
+    await sendMessage(
+      update.message.chat.id,
+      getStrings(locale || DEFAULT_LOCALE).announce,
+      config,
+      fetchImpl,
+      { reply_markup: buildMainKeyboard(config, locale || DEFAULT_LOCALE) },
+    );
+    return;
+  }
+
+  await sendGreeting(update.message.chat.id, config, fetchImpl, locale || DEFAULT_LOCALE);
+
+  if (config.ownerChatId && canForwardDM(text, userId, config)) {
+    const username = update.message.from?.username ? `@${update.message.from.username}` : `ID: ${userId}`;
+    const ownerLocale = getUserLocale(config.ownerChatId) || DEFAULT_LOCALE;
+    await sendMessage(
+      config.ownerChatId,
+      interpolate(getStrings(ownerLocale).dmForward, { username, text }),
+      config,
+      fetchImpl,
+    ).catch(() => {});
+  }
+}
+
+async function processCallback(update, config, fetchImpl) {
+  const userId = update.callback_query.from?.id;
+  const data = String(update.callback_query.data || '');
+  const chatId = update.callback_query.message?.chat?.id;
+
+  await telegramCall('answerCallbackQuery', {
+    callback_query_id: update.callback_query.id,
+  }, config.botToken, fetchImpl);
+
+  if (!chatId) return;
+
+  if (data.startsWith('lang:')) {
+    const locale = setUserLocale(userId, data.slice(5));
+    await sendMessage(chatId, getStrings(locale).languageSaved, config, fetchImpl);
+    await sendGreeting(chatId, config, fetchImpl, locale);
+    return;
+  }
+
+  const locale = getUserLocale(userId) || DEFAULT_LOCALE;
+  await sendGreeting(chatId, config, fetchImpl, locale);
+}
+
 async function processUpdate(update, config, fetchImpl, logger) {
   if (update.message?.new_chat_members) {
     for (const newMember of update.message.new_chat_members) {
@@ -240,52 +390,20 @@ async function processUpdate(update, config, fetchImpl, logger) {
       if (!userId) continue;
 
       buildUserData(userId);
-
-      await sendMessage(
-        userId,
-        `Welcome to Kay's English Corner! 👋\n\nI help you build vocabulary, master grammar, learn idioms, and grow your English naturally.\n\nWhat interests you?`,
-        config,
-        fetchImpl,
-        { reply_markup: buildMainKeyboard(config) },
-      ).catch((error) => {
+      await sendLanguagePrompt(userId, config, fetchImpl).catch((error) => {
         logger?.log?.(`Could not DM user ${userId}: ${error.message}`);
       });
     }
   }
 
   if (update.message && isPrivateChat(update.message.chat)) {
-    const userId = update.message.from?.id;
-    const text = String(update.message.text || '');
-
-    buildUserData(userId);
-
-    const reply = keywordReply(text, config, userId);
-    if (reply) {
-      await sendMessage(update.message.chat.id, reply.text, config, fetchImpl, {
-        reply_markup: reply.reply_markup,
-      });
-    }
-
-    if (config.ownerChatId && canForwardDM(text, userId, config)) {
-      const username = update.message.from?.username ? `@${update.message.from.username}` : `ID: ${userId}`;
-      await sendMessage(config.ownerChatId, `📩 DM from ${username}:\n\n"${text}"`, config, fetchImpl).catch(() => {});
-    }
+    buildUserData(update.message.from?.id);
+    await processTextMessage(update, config, fetchImpl);
   }
 
   if (update.callback_query && isPrivateChat(update.callback_query.message?.chat)) {
-    const userId = update.callback_query.from?.id;
-    const data = update.callback_query.data;
-
-    buildUserData(userId);
-
-    const response = callbackReply(data, config, userId);
-    await telegramCall('answerCallbackQuery', {
-      callback_query_id: update.callback_query.id,
-    }, config.botToken, fetchImpl);
-
-    await sendMessage(update.callback_query.message.chat.id, response.text, config, fetchImpl, {
-      reply_markup: buildMainKeyboard(config),
-    });
+    buildUserData(update.callback_query.from?.id);
+    await processCallback(update, config, fetchImpl);
   }
 
   if (update.poll_answer) {
