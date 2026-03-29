@@ -25,6 +25,8 @@
     "telegram:bot-guide": "node scripts/post-bot-tutorial.mjs",
     "telegram:bot-guide:dry": "node scripts/post-bot-tutorial.mjs --dry-run",
     "telegram:webhook:set": "node scripts/set-telegram-webhook.mjs",
+    "telegram:worker:dev": "npx wrangler dev --config workers/telegram-bot/wrangler.jsonc",
+    "telegram:worker:deploy": "npx wrangler deploy --config workers/telegram-bot/wrangler.jsonc",
     "newsletter:digest": "node scripts/send-newsletter-digest.mjs",
     "newsletter:digest:dry": "node scripts/send-newsletter-digest.mjs --dry-run",
     "newsletter:digest:preview": "node scripts/send-newsletter-digest.mjs --preview",

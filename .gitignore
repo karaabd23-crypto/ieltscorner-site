@@ -25,6 +25,7 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
+.wrangler
 
 # local automation and runtime cache
 .cache/

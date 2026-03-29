@@ -1,0 +1,9 @@
+{
+  "name": "ieltscorner-telegram-bot",
+  "main": "src/index.mjs",
+  "compatibility_date": "2026-03-28",
+  "workers_dev": true,
+  "observability": {
+    "enabled": true
+  }
+}
