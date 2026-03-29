@@ -63,7 +63,7 @@ const UPDATED_SIGNATURE_LINKS = [
     href: BOT_DIRECT_URL,
   },
   {
-    text: '🌐   Website: https://celpipcorner.ca',
+    text: '🌐   Website: CELPIPcorner.ca',
     href: 'https://ieltscorner.ca',
   },
   {

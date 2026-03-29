@@ -37,7 +37,7 @@ const SCREENSHOT_SIGNATURE_LINKS = [
     href: BOT_DIRECT_URL,
   },
   {
-    text: '🌐   Website: https://celpipcorner.ca',
+    text: '🌐   Website: CELPIPcorner.ca',
     href: 'https://ieltscorner.ca',
   },
   {
@@ -211,7 +211,21 @@ function escapeTelegramHtml(text = '') {
 
 function stripExistingSignature(text) {
   const lines = String(text ?? '').replace(/\r\n/g, '\n').split('\n');
-  const signatureStart = lines.findIndex((line) => /Kay.?s English Corner/i.test(line) || /K\s*A\s*Y\s*'\s*S[\s\u00A0]+E\s*N\s*G\s*L\s*I\s*S\s*H/i.test(line));
+  const separatorPattern = /^[\s\u00A0]*➖{5,}[\s\u00A0]*$/u;
+  const headingPattern = /Kay.?s English Corner/i;
+  const spacedHeadingPattern = /K\s*A\s*Y\s*'\s*S[\s\u00A0]+E\s*N\s*G\s*L\s*I\s*S\s*H/i;
+  const customHeadingPattern = /KAY'\s*S\s+ENGLISH\s+CORNER/i;
+
+  const signatureStart = lines.findIndex((line, index) => {
+    if (headingPattern.test(line) || spacedHeadingPattern.test(line) || customHeadingPattern.test(line)) {
+      return true;
+    }
+
+    if (!separatorPattern.test(line)) {
+      return false;
+    }
+    return true;
+  });
   const bodyLines = signatureStart >= 0 ? lines.slice(0, signatureStart) : lines;
   return bodyLines.join('\n').replace(/\n{3,}/g, '\n\n').trim();
 }
