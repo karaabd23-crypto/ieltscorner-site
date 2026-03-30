@@ -3604,6 +3604,76 @@ hr {
   gap: 10px;
 }
 
+.service-trust-card {
+  display: grid;
+  gap: var(--s-4);
+  padding: clamp(20px, 1.8vw + 14px, 30px);
+  border-radius: 20px;
+  border: 1px solid rgba(23, 54, 86, 0.14);
+  background:
+    radial-gradient(circle at top right, rgba(217, 72, 72, 0.08), transparent 34%),
+    linear-gradient(155deg, #fffaf3 0%, #f9fcff 48%, #ffffff 100%);
+}
+
+.service-trust-card__label {
+  display: inline-flex;
+  width: fit-content;
+  margin: 0 0 8px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: rgba(15, 69, 108, 0.08);
+  border: 1px solid rgba(15, 69, 108, 0.12);
+  color: #16456c;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.service-trust-card__intro h2 {
+  margin: 0;
+  color: #173656;
+}
+
+.service-trust-card__intro p {
+  margin: 10px 0 0;
+}
+
+.service-trust-card__proof {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.service-trust-card__item {
+  border: 1px solid rgba(23, 54, 86, 0.14);
+  border-radius: 14px;
+  background: #fff;
+  padding: 14px;
+}
+
+.service-trust-card__item-label {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #5a6775;
+}
+
+.service-trust-card__item-value {
+  margin: 6px 0 0;
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: #173656;
+}
+
+.service-trust-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .lesson-divider {
   height: 1px;
   margin: 0 0 var(--s-5);
@@ -3746,6 +3816,10 @@ hr {
 
   .teacher-trust-banner__actions {
     justify-content: flex-start;
+  }
+
+  .service-trust-card__proof {
+    grid-template-columns: 1fr;
   }
 
   .article-content table,
@@ -4584,6 +4658,75 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
   color: #3f5162;
 }
 
+.lesson-related-quick-links {
+  display: grid;
+  gap: 10px;
+  margin-top: var(--s-3);
+}
+
+.lesson-related-quick-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 9px 14px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent) 36%, white 64%);
+  background: color-mix(in srgb, var(--accent) 8%, white 92%);
+  color: #9a3131;
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 1.25;
+}
+
+.lesson-related-quick-link::after {
+  content: "->";
+  font-size: 0.92em;
+  font-weight: 800;
+}
+
+.lesson-related-quick-link:hover,
+.lesson-related-quick-link:focus-visible {
+  border-color: color-mix(in srgb, var(--accent) 58%, white 42%);
+  background: color-mix(in srgb, var(--accent) 15%, white 85%);
+  color: #7c2828;
+  text-decoration: none;
+}
+
+.lessons-hub-search__controls {
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(160px, 1fr) minmax(160px, 1fr) auto;
+  gap: var(--s-2);
+  align-items: center;
+}
+
+.lessons-hub-search__input,
+.lessons-hub-search__select {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(20, 22, 23, 0.18);
+  padding: 10px 12px;
+  background: #fff;
+  font: inherit;
+  color: var(--text);
+}
+
+.lessons-hub-search__input:focus-visible,
+.lessons-hub-search__select:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 68%, white 32%);
+  outline-offset: 2px;
+}
+
+.lessons-hub-search__summary {
+  margin: var(--s-2) 0 0;
+}
+
+.lessons-hub-search__empty {
+  margin-top: var(--s-3);
+  padding: var(--s-4);
+}
+
 @media (max-width: 980px) {
   .landing-offer-grid,
   .landing-proof-grid {
@@ -4591,6 +4734,10 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
   }
 
   .lesson-related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lessons-hub-search__controls {
     grid-template-columns: 1fr;
   }
 }
@@ -4781,4 +4928,383 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
   .lead-magnet-card__form button {
     width: 100%;
   }
+}
+
+/* ---- CELPIP funnel clarity ---- */
+.funnel-hero {
+  --hero-bg-opacity: 0.24;
+}
+
+.funnel-hero__content {
+  max-width: 60ch;
+}
+
+.funnel-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: var(--s-3);
+}
+
+.funnel-section {
+  padding: clamp(20px, 2vw + 12px, 34px);
+}
+
+.funnel-section__intro {
+  margin-top: 0;
+  max-width: 72ch;
+}
+
+.funnel-section--quiet {
+  background: color-mix(in srgb, #fff 94%, var(--bg-2) 6%);
+}
+
+.funnel-audience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.funnel-info-card {
+  border: 1px solid rgba(20, 22, 23, 0.14);
+  border-radius: 16px;
+  background: #fff;
+  padding: 16px;
+}
+
+.funnel-info-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.offer-card {
+  display: grid;
+  gap: 10px;
+  border: 1px solid rgba(20, 22, 23, 0.16);
+  border-radius: 18px;
+  background: #fff;
+  padding: 18px;
+}
+
+.offer-card--primary {
+  border-color: color-mix(in srgb, var(--accent) 45%, rgba(20, 22, 23, 0.16) 55%);
+  box-shadow: 0 14px 28px rgba(20, 22, 23, 0.1);
+  background:
+    radial-gradient(circle at top right, rgba(217, 72, 72, 0.1), transparent 34%),
+    #fff;
+  grid-column: span 2;
+}
+
+.offer-card__highlight {
+  margin: 0;
+  font-weight: 800;
+  color: #8b2f2f;
+  font-size: 0.85rem;
+}
+
+.offer-card__helper {
+  margin: 0;
+  color: #3a4e61;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.offer-card__name {
+  margin: 0;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.offer-card__price {
+  margin: 0;
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 0.92rem;
+}
+
+.offer-card__label {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #5a6775;
+}
+
+.offer-card__line {
+  margin: 0;
+  color: #334556;
+}
+
+.offer-card__list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #334556;
+}
+
+.offer-card__list li + li {
+  margin-top: 7px;
+}
+
+.offer-card__note {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.offer-card .btn {
+  width: fit-content;
+}
+
+.funnel-video__intro {
+  margin-top: 0;
+  max-width: 68ch;
+}
+
+.funnel-video__embed {
+  border: 1px solid rgba(20, 22, 23, 0.14);
+  border-radius: 16px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.funnel-video__embed iframe {
+  display: block;
+  width: 100%;
+  min-height: clamp(220px, 42vw, 460px);
+  border: 0;
+}
+
+.funnel-video__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: var(--s-4);
+}
+
+.choice-guide {
+  display: grid;
+  gap: 10px;
+}
+
+.choice-guide p {
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(20, 22, 23, 0.12);
+  border-radius: 14px;
+  background: #fff;
+  color: #314456;
+}
+
+.funnel-problem-stack {
+  display: grid;
+  gap: 12px;
+}
+
+.problem-solution-item {
+  border: 1px solid rgba(20, 22, 23, 0.14);
+  border-radius: 14px;
+  background: #fff;
+  padding: 14px;
+  display: grid;
+  gap: 8px;
+}
+
+.problem-solution-item p {
+  margin: 0;
+  color: #314456;
+}
+
+.problem-solution-item__label {
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #5a6775;
+}
+
+.problem-solution-item .btn {
+  width: fit-content;
+  margin-top: 4px;
+}
+
+.funnel-secondary-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.funnel-secondary-links a {
+  font-weight: 700;
+  color: #3b4e61;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(59, 78, 97, 0.4);
+}
+
+.funnel-secondary-links a:hover,
+.funnel-secondary-links a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  text-decoration: none;
+}
+
+.funnel-final-cta {
+  text-align: center;
+  padding: clamp(22px, 2vw + 12px, 36px);
+  border: 1px solid color-mix(in srgb, var(--accent) 32%, var(--border-strong) 68%);
+  background:
+    radial-gradient(circle at top right, rgba(217, 72, 72, 0.1), transparent 34%),
+    #fff;
+}
+
+.funnel-final-cta p {
+  margin: 0 auto;
+  max-width: 62ch;
+}
+
+.funnel-final-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: var(--s-4);
+}
+
+.faq-compact-item {
+  border: 1px solid rgba(20, 22, 23, 0.14);
+  border-radius: 12px;
+  background: #fff;
+  padding: 12px 14px;
+}
+
+.faq-compact-item summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.funnel-return {
+  padding: var(--s-4);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  align-items: center;
+}
+
+.funnel-return__title {
+  margin: 0 0 6px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+@media (max-width: 980px) {
+  .funnel-audience-grid,
+  .offer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .offer-card--primary {
+    grid-column: auto;
+  }
+
+}
+
+@media (max-width: 760px) {
+  .funnel-hero__actions,
+  .funnel-final-cta__actions,
+  .funnel-secondary-links,
+  .funnel-video__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .offer-card .btn,
+  .problem-solution-item .btn,
+  .funnel-hero__actions .btn,
+  .funnel-final-cta__actions .btn {
+    width: 100%;
+  }
+
+  .funnel-return {
+    grid-template-columns: 1fr;
+  }
+
+  .funnel-return .btn {
+    width: 100%;
+  }
+}
+
+/* ---- Home funnel structure ---- */
+.home-funnel {
+  display: grid;
+  gap: var(--s-7);
+}
+
+.home-step {
+  padding: clamp(20px, 2vw + 12px, 34px);
+}
+
+.home-step__label {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #5a6775;
+}
+
+.home-step h2 {
+  margin-top: var(--s-2);
+}
+
+.home-step__intro {
+  margin-top: 0;
+  max-width: 64ch;
+}
+
+.home-option-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.home-option-card__kicker {
+  margin: 0 0 var(--s-2);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #5a6775;
+}
+
+.home-option-card__cta {
+  display: inline-flex;
+  align-items: center;
+  margin-top: auto;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.home-option-card:hover .home-option-card__cta,
+.home-option-card:focus-visible .home-option-card__cta {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+.home-option-card--free {
+  height: auto;
+  min-height: 0;
+  border: 1px solid color-mix(in srgb, var(--accent) 34%, var(--border-strong) 66%);
+  background:
+    radial-gradient(circle at top right, rgba(217, 72, 72, 0.08), transparent 34%),
+    #fff;
 }

@@ -1,234 +1,42 @@
 ---
 import ConversionLayout from "../layouts/ConversionLayout.astro";
-import LeadCaptureForm from "../components/LeadCaptureForm.astro";
-import LeadMagnetCard from "../components/LeadMagnetCard.astro";
-import OfferLadderBlock from "../components/OfferLadderBlock.astro";
-import OfferSequenceBlock from "../components/OfferSequenceBlock.astro";
 ---
 
 <ConversionLayout
-  title="CELPIP Writing Help | Reach CLB 9 Faster"
-  description="Reach CLB 9 in CELPIP Writing faster with live training, private tutoring, and essay correction from a Canada-based instructor."
+  title="CELPIP Writing Help | Start AI Feedback"
+  description="Get detailed CELPIP writing feedback and a clear improvement plan."
   canonical="/celpip-writing-help/"
-  keywords="CELPIP writing help, CLB 9 CELPIP writing, CELPIP writing feedback, CELPIP tutor Canada"
+  keywords="CELPIP writing help, CELPIP writing feedback, CLB 9 writing"
 >
   <section class="section landing-shell">
-    <div class="landing-hero">
-      <p class="landing-eyebrow">CELPIP Writing Score System</p>
-      <h1>Reach CLB 9 in CELPIP Writing Faster</h1>
+    <section class="landing-hero">
+      <p class="landing-eyebrow">CELPIP Writing Support</p>
+      <h1>Stuck at CLB 6 or 7 in CELPIP Writing?</h1>
       <p class="landing-subheadline">
-        Learn with a Canadian-certified instructor, get real feedback on your writing, and improve with a structured system that fixes weak points quickly.
+        Use one focused path: watch the feedback demo, then start AI feedback and fix your score-lowering mistakes.
       </p>
       <div class="landing-hero__actions">
-        <a
-          class="btn btn-primary landing-cta"
-          href="/webinar?src=celpip-writing-help-hero"
-          data-track-click="celpip-writing-help-hero-webinar"
-          data-track-page-type="landing"
-          data-track-offer="weekly_training"
-          data-track-test="celpip"
-          data-track-skill="writing"
-          data-track-position="hero"
-          data-track-intent="purchase"
-        >
-          Fix CELPIP Writing Patterns Live ($12)
-        </a>
-        <a
-          class="btn"
-          href="/tutoring?src=celpip-writing-help-hero"
-          data-track-click="celpip-writing-help-hero-tutoring"
-          data-track-page-type="landing"
-          data-track-offer="tutoring"
-          data-track-test="celpip"
-          data-track-skill="writing"
-          data-track-position="hero"
-          data-track-intent="booking"
-        >
-          Book 1:1 CLB 9 Coaching ($30)
-        </a>
-      </div>
-      <p class="muted" style="margin: var(--s-2) 0 0;">
-        Most students start with the $12 live training, then add essay correction for direct feedback.
-      </p>
-    </div>
-
-    <div class="landing-grid">
-      <section class="landing-section">
-        <h2>Why Most Students Stay Below CLB 9</h2>
-        <ul class="landing-list">
-          <li>Unclear structure that misses key prompt requirements</li>
-          <li>Weak grammar control under time pressure</li>
-          <li>No reliable feedback loop after practice tasks</li>
-        </ul>
-      </section>
-
-      <section class="landing-section">
-        <h2>The Solution</h2>
-        <ul class="landing-list">
-          <li>Experienced instructor teaching students in Canada</li>
-          <li>Structured writing system for Task 1 and Task 2</li>
-          <li>Fast, practical feedback so mistakes stop repeating</li>
-        </ul>
-      </section>
-    </div>
-
-    <section class="landing-section" id="celpip-writing-checklist-optin">
-      <LeadMagnetCard
-        headline="Subscribe for Weekly CELPIP Writing Emails"
-        bullets={[
-          "Receive one practical CELPIP writing strategy each week.",
-          "Get lesson updates focused on the mistakes that block CLB 9.",
-          "Be notified when new tools and downloads are ready.",
-        ]}
-        formName="lead-subscribe-celpip-writing-updates"
-        formType="lead_capture_celpip_writing_updates"
-        successPath="/newsletter/thanks/"
-        source="celpip-writing-help"
-        magnetId="celpip_writing_updates_subscription"
-        buttonLabel="Subscribe for Weekly Emails"
-        pageType="landing"
-        offer="lead_capture"
-        test="celpip"
-        skill="writing"
-        position="mid"
-      />
-    </section>
-
-    <section class="landing-section">
-      <h2>Choose the support that fits you</h2>
-      <div class="landing-offer-grid">
-        <article class="landing-offer">
-          <h3>Weekly Webinar ($12)</h3>
-          <p>Live weekly training focused on score-critical writing patterns.</p>
-          <a
-            class="btn btn-primary"
-            href="/webinar?src=celpip-writing-help-tier1"
-            data-track-click="celpip-writing-help-tier1-webinar"
-            data-track-page-type="landing"
-            data-track-offer="weekly_training"
-            data-track-test="celpip"
-            data-track-skill="writing"
-            data-track-position="mid"
-            data-track-intent="purchase"
-          >
-            Join This Week's Live Training ($12)
-          </a>
-        </article>
-        <article class="landing-offer">
-          <h3>Private Tutoring ($30/session)</h3>
-          <p>One-on-one coaching targeting your exact writing weaknesses.</p>
-          <a
-            class="btn btn-primary"
-            href="/tutoring?src=celpip-writing-help-tier2"
-            data-track-click="celpip-writing-help-tier2-tutoring"
-            data-track-page-type="landing"
-            data-track-offer="tutoring"
-            data-track-test="celpip"
-            data-track-skill="writing"
-            data-track-position="mid"
-            data-track-intent="booking"
-          >
-            Book a 1:1 Session ($30)
-          </a>
-        </article>
-        <article class="landing-offer">
-          <h3>Essay Correction</h3>
-          <p>Line-by-line corrections, score guidance, and targeted revision tasks.</p>
-          <a
-            class="btn btn-primary"
-            href="/essay-correction?src=celpip-writing-help-tier3"
-            data-track-click="celpip-writing-help-tier3-essay"
-            data-track-page-type="landing"
-            data-track-offer="essay_correction"
-            data-track-test="celpip"
-            data-track-skill="writing"
-            data-track-position="mid"
-          >
-            Get Detailed Essay Correction
-          </a>
-        </article>
+        <a class="btn btn-primary landing-cta" href="/ai-feedback">Start AI Feedback</a>
       </div>
     </section>
 
     <section class="landing-section">
-      <h2>Student Results</h2>
-      <div class="landing-proof-grid">
-        <article class="landing-proof">
-          <p>"I moved from CLB 7 writing to CLB 9 after weekly feedback and templates."</p>
-          <strong>CELPIP student, Ontario (placeholder)</strong>
-        </article>
-        <article class="landing-proof">
-          <p>"The structure system made my responses clear and my grammar more accurate."</p>
-          <strong>CELPIP student, Alberta (placeholder)</strong>
-        </article>
-        <article class="landing-proof">
-          <p>"I stopped guessing and finally understood how scoring actually works."</p>
-          <strong>CELPIP student, BC (placeholder)</strong>
-        </article>
-      </div>
+      <h2>What you get</h2>
+      <ul class="landing-list">
+        <li>Clear feedback by scoring criteria</li>
+        <li>Practical correction points you can apply immediately</li>
+        <li>A direct path from practice to improvement</li>
+      </ul>
     </section>
 
     <section class="landing-section landing-section--cta">
-      <h2>Start Improving This Week</h2>
+      <h2>Ready to improve your CELPIP writing score?</h2>
       <div class="landing-hero__actions">
-        <a
-          class="btn btn-primary landing-cta"
-          href="/webinar?src=celpip-writing-help-final"
-          data-track-click="celpip-writing-help-final-webinar"
-          data-track-page-type="landing"
-          data-track-offer="weekly_training"
-          data-track-test="celpip"
-          data-track-skill="writing"
-          data-track-position="end"
-          data-track-intent="purchase"
-        >
-          Train Live and Fix CELPIP Writing Faster ($12)
-        </a>
-        <a
-          class="btn landing-cta landing-cta--alt"
-          href="/tutoring?src=celpip-writing-help-final"
-          data-track-click="celpip-writing-help-final-tutoring"
-          data-track-page-type="landing"
-          data-track-offer="tutoring"
-          data-track-test="celpip"
-          data-track-skill="writing"
-          data-track-position="end"
-          data-track-intent="booking"
-        >
-          Book 1:1 CELPIP Writing Coaching ($30)
-        </a>
+        <a class="btn btn-primary landing-cta" href="/ai-feedback">Start AI Feedback</a>
       </div>
+      <p class="muted" style="margin-top: var(--s-2);">
+        Need one-on-one help instead? <a href="/tutoring#book-private-class">Book Private Class</a>.
+      </p>
     </section>
-
-    <OfferLadderBlock
-      test="celpip"
-      skill="writing"
-      pageType="landing"
-      position="end"
-      heading="Choose the fastest way to improve"
-    />
-
-    <LeadCaptureForm
-      heading="Get free Band 7+ strategies every week"
-      message="Get free Band 7+ strategies every week"
-      buttonLabel="Send Me Weekly Strategies"
-      source="celpip-writing-help"
-      formName="celpip-writing-help-leads"
-      formType="lead_capture_general"
-      pageType="landing"
-      offer="lead_capture"
-      test="celpip"
-      skill="writing"
-      position="form_section"
-      className="landing-lead-form"
-    />
-
-    <OfferSequenceBlock
-      test="celpip"
-      skill="writing"
-      pageType="landing"
-      position="end"
-      heading="Start here if you want faster CELPIP writing progress"
-    />
   </section>
 </ConversionLayout>

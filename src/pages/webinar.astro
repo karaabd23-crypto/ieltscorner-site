@@ -1,88 +1,91 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ServiceTrustCard from "../components/ServiceTrustCard.astro";
 
 const WEBINAR_CALENDLY_URL = "https://calendly.com/ieltscorner/weekly_webinar";
+const WEBINAR_VIDEO_EMBED_URL = "";
+const showWebinarVideo = WEBINAR_VIDEO_EMBED_URL.trim().length > 0;
 ---
 
 <Layout
   title="CELPIP Weekly Webinar | Register"
-  description="Join the weekly CELPIP webinar for live strategy teaching and practical Q and A."
+  description="Register for the weekly CELPIP webinar and get live strategy support."
   type="page"
 >
   <section class="section">
     <div class="hero" style={`--hero-bg: url('/heroes/webinar.png'); --hero-bg-opacity: 0.18;`}>
       <div class="hero-content">
         <span class="pill">Weekly webinar | Live online</span>
-        <h1>Register for this week's webinar</h1>
+        <h1>Register for this week's CELPIP webinar</h1>
         <p>
-          Use the webinar when you want one live session that clears up a confusing exam skill,
-          gives you a simple study plan, and lets you ask direct questions.
+          Join one focused live session, get clear strategy on one score problem, and ask
+          your questions before your next test.
         </p>
 
         <div class="cluster">
           <button id="open-webinar-calendly" class="btn btn-primary" type="button">
-            Open registration
+            Register Now
           </button>
-          <a class="btn btn-ghost" href={WEBINAR_CALENDLY_URL} target="_blank" rel="noreferrer">
-            Open full booking page
-          </a>
         </div>
       </div>
     </div>
 
-    <div style="height: var(--s-7);"></div>
+    <div style="height: var(--s-6);"></div>
 
-    <article class="card">
-      <h2 style="margin-top: 0;">What happens in the webinar</h2>
-      <div class="checklist">
-        <div class="check">
-          <div class="icon">1</div>
-          <div>
-            <strong>One focused teaching topic</strong>
-            <span>The session stays on one real score problem instead of trying to cover everything.</span>
+    <section class="surface funnel-section funnel-video" id="webinar-video-preview">
+      <h2 style="margin-top: 0;">Webinar video preview</h2>
+      {showWebinarVideo ? (
+        <>
+          <p class="muted funnel-video__intro">
+            Watch the webinar preview, then register below to join the next live session.
+          </p>
+          <div class="funnel-video__embed">
+            <iframe
+              width="560"
+              height="315"
+              src={WEBINAR_VIDEO_EMBED_URL}
+              title="Webinar preview video"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
           </div>
-        </div>
-        <div class="check">
-          <div class="icon">2</div>
-          <div>
-            <strong>Examples that show the pattern clearly</strong>
-            <span>You should leave understanding what to do differently, not just with more notes.</span>
-          </div>
-        </div>
-        <div class="check">
-          <div class="icon">3</div>
-          <div>
-            <strong>Questions at the end</strong>
-            <span>You can ask for clarification before you go back to studying alone.</span>
-          </div>
-        </div>
-      </div>
-    </article>
+        </>
+      ) : (
+        <p class="muted funnel-video__intro" style="margin-bottom: 0;">
+          The webinar preview video is being added soon. This section is ready for the embed
+          link, and registration is open below now.
+        </p>
+      )}
+    </section>
 
-    <div style="height: var(--s-5);"></div>
+    <div style="height: var(--s-6);"></div>
 
-    <article class="card">
-      <h2 style="margin-top: 0;">Who this is best for</h2>
-      <ul>
-        <li>Students who understand some English already but still lose marks because exam strategy is unclear</li>
-        <li>Students who want direct answers before spending money on longer tutoring</li>
-        <li>Students who learn better when one topic is explained live, not only read alone</li>
-      </ul>
-    </article>
+    <ServiceTrustCard
+      heading="Know your instructor before registration"
+      intro="Before you reserve your seat, you can review teaching qualifications and score evidence on the About page."
+    />
 
-    <div style="height: var(--s-5);"></div>
+    <div style="height: var(--s-6);"></div>
 
-    <article class="surface webinar-note">
-      <h2 style="margin-top: 0;">What to bring</h2>
-      <p style="margin-bottom: var(--s-2);">
-        Bring one specific question, one weak task, or one recent mistake you want clarified.
-        Students get more value from the webinar when they arrive with a real problem in mind.
+    <section id="register-webinar" class="surface calendly-wrap">
+      <h2 style="margin-top: 0;">Complete your webinar registration</h2>
+      <p class="muted" style="margin-top: 0;">
+        Choose your time below and reserve your seat.
       </p>
-      <a class="btn" href={WEBINAR_CALENDLY_URL} target="_blank" rel="noreferrer">
-        See available times
-      </a>
-    </article>
+
+      <div
+        class="calendly-inline-widget"
+        data-url={WEBINAR_CALENDLY_URL}
+        style="min-width:320px;height:700px;"
+      ></div>
+    </section>
   </section>
+
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async is:inline></script>
 
   <script is:inline>
     window.addEventListener("load", () => {
@@ -103,8 +106,19 @@ const WEBINAR_CALENDLY_URL = "https://calendly.com/ieltscorner/weekly_webinar";
 </Layout>
 
 <style>
-  .webinar-note {
-    padding: var(--s-4);
-    border-left: 4px solid var(--accent);
+  .calendly-wrap {
+    padding: var(--s-5);
+    border: 2px solid color-mix(in srgb, var(--accent) 38%, var(--border) 62%);
+    border-radius: var(--radius);
+  }
+
+  @media (max-width: 768px) {
+    .calendly-wrap {
+      padding: var(--s-3);
+    }
+
+    .calendly-inline-widget {
+      height: 700px !important;
+    }
   }
 </style>

@@ -1,0 +1,58 @@
+---
+interface OfferItem {
+  name: string;
+  forWho: string;
+  includes: string[];
+  outcome: string;
+  ctaHref: string;
+  ctaLabel: string;
+  price?: string;
+  note?: string;
+  isPrimary?: boolean;
+  highlightLabel?: string;
+  helperLine?: string;
+}
+
+interface Props {
+  id?: string;
+  title: string;
+  intro?: string;
+  offers: OfferItem[];
+}
+
+const { id = "support-options", title, intro = "", offers = [] } = Astro.props as Props;
+---
+
+<section class="section-sm" id={id}>
+  <div class="surface funnel-section">
+    <h2 style="margin-top: 0;">{title}</h2>
+    {intro && <p class="muted funnel-section__intro">{intro}</p>}
+
+    <div class="offer-grid">
+      {offers.map((offer) => (
+        <article class:list={["offer-card", offer.isPrimary && "offer-card--primary"]}>
+          {offer.highlightLabel && <p class="offer-card__highlight">{offer.highlightLabel}</p>}
+          <p class="offer-card__name">{offer.name}</p>
+          {offer.price && <p class="offer-card__price">{offer.price}</p>}
+          {offer.helperLine && <p class="offer-card__helper">{offer.helperLine}</p>}
+
+          <p class="offer-card__line"><strong>Best for:</strong> {offer.forWho}</p>
+
+          <p class="offer-card__label">What you get</p>
+          <ul class="offer-card__list">
+            {offer.includes.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+
+          <p class="offer-card__line"><strong>Expected outcome:</strong> {offer.outcome}</p>
+          {offer.note && <p class="muted offer-card__note">{offer.note}</p>}
+
+          <a class:list={["btn", offer.isPrimary && "btn-primary"]} href={offer.ctaHref}>
+            {offer.ctaLabel}
+          </a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

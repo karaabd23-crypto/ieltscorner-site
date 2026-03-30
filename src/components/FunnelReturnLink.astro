@@ -1,0 +1,23 @@
+---
+interface Props {
+  href?: string;
+  title?: string;
+  text?: string;
+  ctaLabel?: string;
+}
+
+const {
+  href = "/celpip",
+  title = "Not sure which support option fits?",
+  text = "Use the CELPIP overview page to compare tutoring, webinar, and writing feedback before you commit.",
+  ctaLabel = "Compare CELPIP support options",
+} = Astro.props as Props;
+---
+
+<div class="surface funnel-return">
+  <div>
+    <p class="funnel-return__title">{title}</p>
+    <p class="muted" style="margin: 0;">{text}</p>
+  </div>
+  <a class="btn" href={href}>{ctaLabel}</a>
+</div>

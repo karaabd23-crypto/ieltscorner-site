@@ -1,10 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import ServiceTrustCard from "../../components/ServiceTrustCard.astro";
 import {
-  ESSAY_CORRECTION_CHECKOUT_ENV_KEY,
   ESSAY_CORRECTION_CHECKOUT_IS_CONFIGURED,
-  ESSAY_CORRECTION_STRIPE_SUCCESS_PATH,
-  ESSAY_CORRECTION_STRIPE_PRODUCT_ID,
   getEssayCorrectionCheckoutLinkProps,
 } from "../../lib/offers";
 
@@ -14,43 +12,33 @@ const pageFaqs = [
   {
     question: "How many essays does this include?",
     answer:
-      "This offer covers one essay correction. You submit one full response and receive one complete feedback package.",
+      "This purchase includes one complete essay correction.",
   },
   {
     question: "What type of feedback do I receive?",
     answer:
-      "You receive detailed feedback on grammar, structure, clarity, and score-oriented improvements for IELTS or CELPIP writing tasks.",
+      "You receive score-focused comments on grammar, structure, clarity, and task response.",
   },
   {
-    question: "How fast is the turnaround?",
+    question: "How do I submit my essay after payment?",
     answer:
-      "Turnaround is fast and configured based on workload. The exact timing is confirmed on purchase and submission pages.",
-  },
-  {
-    question: "Can I submit IELTS and CELPIP writing?",
-    answer:
-      "Yes. The service supports IELTS writing and CELPIP writing tasks. You choose your test type during submission.",
-  },
-  {
-    question: "Where do I submit my essay and how do I get it back?",
-    answer:
-      "After checkout, Stripe sends you to the essay submission page. You paste your essay into the form, and your corrected essay is emailed to the address you provide.",
+      "After checkout, Stripe sends you to the submission page where you paste your essay.",
   },
 ];
 ---
 
 <Layout
   title="Essay Correction | IELTS and CELPIP Writing Feedback"
-  description="Submit one IELTS or CELPIP essay and get detailed score-focused feedback on grammar, structure, and task response."
-  keywords="IELTS essay correction, CELPIP essay correction, writing feedback, writing score improvement"
+  description="Submit one IELTS or CELPIP essay and get detailed score-focused feedback."
+  keywords="IELTS essay correction, CELPIP essay correction, writing feedback"
 >
-  <section class="section">
+  <section class="section" id="start-checkout">
     <div class="landing-shell">
       <section class="landing-hero">
         <p class="landing-eyebrow">Essay Feedback Service</p>
-        <h1>Submit One Essay and Get Score-Focused Feedback You Can Use Immediately</h1>
+        <h1>Submit One Essay and Get Score-Focused Feedback</h1>
         <p class="landing-subheadline">
-          One essay correction with concrete comments on grammar, structure, task response, and the exact changes needed for a stronger IELTS or CELPIP writing score.
+          One correction with clear comments on grammar, structure, and the exact changes needed to improve your IELTS or CELPIP writing score.
         </p>
         <div class="landing-hero__actions">
           <a
@@ -68,19 +56,17 @@ const pageFaqs = [
             Submit an Essay for Correction
           </a>
         </div>
-        <p class="muted" style="margin: var(--s-2) 0 0;">
-          After payment, Stripe sends you straight to the final submission step. Need to review the flow first? <a href="/essay-correction/checkout-intent">See payment and next steps</a>.
-        </p>
       </section>
 
       {!ESSAY_CORRECTION_CHECKOUT_IS_CONFIGURED && (
         <section id="payment-link-pending" class="landing-section">
-          <h2>Checkout Link Is Being Finalized</h2>
+          <h2>Checkout is temporarily unavailable</h2>
           <p class="muted" style="margin-bottom: 0;">
-            The Stripe checkout URL for product <strong>{ESSAY_CORRECTION_STRIPE_PRODUCT_ID}</strong> is not published yet. Set
-            <code>{ESSAY_CORRECTION_CHECKOUT_ENV_KEY}</code> to activate the payment button. Stripe should return paid users to
-            <code>{ESSAY_CORRECTION_STRIPE_SUCCESS_PATH}</code> after checkout.
+            The payment link is being updated. Please check back shortly or contact us and we will send you the active checkout link.
           </p>
+          <div class="landing-hero__actions" style="margin-top: var(--s-3);">
+            <a class="btn" href="/contact">Contact Support</a>
+          </div>
         </section>
       )}
 
@@ -89,15 +75,15 @@ const pageFaqs = [
         <div class="landing-offer-grid">
           <article class="landing-offer">
             <h3>1 Essay Correction</h3>
-            <p>One complete essay review with focused, line-level feedback.</p>
+            <p>One complete review of one IELTS or CELPIP essay.</p>
           </article>
           <article class="landing-offer">
-            <h3>Detailed Feedback</h3>
-            <p>Specific notes on grammar, structure, task completion, and clarity.</p>
+            <h3>Detailed Notes</h3>
+            <p>Clear corrections on grammar, structure, and task coverage.</p>
           </article>
           <article class="landing-offer">
-            <h3>Score-Oriented Guidance</h3>
-            <p>Actionable fixes based on what improves IELTS/CELPIP writing scores.</p>
+            <h3>Score-Focused Actions</h3>
+            <p>Concrete next steps to improve your next writing attempt.</p>
           </article>
         </div>
       </section>
@@ -105,41 +91,21 @@ const pageFaqs = [
       <section class="landing-section">
         <h2>How It Works</h2>
         <ol style="margin: var(--s-2) 0 0; padding-left: 1.2rem;">
-          <li>Pay through the essay correction checkout.</li>
-          <li>After payment, Stripe returns you to the final submission page automatically.</li>
-          <li>Paste your essay text with task details and send it for review.</li>
-          <li>I email your corrected essay and revision priorities to the same email you submit in the form.</li>
+          <li>Pay through checkout.</li>
+          <li>Submit your essay on the next page.</li>
+          <li>Receive your corrected essay and feedback by email.</li>
         </ol>
       </section>
 
       <section class="landing-section">
-        <h2>How You Receive Your Correction</h2>
-        <ul class="landing-list">
-          <li>Your completed review is returned by email, not by dashboard login.</li>
-          <li>Use an email address you check daily when submitting your essay.</li>
-          <li>If you do not see the reply by the confirmed turnaround, check spam first, then contact support.</li>
-        </ul>
-      </section>
-
-      <section class="landing-grid">
-        <section class="landing-section">
-          <h2>Turnaround</h2>
-          <p style="margin-bottom: 0;">
-            Fast turnaround is provided and confirmed after payment. The submission page also explains what to send so review can start without delay.
-          </p>
-        </section>
-        <section class="landing-section">
-          <h2>Why Students Use This</h2>
-          <ul class="landing-list">
-            <li>They keep repeating the same writing mistakes and need direct correction.</li>
-            <li>They want clear score-oriented guidance before booking private tutoring.</li>
-            <li>They need concrete next steps instead of generic advice.</li>
-          </ul>
-        </section>
+        <ServiceTrustCard
+          heading="Know who is checking your writing"
+          intro="Before you pay for essay correction, review the teaching and exam background behind this feedback service."
+        />
       </section>
 
       <section class="landing-section landing-section--cta">
-        <h2>Stop Guessing Why Your Writing Score Is Stuck</h2>
+        <h2>Ready to submit your essay?</h2>
         <div class="landing-hero__actions">
           <a
             class="btn btn-primary landing-cta"
@@ -156,9 +122,6 @@ const pageFaqs = [
             Submit an Essay for Correction
           </a>
         </div>
-        <p class="muted" style="margin: var(--s-2) 0 0;">
-          Pay first, then submit your essay, then receive detailed feedback.
-        </p>
       </section>
 
       <section class="landing-section">
@@ -170,46 +133,6 @@ const pageFaqs = [
               <p class="muted" style="margin: var(--s-2) 0 0;">{faq.answer}</p>
             </details>
           ))}
-        </div>
-      </section>
-
-      <section class="landing-section">
-        <h2>What to do after your correction report</h2>
-        <div class="landing-offer-grid">
-          <article class="landing-offer">
-            <h3>Weekly Live Training ($12)</h3>
-            <p>Fix recurring writing patterns with guided live examples every week.</p>
-            <a
-              class="btn btn-primary"
-              href="/webinar"
-              data-track-click="essay-correction-upsell-webinar"
-              data-track-page-type="service"
-              data-track-offer="weekly_training"
-              data-track-test="ielts_celpip"
-              data-track-skill="writing"
-              data-track-position="upsell"
-              data-track-intent="purchase"
-            >
-              Join Weekly Training
-            </a>
-          </article>
-          <article class="landing-offer">
-            <h3>1:1 Tutoring ($30)</h3>
-            <p>Use your correction report in a private session to close weak areas faster.</p>
-            <a
-              class="btn btn-primary"
-              href="/tutoring"
-              data-track-click="essay-correction-upsell-tutoring"
-              data-track-page-type="service"
-              data-track-offer="tutoring"
-              data-track-test="ielts_celpip"
-              data-track-skill="writing"
-              data-track-position="upsell"
-              data-track-intent="booking"
-            >
-              Book 1:1 Session
-            </a>
-          </article>
         </div>
       </section>
     </div>

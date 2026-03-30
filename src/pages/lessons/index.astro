@@ -1,157 +1,337 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import { getLessonTier, getPublicLessonTitle } from "../../lib/lessonLevel";
 import { buildBreadcrumbSchema } from "../../lib/seo";
 
-const pageKeywords = "IELTS lessons, CELPIP lessons, IELTS writing lessons, IELTS speaking lessons, CELPIP writing lessons, CELPIP speaking lessons, grammar lessons, vocabulary lessons";
+type LessonEntry = CollectionEntry<"lessons">;
+type LessonCategory = LessonEntry["data"]["category"];
+
+const lessons = await getCollection("lessons", ({ data }) => !data.draft);
+const totalLessons = lessons.length;
+const defaultVisibleLessons = Math.min(24, totalLessons);
+
+const parseDate = (value: string | undefined) => {
+  const parsed = Date.parse(value ?? "");
+  return Number.isNaN(parsed) ? 0 : parsed;
+};
+
+const searchableLessons = [...lessons].sort(
+  (a, b) => parseDate(b.data.date) - parseDate(a.data.date)
+);
+
+const categoryCards: Array<{
+  category: LessonCategory;
+  title: string;
+  description: string;
+}> = [
+  {
+    category: "reading",
+    title: "Reading",
+    description: "Build timing, scanning, and evidence-based answer selection.",
+  },
+  {
+    category: "listening",
+    title: "Listening",
+    description: "Train prediction, note capture, and trap detection under pressure.",
+  },
+  {
+    category: "writing",
+    title: "Writing",
+    description: "Improve structure, task response, and correction-driven revision.",
+  },
+  {
+    category: "speaking",
+    title: "Speaking",
+    description: "Develop clearer answers, better fluency, and stronger delivery.",
+  },
+  {
+    category: "grammar",
+    title: "Grammar",
+    description: "Fix high-impact grammar errors that keep scores down.",
+  },
+  {
+    category: "vocabulary",
+    title: "Vocabulary",
+    description: "Expand practical exam vocabulary and stronger word combinations.",
+  },
+];
+
+const categoryCounts = lessons.reduce(
+  (acc, lesson) => {
+    acc[lesson.data.category] += 1;
+    return acc;
+  },
+  {
+    grammar: 0,
+    vocabulary: 0,
+    writing: 0,
+    speaking: 0,
+    listening: 0,
+    reading: 0,
+  } as Record<LessonCategory, number>
+);
+
+const pageKeywords =
+  "free IELTS lessons, free CELPIP lessons, grammar lessons, vocabulary lessons, reading lessons, listening lessons, speaking lessons, writing lessons";
 
 const pageStructuredData = [
   buildBreadcrumbSchema(Astro.site, [
-  { name: "Home", path: "/" },
-  { name: "Lessons", path: "/lessons/" },
+    { name: "Home", path: "/" },
+    { name: "Lessons", path: "/lessons/" },
   ]),
 ];
 ---
 
 <Layout
-  title="Free IELTS and CELPIP Lessons | Writing, Speaking, Reading and More"
-  description="Free IELTS and CELPIP lessons for writing, speaking, reading, listening, grammar, and vocabulary. Study by exam, skill, or language focus."
+  title={`Free Lesson Library | ${totalLessons} IELTS and CELPIP Lessons`}
+  description="All free IELTS and CELPIP lessons in one place. Open grammar, vocabulary, writing, speaking, listening, and reading lessons from this hub."
   keywords={pageKeywords}
   structuredData={pageStructuredData}
 >
   <section class="section">
     <div class="hero" style={`--hero-bg: url('/heroes/lesson.png');`}>
       <div class="hero-content">
-        <span class="pill">📚 Lessons</span>
-
-        <h1>Pick your test. Pick your skill. Practice properly.</h1>
-
-        <p class="muted" style="max-width: 58ch;">
-          Free IELTS and CELPIP lessons organized by exam, skill, and language focus so students can find the exact topic they searched for.
+        <span class="pill">Free lesson library</span>
+        <h1>All {totalLessons} free IELTS and CELPIP lessons in one place</h1>
+        <p class="muted" style="max-width: 62ch;">
+          Choose a category below and open every published lesson. This is the main hub for free study content.
         </p>
-
         <div class="cluster">
-          <a class="btn btn-primary" href="/ielts">IELTS lessons →</a>
-          <a class="btn btn-ghost" href="/celpip">CELPIP lessons →</a>
+          <a class="btn btn-primary" href="/lessons/grammar">Open Grammar Lessons</a>
+          <a class="btn btn-ghost" href="/lessons/vocabulary">Open Vocabulary Lessons</a>
         </div>
-      </div>
-    </div>
-
-    <div style="height: var(--s-8);"></div>
-
-    <!-- Core language categories -->
-    <div class="grid grid-2">
-      <div class="card">
-        <h3>Grammar</h3>
-        <p class="muted">These grammar lessons focus on high-impact structures that improve accuracy and raise your score.</p>
-        <div class="cluster">
-          <a class="btn btn-primary" href="/lessons/grammar">Open grammar →</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Vocabulary</h3>
-        <p class="muted">These vocabulary lessons teach useful words and word groups for real English and exam tasks.</p>
-        <div class="cluster">
-          <a class="btn btn-primary" href="/lessons/vocabulary">Open vocabulary →</a>
-        </div>
-      </div>
-    </div>
-
-    <div style="height: var(--s-8);"></div>
-
-    <!-- CELPIP lessons block -->
-    <div class="surface feature">
-      <div class="feature-grid">
-        <div class="stack">
-          <h2>CELPIP lessons</h2>
-          <p class="muted" style="max-width: 58ch;">
-            Practice each CELPIP skill with simple steps, templates, and examples.
-          </p>
-          <div class="cluster">
-            <a class="btn btn-primary" href="/celpip">CELPIP course page →</a>
-            <a class="btn" href="/tutoring">Private / group lessons →</a>
-          </div>
-        </div>
-
-        <div class="grid grid-2" style="gap: var(--s-4);">
-          <a class="card" href="/celpip/listening" style="text-decoration:none;">
-            <h3>Listening</h3>
-            <p class="muted">You will learn how to understand questions quickly and choose accurate answers under time pressure.</p>
-          </a>
-
-          <a class="card" href="/celpip/reading" style="text-decoration:none;">
-            <h3>Reading</h3>
-            <p class="muted">You will practice scanning, keyword tracking, and evidence-based choices to avoid wrong options.</p>
-          </a>
-
-          <a class="card" href="/celpip/speaking" style="text-decoration:none;">
-            <h3>Speaking</h3>
-            <p class="muted">You will use practical templates for each task while developing natural and confident delivery.</p>
-          </a>
-
-          <a class="card" href="/celpip/writing" style="text-decoration:none;">
-            <h3>Writing</h3>
-            <p class="muted">You will learn reusable structures for both the email task and the survey response task.</p>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div style="height: var(--s-8);"></div>
-
-    <!-- IELTS lessons block -->
-    <div class="surface feature">
-      <div class="feature-grid">
-        <div class="stack">
-          <h2>IELTS lessons</h2>
-          <p class="muted" style="max-width: 58ch;">
-            IELTS lessons cover writing, speaking, reading, and listening with clear explanations, examples, and Band 7+ strategy support.
-          </p>
-          <div class="cluster">
-            <a class="btn btn-primary" href="/ielts">IELTS hub →</a>
-            <a class="btn" href="/tutoring">Tutoring →</a>
-          </div>
-        </div>
-
-        <div class="grid grid-2" style="gap: var(--s-4);">
-          <a class="card" href="/ielts/listening" style="text-decoration:none;">
-            <h3>Listening</h3>
-            <p class="muted">These lessons help you improve listening accuracy and avoid common exam traps.</p>
-          </a>
-
-          <a class="card" href="/ielts/reading" style="text-decoration:none;">
-            <h3>Reading</h3>
-            <p class="muted">You will train time control, keyword tracking, and a clear answer-selection strategy.</p>
-          </a>
-
-          <a class="card" href="/ielts/speaking" style="text-decoration:none;">
-            <h3>Speaking</h3>
-            <p class="muted">You will practice natural answers that still maintain strong and consistent structure.</p>
-          </a>
-
-          <a class="card" href="/ielts/writing" style="text-decoration:none;">
-            <h3>Writing</h3>
-            <p class="muted">These writing lessons teach Band 7+ structure with clear flow, appropriate tone, and precise language.</p>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div style="height: var(--s-8);"></div>
-
-    <!-- gentle conversion -->
-    <div class="grid grid-2">
-      <div class="card">
-        <h3>Want faster progress?</h3>
-        <p class="muted">One focused lesson with feedback can save you weeks of guessing and repeated mistakes.</p>
-        <a class="btn btn-primary" href="/tutoring">View pricing →</a>
-      </div>
-
-      <div class="card">
-        <h3>CELPIP course</h3>
-        <p class="muted">Start now with a guided plan, practical templates, and skill-by-skill practice.</p>
-        <a class="btn" href="/celpip">Go to course page →</a>
       </div>
     </div>
   </section>
+
+  <section class="section-sm">
+    <div class="surface funnel-section">
+      <h2 style="margin-top: 0;">Search all free lessons</h2>
+      <p class="muted funnel-section__intro">
+        Use keywords, category, or exam filters to find the exact lesson faster.
+      </p>
+
+      <div class="lessons-hub-search__controls">
+        <input
+          id="all-lessons-search"
+          type="search"
+          placeholder="Search by keyword (for example: conditionals, task 2, fluency)"
+          autocomplete="off"
+          class="lessons-hub-search__input"
+        />
+        <select id="all-lessons-category" class="lessons-hub-search__select">
+          <option value="all">All categories</option>
+          {categoryCards.map((card) => (
+            <option value={card.category}>{card.title}</option>
+          ))}
+        </select>
+        <select id="all-lessons-exam" class="lessons-hub-search__select">
+          <option value="all">IELTS + CELPIP</option>
+          <option value="IELTS">IELTS only</option>
+          <option value="CELPIP">CELPIP only</option>
+        </select>
+        <button id="all-lessons-clear" class="btn" type="button">Clear</button>
+      </div>
+
+      <p id="all-lessons-summary" class="muted lessons-hub-search__summary">
+        Showing {defaultVisibleLessons} of {totalLessons} lessons.
+      </p>
+
+      <div
+        id="all-lessons-grid"
+        class="grid grid-2"
+        style="margin-top: var(--s-3);"
+        data-default-visible={defaultVisibleLessons}
+      >
+        {searchableLessons.map((lesson, index) => {
+          const searchableText = [
+            lesson.slug,
+            getPublicLessonTitle(lesson.data.title, lesson.data.level),
+            lesson.data.description ?? "",
+            lesson.data.excerpt,
+            lesson.data.category,
+            lesson.data.level,
+            lesson.data.test ?? "",
+            lesson.data.exam.join(" "),
+            lesson.data.tags.join(" "),
+          ]
+            .join(" ")
+            .toLowerCase();
+
+          const lessonExams = (lesson.data.exam ?? []).map((value) => String(value).toUpperCase()).join(",");
+          return (
+            <a
+              class="card all-lessons-item"
+              href={`/lessons/${lesson.data.category}/${lesson.slug}/`}
+              data-search={searchableText}
+              data-category={lesson.data.category}
+              data-exams={lessonExams}
+              data-index={index}
+              style={`display: ${index < defaultVisibleLessons ? "block" : "none"};`}
+            >
+              <div class="cluster" style="justify-content: space-between;">
+                <span class="pill">{getLessonTier(lesson.data.level)} | {lesson.data.exam.join(" & ")}</span>
+                <span class="pill">{lesson.data.category}</span>
+              </div>
+              <h3 style="margin-top: var(--s-3);">
+                {getPublicLessonTitle(lesson.data.title, lesson.data.level)}
+              </h3>
+              <p class="muted" style="margin-bottom: 0;">{lesson.data.excerpt}</p>
+            </a>
+          );
+        })}
+      </div>
+
+      <div id="all-lessons-empty" class="surface lessons-hub-search__empty" style="display: none;">
+        <p class="muted" style="margin: 0;">
+          No lessons match this search yet. Try a different keyword or broader filter.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface funnel-section">
+      <h2 style="margin-top: 0;">Choose a free lesson category</h2>
+      <p class="muted funnel-section__intro">
+        Every category page includes search plus full lesson lists.
+      </p>
+
+      <div class="offer-grid" style="margin-top: var(--s-3);">
+        {categoryCards.map((card) => (
+          <a class="offer-card" href={`/lessons/${card.category}`} style="text-decoration: none; color: inherit;">
+            <p class="offer-card__label">{categoryCounts[card.category]} lessons</p>
+            <h3 class="offer-card__name">{card.title}</h3>
+            <p class="offer-card__line">{card.description}</p>
+            <span class="btn btn-ghost">Open {card.title} Lessons</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface funnel-section">
+      <h2 style="margin-top: 0;">Quick links to key pages</h2>
+      <div class="grid grid-4" style="gap: var(--s-4); margin-top: var(--s-3);">
+        <a class="card" href="/ai-feedback" style="text-decoration: none; color: inherit;">
+          <h3>AI Feedback</h3>
+          <p class="muted">CELPIP writing support with guided feedback workflow.</p>
+        </a>
+        <a class="card" href="/essay-correction" style="text-decoration: none; color: inherit;">
+          <h3>Essay Correction</h3>
+          <p class="muted">Submit writing and get detailed correction support.</p>
+        </a>
+        <a class="card" href="/tutoring" style="text-decoration: none; color: inherit;">
+          <h3>Private Tutoring</h3>
+          <p class="muted">Book one-to-one lessons for specific score problems.</p>
+        </a>
+        <a class="card" href="/webinar" style="text-decoration: none; color: inherit;">
+          <h3>Weekly Webinar</h3>
+          <p class="muted">Live group support for ongoing strategy and Q and A.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface funnel-section">
+      <h2 style="margin-top: 0;">Need exam-specific paths?</h2>
+      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-3);">
+        <a class="card" href="/ielts" style="text-decoration: none; color: inherit;">
+          <h3>IELTS hub</h3>
+          <p class="muted">Open IELTS Listening, Reading, Writing, and Speaking paths.</p>
+          <span class="btn btn-ghost">Open IELTS Hub</span>
+        </a>
+        <a class="card" href="/celpip" style="text-decoration: none; color: inherit;">
+          <h3>CELPIP hub</h3>
+          <p class="muted">Open CELPIP Listening, Reading, Writing, and Speaking paths.</p>
+          <span class="btn btn-ghost">Open CELPIP Hub</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    (() => {
+      const queryInput = document.getElementById("all-lessons-search");
+      const categorySelect = document.getElementById("all-lessons-category");
+      const examSelect = document.getElementById("all-lessons-exam");
+      const clearButton = document.getElementById("all-lessons-clear");
+      const summary = document.getElementById("all-lessons-summary");
+      const emptyState = document.getElementById("all-lessons-empty");
+      const grid = document.getElementById("all-lessons-grid");
+
+      if (
+        !(queryInput instanceof HTMLInputElement) ||
+        !(categorySelect instanceof HTMLSelectElement) ||
+        !(examSelect instanceof HTMLSelectElement) ||
+        !(summary instanceof HTMLElement) ||
+        !(emptyState instanceof HTMLElement) ||
+        !(grid instanceof HTMLElement)
+      ) {
+        return;
+      }
+
+      const cards = Array.from(document.querySelectorAll(".all-lessons-item"));
+      if (cards.length === 0) return;
+
+      const totalLessons = cards.length;
+      const defaultVisible = Number(grid.dataset.defaultVisible || "24");
+
+      const applyFilter = () => {
+        const query = queryInput.value.trim().toLowerCase();
+        const category = categorySelect.value;
+        const exam = examSelect.value;
+        const queryTerms = query.split(/\s+/).filter(Boolean);
+        const hasActiveFilter = queryTerms.length > 0 || category !== "all" || exam !== "all";
+
+        let visibleCount = 0;
+
+        cards.forEach((card) => {
+          if (!(card instanceof HTMLElement)) return;
+
+          const searchableText = (card.getAttribute("data-search") || "").toLowerCase();
+          const cardCategory = card.getAttribute("data-category") || "";
+          const cardExams = (card.getAttribute("data-exams") || "")
+            .split(",")
+            .map((value) => value.trim().toUpperCase())
+            .filter(Boolean);
+          const cardIndex = Number(card.getAttribute("data-index") || "0");
+
+          const queryMatch = queryTerms.every((term) => searchableText.includes(term));
+          const categoryMatch = category === "all" || cardCategory === category;
+          const examMatch = exam === "all" || cardExams.includes(exam);
+          const matches = queryMatch && categoryMatch && examMatch;
+
+          const visible = hasActiveFilter ? matches : matches && cardIndex < defaultVisible;
+          card.style.display = visible ? "block" : "none";
+          if (visible) visibleCount += 1;
+        });
+
+        if (hasActiveFilter) {
+          summary.textContent = `Showing ${visibleCount} of ${totalLessons} lessons.`;
+        } else {
+          summary.textContent = `Showing ${Math.min(defaultVisible, totalLessons)} of ${totalLessons} lessons.`;
+        }
+
+        emptyState.style.display = visibleCount === 0 ? "block" : "none";
+      };
+
+      queryInput.addEventListener("input", applyFilter);
+      categorySelect.addEventListener("change", applyFilter);
+      examSelect.addEventListener("change", applyFilter);
+
+      if (clearButton instanceof HTMLButtonElement) {
+        clearButton.addEventListener("click", () => {
+          queryInput.value = "";
+          categorySelect.value = "all";
+          examSelect.value = "all";
+          applyFilter();
+          queryInput.focus();
+        });
+      }
+    })();
+  </script>
 </Layout>

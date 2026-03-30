@@ -1,83 +1,72 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import ServiceTrustCard from "../../components/ServiceTrustCard.astro";
 
 const PRIVATE_CALENDLY_URL = "https://calendly.com/ieltscorner/60min";
 ---
 
 <Layout
   title="Private Classes | IELTS and CELPIP"
-  description="Book one-on-one IELTS and CELPIP classes directly from the embedded Calendly calendar."
+  description="Book one-on-one IELTS and CELPIP classes directly from the booking calendar."
 >
   <section class="section">
     <div class="hero" style={`--hero-bg: url('/heroes/tutoring.png');`}>
       <div class="hero-content">
         <span class="pill">Private classes | Google Meet</span>
-        <h1>Book Your Private Class</h1>
+        <h1>Book your private class</h1>
         <p class="muted" style="max-width: 62ch;">
-          Work directly with Kara Abdolmaleki. You can also read more about the instructor,
-          exam background, and classroom experience on the <a href="/about">About page</a>.
+          One-to-one support focused on your exact score target, with direct correction and
+          a clear plan for what to practice next.
         </p>
 
         <div class="cluster">
-          <a class="btn btn-primary" href="#book-private-class">Open booking calendar</a>
-          <a class="btn btn-ghost" href={PRIVATE_CALENDLY_URL} target="_blank" rel="noreferrer">
-            Open in new tab
-          </a>
+          <a class="btn btn-primary" href="#book-private-class">Book Private Class</a>
         </div>
       </div>
     </div>
 
-    <div style="height: var(--s-7);"></div>
+    <div style="height: var(--s-6);"></div>
 
-    <div class="grid" style="align-items: start; gap: var(--s-5);">
-      <article class="card">
-        <h2 style="margin-top: 0;">Why private classes work</h2>
-        <div class="checklist">
-          <div class="check">
-            <div class="icon">1</div>
-            <div>
-              <strong>Personalized strategy</strong>
-              <span>Focused on your exact score target and weak points.</span>
-            </div>
-          </div>
-          <div class="check">
-            <div class="icon">2</div>
-            <div>
-              <strong>Direct corrections</strong>
-              <span>Clear feedback on speaking, writing, grammar, and vocabulary.</span>
-            </div>
-          </div>
-          <div class="check">
-            <div class="icon">3</div>
-            <div>
-              <strong>Simple action plan</strong>
-              <span>Know exactly what to practice before your next session.</span>
-            </div>
+    <section class="surface funnel-section">
+      <h2 style="margin-top: 0;">What you get in a private class</h2>
+      <div class="checklist">
+        <div class="check">
+          <div class="icon">1</div>
+          <div>
+            <strong>Focused diagnosis</strong>
+            <span>Find the exact errors that are blocking your next score jump.</span>
           </div>
         </div>
-      </article>
-    </div>
-
-    <div style="height: var(--s-7);"></div>
-
-    <div class="surface" style="padding: var(--s-5); border: 1px solid rgba(23, 54, 86, 0.12); background: linear-gradient(145deg, #fffaf2 0%, #f8fbff 100%);">
-      <h2 style="margin-top: 0;">Meet your instructor</h2>
-      <p class="muted" style="max-width: 68ch;">
-        If you like to know who you will be studying with, the About page shows Kara Abdolmaleki's
-        background, exam results, and teaching qualifications.
-      </p>
-      <div class="cluster">
-        <a class="btn btn-primary" href="/about">About Kara</a>
-        <a class="btn" href="/about#evidence-and-qualifications">See qualifications</a>
+        <div class="check">
+          <div class="icon">2</div>
+          <div>
+            <strong>Live correction</strong>
+            <span>Fix speaking and writing mistakes in real time during class.</span>
+          </div>
+        </div>
+        <div class="check">
+          <div class="icon">3</div>
+          <div>
+            <strong>Clear follow-up plan</strong>
+            <span>Leave class knowing exactly what to practice before your test.</span>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div style="height: var(--s-7);"></div>
+    <div style="height: var(--s-6);"></div>
 
-    <div id="book-private-class" class="surface calendly-wrap">
-      <h2 style="margin-top: 0;">Private Class Booking Calendar</h2>
+    <ServiceTrustCard
+      heading="Know your instructor before booking"
+      intro="If you are paying for one-to-one support, you should see the teaching background first. The About page shows score evidence, TESL certification, and CELPIP instructor training."
+    />
+
+    <div style="height: var(--s-6);"></div>
+
+    <section id="book-private-class" class="surface calendly-wrap">
+      <h2 style="margin-top: 0;">Complete your booking</h2>
       <p class="muted" style="margin-top: 0;">
-        Select a date and time below to reserve your private IELTS or CELPIP session.
+        Select your date and time below.
       </p>
 
       <div
@@ -85,7 +74,7 @@ const PRIVATE_CALENDLY_URL = "https://calendly.com/ieltscorner/60min";
         data-url={PRIVATE_CALENDLY_URL}
         style="min-width:320px;height:700px;"
       ></div>
-    </div>
+    </section>
   </section>
 
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />

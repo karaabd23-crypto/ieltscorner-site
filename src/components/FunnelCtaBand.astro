@@ -1,0 +1,28 @@
+---
+interface CtaLink {
+  href: string;
+  label: string;
+}
+
+interface Props {
+  id?: string;
+  title: string;
+  text: string;
+  primary: CtaLink;
+  secondary?: CtaLink;
+}
+
+const { id = "next-step", title, text, primary, secondary } = Astro.props as Props;
+---
+
+<section class="section-sm" id={id}>
+  <div class="surface funnel-final-cta">
+    <h2 style="margin-top: 0;">{title}</h2>
+    <p class="muted">{text}</p>
+
+    <div class="funnel-final-cta__actions">
+      <a class="btn btn-primary" href={primary.href}>{primary.label}</a>
+      {secondary && <a class="btn" href={secondary.href}>{secondary.label}</a>}
+    </div>
+  </div>
+</section>

@@ -1,388 +1,101 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Testimonials from "../components/Testimonials.astro";
-import Newsletter from "../components/Newsletter.astro";
-import { buildFAQSchema } from "../lib/seo";
 
 const homeKeywords =
-  "IELTS preparation, CELPIP preparation, IELTS lessons, CELPIP lessons, IELTS writing, IELTS speaking, CELPIP writing, CELPIP speaking, IELTS tutor, CELPIP tutor, IELTS writing task 2, CELPIP writing examples, English test preparation";
-
-const homeFaqs = [
-  {
-    question: "Is IELTS Corner for IELTS or CELPIP?",
-    answer: "IELTS Corner supports both IELTS and CELPIP with free lessons, test-specific skill hubs, tutoring, and writing support.",
-  },
-  {
-    question: "Where should I start for IELTS preparation?",
-    answer: "Start with the IELTS overview page, then move into the skill you need most help with, such as IELTS writing, IELTS speaking, IELTS reading, or IELTS listening.",
-  },
-  {
-    question: "Where should I start for CELPIP preparation?",
-    answer: "Start with the CELPIP overview page, then choose the relevant skill hub for writing, speaking, reading, or listening.",
-  },
-  {
-    question: "Do you offer feedback for writing?",
-    answer: "Yes. IELTS Corner offers essay correction, private tutoring, and the CELPIP writing lab for students who want deeper review.",
-  },
-];
-
-const homeStructuredData = [buildFAQSchema(homeFaqs)];
+  "IELTS preparation, CELPIP preparation, IELTS lessons, CELPIP lessons, IELTS tutor, CELPIP tutor, IELTS writing feedback, CELPIP writing feedback";
 ---
 
 <Layout
-  title="IELTS Preparation and CELPIP Preparation | Free Lessons and Tutoring"
-  description="IELTS preparation and CELPIP preparation with free lessons, writing help, speaking strategies, and tutoring. Study IELTS and CELPIP with clear, skill-based guidance."
+  title="IELTS and CELPIP Preparation | Choose Your Path"
+  description="Pick IELTS or CELPIP, choose the support you need, and follow one clear next step."
   keywords={homeKeywords}
   type="website"
-  structuredData={homeStructuredData}
 >
-  <section class="section" style="padding-top: var(--s-6);">
+  <section class="section home-funnel" style="padding-top: var(--s-6);">
     <div class="hero" style={`--hero-bg: url('/heroes/home.png');`}>
       <div class="hero-content">
-        <span class="pill">Band 7+ | IELTS and CELPIP</span>
-        <h1>Learn the English you need for a higher test score.</h1>
-        <p class="muted" style="max-width: 56ch;">
-          Start with free lessons and skill guides. Add tutoring only after you know exactly which score problem you need to fix.
+        <span class="pill">IELTS + CELPIP prep</span>
+        <h1>Pick your exam. Pick your support. Start now.</h1>
+        <p class="muted" style="max-width: 58ch;">
+          Use one clear path: choose IELTS or CELPIP first, then choose the support option that fits your goal.
         </p>
 
         <div class="cluster" style="margin-top: var(--s-2);">
-          <a class="btn btn-primary" href="/lessons">Start free lessons</a>
-          <a class="btn btn-ghost" href="/ielts">Explore skill hubs</a>
+          <a class="btn btn-primary" href="/celpip">Go to CELPIP Hub</a>
+          <a class="btn btn-ghost" href="/ielts">Go to IELTS Hub</a>
         </div>
       </div>
     </div>
 
-    <div style="height: var(--s-8);"></div>
+    <section class="surface home-step">
+      <p class="home-step__label">Step 1</p>
+      <h2>Choose your exam</h2>
+      <p class="muted home-step__intro">Both hubs include all four skills: listening, reading, writing, and speaking.</p>
 
-    <div class="surface feature" style="border: 2px solid color-mix(in srgb, var(--band) 30%, transparent);">
-      <div class="feature-grid">
-        <div class="stack">
-          <span class="pill">Choose your starting point</span>
-          <h2>Start with the skill that is holding your score down.</h2>
-          <p class="muted" style="max-width: 62ch;">
-            Most students improve faster when they focus on one weak area at a time. These are the four pages many students start with first.
-          </p>
-        </div>
-
-        <div class="grid grid-2" style="gap: var(--s-3);">
-          <a class="card" href="/ielts/writing" style="text-decoration:none;">
-            <h3>IELTS Writing</h3>
-            <p class="muted">Task 1, Task 2, Band 7+ structure, grammar control, and score-raising habits.</p>
-          </a>
-          <a class="card" href="/ielts/speaking" style="text-decoration:none;">
-            <h3>IELTS Speaking</h3>
-            <p class="muted">Part 1, 2, and 3 strategies, natural answers, and fluency practice.</p>
-          </a>
-          <a class="card" href="/celpip/writing" style="text-decoration:none;">
-            <h3>CELPIP Writing</h3>
-            <p class="muted">Email and survey response strategy, timed practice, and writing score reports.</p>
-          </a>
-          <a class="card" href="/celpip/speaking" style="text-decoration:none;">
-            <h3>CELPIP Speaking</h3>
-            <p class="muted">Task-by-task speaking support, structure templates, and coaching options.</p>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div style="height: var(--s-8);"></div>
-
-    <div class="surface feature" style="border: 2px solid var(--accent);">
-      <div class="feature-grid">
-        <div class="stack">
-          <span class="pill">Popular pages</span>
-          <h2>Go directly to CELPIP Writing and Speaking.</h2>
-          <p class="muted" style="max-width: 60ch;">
-            Each hub starts with free lessons and examples, then gives you optional paid support if you want deeper feedback.
-          </p>
-        </div>
-
-        <div class="grid grid-2" style="gap: var(--s-3);">
-          <a class="hub-link-card hub-link-card--writing" href="/celpip/writing" aria-label="Open CELPIP Writing Hub">
-            <div class="card hub-link-card__inner">
-              <h3 style="margin-top: 0;">Writing Hub</h3>
-              <p class="muted" style="margin-bottom: 0;">Get a writing score report, then book a class for human feedback, lessons, and coaching.</p>
-              <span class="hub-link-card__cta">Open writing hub</span>
-            </div>
-          </a>
-          <a class="hub-link-card hub-link-card--speaking" href="/celpip/speaking" aria-label="Open CELPIP Speaking Hub">
-            <div class="card hub-link-card__inner">
-              <h3 style="margin-top: 0;">Speaking Hub</h3>
-              <p class="muted" style="margin-bottom: 0;">Task strategies, speaking lessons, tutoring, and webinar support.</p>
-              <span class="hub-link-card__cta">Open speaking hub</span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div style="height: var(--s-8);"></div>
-
-    <div class="grid grid-4">
-      <article class="card">
-        <h3>Grammar</h3>
-        <p>Learn the grammar structures you need for Band 7+ with clear examples.</p>
-        <a class="btn" href="/lessons/grammar">See lessons</a>
-      </article>
-
-      <article class="card">
-        <h3>Vocabulary</h3>
-        <p>Learn the important words and phrases that will help you in the test.</p>
-        <a class="btn" href="/lessons/vocabulary">See lessons</a>
-      </article>
-
-      <article class="card">
-        <h3>Writing</h3>
-        <p>Learn how to write better essays and answers that get higher scores.</p>
-        <a class="btn" href="/lessons/writing">See lessons</a>
-      </article>
-
-      <article class="card">
-        <h3>Speaking</h3>
-        <p>Learn how to give clear, natural answers that sound confident.</p>
-        <a class="btn" href="/lessons/speaking">See lessons</a>
-      </article>
-    </div>
-
-    <div style="height: var(--s-8);"></div>
-
-    <div class="surface" style="padding: var(--s-6);">
-      <h2 style="margin-top: 0;">Popular IELTS and CELPIP resources</h2>
-      <div class="grid grid-2" style="margin-top: var(--s-4); gap: var(--s-3);">
-        <a class="card" href="/blog/band-7-writing-strategy" style="text-decoration:none;">
-          <h3>How to get Band 7 in IELTS Writing</h3>
-          <p class="muted">A practical guide to structure, timing, and the habits that move many students from Band 6 to Band 7.</p>
+      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-3);">
+        <a class="card home-option-card" href="/celpip" aria-label="Go to CELPIP Hub">
+          <p class="home-option-card__kicker">CELPIP</p>
+          <h3>CELPIP Hub</h3>
+          <p class="muted">Follow CELPIP skill paths and go directly to writing feedback when ready.</p>
+          <span class="home-option-card__cta">Go to CELPIP Hub</span>
         </a>
-        <a class="card" href="/celpip/speaking/task-2-personal-experience" style="text-decoration:none;">
-          <h3>CELPIP Speaking Task 2 guide</h3>
-          <p class="muted">A clear guide to one of the tasks students often find difficult under time pressure.</p>
-        </a>
-        <a class="card" href="/celpip/writing/samples" style="text-decoration:none;">
-          <h3>CELPIP sample essays</h3>
-          <p class="muted">Sample responses with score-focused notes you can study before you write your own answer.</p>
-        </a>
-        <a class="card" href="/faq" style="text-decoration:none;">
-          <h3>FAQ</h3>
-          <p class="muted">Common questions about lessons, tutoring, writing help, and pricing.</p>
+
+        <a class="card home-option-card" href="/ielts" aria-label="Go to IELTS Hub">
+          <p class="home-option-card__kicker">IELTS</p>
+          <h3>IELTS Hub</h3>
+          <p class="muted">Follow IELTS skill paths and move to writing correction or private support.</p>
+          <span class="home-option-card__cta">Go to IELTS Hub</span>
         </a>
       </div>
-    </div>
+    </section>
 
-    <div style="height: var(--s-8);"></div>
+    <section class="surface home-step">
+      <p class="home-step__label">Step 2</p>
+      <h2>Paid support options</h2>
+      <p class="muted home-step__intro">Choose the service that matches what you need right now.</p>
 
-    <div class="surface feature" style="border: 3px solid var(--accent); background: linear-gradient(135deg, rgba(217, 72, 72, 0.08) 0%, rgba(217, 72, 72, 0.04) 100%);">
-      <div class="feature-grid">
-        <div class="stack">
-          <div style="display: inline-block; background: var(--accent); color: white; padding: var(--s-1) var(--s-2); border-radius: 999px; width: fit-content; font-size: 0.85rem; font-weight: 700; margin-bottom: var(--s-2);">
-            LIVE EVERY SATURDAY
-          </div>
-          <h2 style="margin-top: 0;">CELPIP Weekly Webinars</h2>
-          <p style="font-size: 1.1rem;">60-minute live sessions. Real strategies. Interactive Q and A.</p>
+      <div class="grid grid-4" style="gap: var(--s-4); margin-top: var(--s-3);">
+        <a class="card home-option-card" href="/ai-feedback" aria-label="Start AI Feedback">
+          <p class="home-option-card__kicker">Paid service</p>
+          <h3>AI Feedback</h3>
+          <p class="muted">For CELPIP writing practice with fast score-based corrections.</p>
+          <span class="home-option-card__cta">Start AI Feedback</span>
+        </a>
 
-          <div class="checklist" style="margin: var(--s-3) 0;">
-            <div class="check">
-              <div class="icon">1</div>
-              <div>
-                <strong>45 minutes of focused teaching</strong>
-                <span>One skill per session. No filler.</span>
-              </div>
-            </div>
+        <a class="card home-option-card" href="/essay-correction#start-checkout" aria-label="Submit Essay for Feedback">
+          <p class="home-option-card__kicker">Paid service</p>
+          <h3>Essay Correction</h3>
+          <p class="muted">For IELTS or CELPIP writing when you want detailed human correction.</p>
+          <span class="home-option-card__cta">Submit Essay for Feedback</span>
+        </a>
 
-            <div class="check">
-              <div class="icon">2</div>
-              <div>
-                <strong>15 minutes of live questions</strong>
-                <span>Ask your specific questions.</span>
-              </div>
-            </div>
+        <a class="card home-option-card" href="/tutoring#book-private-class" aria-label="Book Private Class">
+          <p class="home-option-card__kicker">Paid service</p>
+          <h3>Private Class</h3>
+          <p class="muted">For one-to-one support in listening, reading, writing, or speaking.</p>
+          <span class="home-option-card__cta">Book Private Class</span>
+        </a>
 
-            <div class="check">
-              <div class="icon">3</div>
-              <div>
-                <strong>Only $12 per session</strong>
-                <span>Or attend through the free livestream link.</span>
-              </div>
-            </div>
-          </div>
-
-          <p style="margin-top: var(--s-3); margin-bottom: 0;">
-            <a href="/webinar" style="color: var(--accent); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-              Learn more and register
-            </a>
-          </p>
-        </div>
-
-        <div style="display: flex; align-items: center; justify-content: center; padding: var(--s-5); background: rgba(217, 72, 72, 0.12); border-radius: 16px;">
-          <div style="text-align: center;">
-            <p style="margin: 0; font-weight: 600; font-size: 1.1rem;">Weekly CELPIP<br/>Webinar</p>
-            <p style="margin: var(--s-1) 0 0; color: var(--text-muted); font-size: 0.95rem;">Saturday 6:00 PM PST</p>
-          </div>
-        </div>
+        <a class="card home-option-card" href="/webinar#register-webinar" aria-label="Register for Webinar">
+          <p class="home-option-card__kicker">Paid service</p>
+          <h3>Weekly Webinar</h3>
+          <p class="muted">For live group guidance with focused strategy and Q and A.</p>
+          <span class="home-option-card__cta">Register for Webinar</span>
+        </a>
       </div>
-    </div>
+    </section>
 
-    <div style="height: var(--s-8);"></div>
+    <section class="surface home-step">
+      <p class="home-step__label">Step 3</p>
+      <h2>Free lessons</h2>
+      <p class="muted home-step__intro">If you want to study first, start with the free lesson library.</p>
 
-    <div class="surface feature">
-      <div class="feature-grid">
-        <div class="stack">
-          <h2>Made for students who want better scores.</h2>
-          <p>Most students stop improving because they do not learn the right structures in a clear way.</p>
-
-          <div class="cluster" style="margin-top: var(--s-2);">
-            <a class="btn btn-primary" href="/celpip">CELPIP course</a>
-            <a class="btn" href="/ielts">IELTS guide</a>
-          </div>
-        </div>
-
-        <div>
-          <h3 style="margin: 0 0 var(--s-4);">What you will get</h3>
-
-          <div class="checklist">
-            <div class="check">
-              <div class="icon">1</div>
-              <div>
-                <strong>Easy to understand lessons</strong>
-                <span>Short explanations and clear examples.</span>
-              </div>
-            </div>
-
-            <div class="check">
-              <div class="icon">2</div>
-              <div>
-                <strong>Practice for real tests</strong>
-                <span>Study what actually helps your score.</span>
-              </div>
-            </div>
-
-            <div class="check">
-              <div class="icon">3</div>
-              <div>
-                <strong>Simple patterns to use</strong>
-                <span>Useful models you can apply again and again.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div style="height: var(--s-8);"></div>
-
-    <div>
-      <h2>Student results</h2>
-      <p style="color: var(--text-muted); margin-bottom: var(--s-4);">Real students, real scores.</p>
-      <Testimonials columns={3} />
-      <div style="text-align: center; margin-top: var(--s-4);">
-        <a href="/success-stories" class="btn btn-ghost">See more success stories</a>
-      </div>
-    </div>
-
-    <div style="height: var(--s-8);"></div>
-
-    <Newsletter />
-
-    <div style="height: var(--s-8);"></div>
-
-    <div class="surface" style="padding: var(--s-6);">
-      <h2 style="margin-top: 0;">FAQ</h2>
-      <div class="stack" style="gap: var(--s-3); margin-top: var(--s-4);">
-        {homeFaqs.map((item) => (
-          <details class="card">
-            <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
-            <p class="muted" style="margin-bottom: 0; margin-top: var(--s-2);">{item.answer}</p>
-          </details>
-        ))}
-      </div>
-    </div>
-
-    <form
-      name="newsletter"
-      method="POST"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      hidden
-      aria-hidden="true"
-      style="display:none;"
-    >
-      <input type="hidden" name="form-name" value="newsletter" />
-      <input type="text" name="bot-field" />
-      <input type="email" name="email" />
-    </form>
-
-    <div style="height: var(--s-6);"></div>
+      <a class="card home-option-card home-option-card--free" href="/lessons" aria-label="Browse Free Lessons">
+        <p class="home-option-card__kicker">Free option</p>
+        <h3>Free Lessons Library</h3>
+        <p class="muted">Grammar, vocabulary, writing, speaking, listening, and reading lessons with search and filters.</p>
+        <span class="home-option-card__cta">Browse or Search Free Lessons</span>
+      </a>
+    </section>
   </section>
 </Layout>
-
-<style>
-  .hub-link-card {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    border-radius: var(--radius-sm);
-    transform: translateY(0);
-    transition: transform 220ms ease, box-shadow 220ms ease;
-    animation: hubFloat 4.5s ease-in-out infinite;
-  }
-
-  .hub-link-card__inner {
-    height: 100%;
-    border-left: 4px solid var(--accent);
-    transition: border-color 220ms ease, background 220ms ease;
-  }
-
-  .hub-link-card--speaking {
-    animation-delay: 0.35s;
-  }
-
-  .hub-link-card--speaking .hub-link-card__inner {
-    border-left-color: var(--band);
-  }
-
-  .hub-link-card__cta {
-    display: inline-block;
-    margin-top: var(--s-3);
-    font-weight: 700;
-    color: var(--accent);
-    transition: transform 220ms ease;
-  }
-
-  .hub-link-card:where(:hover, :focus-visible) {
-    transform: translateY(-6px) scale(1.01);
-    box-shadow: 0 12px 28px color-mix(in srgb, var(--accent) 24%, transparent);
-  }
-
-  .hub-link-card:where(:hover, :focus-visible) .hub-link-card__inner {
-    background: color-mix(in srgb, var(--surface) 86%, var(--accent-light) 14%);
-  }
-
-  .hub-link-card:where(:hover, :focus-visible) .hub-link-card__cta {
-    transform: translateX(5px);
-  }
-
-  .hub-link-card:focus-visible {
-    outline: 3px solid color-mix(in srgb, var(--accent) 55%, white 45%);
-    outline-offset: 2px;
-  }
-
-  @keyframes hubFloat {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-3px);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .hub-link-card {
-      animation: none;
-      transition: none;
-    }
-
-    .hub-link-card__cta {
-      transition: none;
-    }
-  }
-</style>

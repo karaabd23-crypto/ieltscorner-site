@@ -1,10 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import {
-  ESSAY_CORRECTION_CHECKOUT_ENV_KEY,
   ESSAY_CORRECTION_CHECKOUT_IS_CONFIGURED,
   ESSAY_CORRECTION_STRIPE_PRODUCT_ID,
-  ESSAY_CORRECTION_STRIPE_SUCCESS_PATH,
   ESSAY_CORRECTION_SUBMIT_ACCESS_PARAM,
   ESSAY_CORRECTION_SUBMIT_ACCESS_VALUE,
   ESSAY_CORRECTION_SUBMIT_STORAGE_KEY,
@@ -96,11 +94,13 @@ import {
 
       {!ESSAY_CORRECTION_CHECKOUT_IS_CONFIGURED && (
         <section id="payment-link-pending" class="landing-section">
-          <h2>Checkout link pending</h2>
+          <h2>Checkout is temporarily unavailable</h2>
           <p class="muted" style="margin-bottom: 0;">
-            Add <code>{ESSAY_CORRECTION_CHECKOUT_ENV_KEY}</code> to activate the essay correction payment button. Stripe should return paid users to
-            <code>{ESSAY_CORRECTION_STRIPE_SUCCESS_PATH}</code>.
+            The payment link is being updated. Please check back shortly or contact us and we will send you the active checkout link.
           </p>
+          <div class="landing-hero__actions" style="margin-top: var(--s-3);">
+            <a class="btn" href="/contact">Contact Support</a>
+          </div>
         </section>
       )}
     </div>
@@ -235,7 +235,7 @@ import {
       <section class="landing-section">
         <h2>What happens next</h2>
         <ol style="margin: var(--s-2) 0 0; padding-left: 1.2rem;">
-          <li>Your submission is received through our secure Netlify form and queued for review.</li>
+          <li>Your submission is received through our secure form and queued for review.</li>
           <li>Your corrected essay and score-focused feedback are emailed to your submitted address.</li>
           <li>You revise using clear priorities instead of guessing what to fix.</li>
         </ol>

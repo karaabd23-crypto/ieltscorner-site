@@ -1,20 +1,7 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-import { getCollection } from "astro:content";
-import { getLessonTier, getPublicLessonTitle } from "../../../lib/lessonLevel";
+import SkillFreeLessons from "../../../components/SkillFreeLessons.astro";
 import { buildBreadcrumbSchema } from "../../../lib/seo";
-
-const relatedLessons = (
-  await getCollection(
-    "lessons",
-    ({ data }) =>
-      !data.draft &&
-      data.exam.includes("IELTS") &&
-      ["listening", "vocabulary", "grammar"].includes(data.category)
-  )
-)
-  .sort((a, b) => (a.data.date < b.data.date ? 1 : -1))
-  .slice(0, 8);
 
 const pageStructuredData = [
   buildBreadcrumbSchema(Astro.site, [
@@ -23,118 +10,49 @@ const pageStructuredData = [
     { name: "Listening", path: "/ielts/listening/" },
   ]),
 ];
-
-const pageKeywords = "IELTS listening, IELTS listening practice, IELTS listening tips, IELTS listening sections, Band 7 IELTS listening, IELTS note taking";
 ---
 
 <Layout
-  title="IELTS Listening Preparation | Sections, Traps and Note Taking"
-  description="IELTS listening preparation with section-by-section strategy, prediction, note-taking, trap awareness, and accuracy under time pressure."
-  keywords={pageKeywords}
+  title="IELTS Listening Help | Book Private Class"
+  description="Stuck in IELTS listening? Book one private class and get a clear plan to fix your score gaps."
+  keywords="IELTS listening help, IELTS listening coaching, IELTS private class"
   structuredData={pageStructuredData}
 >
   <section class="section">
-    <div class="hero" style={`--hero-bg: url('/heroes/listening.png');`}>
-      <div class="hero-content">
-        <span class="pill">IELTS Listening</span>
-        <h1>Predict early. Listen actively. Check carefully.</h1>
-        <p class="muted" style="max-width: 62ch;">
-          IELTS listening rewards habits more than luck. Students who preview well, track signposts,
-          and expect trap answers usually improve faster than students who only do more tests without changing technique.
+    <div class="hero funnel-hero" style={`--hero-bg: url('/heroes/listening.png');`}>
+      <div class="hero-content funnel-hero__content">
+        <span class="pill">IELTS listening support</span>
+        <h1>Stuck below Band 7 in IELTS Listening?</h1>
+        <p class="muted">
+          Get one-to-one guidance to fix the exact listening habits that keep your score low,
+          including prediction mistakes, trap answers, and answer-checking errors.
         </p>
-        <div class="cluster">
-          <a class="btn btn-primary" href="/ielts/listening">Browse listening lessons</a>
-          <a class="btn btn-ghost" href="/ielts">Back to IELTS</a>
+        <div class="funnel-hero__actions">
+          <a class="btn btn-primary" href="/tutoring#book-private-class">Book Private Class</a>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section-sm">
-    <div class="surface" style="padding: var(--s-5);">
-      <div class="cluster quick-nav">
-        <a class="btn" href="/ielts">IELTS Home</a>
-        <a class="btn btn-primary" href="/ielts/listening">Listening</a>
-        <a class="btn" href="/ielts/reading">Reading</a>
-        <a class="btn" href="/ielts/speaking">Speaking</a>
-        <a class="btn" href="/ielts/writing">Writing</a>
-        <a class="btn" href="/ielts">All IELTS lessons</a>
-      </div>
+    <div class="surface funnel-section">
+      <h2 style="margin-top: 0;">What this class helps you fix</h2>
+      <ul style="margin: 0; padding-left: 1.2rem;">
+        <li>Missing answers because you preview too late.</li>
+        <li>Losing marks to distractor and correction patterns.</li>
+        <li>Dropping easy points from spelling and transfer errors.</li>
+      </ul>
     </div>
   </section>
 
-  <section class="section-sm">
-    <div class="surface" style="padding: var(--s-6);">
-      <h2>Popular IELTS listening guides</h2>
-      <p class="muted" style="margin-top: 0; max-width: 70ch;">
-        Start with these two guides if you want clearer question-type strategy and a better understanding of common traps.
-      </p>
-      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-4);">
-        <a class="card" href="/blog/ielts-listening-question-types" style="display:block; text-decoration:none;">
-          <h3>IELTS Listening Question Types Guide</h3>
-          <p class="muted">Practical tactics for completion, matching, and multiple-choice questions.</p>
-        </a>
-        <a class="card" href="/blog/ielts-listening-common-traps" style="display:block; text-decoration:none;">
-          <h3>IELTS Listening Common Traps</h3>
-          <p class="muted">Distractor patterns, corrections, and answer-transfer mistakes to watch for.</p>
-        </a>
-      </div>
-    </div>
-  </section>
+  <SkillFreeLessons exam="IELTS" skill="listening" />
 
   <section class="section-sm">
-    <div class="surface" style="padding: var(--s-6);">
-      <h2>What usually lowers IELTS listening scores</h2>
-      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-4);">
-        <div class="card">
-          <h3>Late previewing</h3>
-          <p class="muted">Students hear the audio before they understand exactly what they are listening for.</p>
-        </div>
-        <div class="card">
-          <h3>Missing signposts</h3>
-          <p class="muted">Speakers often signal transitions, corrections, or changes of direction before the real answer appears.</p>
-        </div>
-        <div class="card">
-          <h3>Trap answers</h3>
-          <p class="muted">The audio may mention one answer, then correct it or replace it. Students need to expect that pattern.</p>
-        </div>
-        <div class="card">
-          <h3>Weak checking habits</h3>
-          <p class="muted">Spelling, plurals, dates, and number format still cost marks after you understood the audio.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="surface" style="padding: var(--s-6);">
-      <h2>Related IELTS listening lessons</h2>
-      <div class="grid grid-2" style="margin-top: var(--s-4);">
-        {relatedLessons.map((lesson) => (
-          <a class="card" href={`/lessons/${lesson.data.category}/${lesson.slug}/`} style="display:block; text-decoration:none;">
-            <div class="cluster" style="justify-content: space-between;">
-              <span class="pill">{lesson.data.category} | {getLessonTier(lesson.data.level)}</span>
-              <span class="pill">Open lesson</span>
-            </div>
-            <h3 style="margin-top: var(--s-3);">{getPublicLessonTitle(lesson.data.title, lesson.data.level)}</h3>
-            <p class="muted" style="margin-bottom: 0;">{lesson.data.excerpt}</p>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="grid grid-2">
-      <div class="card">
-        <h3>Next skill: Reading</h3>
-        <p class="muted">If your listening drops because you miss evidence, the reading hub trains the same proof-based mindset.</p>
-        <a class="btn btn-primary" href="/ielts/reading">Open IELTS reading</a>
-      </div>
-      <div class="card">
-        <h3>Need the full lesson archive?</h3>
-        <p class="muted">Use the listening archive for all published IELTS listening lessons and drills.</p>
-        <a class="btn" href="/ielts/listening">Listening archive</a>
+    <div class="surface funnel-final-cta">
+      <h2 style="margin-top: 0;">Your next step</h2>
+      <p>Book one focused private class and get a personal listening improvement plan.</p>
+      <div class="funnel-final-cta__actions">
+        <a class="btn btn-primary" href="/tutoring#book-private-class">Book Private Class</a>
       </div>
     </div>
   </section>

@@ -1,10 +1,11 @@
 ---
-import Layout from "../../../../layouts/Layout.astro";
+import Layout from "../layouts/Layout.astro";
+import ServiceTrustCard from "../components/ServiceTrustCard.astro";
 import {
   CELPIP_PROMPT_TOTAL,
   CELPIP_TASK_CONFIG,
   CELPIP_WRITING_PRICE_CAD,
-} from "../../../../lib/celpipWritingData.mjs";
+} from "../lib/celpipWritingData.mjs";
 
 const task1 = CELPIP_TASK_CONFIG.task1;
 const task2 = CELPIP_TASK_CONFIG.task2;
@@ -77,6 +78,13 @@ const writingFeedbackVideoEmbedUrl = "https://www.youtube.com/embed/k-2lGP720OU?
         <li>Review your score report and apply the fixes in your next attempt.</li>
       </ol>
     </div>
+  </section>
+
+  <section class="section-sm">
+    <ServiceTrustCard
+      heading="Know the teaching background behind this feedback"
+      intro="Before you subscribe, check the qualifications and score evidence used to design IELTS Corner feedback systems."
+    />
   </section>
 
   <section class="section-sm">

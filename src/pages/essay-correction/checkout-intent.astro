@@ -1,10 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import {
-  ESSAY_CORRECTION_CHECKOUT_ENV_KEY,
   ESSAY_CORRECTION_CHECKOUT_IS_CONFIGURED,
-  ESSAY_CORRECTION_STRIPE_SUCCESS_PATH,
-  ESSAY_CORRECTION_STRIPE_PRODUCT_ID,
   getEssayCorrectionCheckoutLinkProps,
 } from "../../lib/offers";
 
@@ -44,12 +41,13 @@ const checkoutLink = getEssayCorrectionCheckoutLinkProps();
 
       {!ESSAY_CORRECTION_CHECKOUT_IS_CONFIGURED && (
         <section id="payment-link-pending" class="landing-section">
-          <h2>Checkout link pending</h2>
+          <h2>Checkout is temporarily unavailable</h2>
           <p class="muted" style="margin-bottom: 0;">
-            The Stripe checkout URL for product <strong>{ESSAY_CORRECTION_STRIPE_PRODUCT_ID}</strong> is not set yet.
-            Add <code>{ESSAY_CORRECTION_CHECKOUT_ENV_KEY}</code> to activate checkout. Stripe should return paid users to
-            <code>{ESSAY_CORRECTION_STRIPE_SUCCESS_PATH}</code>.
+            The payment link is being updated. Please check back shortly or contact us and we will send you the active checkout link.
           </p>
+          <div class="landing-hero__actions" style="margin-top: var(--s-3);">
+            <a class="btn" href="/contact">Contact Support</a>
+          </div>
         </section>
       )}
 

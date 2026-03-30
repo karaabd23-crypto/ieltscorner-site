@@ -1,38 +1,7 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-import { getCollection } from "astro:content";
-import { getLessonTier, getPublicLessonTitle } from "../../../lib/lessonLevel";
-import { buildBreadcrumbSchema, buildFAQSchema } from "../../../lib/seo";
-
-const relatedLessons = (
-  await getCollection(
-    "lessons",
-    ({ data }) =>
-      !data.draft &&
-      data.exam.includes("IELTS") &&
-      ["writing", "grammar", "vocabulary"].includes(data.category)
-  )
-)
-  .sort((a, b) => (a.data.date < b.data.date ? 1 : -1))
-  .slice(0, 8);
-
-const pageFaqs = [
-  {
-    question: "How can I improve my IELTS writing score?",
-    answer:
-      "Improve your IELTS writing score by learning the task format, planning clearly, keeping one main idea per paragraph, and reviewing the grammar patterns that keep causing errors.",
-  },
-  {
-    question: "Does this page help with both Task 1 and Task 2?",
-    answer:
-      "Yes. This page gives you the main IELTS writing path for both tasks and then points you to more specific lessons and guides.",
-  },
-  {
-    question: "Do I need advanced vocabulary for Band 7?",
-    answer:
-      "Not always. Band 7 writing depends more on clear task response, strong paragraph control, and accurate grammar than on rare vocabulary.",
-  },
-];
+import SkillFreeLessons from "../../../components/SkillFreeLessons.astro";
+import { buildBreadcrumbSchema } from "../../../lib/seo";
 
 const pageStructuredData = [
   buildBreadcrumbSchema(Astro.site, [
@@ -40,290 +9,49 @@ const pageStructuredData = [
     { name: "IELTS", path: "/ielts/" },
     { name: "Writing", path: "/ielts/writing/" },
   ]),
-  buildFAQSchema(pageFaqs),
 ];
-
-const pageKeywords =
-  "IELTS writing, IELTS writing task 2, IELTS writing task 1, Band 7 IELTS writing, IELTS essay structure, IELTS writing tips, IELTS essay correction";
 ---
 
 <Layout
-  title="IELTS Writing Preparation | Task 1, Task 2 and Band 7 Strategy"
-  description="IELTS writing preparation for Task 1 and Task 2. Improve structure, task response, cohesion, grammar, and Band 7 writing control."
-  keywords={pageKeywords}
+  title="IELTS Writing | Get Score-Focused Feedback"
+  description="Improve IELTS writing with one focused path: submit your essay and get score-focused corrections."
+  keywords="IELTS writing, IELTS essay feedback, IELTS writing correction, Band 7 writing"
   structuredData={pageStructuredData}
 >
   <section class="section">
     <div class="hero" style={`--hero-bg: url('/heroes/writing.png');`}>
       <div class="hero-content">
         <span class="pill">IELTS writing</span>
-        <h1>Build the structure first. Then build the language.</h1>
+        <h1>Improve your IELTS writing with one clear next step</h1>
         <p class="muted" style="max-width: 62ch;">
-          IELTS writing scores stay low for predictable reasons: weak task response,
-          unclear paragraph logic, and grammar that breaks under pressure. This page helps
-          you fix those problems in the right order.
+          Stop guessing. Submit one essay and get detailed, score-focused corrections you
+          can apply in your next practice.
         </p>
         <div class="cluster">
-          <a
-            class="btn btn-primary"
-            href="/ielts/writing"
-            data-track-click="ielts-writing-hero-lessons"
-            data-track-page-type="hub"
-            data-track-offer="internal_navigation"
-            data-track-test="ielts"
-            data-track-skill="writing"
-            data-track-position="hero"
-          >
-            Start Band 7 Writing Lessons
-          </a>
-          <a
-            class="btn btn-ghost"
-            href="/essay-correction"
-            data-track-click="ielts-writing-hero-essay-correction"
-            data-track-page-type="hub"
-            data-track-offer="essay_correction"
-            data-track-test="ielts"
-            data-track-skill="writing"
-            data-track-position="hero"
-          >
-            Get Score-Focused Essay Feedback
-          </a>
+          <a class="btn btn-primary" href="/essay-correction#start-checkout">Submit Essay for Feedback</a>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section-sm">
-    <div class="surface" style="padding: var(--s-5);">
-      <div class="cluster quick-nav">
-        <a class="btn" href="/ielts">IELTS home</a>
-        <a class="btn" href="/ielts/listening">Listening</a>
-        <a class="btn" href="/ielts/reading">Reading</a>
-        <a class="btn" href="/ielts/speaking">Speaking</a>
-        <a class="btn btn-primary" href="/ielts/writing">Writing</a>
-        <a class="btn" href="/ielts">All IELTS lessons</a>
-      </div>
+    <div class="surface funnel-section">
+      <h2 style="margin-top: 0;">What this fixes</h2>
+      <ul style="margin: 0; padding-left: 1.2rem;">
+        <li>Weak task response and missing prompt coverage.</li>
+        <li>Unclear paragraph structure and weak support.</li>
+        <li>Grammar patterns that repeatedly lower your score.</li>
+      </ul>
     </div>
   </section>
 
-  <section class="section-sm">
-    <div class="surface feature">
-      <div class="feature-grid">
-        <div class="stack">
-          <h2>What strong IELTS writing usually looks like</h2>
-          <p class="muted" style="max-width: 62ch;">
-            Strong writing answers the exact task, keeps one clear idea per paragraph, and
-            uses grammar you can control. Fancy language helps only when it stays accurate.
-          </p>
-        </div>
-
-        <div class="grid grid-2" style="gap: var(--s-4);">
-          <div class="card">
-            <h3>Task response</h3>
-            <p class="muted">
-              Answer the real question. Do not force a memorized essay onto a topic that
-              only looks similar.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Paragraph control</h3>
-            <p class="muted">
-              One main idea per body paragraph. Explain it clearly, then support it with a
-              relevant example.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Cohesion</h3>
-            <p class="muted">
-              Linking words should show logic. They should not be used just to make the
-              writing look advanced.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Grammar accuracy</h3>
-            <p class="muted">
-              Band 7 writing needs variety, but accuracy still matters more than taking
-              unnecessary risks.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <SkillFreeLessons exam="IELTS" skill="writing" />
 
   <section class="section-sm">
-    <div class="surface" style="padding: var(--s-6);">
-      <h2 style="margin-top: 0;">IELTS writing at a glance</h2>
-      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-4);">
-        <div class="card">
-          <h3>Task 1</h3>
-          <p class="muted">
-            Academic candidates describe visual information. General Training candidates
-            write a letter. Both tasks need clear purpose and organization.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Task 2</h3>
-          <p class="muted">
-            This essay usually matters more for the final band. Students need a clear
-            position, useful support, and disciplined paragraphs.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Best use of time</h3>
-          <p class="muted">
-            Most students should give more time to Task 2, but planning and proofreading
-            should never disappear.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Highest-value habit</h3>
-          <p class="muted">
-            Write, review, correct, and rewrite. Improvement is much faster when you can
-            see exactly why a sentence or paragraph is weak.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="lesson-inline-cta lesson-inline-cta--mid">
-      <p class="lesson-inline-cta__kicker">Direct Writing Feedback</p>
-      <a
-        class="btn btn-primary lesson-inline-cta__button"
-        href="/essay-correction"
-        data-track-click="ielts-writing-mid-essay-correction"
-        data-track-page-type="hub"
-        data-track-offer="essay_correction"
-        data-track-test="ielts"
-        data-track-skill="writing"
-        data-track-position="mid"
-      >
-        Submit One IELTS Essay and See Exactly Why Your Score Is Stuck
-      </a>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="surface" style="padding: var(--s-6);">
-      <h2 style="margin-top: 0;">Start with one focused guide</h2>
-      <p class="muted" style="margin-top: 0; max-width: 70ch;">
-        These article guides are useful when you need help with one specific IELTS writing
-        task instead of the whole archive.
-      </p>
-      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-4);">
-        <a class="card" href="/blog/ielts-writing-task-2-structure" style="text-decoration:none;">
-          <h3>IELTS Writing Task 2 structure</h3>
-          <p class="muted">A clear essay format for position, paragraph flow, and timing.</p>
-        </a>
-        <a class="card" href="/blog/band-7-writing-strategy" style="text-decoration:none;">
-          <h3>How to get Band 7 in IELTS Writing</h3>
-          <p class="muted">A practical score guide for students stuck in the middle bands.</p>
-        </a>
-        <a class="card" href="/blog/ielts-writing-task-1-academic-guide" style="text-decoration:none;">
-          <h3>IELTS Task 1 Academic guide</h3>
-          <p class="muted">Charts, tables, maps, and process reports explained simply.</p>
-        </a>
-        <a class="card" href="/blog/ielts-writing-task-1-general-training-letter" style="text-decoration:none;">
-          <h3>IELTS Task 1 letter guide</h3>
-          <p class="muted">Tone control, bullet coverage, and a reliable letter structure.</p>
-        </a>
-        <a class="card" href="/blog/ielts-writing-task-2-opinion-essay" style="text-decoration:none;">
-          <h3>Opinion essay</h3>
-          <p class="muted">How to take a clear position and support it without repetition.</p>
-        </a>
-        <a class="card" href="/blog/ielts-writing-task-2-discussion-essay" style="text-decoration:none;">
-          <h3>Discussion essay</h3>
-          <p class="muted">How to explain both views and still make your own view clear.</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="surface" style="padding: var(--s-6);">
-      <h2 style="margin-top: 0;">Related lessons for writing improvement</h2>
-      <p class="muted" style="margin-top: 0; max-width: 70ch;">
-        These writing, grammar, and vocabulary lessons support the exact language choices
-        that affect your IELTS writing score.
-      </p>
-      <div class="grid grid-2" style="gap: var(--s-4);">
-        {relatedLessons.map((lesson) => (
-          <a
-            class="card"
-            href={`/lessons/${lesson.data.category}/${lesson.slug}/`}
-            style="display:block; text-decoration:none;"
-          >
-            <div class="cluster" style="justify-content: space-between;">
-              <span class="pill">{lesson.data.category} | {getLessonTier(lesson.data.level)}</span>
-              <span class="pill">Open lesson</span>
-            </div>
-            <h3 style="margin-top: var(--s-3);">
-              {getPublicLessonTitle(lesson.data.title, lesson.data.level)}
-            </h3>
-            <p class="muted" style="margin-bottom: 0;">{lesson.data.excerpt}</p>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="grid grid-2" style="gap: var(--s-4);">
-      <div class="card">
-        <h3>Need direct writing feedback?</h3>
-        <p class="muted">
-          Essay correction is usually the fastest way to stop repeating the same writing
-          mistakes.
-        </p>
-        <a
-          class="btn btn-primary"
-          href="/essay-correction"
-          data-track-click="ielts-writing-end-essay-correction"
-          data-track-page-type="hub"
-          data-track-offer="essay_correction"
-          data-track-test="ielts"
-          data-track-skill="writing"
-          data-track-position="end"
-        >
-          Get Detailed IELTS Essay Correction
-        </a>
-      </div>
-      <div class="card">
-        <h3>Want a wider IELTS study plan?</h3>
-        <p class="muted">
-          Go back to the main IELTS hub and choose the next skill once your writing plan is
-          clear.
-        </p>
-        <a
-          class="btn"
-          href="/ielts"
-          data-track-click="ielts-writing-end-back-hub"
-          data-track-page-type="hub"
-          data-track-offer="internal_navigation"
-          data-track-test="ielts"
-          data-track-skill="writing"
-          data-track-position="end"
-        >
-          Back to IELTS
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="surface" style="padding: var(--s-6);">
-      <h2 style="margin-top: 0;">IELTS writing FAQ</h2>
-      <div class="stack" style="gap: var(--s-3); margin-top: var(--s-4);">
-        {pageFaqs.map((item) => (
-          <details class="card">
-            <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
-            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">
-              {item.answer}
-            </p>
-          </details>
-        ))}
+    <div class="surface funnel-final-cta">
+      <h2 style="margin-top: 0;">Ready to improve your IELTS writing score?</h2>
+      <div class="funnel-final-cta__actions">
+        <a class="btn btn-primary" href="/essay-correction#start-checkout">Submit Essay for Feedback</a>
       </div>
     </div>
   </section>

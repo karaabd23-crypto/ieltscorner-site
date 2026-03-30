@@ -1,5 +1,6 @@
 export const ESSAY_CORRECTION_STRIPE_PRODUCT_ID = "prod_UD9bg6sefJIUBI";
 export const ESSAY_CORRECTION_CHECKOUT_ENV_KEY = "PUBLIC_ESSAY_CORRECTION_CHECKOUT_URL";
+export const ESSAY_CORRECTION_DEFAULT_CHECKOUT_URL = "https://buy.stripe.com/eVq5kC7WCfWkaCR0ZugMw02";
 export const ESSAY_CORRECTION_SUBMIT_PAGE_PATH = "/essay-correction/submit/";
 export const ESSAY_CORRECTION_SUBMITTED_PAGE_PATH = "/essay-correction/submitted/";
 export const ESSAY_CORRECTION_SUBMIT_ACCESS_PARAM = "paid";
@@ -7,7 +8,8 @@ export const ESSAY_CORRECTION_SUBMIT_ACCESS_VALUE = "true";
 export const ESSAY_CORRECTION_SUBMIT_STORAGE_KEY = "ieltscorner.essayCorrectionPaidAccess";
 
 export const ESSAY_CORRECTION_CHECKOUT_URL = String(
-  (import.meta.env as Record<string, string | undefined>)[ESSAY_CORRECTION_CHECKOUT_ENV_KEY] || ""
+  (import.meta.env as Record<string, string | undefined>)[ESSAY_CORRECTION_CHECKOUT_ENV_KEY] ||
+    ESSAY_CORRECTION_DEFAULT_CHECKOUT_URL
 ).trim();
 
 export const ESSAY_CORRECTION_CHECKOUT_IS_CONFIGURED = ESSAY_CORRECTION_CHECKOUT_URL.length > 0;

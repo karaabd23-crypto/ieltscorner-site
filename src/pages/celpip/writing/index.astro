@@ -1,21 +1,7 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-import { getCollection } from "astro:content";
-import { getLessonTier, getPublicLessonTitle } from "../../../lib/lessonLevel";
+import SkillFreeLessons from "../../../components/SkillFreeLessons.astro";
 import { buildBreadcrumbSchema } from "../../../lib/seo";
-import LeadMagnet from "../../../components/LeadMagnet.astro";
-
-const skillLessons = (
-  await getCollection(
-    "lessons",
-    ({ data }) =>
-      !data.draft &&
-      data.exam.includes("CELPIP") &&
-      ["writing", "grammar", "vocabulary"].includes(data.category)
-  )
-)
-  .sort((a, b) => (a.data.date < b.data.date ? 1 : -1))
-  .slice(0, 10);
 
 const pageStructuredData = [
   buildBreadcrumbSchema(Astro.site, [
@@ -27,309 +13,49 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="CELPIP Writing | Email and Survey Response Strategy"
-  description="CELPIP writing support for task response, organization, tone, and grammar. Study Task 1 email and Task 2 survey response with clear models and feedback."
-  keywords="CELPIP writing, CELPIP writing task 1 email, CELPIP writing task 2 survey response, CELPIP writing tips, CLB 9 CELPIP writing"
+  title="CELPIP Writing | Start AI Feedback"
+  description="Improve CELPIP writing faster with focused AI feedback and clear correction points."
+  keywords="CELPIP writing, CELPIP writing feedback, CLB 9 CELPIP writing"
   structuredData={pageStructuredData}
 >
   <section class="section">
-    <div class="hero" style={`--hero: #f2f1ef; --hero-bg: url('/heroes/writing.png');`}>
+    <div class="hero" style={`--hero-bg: url('/heroes/writing.png');`}>
       <div class="hero-content">
         <span class="pill">CELPIP writing</span>
-        <h1>Write clearly, cover the task, and stay in control.</h1>
+        <h1>Improve CELPIP writing with one clear next step</h1>
         <p class="muted" style="max-width: 62ch;">
-          CELPIP writing scores usually fall for three reasons: the response misses part of
-          the prompt, the tone is weak, or the ideas are not organized well. This page
-          helps you fix those problems in a simple order.
+          Start with AI feedback to see your score gaps quickly and fix the mistakes that
+          hold your writing score down.
         </p>
         <div class="cluster">
-          <a
-            class="btn btn-primary"
-            href="/celpip/writing/ai-feedback"
-            data-track-click="celpip-writing-hero-ai-feedback"
-            data-track-page-type="hub"
-            data-track-offer="ai_feedback"
-            data-track-test="celpip"
-            data-track-skill="writing"
-            data-track-position="hero"
-          >
-            Practice With Instant CELPIP Writing Analysis
-          </a>
-          <a
-            class="btn btn-ghost"
-            href="/essay-correction"
-            data-track-click="celpip-writing-hero-essay-correction"
-            data-track-page-type="hub"
-            data-track-offer="essay_correction"
-            data-track-test="celpip"
-            data-track-skill="writing"
-            data-track-position="hero"
-          >
-            Get Human Essay Correction
-          </a>
+          <a class="btn btn-primary" href="/ai-feedback">Go to AI Feedback</a>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section-sm">
-    <div class="surface" style="padding: var(--s-5);">
-      <div class="cluster quick-nav">
-        <a class="btn" href="/celpip">CELPIP home</a>
-        <a class="btn" href="/celpip/listening">Listening</a>
-        <a class="btn" href="/celpip/reading">Reading</a>
-        <a class="btn" href="/celpip/speaking">Speaking</a>
-        <a class="btn btn-primary" href="/celpip/writing">Writing</a>
-        <a class="btn" href="/celpip">All CELPIP lessons</a>
-      </div>
+    <div class="surface funnel-section">
+      <h2 style="margin-top: 0;">Why this path works</h2>
+      <ul style="margin: 0; padding-left: 1.2rem;">
+        <li>Practice timed Task 1 and Task 2 responses.</li>
+        <li>Get clear score-based feedback on your own writing.</li>
+        <li>Apply fixes immediately in your next attempt.</li>
+      </ul>
     </div>
   </section>
 
-  <!-- Section 1: Learn the structure (primary) -->
+  <SkillFreeLessons exam="CELPIP" skill="writing" />
+
   <section class="section-sm">
-    <div class="surface" style="padding: var(--s-6);">
-      <span class="pill">Start here</span>
-      <h2 style="margin-top: var(--s-2);">Learn the full strategy</h2>
-      <p class="muted" style="margin-top: 0; max-width: 68ch;">
-        These guides explain the two writing tasks in clear language and give you a
-        complete structure, tone rules, and prompt coverage strategy.
+    <div class="surface funnel-final-cta">
+      <h2 style="margin-top: 0;">Start your CELPIP writing feedback now</h2>
+      <div class="funnel-final-cta__actions">
+        <a class="btn btn-primary" href="/ai-feedback">Go to AI Feedback</a>
+      </div>
+      <p class="muted" style="margin: var(--s-2) 0 0;">
+        Need human correction instead? <a href="/essay-correction">Use essay correction</a>.
       </p>
-      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-4);">
-        <a class="card" href="/blog/celpip-writing-task-1-email" style="display:block; text-decoration:none; border: 2px solid var(--accent);">
-          <h3>CELPIP Writing Task 1 email guide</h3>
-          <p class="muted">Tone, structure, and complete prompt coverage for Task 1 emails.</p>
-        </a>
-        <a class="card" href="/blog/celpip-writing-task-2-survey-response" style="display:block; text-decoration:none; border: 2px solid var(--accent);">
-          <h3>CELPIP Writing Task 2 survey guide</h3>
-          <p class="muted">Clear position, useful support, and paragraph control for Task 2.</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <LeadMagnet />
-
-  <section class="section-sm">
-    <div class="lesson-inline-cta lesson-inline-cta--mid">
-      <p class="lesson-inline-cta__kicker">Direct Correction</p>
-      <a
-        class="btn btn-primary lesson-inline-cta__button"
-        href="/essay-correction"
-        data-track-click="celpip-writing-mid-essay-correction"
-        data-track-page-type="hub"
-        data-track-offer="essay_correction"
-        data-track-test="celpip"
-        data-track-skill="writing"
-        data-track-position="mid"
-      >
-        Get Your CELPIP Essay Corrected With Score-Focused Feedback
-      </a>
-    </div>
-  </section>
-
-  <!-- Section 2: Quick templates (secondary) -->
-  <section class="section-sm">
-    <div class="surface" style="padding: var(--s-6);">
-      <span class="pill">Quick reference</span>
-      <h2 style="margin-top: var(--s-2);">Paragraph templates</h2>
-      <p class="muted" style="margin-top: 0; max-width: 68ch;">
-        Already read the full guides? Use these reusable sentence frames and paragraph
-        patterns during timed practice.
-      </p>
-      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-4);">
-        <a class="card" href="/blog/celpip-writing-task-1-templates" style="display:block; text-decoration:none;">
-          <h3>Task 1 templates</h3>
-          <p class="muted">Reusable frameworks for complete, calm, well-organized emails.</p>
-        </a>
-        <a class="card" href="/blog/celpip-writing-task-2-templates" style="display:block; text-decoration:none;">
-          <h3>Task 2 templates</h3>
-          <p class="muted">Simple paragraph patterns for stronger survey responses.</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 3: Practice & feedback (conversion) -->
-  <section class="section-sm">
-    <div class="surface feature" style="border: 2px solid var(--accent); padding: var(--s-6);">
-      <span class="pill">Practice & feedback</span>
-      <h2 style="margin-top: var(--s-2);">Get feedback on your writing</h2>
-      <p class="muted" style="margin-top: 0; max-width: 68ch;">
-        After learning the strategy, use these tools to practise under timed conditions
-        and study high-scoring model responses.
-      </p>
-      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-4);">
-        <a class="card" href="/celpip/writing/ai-feedback" style="display:block; text-decoration:none;">
-          <h3>Writing score lab</h3>
-          <p class="muted">
-            Timed practice with score estimates, trait feedback, and lesson suggestions.
-          </p>
-        </a>
-        <a class="card" href="/celpip/writing/samples" style="display:block; text-decoration:none;">
-          <h3>100 sample essays</h3>
-          <p class="muted">
-            CLB 9+ model responses for Task 1 and Task 2 with quality rationale.
-          </p>
-        </a>
-      </div>
-      <div class="cluster" style="margin-top: var(--s-4);">
-        <a
-          class="btn"
-          href="/essay-correction"
-          style="text-decoration:none;"
-          data-track-click="celpip-writing-practice-essay-correction"
-          data-track-page-type="hub"
-          data-track-offer="essay_correction"
-          data-track-test="celpip"
-          data-track-skill="writing"
-          data-track-position="mid"
-        >
-          Submit One Essay for Human Review
-        </a>
-        <a
-          class="btn"
-          href="/tutoring"
-          style="text-decoration:none;"
-          data-track-click="celpip-writing-practice-tutoring"
-          data-track-page-type="hub"
-          data-track-offer="tutoring"
-          data-track-test="celpip"
-          data-track-skill="writing"
-          data-track-position="mid"
-        >
-          Book a Private Writing Class
-        </a>
-        <a
-          class="btn"
-          href="/webinar"
-          style="text-decoration:none;"
-          data-track-click="celpip-writing-practice-webinar"
-          data-track-page-type="hub"
-          data-track-offer="weekly_training"
-          data-track-test="celpip"
-          data-track-skill="writing"
-          data-track-position="mid"
-        >
-          Join Weekly Writing Training
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="surface" style="padding: var(--s-6);">
-      <h2 style="margin-top: 0;">CELPIP writing format</h2>
-      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-4);">
-        <div class="card">
-          <h3>Task 1: email</h3>
-          <p class="muted">
-            Write one email about an everyday situation and answer every prompt point
-            clearly.
-          </p>
-          <p class="muted" style="margin-bottom: 0;"><strong>Target length:</strong> about 150 to 200 words.</p>
-        </div>
-        <div class="card">
-          <h3>Task 2: survey response</h3>
-          <p class="muted">
-            Choose one option, explain why it is better, and support the choice with clear
-            reasons.
-          </p>
-          <p class="muted" style="margin-bottom: 0;"><strong>Target length:</strong> about 150 to 200 words.</p>
-        </div>
-      </div>
-      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-4);">
-        <div class="card">
-          <h3>What matters most</h3>
-          <p class="muted">
-            Cover the task completely, keep the tone appropriate, and make the writing easy
-            to follow.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Best habit</h3>
-          <p class="muted">
-            Spend a minute planning the purpose, tone, and main points before you start
-            typing.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="surface" style="padding: var(--s-6);">
-      <h2 style="margin-top: 0;">Related lessons for writing improvement</h2>
-      <p class="muted" style="margin-top: 0; max-width: 68ch;">
-        Use these CELPIP writing, grammar, and vocabulary lessons to improve task
-        completion, tone control, and sentence accuracy.
-      </p>
-      <div class="grid grid-2" style="gap: var(--s-4);">
-        {skillLessons.map((lesson) => (
-          <a
-            class="card"
-            href={`/lessons/${lesson.data.category}/${lesson.slug}/`}
-            style="display:block; text-decoration:none;"
-          >
-            <div class="cluster" style="justify-content: space-between;">
-              <span class="pill">{lesson.data.category} | {getLessonTier(lesson.data.level)}</span>
-              <span class="pill">Open lesson</span>
-            </div>
-            <h3 style="margin-top: var(--s-3);">
-              {getPublicLessonTitle(lesson.data.title, lesson.data.level)}
-            </h3>
-            <p class="muted" style="margin-bottom: 0;">{lesson.data.excerpt}</p>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="surface" style="padding: var(--s-6);">
-      <div class="stack" style="gap: var(--s-3); text-align: center;">
-        <h2 style="margin-top: 0;">Ready to stop guessing why your CELPIP writing score is stuck?</h2>
-        <p class="muted" style="margin: 0 auto; max-width: 56ch;">
-          Start with instant analysis, then move to human essay correction or a 1:1 session for direct score-focused feedback.
-        </p>
-        <div class="cluster" style="justify-content: center;">
-          <a
-            class="btn btn-primary"
-            href="/essay-correction"
-            data-track-click="celpip-writing-end-essay-correction"
-            data-track-page-type="hub"
-            data-track-offer="essay_correction"
-            data-track-test="celpip"
-            data-track-skill="writing"
-            data-track-position="end"
-          >
-            Submit an Essay for Correction
-          </a>
-          <a
-            class="btn"
-            href="/celpip/writing/ai-feedback"
-            data-track-click="celpip-writing-end-ai-feedback"
-            data-track-page-type="hub"
-            data-track-offer="ai_feedback"
-            data-track-test="celpip"
-            data-track-skill="writing"
-            data-track-position="end"
-          >
-            Check Your Writing Instantly
-          </a>
-          <a
-            class="btn"
-            href="/tutoring"
-            data-track-click="celpip-writing-end-tutoring"
-            data-track-page-type="hub"
-            data-track-offer="tutoring"
-            data-track-test="celpip"
-            data-track-skill="writing"
-            data-track-position="end"
-          >
-            Book a Writing Strategy Session
-          </a>
-        </div>
-      </div>
     </div>
   </section>
 </Layout>

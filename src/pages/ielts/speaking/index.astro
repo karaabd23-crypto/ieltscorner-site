@@ -1,35 +1,7 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-import { getCollection } from "astro:content";
-import { getLessonTier, getPublicLessonTitle } from "../../../lib/lessonLevel";
-import { buildBreadcrumbSchema, buildFAQSchema } from "../../../lib/seo";
-
-const relatedLessons = (
-  await getCollection(
-    "lessons",
-    ({ data }) =>
-      !data.draft &&
-      data.exam.includes("IELTS") &&
-      ["speaking", "grammar", "vocabulary"].includes(data.category)
-  )
-)
-  .sort((a, b) => (a.data.date < b.data.date ? 1 : -1))
-  .slice(0, 8);
-
-const pageFaqs = [
-  {
-    question: "How do I improve my IELTS speaking score?",
-    answer: "Improve your IELTS speaking score by answering directly, extending ideas naturally, using vocabulary you control, and practicing under speaking-style timing instead of memorizing scripts.",
-  },
-  {
-    question: "What matters most in IELTS speaking?",
-    answer: "Fluency and coherence, vocabulary, grammar, and pronunciation all matter, but students usually improve fastest by fixing structure and natural answer extension first.",
-  },
-  {
-    question: "Does this help with IELTS Speaking Parts 1, 2, and 3?",
-    answer: "Yes. This IELTS speaking page covers all three parts and links to deeper lessons for the language and strategy students need.",
-  },
-];
+import SkillFreeLessons from "../../../components/SkillFreeLessons.astro";
+import { buildBreadcrumbSchema } from "../../../lib/seo";
 
 const pageStructuredData = [
   buildBreadcrumbSchema(Astro.site, [
@@ -37,185 +9,50 @@ const pageStructuredData = [
     { name: "IELTS", path: "/ielts/" },
     { name: "Speaking", path: "/ielts/speaking/" },
   ]),
-  buildFAQSchema(pageFaqs),
 ];
-
-const pageKeywords = "IELTS speaking, IELTS speaking part 1, IELTS speaking part 2, IELTS speaking part 3, Band 7 IELTS speaking, IELTS speaking practice, IELTS speaking tips";
 ---
 
 <Layout
-  title="IELTS Speaking Preparation | Part 1, 2 and 3 Practice"
-  description="IELTS speaking preparation for Parts 1, 2, and 3. Improve fluency, coherence, pronunciation, and natural answer structure for a higher band score."
-  keywords={pageKeywords}
+  title="IELTS Speaking Help | Book Private Class"
+  description="Stuck in IELTS speaking? Book one private class and fix fluency, structure, and score-lowering habits."
+  keywords="IELTS speaking help, IELTS speaking coaching, IELTS private class"
   structuredData={pageStructuredData}
 >
   <section class="section">
-    <div class="hero" style={`--hero-bg: url('/heroes/speaking.png');`}>
-      <div class="hero-content">
-        <span class="pill">IELTS Speaking</span>
-        <h1>Clear answers beat memorized answers.</h1>
-        <p class="muted" style="max-width: 62ch;">
-          IELTS speaking is not about sounding impressive for 30 seconds, it is about staying clear,
-          coherent, and natural across Parts 1, 2, and 3. This page gives you the core framework,
-          then takes you to the right lessons for practice.
+    <div class="hero funnel-hero" style={`--hero-bg: url('/heroes/speaking.png');`}>
+      <div class="hero-content funnel-hero__content">
+        <span class="pill">IELTS speaking support</span>
+        <h1>Stuck below Band 7 in IELTS Speaking?</h1>
+        <p class="muted">
+          Get one-to-one speaking support to improve fluency, idea development,
+          and response structure for Parts 1, 2, and 3.
         </p>
-        <div class="cluster">
-          <a class="btn btn-primary" href="/ielts/speaking">Browse speaking lessons</a>
-          <a class="btn btn-ghost" href="/tutoring">Book speaking coaching</a>
+        <div class="funnel-hero__actions">
+          <a class="btn btn-primary" href="/tutoring#book-private-class">Book Private Class</a>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section-sm">
-    <div class="surface" style="padding: var(--s-5);">
-      <div class="cluster quick-nav">
-        <a class="btn" href="/ielts">IELTS Home</a>
-        <a class="btn" href="/ielts/listening">Listening</a>
-        <a class="btn" href="/ielts/reading">Reading</a>
-        <a class="btn btn-primary" href="/ielts/speaking">Speaking</a>
-        <a class="btn" href="/ielts/writing">Writing</a>
-        <a class="btn" href="/ielts">All IELTS lessons</a>
-      </div>
+    <div class="surface funnel-section">
+      <h2 style="margin-top: 0;">What this class helps you fix</h2>
+      <ul style="margin: 0; padding-left: 1.2rem;">
+        <li>Short answers that do not develop ideas well.</li>
+        <li>Frequent hesitation and repetition under pressure.</li>
+        <li>Grammar and pronunciation patterns that lower band score.</li>
+      </ul>
     </div>
   </section>
 
-  <section class="section-sm">
-    <div class="surface" style="padding: var(--s-6);">
-      <h2>IELTS speaking format at a glance</h2>
-      <div class="grid grid-3" style="gap: var(--s-4); margin-top: var(--s-4);">
-        <div class="card">
-          <h3>Part 1</h3>
-          <p class="muted">Short personal questions. The best answers are direct, natural, and slightly extended.</p>
-        </div>
-        <div class="card">
-          <h3>Part 2</h3>
-          <p class="muted">A longer individual talk. Clear organization matters more than trying to sound poetic.</p>
-        </div>
-        <div class="card">
-          <h3>Part 3</h3>
-          <p class="muted">A more abstract discussion. Students need reason, explanation, and example under pressure.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <SkillFreeLessons exam="IELTS" skill="speaking" />
 
   <section class="section-sm">
-    <div class="surface feature">
-      <div class="feature-grid">
-        <div class="stack">
-          <h2>What raises IELTS speaking scores fastest</h2>
-          <p class="muted" style="max-width: 62ch;">
-            Students often chase idioms and rare vocabulary too early. Faster improvements usually come from better structure,
-            longer but relevant answers, and pronunciation that stays easy to understand.
-          </p>
-        </div>
-
-        <div class="checklist">
-          <div class="check">
-            <div class="icon">1</div>
-            <div>
-              <strong>Answer first</strong>
-              <span>Do not circle the topic for too long. Give the main answer early.</span>
-            </div>
-          </div>
-          <div class="check">
-            <div class="icon">2</div>
-            <div>
-              <strong>Extend naturally</strong>
-              <span>Add a reason, example, or comparison instead of memorized filler.</span>
-            </div>
-          </div>
-          <div class="check">
-            <div class="icon">3</div>
-            <div>
-              <strong>Use safe grammar</strong>
-              <span>Complex grammar only helps when it stays accurate and fluent.</span>
-            </div>
-          </div>
-          <div class="check">
-            <div class="icon">4</div>
-            <div>
-              <strong>Record and review</strong>
-              <span>Listening to your own answers exposes repetition, hesitation, and weak development.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="surface" style="padding: var(--s-6);">
-      <h2>Popular IELTS speaking guides</h2>
-      <p class="muted" style="margin-top: 0; max-width: 70ch;">
-        Start with these guides if you want stronger cue-card answers and better idea development.
-      </p>
-      <div class="grid grid-2" style="margin-bottom: var(--s-5);">
-        <a class="card" href="/blog/ielts-speaking-part-2-cue-card" style="text-decoration:none;">
-          <h3>IELTS Speaking Part 2 cue card guide</h3>
-          <p class="muted">How to use the 1-minute prep time and keep speaking clearly for the full 2 minutes.</p>
-        </a>
-        <a class="card" href="/celpip/speaking/task-2-personal-experience" style="text-decoration:none;">
-          <h3>Compare with CELPIP Speaking Task 2</h3>
-          <p class="muted">Useful if you compare both exams or want to see how fluency demands change across task types.</p>
-        </a>
-      </div>
-      <div class="grid grid-2" style="margin-bottom: var(--s-5);">
-        <a class="card" href="/blog/ielts-speaking-part-1-topics" style="text-decoration:none;">
-          <h3>IELTS Speaking Part 1 topics</h3>
-          <p class="muted">Natural answer development for short personal questions.</p>
-        </a>
-        <a class="card" href="/blog/ielts-speaking-part-3-questions-guide" style="text-decoration:none;">
-          <h3>IELTS Speaking Part 3 questions guide</h3>
-          <p class="muted">How to build more abstract answers with stronger logic and support.</p>
-        </a>
-      </div>
-
-      <h2>Related IELTS speaking lessons</h2>
-      <p class="muted" style="margin-top: 0; max-width: 70ch;">
-        These speaking, grammar, and vocabulary lessons make it easier to build fluent answers without sounding rehearsed.
-      </p>
-      <div class="grid grid-2">
-        {relatedLessons.map((lesson) => (
-          <a class="card" href={`/lessons/${lesson.data.category}/${lesson.slug}/`} style="display:block; text-decoration:none;">
-            <div class="cluster" style="justify-content: space-between;">
-              <span class="pill">{lesson.data.category} | {getLessonTier(lesson.data.level)}</span>
-              <span class="pill">Open lesson</span>
-            </div>
-            <h3 style="margin-top: var(--s-3);">{getPublicLessonTitle(lesson.data.title, lesson.data.level)}</h3>
-            <p class="muted" style="margin-bottom: 0;">{lesson.data.excerpt}</p>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="grid grid-2">
-      <div class="card">
-        <h3>Practice with feedback</h3>
-        <p class="muted">Speaking improves faster when someone can tell you where your answer actually breaks down.</p>
-        <a class="btn btn-primary" href="/tutoring">Book IELTS tutoring</a>
-      </div>
-      <div class="card">
-        <h3>See a CELPIP comparison</h3>
-        <p class="muted">If you compare both exams, the CELPIP speaking hub is organized in a similar way.</p>
-        <a class="btn" href="/celpip/speaking">CELPIP speaking</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="surface" style="padding: var(--s-6);">
-      <h2 style="margin-top: 0;">IELTS speaking FAQ</h2>
-      <div class="stack" style="gap: var(--s-3); margin-top: var(--s-4);">
-        {pageFaqs.map((item) => (
-          <details class="card">
-            <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
-            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
-          </details>
-        ))}
+    <div class="surface funnel-final-cta">
+      <h2 style="margin-top: 0;">Your next step</h2>
+      <p>Book one focused private class and get direct speaking feedback in real time.</p>
+      <div class="funnel-final-cta__actions">
+        <a class="btn btn-primary" href="/tutoring#book-private-class">Book Private Class</a>
       </div>
     </div>
   </section>

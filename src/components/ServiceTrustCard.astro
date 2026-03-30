@@ -1,0 +1,39 @@
+---
+interface Props {
+  heading?: string;
+  intro?: string;
+}
+
+const {
+  heading = "Know your instructor before you pay",
+  intro = "Before you book or checkout, review the teaching background and score evidence used to build IELTS Corner services.",
+} = Astro.props as Props;
+---
+
+<section class="surface service-trust-card">
+  <div class="service-trust-card__intro">
+    <p class="service-trust-card__label">Trust and credentials</p>
+    <h2>{heading}</h2>
+    <p class="muted">{intro}</p>
+  </div>
+
+  <div class="service-trust-card__proof">
+    <article class="service-trust-card__item">
+      <p class="service-trust-card__item-label">IELTS Academic</p>
+      <p class="service-trust-card__item-value">Overall 8.5</p>
+    </article>
+    <article class="service-trust-card__item">
+      <p class="service-trust-card__item-label">TESL Canada</p>
+      <p class="service-trust-card__item-value">Professional Certificate</p>
+    </article>
+    <article class="service-trust-card__item">
+      <p class="service-trust-card__item-label">CELPIP</p>
+      <p class="service-trust-card__item-value">Instructor Training Level 1</p>
+    </article>
+  </div>
+
+  <div class="service-trust-card__actions">
+    <a class="btn btn-primary" href="/about#evidence-and-qualifications">See Credentials</a>
+    <a class="btn" href="/about">Know Your Instructor</a>
+  </div>
+</section>

@@ -1,249 +1,58 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-import CelpipWritingBanner from "../../../components/CelpipWritingBanner.astro";
-import { getCollection } from "astro:content";
-import { getLessonTier, getPublicLessonTitle } from "../../../lib/lessonLevel";
+import SkillFreeLessons from "../../../components/SkillFreeLessons.astro";
+import { buildBreadcrumbSchema } from "../../../lib/seo";
 
-const skillLessons = (
-  await getCollection(
-    "lessons",
-    ({ data }) =>
-      !data.draft &&
-      data.exam.includes("CELPIP") &&
-      ["speaking", "vocabulary", "grammar"].includes(data.category)
-  )
-)
-  .sort((a, b) => (a.data.date < b.data.date ? 1 : -1))
-  .slice(0, 10);
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "CELPIP", path: "/celpip/" },
+    { name: "Speaking", path: "/celpip/speaking/" },
+  ]),
+];
 ---
 
 <Layout
-  title="CELPIP Speaking | Fluency and Task Response Strategies | IELTS Corner"
-  description="CELPIP speaking strategies for all tasks. Learn clear delivery, practical templates, and how to manage time under pressure."
+  title="CELPIP Speaking Help | Book Private Class"
+  description="Stuck in CELPIP speaking? Book one private class and improve fluency, structure, and response quality."
+  keywords="CELPIP speaking help, CELPIP speaking coaching, CELPIP private class"
+  structuredData={pageStructuredData}
 >
   <section class="section">
-    <div class="hero" style={`--hero-bg: url('/heroes/speaking.png');`}>
-      <div class="hero-content">
-        <span class="pill">CELPIP Speaking</span>
-        <h1>Know what to say, speak clearly, score higher</h1>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <CelpipWritingBanner />
-  </section>
-
-  <section class="section-sm">
-    <div class="surface" style="padding: var(--s-5);">
-      <div class="cluster quick-nav">
-        <a class="btn" href="/celpip">CELPIP Home</a>
-        <a class="btn" href="/celpip/listening">Listening</a>
-        <a class="btn" href="/celpip/reading">Reading</a>
-        <a class="btn btn-primary" href="/celpip/speaking">Speaking</a>
-        <a class="btn" href="/celpip/writing">Writing</a>
-        <a class="btn" href="/lessons">All Lessons</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="surface" style="padding: var(--s-6); border: 2px solid var(--accent);">
-      <h2 style="margin-top: 0;">All CELPIP speaking support in one place</h2>
-      <p class="muted" style="margin-top: 0; max-width: 72ch;">
-        Use this page as your speaking hub: free lessons, clear strategy guides, private coaching,
-        and live training in one location.
-      </p>
-
-      <div class="grid grid-2" style="margin-top: var(--s-4);">
-        <article class="card" style="display:flex; flex-direction:column; gap: var(--s-2);">
-          <h3 style="margin: 0;">Free speaking lessons</h3>
-          <p class="muted" style="margin:0;">Task-by-task strategy, structure, and fluency help for CELPIP speaking.</p>
-          <a class="btn btn-primary" href="/celpip/speaking">Open speaking lessons</a>
-        </article>
-
-        <article class="card" style="display:flex; flex-direction:column; gap: var(--s-2);">
-          <h3 style="margin: 0;">Private speaking coaching</h3>
-          <p class="muted" style="margin:0;">One-on-one feedback on pronunciation, fluency, structure, and confidence.</p>
-          <a class="btn" href="/tutoring">Book speaking coaching</a>
-        </article>
-
-        <article class="card" style="display:flex; flex-direction:column; gap: var(--s-2);">
-          <h3 style="margin: 0;">Weekly CELPIP webinar</h3>
-          <p class="muted" style="margin:0;">Live strategy sessions with practical examples and student questions.</p>
-          <a class="btn" href="/webinar">Join webinar sessions</a>
-        </article>
-
-        <article class="card" style="display:flex; flex-direction:column; gap: var(--s-2);">
-          <h3 style="margin: 0;">Add writing support</h3>
-          <p class="muted" style="margin:0;">Build a stronger overall score by combining speaking prep with writing feedback.</p>
-          <div class="cluster">
-            <a class="btn" href="/celpip/writing">Writing hub</a>
-            <a class="btn" href="/celpip/writing/ai-feedback">Writing score lab</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="surface" style="padding: var(--s-6);">
-      <h2>Popular CELPIP speaking guides</h2>
-      <p class="muted" style="margin-top: 0; max-width: 68ch;">
-        These pages explain the most important CELPIP speaking tasks in clear, practical language.
-      </p>
-      <div class="grid grid-2" style="gap: var(--s-3);">
-        <a class="card" href="/celpip/speaking/task-1-advice" style="display:block; text-decoration:none;">
-          <h3>CELPIP Speaking Task 1 Guide</h3>
-          <p class="muted">How to give practical advice clearly and sound helpful instead of generic.</p>
-        </a>
-        <a class="card" href="/celpip/speaking/task-2-personal-experience" style="display:block; text-decoration:none;">
-          <h3>CELPIP Speaking Task 2 Guide</h3>
-          <p class="muted">A clear personal-story structure for speaking longer without losing control.</p>
-        </a>
-      </div>
-      <div class="grid grid-2" style="gap: var(--s-3); margin-top: var(--s-3);">
-        <a class="card" href="/celpip/speaking/task-5-comparison" style="display:block; text-decoration:none;">
-          <h3>CELPIP Speaking Task 5 Guide</h3>
-          <p class="muted">Compare options clearly and make a recommendation that fits the situation.</p>
-        </a>
-        <a class="card" href="/celpip/speaking/task-7-opinion" style="display:block; text-decoration:none;">
-          <h3>CELPIP Speaking Task 7 Guide</h3>
-          <p class="muted">Express your opinion with clearer support and less repetition.</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="surface" style="padding: var(--s-6);">
-      <h2>Related lessons for speaking improvement</h2>
-      <p class="muted" style="margin-top: 0; max-width: 68ch;">
-        These CELPIP speaking, grammar, and vocabulary lessons help you build fluency with clearer structure.
-      </p>
-      <div class="grid grid-2">
-        {skillLessons.map((lesson) => (
-          <a class="card" href={`/lessons/${lesson.data.category}/${lesson.slug}/`} style="display:block;">
-            <div class="cluster" style="justify-content: space-between;">
-              <span class="pill">{lesson.data.category} / {getLessonTier(lesson.data.level)}</span>
-              <span class="pill">Open</span>
-            </div>
-            <h3 style="margin-top: var(--s-3);">{getPublicLessonTitle(lesson.data.title, lesson.data.level)}</h3>
-            <p class="muted" style="margin-bottom: 0;">{lesson.data.excerpt}</p>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="stack" style="gap: var(--s-8);">
-      <div class="surface" style="padding: var(--s-6);">
-        <h2>CELPIP speaking format (15-20 minutes, 8 tasks)</h2>
-        <div class="grid grid-2">
-          <a href="/celpip/speaking/task-1-advice" style="text-decoration:none; color: inherit;"><h3>Task 1: Giving Advice</h3><p>Give practical advice for a situation. <span style="color: var(--accent); font-weight: 600;">Full strategy guide →</span></p></a>
-          <a href="/celpip/speaking/task-2-personal-experience" style="text-decoration:none; color: inherit;"><h3>Task 2: Talking about a Personal Experience</h3><p>Tell a clear, structured short story. <span style="color: var(--accent); font-weight: 600;">Full strategy guide →</span></p></a>
-          <a href="/celpip/speaking/task-3-scene" style="text-decoration:none; color: inherit;"><h3>Task 3: Describing a Scene</h3><p>Describe an image so the listener can picture it. <span style="color: var(--accent); font-weight: 600;">Full strategy guide →</span></p></a>
-          <a href="/celpip/speaking/task-4-prediction" style="text-decoration:none; color: inherit;"><h3>Task 4: Making Predictions</h3><p>Predict what will happen next and explain why. <span style="color: var(--accent); font-weight: 600;">Full strategy guide →</span></p></a>
-          <a href="/celpip/speaking/task-5-comparison" style="text-decoration:none; color: inherit;"><h3>Task 5: Comparing and Persuading</h3><p>Choose one option and persuade the listener. <span style="color: var(--accent); font-weight: 600;">Full strategy guide →</span></p></a>
-          <a href="/celpip/speaking/task-6-difficult-situation" style="text-decoration:none; color: inherit;"><h3>Task 6: Dealing with a Difficult Situation</h3><p>Respond politely and solve a real-life problem. <span style="color: var(--accent); font-weight: 600;">Full strategy guide →</span></p></a>
-          <a href="/celpip/speaking/task-7-opinion" style="text-decoration:none; color: inherit;"><h3>Task 7: Expressing Opinions</h3><p>Give your opinion with reasons and examples. <span style="color: var(--accent); font-weight: 600;">Full strategy guide →</span></p></a>
-          <a href="/celpip/speaking/task-8-unusual-situation" style="text-decoration:none; color: inherit;"><h3>Task 8: Describing an Unusual Situation</h3><p>Explain clearly when the situation is surprising or unexpected. <span style="color: var(--accent); font-weight: 600;">Full strategy guide →</span></p></a>
-        </div>
-      </div>
-
-      <div class="surface" style="padding: var(--s-6); border: 2px solid var(--accent);">
-        <h2 style="margin-top: 0;">Deep-Dive Task Strategy Pages</h2>
-        <p class="muted" style="max-width: 70ch;">
-          Each task page includes CLB-level sample answers, examiner scoring analysis, 
-          common mistakes, and upgrade strategies. Start with Task 1 and work through each one.
+    <div class="hero funnel-hero" style={`--hero-bg: url('/heroes/speaking.png');`}>
+      <div class="hero-content funnel-hero__content">
+        <span class="pill">CELPIP speaking support</span>
+        <h1>Stuck at CLB 6 or 7 in CELPIP Speaking?</h1>
+        <p class="muted">
+          Get one-to-one coaching to improve answer structure, fluency, and confidence
+          across all CELPIP speaking tasks.
         </p>
-        <div class="grid grid-2" style="gap: var(--s-3); margin-top: var(--s-4);">
-          <a class="card" href="/celpip/speaking/task-1-advice" style="text-decoration:none;">
-            <span class="pill" style="margin-bottom: var(--s-2);">Task 1</span>
-            <h3>Giving Advice</h3>
-            <p class="muted">Structure, CLB 4/7/9 sample answers, examiner analysis, prep strategy, and upgrade path.</p>
-          </a>
-          <a class="card" href="/celpip/speaking/task-2-personal-experience" style="text-decoration:none;">
-            <span class="pill" style="margin-bottom: var(--s-2);">Task 2</span>
-            <h3>Talking About a Personal Experience</h3>
-            <p class="muted">Chronological story structure, CLB-level samples, common storytelling mistakes, and upgrade strategies.</p>
-          </a>
-          <a class="card" href="/celpip/speaking/task-3-scene" style="text-decoration:none;">
-            <span class="pill" style="margin-bottom: var(--s-2);">Task 3</span>
-            <h3>Describing a Scene</h3>
-            <p class="muted">Spatial description framework, CLB-level samples, organized scanning technique, and upgrade path.</p>
-          </a>
-          <a class="card" href="/celpip/speaking/task-4-prediction" style="text-decoration:none;">
-            <span class="pill" style="margin-bottom: var(--s-2);">Task 4</span>
-            <h3>Making Predictions</h3>
-            <p class="muted">Evidence-based prediction framework, CLB-level samples, cause-effect chains, and upgrade strategies.</p>
-          </a>
-          <a class="card" href="/celpip/speaking/task-5-comparison" style="text-decoration:none;">
-            <span class="pill" style="margin-bottom: var(--s-2);">Task 5</span>
-            <h3>Comparing and Persuading</h3>
-            <p class="muted">Side-by-side comparison framework, CLB-level samples, persuasion techniques, and upgrade path.</p>
-          </a>
-          <a class="card" href="/celpip/speaking/task-6-difficult-situation" style="text-decoration:none;">
-            <span class="pill" style="margin-bottom: var(--s-2);">Task 6</span>
-            <h3>Dealing with a Difficult Situation</h3>
-            <p class="muted">Diplomatic response framework, CLB-level samples, tone management, and upgrade strategies.</p>
-          </a>
-          <a class="card" href="/celpip/speaking/task-7-opinion" style="text-decoration:none;">
-            <span class="pill" style="margin-bottom: var(--s-2);">Task 7</span>
-            <h3>Expressing Opinions</h3>
-            <p class="muted">Structured argument framework, CLB-level samples, reasoning patterns, and upgrade path.</p>
-          </a>
-          <a class="card" href="/celpip/speaking/task-8-unusual-situation" style="text-decoration:none;">
-            <span class="pill" style="margin-bottom: var(--s-2);">Task 8</span>
-            <h3>Describing an Unusual Situation</h3>
-            <p class="muted">Unexpected scenario framework, CLB-level samples, calm response techniques, and upgrade strategies.</p>
-          </a>
-        </div>
-        <p class="muted" style="margin-top: var(--s-3);">
-          <a href="/celpip/clb-9-strategy" style="color: var(--accent); font-weight: 700;">Read the CLB 9 Strategy Guide</a> for the overall approach that applies across all 8 tasks.
-        </p>
-      </div>
-
-      <div class="surface" style="padding: var(--s-6);">
-        <h2>CELPIP speaking strategies</h2>
-        <div class="stack" style="gap: var(--s-4);">
-          <div>
-            <h4>Use prep time for keywords</h4>
-            <p>Write 3-4 key points only. Do not try to memorize full sentences.</p>
-          </div>
-          <div>
-            <h4>Extend ideas with one clear example</h4>
-            <p>In opinion and persuasion tasks, one useful example is better than three vague reasons.</p>
-          </div>
-          <div>
-            <h4>Do not panic about pauses</h4>
-            <p>A short pause is normal. Too many filler words usually sound weaker than a brief silence.</p>
-          </div>
-          <div>
-            <h4>Speak at a natural pace</h4>
-            <p>Clear pronunciation matters more than speed. Slow down if the answer starts to feel rushed.</p>
-          </div>
-          <div>
-            <h4>Read Task 5 instructions carefully</h4>
-            <p>Task 5 asks you to compare choices and recommend one, not just describe both options.</p>
-          </div>
-          <div>
-            <h4>Use transition phrases only when they help</h4>
-            <p>Simple links like "first," "also," and "that is why" are usually enough to keep the answer organized.</p>
-          </div>
+        <div class="funnel-hero__actions">
+          <a class="btn btn-primary" href="/tutoring#book-private-class">Book Private Class</a>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="surface" style="padding: var(--s-6);">
-        <div class="stack" style="gap: var(--s-4); text-align: center;">
-          <h2>Ready to improve your speaking confidence?</h2>
-          <p class="muted">Practice with real CELPIP speaking tasks and get feedback on fluency and clarity.</p>
-          <div class="cluster" style="justify-content: center;">
-            <a class="btn btn-primary" href="/celpip/speaking">Free speaking lessons</a>
-            <a class="btn" href="/tutoring">Book speaking coaching</a>
-          </div>
-        </div>
+  <section class="section-sm">
+    <div class="surface funnel-section">
+      <h2 style="margin-top: 0;">What this class helps you fix</h2>
+      <ul style="margin: 0; padding-left: 1.2rem;">
+        <li>Short answers with weak development.</li>
+        <li>Repeated hesitation and filler words under pressure.</li>
+        <li>Task-response mistakes that lower speaking scores.</li>
+      </ul>
+    </div>
+  </section>
+
+  <SkillFreeLessons exam="CELPIP" skill="speaking" />
+
+  <section class="section-sm">
+    <div class="surface funnel-final-cta">
+      <h2 style="margin-top: 0;">Your next step</h2>
+      <p>Book one focused class and get live speaking correction in real time.</p>
+      <div class="funnel-final-cta__actions">
+        <a class="btn btn-primary" href="/tutoring#book-private-class">Book Private Class</a>
       </div>
     </div>
   </section>

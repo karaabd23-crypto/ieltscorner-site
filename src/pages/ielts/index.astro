@@ -1,185 +1,64 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
-
-const pageKeywords =
-  "IELTS preparation, IELTS writing, IELTS speaking, IELTS reading, IELTS listening, IELTS tutor, Band 7 IELTS, IELTS writing task 2, IELTS speaking practice";
-
-const pageFaqs = [
-  {
-    question: "What is the best way to prepare for IELTS?",
-    answer:
-      "The best way to prepare for IELTS is to work on one skill at a time, learn the task format, practice real question types, and review your mistakes carefully.",
-  },
-  {
-    question: "Does IELTS Corner cover all four IELTS skills?",
-    answer:
-      "Yes. IELTS Corner has separate pages for writing, speaking, reading, and listening, plus lessons, blog guides, essay correction, and tutoring.",
-  },
-  {
-    question: "Can I use these IELTS resources for both Academic and General Training?",
-    answer:
-      "Many grammar, vocabulary, speaking, listening, and reading resources work for both. Writing guidance should match the correct exam type and task.",
-  },
-  {
-    question: "Do you provide feedback for IELTS writing?",
-    answer:
-      "Yes. You can use essay correction or private tutoring if you want direct feedback on your IELTS writing.",
-  },
-];
+import { buildBreadcrumbSchema } from "../../lib/seo";
 
 const pageStructuredData = [
   buildBreadcrumbSchema(Astro.site, [
     { name: "Home", path: "/" },
     { name: "IELTS", path: "/ielts/" },
   ]),
-  buildFAQSchema(pageFaqs),
 ];
 ---
 
 <Layout
-  title="IELTS Preparation | Writing, Speaking, Reading and Listening"
-  description="IELTS preparation for writing, speaking, reading, and listening. Learn the format, improve your skills, and study with clear lessons and feedback."
-  keywords={pageKeywords}
+  title="IELTS Hub | Choose Your Skill"
+  description="IELTS hub with four skill paths: listening, reading, writing, and speaking."
+  keywords="IELTS preparation, IELTS listening, IELTS reading, IELTS writing, IELTS speaking"
   structuredData={pageStructuredData}
 >
   <section class="section">
-    <div class="hero" style={`--hero-bg: url('/heroes/IELTS.png');`}>
-      <div class="hero-content">
-        <span class="pill">IELTS preparation</span>
-        <h1>Choose the skill that is holding your score back.</h1>
-        <p class="muted" style="max-width: 62ch;">
-          Most students do not need more random tips. They need the right page for the
-          exact problem: writing structure, speaking fluency, reading accuracy, or
-          listening traps.
-        </p>
-        <div class="cluster">
-          <a class="btn btn-primary" href="/ielts/writing">Start with IELTS writing</a>
-          <a class="btn btn-ghost" href="/ielts">Browse all IELTS lessons</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="surface" style="padding: var(--s-6);">
-      <h2 style="margin-top: 0;">Start with the right IELTS page</h2>
-      <p class="muted" style="max-width: 68ch; margin-top: 0;">
-        Pick one skill and keep your study simple. Each hub below is built around the
-        exact questions students usually have before the test.
-      </p>
-      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-4);">
-        <a class="card" href="/ielts/writing" style="text-decoration:none;">
-          <h3>IELTS Writing</h3>
-          <p class="muted">
-            Task 1, Task 2, paragraph control, grammar, and clear support for Band 7+
-            writing.
-          </p>
-        </a>
-        <a class="card" href="/ielts/speaking" style="text-decoration:none;">
-          <h3>IELTS Speaking</h3>
-          <p class="muted">
-            Part 1, 2, and 3 strategy, answer development, vocabulary range, and fluency.
-          </p>
-        </a>
-        <a class="card" href="/ielts/reading" style="text-decoration:none;">
-          <h3>IELTS Reading</h3>
-          <p class="muted">
-            Question types, timing, proof-based answers, and the habits that reduce
-            careless mistakes.
-          </p>
-        </a>
-        <a class="card" href="/ielts/listening" style="text-decoration:none;">
-          <h3>IELTS Listening</h3>
-          <p class="muted">
-            Prediction, key-word tracking, note-taking, and common traps that lower
-            scores.
-          </p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="surface feature">
-      <div class="feature-grid">
-        <div class="stack">
-          <h2>What usually improves IELTS scores fastest</h2>
-          <p class="muted" style="max-width: 60ch;">
-            Students often focus only on vocabulary. In real exam results, the bigger
-            gains usually come from task understanding, clearer structure, and better
-            error control.
-          </p>
-        </div>
-
-        <div class="grid grid-2" style="gap: var(--s-3);">
-          <div class="card">
-            <h3>Know the format</h3>
-            <p class="muted">
-              Each skill has repeatable task types. Learn the pattern first so the test
-              feels familiar.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Fix one weakness</h3>
-            <p class="muted">
-              Writing structure, speaking fluency, reading timing, and listening detail
-              are different problems. Treat them differently.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Use evidence</h3>
-            <p class="muted">
-              In reading and listening, high scores come from proof, not from guessing by
-              feeling.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Review your output</h3>
-            <p class="muted">
-              Writing and speaking improve faster when you can see exactly what is weak
-              and why.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="grid grid-2" style="gap: var(--s-4);">
-      <article class="card">
-        <h3>Popular guide</h3>
+    <div class="hero funnel-hero" style={`--hero-bg: url('/heroes/IELTS.png');`}>
+      <div class="hero-content funnel-hero__content">
+        <span class="pill">IELTS exam hub</span>
+        <h1>Choose the IELTS skill you want to improve</h1>
         <p class="muted">
-          Read the Band 7 writing guide if your ideas are decent but your score still
-          stays in the middle bands.
+          Select one skill below and follow one clear path for faster score improvement.
         </p>
-        <a class="btn btn-primary" href="/blog/band-7-writing-strategy">Read the guide</a>
-      </article>
-
-      <article class="card">
-        <h3>Need a lesson archive?</h3>
-        <p class="muted">
-          Go straight to the IELTS lesson library if you already know what you need to
-          study next.
-        </p>
-        <a class="btn" href="/ielts">Open IELTS lessons</a>
-      </article>
+      </div>
     </div>
   </section>
 
   <section class="section-sm">
-    <div class="surface" style="padding: var(--s-6);">
-      <h2 style="margin-top: 0;">IELTS preparation FAQ</h2>
-      <div class="stack" style="gap: var(--s-3); margin-top: var(--s-4);">
-        {pageFaqs.map((item) => (
-          <details class="card">
-            <summary style="cursor: pointer; font-weight: 700;">{item.question}</summary>
-            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">
-              {item.answer}
-            </p>
-          </details>
-        ))}
+    <div class="surface funnel-section">
+      <h2 style="margin-top: 0;">IELTS skill paths</h2>
+      <div class="offer-grid" style="margin-top: var(--s-3);">
+        <a class="offer-card" href="/ielts/listening" style="text-decoration: none; color: inherit;">
+          <p class="offer-card__label">Skill 1</p>
+          <h3 class="offer-card__name">Listening</h3>
+          <p class="offer-card__line">Fix prediction and answer-checking mistakes.</p>
+          <span class="btn btn-ghost">Open Listening Path</span>
+        </a>
+
+        <a class="offer-card" href="/ielts/reading" style="text-decoration: none; color: inherit;">
+          <p class="offer-card__label">Skill 2</p>
+          <h3 class="offer-card__name">Reading</h3>
+          <p class="offer-card__line">Improve timing, question strategy, and accuracy.</p>
+          <span class="btn btn-ghost">Open Reading Path</span>
+        </a>
+
+        <a class="offer-card" href="/ielts/writing" style="text-decoration: none; color: inherit;">
+          <p class="offer-card__label">Skill 3</p>
+          <h3 class="offer-card__name">Writing</h3>
+          <p class="offer-card__line">Get score-focused corrections and a clear revision plan.</p>
+          <span class="btn btn-ghost">Open Writing Path</span>
+        </a>
+
+        <a class="offer-card" href="/ielts/speaking" style="text-decoration: none; color: inherit;">
+          <p class="offer-card__label">Skill 4</p>
+          <h3 class="offer-card__name">Speaking</h3>
+          <p class="offer-card__line">Build clear answers and stronger fluency for all parts.</p>
+          <span class="btn btn-ghost">Open Speaking Path</span>
+        </a>
       </div>
     </div>
   </section>

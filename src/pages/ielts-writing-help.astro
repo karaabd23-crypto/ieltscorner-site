@@ -1,234 +1,42 @@
 ---
 import ConversionLayout from "../layouts/ConversionLayout.astro";
-import LeadCaptureForm from "../components/LeadCaptureForm.astro";
-import LeadMagnetCard from "../components/LeadMagnetCard.astro";
-import OfferLadderBlock from "../components/OfferLadderBlock.astro";
-import OfferSequenceBlock from "../components/OfferSequenceBlock.astro";
 ---
 
 <ConversionLayout
-  title="IELTS Writing Help | Get Band 7+ with Feedback"
-  description="Get Band 7+ in IELTS Writing with expert feedback, a clear writing system, and practical support options."
+  title="IELTS Writing Help | Submit Essay for Feedback"
+  description="Get score-focused IELTS writing feedback with one clear next step."
   canonical="/ielts-writing-help/"
-  keywords="IELTS writing help, Band 7 IELTS writing, IELTS writing tutor, IELTS essay feedback"
+  keywords="IELTS writing help, IELTS essay feedback, IELTS Band 7 writing"
 >
   <section class="section landing-shell">
-    <div class="landing-hero">
-      <p class="landing-eyebrow">IELTS Writing Score Upgrade</p>
-      <h1>Get Band 7+ in IELTS Writing with Expert Feedback</h1>
+    <section class="landing-hero">
+      <p class="landing-eyebrow">IELTS Writing Support</p>
+      <h1>Stuck below Band 7 in IELTS Writing?</h1>
       <p class="landing-subheadline">
-        Train with a Canadian-certified instructor, receive real writing feedback, and follow a focused system designed to move you to Band 7+ faster.
+        Use one focused path: submit your essay, get detailed correction, and apply the exact changes in your next draft.
       </p>
       <div class="landing-hero__actions">
-        <a
-          class="btn btn-primary landing-cta"
-          href="/webinar?src=ielts-writing-help-hero"
-          data-track-click="ielts-writing-help-hero-webinar"
-          data-track-page-type="landing"
-          data-track-offer="weekly_training"
-          data-track-test="ielts"
-          data-track-skill="writing"
-          data-track-position="hero"
-          data-track-intent="purchase"
-        >
-          Fix Band 7 Writing Gaps Live ($12)
-        </a>
-        <a
-          class="btn"
-          href="/tutoring?src=ielts-writing-help-hero"
-          data-track-click="ielts-writing-help-hero-tutoring"
-          data-track-page-type="landing"
-          data-track-offer="tutoring"
-          data-track-test="ielts"
-          data-track-skill="writing"
-          data-track-position="hero"
-          data-track-intent="booking"
-        >
-          Book 1:1 Band 7 Coaching ($30)
-        </a>
-      </div>
-      <p class="muted" style="margin: var(--s-2) 0 0;">
-        Start with the $12 live training for structure and grammar, then use essay correction for direct score feedback.
-      </p>
-    </div>
-
-    <div class="landing-grid">
-      <section class="landing-section">
-        <h2>Why Students Miss Band 7</h2>
-        <ul class="landing-list">
-          <li>Unclear essay structure and weak paragraph flow</li>
-          <li>Grammar errors that reduce accuracy scores</li>
-          <li>No expert feedback to fix repeated mistakes</li>
-        </ul>
-      </section>
-
-      <section class="landing-section">
-        <h2>The Solution</h2>
-        <ul class="landing-list">
-          <li>Experienced instructor supporting learners in Canada</li>
-          <li>Step-by-step system for Task 1 and Task 2 responses</li>
-          <li>Fast feedback loops for faster score improvement</li>
-        </ul>
-      </section>
-    </div>
-
-    <section class="landing-section" id="ielts-writing-structure-guide-optin">
-      <LeadMagnetCard
-        headline="Subscribe for Weekly IELTS Writing Emails"
-        bullets={[
-          "Receive one practical IELTS writing strategy each week.",
-          "Get lesson updates focused on the mistakes that block Band 7.",
-          "Be notified when new tools and downloads are ready.",
-        ]}
-        formName="lead-subscribe-ielts-writing-updates"
-        formType="lead_capture_ielts_writing_updates"
-        successPath="/newsletter/thanks/"
-        source="ielts-writing-help"
-        magnetId="ielts_writing_updates_subscription"
-        buttonLabel="Subscribe for Weekly Emails"
-        pageType="landing"
-        offer="lead_capture"
-        test="ielts"
-        skill="writing"
-        position="mid"
-      />
-    </section>
-
-    <section class="landing-section">
-      <h2>Choose the support that fits you</h2>
-      <div class="landing-offer-grid">
-        <article class="landing-offer">
-          <h3>Weekly Webinar ($12)</h3>
-          <p>Live weekly sessions that sharpen structure, grammar, and strategy.</p>
-          <a
-            class="btn btn-primary"
-            href="/webinar?src=ielts-writing-help-tier1"
-            data-track-click="ielts-writing-help-tier1-webinar"
-            data-track-page-type="landing"
-            data-track-offer="weekly_training"
-            data-track-test="ielts"
-            data-track-skill="writing"
-            data-track-position="mid"
-            data-track-intent="purchase"
-          >
-            Join This Week's Live Training ($12)
-          </a>
-        </article>
-        <article class="landing-offer">
-          <h3>Private Tutoring ($30/session)</h3>
-          <p>Personalized coaching focused on your Band 7+ weak points.</p>
-          <a
-            class="btn btn-primary"
-            href="/tutoring?src=ielts-writing-help-tier2"
-            data-track-click="ielts-writing-help-tier2-tutoring"
-            data-track-page-type="landing"
-            data-track-offer="tutoring"
-            data-track-test="ielts"
-            data-track-skill="writing"
-            data-track-position="mid"
-            data-track-intent="booking"
-          >
-            Book a 1:1 Session ($30)
-          </a>
-        </article>
-        <article class="landing-offer">
-          <h3>Essay Correction</h3>
-          <p>Detailed correction with clear revision actions for your next draft.</p>
-          <a
-            class="btn btn-primary"
-            href="/essay-correction?src=ielts-writing-help-tier3"
-            data-track-click="ielts-writing-help-tier3-essay"
-            data-track-page-type="landing"
-            data-track-offer="essay_correction"
-            data-track-test="ielts"
-            data-track-skill="writing"
-            data-track-position="mid"
-          >
-            Get Detailed Essay Correction
-          </a>
-        </article>
+        <a class="btn btn-primary landing-cta" href="/essay-correction#start-checkout">Submit Essay for Feedback</a>
       </div>
     </section>
 
     <section class="landing-section">
-      <h2>Student Results</h2>
-      <div class="landing-proof-grid">
-        <article class="landing-proof">
-          <p>"I went from Band 6 to Band 7.5 after focused weekly correction."</p>
-          <strong>IELTS student, Toronto (placeholder)</strong>
-        </article>
-        <article class="landing-proof">
-          <p>"The structure framework fixed my Task 2 coherence problems fast."</p>
-          <strong>IELTS student, Vancouver (placeholder)</strong>
-        </article>
-        <article class="landing-proof">
-          <p>"Personal feedback helped me stop making the same grammar errors."</p>
-          <strong>IELTS student, Montreal (placeholder)</strong>
-        </article>
-      </div>
+      <h2>What you get</h2>
+      <ul class="landing-list">
+        <li>Score-focused correction on grammar, structure, and task response</li>
+        <li>Clear next actions for your next writing attempt</li>
+        <li>A direct path from mistakes to improvement</li>
+      </ul>
     </section>
 
     <section class="landing-section landing-section--cta">
-      <h2>Start Improving This Week</h2>
+      <h2>Ready to improve your IELTS writing score?</h2>
       <div class="landing-hero__actions">
-        <a
-          class="btn btn-primary landing-cta"
-          href="/webinar?src=ielts-writing-help-final"
-          data-track-click="ielts-writing-help-final-webinar"
-          data-track-page-type="landing"
-          data-track-offer="weekly_training"
-          data-track-test="ielts"
-          data-track-skill="writing"
-          data-track-position="end"
-          data-track-intent="purchase"
-        >
-          Join Live Training to Reach Band 7+ ($12)
-        </a>
-        <a
-          class="btn landing-cta landing-cta--alt"
-          href="/tutoring?src=ielts-writing-help-final"
-          data-track-click="ielts-writing-help-final-tutoring"
-          data-track-page-type="landing"
-          data-track-offer="tutoring"
-          data-track-test="ielts"
-          data-track-skill="writing"
-          data-track-position="end"
-          data-track-intent="booking"
-        >
-          Book 1:1 IELTS Writing Coaching ($30)
-        </a>
+        <a class="btn btn-primary landing-cta" href="/essay-correction#start-checkout">Submit Essay for Feedback</a>
       </div>
+      <p class="muted" style="margin-top: var(--s-2);">
+        Need live coaching instead? <a href="/tutoring#book-private-class">Book Private Class</a>.
+      </p>
     </section>
-
-    <OfferLadderBlock
-      test="ielts"
-      skill="writing"
-      pageType="landing"
-      position="end"
-      heading="Choose the fastest way to improve"
-    />
-
-    <LeadCaptureForm
-      heading="Get free Band 7+ strategies every week"
-      message="Get free Band 7+ strategies every week"
-      buttonLabel="Send Me Weekly Strategies"
-      source="ielts-writing-help"
-      formName="ielts-writing-help-leads"
-      formType="lead_capture_general"
-      pageType="landing"
-      offer="lead_capture"
-      test="ielts"
-      skill="writing"
-      position="form_section"
-      className="landing-lead-form"
-    />
-
-    <OfferSequenceBlock
-      test="ielts"
-      skill="writing"
-      pageType="landing"
-      position="end"
-      heading="Start here if you want faster IELTS writing progress"
-    />
   </section>
 </ConversionLayout>

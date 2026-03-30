@@ -1,0 +1,101 @@
+---
+import { getCollection } from "astro:content";
+import { getPublicLessonTitle } from "../lib/lessonLevel";
+
+interface Props {
+  exam: "IELTS" | "CELPIP";
+  skill: "listening" | "reading" | "writing" | "speaking";
+  limit?: number;
+}
+
+const { exam, skill, limit = 4 } = Astro.props as Props;
+const examUpper = exam.toUpperCase() as "IELTS" | "CELPIP";
+const oppositeExam = examUpper === "IELTS" ? "CELPIP" : "IELTS";
+const skillLabel = `${skill.charAt(0).toUpperCase()}${skill.slice(1)}`;
+const sectionHeading = `Free ${examUpper} ${skillLabel} lessons`;
+const grammarLessonsPath = "/lessons/grammar";
+const vocabularyLessonsPath = "/lessons/vocabulary";
+const allLessonsPath = "/lessons";
+
+const parseDate = (value: string | undefined) => {
+  const parsed = Date.parse(value ?? "");
+  return Number.isNaN(parsed) ? 0 : parsed;
+};
+
+const allSkillLessons = await getCollection(
+  "lessons",
+  ({ data }) => !data.draft && data.category === skill
+);
+
+const examSignalScore = (lesson: (typeof allSkillLessons)[number]) => {
+  const lessonTest = String(lesson.data.test ?? "").toUpperCase();
+  const searchable = `${lesson.slug} ${lesson.data.title} ${lesson.data.description ?? ""} ${lesson.data.excerpt}`.toUpperCase();
+
+  if (lessonTest === examUpper) return 2;
+  if (searchable.includes(examUpper) && !searchable.includes(oppositeExam)) return 1;
+  return 0;
+};
+
+const relatedLessons = allSkillLessons
+  .filter((lesson) => {
+    const lessonTest = String(lesson.data.test ?? "").toUpperCase();
+    if (lessonTest && lessonTest !== examUpper) return false;
+
+    const lessonExams = (lesson.data.exam ?? []).map((value) => String(value).toUpperCase());
+    if (lessonExams.length > 0 && !lessonExams.includes(examUpper)) return false;
+
+    const searchable = `${lesson.slug} ${lesson.data.title} ${lesson.data.description ?? ""} ${lesson.data.excerpt} ${lesson.data.tags.join(" ")}`.toUpperCase();
+    if (searchable.includes(oppositeExam)) return false;
+
+    return true;
+  })
+  .sort((a, b) => {
+    const scoreDifference = examSignalScore(b) - examSignalScore(a);
+    if (scoreDifference !== 0) return scoreDifference;
+    return parseDate(b.data.date) - parseDate(a.data.date);
+  })
+  .slice(0, limit);
+
+const fallbackLessons = [...allSkillLessons]
+  .sort((a, b) => parseDate(b.data.date) - parseDate(a.data.date))
+  .slice(0, limit);
+
+const displayLessons = relatedLessons.length > 0 ? relatedLessons : fallbackLessons;
+---
+
+<section class="section-sm">
+  <div class="surface lesson-related-system">
+    <h2>{sectionHeading}</h2>
+    <p class="muted">
+      Prefer self-study first? Start with these free lessons, then move to paid support if needed.
+    </p>
+    {displayLessons.length > 0 ? (
+      <div class="lesson-related-grid">
+        {displayLessons.map((lesson) => (
+          <a class="lesson-related-card" href={`/lessons/${lesson.data.category}/${lesson.slug}/`}>
+            <h4>{getPublicLessonTitle(lesson.data.title, lesson.data.level)}</h4>
+            <p>{lesson.data.description ?? lesson.data.excerpt}</p>
+          </a>
+        ))}
+      </div>
+    ) : (
+      <p class="muted" style="margin-bottom: 0;">
+        New lessons for this skill are being added. Use the links below to open the full lesson categories.
+      </p>
+    )}
+    <div class="lesson-related-quick-links" aria-label="Free lesson quick links">
+      <a class="lesson-related-quick-link" href={`/lessons/${skill}`}>
+        Open all free {skill} lessons
+      </a>
+      <a class="lesson-related-quick-link" href={grammarLessonsPath}>
+        Open free grammar lessons
+      </a>
+      <a class="lesson-related-quick-link" href={vocabularyLessonsPath}>
+        Open free vocabulary lessons
+      </a>
+      <a class="lesson-related-quick-link" href={allLessonsPath}>
+        Open the full free lesson library
+      </a>
+    </div>
+  </div>
+</section>
