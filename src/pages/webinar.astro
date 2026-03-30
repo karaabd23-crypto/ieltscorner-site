@@ -1,10 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ServiceTrustCard from "../components/ServiceTrustCard.astro";
 
 const WEBINAR_CALENDLY_URL = "https://calendly.com/ieltscorner/weekly_webinar";
-const WEBINAR_VIDEO_EMBED_URL = "";
-const showWebinarVideo = WEBINAR_VIDEO_EMBED_URL.trim().length > 0;
+const WEBINAR_VIDEO_EMBED_URL = "https://www.youtube.com/embed/okqSzoEJwXc?si=Ptd4DV6yQAffKw98";
+
+const faqs = [
+  {
+    question: "What will I learn in the webinar?",
+    answer: "Each class focuses on one CELPIP score problem and how to fix it.",
+  },
+  {
+    question: "Can I ask questions live?",
+    answer: "Yes. You can ask your questions during the session.",
+  },
+  {
+    question: "How do I register?",
+    answer: "Click the button and choose your time in Calendly.",
+  },
+];
 ---
 
 <Layout
@@ -16,72 +29,100 @@ const showWebinarVideo = WEBINAR_VIDEO_EMBED_URL.trim().length > 0;
     <div class="hero" style={`--hero-bg: url('/heroes/webinar.png'); --hero-bg-opacity: 0.18;`}>
       <div class="hero-content">
         <span class="pill">Weekly webinar | Live online</span>
-        <h1>Register for this week's CELPIP webinar</h1>
+        <h1>Join this Saturday's CELPIP webinar</h1>
         <p>
-          Join one focused live session, get clear strategy on one score problem, and ask
-          your questions before your next test.
+          Get live guidance and clear strategy for your next test.
         </p>
-
-        <div class="cluster">
-          <button id="open-webinar-calendly" class="btn btn-primary" type="button">
-            Register Now
+        <p class="muted" style="margin: 0;">
+          This Saturday at 6:00 PM (PST). Weekly seats are limited.
+        </p>
+        <div class="funnel-hero__actions">
+          <button class="btn btn-primary open-webinar-calendly-btn" type="button">
+            Join this Saturday's CELPIP webinar
           </button>
         </div>
       </div>
     </div>
+  </section>
 
-    <div style="height: var(--s-6);"></div>
-
-    <section class="surface funnel-section funnel-video" id="webinar-video-preview">
-      <h2 style="margin-top: 0;">Webinar video preview</h2>
-      {showWebinarVideo ? (
-        <>
-          <p class="muted funnel-video__intro">
-            Watch the webinar preview, then register below to join the next live session.
-          </p>
-          <div class="funnel-video__embed">
-            <iframe
-              width="560"
-              height="315"
-              src={WEBINAR_VIDEO_EMBED_URL}
-              title="Webinar preview video"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-              loading="lazy"
-            ></iframe>
-          </div>
-        </>
-      ) : (
-        <p class="muted funnel-video__intro" style="margin-bottom: 0;">
-          The webinar preview video is being added soon. This section is ready for the embed
-          link, and registration is open below now.
-        </p>
-      )}
-    </section>
-
-    <div style="height: var(--s-6);"></div>
-
-    <ServiceTrustCard
-      heading="Know your instructor before registration"
-      intro="Before you reserve your seat, you can review teaching qualifications and score evidence on the About page."
-    />
-
-    <div style="height: var(--s-6);"></div>
-
-    <section id="register-webinar" class="surface calendly-wrap">
-      <h2 style="margin-top: 0;">Complete your webinar registration</h2>
-      <p class="muted" style="margin-top: 0;">
-        Choose your time below and reserve your seat.
+  <section class="section-sm">
+    <div class="surface funnel-section funnel-video">
+      <h2 style="margin-top: 0;">Watch part of the live CELPIP class before you join</h2>
+      <p class="muted funnel-video__intro">
+        See how the class works and what you will learn.
       </p>
+      <p class="muted" style="margin: var(--s-2) 0 var(--s-3);">
+        This Saturday at 6:00 PM (PST). Weekly seats are limited.
+      </p>
+      <div class="funnel-video__embed">
+        <iframe
+          width="560"
+          height="315"
+          src={WEBINAR_VIDEO_EMBED_URL}
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+      <div class="funnel-video__actions">
+        <button class="btn btn-primary open-webinar-calendly-btn" type="button">
+          Join this Saturday's CELPIP webinar
+        </button>
+      </div>
+    </div>
+  </section>
 
-      <div
-        class="calendly-inline-widget"
-        data-url={WEBINAR_CALENDLY_URL}
-        style="min-width:320px;height:700px;"
-      ></div>
-    </section>
+  <section class="section-sm">
+    <div class="surface funnel-section">
+      <h2 style="margin-top: 0;">What you get</h2>
+      <ul style="margin: 0; padding-left: 1.2rem;">
+        <li>Live CELPIP teaching in a weekly class.</li>
+        <li>One score problem with clear fixes.</li>
+        <li>Chance to ask your questions live.</li>
+        <li>Action steps to use before your next test.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface funnel-final-cta">
+      <h2 style="margin-top: 0;">Reserve your webinar seat</h2>
+      <p class="muted">This Saturday at 6:00 PM (PST). Weekly seats are limited.</p>
+      <div class="funnel-final-cta__actions">
+        <button class="btn btn-primary open-webinar-calendly-btn" type="button">
+          Join this Saturday's CELPIP webinar
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface funnel-section">
+      <h2 style="margin-top: 0;">FAQ</h2>
+      <div class="stack" style="gap: var(--s-2);">
+        {faqs.map((faq) => (
+          <details class="card">
+            <summary style="cursor: pointer; font-weight: 700;">{faq.question}</summary>
+            <p class="muted" style="margin: var(--s-2) 0 0;">{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface funnel-final-cta">
+      <h2 style="margin-top: 0;">Ready to join live?</h2>
+      <p class="muted">This Saturday at 6:00 PM (PST). Weekly seats are limited.</p>
+      <div class="funnel-final-cta__actions">
+        <button class="btn btn-primary open-webinar-calendly-btn" type="button">
+          Join this Saturday's CELPIP webinar
+        </button>
+      </div>
+    </div>
   </section>
 
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
@@ -99,26 +140,8 @@ const showWebinarVideo = WEBINAR_VIDEO_EMBED_URL.trim().length > 0;
         window.Calendly.initPopupWidget({ url: calendlyUrl });
       };
 
-      const primary = document.getElementById("open-webinar-calendly");
-      primary?.addEventListener("click", openPopup);
+      const buttons = Array.from(document.querySelectorAll(".open-webinar-calendly-btn"));
+      buttons.forEach((button) => button.addEventListener("click", openPopup));
     });
   </script>
 </Layout>
-
-<style>
-  .calendly-wrap {
-    padding: var(--s-5);
-    border: 2px solid color-mix(in srgb, var(--accent) 38%, var(--border) 62%);
-    border-radius: var(--radius);
-  }
-
-  @media (max-width: 768px) {
-    .calendly-wrap {
-      padding: var(--s-3);
-    }
-
-    .calendly-inline-widget {
-      height: 700px !important;
-    }
-  }
-</style>
