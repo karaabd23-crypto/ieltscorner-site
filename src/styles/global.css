@@ -5063,31 +5063,51 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
   width: fit-content;
 }
 
+.funnel-video {
+  max-width: min(760px, 100%);
+  margin-inline: auto;
+  text-align: center;
+}
+
 .funnel-video__intro {
   margin-top: 0;
-  max-width: 68ch;
+  margin-inline: auto;
+  max-width: 54ch;
 }
 
 .funnel-video__embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   border: 1px solid rgba(20, 22, 23, 0.14);
   border-radius: 16px;
-  background: #fff;
+  background: #000;
   overflow: hidden;
   box-shadow: var(--shadow-soft);
 }
 
 .funnel-video__embed iframe {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
-  min-height: clamp(220px, 42vw, 460px);
+  height: 100%;
   border: 0;
 }
 
 .funnel-video__actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
   margin-top: var(--s-4);
+}
+
+@supports not (aspect-ratio: 16 / 9) {
+  .funnel-video__embed {
+    height: 0;
+    padding-bottom: 56.25%;
+  }
 }
 
 .choice-guide {

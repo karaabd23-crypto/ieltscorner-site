@@ -1,52 +1,66 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ServiceTrustCard from "../components/ServiceTrustCard.astro";
 import {
   CELPIP_PROMPT_TOTAL,
-  CELPIP_TASK_CONFIG,
   CELPIP_WRITING_PRICE_CAD,
 } from "../lib/celpipWritingData.mjs";
 
-const task1 = CELPIP_TASK_CONFIG.task1;
-const task2 = CELPIP_TASK_CONFIG.task2;
 const promptTotal = CELPIP_PROMPT_TOTAL;
-const writingFeedbackVideoEmbedUrl = "https://www.youtube.com/embed/k-2lGP720OU?si=U7xe8VvybPi0IPOZ";
+const YOUTUBE_EMBED_URL = "https://www.youtube.com/embed/k-2lGP720OU?si=rg7FiJfdNMHsj9Q3";
+
+const faqs = [
+  {
+    question: "How much does this cost?",
+    answer: `CA$${CELPIP_WRITING_PRICE_CAD} per month.`,
+  },
+  {
+    question: "Is this a live tutoring class?",
+    answer: "No. This is not a live class.",
+  },
+  {
+    question: "What do I get after payment?",
+    answer: `${promptTotal} timed prompts, CLB feedback, and CLB 9+ sample essays.`,
+  },
+  {
+    question: "Can I cancel anytime?",
+    answer: "Yes. You can cancel anytime.",
+  },
+];
 ---
 
 <Layout
-  title="CELPIP Writing AI Feedback | Start Subscription"
-  description="Get CELPIP writing AI feedback with score analysis and model responses."
+  title="CELPIP Writing AI Feedback | Pay and Start"
+  description="Upload your CELPIP essay and get clear corrections in minutes."
 >
   <section class="section">
     <div class="hero" style={`--hero-bg: url('/heroes/writing.png');`}>
       <div class="hero-content">
-        <span class="pill">CELPIP Writing AI Feedback</span>
-        <h1>Get detailed CELPIP writing feedback in minutes</h1>
-        <p style="max-width: 68ch;">
-          Practice with timed prompts, get score-based analysis, and see exactly what to fix.
+        <span class="pill">CELPIP writing feedback</span>
+        <h1>Stuck at CLB 6? See your writing mistakes in minutes</h1>
+        <p class="muted" style="max-width: 62ch;">
+          Find exactly what is lowering your score and fix it.
         </p>
-        <div class="cluster">
-          <button id="buy-writing-lab" class="btn btn-primary buy-writing-lab-btn" type="button">
-            Get Access for CA${CELPIP_WRITING_PRICE_CAD}/month
-          </button>
-        </div>
-        <p class="muted checkout-status" style="margin: var(--s-2) 0 0; min-height: 1.2rem;"></p>
       </div>
     </div>
   </section>
 
   <section class="section-sm">
     <div class="surface funnel-section funnel-video">
-      <h2 style="margin-top: 0;">Watch How the CELPIP Writing Feedback Service Works</h2>
+      <h2 style="margin-top: 0;">Watch what you get with the AI CELPIP essay correction</h2>
       <p class="muted funnel-video__intro">
-        See exactly what kind of corrections you get and how this helps improve your writing score before your next test.
+        This video explains the price, how the service works, and what you receive after you submit your writing.
       </p>
+      <ul class="offer-card__list" style="margin: var(--s-2) auto 0; max-width: 42rem; text-align: left;">
+        <li>Get an estimated CLB score and clear feedback.</li>
+        <li>See why your writing got that score.</li>
+        <li>Get a CLB 9+ sample essay for the same prompt.</li>
+      </ul>
       <div class="funnel-video__embed">
         <iframe
           width="560"
           height="315"
-          src={writingFeedbackVideoEmbedUrl}
-          title="CELPIP writing feedback service video"
+          src={YOUTUBE_EMBED_URL}
+          title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
@@ -54,6 +68,20 @@ const writingFeedbackVideoEmbedUrl = "https://www.youtube.com/embed/k-2lGP720OU?
           loading="lazy"
         ></iframe>
       </div>
+      <p class="muted" style="margin: var(--s-3) 0 0;">
+        Many students do not see these mistakes on their own.
+      </p>
+      <div class="funnel-video__actions">
+        <button class="btn btn-primary buy-writing-lab-btn" type="button">
+          Try the AI essay correction
+        </button>
+      </div>
+      <p class="muted" style="margin: var(--s-2) 0 0;">
+        Built for CELPIP writing practice, not general AI writing help.
+      </p>
+      <p class="muted" style="margin: var(--s-2) 0 0;">
+        <a href="/celpip/writing/samples">See a corrected CELPIP essay</a>
+      </p>
     </div>
   </section>
 
@@ -61,40 +89,53 @@ const writingFeedbackVideoEmbedUrl = "https://www.youtube.com/embed/k-2lGP720OU?
     <div class="surface funnel-section">
       <h2 style="margin-top: 0;">What you get</h2>
       <ul style="margin: 0; padding-left: 1.2rem;">
-        <li>{promptTotal} CELPIP writing prompts for Task 1 and Task 2 practice.</li>
-        <li>Score analysis by criteria with clear corrections and rewrite suggestions.</li>
-        <li>Model responses so you can compare your answer to a strong version.</li>
-        <li>Monthly access for CA${CELPIP_WRITING_PRICE_CAD}, cancel any time.</li>
+        <li>CA${CELPIP_WRITING_PRICE_CAD} per month for full access.</li>
+        <li>Timed writing practice for CELPIP tasks.</li>
+        <li>Estimated CLB score for each response.</li>
+        <li>Clear reason for your estimated CLB score.</li>
+        <li>Advice to improve toward CLB 9+.</li>
+        <li>A CLB 9+ sample essay for the same prompt.</li>
+        <li>Access to {promptTotal} prompts and sample essays.</li>
+      </ul>
+      <h3 style="margin: var(--s-4) 0 var(--s-2);">Who this is for</h3>
+      <ul style="margin: 0; padding-left: 1.2rem;">
+        <li>Stuck at CLB 6 or 7.</li>
+        <li>Writing score lower than other skills.</li>
+        <li>Need clear correction.</li>
       </ul>
     </div>
   </section>
 
   <section class="section-sm">
-    <div class="surface funnel-section">
-      <h2 style="margin-top: 0;">How it works</h2>
-      <ol style="margin: 0; padding-left: 1.2rem;">
-        <li>Subscribe and open the writing lab.</li>
-        <li>Write a timed response for <strong>{task1.label}</strong> or <strong>{task2.label}</strong>.</li>
-        <li>Review your score report and apply the fixes in your next attempt.</li>
-      </ol>
+    <div class="surface funnel-final-cta">
+      <h2 style="margin-top: 0;">Primary action</h2>
+      <button id="buy-writing-lab" class="btn btn-primary buy-writing-lab-btn" type="button">
+        Fix your writing mistakes now
+      </button>
+      <p class="muted checkout-status" style="margin: var(--s-2) 0 0; min-height: 1.2rem;"></p>
     </div>
   </section>
 
   <section class="section-sm">
-    <ServiceTrustCard
-      heading="Know the teaching background behind this feedback"
-      intro="Before you subscribe, check the qualifications and score evidence used to design IELTS Corner feedback systems."
-    />
+    <div class="surface funnel-section">
+      <h2 style="margin-top: 0;">FAQ</h2>
+      <div class="stack" style="gap: var(--s-2);">
+        {faqs.map((faq) => (
+          <details class="card">
+            <summary style="cursor: pointer; font-weight: 700;">{faq.question}</summary>
+            <p class="muted" style="margin: var(--s-2) 0 0;">{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
   </section>
 
   <section class="section-sm">
     <div class="surface funnel-final-cta">
-      <h2 style="margin-top: 0;">Ready to start?</h2>
-      <div class="funnel-final-cta__actions">
-        <button class="btn btn-primary buy-writing-lab-btn" type="button">
-          Start AI Feedback Subscription
-        </button>
-      </div>
+      <h2 style="margin-top: 0;">Final action</h2>
+      <button class="btn btn-primary buy-writing-lab-btn" type="button">
+        See your mistakes before your next test
+      </button>
       <p class="muted checkout-status" style="margin: var(--s-2) 0 0; min-height: 1.2rem;"></p>
     </div>
   </section>
@@ -120,9 +161,7 @@ const writingFeedbackVideoEmbedUrl = "https://www.youtube.com/embed/k-2lGP720OU?
       const text = await response.text();
       const isHtml = /<!doctype html>|<html/i.test(text);
       if (isHtml) {
-        throw new Error(
-          "Checkout endpoint returned HTML instead of JSON. Start the site with Netlify Functions enabled (`netlify dev`) and verify Stripe env vars."
-        );
+        throw new Error("Checkout is unavailable. Please try again.");
       }
 
       try {
@@ -130,7 +169,7 @@ const writingFeedbackVideoEmbedUrl = "https://www.youtube.com/embed/k-2lGP720OU?
       } catch {
       }
 
-      throw new Error(text?.trim() || "Unexpected response from checkout endpoint.");
+      throw new Error(text?.trim() || "Unexpected checkout response.");
     };
 
     const startCheckout = async () => {
@@ -162,7 +201,7 @@ const writingFeedbackVideoEmbedUrl = "https://www.youtube.com/embed/k-2lGP720OU?
     buyButtons.forEach((button) => button.addEventListener("click", startCheckout));
 
     if (new URLSearchParams(window.location.search).get("canceled") === "1") {
-      setCheckoutStatus("Checkout was canceled. You can start again anytime.");
+      setCheckoutStatus("Checkout was canceled. You can start again.");
     }
   </script>
 </Layout>

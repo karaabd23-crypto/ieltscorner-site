@@ -29,3 +29,10 @@ pnpm-debug.log*
 
 # local automation and runtime cache
 .cache/
+
+# local browser profiles and temp data for WhatsApp automation
+scripts/whatsapp-automation/.chrome-profile*
+scripts/whatsapp-automation/whatsapp-profile*
+scripts/whatsapp-automation/.tmp-profile-*
+scripts/whatsapp-automation/**/__pycache__/
+scripts/whatsapp-automation/**/*.pyc

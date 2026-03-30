@@ -38,7 +38,7 @@ const isPrePaymentPath =
   normalizedPath.startsWith("/webinar") ||
   normalizedPath.startsWith("/tutoring") ||
   normalizedPath.startsWith("/essay-correction") ||
-  normalizedPath.startsWith("/celpip/writing/ai-feedback");
+  normalizedPath.startsWith("/ai-feedback");
 const isExamSkillPath =
   ((normalizedPath.startsWith("/celpip/") && normalizedPath !== "/celpip") ||
     (normalizedPath.startsWith("/ielts/") && normalizedPath !== "/ielts")) &&
@@ -89,7 +89,7 @@ const focusHeaderCta = (() => {
   if (normalizedPath === "/celpip-writing-help") {
     return { href: "/ai-feedback", label: "Go to AI Feedback" };
   }
-  if (normalizedPath.startsWith("/celpip/writing/ai-feedback")) {
+  if (normalizedPath.startsWith("/ai-feedback")) {
     return { href: "/ai-feedback#buy-writing-lab", label: "Get AI Writing Access" };
   }
   if (normalizedPath.startsWith("/celpip/writing")) {
@@ -145,7 +145,7 @@ const reducedNavLinks: ReducedNavLink[] = (() => {
       {
         href: "/ai-feedback",
         label: "AI Feedback",
-        isActive: normalizedPath === "/ai-feedback" || normalizedPath.startsWith("/celpip/writing/ai-feedback"),
+        isActive: normalizedPath === "/ai-feedback" || normalizedPath.startsWith("/ai-feedback"),
       },
       { href: "/tutoring", label: "Private Class", isActive: isPathActive("/tutoring") },
     ];
@@ -566,7 +566,7 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
                   );
                 })}
 
-                <a class:list={["nav-hub", (currentPath.startsWith('/celpip/writing/ai-feedback') || currentPath.startsWith('/ai-feedback')) && 'is-active']} href="/ai-feedback">
+                <a class:list={["nav-hub", (currentPath.startsWith('/ai-feedback') || currentPath.startsWith('/ai-feedback')) && 'is-active']} href="/ai-feedback">
                   Writing Hub
                 </a>
               </nav>

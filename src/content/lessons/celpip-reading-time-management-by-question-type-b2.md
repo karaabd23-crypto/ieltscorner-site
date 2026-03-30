@@ -233,7 +233,7 @@ draft: false
       <strong>1-on-1 Tutoring</strong>
       <span>Live help when you want guided practice and fast correction.</span>
     </a>
-    <a class="lesson-support-card lesson-support-card-ai" href="/celpip/writing/ai-feedback">
+    <a class="lesson-support-card lesson-support-card-ai" href="/ai-feedback">
       <span class="lesson-support-icon" aria-hidden="true">AI</span>
       <strong>AI Writing Feedback</strong>
       <span>Quick checks when you want to test ideas before a full review.</span>

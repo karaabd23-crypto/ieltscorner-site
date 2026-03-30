@@ -1,6 +1,5 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-import SkillFreeLessons from "../../../components/SkillFreeLessons.astro";
 import { buildBreadcrumbSchema } from "../../../lib/seo";
 
 const pageStructuredData = [
@@ -13,8 +12,8 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="CELPIP Writing | Start AI Feedback"
-  description="Improve CELPIP writing faster with focused AI feedback and clear correction points."
+  title="CELPIP Writing Hub | Fix Writing Mistakes"
+  description="CELPIP writing hub with one clear path to AI writing feedback."
   keywords="CELPIP writing, CELPIP writing feedback, CLB 9 CELPIP writing"
   structuredData={pageStructuredData}
 >
@@ -22,40 +21,46 @@ const pageStructuredData = [
     <div class="hero" style={`--hero-bg: url('/heroes/writing.png');`}>
       <div class="hero-content">
         <span class="pill">CELPIP writing</span>
-        <h1>Improve CELPIP writing with one clear next step</h1>
-        <p class="muted" style="max-width: 62ch;">
-          Start with AI feedback to see your score gaps quickly and fix the mistakes that
-          hold your writing score down.
-        </p>
-        <div class="cluster">
-          <a class="btn btn-primary" href="/ai-feedback">Go to AI Feedback</a>
-        </div>
+        <h1>Your CELPIP writing score is stuck. Here is why.</h1>
       </div>
     </div>
   </section>
 
   <section class="section-sm">
     <div class="surface funnel-section">
-      <h2 style="margin-top: 0;">Why this path works</h2>
+      <h2 style="margin-top: 0;">Why your writing score is not improving</h2>
       <ul style="margin: 0; padding-left: 1.2rem;">
-        <li>Practice timed Task 1 and Task 2 responses.</li>
-        <li>Get clear score-based feedback on your own writing.</li>
-        <li>Apply fixes immediately in your next attempt.</li>
+        <li>You do not see your grammar mistakes.</li>
+        <li>You repeat the same structure.</li>
+        <li>You do not know what a high score looks like.</li>
       </ul>
     </div>
   </section>
 
-  <SkillFreeLessons exam="CELPIP" skill="writing" />
-
   <section class="section-sm">
     <div class="surface funnel-final-cta">
-      <h2 style="margin-top: 0;">Start your CELPIP writing feedback now</h2>
-      <div class="funnel-final-cta__actions">
-        <a class="btn btn-primary" href="/ai-feedback">Go to AI Feedback</a>
-      </div>
-      <p class="muted" style="margin: var(--s-2) 0 0;">
-        Need human correction instead? <a href="/essay-correction">Use essay correction</a>.
+      <p class="offer-card__label">Main action</p>
+      <h2 style="margin-top: 0;">Get feedback on your writing</h2>
+      <p>Upload your essay and see your mistakes in minutes.</p>
+      <a class="btn btn-primary" href="/ai-feedback">See your mistakes before your next test</a>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface funnel-section" style="opacity: 0.88;">
+      <h2 style="margin-top: 0;">Free lessons (optional)</h2>
+      <p class="muted" style="margin: 0;">
+        Study free writing lessons first if you are not ready to pay.
       </p>
+      <a class="btn btn-ghost" href="/lessons/writing" style="margin-top: var(--s-3);">Open free writing lessons</a>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface funnel-section">
+      <h2 style="margin-top: 0;">Need another skill page?</h2>
+      <p class="muted" style="margin-top: 0;">You can return to the CELPIP main page.</p>
+      <a class="btn btn-ghost" href="/celpip">Go back to CELPIP main page</a>
     </div>
   </section>
 </Layout>

@@ -67,7 +67,7 @@ const displayLessons = relatedLessons.length > 0 ? relatedLessons : fallbackLess
   <div class="surface lesson-related-system">
     <h2>{sectionHeading}</h2>
     <p class="muted">
-      Prefer self-study first? Start with these free lessons, then move to paid support if needed.
+      Study free lessons first if you are not ready to pay.
     </p>
     {displayLessons.length > 0 ? (
       <div class="lesson-related-grid">
@@ -80,7 +80,7 @@ const displayLessons = relatedLessons.length > 0 ? relatedLessons : fallbackLess
       </div>
     ) : (
       <p class="muted" style="margin-bottom: 0;">
-        New lessons for this skill are being added. Use the links below to open the full lesson categories.
+        No new lessons yet for this skill. Use the links below.
       </p>
     )}
     <div class="lesson-related-quick-links" aria-label="Free lesson quick links">

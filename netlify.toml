@@ -33,6 +33,18 @@
   force = true
 
 [[redirects]]
+  from = "/celpip/writing/ai-feedback"
+  to = "/ai-feedback"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/celpip/writing/ai-feedback/"
+  to = "/ai-feedback"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/celpip-speaking-task-2-opinion-strategy"
   to = "/celpip/speaking/task-7-opinion"
   status = 301

@@ -13,55 +13,62 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="CELPIP Hub | Choose Your Skill"
-  description="CELPIP hub with four skill paths: listening, reading, writing, and speaking."
+  title="CELPIP Entry | Start With Writing"
+  description="CELPIP entry page for writing users stuck at CLB 6 or 7."
   keywords={pageKeywords}
   structuredData={pageStructuredData}
 >
   <section class="section">
     <div class="hero funnel-hero" style={`--hero-bg: url('/heroes/celpip.png');`}>
       <div class="hero-content funnel-hero__content">
-        <span class="pill">CELPIP exam hub</span>
-        <h1>Choose the CELPIP skill you want to improve</h1>
-        <p class="muted">
-          Select one skill below and follow a focused study path with a clear next step.
-        </p>
+        <span class="pill">CELPIP entry page</span>
+        <h1>Stuck at CLB 6 in CELPIP Writing?</h1>
+        <p class="muted">Find your mistakes and fix them step by step.</p>
+        <a class="btn btn-primary" href="/celpip/writing">Fix your writing mistakes now</a>
       </div>
     </div>
   </section>
 
   <section class="section-sm">
     <div class="surface funnel-section">
-      <h2 style="margin-top: 0;">CELPIP skill paths</h2>
-      <div class="offer-grid" style="margin-top: var(--s-3);">
-        <a class="offer-card" href="/celpip/listening" style="text-decoration: none; color: inherit;">
-          <p class="offer-card__label">Skill 1</p>
-          <h3 class="offer-card__name">Listening</h3>
-          <p class="offer-card__line">Fix answer-trap mistakes and improve listening accuracy.</p>
-          <span class="btn btn-ghost">Open Listening Path</span>
-        </a>
+      <h2 style="margin-top: 0;">Why your writing score is not improving</h2>
+      <ul style="margin: 0; padding-left: 1.2rem;">
+        <li>You do not see your grammar mistakes.</li>
+        <li>You repeat the same structure.</li>
+        <li>You do not know what a high score looks like.</li>
+      </ul>
+    </div>
+  </section>
 
-        <a class="offer-card" href="/celpip/reading" style="text-decoration: none; color: inherit;">
-          <p class="offer-card__label">Skill 2</p>
-          <h3 class="offer-card__name">Reading</h3>
-          <p class="offer-card__line">Improve timing, question strategy, and proof-based answers.</p>
-          <span class="btn btn-ghost">Open Reading Path</span>
-        </a>
+  <section class="section-sm">
+    <div class="surface funnel-section">
+      <h2 style="margin-top: 0;">Who this is for</h2>
+      <ul style="margin: 0; padding-left: 1.2rem;">
+        <li>You are stuck at CLB 6 or 7.</li>
+        <li>Your writing score is lower than other skills.</li>
+        <li>You do not know what mistakes you make.</li>
+      </ul>
+    </div>
+  </section>
 
-        <a class="offer-card" href="/celpip/writing" style="text-decoration: none; color: inherit;">
-          <p class="offer-card__label">Skill 3</p>
-          <h3 class="offer-card__name">Writing</h3>
-          <p class="offer-card__line">Get score-focused feedback and see the AI feedback video in the writing path.</p>
-          <span class="btn btn-ghost">Open Writing Path</span>
-        </a>
+  <section class="section-sm">
+    <div class="surface funnel-final-cta">
+      <p class="offer-card__label">Start here</p>
+      <h2 style="margin-top: 0;">Start here (recommended)</h2>
+      <ul style="margin: var(--s-2) auto 0; max-width: 36rem; text-align: left; padding-left: 1.2rem;">
+        <li>Step 1: Upload your writing.</li>
+        <li>Step 2: See your mistakes.</li>
+        <li>Step 3: Fix them and improve.</li>
+      </ul>
+      <a class="btn btn-primary" href="/celpip/writing" style="margin-top: var(--s-4);">See your mistakes before your next test</a>
+    </div>
+  </section>
 
-        <a class="offer-card" href="/celpip/speaking" style="text-decoration: none; color: inherit;">
-          <p class="offer-card__label">Skill 4</p>
-          <h3 class="offer-card__name">Speaking</h3>
-          <p class="offer-card__line">Build clearer answers and reduce hesitation under pressure.</p>
-          <span class="btn btn-ghost">Open Speaking Path</span>
-        </a>
-      </div>
+  <section class="section-sm">
+    <div class="surface funnel-section">
+      <h2 style="margin-top: 0;">Need help with speaking, reading, or listening?</h2>
+      <p class="muted" style="margin-bottom: 0;">Book one class and get direct correction.</p>
+      <a class="btn btn-ghost" href="/tutoring#book-private-class" style="margin-top: var(--s-3);">Book a CELPIP class</a>
     </div>
   </section>
 </Layout>
