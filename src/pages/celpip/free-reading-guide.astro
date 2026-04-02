@@ -1,0 +1,284 @@
+---
+import ConversionLayout from "../../layouts/ConversionLayout.astro";
+
+const leadMagnetSource = "instagram-celpip-reading-guide";
+const leadMagnetId = "celpip_reading_guide_instagram";
+const successPath = "/celpip/free-reading-guide/thanks/";
+---
+
+<ConversionLayout
+  title="Free CELPIP Reading Guide"
+  description="Stop losing easy CELPIP Reading marks to timing mistakes, paraphrase confusion, and trap answers. Get a practical guide with mini drills and a 5-day action plan."
+>
+  <section class="landing-shell instagram-lead-shell">
+    <section class="landing-hero instagram-lead-hero">
+      <p class="landing-eyebrow">Free Reading Lead Magnet</p>
+      <h1>Free CELPIP Reading Guide</h1>
+      <p class="landing-subheadline">
+        Stop losing easy marks to timing mistakes, paraphrase confusion, and trap answers. Get a practical reading guide with mini drills and a 5-day improvement plan.
+      </p>
+      <p class="instagram-lead-cred">
+        Created for serious CELPIP candidates who want clear, practical guidance.
+      </p>
+
+      <form
+        id="instagram-reading-guide-form"
+        class="lead-capture__form instagram-lead-form"
+        method="POST"
+        action={successPath}
+        data-track-form="instagram-celpip-reading-guide-form"
+        data-track-form-type="lead_capture_celpip_reading_guide"
+        data-track-page-type="landing"
+        data-track-offer="lead_capture"
+        data-track-test="celpip"
+        data-track-skill="reading"
+        data-track-position="hero"
+      >
+        <input type="hidden" name="source" value={leadMagnetSource} />
+        <input type="hidden" name="lead_magnet_id" value={leadMagnetId} />
+
+        <label class="lead-capture__field">
+          <span>First name (optional)</span>
+          <input
+            id="instagram-reading-guide-first-name"
+            type="text"
+            name="first_name"
+            autocomplete="given-name"
+            placeholder="Your first name"
+          />
+        </label>
+
+        <label class="lead-capture__field">
+          <span>Email</span>
+          <input
+            id="instagram-reading-guide-email"
+            type="email"
+            name="email"
+            required
+            autocomplete="email"
+            placeholder="Your best email"
+          />
+        </label>
+
+        <button
+          id="instagram-reading-guide-submit"
+          type="submit"
+          class="btn btn-primary landing-cta"
+          data-track-click="instagram-reading-guide-hero-submit"
+          data-track-page-type="landing"
+          data-track-offer="lead_capture"
+          data-track-test="celpip"
+          data-track-skill="reading"
+          data-track-position="hero"
+          data-lead-magnet-cta="hero-form-submit"
+        >
+          Get The Free Guide
+        </button>
+      </form>
+
+      <p id="instagram-reading-guide-status" class="instagram-lead-form-status" role="status" aria-live="polite"></p>
+      <p class="instagram-lead-disclaimer">
+        No spam. You will get the guide now and practical CELPIP reading lessons in your inbox. <a href="/privacy">Privacy policy</a>.
+      </p>
+    </section>
+
+    <section class="landing-section">
+      <h2>What you get inside this free guide</h2>
+      <ul class="landing-list instagram-lead-benefits">
+        <li>The five reading mistakes that keep many CELPIP candidates stuck around CLB 6.</li>
+        <li>A simple question-first method to improve accuracy without reading every line slowly.</li>
+        <li>Paraphrasing examples and mini practice drills with answer analysis.</li>
+        <li>A realistic 5-day action plan you can use right away in your next week of practice.</li>
+      </ul>
+    </section>
+
+    <section class="landing-section">
+      <h2>Who this is for</h2>
+      <div class="landing-proof-grid">
+        <article class="landing-proof">
+          <p>You are preparing for CELPIP soon and need a clear plan, not random tips.</p>
+        </article>
+        <article class="landing-proof">
+          <p>Your reading score is holding you back while your other skills are stronger.</p>
+        </article>
+        <article class="landing-proof">
+          <p>You want practical strategy you can apply in your next practice session.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="landing-section landing-section--cta instagram-lead-repeat">
+      <p class="landing-eyebrow">One Clear Next Step</p>
+      <h2>Start fixing CELPIP reading mistakes today.</h2>
+      <p class="muted">
+        Get the free guide, use the mini drills right away, and keep the weekly reading tips for steady score growth.
+      </p>
+      <a
+        class="btn btn-primary landing-cta"
+        href="#instagram-reading-guide-form"
+        data-track-click="instagram-reading-guide-bottom-cta"
+        data-track-page-type="landing"
+        data-track-offer="lead_capture"
+        data-track-test="celpip"
+        data-track-skill="reading"
+        data-track-position="end"
+        data-lead-magnet-cta="bottom-scroll-cta"
+      >
+        Send Me The Free Guide
+      </a>
+    </section>
+  </section>
+</ConversionLayout>
+
+<script>
+  (() => {
+    const leadMagnetSource = "instagram-celpip-reading-guide";
+    const leadMagnetId = "celpip_reading_guide_instagram";
+    const successPath = "/celpip/free-reading-guide/thanks/";
+    const storageKey = "ieltscorner.newsletterSignup";
+
+    const form = document.getElementById("instagram-reading-guide-form");
+    const emailInput = document.getElementById("instagram-reading-guide-email");
+    const firstNameInput = document.getElementById("instagram-reading-guide-first-name");
+    const submitButton = document.getElementById("instagram-reading-guide-submit");
+    const status = document.getElementById("instagram-reading-guide-status");
+    const ctaButtons = Array.from(document.querySelectorAll("[data-lead-magnet-cta]"));
+
+    const pushTrackingEvent = (eventName, payload = {}) => {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: eventName,
+        lead_magnet_id: leadMagnetId,
+        source: leadMagnetSource,
+        page_path: window.location.pathname,
+        ...payload,
+      });
+    };
+
+    const normalizeEmail = (value) => String(value || "").trim().toLowerCase();
+    const normalizeFirstName = (value) => String(value || "").trim().replace(/\s+/g, " ").slice(0, 80);
+    const isValidEmail = (value) => /^\S+@\S+\.\S+$/.test(value);
+
+    const readSignup = () => {
+      try {
+        const raw = localStorage.getItem(storageKey);
+        if (!raw) return null;
+        const parsed = JSON.parse(raw);
+        if (!parsed || typeof parsed !== "object") return null;
+        return parsed;
+      } catch {
+        return null;
+      }
+    };
+
+    const saveSignup = ({ email, firstName }) => {
+      try {
+        localStorage.setItem(
+          storageKey,
+          JSON.stringify({
+            email: normalizeEmail(email),
+            firstName: normalizeFirstName(firstName),
+            source: leadMagnetSource,
+            unlockedLessons: true,
+            subscribedAt: new Date().toISOString(),
+          })
+        );
+      } catch {
+      }
+    };
+
+    const setStatus = (message, type = "neutral") => {
+      if (!(status instanceof HTMLElement)) return;
+      status.textContent = message;
+      status.classList.remove("is-success", "is-error");
+      if (type === "success") status.classList.add("is-success");
+      if (type === "error") status.classList.add("is-error");
+    };
+
+    const submitWithFunction = async ({ email, firstName }) => {
+      const response = await fetch("/.netlify/functions/subscribe-newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          firstName,
+          source: leadMagnetSource,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Function request failed");
+      }
+
+      return response.json().catch(() => null);
+    };
+
+    pushTrackingEvent("lead_magnet_view");
+
+    ctaButtons.forEach((button) => {
+      button.addEventListener(
+        "click",
+        () => {
+          pushTrackingEvent("lead_magnet_cta_click", {
+            cta_label: button.getAttribute("data-lead-magnet-cta") || "cta",
+          });
+        },
+        { passive: true }
+      );
+    });
+
+    if (!(form instanceof HTMLFormElement)) return;
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const email = emailInput instanceof HTMLInputElement ? normalizeEmail(emailInput.value) : "";
+      const firstName = firstNameInput instanceof HTMLInputElement
+        ? normalizeFirstName(firstNameInput.value)
+        : "";
+
+      if (!isValidEmail(email)) {
+        setStatus("Please enter a valid email address.", "error");
+        return;
+      }
+
+      pushTrackingEvent("lead_magnet_submit", {
+        cta_label: "hero-form-submit",
+      });
+
+      const savedSignup = readSignup();
+      if (savedSignup?.email === email) {
+        saveSignup({ email, firstName });
+        pushTrackingEvent("lead_magnet_success", {
+          duplicate: true,
+          cta_label: "hero-form-submit",
+        });
+        window.location.href = successPath;
+        return;
+      }
+
+      if (submitButton instanceof HTMLButtonElement) {
+        submitButton.disabled = true;
+      }
+      setStatus("Submitting your guide request...");
+
+      try {
+        const result = await submitWithFunction({ email, firstName });
+
+        saveSignup({ email, firstName });
+        setStatus("Success. Redirecting you to the guide access page...", "success");
+        pushTrackingEvent("lead_magnet_success", {
+          duplicate: Boolean(result?.duplicate),
+          cta_label: "hero-form-submit",
+        });
+        window.location.href = successPath;
+      } catch {
+        setStatus("We could not save your request right now. Please try again in a moment.", "error");
+      } finally {
+        if (submitButton instanceof HTMLButtonElement) {
+          submitButton.disabled = false;
+        }
+      }
+    });
+  })();
+</script>
