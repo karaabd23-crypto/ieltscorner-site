@@ -1392,6 +1392,20 @@ textarea {
   box-shadow: var(--shadow-soft);
 }
 
+/* Keep ads out of reading cards and heading/text flow.
+   Only allow explicit manual ad slots we render in components/layouts. */
+.google-auto-placed {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  height: 0 !important;
+}
+
+ins.adsbygoogle:not(.ad-unit-line):not(.ad-unit-square):not(.ad-unit-side):not(.ad-unit-content):not(.ad-unit-in-article) {
+  display: none !important;
+}
+
 .ad-shell {
   display: flex;
   justify-content: center;
@@ -4203,6 +4217,10 @@ hr {
   margin-bottom: 0;
 }
 
+.guide-card-spaced {
+  margin-top: var(--s-4);
+}
+
 .guide-tag {
   display: inline-flex;
   align-items: center;
@@ -4306,6 +4324,91 @@ hr {
   color: #8d4d21;
 }
 
+.guide-question__options {
+  padding-left: 1.35rem;
+  margin: var(--s-3) 0 0;
+}
+
+.guide-question__options li {
+  margin-bottom: 8px;
+}
+
+.guide-practice-list {
+  display: grid;
+  gap: var(--s-4);
+  margin-top: var(--s-4);
+}
+
+.guide-practice-item {
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: rgba(245, 249, 255, 0.84);
+  border: 1px solid rgba(29, 95, 153, 0.1);
+}
+
+.guide-practice-item h3 {
+  margin-bottom: 10px;
+}
+
+.guide-practice-item p:last-of-type {
+  margin-bottom: 0;
+}
+
+.guide-answer {
+  margin-top: var(--s-3);
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(22, 53, 83, 0.1);
+}
+
+.guide-answer summary {
+  cursor: pointer;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.guide-answer[open] summary {
+  margin-bottom: 10px;
+}
+
+.guide-answer p:last-child,
+.guide-answer ul:last-child {
+  margin-bottom: 0;
+}
+
+.guide-plan-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-3);
+  margin-top: var(--s-4);
+}
+
+.guide-plan-day {
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(22, 53, 83, 0.1);
+  box-shadow: 0 12px 24px rgba(22, 53, 83, 0.05);
+}
+
+.guide-plan-day__label {
+  margin: 0 0 8px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.guide-plan-day h3 {
+  margin-bottom: 8px;
+}
+
+.guide-plan-day p:last-child {
+  margin-bottom: 0;
+}
+
 .guide-links {
   display: grid;
   gap: var(--s-3);
@@ -4352,6 +4455,10 @@ hr {
   }
 
   .guide-step {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-plan-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -4539,6 +4646,112 @@ hr {
 
 .lead-capture__honeypot {
   display: none;
+}
+
+.instagram-lead-shell {
+  max-width: min(920px, 100%);
+  margin-inline: auto;
+}
+
+.instagram-lead-hero {
+  background:
+    radial-gradient(circle at top right, rgba(217, 72, 72, 0.12), transparent 35%),
+    radial-gradient(circle at left bottom, rgba(123, 183, 199, 0.12), transparent 34%),
+    rgba(255, 255, 255, 0.96);
+}
+
+.instagram-lead-hero h1 {
+  max-width: 15ch;
+}
+
+.instagram-lead-cred {
+  margin: var(--s-3) 0 0;
+  color: #2f4356;
+  font-weight: 600;
+}
+
+.instagram-lead-form {
+  margin-top: var(--s-4);
+}
+
+.instagram-lead-form .btn {
+  min-width: 220px;
+}
+
+.instagram-lead-form-status {
+  margin: var(--s-2) 0 0;
+  min-height: 1.35rem;
+  font-size: 0.92rem;
+  color: #3d4f60;
+}
+
+.instagram-lead-form-status.is-success {
+  color: #2f6a4d;
+}
+
+.instagram-lead-form-status.is-error {
+  color: #8f3434;
+}
+
+.instagram-lead-disclaimer {
+  margin: var(--s-2) 0 0;
+  font-size: 0.86rem;
+  color: #556576;
+}
+
+.instagram-lead-benefits {
+  display: grid;
+  gap: 10px;
+  margin-top: var(--s-3);
+  padding-left: 0;
+  list-style: none;
+}
+
+.instagram-lead-benefits li {
+  position: relative;
+  margin: 0;
+  padding: 12px 14px 12px 42px;
+  border: 1px solid rgba(20, 22, 23, 0.14);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.instagram-lead-benefits li::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 15px;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent) 52%, white 48%);
+  background:
+    radial-gradient(circle at center, color-mix(in srgb, var(--accent) 58%, white 42%) 0 5px, transparent 5px);
+}
+
+.instagram-lead-repeat {
+  text-align: center;
+  border-color: color-mix(in srgb, var(--accent) 34%, var(--border-strong) 66%);
+  background:
+    radial-gradient(circle at top right, rgba(217, 72, 72, 0.1), transparent 34%),
+    #fff;
+}
+
+.instagram-lead-repeat p {
+  margin-inline: auto;
+  max-width: 62ch;
+}
+
+.instagram-lead-next-grid {
+  align-items: stretch;
+}
+
+.instagram-lead-next-grid .landing-offer {
+  grid-template-rows: auto auto 1fr auto;
+}
+
+.instagram-lead-next-grid .btn {
+  width: fit-content;
 }
 
 .essay-submit-guard__locked {
@@ -4749,6 +4962,16 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
 
   .lead-capture__form {
     grid-template-columns: 1fr;
+  }
+
+  .instagram-lead-hero h1 {
+    max-width: none;
+  }
+
+  .instagram-lead-form .btn,
+  .instagram-lead-next-grid .btn {
+    width: 100%;
+    min-width: 0;
   }
 }
 

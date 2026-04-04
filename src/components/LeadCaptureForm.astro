@@ -37,8 +37,7 @@ const {
     name={formName}
     method="POST"
     action="/thank-you/"
-    data-netlify="true"
-    data-netlify-honeypot="bot-field"
+    data-newsletter-capture="kit"
     data-track-form={formName}
     data-track-form-type={formType}
     data-track-page-type={pageType}
@@ -48,11 +47,9 @@ const {
     data-track-position={position}
     class="lead-capture__form"
   >
-    <input type="hidden" name="form-name" value={formName} />
     <input type="hidden" name="source" value={source} />
-    <p class="lead-capture__honeypot">
-      <label>Do not fill this out: <input name="bot-field" /></label>
-    </p>
+    <input type="hidden" name="audience" value="digest" />
+    <input type="hidden" name="success_path" value="/thank-you/" />
     <label class="lead-capture__field">
       <span>Name</span>
       <input type="text" name="name" required autocomplete="name" />
@@ -74,4 +71,5 @@ const {
       {buttonLabel}
     </button>
   </form>
+  <p class="muted" data-newsletter-status style="min-height: 1.2rem; margin-top: var(--s-2);"></p>
 </section>

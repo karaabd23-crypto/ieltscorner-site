@@ -715,15 +715,8 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
             name="newsletter"
             method="POST"
             action="/newsletter/thanks/"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
             class="lesson-email-gate__form"
           >
-            <input type="hidden" name="form-name" value="newsletter" />
-            <p style="display:none;">
-              <label>Do not fill this out: <input name="bot-field" /></label>
-            </p>
-
             <input
               type="email"
               name="email"
@@ -865,18 +858,21 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
     {showLessonEmailGate && (
       <script is:inline>
         (() => {
-          const storageKey = 'ieltscorner.newsletterSignup';
+          const storageKey = 'ieltscorner.digestSignup';
+          const legacyStorageKey = 'ieltscorner.newsletterSignup';
+          const readingGuideSource = 'instagram-celpip-reading-guide';
           const gate = document.getElementById('lesson-email-gate');
           const form = document.getElementById('lesson-email-gate-form');
           const status = document.getElementById('lesson-email-gate-status');
           const normalizeEmail = (value) => String(value || '').trim().toLowerCase();
           const readSignup = () => {
             try {
-              const raw = localStorage.getItem(storageKey);
+              const raw = localStorage.getItem(storageKey) || localStorage.getItem(legacyStorageKey);
               if (!raw) return null;
 
               const parsed = JSON.parse(raw);
               if (!parsed || typeof parsed !== 'object') return null;
+              if (parsed?.source === readingGuideSource) return null;
 
               return parsed;
             } catch {
@@ -888,6 +884,8 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
               localStorage.setItem(storageKey, JSON.stringify({
                 email: normalizeEmail(email),
                 unlockedLessons: true,
+                audience: 'digest',
+                source: 'lesson-email-gate',
                 subscribedAt: new Date().toISOString(),
               }));
             } catch {
@@ -920,6 +918,7 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
               body: JSON.stringify({
                 email,
                 source: 'lesson-email-gate',
+                audience: 'digest',
               }),
             });
 
@@ -928,26 +927,6 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
             }
 
             return response.json().catch(() => null);
-          };
-
-          const submitWithFormFallback = async (email) => {
-            const payload = new URLSearchParams();
-            payload.append('form-name', form.getAttribute('name') || 'newsletter');
-            payload.append('email', email);
-            payload.append('bot-field', '');
-            payload.append('source', 'lesson-email-gate');
-
-            const response = await fetch('/', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-              body: payload.toString(),
-            });
-
-            if (!response.ok) {
-              throw new Error('Fallback form request failed');
-            }
-
-            return { duplicate: false };
           };
 
           form.addEventListener('submit', async (event) => {
@@ -978,12 +957,7 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
             }
 
             try {
-              let data;
-              try {
-                data = await submitWithFunction(email);
-              } catch {
-                data = await submitWithFormFallback(email);
-              }
+              const data = await submitWithFunction(email);
 
               saveSignup(email);
               if (status instanceof HTMLElement) {
@@ -1010,6 +984,94 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
         })();
       </script>
     )}
+
+    <script is:inline>
+      (() => {
+        const forms = Array.from(document.querySelectorAll('form[data-newsletter-capture="kit"]'));
+        if (!forms.length) return;
+
+        const normalizeEmail = (value) => String(value || '').trim().toLowerCase();
+        const normalizeName = (value) => String(value || '').trim().replace(/\s+/g, ' ').slice(0, 80);
+
+        forms.forEach((candidate) => {
+          if (!(candidate instanceof HTMLFormElement)) return;
+          if (candidate.dataset.newsletterBound === '1') return;
+          candidate.dataset.newsletterBound = '1';
+
+          candidate.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const emailInput = candidate.elements.namedItem('email');
+            const nameInput = candidate.elements.namedItem('name');
+            const sourceInput = candidate.elements.namedItem('source');
+            const audienceInput = candidate.elements.namedItem('audience');
+            const successPathInput = candidate.elements.namedItem('success_path');
+
+            const email = emailInput instanceof HTMLInputElement ? normalizeEmail(emailInput.value) : '';
+            const firstName = nameInput instanceof HTMLInputElement ? normalizeName(nameInput.value) : '';
+            const source = sourceInput instanceof HTMLInputElement
+              ? String(sourceInput.value || '').trim()
+              : (candidate.getAttribute('name') || 'site');
+            const audience = audienceInput instanceof HTMLInputElement
+              ? String(audienceInput.value || '').trim()
+              : 'digest';
+            const successPath = successPathInput instanceof HTMLInputElement
+              ? String(successPathInput.value || '').trim()
+              : String(candidate.getAttribute('action') || '/thank-you/').trim();
+
+            const status = candidate.parentElement?.querySelector('[data-newsletter-status]');
+            const submitButton = candidate.querySelector('button[type="submit"]');
+
+            if (!email || !email.includes('@')) {
+              if (status instanceof HTMLElement) {
+                status.textContent = 'Please enter a valid email address.';
+              }
+              return;
+            }
+
+            if (status instanceof HTMLElement) {
+              status.textContent = 'Submitting...';
+            }
+            if (submitButton instanceof HTMLButtonElement) {
+              submitButton.disabled = true;
+            }
+
+            try {
+              const response = await fetch('/.netlify/functions/subscribe-newsletter', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  email,
+                  firstName,
+                  source,
+                  audience,
+                }),
+              });
+
+              if (!response.ok) {
+                throw new Error('Subscribe request failed');
+              }
+
+              const data = await response.json().catch(() => null);
+              if (status instanceof HTMLElement) {
+                status.textContent = data?.duplicate
+                  ? 'You are already subscribed. Redirecting...'
+                  : 'Success. Redirecting...';
+              }
+              window.location.href = successPath || '/thank-you/';
+            } catch {
+              if (status instanceof HTMLElement) {
+                status.textContent = 'We could not save your email right now. Please try again.';
+              }
+            } finally {
+              if (submitButton instanceof HTMLButtonElement) {
+                submitButton.disabled = false;
+              }
+            }
+          });
+        });
+      })();
+    </script>
 
     {showLessonEmailGate && (
       <style is:global>

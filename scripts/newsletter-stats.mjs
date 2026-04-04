@@ -2,12 +2,14 @@
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import {
-  getNetlifyFormMatch,
-  getNetlifySiteInfo,
-  getSubscriberRecords,
-} from './lib/newsletter-audience.mjs';
+  getDigestAudienceSnapshot,
+  getKitFormSubscribers,
+  parseOptionalInteger,
+} from './lib/kit-newsletter-audience.mjs';
 
-const DEFAULT_FORM_NAME = 'newsletter';
+const DEFAULT_SITE_URL = 'https://ieltscorner.ca';
+const DEFAULT_SITE_NAME = 'IELTS Corner';
+const DEFAULT_READING_FORM_ID = 9278286;
 
 function stripWrappingQuotes(value) {
   const trimmed = value.trim();
@@ -88,38 +90,66 @@ async function main() {
   await loadEnvFiles();
   const options = parseArgs(process.argv);
 
-  const accessToken = process.env.NETLIFY_ACCESS_TOKEN || '';
-  const siteId = process.env.NETLIFY_SITE_ID || '';
-  const formName = (process.env.NEWSLETTER_FORM_NAME || DEFAULT_FORM_NAME).trim();
+  const kitApiKey = (process.env.KIT_API_KEY || '').trim();
+  const digestTagId = parseOptionalInteger(process.env.KIT_DIGEST_TAG_ID);
+  const digestFormId = parseOptionalInteger(process.env.KIT_DIGEST_FORM_ID);
+  const kitFormId = parseOptionalInteger(process.env.KIT_FORM_ID);
+  const readingFormId = parseOptionalInteger(process.env.KIT_READING_GUIDE_FORM_ID)
+    || DEFAULT_READING_FORM_ID;
+  const siteName = (process.env.SITE_NAME || DEFAULT_SITE_NAME).trim();
+  const siteUrl = (process.env.SITE_URL || DEFAULT_SITE_URL).trim();
 
-  if (!accessToken || !siteId) {
-    throw new Error('Missing NETLIFY_ACCESS_TOKEN and/or NETLIFY_SITE_ID');
+  if (!kitApiKey) {
+    throw new Error('Missing KIT_API_KEY');
   }
 
-  const siteInfo = await getNetlifySiteInfo({ siteId, accessToken });
-  const formMatch = await getNetlifyFormMatch({ siteId, accessToken, formName });
+  const digest = await getDigestAudienceSnapshot({
+    apiKey: kitApiKey,
+    digestTagId,
+    digestFormId,
+    kitFormId,
+  });
+  const latestSignup = digest.subscribers[0]?.submittedAt || '';
 
-  if (!formMatch.formId) {
-    throw new Error(`Netlify form not found: ${formName}`);
+  let readingGuideSubscriberCount = null;
+  if (readingFormId && !(digest.audienceType === 'form' && digest.audienceId === readingFormId)) {
+    const readingSubscribers = await getKitFormSubscribers({
+      apiKey: kitApiKey,
+      formId: readingFormId,
+    });
+    readingGuideSubscriberCount = readingSubscribers.length;
   }
-
-  const subscribers = await getSubscriberRecords({ formId: formMatch.formId, accessToken });
-  const latestSignup = subscribers[0]?.submittedAt || '';
 
   if (options.json) {
     console.log(JSON.stringify({
-      site: siteInfo,
-      formName: formMatch.formName,
-      subscribers: subscribers.length,
+      site: {
+        name: siteName,
+        url: siteUrl,
+      },
+      audience: {
+        type: digest.audienceType,
+        id: digest.audienceId,
+        label: digest.audienceLabel,
+      },
+      subscribers: digest.subscribers.length,
       latestSignup,
+      recentSubscriberEmails: digest.subscribers.slice(0, 5).map((item) => item.email),
+      segmentation: {
+        readingGuideFormId: readingFormId,
+        readingGuideSubscriberCount,
+      },
     }, null, 2));
     return;
   }
 
-  console.log(`Site: ${siteInfo.name || '(unknown)'} (${siteInfo.id})`);
-  console.log(`Form: ${formMatch.formName}`);
-  console.log(`Subscribers: ${subscribers.length}`);
+  console.log(`Site: ${siteName}`);
+  console.log(`URL: ${siteUrl}`);
+  console.log(`Digest audience: ${digest.audienceLabel}`);
+  console.log(`Subscribers: ${digest.subscribers.length}`);
   console.log(`Latest signup: ${formatDate(latestSignup)}`);
+  if (Number.isFinite(readingGuideSubscriberCount)) {
+    console.log(`Reading guide form (${readingFormId}) subscribers: ${readingGuideSubscriberCount}`);
+  }
 }
 
 main().catch((error) => {

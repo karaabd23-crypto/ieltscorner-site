@@ -31,19 +31,10 @@ const {
     name="newsletter"
     method="POST"
     action="/newsletter/thanks/"
-    netlify
-    data-netlify="true"
-    data-netlify-honeypot="bot-field"
     id="newsletter-form"
     class="newsletter-form"
     style="display: grid; grid-template-columns: 1fr auto; gap: var(--s-1); margin-top: var(--s-2);"
   >
-    <input type="hidden" name="form-name" value="newsletter" />
-
-    <p style="display:none;">
-      <label>Do not fill this out: <input name="bot-field" /></label>
-    </p>
-
     <input
       type="email"
       name="email"
@@ -69,17 +60,20 @@ const {
 </div>
 
 <script>
-  const storageKey = "ieltscorner.newsletterSignup";
+  const storageKey = "ieltscorner.digestSignup";
+  const legacyStorageKey = "ieltscorner.newsletterSignup";
+  const readingGuideSource = "instagram-celpip-reading-guide";
   const form = document.getElementById("newsletter-form");
   const status = document.getElementById("newsletter-status");
   const normalizeEmail = (value: string) => String(value || "").trim().toLowerCase();
   const readSignup = () => {
     try {
-      const raw = localStorage.getItem(storageKey);
+      const raw = localStorage.getItem(storageKey) || localStorage.getItem(legacyStorageKey);
       if (!raw) return null;
 
       const parsed = JSON.parse(raw);
       if (!parsed || typeof parsed !== "object") return null;
+      if (parsed?.source === readingGuideSource) return null;
 
       return parsed;
     } catch {
@@ -91,6 +85,8 @@ const {
       localStorage.setItem(storageKey, JSON.stringify({
         email: normalizeEmail(email),
         unlockedLessons: true,
+        audience: "digest",
+        source: "newsletter-component",
         subscribedAt: new Date().toISOString(),
       }));
     } catch {
@@ -116,23 +112,8 @@ const {
         return;
       }
 
-      const saved = readSignup();
-      if (saved?.email === email) {
-        saveSignup(email);
-        status.textContent = "You are already subscribed. No need to sign up again.";
-        status.style.color = "var(--accent)";
-        return;
-      }
-
       status.textContent = "Submitting...";
       status.style.color = "var(--text-muted)";
-
-      const formData = new FormData(form);
-      const params = new URLSearchParams();
-      formData.forEach((value, key) => {
-        params.append(key, String(value));
-      });
-      const encoded = params.toString();
 
       try {
         const response = await fetch("/.netlify/functions/subscribe-newsletter", {
@@ -141,6 +122,7 @@ const {
           body: JSON.stringify({
             email,
             source: "newsletter-component",
+            audience: "digest",
           }),
         });
 
@@ -158,13 +140,6 @@ const {
         form.reset();
         window.location.href = "/newsletter/thanks/";
       } catch {
-        if (saved?.email === email) {
-          saveSignup(email);
-          status.textContent = "You are already subscribed. No duplicate signup was created.";
-          status.style.color = "var(--accent)";
-          return;
-        }
-
         status.textContent = "We could not save your signup right now. Please try again in a moment.";
         status.style.color = "var(--text-muted)";
       }

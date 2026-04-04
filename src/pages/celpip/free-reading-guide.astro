@@ -135,7 +135,7 @@ const successPath = "/celpip/free-reading-guide/thanks/";
     const leadMagnetSource = "instagram-celpip-reading-guide";
     const leadMagnetId = "celpip_reading_guide_instagram";
     const successPath = "/celpip/free-reading-guide/thanks/";
-    const storageKey = "ieltscorner.newsletterSignup";
+    const storageKey = "ieltscorner.readingGuideSignup";
 
     const form = document.getElementById("instagram-reading-guide-form");
     const emailInput = document.getElementById("instagram-reading-guide-email");
@@ -159,18 +159,6 @@ const successPath = "/celpip/free-reading-guide/thanks/";
     const normalizeFirstName = (value) => String(value || "").trim().replace(/\s+/g, " ").slice(0, 80);
     const isValidEmail = (value) => /^\S+@\S+\.\S+$/.test(value);
 
-    const readSignup = () => {
-      try {
-        const raw = localStorage.getItem(storageKey);
-        if (!raw) return null;
-        const parsed = JSON.parse(raw);
-        if (!parsed || typeof parsed !== "object") return null;
-        return parsed;
-      } catch {
-        return null;
-      }
-    };
-
     const saveSignup = ({ email, firstName }) => {
       try {
         localStorage.setItem(
@@ -179,7 +167,7 @@ const successPath = "/celpip/free-reading-guide/thanks/";
             email: normalizeEmail(email),
             firstName: normalizeFirstName(firstName),
             source: leadMagnetSource,
-            unlockedLessons: true,
+            audience: "reading-guide",
             subscribedAt: new Date().toISOString(),
           })
         );
@@ -203,6 +191,7 @@ const successPath = "/celpip/free-reading-guide/thanks/";
           email,
           firstName,
           source: leadMagnetSource,
+          audience: "reading-guide",
         }),
       });
 
@@ -245,17 +234,6 @@ const successPath = "/celpip/free-reading-guide/thanks/";
       pushTrackingEvent("lead_magnet_submit", {
         cta_label: "hero-form-submit",
       });
-
-      const savedSignup = readSignup();
-      if (savedSignup?.email === email) {
-        saveSignup({ email, firstName });
-        pushTrackingEvent("lead_magnet_success", {
-          duplicate: true,
-          cta_label: "hero-form-submit",
-        });
-        window.location.href = successPath;
-        return;
-      }
 
       if (submitButton instanceof HTMLButtonElement) {
         submitButton.disabled = true;

@@ -25,11 +25,13 @@ const {
       <form
         name={formName}
         method="POST"
-        data-netlify="true"
         action={redirectTo}
+        data-newsletter-capture="kit"
         class="lead-magnet-form"
       >
-        <input type="hidden" name="form-name" value={formName} />
+        <input type="hidden" name="source" value={formName} />
+        <input type="hidden" name="audience" value="digest" />
+        <input type="hidden" name="success_path" value={redirectTo} />
         <input
           type="email"
           name="email"
@@ -42,6 +44,7 @@ const {
           {buttonLabel}
         </button>
       </form>
+      <p class="muted lead-magnet-disclaimer" data-newsletter-status style="min-height: 1.2rem; margin-top: var(--s-2);"></p>
       <p class="muted lead-magnet-disclaimer">No spam. Unsubscribe anytime.</p>
     </div>
   </div>

@@ -26,7 +26,7 @@ const CHANNEL_URL = 'https://t.me/kaysenglishcorner';
 const BOT_DIRECT_URL = 'https://t.me/Ewithkpaybot';
 
 const FOOTER_LINES = [
-  '🌈✨ Kay\'s English Corner 🇨🇦',
+  '✨ Kay\'s English Corner 🇨🇦',
   'Your Gateway to English Success',
   '🌐 More lessons: https://ieltscorner.ca',
   '🧑‍🏫 Tutoring | ✍️ Writing feedback: https://ieltscorner.ca/tutoring | https://ieltscorner.ca/essay-correction',
@@ -63,7 +63,7 @@ const UPDATED_SIGNATURE_LINKS = [
     href: BOT_DIRECT_URL,
   },
   {
-    text: '🌐   Website: CELPIPcorner.ca',
+    text: '🌐   Website: https://celpipcorner.ca',
     href: 'https://ieltscorner.ca',
   },
   {

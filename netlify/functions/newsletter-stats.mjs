@@ -1,13 +1,19 @@
 import {
-  getNetlifyFormMatch,
-  getNetlifySiteInfo,
-  getSubscriberRecords,
-} from '../../scripts/lib/newsletter-audience.mjs';
+  getDigestAudienceSnapshot,
+  getKitFormSubscribers,
+  parseOptionalInteger,
+} from '../../scripts/lib/kit-newsletter-audience.mjs';
 
 const DASHBOARD_TOKEN = (process.env.NEWSLETTER_DASHBOARD_TOKEN || '').trim();
-const ACCESS_TOKEN = (process.env.NETLIFY_ACCESS_TOKEN || '').trim();
-const SITE_ID = (process.env.NETLIFY_SITE_ID || '').trim();
-const FORM_NAME = (process.env.NEWSLETTER_FORM_NAME || 'newsletter').trim();
+const KIT_API_KEY = (process.env.KIT_API_KEY || '').trim();
+const KIT_DIGEST_TAG_ID = parseOptionalInteger(process.env.KIT_DIGEST_TAG_ID);
+const KIT_DIGEST_FORM_ID = parseOptionalInteger(process.env.KIT_DIGEST_FORM_ID);
+const KIT_FORM_ID = parseOptionalInteger(process.env.KIT_FORM_ID);
+const DEFAULT_READING_FORM_ID = 9278286;
+const KIT_READING_GUIDE_FORM_ID = parseOptionalInteger(process.env.KIT_READING_GUIDE_FORM_ID)
+  || DEFAULT_READING_FORM_ID;
+const SITE_NAME = (process.env.SITE_NAME || 'IELTS Corner').trim();
+const SITE_URL = (process.env.SITE_URL || 'https://ieltscorner.ca').trim();
 
 function json(statusCode, payload) {
   return {
@@ -26,8 +32,8 @@ export async function handler(event) {
     return json(503, { error: 'Missing NEWSLETTER_DASHBOARD_TOKEN' });
   }
 
-  if (!ACCESS_TOKEN || !SITE_ID) {
-    return json(500, { error: 'Missing Netlify API credentials' });
+  if (!KIT_API_KEY) {
+    return json(500, { error: 'Missing KIT_API_KEY' });
   }
 
   try {
@@ -36,29 +42,44 @@ export async function handler(event) {
       return json(401, { error: 'Invalid dashboard token' });
     }
 
-    const siteInfo = await getNetlifySiteInfo({ siteId: SITE_ID, accessToken: ACCESS_TOKEN });
-    const formMatch = await getNetlifyFormMatch({
-      siteId: SITE_ID,
-      accessToken: ACCESS_TOKEN,
-      formName: FORM_NAME,
+    const digest = await getDigestAudienceSnapshot({
+      apiKey: KIT_API_KEY,
+      digestTagId: KIT_DIGEST_TAG_ID,
+      digestFormId: KIT_DIGEST_FORM_ID,
+      kitFormId: KIT_FORM_ID,
     });
 
-    if (!formMatch.formId) {
-      return json(404, { error: `Newsletter form not found: ${FORM_NAME}` });
+    let readingGuideSubscriberCount = null;
+    if (
+      KIT_READING_GUIDE_FORM_ID
+      && !(digest.audienceType === 'form' && digest.audienceId === KIT_READING_GUIDE_FORM_ID)
+    ) {
+      const readingGuideSubscribers = await getKitFormSubscribers({
+        apiKey: KIT_API_KEY,
+        formId: KIT_READING_GUIDE_FORM_ID,
+      });
+      readingGuideSubscriberCount = readingGuideSubscribers.length;
     }
 
-    const subscribers = await getSubscriberRecords({
-      formId: formMatch.formId,
-      accessToken: ACCESS_TOKEN,
-    });
-
     return json(200, {
-      siteName: siteInfo.name || '',
-      siteUrl: siteInfo.url || '',
-      formName: formMatch.formName,
-      subscriberCount: subscribers.length,
-      latestSignup: subscribers[0]?.submittedAt || null,
-      recentSubscriberEmails: subscribers.slice(0, 5).map((item) => item.email),
+      siteName: SITE_NAME,
+      siteUrl: SITE_URL,
+      formName: digest.audienceLabel,
+      subscriberCount: digest.subscribers.length,
+      latestSignup: digest.subscribers[0]?.submittedAt || null,
+      recentSubscriberEmails: digest.subscribers.slice(0, 5).map((item) => item.email),
+      audience: {
+        digest: {
+          type: digest.audienceType,
+          id: digest.audienceId,
+          label: digest.audienceLabel,
+          count: digest.subscribers.length,
+        },
+        readingGuide: {
+          formId: KIT_READING_GUIDE_FORM_ID,
+          count: readingGuideSubscriberCount,
+        },
+      },
     });
   } catch (error) {
     return json(500, { error: error?.message || 'Unable to load newsletter stats' });
