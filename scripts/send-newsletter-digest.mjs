@@ -1,12 +1,6 @@
 #!/usr/bin/env node
 import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import nodemailer from 'nodemailer';
-import {
-  getNetlifyFormMatch,
-  getNetlifySiteInfo,
-  getSubscriberRecords,
-} from './lib/newsletter-audience.mjs';
 import {
   getLatestInstagramPost,
   getLatestYouTubeVideo,
@@ -14,11 +8,14 @@ import {
 } from './lib/social-feed.mjs';
 
 const DEFAULT_SITE_URL = 'https://ieltscorner.ca';
-const DEFAULT_FORM_NAME = 'newsletter';
 const DEFAULT_STATE_FILE = '.cache/newsletter-state.json';
 const DEFAULT_YOUTUBE_CHANNEL_URL = 'https://www.youtube.com/@KaraAbdolmaleki';
 const DEFAULT_TELEGRAM_CHANNEL_URL = 'https://t.me/Kaysenglishcorner';
 const DEFAULT_INSTAGRAM_USERNAME = 'ieltscorner.ca';
+const DEFAULT_DIGEST_FORM_ID = 9278182;
+const DEFAULT_SEND_DELAY_MINUTES = 5;
+const KIT_API_BASE = 'https://api.kit.com/v4';
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 function normalizeAbsoluteUrl(value) {
   const raw = String(value || '').trim();
@@ -89,6 +86,189 @@ function parseArgs(argv) {
   }
 
   return options;
+}
+
+function parseOptionalInteger(value) {
+  const parsed = Number.parseInt(String(value || '').trim(), 10);
+  if (!Number.isFinite(parsed) || parsed <= 0) {
+    return null;
+  }
+  return parsed;
+}
+
+function parseOptionalBoolean(value) {
+  const normalized = String(value || '').trim().toLowerCase();
+  if (!normalized) return null;
+  if (['1', 'true', 'yes', 'on'].includes(normalized)) return true;
+  if (['0', 'false', 'no', 'off'].includes(normalized)) return false;
+  return null;
+}
+
+function parsePositiveInteger(value, fallback) {
+  const parsed = Number.parseInt(String(value || '').trim(), 10);
+  if (!Number.isFinite(parsed) || parsed <= 0) {
+    return fallback;
+  }
+  return parsed;
+}
+
+function normalizeSubscriberEmail(value) {
+  return String(value || '').trim().toLowerCase();
+}
+
+function isLikelyValidEmail(value) {
+  const email = normalizeSubscriberEmail(value);
+  if (!email || email.length > 320) {
+    return false;
+  }
+  if (!EMAIL_PATTERN.test(email)) {
+    return false;
+  }
+
+  const parts = email.split('@');
+  if (parts.length !== 2) {
+    return false;
+  }
+
+  const [localPart, domain] = parts;
+  if (!localPart || !domain) {
+    return false;
+  }
+  if (domain.startsWith('.') || domain.endsWith('.') || domain.includes('..')) {
+    return false;
+  }
+
+  return true;
+}
+
+async function fetchKitJson(url, apiKey) {
+  const response = await fetch(url, {
+    headers: {
+      'X-Kit-Api-Key': apiKey,
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(`Kit API failed (${response.status}): ${text}`);
+  }
+
+  return response.json();
+}
+
+async function kitRequest({ apiKey, pathName, method = 'POST', body = {} }) {
+  const response = await fetch(`${KIT_API_BASE}${pathName}`, {
+    method,
+    headers: {
+      'X-Kit-Api-Key': apiKey,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  });
+
+  const text = await response.text();
+  let parsed = null;
+  if (text) {
+    try {
+      parsed = JSON.parse(text);
+    } catch {
+      parsed = null;
+    }
+  }
+
+  if (!response.ok) {
+    const firstError = Array.isArray(parsed?.errors) ? parsed.errors[0] : null;
+    const detail = String(firstError || text || '').trim().slice(0, 240) || `HTTP ${response.status}`;
+    throw new Error(`Kit API failed (${response.status}): ${detail}`);
+  }
+
+  return {
+    status: response.status,
+    body: parsed,
+  };
+}
+
+async function collectKitSubscribers({ apiKey, buildPath, maxPages = 30, perPage = 500 }) {
+  const deduped = new Map();
+  let cursor = null;
+
+  for (let page = 1; page <= maxPages; page += 1) {
+    const params = new URLSearchParams();
+    params.set('per_page', String(perPage));
+    if (cursor) {
+      params.set('after', cursor);
+    }
+
+    const payload = await fetchKitJson(`${KIT_API_BASE}${buildPath(params)}`, apiKey);
+
+    const rows = Array.isArray(payload?.subscribers) ? payload.subscribers : [];
+    for (const row of rows) {
+      const email = normalizeSubscriberEmail(row?.email_address);
+      if (!isLikelyValidEmail(email)) {
+        continue;
+      }
+
+      const subscriberState = String(row?.state || '').trim().toLowerCase();
+      if (subscriberState && subscriberState !== 'active') {
+        continue;
+      }
+
+      const submittedAt = String(row?.added_at || row?.created_at || '').trim();
+      const existing = deduped.get(email);
+      if (!existing) {
+        deduped.set(email, {
+          email,
+          submittedAt,
+        });
+        continue;
+      }
+
+      const nextTime = Date.parse(submittedAt || '');
+      const currentTime = Date.parse(existing.submittedAt || '');
+      if (Number.isFinite(nextTime) && (!Number.isFinite(currentTime) || nextTime > currentTime)) {
+        deduped.set(email, {
+          email,
+          submittedAt,
+        });
+      }
+    }
+
+    const hasNextPage = Boolean(payload?.pagination?.has_next_page);
+    const nextCursor = String(payload?.pagination?.end_cursor || '').trim() || null;
+    if (!hasNextPage || !nextCursor) {
+      break;
+    }
+
+    cursor = nextCursor;
+  }
+
+  return [...deduped.values()].sort((a, b) => {
+    const aTime = Date.parse(a.submittedAt || '');
+    const bTime = Date.parse(b.submittedAt || '');
+    if (!Number.isFinite(aTime) && !Number.isFinite(bTime)) return 0;
+    if (!Number.isFinite(aTime)) return 1;
+    if (!Number.isFinite(bTime)) return -1;
+    return bTime - aTime;
+  });
+}
+
+async function getKitFormSubscribers({ apiKey, formId, maxPages = 30, perPage = 500 }) {
+  return collectKitSubscribers({
+    apiKey,
+    maxPages,
+    perPage,
+    buildPath: (params) => `/forms/${formId}/subscribers?${params.toString()}`,
+  });
+}
+
+async function getKitTagSubscribers({ apiKey, tagId, maxPages = 30, perPage = 500 }) {
+  return collectKitSubscribers({
+    apiKey,
+    maxPages,
+    perPage,
+    buildPath: (params) => `/tags/${tagId}/subscribers?${params.toString()}`,
+  });
 }
 
 function parseFrontmatter(content) {
@@ -630,37 +810,107 @@ Need direct feedback?
 You are receiving this because you subscribed on ieltscorner.ca.`;
 }
 
-async function sendDigestEmails({
-  subscribers,
-  gmailUser,
-  gmailPassword,
-  html,
-  text,
-  subject,
-}) {
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: gmailUser,
-      pass: gmailPassword,
-    },
-  });
+function extractBodyContent(html) {
+  const raw = String(html || '').trim();
+  if (!raw) return '';
+  const match = raw.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+  if (!match) return raw;
+  return match[1].trim();
+}
 
-  let sentCount = 0;
-  for (const subscriber of subscribers) {
-    await transporter.sendMail({
-      from: `IELTS Corner <${gmailUser}>`,
-      to: subscriber.email,
-      subject,
-      text,
-      html,
-    });
-
-    sentCount += 1;
-    await new Promise((resolve) => setTimeout(resolve, 120));
+function buildSubscriberFilter({ digestTagId, digestSegmentId }) {
+  if (digestTagId) {
+    return [
+      {
+        all: [
+          {
+            type: 'tag',
+            ids: [digestTagId],
+          },
+        ],
+        any: null,
+        none: null,
+      },
+    ];
   }
 
-  return sentCount;
+  if (digestSegmentId) {
+    return [
+      {
+        all: [
+          {
+            type: 'segment',
+            ids: [digestSegmentId],
+          },
+        ],
+        any: null,
+        none: null,
+      },
+    ];
+  }
+
+  throw new Error('Missing digest audience filter: set KIT_DIGEST_TAG_ID or KIT_DIGEST_SEGMENT_ID');
+}
+
+function buildBroadcastDescription({ latestLessonTitle, latestLessonDate }) {
+  const lessonTitle = String(latestLessonTitle || '').trim() || 'Weekly digest';
+  const lessonDate = String(latestLessonDate || '').trim() || new Date().toISOString().slice(0, 10);
+  return `Automated IELTS Corner digest | ${lessonDate} | ${lessonTitle}`.slice(0, 180);
+}
+
+async function createKitBroadcast({
+  apiKey,
+  subject,
+  previewText,
+  html,
+  digestTagId,
+  digestSegmentId,
+  emailTemplateId,
+  emailAddress,
+  isPublic,
+  sendDelayMinutes,
+  latestLessonTitle,
+  latestLessonDate,
+}) {
+  const now = new Date();
+  const sendAt = new Date(now.getTime() + sendDelayMinutes * 60 * 1000).toISOString();
+  const publishedAt = now.toISOString();
+  const content = extractBodyContent(html);
+  const subscriberFilter = buildSubscriberFilter({ digestTagId, digestSegmentId });
+
+  const payload = {
+    content,
+    description: buildBroadcastDescription({
+      latestLessonTitle,
+      latestLessonDate,
+    }),
+    public: Boolean(isPublic),
+    published_at: publishedAt,
+    send_at: sendAt,
+    preview_text: previewText,
+    subject,
+    subscriber_filter: subscriberFilter,
+  };
+
+  if (emailTemplateId) {
+    payload.email_template_id = emailTemplateId;
+  }
+  if (emailAddress) {
+    payload.email_address = emailAddress;
+  }
+
+  const response = await kitRequest({
+    apiKey,
+    pathName: '/broadcasts',
+    method: 'POST',
+    body: payload,
+  });
+
+  return {
+    sendAt,
+    publishedAt,
+    broadcast: response.body?.broadcast || null,
+  };
 }
 
 async function main() {
@@ -682,6 +932,7 @@ async function main() {
 
   const leadTitle = lessons[0]?.title || 'fresh lessons';
   const subject = `IELTS Corner digest: start with "${leadTitle}" this week`;
+  const previewText = 'Your week is easier when you know what to study first.';
   const html = buildHtmlEmail({
     siteUrl,
     lessons,
@@ -704,11 +955,20 @@ async function main() {
   });
 
   if (options.preview) {
+    const previewDir = path.join(process.cwd(), '.cache');
+    const previewHtmlPath = path.join(previewDir, 'newsletter-preview.html');
+    const previewTextPath = path.join(previewDir, 'newsletter-preview.txt');
+    await mkdir(previewDir, { recursive: true });
+    await writeFile(previewHtmlPath, `${html}\n`, 'utf8');
+    await writeFile(previewTextPath, `${text}\n`, 'utf8');
+
     console.log(`[preview] Subject: ${subject}`);
     console.log('[preview] Lessons:', lessons.map((item) => item.title));
     console.log('[preview] YouTube:', youtubeVideo?.title || 'not found');
     console.log('[preview] Telegram:', telegramPost?.preview || 'not found');
     console.log('[preview] Instagram:', instagramPost?.preview || 'not found');
+    console.log(`[preview] HTML file: ${previewHtmlPath}`);
+    console.log(`[preview] Text file: ${previewTextPath}`);
     console.log('\n[preview] Text email:\n');
     console.log(text);
     console.log('\n[preview] HTML email:\n');
@@ -716,42 +976,39 @@ async function main() {
     return;
   }
 
-  const accessToken = process.env.NETLIFY_ACCESS_TOKEN || '';
-  const siteId = process.env.NETLIFY_SITE_ID || '';
-  const formName = (process.env.NEWSLETTER_FORM_NAME || DEFAULT_FORM_NAME).trim();
-  const gmailUser = process.env.GMAIL_USER || '';
-  const gmailPassword = process.env.GMAIL_PASSWORD || '';
+  const kitApiKey = (process.env.KIT_API_KEY || '').trim();
+  const digestTagId = parseOptionalInteger(process.env.KIT_DIGEST_TAG_ID);
+  const digestSegmentId = parseOptionalInteger(process.env.KIT_DIGEST_SEGMENT_ID);
+  const digestFormId = parseOptionalInteger(process.env.KIT_DIGEST_FORM_ID)
+    || parseOptionalInteger(process.env.KIT_FORM_ID)
+    || DEFAULT_DIGEST_FORM_ID;
+  const emailTemplateId = parseOptionalInteger(process.env.KIT_DIGEST_TEMPLATE_ID);
+  const emailAddress = String(process.env.KIT_BROADCAST_EMAIL_ADDRESS || '').trim() || null;
+  const sendDelayMinutes = parsePositiveInteger(
+    process.env.KIT_BROADCAST_SEND_DELAY_MINUTES,
+    DEFAULT_SEND_DELAY_MINUTES,
+  );
+  const publicFlag = parseOptionalBoolean(process.env.KIT_BROADCAST_PUBLIC);
+  const isPublic = publicFlag === true;
   const stateFilePath = resolveStateFilePath();
 
-  if (!accessToken || !siteId) {
-    throw new Error('Missing NETLIFY_ACCESS_TOKEN and/or NETLIFY_SITE_ID');
+  if (!kitApiKey) {
+    throw new Error('Missing KIT_API_KEY');
   }
-
-  if (!options.dryRun && (!gmailUser || !gmailPassword)) {
-    throw new Error('Missing GMAIL_USER and/or GMAIL_PASSWORD');
+  if (!digestTagId && !digestSegmentId && !digestFormId) {
+    throw new Error('Missing digest audience configuration');
   }
-
-  const siteInfo = await getNetlifySiteInfo({ siteId, accessToken });
-  console.log(`[info] Netlify site: ${siteInfo.name || '(unknown)'} (${siteInfo.id}) ${siteInfo.url}`);
 
   const state = await loadState(stateFilePath);
-  const formMatch = await getNetlifyFormMatch({ siteId, accessToken, formName });
-
-  if (!formMatch.formId) {
-    const available = formMatch.availableFormNames.length
-      ? formMatch.availableFormNames.join(', ')
-      : '(none found for this site)';
-    console.log(`[warn] Netlify form not found: ${formName}`);
-    console.log(`[warn] Available forms: ${available}`);
-    console.log('[info] Skipping newsletter send. Submit the newsletter form once on production and re-run.');
-    return;
-  }
-
-  if (formMatch.formName !== formName) {
-    console.log(`[info] Using Netlify form: ${formMatch.formName} (requested: ${formName})`);
-  }
-
-  const subscribers = await getSubscriberRecords({ formId: formMatch.formId, accessToken });
+  const subscribers = digestTagId
+    ? await getKitTagSubscribers({
+      apiKey: kitApiKey,
+      tagId: digestTagId,
+    })
+    : await getKitFormSubscribers({
+      apiKey: kitApiKey,
+      formId: digestFormId,
+    });
   if (subscribers.length === 0) {
     console.log('[info] No newsletter subscribers found.');
     return;
@@ -762,6 +1019,13 @@ async function main() {
     return;
   }
 
+  if (digestTagId) {
+    console.log(`[info] Kit digest audience tag: ${digestTagId}`);
+  } else if (digestSegmentId) {
+    console.log(`[info] Kit digest audience segment: ${digestSegmentId}`);
+  } else {
+    console.log(`[info] Kit digest form: ${digestFormId}`);
+  }
   console.log(`[info] Subscribers: ${subscribers.length}`);
   console.log(`[info] Latest subscriber: ${subscribers[0]?.submittedAt || 'unknown'}`);
   console.log(`[info] Latest lessons selected: ${lessons.length}`);
@@ -772,27 +1036,49 @@ async function main() {
     console.log('[dry-run] First recipients:', subscribers.slice(0, 5).map((item) => item.email));
     console.log('[dry-run] Subject:', subject);
     console.log('[dry-run] Lesson titles:', lessons.map((item) => item.title));
+    console.log('[dry-run] Kit send mode:', digestTagId ? 'tag' : digestSegmentId ? 'segment' : 'form-only (cannot send)');
+    console.log('[dry-run] Kit template id:', emailTemplateId || '(account default)');
+    console.log('[dry-run] Kit send delay minutes:', sendDelayMinutes);
     return;
   }
 
-  const sentCount = await sendDigestEmails({
-    subscribers,
-    gmailUser,
-    gmailPassword,
-    html,
-    text,
+  if (!digestTagId && !digestSegmentId) {
+    throw new Error(
+      'Kit broadcast sending requires KIT_DIGEST_TAG_ID or KIT_DIGEST_SEGMENT_ID. '
+      + 'Form-only audience targeting is not supported for broadcasts.'
+    );
+  }
+
+  const created = await createKitBroadcast({
+    apiKey: kitApiKey,
     subject,
+    previewText,
+    html,
+    digestTagId,
+    digestSegmentId,
+    emailTemplateId,
+    emailAddress,
+    isPublic,
+    sendDelayMinutes,
+    latestLessonTitle: lessons[0]?.title || '',
+    latestLessonDate: lessons[0]?.dateIso || '',
   });
 
   const newestLessonDate = lessons[0]?.dateIso || new Date().toISOString();
   await saveState(stateFilePath, {
     lastSentAt: newestLessonDate,
     lastRunAt: new Date().toISOString(),
-    lastSentCount: sentCount,
+    lastSentCount: subscribers.length,
     lastSubscriberCount: subscribers.length,
+    lastBroadcastId: created.broadcast?.id || null,
+    lastBroadcastSendAt: created.broadcast?.send_at || created.sendAt,
+    lastBroadcastSubject: created.broadcast?.subject || subject,
+    lastBroadcastPublicUrl: created.broadcast?.public_url || null,
   });
 
-  console.log(`[ok] Newsletter sent to ${sentCount} subscribers.`);
+  console.log(`[ok] Kit broadcast created: ${created.broadcast?.id || '(unknown id)'}`);
+  console.log(`[ok] Scheduled send time: ${created.broadcast?.send_at || created.sendAt}`);
+  console.log(`[ok] Audience size snapshot: ${subscribers.length}`);
 }
 
 main().catch((error) => {

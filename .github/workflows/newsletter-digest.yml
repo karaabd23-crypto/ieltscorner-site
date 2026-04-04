@@ -36,13 +36,17 @@ jobs:
 
       - name: Send newsletter digest
         env:
-          NETLIFY_ACCESS_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NEWSLETTER_FORM_NAME: ${{ secrets.NEWSLETTER_FORM_NAME }}
+          KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
+          KIT_DIGEST_TAG_ID: ${{ secrets.KIT_DIGEST_TAG_ID }}
+          KIT_DIGEST_SEGMENT_ID: ${{ secrets.KIT_DIGEST_SEGMENT_ID }}
+          KIT_DIGEST_FORM_ID: ${{ secrets.KIT_DIGEST_FORM_ID }}
+          KIT_FORM_ID: ${{ secrets.KIT_FORM_ID }}
+          KIT_DIGEST_TEMPLATE_ID: ${{ secrets.KIT_DIGEST_TEMPLATE_ID }}
+          KIT_BROADCAST_EMAIL_ADDRESS: ${{ secrets.KIT_BROADCAST_EMAIL_ADDRESS }}
+          KIT_BROADCAST_SEND_DELAY_MINUTES: 5
+          KIT_BROADCAST_PUBLIC: false
           NEWSLETTER_STATE_FILE: .cache/newsletter-state.json
           SITE_URL: https://ieltscorner.ca
-          GMAIL_USER: ${{ secrets.GMAIL_USER }}
-          GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
         run: |
           if [ "${{ github.event.inputs.dry_run || 'false' }}" = "true" ]; then
             node scripts/send-newsletter-digest.mjs --dry-run
