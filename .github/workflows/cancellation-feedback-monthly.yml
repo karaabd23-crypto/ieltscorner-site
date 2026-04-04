@@ -1,9 +1,6 @@
 name: Cancellation Feedback Monthly Insights
 
 on:
-  schedule:
-    # First day of each month at 16:00 UTC
-    - cron: '0 16 1 * *'
   workflow_dispatch:
     inputs:
       dry_run:
