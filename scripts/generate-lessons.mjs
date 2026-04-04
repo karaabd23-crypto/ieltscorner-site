@@ -369,11 +369,19 @@ Target exams: IELTS and CELPIP.`;
 
 function fallbackLesson({ level, category, topic }) {
   const title = buildClearTitle({ category, topic });
-  
+  const topicLabel = String(topic || '').trim() || 'this target';
+  const focusLabel = `"${topicLabel}"`;
+  const examTask =
+    category === 'speaking'
+      ? 'IELTS Speaking and CELPIP Speaking responses'
+      : category === 'writing'
+        ? 'IELTS and CELPIP writing tasks'
+        : 'IELTS and CELPIP questions';
+
   return {
     title,
-    excerpt: `Learn ${topic} with clear examples and guided practice for IELTS and CELPIP.`,
-    heroTip: '👉 Start with the examples. Try the practice questions. Check answers at the bottom. Use emojis or colours to guide you!',
+    excerpt: `Build control of ${topicLabel} with clear examples, guided drills, and exam-ready practice.`,
+    heroTip: 'Start with the examples, then complete each task in the Practice Lab before checking feedback.',
     tags: [category, level.toLowerCase(), 'beginner-friendly', 'esl', 'examples', 'practice', 'exam-prep'],
     visualAids: ['Simple example table', 'Right and wrong list', 'Real test examples'],
     quiz: [
@@ -408,74 +416,104 @@ function fallbackLesson({ level, category, topic }) {
         explanation: 'Connecting words help your speaking sound natural.',
       },
     ],
-    body: `## ${title}
+    body: `<p class="lesson-context">This lesson builds reliable control of ${focusLabel} for ${examTask}. You will see practical model sentences, clear usage conditions, and targeted correction drills so you can produce accurate language under time pressure. Follow each section in order, then complete the practice set and check the feedback before moving to a new topic.</p>
 
-### 🎯 What you will learn today
+<nav class="lesson-map" aria-label="Lesson map">
+  <a href="#examples">Examples</a>
+  <a href="#how-it-works">How It Works</a>
+  <a href="#common-mistakes">Common Mistakes</a>
+  <a href="#practice-lab">Practice Lab</a>
+  <a href="#why-it-matters">Why It Matters</a>
+</nav>
 
-In this lesson, you will learn how to write and speak in a way that sounds clear, accurate, and natural. We will start with simple examples, then we will fix common mistakes step by step. By the end, you will know exactly what to do in your next IELTS or CELPIP practice task.
+## Examples
 
-### 👀 Real examples: weak vs strong
-
-Look at the difference between unclear language and clear exam-ready language.
-
-| ❌ Weak sentence | ✅ Better sentence | Why it is better |
+| Model | Sentence | Why it works |
 |---|---|---|
-| People are bad at money. | Many people struggle with money management. | The meaning is specific and professional. |
-| This is very bad. | This can cause serious problems for families. | The reader can understand the real impact. |
-| I think good is here. | I think this policy is useful. | Grammar and word choice are correct. |
+| Incorrect | Learners use ${topicLabel} in a way that confuses the main idea. | The message is too vague and key meaning is lost. |
+| Strong | Learners use ${topicLabel} to state a clear point, then support it with precise detail. | The examiner can track meaning quickly and score coherence higher. |
+| Strong | In timed responses, speakers use ${topicLabel} to control logic before adding extra detail. | Controlled structure reduces avoidable grammar and clarity errors. |
 
-When your sentence is specific, the examiner can follow your idea easily. Because your message is clear, your score can improve.
+## How It Works
 
-### 🧠 How the rule works (simple explanation)
+Use ${topicLabel} as a control tool, not as decoration. Start by deciding the job of the sentence in your response: explain, compare, justify, or conclude. Once the job is clear, choose a structure that keeps the message stable from beginning to end. This prevents mid-sentence drift and helps the examiner follow your argument without guessing. In exam conditions, this stability matters more than forcing advanced wording.
 
-Good grammar lessons are not about memorizing difficult words. They are about building clear meaning. First, choose one clear idea. Then choose words you are confident with. After that, check your sentence and ask: "Can another person understand this quickly?"
+<section class="lesson-panel lesson-panel-when">
+  <h3>Use it when</h3>
+  <ul>
+    <li>You need to state one claim and support it with one specific reason.</li>
+    <li>You are linking evidence to a conclusion in a writing body paragraph.</li>
+    <li>You want a speaking response to stay organized under time pressure.</li>
+    <li>You are revising a sentence that sounds correct but unclear.</li>
+  </ul>
+</section>
 
-Use this 3-step check:
-1. **Clear idea:** Can you explain your point in one sentence?
-2. **Correct form:** Is your verb form and sentence structure correct?
-3. **Natural style:** Does it sound like real English, not a translated sentence?
+<section class="lesson-panel lesson-panel-remember">
+  <h3>Keep these rules in mind</h3>
+  <ul>
+    <li>Keep one purpose per sentence so the reader does not lose the main point.</li>
+    <li>Match grammar choices to meaning first, then polish style.</li>
+    <li>Prefer clear wording over risky expressions you cannot control.</li>
+    <li>Check whether each sentence directly supports your response goal.</li>
+  </ul>
+</section>
 
-### ❌ Common mistakes and easy fixes
+## Common Mistakes
 
-| Mistake | Better version | Why this fix works |
-|---|---|---|
-| Very general sentence | Add one specific detail | Specific details make ideas stronger. |
-| Wrong verb form | Use the correct tense | Correct tense improves clarity. |
-| Repeating the same sentence pattern | Vary sentence openings | Variety makes writing easier to read. |
-| Fancy word used incorrectly | Use a simpler correct word | Accuracy is better than risky vocabulary. |
+- Weak: I use ${topicLabel} because it is good and useful for many things.
+- Strong: I use ${topicLabel} to make my reason specific, then I add one clear example.
+- Fix: Name the exact purpose of the sentence before you add detail.
 
-### ✍️ Guided practice
+- Weak: In this answer I change structure many times and the point becomes unclear.
+- Strong: In this answer I keep one structure, then extend it with focused support.
+- Fix: Keep one sentence frame until the core message is complete.
 
-Now try these short tasks. Write your answers before looking at the key.
+- Weak: The response adds advanced words, but the grammar does not match the meaning.
+- Strong: The response uses controlled wording that fits the intended meaning and tone.
+- Fix: Replace risky wording with accurate forms you can use consistently.
 
-1. Rewrite: **"This is bad for people and bad for money."**
-2. Choose the correct sentence:
-   - A) I do a decision
-   - B) I make a decision
-   - C) I making a decision
-3. Fix the grammar: **"The student is have a test today."**
-4. Improve this opinion sentence: **"Public transport is good."** Add one reason.
+## Practice Lab
 
-### ✅ Suggested answers
+<div class="practice-lab" data-practice-lab>
+  <p data-practice-score>Score: 0 / 3</p>
+  <button type="button" data-practice-reset>Reset</button>
 
-1. **This causes financial and social problems for many families.**
-2. **B) I make a decision.**
-3. **The student has a test today.** / **The student is having a test today.**
-4. **Public transport is useful because it reduces traffic and saves money.**
+  <article class="practice-task" data-task-type="choice">
+    <h3>Task 1: Choose the stronger line</h3>
+    <p>Select the sentence that keeps the response purpose clear.</p>
+    <div data-task-feedback></div>
+  </article>
 
-### 🇬🇧 For IELTS
+  <article class="practice-task" data-task-type="typing">
+    <h3>Task 2: Rewrite for control</h3>
+    <p>Rewrite one weak sentence so it uses ${topicLabel} with clear meaning.</p>
+    <div data-task-feedback></div>
+  </article>
 
-In IELTS, clear organization and accurate grammar matter a lot. Start with a direct answer, support it with one clear reason, and add a simple example. Keep your language natural and controlled.
+  <article class="practice-task" data-task-type="order">
+    <h3>Task 3: Order the response steps</h3>
+    <p>Arrange the steps from planning to final sentence check.</p>
+    <div data-task-feedback></div>
+  </article>
+</div>
 
-### 🇨🇦 For CELPIP
+## Get Feedback
 
-In CELPIP, you also need clear structure, but speed and clarity are very important. Give your point early, support it quickly, and avoid long confusing sentences. Short, correct sentences are better than long risky ones.
+<div class="lesson-support-callout">
+  <p>Get targeted corrections and a practical improvement plan for your next exam attempt.</p>
+  <ul>
+    <li><a href="/essay-correction">Essay Correction</a></li>
+    <li><a href="/tutoring">Tutoring</a></li>
+    <li><a href="/celpip/writing/ai-feedback">AI Feedback</a></li>
+    <li><a href="/webinar">Webinar</a></li>
+  </ul>
+</div>
 
-### 🚀 Your next step
+## Why It Matters
 
-Use one sentence pattern from this lesson in your next practice response today. After writing, read your answer out loud once. If it sounds clear when you speak it, it will usually read clearly too.
-
-You are improving every time you practice with feedback. Keep going—you are closer than you think.`,
+<div class="lesson-importance">
+  <p><strong>Why this matters:</strong> exam scores depend on clear meaning and controlled structure, not random complexity. When you can apply ${topicLabel} with stable grammar and direct support, your writing and speaking become easier to follow, easier to score, and easier to improve over time. This control helps you protect points in grammar, coherence, and task achievement across both IELTS and CELPIP.</p>
+</div>`,
   };
 }
 

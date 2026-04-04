@@ -52,11 +52,8 @@ jobs:
             node scripts/generate-lessons.mjs --count "$COUNT" --category "$CATEGORY"
           done
 
-      - name: Normalize lesson layout
-        run: npm run lesson:align
-
-      - name: Run lesson QA gate
-        run: npm run lesson:qa
+      - name: Run lesson quality gate for generated files
+        run: npm run lesson:check:standards:working
 
       - name: Commit and push generated lessons
         run: |
