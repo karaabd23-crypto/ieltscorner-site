@@ -1,23 +1,207 @@
 # Session Catalog
 
-Generated: 2026-03-26T01:58:54.007Z
+Generated: 2026-04-08T02:43:24.697Z
 
 ## Counts
 
-- Total: 35
-- Codex: 3
-- VS Code chat: 32
+- Total: 55
+- Codex: 13
+- VS Code chat: 42
 
 ## Sessions
+
+### Admin capabilities for Telegram bot
+- Source: vscode-chat
+- ID: ba48c515-bfa6-41d8-a1c6-f273606f940b
+- Created: 2026-04-08T02:14:34.907Z
+- Updated: 2026-04-08T02:43:05.522Z
+- Prompt: I want you to add some capabilities to the robot that are on
+- Final: <skills> Skills provide specialized capabilities, domain knowledge, and refined workflows for producing high-quality outputs. Each skill folder contains tested instructions for specific domains like testing strategies,…
+- File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\99c7524e034dea3b9bb59bd56c463b99\chatSessions\ba48c515-bfa6-41d8-a1c6-f273606f940b.jsonl
+
+### PDF file renaming script request
+- Source: vscode-chat
+- ID: 9d78976a-7d74-4151-8b7e-3fb4532ffe0e
+- Created: 2026-04-04T00:31:26.194Z
+- Updated: 2026-04-06T20:04:31.524Z
+- Prompt: I need to create a script outside of IELTScorner to rename some pdf files for me. This is unrelated to ielts corner
+- Final: is missing** Run this once: ```powershell py -m pip install pypdf ``` Then run the script again. **What the script does** 1. It opens each PDF. 2. It looks for `First Name:` and `Last Name:` inside the PDF. 3. It rename…
+- File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\99c7524e034dea3b9bb59bd56c463b99\chatSessions\9d78976a-7d74-4151-8b7e-3fb4532ffe0e.jsonl
+
+### Fix lesson scheduler runs
+- Source: codex
+- ID: 019d55e6-f712-72f2-9717-854e45416f06
+- Created: 2026-04-04T00:31:33.153Z
+- Updated: 2026-04-04T00:31:56.7728318Z
+- CWD: c:\Users\Karaa\Documents\ieltscorner-site
+- Prompt: lesson scheduler run has failed several times
+- Final: Committed and pushed. - Commit: `b3e49aa` - Branch: `main` - Pushed to: `origin/main` Only these files were included: - [.github/workflows/publish-lessons.yml](/C:/Users/Karaa/Documents/ieltscorner-site/.github/workflow…
+- File: C:\Users\Karaa\.codex\sessions\2026\04\03\rollout-2026-04-03T17-31-33-019d55e6-f712-72f2-9717-854e45416f06.jsonl
+
+### Portfolio creation for instructional design applications
+- Source: vscode-chat
+- ID: b28de049-add4-4c89-89a3-fb7330826b32
+- Created: 2026-04-02T04:33:21.236Z
+- Updated: 2026-04-03T16:49:54.340Z
+- Prompt: I want you to build a
+- Final: Do this in Framer so I can take over the content and structure fast. Start with a blank site, not a template. Templates waste time and make portfolios look generic. **Framer Setup** 1. Create a new blank project. 2. Use…
+- File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\99c7524e034dea3b9bb59bd56c463b99\chatSessions\b28de049-add4-4c89-89a3-fb7330826b32.jsonl
+
+### Explain email digest
+- Source: codex
+- ID: 019d4c72-0e74-72d2-8ce8-36a229085e31
+- Created: 2026-04-02T04:27:16.480Z
+- Updated: 2026-04-02T04:27:35.2387432Z
+- CWD: c:\Users\Karaa\Documents\ieltscorner-site
+- Prompt: explain to me in detail how the email digest works.
+- Final: Sounds good. Keeping sender as `kara.abd23@gmail.com` is the safest choice for now, and your Kit digest pipeline is working. When you’re ready later, I can handle the forwarding + DNS setup quickly end-to-end.
+- File: C:\Users\Karaa\.codex\sessions\2026\04\01\rollout-2026-04-01T21-27-16-019d4c72-0e74-72d2-8ce8-36a229085e31.jsonl
+
+### Fix CELPIP sales funnel
+- Source: codex
+- ID: 019d42aa-4158-7621-b0e1-c3d7155ab5dd
+- Created: 2026-03-31T06:52:27.355Z
+- Updated: 2026-03-31T06:52:40.2096252Z
+- CWD: c:\Users\Karaa\Documents\ieltscorner-site
+- Prompt: # Context from my IDE setup: ## Open tabs: - CLOUDFLARE_TELEGRAM_BOT_SETUP.md: CLOUDFLARE_TELEGRAM_BOT_SETUP.md ## My request for Codex: You are working inside the IELTS Corner Astro + Netlify codebase. Your job is to r…
+- Final: Updated on `/webinar` video section in [src/pages/webinar.astro](c:/Users/Karaa/Documents/ieltscorner-site/src/pages/webinar.astro): - Heading: `Watch how the Saturday CELPIP webinars work` - Supporting text: `This vide…
+- File: C:\Users\Karaa\.codex\sessions\2026\03\30\rollout-2026-03-30T23-52-27-019d42aa-4158-7621-b0e1-c3d7155ab5dd.jsonl
+
+### Audit CELPIP sales funnel
+- Source: codex
+- ID: 019d42aa-2cc9-7f32-a628-c4bc9c2040cb
+- Created: 2026-03-31T06:52:22.091Z
+- Updated: 2026-03-31T06:52:39.7582629Z
+- CWD: c:\Users\Karaa\Documents\ieltscorner-site
+- Prompt: # Context from my IDE setup: ## Open tabs: - CLOUDFLARE_TELEGRAM_BOT_SETUP.md: CLOUDFLARE_TELEGRAM_BOT_SETUP.md ## My request for Codex: You are working inside the IELTS Corner Astro + Netlify codebase. Your job is to r…
+- Final: Updated on `/webinar` video section in [src/pages/webinar.astro](c:/Users/Karaa/Documents/ieltscorner-site/src/pages/webinar.astro): - Heading: `Watch how the Saturday CELPIP webinars work` - Supporting text: `This vide…
+- File: C:\Users\Karaa\.codex\sessions\2026\03\30\rollout-2026-03-30T23-52-22-019d42aa-2cc9-7f32-a628-c4bc9c2040cb.jsonl
+
+### Audit CELPIP sales funnel
+- Source: codex
+- ID: 019d42aa-55da-7aa2-bdbc-2324aa142414
+- Created: 2026-03-31T06:52:32.606Z
+- Updated: 2026-03-31T06:52:39.447401Z
+- CWD: c:\Users\Karaa\Documents\ieltscorner-site
+- Prompt: # Context from my IDE setup: ## Open tabs: - CLOUDFLARE_TELEGRAM_BOT_SETUP.md: CLOUDFLARE_TELEGRAM_BOT_SETUP.md ## My request for Codex: You are working inside the IELTS Corner Astro + Netlify codebase. Your job is to r…
+- Final: Fixed. You were right: this was an AdSense placement issue, not webinar copy. What I changed: - Added a hard ad allowlist so only your intentional ad units can render. - Blocked auto-injected AdSense units that were app…
+- File: C:\Users\Karaa\.codex\sessions\2026\03\30\rollout-2026-03-30T23-52-32-019d42aa-55da-7aa2-bdbc-2324aa142414.jsonl
+
+### Fix free lessons form
+- Source: codex
+- ID: 019d3f49-96fd-7502-a59a-c29355d99e8c
+- Created: 2026-03-30T15:08:00.649Z
+- Updated: 2026-03-30T15:08:39.321919Z
+- CWD: c:\Users\Karaa\Documents\ieltscorner-site
+- Prompt: # Context from my IDE setup: ## Open tabs: - CLOUDFLARE_TELEGRAM_BOT_SETUP.md: CLOUDFLARE_TELEGRAM_BOT_SETUP.md ## My request for Codex: The form that unlocks free lessons is not working. It says we had trouble submitti…
+- Final: Perfect, I’ll pause here. When you’re done, send me: 1. The exact Netlify AI error/output 2. Whether production now reflects commit `0c1bea6` 3. If `/.netlify/functions/subscribe-newsletter` still returns `500` Then I’l…
+- File: C:\Users\Karaa\.codex\sessions\2026\03\30\rollout-2026-03-30T08-08-00-019d3f49-96fd-7502-a59a-c29355d99e8c.jsonl
+
+### 693fd796-3d6f-4441-bb6f-1ced9a97db9c
+- Source: vscode-chat
+- ID: 693fd796-3d6f-4441-bb6f-1ced9a97db9c
+- Created: 2026-03-30T15:07:52.434Z
+- Updated: 2026-03-30T15:08:21.283Z
+- File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\99c7524e034dea3b9bb59bd56c463b99\chatSessions\693fd796-3d6f-4441-bb6f-1ced9a97db9c.jsonl
+
+### Setting up Google Ads account assistance
+- Source: vscode-chat
+- ID: 834265ff-7dcf-404e-bfb7-805dc806fee1
+- Created: 2026-03-27T09:19:17.889Z
+- Updated: 2026-03-30T15:07:52.481Z
+- Prompt: can you help me set up my google ads account
+- Final: <skills> Skills provide specialized capabilities, domain knowledge, and refined workflows for producing high-quality outputs. Each skill folder contains tested instructions for specific domains like testing strategies,…
+- File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\99c7524e034dea3b9bb59bd56c463b99\chatSessions\834265ff-7dcf-404e-bfb7-805dc806fee1.jsonl
+
+### Fix CELPIP sales funnel
+- Source: codex
+- ID: 019d3dc4-7b5d-7653-91bf-83621e075368
+- Created: 2026-03-30T08:03:00.063Z
+- Updated: 2026-03-30T08:03:04.1285408Z
+- CWD: c:\Users\Karaa\Documents\ieltscorner-site
+- Prompt: # Context from my IDE setup: ## Open tabs: - CLOUDFLARE_TELEGRAM_BOT_SETUP.md: CLOUDFLARE_TELEGRAM_BOT_SETUP.md ## My request for Codex: You are working inside the IELTS Corner Astro + Netlify codebase. Your job is to r…
+- Final: Updated on `/webinar` video section in [src/pages/webinar.astro](c:/Users/Karaa/Documents/ieltscorner-site/src/pages/webinar.astro): - Heading: `Watch how the Saturday CELPIP webinars work` - Supporting text: `This vide…
+- File: C:\Users\Karaa\.codex\sessions\2026\03\30\rollout-2026-03-30T01-03-00-019d3dc4-7b5d-7653-91bf-83621e075368.jsonl
+
+### a5acee58-fbe3-4276-a695-bb480df7693b
+- Source: vscode-chat
+- ID: a5acee58-fbe3-4276-a695-bb480df7693b
+- Created: 2026-03-29T00:31:42.326Z
+- Updated: 2026-03-29T00:32:39.454Z
+- File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\99c7524e034dea3b9bb59bd56c463b99\chatSessions\a5acee58-fbe3-4276-a695-bb480df7693b.jsonl
 
 ### Fixing repeated posts in Telegram scheduler
 - Source: vscode-chat
 - ID: 1ebc05b3-eee8-4887-8bbe-c62d4c8ec65b
 - Created: 2026-03-24T03:36:01.444Z
-- Updated: 2026-03-26T01:58:22.074Z
+- Updated: 2026-03-28T23:25:51.352Z
 - Prompt: The telegram post scheduler is posting repeated posts. Don't let i
 - Final: <skills> Skills provide specialized capabilities, domain knowledge, and refined workflows for producing high-quality outputs. Each skill folder contains tested instructions for specific domains like testing strategies,…
 - File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\99c7524e034dea3b9bb59bd56c463b99\chatSessions\1ebc05b3-eee8-4887-8bbe-c62d4c8ec65b.jsonl
+
+### WhatsApp Channel workflow overview
+- Source: vscode-chat
+- ID: a2cd7c75-38ef-4cbe-b5ab-155dffd7df80
+- Created: 2026-03-28T15:55:13.771Z
+- Updated: 2026-03-28T16:38:59.657Z
+- Final: (or an imported helper) expects a CLI argument. Next steps: I can (pick one) - update the script to run without arguments and add logging (recommended), or - run it with the required `--target`/`--target-url` value if y…
+- File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\99c7524e034dea3b9bb59bd56c463b99\chatSessions\a2cd7c75-38ef-4cbe-b5ab-155dffd7df80.jsonl
+
+### Checking for uncommitted and unpushed changes
+- Source: vscode-chat
+- ID: 05196d38-68da-4841-8300-c3d76526f94b
+- Created: 2026-03-28T08:16:28.527Z
+- Updated: 2026-03-28T15:45:49.239Z
+- Final: <skills> Skills provide specialized capabilities, domain knowledge, and refined workflows for producing high-quality outputs. Each skill folder contains tested instructions for specific domains like testing strategies,…
+- File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\99c7524e034dea3b9bb59bd56c463b99\chatSessions\05196d38-68da-4841-8300-c3d76526f94b.jsonl
+
+### Fix mobile card overflow
+- Source: codex
+- ID: 019d2ea8-1267-7df0-816d-d0a560e08c04
+- Created: 2026-03-27T09:37:39.963Z
+- Updated: 2026-03-27T09:39:57.963217Z
+- CWD: c:\Users\Karaa\Documents\ieltscorner-site
+- Prompt: # Context from my IDE setup: ## Open tabs: - whatsapp_poster.py: scripts/whatsapp-automation/whatsapp_poster.py ## My request for Codex: On mobile, cards inside the lessons overflow to the right. <image> </image>
+- Final: Committed and pushed. Commit: `923f423` Message: `Expand Telegram bot onboarding and localization` That includes the language picker, localized menus/greetings, Mandarin, and the polished onboarding text. The repo is cl…
+- File: C:\Users\Karaa\.codex\sessions\2026\03\27\rollout-2026-03-27T02-37-39-019d2ea8-1267-7df0-816d-d0a560e08c04.jsonl
+
+### Checking Facebook group follower count
+- Source: vscode-chat
+- ID: abfd7963-e983-41e1-9267-36bfc89380e8
+- Created: 2026-03-27T08:44:17.996Z
+- Updated: 2026-03-27T09:04:39.954Z
+- Prompt: I want you to take a look at this gr
+- Final: A new script, telegram_to_whatsapp.py, is ready. It will: - Read Telegram posts from a JSON file (telegram_posts.json). - Format each post for WhatsApp (emojis, bold, italics, links to your site and channel). - Post 5 m…
+- File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\99c7524e034dea3b9bb59bd56c463b99\chatSessions\abfd7963-e983-41e1-9267-36bfc89380e8.jsonl
+
+### Audit SEO and analytics
+- Source: codex
+- ID: 019d2e49-999f-7d10-8834-7f1041cfa8df
+- Created: 2026-03-27T07:54:28.650Z
+- Updated: 2026-03-27T07:54:35.3899078Z
+- CWD: c:\Users\Karaa\Documents\ieltscorner-site
+- Prompt: You are working inside the IELTSCorner Astro + Netlify codebase. Your task is to PERFORM A VERIFIED TECHNICAL AUDIT and FIX critical SEO + analytics issues. Do NOT assume anything. Do NOT speculate. You must VERIFY ever…
+- Final: Blocked on live deletion targeting. Verified: - Current loaded live channel DOM has `0` matches for `Visibility test` and `0` matches for `WhatsApp Test Post`. - Current loaded live cleanup targets are: - `CELPIP Readin…
+- File: C:\Users\Karaa\.codex\sessions\2026\03\27\rollout-2026-03-27T00-54-28-019d2e49-999f-7d10-8834-7f1041cfa8df.jsonl
+
+### Investigating Netlify Credit Usage
+- Source: vscode-chat
+- ID: 152166dd-f745-4045-a3b0-c3a36deb073d
+- Created: 2026-03-26T02:01:45.413Z
+- Updated: 2026-03-27T06:42:58.233Z
+- Prompt: something ate th
+- Final: <skills> Skills provide specialized capabilities, domain knowledge, and refined workflows for producing high-quality outputs. Each skill folder contains tested instructions for specific domains like testing strategies,…
+- File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\99c7524e034dea3b9bb59bd56c463b99\chatSessions\152166dd-f745-4045-a3b0-c3a36deb073d.jsonl
+
+### Adjust ad placement layout
+- Source: codex
+- ID: 019d2dcf-9ea6-7a50-a1a8-78744b6cab1f
+- Created: 2026-03-27T05:41:14.546Z
+- Updated: 2026-03-27T05:43:00.1455238Z
+- CWD: c:\Users\Karaa\Documents\ieltscorner-site
+- Prompt: Do a check of the pages on the webiste and make sure ads appear between section and only within sections in they do not disrupt the layout. Especially when it omes to cards, make sure ads appear between cards, not insid…
+- Final: Committed and pushed. - Branch: `main` - Commit: `12cce66` - Message: `Fix ad placement behavior and convert lead captures to subscriptions` - Pushed to: `origin/main`
+- File: C:\Users\Karaa\.codex\sessions\2026\03\26\rollout-2026-03-26T22-41-14-019d2dcf-9ea6-7a50-a1a8-78744b6cab1f.jsonl
 
 ### Add landing pages for CELPIP and IEL
 - Source: codex
@@ -26,7 +210,7 @@ Generated: 2026-03-26T01:58:54.007Z
 - Updated: 2026-03-25T04:49:32.2608704Z
 - CWD: c:\Users\Karaa\Documents\ieltscorner-site
 - Prompt: # Context from my IDE setup: ## Open tabs: - delete-duplicates.mjs: scripts/delete-duplicates.mjs ## My request for Codex: You are an expert full-stack developer, conversion strategist, and SEO architect working inside…
-- Final: Fixed and now live. What I did: - Fixed malformed lesson CTA markup that caused the broken pill/button layout. - Standardized CTA button sizing in global styles. - Replaced old `bottleneck` CTA variation text with `prob…
+- Final: Most likely because your SEO signals are split and your measurement is messy. From a quick audit of your live domain + codebase, the biggest issues are: 1. Your domain is serving two different sites. - `https://ieltscor…
 - File: C:\Users\Karaa\.codex\sessions\2026\03\24\rollout-2026-03-24T21-49-24-019d2353-7041-78b3-b4d7-1e00ade15a68.jsonl
 
 ### Adding "Book a Class" Button to CELPIP Page

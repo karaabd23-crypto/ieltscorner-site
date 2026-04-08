@@ -79,7 +79,7 @@ async function main() {
   const payload = {
     url: options.webhookUrl,
     drop_pending_updates: options.dropPending,
-    allowed_updates: ['message', 'callback_query'],
+    allowed_updates: ['message', 'callback_query', 'chat_member', 'chat_join_request'],
   };
 
   if (options.secret) {

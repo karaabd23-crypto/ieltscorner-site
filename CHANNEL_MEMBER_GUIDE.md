@@ -109,7 +109,14 @@ If you set `TELEGRAM_OWNER_CHAT_ID`, you can use admin commands:
 ```
 /stats - View bot analytics (message count, quiz responses, total users)
 /announce [message] - Broadcast message to all users (demo available)
+/channelinfo <@channel|chat_id|t.me link> - Show channel title, member count, admins, and how many usernames the bot has observed
+/channelmembers <@channel|chat_id|t.me link> - Export usernames the bot has actually observed through join requests or member updates
+/invitegroup @username1 @username2 | Optional custom message - Send a study-group invite to known bot users by username
 ```
+
+Important: Telegram does not give bots a full list of all channel members. The new member export only includes usernames the bot has actually seen through admin-visible updates such as join requests and member status changes.
+
+Important: Telegram bots also cannot start a new DM with an arbitrary username. `/invitegroup` only works for people who already started the bot, because only those users are messageable.
 
 Any unmatched DM not matching keywords is forwarded to you for manual follow-up.
 

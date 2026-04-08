@@ -5,6 +5,8 @@ This adds DM chat capability to your Telegram bot using a Netlify webhook functi
 ## What this enables
 
 - Bot replies in private chat (`/start`, `IELTS`, `CELPIP`, `website`, `contact`, etc.)
+- Admin-only DM commands for channel inspection and observed-member export
+- Admin-only DM command for sending a group invite message to known bot users by username
 - Quick action buttons:
   - Visit website
   - Open channel
@@ -21,6 +23,7 @@ This adds DM chat capability to your Telegram bot using a Netlify webhook functi
 
 - `TELEGRAM_BOT_TOKEN`
 - `TELEGRAM_CHANNEL_URL`
+- `TELEGRAM_GROUP_INVITE_URL` (if you want the bot to send study-group invites)
 - `WEBSITE_URL` (recommended)
 
 Recommended:
@@ -67,3 +70,20 @@ node scripts/set-telegram-webhook.mjs --url "https://<your-netlify-domain>/.netl
 
 - This chat webhook handles **private DM messages**, not channel post comments.
 - Keep scheduled posting workflow as-is for channel content publishing.
+- `npm run telegram:webhook:set` now subscribes the bot to `chat_member` and `chat_join_request` updates so admin-only member observation can work.
+- Telegram still does **not** expose a full member list for channels to bots. The bot can only export usernames it has actually observed through join requests or member-status updates.
+- `/invitegroup @username1 @username2 | Optional custom message` only works for people who already started the bot. Telegram bots cannot initiate a new DM to an arbitrary username.
+
+## Admin invite command
+
+If `TELEGRAM_OWNER_CHAT_ID` and `TELEGRAM_GROUP_INVITE_URL` are set, you can send a group invite message to known bot users with:
+
+```bash
+/invitegroup @username1 @username2 | Optional custom message
+```
+
+Example:
+
+```bash
+/invitegroup @alice @bob | Join the private study group for weekly speaking practice.
+```
