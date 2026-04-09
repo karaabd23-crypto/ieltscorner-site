@@ -58,45 +58,71 @@ export async function resolveYouTubeChannelId(channelUrl) {
   }
 }
 
-export async function getLatestYouTubeVideo(channelUrl) {
-  const channelId = await resolveYouTubeChannelId(channelUrl);
-  if (!channelId) {
+function parseYouTubeEntry(entry, fallbackUrl) {
+  const videoId = entry.match(/<yt:videoId>([^<]+)<\/yt:videoId>/i)?.[1]?.trim();
+  const titleRaw = entry.match(/<title>([^<]+)<\/title>/i)?.[1]?.trim() || 'Latest YouTube lesson';
+  const url = entry.match(/<link[^>]*href="([^"]+)"/i)?.[1]?.trim()
+    || (videoId ? `https://www.youtube.com/watch?v=${videoId}` : fallbackUrl);
+  const publishedAt = entry.match(/<published>([^<]+)<\/published>/i)?.[1]?.trim() || '';
+
+  if (!videoId) {
     return null;
   }
+
+  const title = decodeXmlEntities(titleRaw);
+  return {
+    title,
+    url,
+    thumbnailUrl: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
+    publishedAt,
+    preview: truncate(title, 90),
+  };
+}
+
+export async function getLatestYouTubeVideos(channelUrl, limit = 5) {
+  const channelId = await resolveYouTubeChannelId(channelUrl);
+  if (!channelId) {
+    return [];
+  }
+
+  const safeLimit = Number.isFinite(Number(limit))
+    ? Math.max(1, Math.min(10, Number.parseInt(String(limit), 10)))
+    : 5;
 
   try {
     const response = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`);
     if (!response.ok) {
-      return null;
+      return [];
     }
 
     const xml = await response.text();
-    const entryMatch = xml.match(/<entry>([\s\S]*?)<\/entry>/i);
-    if (!entryMatch) {
-      return null;
+    const entries = [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/gi)];
+    if (!entries.length) {
+      return [];
     }
 
-    const entry = entryMatch[1];
-    const videoId = entry.match(/<yt:videoId>([^<]+)<\/yt:videoId>/i)?.[1]?.trim();
-    const titleRaw = entry.match(/<title>([^<]+)<\/title>/i)?.[1]?.trim() || 'Latest YouTube lesson';
-    const url = entry.match(/<link[^>]*href="([^"]+)"/i)?.[1]?.trim()
-      || (videoId ? `https://www.youtube.com/watch?v=${videoId}` : channelUrl);
-    const publishedAt = entry.match(/<published>([^<]+)<\/published>/i)?.[1]?.trim() || '';
+    const videos = [];
+    for (const match of entries) {
+      const parsed = parseYouTubeEntry(match[1], channelUrl);
+      if (!parsed) {
+        continue;
+      }
 
-    if (!videoId) {
-      return null;
+      videos.push(parsed);
+      if (videos.length >= safeLimit) {
+        break;
+      }
     }
 
-    return {
-      title: decodeXmlEntities(titleRaw),
-      url,
-      thumbnailUrl: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
-      publishedAt,
-      preview: truncate(decodeXmlEntities(titleRaw), 90),
-    };
+    return videos;
   } catch {
-    return null;
+    return [];
   }
+}
+
+export async function getLatestYouTubeVideo(channelUrl) {
+  const videos = await getLatestYouTubeVideos(channelUrl, 1);
+  return videos[0] || null;
 }
 
 function resolveTelegramSlug(channelUrl) {
@@ -158,45 +184,83 @@ export async function getTelegramChannelSnapshot(channelUrl) {
 }
 
 export async function getLatestInstagramPost(username) {
-  const handle = String(username || '').trim().replace(/^@/, '');
-  if (!handle) {
+  const posts = await getLatestInstagramPosts(username, 1);
+  return posts[0] || null;
+}
+
+function normalizeInstagramPost(node, handle) {
+  if (!node || typeof node !== 'object') {
     return null;
   }
+
+  const caption = String(node?.edge_media_to_caption?.edges?.[0]?.node?.text || '').trim();
+  const shortcode = String(node?.shortcode || '').trim();
+  const url = shortcode ? `https://www.instagram.com/p/${shortcode}/` : `https://www.instagram.com/${handle}/`;
+  const imageUrl = String(node?.thumbnail_src || node?.display_url || '').trim();
+  const publishedAt = node?.taken_at_timestamp
+    ? new Date(Number(node.taken_at_timestamp) * 1000).toISOString()
+    : '';
+
+  return {
+    title: caption ? truncate(caption, 90) : `Instagram post from @${handle}`,
+    url,
+    caption,
+    preview: truncate(caption || `Instagram post from @${handle}`, 170),
+    imageUrl,
+    publishedAt,
+  };
+}
+
+export async function getLatestInstagramPosts(username, limit = 5) {
+  const handle = String(username || '').trim().replace(/^@/, '');
+  if (!handle) {
+    return [];
+  }
+
+  const safeLimit = Number.isFinite(Number(limit))
+    ? Math.max(1, Math.min(10, Number.parseInt(String(limit), 10)))
+    : 5;
 
   try {
     const response = await fetch(`https://www.instagram.com/api/v1/users/web_profile_info/?username=${encodeURIComponent(handle)}`, {
       headers: {
+        Accept: 'application/json',
+        Referer: `https://www.instagram.com/${handle}/`,
         'User-Agent': 'Mozilla/5.0 (compatible; IELTSCornerDigest/1.0)',
         'x-ig-app-id': '936619743392459',
+        'x-requested-with': 'XMLHttpRequest',
       },
     });
 
     if (!response.ok) {
-      return null;
+      return [];
     }
 
     const data = await response.json();
     const user = data?.data?.user;
-    const node = user?.edge_owner_to_timeline_media?.edges?.[0]?.node;
-    if (!node) {
-      return null;
+    const edges = Array.isArray(user?.edge_owner_to_timeline_media?.edges)
+      ? user.edge_owner_to_timeline_media.edges
+      : [];
+
+    if (!edges.length) {
+      return [];
     }
 
-    const caption = String(node?.edge_media_to_caption?.edges?.[0]?.node?.text || '').trim();
-    const shortcode = String(node?.shortcode || '').trim();
-    const url = shortcode ? `https://www.instagram.com/p/${shortcode}/` : `https://www.instagram.com/${handle}/`;
+    const posts = [];
+    for (const edge of edges) {
+      const normalized = normalizeInstagramPost(edge?.node, handle);
+      if (!normalized) {
+        continue;
+      }
 
-    return {
-      title: `Latest Instagram post from @${handle}`,
-      url,
-      caption,
-      preview: truncate(caption || `Latest Instagram post from @${handle}`, 170),
-      imageUrl: String(node?.thumbnail_src || node?.display_url || '').trim(),
-      publishedAt: node?.taken_at_timestamp
-        ? new Date(Number(node.taken_at_timestamp) * 1000).toISOString()
-        : '',
-    };
+      posts.push(normalized);
+      if (posts.length >= safeLimit) {
+        break;
+      }
+    }
+
+    return posts;
   } catch {
-    return null;
+    return [];
   }
 }

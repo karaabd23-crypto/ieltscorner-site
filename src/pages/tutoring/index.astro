@@ -3,6 +3,9 @@ import Layout from "../../layouts/Layout.astro";
 import ServiceTrustCard from "../../components/ServiceTrustCard.astro";
 
 const PRIVATE_CALENDLY_URL = "https://calendly.com/ieltscorner/60min";
+const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/@KaraAbdolmaleki";
+const INSTAGRAM_USERNAME = "ieltscorner.ca";
+const INSTAGRAM_URL = `https://www.instagram.com/${INSTAGRAM_USERNAME}/`;
 ---
 
 <Layout
@@ -74,11 +77,206 @@ const PRIVATE_CALENDLY_URL = "https://calendly.com/ieltscorner/60min";
         data-url={PRIVATE_CALENDLY_URL}
         style="min-width:320px;height:700px;"
       ></div>
+
+      <div class="tutoring-social-wrap">
+        <h3 class="tutoring-social-heading">Latest free practice from social channels</h3>
+        <p class="muted tutoring-social-intro">
+          Watch the newest YouTube lessons and open the latest Instagram posts while you wait for class.
+        </p>
+        <p id="tutoring-social-status" class="tutoring-social-status" aria-live="polite"></p>
+
+        <div class="tutoring-social-grid">
+          <article class="tutoring-social-column">
+            <div class="tutoring-social-column-head">
+              <h4>YouTube (Latest 5 videos)</h4>
+              <a href={YOUTUBE_CHANNEL_URL} target="_blank" rel="noreferrer">Open channel</a>
+            </div>
+            <ul id="tutoring-youtube-feed" class="tutoring-social-list">
+              <li class="tutoring-social-loading">Loading latest YouTube videos...</li>
+            </ul>
+          </article>
+
+          <article class="tutoring-social-column">
+            <div class="tutoring-social-column-head">
+              <h4>Instagram (Latest 5 posts)</h4>
+              <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer">Open Instagram</a>
+            </div>
+            <ul id="tutoring-instagram-feed" class="tutoring-social-list">
+              <li class="tutoring-social-loading">Loading latest Instagram posts...</li>
+            </ul>
+          </article>
+        </div>
+      </div>
     </section>
   </section>
 
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async is:inline></script>
+  <script is:inline>
+    (() => {
+      const endpoint = "/.netlify/functions/get-social-feed?limit=5";
+      const youtubeChannelUrl = {JSON.stringify(YOUTUBE_CHANNEL_URL)};
+      const instagramUrl = {JSON.stringify(INSTAGRAM_URL)};
+      const youtubeList = document.getElementById("tutoring-youtube-feed");
+      const instagramList = document.getElementById("tutoring-instagram-feed");
+      const status = document.getElementById("tutoring-social-status");
+
+      if (!(youtubeList instanceof HTMLUListElement) || !(instagramList instanceof HTMLUListElement)) {
+        return;
+      }
+
+      const formatDate = (value) => {
+        const date = new Date(value);
+        if (Number.isNaN(date.getTime())) {
+          return "";
+        }
+        return date.toLocaleDateString("en-CA", {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        });
+      };
+
+      const clearList = (list) => {
+        while (list.firstChild) {
+          list.removeChild(list.firstChild);
+        }
+      };
+
+      const appendFallbackItem = (list, message, href, linkLabel) => {
+        const item = document.createElement("li");
+        item.className = "tutoring-social-empty";
+
+        const text = document.createElement("p");
+        text.textContent = message;
+        item.appendChild(text);
+
+        const link = document.createElement("a");
+        link.href = href;
+        link.target = "_blank";
+        link.rel = "noreferrer";
+        link.textContent = linkLabel;
+        item.appendChild(link);
+
+        list.appendChild(item);
+      };
+
+      const appendItems = (list, items, options) => {
+        clearList(list);
+
+        const safeItems = Array.isArray(items) ? items.slice(0, 5) : [];
+        if (!safeItems.length) {
+          appendFallbackItem(list, options.fallbackMessage, options.fallbackUrl, options.fallbackLabel);
+          return;
+        }
+
+        safeItems.forEach((itemData) => {
+          const item = document.createElement("li");
+          item.className = "tutoring-social-item";
+
+          const link = document.createElement("a");
+          link.className = "tutoring-social-link";
+          link.href = String(itemData?.url || options.fallbackUrl);
+          link.target = "_blank";
+          link.rel = "noreferrer";
+
+          if (itemData?.thumbnailUrl || itemData?.imageUrl) {
+            const image = document.createElement("img");
+            image.className = "tutoring-social-thumb";
+            image.src = String(itemData.thumbnailUrl || itemData.imageUrl);
+            image.alt = String(itemData?.title || options.defaultTitle);
+            image.loading = "lazy";
+            image.decoding = "async";
+            link.appendChild(image);
+          } else {
+            const emptyThumb = document.createElement("span");
+            emptyThumb.className = "tutoring-social-thumb tutoring-social-thumb--empty";
+            emptyThumb.textContent = "No image";
+            link.appendChild(emptyThumb);
+          }
+
+          const textWrap = document.createElement("span");
+          textWrap.className = "tutoring-social-text";
+
+          const title = document.createElement("span");
+          title.className = "tutoring-social-title";
+          title.textContent = String(itemData?.title || itemData?.preview || options.defaultTitle);
+          textWrap.appendChild(title);
+
+          const meta = document.createElement("span");
+          meta.className = "tutoring-social-meta";
+          const date = formatDate(itemData?.publishedAt);
+          meta.textContent = date || options.defaultMeta;
+          textWrap.appendChild(meta);
+
+          link.appendChild(textWrap);
+          item.appendChild(link);
+          list.appendChild(item);
+        });
+      };
+
+      const setStatus = (message) => {
+        if (status instanceof HTMLElement) {
+          status.textContent = message;
+        }
+      };
+
+      const loadSocialFeed = async () => {
+        setStatus("Loading latest social posts...");
+
+        try {
+          const response = await fetch(endpoint, {
+            headers: {
+              Accept: "application/json",
+            },
+          });
+
+          const payload = await response.json();
+          if (!response.ok) {
+            throw new Error(payload?.error || "Unable to load social feeds.");
+          }
+
+          appendItems(youtubeList, payload?.youtubeVideos, {
+            fallbackMessage: "Latest YouTube videos are not available right now.",
+            fallbackUrl: String(payload?.youtubeChannelUrl || youtubeChannelUrl),
+            fallbackLabel: "Open YouTube channel",
+            defaultTitle: "Recent YouTube lesson",
+            defaultMeta: "Watch on YouTube",
+          });
+
+          appendItems(instagramList, payload?.instagramPosts, {
+            fallbackMessage: "Latest Instagram posts are not available right now.",
+            fallbackUrl: String(payload?.instagramUrl || instagramUrl),
+            fallbackLabel: "Open Instagram profile",
+            defaultTitle: "Recent Instagram post",
+            defaultMeta: "Open on Instagram",
+          });
+
+          setStatus("");
+        } catch {
+          appendItems(youtubeList, [], {
+            fallbackMessage: "Latest YouTube videos are not available right now.",
+            fallbackUrl: youtubeChannelUrl,
+            fallbackLabel: "Open YouTube channel",
+            defaultTitle: "Recent YouTube lesson",
+            defaultMeta: "Watch on YouTube",
+          });
+
+          appendItems(instagramList, [], {
+            fallbackMessage: "Latest Instagram posts are not available right now.",
+            fallbackUrl: instagramUrl,
+            fallbackLabel: "Open Instagram profile",
+            defaultTitle: "Recent Instagram post",
+            defaultMeta: "Open on Instagram",
+          });
+
+          setStatus("Social previews are temporarily unavailable. You can still open both channels directly.");
+        }
+      };
+
+      loadSocialFeed();
+    })();
+  </script>
 </Layout>
 
 <style>
@@ -88,6 +286,152 @@ const PRIVATE_CALENDLY_URL = "https://calendly.com/ieltscorner/60min";
     border-radius: var(--radius);
   }
 
+  .tutoring-social-wrap {
+    margin-top: var(--s-5);
+    padding-top: var(--s-4);
+    border-top: 1px solid color-mix(in srgb, var(--border-strong) 48%, white 52%);
+  }
+
+  .tutoring-social-heading {
+    margin: 0;
+  }
+
+  .tutoring-social-intro {
+    margin-top: var(--s-1);
+    margin-bottom: var(--s-1);
+  }
+
+  .tutoring-social-status {
+    min-height: 1.35rem;
+    margin: 0 0 var(--s-3);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .tutoring-social-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--s-3);
+  }
+
+  .tutoring-social-column {
+    border: 1px solid color-mix(in srgb, var(--border-strong) 45%, white 55%);
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--surface) 92%, white 8%);
+    padding: var(--s-3);
+  }
+
+  .tutoring-social-column-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--s-2);
+  }
+
+  .tutoring-social-column-head h4 {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .tutoring-social-column-head a {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .tutoring-social-list {
+    margin: var(--s-3) 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: var(--s-2);
+  }
+
+  .tutoring-social-item {
+    margin: 0;
+  }
+
+  .tutoring-social-link {
+    display: grid;
+    grid-template-columns: minmax(88px, 118px) minmax(0, 1fr);
+    gap: 0.65rem;
+    align-items: start;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 10px;
+    padding: 0.42rem;
+    border: 1px solid transparent;
+    transition: border-color 150ms ease, background-color 150ms ease;
+  }
+
+  .tutoring-social-link:hover,
+  .tutoring-social-link:focus-visible {
+    border-color: color-mix(in srgb, var(--accent) 32%, var(--border-strong) 68%);
+    background: color-mix(in srgb, var(--surface) 94%, white 6%);
+  }
+
+  .tutoring-social-thumb {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid color-mix(in srgb, var(--border-strong) 38%, white 62%);
+    background: #eff2f5;
+  }
+
+  .tutoring-social-thumb--empty {
+    display: grid;
+    place-items: center;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    border-style: dashed;
+    font-weight: 600;
+  }
+
+  .tutoring-social-text {
+    display: grid;
+    gap: 0.25rem;
+    min-width: 0;
+  }
+
+  .tutoring-social-title {
+    font-weight: 700;
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 0.94rem;
+  }
+
+  .tutoring-social-meta {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  .tutoring-social-loading,
+  .tutoring-social-empty {
+    margin: 0;
+    border: 1px dashed color-mix(in srgb, var(--border-strong) 48%, white 52%);
+    border-radius: 10px;
+    padding: 0.8rem;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    background: color-mix(in srgb, var(--surface) 95%, white 5%);
+  }
+
+  .tutoring-social-empty p {
+    margin: 0 0 0.35rem;
+  }
+
+  .tutoring-social-empty a {
+    font-weight: 700;
+    color: var(--accent);
+  }
+
   @media (max-width: 768px) {
     .calendly-wrap {
       padding: var(--s-3);
@@ -95,6 +439,14 @@ const PRIVATE_CALENDLY_URL = "https://calendly.com/ieltscorner/60min";
 
     .calendly-inline-widget {
       height: 700px !important;
+    }
+
+    .tutoring-social-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tutoring-social-column {
+      padding: var(--s-2);
     }
   }
 </style>
