@@ -5,6 +5,7 @@
 
 [build.environment]
   NODE_VERSION = "20"
+  SECRETS_SCAN_OMIT_KEYS = "KIT_FORM_ID,KIT_DEFAULT_TAG_ID"
 
 # Domain aliases — redirect celpipcorner.com/celpipcorner.ca to ieltscorner.ca
 # These domains must be added in Netlify dashboard + DNS pointed to Netlify
