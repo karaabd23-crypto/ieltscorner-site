@@ -1,0 +1,1682 @@
+---
+import {
+  CELPIP_TASK1_SIDEBAR,
+  CELPIP_FREE_TASK_ID,
+  CELPIP_WRITING_PRICE_CAD,
+  getSidebarPromptById,
+} from '../lib/celpipWritingData.mjs';
+
+// Build a lookup map: id → full prompt object (available at build time for JSON embed)
+const sidebarPromptMap = {};
+for (const entry of CELPIP_TASK1_SIDEBAR) {
+  const p = getSidebarPromptById(entry.id);
+  if (p) sidebarPromptMap[entry.id] = p;
+}
+
+const totalTasks = CELPIP_TASK1_SIDEBAR.length;
+const lockedCount = CELPIP_TASK1_SIDEBAR.filter((t) => !t.isFree).length;
+---
+
+<div class="practice-hub" id="practice-hub">
+
+  <!-- SIDEBAR -->
+  <aside class="practice-hub__sidebar" aria-label="Task list">
+    <div class="sidebar-header">
+      <span class="sidebar-title">Writing &rsaquo; Task 1</span>
+      <span class="sidebar-sub">Email Writing</span>
+    </div>
+    <nav class="task-list" role="list">
+      {CELPIP_TASK1_SIDEBAR.map((task, i) => (
+        <button
+          class={`task-item${task.isFree ? ' task-item--free' : ' task-item--locked'}`}
+          data-task-id={task.id}
+          data-is-free={task.isFree ? 'true' : 'false'}
+          aria-label={task.label + (task.isFree ? ' (free)' : ' (subscription required)')}
+          type="button"
+        >
+          <span class="task-num">{i + 1}.</span>
+          <span class="task-label">{task.label}</span>
+          {task.isFree
+            ? <span class="free-badge">FREE</span>
+            : (
+              <svg class="lock-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M8 1a3.5 3.5 0 0 0-3.5 3.5V6H4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-.5V4.5A3.5 3.5 0 0 0 8 1Zm2 5V4.5a2 2 0 1 0-4 0V6h4Z" clip-rule="evenodd" />
+              </svg>
+            )
+          }
+        </button>
+      ))}
+    </nav>
+  </aside>
+
+  <!-- PROMPT PANEL -->
+  <section class="practice-hub__prompt" id="hub-prompt-panel" aria-label="Prompt">
+    <div class="prompt-top-bar">
+      <span class="social-proof" id="hub-submissions-count">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM6 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM1.49 15.326a.78.78 0 0 1-.358-.442 3 3 0 0 1 4.308-3.516 6.484 6.484 0 0 0-1.905 3.959c-.023.222-.014.442.025.654a4.97 4.97 0 0 1-2.07-.655ZM16.44 15.98a4.97 4.97 0 0 0 2.07-.654.78.78 0 0 0 .357-.442 3 3 0 0 0-4.308-3.517 6.484 6.484 0 0 1 1.907 3.96 2.32 2.32 0 0 1-.026.654ZM18 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM5.304 16.19a.844.844 0 0 1-.277-.71 5 5 0 0 1 9.947 0 .843.843 0 0 1-.277.71A6.975 6.975 0 0 1 10 18a6.974 6.974 0 0 1-4.696-1.81Z"/></svg>
+        <span id="hub-count-text">1.1k submitted today</span>
+      </span>
+    </div>
+
+    <div class="prompt-card" id="hub-prompt-card">
+      <p class="prompt-intro">Read the following information.</p>
+      <div class="prompt-scenario" id="hub-prompt-scenario"></div>
+      <div class="prompt-task-line" id="hub-prompt-task-line"></div>
+      <ul class="prompt-instructions" id="hub-prompt-instructions"></ul>
+
+      <!-- Sample Responses -->
+      <div class="sample-accordions">
+        <details class="sample-accordion">
+          <summary>CLB 5 Sample</summary>
+          <div class="sample-content" id="hub-sample-clb5">
+            <p class="muted sample-placeholder">Sample response coming soon — check back or subscribe to see all samples.</p>
+          </div>
+        </details>
+        <details class="sample-accordion">
+          <summary>CLB 7 Sample</summary>
+          <div class="sample-content" id="hub-sample-clb7">
+            <p class="muted sample-placeholder">Sample response coming soon — check back or subscribe to see all samples.</p>
+          </div>
+        </details>
+        <details class="sample-accordion">
+          <summary>CLB 9 Sample</summary>
+          <div class="sample-content">
+            <div class="sample-level-badge" id="hub-sample-level-badge"></div>
+            <ul class="sample-why" id="hub-sample-level-why"></ul>
+            <pre class="sample-essay" id="hub-sample-clb9"></pre>
+          </div>
+        </details>
+        <details class="sample-accordion">
+          <summary>CLB 11 Sample</summary>
+          <div class="sample-content" id="hub-sample-clb11">
+            <p class="muted sample-placeholder">Sample response coming soon â€” check back or subscribe to see all samples.</p>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WRITING PANEL -->
+  <section class="practice-hub__writing" id="hub-writing-panel" aria-label="Writing area">
+    <div class="writing-header">
+      <span class="writing-title">Write to see your score</span>
+      <div class="timer-box">
+        <div class="timer-display" id="hub-timer">27:00</div>
+        <div class="timer-controls">
+          <button class="timer-btn" id="hub-timer-start" type="button" title="Start timer">&#9654;</button>
+          <button class="timer-btn" id="hub-timer-reset" type="button" title="Reset timer">&#8635;</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="word-count-row">
+      <span class="word-count-label">Your response</span>
+      <span class="word-count-badge" id="hub-word-count">0 words</span>
+    </div>
+
+    <textarea
+      id="hub-textarea"
+      class="writing-textarea"
+      placeholder="Type your response here..."
+      rows="14"
+      aria-label="Your writing response"
+    ></textarea>
+
+    <!-- Submit area (shows different states) -->
+    <div id="hub-submit-area">
+      <button class="btn btn-primary hub-submit-btn" id="hub-submit-btn" type="button" disabled>
+        Submit for evaluation
+      </button>
+      <p class="writing-status muted" id="hub-writing-status" style="min-height: 1.2em;"></p>
+    </div>
+
+    <!-- Upgrade prompt (shown after free eval used, no subscription) -->
+    <div id="hub-upgrade-prompt" style="display:none;" class="upgrade-inline">
+      <p class="upgrade-inline__msg">You've used your free evaluation. Subscribe to practice all {lockedCount} more tasks.</p>
+      <button class="btn btn-primary hub-checkout-btn" type="button">
+        Unlock all tasks &mdash; CA${CELPIP_WRITING_PRICE_CAD}/month
+      </button>
+      <p class="muted" style="font-size: 0.85rem; margin-top: var(--s-2);">Cancel anytime. Secure billing via Stripe.</p>
+    </div>
+
+    <!-- Results area -->
+    <div id="hub-results" style="display:none;" class="results-area">
+      <div class="results-header">
+        <div class="results-score-block">
+          <span class="results-label">Your estimated score</span>
+          <div class="score-badge" id="hub-score-badge"></div>
+          <span class="score-descriptor" id="hub-score-descriptor"></span>
+        </div>
+      </div>
+      <p class="results-summary" id="hub-results-summary"></p>
+
+      <!-- Criteria -->
+      <div class="criteria-grid" id="hub-criteria-grid"></div>
+
+      <!-- Strengths & Priorities -->
+      <div class="feedback-cols">
+        <div class="feedback-col">
+          <h4 class="feedback-col__title feedback-col__title--good">What's working</h4>
+          <ul class="feedback-list" id="hub-strengths"></ul>
+        </div>
+        <div class="feedback-col">
+          <h4 class="feedback-col__title feedback-col__title--fix">What to fix next</h4>
+          <ul class="feedback-list" id="hub-priorities"></ul>
+        </div>
+      </div>
+
+      <!-- Error analysis -->
+      <div id="hub-errors-section" style="display:none;">
+        <h4 class="section-subtitle">Language issues found</h4>
+        <div class="errors-list" id="hub-errors-list"></div>
+      </div>
+
+      <!-- Rewrite suggestions -->
+      <div id="hub-rewrites-section" style="display:none;">
+        <h4 class="section-subtitle">Suggested rewrites</h4>
+        <div class="rewrites-list" id="hub-rewrites-list"></div>
+      </div>
+
+      <!-- Lesson recommendations -->
+      <div id="hub-lessons-section" style="display:none;">
+        <h4 class="section-subtitle">Lessons to help you improve</h4>
+        <div class="lessons-grid" id="hub-lessons-grid"></div>
+      </div>
+
+      <!-- Upgrade CTA inside results (for free users) -->
+      <div id="hub-results-upgrade" style="display:none;" class="results-upgrade-cta">
+        <p>Practice all {lockedCount} more tasks with AI feedback — CA${CELPIP_WRITING_PRICE_CAD}/month.</p>
+        <button class="btn btn-primary hub-checkout-btn" type="button">Unlock all tasks</button>
+      </div>
+    </div>
+
+    <!-- Inbox placeholder (before any submission) -->
+    <div id="hub-no-submission" class="no-submission-placeholder">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H6.911a2.25 2.25 0 0 0-2.15 1.588L2.1 13.177a2.25 2.25 0 0 0-.1.661Z"/>
+      </svg>
+      <p>No submissions yet</p>
+    </div>
+  </section>
+</div>
+
+<!-- SUBSCRIPTION MODAL -->
+<div id="hub-modal-backdrop" class="modal-backdrop" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="hub-modal-title">
+  <div class="modal-card">
+    <button class="modal-close" id="hub-modal-close" type="button" aria-label="Close">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"/></svg>
+    </button>
+    <div class="modal-icon" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12 1.5a5.25 5.25 0 0 0-5.25 5.25v3a3 3 0 0 0-3 3v6.75a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3v-6.75a3 3 0 0 0-3-3v-3c0-2.9-2.35-5.25-5.25-5.25Zm3.75 8.25v-3a3.75 3.75 0 1 0-7.5 0v3h7.5Z" clip-rule="evenodd"/></svg>
+    </div>
+    <h2 class="modal-title" id="hub-modal-title">Unlock all {totalTasks} writing tasks</h2>
+    <p class="modal-desc">
+      Subscribe for CA${CELPIP_WRITING_PRICE_CAD}/month to access all Task 1 and Task 2 practice prompts with full AI evaluation, CLB scoring, and lesson recommendations.
+    </p>
+    <ul class="modal-features">
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd"/></svg>
+        {lockedCount} more Task 1 &amp; 2 prompts
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd"/></svg>
+        Unlimited AI evaluations with CLB scoring
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd"/></svg>
+        Saved sample bands for CLB 5, 7, 9, and 11
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd"/></svg>
+        Cancel anytime — no commitment
+      </li>
+    </ul>
+    <button class="btn btn-primary hub-checkout-btn modal-cta" type="button">
+      Subscribe — CA${CELPIP_WRITING_PRICE_CAD}/month
+    </button>
+    <button class="modal-secondary" id="hub-modal-keep-free" type="button">
+      Keep practising with the free task
+    </button>
+    <p class="modal-status muted" id="hub-modal-status" style="min-height: 1.2em;"></p>
+  </div>
+</div>
+
+<!-- Embed all prompt data as JSON for client-side use -->
+<script id="hub-prompt-data" type="application/json" is:inline set:html={JSON.stringify(sidebarPromptMap)}></script>
+<script id="hub-sidebar-data" type="application/json" is:inline set:html={JSON.stringify(CELPIP_TASK1_SIDEBAR)}></script>
+
+<style>
+  /* ---- Layout ---- */
+  .practice-hub {
+    display: grid;
+    grid-template-columns: 260px 1fr 1fr;
+    min-height: 82vh;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--surface);
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* ---- Sidebar ---- */
+  .practice-hub__sidebar {
+    background: var(--bg-2);
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    max-height: 82vh;
+  }
+
+  .sidebar-header {
+    padding: var(--s-3) var(--s-4);
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-2);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  .sidebar-title {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .sidebar-sub {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--muted-2);
+    margin-top: 2px;
+  }
+
+  .task-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .task-item {
+    display: flex;
+    align-items: center;
+    gap: var(--s-2);
+    padding: 9px var(--s-4);
+    background: none;
+    border: none;
+    border-left: 3px solid transparent;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.82rem;
+    color: var(--text);
+    transition: background 0.12s, border-color 0.12s;
+    line-height: 1.35;
+  }
+
+  .task-item:hover {
+    background: rgba(217, 72, 72, 0.06);
+  }
+
+  .task-item.is-active {
+    border-left-color: var(--accent);
+    background: var(--surface);
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .task-item--locked {
+    opacity: 0.45;
+  }
+
+  .task-item--locked:hover {
+    opacity: 0.7;
+    background: rgba(217, 72, 72, 0.04);
+  }
+
+  .task-num {
+    flex-shrink: 0;
+    color: var(--muted-2);
+    font-size: 0.78rem;
+    min-width: 18px;
+  }
+
+  .task-label {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .free-badge {
+    flex-shrink: 0;
+    background: var(--gold);
+    color: #1c1c1c;
+    font-size: 0.6rem;
+    font-weight: 800;
+    padding: 2px 5px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .lock-icon {
+    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+    color: var(--muted-2);
+  }
+
+  /* ---- Prompt Panel ---- */
+  .practice-hub__prompt {
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    max-height: 82vh;
+    background: var(--surface);
+  }
+
+  .prompt-top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: var(--s-3) var(--s-4);
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+  }
+
+  .social-proof {
+    display: flex;
+    align-items: center;
+    gap: var(--s-1);
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .social-proof svg {
+    width: 14px;
+    height: 14px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .prompt-card {
+    padding: var(--s-5) var(--s-5) var(--s-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-4);
+  }
+
+  .prompt-intro {
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin: 0;
+    font-style: italic;
+  }
+
+  .prompt-scenario {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--text);
+  }
+
+  .prompt-task-line {
+    font-size: 0.93rem;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .prompt-instructions {
+    margin: 0;
+    padding-left: var(--s-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.55;
+  }
+
+  /* ---- Sample Accordions ---- */
+  .sample-accordions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+    border-top: 1px solid var(--border);
+    padding-top: var(--s-4);
+  }
+
+  .sample-accordion {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .sample-accordion summary {
+    padding: var(--s-3) var(--s-4);
+    cursor: pointer;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg);
+    user-select: none;
+  }
+
+  .sample-accordion summary::-webkit-details-marker { display: none; }
+
+  .sample-accordion summary::after {
+    content: '▾';
+    font-size: 0.8rem;
+    color: var(--muted);
+    transition: transform 0.15s;
+  }
+
+  .sample-accordion[open] summary::after {
+    transform: rotate(180deg);
+  }
+
+  .sample-accordion[open] summary {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sample-content {
+    padding: var(--s-4);
+    background: var(--surface);
+  }
+
+  .sample-placeholder {
+    font-size: 0.85rem;
+    margin: 0;
+  }
+
+  .sample-level-badge {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: var(--s-2);
+  }
+
+  .sample-why {
+    margin: 0 0 var(--s-3) var(--s-4);
+    padding: 0;
+    font-size: 0.82rem;
+    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .sample-essay {
+    white-space: pre-wrap;
+    font-family: inherit;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--text);
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    padding: var(--s-4);
+    margin: 0;
+    border: 1px solid var(--border);
+  }
+
+  .sample-essay--placeholder {
+    white-space: normal;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ---- Resource Links ---- */
+  .prompt-resources {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+    border-top: 1px solid var(--border);
+    padding-top: var(--s-4);
+  }
+
+  .resource-link {
+    display: flex;
+    align-items: center;
+    gap: var(--s-2);
+    padding: var(--s-3) var(--s-4);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.88rem;
+    font-weight: 600;
+    background: var(--bg);
+    transition: border-color 0.12s, background 0.12s;
+  }
+
+  .resource-link:hover {
+    border-color: var(--accent);
+    background: var(--surface);
+    color: var(--accent);
+  }
+
+  .resource-link svg:first-child {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    color: var(--accent);
+  }
+
+  .link-arrow {
+    width: 14px;
+    height: 14px;
+    margin-left: auto;
+    color: var(--muted-2);
+  }
+
+  /* ---- Writing Panel ---- */
+  .practice-hub__writing {
+    overflow-y: auto;
+    max-height: 82vh;
+    padding: var(--s-4) var(--s-5) var(--s-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+    background: var(--surface);
+  }
+
+  .writing-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--s-3);
+  }
+
+  .writing-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+    padding-top: 2px;
+  }
+
+  .timer-box {
+    text-align: center;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: var(--s-2) var(--s-3);
+    min-width: 110px;
+    flex-shrink: 0;
+  }
+
+  .timer-display {
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .timer-display.timer-urgent {
+    color: var(--accent);
+  }
+
+  .timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: var(--s-2);
+    margin-top: var(--s-1);
+  }
+
+  .timer-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    color: var(--muted);
+    transition: border-color 0.12s, color 0.12s;
+  }
+
+  .timer-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .word-count-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .word-count-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--muted);
+  }
+
+  .word-count-badge {
+    font-size: 0.78rem;
+    font-weight: 700;
+    background: var(--bg-2);
+    color: var(--muted);
+    padding: 2px 8px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+  }
+
+  .word-count-badge.ready {
+    background: rgba(34, 139, 34, 0.1);
+    color: #228b22;
+    border-color: rgba(34, 139, 34, 0.25);
+  }
+
+  .writing-textarea {
+    width: 100%;
+    padding: var(--s-3) var(--s-4);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 0.93rem;
+    line-height: 1.65;
+    color: var(--text);
+    background: var(--bg);
+    resize: vertical;
+    transition: border-color 0.12s;
+    box-sizing: border-box;
+  }
+
+  .writing-textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: var(--surface);
+  }
+
+  .writing-status {
+    margin-top: var(--s-2);
+    font-size: 0.85rem;
+  }
+
+  /* ---- Upgrade inline ---- */
+  .upgrade-inline {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-2);
+    padding: var(--s-4);
+    text-align: center;
+  }
+
+  .upgrade-inline__msg {
+    margin: 0 0 var(--s-3);
+    font-size: 0.9rem;
+    color: var(--text);
+  }
+
+  /* ---- Results ---- */
+  .results-area {
+    border-top: 1px solid var(--border);
+    padding-top: var(--s-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-4);
+  }
+
+  .results-header {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .results-score-block {
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    flex-wrap: wrap;
+  }
+
+  .results-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    flex-basis: 100%;
+  }
+
+  .score-badge {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--accent);
+    font-family: 'Fraunces', Georgia, serif;
+  }
+
+  .score-descriptor {
+    font-size: 0.88rem;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .results-summary {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.6;
+    margin: 0;
+    padding: var(--s-3) var(--s-4);
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--accent);
+  }
+
+  .criteria-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-2);
+  }
+
+  .criterion-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: var(--s-3);
+    background: var(--bg);
+  }
+
+  .criterion-name {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    margin-bottom: var(--s-1);
+  }
+
+  .criterion-score {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--accent);
+    font-family: 'Fraunces', Georgia, serif;
+  }
+
+  .criterion-comment {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: var(--s-1);
+    line-height: 1.45;
+  }
+
+  .feedback-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-3);
+  }
+
+  .feedback-col {
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    padding: var(--s-3);
+    border: 1px solid var(--border);
+  }
+
+  .feedback-col__title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin: 0 0 var(--s-2);
+  }
+
+  .feedback-col__title--good { color: #228b22; }
+  .feedback-col__title--fix  { color: var(--accent); }
+
+  .feedback-list {
+    margin: 0;
+    padding-left: var(--s-4);
+    font-size: 0.84rem;
+    color: var(--text);
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .section-subtitle {
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    margin: 0 0 var(--s-2);
+  }
+
+  .errors-list, .rewrites-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+  }
+
+  .error-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: var(--s-3);
+    font-size: 0.84rem;
+  }
+
+  .error-card__cat {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .error-card__text {
+    color: var(--text);
+    margin-top: 4px;
+    line-height: 1.5;
+  }
+
+  .error-card__fix {
+    color: var(--muted);
+    margin-top: 4px;
+    font-size: 0.8rem;
+    font-style: italic;
+  }
+
+  .rewrite-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: var(--s-3);
+    font-size: 0.84rem;
+    display: grid;
+    gap: var(--s-2);
+  }
+
+  .rewrite-before {
+    color: var(--muted);
+    text-decoration: line-through;
+  }
+
+  .rewrite-after {
+    color: #228b22;
+    font-weight: 600;
+  }
+
+  .rewrite-why {
+    color: var(--muted-2);
+    font-size: 0.8rem;
+    font-style: italic;
+  }
+
+  .lessons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-2);
+  }
+
+  .lesson-link {
+    display: block;
+    padding: var(--s-2) var(--s-3);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-size: 0.82rem;
+    color: var(--accent);
+    font-weight: 600;
+    transition: border-color 0.12s;
+  }
+
+  .lesson-link:hover {
+    border-color: var(--accent);
+    background: var(--surface);
+  }
+
+  .results-upgrade-cta {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-2);
+    padding: var(--s-4);
+    text-align: center;
+  }
+
+  .results-upgrade-cta p {
+    margin: 0 0 var(--s-3);
+    font-size: 0.9rem;
+  }
+
+  /* ---- No submission placeholder ---- */
+  .no-submission-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--s-2);
+    padding: var(--s-6) var(--s-4);
+    color: var(--muted-2);
+  }
+
+  .no-submission-placeholder svg {
+    width: 40px;
+    height: 40px;
+    opacity: 0.35;
+  }
+
+  .no-submission-placeholder p {
+    font-size: 0.88rem;
+    margin: 0;
+  }
+
+  /* ---- Modal ---- */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 22, 23, 0.55);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--s-4);
+  }
+
+  .modal-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: var(--s-6);
+    max-width: 440px;
+    width: 100%;
+    position: relative;
+    box-shadow: var(--shadow);
+    text-align: center;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: var(--s-3);
+    right: var(--s-3);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--muted);
+    padding: 4px;
+    border-radius: 6px;
+    line-height: 1;
+    transition: color 0.12s;
+  }
+
+  .modal-close:hover { color: var(--text); }
+  .modal-close svg { width: 20px; height: 20px; display: block; }
+
+  .modal-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(217, 72, 72, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--s-4);
+  }
+
+  .modal-icon svg {
+    width: 24px;
+    height: 24px;
+    color: var(--accent);
+  }
+
+  .modal-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0 0 var(--s-3);
+  }
+
+  .modal-desc {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin: 0 0 var(--s-4);
+    line-height: 1.6;
+  }
+
+  .modal-features {
+    list-style: none;
+    margin: 0 0 var(--s-5);
+    padding: 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+  }
+
+  .modal-features li {
+    display: flex;
+    align-items: center;
+    gap: var(--s-2);
+    font-size: 0.88rem;
+    color: var(--text);
+  }
+
+  .modal-features li svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    color: #228b22;
+  }
+
+  .modal-cta {
+    width: 100%;
+  }
+
+  .modal-secondary {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: var(--s-3);
+    text-decoration: underline;
+    font-family: inherit;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .modal-secondary:hover { color: var(--text); }
+
+  .modal-status {
+    margin-top: var(--s-2);
+    font-size: 0.84rem;
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 960px) {
+    .practice-hub {
+      grid-template-columns: 1fr;
+      max-height: none;
+      min-height: auto;
+    }
+
+    .practice-hub__sidebar {
+      max-height: 220px;
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .task-list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 4px;
+      padding: var(--s-2) var(--s-3);
+    }
+
+    .task-item {
+      border-left: none;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      padding: 5px 10px;
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+
+    .task-item.is-active {
+      border-color: var(--accent);
+      border-left-color: var(--accent);
+      background: rgba(217, 72, 72, 0.08);
+    }
+
+    .task-label {
+      max-width: 120px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .practice-hub__prompt,
+    .practice-hub__writing {
+      max-height: none;
+      border-right: none;
+    }
+
+    .practice-hub__prompt {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .criteria-grid,
+    .feedback-cols,
+    .lessons-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    // ---- Read embedded data ----
+    const promptData = JSON.parse(
+      document.getElementById('hub-prompt-data')?.textContent || '{}'
+    );
+    const sidebarData = JSON.parse(
+      document.getElementById('hub-sidebar-data')?.textContent || '[]'
+    );
+
+    // ---- State ----
+    const FREE_TASK_ID = 'informal-pet-sitting';
+    const ACCESS_KEY = 'ieltscorner.celpipWritingAccess';
+    const FREE_EVAL_KEY = 'ieltscorner.celpipFreeEvalUsed';
+
+    let selectedTaskId = FREE_TASK_ID;
+    let timerInterval = null;
+    let timerSeconds = 27 * 60;
+    let timerRunning = false;
+
+    function getSubscription() {
+      try {
+        const raw = localStorage.getItem(ACCESS_KEY);
+        if (!raw) return null;
+        return JSON.parse(raw);
+      } catch {
+        return null;
+      }
+    }
+
+    function hasFreeEvalUsed() {
+      return localStorage.getItem(FREE_EVAL_KEY) === 'true';
+    }
+
+    function markFreeEvalUsed() {
+      localStorage.setItem(FREE_EVAL_KEY, 'true');
+    }
+
+    // ---- DOM refs ----
+    const taskItems = Array.from(document.querySelectorAll('.task-item'));
+    const promptScenario = document.getElementById('hub-prompt-scenario');
+    const promptTaskLine = document.getElementById('hub-prompt-task-line');
+    const promptInstructions = document.getElementById('hub-prompt-instructions');
+    const sampleClb5 = document.getElementById('hub-sample-clb5');
+    const sampleClb7 = document.getElementById('hub-sample-clb7');
+    const sampleClb9 = document.getElementById('hub-sample-clb9');
+    const sampleClb11 = document.getElementById('hub-sample-clb11');
+    const sampleLevelBadge = document.getElementById('hub-sample-level-badge');
+    const sampleLevelWhy = document.getElementById('hub-sample-level-why');
+    const textarea = document.getElementById('hub-textarea');
+    const wordCountBadge = document.getElementById('hub-word-count');
+    const submitBtn = document.getElementById('hub-submit-btn');
+    const writingStatus = document.getElementById('hub-writing-status');
+    const submitArea = document.getElementById('hub-submit-area');
+    const upgradePrompt = document.getElementById('hub-upgrade-prompt');
+    const resultsEl = document.getElementById('hub-results');
+    const noSubmission = document.getElementById('hub-no-submission');
+    const timerEl = document.getElementById('hub-timer');
+    const timerStart = document.getElementById('hub-timer-start');
+    const timerReset = document.getElementById('hub-timer-reset');
+    const modalBackdrop = document.getElementById('hub-modal-backdrop');
+    const modalClose = document.getElementById('hub-modal-close');
+    const modalKeepFree = document.getElementById('hub-modal-keep-free');
+    const modalStatus = document.getElementById('hub-modal-status');
+
+    // ---- Helpers ----
+    function wordCount(text) {
+      return text.trim().split(/\s+/).filter(Boolean).length;
+    }
+
+    function formatTime(seconds) {
+      const m = Math.floor(seconds / 60).toString().padStart(2, '0');
+      const s = (seconds % 60).toString().padStart(2, '0');
+      return `${m}:${s}`;
+    }
+
+    function setStatus(msg, isError = false) {
+      if (writingStatus) {
+        writingStatus.textContent = msg;
+        writingStatus.style.color = isError ? 'var(--accent)' : '';
+      }
+    }
+
+    function setModalStatus(msg) {
+      if (modalStatus) modalStatus.textContent = msg;
+    }
+
+    function getSampleResponses(prompt) {
+      const samples = prompt?.sampleResponses && typeof prompt.sampleResponses === 'object'
+        ? prompt.sampleResponses
+        : {};
+
+      return {
+        clb5: String(samples.clb5 || '').trim(),
+        clb7: String(samples.clb7 || '').trim(),
+        clb9: String(samples.clb9 || prompt?.sampleResponse || '').trim(),
+        clb11: String(samples.clb11 || '').trim(),
+      };
+    }
+
+    function renderSampleCard(container, label, sampleText) {
+      if (!(container instanceof HTMLElement)) {
+        return;
+      }
+
+      container.innerHTML = '';
+
+      if (!sampleText) {
+        const placeholder = document.createElement('p');
+        placeholder.className = 'muted sample-placeholder';
+        placeholder.textContent = `${label} sample will appear here after it is added to the prompt library.`;
+        container.appendChild(placeholder);
+        return;
+      }
+
+      const sample = document.createElement('pre');
+      sample.className = 'sample-essay';
+      sample.textContent = sampleText;
+      container.appendChild(sample);
+    }
+
+    // ---- Timer ----
+    function updateTimerDisplay() {
+      if (!timerEl) return;
+      timerEl.textContent = formatTime(timerSeconds);
+      timerEl.classList.toggle('timer-urgent', timerSeconds <= 180);
+    }
+
+    function startTimer() {
+      if (timerRunning) return;
+      timerRunning = true;
+      if (timerStart) timerStart.textContent = '⏸';
+      timerInterval = setInterval(() => {
+        if (timerSeconds > 0) {
+          timerSeconds--;
+          updateTimerDisplay();
+        } else {
+          clearInterval(timerInterval);
+          timerRunning = false;
+          if (timerStart) timerStart.textContent = '▶';
+        }
+      }, 1000);
+    }
+
+    function pauseTimer() {
+      timerRunning = false;
+      clearInterval(timerInterval);
+      if (timerStart) timerStart.textContent = '▶';
+    }
+
+    function resetTimer() {
+      pauseTimer();
+      timerSeconds = 27 * 60;
+      updateTimerDisplay();
+    }
+
+    timerStart?.addEventListener('click', () => {
+      if (timerRunning) pauseTimer(); else startTimer();
+    });
+
+    timerReset?.addEventListener('click', resetTimer);
+
+    // ---- Load prompt into UI ----
+    function loadPrompt(id) {
+      const p = promptData[id];
+      if (!p) return;
+
+      // Scenario
+      if (promptScenario) promptScenario.textContent = p.scenario || '';
+
+      // Task line
+      if (promptTaskLine) {
+        const wc = p.targetWords || '150\u2013200 words';
+        promptTaskLine.textContent = `Write an email in about ${wc}. Your email should:`;
+      }
+
+      // Instructions
+      if (promptInstructions) {
+        promptInstructions.innerHTML = '';
+        const items = p.instructions || [];
+        items.forEach((instr) => {
+          const li = document.createElement('li');
+          li.textContent = instr;
+          promptInstructions.appendChild(li);
+        });
+      }
+
+      // Sample bank
+      const samples = getSampleResponses(p);
+      renderSampleCard(sampleClb5, 'CLB 5', samples.clb5);
+      renderSampleCard(sampleClb7, 'CLB 7', samples.clb7);
+      renderSampleCard(sampleClb11, 'CLB 11', samples.clb11);
+
+      if (sampleClb9) {
+        sampleClb9.textContent = samples.clb9 || 'CLB 9 sample will appear here after it is added to the prompt library.';
+        sampleClb9.classList.toggle('sample-essay--placeholder', !samples.clb9);
+      }
+      if (sampleLevelBadge) {
+        const hasClb9 = Boolean(samples.clb9);
+        sampleLevelBadge.textContent = hasClb9 ? 'Reference sample' : '';
+        sampleLevelBadge.style.display = hasClb9 ? '' : 'none';
+      }
+      if (sampleLevelWhy && Array.isArray(p.sampleLevelWhy)) {
+        sampleLevelWhy.innerHTML = '';
+        p.sampleLevelWhy.forEach((why) => {
+          const li = document.createElement('li');
+          li.textContent = why;
+          sampleLevelWhy.appendChild(li);
+        });
+        sampleLevelWhy.style.display = samples.clb9 && p.sampleLevelWhy.length ? '' : 'none';
+      } else if (sampleLevelWhy) {
+        sampleLevelWhy.innerHTML = '';
+        sampleLevelWhy.style.display = 'none';
+      }
+
+      // Reset timer
+      resetTimer();
+    }
+
+    // ---- Update submit area based on state ----
+    function updateSubmitArea() {
+      const sub = getSubscription();
+      const isFreeeTask = selectedTaskId === FREE_TASK_ID;
+      const freeUsed = hasFreeEvalUsed();
+
+      if (!isFreeeTask && !sub) {
+        // Locked task, no subscription — shouldn't reach here but guard
+        return;
+      }
+
+      if (isFreeeTask && freeUsed && !sub) {
+        // Free eval exhausted
+        if (submitArea) submitArea.style.display = 'none';
+        if (upgradePrompt) upgradePrompt.style.display = '';
+      } else {
+        if (submitArea) submitArea.style.display = '';
+        if (upgradePrompt) upgradePrompt.style.display = 'none';
+      }
+    }
+
+    // ---- Select task ----
+    function selectTask(id) {
+      const entry = sidebarData.find((t) => t.id === id);
+      if (!entry) return;
+
+      const sub = getSubscription();
+      if (!entry.isFree && !sub) {
+        openModal();
+        return;
+      }
+
+      selectedTaskId = id;
+
+      // Update sidebar active state
+      taskItems.forEach((btn) => {
+        const btnId = btn.getAttribute('data-task-id');
+        btn.classList.toggle('is-active', btnId === id);
+      });
+
+      // Load prompt
+      loadPrompt(id);
+
+      // Reset writing area
+      if (textarea) textarea.value = '';
+      if (wordCountBadge) {
+        wordCountBadge.textContent = '0 words';
+        wordCountBadge.classList.remove('ready');
+      }
+      if (submitBtn) submitBtn.disabled = true;
+      setStatus('');
+
+      // Reset results
+      if (resultsEl) resultsEl.style.display = 'none';
+      if (noSubmission) noSubmission.style.display = '';
+
+      updateSubmitArea();
+    }
+
+    // ---- Sidebar click handlers ----
+    taskItems.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-task-id');
+        if (id) selectTask(id);
+      });
+    });
+
+    // ---- Word count ----
+    textarea?.addEventListener('input', () => {
+      const wc = wordCount(textarea.value);
+      if (wordCountBadge) {
+        wordCountBadge.textContent = `${wc} word${wc !== 1 ? 's' : ''}`;
+        wordCountBadge.classList.toggle('ready', wc >= 40);
+      }
+      if (submitBtn) {
+        submitBtn.disabled = wc < 40;
+      }
+    });
+
+    // ---- Submit ----
+    submitBtn?.addEventListener('click', async () => {
+      const sub = getSubscription();
+      const isFreeeTask = selectedTaskId === FREE_TASK_ID;
+      const freeUsed = hasFreeEvalUsed();
+
+      if (isFreeeTask && freeUsed && !sub) {
+        updateSubmitArea();
+        return;
+      }
+
+      const responseText = textarea?.value?.trim() || '';
+      if (wordCount(responseText) < 40) {
+        setStatus('Please write at least 40 words before submitting.', true);
+        return;
+      }
+
+      const p = promptData[selectedTaskId];
+      if (!p) {
+        setStatus('Prompt data not found. Please refresh the page.', true);
+        return;
+      }
+
+      setStatus('Evaluating your response…');
+      if (submitBtn) submitBtn.disabled = true;
+
+      try {
+        const payload = {
+          taskType: 'task1',
+          promptId: selectedTaskId,
+          promptTitle: p.title || p.sidebarLabel || selectedTaskId,
+          promptText: p.scenario || '',
+          promptInstructions: p.instructions || [],
+          responseText,
+          isFreeTask: isFreeeTask && !sub,
+          ...(sub?.sessionId ? { sessionId: sub.sessionId } : {}),
+        };
+
+        const res = await fetch('/.netlify/functions/evaluate-celpip-writing', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        const data = await res.json();
+
+        if (!res.ok || !data.report) {
+          throw new Error(data.error || 'Evaluation failed. Please try again.');
+        }
+
+        if (isFreeeTask && !sub) {
+          markFreeEvalUsed();
+        }
+
+        renderResults(data.report);
+        setStatus('');
+      } catch (err) {
+        setStatus(err instanceof Error ? err.message : 'Evaluation failed.', true);
+        if (submitBtn) submitBtn.disabled = false;
+      }
+    });
+
+    // ---- Render results ----
+    function renderResults(report) {
+      if (!resultsEl) return;
+
+      // Score
+      const scoreBadge = document.getElementById('hub-score-badge');
+      const scoreDesc = document.getElementById('hub-score-descriptor');
+      if (scoreBadge) scoreBadge.textContent = `CLB ${report.overallLevel}`;
+      if (scoreDesc) scoreDesc.textContent = report.descriptor || '';
+
+      // Summary
+      const summaryEl = document.getElementById('hub-results-summary');
+      if (summaryEl) summaryEl.textContent = report.overallSummary || '';
+
+      // Criteria
+      const criteriaGrid = document.getElementById('hub-criteria-grid');
+      if (criteriaGrid && report.traitScores) {
+        criteriaGrid.innerHTML = '';
+        Object.entries(report.traitScores).forEach(([name, score]) => {
+          const comment = report.criterionComments?.[name] || '';
+          const card = document.createElement('div');
+          card.className = 'criterion-card';
+          card.innerHTML = `
+            <div class="criterion-name">${escHtml(name)}</div>
+            <div class="criterion-score">CLB ${escHtml(String(score))}</div>
+            <div class="criterion-comment">${escHtml(comment)}</div>
+          `;
+          criteriaGrid.appendChild(card);
+        });
+      }
+
+      // Strengths
+      const strengthsEl = document.getElementById('hub-strengths');
+      if (strengthsEl && Array.isArray(report.strengths)) {
+        strengthsEl.innerHTML = report.strengths
+          .map((s) => `<li>${escHtml(s)}</li>`)
+          .join('');
+      }
+
+      // Priorities
+      const prioritiesEl = document.getElementById('hub-priorities');
+      if (prioritiesEl && Array.isArray(report.improvementPriorities)) {
+        prioritiesEl.innerHTML = report.improvementPriorities
+          .map((s) => `<li>${escHtml(s)}</li>`)
+          .join('');
+      }
+
+      // Errors
+      const errorsSection = document.getElementById('hub-errors-section');
+      const errorsList = document.getElementById('hub-errors-list');
+      if (errorsSection && errorsList && Array.isArray(report.errorAnalysis) && report.errorAnalysis.length) {
+        errorsList.innerHTML = report.errorAnalysis.slice(0, 4).map((e) => `
+          <div class="error-card">
+            <div class="error-card__cat">${escHtml(e.category || '')}</div>
+            <div class="error-card__text">${escHtml(e.explanation || '')}</div>
+            ${e.fixNow ? `<div class="error-card__fix">Fix: ${escHtml(e.fixNow)}</div>` : ''}
+          </div>
+        `).join('');
+        errorsSection.style.display = '';
+      } else if (errorsSection) {
+        errorsSection.style.display = 'none';
+      }
+
+      // Rewrites
+      const rewritesSection = document.getElementById('hub-rewrites-section');
+      const rewritesList = document.getElementById('hub-rewrites-list');
+      if (rewritesSection && rewritesList && Array.isArray(report.rewriteSuggestions) && report.rewriteSuggestions.length) {
+        rewritesList.innerHTML = report.rewriteSuggestions.slice(0, 3).map((r) => `
+          <div class="rewrite-card">
+            <div class="rewrite-before">${escHtml(r.before || '')}</div>
+            <div class="rewrite-after">${escHtml(r.after || '')}</div>
+            <div class="rewrite-why">${escHtml(r.why || '')}</div>
+          </div>
+        `).join('');
+        rewritesSection.style.display = '';
+      } else if (rewritesSection) {
+        rewritesSection.style.display = 'none';
+      }
+
+      // Lesson recommendations
+      const lessonsSection = document.getElementById('hub-lessons-section');
+      const lessonsGrid = document.getElementById('hub-lessons-grid');
+      const recs = report.lessonRecommendations || report.lessonNeeds || [];
+      if (lessonsSection && lessonsGrid && Array.isArray(recs) && recs.length) {
+        lessonsGrid.innerHTML = recs.slice(0, 4).map((l) => {
+          const href = l.path || l.href || '#';
+          const label = l.label || l.title || 'Lesson';
+          return `<a class="lesson-link" href="${escHtml(href)}">${escHtml(label)}</a>`;
+        }).join('');
+        lessonsSection.style.display = '';
+      } else if (lessonsSection) {
+        lessonsSection.style.display = 'none';
+      }
+
+      // Upgrade CTA inside results for free users
+      const resultsUpgrade = document.getElementById('hub-results-upgrade');
+      if (resultsUpgrade) {
+        const sub = getSubscription();
+        resultsUpgrade.style.display = !sub ? '' : 'none';
+      }
+
+      // Show results, hide placeholder
+      resultsEl.style.display = '';
+      if (noSubmission) noSubmission.style.display = 'none';
+
+      // Update submit area (may now show upgrade prompt)
+      if (submitBtn) submitBtn.disabled = false;
+      updateSubmitArea();
+
+      // Scroll results into view
+      resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function escHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    // ---- Modal ----
+    function openModal() {
+      if (modalBackdrop) modalBackdrop.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      setModalStatus('');
+    }
+
+    function closeModal() {
+      if (modalBackdrop) modalBackdrop.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    modalClose?.addEventListener('click', closeModal);
+    modalKeepFree?.addEventListener('click', closeModal);
+
+    modalBackdrop?.addEventListener('click', (e) => {
+      if (e.target === modalBackdrop) closeModal();
+    });
+
+    // ---- Checkout (modal + inline buttons) ----
+    async function startCheckout(statusEl) {
+      if (statusEl) statusEl.textContent = 'Redirecting to secure checkout…';
+      const allBtns = document.querySelectorAll('.hub-checkout-btn');
+      allBtns.forEach((b) => { if (b instanceof HTMLButtonElement) b.disabled = true; });
+
+      try {
+        const res = await fetch('/.netlify/functions/create-celpip-writing-checkout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ product: 'celpip-writing-ai' }),
+        });
+        const data = await res.json();
+        if (!res.ok || !data.checkoutUrl) {
+          throw new Error(data.error || 'Unable to start checkout.');
+        }
+        window.location.href = data.checkoutUrl;
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : 'Unable to start checkout.';
+        if (statusEl) statusEl.textContent = msg;
+        allBtns.forEach((b) => { if (b instanceof HTMLButtonElement) b.disabled = false; });
+      }
+    }
+
+    document.querySelectorAll('.hub-checkout-btn').forEach((btn) => {
+      btn.addEventListener('click', () => startCheckout(modalStatus));
+    });
+
+    // ---- Init ----
+    selectTask(FREE_TASK_ID);
+    updateSubmitArea();
+  })();
+</script>
