@@ -1,22 +1,49 @@
 # Session Catalog
 
-Generated: 2026-04-08T02:43:24.697Z
+Generated: 2026-04-10T01:04:33.183Z
 
 ## Counts
 
-- Total: 55
-- Codex: 13
-- VS Code chat: 42
+- Total: 58
+- Codex: 15
+- VS Code chat: 43
 
 ## Sessions
+
+### Checking for uncommitted changes in Git
+- Source: vscode-chat
+- ID: 48fc9644-e538-41e6-9f59-5cc4de7d6d63
+- Created: 2026-04-09T21:58:00.253Z
+- Updated: 2026-04-10T01:00:53.439Z
+- Final: <skills> Skills provide specialized capabilities, domain knowledge, and refined workflows for producing high-quality outputs. Each skill folder contains tested instructions for specific domains like testing strategies,…
+- File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\99c7524e034dea3b9bb59bd56c463b99\chatSessions\48fc9644-e538-41e6-9f59-5cc4de7d6d63.jsonl
+
+### Add tutoring social columns
+- Source: codex
+- ID: 019d749a-6b6a-7b31-af6e-7ab343a44f7b
+- Created: 2026-04-09T23:36:10.358Z
+- Updated: 2026-04-09T23:38:01.5855168Z
+- CWD: c:\Users\Karaa\Documents\ieltscorner-site
+- Prompt: I want you to make changes to /tutoring add two columns under the calendar: one column shows thumbnails of the last 5 youtube vidoes from my channel and one column shows last 5 posts from my instagram.
+- Final: Both are taken care of. - Pushed `d033edb` to `origin/main` - Added local ignore rules in `.git/info/exclude` for: - `/.claude/` - `/.tmp/` - `/memory/chat-sessions/` Current state: - `main` is fully in sync with `origi…
+- File: C:\Users\Karaa\.codex\sessions\2026\04\09\rollout-2026-04-09T16-36-10-019d749a-6b6a-7b31-af6e-7ab343a44f7b.jsonl
+
+### Start local server
+- Source: codex
+- ID: 019d747f-3df9-7fe3-ab90-36e798983264
+- Created: 2026-04-09T23:06:29.262Z
+- Updated: 2026-04-09T23:06:32.1658071Z
+- CWD: c:\Users\Karaa\Documents\ieltscorner-site
+- Prompt: run local server
+- File: C:\Users\Karaa\.codex\sessions\2026\04\09\rollout-2026-04-09T16-06-29-019d747f-3df9-7fe3-ab90-36e798983264.jsonl
 
 ### Admin capabilities for Telegram bot
 - Source: vscode-chat
 - ID: ba48c515-bfa6-41d8-a1c6-f273606f940b
 - Created: 2026-04-08T02:14:34.907Z
-- Updated: 2026-04-08T02:43:05.522Z
+- Updated: 2026-04-08T02:50:40.371Z
 - Prompt: I want you to add some capabilities to the robot that are on
-- Final: <skills> Skills provide specialized capabilities, domain knowledge, and refined workflows for producing high-quality outputs. Each skill folder contains tested instructions for specific domains like testing strategies,…
+- Final: Committed the scoped Telegram bot changes and pushed them to `origin/main`; unrelated local changes were left uncommitted.
 - File: C:\Users\Karaa\AppData\Roaming\Code\User\workspaceStorage\99c7524e034dea3b9bb59bd56c463b99\chatSessions\ba48c515-bfa6-41d8-a1c6-f273606f940b.jsonl
 
 ### PDF file renaming script request

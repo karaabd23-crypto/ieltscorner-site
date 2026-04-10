@@ -1,37 +1,106 @@
 ---
 import {
-  CELPIP_TASK1_SIDEBAR,
-  CELPIP_FREE_TASK_ID,
+  CELPIP_TASK_CONFIG,
+  CELPIP_TASK_SIDEBARS,
+  CELPIP_FREE_PROMPT_IDS,
   CELPIP_WRITING_PRICE_CAD,
-  getSidebarPromptById,
+  getPracticeHubPromptById,
 } from '../lib/celpipWritingData.mjs';
 
 // Build a lookup map: id → full prompt object (available at build time for JSON embed)
-const sidebarPromptMap = {};
-for (const entry of CELPIP_TASK1_SIDEBAR) {
-  const p = getSidebarPromptById(entry.id);
-  if (p) sidebarPromptMap[entry.id] = p;
+const taskOrder = ['task1', 'task2'];
+
+const hubTasks = {
+  task1: {
+    ...CELPIP_TASK_CONFIG.task1,
+    tabTitle: 'Task 1',
+    tabFocus: 'Email writing',
+    sidebarTitle: 'Writing > Task 1',
+    sidebarSub: 'Email Writing',
+    promptIntro: 'Read the following information.',
+    promptTaskLine: `Write an email in about ${CELPIP_TASK_CONFIG.task1.targetWords}. Your email should:`,
+    promptLabel: 'Task 1 | Email',
+    shortLabel: 'Task 1',
+    unlockLabel: 'Task 1 prompts and the full writing hub',
+  },
+  task2: {
+    ...CELPIP_TASK_CONFIG.task2,
+    tabTitle: 'Task 2',
+    tabFocus: 'Survey response',
+    sidebarTitle: 'Writing > Task 2',
+    sidebarSub: 'Survey Response',
+    promptIntro: 'Read the following survey question.',
+    promptTaskLine: `Write a response in about ${CELPIP_TASK_CONFIG.task2.targetWords}. In your response:`,
+    promptLabel: 'Task 2 | Survey Response',
+    shortLabel: 'Task 2',
+    unlockLabel: 'Task 2 prompts and the full writing hub',
+  },
+};
+
+const promptData = {};
+for (const taskType of taskOrder) {
+  promptData[taskType] = {};
+  for (const entry of CELPIP_TASK_SIDEBARS[taskType] || []) {
+    const prompt = getPracticeHubPromptById(taskType, entry.id);
+    if (prompt) promptData[taskType][entry.id] = prompt;
+  }
 }
 
-const totalTasks = CELPIP_TASK1_SIDEBAR.length;
-const lockedCount = CELPIP_TASK1_SIDEBAR.filter((t) => !t.isFree).length;
+const totalTasks = taskOrder.reduce((sum, taskType) => sum + (CELPIP_TASK_SIDEBARS[taskType]?.length || 0), 0);
+const totalLockedCount = taskOrder.reduce(
+  (sum, taskType) => sum + (CELPIP_TASK_SIDEBARS[taskType] || []).filter((entry) => !entry.isFree).length,
+  0,
+);
+
+const hubConfig = {
+  taskOrder,
+  totalTasks,
+  totalLockedCount,
+  tasks: Object.fromEntries(
+    taskOrder.map((taskType) => {
+      const lockedCount = (CELPIP_TASK_SIDEBARS[taskType] || []).filter((entry) => !entry.isFree).length;
+      return [taskType, {
+        ...hubTasks[taskType],
+        freePromptId: CELPIP_FREE_PROMPT_IDS[taskType],
+        lockedCount,
+      }];
+    }),
+  ),
+};
+
+const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
 ---
 
-<div class="practice-hub" id="practice-hub">
+<div class="practice-hub-shell" id="practice-hub">
+  <div class="hub-task-switch" id="hub-task-switch" role="tablist" aria-label="Choose writing task">
+    {taskOrder.map((taskType) => (
+      <button
+        class={`hub-task-switch__btn${taskType === 'task1' ? ' is-active' : ''}`}
+        type="button"
+        role="tab"
+        aria-selected={taskType === 'task1' ? 'true' : 'false'}
+        data-task-type={taskType}
+      >
+        <span class="hub-task-switch__title">{hubTasks[taskType].tabTitle}</span>
+        <span class="hub-task-switch__focus">{hubTasks[taskType].tabFocus}</span>
+      </button>
+    ))}
+  </div>
+
+<div class="practice-hub">
 
   <!-- SIDEBAR -->
   <aside class="practice-hub__sidebar" aria-label="Task list">
     <div class="sidebar-header">
-      <span class="sidebar-title">Writing &rsaquo; Task 1</span>
-      <span class="sidebar-sub">Email Writing</span>
+      <span class="sidebar-title" id="hub-sidebar-title">{hubTasks.task1.sidebarTitle}</span>
+      <span class="sidebar-sub" id="hub-sidebar-sub">{hubTasks.task1.sidebarSub}</span>
     </div>
-    <nav class="task-list" role="list">
-      {CELPIP_TASK1_SIDEBAR.map((task, i) => (
+    <nav class="task-list" id="hub-task-list" role="list">
+      {defaultSidebar.map((task, i) => (
         <button
-          class={`task-item${task.isFree ? ' task-item--free' : ' task-item--locked'}`}
+          class={`task-item${task.isFree ? ' task-item--free' : ' task-item--locked'}${task.id === CELPIP_FREE_PROMPT_IDS.task1 ? ' is-active' : ''}`}
           data-task-id={task.id}
           data-is-free={task.isFree ? 'true' : 'false'}
-          aria-label={task.label + (task.isFree ? ' (free)' : ' (subscription required)')}
           type="button"
         >
           <span class="task-num">{i + 1}.</span>
@@ -59,8 +128,14 @@ const lockedCount = CELPIP_TASK1_SIDEBAR.filter((t) => !t.isFree).length;
     </div>
 
     <div class="prompt-card" id="hub-prompt-card">
-      <p class="prompt-intro">Read the following information.</p>
+      <div class="prompt-meta-row">
+        <span class="prompt-kicker" id="hub-prompt-kicker">{hubTasks.task1.promptLabel}</span>
+        <span class="prompt-target" id="hub-prompt-target">{hubTasks.task1.targetWords} | {hubTasks.task1.minutes} min</span>
+      </div>
+      <h3 class="prompt-title" id="hub-prompt-title"></h3>
+      <p class="prompt-intro" id="hub-prompt-intro">{hubTasks.task1.promptIntro}</p>
       <div class="prompt-scenario" id="hub-prompt-scenario"></div>
+      <div class="prompt-options" id="hub-prompt-options" style="display:none;"></div>
       <div class="prompt-task-line" id="hub-prompt-task-line"></div>
       <ul class="prompt-instructions" id="hub-prompt-instructions"></ul>
 
@@ -100,7 +175,7 @@ const lockedCount = CELPIP_TASK1_SIDEBAR.filter((t) => !t.isFree).length;
   <!-- WRITING PANEL -->
   <section class="practice-hub__writing" id="hub-writing-panel" aria-label="Writing area">
     <div class="writing-header">
-      <span class="writing-title">Write to see your score</span>
+      <span class="writing-title" id="hub-writing-title">Write your Task 1 to see your score</span>
       <div class="timer-box">
         <div class="timer-display" id="hub-timer">27:00</div>
         <div class="timer-controls">
@@ -133,9 +208,9 @@ const lockedCount = CELPIP_TASK1_SIDEBAR.filter((t) => !t.isFree).length;
 
     <!-- Upgrade prompt (shown after free eval used, no subscription) -->
     <div id="hub-upgrade-prompt" style="display:none;" class="upgrade-inline">
-      <p class="upgrade-inline__msg">You've used your free evaluation. Subscribe to practice all {lockedCount} more tasks.</p>
+      <p class="upgrade-inline__msg" id="hub-upgrade-copy">Subscribe to unlock the full writing hub.</p>
       <button class="btn btn-primary hub-checkout-btn" type="button">
-        Unlock all tasks &mdash; CA${CELPIP_WRITING_PRICE_CAD}/month
+        Unlock all tasks - CA${CELPIP_WRITING_PRICE_CAD}/month
       </button>
       <p class="muted" style="font-size: 0.85rem; margin-top: var(--s-2);">Cancel anytime. Secure billing via Stripe.</p>
     </div>
@@ -186,7 +261,7 @@ const lockedCount = CELPIP_TASK1_SIDEBAR.filter((t) => !t.isFree).length;
 
       <!-- Upgrade CTA inside results (for free users) -->
       <div id="hub-results-upgrade" style="display:none;" class="results-upgrade-cta">
-        <p>Practice all {lockedCount} more tasks with AI feedback — CA${CELPIP_WRITING_PRICE_CAD}/month.</p>
+        <p>Practice all {totalLockedCount} more tasks with AI feedback — CA${CELPIP_WRITING_PRICE_CAD}/month.</p>
         <button class="btn btn-primary hub-checkout-btn" type="button">Unlock all tasks</button>
       </div>
     </div>
@@ -199,6 +274,7 @@ const lockedCount = CELPIP_TASK1_SIDEBAR.filter((t) => !t.isFree).length;
       <p>No submissions yet</p>
     </div>
   </section>
+</div>
 </div>
 
 <!-- SUBSCRIPTION MODAL -->
@@ -217,7 +293,7 @@ const lockedCount = CELPIP_TASK1_SIDEBAR.filter((t) => !t.isFree).length;
     <ul class="modal-features">
       <li>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd"/></svg>
-        {lockedCount} more Task 1 &amp; 2 prompts
+        {totalLockedCount} more Task 1 &amp; 2 prompts
       </li>
       <li>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd"/></svg>
@@ -243,11 +319,63 @@ const lockedCount = CELPIP_TASK1_SIDEBAR.filter((t) => !t.isFree).length;
 </div>
 
 <!-- Embed all prompt data as JSON for client-side use -->
-<script id="hub-prompt-data" type="application/json" is:inline set:html={JSON.stringify(sidebarPromptMap)}></script>
-<script id="hub-sidebar-data" type="application/json" is:inline set:html={JSON.stringify(CELPIP_TASK1_SIDEBAR)}></script>
+<script id="hub-config-data" type="application/json" is:inline set:html={JSON.stringify(hubConfig)}></script>
+<script id="hub-prompt-data" type="application/json" is:inline set:html={JSON.stringify(promptData)}></script>
+<script id="hub-sidebar-data" type="application/json" is:inline set:html={JSON.stringify(CELPIP_TASK_SIDEBARS)}></script>
 
 <style>
   /* ---- Layout ---- */
+  .practice-hub-shell {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+  }
+
+  .hub-task-switch {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--s-2);
+  }
+
+  .hub-task-switch__btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: var(--s-3) var(--s-4);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg);
+    color: var(--text);
+    cursor: pointer;
+    transition: border-color 0.12s, background 0.12s, transform 0.12s;
+    text-align: left;
+    font-family: inherit;
+  }
+
+  .hub-task-switch__btn:hover {
+    border-color: var(--accent);
+    background: rgba(217, 72, 72, 0.06);
+    transform: translateY(-1px);
+  }
+
+  .hub-task-switch__btn.is-active {
+    border-color: var(--accent);
+    background: rgba(217, 72, 72, 0.08);
+    box-shadow: inset 0 0 0 1px rgba(217, 72, 72, 0.12);
+  }
+
+  .hub-task-switch__title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .hub-task-switch__focus {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
   .practice-hub {
     display: grid;
     grid-template-columns: 260px 1fr 1fr;
@@ -407,6 +535,41 @@ const lockedCount = CELPIP_TASK1_SIDEBAR.filter((t) => !t.isFree).length;
     gap: var(--s-4);
   }
 
+  .prompt-meta-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-2);
+    flex-wrap: wrap;
+  }
+
+  .prompt-kicker,
+  .prompt-target {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .prompt-kicker {
+    color: var(--accent);
+  }
+
+  .prompt-title {
+    margin: 0;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.2rem;
+    color: var(--ink);
+  }
+
   .prompt-intro {
     font-size: 0.88rem;
     color: var(--muted);
@@ -418,6 +581,24 @@ const lockedCount = CELPIP_TASK1_SIDEBAR.filter((t) => !t.isFree).length;
     font-size: 0.95rem;
     line-height: 1.65;
     color: var(--text);
+  }
+
+  .prompt-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2);
+  }
+
+  .prompt-option-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(217, 72, 72, 0.2);
+    background: rgba(217, 72, 72, 0.06);
+    color: var(--ink);
+    font-size: 0.82rem;
+    font-weight: 600;
   }
 
   .prompt-task-line {
@@ -1141,7 +1322,8 @@ const lockedCount = CELPIP_TASK1_SIDEBAR.filter((t) => !t.isFree).length;
 
     .criteria-grid,
     .feedback-cols,
-    .lessons-grid {
+    .lessons-grid,
+    .hub-task-switch {
       grid-template-columns: 1fr;
     }
   }

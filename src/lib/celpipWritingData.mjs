@@ -761,6 +761,205 @@ export const CELPIP_TASK1_SIDEBAR = [
   { id: 'email-program-feedback-supervisor',           label: 'Formal \u2013 Program Improvement',    formality: 'Formal',   isFree: false },
 ];
 
+export const CELPIP_FREE_PROMPT_IDS = {
+  task1: CELPIP_FREE_TASK_ID,
+  task2: 'survey-online-vs-inperson-1',
+};
+
+function buildTask2HubInstructions(options = []) {
+  const optionLine = options.length >= 2
+    ? `Choose one option clearly: ${options[0]} or ${options[1]}.`
+    : 'Choose one option clearly in your opening.';
+
+  return [
+    optionLine,
+    'Support your choice with reasons and at least one specific example or consequence.',
+    'Briefly explain why the other option is less suitable before you conclude.',
+  ];
+}
+
+function createTask2SidebarPrompt({
+  id,
+  sidebarLabel,
+  title,
+  question,
+}) {
+  const bankPrompt = getPromptById('task2', id);
+  if (!bankPrompt) {
+    throw new Error(`Missing Task 2 prompt for sidebar id "${id}"`);
+  }
+
+  const samples = getPromptSampleResponses(bankPrompt);
+
+  return {
+    id,
+    sidebarLabel,
+    title: title || bankPrompt.title,
+    question: question || bankPrompt.question,
+    options: Array.isArray(bankPrompt.options) ? bankPrompt.options : [],
+    instructions: buildTask2HubInstructions(bankPrompt.options),
+    sampleResponses: {
+      clb5: '',
+      clb7: '',
+      clb9: samples.clb9,
+      clb11: '',
+    },
+    sampleLevelWhy: Array.isArray(bankPrompt.sampleLevelWhy) ? bankPrompt.sampleLevelWhy : [],
+  };
+}
+
+export const CELPIP_TASK2_CURATED_PROMPTS = [
+  createTask2SidebarPrompt({
+    id: 'survey-online-vs-inperson-1',
+    sidebarLabel: 'Online vs In-Person',
+    title: 'Online classes or in-person classes',
+    question: 'For newcomers adapting to life in Canada, which option is better for adult learners: online classes or in-person classes?',
+  }),
+  createTask2SidebarPrompt({
+    id: 'survey-public-transport-1',
+    sidebarLabel: 'Bus Routes vs Bike Lanes',
+    title: 'More buses or more bike lanes',
+    question: 'If a city wants to help newcomers adapt to life in Canada, which transportation investment is better: more bus routes or more bike lanes?',
+  }),
+  createTask2SidebarPrompt({
+    id: 'survey-work-model-2',
+    sidebarLabel: 'Remote vs Office Work',
+    title: 'Work from home or work in office',
+    question: 'For busy working adults, which model is better for most employees: working from home or working in an office?',
+  }),
+  createTask2SidebarPrompt({
+    id: 'survey-save-vs-travel-2',
+    sidebarLabel: 'Save or Travel',
+    title: 'Save money or travel now',
+    question: 'For busy working adults with extra money, which is the better choice: saving for the future or travelling now?',
+  }),
+  createTask2SidebarPrompt({
+    id: 'survey-small-vs-large-event-4',
+    sidebarLabel: 'Small or Large Events',
+    title: 'Small event or large event',
+    question: 'For parents balancing work and family, which is better for most families: a small event or a large event?',
+  }),
+  createTask2SidebarPrompt({
+    id: 'survey-reading-vs-video-2',
+    sidebarLabel: 'Reading vs Video Lessons',
+    title: 'Reading or watching videos to learn',
+    question: 'For busy working adults, which helps people learn more effectively: reading or watching videos?',
+  }),
+  createTask2SidebarPrompt({
+    id: 'survey-car-vs-transit-1',
+    sidebarLabel: 'Car vs Transit',
+    title: 'Buy a car or rely on transit',
+    question: 'For newcomers adapting to life in Canada, which is the better option in cities: buying a car or relying on public transit?',
+  }),
+  createTask2SidebarPrompt({
+    id: 'survey-rent-vs-buy-2',
+    sidebarLabel: 'Rent or Buy a Home',
+    title: 'Rent a home or buy a home',
+    question: 'For busy working adults early in their careers, which is better: renting a home or buying a home?',
+  }),
+  createTask2SidebarPrompt({
+    id: 'survey-team-vs-individual-3',
+    sidebarLabel: 'Team vs Solo Projects',
+    title: 'Team projects or individual projects',
+    question: 'For college students under deadline pressure, which approach is better in education: team projects or individual projects?',
+  }),
+  createTask2SidebarPrompt({
+    id: 'survey-morning-vs-evening-2',
+    sidebarLabel: 'Morning vs Evening Study',
+    title: 'Morning study or evening study',
+    question: 'For busy working adults, which study schedule is more effective: morning study or evening study?',
+  }),
+  createTask2SidebarPrompt({
+    id: 'survey-online-vs-inperson-5',
+    sidebarLabel: 'Classes for Test Prep',
+    title: 'Online classes for test prep',
+    question: 'For people preparing for language tests, which is better: online classes or in-person classes?',
+  }),
+  createTask2SidebarPrompt({
+    id: 'survey-work-model-4',
+    sidebarLabel: 'Work Model for Parents',
+    title: 'Work from home or work in office',
+    question: 'For parents balancing work and family, which model is better: working from home or working in an office?',
+  }),
+  createTask2SidebarPrompt({
+    id: 'survey-save-vs-travel-3',
+    sidebarLabel: 'Save or Travel Under Pressure',
+    title: 'Save money or travel now',
+    question: 'For college students under deadline pressure who suddenly have extra money, which is better: saving for the future or travelling now?',
+  }),
+  createTask2SidebarPrompt({
+    id: 'survey-reading-vs-video-5',
+    sidebarLabel: 'Study Mode for Test Takers',
+    title: 'Reading or watching videos to learn',
+    question: 'For people preparing for language tests, which helps most: reading or watching videos?',
+  }),
+  createTask2SidebarPrompt({
+    id: 'survey-car-vs-transit-2',
+    sidebarLabel: 'Car vs Transit for Workers',
+    title: 'Buy a car or rely on transit',
+    question: 'For busy working adults in cities, which is the better option: buying a car or using public transit?',
+  }),
+  createTask2SidebarPrompt({
+    id: 'survey-rent-vs-buy-4',
+    sidebarLabel: 'Housing for Parents',
+    title: 'Rent a home or buy a home',
+    question: 'For parents balancing work and family, which is better: renting a home or buying a home?',
+  }),
+  createTask2SidebarPrompt({
+    id: 'survey-team-vs-individual-5',
+    sidebarLabel: 'Projects for Test Prep',
+    title: 'Team projects or individual projects',
+    question: 'For people preparing for language tests, which approach is better for learning: team projects or individual projects?',
+  }),
+  createTask2SidebarPrompt({
+    id: 'survey-morning-vs-evening-5',
+    sidebarLabel: 'Study Time for Test Takers',
+    title: 'Morning study or evening study',
+    question: 'For people preparing for language tests, which study schedule is more effective: morning study or evening study?',
+  }),
+];
+
+export const CELPIP_TASK2_SIDEBAR = CELPIP_TASK2_CURATED_PROMPTS.map((prompt, index) => ({
+  id: prompt.id,
+  label: `Survey \u2013 ${prompt.sidebarLabel}`,
+  formality: 'Survey',
+  isFree: prompt.id === CELPIP_FREE_PROMPT_IDS.task2 && index === 0,
+}));
+
+export const CELPIP_TASK_SIDEBARS = {
+  task1: CELPIP_TASK1_SIDEBAR,
+  task2: CELPIP_TASK2_SIDEBAR,
+};
+
+const CELPIP_CURATED_HUB_PROMPTS = {
+  task1: CELPIP_SIDEBAR_EXTENDED_PROMPTS,
+  task2: CELPIP_TASK2_CURATED_PROMPTS,
+};
+
+export function isCelpipFreePrompt(taskType, promptId) {
+  return CELPIP_FREE_PROMPT_IDS[taskType] === promptId;
+}
+
+export function getPracticeHubPromptById(taskType, id) {
+  const curated = CELPIP_CURATED_HUB_PROMPTS[taskType]?.find((prompt) => prompt.id === id);
+  if (curated) {
+    return {
+      ...curated,
+      taskType,
+      sampleResponses: getPromptSampleResponses(curated),
+    };
+  }
+
+  const bankPrompt = CELPIP_PROMPT_BANK[taskType]?.find((prompt) => prompt.id === id);
+  if (!bankPrompt) return null;
+
+  return {
+    ...bankPrompt,
+    taskType,
+    sampleResponses: getPromptSampleResponses(bankPrompt),
+  };
+}
+
 /**
  * Look up a full prompt object by ID.
  * Checks sidebar-specific prompts first, then the main task1 bank.
@@ -768,19 +967,5 @@ export const CELPIP_TASK1_SIDEBAR = [
  * shimmed into the sampleResponses shape so the component stays uniform.
  */
 export function getSidebarPromptById(id) {
-  const extended = CELPIP_SIDEBAR_EXTENDED_PROMPTS.find((p) => p.id === id);
-  if (extended) {
-    return {
-      ...extended,
-      sampleResponses: getPromptSampleResponses(extended),
-    };
-  }
-
-  const bankPrompt = CELPIP_PROMPT_BANK.task1.find((p) => p.id === id);
-  if (!bankPrompt) return null;
-
-  return {
-    ...bankPrompt,
-    sampleResponses: getPromptSampleResponses(bankPrompt),
-  };
+  return getPracticeHubPromptById('task1', id);
 }
