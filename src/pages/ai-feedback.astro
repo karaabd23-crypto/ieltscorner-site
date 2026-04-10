@@ -5,6 +5,8 @@ import {
   CELPIP_WRITING_PRICE_CAD,
 } from "../lib/celpipWritingData.mjs";
 
+const YOUTUBE_EMBED_URL = "https://www.youtube.com/embed/k-2lGP720OU?si=rg7FiJfdNMHsj9Q3";
+
 const faqs = [
   {
     question: "How much does this cost?",
@@ -38,6 +40,27 @@ const faqs = [
           Write a timed email, get an estimated CLB score, see exactly what is lowering it, and compare your writing to saved sample responses inside the task.
           The first task is always free.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm" style="padding-top: 0; padding-bottom: var(--s-4);">
+    <div class="surface funnel-section funnel-video" style="max-width: 480px; margin: 0 auto; padding: var(--s-4);">
+      <p class="muted funnel-video__intro" style="margin: 0 0 var(--s-3); font-size: 0.85rem;">
+        Watch how the AI essay correction works and what you receive after submitting.
+      </p>
+      <div class="funnel-video__embed" style="max-width: 420px; margin: 0 auto;">
+        <iframe
+          width="420"
+          height="236"
+          src={YOUTUBE_EMBED_URL}
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
       </div>
     </div>
   </section>

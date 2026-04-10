@@ -14,6 +14,43 @@ const OPENAI_API_KEY = (process.env.OPENAI_API_KEY || '').trim();
 const OPENAI_MODEL = (process.env.OPENAI_MODEL || 'gpt-4.1-mini').trim();
 const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions';
 const OPENAI_TIMEOUT_MS = 25000;
+
+// ── Per-IP, per-task rate limit (survives across warm invocations) ──
+const RATE_LIMIT_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours
+const ipTaskMap = new Map(); // key: "ip::promptId" → timestamp
+
+function hasAlreadySubmitted(ip, promptId) {
+  const key = `${ip}::${promptId}`;
+  const ts = ipTaskMap.get(key);
+  if (!ts) return false;
+  if (Date.now() - ts > RATE_LIMIT_TTL_MS) {
+    ipTaskMap.delete(key);
+    return false;
+  }
+  return true;
+}
+
+function recordSubmission(ip, promptId) {
+  const key = `${ip}::${promptId}`;
+  ipTaskMap.set(key, Date.now());
+  // Prune expired entries periodically (keep map from growing unbounded)
+  if (ipTaskMap.size > 500) {
+    const now = Date.now();
+    for (const [k, ts] of ipTaskMap) {
+      if (now - ts > RATE_LIMIT_TTL_MS) ipTaskMap.delete(k);
+    }
+  }
+}
+
+function getClientIp(event) {
+  return (
+    event.headers?.['x-nf-client-connection-ip'] ||
+    event.headers?.['x-forwarded-for']?.split(',')[0]?.trim() ||
+    event.headers?.['client-ip'] ||
+    'unknown'
+  );
+}
+
 const LESSON_NEED_OPTIONS = [
   'prompt coverage',
   'email tone',
@@ -251,6 +288,18 @@ export async function handler(event) {
       return { statusCode: 400, body: JSON.stringify({ error: 'Missing required fields' }) };
     }
 
+    // ── Rate limit: one submission per IP per task ──
+    const clientIp = getClientIp(event);
+    const rateLimitKey = promptId || `${taskType}::${promptTitle}`;
+    if (hasAlreadySubmitted(clientIp, rateLimitKey)) {
+      return {
+        statusCode: 429,
+        body: JSON.stringify({
+          error: 'You have already submitted an essay for this task. Try a different prompt.',
+        }),
+      };
+    }
+
     const wordCount = String(responseText || '').trim().split(/\s+/).filter(Boolean).length;
     if (wordCount < 40) {
       return { statusCode: 400, body: JSON.stringify({ error: 'Response is too short to grade meaningfully.' }) };
@@ -272,6 +321,9 @@ export async function handler(event) {
 
     let rawReport;
     let evaluationSource = 'openai';
+
+    // Record this IP+task so repeat submissions are blocked
+    recordSubmission(clientIp, rateLimitKey);
 
     try {
       rawReport = await requestOpenAIEvaluation({

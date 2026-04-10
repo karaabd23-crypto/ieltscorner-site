@@ -155,10 +155,8 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
         </details>
         <details class="sample-accordion">
           <summary>CLB 9 Sample</summary>
-          <div class="sample-content">
-            <div class="sample-level-badge" id="hub-sample-level-badge"></div>
-            <ul class="sample-why" id="hub-sample-level-why"></ul>
-            <pre class="sample-essay" id="hub-sample-clb9"></pre>
+          <div class="sample-content" id="hub-sample-clb9">
+            <p class="muted sample-placeholder">Sample response coming soon — check back or subscribe to see all samples.</p>
           </div>
         </details>
         <details class="sample-accordion">
@@ -499,7 +497,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
   .practice-hub__prompt {
     border-right: 1px solid var(--border);
     overflow-y: auto;
-    max-height: 82vh;
+    max-height: 100vh;
     background: var(--surface);
   }
 
@@ -692,16 +690,16 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
   }
 
   .sample-essay {
-    white-space: pre-wrap;
     font-family: inherit;
     font-size: 0.88rem;
     line-height: 1.65;
     color: var(--text);
-    background: var(--bg);
-    border-radius: var(--radius-sm);
-    padding: var(--s-4);
+    background: transparent;
+    padding: 0;
     margin: 0;
-    border: 1px solid var(--border);
+    border: none;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   .sample-essay--placeholder {
@@ -1332,22 +1330,34 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
 <script>
   (() => {
     // ---- Read embedded data ----
+    const hubConfig = JSON.parse(
+      document.getElementById('hub-config-data')?.textContent || '{}'
+    );
     const promptData = JSON.parse(
       document.getElementById('hub-prompt-data')?.textContent || '{}'
     );
     const sidebarData = JSON.parse(
-      document.getElementById('hub-sidebar-data')?.textContent || '[]'
+      document.getElementById('hub-sidebar-data')?.textContent || '{}'
     );
 
     // ---- State ----
-    const FREE_TASK_ID = 'informal-pet-sitting';
     const ACCESS_KEY = 'ieltscorner.celpipWritingAccess';
     const FREE_EVAL_KEY = 'ieltscorner.celpipFreeEvalUsed';
+    const taskOrder = hubConfig.taskOrder || ['task1', 'task2'];
 
-    let selectedTaskId = FREE_TASK_ID;
+    let currentTaskType = 'task1';
+    let selectedTaskId = hubConfig.tasks?.task1?.freePromptId || 'informal-pet-sitting';
     let timerInterval = null;
     let timerSeconds = 27 * 60;
     let timerRunning = false;
+
+    function getFreePromptId(taskType) {
+      return hubConfig.tasks?.[taskType]?.freePromptId || '';
+    }
+
+    function getTaskMinutes(taskType) {
+      return hubConfig.tasks?.[taskType]?.minutes || 27;
+    }
 
     function getSubscription() {
       try {
@@ -1368,20 +1378,27 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
     }
 
     // ---- DOM refs ----
-    const taskItems = Array.from(document.querySelectorAll('.task-item'));
+    const taskSwitchBtns = Array.from(document.querySelectorAll('.hub-task-switch__btn'));
+    const taskListNav = document.getElementById('hub-task-list');
+    const sidebarTitle = document.getElementById('hub-sidebar-title');
+    const sidebarSub = document.getElementById('hub-sidebar-sub');
+    const promptTitle = document.getElementById('hub-prompt-title');
+    const promptKicker = document.getElementById('hub-prompt-kicker');
+    const promptTarget = document.getElementById('hub-prompt-target');
+    const promptIntro = document.getElementById('hub-prompt-intro');
     const promptScenario = document.getElementById('hub-prompt-scenario');
+    const promptOptions = document.getElementById('hub-prompt-options');
     const promptTaskLine = document.getElementById('hub-prompt-task-line');
     const promptInstructions = document.getElementById('hub-prompt-instructions');
     const sampleClb5 = document.getElementById('hub-sample-clb5');
     const sampleClb7 = document.getElementById('hub-sample-clb7');
     const sampleClb9 = document.getElementById('hub-sample-clb9');
     const sampleClb11 = document.getElementById('hub-sample-clb11');
-    const sampleLevelBadge = document.getElementById('hub-sample-level-badge');
-    const sampleLevelWhy = document.getElementById('hub-sample-level-why');
     const textarea = document.getElementById('hub-textarea');
     const wordCountBadge = document.getElementById('hub-word-count');
     const submitBtn = document.getElementById('hub-submit-btn');
     const writingStatus = document.getElementById('hub-writing-status');
+    const writingTitle = document.getElementById('hub-writing-title');
     const submitArea = document.getElementById('hub-submit-area');
     const upgradePrompt = document.getElementById('hub-upgrade-prompt');
     const resultsEl = document.getElementById('hub-results');
@@ -1430,12 +1447,8 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
     }
 
     function renderSampleCard(container, label, sampleText) {
-      if (!(container instanceof HTMLElement)) {
-        return;
-      }
-
+      if (!(container instanceof HTMLElement)) return;
       container.innerHTML = '';
-
       if (!sampleText) {
         const placeholder = document.createElement('p');
         placeholder.className = 'muted sample-placeholder';
@@ -1443,11 +1456,21 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
         container.appendChild(placeholder);
         return;
       }
-
-      const sample = document.createElement('pre');
+      const sample = document.createElement('div');
       sample.className = 'sample-essay';
-      sample.textContent = sampleText;
+      sample.innerHTML = sampleText
+        .split('\n')
+        .map(line => line ? escHtml(line) : '<br>')
+        .join('<br>');
       container.appendChild(sample);
+    }
+
+    function escHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
     }
 
     // ---- Timer ----
@@ -1481,7 +1504,8 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
 
     function resetTimer() {
       pauseTimer();
-      timerSeconds = 27 * 60;
+      const mins = getTaskMinutes(currentTaskType);
+      timerSeconds = mins * 60;
       updateTimerDisplay();
     }
 
@@ -1491,25 +1515,135 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
 
     timerReset?.addEventListener('click', resetTimer);
 
+    // ---- Capture Astro scope attributes from server-rendered elements ----
+    const astroAttrs = [];
+    const firstBtn = taskListNav?.querySelector('.task-item');
+    if (firstBtn) {
+      for (const attr of firstBtn.attributes) {
+        if (attr.name.startsWith('data-astro-cid-')) {
+          astroAttrs.push(attr.name);
+        }
+      }
+    }
+
+    function applyAstroScope(el) {
+      astroAttrs.forEach((attr) => el.setAttribute(attr, ''));
+    }
+
+    // ---- Bind click handlers on existing server-rendered sidebar ----
+    function bindSidebarHandlers() {
+      if (!taskListNav) return;
+      const btns = Array.from(taskListNav.querySelectorAll('.task-item'));
+      btns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const id = btn.getAttribute('data-task-id');
+          if (id) selectTask(id);
+        });
+      });
+    }
+
+    // ---- Rebuild sidebar for current task type (on switch only) ----
+    function rebuildSidebar() {
+      if (!taskListNav) return;
+      const items = sidebarData[currentTaskType] || [];
+      const freeId = getFreePromptId(currentTaskType);
+      taskListNav.innerHTML = '';
+      items.forEach((task, i) => {
+        const btn = document.createElement('button');
+        const isActive = task.id === selectedTaskId;
+        const isFree = task.isFree || task.id === freeId;
+        btn.className = `task-item${isFree ? ' task-item--free' : ' task-item--locked'}${isActive ? ' is-active' : ''}`;
+        btn.setAttribute('data-task-id', task.id);
+        btn.setAttribute('data-is-free', isFree ? 'true' : 'false');
+        btn.type = 'button';
+        applyAstroScope(btn);
+
+        const numSpan = document.createElement('span');
+        numSpan.className = 'task-num';
+        numSpan.textContent = `${i + 1}.`;
+        applyAstroScope(numSpan);
+        btn.appendChild(numSpan);
+
+        const labelSpan = document.createElement('span');
+        labelSpan.className = 'task-label';
+        labelSpan.textContent = task.label || task.sidebarLabel || task.id;
+        applyAstroScope(labelSpan);
+        btn.appendChild(labelSpan);
+
+        if (isFree) {
+          const badge = document.createElement('span');
+          badge.className = 'free-badge';
+          badge.textContent = 'FREE';
+          applyAstroScope(badge);
+          btn.appendChild(badge);
+        } else {
+          const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+          svg.setAttribute('class', 'lock-icon');
+          svg.setAttribute('viewBox', '0 0 16 16');
+          svg.setAttribute('fill', 'currentColor');
+          svg.setAttribute('aria-hidden', 'true');
+          applyAstroScope(svg);
+          const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          path.setAttribute('fill-rule', 'evenodd');
+          path.setAttribute('d', 'M8 1a3.5 3.5 0 0 0-3.5 3.5V6H4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-.5V4.5A3.5 3.5 0 0 0 8 1Zm2 5V4.5a2 2 0 1 0-4 0V6h4Z');
+          path.setAttribute('clip-rule', 'evenodd');
+          svg.appendChild(path);
+          btn.appendChild(svg);
+        }
+
+        btn.addEventListener('click', () => selectTask(task.id));
+        taskListNav.appendChild(btn);
+      });
+    }
+
     // ---- Load prompt into UI ----
     function loadPrompt(id) {
-      const p = promptData[id];
+      const taskPrompts = promptData[currentTaskType] || {};
+      const p = taskPrompts[id];
       if (!p) return;
 
-      // Scenario
-      if (promptScenario) promptScenario.textContent = p.scenario || '';
+      const cfg = hubConfig.tasks?.[currentTaskType] || {};
+
+      // Title
+      if (promptTitle) promptTitle.textContent = p.title || '';
+
+      // Kicker + target
+      if (promptKicker) promptKicker.textContent = cfg.promptLabel || '';
+      if (promptTarget) promptTarget.textContent = `${cfg.targetWords || '150–200 words'} | ${cfg.minutes || 27} min`;
+
+      // Intro
+      if (promptIntro) promptIntro.textContent = cfg.promptIntro || '';
+
+      // Scenario (task1) or question (task2)
+      if (promptScenario) {
+        promptScenario.textContent = currentTaskType === 'task2'
+          ? (p.question || p.scenario || '')
+          : (p.scenario || '');
+      }
+
+      // Options pills (task2 only)
+      if (promptOptions) {
+        const opts = Array.isArray(p.options) ? p.options : [];
+        if (opts.length > 0) {
+          promptOptions.innerHTML = opts.map((o) =>
+            `<span class="prompt-option-pill">${escHtml(o)}</span>`
+          ).join('');
+          promptOptions.style.display = '';
+        } else {
+          promptOptions.innerHTML = '';
+          promptOptions.style.display = 'none';
+        }
+      }
 
       // Task line
       if (promptTaskLine) {
-        const wc = p.targetWords || '150\u2013200 words';
-        promptTaskLine.textContent = `Write an email in about ${wc}. Your email should:`;
+        promptTaskLine.textContent = cfg.promptTaskLine || '';
       }
 
       // Instructions
       if (promptInstructions) {
         promptInstructions.innerHTML = '';
-        const items = p.instructions || [];
-        items.forEach((instr) => {
+        (p.instructions || []).forEach((instr) => {
           const li = document.createElement('li');
           li.textContent = instr;
           promptInstructions.appendChild(li);
@@ -1520,47 +1654,21 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
       const samples = getSampleResponses(p);
       renderSampleCard(sampleClb5, 'CLB 5', samples.clb5);
       renderSampleCard(sampleClb7, 'CLB 7', samples.clb7);
+      renderSampleCard(sampleClb9, 'CLB 9', samples.clb9);
       renderSampleCard(sampleClb11, 'CLB 11', samples.clb11);
 
-      if (sampleClb9) {
-        sampleClb9.textContent = samples.clb9 || 'CLB 9 sample will appear here after it is added to the prompt library.';
-        sampleClb9.classList.toggle('sample-essay--placeholder', !samples.clb9);
-      }
-      if (sampleLevelBadge) {
-        const hasClb9 = Boolean(samples.clb9);
-        sampleLevelBadge.textContent = hasClb9 ? 'Reference sample' : '';
-        sampleLevelBadge.style.display = hasClb9 ? '' : 'none';
-      }
-      if (sampleLevelWhy && Array.isArray(p.sampleLevelWhy)) {
-        sampleLevelWhy.innerHTML = '';
-        p.sampleLevelWhy.forEach((why) => {
-          const li = document.createElement('li');
-          li.textContent = why;
-          sampleLevelWhy.appendChild(li);
-        });
-        sampleLevelWhy.style.display = samples.clb9 && p.sampleLevelWhy.length ? '' : 'none';
-      } else if (sampleLevelWhy) {
-        sampleLevelWhy.innerHTML = '';
-        sampleLevelWhy.style.display = 'none';
-      }
-
-      // Reset timer
+      // Reset timer for this task type
       resetTimer();
     }
 
     // ---- Update submit area based on state ----
     function updateSubmitArea() {
       const sub = getSubscription();
-      const isFreeeTask = selectedTaskId === FREE_TASK_ID;
+      const freeId = getFreePromptId(currentTaskType);
+      const isFreeTask = selectedTaskId === freeId;
       const freeUsed = hasFreeEvalUsed();
 
-      if (!isFreeeTask && !sub) {
-        // Locked task, no subscription — shouldn't reach here but guard
-        return;
-      }
-
-      if (isFreeeTask && freeUsed && !sub) {
-        // Free eval exhausted
+      if (isFreeTask && freeUsed && !sub) {
         if (submitArea) submitArea.style.display = 'none';
         if (upgradePrompt) upgradePrompt.style.display = '';
       } else {
@@ -1569,13 +1677,66 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
       }
     }
 
-    // ---- Select task ----
+    // ---- Switch task type (Task 1 / Task 2 tabs) ----
+    function switchTaskType(taskType) {
+      if (taskType === currentTaskType) return;
+      currentTaskType = taskType;
+
+      // Update tab active states
+      taskSwitchBtns.forEach((btn) => {
+        const btnType = btn.getAttribute('data-task-type');
+        const isActive = btnType === taskType;
+        btn.classList.toggle('is-active', isActive);
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+
+      // Update sidebar header
+      const cfg = hubConfig.tasks?.[taskType] || {};
+      if (sidebarTitle) sidebarTitle.textContent = cfg.sidebarTitle || '';
+      if (sidebarSub) sidebarSub.textContent = cfg.sidebarSub || '';
+
+      // Update writing title
+      if (writingTitle) writingTitle.textContent = `Write your ${cfg.shortLabel || 'Task'} to see your score`;
+
+      // Select the free prompt for this task type
+      selectedTaskId = getFreePromptId(taskType);
+
+      // Rebuild sidebar and load prompt
+      rebuildSidebar();
+      loadPrompt(selectedTaskId);
+
+      // Reset writing area
+      if (textarea) textarea.value = '';
+      if (wordCountBadge) {
+        wordCountBadge.textContent = '0 words';
+        wordCountBadge.classList.remove('ready');
+      }
+      if (submitBtn) submitBtn.disabled = true;
+      setStatus('');
+      if (resultsEl) resultsEl.style.display = 'none';
+      if (noSubmission) noSubmission.style.display = '';
+
+      updateSubmitArea();
+    }
+
+    // ---- Task type tab click handlers ----
+    taskSwitchBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const taskType = btn.getAttribute('data-task-type');
+        if (taskType) switchTaskType(taskType);
+      });
+    });
+
+    // ---- Select task (individual prompt from sidebar) ----
     function selectTask(id) {
-      const entry = sidebarData.find((t) => t.id === id);
+      const items = sidebarData[currentTaskType] || [];
+      const freeId = getFreePromptId(currentTaskType);
+      const entry = items.find((t) => t.id === id);
       if (!entry) return;
 
+      const isFree = entry.isFree || entry.id === freeId;
       const sub = getSubscription();
-      if (!entry.isFree && !sub) {
+      if (!isFree && !sub) {
         openModal();
         return;
       }
@@ -1583,9 +1744,9 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
       selectedTaskId = id;
 
       // Update sidebar active state
-      taskItems.forEach((btn) => {
-        const btnId = btn.getAttribute('data-task-id');
-        btn.classList.toggle('is-active', btnId === id);
+      const sidebarBtns = taskListNav ? Array.from(taskListNav.querySelectorAll('.task-item')) : [];
+      sidebarBtns.forEach((btn) => {
+        btn.classList.toggle('is-active', btn.getAttribute('data-task-id') === id);
       });
 
       // Load prompt
@@ -1607,14 +1768,6 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
       updateSubmitArea();
     }
 
-    // ---- Sidebar click handlers ----
-    taskItems.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const id = btn.getAttribute('data-task-id');
-        if (id) selectTask(id);
-      });
-    });
-
     // ---- Word count ----
     textarea?.addEventListener('input', () => {
       const wc = wordCount(textarea.value);
@@ -1630,10 +1783,11 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
     // ---- Submit ----
     submitBtn?.addEventListener('click', async () => {
       const sub = getSubscription();
-      const isFreeeTask = selectedTaskId === FREE_TASK_ID;
+      const freeId = getFreePromptId(currentTaskType);
+      const isFreeTask = selectedTaskId === freeId;
       const freeUsed = hasFreeEvalUsed();
 
-      if (isFreeeTask && freeUsed && !sub) {
+      if (isFreeTask && freeUsed && !sub) {
         updateSubmitArea();
         return;
       }
@@ -1644,7 +1798,8 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
         return;
       }
 
-      const p = promptData[selectedTaskId];
+      const taskPrompts = promptData[currentTaskType] || {};
+      const p = taskPrompts[selectedTaskId];
       if (!p) {
         setStatus('Prompt data not found. Please refresh the page.', true);
         return;
@@ -1654,14 +1809,18 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
       if (submitBtn) submitBtn.disabled = true;
 
       try {
+        const promptText = currentTaskType === 'task2'
+          ? (p.question || p.scenario || '')
+          : (p.scenario || '');
+
         const payload = {
-          taskType: 'task1',
+          taskType: currentTaskType,
           promptId: selectedTaskId,
           promptTitle: p.title || p.sidebarLabel || selectedTaskId,
-          promptText: p.scenario || '',
+          promptText,
           promptInstructions: p.instructions || [],
           responseText,
-          isFreeTask: isFreeeTask && !sub,
+          isFreeTask: isFreeTask && !sub,
           ...(sub?.sessionId ? { sessionId: sub.sessionId } : {}),
         };
 
@@ -1671,13 +1830,26 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
           body: JSON.stringify(payload),
         });
 
+        if (!res.ok) {
+          let errorMsg = `Evaluation failed (${res.status}).`;
+          try {
+            const errData = await res.json();
+            if (errData.error) errorMsg = errData.error;
+          } catch {
+            if (res.status === 404) {
+              errorMsg = 'Evaluation endpoint not found. Run "netlify dev" instead of "npm run dev" for local testing.';
+            }
+          }
+          throw new Error(errorMsg);
+        }
+
         const data = await res.json();
 
-        if (!res.ok || !data.report) {
+        if (!data.report) {
           throw new Error(data.error || 'Evaluation failed. Please try again.');
         }
 
-        if (isFreeeTask && !sub) {
+        if (isFreeTask && !sub) {
           markFreeEvalUsed();
         }
 
@@ -1802,14 +1974,6 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
       resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    function escHtml(str) {
-      return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
-    }
-
     // ---- Modal ----
     function openModal() {
       if (modalBackdrop) modalBackdrop.style.display = 'flex';
@@ -1858,7 +2022,8 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
     });
 
     // ---- Init ----
-    selectTask(FREE_TASK_ID);
+    bindSidebarHandlers();
+    loadPrompt(selectedTaskId);
     updateSubmitArea();
   })();
 </script>
