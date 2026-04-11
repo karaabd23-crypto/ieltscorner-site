@@ -295,6 +295,23 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
         freeSampleStatus.style.color = isError ? '#b42318' : 'var(--text-muted)';
       };
 
+      const getPromptSamples = (prompt) => {
+        const samples = prompt?.sampleResponses && typeof prompt.sampleResponses === 'object'
+          ? prompt.sampleResponses
+          : {};
+        return {
+          clb5: String(samples.clb5 || '').trim(),
+          clb7: String(samples.clb7 || '').trim(),
+          clb9: String(samples.clb9 || prompt?.sampleResponse || '').trim(),
+          clb11: String(samples.clb11 || '').trim(),
+        };
+      };
+
+      const getPrimarySample = (prompt) => {
+        const samples = getPromptSamples(prompt);
+        return samples.clb9 || samples.clb7 || samples.clb11 || samples.clb5 || '';
+      };
+
       const renderFreeSample = (prompt) => {
         if (!(freeSampleResult instanceof HTMLElement)) return;
         if (!(freeSampleTitle instanceof HTMLElement)) return;
@@ -308,7 +325,7 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
         freeSampleTask.textContent = prompt?.taskType === 'task2' ? 'Task 2 · Survey essay' : 'Task 1 · Email essay';
         freeSampleScenario.textContent = prompt?.scenario || '';
         freeSampleLevel.textContent = prompt?.sampleLevel ? `Model level: ${prompt.sampleLevel}` : '';
-        freeSampleText.textContent = prompt?.sampleResponse || '';
+        freeSampleText.textContent = getPrimarySample(prompt);
 
         freeSampleWhy.innerHTML = '';
         (Array.isArray(prompt?.sampleLevelWhy) ? prompt.sampleLevelWhy : []).forEach((reason) => {
@@ -384,7 +401,7 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
         sample.className = 'muted';
         sample.style.whiteSpace = 'pre-line';
         sample.style.marginBottom = '0';
-        sample.textContent = prompt.sampleResponse || '';
+        sample.textContent = getPrimarySample(prompt);
 
         article.appendChild(title);
         if (level.textContent) article.appendChild(level);

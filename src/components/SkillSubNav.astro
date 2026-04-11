@@ -1,0 +1,93 @@
+---
+/**
+ * Renders a horizontal sub-navigation bar for exam skill pages.
+ * Shows "← Back to hub" + sibling skill links.
+ */
+
+type Props = {
+  exam: "IELTS" | "CELPIP";
+  currentSkill: "listening" | "reading" | "writing" | "speaking";
+};
+
+const { exam, currentSkill } = Astro.props as Props;
+
+const hub = exam === "IELTS" ? "/ielts" : "/celpip";
+const hubLabel = exam === "IELTS" ? "IELTS Hub" : "CELPIP Hub";
+
+const skills = [
+  { slug: "listening", label: "Listening" },
+  { slug: "reading", label: "Reading" },
+  { slug: "writing", label: "Writing" },
+  { slug: "speaking", label: "Speaking" },
+];
+---
+
+<nav class="skill-subnav" aria-label={`${exam} skill navigation`}>
+  <a class="skill-subnav__back" href={hub}>← {hubLabel}</a>
+  <div class="skill-subnav__links">
+    {skills.map((skill) => (
+      <a
+        class:list={["skill-subnav__link", skill.slug === currentSkill && "is-active"]}
+        href={`${hub}/${skill.slug}`}
+        aria-current={skill.slug === currentSkill ? "page" : undefined}
+      >
+        {skill.label}
+      </a>
+    ))}
+  </div>
+</nav>
+
+<style>
+  .skill-subnav {
+    display: flex;
+    align-items: center;
+    gap: var(--s-4);
+    flex-wrap: wrap;
+    padding: var(--s-3) 0;
+    margin-bottom: var(--s-4);
+    border-bottom: 1px solid var(--border);
+    font-size: var(--step--1);
+  }
+
+  .skill-subnav__back {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .skill-subnav__back:hover {
+    color: var(--accent);
+  }
+
+  .skill-subnav__links {
+    display: flex;
+    gap: var(--s-3);
+    flex-wrap: wrap;
+  }
+
+  .skill-subnav__link {
+    color: var(--muted);
+    text-decoration: none;
+    padding: var(--s-1) var(--s-2);
+    border-radius: 999px;
+    transition: background 140ms ease, color 140ms ease;
+  }
+
+  .skill-subnav__link:hover {
+    background: var(--bg-2);
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .skill-subnav__link.is-active {
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-weight: 600;
+  }
+
+  .skill-subnav__link.is-active:hover {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+</style>

@@ -1,8 +1,85 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { buildBreadcrumbSchema } from "../../lib/seo";
 
-const pageKeywords = "CELPIP preparation, CELPIP listening, CELPIP reading, CELPIP writing, CELPIP speaking";
+const pageKeywords = "CELPIP preparation, CELPIP listening, CELPIP reading, CELPIP writing, CELPIP speaking, CELPIP services";
+
+const skillCards = [
+  {
+    badge: "L",
+    title: "Listening",
+    description: "Improve timing, note-taking, and trap-answer accuracy with focused CELPIP listening support.",
+    href: "/celpip/listening",
+    cta: "Open listening hub",
+  },
+  {
+    badge: "R",
+    title: "Reading",
+    description: "Fix distractor mistakes and pacing issues with reading-specific strategy and drills.",
+    href: "/celpip/reading",
+    cta: "Open reading hub",
+  },
+  {
+    badge: "W",
+    title: "Writing",
+    description: "Access Task 1 and Task 2 writing practice, sample essays, and correction services.",
+    href: "/celpip/writing",
+    cta: "Open writing hub",
+  },
+  {
+    badge: "S",
+    title: "Speaking",
+    description: "Build stronger speaking structure, fluency, and confidence across all speaking tasks.",
+    href: "/celpip/speaking",
+    cta: "Open speaking hub",
+  },
+];
+
+const celpipServices = [
+  {
+    title: "AI Writing Feedback Hub",
+    description: "Practice CELPIP Writing Task 1 and Task 2 with timer, scoring, and actionable feedback.",
+    href: "/ai-feedback",
+    cta: "Start AI feedback",
+  },
+  {
+    title: "100 Writing Sample Essays",
+    description: "Open the CELPIP sample essay library for Task 1 and Task 2 model responses.",
+    href: "/celpip/writing/samples",
+    cta: "Open sample library",
+  },
+  {
+    title: "Private CELPIP Class",
+    description: "Book a one-on-one class for listening, reading, writing, or speaking improvement.",
+    href: "/tutoring#book-private-class",
+    cta: "Book private class",
+  },
+  {
+    title: "CELPIP Writing Help",
+    description: "Quick-start writing support path that leads directly to correction and improvement.",
+    href: "/celpip-writing-help",
+    cta: "Open writing help",
+  },
+  {
+    title: "CLB 9 Strategy Guide",
+    description: "Review a full strategy page for reaching CLB 9 across CELPIP skills.",
+    href: "/celpip/clb-9-strategy",
+    cta: "Read CLB 9 strategy",
+  },
+  {
+    title: "Reading Rescue Hub",
+    description: "Use the CLB 6 to 8 reading rescue flow for timing, inference, and trap fixes.",
+    href: "/celpip/reading/clb-6-to-8",
+    cta: "Open reading rescue",
+  },
+  {
+    title: "Full Reading Guide",
+    description: "Read the full long-form reading guide with drills and strategy examples.",
+    href: "/celpip/reading-guide",
+    cta: "Open reading guide",
+  },
+];
 
 const pageStructuredData = [
   buildBreadcrumbSchema(Astro.site, [
@@ -13,78 +90,142 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="CELPIP Entry | Start With Writing"
-  description="CELPIP entry page for writing users stuck at CLB 6 or 7."
+  title="CELPIP Hub | Skills and Services"
+  description="CELPIP hub with direct links to Listening, Reading, Writing, Speaking, and all active CELPIP services."
   keywords={pageKeywords}
   structuredData={pageStructuredData}
 >
+  <Breadcrumbs items={[
+    { label: "Home", href: "/" },
+    { label: "CELPIP" },
+  ]} />
+
   <section class="section">
     <div class="hero funnel-hero" style={`--hero-bg: url('/heroes/celpip.png');`}>
       <div class="hero-content funnel-hero__content">
-        <span class="pill">CELPIP entry page</span>
-        <h1>Stuck at CLB 6 in CELPIP Writing?</h1>
-        <p class="muted">Find your mistakes and fix them step by step.</p>
-        <a class="btn btn-primary" href="/celpip/writing">Fix your writing mistakes now</a>
+        <span class="pill">CELPIP hub</span>
+        <h1>Choose your skill, then choose your service</h1>
+        <p class="muted">
+          Start with Listening, Reading, Writing, or Speaking. Then use the service cards below to go directly to the exact CELPIP support you need.
+        </p>
+        <div class="funnel-hero__actions">
+          <a class="btn btn-primary" href="/celpip/writing">Open writing hub</a>
+          <a class="btn btn-ghost" href="/tutoring#book-private-class">Book private class</a>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section-sm">
-    <div class="surface funnel-section">
-      <h2 style="margin-top: 0;">Why your writing score is not improving</h2>
-      <ul style="margin: 0; padding-left: 1.2rem;">
-        <li>You do not see your grammar mistakes.</li>
-        <li>You repeat the same structure.</li>
-        <li>You do not know what a high score looks like.</li>
-      </ul>
+    <div class="surface celpip-section">
+      <h2 style="margin-top: 0;">1) CELPIP skill menu</h2>
+      <p class="muted" style="margin-top: 0;">
+        Pick the skill page first. Each page is focused and links to the right support options for that skill.
+      </p>
+      <div class="grid grid-2 celpip-grid">
+        {skillCards.map((skill) => (
+          <a class="card celpip-link-card" href={skill.href}>
+            <span class="pill celpip-pill">{skill.badge}</span>
+            <h3>{skill.title}</h3>
+            <p class="muted">{skill.description}</p>
+            <span class="celpip-link-card__cta">{skill.cta}</span>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
   <section class="section-sm">
-    <div class="surface funnel-section">
-      <h2 style="margin-top: 0;">Who this is for</h2>
-      <ul style="margin: 0; padding-left: 1.2rem;">
-        <li>You are stuck at CLB 6 or 7.</li>
-        <li>Your writing score is lower than other skills.</li>
-        <li>You do not know what mistakes you make.</li>
-      </ul>
+    <div class="surface celpip-section">
+      <h2 style="margin-top: 0;">2) All CELPIP services</h2>
+      <p class="muted" style="margin-top: 0;">
+        Every active CELPIP-related service is listed here for one-click access.
+      </p>
+      <div class="grid grid-3 celpip-grid celpip-grid-services">
+        {celpipServices.map((service) => (
+          <a class="card celpip-link-card" href={service.href}>
+            <h3>{service.title}</h3>
+            <p class="muted">{service.description}</p>
+            <span class="celpip-link-card__cta">{service.cta}</span>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
   <section class="section-sm">
     <div class="surface funnel-final-cta">
-      <p class="offer-card__label">Start here</p>
-      <h2 style="margin-top: 0;">Start here (recommended)</h2>
-      <ul style="margin: var(--s-2) auto 0; max-width: 36rem; text-align: left; padding-left: 1.2rem;">
-        <li>Step 1: Upload your writing.</li>
-        <li>Step 2: See your mistakes.</li>
-        <li>Step 3: Fix them and improve.</li>
-      </ul>
-      <a class="btn btn-primary" href="/celpip/writing" style="margin-top: var(--s-4);">See your mistakes before your next test</a>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="surface funnel-section">
-      <h2 style="margin-top: 0;">Need help with speaking, reading, or listening?</h2>
-      <p class="muted" style="margin-bottom: 0;">Book one class and get direct correction.</p>
-      <a class="btn btn-ghost" href="/tutoring#book-private-class" style="margin-top: var(--s-3);">Book a CELPIP class</a>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="surface funnel-section funnel-section--quiet">
-      <h2 style="margin-top: 0;">Need live help this week?</h2>
-      <p class="muted" style="margin-bottom: 0;">
-        Join this Saturday's CELPIP webinar to fix common writing and speaking mistakes with live explanation and questions.
-      </p>
-      <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">
-        This Saturday at 6:00 PM (PST)
-      </p>
-      <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">
-        Weekly seats are limited.
-      </p>
-      <a class="btn btn-ghost" href="/webinar" style="margin-top: var(--s-3);">Join this Saturday's CELPIP webinar</a>
+      <p class="offer-card__label">Fast path</p>
+      <h2 style="margin-top: 0;">Need writing support first?</h2>
+      <p>Use the writing hub to see all writing services on one page.</p>
+      <a class="btn btn-primary" href="/celpip/writing">Open CELPIP writing services</a>
     </div>
   </section>
 </Layout>
+
+<style>
+  .celpip-section {
+    padding: var(--s-5);
+  }
+
+  .celpip-grid {
+    gap: var(--s-3);
+    margin-top: var(--s-3);
+  }
+
+  .celpip-grid-services {
+    align-items: stretch;
+  }
+
+  .celpip-link-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
+  }
+
+  .celpip-link-card h3 {
+    margin: 0;
+    color: var(--text);
+  }
+
+  .celpip-link-card p {
+    margin: 0;
+  }
+
+  .celpip-link-card:hover,
+  .celpip-link-card:focus-visible {
+    border-color: color-mix(in srgb, var(--accent) 55%, var(--border) 45%);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+
+  .celpip-pill {
+    width: fit-content;
+  }
+
+  .celpip-link-card__cta {
+    margin-top: auto;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  @media (max-width: 960px) {
+    .celpip-grid-services {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 700px) {
+    .celpip-section {
+      padding: var(--s-4);
+    }
+
+    .celpip-grid,
+    .celpip-grid-services {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

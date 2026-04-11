@@ -176,7 +176,7 @@ const serviceLink: ServiceLink = likelyCelpip
   ? {
       title: "CELPIP Writing Help",
       href: "/celpip-writing-help",
-      description: "Reach CLB 9 faster with live training, tutoring, and essay correction.",
+      description: "Reach CLB 9 faster with AI writing feedback and targeted tutoring.",
     }
   : {
       title: "IELTS Writing Help",
@@ -236,44 +236,44 @@ const leadMagnetBlock: LeadMagnetBlock | null = readingRescueLesson
 const midLessonCta: CtaBlock = isWritingLesson
   ? likelyCelpip
     ? {
-        kicker: "CELPIP Writing Rescue",
-        text: "Want direct feedback on your CELPIP writing? Get one essay corrected with score-focused comments.",
-        href: "/essay-correction?src=lesson-mid-celpip-writing",
-        offer: "essay_correction",
+        kicker: "CELPIP AI Writing Feedback",
+        text: "Practice under timed conditions and get instant CLB scoring on your CELPIP writing.",
+        href: "/ai-feedback",
+        offer: "ai_feedback",
       }
     : {
-        kicker: "IELTS Writing Rescue",
-        text: "Get Band 7+ writing feedback on one essay and stop repeating hidden scoring mistakes.",
-        href: "/essay-correction?src=lesson-mid-ielts-writing",
-        offer: "essay_correction",
+        kicker: "AI Writing Feedback",
+        text: "Practice under timed conditions and get instant AI scoring on your writing.",
+        href: "/ai-feedback",
+        offer: "ai_feedback",
       }
   : likelyCelpip
     ? {
         kicker: "Live CELPIP Support",
-        text: "Fix your next CELPIP weak point in this week's live training session.",
-        href: "/webinar?src=lesson-mid-celpip",
-        offer: "weekly_training",
+        text: "Book a focused 1:1 session to fix your next CELPIP weak point.",
+        href: "/tutoring?src=lesson-mid-celpip",
+        offer: "tutoring",
       }
     : {
         kicker: "Live IELTS Support",
-        text: "Join live training to fix the patterns that keep your IELTS score from moving.",
-        href: "/webinar?src=lesson-mid-ielts",
-        offer: "weekly_training",
+        text: "Book a focused 1:1 session to fix the patterns that keep your IELTS score from moving.",
+        href: "/tutoring?src=lesson-mid-ielts",
+        offer: "tutoring",
       };
 
 const endLessonCta: CtaBlock = isWritingLesson
   ? likelyCelpip
     ? {
-        kicker: "Personal Essay Feedback",
-        text: "Submit one CELPIP essay for detailed grammar, structure, and score-focused correction.",
-        href: "/essay-correction?src=lesson-end-celpip-writing",
-        offer: "essay_correction",
+        kicker: "Practice with AI Feedback",
+        text: "Apply what you just learned. Write under exam conditions and get an instant CLB score.",
+        href: "/ai-feedback",
+        offer: "ai_feedback",
       }
     : {
-        kicker: "Personal Essay Feedback",
-        text: "Submit one IELTS essay for detailed grammar, structure, and Band-focused correction.",
-        href: "/essay-correction?src=lesson-end-ielts-writing",
-        offer: "essay_correction",
+        kicker: "Practice with AI Feedback",
+        text: "Apply what you just learned. Write under timed conditions and get instant AI scoring.",
+        href: "/ai-feedback",
+        offer: "ai_feedback",
       }
   : likelyCelpip
     ? {

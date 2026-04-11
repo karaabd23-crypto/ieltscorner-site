@@ -1,6 +1,8 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import SkillFreeLessons from "../../../components/SkillFreeLessons.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import SkillSubNav from "../../../components/SkillSubNav.astro";
 import { buildBreadcrumbSchema } from "../../../lib/seo";
 
 const pageStructuredData = [
@@ -18,6 +20,13 @@ const pageStructuredData = [
   keywords="IELTS reading help, IELTS reading coaching, IELTS private class"
   structuredData={pageStructuredData}
 >
+  <Breadcrumbs items={[
+    { label: "Home", href: "/" },
+    { label: "IELTS", href: "/ielts" },
+    { label: "Reading" },
+  ]} />
+  <SkillSubNav exam="IELTS" currentSkill="reading" />
+
   <section class="section">
     <div class="hero funnel-hero" style={`--hero-bg: url('/heroes/reading.png');`}>
       <div class="hero-content funnel-hero__content">
@@ -34,17 +43,6 @@ const pageStructuredData = [
     </div>
   </section>
 
-  <section class="section-sm">
-    <div class="surface funnel-section">
-      <h2 style="margin-top: 0;">What this class helps you fix</h2>
-      <ul style="margin: 0; padding-left: 1.2rem;">
-        <li>Running out of time in Passage 3.</li>
-        <li>Confusion with True/False/Not Given and matching tasks.</li>
-        <li>Wrong answers caused by paraphrase traps.</li>
-      </ul>
-    </div>
-  </section>
-
   <SkillFreeLessons exam="IELTS" skill="reading" />
 
   <section class="section-sm">
@@ -57,3 +55,4 @@ const pageStructuredData = [
     </div>
   </section>
 </Layout>
+

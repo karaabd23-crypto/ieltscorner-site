@@ -4,6 +4,7 @@ import {
   CELPIP_PROMPT_TOTAL,
   CELPIP_WRITING_BILLING_INTERVAL,
   CELPIP_WRITING_PRODUCT_NAME,
+  getPromptSampleResponses,
 } from '../../src/lib/celpipWritingData.mjs';
 
 const STRIPE_API_KEY = process.env.STRIPE_API_KEY;
@@ -18,6 +19,9 @@ function extractId(value) {
 }
 
 function sanitizePrompt(prompt) {
+  const sampleResponses = getPromptSampleResponses(prompt);
+  const sampleResponse = sampleResponses.clb9 || sampleResponses.clb7 || sampleResponses.clb11 || sampleResponses.clb5 || '';
+
   return {
     id: prompt.id,
     title: prompt.title,
@@ -25,7 +29,8 @@ function sanitizePrompt(prompt) {
     question: prompt.question || '',
     instructions: Array.isArray(prompt.instructions) ? prompt.instructions : [],
     options: Array.isArray(prompt.options) ? prompt.options : [],
-    sampleResponse: prompt.sampleResponse || '',
+    sampleResponse,
+    sampleResponses,
     sampleLevel: prompt.sampleLevel || '',
     sampleLevelWhy: Array.isArray(prompt.sampleLevelWhy) ? prompt.sampleLevelWhy : [],
   };

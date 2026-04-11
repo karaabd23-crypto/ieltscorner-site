@@ -1,6 +1,73 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import SkillSubNav from "../../../components/SkillSubNav.astro";
 import { buildBreadcrumbSchema } from "../../../lib/seo";
+
+const writingServices = [
+  {
+    title: "AI Writing Feedback Hub",
+    description: "Practice Task 1 and Task 2 in the CELPIP writing lab with timer, score report, and revision guidance.",
+    href: "/ai-feedback",
+    cta: "Start AI feedback",
+    tag: "Core",
+  },
+  {
+    title: "100 Writing Sample Essays",
+    description: "Access the CELPIP Task 1 and Task 2 sample library to study strong model responses.",
+    href: "/celpip/writing/samples",
+    cta: "Open sample library",
+    tag: "Core",
+  },
+  {
+    title: "Private Writing Class",
+    description: "Book one-to-one writing coaching to fix your exact Task 1 and Task 2 weak points.",
+    href: "/tutoring#book-private-class",
+    cta: "Book private class",
+    tag: "Live",
+  },
+  {
+    title: "CELPIP Writing Help",
+    description: "Use the focused writing landing path if you want a faster start point before practice.",
+    href: "/celpip-writing-help",
+    cta: "Open writing help",
+    tag: "Path",
+  },
+  {
+    title: "Free Writing Lessons",
+    description: "Open writing lessons immediately for extra grammar, structure, and task-response practice.",
+    href: "/lessons/writing",
+    cta: "Open writing lessons",
+    tag: "Free",
+  },
+];
+
+const writingResources = [
+  {
+    title: "Task 1 Email Guide",
+    href: "/blog/celpip-writing-task-1-email",
+  },
+  {
+    title: "Task 1 Templates",
+    href: "/blog/celpip-writing-task-1-templates",
+  },
+  {
+    title: "Task 2 Survey Response Guide",
+    href: "/blog/celpip-writing-task-2-survey-response",
+  },
+  {
+    title: "Task 2 Templates",
+    href: "/blog/celpip-writing-task-2-templates",
+  },
+  {
+    title: "CELPIP Sample Answers Overview",
+    href: "/blog/celpip-sample-answers",
+  },
+  {
+    title: "CLB 9 Strategy Guide",
+    href: "/celpip/clb-9-strategy",
+  },
+];
 
 const pageStructuredData = [
   buildBreadcrumbSchema(Astro.site, [
@@ -12,55 +79,157 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="CELPIP Writing Hub | Fix Writing Mistakes"
-  description="CELPIP writing hub with one clear path to AI writing feedback."
-  keywords="CELPIP writing, CELPIP writing feedback, CLB 9 CELPIP writing"
+  title="CELPIP Writing Hub | All Writing Services"
+  description="One-page CELPIP writing hub with direct links to all writing services, including AI feedback, sample essays, correction, and live support."
+  keywords="CELPIP writing, CELPIP writing services, CELPIP task 1, CELPIP task 2, CELPIP writing feedback"
   structuredData={pageStructuredData}
 >
+  <Breadcrumbs items={[
+    { label: "Home", href: "/" },
+    { label: "CELPIP", href: "/celpip" },
+    { label: "Writing" },
+  ]} />
+  <SkillSubNav exam="CELPIP" currentSkill="writing" />
+
   <section class="section">
-    <div class="hero" style={`--hero-bg: url('/heroes/writing.png');`}>
-      <div class="hero-content">
-        <span class="pill">CELPIP writing</span>
-        <h1>Your CELPIP writing score is stuck. Here is why.</h1>
+    <div class="hero funnel-hero" style={`--hero-bg: url('/heroes/writing.png');`}>
+      <div class="hero-content funnel-hero__content">
+        <span class="pill">CELPIP writing hub</span>
+        <h1>All CELPIP writing services on one page</h1>
+        <p class="muted">
+          You do not need to navigate deeper to find services. Use the cards below to open any writing service directly.
+        </p>
+        <div class="funnel-hero__actions">
+          <a class="btn btn-primary" href="/ai-feedback">Start AI writing feedback</a>
+          <a class="btn btn-ghost" href="/celpip/writing/samples">Open sample essays</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface writing-map">
+      <h2 style="margin-top: 0;">CELPIP writing service map</h2>
+      <p class="muted" style="margin-top: 0;">
+        Every active writing service is listed here for direct access.
+      </p>
+      <div class="grid grid-2 writing-services-grid">
+        {writingServices.map((service) => (
+          <a class="card writing-link-card" href={service.href}>
+            <div class="writing-link-card__head">
+              <span class="pill writing-link-card__tag">{service.tag}</span>
+              <h3>{service.title}</h3>
+            </div>
+            <p class="muted">{service.description}</p>
+            <span class="writing-link-card__cta">{service.cta}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface writing-map writing-map--quiet">
+      <h2 style="margin-top: 0;">Task 1 and Task 2 support resources</h2>
+      <p class="muted" style="margin-top: 0;">
+        If you want extra guidance before paid services, these links take you directly to writing strategy pages.
+      </p>
+      <div class="grid grid-3 writing-resources-grid">
+        {writingResources.map((resource) => (
+          <a class="card writing-resource-card" href={resource.href}>
+            <h3>{resource.title}</h3>
+            <span class="writing-link-card__cta">Open resource</span>
+          </a>
+        ))}
       </div>
     </div>
   </section>
 
   <section class="section-sm">
     <div class="surface funnel-section">
-      <h2 style="margin-top: 0;">Why your writing score is not improving</h2>
-      <ul style="margin: 0; padding-left: 1.2rem;">
-        <li>You do not see your grammar mistakes.</li>
-        <li>You repeat the same structure.</li>
-        <li>You do not know what a high score looks like.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="surface funnel-final-cta">
-      <p class="offer-card__label">Main action</p>
-      <h2 style="margin-top: 0;">Get feedback on your writing</h2>
-      <p>Upload your essay and see your mistakes in minutes.</p>
-      <a class="btn btn-primary" href="/ai-feedback">See your mistakes before your next test</a>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="surface funnel-section" style="opacity: 0.88;">
-      <h2 style="margin-top: 0;">Free lessons (optional)</h2>
-      <p class="muted" style="margin: 0;">
-        Study free writing lessons first if you are not ready to pay.
-      </p>
-      <a class="btn btn-ghost" href="/lessons/writing" style="margin-top: var(--s-3);">Open free writing lessons</a>
-    </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="surface funnel-section">
-      <h2 style="margin-top: 0;">Need another skill page?</h2>
-      <p class="muted" style="margin-top: 0;">You can return to the CELPIP main page.</p>
-      <a class="btn btn-ghost" href="/celpip">Go back to CELPIP main page</a>
+      <h2 style="margin-top: 0;">Need another CELPIP skill?</h2>
+      <p class="muted" style="margin-top: 0;">Go back to the CELPIP hub to open Listening, Reading, or Speaking support.</p>
+      <a class="btn btn-ghost" href="/celpip">Back to CELPIP hub</a>
     </div>
   </section>
 </Layout>
+
+<style>
+  .writing-map {
+    padding: var(--s-5);
+  }
+
+  .writing-map--quiet {
+    opacity: 0.97;
+  }
+
+  .writing-services-grid,
+  .writing-resources-grid {
+    gap: var(--s-3);
+    margin-top: var(--s-3);
+    align-items: stretch;
+  }
+
+  .writing-link-card,
+  .writing-resource-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
+  }
+
+  .writing-link-card:hover,
+  .writing-link-card:focus-visible,
+  .writing-resource-card:hover,
+  .writing-resource-card:focus-visible {
+    border-color: color-mix(in srgb, var(--accent) 55%, var(--border) 45%);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+
+  .writing-link-card__head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2);
+    align-items: center;
+  }
+
+  .writing-link-card__head h3,
+  .writing-resource-card h3 {
+    margin: 0;
+    color: var(--text);
+  }
+
+  .writing-link-card p {
+    margin: 0;
+  }
+
+  .writing-link-card__tag {
+    width: fit-content;
+  }
+
+  .writing-link-card__cta {
+    margin-top: auto;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  @media (max-width: 960px) {
+    .writing-resources-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 700px) {
+    .writing-map {
+      padding: var(--s-4);
+    }
+
+    .writing-services-grid,
+    .writing-resources-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

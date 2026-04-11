@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { buildBreadcrumbSchema } from "../../lib/seo";
 
 const pageStructuredData = [
@@ -16,6 +17,11 @@ const pageStructuredData = [
   keywords="IELTS preparation, IELTS listening, IELTS reading, IELTS writing, IELTS speaking"
   structuredData={pageStructuredData}
 >
+  <Breadcrumbs items={[
+    { label: "Home", href: "/" },
+    { label: "IELTS" },
+  ]} />
+
   <section class="section">
     <div class="hero funnel-hero" style={`--hero-bg: url('/heroes/IELTS.png');`}>
       <div class="hero-content funnel-hero__content">
@@ -58,6 +64,44 @@ const pageStructuredData = [
           <h3 class="offer-card__name">Speaking</h3>
           <p class="offer-card__line">Build clear answers and stronger fluency for all parts.</p>
           <span class="btn btn-ghost">Open Speaking Path</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface funnel-section">
+      <h2 style="margin-top: 0;">IELTS support services</h2>
+      <p class="muted" style="margin-top: 0;">
+        Choose the service that matches your current need.
+      </p>
+      <div class="offer-grid" style="margin-top: var(--s-3);">
+        <a class="offer-card" href="/ai-feedback" style="text-decoration: none; color: inherit;">
+          <p class="offer-card__label">Writing</p>
+          <h3 class="offer-card__name">AI Writing Feedback</h3>
+          <p class="offer-card__line">Practice under timed conditions and get instant AI-scored feedback.</p>
+          <span class="btn btn-ghost">Start AI Feedback</span>
+        </a>
+
+        <a class="offer-card" href="/tutoring#book-private-class" style="text-decoration: none; color: inherit;">
+          <p class="offer-card__label">Live support</p>
+          <h3 class="offer-card__name">Private Class</h3>
+          <p class="offer-card__line">One-to-one support for any skill: listening, reading, writing, or speaking.</p>
+          <span class="btn btn-ghost">Book Private Class</span>
+        </a>
+
+        <a class="offer-card" href="/ielts-writing-help" style="text-decoration: none; color: inherit;">
+          <p class="offer-card__label">Quick start</p>
+          <h3 class="offer-card__name">IELTS Writing Help</h3>
+          <p class="offer-card__line">A focused path for writing improvement with correction and feedback.</p>
+          <span class="btn btn-ghost">Open Writing Help</span>
+        </a>
+
+        <a class="offer-card" href="/lessons" style="text-decoration: none; color: inherit;">
+          <p class="offer-card__label">Free</p>
+          <h3 class="offer-card__name">Free Lessons</h3>
+          <p class="offer-card__line">Grammar, vocabulary, writing, and speaking lessons with search and filters.</p>
+          <span class="btn btn-ghost">Browse Free Lessons</span>
         </a>
       </div>
     </div>

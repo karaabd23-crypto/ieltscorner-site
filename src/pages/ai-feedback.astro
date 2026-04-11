@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     question: "What do I get after subscribing?",
-    answer: `Full access to all Task 1 and Task 2 practice prompts, unlimited AI evaluations with CLB scoring, and saved sample response bands inside each task.`,
+    answer: `Full access to all Task 1 and Task 2 practice prompts, AI evaluations with CLB scoring, and saved sample response bands inside each task.`,
   },
   {
     question: "Can I cancel anytime?",
@@ -66,21 +66,16 @@ const faqs = [
   </section>
 
   <section class="section-sm" style="padding-top: 0;">
-    <div class="container">
-      <CelpipPracticeHub />
+    <div class="container" style="margin-bottom: var(--s-3);">
+      <p class="muted" style="margin: 0; max-width: 72ch;">
+        This tool supports writing development through structured feedback and guided revision, not just a score.
+      </p>
     </div>
   </section>
 
-  <section class="section-sm">
-    <div class="surface funnel-section funnel-section--quiet">
-      <h2 style="margin-top: 0;">Need live explanation and the chance to ask questions?</h2>
-      <p class="muted" style="margin-bottom: 0;">
-        Join the weekly CELPIP webinar if you want guided help, not just written feedback.
-      </p>
-      <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">
-        This Saturday at 6:00 PM (PST) &mdash; weekly seats are limited.
-      </p>
-      <a class="btn btn-ghost" href="/webinar" style="margin-top: var(--s-3);">Join the CELPIP webinar</a>
+  <section class="section-sm" style="padding-top: 0;">
+    <div class="container">
+      <CelpipPracticeHub />
     </div>
   </section>
 
@@ -94,6 +89,21 @@ const faqs = [
             <p class="muted" style="margin: var(--s-2) 0 0;">{faq.answer}</p>
           </details>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface funnel-section funnel-section--quiet">
+      <h2 style="margin-top: 0;">Not ready to start writing practice yet?</h2>
+      <p class="muted" style="margin-top: 0; max-width: 62ch;">
+        Explore free lessons first, or choose another support option.
+      </p>
+      <div class="cluster" style="margin-top: var(--s-3);">
+        <a class="btn" href="/lessons">Browse free lessons</a>
+        <a class="btn" href="/celpip">CELPIP Hub</a>
+        <a class="btn" href="/ielts">IELTS Hub</a>
+        <a class="btn" href="/tutoring">Private tutoring</a>
       </div>
     </div>
   </section>

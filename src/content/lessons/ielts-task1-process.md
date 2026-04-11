@@ -220,11 +220,6 @@ quiz:
     <p class="lesson-support-copy">Choose the support that matches your study goal. You get direct correction, clear scoring language, and a simple next step.</p>
   </div>
   <div class="lesson-support-grid">
-    <a class="lesson-support-card lesson-support-card-essay" href="/essay-correction">
-      <span class="lesson-support-icon" aria-hidden="true">A+</span>
-      <strong>Essay Correction</strong>
-      <span>Detailed comments on one draft with band-style scoring.</span>
-    </a>
     <a class="lesson-support-card lesson-support-card-tutoring" href="/tutoring">
       <span class="lesson-support-icon" aria-hidden="true">1:1</span>
       <strong>1-on-1 Tutoring</strong>
@@ -234,11 +229,6 @@ quiz:
       <span class="lesson-support-icon" aria-hidden="true">AI</span>
       <strong>AI Writing Feedback</strong>
       <span>Quick checks when you want to test ideas before a full review.</span>
-    </a>
-    <a class="lesson-support-card lesson-support-card-webinar" href="/webinar">
-      <span class="lesson-support-icon" aria-hidden="true">Live</span>
-      <strong>Weekly Webinar</strong>
-      <span>Join a guided session and learn with real exam-style examples.</span>
     </a>
   </div>
   <p class="lesson-support-best">Best when you need detailed scoring guidance on overview control, sequencing, and process language.</p>

@@ -305,6 +305,24 @@ const taskConfig = CELPIP_TASK_CONFIG;
         return text.split(/\s+/).filter(Boolean).length;
       };
 
+      const getPromptSampleResponses = (prompt) => {
+        const samples = prompt?.sampleResponses && typeof prompt.sampleResponses === 'object'
+          ? prompt.sampleResponses
+          : {};
+
+        return {
+          clb5: String(samples.clb5 || '').trim(),
+          clb7: String(samples.clb7 || '').trim(),
+          clb9: String(samples.clb9 || prompt?.sampleResponse || '').trim(),
+          clb11: String(samples.clb11 || '').trim(),
+        };
+      };
+
+      const getPrimarySampleResponse = (prompt) => {
+        const samples = getPromptSampleResponses(prompt);
+        return samples.clb9 || samples.clb7 || samples.clb11 || samples.clb5 || '';
+      };
+
       const currentPrompt = () => promptBank[activeTask][activePromptIndex];
 
       const renderPrompt = () => {
@@ -316,8 +334,9 @@ const taskConfig = CELPIP_TASK_CONFIG;
         if (promptText) {
           promptText.textContent = prompt.scenario || prompt.question || '';
         }
+        const primarySample = getPrimarySampleResponse(prompt);
         if (sampleResponseText) {
-          sampleResponseText.textContent = prompt.sampleResponse || '';
+          sampleResponseText.textContent = primarySample;
         }
         if (sampleResponseLevel) {
           sampleResponseLevel.textContent = prompt.sampleLevel
@@ -334,7 +353,7 @@ const taskConfig = CELPIP_TASK_CONFIG;
           });
         }
         if (sampleResponseWrap) {
-          sampleResponseWrap.style.display = prompt.sampleResponse ? 'block' : 'none';
+          sampleResponseWrap.style.display = primarySample ? 'block' : 'none';
         }
         if (promptPoints) {
           promptPoints.innerHTML = '';
@@ -479,8 +498,9 @@ const taskConfig = CELPIP_TASK_CONFIG;
 
       const renderSampleCard = (prompt) => {
         if (!resultsSampleCard) return;
+        const primarySample = getPrimarySampleResponse(prompt);
 
-        if (!prompt?.sampleResponse) {
+        if (!primarySample) {
           resultsSampleCard.innerHTML = '<p class="muted" style="margin: 0;">No model answer is available for this prompt yet.</p>';
           return;
         }
@@ -520,7 +540,7 @@ const taskConfig = CELPIP_TASK_CONFIG;
         const sampleText = document.createElement('p');
         sampleText.style.margin = '0';
         sampleText.style.whiteSpace = 'pre-line';
-        sampleText.textContent = prompt.sampleResponse;
+        sampleText.textContent = primarySample;
         resultsSampleCard.appendChild(sampleText);
       };
 
@@ -592,7 +612,7 @@ const taskConfig = CELPIP_TASK_CONFIG;
         renderLessonCards(report.lessonRecommendations);
         renderResultsList(resultsSteps, report.nextPracticeSteps);
 
-        if (prompt?.sampleResponse) {
+        if (getPrimarySampleResponse(prompt)) {
           openSampleForComparison({ scroll: false });
           if (resultsCard instanceof HTMLElement) {
             resultsCard.scrollIntoView({ behavior: 'smooth', block: 'start' });

@@ -35,9 +35,7 @@ const robotsContent = noindex ? "noindex, nofollow" : "index, follow";
 const normalizedPath = Astro.url.pathname.replace(/\/$/, "") || "/";
 const isPrePaymentPath =
   normalizedPath === "/ai-feedback" ||
-  normalizedPath.startsWith("/webinar") ||
   normalizedPath.startsWith("/tutoring") ||
-  normalizedPath.startsWith("/essay-correction") ||
   normalizedPath.startsWith("/ai-feedback");
 const isExamSkillPath =
   ((normalizedPath.startsWith("/celpip/") && normalizedPath !== "/celpip") ||
@@ -60,9 +58,6 @@ const isGuidedPath =
   normalizedPath.startsWith("/ielts/") ||
   normalizedPath === "/tutoring" ||
   normalizedPath.startsWith("/tutoring/") ||
-  normalizedPath === "/webinar" ||
-  normalizedPath.startsWith("/webinar/") ||
-  normalizedPath.startsWith("/essay-correction") ||
   normalizedPath === "/celpip-writing-help" ||
   normalizedPath === "/ielts-writing-help" ||
   normalizedPath.startsWith("/contact/");
@@ -71,20 +66,14 @@ const reduceFunnelDistractions =
   normalizedPath === "/contact";
 
 const focusHeaderCta = (() => {
-  if (normalizedPath.startsWith("/webinar")) {
-    return { href: "/webinar#register-webinar", label: "Register Webinar" };
-  }
   if (normalizedPath.startsWith("/tutoring")) {
     return { href: "/tutoring#book-private-class", label: "Book Private Class" };
-  }
-  if (normalizedPath.startsWith("/essay-correction")) {
-    return { href: "/essay-correction#start-checkout", label: "Go to Checkout" };
   }
   if (normalizedPath === "/ai-feedback") {
     return { href: "/ai-feedback#buy-writing-lab", label: "Get AI Writing Access" };
   }
   if (normalizedPath === "/ielts-writing-help") {
-    return { href: "/essay-correction#start-checkout", label: "Submit Essay for Feedback" };
+    return { href: "/ai-feedback", label: "Try AI Writing Feedback" };
   }
   if (normalizedPath === "/celpip-writing-help") {
     return { href: "/ai-feedback", label: "Go to AI Feedback" };
@@ -106,7 +95,7 @@ const focusHeaderCta = (() => {
     return null;
   }
   if (normalizedPath.startsWith("/ielts/writing")) {
-    return { href: "/essay-correction#start-checkout", label: "Submit Essay for Feedback" };
+    return { href: "/ai-feedback", label: "Try AI Writing Feedback" };
   }
   if (
     normalizedPath.startsWith("/ielts/listening") ||
@@ -134,7 +123,7 @@ const reducedNavLinks: ReducedNavLink[] = (() => {
   if (normalizedPath.startsWith("/ielts")) {
     return [
       { href: "/ielts", label: "IELTS", isActive: isPathActive("/ielts") },
-      { href: "/essay-correction", label: "Essay Feedback", isActive: isPathActive("/essay-correction") },
+      { href: "/ai-feedback", label: "AI Writing Feedback", isActive: isPathActive("/ai-feedback") },
       { href: "/tutoring", label: "Private Class", isActive: isPathActive("/tutoring") },
     ];
   }
@@ -169,14 +158,13 @@ const highIntentTrackingPaths = new Set([
   "/celpip/reading/clb-6-to-8",
   "/celpip-writing-help",
   "/ielts-writing-help",
-  "/essay-correction",
-  "/essay-correction/submit",
+  "/ai-feedback",
 ]);
 
 const inferTrackingPageType = (path: string) => {
   if (path.startsWith("/lessons/")) return "lesson";
   if (path.startsWith("/blog/")) return "blog";
-  if (path.includes("-help") || path.startsWith("/essay-correction") || path.startsWith("/tutoring") || path.startsWith("/webinar")) return "landing";
+  if (path.includes("-help") || path.startsWith("/tutoring")) return "landing";
   if (path.startsWith("/celpip/") || path.startsWith("/ielts/")) return "hub";
   return "site";
 };
@@ -217,6 +205,7 @@ const navGroups = [
       { label: 'Reading', href: '/ielts/reading' },
       { label: 'Writing', href: '/ielts/writing' },
       { label: 'Speaking', href: '/ielts/speaking' },
+      { label: 'IELTS Writing Help', href: '/ielts-writing-help' },
     ],
   },
   {
@@ -238,9 +227,8 @@ const navGroups = [
     href: '/tutoring',
     items: [
       { label: 'Tutoring', href: '/tutoring' },
-      { label: 'Essay correction', href: '/essay-correction' },
+      { label: 'AI Writing Lab', href: '/ai-feedback' },
       { label: 'eBook', href: '/ebook' },
-      { label: 'Weekly webinar', href: '/webinar' },
     ],
   },
   {
@@ -363,8 +351,9 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
       </>
     )}
 
-    <!-- Calendly popup support -->
+    <!-- Calendly popup support (disabled while webinar is inactive)
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+    -->
     <style is:inline>
       /* Hide the Calendly auto-badge entirely. we use our own button */
       .calendly-badge-widget { display: none !important; }
@@ -415,12 +404,12 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
         .floating-cta-btn--right { right: 16px; }
       }
     </style>
+    <!-- Calendly widget disabled while webinar is inactive
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async is:inline></script>
     <script is:inline>
       window.addEventListener('load', () => {
         const allowBadge = document.body?.dataset.mainPage === '1';
         if (!allowBadge || window.__ieltscornerCalendlyBadgeInit) return;
-        // Still init the badge so popup works, but it's hidden via CSS
         if (window.Calendly) {
           window.Calendly.initBadgeWidget({
             url: "https://calendly.com/ieltscorner/weekly_webinar",
@@ -433,6 +422,7 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
         window.__ieltscornerCalendlyBadgeInit = true;
       });
     </script>
+    -->
   </head>
 
   <body
@@ -442,6 +432,8 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
     data-test={trackingTest}
     data-skill={trackingSkill}
   >
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
     <form
       name="subscription-cancel-feedback"
       method="POST"
@@ -468,12 +460,9 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
     {showTopDrawerBanner && (
       <div class="top-drawer-banner" style="position: relative; z-index: 40; background: transparent; color: var(--accent); padding: 12px 0; text-align: center; border-bottom: 2px solid var(--accent);">
         <div class="container" style="display: flex; align-items: center; justify-content: center; gap: var(--s-2); flex-wrap: wrap;">
-          <span style="font-size: 14px;"><strong>Weekly webinar | 100 CELPIP writing prompts + sample responses for CA$5/month</strong></span>
-          <a href="/webinar" style="color: var(--accent); font-weight: 700; font-size: 13px; text-decoration: none; background: transparent; border: 1.5px solid var(--accent); padding: 6px 12px; border-radius: 999px; transition: background 140ms ease, color 140ms ease;">
-            Webinar
-          </a>
+          <span style="font-size: 14px;"><strong>100 CELPIP writing prompts + AI scoring for CA$5/month</strong></span>
           <a href="/ai-feedback" style="color: var(--accent); font-weight: 700; font-size: 13px; text-decoration: none; background: transparent; border: 1.5px solid var(--accent); padding: 6px 12px; border-radius: 999px; transition: background 140ms ease, color 140ms ease;">
-            Writing hub
+            AI Writing Hub
           </a>
           <a href="/celpip/writing/samples" style="color: var(--accent); font-weight: 700; font-size: 13px; text-decoration: none; background: transparent; border: 1.5px solid var(--accent); padding: 6px 12px; border-radius: 999px; transition: background 140ms ease, color 140ms ease;">
             Sample essays
@@ -734,7 +723,7 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
       </div>
     )}
 
-    <main class="site-main">
+    <main id="main-content" class="site-main">
       <div class="container">
         <slot />
 
@@ -761,16 +750,10 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
               <p class="blog-post-cta__label">Need direct feedback?</p>
               <h2>Turn this article into a score plan.</h2>
               <p class="blog-post-cta__copy">
-                Read the guide first. Then choose the support that matches your next step:
-                essay correction, a private class, the AI writing lab, or the weekly webinar.
+                Read the guide first. Then choose the support that matches your next step.
               </p>
             </div>
             <div class="blog-post-cta__grid">
-              <a class="blog-post-cta__card" href="/essay-correction">
-                <span class="blog-post-cta__icon" aria-hidden="true">A+</span>
-                <strong>Essay Correction</strong>
-                <span>Get line-by-line comments and score guidance on one draft.</span>
-              </a>
               <a class="blog-post-cta__card" href="/tutoring">
                 <span class="blog-post-cta__icon" aria-hidden="true">1:1</span>
                 <strong>Private Tutoring</strong>
@@ -780,11 +763,6 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
                 <span class="blog-post-cta__icon" aria-hidden="true">AI</span>
                 <strong>AI Writing Lab</strong>
                 <span>Practice under time pressure and get instant writing analysis.</span>
-              </a>
-              <a class="blog-post-cta__card" href="/webinar">
-                <span class="blog-post-cta__icon" aria-hidden="true">Live</span>
-                <strong>Weekly Webinar</strong>
-                <span>Join a live lesson and study with real exam-style examples.</span>
               </a>
             </div>
           </section>
@@ -827,9 +805,9 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
                   <a href="/lessons">Lessons</a>
                   <a href="/blog">Blog</a>
                   <a href="/tutoring">Tutoring</a>
-                  <a href="/essay-correction">Essay correction</a>
-                  <a href="/webinar">Webinar</a>
+                  <a href="/ai-feedback">AI Writing Lab</a>
                   <a href="/ebook">eBook</a>
+                  <a href="/success-stories">Success Stories</a>
                   <a href="/faq">FAQ</a>
                   <a href="/contact">Contact</a>
                   <a href="/about">About</a>
@@ -1108,15 +1086,6 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
           }
         }
       </style>
-    )}
-
-    {showFloatingWebinarCta && (
-      <button
-        class="floating-cta-btn floating-cta-btn--right"
-        type="button"
-        onclick="window.Calendly ? window.Calendly.initPopupWidget({url:'https://calendly.com/ieltscorner/weekly_webinar'}) : window.open('https://calendly.com/ieltscorner/weekly_webinar','_blank','noopener,noreferrer')"
-        aria-label="Join Weekly Webinar"
-      >🎥 Join Weekly Webinar</button>
     )}
 
     <ConversionTrackingScript />

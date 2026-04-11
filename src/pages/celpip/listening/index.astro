@@ -1,6 +1,8 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import SkillFreeLessons from "../../../components/SkillFreeLessons.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import SkillSubNav from "../../../components/SkillSubNav.astro";
 import { buildBreadcrumbSchema } from "../../../lib/seo";
 
 const pageStructuredData = [
@@ -18,6 +20,13 @@ const pageStructuredData = [
   keywords="CELPIP listening help, CELPIP listening coaching, CELPIP private class"
   structuredData={pageStructuredData}
 >
+  <Breadcrumbs items={[
+    { label: "Home", href: "/" },
+    { label: "CELPIP", href: "/celpip" },
+    { label: "Listening" },
+  ]} />
+  <SkillSubNav exam="CELPIP" currentSkill="listening" />
+
   <section class="section">
     <div class="hero funnel-hero" style={`--hero-bg: url('/heroes/listening.png');`}>
       <div class="hero-content funnel-hero__content">
@@ -34,17 +43,6 @@ const pageStructuredData = [
     </div>
   </section>
 
-  <section class="section-sm">
-    <div class="surface funnel-section">
-      <h2 style="margin-top: 0;">What this class helps you fix</h2>
-      <ul style="margin: 0; padding-left: 1.2rem;">
-        <li>Missing details while trying to write full notes.</li>
-        <li>Choosing early options before the speaker corrects them.</li>
-        <li>Losing marks from spelling and number format errors.</li>
-      </ul>
-    </div>
-  </section>
-
   <SkillFreeLessons exam="CELPIP" skill="listening" />
 
   <section class="section-sm">
@@ -57,3 +55,4 @@ const pageStructuredData = [
     </div>
   </section>
 </Layout>
+

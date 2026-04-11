@@ -123,7 +123,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
     <div class="prompt-top-bar">
       <span class="social-proof" id="hub-submissions-count">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM6 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM1.49 15.326a.78.78 0 0 1-.358-.442 3 3 0 0 1 4.308-3.516 6.484 6.484 0 0 0-1.905 3.959c-.023.222-.014.442.025.654a4.97 4.97 0 0 1-2.07-.655ZM16.44 15.98a4.97 4.97 0 0 0 2.07-.654.78.78 0 0 0 .357-.442 3 3 0 0 0-4.308-3.517 6.484 6.484 0 0 1 1.907 3.96 2.32 2.32 0 0 1-.026.654ZM18 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM5.304 16.19a.844.844 0 0 1-.277-.71 5 5 0 0 1 9.947 0 .843.843 0 0 1-.277.71A6.975 6.975 0 0 1 10 18a6.974 6.974 0 0 1-4.696-1.81Z"/></svg>
-        <span id="hub-count-text">1.1k submitted today</span>
+        <span id="hub-count-text">Get instant AI-assisted feedback on your writing.</span>
       </span>
     </div>
 
@@ -251,10 +251,26 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
         <div class="rewrites-list" id="hub-rewrites-list"></div>
       </div>
 
+      <!-- Next practice steps -->
+      <div id="hub-next-steps-section" style="display:none;">
+        <h4 class="section-subtitle">What to work on next</h4>
+        <ul class="feedback-list" id="hub-next-steps"></ul>
+      </div>
+
       <!-- Lesson recommendations -->
       <div id="hub-lessons-section" style="display:none;">
         <h4 class="section-subtitle">Lessons to help you improve</h4>
         <div class="lessons-grid" id="hub-lessons-grid"></div>
+      </div>
+
+      <!-- Reflection support -->
+      <div class="feedback-col">
+        <h4 class="section-subtitle">Reflect before revising</h4>
+        <ul class="feedback-list">
+          <li>What is the single most important issue to fix first?</li>
+          <li>Which part of your response is already working well?</li>
+          <li>How will you revise your answer based on this feedback?</li>
+        </ul>
       </div>
 
       <!-- Upgrade CTA inside results (for free users) -->
@@ -295,7 +311,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
       </li>
       <li>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd"/></svg>
-        Unlimited AI evaluations with CLB scoring
+        AI evaluations with CLB scoring and targeted feedback
       </li>
       <li>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd"/></svg>
@@ -1938,6 +1954,19 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
         rewritesSection.style.display = '';
       } else if (rewritesSection) {
         rewritesSection.style.display = 'none';
+      }
+
+      // Next practice steps
+      const nextStepsSection = document.getElementById('hub-next-steps-section');
+      const nextStepsList = document.getElementById('hub-next-steps');
+      if (nextStepsSection && nextStepsList && Array.isArray(report.nextPracticeSteps) && report.nextPracticeSteps.length) {
+        nextStepsList.innerHTML = report.nextPracticeSteps
+          .slice(0, 4)
+          .map((step) => `<li>${escHtml(step)}</li>`)
+          .join('');
+        nextStepsSection.style.display = '';
+      } else if (nextStepsSection) {
+        nextStepsSection.style.display = 'none';
       }
 
       // Lesson recommendations

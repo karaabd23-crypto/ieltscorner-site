@@ -2,7 +2,7 @@ import Stripe from 'stripe';
 import {
   CELPIP_WRITING_BILLING_INTERVAL,
   CELPIP_WRITING_PRODUCT_NAME,
-  CELPIP_FREE_TASK_ID,
+  isCelpipFreePrompt,
 } from '../../src/lib/celpipWritingData.mjs';
 import { normalizeCelpipReport } from '../../src/lib/celpipWritingFeedback.mjs';
 import { evaluateCelpipWriting } from '../../src/lib/celpipWritingEvaluator.mjs';
@@ -309,8 +309,13 @@ export async function handler(event) {
     const bypassByLocalhost = ADMIN_BYPASS_TOKEN && isLocalhostRequest(event) && sessionId === 'admin-bypass';
     const isAdminBypass = Boolean(bypassByToken || bypassByLocalhost);
 
-    // Allow the designated free task without a Stripe session
-    const isFreeTaskBypass = isFreeTask === true && promptId === CELPIP_FREE_TASK_ID;
+    // Allow designated free prompts without a Stripe session (Task 1 and Task 2)
+    const isFreePrompt = Boolean(
+      typeof taskType === 'string' &&
+      typeof promptId === 'string' &&
+      isCelpipFreePrompt(taskType, promptId)
+    );
+    const isFreeTaskBypass = isFreeTask === true && isFreePrompt;
 
     if (!isAdminBypass && !isFreeTaskBypass) {
       if (!sessionId) {

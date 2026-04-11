@@ -1,6 +1,8 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import SkillFreeLessons from "../../../components/SkillFreeLessons.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import SkillSubNav from "../../../components/SkillSubNav.astro";
 import { buildBreadcrumbSchema } from "../../../lib/seo";
 
 const pageStructuredData = [
@@ -18,6 +20,13 @@ const pageStructuredData = [
   keywords="IELTS listening help, IELTS listening coaching, IELTS private class"
   structuredData={pageStructuredData}
 >
+  <Breadcrumbs items={[
+    { label: "Home", href: "/" },
+    { label: "IELTS", href: "/ielts" },
+    { label: "Listening" },
+  ]} />
+  <SkillSubNav exam="IELTS" currentSkill="listening" />
+
   <section class="section">
     <div class="hero funnel-hero" style={`--hero-bg: url('/heroes/listening.png');`}>
       <div class="hero-content funnel-hero__content">
@@ -34,17 +43,6 @@ const pageStructuredData = [
     </div>
   </section>
 
-  <section class="section-sm">
-    <div class="surface funnel-section">
-      <h2 style="margin-top: 0;">What this class helps you fix</h2>
-      <ul style="margin: 0; padding-left: 1.2rem;">
-        <li>Missing answers because you preview too late.</li>
-        <li>Losing marks to distractor and correction patterns.</li>
-        <li>Dropping easy points from spelling and transfer errors.</li>
-      </ul>
-    </div>
-  </section>
-
   <SkillFreeLessons exam="IELTS" skill="listening" />
 
   <section class="section-sm">
@@ -57,3 +55,4 @@ const pageStructuredData = [
     </div>
   </section>
 </Layout>
+

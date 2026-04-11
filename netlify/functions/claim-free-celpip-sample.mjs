@@ -1,16 +1,27 @@
 import { createHash } from 'node:crypto';
-import { CELPIP_PROMPT_BANK } from '../../src/lib/celpipWritingData.mjs';
+import {
+  CELPIP_PROMPT_BANK,
+  getPromptSampleResponses,
+} from '../../src/lib/celpipWritingData.mjs';
 
-const allPrompts = [...CELPIP_PROMPT_BANK.task1, ...CELPIP_PROMPT_BANK.task2]
-  .map((prompt) => ({
-    id: prompt.id,
-    title: prompt.title,
-    taskType: prompt.id.startsWith('email-') ? 'task1' : 'task2',
-    scenario: prompt.scenario || prompt.question || '',
-    sampleResponse: prompt.sampleResponse || '',
-    sampleLevel: prompt.sampleLevel || '',
-    sampleLevelWhy: Array.isArray(prompt.sampleLevelWhy) ? prompt.sampleLevelWhy : [],
-  }))
+const allPrompts = [
+  ...CELPIP_PROMPT_BANK.task1.map((prompt) => ({ taskType: 'task1', prompt })),
+  ...CELPIP_PROMPT_BANK.task2.map((prompt) => ({ taskType: 'task2', prompt })),
+]
+  .map(({ taskType, prompt }) => {
+    const sampleResponses = getPromptSampleResponses(prompt);
+    const sampleResponse = sampleResponses.clb9 || sampleResponses.clb7 || sampleResponses.clb11 || sampleResponses.clb5 || '';
+    return {
+      id: prompt.id,
+      title: prompt.title,
+      taskType,
+      scenario: prompt.scenario || prompt.question || '',
+      sampleResponse,
+      sampleResponses,
+      sampleLevel: prompt.sampleLevel || '',
+      sampleLevelWhy: Array.isArray(prompt.sampleLevelWhy) ? prompt.sampleLevelWhy : [],
+    };
+  })
   .filter((prompt) => prompt.sampleResponse);
 
 function normalizeEmail(value) {
@@ -36,6 +47,7 @@ function sanitizePrompt(prompt) {
     taskType: prompt.taskType,
     scenario: prompt.scenario,
     sampleResponse: prompt.sampleResponse,
+    sampleResponses: prompt.sampleResponses,
     sampleLevel: prompt.sampleLevel,
     sampleLevelWhy: prompt.sampleLevelWhy,
   };

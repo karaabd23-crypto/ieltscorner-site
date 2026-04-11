@@ -1,6 +1,8 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import SkillFreeLessons from "../../../components/SkillFreeLessons.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import SkillSubNav from "../../../components/SkillSubNav.astro";
 import { buildBreadcrumbSchema } from "../../../lib/seo";
 
 const pageStructuredData = [
@@ -18,17 +20,24 @@ const pageStructuredData = [
   keywords="IELTS writing, IELTS essay feedback, IELTS writing correction, Band 7 writing"
   structuredData={pageStructuredData}
 >
+  <Breadcrumbs items={[
+    { label: "Home", href: "/" },
+    { label: "IELTS", href: "/ielts" },
+    { label: "Writing" },
+  ]} />
+  <SkillSubNav exam="IELTS" currentSkill="writing" />
+
   <section class="section">
     <div class="hero" style={`--hero-bg: url('/heroes/writing.png');`}>
       <div class="hero-content">
         <span class="pill">IELTS writing</span>
         <h1>Improve your IELTS writing with one clear next step</h1>
         <p class="muted" style="max-width: 62ch;">
-          Stop guessing. Submit one essay and get detailed, score-focused corrections you
-          can apply in your next practice.
+          Stop guessing. Practice under timed conditions and get AI scoring and feedback you
+          can apply in your next draft.
         </p>
         <div class="cluster">
-          <a class="btn btn-primary" href="/essay-correction#start-checkout">Submit Essay for Feedback</a>
+          <a class="btn btn-primary" href="/ai-feedback">Try AI Writing Feedback</a>
         </div>
       </div>
     </div>
@@ -51,7 +60,7 @@ const pageStructuredData = [
     <div class="surface funnel-final-cta">
       <h2 style="margin-top: 0;">Ready to improve your IELTS writing score?</h2>
       <div class="funnel-final-cta__actions">
-        <a class="btn btn-primary" href="/essay-correction#start-checkout">Submit Essay for Feedback</a>
+        <a class="btn btn-primary" href="/ai-feedback">Try AI Writing Feedback</a>
       </div>
     </div>
   </section>

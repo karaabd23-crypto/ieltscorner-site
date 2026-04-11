@@ -175,4 +175,29 @@
 # path = "/scheduled-post-telegram"
 # cron = "0 9,12,15,18,21 * * *"
 
+# Webinar and essay-correction disabled — redirecting to home
+[[redirects]]
+  from = "/webinar"
+  to = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/webinar/*"
+  to = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/essay-correction"
+  to = "/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/essay-correction/*"
+  to = "/"
+  status = 302
+  force = true
+
 # Telegram webhook: Updated 2026-03-04
