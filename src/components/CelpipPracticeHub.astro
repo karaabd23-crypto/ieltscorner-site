@@ -68,6 +68,14 @@ const hubConfig = {
   ),
 };
 
+const serializeInlineJSON = (value) =>
+  JSON.stringify(value)
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e')
+    .replace(/&/g, '\\u0026')
+    .replace(/\u2028/g, '\\u2028')
+    .replace(/\u2029/g, '\\u2029');
+
 const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
 ---
 
@@ -121,9 +129,12 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
   <!-- PROMPT PANEL -->
   <section class="practice-hub__prompt" id="hub-prompt-panel" aria-label="Prompt">
     <div class="prompt-top-bar">
-      <span class="social-proof" id="hub-submissions-count">
+      <span class="social-proof" id="hub-submissions-count" aria-live="polite">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM6 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM1.49 15.326a.78.78 0 0 1-.358-.442 3 3 0 0 1 4.308-3.516 6.484 6.484 0 0 0-1.905 3.959c-.023.222-.014.442.025.654a4.97 4.97 0 0 1-2.07-.655ZM16.44 15.98a4.97 4.97 0 0 0 2.07-.654.78.78 0 0 0 .357-.442 3 3 0 0 0-4.308-3.517 6.484 6.484 0 0 1 1.907 3.96 2.32 2.32 0 0 1-.026.654ZM18 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM5.304 16.19a.844.844 0 0 1-.277-.71 5 5 0 0 1 9.947 0 .843.843 0 0 1-.277.71A6.975 6.975 0 0 1 10 18a6.974 6.974 0 0 1-4.696-1.81Z"/></svg>
-        <span id="hub-count-text">Get instant AI-assisted feedback on your writing.</span>
+        <span class="social-proof__stack">
+          <span class="social-proof__item" id="hub-subscriber-count" style="display:none;"></span>
+          <span class="social-proof__item" id="hub-essays-today-count">0 essays submitted today</span>
+        </span>
       </span>
     </div>
 
@@ -333,9 +344,9 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
 </div>
 
 <!-- Embed all prompt data as JSON for client-side use -->
-<script id="hub-config-data" type="application/json" is:inline set:html={JSON.stringify(hubConfig)}></script>
-<script id="hub-prompt-data" type="application/json" is:inline set:html={JSON.stringify(promptData)}></script>
-<script id="hub-sidebar-data" type="application/json" is:inline set:html={JSON.stringify(CELPIP_TASK_SIDEBARS)}></script>
+<script id="hub-config-data" type="application/json" is:inline set:html={serializeInlineJSON(hubConfig)}></script>
+<script id="hub-prompt-data" type="application/json" is:inline set:html={serializeInlineJSON(promptData)}></script>
+<script id="hub-sidebar-data" type="application/json" is:inline set:html={serializeInlineJSON(CELPIP_TASK_SIDEBARS)}></script>
 
 <style>
   /* ---- Layout ---- */
@@ -393,10 +404,10 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
   .practice-hub {
     display: grid;
     grid-template-columns: 260px 1fr 1fr;
-    min-height: 82vh;
+    align-items: start;
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    overflow: hidden;
+    overflow: visible;
     background: var(--surface);
     box-shadow: var(--shadow-soft);
   }
@@ -405,8 +416,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
   .practice-hub__sidebar {
     background: var(--bg-2);
     border-right: 1px solid var(--border);
-    overflow-y: auto;
-    max-height: 82vh;
+    overflow: visible;
   }
 
   .sidebar-header {
@@ -512,15 +522,14 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
   /* ---- Prompt Panel ---- */
   .practice-hub__prompt {
     border-right: 1px solid var(--border);
-    overflow-y: auto;
-    max-height: 100vh;
+    overflow: visible;
     background: var(--surface);
   }
 
   .prompt-top-bar {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding: var(--s-3) var(--s-4);
     border-bottom: 1px solid var(--border);
     background: var(--bg);
@@ -528,11 +537,12 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
 
   .social-proof {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: var(--s-1);
     font-size: 0.82rem;
     color: var(--muted);
     font-weight: 500;
+    text-align: left;
   }
 
   .social-proof svg {
@@ -540,6 +550,16 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
     height: 14px;
     color: var(--accent);
     flex-shrink: 0;
+  }
+
+  .social-proof__item {
+    white-space: nowrap;
+  }
+
+  .social-proof__stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
   }
 
   .prompt-card {
@@ -770,8 +790,6 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
 
   /* ---- Writing Panel ---- */
   .practice-hub__writing {
-    overflow-y: auto;
-    max-height: 82vh;
     padding: var(--s-4) var(--s-5) var(--s-6);
     display: flex;
     flex-direction: column;
@@ -868,6 +886,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
 
   .writing-textarea {
     width: 100%;
+    min-height: 320px;
     padding: var(--s-3) var(--s-4);
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
@@ -876,7 +895,8 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
     line-height: 1.65;
     color: var(--text);
     background: var(--bg);
-    resize: vertical;
+    resize: none;
+    overflow: hidden;
     transition: border-color 0.12s;
     box-sizing: border-box;
   }
@@ -1415,6 +1435,8 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
     const submitBtn = document.getElementById('hub-submit-btn');
     const writingStatus = document.getElementById('hub-writing-status');
     const writingTitle = document.getElementById('hub-writing-title');
+    const subscriberCountEl = document.getElementById('hub-subscriber-count');
+    const essaysTodayCountEl = document.getElementById('hub-essays-today-count');
     const submitArea = document.getElementById('hub-submit-area');
     const upgradePrompt = document.getElementById('hub-upgrade-prompt');
     const resultsEl = document.getElementById('hub-results');
@@ -1447,6 +1469,56 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
 
     function setModalStatus(msg) {
       if (modalStatus) modalStatus.textContent = msg;
+    }
+
+    function autoResizeTextarea() {
+      if (!(textarea instanceof HTMLTextAreaElement)) return;
+      textarea.style.height = 'auto';
+      const minHeight = 320;
+      textarea.style.height = `${Math.max(textarea.scrollHeight, minHeight)}px`;
+    }
+
+    function formatCount(value) {
+      return new Intl.NumberFormat('en-CA').format(Math.max(0, Number(value) || 0));
+    }
+
+    function renderStatsFallback() {
+      if (subscriberCountEl) {
+        subscriberCountEl.textContent = '';
+        subscriberCountEl.style.display = 'none';
+      }
+      if (essaysTodayCountEl) {
+        essaysTodayCountEl.textContent = '0 essays submitted today';
+      }
+    }
+
+    async function loadUsageStats() {
+      try {
+        const response = await fetch('/.netlify/functions/celpip-writing-stats');
+        if (!response.ok) {
+          throw new Error(`Stats request failed with ${response.status}`);
+        }
+
+        const data = await response.json();
+        const subscribers = Number(data?.subscriberCount);
+        const essaysToday = Number(data?.essaysSubmittedToday);
+
+        if (essaysTodayCountEl) {
+          essaysTodayCountEl.textContent = `${formatCount(essaysToday)} essays submitted today`;
+        }
+
+        if (subscriberCountEl) {
+          if (Number.isFinite(subscribers) && subscribers > 0) {
+            subscriberCountEl.textContent = `${formatCount(subscribers)} subscribers`;
+            subscriberCountEl.style.display = '';
+          } else {
+            subscriberCountEl.textContent = '';
+            subscriberCountEl.style.display = 'none';
+          }
+        }
+      } catch {
+        renderStatsFallback();
+      }
     }
 
     function getSampleResponses(prompt) {
@@ -1486,7 +1558,31 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function safeInternalHref(value) {
+      try {
+        const url = new URL(String(value || '').trim(), window.location.origin);
+        if (!['http:', 'https:'].includes(url.protocol)) return '#';
+        if (url.origin !== window.location.origin) return '#';
+        if (url.pathname.startsWith('//') || url.pathname.includes('\\')) return '#';
+        return `${url.pathname}${url.search}${url.hash}` || '#';
+      } catch {
+        return '#';
+      }
+    }
+
+    function renderBulletList(listEl, items, maxItems = 6) {
+      if (!(listEl instanceof HTMLElement)) return;
+      listEl.innerHTML = '';
+      if (!Array.isArray(items) || !items.length) return;
+      items.slice(0, maxItems).forEach((item) => {
+        const li = document.createElement('li');
+        li.textContent = String(item || '');
+        listEl.appendChild(li);
+      });
     }
 
     // ---- Timer ----
@@ -1723,6 +1819,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
 
       // Reset writing area
       if (textarea) textarea.value = '';
+      autoResizeTextarea();
       if (wordCountBadge) {
         wordCountBadge.textContent = '0 words';
         wordCountBadge.classList.remove('ready');
@@ -1770,6 +1867,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
 
       // Reset writing area
       if (textarea) textarea.value = '';
+      autoResizeTextarea();
       if (wordCountBadge) {
         wordCountBadge.textContent = '0 words';
         wordCountBadge.classList.remove('ready');
@@ -1786,6 +1884,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
 
     // ---- Word count ----
     textarea?.addEventListener('input', () => {
+      autoResizeTextarea();
       const wc = wordCount(textarea.value);
       if (wordCountBadge) {
         wordCountBadge.textContent = `${wc} word${wc !== 1 ? 's' : ''}`;
@@ -1911,17 +2010,13 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
       // Strengths
       const strengthsEl = document.getElementById('hub-strengths');
       if (strengthsEl && Array.isArray(report.strengths)) {
-        strengthsEl.innerHTML = report.strengths
-          .map((s) => `<li>${escHtml(s)}</li>`)
-          .join('');
+        renderBulletList(strengthsEl, report.strengths, 6);
       }
 
       // Priorities
       const prioritiesEl = document.getElementById('hub-priorities');
       if (prioritiesEl && Array.isArray(report.improvementPriorities)) {
-        prioritiesEl.innerHTML = report.improvementPriorities
-          .map((s) => `<li>${escHtml(s)}</li>`)
-          .join('');
+        renderBulletList(prioritiesEl, report.improvementPriorities, 6);
       }
 
       // Errors
@@ -1960,10 +2055,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
       const nextStepsSection = document.getElementById('hub-next-steps-section');
       const nextStepsList = document.getElementById('hub-next-steps');
       if (nextStepsSection && nextStepsList && Array.isArray(report.nextPracticeSteps) && report.nextPracticeSteps.length) {
-        nextStepsList.innerHTML = report.nextPracticeSteps
-          .slice(0, 4)
-          .map((step) => `<li>${escHtml(step)}</li>`)
-          .join('');
+        renderBulletList(nextStepsList, report.nextPracticeSteps, 4);
         nextStepsSection.style.display = '';
       } else if (nextStepsSection) {
         nextStepsSection.style.display = 'none';
@@ -1974,11 +2066,16 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
       const lessonsGrid = document.getElementById('hub-lessons-grid');
       const recs = report.lessonRecommendations || report.lessonNeeds || [];
       if (lessonsSection && lessonsGrid && Array.isArray(recs) && recs.length) {
-        lessonsGrid.innerHTML = recs.slice(0, 4).map((l) => {
-          const href = l.path || l.href || '#';
-          const label = l.label || l.title || 'Lesson';
-          return `<a class="lesson-link" href="${escHtml(href)}">${escHtml(label)}</a>`;
-        }).join('');
+        lessonsGrid.innerHTML = '';
+        recs.slice(0, 4).forEach((lesson) => {
+          const href = safeInternalHref(lesson.path || lesson.href || '#');
+          const label = String(lesson.label || lesson.title || 'Lesson');
+          const link = document.createElement('a');
+          link.className = 'lesson-link';
+          link.setAttribute('href', href);
+          link.textContent = label;
+          lessonsGrid.appendChild(link);
+        });
         lessonsSection.style.display = '';
       } else if (lessonsSection) {
         lessonsSection.style.display = 'none';
@@ -1998,9 +2095,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
       // Update submit area (may now show upgrade prompt)
       if (submitBtn) submitBtn.disabled = false;
       updateSubmitArea();
-
-      // Scroll results into view
-      resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      loadUsageStats();
     }
 
     // ---- Modal ----
@@ -2053,6 +2148,8 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
     // ---- Init ----
     bindSidebarHandlers();
     loadPrompt(selectedTaskId);
+    autoResizeTextarea();
     updateSubmitArea();
+    loadUsageStats();
   })();
 </script>

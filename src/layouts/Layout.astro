@@ -27,12 +27,12 @@ const canonicalURL = new URL(canonical, Astro.site);
 const ogImageURL = new URL(ogImage, Astro.site);
 const isLessonsPath = Astro.url.pathname.startsWith("/lessons");
 const isLocalPreview = import.meta.env.DEV || ["localhost", "127.0.0.1"].includes(Astro.url.hostname);
+const normalizedPath = Astro.url.pathname.replace(/\/$/, "") || "/";
 const showLessonEmailGate = isLessonsPath && !isLocalPreview;
-const showAds = !isLocalPreview;
+const showAds = !isLocalPreview && normalizedPath !== "/ai-feedback";
 const currentPath = Astro.url.pathname;
 const isBlogArticle = currentPath.startsWith("/blog/") && currentPath !== "/blog/" && currentPath !== "/blog";
 const robotsContent = noindex ? "noindex, nofollow" : "index, follow";
-const normalizedPath = Astro.url.pathname.replace(/\/$/, "") || "/";
 const isPrePaymentPath =
   normalizedPath === "/ai-feedback" ||
   normalizedPath.startsWith("/tutoring") ||
@@ -294,6 +294,13 @@ const webPageSchema = {
 
 const extraStructuredData = Array.isArray(structuredData) ? structuredData : [structuredData];
 const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraStructuredData].filter(Boolean);
+const serializeJsonForScript = (value: unknown) =>
+  JSON.stringify(value)
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e')
+    .replace(/&/g, '\\u0026')
+    .replace(/\u2028/g, '\\u2028')
+    .replace(/\u2029/g, '\\u2029');
 ---
 
 <script is:inline>
@@ -338,7 +345,7 @@ const pageSchemas = [organizationSchema, websiteSchema, webPageSchema, ...extraS
     
     <!-- Structured Data (JSON-LD) -->
     {pageSchemas.map((schema) => (
-      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+      <script type="application/ld+json" set:html={serializeJsonForScript(schema)} />
     ))}
     <slot name="head" />
     

@@ -1,9 +1,20 @@
 import Stripe from 'stripe';
+import { createHash } from 'crypto';
+import { connectLambda, getStore } from '@netlify/blobs';
+import {
+  getHeader,
+  getRequestHost,
+  isSameOriginRequest,
+} from './_utils/requestSecurity.mjs';
 import {
   CELPIP_WRITING_BILLING_INTERVAL,
   CELPIP_WRITING_PRODUCT_NAME,
   isCelpipFreePrompt,
 } from '../../src/lib/celpipWritingData.mjs';
+import {
+  calibrateReportToSample,
+  detectSampleBenchmarkMatch,
+} from '../../src/lib/celpipScoreCalibration.mjs';
 import { normalizeCelpipReport } from '../../src/lib/celpipWritingFeedback.mjs';
 import { evaluateCelpipWriting } from '../../src/lib/celpipWritingEvaluator.mjs';
 
@@ -14,6 +25,16 @@ const OPENAI_API_KEY = (process.env.OPENAI_API_KEY || '').trim();
 const OPENAI_MODEL = (process.env.OPENAI_MODEL || 'gpt-4.1-mini').trim();
 const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions';
 const OPENAI_TIMEOUT_MS = 25000;
+const STATS_STORE_NAME = 'celpip-writing-stats';
+const FREE_USER_PREFIX = 'free-users/';
+const DAILY_SUBMISSION_PREFIX = 'daily-submissions/';
+const MAX_REQUEST_BODY_CHARS = 65000;
+const MAX_PROMPT_TITLE_CHARS = 220;
+const MAX_PROMPT_TEXT_CHARS = 5000;
+const MAX_RESPONSE_TEXT_CHARS = 12000;
+const MAX_PROMPT_INSTRUCTIONS = 10;
+const MAX_PROMPT_INSTRUCTION_CHARS = 220;
+const VALID_TASK_TYPES = new Set(['task1', 'task2']);
 
 // ── Per-IP, per-task rate limit (survives across warm invocations) ──
 const RATE_LIMIT_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours
@@ -44,11 +65,98 @@ function recordSubmission(ip, promptId) {
 
 function getClientIp(event) {
   return (
-    event.headers?.['x-nf-client-connection-ip'] ||
-    event.headers?.['x-forwarded-for']?.split(',')[0]?.trim() ||
-    event.headers?.['client-ip'] ||
+    getHeader(event, 'x-nf-client-connection-ip') ||
+    getHeader(event, 'x-forwarded-for').split(',')[0]?.trim() ||
+    getHeader(event, 'client-ip') ||
     'unknown'
   );
+}
+
+function buildFreeUserKey(clientIp) {
+  const normalizedIp = String(clientIp || '').trim();
+  if (!normalizedIp || normalizedIp === 'unknown') return null;
+
+  const hash = createHash('sha256')
+    .update(`celpip-free-eval:${normalizedIp}`)
+    .digest('hex');
+
+  return `${FREE_USER_PREFIX}${hash}`;
+}
+
+async function recordFreeEvaluationUser({ clientIp }) {
+  const key = buildFreeUserKey(clientIp);
+  if (!key) return;
+
+  try {
+    const store = getStore(STATS_STORE_NAME);
+    await store.setJSON(
+      key,
+      { firstFreeEvalAt: new Date().toISOString() },
+      { onlyIfNew: true },
+    );
+  } catch (error) {
+    console.warn('[celpip-eval] Unable to persist free-evaluation usage stats:', error?.message || error);
+  }
+}
+
+async function hasUsedFreeEvaluation({ clientIp }) {
+  const key = buildFreeUserKey(clientIp);
+  if (!key) return false;
+
+  try {
+    const store = getStore(STATS_STORE_NAME);
+    const existing = await store.get(key, { type: 'json' });
+    return Boolean(existing);
+  } catch (error) {
+    console.warn('[celpip-eval] Unable to verify free-evaluation usage:', error?.message || error);
+    return false;
+  }
+}
+
+function getDailySubmissionKey(date = new Date()) {
+  return `${DAILY_SUBMISSION_PREFIX}${date.toISOString().slice(0, 10)}`;
+}
+
+async function incrementDailyEssaySubmissionCount() {
+  const store = getStore(STATS_STORE_NAME);
+  const key = getDailySubmissionKey();
+
+  for (let attempt = 0; attempt < 4; attempt += 1) {
+    const current = await store.getWithMetadata(key, { type: 'json' });
+    const updatedAt = new Date().toISOString();
+
+    if (!current) {
+      const write = await store.setJSON(
+        key,
+        { count: 1, updatedAt },
+        { onlyIfNew: true },
+      );
+      if (write?.modified) return;
+      continue;
+    }
+
+    const currentCount = Number(current.data?.count) || 0;
+    const write = await store.setJSON(
+      key,
+      { count: currentCount + 1, updatedAt },
+      { onlyIfMatch: current.etag },
+    );
+    if (write?.modified) return;
+  }
+
+  throw new Error('Unable to update daily essay count after retries.');
+}
+
+async function recordEssaySubmissionStats({ clientIp, isFreeTaskBypass, isAdminBypass }) {
+  try {
+    await incrementDailyEssaySubmissionCount();
+
+    if (isFreeTaskBypass && !isAdminBypass) {
+      await recordFreeEvaluationUser({ clientIp });
+    }
+  } catch (error) {
+    console.warn('[celpip-eval] Unable to persist essay submission stats:', error?.message || error);
+  }
 }
 
 const LESSON_NEED_OPTIONS = [
@@ -66,9 +174,31 @@ const LESSON_NEED_OPTIONS = [
 ];
 
 function isLocalhostRequest(event) {
-  const host = String(event?.headers?.host || '');
-  const origin = String(event?.headers?.origin || '');
+  const host = String(getRequestHost(event) || '');
+  const origin = String(getHeader(event, 'origin') || '');
   return /localhost|127\.0\.0\.1/i.test(`${host} ${origin}`);
+}
+
+function normalizeTaskType(value) {
+  if (typeof value !== 'string') return '';
+  return value.trim().toLowerCase();
+}
+
+function normalizePromptId(value) {
+  if (typeof value !== 'string') return '';
+  return value.trim();
+}
+
+function normalizeText(value) {
+  if (typeof value !== 'string') return '';
+  return value.trim();
+}
+
+function normalizePromptInstructions(value) {
+  if (!Array.isArray(value)) return [];
+  return value
+    .map((item) => (typeof item === 'string' ? item.trim() : ''))
+    .filter(Boolean);
 }
 
 function extractId(value) {
@@ -270,8 +400,37 @@ export async function handler(event) {
     return { statusCode: 405, body: JSON.stringify({ error: 'Method not allowed' }) };
   }
 
+  if (!isSameOriginRequest(event)) {
+    return {
+      statusCode: 403,
+      body: JSON.stringify({ error: 'Cross-origin requests are not allowed.' }),
+    };
+  }
+
   try {
-    const body = JSON.parse(event.body || '{}');
+    const canUseBlobs = Boolean(event?.blobs);
+    if (canUseBlobs) {
+      connectLambda(event);
+    }
+
+    const rawBody = String(event.body || '');
+    if (rawBody.length > MAX_REQUEST_BODY_CHARS) {
+      return {
+        statusCode: 413,
+        body: JSON.stringify({ error: 'Request payload is too large.' }),
+      };
+    }
+
+    let body;
+    try {
+      body = JSON.parse(rawBody || '{}');
+    } catch {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: 'Invalid JSON request body.' }),
+      };
+    }
+
     const {
       sessionId,
       adminToken,
@@ -284,13 +443,45 @@ export async function handler(event) {
       responseText,
     } = body;
 
-    if (!taskType || !responseText || !promptTitle) {
+    const normalizedTaskType = normalizeTaskType(taskType);
+    const normalizedPromptId = normalizePromptId(promptId);
+    const normalizedPromptTitle = normalizeText(promptTitle);
+    const normalizedPromptText = normalizeText(promptText);
+    const normalizedResponseText = normalizeText(responseText);
+    const normalizedPromptInstructions = normalizePromptInstructions(promptInstructions);
+
+    if (!VALID_TASK_TYPES.has(normalizedTaskType) || !normalizedResponseText || !normalizedPromptTitle) {
       return { statusCode: 400, body: JSON.stringify({ error: 'Missing required fields' }) };
     }
 
-    // ── Rate limit: one submission per IP per task ──
+    if (normalizedPromptId && !/^[A-Za-z0-9-]{1,80}$/.test(normalizedPromptId)) {
+      return { statusCode: 400, body: JSON.stringify({ error: 'Invalid prompt ID format.' }) };
+    }
+
+    if (
+      normalizedPromptTitle.length > MAX_PROMPT_TITLE_CHARS ||
+      normalizedPromptText.length > MAX_PROMPT_TEXT_CHARS ||
+      normalizedResponseText.length > MAX_RESPONSE_TEXT_CHARS
+    ) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: 'One or more fields exceed allowed length.' }),
+      };
+    }
+
+    if (
+      normalizedPromptInstructions.length > MAX_PROMPT_INSTRUCTIONS ||
+      normalizedPromptInstructions.some((item) => item.length > MAX_PROMPT_INSTRUCTION_CHARS)
+    ) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: 'Prompt instructions are invalid.' }),
+      };
+    }
+
+    // Rate limit: one submission per IP per task
     const clientIp = getClientIp(event);
-    const rateLimitKey = promptId || `${taskType}::${promptTitle}`;
+    const rateLimitKey = normalizedPromptId || `${normalizedTaskType}::${normalizedPromptTitle}`;
     if (hasAlreadySubmitted(clientIp, rateLimitKey)) {
       return {
         statusCode: 429,
@@ -300,7 +491,7 @@ export async function handler(event) {
       };
     }
 
-    const wordCount = String(responseText || '').trim().split(/\s+/).filter(Boolean).length;
+    const wordCount = normalizedResponseText.split(/\s+/).filter(Boolean).length;
     if (wordCount < 40) {
       return { statusCode: 400, body: JSON.stringify({ error: 'Response is too short to grade meaningfully.' }) };
     }
@@ -309,13 +500,23 @@ export async function handler(event) {
     const bypassByLocalhost = ADMIN_BYPASS_TOKEN && isLocalhostRequest(event) && sessionId === 'admin-bypass';
     const isAdminBypass = Boolean(bypassByToken || bypassByLocalhost);
 
-    // Allow designated free prompts without a Stripe session (Task 1 and Task 2)
+    // Allow designated free prompts without a Stripe session
     const isFreePrompt = Boolean(
-      typeof taskType === 'string' &&
-      typeof promptId === 'string' &&
-      isCelpipFreePrompt(taskType, promptId)
+      normalizedTaskType &&
+      normalizedPromptId &&
+      isCelpipFreePrompt(normalizedTaskType, normalizedPromptId)
     );
     const isFreeTaskBypass = isFreeTask === true && isFreePrompt;
+
+    if (isFreeTaskBypass && !isAdminBypass && canUseBlobs) {
+      const alreadyUsed = await hasUsedFreeEvaluation({ clientIp });
+      if (alreadyUsed) {
+        return {
+          statusCode: 403,
+          body: JSON.stringify({ error: 'Your free evaluation has already been used. Please subscribe to continue.' }),
+        };
+      }
+    }
 
     if (!isAdminBypass && !isFreeTaskBypass) {
       if (!sessionId) {
@@ -332,11 +533,11 @@ export async function handler(event) {
 
     try {
       rawReport = await requestOpenAIEvaluation({
-        taskType,
-        promptTitle,
-        promptText,
-        promptInstructions,
-        responseText,
+        taskType: normalizedTaskType,
+        promptTitle: normalizedPromptTitle,
+        promptText: normalizedPromptText,
+        promptInstructions: normalizedPromptInstructions,
+        responseText: normalizedResponseText,
       });
     } catch (openAiError) {
       evaluationSource = 'rules-fallback';
@@ -347,22 +548,40 @@ export async function handler(event) {
         console.warn('[celpip-eval] OPENAI_API_KEY missing, using rule-based evaluator.');
       }
       rawReport = evaluateCelpipWriting({
-        taskType,
-        promptTitle,
-        promptText,
-        promptInstructions,
-        responseText,
+        taskType: normalizedTaskType,
+        promptTitle: normalizedPromptTitle,
+        promptText: normalizedPromptText,
+        promptInstructions: normalizedPromptInstructions,
+        responseText: normalizedResponseText,
       });
     }
 
-    const report = normalizeCelpipReport(rawReport, { taskType });
+    let report = normalizeCelpipReport(rawReport, { taskType: normalizedTaskType });
+
+    const sampleMatch = detectSampleBenchmarkMatch({
+      taskType: normalizedTaskType,
+      promptId: normalizedPromptId,
+      responseText: normalizedResponseText,
+    });
+    if (sampleMatch) {
+      report = calibrateReportToSample(report, sampleMatch);
+      evaluationSource = `${evaluationSource}:sample-calibrated`;
+    }
+
+    if (canUseBlobs) {
+      await recordEssaySubmissionStats({
+        clientIp,
+        isFreeTaskBypass,
+        isAdminBypass,
+      });
+    }
 
     return {
       statusCode: 200,
       body: JSON.stringify({
         report,
         evaluationSource,
-        evaluationModel: evaluationSource === 'openai' ? OPENAI_MODEL : 'rule-based',
+        evaluationModel: evaluationSource.startsWith('openai') ? OPENAI_MODEL : 'rule-based',
       }),
     };
   } catch (error) {

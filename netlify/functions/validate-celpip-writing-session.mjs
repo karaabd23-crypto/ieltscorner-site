@@ -3,6 +3,11 @@ import {
   CELPIP_WRITING_BILLING_INTERVAL,
   CELPIP_WRITING_PRODUCT_NAME,
 } from '../../src/lib/celpipWritingData.mjs';
+import {
+  getHeader,
+  getRequestHost,
+  isSameOriginRequest,
+} from './_utils/requestSecurity.mjs';
 
 const STRIPE_API_KEY = process.env.STRIPE_API_KEY;
 const PRICE_ID = (process.env.CELPIP_WRITING_PRICE_ID || 'price_1T9z9OAfbKGrKsHyDdo8ua53').trim();
@@ -67,17 +72,30 @@ export async function handler(event) {
     return { statusCode: 405, body: JSON.stringify({ error: 'Method not allowed' }) };
   }
 
+  if (!isSameOriginRequest(event)) {
+    return {
+      statusCode: 403,
+      body: JSON.stringify({ error: 'Cross-origin requests are not allowed.' }),
+    };
+  }
+
   if (!STRIPE_API_KEY) {
     return { statusCode: 500, body: JSON.stringify({ error: 'Missing STRIPE_API_KEY' }) };
   }
 
   try {
-    const { sessionId, adminToken } = JSON.parse(event.body || '{}');
-    const host = String(event.headers?.host || '');
-    const origin = String(event.headers?.origin || '');
+    let payload;
+    try {
+      payload = JSON.parse(event.body || '{}');
+    } catch {
+      return { statusCode: 400, body: JSON.stringify({ error: 'Invalid JSON request body.' }) };
+    }
+    const { sessionId, adminToken } = payload;
+    const host = String(getRequestHost(event) || '');
+    const origin = String(getHeader(event, 'origin') || '');
     const isLocalhostRequest = /localhost|127\.0\.0\.1/i.test(`${host} ${origin}`);
 
-    if (ADMIN_BYPASS_TOKEN && isLocalhostRequest) {
+    if (ADMIN_BYPASS_TOKEN && isLocalhostRequest && sessionId === 'admin-bypass') {
       return { statusCode: 200, body: JSON.stringify(adminBypassPayload()) };
     }
 

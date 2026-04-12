@@ -6,6 +6,15 @@ import {
 } from "../lib/celpipWritingData.mjs";
 
 const YOUTUBE_EMBED_URL = "https://www.youtube.com/embed/k-2lGP720OU?si=rg7FiJfdNMHsj9Q3";
+const celpipQuickLinks = [
+  { href: "/celpip", label: "CELPIP Hub" },
+  { href: "/celpip/listening", label: "Listening" },
+  { href: "/celpip/reading", label: "Reading" },
+  { href: "/celpip/writing", label: "Writing" },
+  { href: "/celpip/speaking", label: "Speaking" },
+  { href: "/celpip/writing/samples", label: "Sample Essays" },
+  { href: "/celpip/reading-guide", label: "Reading Guide" },
+];
 
 const faqs = [
   {
@@ -40,6 +49,17 @@ const faqs = [
           Write a timed email, get an estimated CLB score, see exactly what is lowering it, and compare your writing to saved sample responses inside the task.
           The first task is always free.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm" style="padding-top: 0; padding-bottom: var(--s-3);">
+    <div class="surface" style="padding: var(--s-3) var(--s-4);">
+      <p class="muted" style="margin: 0; font-size: 0.88rem;">CELPIP quick menu</p>
+      <div class="cluster" style="margin-top: var(--s-2); gap: var(--s-2);">
+        {celpipQuickLinks.map((link) => (
+          <a class="btn" href={link.href}>{link.label}</a>
+        ))}
       </div>
     </div>
   </section>

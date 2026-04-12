@@ -4,23 +4,24 @@ import {
   CELPIP_WRITING_PRICE_CAD,
   CELPIP_WRITING_PRODUCT_NAME,
 } from '../../src/lib/celpipWritingData.mjs';
+import {
+  getSafeBaseUrl,
+  isSameOriginRequest,
+} from './_utils/requestSecurity.mjs';
 
 const STRIPE_API_KEY = process.env.STRIPE_API_KEY;
 const PRICE_ID = (process.env.CELPIP_WRITING_PRICE_ID || 'price_1T9z9OAfbKGrKsHyDdo8ua53').trim();
 
-function getBaseUrl(event) {
-  return (
-    process.env.URL ||
-    process.env.DEPLOY_PRIME_URL ||
-    process.env.SITE_URL ||
-    event.headers.origin ||
-    'http://localhost:4321'
-  ).replace(/\/$/, '');
-}
-
 export async function handler(event) {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: JSON.stringify({ error: 'Method not allowed' }) };
+  }
+
+  if (!isSameOriginRequest(event)) {
+    return {
+      statusCode: 403,
+      body: JSON.stringify({ error: 'Cross-origin requests are not allowed.' }),
+    };
   }
 
   if (!STRIPE_API_KEY) {
@@ -32,7 +33,7 @@ export async function handler(event) {
 
   try {
     const stripe = new Stripe(STRIPE_API_KEY, { apiVersion: '2020-08-27' });
-    const baseUrl = getBaseUrl(event);
+    const baseUrl = getSafeBaseUrl(event);
 
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',

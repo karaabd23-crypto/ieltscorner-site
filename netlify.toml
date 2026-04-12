@@ -7,6 +7,14 @@
   NODE_VERSION = "20"
   SECRETS_SCAN_OMIT_KEYS = "KIT_FORM_ID,KIT_DEFAULT_TAG_ID"
 
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
 # Domain aliases — redirect celpipcorner.com/celpipcorner.ca to ieltscorner.ca
 # These domains must be added in Netlify dashboard + DNS pointed to Netlify
 [[redirects]]

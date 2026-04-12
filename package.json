@@ -7,6 +7,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "celpip:calibration:check": "node scripts/check-celpip-sample-calibration.mjs",
     "lesson:check:frontmatter": "node scripts/check-all-lessons.mjs",
     "lesson:check:standards": "node scripts/enforce-lesson-quality-gate.mjs",
     "lesson:check:standards:changed": "node scripts/enforce-lesson-quality-gate.mjs --changed",
@@ -51,7 +52,7 @@
     "@astrojs/sitemap": "^3.7.0",
     "@netlify/blobs": "^10.7.2",
     "astro": "^5.16.0",
-    "nodemailer": "^6.9.8",
+    "nodemailer": "^8.0.5",
     "sharp": "^0.33.5",
     "stripe": "^17.5.0",
     "typescript": "^5.9.3"
