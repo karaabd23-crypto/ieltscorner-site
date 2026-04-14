@@ -1311,19 +1311,29 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
     }
 
     .practice-hub__sidebar {
-      max-height: 220px;
+      max-height: none;
       border-right: none;
       border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .sidebar-header {
+      position: static;
     }
 
     .task-list {
       flex-direction: row;
-      flex-wrap: wrap;
-      gap: 4px;
+      flex-wrap: nowrap;
+      gap: 8px;
       padding: var(--s-2) var(--s-3);
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
     }
 
     .task-item {
+      flex: 0 0 auto;
       border-left: none;
       border-radius: var(--radius-sm);
       border: 1px solid var(--border);
@@ -1339,7 +1349,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
     }
 
     .task-label {
-      max-width: 120px;
+      max-width: 150px;
       overflow: hidden;
       text-overflow: ellipsis;
     }
@@ -1348,10 +1358,28 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
     .practice-hub__writing {
       max-height: none;
       border-right: none;
+      min-width: 0;
     }
 
     .practice-hub__prompt {
       border-bottom: 1px solid var(--border);
+    }
+
+    .prompt-top-bar {
+      padding: var(--s-2) var(--s-3);
+    }
+
+    .social-proof {
+      width: 100%;
+    }
+
+    .social-proof__item {
+      white-space: normal;
+      line-height: 1.25;
+    }
+
+    .prompt-card {
+      padding: var(--s-4);
     }
 
     .criteria-grid,
