@@ -36,4 +36,16 @@ const lessons = defineCollection({
   }),
 });
 
-export const collections = { lessons };
+const questions = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    taskType: z.enum(["email", "survey"]),
+    targetCLB: z.number().min(6).max(10),
+    prompt: z.string(),
+    tags: z.array(z.string()).default([]),
+    publishedAt: z.coerce.date(),
+  }),
+});
+
+export const collections = { lessons, questions };

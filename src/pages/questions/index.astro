@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+
+const questions = await getCollection("questions");
+questions.sort(
+  (a, b) =>
+    b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf()
+);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CELPIP Writing Question Bank</title>
+  </head>
+  <body>
+    <main>
+      <h1>CELPIP Writing Question Bank</h1>
+      <p>Free practice questions for CELPIP Writing Tasks 1 and 2.</p>
+
+      <ul>
+        {questions.map((q) => (
+          <li>
+            <a href={`/questions/${q.id.replace(/\.(md|mdx)$/, "")}/`}>
+              <strong>{q.data.title}</strong>
+            </a>
+            <br />
+            Task type: {q.data.taskType} &mdash; Target CLB: {q.data.targetCLB}
+          </li>
+        ))}
+      </ul>
+    </main>
+  </body>
+</html>

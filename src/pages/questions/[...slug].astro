@@ -1,0 +1,50 @@
+---
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const questions = await getCollection("questions");
+  return questions.map((q) => ({
+    params: { slug: q.id.replace(/\.(md|mdx)$/, "") },
+    props: { question: q },
+  }));
+}
+
+const { question } = Astro.props;
+const { Content } = await render(question);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{question.data.title}</title>
+  </head>
+  <body>
+    <main>
+      <a href="/questions/">&larr; Back to question bank</a>
+
+      <h1>{question.data.title}</h1>
+
+      <dl>
+        <dt>Task type</dt>
+        <dd>{question.data.taskType}</dd>
+
+        <dt>Target CLB</dt>
+        <dd>{question.data.targetCLB}</dd>
+
+        {question.data.tags.length > 0 && (
+          <>
+            <dt>Tags</dt>
+            <dd>{question.data.tags.join(", ")}</dd>
+          </>
+        )}
+      </dl>
+
+      <h2>Question Prompt</h2>
+      <p>{question.data.prompt}</p>
+
+      <Content />
+    </main>
+  </body>
+</html>
