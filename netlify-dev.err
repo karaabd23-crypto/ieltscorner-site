@@ -1,0 +1,669 @@
+[33m⠋[39m Waiting for Astro dev server to be ready on port 4321
+[32m√[39m Astro dev server ready on port 4321
+(node:13820) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+01:17:09 [ERROR] [vite] Error:   Failed to scan for dependencies from entries:
+  C:/Users/Karaa/Documents/ieltscorner-site/src/components/Breadcrumbs.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/callout.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/CelpipPracticeHub.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/CelpipWritingBanner.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/CelpipWritingLab.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/ContentAd.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/ConversionTrackingScript.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/FunnelCtaBand.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/FunnelReturnLink.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/GoogleAnalytics.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/HeroArt.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/InArticleAd.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/LeadCaptureForm.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/LeadMagnet.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/LeadMagnetCard.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/Newsletter.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/OfferComparisonCards.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/OfferLadderBlock.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/OfferSequenceBlock.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/Quiz.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/ServiceTrustCard.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/SkillFreeLessons.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/SkillSubNav.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/Testimonials.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/WebinarCTA.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/Welcome.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/layouts/ConversionLayout.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/layouts/Layout.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/layouts/LessonLayout.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/about.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/ai-feedback.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/celpip-writing-help.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/contact.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/faq.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/ielts-writing-help.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/privacy.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/success-stories.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/terms.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/thank-you.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/webinar.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/_app.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/lesson/Callout.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/lesson/LessonShell.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/lesson/MiniQuiz.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/components/lesson/PatternTable.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/band-7-writing-strategy.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/celpip-listening-question-types.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/celpip-reading-question-types.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/celpip-sample-answers.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/celpip-writing-task-1-email.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/celpip-writing-task-1-templates.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/celpip-writing-task-2-survey-response.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/celpip-writing-task-2-templates.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/collocations-ielts.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/grammar-mistakes-ielts.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/ielts-listening-common-traps.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/ielts-listening-question-types.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/ielts-reading-question-types.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/ielts-speaking-part-1-topics.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/ielts-speaking-part-2-cue-card.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/ielts-speaking-part-3-questions-guide.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/ielts-writing-task-1-academic-guide.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/ielts-writing-task-1-general-training-letter.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/ielts-writing-task-2-advantages-disadvantages.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/ielts-writing-task-2-discussion-essay.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/ielts-writing-task-2-opinion-essay.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/ielts-writing-task-2-problem-solution.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/ielts-writing-task-2-structure.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/blog/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/celpip/free-reading-guide.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/celpip/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/celpip/reading-guide.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/ebook/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/ielts/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/lessons/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/newsletter/thanks.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/essay-correction/checkout-intent.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/essay-correction/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/essay-correction/submit.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/essay-correction/submitted.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/owner/newsletter.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/thank-you/celpip-reading-checklist.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/thank-you/celpip-writing-score-boost.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/thank-you/ielts-writing-structure-guide.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/tutoring/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/tutoring/success.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/webinar/thank-you.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/book/paid/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/celpip/clb-9-strategy/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/celpip/free-reading-guide/thanks.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/celpip/reading/clb-6-to-8.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/celpip/reading/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/celpip/listening/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/celpip/writing/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/celpip/speaking/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/ielts/reading/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/ielts/listening/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/ielts/speaking/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/ielts/writing/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/lessons/[category]/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/lessons/[category]/[...slug].astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/celpip/writing/ai-feedback/success.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/celpip/writing/samples/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/celpip/speaking/task-1-advice/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/celpip/speaking/task-2-personal-experience/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/celpip/speaking/task-3-scene/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/celpip/speaking/task-4-prediction/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/celpip/speaking/task-8-unusual-situation/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/celpip/speaking/task-5-comparison/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/celpip/speaking/task-7-opinion/index.astro
+C:/Users/Karaa/Documents/ieltscorner-site/src/pages/celpip/speaking/task-6-difficult-situation/index.astro
+
+  X [ERROR] Expected "}" but found "."
+
+    script:C:/Users/Karaa/Documents/ieltscorner-site/src/pages/tutoring/index.astro?id=0:4:37:
+      4 │       const youtubeChannelUrl = {JSON.stringify(YOUTUBE_CHANNEL_URL)};
+        │                                      ^
+        ╵                                      }
+
+
+    at failureErrorWithLog (C:\Users\Karaa\Documents\ieltscorner-site\node_modules\vite\node_modules\esbuild\lib\main.js:1467:15)
+    at C:\Users\Karaa\Documents\ieltscorner-site\node_modules\vite\node_modules\esbuild\lib\main.js:926:25
+    at runOnEndCallbacks (C:\Users\Karaa\Documents\ieltscorner-site\node_modules\vite\node_modules\esbuild\lib\main.js:1307:45)
+    at buildResponseToResult (C:\Users\Karaa\Documents\ieltscorner-site\node_modules\vite\node_modules\esbuild\lib\main.js:924:7)
+    at C:\Users\Karaa\Documents\ieltscorner-site\node_modules\vite\node_modules\esbuild\lib\main.js:936:9
+    at new Promise (<anonymous>)
+    at requestCallbacks.on-end (C:\Users\Karaa\Documents\ieltscorner-site\node_modules\vite\node_modules\esbuild\lib\main.js:935:54)
+    at handleRequest (C:\Users\Karaa\Documents\ieltscorner-site\node_modules\vite\node_modules\esbuild\lib\main.js:628:17)
+    at handleIncomingPacket (C:\Users\Karaa\Documents\ieltscorner-site\node_modules\vite\node_modules\esbuild\lib\main.js:653:7)
+    at Socket.readFromStdout (C:\Users\Karaa\Documents\ieltscorner-site\node_modules\vite\node_modules\esbuild\lib\main.js:581:7)
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+[celpip-eval] Falling back to rule-based evaluator: OpenAI API error 401: {
+  "error": {
+    "message": "Your authentication token is not from a valid issuer.",
+    "type": "invalid_request_error",
+    "code": "invalid_issuer",
+    "param": null
+  },
+  "status": 401
+}
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+[celpip-stats] Unable to load free evaluation count: The environment has not been configured to use Netlify Blobs. To use it manually, supply the following properties when creating a store: siteID, token
+[celpip-stats] Unable to load free evaluation count: The environment has not been configured to use Netlify Blobs. To use it manually, supply the following properties when creating a store: siteID, token
+[celpip-stats] Unable to load free evaluation count: The environment has not been configured to use Netlify Blobs. To use it manually, supply the following properties when creating a store: siteID, token
+[celpip-stats] Unable to load free evaluation count: The environment has not been configured to use Netlify Blobs. To use it manually, supply the following properties when creating a store: siteID, token
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+^C^C" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+
+Auto-generating collections for folders in "src/content/" that are not defined as collections.
+This is deprecated, so you should define these collections yourself in "src/content.config.ts".
+The following collections have been auto-generated: lesson-seeds
+
+^C

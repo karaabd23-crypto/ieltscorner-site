@@ -1,0 +1,131 @@
+⬥ Injecting environment variable values for all scopes
+⬥ Ignored project settings env var: CELPIP_WRITING_ADMIN_BYPASS_TOKEN (defined in .env file)
+⬥ Ignored project settings env var: GMAIL_PASSWORD (defined in .env file)
+⬥ Ignored project settings env var: GMAIL_USER (defined in .env file)
+⬥ Ignored project settings env var: STRIPE_API_KEY (defined in .env file)
+⬥ Ignored project settings env var: TELEGRAM_BOT_TOKEN (defined in .env file)
+⬥ Ignored project settings env var: TELEGRAM_CHANNEL_URL (defined in .env file)
+⬥ Ignored project settings env var: TELEGRAM_OWNER_CHAT_ID (defined in .env file)
+⬥ Ignored project settings env var: TELEGRAM_WEBHOOK_SECRET (defined in .env file)
+⬥ Injected .env file env vars: CELPIP_WRITING_ADMIN_BYPASS_TOKEN, GMAIL_PASSWORD, GMAIL_USER, STRIPE_API_KEY, TELEGRAM_BOT_TOKEN, TELEGRAM_CHANNEL_URL, TELEGRAM_OWNER_CHAT_ID, TELEGRAM_WEBHOOK_SECRET, TELEGRAM_CHAT_ID, TELEGRAM_WEBHOOK_URL, CELPIP_WRITING_PRICE_ID
+⬥ Injected project settings env vars: CONTACT_EMAIL, KIT_API_KEY, KIT_DEFAULT_TAG_ID, KIT_FORM_ID, PUBLIC_ESSAY_CORRECTION_CHECKOUT_URL, STRIPE_WEBHOOK_SECRET, TELEGRAM_OWNER_USERNAME, TUTORING_CALENDAR_URL, WEBSITE_URL
+⬥ Injected netlify.toml file env vars: NODE_VERSION, SECRETS_SCAN_OMIT_KEYS
+⬥ Setting up local dev server
+
+⬥ Starting Astro dev server
+
+   ╭─────────────────────── ⬥  ────────────────────────╮
+   │                                                   │
+   │   Local dev server ready: http://localhost:6521   │
+   │                                                   │
+   ╰───────────────────────────────────────────────────╯
+
+
+> ieltscorner-site@0.0.3 dev
+> astro dev
+
+⬥ Loaded function scheduled-post-telegram
+01:09:25 [types] Generated 3ms
+⬥ Loaded function newsletter-stats in Lambda compatibility mode (https://ntl.fyi/lambda-compat)
+⬥ Loaded function get-social-feed in Lambda compatibility mode (https://ntl.fyi/lambda-compat)
+⬥ Loaded function telegram-webhook in Lambda compatibility mode (https://ntl.fyi/lambda-compat)
+⬥ Loaded function subscribe-newsletter in Lambda compatibility mode (https://ntl.fyi/lambda-compat)
+⬥ Loaded function claim-free-celpip-sample in Lambda compatibility mode (https://ntl.fyi/lambda-compat)
+⬥ Loaded function validate-tutoring-session in Lambda compatibility mode (https://ntl.fyi/lambda-compat)
+⬥ Loaded function create-celpip-writing-portal in Lambda compatibility mode (https://ntl.fyi/lambda-compat)
+⬥ Loaded function validate-celpip-writing-session in Lambda compatibility mode (https://ntl.fyi/lambda-compat)
+⬥ Loaded function get-celpip-writing-samples in Lambda compatibility mode (https://ntl.fyi/lambda-compat)
+⬥ Loaded function cancel-celpip-writing-subscription in Lambda compatibility mode (https://ntl.fyi/lambda-compat)
+⬥ Loaded function create-celpip-writing-checkout in Lambda compatibility mode (https://ntl.fyi/lambda-compat)
+⬥ Loaded function evaluate-celpip-writing in Lambda compatibility mode (https://ntl.fyi/lambda-compat)
+⬥ Loaded function stripe-webhook in Lambda compatibility mode (https://ntl.fyi/lambda-compat)
+01:09:33 [content] Syncing content
+01:09:33 [WARN] [glob-loader] No files found matching "**/*{.md,.mdx},!**/_*/**/*{.md,.mdx},!**/_*{.md,.mdx}" in directory "src\content\lesson-seeds"
+01:09:33 [content] Synced content
+01:09:33 [vite] Port 4321 is in use, trying another one...
+01:09:33 [vite] Port 4322 is in use, trying another one...
+01:09:33 [vite] Port 4323 is in use, trying another one...
+
+ astro  v5.18.0 ready in 9209 ms
+
+┃ Local    http://localhost:4324/
+┃ Network  use --host ⬥ Reloading function evaluate-celpip-writing...
+⬥ Reloaded function evaluate-celpip-writing
+⬥ Reloading function evaluate-celpip-writing...
+⬥ Reloaded function evaluate-celpip-writing
+01:17:04 Configuration file updated. Restarting...
+01:17:05 [vite] Re-optimizing dependencies becaus01:17:05 [vite] Re-optimiz01:17:08 [content] Syncing content
+01:17:08 [WARN01:17:08 [content] Syncing content
+01:17:08 [WARN] [glob-loader] No files found matching "**/*{.md,.mdx},!**/_*/**/*{.md,.mdx},!**/_*{.m01:17:09 [content] Synced content
+01:17:09 [types01:17:09 [content] Synced content
+01:17:09 [types] Generated 4.57s
+01:17:09 [vite] Port 4321 01:22:46 [200] /ai-feedback 82ms
+⬥ Reloading function evaluate-celpip-writing...
+⬥ Reloaded function evaluate-celpip-writing
+⬥ Loaded function celpip-writing-stats in Lambda compatibility mode (https://ntl.fyi/lambda-compat)
+01:23:27 [200] /ai-feedback 9ms
+01:23:30 [200] /ai-feedback 17ms
+01:23:46 [watch] src/pages/ai-feedback.astro
+01:23:46 [200] /ai-feedback 12ms
+01:24:13 [200] /ai-feedback 8ms
+⬥ Reloading function evaluate-celpip-writing...
+⬥ Reloaded function evaluate-celpip-writing
+⬥ Reloading function celpip-writing-stats...
+⬥ Reloaded function celpip-writing-stats
+⬥ Reloading function evaluate-celpip-writing...
+⬥ Reloaded function evaluate-celpip-writing
+⬥ Reloading function celpip-writing-stats...
+⬥ Reloaded function celpip-writing-stats
+01:26:49 [200] /ai-feedback 9ms
+01:30:41 [200] /ai-feedback 13ms
+01:31:18 [200] /ai-feedback 8ms
+01:32:23 [200] / 7ms
+01:34:07 [200] /ai-feedback 9ms
+01:34:10 [200] /ai-feedback 7ms
+01:34:15 [200] /ai-feedback 7ms
+01:34:26 [200] /ai-feedback 7ms
+01:34:32 [200] /ai-feedback 7ms
+01:34:52 [200] /ai-feedback 7ms
+01:35:08 [watch] src/components/CelpipPracticeHub.astro
+01:35:09 [200] /ai-feedback 11ms
+⬥ Reloading function evaluate-celpip-writing...
+⬥ Reloaded function evaluate-celpip-writing
+01:35:30 [200] /ai-feedback 6ms
+⬥ Reloading function celpip-writing-stats...
+⬥ Reloaded function celpip-writing-stats
+01:35:56 [200] /ai-feedback 7ms
+01:36:14 [200] /ai-feedback 6ms
+01:36:19 [watch] /src/components/CelpipPracticeHub.astro?astro&type=style&index=0&lang.css
+01:36:19 [watch] src/components/CelpipPracticeHub.astro
+01:39:08 [200] / 7ms
+01:39:11 [200] / 3ms
+01:39:14 [200] /ai-feedback 10ms
+Terminate batch job (Y/N)? 
+tions/celpip-writing-stats
+Response with status 200 in 73 ms.
+Request from ::1: GET /.netlify/functions/celpip-writing-stats
+Response with status 200 in 158 ms.
+Request from ::1: GET /.netlify/functions/celpip-writing-stats
+Response with status 200 in 58 ms.
+Request from ::1: GET /.netlify/functions/celpip-writing-stats
+Response with status 200 in 54 ms.
+Request from ::1: GET /.netlify/functions/celpip-writing-stats
+Response with status 200 in 53 ms.
+Request from ::1: GET /.netlify/functions/celpip-writing-stats
+Response with status 200 in 53 ms.
+Request from ::1: GET /.netlify/functions/celpip-writing-stats
+Response with status 200 in 53 ms.
+Request from ::1: GET /.netlify/functions/celpip-writing-stats
+Response with status 200 in 53 ms.
+⬥ Reloading function evaluate-celpip-writing...
+⬥ Reloaded function evaluate-celpip-writing
+Request from ::1: GET /.netlify/functions/celpip-writing-stats
+Response with status 200 in 191 ms.
+⬥ Reloading function celpip-writing-stats...
+⬥ Reloaded function celpip-writing-stats
+Request from ::1: GET /.netlify/functions/celpip-writing-stats
+Response with status 200 in 283 ms.
+Request from ::1: GET /.netlify/functions/celpip-writing-stats
+Response with status 200 in 58 ms.
+Terminate batch job (Y/N)? 
+⬥ Command failed with exit code 3221225786: npm run dev. Shutting down Netlify Dev server
