@@ -1,0 +1,39 @@
+name: Setup ImprovMX Forwarding
+
+on:
+  workflow_dispatch:
+    inputs:
+      domain:
+        description: Domain to configure in ImprovMX and Netlify DNS
+        required: false
+        default: ieltscorner.ca
+      alias:
+        description: Alias local-part (e.g., newsletter)
+        required: false
+        default: newsletter
+      forward_to:
+        description: Destination email for forwarding
+        required: false
+        default: kara.abd23@gmail.com
+
+jobs:
+  setup-forwarding:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Configure ImprovMX forwarding + Netlify DNS
+        env:
+          IMPROVMX_API_KEY: ${{ secrets.IMPROVMX_API_KEY }}
+          NETLIFY_ACCESS_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
+          IMPROVMX_DOMAIN: ${{ github.event.inputs.domain || 'ieltscorner.ca' }}
+          IMPROVMX_ALIAS: ${{ github.event.inputs.alias || 'newsletter' }}
+          IMPROVMX_FORWARD_TO: ${{ github.event.inputs.forward_to || 'kara.abd23@gmail.com' }}
+        run: node scripts/setup-improvmx-forwarding.mjs
+
