@@ -2,6 +2,8 @@
 import Layout from "../../../layouts/Layout.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import SkillSubNav from "../../../components/SkillSubNav.astro";
+import FeaturedToolsSection from "../../../components/FeaturedToolsSection.astro";
+import { celpipWritingFeaturedToolCards } from "../../../lib/promotionTools";
 import { buildBreadcrumbSchema } from "../../../lib/seo";
 
 const writingServices = [
@@ -11,6 +13,13 @@ const writingServices = [
     href: "/ai-feedback",
     cta: "Start AI feedback",
     tag: "Core",
+  },
+  {
+    title: "Free Question Bank",
+    description: "Browse 100 free CELPIP writing questions before you move into scored practice.",
+    href: "/celpip/writing/questions",
+    cta: "Open question bank",
+    tag: "Free",
   },
   {
     title: "100 Writing Sample Essays",
@@ -64,6 +73,10 @@ const writingResources = [
     href: "/blog/celpip-sample-answers",
   },
   {
+    title: "Free CELPIP Question Bank",
+    href: "/celpip/writing/questions",
+  },
+  {
     title: "CLB 9 Strategy Guide",
     href: "/celpip/clb-9-strategy",
   },
@@ -101,7 +114,7 @@ const pageStructuredData = [
         </p>
         <div class="funnel-hero__actions">
           <a class="btn btn-primary" href="/ai-feedback">Start AI writing feedback</a>
-          <a class="btn btn-ghost" href="/celpip/writing/samples">Open sample essays</a>
+          <a class="btn btn-ghost" href="/celpip/writing/questions">Browse free question bank</a>
         </div>
       </div>
     </div>
@@ -109,9 +122,24 @@ const pageStructuredData = [
 
   <section class="section-sm">
     <div class="surface writing-map">
+      <FeaturedToolsSection
+        eyebrow="Start with the right writing tool"
+        title="Choose the writing path that matches your stage"
+        intro="Use the writing lab for feedback, sample essays for proof, and the question bank when you just want free repetition."
+        cards={celpipWritingFeaturedToolCards}
+        trackPageType="hub"
+        trackTest="celpip"
+        trackSkill="writing"
+        trackPosition="celpip-writing-featured-tools"
+      />
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface writing-map">
       <h2 style="margin-top: 0;">CELPIP writing service map</h2>
       <p class="muted" style="margin-top: 0;">
-        Every active writing service is listed here for direct access.
+        Everything else on the writing page stays here for direct access.
       </p>
       <div class="grid grid-2 writing-services-grid">
         {writingServices.map((service) => (

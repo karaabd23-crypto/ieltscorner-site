@@ -1,0 +1,164 @@
+---
+import type { ContextualPromoConfig, PromoAction } from "../lib/promotionTools";
+
+interface Props extends ContextualPromoConfig {
+  className?: string;
+  trackPageType?: string;
+  trackTest?: string;
+  trackSkill?: string;
+  trackPosition?: string;
+}
+
+const {
+  eyebrow = "Next step",
+  title,
+  intro = "",
+  primary,
+  secondary,
+  variant = "default",
+  promoType = "contextual_next_step",
+  className = "",
+  trackPageType = "hub",
+  trackTest = "general",
+  trackSkill = "general",
+  trackPosition = "contextual_next_step",
+} = Astro.props as Props;
+
+const promoClass = [
+  "contextual-next-step",
+  `contextual-next-step--${variant}`,
+  className,
+]
+  .filter(Boolean)
+  .join(" ");
+
+const buildTrackPosition = (offer: PromoAction["offer"], slot: "primary" | "secondary") =>
+  `${trackPosition}-${slot}-${offer}`;
+---
+
+<section class={promoClass}>
+  <div class="contextual-next-step__copy">
+    <p class="contextual-next-step__eyebrow">{eyebrow}</p>
+    <h2>{title}</h2>
+    {intro && <p class="muted contextual-next-step__intro">{intro}</p>}
+  </div>
+
+  <div class="contextual-next-step__actions">
+    <article class="contextual-next-step__card contextual-next-step__card--primary">
+      <h3>{primary.title}</h3>
+      <p>{primary.description}</p>
+      <a
+        class="btn btn-primary"
+        href={primary.href}
+        data-track-click={`contextual-${primary.offer}-primary`}
+        data-track-offer={primary.offer}
+        data-track-promo-type={promoType}
+        data-track-page-type={trackPageType}
+        data-track-test={trackTest}
+        data-track-skill={trackSkill}
+        data-track-position={buildTrackPosition(primary.offer, "primary")}
+      >
+        {primary.cta}
+      </a>
+    </article>
+
+    {secondary && (
+      <article class="contextual-next-step__card contextual-next-step__card--secondary">
+        <h3>{secondary.title}</h3>
+        <p>{secondary.description}</p>
+        <a
+          class="btn"
+          href={secondary.href}
+          data-track-click={`contextual-${secondary.offer}-secondary`}
+          data-track-offer={secondary.offer}
+          data-track-promo-type={promoType}
+          data-track-page-type={trackPageType}
+          data-track-test={trackTest}
+          data-track-skill={trackSkill}
+          data-track-position={buildTrackPosition(secondary.offer, "secondary")}
+        >
+          {secondary.cta}
+        </a>
+      </article>
+    )}
+  </div>
+</section>
+
+<style>
+  .contextual-next-step {
+    display: grid;
+    gap: var(--s-3);
+    padding: clamp(18px, 1vw + 16px, 28px);
+    border: 1px solid rgba(20, 22, 23, 0.14);
+    border-radius: 20px;
+    background:
+      radial-gradient(circle at top right, rgba(217, 72, 72, 0.08), transparent 34%),
+      #fff;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .contextual-next-step--compact {
+    padding: 18px;
+    gap: 14px;
+  }
+
+  .contextual-next-step__copy,
+  .contextual-next-step__actions,
+  .contextual-next-step__card {
+    display: grid;
+    gap: 10px;
+  }
+
+  .contextual-next-step__copy h2,
+  .contextual-next-step__card h3 {
+    margin: 0;
+  }
+
+  .contextual-next-step__eyebrow {
+    margin: 0;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8f3434;
+  }
+
+  .contextual-next-step__intro,
+  .contextual-next-step__card p {
+    margin: 0;
+  }
+
+  .contextual-next-step__actions {
+    grid-template-columns: 1fr;
+  }
+
+  .contextual-next-step__card {
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(20, 22, 23, 0.12);
+    background: rgba(255, 255, 255, 0.86);
+  }
+
+  .contextual-next-step__card--primary {
+    border-color: color-mix(in srgb, var(--accent) 28%, rgba(20, 22, 23, 0.12) 72%);
+  }
+
+  .contextual-next-step--compact .contextual-next-step__card {
+    padding: 14px;
+  }
+
+  .contextual-next-step__card .btn {
+    width: fit-content;
+  }
+
+  @media (min-width: 900px) {
+    .contextual-next-step__actions {
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+      align-items: stretch;
+    }
+
+    .contextual-next-step--compact .contextual-next-step__actions {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+    }
+  }
+</style>

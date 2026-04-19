@@ -1,0 +1,2081 @@
+---
+import {
+  CELPIP_READING_BILLING_INTERVAL,
+  CELPIP_READING_FREE_TEST,
+  CELPIP_READING_PREMIUM_TESTS,
+  CELPIP_READING_PRICE_CAD,
+  CELPIP_READING_PRODUCT_NAME,
+  CELPIP_READING_WORK_AREAS,
+  flattenReadingQuestions,
+} from "../lib/celpipReadingData.mjs";
+
+const freeQuestions = flattenReadingQuestions(CELPIP_READING_FREE_TEST);
+
+const serializeInlineJSON = (value) =>
+  JSON.stringify(value)
+    .replace(/</g, "\\u003c")
+    .replace(/>/g, "\\u003e")
+    .replace(/&/g, "\\u0026")
+    .replace(/\u2028/g, "\\u2028")
+    .replace(/\u2029/g, "\\u2029");
+---
+
+<section class="reading-test">
+  <header class="reading-test__topbar">
+    <div class="reading-test__heading reading-test__heading-card">
+      <div
+        class="reading-test__heading-topline"
+        style="display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:10px;"
+      >
+        <p class="reading-test__eyebrow">Free full test</p>
+        <a class="btn reading-test__back-btn" href="/celpip">Exit test</a>
+      </div>
+      <h2>{CELPIP_READING_FREE_TEST.title}</h2>
+      <p class="muted reading-test__intro">
+        Auto-timed. Instant score and lesson plan when you finish.
+      </p>
+    </div>
+
+    <div class="reading-test__topmeta reading-test__status-card">
+      <div class="reading-test__status-head">
+        <div class="reading-test__timer">
+          <span>Time remaining</span>
+          <strong id="reading-timer">{CELPIP_READING_FREE_TEST.durationMinutes}:00</strong>
+        </div>
+        <button class="btn btn-primary" id="reading-submit-test" type="button">Finish and score</button>
+      </div>
+
+      <div class="reading-test__progress reading-test__progress--top">
+        <div class="reading-test__progress-copyline">
+          <p class="reading-test__subhead">Progress</p>
+          <p class="muted" id="reading-progress-copy">0 of {freeQuestions.length} answered</p>
+        </div>
+        <div class="reading-progressbar" aria-hidden="true">
+          <span id="reading-progress-fill"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reading-test__navcard">
+      <div class="reading-test__navcard-head">
+        <p class="reading-test__subhead">Navigator</p>
+        <div class="reading-test__sections reading-test__sections--compact">
+          {CELPIP_READING_FREE_TEST.sections.map((section, index) => (
+            <button
+              class={`reading-section-btn${index === 0 ? " is-active" : ""}`}
+              type="button"
+              data-reading-section={section.id}
+              aria-label={`Go to ${section.label}: ${section.title}`}
+              title={`${section.label}: ${section.title}`}
+            >
+              <span>{section.label}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div class="reading-palette" id="reading-palette">
+        {freeQuestions.map((question, index) => (
+          <button
+            class={`reading-palette__item${index === 0 ? " is-active" : ""}`}
+            type="button"
+            data-reading-question={question.id}
+            aria-label={`Go to question ${question.number}`}
+          >
+            {question.number}
+          </button>
+        ))}
+      </div>
+    </div>
+  </header>
+
+  <div class="reading-test__shell" id="reading-test-shell">
+    <div class="reading-test__workspace">
+      <section class="reading-passage">
+        <div class="reading-passage__head">
+          <p class="reading-test__eyebrow" id="reading-current-section-label">{CELPIP_READING_FREE_TEST.sections[0].label}</p>
+          <h3 id="reading-current-section-title">{CELPIP_READING_FREE_TEST.sections[0].title}</h3>
+          <p class="muted" id="reading-current-section-context">{CELPIP_READING_FREE_TEST.sections[0].context}</p>
+        </div>
+        <div class="reading-passage__body" id="reading-passage-body">
+          {CELPIP_READING_FREE_TEST.sections[0].passage.map((line) => (
+            line === "" ? <div class="reading-passage__break" aria-hidden="true"></div> : <p>{line}</p>
+          ))}
+        </div>
+      </section>
+
+      <section class="reading-question-card">
+        <div class="reading-question-card__head">
+          <div>
+            <p class="reading-test__eyebrow" id="reading-question-kicker">Question 1</p>
+            <h3 id="reading-question-prompt">{freeQuestions[0].prompt}</h3>
+          </div>
+          <button class="btn reading-flag-btn" id="reading-flag-btn" type="button">Flag for review</button>
+        </div>
+
+        <div class="reading-question-card__type" id="reading-question-type">Single answer</div>
+        <form id="reading-question-form" class="reading-question-form"></form>
+
+        <div class="reading-question-card__footer">
+          <button class="btn" id="reading-prev-question" type="button">Previous</button>
+          <button class="btn btn-primary" id="reading-next-question" type="button">Next</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section class="reading-results" id="reading-results" hidden>
+    <div class="reading-access-banner" id="reading-access-banner" hidden></div>
+
+    <div class="reading-results__hero">
+      <div>
+        <p class="reading-test__eyebrow">Score report</p>
+        <h3 id="reading-score-line">Score pending</h3>
+        <p class="muted" id="reading-score-summary"></p>
+      </div>
+      <div class="reading-results__hero-actions">
+        <div class="reading-score-pill" id="reading-level-pill">CLB</div>
+        <button class="btn" id="reading-manage-subscription" type="button" hidden>Manage subscription</button>
+        <button class="btn" id="reading-retake-test" type="button">Retake free test</button>
+        <p class="muted reading-results__portal-note" id="reading-portal-note" hidden>
+          Update billing details or cancel anytime. If you cancel, access stays active until the end of the paid period.
+        </p>
+      </div>
+    </div>
+
+    <div class="reading-results__summary-grid">
+      <div class="reading-summary-card">
+        <strong id="reading-score-correct">0/20</strong>
+        <span>questions correct</span>
+      </div>
+      <div class="reading-summary-card">
+        <strong id="reading-score-answered">0/20</strong>
+        <span>questions answered</span>
+      </div>
+      <div class="reading-summary-card">
+        <strong id="reading-score-time">00:00</strong>
+        <span>time used</span>
+      </div>
+    </div>
+
+    <div class="reading-results__panels">
+      <div class="reading-results__panel reading-results__panel--primary">
+        <h4>Where you need work next</h4>
+        <div id="reading-workareas" class="reading-workareas"></div>
+      </div>
+      <div class="reading-results__panel reading-results__panel--compact">
+        <h4>Performance by part</h4>
+        <div id="reading-section-results" class="reading-results__stack"></div>
+      </div>
+      <div class="reading-results__panel reading-results__panel--compact">
+        <h4>Performance by skill</h4>
+        <div id="reading-skill-results" class="reading-results__stack"></div>
+      </div>
+    </div>
+
+    <div class="reading-review-lock" id="reading-review-lock">
+      <div>
+        <p class="reading-test__eyebrow">Premium review</p>
+        <h4>Detailed answer review is locked after the free test.</h4>
+        <p class="muted">
+          Unlock question-by-question explanations, flagged-question review, and the next {CELPIP_READING_PREMIUM_TESTS.length} full tests.
+        </p>
+      </div>
+      <div class="reading-review-lock__actions">
+        <button class="btn btn-primary" id="reading-open-upgrade" type="button">Unlock premium review</button>
+      </div>
+    </div>
+
+    <div class="reading-review" id="reading-review" hidden>
+      <div class="reading-review__head">
+        <div>
+          <p class="reading-test__eyebrow">Premium review</p>
+          <h4>Answer-by-answer breakdown</h4>
+        </div>
+      </div>
+      <div id="reading-review-list" class="reading-review__list"></div>
+    </div>
+  </section>
+</section>
+
+<div class="reading-upgrade-modal" id="reading-upgrade-modal" hidden>
+  <div class="reading-upgrade-modal__backdrop" data-modal-close="true"></div>
+  <div class="reading-upgrade-modal__card surface" role="dialog" aria-modal="true" aria-labelledby="reading-upgrade-title">
+    <button class="reading-upgrade-modal__close" type="button" data-modal-close="true" aria-label="Close">x</button>
+    <p class="reading-test__eyebrow">Upgrade</p>
+    <h3 id="reading-upgrade-title">Unlock the full reading pack for CA${CELPIP_READING_PRICE_CAD}/{CELPIP_READING_BILLING_INTERVAL}</h3>
+    <p class="muted">
+      Unlock {CELPIP_READING_PRODUCT_NAME} with detailed review, premium explanations, and all remaining full reading tests.
+    </p>
+    <ul class="reading-upgrade-modal__list">
+      <li>{CELPIP_READING_PREMIUM_TESTS.length} additional full reading tests</li>
+      <li>Question-by-question explanation review</li>
+      <li>Review mode for flagged and incorrect questions</li>
+      <li>Stronger analytics by skill and section</li>
+      <li>Self-serve billing management with easy cancellation</li>
+    </ul>
+    <p class="muted reading-upgrade-modal__note">
+      Cancel anytime in the customer portal. Access continues until the end of your current paid period.
+    </p>
+    <div class="reading-upgrade-modal__actions">
+      <button class="btn btn-primary" id="reading-start-checkout" type="button">Go to secure checkout</button>
+    </div>
+    <p class="muted" id="reading-checkout-status" style="min-height:1.4rem; margin:0;"></p>
+  </div>
+</div>
+
+<script id="reading-test-data" type="application/json" is:inline set:html={serializeInlineJSON(CELPIP_READING_FREE_TEST)}></script>
+<script id="reading-workarea-data" type="application/json" is:inline set:html={serializeInlineJSON(CELPIP_READING_WORK_AREAS)}></script>
+
+<script is:inline>
+  (() => {
+    const premiumStorageKey = 'ieltscorner.celpipReadingPremium';
+    const attemptStorageKey = 'ieltscorner.celpipReadingLatestAttempt';
+
+    const parseJson = (id) => {
+      const el = document.getElementById(id);
+      if (!el?.textContent) return null;
+      try {
+        return JSON.parse(el.textContent);
+      } catch {
+        return null;
+      }
+    };
+
+    const test = parseJson('reading-test-data');
+    const workAreaMap = parseJson('reading-workarea-data') || {};
+    if (!test) return;
+
+    const flatQuestions = test.sections.flatMap((section) =>
+      section.questions.map((question) => ({
+        ...question,
+        sectionId: section.id,
+        sectionLabel: section.label,
+        sectionTitle: section.title,
+      })),
+    );
+
+    const totalDurationSeconds = Number(test.durationMinutes || 55) * 60;
+    let currentIndex = 0;
+    let answers = {};
+    let flagged = {};
+    let timeRemaining = totalDurationSeconds;
+    let timerId = null;
+    let hasSubmitted = false;
+
+    const testShellEl = document.getElementById('reading-test-shell');
+    const sectionButtons = Array.from(document.querySelectorAll('[data-reading-section]'));
+    const paletteButtons = Array.from(document.querySelectorAll('[data-reading-question]'));
+    const passageBody = document.getElementById('reading-passage-body');
+    const sectionLabelEl = document.getElementById('reading-current-section-label');
+    const sectionTitleEl = document.getElementById('reading-current-section-title');
+    const sectionContextEl = document.getElementById('reading-current-section-context');
+    const questionKickerEl = document.getElementById('reading-question-kicker');
+    const questionPromptEl = document.getElementById('reading-question-prompt');
+    const questionTypeEl = document.getElementById('reading-question-type');
+    const questionForm = document.getElementById('reading-question-form');
+    const timerEl = document.getElementById('reading-timer');
+    const progressFill = document.getElementById('reading-progress-fill');
+    const progressCopy = document.getElementById('reading-progress-copy');
+    const resultsEl = document.getElementById('reading-results');
+    const scoreLineEl = document.getElementById('reading-score-line');
+    const scoreSummaryEl = document.getElementById('reading-score-summary');
+    const levelPillEl = document.getElementById('reading-level-pill');
+    const scoreCorrectEl = document.getElementById('reading-score-correct');
+    const scoreAnsweredEl = document.getElementById('reading-score-answered');
+    const scoreTimeEl = document.getElementById('reading-score-time');
+    const sectionResultsEl = document.getElementById('reading-section-results');
+    const skillResultsEl = document.getElementById('reading-skill-results');
+    const workAreasEl = document.getElementById('reading-workareas');
+    const accessBannerEl = document.getElementById('reading-access-banner');
+    const reviewLockEl = document.getElementById('reading-review-lock');
+    const reviewEl = document.getElementById('reading-review');
+    const reviewListEl = document.getElementById('reading-review-list');
+    const manageSubscriptionButton = document.getElementById('reading-manage-subscription');
+    const portalNoteEl = document.getElementById('reading-portal-note');
+    const flagButton = document.getElementById('reading-flag-btn');
+    const modalEl = document.getElementById('reading-upgrade-modal');
+    const checkoutStatusEl = document.getElementById('reading-checkout-status');
+
+    const levelGuide = [
+      { minRatio: 0.9, level: 10, label: 'Test-ready', descriptor: 'Strong control of detail, paraphrase, and inference under time pressure.' },
+      { minRatio: 0.8, level: 9, label: 'Competitive', descriptor: 'Mostly accurate reading with only a few costly distractor mistakes.' },
+      { minRatio: 0.7, level: 8, label: 'Close to target', descriptor: 'Solid foundation, but timing or inference questions still lower the score.' },
+      { minRatio: 0.58, level: 7, label: 'Developing', descriptor: 'Enough comprehension to progress, but accuracy drops when distractors tighten.' },
+      { minRatio: 0.45, level: 6, label: 'Below target', descriptor: 'Core meaning is often understood, but details and viewpoint tracking remain unstable.' },
+      { minRatio: 0, level: 5, label: 'Needs rebuilding', descriptor: 'Reading process is still too slow or too reactive for CELPIP-style pressure.' },
+    ];
+
+    const readStoredJson = (key) => {
+      try {
+        const raw = localStorage.getItem(key);
+        if (!raw) return null;
+        return JSON.parse(raw);
+      } catch {
+        return null;
+      }
+    };
+
+    const writeStoredJson = (key, value) => {
+      try {
+        localStorage.setItem(key, JSON.stringify(value));
+      } catch {
+      }
+    };
+
+    const removeStoredValue = (key) => {
+      try {
+        localStorage.removeItem(key);
+      } catch {
+      }
+    };
+
+    let premiumAccess = readStoredJson(premiumStorageKey);
+    if (premiumAccess?.source === 'dev-preview' || premiumAccess?.sessionId === 'dev-preview') {
+      premiumAccess = null;
+      removeStoredValue(premiumStorageKey);
+    }
+
+    const isPremium = () => {
+      return Boolean(premiumAccess?.valid);
+    };
+
+    const hasPortalAccess = () => {
+      return Boolean(isPremium() && String(premiumAccess?.sessionId || '').trim());
+    };
+
+    const setAccessBanner = (message = '', tone = 'success') => {
+      if (!(accessBannerEl instanceof HTMLElement)) return;
+      accessBannerEl.hidden = !message;
+      accessBannerEl.textContent = message;
+      accessBannerEl.dataset.tone = tone;
+    };
+
+    const formatCalendarDate = (unixSeconds) => {
+      if (!Number.isFinite(unixSeconds) || Number(unixSeconds) <= 0) return '';
+
+      try {
+        return new Intl.DateTimeFormat('en-CA', {
+          month: 'long',
+          day: 'numeric',
+          year: 'numeric',
+        }).format(new Date(Number(unixSeconds) * 1000));
+      } catch {
+        return '';
+      }
+    };
+
+    const syncPremiumActions = () => {
+      const canManage = hasPortalAccess();
+
+      if (manageSubscriptionButton instanceof HTMLElement) {
+        manageSubscriptionButton.hidden = !canManage;
+      }
+
+      if (portalNoteEl instanceof HTMLElement) {
+        portalNoteEl.hidden = !canManage;
+      }
+    };
+
+    const saveAttemptSnapshot = () => {
+      writeStoredJson(attemptStorageKey, {
+        answers,
+        flagged,
+        timeRemaining,
+        hasSubmitted,
+      });
+    };
+
+    const clearAttemptSnapshot = () => {
+      removeStoredValue(attemptStorageKey);
+    };
+
+    const restoreAttemptSnapshot = () => {
+      const savedAttempt = readStoredJson(attemptStorageKey);
+      if (!savedAttempt?.hasSubmitted) return false;
+
+      answers = savedAttempt.answers && typeof savedAttempt.answers === 'object' ? savedAttempt.answers : {};
+      flagged = savedAttempt.flagged && typeof savedAttempt.flagged === 'object' ? savedAttempt.flagged : {};
+      timeRemaining = Number.isFinite(savedAttempt.timeRemaining)
+        ? Math.max(0, Math.min(totalDurationSeconds, Number(savedAttempt.timeRemaining)))
+        : totalDurationSeconds;
+      hasSubmitted = true;
+      updateProgress();
+      renderResults();
+      return true;
+    };
+
+    const grantPremium = (access = {}) => {
+      premiumAccess = {
+        valid: true,
+        ...access,
+      };
+      writeStoredJson(premiumStorageKey, premiumAccess);
+      syncPremiumActions();
+
+      closeModal();
+      if (!resultsEl?.hidden) {
+        renderResults();
+      }
+    };
+
+    const clearPremium = () => {
+      premiumAccess = null;
+      removeStoredValue(premiumStorageKey);
+      syncPremiumActions();
+    };
+
+    const validatePremiumSession = async (sessionId) => {
+      const response = await fetch('/.netlify/functions/validate-celpip-reading-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sessionId }),
+      });
+
+      const data = await response.json().catch(() => null);
+      if (!response.ok) {
+        throw new Error(data?.error || 'Unable to validate your payment session.');
+      }
+      if (!data?.valid) {
+        throw new Error(data?.reason || 'Your subscription could not be confirmed.');
+      }
+
+      return data;
+    };
+
+    const formatTime = (seconds) => {
+      const minutes = Math.floor(seconds / 60);
+      const remainder = seconds % 60;
+      return `${String(minutes).padStart(2, '0')}:${String(remainder).padStart(2, '0')}`;
+    };
+
+    const getAnsweredCount = () =>
+      flatQuestions.filter((question) => {
+        const value = answers[question.id];
+        return Array.isArray(value) ? value.length > 0 : Boolean(value);
+      }).length;
+
+    const getCurrentQuestion = () => flatQuestions[currentIndex];
+
+    const updateProgress = () => {
+      const answered = getAnsweredCount();
+      const ratio = flatQuestions.length ? (answered / flatQuestions.length) * 100 : 0;
+
+      if (progressFill instanceof HTMLElement) {
+        progressFill.style.width = `${ratio}%`;
+      }
+      if (progressCopy instanceof HTMLElement) {
+        progressCopy.textContent = `${answered} of ${flatQuestions.length} answered`;
+      }
+
+      paletteButtons.forEach((button) => {
+        if (!(button instanceof HTMLButtonElement)) return;
+        const questionId = button.dataset.readingQuestion;
+        const question = flatQuestions.find((item) => item.id === questionId);
+        if (!question) return;
+        const value = answers[question.id];
+        const answeredNow = Array.isArray(value) ? value.length > 0 : Boolean(value);
+        button.classList.toggle('is-answered', answeredNow);
+        button.classList.toggle('is-flagged', Boolean(flagged[question.id]));
+        button.classList.toggle('is-active', question.id === getCurrentQuestion().id);
+      });
+    };
+
+    const renderPassage = (sectionId) => {
+      const section = test.sections.find((item) => item.id === sectionId);
+      if (!section || !(passageBody instanceof HTMLElement)) return;
+
+      if (sectionLabelEl instanceof HTMLElement) sectionLabelEl.textContent = section.label;
+      if (sectionTitleEl instanceof HTMLElement) sectionTitleEl.textContent = section.title;
+      if (sectionContextEl instanceof HTMLElement) sectionContextEl.textContent = section.context;
+
+      passageBody.innerHTML = '';
+      section.passage.forEach((line) => {
+        if (!line) {
+          const spacer = document.createElement('div');
+          spacer.className = 'reading-passage__break';
+          spacer.setAttribute('aria-hidden', 'true');
+          passageBody.appendChild(spacer);
+          return;
+        }
+
+        /* Bold paragraph labels: **Paragraph 1** */
+        if (line.startsWith('**') && line.endsWith('**')) {
+          const label = document.createElement('p');
+          label.className = 'reading-passage__plabel';
+          const strong = document.createElement('strong');
+          strong.textContent = line.slice(2, -2);
+          label.appendChild(strong);
+          passageBody.appendChild(label);
+          return;
+        }
+
+        /* Horizontal rule separator (---) */
+        if (line === '---') {
+          const hr = document.createElement('hr');
+          hr.className = 'reading-passage__divider';
+          passageBody.appendChild(hr);
+          return;
+        }
+
+        /* Lines with fill-in-the-blank markers: {{BLANK:qX}} */
+        if (line.includes('{{BLANK:')) {
+          const paragraph = document.createElement('p');
+          const parts = line.split(/({{BLANK:[^}]+}})/);
+          parts.forEach((part) => {
+            const blankMatch = part.match(/{{BLANK:([^}]+)}}/);
+            if (blankMatch) {
+              const blankId = blankMatch[1];
+              const span = document.createElement('span');
+              span.className = 'reading-blank';
+              span.dataset.blankId = blankId;
+              const selectedAnswer = answers[blankId];
+              if (selectedAnswer) {
+                const question = flatQuestions.find((q) => q.id === blankId);
+                const option = question?.options?.find((o) => o.id === selectedAnswer);
+                span.textContent = option?.text || selectedAnswer;
+                span.classList.add('reading-blank--filled');
+              } else {
+                span.textContent = '[____' + blankId.replace('q', '') + '____]';
+              }
+              paragraph.appendChild(span);
+            } else {
+              paragraph.appendChild(document.createTextNode(part));
+            }
+          });
+          passageBody.appendChild(paragraph);
+          return;
+        }
+
+        const paragraph = document.createElement('p');
+        paragraph.textContent = line;
+        passageBody.appendChild(paragraph);
+      });
+
+      /* Render diagram table if present */
+      if (section.diagram) {
+        const wrap = document.createElement('div');
+        wrap.className = 'reading-diagram';
+
+        if (section.diagram.caption) {
+          const cap = document.createElement('p');
+          cap.className = 'reading-diagram__caption';
+          cap.textContent = section.diagram.caption;
+          wrap.appendChild(cap);
+        }
+
+        const table = document.createElement('table');
+        table.className = 'reading-diagram__table';
+
+        if (section.diagram.headers) {
+          const thead = document.createElement('thead');
+          const tr = document.createElement('tr');
+          section.diagram.headers.forEach((h) => {
+            const th = document.createElement('th');
+            th.textContent = h;
+            tr.appendChild(th);
+          });
+          thead.appendChild(tr);
+          table.appendChild(thead);
+        }
+
+        if (section.diagram.rows) {
+          const tbody = document.createElement('tbody');
+          section.diagram.rows.forEach((row) => {
+            const tr = document.createElement('tr');
+            row.forEach((cell) => {
+              const td = document.createElement('td');
+              td.textContent = cell;
+              tr.appendChild(td);
+            });
+            tbody.appendChild(tr);
+          });
+          table.appendChild(tbody);
+        }
+
+        wrap.appendChild(table);
+        passageBody.appendChild(wrap);
+      }
+
+      sectionButtons.forEach((button) => {
+        if (!(button instanceof HTMLButtonElement)) return;
+        button.classList.toggle('is-active', button.dataset.readingSection === sectionId);
+      });
+    };
+
+    const renderOptions = (question) => {
+      if (!(questionForm instanceof HTMLElement)) return;
+      questionForm.innerHTML = '';
+
+      const currentAnswer = answers[question.id];
+      const inputType = question.type === 'multi' ? 'checkbox' : 'radio';
+
+      if (question.type === 'select') {
+        const wrap = document.createElement('label');
+        wrap.className = 'reading-select-wrap';
+
+        const select = document.createElement('select');
+        select.className = 'reading-select';
+
+        const placeholder = document.createElement('option');
+        placeholder.value = '';
+        placeholder.textContent = 'Choose an answer';
+        select.appendChild(placeholder);
+
+        question.options.forEach((option) => {
+          const optionEl = document.createElement('option');
+          optionEl.value = option.id;
+          optionEl.textContent = option.text;
+          if (currentAnswer === option.id) optionEl.selected = true;
+          select.appendChild(optionEl);
+        });
+
+        select.addEventListener('change', () => {
+          answers[question.id] = select.value;
+          updateProgress();
+          /* Sync inline blank in passage */
+          const blankSpan = passageBody?.querySelector('[data-blank-id="' + question.id + '"]');
+          if (blankSpan) {
+            const opt = question.options.find((o) => o.id === select.value);
+            if (select.value && opt) {
+              blankSpan.textContent = opt.text;
+              blankSpan.classList.add('reading-blank--filled');
+            } else {
+              blankSpan.textContent = '[____' + question.id.replace('q', '') + '____]';
+              blankSpan.classList.remove('reading-blank--filled');
+            }
+          }
+        });
+
+        wrap.appendChild(select);
+        questionForm.appendChild(wrap);
+        return;
+      }
+
+      question.options.forEach((option) => {
+        const label = document.createElement('label');
+        label.className = 'reading-option';
+
+        const input = document.createElement('input');
+        input.type = inputType;
+        input.name = question.id;
+        input.value = option.id;
+
+        if (question.type === 'multi') {
+          const selected = Array.isArray(currentAnswer) ? currentAnswer : [];
+          input.checked = selected.includes(option.id);
+          input.addEventListener('change', () => {
+            const previous = Array.isArray(answers[question.id]) ? [...answers[question.id]] : [];
+            const next = input.checked
+              ? [...previous, option.id]
+              : previous.filter((value) => value !== option.id);
+            answers[question.id] = Array.from(new Set(next));
+            updateProgress();
+          });
+        } else {
+          input.checked = currentAnswer === option.id;
+          input.addEventListener('change', () => {
+            answers[question.id] = option.id;
+            updateProgress();
+          });
+        }
+
+        const optionBody = document.createElement('span');
+        optionBody.className = 'reading-option__body';
+
+        const marker = document.createElement('span');
+        marker.className = 'reading-option__marker';
+        marker.textContent = `${option.id.toUpperCase()}) `;
+
+        const text = document.createElement('span');
+        text.className = 'reading-option__text';
+        text.textContent = option.text;
+
+        optionBody.append(marker, text);
+        label.append(input, optionBody);
+        questionForm.appendChild(label);
+      });
+    };
+
+    const renderQuestion = () => {
+      const question = getCurrentQuestion();
+      if (!question) return;
+
+      renderPassage(question.sectionId);
+
+      if (questionKickerEl instanceof HTMLElement) {
+        questionKickerEl.textContent = `Question ${question.number}`;
+      }
+      if (questionPromptEl instanceof HTMLElement) {
+        questionPromptEl.textContent = question.prompt;
+      }
+      if (questionTypeEl instanceof HTMLElement) {
+        questionTypeEl.textContent = question.type === 'multi'
+          ? `Choose ${question.selectCount || 2} answers`
+          : question.type === 'select'
+            ? 'Fill in the blank'
+            : 'Choose one answer';
+      }
+      if (flagButton instanceof HTMLButtonElement) {
+        flagButton.classList.toggle('is-flagged', Boolean(flagged[question.id]));
+        flagButton.textContent = flagged[question.id] ? 'Flagged' : 'Flag for review';
+      }
+
+      renderOptions(question);
+      updateProgress();
+    };
+
+    const moveToQuestion = (nextIndex) => {
+      currentIndex = Math.max(0, Math.min(flatQuestions.length - 1, nextIndex));
+      renderQuestion();
+    };
+
+    const gradeAttempt = () => {
+      const sectionTotals = {};
+      const skillTotals = {};
+      let correct = 0;
+      let answered = 0;
+
+      flatQuestions.forEach((question) => {
+        const response = answers[question.id];
+        const hasAnswer = Array.isArray(response) ? response.length > 0 : Boolean(response);
+        if (hasAnswer) answered += 1;
+
+        const isCorrect = question.type === 'multi'
+          ? Array.isArray(response) &&
+            Array.isArray(question.correctAnswer) &&
+            [...response].sort().join('|') === [...question.correctAnswer].sort().join('|')
+          : String(response || '') === String(question.correctAnswer || '');
+
+        if (isCorrect) correct += 1;
+
+        if (!sectionTotals[question.sectionId]) {
+          sectionTotals[question.sectionId] = { title: question.sectionTitle, correct: 0, total: 0 };
+        }
+        if (!skillTotals[question.skillTag]) {
+          skillTotals[question.skillTag] = { key: question.skillTag, correct: 0, total: 0 };
+        }
+
+        sectionTotals[question.sectionId].total += 1;
+        skillTotals[question.skillTag].total += 1;
+
+        if (isCorrect) {
+          sectionTotals[question.sectionId].correct += 1;
+          skillTotals[question.skillTag].correct += 1;
+        }
+      });
+
+      const ratio = flatQuestions.length ? correct / flatQuestions.length : 0;
+      const level = levelGuide.find((entry) => ratio >= entry.minRatio) || levelGuide[levelGuide.length - 1];
+
+      return {
+        correct,
+        answered,
+        unanswered: flatQuestions.length - answered,
+        total: flatQuestions.length,
+        level,
+        sectionTotals: Object.values(sectionTotals),
+        skillTotals: Object.values(skillTotals),
+      };
+    };
+
+    const buildWorkAreas = (report, options = {}) => {
+      const weakSkills = report.skillTotals
+        .map((skill) => ({
+          ...skill,
+          ratio: skill.total ? skill.correct / skill.total : 1,
+          meta: workAreaMap[skill.key],
+        }))
+        .filter((skill) => skill.correct < skill.total && skill.meta)
+        .sort((a, b) => a.ratio - b.ratio || b.total - a.total)
+        .slice(0, 3);
+
+      const results = weakSkills.map((skill) => ({
+        key: skill.key,
+        title: skill.meta.title,
+        performance: `${skill.correct}/${skill.total} correct`,
+        diagnosis: skill.meta.diagnosis,
+        action: skill.meta.action,
+        lessons: skill.meta.lessons || [],
+      }));
+
+      if ((options.timeExpired || report.unanswered > 0) && workAreaMap.timing) {
+        results.push({
+          key: 'timing',
+          title: workAreaMap.timing.title,
+          performance: report.unanswered > 0
+            ? `${report.unanswered} unanswered at submission`
+            : 'Full time used',
+          diagnosis: workAreaMap.timing.diagnosis,
+          action: workAreaMap.timing.action,
+          lessons: workAreaMap.timing.lessons || [],
+        });
+      }
+
+      if (!results.length && workAreaMap.detail) {
+        results.push({
+          key: 'detail',
+          title: 'General reading control',
+          performance: `${report.correct}/${report.total} correct`,
+          diagnosis: 'Your score is stable enough that the next gains should come from keeping the same proof-first process under tighter time pressure.',
+          action: 'Retake another full test and focus on preserving accuracy late in the section.',
+          lessons: workAreaMap.timing?.lessons || workAreaMap.detail.lessons || [],
+        });
+      }
+
+      return results.slice(0, 3);
+    };
+
+    const renderMetrics = (target, items, labelBuilder) => {
+      if (!(target instanceof HTMLElement)) return;
+      target.innerHTML = '';
+
+      items.forEach((item) => {
+        const card = document.createElement('div');
+        card.className = 'reading-metric';
+
+        const left = document.createElement('strong');
+        left.textContent = labelBuilder(item);
+
+        const right = document.createElement('span');
+        right.textContent = `${item.correct}/${item.total}`;
+
+        card.append(left, right);
+        target.appendChild(card);
+      });
+    };
+
+    const renderWorkAreas = (report, options) => {
+      if (!(workAreasEl instanceof HTMLElement)) return;
+      workAreasEl.innerHTML = '';
+
+      const areas = buildWorkAreas(report, options);
+
+      areas.forEach((area) => {
+        const card = document.createElement('article');
+        card.className = 'reading-workarea-card';
+
+        const title = document.createElement('h5');
+        title.textContent = area.title;
+
+        const performance = document.createElement('p');
+        performance.className = 'reading-workarea-card__score';
+        performance.textContent = area.performance;
+
+        const diagnosis = document.createElement('p');
+        diagnosis.textContent = area.diagnosis;
+
+        const action = document.createElement('p');
+        action.className = 'muted';
+        action.textContent = `Next move: ${area.action}`;
+
+        const lessons = document.createElement('div');
+        lessons.className = 'reading-workarea-card__links';
+
+        area.lessons.forEach((lesson) => {
+          const link = document.createElement('a');
+          link.href = lesson.href;
+          link.textContent = lesson.title;
+          lessons.appendChild(link);
+        });
+
+        card.append(title, performance, diagnosis, action, lessons);
+        workAreasEl.appendChild(card);
+      });
+    };
+
+    const renderReview = () => {
+      if (!(reviewListEl instanceof HTMLElement)) return;
+      reviewListEl.innerHTML = '';
+
+      flatQuestions.forEach((question) => {
+        const response = answers[question.id];
+        const isCorrect = question.type === 'multi'
+          ? Array.isArray(response) &&
+            Array.isArray(question.correctAnswer) &&
+            [...response].sort().join('|') === [...question.correctAnswer].sort().join('|')
+          : String(response || '') === String(question.correctAnswer || '');
+
+        const card = document.createElement('article');
+        card.className = `reading-review-card${isCorrect ? ' is-correct' : ' is-wrong'}`;
+
+        const meta = document.createElement('p');
+        meta.className = 'reading-review-card__meta';
+        meta.textContent = `${question.sectionLabel} | Question ${question.number} | ${question.skillTag}`;
+
+        const prompt = document.createElement('h5');
+        prompt.textContent = question.prompt;
+
+        const yourAnswer = document.createElement('p');
+        const normalizedResponse = Array.isArray(response) ? response.join(', ') : response || 'No answer';
+        yourAnswer.innerHTML = `<strong>Your answer:</strong> ${normalizedResponse}`;
+
+        const correctAnswer = document.createElement('p');
+        const normalizedCorrect = Array.isArray(question.correctAnswer)
+          ? question.correctAnswer.join(', ')
+          : question.correctAnswer;
+        correctAnswer.innerHTML = `<strong>Correct answer:</strong> ${normalizedCorrect}`;
+
+        const explanation = document.createElement('p');
+        explanation.className = 'muted';
+        explanation.textContent = question.explanation;
+
+        card.append(meta, prompt, yourAnswer, correctAnswer, explanation);
+        reviewListEl.appendChild(card);
+      });
+    };
+
+    const renderResults = (options = {}) => {
+      const report = gradeAttempt();
+      if (!(resultsEl instanceof HTMLElement)) return;
+
+      resultsEl.hidden = false;
+      if (testShellEl instanceof HTMLElement) {
+        testShellEl.hidden = true;
+      }
+
+      const timeUsed = totalDurationSeconds - timeRemaining;
+      saveAttemptSnapshot();
+
+      if (scoreLineEl instanceof HTMLElement) {
+        scoreLineEl.textContent = `${report.correct}/${report.total} correct`;
+      }
+      if (scoreSummaryEl instanceof HTMLElement) {
+        scoreSummaryEl.textContent = `Estimated CLB ${report.level.level} - ${report.level.label}. ${report.level.descriptor}`;
+      }
+      if (levelPillEl instanceof HTMLElement) {
+        levelPillEl.textContent = `CLB ${report.level.level}`;
+      }
+      if (scoreCorrectEl instanceof HTMLElement) {
+        scoreCorrectEl.textContent = `${report.correct}/${report.total}`;
+      }
+      if (scoreAnsweredEl instanceof HTMLElement) {
+        scoreAnsweredEl.textContent = `${report.answered}/${report.total}`;
+      }
+      if (scoreTimeEl instanceof HTMLElement) {
+        scoreTimeEl.textContent = formatTime(timeUsed);
+      }
+
+      renderMetrics(sectionResultsEl, report.sectionTotals, (item) => item.title);
+      renderMetrics(skillResultsEl, report.skillTotals, (item) => workAreaMap[item.key]?.title || item.key);
+      renderWorkAreas(report, {
+        timeExpired: Boolean(options.timeExpired),
+      });
+
+      if (isPremium()) {
+        if (reviewLockEl instanceof HTMLElement) reviewLockEl.hidden = true;
+        if (reviewEl instanceof HTMLElement) reviewEl.hidden = false;
+        renderReview();
+      } else {
+        if (reviewLockEl instanceof HTMLElement) reviewLockEl.hidden = false;
+        if (reviewEl instanceof HTMLElement) reviewEl.hidden = true;
+      }
+
+      syncPremiumActions();
+
+      resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
+    const finalizeTest = ({ skipConfirm = false, timeExpired = false } = {}) => {
+      if (hasSubmitted) return;
+
+      const unanswered = flatQuestions.filter((question) => {
+        const value = answers[question.id];
+        return Array.isArray(value) ? value.length === 0 : !value;
+      }).length;
+
+      if (!skipConfirm) {
+        const proceed = window.confirm(
+          unanswered
+            ? `You still have ${unanswered} unanswered question${unanswered === 1 ? '' : 's'}. Finish and score now?`
+            : 'Finish the test and see your score now?'
+        );
+        if (!proceed) return;
+      }
+
+      hasSubmitted = true;
+      if (timerId) {
+        window.clearInterval(timerId);
+        timerId = null;
+      }
+
+      renderResults({ timeExpired });
+    };
+
+    const startTimer = () => {
+      if (timerId || hasSubmitted) return;
+      timerId = window.setInterval(() => {
+        timeRemaining -= 1;
+        if (timerEl instanceof HTMLElement) {
+          timerEl.textContent = formatTime(Math.max(0, timeRemaining));
+        }
+
+        if (timeRemaining <= 0) {
+          timeRemaining = 0;
+          if (timerEl instanceof HTMLElement) {
+            timerEl.textContent = formatTime(0);
+          }
+          finalizeTest({ skipConfirm: true, timeExpired: true });
+        }
+      }, 1000);
+    };
+
+    const openModal = () => {
+      if (!(modalEl instanceof HTMLElement)) return;
+      modalEl.hidden = false;
+      document.body.style.overflow = 'hidden';
+      if (checkoutStatusEl instanceof HTMLElement) checkoutStatusEl.textContent = '';
+    };
+
+    const closeModal = () => {
+      if (!(modalEl instanceof HTMLElement)) return;
+      modalEl.hidden = true;
+      document.body.style.overflow = '';
+    };
+
+    document.getElementById('reading-submit-test')?.addEventListener('click', () => finalizeTest());
+    document.getElementById('reading-prev-question')?.addEventListener('click', () => moveToQuestion(currentIndex - 1));
+    document.getElementById('reading-next-question')?.addEventListener('click', () => moveToQuestion(currentIndex + 1));
+    document.getElementById('reading-open-upgrade')?.addEventListener('click', openModal);
+    document.getElementById('reading-retake-test')?.addEventListener('click', () => {
+      clearAttemptSnapshot();
+      window.location.href = '/celpip/reading/free-test';
+    });
+    document.getElementById('reading-manage-subscription')?.addEventListener('click', async () => {
+      const sessionId = String(premiumAccess?.sessionId || '').trim();
+      if (!sessionId) {
+        setAccessBanner('We could not find your billing session. Please email support if you need help canceling.', 'error');
+        return;
+      }
+
+      setAccessBanner('Opening secure billing portal...', 'info');
+
+      try {
+        const response = await fetch('/.netlify/functions/create-celpip-reading-portal', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sessionId }),
+        });
+
+        const data = await response.json().catch(() => null);
+        if (!response.ok || !data?.portalUrl) {
+          throw new Error(data?.error || 'Unable to open the billing portal.');
+        }
+
+        window.location.href = data.portalUrl;
+      } catch (error) {
+        setAccessBanner(error instanceof Error ? error.message : 'Unable to open the billing portal.', 'error');
+      }
+    });
+
+    flagButton?.addEventListener('click', () => {
+      const question = getCurrentQuestion();
+      flagged[question.id] = !flagged[question.id];
+      renderQuestion();
+    });
+
+    sectionButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        if (!(button instanceof HTMLButtonElement)) return;
+        const targetSection = button.dataset.readingSection;
+        const firstIndex = flatQuestions.findIndex((question) => question.sectionId === targetSection);
+        if (firstIndex >= 0) moveToQuestion(firstIndex);
+      });
+    });
+
+    paletteButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        if (!(button instanceof HTMLButtonElement)) return;
+        const questionId = button.dataset.readingQuestion;
+        const targetIndex = flatQuestions.findIndex((question) => question.id === questionId);
+        if (targetIndex >= 0) moveToQuestion(targetIndex);
+      });
+    });
+
+    modalEl?.querySelectorAll('[data-modal-close="true"]').forEach((button) => {
+      button.addEventListener('click', closeModal);
+    });
+
+    document.getElementById('reading-start-checkout')?.addEventListener('click', async () => {
+      if (!(checkoutStatusEl instanceof HTMLElement)) return;
+      checkoutStatusEl.textContent = 'Redirecting to secure checkout...';
+
+      try {
+        const response = await fetch('/.netlify/functions/create-celpip-reading-checkout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ product: 'celpip-reading-simulator' }),
+        });
+
+        const data = await response.json().catch(() => null);
+        if (!response.ok || !data?.checkoutUrl) {
+          throw new Error(data?.error || 'Unable to start checkout.');
+        }
+
+        window.location.href = data.checkoutUrl;
+      } catch (error) {
+        checkoutStatusEl.textContent = error instanceof Error ? error.message : 'Unable to start checkout.';
+      }
+    });
+
+    const bootstrapPage = async () => {
+      const restoredAttempt = restoreAttemptSnapshot();
+      const params = new URLSearchParams(window.location.search);
+      const returnedSessionId = params.get('checkout') === 'success'
+        ? String(params.get('session_id') || '').trim()
+        : '';
+      const storedSessionId = String(premiumAccess?.sessionId || '').trim();
+      const sessionIdToValidate = returnedSessionId || storedSessionId;
+
+      if (timerEl instanceof HTMLElement) {
+        timerEl.textContent = formatTime(timeRemaining);
+      }
+
+      if (!restoredAttempt) {
+        renderQuestion();
+        startTimer();
+      }
+
+      if (!sessionIdToValidate) {
+        if (params.has('checkout') || params.has('session_id')) {
+          window.history.replaceState({}, '', window.location.pathname);
+        }
+        return;
+      }
+
+      if (returnedSessionId) {
+        setAccessBanner('Confirming your payment and unlocking premium review...', 'info');
+      }
+
+      try {
+        const access = await validatePremiumSession(sessionIdToValidate);
+        grantPremium(access);
+
+        if (returnedSessionId) {
+          setAccessBanner('Payment confirmed. Premium review is now unlocked for this score report.', 'success');
+        } else if (access.cancelAtPeriodEnd) {
+          const endDate = formatCalendarDate(access.currentPeriodEnd);
+          setAccessBanner(
+            endDate
+              ? `Your subscription is set to end on ${endDate}. Premium access stays active until then.`
+              : 'Your subscription is set to end at the end of the current billing period.',
+            'info',
+          );
+        } else {
+          setAccessBanner('');
+        }
+      } catch (error) {
+        clearPremium();
+        if (!resultsEl?.hidden) {
+          renderResults();
+        }
+
+        if (returnedSessionId) {
+          setAccessBanner(
+            error instanceof Error ? error.message : 'We could not confirm your subscription yet.',
+            'error',
+          );
+        } else {
+          setAccessBanner('');
+        }
+      } finally {
+        if (params.has('checkout') || params.has('session_id')) {
+          window.history.replaceState({}, '', window.location.pathname);
+        }
+      }
+    };
+
+    bootstrapPage();
+  })();
+</script>
+
+<style>
+  .reading-test {
+    display: grid;
+    gap: 8px;
+  }
+
+  .reading-test__topbar {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  .reading-test__heading h2,
+  .reading-passage__head h3,
+  .reading-question-card__head h3,
+  .reading-results h3,
+  .reading-results h4,
+  .reading-results h5,
+  .reading-upgrade-modal__card h3 {
+    margin: 0;
+  }
+
+  .reading-test__heading-card,
+  .reading-test__status-card,
+  .reading-test__navcard,
+  .reading-passage,
+  .reading-question-card,
+  .reading-results__panel,
+  .reading-results__hero,
+  .reading-review-lock,
+  .reading-review {
+    border: 1px solid rgba(20, 22, 23, 0.14);
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .reading-test__heading-card,
+  .reading-test__status-card,
+  .reading-test__navcard {
+    padding: 6px 10px;
+  }
+
+  .reading-test__heading-card {
+    min-width: 0;
+    display: grid;
+    align-content: center;
+    gap: 2px;
+  }
+
+  .reading-test__heading-topline {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 10px;
+  }
+
+  .reading-test__heading-topline .reading-test__eyebrow {
+    min-width: 0;
+  }
+
+  .reading-test__heading-card h2 {
+    font-size: clamp(0.92rem, 0.35vw + 0.88rem, 1.08rem);
+    line-height: 1.05;
+  }
+
+  .reading-test__back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: end;
+    margin: 0;
+    width: fit-content;
+    border-radius: 999px;
+    border: 1px solid rgba(20, 22, 23, 0.12);
+    background: rgba(20, 22, 23, 0.03);
+    color: #445463;
+    font-weight: 700;
+    text-decoration: none;
+    flex: 0 0 auto;
+  }
+
+  .reading-test__back-btn:hover,
+  .reading-test__back-btn:focus-visible {
+    background: rgba(20, 22, 23, 0.06);
+    color: #233240;
+    text-decoration: none;
+  }
+
+  .reading-test__eyebrow {
+    margin: 0;
+    font-size: 0.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #8f3434;
+  }
+
+  .reading-test__intro {
+    display: none;
+  }
+
+  .reading-test__topmeta {
+    display: grid;
+    gap: 4px;
+    min-width: 0;
+    align-content: center;
+  }
+
+  .reading-test__status-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .reading-test__timer {
+    display: grid;
+    gap: 2px;
+  }
+
+  .reading-test__timer span {
+    font-size: 0.58rem;
+    color: #5f6c79;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+  }
+
+  .reading-test__timer strong {
+    font-size: clamp(1rem, 0.32vw + 0.96rem, 1.2rem);
+    line-height: 1;
+    color: var(--ink);
+  }
+
+  .reading-test__back-btn,
+  #reading-submit-test {
+    min-height: 28px;
+    padding: 0.38rem 0.68rem;
+    font-size: 0.78rem;
+    white-space: nowrap;
+    min-width: 136px;
+  }
+
+  .reading-test__progress--top {
+    display: grid;
+    gap: 4px;
+  }
+
+  .reading-test__progress-copyline {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .reading-test__progress-copyline .muted {
+    margin: 0;
+    font-size: 0.66rem;
+  }
+
+  .reading-test__navcard {
+    display: grid;
+    gap: 4px;
+    align-content: start;
+    min-height: 0;
+  }
+
+  .reading-test__subhead {
+    margin: 0;
+    font-size: 0.58rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6b7886;
+    font-weight: 800;
+  }
+
+  .reading-test__navcard-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .reading-progressbar {
+    width: 100%;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(20, 22, 23, 0.08);
+    overflow: hidden;
+  }
+
+  .reading-progressbar span {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #d94848, #f2a65a);
+  }
+
+  .reading-test__sections {
+    display: grid;
+    gap: 8px;
+  }
+
+  .reading-test__sections--compact {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4px;
+  }
+
+  .reading-section-btn {
+    width: 100%;
+    text-align: center;
+    display: inline-grid;
+    place-items: center;
+    padding: 2px 4px;
+    min-height: 22px;
+    border-radius: 7px;
+    border: 1px solid rgba(20, 22, 23, 0.14);
+    background: rgba(255, 255, 255, 0.94);
+    font: inherit;
+    color: var(--text);
+  }
+
+  .reading-section-btn span {
+    font-size: 0.56rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6b7886;
+    font-weight: 700;
+  }
+
+  .reading-section-btn.is-active {
+    border-color: rgba(217, 72, 72, 0.42);
+    background: rgba(217, 72, 72, 0.08);
+  }
+
+  .reading-palette {
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    gap: 4px;
+  }
+
+  .reading-palette__item {
+    min-height: 22px;
+    border-radius: 7px;
+    border: 1px solid rgba(20, 22, 23, 0.14);
+    background: #fff;
+    font: inherit;
+    font-weight: 700;
+    color: var(--text);
+    font-size: 0.66rem;
+  }
+
+  .reading-palette__item.is-active {
+    border-color: var(--accent);
+    background: rgba(217, 72, 72, 0.12);
+  }
+
+  .reading-palette__item.is-answered {
+    background: rgba(123, 183, 199, 0.18);
+    border-color: rgba(68, 118, 129, 0.3);
+  }
+
+  .reading-palette__item.is-flagged {
+    box-shadow: inset 0 0 0 2px rgba(242, 193, 78, 0.7);
+  }
+
+  .reading-test__shell {
+    display: block;
+  }
+
+  .reading-test__workspace {
+    display: grid;
+    grid-template-columns: minmax(0, 1.36fr) minmax(300px, 0.64fr);
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .reading-passage,
+  .reading-question-card {
+    padding: 10px 12px;
+  }
+
+  .reading-passage__body {
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+    font-size: clamp(0.92rem, 0.2vw + 0.9rem, 1rem);
+  }
+
+  .reading-passage__head {
+    display: grid;
+    gap: 3px;
+    margin-bottom: 6px;
+  }
+
+  .reading-passage__head .muted {
+    margin: 0;
+    font-size: 0.74rem;
+    line-height: 1.25;
+  }
+
+  .reading-passage__body p {
+    margin: 0 0 2px;
+    color: #263645;
+    line-height: 1.26;
+  }
+
+  .reading-passage__break {
+    height: 2px;
+  }
+
+  /* Paragraph labels (e.g. "Paragraph 1") */
+  .reading-passage__plabel {
+    margin: 10px 0 2px;
+    font-size: 0.76rem;
+    color: #5f6c79;
+    letter-spacing: 0.01em;
+  }
+
+  .reading-passage__plabel strong {
+    font-weight: 800;
+  }
+
+  /* Horizontal divider between emails */
+  .reading-passage__divider {
+    border: none;
+    border-top: 1px solid rgba(20, 22, 23, 0.14);
+    margin: 6px 0;
+  }
+
+  /* Fill-in-the-blank inline markers */
+  .reading-blank {
+    display: inline;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: rgba(217, 72, 72, 0.08);
+    border: 1px dashed rgba(217, 72, 72, 0.35);
+    color: #8f3434;
+    font-weight: 700;
+    font-size: 0.88em;
+    white-space: nowrap;
+  }
+
+  .reading-blank--filled {
+    background: rgba(123, 183, 199, 0.15);
+    border: 1px solid rgba(68, 118, 129, 0.35);
+    color: #1e5462;
+  }
+
+  /* Diagram / table */
+  .reading-diagram {
+    margin-top: 12px;
+    border: 1px solid rgba(20, 22, 23, 0.14);
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(245, 248, 250, 0.7);
+  }
+
+  .reading-diagram__caption {
+    margin: 0;
+    padding: 8px 12px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #5f6c79;
+    border-bottom: 1px solid rgba(20, 22, 23, 0.1);
+  }
+
+  .reading-diagram__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    line-height: 1.3;
+  }
+
+  .reading-diagram__table th,
+  .reading-diagram__table td {
+    padding: 6px 10px;
+    border-bottom: 1px solid rgba(20, 22, 23, 0.08);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .reading-diagram__table th {
+    background: rgba(20, 22, 23, 0.04);
+    font-weight: 800;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #445463;
+  }
+
+  .reading-diagram__table td {
+    color: #263645;
+  }
+
+  .reading-diagram__table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .reading-question-card {
+    display: grid;
+    gap: 8px;
+    align-content: start;
+  }
+
+  .reading-question-card__head {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: start;
+  }
+
+  .reading-question-card__head > div:first-child {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .reading-question-card__head h3 {
+    font-size: clamp(0.88rem, 0.32vw + 0.84rem, 1rem);
+    line-height: 1.16;
+  }
+
+  .reading-question-card__type {
+    width: fit-content;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: rgba(20, 22, 23, 0.06);
+    color: #45576a;
+    font-size: 0.68rem;
+    font-weight: 700;
+  }
+
+  .reading-question-form {
+    display: grid;
+    gap: 6px;
+  }
+
+  .reading-option {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+    padding: 8px 14px 8px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(20, 22, 23, 0.12);
+    background: #fff;
+  }
+
+  .reading-option input {
+    margin-top: 2px;
+  }
+
+  .reading-option__body {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+    min-width: 0;
+  }
+
+  .reading-option__marker {
+    min-width: 32px;
+    padding-top: 1px;
+    color: #8f3434;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    white-space: pre;
+  }
+
+  .reading-option__text {
+    color: #243341;
+    line-height: 1.2;
+    font-size: 0.82rem;
+    min-width: 0;
+  }
+
+  .reading-select {
+    width: 100%;
+    min-height: 34px;
+    border-radius: 12px;
+    border: 1px solid rgba(20, 22, 23, 0.14);
+    padding: 0 10px;
+    background: #fff;
+    font: inherit;
+  }
+
+  .reading-question-card__footer {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .reading-question-card__footer .btn,
+  .reading-flag-btn {
+    min-height: 30px;
+    padding: 0.4rem 0.7rem;
+    font-size: 0.76rem;
+    white-space: nowrap;
+  }
+
+  .reading-question-card__footer .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .reading-flag-btn {
+    flex: 0 0 auto;
+    align-self: flex-start;
+    border-color: rgba(20, 22, 23, 0.12);
+    background: rgba(20, 22, 23, 0.03);
+    color: #445463;
+  }
+
+  .reading-flag-btn:hover,
+  .reading-flag-btn:focus-visible {
+    background: rgba(20, 22, 23, 0.06);
+    color: #233240;
+  }
+
+  .reading-flag-btn.is-flagged {
+    border-color: #e0a91a;
+    background: rgba(242, 193, 78, 0.16);
+    color: #7a5a07;
+  }
+
+  .reading-results {
+    display: grid;
+    gap: var(--s-4);
+    justify-items: start;
+  }
+
+  .reading-access-banner {
+    width: min(100%, 1240px);
+    padding: 14px 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(20, 22, 23, 0.14);
+    background: rgba(230, 244, 236, 0.9);
+    color: #1f5d39;
+    font-weight: 700;
+  }
+
+  .reading-access-banner[data-tone='info'] {
+    background: rgba(231, 240, 250, 0.96);
+    color: #274d76;
+  }
+
+  .reading-access-banner[data-tone='error'] {
+    background: rgba(254, 242, 242, 0.98);
+    color: #8f3434;
+  }
+
+  .reading-results__hero,
+  .reading-results__panel,
+  .reading-review-lock,
+  .reading-review {
+    width: min(100%, 1240px);
+    padding: 20px;
+  }
+
+  .reading-results__hero {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--s-3);
+    align-items: start;
+    background:
+      radial-gradient(circle at top right, rgba(217, 72, 72, 0.1), transparent 34%),
+      #fff;
+  }
+
+  .reading-results__hero-actions {
+    display: grid;
+    gap: 10px;
+    justify-items: end;
+  }
+
+  .reading-results__portal-note {
+    max-width: 28ch;
+    margin: 0;
+    text-align: right;
+    font-size: 0.84rem;
+    line-height: 1.4;
+  }
+
+  .reading-score-pill {
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: #18232c;
+    color: #fff;
+    font-weight: 800;
+  }
+
+  .reading-results__summary-grid,
+  .reading-results__panels {
+    width: min(100%, 1240px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-3);
+    align-items: flex-start;
+  }
+
+  .reading-summary-card {
+    flex: 0 1 220px;
+    width: min(100%, 220px);
+    padding: 18px;
+    border: 1px solid rgba(20, 22, 23, 0.14);
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: var(--shadow-soft);
+    display: grid;
+    gap: 4px;
+  }
+
+  .reading-summary-card strong {
+    font-size: 1.2rem;
+    color: var(--ink);
+  }
+
+  .reading-summary-card span {
+    color: #4d5f71;
+    font-size: 0.88rem;
+  }
+
+  .reading-results__panel {
+    flex: 0 1 320px;
+    width: min(100%, 320px);
+  }
+
+  .reading-results__panel--primary {
+    flex-basis: 560px;
+    width: min(100%, 560px);
+  }
+
+  .reading-results__panel--compact {
+    flex-basis: 300px;
+    width: min(100%, 300px);
+  }
+
+  .reading-results__stack {
+    display: grid;
+    gap: 10px;
+  }
+
+  .reading-metric {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: rgba(20, 22, 23, 0.05);
+  }
+
+  .reading-workareas {
+    display: grid;
+    gap: 12px;
+  }
+
+  .reading-workarea-card {
+    padding: 16px;
+    border-radius: 16px;
+    background: rgba(20, 22, 23, 0.04);
+    display: grid;
+    gap: 8px;
+  }
+
+  .reading-workarea-card h5,
+  .reading-workarea-card p {
+    margin: 0;
+  }
+
+  .reading-workarea-card__score {
+    font-weight: 800;
+    color: #8f3434;
+  }
+
+  .reading-workarea-card__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .reading-workarea-card__links a {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--accent) 32%, white 68%);
+    background: color-mix(in srgb, var(--accent) 8%, white 92%);
+    color: #8f3434;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .reading-workarea-card__links a:hover,
+  .reading-workarea-card__links a:focus-visible {
+    background: color-mix(in srgb, var(--accent) 14%, white 86%);
+    text-decoration: none;
+  }
+
+  .reading-review-lock,
+  .reading-review {
+    display: grid;
+    gap: var(--s-3);
+  }
+
+  .reading-review-lock__actions,
+  .reading-upgrade-modal__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .reading-upgrade-modal__note {
+    margin: 0;
+  }
+
+  .reading-review__list {
+    display: grid;
+    gap: 12px;
+  }
+
+  .reading-review-card {
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(20, 22, 23, 0.14);
+    background: #fff;
+  }
+
+  .reading-review-card.is-correct {
+    border-color: rgba(57, 122, 88, 0.3);
+    background: rgba(237, 248, 242, 0.95);
+  }
+
+  .reading-review-card.is-wrong {
+    border-color: rgba(217, 72, 72, 0.24);
+    background: rgba(254, 246, 246, 0.98);
+  }
+
+  .reading-review-card__meta {
+    margin: 0 0 6px;
+    font-size: 0.8rem;
+    color: #677481;
+    font-weight: 700;
+  }
+
+  .reading-review-card p,
+  .reading-review-card h5 {
+    margin: 0 0 8px;
+  }
+
+  .reading-upgrade-modal[hidden] {
+    display: none;
+  }
+
+  .reading-upgrade-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    display: grid;
+    place-items: center;
+    padding: var(--s-4);
+  }
+
+  .reading-upgrade-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 22, 23, 0.42);
+  }
+
+  .reading-upgrade-modal__card {
+    position: relative;
+    width: min(560px, 100%);
+    padding: 24px;
+    display: grid;
+    gap: var(--s-3);
+    z-index: 1;
+  }
+
+  .reading-upgrade-modal__close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(20, 22, 23, 0.14);
+    background: #fff;
+    font: inherit;
+  }
+
+  .reading-upgrade-modal__list {
+    margin: 0;
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 8px;
+    color: #334556;
+  }
+
+  @media (max-width: 1180px) {
+    .reading-test__topbar {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    .reading-test__navcard {
+      grid-column: span 2;
+    }
+  }
+
+  @media (max-width: 1080px) {
+    .reading-test__workspace {
+      grid-template-columns: 1fr;
+    }
+
+    .reading-results__summary-grid,
+    .reading-results__panels {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .reading-test__topbar,
+    .reading-test__status-head,
+    .reading-question-card__head,
+    .reading-results__hero {
+      grid-template-columns: 1fr;
+      flex-direction: column;
+    }
+
+    .reading-test__topbar {
+      grid-template-columns: 1fr;
+    }
+
+    .reading-test__navcard {
+      grid-column: auto;
+    }
+
+    .reading-test__topmeta,
+    .reading-test__status-head {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .reading-test__timer {
+      text-align: left;
+    }
+
+    .reading-test__progress-copyline {
+      flex-direction: column;
+      align-items: start;
+    }
+
+    .reading-test__sections--compact {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .reading-question-card__footer .btn,
+    .reading-review-lock__actions .btn,
+    .reading-upgrade-modal__actions .btn,
+    .reading-test__topmeta .btn,
+    .reading-results__hero-actions .btn {
+      width: 100%;
+    }
+
+    .reading-results__hero-actions {
+      width: 100%;
+      justify-items: stretch;
+    }
+
+    .reading-results__portal-note {
+      max-width: none;
+      text-align: left;
+    }
+
+    .reading-summary-card,
+    .reading-results__panel,
+    .reading-results__panel--primary,
+    .reading-results__panel--compact {
+      width: 100%;
+      flex-basis: 100%;
+    }
+  }
+</style>

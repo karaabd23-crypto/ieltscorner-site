@@ -1423,6 +1423,44 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
       return hubConfig.tasks?.[taskType]?.minutes || 27;
     }
 
+    function taskHasPrompt(taskType, promptId) {
+      if (!taskType || !promptId) return false;
+      return Boolean((promptData[taskType] || {})[promptId]);
+    }
+
+    function resolveRequestedPrompt() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const requestedTask = String(params.get('task') || '').trim().toLowerCase();
+        const requestedPrompt = String(params.get('prompt') || '').trim();
+
+        if (!requestedPrompt) return null;
+
+        if (taskHasPrompt(requestedTask, requestedPrompt)) {
+          return { taskType: requestedTask, promptId: requestedPrompt };
+        }
+
+        for (const taskType of taskOrder) {
+          if (taskHasPrompt(taskType, requestedPrompt)) {
+            return { taskType, promptId: requestedPrompt };
+          }
+        }
+      } catch {
+      }
+
+      return null;
+    }
+
+    function syncPromptQuery() {
+      try {
+        const url = new URL(window.location.href);
+        url.searchParams.set('task', currentTaskType);
+        url.searchParams.set('prompt', selectedTaskId);
+        window.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`);
+      } catch {
+      }
+    }
+
     function getSubscription() {
       try {
         const raw = localStorage.getItem(ACCESS_KEY);
@@ -1799,6 +1837,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
 
       // Reset timer for this task type
       resetTimer();
+      syncPromptQuery();
     }
 
     // ---- Update submit area based on state ----
@@ -2174,6 +2213,25 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
     });
 
     // ---- Init ----
+    const requestedPrompt = resolveRequestedPrompt();
+    if (requestedPrompt) {
+      currentTaskType = requestedPrompt.taskType;
+      selectedTaskId = requestedPrompt.promptId;
+
+      taskSwitchBtns.forEach((btn) => {
+        const btnType = btn.getAttribute('data-task-type');
+        const isActive = btnType === currentTaskType;
+        btn.classList.toggle('is-active', isActive);
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+
+      const cfg = hubConfig.tasks?.[currentTaskType] || {};
+      if (sidebarTitle) sidebarTitle.textContent = cfg.sidebarTitle || '';
+      if (sidebarSub) sidebarSub.textContent = cfg.sidebarSub || '';
+      if (writingTitle) writingTitle.textContent = `Write your ${cfg.shortLabel || 'Task'} to see your score`;
+      rebuildSidebar();
+    }
+
     bindSidebarHandlers();
     loadPrompt(selectedTaskId);
     autoResizeTextarea();

@@ -191,6 +191,7 @@
       const pageType = normalizePageType(element.dataset.trackPageType || base.page_type);
       const test = element.dataset.trackTest || base.test;
       const skill = element.dataset.trackSkill || base.skill;
+      const promoType = element.dataset.trackPromoType || "standard";
 
       return {
         page_path: base.page_path,
@@ -198,6 +199,7 @@
         page_type: pageType,
         intent_level: base.intent_level,
         offer,
+        promo_type: promoType,
         offer_type: inferOfferType(offer),
         test,
         skill,

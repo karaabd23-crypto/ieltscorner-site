@@ -1,0 +1,60 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import CelpipReadingSimulator from "../../../../components/CelpipReadingSimulator.astro";
+import { buildBreadcrumbSchema } from "../../../../lib/seo";
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "CELPIP", path: "/celpip/" },
+    { name: "Reading", path: "/celpip/reading/" },
+    { name: "Free Test", path: "/celpip/reading/free-test/" },
+  ]),
+];
+---
+
+<Layout
+  title="CELPIP Reading Free Test"
+  description="Take the free CELPIP reading test in a focused exam-style environment with instant scoring and lesson recommendations."
+  keywords="CELPIP reading free test, CELPIP reading simulator, CELPIP reading practice test"
+  structuredData={pageStructuredData}
+>
+  <section class="section-sm reading-free-test-route">
+    <CelpipReadingSimulator />
+  </section>
+</Layout>
+
+<style>
+  .reading-free-test-route {
+    padding-top: 10px;
+    padding-bottom: 18px;
+  }
+
+  :global(.site-main > .container) {
+    width: min(1680px, calc(100vw - 56px));
+    max-width: min(1680px, calc(100vw - 56px));
+  }
+
+  :global(.site-main) {
+    padding-top: 0;
+    min-height: 100vh;
+  }
+
+  :global(.site-header),
+  :global(.site-footer),
+  :global(.top-drawer-banner),
+  :global(.page-bottom-ad-band) {
+    display: none;
+  }
+
+  @media (max-width: 760px) {
+    .reading-free-test-route {
+      padding-top: 8px;
+    }
+
+    :global(.site-main > .container) {
+      width: min(1680px, calc(100vw - 24px));
+      max-width: min(1680px, calc(100vw - 24px));
+    }
+  }
+</style>

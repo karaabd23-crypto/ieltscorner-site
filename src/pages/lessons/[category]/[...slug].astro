@@ -3,9 +3,11 @@ import LeadCaptureForm from "../../../components/LeadCaptureForm.astro";
 import LeadMagnetCard from "../../../components/LeadMagnetCard.astro";
 import OfferLadderBlock from "../../../components/OfferLadderBlock.astro";
 import OfferSequenceBlock from "../../../components/OfferSequenceBlock.astro";
+import ContextualNextStepPromo from "../../../components/ContextualNextStepPromo.astro";
 import Layout from "../../../layouts/Layout.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { getLessonTier, getPublicLessonTitle } from "../../../lib/lessonLevel";
+import { getLessonPromoConfig } from "../../../lib/promotionTools";
 
 type LessonEntry = CollectionEntry<"lessons">;
 type GuideLink = {
@@ -23,13 +25,6 @@ type ServiceLink = {
 type HubLink = {
   label: string;
   href: string;
-};
-
-type CtaBlock = {
-  kicker: string;
-  text: string;
-  href: string;
-  offer: string;
 };
 
 type LeadMagnetBlock = {
@@ -189,6 +184,11 @@ const trackTest = likelyCelpip ? "celpip" : currentTests.includes("IELTS") ? "ie
 const readingRescueLesson = likelyCelpip && currentSkill === "reading";
 const showIntentStack = isWritingLesson || readingRescueLesson;
 const ladderSkill = readingRescueLesson ? "reading" : "writing";
+const lessonPromoConfig = getLessonPromoConfig({
+  exam: likelyCelpip ? "CELPIP" : "IELTS",
+  skill: currentSkill,
+  category: currentCategory,
+});
 const leadMagnetBlock: LeadMagnetBlock | null = readingRescueLesson
   ? {
       headline: "Subscribe for Weekly CELPIP Reading Emails",
@@ -232,62 +232,6 @@ const leadMagnetBlock: LeadMagnetBlock | null = readingRescueLesson
           buttonLabel: "Subscribe for Weekly Emails",
         }
     : null;
-
-const midLessonCta: CtaBlock = isWritingLesson
-  ? likelyCelpip
-    ? {
-        kicker: "CELPIP AI Writing Feedback",
-        text: "Practice under timed conditions and get instant CLB scoring on your CELPIP writing.",
-        href: "/ai-feedback",
-        offer: "ai_feedback",
-      }
-    : {
-        kicker: "AI Writing Feedback",
-        text: "Practice under timed conditions and get instant AI scoring on your writing.",
-        href: "/ai-feedback",
-        offer: "ai_feedback",
-      }
-  : likelyCelpip
-    ? {
-        kicker: "Live CELPIP Support",
-        text: "Book a focused 1:1 session to fix your next CELPIP weak point.",
-        href: "/tutoring?src=lesson-mid-celpip",
-        offer: "tutoring",
-      }
-    : {
-        kicker: "Live IELTS Support",
-        text: "Book a focused 1:1 session to fix the patterns that keep your IELTS score from moving.",
-        href: "/tutoring?src=lesson-mid-ielts",
-        offer: "tutoring",
-      };
-
-const endLessonCta: CtaBlock = isWritingLesson
-  ? likelyCelpip
-    ? {
-        kicker: "Practice with AI Feedback",
-        text: "Apply what you just learned. Write under exam conditions and get an instant CLB score.",
-        href: "/ai-feedback",
-        offer: "ai_feedback",
-      }
-    : {
-        kicker: "Practice with AI Feedback",
-        text: "Apply what you just learned. Write under timed conditions and get instant AI scoring.",
-        href: "/ai-feedback",
-        offer: "ai_feedback",
-      }
-  : likelyCelpip
-    ? {
-        kicker: "Personalized Coaching",
-        text: "Need faster CELPIP improvement? Book a focused 1:1 strategy session.",
-        href: "/tutoring?src=lesson-end-celpip",
-        offer: "tutoring",
-      }
-    : {
-        kicker: "Personalized Coaching",
-        text: "Need faster IELTS improvement? Book a focused 1:1 strategy session.",
-        href: "/tutoring?src=lesson-end-ielts",
-        offer: "tutoring",
-      };
 
 const guideLinks: GuideLink[] = [];
 const seenGuideHrefs = new Set<string>();
@@ -537,44 +481,22 @@ const seoKeywords = `${publicTitle}, ${item.data.category}, ${item.data.level}, 
         <Content />
       </div>
 
-      <div id="lesson-mid-cta-template" hidden aria-hidden="true">
-        <section class="lesson-inline-cta lesson-inline-cta--mid">
-          <p class="lesson-inline-cta__kicker">{midLessonCta.kicker}</p>
-          <a
-            class="btn btn-primary lesson-inline-cta__button"
-            href={midLessonCta.href}
-            data-track-click="lesson-mid-primary-cta"
-            data-track-page-type="lesson"
-            data-track-offer={midLessonCta.offer}
-            data-track-test={trackTest}
-            data-track-skill={currentSkill}
-            data-track-position="mid"
-          >
-            {midLessonCta.text}
-          </a>
-        </section>
-      </div>
-
-      <section class="lesson-inline-cta lesson-inline-cta--end">
-        <p class="lesson-inline-cta__kicker">{endLessonCta.kicker}</p>
-        <a
-          class="btn btn-primary lesson-inline-cta__button"
-          href={endLessonCta.href}
-          data-track-click="lesson-end-primary-cta"
-          data-track-page-type="lesson"
-          data-track-offer={endLessonCta.offer}
-          data-track-test={trackTest}
-          data-track-skill={currentSkill}
-          data-track-position="end"
-        >
-          {endLessonCta.text}
-        </a>
-      </section>
+      {lessonPromoConfig && (
+        <div style="margin-top: var(--s-5);">
+          <ContextualNextStepPromo
+            {...lessonPromoConfig}
+            trackPageType="lesson"
+            trackTest={trackTest}
+            trackSkill={currentSkill}
+            trackPosition="lesson-next-step"
+          />
+        </div>
+      )}
 
       <div class="lesson-divider lesson-divider-soft" aria-hidden="true"></div>
 
       <section class="surface lesson-related-system">
-        <h3>Related lessons and your next support option</h3>
+        <h3>Related lessons and support options</h3>
         <p class="muted" style="margin-top: 0;">
           These recommendations are matched by test focus and skill level for this lesson.
         </p>
@@ -739,27 +661,6 @@ const seoKeywords = `${publicTitle}, ${item.data.category}, ${item.data.level}, 
           .replace(/[^\w\s]/g, " ")
           .replace(/\s+/g, " ")
           .trim();
-
-      const injectMidLessonCta = () => {
-        const template = document.getElementById("lesson-mid-cta-template");
-        if (!(template instanceof HTMLElement)) return;
-
-        const roots = Array.from(document.querySelectorAll("[data-lesson-body]"));
-        roots.forEach((root) => {
-          if (!(root instanceof HTMLElement)) return;
-          if (root.dataset.midCtaInjected === "true") return;
-
-          const blocks = Array.from(root.children).filter((child) => child instanceof HTMLElement);
-          if (blocks.length === 0) return;
-
-          const insertionIndex = Math.max(0, Math.floor(blocks.length / 2) - 1);
-          const ctaNode = template.firstElementChild?.cloneNode(true);
-          if (!(ctaNode instanceof HTMLElement)) return;
-
-          blocks[insertionIndex].insertAdjacentElement("afterend", ctaNode);
-          root.dataset.midCtaInjected = "true";
-        });
-      };
 
       const initializePracticeLab = () => {
         const roots = Array.from(document.querySelectorAll(".lesson-content"));
@@ -1003,7 +904,6 @@ const seoKeywords = `${publicTitle}, ${item.data.category}, ${item.data.level}, 
       };
 
       const initializeLessonEnhancements = () => {
-        injectMidLessonCta();
         initializePracticeLab();
       };
 

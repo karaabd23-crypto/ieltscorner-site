@@ -1,9 +1,14 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-import SkillFreeLessons from "../../../components/SkillFreeLessons.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import SkillSubNav from "../../../components/SkillSubNav.astro";
+import ContextualNextStepPromo from "../../../components/ContextualNextStepPromo.astro";
 import { buildBreadcrumbSchema } from "../../../lib/seo";
+import {
+  CELPIP_READING_FREE_TEST,
+  CELPIP_READING_PREMIUM_TESTS,
+  CELPIP_READING_PRICE_CAD,
+} from "../../../lib/celpipReadingData.mjs";
 
 const pageStructuredData = [
   buildBreadcrumbSchema(Astro.site, [
@@ -15,9 +20,9 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="CELPIP Reading Help | Book Private Class"
-  description="Stuck in CELPIP reading? Book one private class and fix timing, question strategy, and score-lowering mistakes."
-  keywords="CELPIP reading help, CELPIP reading coaching, CELPIP private class"
+  title="CELPIP Reading Tests"
+  description="Choose a CELPIP reading test, start the free full test in a separate exam-style environment, and unlock premium tests after your first score."
+  keywords="CELPIP reading test, CELPIP reading simulator, CELPIP reading practice"
   structuredData={pageStructuredData}
 >
   <Breadcrumbs items={[
@@ -25,34 +30,274 @@ const pageStructuredData = [
     { label: "CELPIP", href: "/celpip" },
     { label: "Reading" },
   ]} />
+
   <SkillSubNav exam="CELPIP" currentSkill="reading" />
 
   <section class="section">
     <div class="hero funnel-hero" style={`--hero-bg: url('/heroes/reading.png');`}>
-      <div class="hero-content funnel-hero__content">
-        <span class="pill">CELPIP reading support</span>
-        <h1>Stuck at CLB 6 or 7 in CELPIP Reading?</h1>
+      <div class="hero-content funnel-hero__content reading-catalog-hero">
+        <span class="pill">CELPIP reading tests</span>
+        <h1>Choose your reading test first. The exam screen opens separately.</h1>
         <p class="muted">
-          Get one-to-one coaching to improve timing, handle each reading task with a clear method,
-          and stop losing marks to distractors.
+          Start with one full free reading test. After you finish, you see your score immediately, along with the
+          reading skills that need work and the lessons that can fix them.
         </p>
         <div class="funnel-hero__actions">
-          <a class="btn btn-primary" href="/tutoring#book-private-class">Book Private Class</a>
+          <a class="btn btn-primary" href="/celpip/reading/free-test">Start Free Test</a>
+          <a class="btn btn-ghost" href="/tutoring#book-private-class">Book private reading coaching</a>
         </div>
       </div>
     </div>
   </section>
 
-  <SkillFreeLessons exam="CELPIP" skill="reading" />
+  <section class="section-sm">
+    <div class="surface reading-catalog">
+      <div class="reading-catalog__head">
+        <div>
+          <p class="reading-catalog__label">Available tests</p>
+          <h2>Test list</h2>
+        </div>
+        <p class="muted reading-catalog__copy">
+          The free test opens in a dedicated test environment. Premium tests unlock after the first score report.
+        </p>
+      </div>
+
+      <div class="reading-catalog__grid">
+        <article class="reading-test-card reading-test-card--free">
+          <p class="reading-test-card__badge">Free</p>
+          <h3>{CELPIP_READING_FREE_TEST.title}</h3>
+          <p class="muted">{CELPIP_READING_FREE_TEST.estimatedDifficulty}</p>
+          <ul class="reading-test-card__list">
+            <li>{CELPIP_READING_FREE_TEST.totalQuestions} auto-marked questions</li>
+            <li>{CELPIP_READING_FREE_TEST.durationMinutes}-minute timed test</li>
+            <li>Instant score plus lesson recommendations</li>
+          </ul>
+          <a class="btn btn-primary" href="/celpip/reading/free-test">Start Free Test</a>
+        </article>
+
+        {CELPIP_READING_PREMIUM_TESTS.map((test) => (
+          <article class="reading-test-card reading-test-card--locked">
+            <p class="reading-test-card__badge">Premium</p>
+            <h3>{test.title}</h3>
+            <p class="muted">{test.summary}</p>
+            <p class="reading-test-card__focus"><strong>Focus:</strong> {test.focus}</p>
+            <div class="reading-test-card__lockline">
+              Unlock with Reading Premium after the free test. CA${CELPIP_READING_PRICE_CAD}/month. Cancel anytime.
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="reading-catalog__promo">
+        <ContextualNextStepPromo
+          eyebrow="Reading premium"
+          title="Use the free test as your diagnostic, then decide whether to unlock premium."
+          intro="One full test is free. Premium adds detailed answer review, explanations, and the remaining full tests after you see your first score."
+          primary={{
+            offer: "reading_test",
+            title: "Free Reading Test",
+            description:
+              "Open the separate test screen now, finish the test, and see your score immediately.",
+            href: "/celpip/reading/free-test",
+            cta: "Start free test",
+          }}
+          variant="compact"
+          promoType="reading_premium_strip"
+          trackPageType="hub"
+          trackTest="celpip"
+          trackSkill="reading"
+          trackPosition="reading-premium-strip"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface reading-process">
+      <h2 style="margin-top: 0;">How it works</h2>
+      <div class="reading-process__grid">
+        <article class="reading-process__item">
+          <span>1</span>
+          <h3>Choose a test</h3>
+          <p>Start with the free full reading test from this page.</p>
+        </article>
+        <article class="reading-process__item">
+          <span>2</span>
+          <h3>Take it in a separate test screen</h3>
+          <p>The timer starts automatically and the environment stays focused on the test itself.</p>
+        </article>
+        <article class="reading-process__item">
+          <span>3</span>
+          <h3>Get score and study plan</h3>
+          <p>You see the score immediately, where your reading broke down, and which lessons to study next.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
   <section class="section-sm">
     <div class="surface funnel-final-cta">
-      <h2 style="margin-top: 0;">Your next step</h2>
-      <p>Book one focused class and get a personal reading improvement plan.</p>
+      <p class="offer-card__label">Need faster help?</p>
+      <h2 style="margin-top: 0;">Use the free test as your diagnostic, then decide whether you need premium or coaching.</h2>
+      <p>
+        The free test is the clean starting point. Premium adds more full tests and detailed review. Tutoring is for learners who want direct intervention.
+      </p>
       <div class="funnel-final-cta__actions">
-        <a class="btn btn-primary" href="/tutoring#book-private-class">Book Private Class</a>
+        <a class="btn btn-primary" href="/celpip/reading/free-test">Take the free reading test</a>
+        <a class="btn" href="/tutoring#book-private-class">Book private class</a>
       </div>
     </div>
   </section>
 </Layout>
 
+<style>
+  .reading-catalog-hero {
+    max-width: 62ch;
+  }
+
+  .reading-catalog {
+    padding: clamp(20px, 2vw + 12px, 32px);
+  }
+
+  .reading-catalog__head {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--s-4);
+    align-items: end;
+    margin-bottom: var(--s-4);
+  }
+
+  .reading-catalog__head h2,
+  .reading-test-card h3,
+  .reading-process__item h3 {
+    margin: 0;
+  }
+
+  .reading-catalog__label {
+    margin: 0 0 6px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7d3940;
+  }
+
+  .reading-catalog__copy {
+    margin: 0;
+    max-width: 42ch;
+  }
+
+  .reading-catalog__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) repeat(3, minmax(0, 1fr));
+    gap: var(--s-3);
+  }
+
+  .reading-catalog__promo {
+    margin-top: var(--s-4);
+  }
+
+  .reading-test-card {
+    display: grid;
+    gap: 10px;
+    padding: 18px;
+    border-radius: 18px;
+    border: 1px solid rgba(20, 22, 23, 0.14);
+    background: #fff;
+  }
+
+  .reading-test-card--free {
+    border-color: color-mix(in srgb, var(--accent) 34%, rgba(20, 22, 23, 0.14) 66%);
+    background:
+      radial-gradient(circle at top right, rgba(217, 72, 72, 0.08), transparent 34%),
+      #fff;
+  }
+
+  .reading-test-card__badge {
+    margin: 0;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #5f6c79;
+  }
+
+  .reading-test-card__list {
+    margin: 0;
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 8px;
+    color: #334556;
+  }
+
+  .reading-test-card__focus,
+  .reading-test-card__lockline {
+    margin: 0;
+    color: #334556;
+  }
+
+  .reading-test-card__lockline {
+    margin-top: auto;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: rgba(20, 22, 23, 0.05);
+    font-weight: 700;
+  }
+
+  .reading-process {
+    padding: clamp(20px, 2vw + 12px, 32px);
+  }
+
+  .reading-process__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--s-3);
+  }
+
+  .reading-process__item {
+    padding: 18px;
+    border-radius: 18px;
+    border: 1px solid rgba(20, 22, 23, 0.14);
+    background: #fff;
+  }
+
+  .reading-process__item span {
+    display: inline-grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(217, 72, 72, 0.1);
+    color: #8f3434;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+
+  .reading-process__item p {
+    margin: 8px 0 0;
+    color: #334556;
+  }
+
+  @media (max-width: 1080px) {
+    .reading-catalog__grid,
+    .reading-process__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .reading-test-card--free {
+      grid-column: span 2;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .reading-catalog__head,
+    .reading-catalog__grid,
+    .reading-process__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .reading-test-card--free {
+      grid-column: auto;
+    }
+  }
+</style>

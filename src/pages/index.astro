@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import FeaturedToolsSection from "../components/FeaturedToolsSection.astro";
+import { homeFeaturedToolCards } from "../lib/promotionTools";
 
 const homeKeywords =
   "IELTS preparation, CELPIP preparation, IELTS lessons, CELPIP lessons, IELTS tutor, CELPIP tutor, IELTS writing feedback, CELPIP writing feedback";
@@ -51,37 +53,38 @@ const homeKeywords =
 
     <section class="surface home-step">
       <p class="home-step__label">Step 2</p>
-      <h2>Paid support options</h2>
-      <p class="muted home-step__intro">Choose the service that matches what you need right now.</p>
-
-      <div class="grid grid-4" style="gap: var(--s-4); margin-top: var(--s-3);">
-        <a class="card home-option-card" href="/ai-feedback" aria-label="Start AI Feedback">
-          <p class="home-option-card__kicker">Paid service</p>
-          <h3>AI Feedback</h3>
-          <p class="muted">For CELPIP writing practice with fast score-based corrections.</p>
-          <span class="home-option-card__cta">Start AI Feedback</span>
-        </a>
-
-        <a class="card home-option-card" href="/tutoring#book-private-class" aria-label="Book Private Class">
-          <p class="home-option-card__kicker">Paid service</p>
-          <h3>Private Class</h3>
-          <p class="muted">For one-to-one support in listening, reading, writing, or speaking.</p>
-          <span class="home-option-card__cta">Book Private Class</span>
-        </a>
-      </div>
+      <FeaturedToolsSection
+        eyebrow="Featured CELPIP tools"
+        title="Start with the tool that fits your next move"
+        intro="Most visitors do better with one clear tool instead of digging through the menu first."
+        cards={homeFeaturedToolCards}
+        trackPageType="site"
+        trackTest="celpip"
+        trackSkill="general"
+        trackPosition="home-featured-tools"
+      />
     </section>
 
     <section class="surface home-step">
       <p class="home-step__label">Step 3</p>
-      <h2>Free lessons</h2>
-      <p class="muted home-step__intro">If you want to study first, start with the free lesson library.</p>
+      <h2>Extra support if you need it</h2>
+      <p class="muted home-step__intro">Use private help or the lesson library when you want more than the core tools.</p>
 
-      <a class="card home-option-card home-option-card--free" href="/lessons" aria-label="Browse Free Lessons">
-        <p class="home-option-card__kicker">Free option</p>
-        <h3>Free Lessons Library</h3>
-        <p class="muted">Grammar, vocabulary, writing, speaking, listening, and reading lessons with search and filters.</p>
-        <span class="home-option-card__cta">Browse or Search Free Lessons</span>
-      </a>
+      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-3);">
+        <a class="card home-option-card" href="/tutoring#book-private-class" aria-label="Book Private Class">
+          <p class="home-option-card__kicker">1:1 support</p>
+          <h3>Private Class</h3>
+          <p class="muted">For direct help in listening, reading, writing, or speaking when you want a personal plan.</p>
+          <span class="home-option-card__cta">Book Private Class</span>
+        </a>
+
+        <a class="card home-option-card home-option-card--free" href="/lessons" aria-label="Browse Free Lessons">
+          <p class="home-option-card__kicker">Free lessons</p>
+          <h3>Lessons Library</h3>
+          <p class="muted">Grammar, vocabulary, writing, speaking, listening, and reading lessons with search and filters.</p>
+          <span class="home-option-card__cta">Browse Free Lessons</span>
+        </a>
+      </div>
     </section>
   </section>
 </Layout>

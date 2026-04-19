@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import CelpipPracticeHub from "../components/CelpipPracticeHub.astro";
+import ContextualNextStepPromo from "../components/ContextualNextStepPromo.astro";
+import { aiFeedbackSecondaryPromo } from "../lib/promotionTools";
 import {
   CELPIP_WRITING_PRICE_CAD,
 } from "../lib/celpipWritingData.mjs";
@@ -11,6 +13,7 @@ const celpipQuickLinks = [
   { href: "/celpip/listening", label: "Listening" },
   { href: "/celpip/reading", label: "Reading" },
   { href: "/celpip/writing", label: "Writing" },
+  { href: "/celpip/writing/questions", label: "Question Bank" },
   { href: "/celpip/speaking", label: "Speaking" },
   { href: "/celpip/writing/samples", label: "Sample Essays" },
   { href: "/celpip/reading-guide", label: "Reading Guide" },
@@ -48,6 +51,9 @@ const faqs = [
         <p class="muted" style="max-width: 60ch;">
           Write a timed email, get an estimated CLB score, see exactly what is lowering it, and compare your writing to saved sample responses inside the task.
           The first task is always free.
+        </p>
+        <p class="muted" style="max-width: 60ch; margin-top: var(--s-2);">
+          Sample essays are bundled into the same premium writing workflow, and the free question bank stays open if you want lower-pressure prompt practice first.
         </p>
       </div>
     </div>
@@ -114,17 +120,14 @@ const faqs = [
   </section>
 
   <section class="section-sm">
-    <div class="surface funnel-section funnel-section--quiet">
-      <h2 style="margin-top: 0;">Not ready to start writing practice yet?</h2>
-      <p class="muted" style="margin-top: 0; max-width: 62ch;">
-        Explore free lessons first, or choose another support option.
-      </p>
-      <div class="cluster" style="margin-top: var(--s-3);">
-        <a class="btn" href="/lessons">Browse free lessons</a>
-        <a class="btn" href="/celpip">CELPIP Hub</a>
-        <a class="btn" href="/ielts">IELTS Hub</a>
-        <a class="btn" href="/tutoring">Private tutoring</a>
-      </div>
+    <div class="container">
+      <ContextualNextStepPromo
+        {...aiFeedbackSecondaryPromo}
+        trackPageType="landing"
+        trackTest="celpip"
+        trackSkill="writing"
+        trackPosition="ai-feedback-secondary"
+      />
     </div>
   </section>
 

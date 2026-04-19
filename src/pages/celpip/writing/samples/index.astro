@@ -4,23 +4,32 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
 ---
 
 <Layout
-  title="100 CELPIP Sample Essays | Paid Access"
-  description="Subscriber-only access to 100 CELPIP sample essays for Task 1 and Task 2."
+  title="100 CELPIP Sample Essays | Included in the Writing Bundle"
+  description="CELPIP sample essays are included with the AI Writing Lab subscription, along with timed practice and scored feedback."
 >
   <section class="section">
     <div class="hero" style={`--hero-bg: url('/heroes/writing.png');`}>
       <div class="hero-content">
         <span class="pill">100 CELPIP sample essays</span>
-        <h1>Read 100 sample answers for CELPIP writing</h1>
+        <h1>Study 100 sample answers inside the CELPIP writing bundle</h1>
         <p style="max-width: 68ch; font-size: 1.15rem; line-height: 1.7;">
-          See what strong CELPIP writing looks like. Search by task, topic, or level.
-          Every essay is a CLB 9+ model with a short note on why it scores well.
+          These model responses are part of the same premium writing bundle as the AI Writing Lab.
+          Use them to see what strong CELPIP writing looks like by task, topic, and level.
         </p>
       </div>
     </div>
   </section>
 
   <section class="section-sm">
+    <div class="surface" style="padding: var(--s-4); margin-bottom: var(--s-4);">
+      <p class="muted" style="margin: 0; max-width: 64ch;">
+        If you want timed practice, scored feedback, and these sample essays under one subscription, start with the AI Writing Lab. If you are not ready to pay yet, use the free question bank first.
+      </p>
+      <div class="cluster" style="margin-top: var(--s-3);">
+        <a class="btn btn-primary" href="/ai-feedback">Go to AI Writing Lab</a>
+        <a class="btn btn-ghost" href="/celpip/writing/questions">Practice free prompts first</a>
+      </div>
+    </div>
     <div id="sample-library-checking" class="surface" style="padding: var(--s-5);">
       <p class="muted" style="margin: 0;">Checking your subscription and loading sample essays…</p>
     </div>
@@ -29,9 +38,9 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
       <div class="card" style="border-left: 4px solid #dc3545;">
         <h2 style="margin-top: 0; color: #dc3545;">Get access to all 100 sample essays</h2>
         <p id="sample-library-locked-reason" style="margin-top: 0; font-size: 1.1rem; line-height: 1.7;">
-          For CA$5/month, you get 100 model answers you can search by task, topic, and
-          level. You also get the timed writing lab with scoring and feedback. Cancel any
-          time. no contracts.
+          For CA${CELPIP_WRITING_PRICE_CAD}/month, you get 100 model answers you can search by task, topic, and
+          level, plus the same AI Writing Lab subscription with timed practice and scored feedback.
+          Cancel any time.
         </p>
         <div class="cluster">
           <a class="btn btn-primary" href="/ai-feedback">Subscribe for CA${CELPIP_WRITING_PRICE_CAD}/month</a>

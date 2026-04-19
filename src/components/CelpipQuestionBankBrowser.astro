@@ -1,0 +1,380 @@
+---
+import { CELPIP_PROMPT_BANK, CELPIP_PROMPT_TOTAL, CELPIP_TASK_SIDEBARS } from "../lib/celpipWritingData.mjs";
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const {
+  title = "Question bank browser",
+  description = "Search by topic or instruction language, or filter by task type. Every result has a direct AI Writing Lab entry point when you want feedback.",
+} = Astro.props as Props;
+
+const taskMeta = {
+  task1: {
+    label: "Task 1",
+    longLabel: "Task 1 Email",
+  },
+  task2: {
+    label: "Task 2",
+    longLabel: "Task 2 Survey Response",
+  },
+};
+
+const aiLabPromptIds = new Set(
+  Object.values(CELPIP_TASK_SIDEBARS)
+    .flat()
+    .map((entry) => entry.id)
+);
+
+const promptCards = [...CELPIP_PROMPT_BANK.task1, ...CELPIP_PROMPT_BANK.task2].map((prompt) => {
+  const taskType = String(prompt.id || "").startsWith("survey-") ? "task2" : "task1";
+  const promptText = String(prompt.question || prompt.scenario || "").trim();
+  const opensDirectlyInLab = aiLabPromptIds.has(prompt.id);
+  const searchBlob = [
+    taskMeta[taskType].label,
+    prompt.title,
+    promptText,
+    ...(Array.isArray(prompt.instructions) ? prompt.instructions : []),
+    ...(Array.isArray(prompt.options) ? prompt.options : []),
+  ]
+    .join(" ")
+    .toLowerCase();
+
+  return {
+    ...prompt,
+    taskType,
+    taskLabel: taskMeta[taskType].longLabel,
+    promptText,
+    searchBlob,
+    opensDirectlyInLab,
+    aiLabHref: opensDirectlyInLab
+      ? `/ai-feedback?task=${taskType}&prompt=${encodeURIComponent(prompt.id)}`
+      : "/ai-feedback",
+  };
+});
+---
+
+<div class="surface question-bank-browser">
+  <div class="question-bank-browser__head">
+    <div>
+      <h2 style="margin-top: 0;">{title}</h2>
+      <p class="muted" style="margin-top: 0;">{description}</p>
+    </div>
+    <div class="question-bank-browser__tools">
+      <label class="question-bank-control">
+        <span>Search prompts</span>
+        <input id="question-bank-search" type="search" placeholder="Search by topic, action, or keyword" autocomplete="off" />
+      </label>
+      <label class="question-bank-control">
+        <span>Task filter</span>
+        <select id="question-bank-filter-task">
+          <option value="all">All prompts</option>
+          <option value="task1">Task 1 only</option>
+          <option value="task2">Task 2 only</option>
+        </select>
+      </label>
+    </div>
+  </div>
+
+  <p id="question-bank-results-summary" class="muted question-bank-results-summary">
+    Showing all {CELPIP_PROMPT_TOTAL} prompts.
+  </p>
+
+  <div class="question-bank-grid">
+    {promptCards.map((prompt, index) => (
+      <article
+        class="card question-card"
+        data-task-type={prompt.taskType}
+        data-search={prompt.searchBlob}
+        data-title={prompt.title}
+        data-index={index}
+      >
+        <div class="question-card__head">
+          <div class="cluster question-card__pills">
+            <span class="pill">{prompt.taskLabel}</span>
+            <span class="question-card__meta">{prompt.sampleLevel || "CLB 9+ model available in AI Lab"}</span>
+          </div>
+          <h3>{prompt.title}</h3>
+        </div>
+
+        <p class="question-card__text">{prompt.promptText}</p>
+
+        {prompt.options?.length > 0 && (
+          <div class="question-card__options">
+            {prompt.options.map((option) => (
+              <span class="question-card__option">{option}</span>
+            ))}
+          </div>
+        )}
+
+        {prompt.instructions?.length > 0 && (
+          <ul class="question-card__instructions">
+            {prompt.instructions.slice(0, 3).map((instruction) => (
+              <li>{instruction}</li>
+            ))}
+          </ul>
+        )}
+
+        <div class="question-card__footer">
+          <div class="question-card__actions">
+            <a class="btn btn-primary" href={prompt.aiLabHref}>
+              {prompt.opensDirectlyInLab ? "Write This in AI Lab" : "Open AI Lab"}
+            </a>
+            <button
+              class="btn question-card__copy"
+              type="button"
+              data-copy-title={prompt.title}
+              data-copy-text={prompt.promptText}
+            >
+              Copy Prompt
+            </button>
+          </div>
+          <p class="muted question-card__note">
+            {prompt.opensDirectlyInLab
+              ? "This prompt opens directly in the AI Lab."
+              : "Browse here for free, then use the AI Lab for timed writing, CLB scoring, and rewrite suggestions."}
+          </p>
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <div id="question-bank-empty" class="surface question-bank-empty" style="display:none;">
+    <h3 style="margin-top: 0;">No prompts match your current filter</h3>
+    <p class="muted" style="margin-bottom: 0;">Try a broader keyword or switch back to all prompts.</p>
+  </div>
+</div>
+
+<script is:inline>
+  (() => {
+    const root = document.currentScript?.previousElementSibling;
+    if (!(root instanceof HTMLElement)) return;
+
+    const searchInput = root.querySelector('#question-bank-search');
+    const taskFilter = root.querySelector('#question-bank-filter-task');
+    const summary = root.querySelector('#question-bank-results-summary');
+    const emptyState = root.querySelector('#question-bank-empty');
+    const cards = Array.from(root.querySelectorAll('.question-card'));
+
+    const updateSummary = (visibleCount, taskValue, query) => {
+      if (!(summary instanceof HTMLElement)) return;
+      const taskLabel = taskValue === 'task1'
+        ? 'Task 1'
+        : taskValue === 'task2'
+          ? 'Task 2'
+          : 'all';
+      if (!visibleCount) {
+        summary.textContent = 'No prompts match your current filter.';
+        return;
+      }
+      if (query) {
+        summary.textContent = `Showing ${visibleCount} ${taskLabel} prompt${visibleCount === 1 ? '' : 's'} for "${query}".`;
+        return;
+      }
+      summary.textContent = taskValue === 'all'
+        ? `Showing all ${visibleCount} prompts.`
+        : `Showing ${visibleCount} ${taskLabel} prompt${visibleCount === 1 ? '' : 's'}.`;
+    };
+
+    const applyFilters = () => {
+      const taskValue = taskFilter instanceof HTMLSelectElement ? taskFilter.value : 'all';
+      const query = searchInput instanceof HTMLInputElement ? searchInput.value.trim().toLowerCase() : '';
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        if (!(card instanceof HTMLElement)) return;
+        const taskType = card.dataset.taskType || '';
+        const searchBlob = card.dataset.search || '';
+        const matchesTask = taskValue === 'all' || taskType === taskValue;
+        const matchesQuery = !query || searchBlob.includes(query);
+        const visible = matchesTask && matchesQuery;
+        card.style.display = visible ? '' : 'none';
+        if (visible) visibleCount += 1;
+      });
+
+      if (emptyState instanceof HTMLElement) {
+        emptyState.style.display = visibleCount ? 'none' : '';
+      }
+
+      updateSummary(visibleCount, taskValue, query);
+    };
+
+    searchInput?.addEventListener('input', applyFilters);
+    taskFilter?.addEventListener('change', applyFilters);
+    applyFilters();
+
+    root.querySelectorAll('.question-card__copy').forEach((button) => {
+      button.addEventListener('click', async () => {
+        if (!(button instanceof HTMLButtonElement)) return;
+        const title = button.dataset.copyTitle || 'CELPIP writing prompt';
+        const text = button.dataset.copyText || '';
+        const payload = `${title}\n\n${text}`;
+
+        try {
+          await navigator.clipboard.writeText(payload);
+          button.textContent = 'Copied';
+          window.setTimeout(() => {
+            button.textContent = 'Copy Prompt';
+          }, 1500);
+        } catch {
+          button.textContent = 'Copy failed';
+          window.setTimeout(() => {
+            button.textContent = 'Copy Prompt';
+          }, 1500);
+        }
+      });
+    });
+  })();
+</script>
+
+<style>
+  .question-bank-browser {
+    padding: var(--s-5);
+  }
+
+  .question-bank-browser__head {
+    display: grid;
+    gap: var(--s-4);
+  }
+
+  .question-bank-browser__tools {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(220px, 0.9fr);
+    gap: var(--s-3);
+    align-items: end;
+  }
+
+  .question-bank-control {
+    display: grid;
+    gap: 0.45rem;
+    font-weight: 700;
+  }
+
+  .question-bank-control span {
+    font-size: 0.92rem;
+  }
+
+  .question-bank-control input,
+  .question-bank-control select {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.9rem 1rem;
+    font: inherit;
+    background: #fff;
+  }
+
+  .question-bank-results-summary {
+    margin: var(--s-3) 0 0;
+  }
+
+  .question-bank-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--s-3);
+    margin-top: var(--s-4);
+  }
+
+  .question-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+    border: 1px solid var(--border);
+  }
+
+  .question-card__head h3 {
+    margin: var(--s-2) 0 0;
+  }
+
+  .question-card__pills {
+    gap: 0.55rem;
+  }
+
+  .question-card__meta {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-weight: 700;
+  }
+
+  .question-card__text {
+    margin: 0;
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  .question-card__options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .question-card__option {
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--accent) 11%, #fff 89%);
+    color: var(--accent);
+    font-size: 0.88rem;
+    font-weight: 700;
+    padding: 0.45rem 0.8rem;
+  }
+
+  .question-card__instructions {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: var(--text-muted);
+  }
+
+  .question-card__instructions li + li {
+    margin-top: 0.35rem;
+  }
+
+  .question-card__footer {
+    margin-top: auto;
+  }
+
+  .question-card__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2);
+  }
+
+  .question-card__copy {
+    border: 1px solid var(--border);
+  }
+
+  .question-card__note {
+    margin: var(--s-2) 0 0;
+    font-size: 0.9rem;
+  }
+
+  .question-bank-empty {
+    margin-top: var(--s-4);
+    padding: var(--s-4);
+  }
+
+  @media (max-width: 960px) {
+    .question-bank-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .question-bank-browser {
+      padding: var(--s-4);
+    }
+
+    .question-bank-browser__tools {
+      grid-template-columns: 1fr;
+    }
+
+    .question-card__actions {
+      flex-direction: column;
+    }
+
+    .question-card__actions .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

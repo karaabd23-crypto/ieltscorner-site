@@ -1,0 +1,245 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import Breadcrumbs from "../../../../components/Breadcrumbs.astro";
+import SkillSubNav from "../../../../components/SkillSubNav.astro";
+import LeadCaptureForm from "../../../../components/LeadCaptureForm.astro";
+import ContentAd from "../../../../components/ContentAd.astro";
+import CelpipQuestionBankBrowser from "../../../../components/CelpipQuestionBankBrowser.astro";
+import ContextualNextStepPromo from "../../../../components/ContextualNextStepPromo.astro";
+import {
+  CELPIP_PROMPT_BANK,
+  CELPIP_PROMPT_TOTAL,
+} from "../../../../lib/celpipWritingData.mjs";
+import { questionBankUpgradePromo } from "../../../../lib/promotionTools";
+import { buildBreadcrumbSchema } from "../../../../lib/seo";
+
+const taskMeta = {
+  task1: {
+    label: "Task 1",
+    longLabel: "Task 1 Email",
+    shortDescription: "Email prompts with clear audience, purpose, and requested action.",
+  },
+  task2: {
+    label: "Task 2",
+    longLabel: "Task 2 Survey Response",
+    shortDescription: "Survey questions that ask you to choose one option and defend it.",
+  },
+};
+
+const taskCounts = {
+  task1: CELPIP_PROMPT_BANK.task1.length,
+  task2: CELPIP_PROMPT_BANK.task2.length,
+};
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "CELPIP", path: "/celpip/" },
+    { name: "Writing", path: "/celpip/writing/" },
+    { name: "Questions", path: "/celpip/writing/questions/" },
+  ]),
+];
+---
+
+<Layout
+  title="CELPIP Writing Questions | 100 Free Task 1 and Task 2 Prompts"
+  description="Browse 100 free CELPIP writing questions for Task 1 email and Task 2 survey response practice. Search prompts, join the digest, and move into the AI Writing Lab when you want scored feedback."
+  keywords="CELPIP writing questions, CELPIP writing prompts, CELPIP task 1 questions, CELPIP task 2 questions, CELPIP email practice, CELPIP survey response prompts"
+  structuredData={pageStructuredData}
+>
+  <Breadcrumbs items={[
+    { label: "Home", href: "/" },
+    { label: "CELPIP", href: "/celpip" },
+    { label: "Writing", href: "/celpip/writing" },
+    { label: "Questions" },
+  ]} />
+  <SkillSubNav exam="CELPIP" currentSkill="writing" />
+
+  <section class="section">
+    <div class="hero funnel-hero" style={`--hero-bg: url('/heroes/writing.png');`}>
+      <div class="hero-content funnel-hero__content">
+        <span class="pill">Free CELPIP writing bank</span>
+        <h1>100 CELPIP writing questions you can practice for free</h1>
+        <p class="muted question-bank-hero-copy">
+          Use this public question bank to practice both CELPIP writing tasks. Browse Task 1 emails and Task 2 survey responses, save prompts for later, and move into the AI Writing Lab when you want a CLB estimate and detailed feedback.
+        </p>
+        <div class="cluster question-bank-stats">
+          <span class="question-bank-stat">{CELPIP_PROMPT_TOTAL} total prompts</span>
+          <span class="question-bank-stat">{taskCounts.task1} Task 1 emails</span>
+          <span class="question-bank-stat">{taskCounts.task2} Task 2 surveys</span>
+        </div>
+        <div class="funnel-hero__actions">
+          <a class="btn btn-primary" href="#question-bank-browser">Browse questions</a>
+          <a class="btn btn-ghost" href="/ai-feedback">Open AI Writing Lab</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm" style="padding-top: 0;">
+    <div class="surface question-bank-intro">
+      <div class="question-bank-intro__copy">
+        <h2 style="margin-top: 0;">Use the free bank first, then upgrade only when you need scored feedback</h2>
+        <p class="muted" style="margin-top: 0;">
+          This page is fully open to visitors. The prompts are free to browse. The AI Writing Lab is the paid step when you want timed practice, score reports, error analysis, rewrites, and a stronger improvement plan.
+        </p>
+      </div>
+      <div class="question-bank-intro__grid">
+        <article class="card question-bank-mini-card">
+          <span class="pill">Task 1</span>
+          <h3>Email prompts</h3>
+          <p class="muted">{taskMeta.task1.shortDescription}</p>
+        </article>
+        <article class="card question-bank-mini-card">
+          <span class="pill">Task 2</span>
+          <h3>Survey prompts</h3>
+          <p class="muted">{taskMeta.task2.shortDescription}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm" style="padding-top: 0;">
+    <div class="surface question-bank-signup">
+      <LeadCaptureForm
+        heading="Get new CELPIP writing prompts and digest notes by email"
+        message="Join the Kit digest for fresh writing prompts, weekly writing tips, and direct links to new CELPIP resources."
+        buttonLabel="Join the Digest"
+        source="celpip-question-bank-top"
+        formName="celpip-question-bank-top"
+        formType="lead_capture_question_bank"
+        pageType="hub"
+        offer="digest"
+        test="celpip"
+        skill="writing"
+        position="question_bank_top"
+      />
+    </div>
+  </section>
+
+  <section class="section-sm" style="padding-top: 0;">
+    <div class="container">
+      <ContentAd className="question-bank-ad" />
+    </div>
+  </section>
+
+  <section class="section-sm" id="question-bank-browser" style="padding-top: 0;">
+    <CelpipQuestionBankBrowser />
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+      <ContentAd className="question-bank-ad" label="Sponsored" />
+    </div>
+  </section>
+
+  <section class="section-sm" style="padding-top: 0;">
+    <div class="surface question-bank-mid">
+      <div class="question-bank-mid__copy">
+        <h2 style="margin-top: 0;">Turn these free prompts into weekly practice</h2>
+        <p class="muted" style="margin-top: 0;">
+          If you want more than a static list, join the digest. You will get CELPIP writing ideas, new prompt reminders, and study notes that keep the bank active instead of forgotten.
+        </p>
+      </div>
+      <LeadCaptureForm
+        heading="Get the CELPIP writing digest"
+        message="Receive new prompts, practical writing tips, and updates when new CELPIP writing resources go live."
+        buttonLabel="Subscribe Free"
+        source="celpip-question-bank-mid"
+        formName="celpip-question-bank-mid"
+        formType="lead_capture_question_bank"
+        pageType="hub"
+        offer="digest"
+        test="celpip"
+        skill="writing"
+        position="question_bank_mid"
+      />
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <ContextualNextStepPromo
+      {...questionBankUpgradePromo}
+      trackPageType="hub"
+      trackTest="celpip"
+      trackSkill="writing"
+      trackPosition="question-bank-upgrade"
+    />
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+      <ContentAd className="question-bank-ad" />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .question-bank-hero-copy {
+    max-width: 64ch;
+  }
+
+  .question-bank-stats {
+    margin-top: var(--s-3);
+    gap: var(--s-2);
+  }
+
+  .question-bank-stat {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.45rem 0.8rem;
+    background: rgba(255, 255, 255, 0.82);
+    font-size: 0.92rem;
+    font-weight: 700;
+  }
+
+  .question-bank-intro,
+  .question-bank-mid {
+    padding: var(--s-5);
+  }
+
+  .question-bank-intro__grid {
+    display: grid;
+    gap: var(--s-3);
+  }
+
+  .question-bank-intro__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: var(--s-3);
+  }
+
+  .question-bank-mini-card h3 {
+    margin-bottom: 0;
+  }
+
+  .question-bank-mid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: var(--s-4);
+    align-items: start;
+  }
+
+  :global(.question-bank-signup .lead-capture),
+  :global(.question-bank-mid .lead-capture) {
+    margin: 0;
+  }
+
+  :global(.question-bank-signup .lead-capture h3),
+  :global(.question-bank-mid .lead-capture h3) {
+    margin-top: 0;
+  }
+
+  @media (max-width: 960px) {
+    .question-bank-intro__grid,
+    .question-bank-mid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .question-bank-intro,
+    .question-bank-mid {
+      padding: var(--s-4);
+    }
+  }
+</style>

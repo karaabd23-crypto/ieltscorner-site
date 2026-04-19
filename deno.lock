@@ -16,7 +16,7 @@
         "npm:@astrojs/sitemap@^3.7.0",
         "npm:@netlify/blobs@^10.7.2",
         "npm:astro@^5.16.0",
-        "npm:nodemailer@^6.9.8",
+        "npm:nodemailer@^8.0.5",
         "npm:sharp@~0.33.5",
         "npm:stripe@^17.5.0",
         "npm:typescript@^5.9.3"

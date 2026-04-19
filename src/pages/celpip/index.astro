@@ -1,6 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import FeaturedToolsSection from "../../components/FeaturedToolsSection.astro";
+import { celpipFeaturedToolCards } from "../../lib/promotionTools";
 import { buildBreadcrumbSchema } from "../../lib/seo";
 
 const pageKeywords = "CELPIP preparation, CELPIP listening, CELPIP reading, CELPIP writing, CELPIP speaking, CELPIP services";
@@ -42,6 +44,12 @@ const celpipServices = [
     description: "Practice CELPIP Writing Task 1 and Task 2 with timer, scoring, and actionable feedback.",
     href: "/ai-feedback",
     cta: "Start AI feedback",
+  },
+  {
+    title: "Free CELPIP Question Bank",
+    description: "Browse 100 public Task 1 and Task 2 prompts before moving into scored practice.",
+    href: "/celpip/writing/questions",
+    cta: "Open question bank",
   },
   {
     title: "100 Writing Sample Essays",
@@ -118,7 +126,22 @@ const pageStructuredData = [
 
   <section class="section-sm">
     <div class="surface celpip-section">
-      <h2 style="margin-top: 0;">1) CELPIP skill menu</h2>
+      <FeaturedToolsSection
+        eyebrow="Start with a tool, not the menu"
+        title="The three CELPIP tools that deserve top billing"
+        intro="These are the quickest ways to start practicing, diagnose your level, or move into premium improvement."
+        cards={celpipFeaturedToolCards}
+        trackPageType="hub"
+        trackTest="celpip"
+        trackSkill="general"
+        trackPosition="celpip-featured-tools"
+      />
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface celpip-section">
+      <h2 style="margin-top: 0;">1) Explore by skill</h2>
       <p class="muted" style="margin-top: 0;">
         Pick the skill page first. Each page is focused and links to the right support options for that skill.
       </p>
@@ -137,7 +160,7 @@ const pageStructuredData = [
 
   <section class="section-sm">
     <div class="surface celpip-section">
-      <h2 style="margin-top: 0;">2) All CELPIP services</h2>
+      <h2 style="margin-top: 0;">2) More CELPIP support</h2>
       <p class="muted" style="margin-top: 0;">
         Every active CELPIP-related service is listed here for one-click access.
       </p>
