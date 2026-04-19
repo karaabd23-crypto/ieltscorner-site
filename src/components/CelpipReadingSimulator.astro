@@ -10,8 +10,24 @@ import {
 } from "../lib/celpipReadingData.mjs";
 
 const freeQuestions = flattenReadingQuestions(CELPIP_READING_FREE_TEST);
+const initialSection = CELPIP_READING_FREE_TEST.sections[0];
 
-const serializeInlineJSON = (value) =>
+const blankTokenPattern = /({{BLANK:[^}]+}})/;
+
+const blankPlaceholder = (blankId) => `[____${String(blankId || "").replace("q", "")}____]`;
+
+const splitPassageText = (text = "") =>
+  String(text)
+    .split(blankTokenPattern)
+    .filter(Boolean)
+    .map((part) => {
+      const blankMatch = part.match(/{{BLANK:([^}]+)}}/);
+      return blankMatch
+        ? { type: "blank", id: blankMatch[1] }
+        : { type: "text", value: part };
+    });
+
+const serializeInlineJSON = (value: unknown) =>
   JSON.stringify(value)
     .replace(/</g, "\\u003c")
     .replace(/>/g, "\\u003e")
@@ -93,13 +109,31 @@ const serializeInlineJSON = (value) =>
     <div class="reading-test__workspace">
       <section class="reading-passage">
         <div class="reading-passage__head">
-          <p class="reading-test__eyebrow" id="reading-current-section-label">{CELPIP_READING_FREE_TEST.sections[0].label}</p>
-          <h3 id="reading-current-section-title">{CELPIP_READING_FREE_TEST.sections[0].title}</h3>
-          <p class="muted" id="reading-current-section-context">{CELPIP_READING_FREE_TEST.sections[0].context}</p>
+          <p class="reading-test__eyebrow" id="reading-current-section-label">{initialSection.label}</p>
+          <h3 id="reading-current-section-title">{initialSection.title}</h3>
+          <p class="muted" id="reading-current-section-context">{initialSection.context}</p>
         </div>
         <div class="reading-passage__body" id="reading-passage-body">
-          {CELPIP_READING_FREE_TEST.sections[0].passage.map((line) => (
-            line === "" ? <div class="reading-passage__break" aria-hidden="true"></div> : <p>{line}</p>
+          {initialSection.passage.map((block) => (
+            block.type === "divider" ? (
+              <hr class="reading-passage__divider" aria-hidden="true" />
+            ) : block.type === "label" ? (
+              <p class="reading-passage__plabel">
+                <strong>{block.text}</strong>
+              </p>
+            ) : (
+              <p class:list={[block.type === "meta" ? "reading-passage__meta" : "reading-passage__paragraph"]}>
+                {splitPassageText(block.text).map((part) =>
+                  part.type === "blank" ? (
+                    <span class="reading-blank" data-blank-id={part.id}>
+                      {blankPlaceholder(part.id)}
+                    </span>
+                  ) : (
+                    part.value
+                  )
+                )}
+              </p>
+            )
           ))}
         </div>
       </section>
@@ -127,7 +161,7 @@ const serializeInlineJSON = (value) =>
   <section class="reading-results" id="reading-results" hidden>
     <div class="reading-access-banner" id="reading-access-banner" hidden></div>
 
-    <div class="reading-results__hero">
+    <div class="reading-results__hero" id="reading-results-top">
       <div>
         <p class="reading-test__eyebrow">Score report</p>
         <h3 id="reading-score-line">Score pending</h3>
@@ -145,11 +179,11 @@ const serializeInlineJSON = (value) =>
 
     <div class="reading-results__summary-grid">
       <div class="reading-summary-card">
-        <strong id="reading-score-correct">0/20</strong>
+        <strong id="reading-score-correct">0/{freeQuestions.length}</strong>
         <span>questions correct</span>
       </div>
       <div class="reading-summary-card">
-        <strong id="reading-score-answered">0/20</strong>
+        <strong id="reading-score-answered">0/{freeQuestions.length}</strong>
         <span>questions answered</span>
       </div>
       <div class="reading-summary-card">
@@ -158,42 +192,61 @@ const serializeInlineJSON = (value) =>
       </div>
     </div>
 
+    <nav class="reading-results__nav" aria-label="Score report sections">
+      <a href="#reading-results-top">Overview</a>
+      <a href="#reading-results-next-steps">Next steps</a>
+      <a href="#reading-results-by-part">By part</a>
+      <a href="#reading-results-by-skill">By skill</a>
+      <a href="#reading-results-review-section">Answer review</a>
+    </nav>
+
     <div class="reading-results__panels">
-      <div class="reading-results__panel reading-results__panel--primary">
-        <h4>Where you need work next</h4>
+      <div class="reading-results__panel reading-results__panel--primary" id="reading-results-next-steps">
+        <div class="reading-results__panel-head">
+          <p class="reading-test__subhead">Study plan</p>
+          <h4>Where you need work next</h4>
+        </div>
         <div id="reading-workareas" class="reading-workareas"></div>
       </div>
-      <div class="reading-results__panel reading-results__panel--compact">
-        <h4>Performance by part</h4>
+      <div class="reading-results__panel reading-results__panel--compact" id="reading-results-by-part">
+        <div class="reading-results__panel-head">
+          <p class="reading-test__subhead">Breakdown</p>
+          <h4>Performance by part</h4>
+        </div>
         <div id="reading-section-results" class="reading-results__stack"></div>
       </div>
-      <div class="reading-results__panel reading-results__panel--compact">
-        <h4>Performance by skill</h4>
+      <div class="reading-results__panel reading-results__panel--compact" id="reading-results-by-skill">
+        <div class="reading-results__panel-head">
+          <p class="reading-test__subhead">Breakdown</p>
+          <h4>Performance by skill</h4>
+        </div>
         <div id="reading-skill-results" class="reading-results__stack"></div>
       </div>
     </div>
 
-    <div class="reading-review-lock" id="reading-review-lock">
-      <div>
-        <p class="reading-test__eyebrow">Premium review</p>
-        <h4>Detailed answer review is locked after the free test.</h4>
-        <p class="muted">
-          Unlock question-by-question explanations, flagged-question review, and the next {CELPIP_READING_PREMIUM_TESTS.length} full tests.
-        </p>
-      </div>
-      <div class="reading-review-lock__actions">
-        <button class="btn btn-primary" id="reading-open-upgrade" type="button">Unlock premium review</button>
-      </div>
-    </div>
-
-    <div class="reading-review" id="reading-review" hidden>
-      <div class="reading-review__head">
+    <div class="reading-results__review-shell" id="reading-results-review-section">
+      <div class="reading-review-lock" id="reading-review-lock">
         <div>
           <p class="reading-test__eyebrow">Premium review</p>
-          <h4>Answer-by-answer breakdown</h4>
+          <h4>Detailed answer review is locked after the free test.</h4>
+          <p class="muted">
+            Unlock question-by-question explanations, flagged-question review, and the next {CELPIP_READING_PREMIUM_TESTS.length} full tests.
+          </p>
+        </div>
+        <div class="reading-review-lock__actions">
+          <button class="btn btn-primary" id="reading-open-upgrade" type="button">Unlock premium review</button>
         </div>
       </div>
-      <div id="reading-review-list" class="reading-review__list"></div>
+
+      <div class="reading-review" id="reading-review" hidden>
+        <div class="reading-review__head">
+          <div>
+            <p class="reading-test__eyebrow">Premium review</p>
+            <h4>Answer-by-answer breakdown</h4>
+          </div>
+        </div>
+        <div id="reading-review-list" class="reading-review__list"></div>
+      </div>
     </div>
   </section>
 </section>
@@ -227,7 +280,9 @@ const serializeInlineJSON = (value) =>
 <script id="reading-test-data" type="application/json" is:inline set:html={serializeInlineJSON(CELPIP_READING_FREE_TEST)}></script>
 <script id="reading-workarea-data" type="application/json" is:inline set:html={serializeInlineJSON(CELPIP_READING_WORK_AREAS)}></script>
 
-<script is:inline>
+<script>
+  import { answersMatch, flattenReadingQuestions, gradeReadingAttempt } from "../lib/celpipReadingData.mjs";
+
   (() => {
     const premiumStorageKey = 'ieltscorner.celpipReadingPremium';
     const attemptStorageKey = 'ieltscorner.celpipReadingLatestAttempt';
@@ -246,16 +301,10 @@ const serializeInlineJSON = (value) =>
     const workAreaMap = parseJson('reading-workarea-data') || {};
     if (!test) return;
 
-    const flatQuestions = test.sections.flatMap((section) =>
-      section.questions.map((question) => ({
-        ...question,
-        sectionId: section.id,
-        sectionLabel: section.label,
-        sectionTitle: section.title,
-      })),
-    );
+    const flatQuestions = flattenReadingQuestions(test);
 
     const totalDurationSeconds = Number(test.durationMinutes || 55) * 60;
+    const minimumAnsweredForEstimate = Math.ceil(flatQuestions.length * 0.75);
     let currentIndex = 0;
     let answers = {};
     let flagged = {};
@@ -296,15 +345,6 @@ const serializeInlineJSON = (value) =>
     const flagButton = document.getElementById('reading-flag-btn');
     const modalEl = document.getElementById('reading-upgrade-modal');
     const checkoutStatusEl = document.getElementById('reading-checkout-status');
-
-    const levelGuide = [
-      { minRatio: 0.9, level: 10, label: 'Test-ready', descriptor: 'Strong control of detail, paraphrase, and inference under time pressure.' },
-      { minRatio: 0.8, level: 9, label: 'Competitive', descriptor: 'Mostly accurate reading with only a few costly distractor mistakes.' },
-      { minRatio: 0.7, level: 8, label: 'Close to target', descriptor: 'Solid foundation, but timing or inference questions still lower the score.' },
-      { minRatio: 0.58, level: 7, label: 'Developing', descriptor: 'Enough comprehension to progress, but accuracy drops when distractors tighten.' },
-      { minRatio: 0.45, level: 6, label: 'Below target', descriptor: 'Core meaning is often understood, but details and viewpoint tracking remain unstable.' },
-      { minRatio: 0, level: 5, label: 'Needs rebuilding', descriptor: 'Reading process is still too slow or too reactive for CELPIP-style pressure.' },
-    ];
 
     const readStoredJson = (key) => {
       try {
@@ -401,7 +441,7 @@ const serializeInlineJSON = (value) =>
         : totalDurationSeconds;
       hasSubmitted = true;
       updateProgress();
-      renderResults();
+      renderResults({ scrollToResults: false });
       return true;
     };
 
@@ -457,6 +497,100 @@ const serializeInlineJSON = (value) =>
 
     const getCurrentQuestion = () => flatQuestions[currentIndex];
 
+    const scrollTestLayoutIntoView = (behavior = 'auto') => {
+      if (window.location.hash) return;
+
+      const layoutRoot = document.querySelector('.reading-free-test-route') || document.querySelector('.reading-test');
+      if (!(layoutRoot instanceof HTMLElement)) return;
+
+      const top = Math.max(0, Math.floor(window.scrollY + layoutRoot.getBoundingClientRect().top - 8));
+      window.scrollTo({ top, left: 0, behavior });
+    };
+
+    const queueInitialViewportAlignment = () => {
+      window.requestAnimationFrame(() => {
+        scrollTestLayoutIntoView('auto');
+      });
+    };
+
+    const blankPlaceholder = (blankId) => '[____' + String(blankId || '').replace('q', '') + '____]';
+
+    const appendPassageText = (container, text) => {
+      String(text || '')
+        .split(/({{BLANK:[^}]+}})/)
+        .filter(Boolean)
+        .forEach((part) => {
+          const blankMatch = part.match(/{{BLANK:([^}]+)}}/);
+          if (!blankMatch) {
+            container.appendChild(document.createTextNode(part));
+            return;
+          }
+
+          const blankId = blankMatch[1];
+          const span = document.createElement('span');
+          span.className = 'reading-blank';
+          span.dataset.blankId = blankId;
+
+          const selectedAnswer = answers[blankId];
+          if (selectedAnswer) {
+            const question = flatQuestions.find((entry) => entry.id === blankId);
+            const option = question?.options?.find((entry) => entry.id === selectedAnswer);
+            span.textContent = option?.text || selectedAnswer;
+            span.classList.add('reading-blank--filled');
+          } else {
+            span.textContent = blankPlaceholder(blankId);
+          }
+
+          container.appendChild(span);
+        });
+    };
+
+    const normalizePassageBlock = (block) => {
+      if (typeof block !== 'string') return block;
+      if (!block) return { type: 'break' };
+      if (block === '---') return { type: 'divider' };
+      if (block.startsWith('**') && block.endsWith('**')) {
+        return { type: 'label', text: block.slice(2, -2) };
+      }
+      return { type: 'paragraph', text: block };
+    };
+
+    const createPassageBlockElement = (rawBlock) => {
+      const block = normalizePassageBlock(rawBlock);
+      if (!block || typeof block !== 'object') return null;
+
+      if (block.type === 'break') {
+        const spacer = document.createElement('div');
+        spacer.className = 'reading-passage__break';
+        spacer.setAttribute('aria-hidden', 'true');
+        return spacer;
+      }
+
+      if (block.type === 'divider') {
+        const hr = document.createElement('hr');
+        hr.className = 'reading-passage__divider';
+        return hr;
+      }
+
+      if (block.type === 'label') {
+        const label = document.createElement('p');
+        label.className = 'reading-passage__plabel';
+        const strong = document.createElement('strong');
+        strong.textContent = block.text || '';
+        label.appendChild(strong);
+        return label;
+      }
+
+      if (block.type === 'paragraph' || block.type === 'meta') {
+        const paragraph = document.createElement('p');
+        paragraph.className = block.type === 'meta' ? 'reading-passage__meta' : 'reading-passage__paragraph';
+        appendPassageText(paragraph, block.text || '');
+        return paragraph;
+      }
+
+      return null;
+    };
+
     const updateProgress = () => {
       const answered = getAnsweredCount();
       const ratio = flatQuestions.length ? (answered / flatQuestions.length) * 100 : 0;
@@ -490,66 +624,11 @@ const serializeInlineJSON = (value) =>
       if (sectionContextEl instanceof HTMLElement) sectionContextEl.textContent = section.context;
 
       passageBody.innerHTML = '';
-      section.passage.forEach((line) => {
-        if (!line) {
-          const spacer = document.createElement('div');
-          spacer.className = 'reading-passage__break';
-          spacer.setAttribute('aria-hidden', 'true');
-          passageBody.appendChild(spacer);
-          return;
+      section.passage.forEach((block) => {
+        const element = createPassageBlockElement(block);
+        if (element) {
+          passageBody.appendChild(element);
         }
-
-        /* Bold paragraph labels: **Paragraph 1** */
-        if (line.startsWith('**') && line.endsWith('**')) {
-          const label = document.createElement('p');
-          label.className = 'reading-passage__plabel';
-          const strong = document.createElement('strong');
-          strong.textContent = line.slice(2, -2);
-          label.appendChild(strong);
-          passageBody.appendChild(label);
-          return;
-        }
-
-        /* Horizontal rule separator (---) */
-        if (line === '---') {
-          const hr = document.createElement('hr');
-          hr.className = 'reading-passage__divider';
-          passageBody.appendChild(hr);
-          return;
-        }
-
-        /* Lines with fill-in-the-blank markers: {{BLANK:qX}} */
-        if (line.includes('{{BLANK:')) {
-          const paragraph = document.createElement('p');
-          const parts = line.split(/({{BLANK:[^}]+}})/);
-          parts.forEach((part) => {
-            const blankMatch = part.match(/{{BLANK:([^}]+)}}/);
-            if (blankMatch) {
-              const blankId = blankMatch[1];
-              const span = document.createElement('span');
-              span.className = 'reading-blank';
-              span.dataset.blankId = blankId;
-              const selectedAnswer = answers[blankId];
-              if (selectedAnswer) {
-                const question = flatQuestions.find((q) => q.id === blankId);
-                const option = question?.options?.find((o) => o.id === selectedAnswer);
-                span.textContent = option?.text || selectedAnswer;
-                span.classList.add('reading-blank--filled');
-              } else {
-                span.textContent = '[____' + blankId.replace('q', '') + '____]';
-              }
-              paragraph.appendChild(span);
-            } else {
-              paragraph.appendChild(document.createTextNode(part));
-            }
-          });
-          passageBody.appendChild(paragraph);
-          return;
-        }
-
-        const paragraph = document.createElement('p');
-        paragraph.textContent = line;
-        passageBody.appendChild(paragraph);
       });
 
       /* Render diagram table if present */
@@ -641,7 +720,7 @@ const serializeInlineJSON = (value) =>
               blankSpan.textContent = opt.text;
               blankSpan.classList.add('reading-blank--filled');
             } else {
-              blankSpan.textContent = '[____' + question.id.replace('q', '') + '____]';
+              blankSpan.textContent = blankPlaceholder(question.id);
               blankSpan.classList.remove('reading-blank--filled');
             }
           }
@@ -730,61 +809,69 @@ const serializeInlineJSON = (value) =>
       renderQuestion();
     };
 
-    const gradeAttempt = () => {
-      const sectionTotals = {};
-      const skillTotals = {};
-      let correct = 0;
-      let answered = 0;
+    const buildDiagnosticState = (report, options = {}) => {
+      const unansweredLabel = `${report.unanswered} unanswered question${report.unanswered === 1 ? '' : 's'}`;
+      const limitedEvidence = report.answered < minimumAnsweredForEstimate;
+      const timeAffected = Boolean(options.timeExpired && report.unanswered > 0);
 
-      flatQuestions.forEach((question) => {
-        const response = answers[question.id];
-        const hasAnswer = Array.isArray(response) ? response.length > 0 : Boolean(response);
-        if (hasAnswer) answered += 1;
-
-        const isCorrect = question.type === 'multi'
-          ? Array.isArray(response) &&
-            Array.isArray(question.correctAnswer) &&
-            [...response].sort().join('|') === [...question.correctAnswer].sort().join('|')
-          : String(response || '') === String(question.correctAnswer || '');
-
-        if (isCorrect) correct += 1;
-
-        if (!sectionTotals[question.sectionId]) {
-          sectionTotals[question.sectionId] = { title: question.sectionTitle, correct: 0, total: 0 };
-        }
-        if (!skillTotals[question.skillTag]) {
-          skillTotals[question.skillTag] = { key: question.skillTag, correct: 0, total: 0 };
-        }
-
-        sectionTotals[question.sectionId].total += 1;
-        skillTotals[question.skillTag].total += 1;
-
-        if (isCorrect) {
-          sectionTotals[question.sectionId].correct += 1;
-          skillTotals[question.skillTag].correct += 1;
-        }
-      });
-
-      const ratio = flatQuestions.length ? correct / flatQuestions.length : 0;
-      const level = levelGuide.find((entry) => ratio >= entry.minRatio) || levelGuide[levelGuide.length - 1];
+      if (limitedEvidence) {
+        return {
+          limitedEvidence: true,
+          pillLabel: 'Partial',
+          pillState: 'partial',
+          line: `Partial diagnostic: ${report.correct}/${report.total} correct`,
+          summary: timeAffected
+            ? `Time expired with ${unansweredLabel}. Answer at least ${minimumAnsweredForEstimate} of ${report.total} questions for a reliable CLB estimate and lesson plan.`
+            : `Only ${report.answered} of ${report.total} questions were answered. Answer at least ${minimumAnsweredForEstimate} questions for a reliable CLB estimate and lesson plan.`,
+        };
+      }
 
       return {
-        correct,
-        answered,
-        unanswered: flatQuestions.length - answered,
-        total: flatQuestions.length,
-        level,
-        sectionTotals: Object.values(sectionTotals),
-        skillTotals: Object.values(skillTotals),
+        limitedEvidence: false,
+        pillLabel: `CLB ${report.level.level}`,
+        pillState: 'full',
+        line: `${report.correct}/${report.total} correct`,
+        summary: timeAffected
+          ? `Estimated CLB ${report.level.level} - ${report.level.label}. ${report.level.descriptor} Time expired, so ${unansweredLabel} lowered the final score.`
+          : `Estimated CLB ${report.level.level} - ${report.level.label}. ${report.level.descriptor}`,
       };
     };
 
     const buildWorkAreas = (report, options = {}) => {
+      if (options.limitedEvidence) {
+        const results = [
+          {
+            key: 'completion',
+            title: 'Complete a fuller attempt first',
+            performance: `${report.answered}/${report.total} answered`,
+            diagnosis: options.timeExpired
+              ? 'The timer ended before enough questions were answered to trust a skill-by-skill diagnosis.'
+              : 'There is not enough answer data yet to trust a skill-by-skill diagnosis.',
+            action: `Answer at least ${minimumAnsweredForEstimate} questions in one sitting before using lesson recommendations as your main study plan.`,
+            lessons: workAreaMap.timing?.lessons || [],
+          },
+        ];
+
+        if (options.timeExpired && workAreaMap.timing) {
+          results.push({
+            key: 'timing',
+            title: workAreaMap.timing.title,
+            performance: `${report.unanswered} unanswered at time limit`,
+            diagnosis: workAreaMap.timing.diagnosis,
+            action: workAreaMap.timing.action,
+            lessons: workAreaMap.timing.lessons || [],
+          });
+        }
+
+        return results.slice(0, 2);
+      }
+
       const weakSkills = report.skillTotals
         .map((skill) => ({
           ...skill,
+          key: skill.key || skill.label,
           ratio: skill.total ? skill.correct / skill.total : 1,
-          meta: workAreaMap[skill.key],
+          meta: workAreaMap[skill.key || skill.label],
         }))
         .filter((skill) => skill.correct < skill.total && skill.meta)
         .sort((a, b) => a.ratio - b.ratio || b.total - a.total)
@@ -890,11 +977,7 @@ const serializeInlineJSON = (value) =>
 
       flatQuestions.forEach((question) => {
         const response = answers[question.id];
-        const isCorrect = question.type === 'multi'
-          ? Array.isArray(response) &&
-            Array.isArray(question.correctAnswer) &&
-            [...response].sort().join('|') === [...question.correctAnswer].sort().join('|')
-          : String(response || '') === String(question.correctAnswer || '');
+        const isCorrect = answersMatch(question, response);
 
         const card = document.createElement('article');
         card.className = `reading-review-card${isCorrect ? ' is-correct' : ' is-wrong'}`;
@@ -926,7 +1009,9 @@ const serializeInlineJSON = (value) =>
     };
 
     const renderResults = (options = {}) => {
-      const report = gradeAttempt();
+      const report = gradeReadingAttempt(test, answers);
+      const diagnosticState = buildDiagnosticState(report, options);
+      const shouldScrollToResults = options.scrollToResults !== false;
       if (!(resultsEl instanceof HTMLElement)) return;
 
       resultsEl.hidden = false;
@@ -938,13 +1023,14 @@ const serializeInlineJSON = (value) =>
       saveAttemptSnapshot();
 
       if (scoreLineEl instanceof HTMLElement) {
-        scoreLineEl.textContent = `${report.correct}/${report.total} correct`;
+        scoreLineEl.textContent = diagnosticState.line;
       }
       if (scoreSummaryEl instanceof HTMLElement) {
-        scoreSummaryEl.textContent = `Estimated CLB ${report.level.level} - ${report.level.label}. ${report.level.descriptor}`;
+        scoreSummaryEl.textContent = diagnosticState.summary;
       }
       if (levelPillEl instanceof HTMLElement) {
-        levelPillEl.textContent = `CLB ${report.level.level}`;
+        levelPillEl.textContent = diagnosticState.pillLabel;
+        levelPillEl.dataset.state = diagnosticState.pillState;
       }
       if (scoreCorrectEl instanceof HTMLElement) {
         scoreCorrectEl.textContent = `${report.correct}/${report.total}`;
@@ -957,8 +1043,12 @@ const serializeInlineJSON = (value) =>
       }
 
       renderMetrics(sectionResultsEl, report.sectionTotals, (item) => item.title);
-      renderMetrics(skillResultsEl, report.skillTotals, (item) => workAreaMap[item.key]?.title || item.key);
+      renderMetrics(skillResultsEl, report.skillTotals, (item) => {
+        const skillKey = item.key || item.label;
+        return workAreaMap[skillKey]?.title || skillKey;
+      });
       renderWorkAreas(report, {
+        limitedEvidence: diagnosticState.limitedEvidence,
         timeExpired: Boolean(options.timeExpired),
       });
 
@@ -973,7 +1063,9 @@ const serializeInlineJSON = (value) =>
 
       syncPremiumActions();
 
-      resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (shouldScrollToResults) {
+        resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     };
 
     const finalizeTest = ({ skipConfirm = false, timeExpired = false } = {}) => {
@@ -1135,6 +1227,8 @@ const serializeInlineJSON = (value) =>
         renderQuestion();
         startTimer();
       }
+
+      queueInitialViewportAlignment();
 
       if (!sessionIdToValidate) {
         if (params.has('checkout') || params.has('session_id')) {
@@ -1493,20 +1587,40 @@ const serializeInlineJSON = (value) =>
     line-height: 1.25;
   }
 
-  .reading-passage__body p {
-    margin: 0 0 2px;
+  .reading-passage__paragraph,
+  .reading-passage__meta {
+    margin: 0 0 14px;
     color: #263645;
-    line-height: 1.26;
+  }
+
+  .reading-passage__paragraph {
+    line-height: 1.55;
+  }
+
+  .reading-passage__meta {
+    margin-bottom: 4px;
+    font-size: 0.82rem;
+    line-height: 1.35;
+    font-weight: 700;
+    color: #556573;
+  }
+
+  .reading-passage__meta + .reading-passage__meta {
+    margin-top: -2px;
+  }
+
+  .reading-passage__body > :last-child {
+    margin-bottom: 0;
   }
 
   .reading-passage__break {
-    height: 2px;
+    height: 14px;
   }
 
   /* Paragraph labels (e.g. "Paragraph 1") */
   .reading-passage__plabel {
-    margin: 10px 0 2px;
-    font-size: 0.76rem;
+    margin: 18px 0 8px;
+    font-size: 0.82rem;
     color: #5f6c79;
     letter-spacing: 0.01em;
   }
@@ -1751,6 +1865,7 @@ const serializeInlineJSON = (value) =>
 
   .reading-results__hero,
   .reading-results__panel,
+  .reading-results__review-shell,
   .reading-review-lock,
   .reading-review {
     width: min(100%, 1240px);
@@ -1789,18 +1904,53 @@ const serializeInlineJSON = (value) =>
     font-weight: 800;
   }
 
+  .reading-score-pill[data-state='partial'] {
+    background: #5f6c79;
+  }
+
   .reading-results__summary-grid,
-  .reading-results__panels {
+  .reading-results__nav,
+  .reading-results__panels,
+  .reading-results__review-shell {
     width: min(100%, 1240px);
+  }
+
+  .reading-results__summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--s-3);
+  }
+
+  .reading-results__nav {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--s-3);
-    align-items: flex-start;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .reading-results__nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0.55rem 0.95rem;
+    border-radius: 999px;
+    border: 1px solid rgba(20, 22, 23, 0.12);
+    background: rgba(255, 255, 255, 0.9);
+    color: #445463;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .reading-results__nav a:hover,
+  .reading-results__nav a:focus-visible {
+    border-color: rgba(217, 72, 72, 0.3);
+    background: rgba(217, 72, 72, 0.08);
+    color: #8f3434;
+    text-decoration: none;
   }
 
   .reading-summary-card {
-    flex: 0 1 220px;
-    width: min(100%, 220px);
     padding: 18px;
     border: 1px solid rgba(20, 22, 23, 0.14);
     border-radius: 18px;
@@ -1820,19 +1970,26 @@ const serializeInlineJSON = (value) =>
     font-size: 0.88rem;
   }
 
-  .reading-results__panel {
-    flex: 0 1 320px;
-    width: min(100%, 320px);
+  .reading-results__panels {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--s-3);
+    align-items: start;
+  }
+
+  .reading-results__panel,
+  .reading-results__review-shell {
+    scroll-margin-top: 24px;
   }
 
   .reading-results__panel--primary {
-    flex-basis: 560px;
-    width: min(100%, 560px);
+    grid-column: 1 / -1;
   }
 
-  .reading-results__panel--compact {
-    flex-basis: 300px;
-    width: min(100%, 300px);
+  .reading-results__panel-head {
+    display: grid;
+    gap: 4px;
+    margin-bottom: 14px;
   }
 
   .reading-results__stack {
@@ -1852,6 +2009,15 @@ const serializeInlineJSON = (value) =>
   .reading-workareas {
     display: grid;
     gap: 12px;
+  }
+
+  .reading-results__review-shell {
+    display: grid;
+    gap: var(--s-3);
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
   }
 
   .reading-workarea-card {
@@ -2010,8 +2176,14 @@ const serializeInlineJSON = (value) =>
       grid-template-columns: 1fr;
     }
 
+    .reading-results__summary-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .reading-results__summary-grid,
-    .reading-results__panels {
+    .reading-results__nav,
+    .reading-results__panels,
+    .reading-results__review-shell {
       width: 100%;
     }
   }
@@ -2070,12 +2242,25 @@ const serializeInlineJSON = (value) =>
       text-align: left;
     }
 
+    .reading-results__summary-grid,
+    .reading-results__panels {
+      grid-template-columns: 1fr;
+    }
+
+    .reading-results__nav {
+      gap: 8px;
+    }
+
+    .reading-results__nav a {
+      flex: 1 1 140px;
+    }
+
     .reading-summary-card,
     .reading-results__panel,
     .reading-results__panel--primary,
-    .reading-results__panel--compact {
+    .reading-results__panel--compact,
+    .reading-results__review-shell {
       width: 100%;
-      flex-basis: 100%;
     }
   }
 </style>
