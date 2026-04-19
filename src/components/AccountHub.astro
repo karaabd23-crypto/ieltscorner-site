@@ -1,0 +1,813 @@
+---
+const { initialTab = 'overview' } = Astro.props;
+---
+
+<section class="account-hub" data-initial-tab={initialTab}>
+  <div class="account-hub__hero surface">
+    <div>
+      <p class="account-hub__eyebrow">Account</p>
+      <h1>CELPIP Reading account</h1>
+      <p class="muted">
+        Keep your subscription, verified contact emails, and reading progress attached to one account across devices.
+      </p>
+    </div>
+    <div class="account-hub__actions">
+      <a class="btn" href="/account/sign-in" data-guest-only="true">Sign in</a>
+      <a class="btn btn-primary" href="/account/sign-up" data-guest-only="true">Create account</a>
+      <button class="btn" type="button" id="account-signout-btn" hidden>Sign out</button>
+    </div>
+  </div>
+
+  <p class="account-hub__status" id="account-status" hidden></p>
+
+  <div class="account-hub__gate surface" id="account-guest-gate" hidden>
+    <h2>Sign in to manage your account</h2>
+    <p class="muted">
+      Your subscription and progress now live on your account instead of one browser. Sign in or create an account to manage everything.
+    </p>
+    <div class="account-hub__actions">
+      <a class="btn" href="/account/sign-in">Sign in</a>
+      <a class="btn btn-primary" href="/account/sign-up">Create account</a>
+      <a class="btn" href="/account/forgot-password">Forgot password</a>
+    </div>
+  </div>
+
+  <div id="account-authenticated" hidden>
+    <nav class="account-tabs" aria-label="Account sections">
+      <a href="/account" data-account-tab="overview">Overview</a>
+      <a href="/account/profile" data-account-tab="profile">Profile</a>
+      <a href="/account/emails" data-account-tab="emails">Emails</a>
+      <a href="/account/subscription" data-account-tab="subscription">Subscription</a>
+    </nav>
+
+    <section class="account-panel surface" data-tab-panel="overview">
+      <div class="account-panel__head">
+        <div>
+          <p class="account-panel__eyebrow">Overview</p>
+          <h2 id="account-overview-title">Your account</h2>
+        </div>
+      </div>
+
+      <div class="account-grid">
+        <article class="account-card">
+          <p class="account-card__label">Reading access</p>
+          <strong id="account-access-status">Checking subscription...</strong>
+          <p class="muted" id="account-access-copy"></p>
+          <div class="account-card__actions">
+            <button class="btn btn-primary" type="button" id="account-claim-subscription-btn">Claim subscription</button>
+            <button class="btn" type="button" id="account-open-portal-btn">Manage billing</button>
+          </div>
+        </article>
+
+        <article class="account-card">
+          <p class="account-card__label">Primary contact</p>
+          <strong id="account-primary-contact"></strong>
+          <p class="muted" id="account-profile-summary"></p>
+        </article>
+
+        <article class="account-card">
+          <p class="account-card__label">Latest reading activity</p>
+          <strong id="account-latest-attempt-title">No reading attempts yet</strong>
+          <p class="muted" id="account-latest-attempt-copy"></p>
+          <div class="account-card__actions">
+            <a class="btn btn-primary" href="/celpip/reading/free-test">Open reading test</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="account-history">
+        <div class="account-panel__head">
+          <div>
+            <p class="account-panel__eyebrow">History</p>
+            <h3>Reading attempts</h3>
+          </div>
+        </div>
+        <div class="account-history__list" id="account-attempt-history"></div>
+      </div>
+    </section>
+
+    <section class="account-panel surface" data-tab-panel="profile" hidden>
+      <div class="account-panel__head">
+        <div>
+          <p class="account-panel__eyebrow">Profile</p>
+          <h2>Your contact details</h2>
+        </div>
+      </div>
+
+      <form class="account-form" id="account-profile-form">
+        <label>
+          <span>Name</span>
+          <input type="text" name="displayName" maxlength="80" autocomplete="name" />
+        </label>
+        <label>
+          <span>Timezone</span>
+          <input type="text" name="timezone" maxlength="80" placeholder="America/Vancouver" />
+        </label>
+        <label>
+          <span>Country</span>
+          <input type="text" name="country" maxlength="80" autocomplete="country-name" />
+        </label>
+        <label>
+          <span>Phone</span>
+          <input type="text" name="phone" maxlength="40" autocomplete="tel" />
+        </label>
+        <label>
+          <span>WhatsApp</span>
+          <input type="text" name="whatsapp" maxlength="40" />
+        </label>
+        <div class="account-form__actions">
+          <button class="btn btn-primary" type="submit">Save profile</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="account-panel surface" data-tab-panel="emails" hidden>
+      <div class="account-panel__head">
+        <div>
+          <p class="account-panel__eyebrow">Emails</p>
+          <h2>Verified contact emails</h2>
+        </div>
+      </div>
+
+      <p class="muted">
+        Every verified email on this account is mirrored to your Kit digest audience automatically.
+      </p>
+
+      <div class="account-email-list" id="account-email-list"></div>
+
+      <form class="account-form account-form--inline" id="account-add-email-form">
+        <label>
+          <span>Add another email</span>
+          <input type="email" name="email" maxlength="320" autocomplete="email" placeholder="you@example.com" required />
+        </label>
+        <div class="account-form__actions">
+          <button class="btn btn-primary" type="submit">Send verification</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="account-panel surface" data-tab-panel="subscription" hidden>
+      <div class="account-panel__head">
+        <div>
+          <p class="account-panel__eyebrow">Subscription</p>
+          <h2>CELPIP Reading premium</h2>
+        </div>
+      </div>
+
+      <div class="account-grid">
+        <article class="account-card">
+          <p class="account-card__label">Plan status</p>
+          <strong id="account-subscription-status">Checking...</strong>
+          <p class="muted" id="account-subscription-copy"></p>
+          <div class="account-card__actions">
+            <button class="btn btn-primary" type="button" id="account-subscription-claim-btn">Claim existing subscription</button>
+            <button class="btn" type="button" id="account-subscription-portal-btn">Manage subscription</button>
+          </div>
+        </article>
+
+        <article class="account-card">
+          <p class="account-card__label">What this covers</p>
+          <strong>Premium answer review + future sync</strong>
+          <p class="muted">
+            This account owns your CELPIP Reading premium access, progress restore, and cross-device history for the reading test.
+          </p>
+        </article>
+      </div>
+    </section>
+  </div>
+</section>
+
+<script>
+  // @ts-nocheck
+  import { logout, onAuthChange } from '@netlify/identity';
+
+  (() => {
+    const root = document.querySelector('.account-hub');
+    if (!(root instanceof HTMLElement)) return;
+
+    const initialTab = String(root.dataset.initialTab || 'overview');
+    const statusEl = document.getElementById('account-status');
+    const guestGate = document.getElementById('account-guest-gate');
+    const authWrap = document.getElementById('account-authenticated');
+    const signOutButton = document.getElementById('account-signout-btn');
+    const guestOnlyButtons = Array.from(document.querySelectorAll('[data-guest-only="true"]'));
+    const emailListEl = document.getElementById('account-email-list');
+    const attemptHistoryEl = document.getElementById('account-attempt-history');
+    const overviewTitleEl = document.getElementById('account-overview-title');
+    const accessStatusEl = document.getElementById('account-access-status');
+    const accessCopyEl = document.getElementById('account-access-copy');
+    const latestAttemptTitleEl = document.getElementById('account-latest-attempt-title');
+    const latestAttemptCopyEl = document.getElementById('account-latest-attempt-copy');
+    const primaryContactEl = document.getElementById('account-primary-contact');
+    const profileSummaryEl = document.getElementById('account-profile-summary');
+    const subscriptionStatusEl = document.getElementById('account-subscription-status');
+    const subscriptionCopyEl = document.getElementById('account-subscription-copy');
+    const profileForm = document.getElementById('account-profile-form');
+    const addEmailForm = document.getElementById('account-add-email-form');
+
+    let state = {
+      authenticated: false,
+      user: null,
+      account: null,
+      entitlement: null,
+      latestAttempt: null,
+      attempts: [],
+    };
+
+    const showStatus = (message = '', tone = 'info') => {
+      if (!(statusEl instanceof HTMLElement)) return;
+      statusEl.hidden = !message;
+      statusEl.textContent = message;
+      statusEl.dataset.tone = tone;
+    };
+
+    const consumeFlash = () => {
+      try {
+        const raw = sessionStorage.getItem('ieltscorner.accountFlash');
+        if (!raw) return;
+        sessionStorage.removeItem('ieltscorner.accountFlash');
+        const parsed = JSON.parse(raw);
+        showStatus(String(parsed?.message || ''), String(parsed?.tone || 'info'));
+      } catch {
+      }
+    };
+
+    const formatDate = (value) => {
+      if (!value) return '';
+      const parsed = new Date(value);
+      if (Number.isNaN(parsed.getTime())) return '';
+      return new Intl.DateTimeFormat('en-CA', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric',
+      }).format(parsed);
+    };
+
+    const postJson = async (url, payload = {}) => {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await response.json().catch(() => null);
+      if (!response.ok) {
+        throw new Error(data?.error || 'Request failed.');
+      }
+      return data;
+    };
+
+    const setTabVisibility = (tab) => {
+      const active = String(tab || initialTab || 'overview');
+      document.querySelectorAll('[data-tab-panel]').forEach((panel) => {
+        if (!(panel instanceof HTMLElement)) return;
+        panel.hidden = panel.dataset.tabPanel !== active;
+      });
+      document.querySelectorAll('[data-account-tab]').forEach((link) => {
+        if (!(link instanceof HTMLAnchorElement)) return;
+        link.classList.toggle('is-active', link.dataset.accountTab === active);
+      });
+    };
+
+    const renderEmails = () => {
+      if (!(emailListEl instanceof HTMLElement)) return;
+      emailListEl.innerHTML = '';
+
+      const emails = Array.isArray(state.account?.contactEmails) ? state.account.contactEmails : [];
+      if (!emails.length) {
+        emailListEl.innerHTML = '<p class="muted">No contact emails saved yet.</p>';
+        return;
+      }
+
+      emails.forEach((entry) => {
+        const item = document.createElement('article');
+        item.className = 'account-email-item';
+
+        const content = document.createElement('div');
+
+        const title = document.createElement('strong');
+        title.textContent = entry.email;
+
+        const meta = document.createElement('p');
+        meta.className = 'muted';
+        const tags = [];
+        if (entry.email === state.account.primaryLoginEmail) tags.push('login email');
+        if (entry.primary) tags.push('primary contact');
+        tags.push(entry.verified ? 'verified' : 'awaiting verification');
+        meta.textContent = tags.join(' • ');
+
+        content.append(title, meta);
+
+        const actions = document.createElement('div');
+        actions.className = 'account-email-item__actions';
+
+        if (entry.verified && !entry.primary) {
+          const primaryButton = document.createElement('button');
+          primaryButton.className = 'btn';
+          primaryButton.type = 'button';
+          primaryButton.textContent = 'Make primary';
+          primaryButton.addEventListener('click', async () => {
+            try {
+              showStatus('Updating primary contact email...', 'info');
+              const data = await postJson('/.netlify/functions/account-set-primary-email', { email: entry.email });
+              state.account = data.account;
+              render();
+              showStatus('Primary contact email updated.', 'success');
+            } catch (error) {
+              showStatus(error instanceof Error ? error.message : 'Unable to update primary email.', 'error');
+            }
+          });
+          actions.appendChild(primaryButton);
+        }
+
+        if (entry.email !== state.account.primaryLoginEmail) {
+          const removeButton = document.createElement('button');
+          removeButton.className = 'btn';
+          removeButton.type = 'button';
+          removeButton.textContent = 'Remove';
+          removeButton.addEventListener('click', async () => {
+            try {
+              showStatus('Removing email...', 'info');
+              const data = await postJson('/.netlify/functions/account-remove-email', { email: entry.email });
+              state.account = data.account;
+              render();
+              showStatus('Email removed from the account.', 'success');
+            } catch (error) {
+              showStatus(error instanceof Error ? error.message : 'Unable to remove that email.', 'error');
+            }
+          });
+          actions.appendChild(removeButton);
+        }
+
+        item.append(content, actions);
+        emailListEl.appendChild(item);
+      });
+    };
+
+    const renderAttemptHistory = () => {
+      if (!(attemptHistoryEl instanceof HTMLElement)) return;
+      attemptHistoryEl.innerHTML = '';
+
+      if (!state.attempts.length) {
+        attemptHistoryEl.innerHTML = '<p class="muted">Your submitted CELPIP Reading attempts will appear here.</p>';
+        return;
+      }
+
+      state.attempts.forEach((attempt) => {
+        const card = document.createElement('article');
+        card.className = 'account-history-card';
+
+        const title = document.createElement('strong');
+        title.textContent = attempt.level
+          ? `CLB ${attempt.level.level} • ${attempt.correct}/${attempt.total} correct`
+          : `${attempt.correct}/${attempt.total} correct`;
+
+        const meta = document.createElement('p');
+        meta.className = 'muted';
+        meta.textContent = attempt.submittedAt
+          ? `Submitted ${formatDate(attempt.submittedAt)}`
+          : `Last updated ${formatDate(attempt.updatedAt)}`;
+
+        card.append(title, meta);
+        attemptHistoryEl.appendChild(card);
+      });
+    };
+
+    const renderOverview = () => {
+      const setInputValue = (name, value) => {
+        if (!(profileForm instanceof HTMLFormElement)) return;
+        const field = profileForm.elements.namedItem(name);
+        if (field instanceof HTMLInputElement) {
+          field.value = String(value || '');
+        }
+      };
+
+      if (overviewTitleEl instanceof HTMLElement) {
+        overviewTitleEl.textContent = state.account?.displayName
+          ? `${state.account.displayName}'s account`
+          : 'Your account';
+      }
+
+      if (primaryContactEl instanceof HTMLElement) {
+        primaryContactEl.textContent = state.account?.primaryContactEmail || state.user?.email || 'Not set';
+      }
+
+      if (profileSummaryEl instanceof HTMLElement) {
+        const parts = [state.account?.country, state.account?.timezone].filter(Boolean);
+        profileSummaryEl.textContent = parts.length
+          ? parts.join(' • ')
+          : 'Add your timezone and contact details in Profile.';
+      }
+
+      if (accessStatusEl instanceof HTMLElement) {
+        accessStatusEl.textContent = state.entitlement?.active
+          ? 'Premium access active'
+          : 'No active premium access on this account';
+      }
+
+      if (accessCopyEl instanceof HTMLElement) {
+        if (state.entitlement?.active) {
+          accessCopyEl.textContent = state.entitlement.cancelAtPeriodEnd && state.entitlement.currentPeriodEnd
+            ? `Your access stays active until ${formatDate(new Date(Number(state.entitlement.currentPeriodEnd) * 1000).toISOString())}.`
+            : 'Your premium answer review and subscription follow this account across devices.';
+        } else {
+          accessCopyEl.textContent = 'If you already paid on another device, claim your reading subscription from the Subscription tab.';
+        }
+      }
+
+      if (latestAttemptTitleEl instanceof HTMLElement) {
+        latestAttemptTitleEl.textContent = state.latestAttempt
+          ? `${state.latestAttempt.correct}/${state.latestAttempt.total} correct`
+          : 'No reading attempts yet';
+      }
+
+      if (latestAttemptCopyEl instanceof HTMLElement) {
+        latestAttemptCopyEl.textContent = state.latestAttempt
+          ? `${state.latestAttempt.status === 'submitted' ? 'Submitted' : 'Saved'} ${formatDate(state.latestAttempt.submittedAt || state.latestAttempt.updatedAt)}`
+          : 'Start the free reading test and your progress will sync here.';
+      }
+
+      if (subscriptionStatusEl instanceof HTMLElement) {
+        subscriptionStatusEl.textContent = state.entitlement?.active
+          ? `Active ${state.entitlement.productName}`
+          : 'Not currently attached';
+      }
+
+      if (subscriptionCopyEl instanceof HTMLElement) {
+        subscriptionCopyEl.textContent = state.entitlement?.active
+          ? 'Use the billing portal if you need to update payment details or cancel at period end.'
+          : 'Claim an existing Stripe subscription after your verified account emails match your billing email.';
+      }
+
+      setInputValue('displayName', state.account?.displayName || '');
+      setInputValue('timezone', state.account?.timezone || '');
+      setInputValue('country', state.account?.country || '');
+      setInputValue('phone', state.account?.phone || '');
+      setInputValue('whatsapp', state.account?.whatsapp || '');
+    };
+
+    const render = () => {
+      const authenticated = Boolean(state.authenticated);
+      if (guestGate instanceof HTMLElement) guestGate.hidden = authenticated;
+      if (authWrap instanceof HTMLElement) authWrap.hidden = !authenticated;
+      if (signOutButton instanceof HTMLButtonElement) signOutButton.hidden = !authenticated;
+      guestOnlyButtons.forEach((el) => {
+        if (!(el instanceof HTMLElement)) return;
+        el.hidden = authenticated;
+      });
+
+      if (!authenticated) return;
+
+      renderOverview();
+      renderEmails();
+      renderAttemptHistory();
+    };
+
+    const loadAttempts = async () => {
+      const response = await fetch('/.netlify/functions/account-list-reading-attempts?limit=12');
+      const data = await response.json().catch(() => null);
+      if (!response.ok) {
+        throw new Error(data?.error || 'Unable to load reading history.');
+      }
+      state.attempts = Array.isArray(data?.attempts) ? data.attempts : [];
+    };
+
+    const loadSession = async () => {
+      const response = await fetch('/.netlify/functions/account-session', {
+        headers: { Accept: 'application/json' },
+      });
+      const data = await response.json().catch(() => null);
+      if (!response.ok) {
+        throw new Error(data?.error || 'Unable to load account data.');
+      }
+      state = {
+        authenticated: Boolean(data?.authenticated),
+        user: data?.user || null,
+        account: data?.account || null,
+        entitlement: data?.entitlement || null,
+        latestAttempt: data?.latestAttempt || null,
+        attempts: [],
+      };
+      if (state.authenticated) {
+        await loadAttempts();
+      }
+      render();
+    };
+
+    const maybeHandleEmailVerification = async () => {
+      const url = new URL(window.location.href);
+      const token = String(url.searchParams.get('verify_email_token') || '').trim();
+      if (!token) return;
+      try {
+        showStatus('Verifying email...', 'info');
+        await postJson('/.netlify/functions/account-verify-email', { token });
+        url.searchParams.delete('verify_email_token');
+        window.history.replaceState({}, '', `${url.pathname}${url.search}`);
+        await loadSession();
+        showStatus('Email verified. It has been added to your Kit digest audience too.', 'success');
+      } catch (error) {
+        showStatus(error instanceof Error ? error.message : 'Unable to verify that email.', 'error');
+      }
+    };
+
+    profileForm?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!(profileForm instanceof HTMLFormElement)) return;
+
+      const formData = new FormData(profileForm);
+      try {
+        showStatus('Saving profile...', 'info');
+        const data = await postJson('/.netlify/functions/account-update-profile', {
+          displayName: formData.get('displayName'),
+          timezone: formData.get('timezone'),
+          country: formData.get('country'),
+          phone: formData.get('phone'),
+          whatsapp: formData.get('whatsapp'),
+        });
+        state.account = data.account;
+        render();
+        showStatus('Profile updated.', 'success');
+      } catch (error) {
+        showStatus(error instanceof Error ? error.message : 'Unable to save your profile.', 'error');
+      }
+    });
+
+    addEmailForm?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!(addEmailForm instanceof HTMLFormElement)) return;
+      const formData = new FormData(addEmailForm);
+      try {
+        showStatus('Sending verification email...', 'info');
+        await postJson('/.netlify/functions/account-add-email', {
+          email: formData.get('email'),
+        });
+        addEmailForm.reset();
+        await loadSession();
+        showStatus('Verification email sent. Once confirmed, that email will join your Kit digest audience automatically.', 'success');
+      } catch (error) {
+        showStatus(error instanceof Error ? error.message : 'Unable to add that email.', 'error');
+      }
+    });
+
+    const bindClaimButton = (id) => {
+      document.getElementById(id)?.addEventListener('click', async () => {
+        try {
+          showStatus('Looking for an active reading subscription...', 'info');
+          const data = await postJson('/.netlify/functions/account-claim-reading-subscription');
+          state.account = data.account;
+          state.entitlement = data.entitlement;
+          render();
+          showStatus('Subscription attached to this account.', 'success');
+        } catch (error) {
+          showStatus(error instanceof Error ? error.message : 'Unable to claim the subscription.', 'error');
+        }
+      });
+    };
+
+    bindClaimButton('account-claim-subscription-btn');
+    bindClaimButton('account-subscription-claim-btn');
+
+    const bindPortalButton = (id) => {
+      document.getElementById(id)?.addEventListener('click', async () => {
+        try {
+          showStatus('Opening billing portal...', 'info');
+          const data = await postJson('/.netlify/functions/account-create-reading-portal');
+          if (!data?.portalUrl) {
+            throw new Error('Unable to open the billing portal.');
+          }
+          window.location.href = data.portalUrl;
+        } catch (error) {
+          showStatus(error instanceof Error ? error.message : 'Unable to open the billing portal.', 'error');
+        }
+      });
+    };
+
+    bindPortalButton('account-open-portal-btn');
+    bindPortalButton('account-subscription-portal-btn');
+
+    signOutButton?.addEventListener('click', async () => {
+      try {
+        await logout();
+        window.location.href = '/account/sign-in';
+      } catch (error) {
+        showStatus(error instanceof Error ? error.message : 'Unable to sign out.', 'error');
+      }
+    });
+
+    setTabVisibility(initialTab);
+    consumeFlash();
+    maybeHandleEmailVerification().finally(() => {
+      loadSession().catch((error) => {
+        showStatus(error instanceof Error ? error.message : 'Unable to load the account dashboard.', 'error');
+      });
+    });
+
+    onAuthChange(() => {
+      loadSession().catch(() => {
+      });
+    });
+  })();
+</script>
+
+<style>
+  .account-hub {
+    display: grid;
+    gap: var(--s-4);
+  }
+
+  .account-hub__hero,
+  .account-panel,
+  .account-hub__gate {
+    padding: var(--s-5);
+    border-radius: 20px;
+  }
+
+  .account-hub__hero {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--s-4);
+    align-items: start;
+  }
+
+  .account-hub__eyebrow,
+  .account-panel__eyebrow {
+    margin: 0 0 8px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8f3434;
+  }
+
+  .account-hub__hero h1,
+  .account-panel h2,
+  .account-panel h3 {
+    margin: 0;
+  }
+
+  .account-hub__actions,
+  .account-card__actions,
+  .account-form__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .account-hub__status {
+    margin: 0;
+    padding: 14px 16px;
+    border-radius: 14px;
+    font-weight: 600;
+  }
+
+  .account-hub__status[data-tone="info"] {
+    background: rgba(56, 116, 203, 0.08);
+    color: #27548a;
+  }
+
+  .account-hub__status[data-tone="success"] {
+    background: rgba(33, 138, 77, 0.08);
+    color: #246c41;
+  }
+
+  .account-hub__status[data-tone="error"] {
+    background: rgba(217, 72, 72, 0.08);
+    color: #8f3434;
+  }
+
+  .account-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .account-tabs a {
+    display: inline-flex;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(20, 22, 23, 0.12);
+    background: #fff;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .account-tabs a.is-active {
+    border-color: rgba(217, 72, 72, 0.36);
+    background: rgba(217, 72, 72, 0.08);
+    color: #8f3434;
+  }
+
+  .account-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .account-card {
+    border: 1px solid rgba(20, 22, 23, 0.1);
+    border-radius: 16px;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.7);
+    display: grid;
+    gap: 10px;
+  }
+
+  .account-card__label {
+    margin: 0;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #5f6c79;
+  }
+
+  .account-panel__head {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--s-3);
+    align-items: start;
+    margin-bottom: var(--s-3);
+  }
+
+  .account-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .account-form label {
+    display: grid;
+    gap: 8px;
+    font-weight: 600;
+    color: #233240;
+  }
+
+  .account-form input {
+    width: 100%;
+    min-height: 46px;
+    border-radius: 12px;
+    border: 1px solid rgba(20, 22, 23, 0.14);
+    padding: 0 14px;
+    font: inherit;
+  }
+
+  .account-form__actions {
+    grid-column: 1 / -1;
+  }
+
+  .account-email-list,
+  .account-history__list {
+    display: grid;
+    gap: 12px;
+  }
+
+  .account-email-item,
+  .account-history-card {
+    border: 1px solid rgba(20, 22, 23, 0.1);
+    border-radius: 14px;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .account-email-item__actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .account-history {
+    margin-top: var(--s-4);
+  }
+
+  @media (max-width: 980px) {
+    .account-hub__hero {
+      flex-direction: column;
+    }
+
+    .account-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .account-form {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .account-hub__hero,
+    .account-panel,
+    .account-hub__gate {
+      padding: var(--s-4);
+    }
+
+    .account-email-item,
+    .account-history-card {
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+</style>

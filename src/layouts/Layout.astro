@@ -4,6 +4,7 @@ import ConversionTrackingScript from "../components/ConversionTrackingScript.ast
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 import ContentAd from "../components/ContentAd.astro";
 import ContextualNextStepPromo from "../components/ContextualNextStepPromo.astro";
+import IdentityCallbackBridge from "../components/IdentityCallbackBridge.astro";
 import { getBlogPromoConfig } from "../lib/promotionTools";
 
 // TypeScript declaration for AdSense
@@ -402,6 +403,7 @@ const serializeJsonForScript = (value: unknown) =>
     <GoogleAnalytics measurementId="G-G0WCV3WJ44" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <IdentityCallbackBridge />
     
     <!-- Primary Meta Tags -->
     <title>{fullTitle}</title>
@@ -614,6 +616,7 @@ const serializeJsonForScript = (value: unknown) =>
                   <a href="https://www.youtube.com/@KaraAbdolmaleki" target="_blank" rel="noreferrer" aria-label="YouTube">YT</a>
                   <a href="https://t.me/Kaysenglishcorner" target="_blank" rel="noreferrer" aria-label="Telegram">TG</a>
                 </div>
+                <a class="btn btn-ghost cta" href="/account">Account</a>
                 <a class="btn btn-ghost cta" href="/about">About</a>
                 <a class="btn btn-primary cta" href="/tutoring">Book a class</a>
               </div>

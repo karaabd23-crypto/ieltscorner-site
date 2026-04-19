@@ -4,7 +4,7 @@
   ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- src public netlify scripts astro.config.mjs package.json package-lock.json tsconfig.json"
 
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "22"
   SECRETS_SCAN_OMIT_KEYS = "KIT_FORM_ID,KIT_DEFAULT_TAG_ID"
 
 [[headers]]

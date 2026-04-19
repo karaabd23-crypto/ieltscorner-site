@@ -4,9 +4,9 @@ import {
   getSafeBaseUrl,
   isSameOriginRequest,
 } from './_utils/requestSecurity.mjs';
+import { subscriptionHasReadingPrice } from './_utils/celpipReadingStripe.mjs';
 
 const STRIPE_API_KEY = (process.env.STRIPE_API_KEY || '').trim();
-const PRICE_ID = (process.env.CELPIP_READING_PRICE_ID || '').trim();
 const PORTAL_CONFIGURATION_NAME = 'CELPIP Reading Self-Serve Billing';
 const PORTAL_CONFIGURATION_KEY = 'celpip-reading-simulator';
 
@@ -96,11 +96,9 @@ async function getValidatedCustomerAndSubscription(stripe, sessionId) {
       ? session.subscription
       : await stripe.subscriptions.retrieve(subscriptionId);
 
-  if (PRICE_ID) {
-    const hasMatchingPrice = subscription.items?.data?.some((item) => item.price?.id === PRICE_ID);
-    if (!hasMatchingPrice) {
-      throw new Error('This subscription does not match the CELPIP Reading plan.');
-    }
+  const hasMatchingPrice = await subscriptionHasReadingPrice(stripe, subscription);
+  if (!hasMatchingPrice) {
+    throw new Error('This subscription does not match the CELPIP Reading plan.');
   }
 
   return {

@@ -28,22 +28,35 @@ const aiLabPromptIds = new Set(
     .map((entry) => entry.id)
 );
 
+const getPromptText = (prompt: Record<string, unknown>) =>
+  String(prompt.question ?? prompt.scenario ?? '').trim();
+
+const getPromptInstructions = (prompt: Record<string, unknown>) =>
+  Array.isArray(prompt.instructions) ? prompt.instructions.map((item) => String(item)) : [];
+
+const getPromptOptions = (prompt: Record<string, unknown>) =>
+  Array.isArray(prompt.options) ? prompt.options.map((item) => String(item)) : [];
+
 const promptCards = [...CELPIP_PROMPT_BANK.task1, ...CELPIP_PROMPT_BANK.task2].map((prompt) => {
   const taskType = String(prompt.id || "").startsWith("survey-") ? "task2" : "task1";
-  const promptText = String(prompt.question || prompt.scenario || "").trim();
+  const promptText = getPromptText(prompt as Record<string, unknown>);
+  const instructions = getPromptInstructions(prompt as Record<string, unknown>);
+  const options = getPromptOptions(prompt as Record<string, unknown>);
   const opensDirectlyInLab = aiLabPromptIds.has(prompt.id);
   const searchBlob = [
     taskMeta[taskType].label,
     prompt.title,
     promptText,
-    ...(Array.isArray(prompt.instructions) ? prompt.instructions : []),
-    ...(Array.isArray(prompt.options) ? prompt.options : []),
+    ...instructions,
+    ...options,
   ]
     .join(" ")
     .toLowerCase();
 
   return {
     ...prompt,
+    instructions,
+    options,
     taskType,
     taskLabel: taskMeta[taskType].longLabel,
     promptText,
@@ -101,17 +114,17 @@ const promptCards = [...CELPIP_PROMPT_BANK.task1, ...CELPIP_PROMPT_BANK.task2].m
 
         <p class="question-card__text">{prompt.promptText}</p>
 
-        {prompt.options?.length > 0 && (
+        {prompt.options.length > 0 && (
           <div class="question-card__options">
-            {prompt.options.map((option) => (
+            {prompt.options.map((option: string) => (
               <span class="question-card__option">{option}</span>
             ))}
           </div>
         )}
 
-        {prompt.instructions?.length > 0 && (
+        {prompt.instructions.length > 0 && (
           <ul class="question-card__instructions">
-            {prompt.instructions.slice(0, 3).map((instruction) => (
+            {prompt.instructions.slice(0, 3).map((instruction: string) => (
               <li>{instruction}</li>
             ))}
           </ul>

@@ -8,9 +8,9 @@ import {
   getSafeBaseUrl,
   isSameOriginRequest,
 } from './_utils/requestSecurity.mjs';
+import { resolveReadingPriceId } from './_utils/celpipReadingStripe.mjs';
 
 const STRIPE_API_KEY = process.env.STRIPE_API_KEY;
-const PRICE_ID = (process.env.CELPIP_READING_PRICE_ID || '').trim();
 
 export async function handler(event) {
   if (event.httpMethod !== 'POST') {
@@ -31,22 +31,24 @@ export async function handler(event) {
     };
   }
 
-  if (!PRICE_ID) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: 'Missing CELPIP_READING_PRICE_ID in environment variables' }),
-    };
-  }
-
   try {
     const stripe = new Stripe(STRIPE_API_KEY, { apiVersion: '2026-02-25.clover' });
+    const priceId = await resolveReadingPriceId(stripe);
     const baseUrl = getSafeBaseUrl(event);
+    let payload = {};
+    try {
+      payload = JSON.parse(event.body || '{}');
+    } catch {
+      payload = {};
+    }
+    const customerEmail = String(payload?.customerEmail || '').trim().toLowerCase();
 
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',
       billing_address_collection: 'auto',
       allow_promotion_codes: true,
       payment_method_types: ['card'],
+      customer_email: customerEmail || undefined,
       success_url: `${baseUrl}/celpip/reading/free-test?checkout=success&session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${baseUrl}/celpip/reading/free-test?checkout=canceled`,
       metadata: {
@@ -56,7 +58,7 @@ export async function handler(event) {
       line_items: [
         {
           quantity: 1,
-          price: PRICE_ID,
+          price: priceId,
         },
       ],
     });

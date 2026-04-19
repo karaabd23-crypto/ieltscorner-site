@@ -1,0 +1,165 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Create Account"
+  description="Create your IELTS Corner account for CELPIP Reading subscriptions, progress, and verified contact emails."
+>
+  <section class="section-sm account-auth-page">
+    <div class="account-auth-card surface">
+      <p class="account-auth-card__eyebrow">Account</p>
+      <h1>Create your account</h1>
+      <p class="muted">
+        Your primary login email stays separate from any extra verified contact emails you add later.
+      </p>
+
+      <p id="account-signup-status" hidden></p>
+
+      <form id="account-signup-form" class="account-auth-form">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" autocomplete="name" maxlength="80" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" autocomplete="email" required />
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" name="password" autocomplete="new-password" required />
+        </label>
+        <button class="btn btn-primary" type="submit">Create account</button>
+      </form>
+
+      <div class="account-auth-actions">
+        <button class="btn" id="account-google-signup" type="button">Continue with Google</button>
+        <a class="btn" href="/account/sign-in">Already have an account?</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import { AuthError, oauthLogin, signup } from '@netlify/identity';
+
+  (() => {
+    const form = document.getElementById('account-signup-form');
+    const googleButton = document.getElementById('account-google-signup');
+    const statusEl = document.getElementById('account-signup-status');
+
+    const showStatus = (message = '', tone = 'info') => {
+      if (!(statusEl instanceof HTMLElement)) return;
+      statusEl.hidden = !message;
+      statusEl.textContent = message;
+      statusEl.dataset.tone = tone;
+    };
+
+    form?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!(form instanceof HTMLFormElement)) return;
+      const formData = new FormData(form);
+      const name = String(formData.get('name') || '').trim();
+      const email = String(formData.get('email') || '').trim();
+      const password = String(formData.get('password') || '');
+
+      try {
+        showStatus('Creating your account...', 'info');
+        const user = await signup(email, password, { full_name: name, name });
+        if (user?.emailVerified) {
+          window.location.href = '/account';
+          return;
+        }
+        showStatus('Account created. Check your email to confirm the address, then sign in.', 'success');
+      } catch (error) {
+        if (error instanceof AuthError) {
+          showStatus(error.message, 'error');
+          return;
+        }
+        showStatus(error instanceof Error ? error.message : 'Unable to create the account.', 'error');
+      }
+    });
+
+    googleButton?.addEventListener('click', () => {
+      try {
+        oauthLogin('google');
+      } catch (error) {
+        showStatus(error instanceof Error ? error.message : 'Google sign-in is unavailable right now.', 'error');
+      }
+    });
+  })();
+</script>
+
+<style>
+  .account-auth-page {
+    display: grid;
+    place-items: center;
+  }
+
+  .account-auth-card {
+    width: min(560px, 100%);
+    padding: var(--s-5);
+    border-radius: 24px;
+  }
+
+  .account-auth-card__eyebrow {
+    margin: 0 0 8px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #8f3434;
+  }
+
+  .account-auth-card h1 {
+    margin: 0 0 8px;
+  }
+
+  .account-auth-form {
+    display: grid;
+    gap: 16px;
+  }
+
+  .account-auth-form label {
+    display: grid;
+    gap: 8px;
+    font-weight: 600;
+  }
+
+  .account-auth-form input {
+    min-height: 48px;
+    border-radius: 12px;
+    border: 1px solid rgba(20, 22, 23, 0.14);
+    padding: 0 14px;
+    font: inherit;
+  }
+
+  .account-auth-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: var(--s-4);
+  }
+
+  #account-signup-status {
+    margin: 0 0 var(--s-3);
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+
+  #account-signup-status[data-tone="info"] {
+    background: rgba(56, 116, 203, 0.08);
+    color: #27548a;
+  }
+
+  #account-signup-status[data-tone="success"] {
+    background: rgba(33, 138, 77, 0.08);
+    color: #246c41;
+  }
+
+  #account-signup-status[data-tone="error"] {
+    background: rgba(217, 72, 72, 0.08);
+    color: #8f3434;
+  }
+</style>

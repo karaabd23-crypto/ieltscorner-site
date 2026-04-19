@@ -1,4 +1,5 @@
 ---
+// @ts-nocheck
 import {
   CELPIP_READING_BILLING_INTERVAL,
   CELPIP_READING_FREE_TEST,
@@ -281,6 +282,7 @@ const serializeInlineJSON = (value: unknown) =>
 <script id="reading-workarea-data" type="application/json" is:inline set:html={serializeInlineJSON(CELPIP_READING_WORK_AREAS)}></script>
 
 <script>
+  // @ts-nocheck
   import { answersMatch, flattenReadingQuestions, gradeReadingAttempt } from "../lib/celpipReadingData.mjs";
 
   (() => {
@@ -311,6 +313,12 @@ const serializeInlineJSON = (value: unknown) =>
     let timeRemaining = totalDurationSeconds;
     let timerId = null;
     let hasSubmitted = false;
+    let currentAttemptId = '';
+    let currentAttemptStartedAt = new Date().toISOString();
+    let accountSession = null;
+    let accountEntitlement = null;
+    let latestAccountAttemptState = null;
+    let accountSaveTimer = null;
 
     const testShellEl = document.getElementById('reading-test-shell');
     const sectionButtons = Array.from(document.querySelectorAll('[data-reading-section]'));
@@ -376,12 +384,14 @@ const serializeInlineJSON = (value: unknown) =>
       removeStoredValue(premiumStorageKey);
     }
 
+    const isSignedIn = () => Boolean(accountSession?.authenticated);
+
     const isPremium = () => {
-      return Boolean(premiumAccess?.valid);
+      return Boolean(isSignedIn() && accountEntitlement?.active);
     };
 
     const hasPortalAccess = () => {
-      return Boolean(isPremium() && String(premiumAccess?.sessionId || '').trim());
+      return Boolean(isSignedIn() && isPremium());
     };
 
     const setAccessBanner = (message = '', tone = 'success') => {
@@ -419,6 +429,8 @@ const serializeInlineJSON = (value: unknown) =>
 
     const saveAttemptSnapshot = () => {
       writeStoredJson(attemptStorageKey, {
+        attemptId: currentAttemptId,
+        startedAt: currentAttemptStartedAt,
         answers,
         flagged,
         timeRemaining,
@@ -430,19 +442,32 @@ const serializeInlineJSON = (value: unknown) =>
       removeStoredValue(attemptStorageKey);
     };
 
-    const restoreAttemptSnapshot = () => {
-      const savedAttempt = readStoredJson(attemptStorageKey);
-      if (!savedAttempt?.hasSubmitted) return false;
+    const restoreAttemptState = (savedAttempt) => {
+      if (!savedAttempt || typeof savedAttempt !== 'object') return false;
 
+      currentAttemptId = String(savedAttempt.attemptId || '').trim();
+      currentAttemptStartedAt = String(savedAttempt.startedAt || new Date().toISOString());
       answers = savedAttempt.answers && typeof savedAttempt.answers === 'object' ? savedAttempt.answers : {};
       flagged = savedAttempt.flagged && typeof savedAttempt.flagged === 'object' ? savedAttempt.flagged : {};
       timeRemaining = Number.isFinite(savedAttempt.timeRemaining)
         ? Math.max(0, Math.min(totalDurationSeconds, Number(savedAttempt.timeRemaining)))
         : totalDurationSeconds;
-      hasSubmitted = true;
+      hasSubmitted = Boolean(savedAttempt.status === 'submitted' || savedAttempt.hasSubmitted);
       updateProgress();
-      renderResults({ scrollToResults: false });
+
+      if (hasSubmitted) {
+        renderResults({ scrollToResults: false });
+      } else {
+        renderQuestion();
+        startTimer();
+      }
+
       return true;
+    };
+
+    const restoreAttemptSnapshot = () => {
+      const savedAttempt = readStoredJson(attemptStorageKey);
+      return restoreAttemptState(savedAttempt);
     };
 
     const grantPremium = (access = {}) => {
@@ -451,6 +476,13 @@ const serializeInlineJSON = (value: unknown) =>
         ...access,
       };
       writeStoredJson(premiumStorageKey, premiumAccess);
+      if (isSignedIn()) {
+        accountEntitlement = {
+          ...(accountEntitlement || {}),
+          ...access,
+          active: true,
+        };
+      }
       syncPremiumActions();
 
       closeModal();
@@ -462,6 +494,12 @@ const serializeInlineJSON = (value: unknown) =>
     const clearPremium = () => {
       premiumAccess = null;
       removeStoredValue(premiumStorageKey);
+      if (!isSignedIn()) {
+        accountEntitlement = {
+          active: false,
+          status: 'inactive',
+        };
+      }
       syncPremiumActions();
     };
 
@@ -481,6 +519,61 @@ const serializeInlineJSON = (value: unknown) =>
       }
 
       return data;
+    };
+
+    const fetchAccountSession = async () => {
+      const response = await fetch('/.netlify/functions/account-session', {
+        headers: { Accept: 'application/json' },
+      });
+      const data = await response.json().catch(() => null);
+      if (!response.ok) {
+        throw new Error(data?.error || 'Unable to load your account session.');
+      }
+      return data;
+    };
+
+    const persistAttemptToAccount = async ({ submitted = false } = {}) => {
+      if (!isSignedIn()) return null;
+
+      const response = await fetch('/.netlify/functions/account-save-reading-attempt', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          attemptId: currentAttemptId,
+          startedAt: currentAttemptStartedAt,
+          answers,
+          flagged,
+          timeRemaining,
+          hasSubmitted: submitted || hasSubmitted,
+          submittedAt: submitted || hasSubmitted ? new Date().toISOString() : null,
+        }),
+      });
+
+      const data = await response.json().catch(() => null);
+      if (!response.ok) {
+        throw new Error(data?.error || 'Unable to save reading progress.');
+      }
+
+      if (data?.attemptState) {
+        currentAttemptId = String(data.attemptState.attemptId || currentAttemptId);
+        currentAttemptStartedAt = String(data.attemptState.startedAt || currentAttemptStartedAt);
+      }
+
+      return data;
+    };
+
+    const scheduleAccountSave = ({ submitted = false, immediate = false } = {}) => {
+      saveAttemptSnapshot();
+      if (!isSignedIn()) return;
+
+      if (accountSaveTimer) {
+        window.clearTimeout(accountSaveTimer);
+      }
+
+      accountSaveTimer = window.setTimeout(() => {
+        persistAttemptToAccount({ submitted }).catch(() => {
+        });
+      }, immediate ? 0 : 700);
     };
 
     const formatTime = (seconds) => {
@@ -712,6 +805,7 @@ const serializeInlineJSON = (value: unknown) =>
         select.addEventListener('change', () => {
           answers[question.id] = select.value;
           updateProgress();
+          scheduleAccountSave();
           /* Sync inline blank in passage */
           const blankSpan = passageBody?.querySelector('[data-blank-id="' + question.id + '"]');
           if (blankSpan) {
@@ -750,12 +844,14 @@ const serializeInlineJSON = (value: unknown) =>
               : previous.filter((value) => value !== option.id);
             answers[question.id] = Array.from(new Set(next));
             updateProgress();
+            scheduleAccountSave();
           });
         } else {
           input.checked = currentAnswer === option.id;
           input.addEventListener('change', () => {
             answers[question.id] = option.id;
             updateProgress();
+            scheduleAccountSave();
           });
         }
 
@@ -1092,6 +1188,7 @@ const serializeInlineJSON = (value: unknown) =>
       }
 
       renderResults({ timeExpired });
+      scheduleAccountSave({ submitted: true, immediate: true });
     };
 
     const startTimer = () => {
@@ -1100,6 +1197,10 @@ const serializeInlineJSON = (value: unknown) =>
         timeRemaining -= 1;
         if (timerEl instanceof HTMLElement) {
           timerEl.textContent = formatTime(Math.max(0, timeRemaining));
+        }
+
+        if (timeRemaining > 0 && timeRemaining % 30 === 0) {
+          scheduleAccountSave();
         }
 
         if (timeRemaining <= 0) {
@@ -1131,22 +1232,19 @@ const serializeInlineJSON = (value: unknown) =>
     document.getElementById('reading-open-upgrade')?.addEventListener('click', openModal);
     document.getElementById('reading-retake-test')?.addEventListener('click', () => {
       clearAttemptSnapshot();
-      window.location.href = '/celpip/reading/free-test';
+      window.location.href = '/celpip/reading/free-test?fresh=1';
     });
     document.getElementById('reading-manage-subscription')?.addEventListener('click', async () => {
-      const sessionId = String(premiumAccess?.sessionId || '').trim();
-      if (!sessionId) {
-        setAccessBanner('We could not find your billing session. Please email support if you need help canceling.', 'error');
+      if (!isSignedIn()) {
+        setAccessBanner('Sign in first so we can open the subscription attached to your account.', 'error');
         return;
       }
 
       setAccessBanner('Opening secure billing portal...', 'info');
 
       try {
-        const response = await fetch('/.netlify/functions/create-celpip-reading-portal', {
+        const response = await fetch('/.netlify/functions/account-create-reading-portal', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ sessionId }),
         });
 
         const data = await response.json().catch(() => null);
@@ -1164,6 +1262,7 @@ const serializeInlineJSON = (value: unknown) =>
       const question = getCurrentQuestion();
       flagged[question.id] = !flagged[question.id];
       renderQuestion();
+      scheduleAccountSave();
     });
 
     sectionButtons.forEach((button) => {
@@ -1196,7 +1295,10 @@ const serializeInlineJSON = (value: unknown) =>
         const response = await fetch('/.netlify/functions/create-celpip-reading-checkout', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ product: 'celpip-reading-simulator' }),
+          body: JSON.stringify({
+            product: 'celpip-reading-simulator',
+            customerEmail: accountSession?.account?.primaryContactEmail || accountSession?.user?.email || '',
+          }),
         });
 
         const data = await response.json().catch(() => null);
@@ -1211,43 +1313,112 @@ const serializeInlineJSON = (value: unknown) =>
     });
 
     const bootstrapPage = async () => {
-      const restoredAttempt = restoreAttemptSnapshot();
       const params = new URLSearchParams(window.location.search);
+      const forceFreshAttempt = params.get('fresh') === '1';
       const returnedSessionId = params.get('checkout') === 'success'
         ? String(params.get('session_id') || '').trim()
         : '';
       const storedSessionId = String(premiumAccess?.sessionId || '').trim();
       const sessionIdToValidate = returnedSessionId || storedSessionId;
+      const localAttempt = readStoredJson(attemptStorageKey);
+
+      try {
+        accountSession = await fetchAccountSession();
+        accountEntitlement = accountSession?.entitlement || { active: false, status: 'inactive' };
+        latestAccountAttemptState = accountSession?.latestAttemptState || null;
+      } catch {
+        accountSession = null;
+        accountEntitlement = { active: false, status: 'inactive' };
+        latestAccountAttemptState = null;
+      }
 
       if (timerEl instanceof HTMLElement) {
         timerEl.textContent = formatTime(timeRemaining);
       }
 
+      if (forceFreshAttempt) {
+        clearAttemptSnapshot();
+        latestAccountAttemptState = null;
+        currentAttemptId = '';
+        currentAttemptStartedAt = new Date().toISOString();
+      }
+
+      const restoredAttempt = forceFreshAttempt
+        ? false
+        : restoreAttemptState(latestAccountAttemptState || localAttempt);
       if (!restoredAttempt) {
         renderQuestion();
         startTimer();
       }
 
+      syncPremiumActions();
       queueInitialViewportAlignment();
 
       if (!sessionIdToValidate) {
-        if (params.has('checkout') || params.has('session_id')) {
+        if (isSignedIn() && isPremium()) {
+          if (accountEntitlement?.cancelAtPeriodEnd) {
+            const endDate = formatCalendarDate(accountEntitlement.currentPeriodEnd);
+            setAccessBanner(
+              endDate
+                ? `Your subscription is set to end on ${endDate}. Premium access stays active until then.`
+                : 'Your subscription is set to end at the end of the current billing period.',
+              'info',
+            );
+          } else {
+            setAccessBanner('');
+          }
+        }
+        if (params.has('checkout') || params.has('session_id') || params.has('fresh')) {
           window.history.replaceState({}, '', window.location.pathname);
         }
         return;
       }
 
       if (returnedSessionId) {
-        setAccessBanner('Confirming your payment and unlocking premium review...', 'info');
+        setAccessBanner(
+          isSignedIn()
+            ? 'Confirming your payment and attaching it to this account...'
+            : 'Confirming your payment. You will need to sign in to claim this subscription on your account.',
+          'info',
+        );
       }
 
       try {
         const access = await validatePremiumSession(sessionIdToValidate);
-        grantPremium(access);
+        premiumAccess = {
+          valid: true,
+          ...access,
+        };
+        writeStoredJson(premiumStorageKey, premiumAccess);
+
+        if (returnedSessionId && isSignedIn()) {
+          const claimResponse = await fetch('/.netlify/functions/account-claim-reading-subscription', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ sessionId: returnedSessionId }),
+          });
+          const claimData = await claimResponse.json().catch(() => null);
+          if (!claimResponse.ok) {
+            throw new Error(claimData?.error || 'Payment was confirmed, but we could not attach it to your account yet.');
+          }
+
+          accountEntitlement = claimData?.entitlement || { active: true, status: 'active' };
+          grantPremium(access);
+        }
 
         if (returnedSessionId) {
-          setAccessBanner('Payment confirmed. Premium review is now unlocked for this score report.', 'success');
-        } else if (access.cancelAtPeriodEnd) {
+          if (isSignedIn()) {
+            setAccessBanner('Payment confirmed. Premium review is now unlocked on this account.', 'success');
+          } else {
+            const claimedEmail = String(access.customerEmail || '').trim();
+            setAccessBanner(
+              claimedEmail
+                ? `Payment confirmed for ${claimedEmail}. Sign in or create your account, then claim the subscription from the account page.`
+                : 'Payment confirmed. Sign in or create your account, then claim the subscription from the account page.',
+              'info',
+            );
+          }
+        } else if (isSignedIn() && accountEntitlement?.cancelAtPeriodEnd) {
           const endDate = formatCalendarDate(access.currentPeriodEnd);
           setAccessBanner(
             endDate
@@ -1255,11 +1426,15 @@ const serializeInlineJSON = (value: unknown) =>
               : 'Your subscription is set to end at the end of the current billing period.',
             'info',
           );
+        } else if (!isSignedIn() && storedSessionId) {
+          setAccessBanner('Sign in to reconnect your premium access to this account.', 'info');
         } else {
           setAccessBanner('');
         }
       } catch (error) {
-        clearPremium();
+        if (isSignedIn()) {
+          accountEntitlement = { active: false, status: 'inactive' };
+        }
         if (!resultsEl?.hidden) {
           renderResults();
         }
@@ -1273,7 +1448,7 @@ const serializeInlineJSON = (value: unknown) =>
           setAccessBanner('');
         }
       } finally {
-        if (params.has('checkout') || params.has('session_id')) {
+        if (params.has('checkout') || params.has('session_id') || params.has('fresh')) {
           window.history.replaceState({}, '', window.location.pathname);
         }
       }

@@ -4,9 +4,9 @@ import {
   CELPIP_READING_PRODUCT_NAME,
 } from '../../src/lib/celpipReadingData.mjs';
 import { isSameOriginRequest } from './_utils/requestSecurity.mjs';
+import { subscriptionHasReadingPrice } from './_utils/celpipReadingStripe.mjs';
 
 const STRIPE_API_KEY = (process.env.STRIPE_API_KEY || '').trim();
-const PRICE_ID = (process.env.CELPIP_READING_PRICE_ID || '').trim();
 
 function extractId(value) {
   if (!value) return '';
@@ -30,14 +30,12 @@ async function getSubscriptionDetails(stripe, subscriptionRef) {
     };
   }
 
-  if (PRICE_ID) {
-    const hasPrice = subscription.items.data.some((item) => item.price?.id === PRICE_ID);
-    if (!hasPrice) {
-      return {
-        valid: false,
-        reason: `Subscription does not include the required ${CELPIP_READING_PRODUCT_NAME} price.`,
-      };
-    }
+  const hasPrice = await subscriptionHasReadingPrice(stripe, subscription);
+  if (!hasPrice) {
+    return {
+      valid: false,
+      reason: `Subscription does not include the required ${CELPIP_READING_PRODUCT_NAME} price.`,
+    };
   }
 
   return {

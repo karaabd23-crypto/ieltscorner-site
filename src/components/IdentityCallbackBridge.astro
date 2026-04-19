@@ -1,0 +1,52 @@
+<script>
+  import { handleAuthCallback } from '@netlify/identity';
+
+  (() => {
+    const AUTH_HASH_PATTERN = /^#(confirmation_token|recovery_token|invite_token|email_change_token|access_token)=/;
+    if (typeof window === 'undefined') return;
+    if (!AUTH_HASH_PATTERN.test(window.location.hash || '')) return;
+
+    const saveFlash = (message, tone = 'success') => {
+      try {
+        sessionStorage.setItem('ieltscorner.accountFlash', JSON.stringify({ message, tone }));
+      } catch {
+      }
+    };
+
+    handleAuthCallback()
+      .then((result) => {
+        if (!result) return;
+
+        if (result.type === 'recovery') {
+          saveFlash('Password recovery confirmed. Choose your new password below.', 'info');
+          window.location.href = '/account/reset-password';
+          return;
+        }
+
+        if (result.type === 'invite') {
+          saveFlash('Your invite is ready. Sign in to continue.', 'info');
+          window.location.href = '/account/sign-in';
+          return;
+        }
+
+        if (result.type === 'email_change') {
+          saveFlash('Your login email was updated successfully.', 'success');
+          window.location.href = '/account';
+          return;
+        }
+
+        if (result.type === 'confirmation') {
+          saveFlash('Email confirmed. Your account is ready.', 'success');
+          window.location.href = '/account';
+          return;
+        }
+
+        saveFlash('Signed in successfully.', 'success');
+        window.location.href = '/account';
+      })
+      .catch((error) => {
+        saveFlash(error instanceof Error ? error.message : 'Authentication callback failed.', 'error');
+        window.location.href = '/account/sign-in';
+      });
+  })();
+</script>
