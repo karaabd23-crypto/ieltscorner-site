@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-11T07:24:35.089Z",
+  "generatedAt": "2026-04-19T08:17:12.659Z",
   "sources": {
     "codex": {
       "root": "C:\\Users\\Karaa\\.codex",
@@ -11,20 +11,97 @@
     }
   },
   "counts": {
-    "total": 60,
-    "codex": 16,
-    "vscode": 44
+    "total": 67,
+    "codex": 21,
+    "vscode": 46
   },
   "sessions": [
+    {
+      "source": "vscode-chat",
+      "id": "9c3af967-5f98-4287-b6dc-ed42ed6644be",
+      "title": "Checking for uncommitted changes in Git",
+      "createdAt": "2026-04-19T05:26:43.106Z",
+      "updatedAt": "2026-04-19T08:16:33.278Z",
+      "cwd": null,
+      "initialPrompt": "",
+      "finalAnswer": "I’m removing the Playwright artifacts and making sure they stay out of Git going forward, then I’ll verify the working tree is",
+      "filePath": "C:\\Users\\Karaa\\AppData\\Roaming\\Code\\User\\workspaceStorage\\99c7524e034dea3b9bb59bd56c463b99\\chatSessions\\9c3af967-5f98-4287-b6dc-ed42ed6644be.jsonl"
+    },
+    {
+      "source": "codex",
+      "id": "019da41e-3b8b-7220-8cb8-272aba06ccf1",
+      "title": "Review CELPIP reading content",
+      "createdAt": "2026-04-19T05:02:18.026Z",
+      "updatedAt": "2026-04-19T05:04:23.6134489Z",
+      "cwd": "C:\\Users\\Karaa\\Documents\\ieltscorner-site",
+      "initialPrompt": "review the code and the content for the CELPIP reading and make a list of suggested improvements. Two that I see right now: 1) one empty line between paragraphs breaks in the reading passages. 2) better layout that is e…",
+      "finalAnswer": "Pushed successfully. - Branch: `main` - Commit: `f02e22e` - Message: `Improve CELPIP reading simulator UX and scoring reliability` - Remote: `origin/main` updated (`e744b4e -> f02e22e`) I left the local untracked `.play…",
+      "filePath": "C:\\Users\\Karaa\\.codex\\sessions\\2026\\04\\18\\rollout-2026-04-18T22-02-18-019da41e-3b8b-7220-8cb8-272aba06ccf1.jsonl"
+    },
+    {
+      "source": "vscode-chat",
+      "id": "18561c5b-7393-4863-9da6-29ea793c4671",
+      "title": "CELPIP reading test content review request",
+      "createdAt": "2026-04-18T03:57:00.626Z",
+      "updatedAt": "2026-04-19T05:00:34.805Z",
+      "cwd": null,
+      "initialPrompt": "I would like you to do a very thro",
+      "finalAnswer": "Committed and pushed to `main` (`e744b4e`). The deploy workflow should trigger automatically on Netlify.",
+      "filePath": "C:\\Users\\Karaa\\AppData\\Roaming\\Code\\User\\workspaceStorage\\99c7524e034dea3b9bb59bd56c463b99\\chatSessions\\18561c5b-7393-4863-9da6-29ea793c4671.jsonl"
+    },
+    {
+      "source": "codex",
+      "id": "019d9fa0-2621-7d42-9871-8b0a6b474535",
+      "title": "CELPIP Reading Test",
+      "createdAt": "2026-04-18T08:06:06.147Z",
+      "updatedAt": "2026-04-18T08:07:12.4928265Z",
+      "cwd": "C:\\Users\\Karaa\\Documents\\ieltscorner-site",
+      "initialPrompt": "File Edit View Window Help Design CELPIP reading paywall ieltscorner-site Let's plan. I would like to add a feature to the webiste. CELPIP reading tasks that automatically mark themselves. Provide an interface experienc…",
+      "finalAnswer": "Implemented the mobile-first promo system and removed the old “buried in navigation” behavior. The reusable promo layer is in [FeaturedToolsSection.astro](C:/Users/Karaa/Documents/ieltscorner-site/src/components/Feature…",
+      "filePath": "C:\\Users\\Karaa\\.codex\\sessions\\2026\\04\\18\\rollout-2026-04-18T01-06-06-019d9fa0-2621-7d42-9871-8b0a6b474535.jsonl"
+    },
+    {
+      "source": "codex",
+      "id": "019d9f96-82a4-7233-9719-72647f43e8e7",
+      "title": "Design CELPIP reading paywall",
+      "createdAt": "2026-04-18T07:55:34.466Z",
+      "updatedAt": "2026-04-18T07:57:46.8724216Z",
+      "cwd": "G:\\My Drive\\IELTS Corner\\ieltscorner-site",
+      "initialPrompt": "Let's plan. I would like to add a feature to the webiste. CELPIP reading tasks that automatically mark themselves. Provide an interface experience as close to the test environment as possible and at the same level of di…",
+      "finalAnswer": "Yes. I can design this, and it’s a strong feature for this site. One important note first: the workspace at `G:\\My Drive\\IELTS Corner\\ieltscorner-site` is currently empty from my side, so this is a product/feature plan…",
+      "filePath": "C:\\Users\\Karaa\\.codex\\sessions\\2026\\04\\18\\rollout-2026-04-18T00-55-34-019d9f96-82a4-7233-9719-72647f43e8e7.jsonl"
+    },
+    {
+      "source": "codex",
+      "id": "019d9f71-e03d-76e0-b322-30dd0963d9d7",
+      "title": "Audit site navigation plan",
+      "createdAt": "2026-04-18T07:15:33.598Z",
+      "updatedAt": "2026-04-18T07:18:11.4585744Z",
+      "cwd": "G:\\My Drive\\IELTS Corner\\ieltscorner-site",
+      "initialPrompt": "In an attempt to create more conversions, my AI agent has changed the structure of the site, but I think that has made the sire less intuitive to navigate to the human brain. Can you do an audit of the architecture and…",
+      "finalAnswer": "I added the question bank shortcut on the homepage and made the destination read like a real product instead of a hidden sample page. The homepage now has a floating-style `Question Bank` card just under the CELPIP shor…",
+      "filePath": "C:\\Users\\Karaa\\.codex\\sessions\\2026\\04\\18\\rollout-2026-04-18T00-15-33-019d9f71-e03d-76e0-b322-30dd0963d9d7.jsonl"
+    },
+    {
+      "source": "codex",
+      "id": "019d9f13-d681-7783-a51e-2ee67345e1f1",
+      "title": "Inspect project overview",
+      "createdAt": "2026-04-18T05:32:50.718Z",
+      "updatedAt": "2026-04-18T05:33:20.570973Z",
+      "cwd": "G:\\My Drive\\IELTS Corner\\ieltscorner-site",
+      "initialPrompt": "Can you look at this project and tell me what you see in broad strokes. This is also on VS Code, which you have access to",
+      "finalAnswer": "The core feature is in place. What’s left is mostly polish, growth, and QA rather than missing foundation. Still worth doing: - Add more internal links to the question bank from CELPIP blog posts, writing lessons, and a…",
+      "filePath": "C:\\Users\\Karaa\\.codex\\sessions\\2026\\04\\17\\rollout-2026-04-17T22-32-50-019d9f13-d681-7783-a51e-2ee67345e1f1.jsonl"
+    },
     {
       "source": "vscode-chat",
       "id": "bb81816d-2867-494e-b483-b7a6422aa49d",
       "title": "Website Navigation and Accessibility Audit Suggestions",
       "createdAt": "2026-04-11T06:46:28.595Z",
-      "updatedAt": "2026-04-11T07:23:57.297Z",
+      "updatedAt": "2026-04-11T07:25:34.208Z",
       "cwd": null,
       "initialPrompt": "Do an audit of the site map and nevigation options (menus, links, )",
-      "finalAnswer": "All commands will be auto approved for this session ([Disable](command:workbench.action.terminal.chat.disableSessionAutoApproval?%255B%257B%2522%2524mid%2522%253A1%252C%2522external%2522%253A%2522vscode-chat-session%253…",
+      "finalAnswer": "Done. Commit `186e82a` is pushed and Netlify deploy is in progress. The session log has been written and catalog updated.",
       "filePath": "C:\\Users\\Karaa\\AppData\\Roaming\\Code\\User\\workspaceStorage\\99c7524e034dea3b9bb59bd56c463b99\\chatSessions\\bb81816d-2867-494e-b483-b7a6422aa49d.jsonl"
     },
     {
@@ -35,7 +112,7 @@
       "updatedAt": "2026-04-10T18:32:25.8318695Z",
       "cwd": "c:\\Users\\Karaa\\Documents\\ieltscorner-site",
       "initialPrompt": "I need you to perform a deep audit of the AI essay feedback feature in this codebase and explain it to me in full detail as if I am preparing to present it in a job interview for a Learning and Development Coordinator r…",
-      "finalAnswer": "Done. I removed the duplicate **“Free Reading Guide”** card and kept **“Full Reading Guide”**. Changed file: [src/pages/celpip/index.astro](C:/Users/Karaa/Documents/ieltscorner-site/src/pages/celpip/index.astro) Only on…",
+      "finalAnswer": "Committed and pushed to `main`. Latest commit: `9e243df` Message: `Fix CELPIP practice hub mobile layout overflow` The branch is up to date with `origin/main`. The only files left untracked are the local temp logs `netl…",
       "filePath": "C:\\Users\\Karaa\\.codex\\sessions\\2026\\04\\10\\rollout-2026-04-10T11-32-20-019d78aa-9c35-7c52-9c02-3c7be554fe42.jsonl"
     },
     {
@@ -123,7 +200,7 @@
       "updatedAt": "2026-04-02T04:27:35.2387432Z",
       "cwd": "c:\\Users\\Karaa\\Documents\\ieltscorner-site",
       "initialPrompt": "explain to me in detail how the email digest works.",
-      "finalAnswer": "Sounds good. Keeping sender as `kara.abd23@gmail.com` is the safest choice for now, and your Kit digest pipeline is working. When you’re ready later, I can handle the forwarding + DNS setup quickly end-to-end.",
+      "finalAnswer": "Triggered and confirmed. - Workflow run: `https://github.com/karaabd23-crypto/ieltscorner-site/actions/runs/24597423174` - Result: `success` - Kit broadcast created: `23750983` - Scheduled send time: `2026-04-18T05:06:0…",
       "filePath": "C:\\Users\\Karaa\\.codex\\sessions\\2026\\04\\01\\rollout-2026-04-01T21-27-16-019d4c72-0e74-72d2-8ce8-36a229085e31.jsonl"
     },
     {

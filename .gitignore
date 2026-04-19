@@ -30,6 +30,7 @@ pnpm-debug.log*
 # local automation and runtime cache
 .cache/
 .agents/
+.playwright-cli/
 
 # local browser profiles and temp data for WhatsApp automation
 scripts/whatsapp-automation/.chrome-profile*
