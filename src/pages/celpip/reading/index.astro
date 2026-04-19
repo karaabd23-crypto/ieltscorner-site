@@ -21,7 +21,7 @@ const pageStructuredData = [
 
 <Layout
   title="CELPIP Reading Tests"
-  description="Choose a CELPIP reading test, start the free full test in a separate exam-style environment, and unlock premium tests after your first score."
+  description="Choose a CELPIP reading test, start the free full test in a separate exam-style environment, or unlock premium reading access immediately from the hub."
   keywords="CELPIP reading test, CELPIP reading simulator, CELPIP reading practice"
   structuredData={pageStructuredData}
 >
@@ -39,13 +39,15 @@ const pageStructuredData = [
         <span class="pill">CELPIP reading tests</span>
         <h1>Choose your reading test first. The exam screen opens separately.</h1>
         <p class="muted">
-          Start with one full free reading test. After you finish, you see your score immediately, along with the
-          reading skills that need work and the lessons that can fix them.
+          Start with one full free reading test, or unlock premium now if you already know you want the full reading pack.
+          The premium subscription gives you the detailed review layer and the remaining premium tests without making you buy only after the free diagnostic.
         </p>
         <div class="funnel-hero__actions">
           <a class="btn btn-primary" href="/celpip/reading/free-test">Start Free Test</a>
+          <button class="btn btn-ghost" id="reading-hub-start-checkout" type="button">Unlock premium now</button>
           <a class="btn btn-ghost" href="/tutoring#book-private-class">Book private reading coaching</a>
         </div>
+        <p class="muted reading-catalog__status" id="reading-hub-checkout-status" style="margin: 0; min-height: 1.4rem;"></p>
       </div>
     </div>
   </section>
@@ -58,7 +60,7 @@ const pageStructuredData = [
           <h2>Test list</h2>
         </div>
         <p class="muted reading-catalog__copy">
-          The free test opens in a dedicated test environment. Premium tests unlock after the first score report.
+          The free test opens in a dedicated test environment. You can also unlock Reading Premium directly from this page before taking the test.
         </p>
       </div>
 
@@ -73,6 +75,7 @@ const pageStructuredData = [
             <li>Instant score plus lesson recommendations</li>
           </ul>
           <a class="btn btn-primary" href="/celpip/reading/free-test">Start Free Test</a>
+          <p class="muted" style="margin: 0;">Use this first if you want a diagnostic before deciding on premium.</p>
         </article>
 
         {CELPIP_READING_PREMIUM_TESTS.map((test) => (
@@ -82,8 +85,9 @@ const pageStructuredData = [
             <p class="muted">{test.summary}</p>
             <p class="reading-test-card__focus"><strong>Focus:</strong> {test.focus}</p>
             <div class="reading-test-card__lockline">
-              Unlock with Reading Premium after the free test. CA${CELPIP_READING_PRICE_CAD}/month. Cancel anytime.
+              Unlock with Reading Premium right now for CA${CELPIP_READING_PRICE_CAD}/month. Cancel anytime.
             </div>
+            <button class="btn btn-ghost reading-test-card__cta" type="button" data-reading-checkout="true">Unlock premium now</button>
           </article>
         ))}
       </div>
@@ -91,13 +95,21 @@ const pageStructuredData = [
       <div class="reading-catalog__promo">
         <ContextualNextStepPromo
           eyebrow="Reading premium"
-          title="Use the free test as your diagnostic, then decide whether to unlock premium."
-          intro="One full test is free. Premium adds detailed answer review, explanations, and the remaining full tests after you see your first score."
+          title="Start with the free test or unlock Reading Premium immediately."
+          intro="One full test is free. Premium adds detailed answer review, explanations, and the remaining full tests whenever you are ready to use them."
           primary={{
+            offer: "reading_premium",
+            title: "Reading Premium",
+            description:
+              "Go straight to secure checkout if you already know you want the full reading pack.",
+            href: "#reading-hub-start-checkout",
+            cta: "Unlock premium now",
+          }}
+          secondary={{
             offer: "reading_test",
             title: "Free Reading Test",
             description:
-              "Open the separate test screen now, finish the test, and see your score immediately.",
+              "Take the free diagnostic first if you want to see your score before subscribing.",
             href: "/celpip/reading/free-test",
             cta: "Start free test",
           }}
@@ -119,17 +131,17 @@ const pageStructuredData = [
         <article class="reading-process__item">
           <span>1</span>
           <h3>Choose a test</h3>
-          <p>Start with the free full reading test from this page.</p>
+          <p>Start with the free full reading test, or unlock premium immediately from this page.</p>
         </article>
         <article class="reading-process__item">
           <span>2</span>
-          <h3>Take it in a separate test screen</h3>
-          <p>The timer starts automatically and the environment stays focused on the test itself.</p>
+          <h3>Take the test when you are ready</h3>
+          <p>The exam opens in a separate focused screen, whether you start free first or subscribe before taking it.</p>
         </article>
         <article class="reading-process__item">
           <span>3</span>
-          <h3>Get score and study plan</h3>
-          <p>You see the score immediately, where your reading broke down, and which lessons to study next.</p>
+          <h3>Use review and premium tests</h3>
+          <p>You get the score immediately, and premium adds deeper review plus the remaining tests when you want them.</p>
         </article>
       </div>
     </div>
@@ -138,17 +150,68 @@ const pageStructuredData = [
   <section class="section-sm">
     <div class="surface funnel-final-cta">
       <p class="offer-card__label">Need faster help?</p>
-      <h2 style="margin-top: 0;">Use the free test as your diagnostic, then decide whether you need premium or coaching.</h2>
+      <h2 style="margin-top: 0;">Choose the path that fits you: free diagnostic first, or premium immediately.</h2>
       <p>
-        The free test is the clean starting point. Premium adds more full tests and detailed review. Tutoring is for learners who want direct intervention.
+        The free test is still the clean diagnostic. But if you already know you want the full reading pack, you can subscribe now without waiting for the first attempt.
       </p>
       <div class="funnel-final-cta__actions">
         <a class="btn btn-primary" href="/celpip/reading/free-test">Take the free reading test</a>
+        <button class="btn" type="button" data-reading-checkout="true">Unlock premium now</button>
         <a class="btn" href="/tutoring#book-private-class">Book private class</a>
       </div>
     </div>
   </section>
 </Layout>
+
+<script is:inline>
+  (() => {
+    const statusEl = document.getElementById('reading-hub-checkout-status');
+    const checkoutButtons = Array.from(document.querySelectorAll('[data-reading-checkout="true"], #reading-hub-start-checkout'));
+    const params = new URLSearchParams(window.location.search);
+
+    const setStatus = (message = '', tone = 'info') => {
+      if (!(statusEl instanceof HTMLElement)) return;
+      statusEl.textContent = message;
+      statusEl.dataset.tone = message ? tone : '';
+    };
+
+    if (params.get('checkout') === 'success') {
+      setStatus('Payment confirmed. Premium is active for this purchase. You can start the free test whenever you are ready and use the premium review there.', 'success');
+    } else if (params.get('checkout') === 'canceled') {
+      setStatus('Checkout canceled. You can still start the free test now or come back to premium later.', 'info');
+    }
+
+    const beginCheckout = async () => {
+      setStatus('Opening secure checkout...', 'info');
+
+      try {
+        const response = await fetch('/.netlify/functions/create-celpip-reading-checkout', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ source: 'reading-hub' }),
+        });
+
+        const data = await response.json().catch(() => null);
+        if (!response.ok || !data?.checkoutUrl) {
+          throw new Error(data?.error || 'Unable to start checkout.');
+        }
+
+        window.location.href = data.checkoutUrl;
+      } catch (error) {
+        setStatus(error instanceof Error ? error.message : 'Unable to start checkout.', 'error');
+      }
+    };
+
+    checkoutButtons.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
+        void beginCheckout();
+      });
+    });
+  })();
+</script>
 
 <style>
   .reading-catalog-hero {
@@ -185,6 +248,18 @@ const pageStructuredData = [
   .reading-catalog__copy {
     margin: 0;
     max-width: 42ch;
+  }
+
+  .reading-catalog__status {
+    color: #5f6c79;
+  }
+
+  .reading-catalog__status[data-tone="success"] {
+    color: #21603c;
+  }
+
+  .reading-catalog__status[data-tone="error"] {
+    color: #9f2e2e;
   }
 
   .reading-catalog__grid {
@@ -242,6 +317,10 @@ const pageStructuredData = [
     border-radius: 14px;
     background: rgba(20, 22, 23, 0.05);
     font-weight: 700;
+  }
+
+  .reading-test-card__cta {
+    width: fit-content;
   }
 
   .reading-process {

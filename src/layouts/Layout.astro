@@ -48,7 +48,6 @@ const isExamHubPath = normalizedPath === "/celpip" || normalizedPath === "/ielts
 const isSupportLandingPath =
   normalizedPath === "/celpip-writing-help" ||
   normalizedPath === "/ielts-writing-help";
-const headerMode: "full" | "reduced" | "minimal" = "full";
 const isGuidedPath =
   normalizedPath === "/ai-feedback" ||
   normalizedPath === "/celpip" ||
@@ -64,57 +63,10 @@ const reduceFunnelDistractions =
   isGuidedPath ||
   normalizedPath === "/contact";
 
-const focusHeaderCta = (() => {
-  if (normalizedPath.startsWith("/tutoring")) {
-    return { href: "/tutoring#book-private-class", label: "Book Private Class" };
-  }
-  if (normalizedPath === "/ai-feedback") {
-    return { href: "/ai-feedback#buy-writing-lab", label: "Get AI Writing Access" };
-  }
-  if (normalizedPath === "/ielts-writing-help") {
-    return { href: "/ai-feedback", label: "Try AI Writing Feedback" };
-  }
-  if (normalizedPath === "/celpip-writing-help") {
-    return { href: "/ai-feedback", label: "Go to AI Feedback" };
-  }
-  if (normalizedPath.startsWith("/ai-feedback")) {
-    return { href: "/ai-feedback#buy-writing-lab", label: "Get AI Writing Access" };
-  }
-  if (normalizedPath.startsWith("/celpip/writing")) {
-    return { href: "/ai-feedback", label: "Go to AI Feedback" };
-  }
-  if (
-    normalizedPath.startsWith("/celpip/listening") ||
-    normalizedPath.startsWith("/celpip/reading") ||
-    normalizedPath.startsWith("/celpip/speaking")
-  ) {
-    return { href: "/tutoring#book-private-class", label: "Book Private Class" };
-  }
-  if (normalizedPath.startsWith("/celpip")) {
-    return null;
-  }
-  if (normalizedPath.startsWith("/ielts/writing")) {
-    return { href: "/ai-feedback", label: "Try AI Writing Feedback" };
-  }
-  if (
-    normalizedPath.startsWith("/ielts/listening") ||
-    normalizedPath.startsWith("/ielts/reading") ||
-    normalizedPath.startsWith("/ielts/speaking")
-  ) {
-    return { href: "/tutoring#book-private-class", label: "Book Private Class" };
-  }
-  if (normalizedPath.startsWith("/ielts")) {
-    return null;
-  }
-  return null;
-})();
-
 const isPathActive = (path: string) =>
   normalizedPath === path || normalizedPath.startsWith(`${path}/`);
 
-const showFocusHeader = headerMode === "minimal";
-const showReducedHeader = headerMode === "reduced";
-const showReducedHeaderCta = Boolean(focusHeaderCta);
+const showFocusHeader = false;
 const floatingCtaPaths = new Set<string>();
 const showFloatingWebinarCta = floatingCtaPaths.has(normalizedPath);
 const showPageBottomAd = showAds && !isGuidedPath;
@@ -164,28 +116,20 @@ const generalNavGroups = [
     label: 'IELTS',
     href: '/ielts',
     items: [
-      { label: 'Overview', href: '/ielts' },
-      { label: 'All IELTS lessons', href: '/ielts' },
       { label: 'Listening', href: '/ielts/listening' },
       { label: 'Reading', href: '/ielts/reading' },
       { label: 'Writing', href: '/ielts/writing' },
       { label: 'Speaking', href: '/ielts/speaking' },
-      { label: 'IELTS Writing Help', href: '/ielts-writing-help' },
     ],
   },
   {
     label: 'CELPIP',
     href: '/celpip',
     items: [
-      { label: 'Overview', href: '/celpip' },
       { label: 'Listening', href: '/celpip/listening' },
       { label: 'Reading', href: '/celpip/reading' },
       { label: 'Writing', href: '/celpip/writing' },
       { label: 'Speaking', href: '/celpip/speaking' },
-      { label: 'CLB 9 Strategy', href: '/celpip/clb-9-strategy' },
-      { label: 'Question Bank', href: '/celpip/writing/questions' },
-      { label: 'AI Writing Lab', href: '/ai-feedback' },
-      { label: 'Sample Essays', href: '/celpip/writing/samples' },
     ],
   },
   {
@@ -201,7 +145,7 @@ const generalNavGroups = [
     label: 'Resources',
     href: '/lessons',
     items: [
-      { label: 'All lessons', href: '/lessons' },
+      { label: 'Free Lessons', href: '/lessons' },
       { label: 'Blog', href: '/blog' },
       { label: 'Success stories', href: '/success-stories' },
       { label: 'FAQ', href: '/faq' },
@@ -211,128 +155,17 @@ const generalNavGroups = [
   },
 ];
 
-const celpipNavGroups = [
-  {
-    label: 'CELPIP',
-    href: '/celpip',
-    items: [
-      { label: 'Overview', href: '/celpip' },
-      { label: 'Listening', href: '/celpip/listening' },
-      { label: 'Reading', href: '/celpip/reading' },
-      { label: 'Writing', href: '/celpip/writing' },
-      { label: 'Speaking', href: '/celpip/speaking' },
-    ],
-  },
-  {
-    label: 'Writing',
-    href: '/celpip/writing',
-    items: [
-      { label: 'Writing Hub', href: '/celpip/writing' },
-      { label: 'Question Bank', href: '/celpip/writing/questions' },
-      { label: 'AI Writing Lab', href: '/ai-feedback' },
-      { label: 'Sample Essays', href: '/celpip/writing/samples' },
-      { label: 'Writing Help', href: '/celpip-writing-help' },
-    ],
-  },
-  {
-    label: 'Study',
-    href: '/lessons',
-    items: [
-      { label: 'Free Lessons', href: '/lessons' },
-      { label: 'Writing Lessons', href: '/lessons/writing' },
-      { label: 'Blog', href: '/blog' },
-      { label: 'CLB 9 Strategy', href: '/celpip/clb-9-strategy' },
-      { label: 'Reading Guide', href: '/celpip/reading-guide' },
-    ],
-  },
-  {
-    label: 'Support',
-    href: '/tutoring',
-    items: [
-      { label: 'Private Class', href: '/tutoring' },
-      { label: 'Contact', href: '/contact' },
-      { label: 'FAQ', href: '/faq' },
-      { label: 'About', href: '/about' },
-    ],
-  },
-];
+const practiceNavGroup = {
+  label: 'Practice',
+  href: '/celpip/reading',
+  items: [
+    { label: 'CELPIP Reading Practice', href: '/celpip/reading' },
+    { label: 'CELPIP Writing Practice', href: '/ai-feedback' },
+    { label: 'Free Lessons', href: '/lessons' },
+  ],
+};
 
-const ieltsNavGroups = [
-  {
-    label: 'IELTS',
-    href: '/ielts',
-    items: [
-      { label: 'Overview', href: '/ielts' },
-      { label: 'Listening', href: '/ielts/listening' },
-      { label: 'Reading', href: '/ielts/reading' },
-      { label: 'Writing', href: '/ielts/writing' },
-      { label: 'Speaking', href: '/ielts/speaking' },
-    ],
-  },
-  {
-    label: 'Writing',
-    href: '/ielts/writing',
-    items: [
-      { label: 'Writing Hub', href: '/ielts/writing' },
-      { label: 'Writing Help', href: '/ielts-writing-help' },
-      { label: 'AI Writing Feedback', href: '/ai-feedback' },
-      { label: 'Task 1 Guide', href: '/blog/ielts-writing-task-1-academic-guide' },
-      { label: 'Task 2 Guide', href: '/blog/ielts-writing-task-2-structure' },
-    ],
-  },
-  {
-    label: 'Study',
-    href: '/lessons',
-    items: [
-      { label: 'Free Lessons', href: '/lessons' },
-      { label: 'Writing Lessons', href: '/lessons/writing' },
-      { label: 'Blog', href: '/blog' },
-      { label: 'Success Stories', href: '/success-stories' },
-      { label: 'FAQ', href: '/faq' },
-    ],
-  },
-  {
-    label: 'Support',
-    href: '/tutoring',
-    items: [
-      { label: 'Private Class', href: '/tutoring' },
-      { label: 'Contact', href: '/contact' },
-      { label: 'About', href: '/about' },
-      { label: 'IELTS Hub', href: '/ielts' },
-    ],
-  },
-];
-
-const navExamContext = (() => {
-  if (
-    normalizedPath.startsWith('/celpip')
-    || normalizedPath === '/celpip-writing-help'
-    || normalizedPath.startsWith('/ai-feedback')
-  ) {
-    return 'celpip';
-  }
-
-  if (
-    normalizedPath.startsWith('/ielts')
-    || normalizedPath === '/ielts-writing-help'
-  ) {
-    return 'ielts';
-  }
-
-  return 'general';
-})();
-
-const navGroups = navExamContext === 'celpip'
-  ? celpipNavGroups
-  : navExamContext === 'ielts'
-    ? ieltsNavGroups
-    : generalNavGroups;
-
-const standaloneNavLink = navExamContext === 'celpip'
-  ? { href: '/celpip/writing/questions', label: 'Question Bank' }
-  : navExamContext === 'ielts'
-    ? { href: '/ielts-writing-help', label: 'Writing Help' }
-    : { href: '/ai-feedback', label: 'Writing Hub' };
+const activeNavGroups = [generalNavGroups[0], generalNavGroups[1], practiceNavGroup, generalNavGroups[2], generalNavGroups[3]];
 
 // Structured data for Organization
 const organizationSchema = {
@@ -580,45 +413,46 @@ const serializeJsonForScript = (value: unknown) =>
             </button>
 
             <div id="site-header-panel" class="header-panel">
-              <nav id="primary-navigation" class="nav nav-main" aria-label="Primary navigation">
-                {navGroups.map((group) => {
-                  const groupActive = currentPath === group.href || currentPath.startsWith(`${group.href}/`);
-                  return (
-                    <div class="nav-item nav-item-dropdown">
-                      <div class="nav-item-row">
-                        <a class:list={["nav-trigger", groupActive && "is-active"]} href={group.href}>
-                          <span>{group.label}</span>
-                        </a>
-                        <button class="nav-expand" type="button" aria-label={`Expand ${group.label} links`} aria-expanded="false">
-                          <span aria-hidden="true">v</span>
-                        </button>
+              <div class="header-main-row">
+                <nav id="primary-navigation" class="nav nav-main" aria-label="Primary navigation">
+                  {activeNavGroups.map((group) => {
+                    const groupActive = currentPath === group.href || currentPath.startsWith(`${group.href}/`);
+                    return (
+                      <div class="nav-item nav-item-dropdown">
+                        <div class="nav-item-row">
+                          <a class:list={["nav-trigger", groupActive && "is-active"]} href={group.href}>
+                            <span>{group.label}</span>
+                          </a>
+                          <button class="nav-expand" type="button" aria-label={`Expand ${group.label} links`} aria-expanded="false">
+                            <span aria-hidden="true">v</span>
+                          </button>
+                        </div>
+                        <div class="nav-dropdown" role="menu" aria-label={`${group.label} links`}>
+                          {group.items.map((item) => {
+                            const itemActive = currentPath === item.href || currentPath.startsWith(`${item.href}/`);
+                            return (
+                              <a class:list={[itemActive && 'is-active']} href={item.href} role="menuitem">{item.label}</a>
+                            );
+                          })}
+                        </div>
                       </div>
-                      <div class="nav-dropdown" role="menu" aria-label={`${group.label} links`}>
-                        {group.items.map((item) => {
-                          const itemActive = currentPath === item.href || currentPath.startsWith(`${item.href}/`);
-                          return (
-                            <a class:list={[itemActive && 'is-active']} href={item.href} role="menuitem">{item.label}</a>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
 
-                <a class:list={["nav-hub", isPathActive(standaloneNavLink.href) && 'is-active']} href={standaloneNavLink.href}>
-                  {standaloneNavLink.label}
-                </a>
-              </nav>
+                  <a class:list={["nav-trigger", isPathActive('/account') && 'is-active']} href="/account">
+                    <span>Account</span>
+                  </a>
+                </nav>
 
-              <div class="header-right">
-                <div class="social" aria-label="Social links">
-                  <a href="https://www.instagram.com/ieltscorner.ca" target="_blank" rel="noreferrer" aria-label="Instagram">IG</a>
-                  <a href="https://www.youtube.com/@KaraAbdolmaleki" target="_blank" rel="noreferrer" aria-label="YouTube">YT</a>
-                  <a href="https://t.me/Kaysenglishcorner" target="_blank" rel="noreferrer" aria-label="Telegram">TG</a>
+                <div class="header-right">
+                  <div class="social" aria-label="Social links">
+                    <a href="https://www.instagram.com/ieltscorner.ca" target="_blank" rel="noreferrer" aria-label="Instagram">IG</a>
+                    <a href="https://www.youtube.com/@KaraAbdolmaleki" target="_blank" rel="noreferrer" aria-label="YouTube">YT</a>
+                    <a href="https://t.me/Kaysenglishcorner" target="_blank" rel="noreferrer" aria-label="Telegram">TG</a>
+                  </div>
+
+                  <a class="btn btn-primary cta-book" href="/tutoring">Book a class</a>
                 </div>
-                <a class="btn btn-ghost cta" href="/account">Account</a>
-                <a class="btn btn-ghost cta" href="/about">About</a>
-                <a class="btn btn-primary cta" href="/tutoring">Book a class</a>
               </div>
             </div>
           </>

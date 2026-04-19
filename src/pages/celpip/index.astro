@@ -40,16 +40,28 @@ const skillCards = [
 
 const celpipServices = [
   {
-    title: "AI Writing Feedback Hub",
-    description: "Practice CELPIP Writing Task 1 and Task 2 with timer, scoring, and actionable feedback.",
+    title: "CELPIP Writing Practice",
+    description: "Practice Task 1 and Task 2 with timer, scoring, revision guidance, and saved premium progress.",
     href: "/ai-feedback",
-    cta: "Start AI feedback",
+    cta: "Open writing practice",
   },
   {
-    title: "Free CELPIP Question Bank",
-    description: "Browse 100 public Task 1 and Task 2 prompts before moving into scored practice.",
+    title: "CELPIP Question Bank",
+    description: "Browse 100 public Task 1 and Task 2 prompts before moving into scored writing practice.",
     href: "/celpip/writing/questions",
     cta: "Open question bank",
+  },
+  {
+    title: "Free Lessons",
+    description: "Open the lesson library when you want grammar, vocabulary, reading, writing, or speaking support outside the test tools.",
+    href: "/lessons",
+    cta: "Browse free lessons",
+  },
+  {
+    title: "CELPIP Reading Practice",
+    description: "Take the free reading test first, then unlock premium review if you want deeper explanations and progress tracking.",
+    href: "/celpip/reading/free-test",
+    cta: "Start reading practice",
   },
   {
     title: "100 Writing Sample Essays",
@@ -114,11 +126,13 @@ const pageStructuredData = [
         <span class="pill">CELPIP hub</span>
         <h1>Choose your skill, then choose your service</h1>
         <p class="muted">
-          Start with Listening, Reading, Writing, or Speaking. Then use the service cards below to go directly to the exact CELPIP support you need.
+          Start with Listening, Reading, Writing, or Speaking. Then use the quick links and service cards below to go directly to the exact CELPIP support you need.
         </p>
         <div class="funnel-hero__actions">
-          <a class="btn btn-primary" href="/celpip/writing">Open writing hub</a>
-          <a class="btn btn-ghost" href="/tutoring#book-private-class">Book private class</a>
+          <a class="btn btn-primary" href="/celpip/writing/questions">Question bank</a>
+          <a class="btn btn-ghost" href="/lessons">Free lessons</a>
+          <a class="btn btn-ghost" href="/celpip/reading/free-test">Reading practice</a>
+          <a class="btn btn-ghost" href="/ai-feedback">Writing practice</a>
         </div>
       </div>
     </div>
