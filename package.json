@@ -8,6 +8,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "celpip:calibration:check": "node scripts/check-celpip-sample-calibration.mjs",
+    "reading:check": "node scripts/check-celpip-reading-quality.mjs",
     "lesson:check:frontmatter": "node scripts/check-all-lessons.mjs",
     "lesson:check:standards": "node scripts/enforce-lesson-quality-gate.mjs",
     "lesson:check:standards:changed": "node scripts/enforce-lesson-quality-gate.mjs --changed",

@@ -889,6 +889,8 @@ const serializeInlineJSON = (value: unknown) =>
           ? `Choose ${question.selectCount || 2} answers`
           : question.type === 'select'
             ? 'Fill in the blank'
+            : question.type === 'matching'
+              ? 'Match to the correct paragraph'
             : 'Choose one answer';
       }
       if (flagButton instanceof HTMLButtonElement) {

@@ -11,26 +11,102 @@ export const CELPIP_READING_LEVEL_GUIDE = [
   { minRatio: 0, level: 5, label: 'Needs rebuilding', descriptor: 'Reading process is still too slow or too reactive for CELPIP-style pressure.' },
 ];
 
-export const CELPIP_READING_PREMIUM_TESTS = [
+export const CELPIP_READING_TEST_CATALOG = [
+  {
+    id: 'reading-test-01',
+    order: 1,
+    access: 'free',
+    status: 'published',
+    title: 'Free Full Reading Test',
+    focus: 'Balanced full-form simulation across all four CELPIP reading parts',
+    summary: 'Production baseline form used for calibration and learner diagnostics.',
+  },
   {
     id: 'reading-test-02',
+    order: 2,
+    access: 'premium',
+    status: 'draft',
     title: 'Reading Test 02',
     focus: 'Workplace notices, comparison logic, and viewpoint tracking',
     summary: 'Designed to punish shallow keyword matching and force cleaner elimination.',
   },
   {
     id: 'reading-test-03',
+    order: 3,
+    access: 'premium',
+    status: 'draft',
     title: 'Reading Test 03',
     focus: 'Longer passage pacing, inference, and evidence selection',
     summary: 'Harder paraphrase pressure with tighter time-management demands.',
   },
   {
     id: 'reading-test-04',
+    order: 4,
+    access: 'premium',
+    status: 'draft',
     title: 'Reading Test 04',
     focus: 'Mixed difficulty set with stronger distractors',
     summary: 'Closest to a pressure-test form for learners targeting CLB 9 and above.',
   },
+  {
+    id: 'reading-test-05',
+    order: 5,
+    access: 'premium',
+    status: 'draft',
+    title: 'Reading Test 05',
+    focus: 'Policy interpretation, clause exceptions, and precision traps',
+    summary: 'Adds denser legal-style phrasing with stronger near-miss distractors.',
+  },
+  {
+    id: 'reading-test-06',
+    order: 6,
+    access: 'premium',
+    status: 'draft',
+    title: 'Reading Test 06',
+    focus: 'Diagram application speed under compressed decision windows',
+    summary: 'Targets accuracy when details are spread across prose and tables.',
+  },
+  {
+    id: 'reading-test-07',
+    order: 7,
+    access: 'premium',
+    status: 'draft',
+    title: 'Reading Test 07',
+    focus: 'Paraphrase-heavy passages with competing partial truths',
+    summary: 'Built to expose keyword-only strategies and reward proof-based reading.',
+  },
+  {
+    id: 'reading-test-08',
+    order: 8,
+    access: 'premium',
+    status: 'draft',
+    title: 'Reading Test 08',
+    focus: 'Public notices and service updates with timeline conflicts',
+    summary: 'Emphasizes date, condition, and eligibility precision.',
+  },
+  {
+    id: 'reading-test-09',
+    order: 9,
+    access: 'premium',
+    status: 'draft',
+    title: 'Reading Test 09',
+    focus: 'Information synthesis across multiple stakeholder viewpoints',
+    summary: 'Increases cognitive load on stance tracking and compromise positions.',
+  },
+  {
+    id: 'reading-test-10',
+    order: 10,
+    access: 'premium',
+    status: 'draft',
+    title: 'Reading Test 10',
+    focus: 'Capstone pressure form with elevated inference ambiguity',
+    summary: 'Final benchmark-level simulation before live exam day.',
+  },
 ];
+
+export const CELPIP_READING_PREMIUM_TESTS = CELPIP_READING_TEST_CATALOG.filter(
+  (entry) => entry.access === 'premium',
+);
 
 const paragraph = (text) => ({ type: 'paragraph', text });
 const meta = (text) => ({ type: 'meta', text });
@@ -516,7 +592,7 @@ export const CELPIP_READING_FREE_TEST = {
         {
           id: 'q20',
           number: 20,
-          type: 'single',
+          type: 'matching',
           prompt: 'In which paragraph can you find information about how the project will be paid for?',
           options: [
             { id: 'a', text: 'Paragraph 1' },
@@ -532,7 +608,7 @@ export const CELPIP_READING_FREE_TEST = {
         {
           id: 'q21',
           number: 21,
-          type: 'single',
+          type: 'matching',
           prompt: 'In which paragraph does the author describe concerns raised by opponents of the plan?',
           options: [
             { id: 'a', text: 'Paragraph 2' },
@@ -548,7 +624,7 @@ export const CELPIP_READING_FREE_TEST = {
         {
           id: 'q22',
           number: 22,
-          type: 'single',
+          type: 'matching',
           prompt: 'In which paragraph is the reason for restructuring bus routes explained?',
           options: [
             { id: 'a', text: 'Paragraph 1' },
@@ -845,6 +921,36 @@ export const CELPIP_READING_FREE_TEST = {
     },
   ],
 };
+
+export const CELPIP_READING_TEST_CONTENT = {
+  [CELPIP_READING_FREE_TEST.id]: CELPIP_READING_FREE_TEST,
+};
+
+export function getReadingTest(testId = CELPIP_READING_FREE_TEST.id) {
+  return CELPIP_READING_TEST_CONTENT[testId] || null;
+}
+
+export function listPublishedReadingTests() {
+  return CELPIP_READING_TEST_CATALOG
+    .filter((entry) => entry.status === 'published')
+    .map((entry) => ({
+      ...entry,
+      test: getReadingTest(entry.id),
+    }))
+    .filter((entry) => Boolean(entry.test));
+}
+
+export function listPlayableReadingTestsForViewer(options = {}) {
+  const hasPremiumAccess = Boolean(options.hasPremiumAccess);
+  return CELPIP_READING_TEST_CATALOG
+    .filter((entry) => entry.status === 'published')
+    .filter((entry) => entry.access === 'free' || hasPremiumAccess)
+    .map((entry) => ({
+      ...entry,
+      test: getReadingTest(entry.id),
+    }))
+    .filter((entry) => Boolean(entry.test));
+}
 
 export function flattenReadingQuestions(test = CELPIP_READING_FREE_TEST) {
   return test.sections.flatMap((section) =>
