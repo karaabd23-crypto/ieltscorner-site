@@ -1,59 +1,518 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+
+const STRIPE_PAYMENT_LINK = "https://buy.stripe.com/aFa14m4Kq11q3ap7nSgMw03";
+
+const tasks = [
+  { num: "Task 1", title: "Giving Advice", desc: "Empathy-first structure, modal hierarchy, and the exact phrases that separate CLB 7 from CLB 8." },
+  { num: "Task 2", title: "Talking about a Personal Experience", desc: "Past tense control, emotional precision vocabulary, and the reflective closing raters reward." },
+  { num: "Task 3", title: "Describing a Scene", desc: "How to move from listing objects to reading atmosphere - the shift that unlocks CLB 8 on this task." },
+  { num: "Task 4", title: "Making Predictions", desc: "Evidence-anchored prediction language, probability hedging, and how to include the alternative scenario." },
+  { num: "Task 5", title: "Comparing and Persuading", desc: "Decisive choice language, comparative structures, and how to concede without losing your position." },
+  { num: "Task 6", title: "Dealing with a Difficult Situation", desc: "Accountability without over-apologizing. The four-step arc raters listen for: acknowledge, own, resolve, commit." },
+  { num: "Task 7", title: "Expressing Opinions", desc: "Strong opinion openers, counterargument framing, and the rebuttal structure that makes your position survive scrutiny." },
+  { num: "Task 8", title: "Describing an Unlikely Situation", desc: "Second conditional fluency, hypothetical engagement, and the reflective closing that shows personality." },
+];
+
+const bookSchema = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "CELPIP Speaking: The Complete Preparation Guide",
+  "description": "A 109-page workbook covering all 8 CELPIP Speaking tasks with scored samples, response frames, 30 high-score patterns, grammar drills, and a 4-week study plan. Written by Dr. Kara Abdolmaleki, PhD, TESL Canada certified, CELPIP Instructor Level 1.",
+  "numberOfPages": 109,
+  "author": {
+    "@type": "Person",
+    "name": "Dr. Kara Abdolmaleki",
+    "url": "https://ieltscorner.ca/about",
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "IELTS Corner",
+    "url": "https://ieltscorner.ca",
+  },
+  "inLanguage": "en",
+  "offers": {
+    "@type": "Offer",
+    "price": "49.50",
+    "priceCurrency": "CAD",
+    "availability": "https://schema.org/InStock",
+  },
+};
 ---
 
 <Layout
-  title="eBook Coming Soon | IELTS Corner"
-  description="The IELTS Corner eBook is still in development. Use the lessons and support pages for now."
+  title="CELPIP Speaking: The Complete Preparation Guide - eBook"
+  description="109 pages. All 8 tasks. 24 scored samples, 30 high-score patterns, grammar drills, and a 4-week study plan. Written by a certified CELPIP instructor and PhD. CA$49.50."
+  structuredData={[bookSchema]}
 >
-  <section class="section">
-    <div class="hero" style={`--hero-bg: url('/heroes/ebook.png');`}>
-      <div class="hero-content">
-        <span class="pill">eBook</span>
-        <h1>The eBook is not ready yet</h1>
-        <p class="muted" style="max-width: 62ch;">
-          It is still being shaped into something worth using, not just something to sell.
-          The goal is a practical guide that helps IELTS and CELPIP learners study with less confusion.
-        </p>
-        <p class="muted" style="max-width: 62ch; margin-top: var(--s-2);">
-          Until it is ready, the strongest materials are still the free lessons, the writing feedback services,
-          and the skill hubs already on the site.
-        </p>
-        <div class="cluster" style="margin-top: var(--s-2);">
-          <a class="btn btn-primary" href="/lessons">Explore free lessons</a>
-          <a class="btn" href="/blog">Read the blog</a>
+  <!-- Hero -->
+  <section class="section" style="padding-bottom: var(--s-5);">
+    <div class="hero ebook-hero" style={`--hero-bg: url('/heroes/ebook.png');`}>
+      <div class="ebook-hero-layout">
+        <!-- Left: Cover -->
+        <div class="cover-wrap">
+          <img
+            src="/ebook/cover.jpg"
+            alt="CELPIP Speaking: The Complete Preparation Guide - book cover"
+            class="book-cover"
+            width="300"
+            height="420"
+          />
+        </div>
+        <!-- Right: Hero content -->
+        <div class="hero-content ebook-hero-content">
+          <span class="pill">CELPIP Speaking</span>
+          <h1>The complete preparation guide for all 8 speaking tasks</h1>
+          <p class="muted" style="max-width: 54ch;">
+            109 pages. Every task covered. Scored samples, grammar drills, response frames, and a 4-week study plan - written by a certified CELPIP instructor and examiner-trained evaluator.
+          </p>
+          <div class="ebook-badges">
+            <span class="ebook-badge">109 pages</span>
+            <span class="ebook-badge">24 scored samples</span>
+            <span class="ebook-badge">30 high-score patterns</span>
+            <span class="ebook-badge">PDF - instant download</span>
+          </div>
+          <div class="cluster" style="margin-top: var(--s-3);">
+            <a class="btn btn-primary ebook-cta-btn" href={STRIPE_PAYMENT_LINK} target="_blank" rel="noreferrer noopener">
+              Get the eBook - CA$49.50
+            </a>
+          </div>
+          <p class="muted" style="font-size: 0.82rem; margin-top: var(--s-2); margin-bottom: 0;">
+            One-time payment. Instant download. Keep forever.
+          </p>
         </div>
       </div>
     </div>
+  </section>
 
-    <div style="height: var(--s-6);"></div>
-
-    <div class="surface ebook-panel">
-      <h2 style="margin-top: 0;">What to use instead right now</h2>
-      <p>
-        If you need help today, start with one grammar, writing, or speaking lesson. If the score problem is still
-        unclear after that, move to writing feedback or tutoring for direct correction.
-      </p>
-      <div class="cluster" style="margin-top: var(--s-2);">
-        <a class="btn" href="/ai-feedback/">AI Writing Lab</a>
-        <a class="btn" href="/tutoring">Tutoring</a>
+  <!-- What's inside strip -->
+  <section class="section-sm" style="padding-top: 0; padding-bottom: var(--s-5);">
+    <div class="surface funnel-section">
+      <h2 style="margin-top: 0; margin-bottom: var(--s-3);">What is inside</h2>
+      <div class="inside-grid">
+        <div class="inside-item">
+          <span class="inside-number">8</span>
+          <span class="inside-label">Task chapters</span>
+          <span class="inside-desc">One full chapter per task - structure, language, grammar, and annotated samples</span>
+        </div>
+        <div class="inside-item">
+          <span class="inside-number">24</span>
+          <span class="inside-label">Scored samples</span>
+          <span class="inside-desc">CLB 6–7, CLB 7–8, and CLB 8–9+ versions of the same prompt so you hear the difference</span>
+        </div>
+        <div class="inside-item">
+          <span class="inside-number">30</span>
+          <span class="inside-label">High-score patterns</span>
+          <span class="inside-desc">The specific openers, connectors, and closers that appear most consistently in CLB 8–9+ responses</span>
+        </div>
+        <div class="inside-item">
+          <span class="inside-number">4-week</span>
+          <span class="inside-label">Study plan</span>
+          <span class="inside-desc">30–45 minutes a day. Every task covered. Built around timed practice and self-check routines</span>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div style="height: var(--s-5);"></div>
-
-    <div class="surface ebook-panel">
-      <h2 style="margin-top: 0;">Want to hear about it later?</h2>
-      <p style="margin-bottom: 0;">
-        Join the newsletter on the home page if you want the announcement when the eBook is actually ready.
+  <!-- The score problem -->
+  <section class="section-sm" style="padding-bottom: var(--s-5);">
+    <div class="surface funnel-section problem-panel">
+      <h2 style="margin-top: 0;">Most CELPIP candidates score below their ability - not below their effort</h2>
+      <p class="muted">
+        The problem is rarely lack of English. It is underdeveloped responses. Stopping 15 seconds early. Advice with no reason. Opinions with no counterargument. Scene descriptions that list objects without atmosphere. These are fixable - but only if you know what the rater is actually listening for.
       </p>
+      <p class="muted" style="margin-bottom: 0;">
+        This book explains the criteria in plain language, shows you what CLB 8 sounds like versus CLB 6 on the same prompt, and gives you the specific language and structures to close that gap.
+      </p>
+    </div>
+  </section>
+
+  <!-- Task chapters -->
+  <section class="section-sm" style="padding-bottom: var(--s-5);">
+    <h2 class="section-heading">All 8 tasks. One chapter each.</h2>
+    <p class="section-sub muted">Every chapter includes a task snapshot, timed response frame, language toolkit, grammar insight, grammar exercises, vocabulary builder, annotated scored samples, rater insight, practice prompts, and a self-check.</p>
+    <div class="task-grid">
+      {tasks.map((t) => (
+        <div class="surface task-card">
+          <span class="task-num">{t.num}</span>
+          <h3>{t.title}</h3>
+          <p class="muted">{t.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Scored samples callout -->
+  <section class="section-sm" style="padding-bottom: var(--s-5);">
+    <div class="surface funnel-section sample-callout">
+      <div class="sample-callout-inner">
+        <div class="sample-text">
+          <h2 style="margin-top: 0;">Hear the difference between CLB 6 and CLB 8 on the same prompt</h2>
+          <p class="muted">
+            Every scored sample in this book comes in three versions: CLB 6–7, CLB 7–8, and CLB 8–9+. Rater notes explain exactly what earned marks in the higher response and what was missing in the lower one.
+          </p>
+          <p class="muted" style="margin-bottom: 0;">
+            Reading a good sample is useful. Seeing <em>why</em> it scored high, next to a version that didn't, is how you actually change your speaking.
+          </p>
+        </div>
+        <div class="sample-stat-block">
+          <div class="sample-stat">
+            <span class="sample-stat-num">24</span>
+            <span class="sample-stat-label">scored samples with rater annotations</span>
+          </div>
+          <div class="sample-stat">
+            <span class="sample-stat-num">3</span>
+            <span class="sample-stat-label">CLB levels shown per prompt</span>
+          </div>
+          <div class="sample-stat">
+            <span class="sample-stat-num">10</span>
+            <span class="sample-stat-label">common scoring mistakes dissected</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Author -->
+  <section class="section-sm" style="padding-bottom: var(--s-5);">
+    <div class="surface funnel-section author-panel">
+      <span class="pill" style="margin-bottom: var(--s-3);">About the author</span>
+      <h2 style="margin-top: 0;">Written by someone trained to evaluate the test - not just teach it</h2>
+      <p class="muted">
+        Dr. Kara Abdolmaleki holds a PhD, is TESL Canada certified, and completed <strong>CELPIP Instructor Training Level 1</strong> through Paragon Testing Enterprises. As the founder of CELPIPCorner.ca and IELTSCorner.ca, she has spent years building materials that treat learners as capable adults who need clarity, not filler.
+      </p>
+      <p class="muted" style="margin-bottom: var(--s-3);">
+        Every rater insight, scored sample, and grammar note in this book comes from direct experience with how the test is evaluated - not from studying other prep books.
+      </p>
+      <a class="btn" href="/about">See full background</a>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section-sm" style="padding-bottom: var(--s-8);">
+    <div class="surface funnel-section final-cta">
+      <div class="final-cta-inner">
+        <h2 style="margin-top: 0;">Ready to prepare with the right structure?</h2>
+        <p class="muted" style="max-width: 56ch; margin-left: auto; margin-right: auto;">
+          CA$49.50. One payment. Instant PDF download. No subscription, no expiry. This is the book you work through - not one you skim and put down.
+        </p>
+        <div class="cluster" style="justify-content: center; margin-top: var(--s-4);">
+          <a class="btn btn-primary final-cta-btn" href={STRIPE_PAYMENT_LINK} target="_blank" rel="noreferrer noopener">
+            Get the eBook - CA$49.50
+          </a>
+        </div>
+        <div class="final-reassurance">
+          <span>PDF format</span>
+          <span class="dot">·</span>
+          <span>Works on any device</span>
+          <span class="dot">·</span>
+          <span>Download link sent instantly</span>
+          <span class="dot">·</span>
+          <span>Keep forever</span>
+        </div>
+      </div>
     </div>
   </section>
 </Layout>
 
 <style>
-  .ebook-panel {
-    padding: var(--s-4);
+  /* Hero layout */
+  .ebook-hero {
+    --hero-min-h: 280px;
+    padding: var(--s-6);
+  }
+
+  .ebook-hero-layout {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: var(--s-6);
+    align-items: center;
+  }
+
+  .cover-wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  .book-cover {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(20,22,23,0.30), 0 6px 20px rgba(20,22,23,0.18);
+    display: block;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+  }
+
+  .book-cover:hover {
+    transform: translateY(-4px) rotate(-1deg);
+    box-shadow: 0 28px 70px rgba(20,22,23,0.35), 0 8px 24px rgba(20,22,23,0.20);
+  }
+
+  .ebook-hero-content {
+    max-width: none;
+  }
+
+  /* Badges */
+  .ebook-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: var(--s-3);
+  }
+
+  .ebook-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.88);
+    border: 1px solid var(--border-strong);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+  }
+
+  .ebook-cta-btn {
+    font-size: 1rem !important;
+    padding: 14px 28px !important;
+  }
+
+  /* What's inside grid */
+  .inside-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .inside-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: var(--s-3) var(--s-3) var(--s-3) 0;
+    border-right: 1px solid var(--border);
+  }
+
+  .inside-item:last-child {
+    border-right: none;
+  }
+
+  .inside-number {
+    font-family: "Fraunces", ui-serif, Georgia, serif;
+    font-size: var(--step-3);
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .inside-label {
+    font-weight: 700;
+    font-size: var(--step-0);
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  .inside-desc {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* Problem panel */
+  .problem-panel {
     border-left: 4px solid var(--accent);
+    max-width: 780px;
+  }
+
+  /* Task grid */
+  .section-heading {
+    margin-top: 0;
+    margin-bottom: var(--s-2);
+  }
+
+  .section-sub {
+    max-width: 70ch;
+    margin-top: 0;
+    margin-bottom: var(--s-4);
+  }
+
+  .task-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .task-card {
+    padding: var(--s-4);
+  }
+
+  .task-num {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    margin-bottom: var(--s-1);
+  }
+
+  .task-card h3 {
+    margin-top: 0;
+    margin-bottom: var(--s-1);
+    font-size: 0.96rem;
+    line-height: 1.3;
+  }
+
+  .task-card p {
+    margin: 0;
+    font-size: 0.87rem;
+    line-height: 1.55;
+  }
+
+  /* Scored samples callout */
+  .sample-callout-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--s-6);
+    align-items: start;
+  }
+
+  .sample-stat-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+    min-width: 200px;
+  }
+
+  .sample-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-left: var(--s-3);
+    border-left: 3px solid var(--accent);
+  }
+
+  .sample-stat-num {
+    font-family: "Fraunces", ui-serif, Georgia, serif;
+    font-size: var(--step-2);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .sample-stat-label {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* Author panel */
+  .author-panel {
+    max-width: 780px;
+  }
+
+  /* Final CTA */
+  .final-cta {
+    text-align: center;
+  }
+
+  .final-cta-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .final-cta-btn {
+    font-size: 1.05rem !important;
+    padding: 16px 32px !important;
+  }
+
+  .final-reassurance {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: var(--s-3);
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  .dot {
+    color: var(--border-strong);
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .ebook-hero-layout {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .cover-wrap {
+      order: -1;
+    }
+
+    .ebook-badges {
+      justify-content: center;
+    }
+
+    .inside-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .inside-item {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: var(--s-3);
+    }
+
+    .inside-item:nth-child(3),
+    .inside-item:last-child {
+      border-bottom: none;
+    }
+
+    .task-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sample-callout-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .sample-stat-block {
+      flex-direction: row;
+      flex-wrap: wrap;
+      min-width: 0;
+    }
+
+    .sample-stat {
+      flex: 1 1 140px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .ebook-hero {
+      padding: var(--s-4);
+    }
+
+    .task-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .inside-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .inside-item {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .inside-item:last-child {
+      border-bottom: none;
+    }
   }
 </style>
