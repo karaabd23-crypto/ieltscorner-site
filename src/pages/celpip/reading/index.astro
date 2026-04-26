@@ -161,6 +161,21 @@ const pageStructuredData = [
       </div>
     </div>
   </section>
+
+  <section class="section-sm" style="padding-bottom: var(--s-6);">
+    <div class="surface reading-ebook-callout">
+      <div class="reading-ebook-callout__inner">
+        <div>
+          <p class="reading-ebook-callout__label">Also preparing speaking?</p>
+          <h2 style="margin-top: var(--s-1); margin-bottom: var(--s-2);">The speaking guide covers what the reading test cannot.</h2>
+          <p class="muted" style="margin: 0; max-width: 58ch;">
+            All 8 CELPIP speaking tasks in one 109-page book. Scored samples at every CLB level, response frames, grammar drills, and a 4-week plan. One-time purchase, instant PDF download.
+          </p>
+        </div>
+        <a class="btn btn-primary reading-ebook-callout__btn" href="/ebook">Get the Speaking eBook - CA$49.50</a>
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <script is:inline>
@@ -378,5 +393,32 @@ const pageStructuredData = [
     .reading-test-card--free {
       grid-column: auto;
     }
+  }
+
+  .reading-ebook-callout {
+    padding: clamp(20px, 2vw + 12px, 32px);
+    border: 1.5px solid color-mix(in srgb, var(--accent) 22%, var(--border) 78%);
+  }
+
+  .reading-ebook-callout__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-5);
+    flex-wrap: wrap;
+  }
+
+  .reading-ebook-callout__label {
+    margin: 0;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7d3940;
+  }
+
+  .reading-ebook-callout__btn {
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 </style>

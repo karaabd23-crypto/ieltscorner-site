@@ -70,6 +70,14 @@ const promoActions = {
     href: "/celpip/writing",
     cta: "Open writing hub",
   },
+  ebookSpeaking: {
+    offer: "ebook_speaking",
+    title: "CELPIP Speaking eBook",
+    description:
+      "109 pages covering all 8 speaking tasks. Scored samples, response frames, grammar drills, and a 4-week plan. CA$49.50, instant PDF download.",
+    href: "/ebook",
+    cta: "Get the eBook",
+  },
   ieltsWritingHub: {
     offer: "ielts_writing_hub",
     title: "IELTS Writing Hub",
@@ -106,6 +114,11 @@ export const homeFeaturedToolCards: FeaturedToolCard[] = [
     ...cloneAction(promoActions.aiWritingLab),
     note: "Includes timed feedback plus sample essays in the writing bundle.",
   },
+  {
+    badge: "eBook",
+    ...cloneAction(promoActions.ebookSpeaking),
+    note: "One-time purchase. No subscription.",
+  },
 ];
 
 export const celpipFeaturedToolCards: FeaturedToolCard[] = [
@@ -121,6 +134,11 @@ export const celpipFeaturedToolCards: FeaturedToolCard[] = [
     badge: "Premium",
     ...cloneAction(promoActions.aiWritingLab),
     note: "Sample essays are included as part of the writing value story.",
+  },
+  {
+    badge: "eBook",
+    ...cloneAction(promoActions.ebookSpeaking),
+    note: "One-time purchase. No subscription.",
   },
 ];
 
