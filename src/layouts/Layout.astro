@@ -69,6 +69,9 @@ const isPathActive = (path: string) =>
 const showFocusHeader = false;
 const floatingCtaPaths = new Set<string>();
 const showFloatingWebinarCta = floatingCtaPaths.has(normalizedPath);
+const showFloatingEbookCta =
+  !normalizedPath.startsWith('/ebook') &&
+  !normalizedPath.startsWith('/ai-feedback');
 const showPageBottomAd = showAds && !isGuidedPath;
 const highIntentTrackingPaths = new Set([
   "/celpip/reading/clb-6-to-8",
@@ -333,6 +336,79 @@ const serializeJsonForScript = (value: unknown) =>
         .floating-cta-btn--left { left: 16px; }
         .floating-cta-btn--right { right: 16px; }
       }
+
+      /* Header ebook pill */
+      .cta-ebook {
+        background: rgba(217,72,72,0.08);
+        color: #d94848;
+        border: 1.5px solid rgba(217,72,72,0.3);
+        font-weight: 700;
+        padding: 0 14px;
+        height: 36px;
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        text-decoration: none;
+        font-size: 0.85rem;
+        white-space: nowrap;
+        transition: background 140ms, color 140ms, border-color 140ms;
+      }
+      .cta-ebook:hover {
+        background: #d94848;
+        color: #fff;
+        border-color: #d94848;
+      }
+
+      /* Floating ebook button */
+      .floating-ebook-btn {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 1000;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 18px 10px 14px;
+        background: #1d1d1d;
+        color: #fff;
+        border-radius: 999px;
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-family: inherit;
+        font-weight: 600;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.22);
+        transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+        white-space: nowrap;
+        animation: ebook-float-in 0.5s 1.2s cubic-bezier(0.34,1.56,0.64,1) both;
+      }
+      .floating-ebook-btn strong {
+        color: #ff9090;
+        font-weight: 800;
+      }
+      .floating-ebook-btn__icon {
+        font-size: 1rem;
+        line-height: 1;
+      }
+      .floating-ebook-btn:hover {
+        background: #d94848;
+        transform: translateY(-2px) scale(1.03);
+        box-shadow: 0 6px 24px rgba(217,72,72,0.35);
+      }
+      .floating-ebook-btn:hover strong {
+        color: #fff;
+      }
+      @keyframes ebook-float-in {
+        from { opacity: 0; transform: translateY(16px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+      @media (max-width: 600px) {
+        .floating-ebook-btn {
+          bottom: 16px;
+          right: 16px;
+          padding: 9px 14px 9px 12px;
+          font-size: 0.8rem;
+        }
+      }
     </style>
     <!-- Calendly widget disabled while webinar is inactive
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async is:inline></script>
@@ -452,6 +528,7 @@ const serializeJsonForScript = (value: unknown) =>
                   </div>
 
                   <a class="btn btn-primary cta-book" href="/tutoring">Book a class</a>
+                  <a class="btn cta-ebook" href="/ebook" aria-label="Get the CELPIP Speaking eBook">eBook</a>
                 </div>
               </div>
             </div>
@@ -705,6 +782,13 @@ const serializeJsonForScript = (value: unknown) =>
         )}
       </div>
     </footer>
+
+    {showFloatingEbookCta && (
+      <a class="floating-ebook-btn" href="/ebook" aria-label="Get the CELPIP Speaking eBook - CA$49.50">
+        <span class="floating-ebook-btn__icon" aria-hidden="true">📖</span>
+        <span class="floating-ebook-btn__text">Speaking eBook <strong>CA$49.50</strong></span>
+      </a>
+    )}
 
     {showLessonEmailGate && (
       <script is:inline>
