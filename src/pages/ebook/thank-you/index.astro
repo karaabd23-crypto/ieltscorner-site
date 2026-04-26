@@ -1,0 +1,427 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+---
+
+<Layout
+  title="Your eBook is Ready - IELTS Corner"
+  description="Download your CELPIP Speaking eBook. You have 2 downloads available."
+  keywords="CELPIP speaking ebook download"
+  noindex={true}
+>
+  <Breadcrumbs items={[
+    { label: "Home", href: "/" },
+    { label: "Speaking eBook", href: "/ebook" },
+    { label: "Download" },
+  ]} />
+
+  <section class="section-sm" style="padding-top: var(--s-5);">
+    <div class="surface thankyou-card" id="thankyou-root">
+      <div class="thankyou-header">
+        <span class="pill">Purchase confirmed</span>
+        <h1>Your eBook is ready.</h1>
+        <p class="muted">
+          CELPIP Speaking: The Complete Preparation Guide - 109 pages, all 8 speaking tasks.
+        </p>
+      </div>
+
+      <div class="thankyou-notice">
+        <p class="thankyou-notice__text">
+          <strong>Download limit: 2 per purchase.</strong>
+          Each click of the download button counts as one download. Save the file to your device after the first download.
+        </p>
+      </div>
+
+      <div id="thankyou-state-loading" class="thankyou-state">
+        <p class="muted">Verifying your purchase...</p>
+      </div>
+
+      <div id="thankyou-state-ready" class="thankyou-state" hidden>
+        <div class="thankyou-counter" id="download-counter-wrap">
+          <span id="downloads-used">0</span> of <span id="downloads-max">2</span> downloads used
+        </div>
+        <button class="btn btn-primary thankyou-download-btn" id="btn-download" type="button">
+          Download eBook (PDF)
+        </button>
+        <p class="muted thankyou-hint" id="download-status-msg" style="margin: 0; min-height: 1.2rem;"></p>
+      </div>
+
+      <div id="thankyou-state-exhausted" class="thankyou-state" hidden>
+        <div class="thankyou-counter thankyou-counter--exhausted">
+          2 of 2 downloads used
+        </div>
+        <p class="muted">Both downloads have been used for this purchase. If you need help accessing your file, use the email option below or contact us.</p>
+      </div>
+
+      <div id="thankyou-state-error" class="thankyou-state" hidden>
+        <p class="thankyou-error-msg" id="error-detail-msg">Unable to verify your purchase. Make sure you are on the correct confirmation link.</p>
+        <p class="muted">If you completed payment and still see this message, use the email option below.</p>
+      </div>
+
+      <div class="thankyou-divider">
+        <span>or receive it by email instead</span>
+      </div>
+
+      <div class="thankyou-email-section">
+        <p class="muted">
+          Enter your email address and we will send the PDF as an attachment directly from our Gmail account.
+          This is separate from the download limit.
+        </p>
+        <form class="thankyou-email-form" id="email-form" novalidate>
+          <div class="thankyou-email-form__row">
+            <input
+              type="email"
+              id="email-input"
+              name="email"
+              placeholder="Your email address"
+              autocomplete="email"
+              class="thankyou-email-form__input"
+              required
+            />
+            <button class="btn btn-ghost" type="submit" id="btn-send-email">Send to my email</button>
+          </div>
+          <p class="muted thankyou-hint" id="email-status-msg" style="margin: 0; min-height: 1.2rem;"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm" style="padding-bottom: var(--s-6);">
+    <div class="surface thankyou-next">
+      <p class="thankyou-next__label">What is in the guide</p>
+      <h2 style="margin-top: var(--s-1);">All 8 speaking tasks in one structured guide.</h2>
+      <div class="thankyou-next__grid">
+        <div class="thankyou-next__item">
+          <strong>Scored sample responses</strong>
+          <p class="muted">24 CLB-level samples showing exactly what a top answer sounds like.</p>
+        </div>
+        <div class="thankyou-next__item">
+          <strong>Response frames</strong>
+          <p class="muted">Task-specific sentence starters and structure guides for every task type.</p>
+        </div>
+        <div class="thankyou-next__item">
+          <strong>Grammar drills</strong>
+          <p class="muted">30 grammar patterns that appear in high-scoring responses.</p>
+        </div>
+        <div class="thankyou-next__item">
+          <strong>4-week study plan</strong>
+          <p class="muted">A day-by-day schedule that works through all 8 tasks with review cycles.</p>
+        </div>
+      </div>
+      <p class="muted" style="margin-bottom: 0;">
+        Need help with reading, writing, or listening? <a href="/celpip">Visit the CELPIP hub.</a>
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<script is:inline>
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var sessionId = params.get('session_id') || '';
+
+    var stateLoading = document.getElementById('thankyou-state-loading');
+    var stateReady = document.getElementById('thankyou-state-ready');
+    var stateExhausted = document.getElementById('thankyou-state-exhausted');
+    var stateError = document.getElementById('thankyou-state-error');
+    var btnDownload = document.getElementById('btn-download');
+    var downloadStatusMsg = document.getElementById('download-status-msg');
+    var downloadsUsedEl = document.getElementById('downloads-used');
+    var downloadsMaxEl = document.getElementById('downloads-max');
+    var errorDetailMsg = document.getElementById('error-detail-msg');
+    var emailForm = document.getElementById('email-form');
+    var emailInput = document.getElementById('email-input');
+    var emailStatusMsg = document.getElementById('email-status-msg');
+    var btnSendEmail = document.getElementById('btn-send-email');
+
+    function showState(name) {
+      [stateLoading, stateReady, stateExhausted, stateError].forEach(function (el) {
+        if (el) el.hidden = true;
+      });
+      var target = document.getElementById('thankyou-state-' + name);
+      if (target) target.hidden = false;
+    }
+
+    function setDownloadStatus(msg, tone) {
+      if (!downloadStatusMsg) return;
+      downloadStatusMsg.textContent = msg || '';
+      downloadStatusMsg.dataset.tone = msg ? (tone || 'info') : '';
+    }
+
+    function setEmailStatus(msg, tone) {
+      if (!emailStatusMsg) return;
+      emailStatusMsg.textContent = msg || '';
+      emailStatusMsg.dataset.tone = msg ? (tone || 'info') : '';
+    }
+
+    if (!sessionId) {
+      showState('error');
+      if (errorDetailMsg) errorDetailMsg.textContent = 'No session ID found in the URL. If you just completed payment, make sure you followed the link from Stripe.';
+      return;
+    }
+
+    // Probe the session once on page load to show current download count (GET-like POST with no increment)
+    // We use a separate lightweight status check by calling get-ebook-download which increments only on actual request.
+    // To avoid premature incrementing, we show the state as "ready" immediately once sessionId is present,
+    // and let the actual download button trigger the real call.
+    showState('ready');
+    if (downloadsUsedEl) downloadsUsedEl.textContent = '?';
+    if (downloadsMaxEl) downloadsMaxEl.textContent = '2';
+
+    // Fetch current status without incrementing by calling a status endpoint
+    // Since we only have get-ebook-download (which increments), we do a preflight
+    // by keeping state unknown until the user clicks. Show counter as "0 of 2" initially.
+    if (downloadsUsedEl) downloadsUsedEl.textContent = '0';
+
+    if (btnDownload) {
+      btnDownload.addEventListener('click', function () {
+        btnDownload.disabled = true;
+        setDownloadStatus('Verifying purchase...', 'info');
+
+        fetch('/.netlify/functions/get-ebook-download', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sessionId: sessionId }),
+        })
+          .then(function (res) { return res.json(); })
+          .then(function (data) {
+            if (data.error && !data.allowed && data.downloadsUsed === undefined) {
+              setDownloadStatus(data.error || 'Unable to verify purchase.', 'error');
+              btnDownload.disabled = false;
+              return;
+            }
+
+            if (downloadsUsedEl) downloadsUsedEl.textContent = String(data.downloadsUsed || 0);
+            if (downloadsMaxEl) downloadsMaxEl.textContent = String(data.maxDownloads || 2);
+
+            if (!data.allowed) {
+              showState('exhausted');
+              return;
+            }
+
+            // Trigger download
+            var dlUrl = '/.netlify/functions/ebook-download-file?token=' + encodeURIComponent(data.token);
+            window.location.href = dlUrl;
+
+            var remaining = data.downloadsRemaining || 0;
+            if (remaining <= 0) {
+              setTimeout(function () { showState('exhausted'); }, 1200);
+            } else {
+              setDownloadStatus(
+                'Download started. ' + remaining + ' download' + (remaining === 1 ? '' : 's') + ' remaining for this purchase.',
+                'success'
+              );
+              btnDownload.disabled = false;
+            }
+          })
+          .catch(function () {
+            setDownloadStatus('Network error. Please try again or use the email option below.', 'error');
+            btnDownload.disabled = false;
+          });
+      });
+    }
+
+    if (emailForm) {
+      emailForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = (emailInput ? emailInput.value : '').trim();
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+          setEmailStatus('Please enter a valid email address.', 'error');
+          return;
+        }
+
+        if (btnSendEmail) btnSendEmail.disabled = true;
+        setEmailStatus('Sending...', 'info');
+
+        fetch('/.netlify/functions/send-ebook-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sessionId: sessionId, email: email }),
+        })
+          .then(function (res) { return res.json(); })
+          .then(function (data) {
+            if (data.sent) {
+              setEmailStatus('Sent. Check your inbox (and spam folder if needed) for an email from IELTS Corner.', 'success');
+            } else {
+              setEmailStatus(data.error || 'Failed to send. Try again or contact us directly.', 'error');
+              if (btnSendEmail) btnSendEmail.disabled = false;
+            }
+          })
+          .catch(function () {
+            setEmailStatus('Network error. Please try again.', 'error');
+            if (btnSendEmail) btnSendEmail.disabled = false;
+          });
+      });
+    }
+  })();
+</script>
+
+<style>
+  .thankyou-card {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: clamp(24px, 3vw + 12px, 40px);
+    display: grid;
+    gap: var(--s-4);
+  }
+
+  .thankyou-header h1 {
+    margin: var(--s-1) 0 var(--s-1);
+    font-size: clamp(1.6rem, 2.8vw + 0.8rem, 2.2rem);
+  }
+
+  .thankyou-header p {
+    margin: 0;
+  }
+
+  .thankyou-notice {
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: rgba(217, 72, 72, 0.07);
+    border: 1px solid rgba(217, 72, 72, 0.22);
+  }
+
+  .thankyou-notice__text {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #5a1f1f;
+    line-height: 1.5;
+  }
+
+  .thankyou-state {
+    display: grid;
+    gap: var(--s-2);
+  }
+
+  .thankyou-counter {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(20, 22, 23, 0.06);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #334556;
+    width: fit-content;
+  }
+
+  .thankyou-counter--exhausted {
+    background: rgba(217, 72, 72, 0.1);
+    color: #7c2020;
+  }
+
+  .thankyou-download-btn {
+    width: fit-content;
+  }
+
+  .thankyou-hint {
+    font-size: 0.85rem;
+  }
+
+  .thankyou-hint[data-tone="success"] { color: #1d6b40; }
+  .thankyou-hint[data-tone="error"]   { color: #9f2e2e; }
+  .thankyou-hint[data-tone="info"]    { color: #5f6c79; }
+
+  .thankyou-error-msg {
+    color: #9f2e2e;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .thankyou-divider {
+    display: flex;
+    align-items: center;
+    gap: var(--s-2);
+    color: #8a9aaa;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .thankyou-divider::before,
+  .thankyou-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(20, 22, 23, 0.12);
+  }
+
+  .thankyou-email-section {
+    display: grid;
+    gap: var(--s-2);
+  }
+
+  .thankyou-email-section > p {
+    margin: 0;
+  }
+
+  .thankyou-email-form__row {
+    display: flex;
+    gap: var(--s-2);
+    flex-wrap: wrap;
+  }
+
+  .thankyou-email-form__input {
+    flex: 1;
+    min-width: 220px;
+    padding: 10px 14px;
+    border: 1.5px solid rgba(20, 22, 23, 0.2);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--text);
+    background: #fff;
+    outline: none;
+    transition: border-color 140ms;
+  }
+
+  .thankyou-email-form__input:focus {
+    border-color: var(--accent);
+  }
+
+  .thankyou-next {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: clamp(20px, 2vw + 12px, 32px);
+  }
+
+  .thankyou-next__label {
+    margin: 0 0 4px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7d3940;
+  }
+
+  .thankyou-next__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-3);
+    margin: var(--s-3) 0 var(--s-3);
+  }
+
+  .thankyou-next__item {
+    display: grid;
+    gap: 4px;
+  }
+
+  .thankyou-next__item p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 560px) {
+    .thankyou-next__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .thankyou-email-form__row {
+      flex-direction: column;
+    }
+
+    .thankyou-email-form__input {
+      min-width: 0;
+    }
+  }
+</style>
