@@ -272,7 +272,7 @@ async function getKitTagSubscribers({ apiKey, tagId, maxPages = 30, perPage = 50
 }
 
 function parseFrontmatter(content) {
-  const match = content.match(/^---\n([\s\S]*?)\n---/);
+  const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
   if (!match) {
     return {};
   }
@@ -323,36 +323,28 @@ function formatShortDate(value) {
   });
 }
 
-async function getLatestLessons(limit = 5) {
+async function getLatestLessons(perSection = 3) {
   const lessonsDir = path.join(process.cwd(), 'src', 'content', 'lessons');
   const files = await readdir(lessonsDir);
-  const lessons = [];
+  const all = [];
 
   for (const fileName of files) {
-    if (!fileName.endsWith('.md')) {
-      continue;
-    }
+    if (!fileName.endsWith('.md')) continue;
 
     const fullPath = path.join(lessonsDir, fileName);
     const content = await readFile(fullPath, 'utf8');
     const frontmatter = parseFrontmatter(content);
 
-    if (frontmatter.draft === true) {
-      continue;
-    }
+    if (frontmatter.draft === true) continue;
 
     const dateIso = toIsoDate(frontmatter.date);
-    if (!dateIso) {
-      continue;
-    }
+    if (!dateIso) continue;
 
     const slug = fileName.replace(/\.md$/, '');
     const category = String(frontmatter.category || '').trim();
-    if (!category) {
-      continue;
-    }
+    if (!category) continue;
 
-    lessons.push({
+    all.push({
       title: String(frontmatter.title || slug).trim(),
       excerpt: String(frontmatter.excerpt || '').trim(),
       category,
@@ -363,8 +355,17 @@ async function getLatestLessons(limit = 5) {
     });
   }
 
-  lessons.sort((a, b) => new Date(b.dateIso).getTime() - new Date(a.dateIso).getTime());
-  return lessons.slice(0, limit);
+  all.sort((a, b) => new Date(b.dateIso).getTime() - new Date(a.dateIso).getTime());
+
+  const buckets = { celpip: [], ielts: [], grammar: [], vocab: [] };
+  for (const lesson of all) {
+    const section = classifyLesson(lesson);
+    if (section && buckets[section].length < perSection) {
+      buckets[section].push(lesson);
+    }
+  }
+
+  return [...buckets.celpip, ...buckets.ielts, ...buckets.grammar, ...buckets.vocab];
 }
 
 function resolveStateFilePath() {
@@ -395,13 +396,6 @@ function buildLessonUrl(siteUrl, lesson) {
   return `${siteUrl}/lessons/${lesson.category}/${lesson.slug}/`;
 }
 
-function getLessonTier(level) {
-  const normalized = String(level || '').trim().toUpperCase();
-  if (normalized === 'A1' || normalized === 'A2') return 'Basic';
-  if (normalized === 'B1' || normalized === 'B2') return 'Intermediate';
-  return 'Advanced';
-}
-
 function escapeHtml(value) {
   return String(value || '')
     .replace(/&/g, '&amp;')
@@ -411,401 +405,233 @@ function escapeHtml(value) {
     .replace(/'/g, '&#39;');
 }
 
-function buildLessonCards(siteUrl, lessons) {
-  return lessons
-    .map((lesson) => {
-      const url = buildLessonUrl(siteUrl, lesson);
-      const eyebrow = `${lesson.category.toUpperCase()} | ${getLessonTier(lesson.level)}`;
-      const body = lesson.excerpt || lesson.heroTip || 'Open the lesson for the full explanation and interactive practice.';
-      return `
-        <tr>
-          <td style="padding: 0 0 16px;">
-            <table role="presentation" width="100%" style="border-collapse: collapse; background: #ffffff; border: 1px solid #eadfd2; border-radius: 18px;">
-              <tr>
-                <td style="padding: 18px 18px 16px;">
-                  <div style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 800; color: #8d4d21; margin-bottom: 8px;">${escapeHtml(eyebrow)}</div>
-                  <div style="font-size: 21px; line-height: 1.25; font-weight: 800; color: #1f2b37; margin-bottom: 8px;">${escapeHtml(lesson.title)}</div>
-                  <div style="font-size: 14px; line-height: 1.7; color: #495566; margin-bottom: 12px;">${escapeHtml(body)}</div>
-                  <div style="font-size: 13px; color: #7a8491; margin-bottom: 14px;">${escapeHtml(formatShortDate(lesson.dateIso))}</div>
-                  <a href="${url}" style="display: inline-block; background: #d94848; color: #ffffff; text-decoration: none; font-weight: 800; border-radius: 999px; padding: 10px 16px;">Open lesson</a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      `;
-    })
-    .join('');
+function classifyLesson(lesson) {
+  const title = String(lesson.title || '').toUpperCase();
+  if (title.includes('CELPIP')) return 'celpip';
+  if (title.includes('IELTS')) return 'ielts';
+  if (lesson.category === 'vocabulary') return 'vocab';
+  if (lesson.category === 'grammar') return 'grammar';
+  return null;
 }
 
-function normalizeTelegramPreview(telegramPost) {
-  const preview = String(telegramPost?.preview || '').trim();
-  if (!preview) {
-    return 'Open the latest Telegram teaching post for a short daily lesson.';
+function groupLessonsBySection(lessons) {
+  const sections = { celpip: [], ielts: [], grammar: [], vocab: [] };
+  for (const lesson of lessons) {
+    const section = classifyLesson(lesson);
+    if (section) sections[section].push(lesson);
   }
-
-  const normalized = preview.toLowerCase();
-  if (
-    normalized.includes('pinned a video')
-    || normalized.includes('pinned a message')
-    || normalized.includes('joined telegram')
-  ) {
-    return 'Open the latest Telegram teaching post for a quick study boost and a short quiz.';
-  }
-
-  return preview;
+  return sections;
 }
 
-function buildSocialCards({ youtubeVideo, telegramPost, instagramPost, youtubeChannelUrl, telegramChannelUrl, instagramUrl }) {
-  const cards = [];
-
-  if (youtubeVideo) {
-    cards.push(`
-      <td width="33.33%" valign="top" style="padding: 0 8px 12px 0;">
-        <table role="presentation" width="100%" style="border-collapse: collapse; background: #fff7f1; border: 1px solid #ead9ca; border-radius: 18px; overflow: hidden;">
-          <tr>
-            <td style="padding: 14px 14px 0;">
-              <div style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 800; color: #8d4d21;">YouTube</div>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 10px 14px 14px;">
-              <a href="${youtubeVideo.url}" style="text-decoration: none; color: inherit;">
-                <img src="${youtubeVideo.thumbnailUrl}" alt="${escapeHtml(youtubeVideo.title)}" style="display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid #e6d4c6;" />
-                <div style="font-size: 16px; line-height: 1.4; font-weight: 800; color: #1f2b37; margin-top: 12px;">${escapeHtml(youtubeVideo.title)}</div>
-                <div style="font-size: 13px; line-height: 1.6; color: #586577; margin-top: 8px;">Watch the newest lesson and keep your practice current.</div>
-              </a>
-            </td>
-          </tr>
-        </table>
-      </td>
-    `);
-  }
-
-  if (telegramPost) {
-    const telegramPreview = normalizeTelegramPreview(telegramPost);
-    const subscriberLine = telegramPost.subscriberCount
-      ? `Channel size: ${escapeHtml(telegramPost.subscriberCount)} subscribers`
-      : 'Daily teaching post on Telegram';
-
-    cards.push(`
-      <td width="33.33%" valign="top" style="padding: 0 8px 12px 0;">
-        <table role="presentation" width="100%" style="border-collapse: collapse; background: #f4f8ff; border: 1px solid #dbe6f5; border-radius: 18px;">
-          <tr>
-            <td style="padding: 14px 14px 0;">
-              <div style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 800; color: #24507d;">Telegram</div>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 10px 14px 14px;">
-              <div style="font-size: 15px; line-height: 1.5; font-weight: 800; color: #1f2b37;">${escapeHtml(telegramPost.title || "Kay's English Corner")}</div>
-              <div style="font-size: 13px; line-height: 1.6; color: #586577; margin-top: 8px;">${escapeHtml(telegramPreview)}</div>
-              <div style="font-size: 12px; line-height: 1.6; color: #6d7785; margin-top: 10px;">${subscriberLine}</div>
-              <a href="${telegramPost.url || telegramChannelUrl}" style="display: inline-block; margin-top: 12px; color: #24507d; font-weight: 800; text-decoration: none;">Open latest post</a>
-            </td>
-          </tr>
-        </table>
-      </td>
-    `);
-  }
-
-  if (instagramPost || instagramUrl) {
-    const instagramHref = instagramPost?.url || instagramUrl;
-    const imageMarkup = instagramPost?.imageUrl
-      ? `<img src="${instagramPost.imageUrl}" alt="Latest Instagram post" style="display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid #ead9e8;" />`
-      : '';
-
-    cards.push(`
-      <td width="33.33%" valign="top" style="padding: 0 0 12px 0;">
-        <table role="presentation" width="100%" style="border-collapse: collapse; background: #fff5fa; border: 1px solid #efd8e6; border-radius: 18px; overflow: hidden;">
-          <tr>
-            <td style="padding: 14px 14px 0;">
-              <div style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 800; color: #8b3f63;">Instagram</div>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 10px 14px 14px;">
-              <a href="${instagramHref}" style="text-decoration: none; color: inherit;">
-                ${imageMarkup}
-                <div style="font-size: 15px; line-height: 1.6; color: #1f2b37; font-weight: 700; margin-top: ${imageMarkup ? '12px' : '0'};">${escapeHtml(instagramPost?.preview || 'Open the Instagram page for quick study visuals and short explanations.')}</div>
-                <div style="font-size: 13px; line-height: 1.6; color: #586577; margin-top: 8px;">Tap through for the latest reels, captions, and visual study posts.</div>
-              </a>
-            </td>
-          </tr>
-        </table>
-      </td>
-    `);
-  }
-
-  if (cards.length === 0) {
-    return '';
-  }
-
+function buildLessonCell(siteUrl, lesson) {
+  const url = buildLessonUrl(siteUrl, lesson);
+  const body = escapeHtml(lesson.excerpt || lesson.heroTip || 'Open the lesson for the full explanation.');
   return `
-    <table role="presentation" width="100%" style="border-collapse: separate; border-spacing: 0;">
-      <tr>
-        ${cards.join('')}
-      </tr>
-    </table>
-  `;
-}
-
-function buildWeeklyPlan(siteUrl, lessons, telegramChannelUrl, youtubeChannelUrl) {
-  const first = lessons[0];
-  const second = lessons[1];
-  const third = lessons[2];
-
-  const steps = [
-    first
-      ? {
-          title: 'Start with one lesson',
-          text: `${first.title} gives you one clear teaching point to study first this week.`,
-          href: buildLessonUrl(siteUrl, first),
-          label: 'Open first lesson',
-        }
-      : {
-          title: 'Start with one lesson',
-          text: 'Open one full lesson and stay with that topic long enough to finish the interactive practice.',
-          href: `${siteUrl}/lessons/`,
-          label: 'Open lessons',
-        },
-    second
-      ? {
-          title: 'Add one second topic',
-          text: `${second.title} works well as your next focused read after the first lesson.`,
-          href: buildLessonUrl(siteUrl, second),
-          label: 'Open next lesson',
-        }
-      : {
-          title: 'Add one second topic',
-          text: 'Choose one more lesson only after you finish the first one.',
-          href: `${siteUrl}/lessons/`,
-          label: 'Browse lessons',
-        },
-    {
-      title: 'Stay warm between lessons',
-      text: third
-        ? `Use Telegram or YouTube after ${third.title} to keep the topic active during the week.`
-        : 'Use Telegram or YouTube between lessons so your English stays active during the week.',
-      href: telegramChannelUrl || youtubeChannelUrl || siteUrl,
-      label: telegramChannelUrl ? 'Open Telegram' : 'Open YouTube',
-    },
-  ];
-
-  return `
-    <table role="presentation" width="100%" style="border-collapse: collapse; background: #fffdf8; border: 1px solid #eadfd2; border-radius: 22px; overflow: hidden;">
-      <tr>
-        <td style="padding: 22px 22px 10px;">
-          <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 800; color: #8d4d21; margin-bottom: 10px;">This Week's Study Plan</div>
-          <div style="font-size: 24px; line-height: 1.25; font-weight: 800; color: #1f2b37; margin-bottom: 8px;">If you only study three times this week, do it in this order.</div>
-          <div style="font-size: 15px; line-height: 1.7; color: #586577; margin-bottom: 18px;">This keeps your week simple: one strong lesson, one follow-up lesson, and one lighter touchpoint.</div>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding: 0 22px 22px;">
-          ${steps.map((step, index) => `
-            <table role="presentation" width="100%" style="border-collapse: collapse; margin-bottom: 14px; background: #ffffff; border: 1px solid #eadfd2; border-radius: 16px;">
-              <tr>
-                <td width="52" valign="top" style="padding: 16px 0 16px 16px;">
-                  <div style="width: 34px; height: 34px; border-radius: 999px; background: #173656; color: #ffffff; font-size: 15px; font-weight: 800; line-height: 34px; text-align: center;">${index + 1}</div>
-                </td>
-                <td style="padding: 16px 16px 16px 0;">
-                  <div style="font-size: 17px; line-height: 1.35; font-weight: 800; color: #1f2b37; margin-bottom: 6px;">${escapeHtml(step.title)}</div>
-                  <div style="font-size: 14px; line-height: 1.7; color: #586577; margin-bottom: 10px;">${escapeHtml(step.text)}</div>
-                  <a href="${step.href}" style="display: inline-block; color: #173656; font-weight: 800; text-decoration: none;">${escapeHtml(step.label)} →</a>
-                </td>
-              </tr>
-            </table>
-          `).join('')}
-        </td>
-      </tr>
-    </table>
-  `;
-}
-
-function buildSocialButtonRow({ youtubeVideo, telegramPost, instagramPost, youtubeChannelUrl, telegramChannelUrl, instagramUrl }) {
-  const links = [
-    {
-      label: 'Watch on YouTube',
-      href: youtubeVideo?.url || youtubeChannelUrl,
-      background: '#ffe9e4',
-      color: '#922d1d',
-    },
-    {
-      label: 'Open Telegram',
-      href: telegramPost?.url || telegramChannelUrl,
-      background: '#e9f2ff',
-      color: '#24507d',
-    },
-    {
-      label: 'View Instagram',
-      href: instagramPost?.url || instagramUrl,
-      background: '#fff0f6',
-      color: '#8b3f63',
-    },
-  ].filter((item) => item.href);
-
-  if (!links.length) return '';
-
-  return `
-    <div style="margin-top: 16px;">
-      ${links.map((item) => `
-        <a href="${item.href}" style="display: inline-block; margin: 0 10px 10px 0; padding: 10px 15px; border-radius: 999px; background: ${item.background}; color: ${item.color}; font-weight: 800; text-decoration: none;">${escapeHtml(item.label)}</a>
-      `).join('')}
+    <!--[if mso]><td width="213" valign="top" style="padding:0 5px 10px;"><![endif]-->
+    <div class="lesson-cell">
+      <div style="background:#fbf8f4;border:1px solid rgba(20,22,23,0.1);border-radius:14px;padding:18px 18px 16px;height:100%;box-sizing:border-box;">
+        <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;color:#d94848;margin-bottom:7px;">${escapeHtml(lesson.category)}</div>
+        <div style="font-size:15px;font-weight:700;color:#141617;line-height:1.35;margin-bottom:8px;">${escapeHtml(lesson.title)}</div>
+        <div style="font-size:13px;line-height:1.7;color:#4f565d;margin-bottom:15px;">${body}</div>
+        <a href="${url}" style="display:inline-block;background:#d94848;color:#ffffff;text-decoration:none;font-weight:700;border-radius:8px;padding:8px 14px;font-size:12px;">Open lesson</a>
+      </div>
     </div>
-  `;
+    <!--[if mso]></td><![endif]-->`;
 }
+
+function buildSectionHtml(siteUrl, label, lessons) {
+  if (!lessons.length) return '';
+  const cells = lessons.map((l) => buildLessonCell(siteUrl, l)).join('');
+  return `
+    <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#4f565d;margin-bottom:10px;padding:0 5px;">${escapeHtml(label)}</div>
+    <!--[if mso]><table role="presentation" width="100%"><tr><![endif]-->
+    <div class="lesson-grid">${cells}</div>
+    <!--[if mso]></tr></table><![endif]-->`;
+}
+
+function buildProductCell(price, title, body, ctaLabel, ctaHref) {
+  return `
+    <!--[if mso]><td width="213" valign="top" style="padding:0 5px 10px;"><![endif]-->
+    <div class="product-cell">
+      <div style="background:#1c2328;border-radius:14px;padding:22px 20px 20px;height:100%;box-sizing:border-box;">
+        <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;color:#f2c14e;margin-bottom:10px;">${escapeHtml(price)}</div>
+        <div style="font-size:16px;font-weight:700;color:#fbf8f4;line-height:1.3;margin-bottom:10px;">${escapeHtml(title)}</div>
+        <div style="font-size:13px;line-height:1.75;color:rgba(251,248,244,0.6);margin-bottom:18px;">${escapeHtml(body)}</div>
+        <a href="${ctaHref}" style="display:inline-block;background:#d94848;color:#ffffff;text-decoration:none;font-weight:700;border-radius:8px;padding:9px 16px;font-size:13px;">${escapeHtml(ctaLabel)}</a>
+      </div>
+    </div>
+    <!--[if mso]></td><![endif]-->`;
+}
+
 
 function buildHtmlEmail({
   siteUrl,
   lessons,
-  youtubeVideo,
-  telegramPost,
-  instagramPost,
   youtubeChannelUrl,
   telegramChannelUrl,
   instagramUrl,
 }) {
-  const lessonCards = buildLessonCards(siteUrl, lessons);
-  const socialCards = buildSocialCards({
-    youtubeVideo,
-    telegramPost,
-    instagramPost,
-    youtubeChannelUrl,
-    telegramChannelUrl,
-    instagramUrl,
-  });
-  const weeklyPlan = buildWeeklyPlan(siteUrl, lessons, telegramChannelUrl, youtubeChannelUrl);
-  const socialButtons = buildSocialButtonRow({
-    youtubeVideo,
-    telegramPost,
-    instagramPost,
-    youtubeChannelUrl,
-    telegramChannelUrl,
-    instagramUrl,
-  });
+  const sections = groupLessonsBySection(lessons);
+
+  const celpipHtml = buildSectionHtml(siteUrl, 'CELPIP', sections.celpip);
+  const ieltsHtml = buildSectionHtml(siteUrl, 'IELTS', sections.ielts);
+  const grammarHtml = buildSectionHtml(siteUrl, 'Grammar', sections.grammar);
+  const vocabHtml = buildSectionHtml(siteUrl, 'Vocabulary', sections.vocab);
+
+  const writingProduct = buildProductCell(
+    'CA$5 / month',
+    'Find out what your CELPIP writing score actually is.',
+    'Write your Task 1 or Task 2 response, submit it, and get a CLB score with feedback. You will see exactly where your marks are coming from and what to fix. No waiting. No guessing.',
+    'Yes, score my writing',
+    `${siteUrl}/celpip/writing/ai-feedback/`,
+  );
+  const readingProduct = buildProductCell(
+    'CA$20 / month',
+    'Practice CELPIP reading with tests built like the real exam.',
+    'Most practice tests online are not real CELPIP format. These ones are. Four parts, timed, scored by CLB level. Test 01 is completely free. The subscription gives you Tests 02, 03, and 04.',
+    'Take the free test first',
+    `${siteUrl}/celpip/reading/`,
+  );
+  const ebookProduct = buildProductCell(
+    'CA$49.50 · one time',
+    'The CELPIP speaking book that shows what a high score sounds like.',
+    '109 pages. 24 sample answers with scores. 30 patterns that examiners reward. Written by Dr. Kara Abdolmaleki. You read real answers and see why each one gets the mark it gets.',
+    'Get the book',
+    'https://buy.stripe.com/aFa14m4Kq11q3ap7nSgMw03',
+  );
+
+  const socialLinks = [
+    youtubeChannelUrl ? `<a href="${youtubeChannelUrl}" style="display:inline-block;margin:0 8px 8px 0;padding:8px 14px;border-radius:8px;border:1px solid rgba(20,22,23,0.12);background:#fbf8f4;color:#141617;font-weight:600;text-decoration:none;font-size:12px;">YouTube</a>` : '',
+    telegramChannelUrl ? `<a href="${telegramChannelUrl}" style="display:inline-block;margin:0 8px 8px 0;padding:8px 14px;border-radius:8px;border:1px solid rgba(20,22,23,0.12);background:#fbf8f4;color:#141617;font-weight:600;text-decoration:none;font-size:12px;">Telegram</a>` : '',
+    instagramUrl ? `<a href="${instagramUrl}" style="display:inline-block;margin:0 8px 8px 0;padding:8px 14px;border-radius:8px;border:1px solid rgba(20,22,23,0.12);background:#fbf8f4;color:#141617;font-weight:600;text-decoration:none;font-size:12px;">Instagram</a>` : '',
+  ].filter(Boolean).join('');
 
   return `<!doctype html>
 <html>
-  <body style="margin: 0; padding: 24px 12px; background: #f7f1ea; font-family: Arial, sans-serif; color: #1f2b37;">
-    <table role="presentation" width="100%" style="border-collapse: collapse;">
-      <tr>
-        <td align="center">
-          <table role="presentation" width="100%" style="max-width: 720px; border-collapse: collapse; background: #fffaf5; border: 1px solid #eadfd2; border-radius: 28px; overflow: hidden;">
-            <tr>
-              <td style="padding: 34px 34px 26px; background: linear-gradient(135deg, #fff0df 0%, #fff8f1 50%, #f4f8ff 100%);">
-                <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 800; color: #8d4d21; margin-bottom: 10px;">IELTS Corner Weekly Digest</div>
-                <div style="font-size: 34px; line-height: 1.15; font-weight: 800; color: #1f2b37; margin-bottom: 12px;">Your week is easier when you know what to study first.</div>
-                <div style="font-size: 16px; line-height: 1.7; color: #4e5a6b; max-width: 560px;">This digest is designed like a teacher&apos;s weekly note: one clear place to start, a few strong follow-ups, and the latest short practice from each channel.</div>
-              </td>
-            </tr>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+*{box-sizing:border-box;}
+body{margin:0;padding:20px 12px;background:#f2ede6;font-family:Arial,sans-serif;color:#141617;}
+.wrapper{max-width:860px;margin:0 auto;}
+.lesson-grid,.product-grid{font-size:0;margin:0 -5px;}
+.lesson-cell,.product-cell{display:inline-block;vertical-align:top;width:100%;font-size:14px;padding:0 5px 10px;}
+@media(min-width:600px){
+  .lesson-cell,.product-cell{width:33.33%;}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
 
-            <tr>
-              <td style="padding: 26px 34px 12px;">
-                ${weeklyPlan}
-              </td>
-            </tr>
+  <div style="padding:0 5px 22px;">
+    <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#d94848;margin-bottom:10px;">IELTS Corner</div>
+    <div style="font-size:26px;line-height:1.15;font-weight:800;color:#141617;margin-bottom:8px;">New lessons this week</div>
+    <div style="font-size:14px;line-height:1.7;color:#4f565d;">Here is what is new. Open the ones that match your goal right now.</div>
+  </div>
 
-            <tr>
-              <td style="padding: 30px 34px 12px;">
-                <div style="font-size: 24px; line-height: 1.25; font-weight: 800; color: #1f2b37; margin-bottom: 8px;">Start with these new lessons</div>
-                <div style="font-size: 15px; line-height: 1.7; color: #586577; margin-bottom: 20px;">Open one lesson, do the interactive practice, and save the rest for later. Each lesson now follows the same clearer teacher-style structure.</div>
-                <table role="presentation" width="100%" style="border-collapse: collapse;">
-                  ${lessonCards}
-                </table>
-              </td>
-            </tr>
+  ${celpipHtml}
 
-            ${socialCards ? `
-            <tr>
-              <td style="padding: 12px 34px 16px;">
-                <div style="font-size: 24px; line-height: 1.25; font-weight: 800; color: #1f2b37; margin-bottom: 8px;">Latest on our channels</div>
-                <div style="font-size: 15px; line-height: 1.7; color: #586577; margin-bottom: 20px;">If you want short study boosts between lessons, use the newest post from each channel below.</div>
-                ${socialCards}
-                ${socialButtons}
-              </td>
-            </tr>
-            ` : ''}
+  <div style="border-top:1px solid rgba(20,22,23,0.1);margin:24px 5px;"></div>
 
-            <tr>
-              <td style="padding: 12px 34px 34px;">
-                <table role="presentation" width="100%" style="border-collapse: collapse; background: linear-gradient(135deg, #173656 0%, #274c73 100%); border-radius: 22px; overflow: hidden;">
-                  <tr>
-                    <td style="padding: 24px;">
-                      <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 800; color: #ffd68d; margin-bottom: 10px;">Need direct feedback?</div>
-                      <div style="font-size: 28px; line-height: 1.2; font-weight: 800; color: #ffffff; margin-bottom: 10px;">Work with a teacher, not just a worksheet.</div>
-                      <div style="font-size: 15px; line-height: 1.7; color: #d8e6f4; margin-bottom: 18px;">Choose the support that matches your goal this week: essay correction, a private class, the writing score lab, or the live webinar.</div>
-                      <a href="${siteUrl}/tutoring/" style="display: inline-block; background: #ffd68d; color: #173656; text-decoration: none; font-weight: 800; border-radius: 999px; padding: 11px 18px; margin-right: 10px;">Book tutoring</a>
-                      <a href="${siteUrl}/essay-correction/" style="display: inline-block; background: rgba(255,255,255,0.14); color: #ffffff; text-decoration: none; font-weight: 800; border-radius: 999px; padding: 11px 18px; margin-top: 10px;">Essay correction</a>
-                    </td>
-                  </tr>
-                </table>
+  <div style="padding:0 5px 16px;">
+    <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:#d94848;margin-bottom:6px;">Want to move faster?</div>
+    <div style="font-size:20px;font-weight:800;color:#141617;line-height:1.2;">Three things that can help.</div>
+  </div>
+  <!--[if mso]><table role="presentation" width="100%"><tr><![endif]-->
+  <div class="product-grid">
+    ${writingProduct}
+    ${readingProduct}
+    ${ebookProduct}
+  </div>
+  <!--[if mso]></tr></table><![endif]-->
 
-                <div style="font-size: 13px; line-height: 1.7; color: #7a8491; margin-top: 18px;">
-                  More ways to study:
-                  <a href="${siteUrl}/celpip/writing/ai-feedback/" style="color: #24507d; font-weight: 700; text-decoration: underline;">writing score lab</a>,
-                  <a href="${siteUrl}/webinar/" style="color: #24507d; font-weight: 700; text-decoration: underline;">weekly webinar</a>,
-                  <a href="${youtubeChannelUrl}" style="color: #24507d; font-weight: 700; text-decoration: underline;">YouTube</a>,
-                  <a href="${telegramChannelUrl}" style="color: #24507d; font-weight: 700; text-decoration: underline;">Telegram</a>,
-                  <a href="${instagramUrl}" style="color: #24507d; font-weight: 700; text-decoration: underline;">Instagram</a>.
-                </div>
+  ${ieltsHtml ? `<div style="border-top:1px solid rgba(20,22,23,0.1);margin:24px 5px;"></div><div style="margin-top:0;">${ieltsHtml}</div>` : ''}
+  ${grammarHtml ? `<div style="margin-top:18px;">${grammarHtml}</div>` : ''}
+  ${vocabHtml ? `<div style="margin-top:18px;">${vocabHtml}</div>` : ''}
 
-                <div style="font-size: 12px; line-height: 1.7; color: #8d96a2; margin-top: 14px;">You are receiving this because you subscribed on ieltscorner.ca.</div>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-  </body>
+  <div style="border-top:1px solid rgba(20,22,23,0.1);margin:24px 5px;"></div>
+
+  <div style="padding:0 5px;">
+    <div style="font-size:13px;font-weight:700;color:#141617;margin-bottom:12px;">More practice on our channels</div>
+    ${socialLinks}
+  </div>
+
+  <div style="padding:22px 5px 8px;font-size:12px;line-height:1.8;color:#6a727a;">You are receiving this because you subscribed on ieltscorner.ca.</div>
+
+</div>
+</body>
 </html>`;
 }
 
 function buildTextEmail({
   siteUrl,
   lessons,
-  youtubeVideo,
-  telegramPost,
-  instagramPost,
   youtubeChannelUrl,
   telegramChannelUrl,
   instagramUrl,
 }) {
-  const telegramPreview = normalizeTelegramPreview(telegramPost);
-  const lessonLines = lessons.map((lesson) => {
-    const url = buildLessonUrl(siteUrl, lesson);
-    const support = lesson.excerpt || lesson.heroTip || '';
-    return `- ${lesson.title} (${lesson.category}, ${getLessonTier(lesson.level)})\n  ${url}${support ? `\n  ${support}` : ''}`;
-  }).join('\n\n');
+  const sections = groupLessonsBySection(lessons);
 
-  const socialLines = [
-    youtubeVideo ? `YouTube: ${youtubeVideo.title}\n${youtubeVideo.url}` : `YouTube: ${youtubeChannelUrl}`,
-    telegramPost ? `Telegram: ${telegramPreview}\n${telegramPost.url || telegramChannelUrl}` : `Telegram: ${telegramChannelUrl}`,
-    instagramPost ? `Instagram: ${instagramPost.preview}\n${instagramPost.url || instagramUrl}` : `Instagram: ${instagramUrl}`,
-  ].join('\n\n');
+  const sectionLines = [];
 
-  return `IELTS Corner Weekly Digest
+  if (sections.celpip.length) {
+    sectionLines.push('CELPIP');
+    for (const l of sections.celpip) {
+      const url = buildLessonUrl(siteUrl, l);
+      const body = l.excerpt || l.heroTip || '';
+      sectionLines.push(`- ${l.title}${body ? `\n  ${body}` : ''}\n  ${url}`);
+    }
+  }
 
-Your week is easier when you know what to study first.
+  sectionLines.push('');
+  sectionLines.push('Want to move faster?');
+  sectionLines.push(`Writing Score Lab (CA$5/month): ${siteUrl}/celpip/writing/ai-feedback/`);
+  sectionLines.push(`Reading Simulator (CA$20/month): ${siteUrl}/celpip/reading/`);
+  sectionLines.push('Speaking eBook (CA$49.50): https://buy.stripe.com/aFa14m4Kq11q3ap7nSgMw03');
 
-This week's simple plan:
-1. Open one full lesson and finish the interactive practice.
-2. Add one second lesson only after the first one is done.
-3. Use Telegram or YouTube between lessons to keep the topic active.
+  if (sections.ielts.length) {
+    sectionLines.push('');
+    sectionLines.push('IELTS');
+    for (const l of sections.ielts) {
+      const url = buildLessonUrl(siteUrl, l);
+      const body = l.excerpt || l.heroTip || '';
+      sectionLines.push(`- ${l.title}${body ? `\n  ${body}` : ''}\n  ${url}`);
+    }
+  }
 
-Start with these new lessons:
+  if (sections.grammar.length) {
+    sectionLines.push('');
+    sectionLines.push('Grammar');
+    for (const l of sections.grammar) {
+      const url = buildLessonUrl(siteUrl, l);
+      const body = l.excerpt || l.heroTip || '';
+      sectionLines.push(`- ${l.title}${body ? `\n  ${body}` : ''}\n  ${url}`);
+    }
+  }
 
-${lessonLines}
+  if (sections.vocab.length) {
+    sectionLines.push('');
+    sectionLines.push('Vocabulary');
+    for (const l of sections.vocab) {
+      const url = buildLessonUrl(siteUrl, l);
+      const body = l.excerpt || l.heroTip || '';
+      sectionLines.push(`- ${l.title}${body ? `\n  ${body}` : ''}\n  ${url}`);
+    }
+  }
 
-Latest on our channels:
+  const channels = [
+    youtubeChannelUrl ? `YouTube: ${youtubeChannelUrl}` : '',
+    telegramChannelUrl ? `Telegram: ${telegramChannelUrl}` : '',
+    instagramUrl ? `Instagram: ${instagramUrl}` : '',
+  ].filter(Boolean).join('\n');
 
-${socialLines}
+  return `IELTS Corner - New lessons this week
 
-Need direct feedback?
-- Tutoring: ${siteUrl}/tutoring/
-- Essay correction: ${siteUrl}/essay-correction/
-- Writing score lab: ${siteUrl}/celpip/writing/ai-feedback/
-- Weekly webinar: ${siteUrl}/webinar/
+${sectionLines.join('\n')}
+
+More practice on our channels:
+${channels}
 
 You are receiving this because you subscribed on ieltscorner.ca.`;
 }
@@ -923,22 +749,14 @@ async function main() {
   const instagramUsername = (process.env.INSTAGRAM_USERNAME || DEFAULT_INSTAGRAM_USERNAME).trim().replace(/^@/, '');
   const instagramUrl = `https://www.instagram.com/${instagramUsername}/`;
 
-  const [lessons, youtubeVideo, telegramPost, instagramPost] = await Promise.all([
-    getLatestLessons(5),
-    getLatestYouTubeVideo(youtubeChannelUrl),
-    getTelegramChannelSnapshot(telegramChannelUrl),
-    getLatestInstagramPost(instagramUsername),
-  ]);
+  const lessons = await getLatestLessons(3);
 
   const leadTitle = lessons[0]?.title || 'fresh lessons';
-  const subject = `IELTS Corner digest: start with "${leadTitle}" this week`;
-  const previewText = 'Your week is easier when you know what to study first.';
+  const subject = `New lessons on IELTS Corner: ${leadTitle}`;
+  const previewText = 'New lessons are ready. Open the ones that match your goal right now.';
   const html = buildHtmlEmail({
     siteUrl,
     lessons,
-    youtubeVideo,
-    telegramPost,
-    instagramPost,
     youtubeChannelUrl,
     telegramChannelUrl,
     instagramUrl,
@@ -946,9 +764,6 @@ async function main() {
   const text = buildTextEmail({
     siteUrl,
     lessons,
-    youtubeVideo,
-    telegramPost,
-    instagramPost,
     youtubeChannelUrl,
     telegramChannelUrl,
     instagramUrl,
@@ -964,9 +779,6 @@ async function main() {
 
     console.log(`[preview] Subject: ${subject}`);
     console.log('[preview] Lessons:', lessons.map((item) => item.title));
-    console.log('[preview] YouTube:', youtubeVideo?.title || 'not found');
-    console.log('[preview] Telegram:', telegramPost?.preview || 'not found');
-    console.log('[preview] Instagram:', instagramPost?.preview || 'not found');
     console.log(`[preview] HTML file: ${previewHtmlPath}`);
     console.log(`[preview] Text file: ${previewTextPath}`);
     console.log('\n[preview] Text email:\n');
@@ -1030,7 +842,6 @@ async function main() {
   console.log(`[info] Latest subscriber: ${subscribers[0]?.submittedAt || 'unknown'}`);
   console.log(`[info] Latest lessons selected: ${lessons.length}`);
   console.log(`[info] Last sent at: ${state.lastSentAt || 'never'}`);
-  console.log(`[info] Social found: YouTube=${youtubeVideo ? 'yes' : 'no'} | Telegram=${telegramPost ? 'yes' : 'no'} | Instagram=${instagramPost ? 'yes' : 'no'}`);
 
   if (options.dryRun) {
     console.log('[dry-run] First recipients:', subscribers.slice(0, 5).map((item) => item.email));
