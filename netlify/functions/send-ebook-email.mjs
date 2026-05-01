@@ -5,6 +5,10 @@ import { isSameOriginRequest } from './_utils/requestSecurity.mjs';
 
 const STRIPE_API_KEY = (process.env.STRIPE_API_KEY || '').trim();
 const EBOOK_PAYMENT_LINK_ID = (process.env.EBOOK_PAYMENT_LINK_ID || '').trim();
+const EBOOK_PAYMENT_LINK_IDS = (process.env.EBOOK_PAYMENT_LINK_IDS || '')
+  .split(',')
+  .map((value) => value.trim())
+  .filter(Boolean);
 const EBOOK_AMOUNT_CENTS = Number.parseInt(process.env.EBOOK_AMOUNT_CENTS || '4950', 10);
 const GMAIL_USER = (process.env.GMAIL_USER || '').trim();
 const GMAIL_PASSWORD = (process.env.GMAIL_PASSWORD || '').trim();
@@ -22,9 +26,19 @@ function getPaymentLinkId(paymentLink) {
 function isEbookPurchase(session) {
   if (session.payment_status !== 'paid') return false;
   if (session.mode !== 'payment') return false;
-  if (EBOOK_PAYMENT_LINK_ID) {
-    return getPaymentLinkId(session.payment_link) === EBOOK_PAYMENT_LINK_ID;
+
+  const sessionPaymentLinkId = getPaymentLinkId(session.payment_link);
+  const allowedPaymentLinkIds = new Set([
+    ...EBOOK_PAYMENT_LINK_IDS,
+    EBOOK_PAYMENT_LINK_ID,
+  ].filter(Boolean));
+
+  if (allowedPaymentLinkIds.size > 0 && sessionPaymentLinkId) {
+    if (allowedPaymentLinkIds.has(sessionPaymentLinkId)) return true;
+    // Controlled fallback for legacy/rotated links: require exact ebook amount.
+    return Number(session.amount_total ?? 0) === EBOOK_AMOUNT_CENTS;
   }
+
   return Number(session.amount_total ?? 0) === EBOOK_AMOUNT_CENTS;
 }
 
