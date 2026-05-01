@@ -38,17 +38,26 @@ export const TELEGRAM_SIGNATURE_LINES = [
 ];
 
 export const TELEGRAM_SIGNATURE_TEXT = TELEGRAM_SIGNATURE_LINES.join('\n\n');
+const TELEGRAM_SIGNATURE_COMPACT_TEXT = [
+  TELEGRAM_SIGNATURE_HEADING,
+  TELEGRAM_SIGNATURE_LINKS[0].text,
+  TELEGRAM_SIGNATURE_LINKS[1].text,
+].join('\n');
 
 export function hasTelegramSignature(text = '') {
   const value = String(text ?? '');
   return value.includes(TELEGRAM_SIGNATURE_HEADING) || value.includes(TELEGRAM_SIGNATURE_SEPARATOR);
 }
 
-export function appendTelegramSignature(body = '') {
+export function appendTelegramSignature(body = '', options = {}) {
+  const {
+    compact = false,
+  } = options;
   const cleanBody = String(body ?? '').trim();
-  if (!cleanBody) return TELEGRAM_SIGNATURE_TEXT;
+  const signatureText = compact ? TELEGRAM_SIGNATURE_COMPACT_TEXT : TELEGRAM_SIGNATURE_TEXT;
+  if (!cleanBody) return signatureText;
   if (hasTelegramSignature(cleanBody)) return cleanBody;
-  return `${cleanBody}\n\n${TELEGRAM_SIGNATURE_TEXT}`;
+  return `${cleanBody}\n\n${signatureText}`;
 }
 
 export function preserveTelegramSpacing(text = '') {

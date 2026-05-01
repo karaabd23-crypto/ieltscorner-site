@@ -2,12 +2,10 @@ name: Telegram Unified Scheduler
 
 on:
   schedule:
-    # Full lessons: 15:00, 21:00 UTC (2x daily)
-    # ≈ ET: 10am, 4pm | PT: 7am, 1pm
-    - cron: '0 15,21 * * *'
-    # Mini-tip channel posts: 03:00, 18:00, 00:00 UTC (3x daily)
-    # ≈ ET: 10pm, 1pm, 7pm | PT: 7pm, 10am, 4pm
-    - cron: '0 3,18 * * *'
+    # One post per day at 17:00 UTC.
+    # Odd UTC day: full lesson. Even UTC day: mini-tip.
+    # ≈ ET: 1pm | PT: 10am
+    - cron: '0 17 * * *'
   workflow_dispatch:
     inputs:
       content_type:
@@ -46,9 +44,10 @@ jobs:
                 ;;
             esac
           else
-            # For scheduled runs, determine by hour
-            HOUR=$(date -u +%H)
-            if [ "$HOUR" = "15" ] || [ "$HOUR" = "21" ]; then
+            # For scheduled runs, alternate by UTC day-of-month:
+            # odd days = lesson, even days = mini-tip
+            DAY=$(date -u +%d)
+            if [ $((10#$DAY % 2)) -eq 1 ]; then
               echo "post_lesson=true" >> $GITHUB_OUTPUT
               echo "post_mini_tip=false" >> $GITHUB_OUTPUT
             else
@@ -84,7 +83,7 @@ jobs:
       - name: Post full lesson content
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID || secrets.TELEGRAM_CHANNEL_ID }}
           TELEGRAM_CHANNEL_URL: ${{ secrets.TELEGRAM_CHANNEL_URL }}
           TELEGRAM_HISTORY_FILE: .cache/telegram-post-history.json
         run: node scripts/post-telegram-content.mjs
@@ -123,7 +122,7 @@ jobs:
       - name: Post mini-tip channel content
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID || secrets.TELEGRAM_CHANNEL_ID }}
           TELEGRAM_CHANNEL_URL: ${{ secrets.TELEGRAM_CHANNEL_URL }}
           TELEGRAM_HISTORY_FILE: .cache/telegram-post-history.json
         run: node scripts/post-telegram-content.mjs --mode mini-tip

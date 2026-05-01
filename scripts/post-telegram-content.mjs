@@ -90,6 +90,9 @@ const TELEGRAM_LIMITS = {
 };
 
 const TELEGRAM_EXAM_TOPIC_SHARE = 0.7;
+const TELEGRAM_STYLE_RULES = {
+  maxHashtags: 2,
+};
 
 const CHANNEL_TOPICS = [
   {
@@ -1509,8 +1512,10 @@ function formatTelegramPost(text = '') {
     .join('\n');
 }
 
-function appendFooter(message, lessonSlugs = []) {
-  return appendTelegramSignature(message);
+function appendFooter(message, lessonSlugs = [], mode = 'lesson') {
+  return appendTelegramSignature(message, {
+    compact: mode === 'mini-tip',
+  });
 }
 
 function formatTelegramLine(line, lineIndex) {
@@ -1588,12 +1593,13 @@ function validateTelegramPayload(content, messageText, mode) {
 
 function buildMessage(topic, mode) {
   const variant = mode === 'mini-tip' ? topic.mini : topic.lesson;
-  const text = appendFooter(variant.lines.join('\n'), topic.lessonSlugs);
+  const text = appendFooter(variant.lines.join('\n'), topic.lessonSlugs, mode);
+  const selectedHashtags = (topic.hashtags ?? []).slice(0, TELEGRAM_STYLE_RULES.maxHashtags);
   return {
     topicId: topic.id,
     title: variant.title,
     postBody: `${variant.title}\n\n${text}`,
-    hashtags: topic.hashtags ?? [],
+    hashtags: selectedHashtags,
     quiz: variant.quiz ?? null,
   };
 }
@@ -1695,9 +1701,9 @@ async function main() {
   const channelUrl = process.env.TELEGRAM_CHANNEL_URL?.trim() ?? '';
   const historyFilePath = resolveHistoryFilePath();
   const history = await loadPostHistory(historyFilePath);
-  // With 10 topics, dedup window must be shorter than (topics / posts-per-day-per-mode) days
-  // Default 7 days prevents repeats within a week while allowing the topic pool to recycle
-  const topicDedupeDays = Math.max(3, Number.parseInt(process.env.TELEGRAM_TOPIC_DEDUPE_DAYS ?? '7', 10) || 7);
+  // Use a longer dedupe window to avoid repetitive channel experience.
+  // Can be overridden via TELEGRAM_TOPIC_DEDUPE_DAYS.
+  const topicDedupeDays = Math.max(14, Number.parseInt(process.env.TELEGRAM_TOPIC_DEDUPE_DAYS ?? '30', 10) || 30);
 
   const pickedTopic = pickTopic(options, history, topicDedupeDays);
   if (!pickedTopic) {
