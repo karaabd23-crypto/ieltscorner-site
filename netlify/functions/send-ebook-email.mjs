@@ -83,6 +83,16 @@ function buildEmailHtml(customerName, downloadUrl) {
 </html>`;
 }
 
+function deriveNameFromEmail(email) {
+  const local = String(email || '').split('@')[0] || '';
+  const cleaned = local.replace(/[._-]+/g, ' ').trim();
+  if (!cleaned) return 'there';
+  return cleaned
+    .split(/\s+/)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase())
+    .join(' ');
+}
+
 async function sendEmailWithAttachment({ toEmail, customerName, pdfBuffer, pdfFilename }) {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -179,7 +189,10 @@ export async function handler(event) {
       };
     }
 
-    const customerName = session.customer_details?.name || toEmail.split('@')[0];
+    const stripeName = String(session.customer_details?.name || '').trim();
+    const stripeEmail = String(session.customer_details?.email || '').trim().toLowerCase();
+    const isSameRecipientAsPurchase = !!stripeEmail && stripeEmail === toEmail;
+    const customerName = isSameRecipientAsPurchase && stripeName ? stripeName : deriveNameFromEmail(toEmail);
 
     // Fetch the PDF from its hosted URL and attach it
     const pdfResponse = await fetch(EBOOK_FILE_URL);

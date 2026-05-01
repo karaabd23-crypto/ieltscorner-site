@@ -15,6 +15,7 @@
         "npm:@astrojs/mdx@^4.3.13",
         "npm:@astrojs/sitemap@^3.7.0",
         "npm:@netlify/blobs@^10.7.2",
+        "npm:@netlify/identity@1",
         "npm:astro@^5.16.0",
         "npm:nodemailer@^8.0.5",
         "npm:sharp@~0.33.5",
