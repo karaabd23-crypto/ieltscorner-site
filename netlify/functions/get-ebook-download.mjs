@@ -91,9 +91,19 @@ export async function handler(event) {
       };
     }
 
-    const store = getStore(STORE_NAME);
-    const storeKey = `session/${sessionId}`;
-    let record = await store.get(storeKey, { type: 'json' }).catch(() => null);
+    let store = null;
+    let storeKey = '';
+    let record = null;
+    let storeAvailable = true;
+
+    try {
+      store = getStore(STORE_NAME);
+      storeKey = `session/${sessionId}`;
+      record = await store.get(storeKey, { type: 'json' }).catch(() => null);
+    } catch (storeError) {
+      storeAvailable = false;
+      console.warn('[get-ebook-download] Blobs unavailable, continuing without download counter.', storeError);
+    }
 
     if (!record) {
       record = {
@@ -106,7 +116,7 @@ export async function handler(event) {
       };
     }
 
-    if (record.downloadCount >= MAX_DOWNLOADS) {
+    if (storeAvailable && record.downloadCount >= MAX_DOWNLOADS) {
       return {
         statusCode: 200,
         body: JSON.stringify({
@@ -118,12 +128,13 @@ export async function handler(event) {
       };
     }
 
-    // Increment before issuing the token
-    record.downloadCount += 1;
-    record.lastDownloadAt = new Date().toISOString();
-    if (!record.firstDownloadAt) record.firstDownloadAt = record.lastDownloadAt;
-
-    await store.setJSON(storeKey, record);
+    if (storeAvailable) {
+      // Increment before issuing the token
+      record.downloadCount += 1;
+      record.lastDownloadAt = new Date().toISOString();
+      if (!record.firstDownloadAt) record.firstDownloadAt = record.lastDownloadAt;
+      await store.setJSON(storeKey, record);
+    }
 
     const expiresAt = Date.now() + TOKEN_TTL_MS;
     const token = signToken(sessionId, expiresAt);
@@ -132,9 +143,10 @@ export async function handler(event) {
       statusCode: 200,
       body: JSON.stringify({
         allowed: true,
-        downloadsUsed: record.downloadCount,
+        downloadsUsed: storeAvailable ? record.downloadCount : 0,
         maxDownloads: MAX_DOWNLOADS,
-        downloadsRemaining: MAX_DOWNLOADS - record.downloadCount,
+        downloadsRemaining: storeAvailable ? (MAX_DOWNLOADS - record.downloadCount) : MAX_DOWNLOADS,
+        storageBypassed: !storeAvailable,
         token,
         expiresAt,
       }),

@@ -152,10 +152,19 @@ export async function handler(event) {
       };
     }
 
-    // Check store to verify this is a legitimate purchaser (session must have been validated at least once)
-    const store = getStore(STORE_NAME);
-    const storeKey = `session/${sessionId}`;
-    let record = await store.get(storeKey, { type: 'json' }).catch(() => null);
+    let store = null;
+    let storeKey = '';
+    let record = null;
+    let storeAvailable = true;
+
+    try {
+      store = getStore(STORE_NAME);
+      storeKey = `session/${sessionId}`;
+      record = await store.get(storeKey, { type: 'json' }).catch(() => null);
+    } catch (storeError) {
+      storeAvailable = false;
+      console.warn('[send-ebook-email] Blobs unavailable, skipping store persistence.', storeError);
+    }
 
     if (!record) {
       // First interaction - create the record
@@ -188,7 +197,9 @@ export async function handler(event) {
 
     record.emailSentAt = new Date().toISOString();
     record.emailSentTo = toEmail;
-    await store.setJSON(storeKey, record);
+    if (storeAvailable) {
+      await store.setJSON(storeKey, record);
+    }
 
     return {
       statusCode: 200,
