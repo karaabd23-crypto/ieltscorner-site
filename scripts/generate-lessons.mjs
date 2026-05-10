@@ -7,7 +7,7 @@ const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 const CATEGORIES = ['grammar', 'vocabulary', 'writing', 'speaking'];
 const LESSON_DIR = path.resolve('src/content/lessons');
 const LEECH_OUT_DIR = path.resolve('src/content/lessons/ielts/writing');
-const DEFAULT_MODEL = process.env.OPENAI_MODEL || 'gpt-4o';
+const DEFAULT_MODEL = process.env.OPENAI_MODEL || 'gpt-4.1-mini';
 const TOPIC_BANK = {
   grammar: {
     A1: [
@@ -333,7 +333,7 @@ Target exams: IELTS and CELPIP.`;
         { role: 'user', content: userMessage },
       ],
       temperature: 0.7,
-      max_tokens: 12000,
+      max_tokens: 4000,
     }),
   });
 

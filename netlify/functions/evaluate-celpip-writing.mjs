@@ -40,6 +40,14 @@ const VALID_TASK_TYPES = new Set(['task1', 'task2']);
 const RATE_LIMIT_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours
 const ipTaskMap = new Map(); // key: "ip::promptId" → timestamp
 
+// ── Daily eval cap per IP ──
+const DAILY_EVAL_CAP = 5;
+const ipDailyCount = new Map(); // key: ip → { count, windowStart }
+
+// ── Response cache for identical submissions ──
+const evalCache = new Map(); // key: sha256 hash → { payload, ts }
+const EVAL_CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
+
 function hasAlreadySubmitted(ip, promptId) {
   const key = `${ip}::${promptId}`;
   const ts = ipTaskMap.get(key);
@@ -59,6 +67,50 @@ function recordSubmission(ip, promptId) {
     const now = Date.now();
     for (const [k, ts] of ipTaskMap) {
       if (now - ts > RATE_LIMIT_TTL_MS) ipTaskMap.delete(k);
+    }
+  }
+}
+
+function getDailyCount(ip) {
+  const entry = ipDailyCount.get(ip);
+  if (!entry || Date.now() - entry.windowStart > RATE_LIMIT_TTL_MS) return 0;
+  return entry.count;
+}
+
+function incrementDailyCount(ip) {
+  const entry = ipDailyCount.get(ip);
+  if (!entry || Date.now() - entry.windowStart > RATE_LIMIT_TTL_MS) {
+    ipDailyCount.set(ip, { count: 1, windowStart: Date.now() });
+  } else {
+    entry.count += 1;
+  }
+  if (ipDailyCount.size > 500) {
+    const now = Date.now();
+    for (const [k, v] of ipDailyCount) {
+      if (now - v.windowStart > RATE_LIMIT_TTL_MS) ipDailyCount.delete(k);
+    }
+  }
+}
+
+function buildEvalCacheKey({ taskType, promptId, responseText }) {
+  return createHash('sha256')
+    .update(`${taskType}::${promptId}::${responseText}`)
+    .digest('hex');
+}
+
+function getCachedEval(key) {
+  const entry = evalCache.get(key);
+  if (!entry) return null;
+  if (Date.now() - entry.ts > EVAL_CACHE_TTL_MS) { evalCache.delete(key); return null; }
+  return entry.payload;
+}
+
+function setCachedEval(key, payload) {
+  evalCache.set(key, { payload, ts: Date.now() });
+  if (evalCache.size > 200) {
+    const now = Date.now();
+    for (const [k, v] of evalCache) {
+      if (now - v.ts > EVAL_CACHE_TTL_MS) evalCache.delete(k);
     }
   }
 }
@@ -339,7 +391,7 @@ async function requestOpenAIEvaluation({
           },
         ],
         temperature: 0.2,
-        max_tokens: 1800,
+        max_tokens: 1200,
       }),
     });
 
@@ -525,6 +577,31 @@ export async function handler(event) {
       await validateSession(sessionId);
     }
 
+    // Daily cap: non-admin IPs limited to DAILY_EVAL_CAP evaluations per 24h
+    if (!isAdminBypass && getDailyCount(clientIp) >= DAILY_EVAL_CAP) {
+      return {
+        statusCode: 429,
+        body: JSON.stringify({ error: 'Daily evaluation limit reached. Try again tomorrow.' }),
+      };
+    }
+
+    // Cache: return stored result for identical task+prompt+response within 1 hour
+    const evalCacheKey = buildEvalCacheKey({
+      taskType: normalizedTaskType,
+      promptId: normalizedPromptId,
+      responseText: normalizedResponseText,
+    });
+    const cachedPayload = getCachedEval(evalCacheKey);
+    if (cachedPayload) {
+      return {
+        statusCode: 200,
+        body: JSON.stringify({
+          ...cachedPayload,
+          evaluationSource: `${cachedPayload.evaluationSource}:cached`,
+        }),
+      };
+    }
+
     let rawReport;
     let evaluationSource = 'openai';
 
@@ -576,13 +653,18 @@ export async function handler(event) {
       });
     }
 
+    incrementDailyCount(clientIp);
+
+    const responsePayload = {
+      report,
+      evaluationSource,
+      evaluationModel: evaluationSource.startsWith('openai') ? OPENAI_MODEL : 'rule-based',
+    };
+    setCachedEval(evalCacheKey, responsePayload);
+
     return {
       statusCode: 200,
-      body: JSON.stringify({
-        report,
-        evaluationSource,
-        evaluationModel: evaluationSource.startsWith('openai') ? OPENAI_MODEL : 'rule-based',
-      }),
+      body: JSON.stringify(responsePayload),
     };
   } catch (error) {
     return {
