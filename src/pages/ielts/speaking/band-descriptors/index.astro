@@ -1,0 +1,714 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import Breadcrumbs from "../../../../components/Breadcrumbs.astro";
+import SkillSubNav from "../../../../components/SkillSubNav.astro";
+import { buildBreadcrumbSchema } from "../../../../lib/seo";
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "IELTS", path: "/ielts/" },
+    { name: "Speaking", path: "/ielts/speaking/" },
+    { name: "Band Descriptors", path: "/ielts/speaking/band-descriptors/" },
+  ]),
+];
+
+// The four official IELTS Speaking criteria, broken down in plain English
+const criteria = [
+  {
+    id: "fc",
+    label: "Fluency & Coherence",
+    short: "FC",
+    color: "var(--color-fc)",
+    icon: "💬",
+    description: "How smoothly and logically you speak.",
+    bands: [
+      {
+        band: 9,
+        headline: "Effortless flow",
+        plain: "You speak at a natural pace with no hesitation. Ideas connect logically without any effort. If you do pause, it is only to think of the right word, not because you are struggling.",
+      },
+      {
+        band: 8,
+        headline: "Mostly smooth, occasional self-correction",
+        plain: "Very fluent with only occasional hesitation or self-correction. You keep going even when you make a small mistake, and the listener is never lost.",
+      },
+      {
+        band: 7,
+        headline: "Generally fluent with some repetition",
+        plain: "You speak at a good pace but sometimes repeat yourself or use filler phrases like 'you know' or 'I mean' while finding the next idea. Answers feel complete and logical.",
+      },
+      {
+        band: 6,
+        headline: "Some hesitation but keeps going",
+        plain: "You can produce long stretches of speech but lose fluency at times. You might pause for several seconds or repeat phrases to fill gaps. The answer still makes sense overall.",
+      },
+      {
+        band: 5,
+        headline: "Frequent pauses and repetition",
+        plain: "You pause often and use lots of fillers. Ideas are present but the listener has to wait. Coherence suffers because linking words are limited or used incorrectly.",
+      },
+      {
+        band: 4,
+        headline: "Short answers and noticeable effort",
+        plain: "You speak slowly with long gaps. Answers are short and sometimes hard to follow. The examiner can sense you are searching for language rather than ideas.",
+      },
+    ],
+  },
+  {
+    id: "lr",
+    label: "Lexical Resource",
+    short: "LR",
+    color: "var(--color-lr)",
+    icon: "📖",
+    description: "The range and accuracy of your vocabulary.",
+    bands: [
+      {
+        band: 9,
+        headline: "Precise, flexible, natural word choice",
+        plain: "You use exactly the right word in every context. You can paraphrase effortlessly, use idiomatic expressions naturally, and rarely if ever make vocabulary errors.",
+      },
+      {
+        band: 8,
+        headline: "Wide range with very few errors",
+        plain: "You use a wide vocabulary with natural flexibility. Occasional errors with collocations or word choice happen but do not cause any misunderstanding.",
+      },
+      {
+        band: 7,
+        headline: "Good range with some inaccuracies",
+        plain: "You have enough vocabulary for most topics and can paraphrase when needed. Some words may be used slightly incorrectly or in an unnatural combination, but meaning stays clear.",
+      },
+      {
+        band: 6,
+        headline: "Adequate but limited flexibility",
+        plain: "You can discuss familiar topics with adequate vocabulary. You may struggle with less familiar topics and rely on simpler words or repetition when the exact word escapes you.",
+      },
+      {
+        band: 5,
+        headline: "Basic vocabulary, often repeated",
+        plain: "You use a limited set of words and phrases. The same expressions appear again and again. Errors are noticeable and occasionally make meaning unclear.",
+      },
+      {
+        band: 4,
+        headline: "Very restricted vocabulary",
+        plain: "Your word choices are basic and imprecise. Errors are frequent and sometimes make sentences difficult to understand.",
+      },
+    ],
+  },
+  {
+    id: "gr",
+    label: "Grammatical Range & Accuracy",
+    short: "GR",
+    color: "var(--color-gr)",
+    icon: "🔧",
+    description: "How varied and correct your grammar is.",
+    bands: [
+      {
+        band: 9,
+        headline: "Full range, virtually error-free",
+        plain: "You use a wide range of grammatical structures naturally and accurately. Errors are extremely rare and do not affect communication at all.",
+      },
+      {
+        band: 8,
+        headline: "Wide range with only slips",
+        plain: "You use complex sentences and a variety of tenses confidently. The occasional error is a slip rather than a pattern and does not confuse the listener.",
+      },
+      {
+        band: 7,
+        headline: "Mix of simple and complex with some errors",
+        plain: "You frequently use complex structures and they usually work. Some systematic errors appear (e.g. article use or verb tenses) but meaning remains clear.",
+      },
+      {
+        band: 6,
+        headline: "Mix of structures, frequent errors",
+        plain: "You produce both simple and some complex sentences, but errors in complex structures are common. These errors do not usually prevent understanding.",
+      },
+      {
+        band: 5,
+        headline: "Mostly simple structures with frequent errors",
+        plain: "You use simple sentences reliably but make frequent errors in more complex grammar. Errors can sometimes make meaning unclear.",
+      },
+      {
+        band: 4,
+        headline: "Very limited range, basic errors",
+        plain: "You mostly use very basic sentence patterns. Errors are frequent and may make parts of your speech hard to understand.",
+      },
+    ],
+  },
+  {
+    id: "p",
+    label: "Pronunciation",
+    short: "PR",
+    color: "var(--color-p)",
+    icon: "🎙️",
+    description: "How easy you are to understand and how natural you sound.",
+    bands: [
+      {
+        band: 9,
+        headline: "Sounds fully natural",
+        plain: "You are effortless to understand. You use stress and intonation to add meaning, just as a native speaker would. There is no strain on the listener at any point.",
+      },
+      {
+        band: 8,
+        headline: "Clear with natural features",
+        plain: "You are easy to understand throughout and use natural pronunciation features like connected speech and word stress effectively. Minor accent features do not interfere.",
+      },
+      {
+        band: 7,
+        headline: "Clear overall with some L1 influence",
+        plain: "You are easy to understand, though your first-language accent comes through at times. You show some control of stress and intonation, though not always consistently.",
+      },
+      {
+        band: 6,
+        headline: "Mostly clear but requires effort occasionally",
+        plain: "You are generally understandable but the listener occasionally has to concentrate harder. Mispronunciations of individual sounds or words appear but rarely block meaning.",
+      },
+      {
+        band: 5,
+        headline: "Understandable but errors are noticeable",
+        plain: "Mispronunciations are regular and occasionally cause a misunderstanding. The listener can follow you but may need to adjust their attention.",
+      },
+      {
+        band: 4,
+        headline: "Difficult to understand in places",
+        plain: "Pronunciation errors are frequent and sometimes make it hard to understand you. The listener needs to work to follow what you are saying.",
+      },
+    ],
+  },
+];
+
+const bandSummaries = [
+  { band: 9, label: "Expert", color: "#1a7f4e", summary: "Virtually flawless across all four areas. Sounds and feels like a native-level speaker.", tip: null },
+  { band: 8, label: "Very Good", color: "#2e9e64", summary: "Highly proficient. Occasional minor slips only. Comfortable with any topic.", tip: "Focus on eliminating systematic slips in collocations and complex grammar." },
+  { band: 7, label: "Good", color: "#4caf50", summary: "Clearly competent. Can handle most topics but shows some limitations under pressure.", tip: "Extend your answer length and work on natural linking expressions between ideas." },
+  { band: 6, label: "Competent", color: "#8bc34a", summary: "Can communicate effectively but fluency, vocabulary, and grammar restrict you on harder topics.", tip: "Prioritise speaking for longer without pausing. Practise Part 3 abstract topics daily." },
+  { band: 5, label: "Modest", color: "#ff9800", summary: "Able to handle straightforward topics but struggles with abstract discussion.", tip: "Build vocabulary topic by topic. Learn 10 collocations per week and practise out loud." },
+  { band: 4, label: "Limited", color: "#f44336", summary: "Communication is limited to familiar topics. Many errors restrict understanding.", tip: "Focus on fluency before accuracy. Speak every day for at least 20 minutes without stopping." },
+];
+
+// Common myths and quick tips
+const myths = [
+  {
+    myth: "Talking fast will help my fluency score.",
+    truth: "Speed is not the goal — smoothness is. Speaking at a natural pace with good linking is far more impressive than rushing and stumbling.",
+  },
+  {
+    myth: "I need a British or American accent to score Band 7.",
+    truth: "IELTS examiners are trained to assess clarity, not accent. Your first-language accent is fine as long as you are easy to understand.",
+  },
+  {
+    myth: "Using big words automatically boosts my vocabulary score.",
+    truth: "Accuracy matters more than rarity. A slightly unusual word used correctly scores higher than a rare word used in the wrong context.",
+  },
+  {
+    myth: "Short answers are safer — I can avoid making mistakes.",
+    truth: "Short answers hurt your fluency and coherence score. Examiners need to hear sustained speech to award higher bands.",
+  },
+  {
+    myth: "Memorised answers can help me reach Band 7.",
+    truth: "Examiners are trained to spot scripted responses. If they suspect it, they can ask you follow-up questions that break the script — and your score drops.",
+  },
+];
+
+const quickFixes = [
+  { fix: "Answer in full sentences, not single words.", impact: "FC" },
+  { fix: "Use 'because', 'however', 'whereas' to connect ideas.", impact: "FC" },
+  { fix: "Learn 5 topic-specific phrases before each practice session.", impact: "LR" },
+  { fix: "Practise paraphrasing — say the same idea using different words.", impact: "LR" },
+  { fix: "Record yourself and listen back for grammar patterns.", impact: "GR" },
+  { fix: "Learn one complex structure per week and practise it until it feels automatic.", impact: "GR" },
+  { fix: "Slow down slightly and emphasise the most important word in each phrase.", impact: "PR" },
+  { fix: "Practise minimal pairs (ship/sheep, live/leave) to fix key sound errors.", impact: "PR" },
+];
+---
+
+<Layout
+  title="IELTS Speaking Band Descriptors Explained | Plain English Guide"
+  description="Understand exactly what IELTS examiners look for in each band score. Plain-English explanations of Fluency, Vocabulary, Grammar, and Pronunciation — from Band 4 to Band 9."
+  keywords="IELTS speaking band descriptors, IELTS speaking score, IELTS band 7 speaking, IELTS speaking criteria, IELTS speaking fluency coherence"
+  structuredData={pageStructuredData}
+>
+  <Breadcrumbs items={[
+    { label: "Home", href: "/" },
+    { label: "IELTS", href: "/ielts" },
+    { label: "Speaking", href: "/ielts/speaking" },
+    { label: "Band Descriptors" },
+  ]} />
+  <SkillSubNav exam="IELTS" currentSkill="speaking" />
+
+  <!-- Hero -->
+  <section class="section">
+    <div class="hero funnel-hero" style={`--hero-bg: url('/heroes/speaking.png');`}>
+      <div class="hero-content funnel-hero__content">
+        <span class="pill">IELTS speaking explained</span>
+        <h1>IELTS Speaking band descriptors in plain English</h1>
+        <p class="muted bd-hero-copy">
+          Examiners score you on four criteria. This guide translates the official language
+          into clear, actionable descriptions you can actually use in preparation.
+        </p>
+        <div class="funnel-hero__actions">
+          <a class="btn btn-primary" href="#band-overview">See band summaries</a>
+          <a class="btn btn-ghost" href="#criteria">Explore each criterion</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Four criteria overview -->
+  <section class="section-sm" style="padding-top: 0;">
+    <div class="surface criteria-overview">
+      <h2 style="margin-top: 0;">The four things your examiner is listening for</h2>
+      <p class="muted" style="margin-top: 0; max-width: 64ch;">Each criterion is worth exactly 25% of your speaking score. Improving any one of them moves your overall band up.</p>
+      <div class="criteria-cards">
+        {criteria.map((c) => (
+          <a href={`#${c.id}`} class="criterion-card" style={`--card-accent: ${c.color};`}>
+            <span class="criterion-card__icon" aria-hidden="true">{c.icon}</span>
+            <div>
+              <div class="criterion-card__label">{c.label}</div>
+              <div class="criterion-card__desc">{c.description}</div>
+            </div>
+            <span class="criterion-card__pct">25%</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Band score overview table -->
+  <section class="section-sm" id="band-overview" style="padding-top: 0;">
+    <div class="surface band-overview">
+      <h2 style="margin-top: 0;">At a glance: what each band looks like</h2>
+      <p class="muted" style="margin-top: 0;">Scroll the table to see Band 4 through 9, with a quick action tip for each level.</p>
+      <div class="band-table-wrap">
+        <table class="band-table" role="grid">
+          <thead>
+            <tr>
+              <th scope="col">Band</th>
+              <th scope="col">Level</th>
+              <th scope="col">What it sounds like</th>
+              <th scope="col">Your priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            {bandSummaries.map((b) => (
+              <tr>
+                <td>
+                  <span class="band-badge" style={`background: ${b.color};`}>{b.band}</span>
+                </td>
+                <td><strong>{b.label}</strong></td>
+                <td>{b.summary}</td>
+                <td class="muted">{b.tip ?? "Maintain your level and refine edge cases."}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deep-dive into each criterion -->
+  <section class="section-sm" id="criteria" style="padding-top: 0;">
+    <div class="container">
+      <h2 class="criteria-section-title">Deep dive: each criterion explained</h2>
+      <p class="muted criteria-section-sub">Click any band level to expand the full description.</p>
+
+      {criteria.map((c) => (
+        <div class="criterion-section" id={c.id} style={`--crit-color: ${c.color};`}>
+          <div class="criterion-section__header">
+            <span class="criterion-section__icon" aria-hidden="true">{c.icon}</span>
+            <div>
+              <h3 class="criterion-section__title">{c.label}</h3>
+              <p class="criterion-section__desc">{c.description}</p>
+            </div>
+            <span class="criterion-badge">{c.short}</span>
+          </div>
+
+          <div class="band-list">
+            {c.bands.map((b) => (
+              <details class="band-item">
+                <summary class="band-item__summary">
+                  <span class="band-item__number" style={`background: ${c.color};`}>{b.band}</span>
+                  <span class="band-item__headline">{b.headline}</span>
+                  <span class="band-item__chevron" aria-hidden="true">›</span>
+                </summary>
+                <div class="band-item__body">
+                  <p>{b.plain}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Common myths -->
+  <section class="section-sm" style="padding-top: 0;">
+    <div class="surface myths-section">
+      <h2 style="margin-top: 0;">5 myths that are keeping your score stuck</h2>
+      <div class="myths-grid">
+        {myths.map((m, i) => (
+          <div class="myth-card">
+            <div class="myth-card__header">
+              <span class="myth-card__num" aria-hidden="true">{i + 1}</span>
+              <div>
+                <p class="myth-card__myth"><span class="myth-label">Myth:</span> "{m.myth}"</p>
+                <p class="myth-card__truth"><span class="truth-label">Reality:</span> {m.truth}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick fix tips by criterion -->
+  <section class="section-sm" style="padding-top: 0;">
+    <div class="surface quick-fixes-section">
+      <h2 style="margin-top: 0;">8 quick fixes — one for each criterion area</h2>
+      <div class="quick-fixes-grid">
+        {quickFixes.map((qf) => {
+          const crit = criteria.find((c) => c.short === qf.impact);
+          return (
+            <div class="quick-fix" style={`--fix-color: ${crit?.color ?? "var(--accent)"};`}>
+              <span class="quick-fix__tag" style={`background: ${crit?.color ?? "var(--accent)"};`}>{qf.impact}</span>
+              <p class="quick-fix__text">{qf.fix}</p>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-sm">
+    <div class="surface funnel-final-cta">
+      <h2 style="margin-top: 0;">Know the target. Now practise hitting it.</h2>
+      <p>Use our free question bank to practise authentic cue cards and Part 3 questions, or book a private class for live examiner-style feedback.</p>
+      <div class="funnel-final-cta__actions">
+        <a class="btn btn-primary" href="/ielts/speaking/questions">Browse 100 Practice Questions</a>
+        <a class="btn btn-ghost" href="/tutoring#book-private-class">Book a Private Class</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* ---- CSS custom properties ---- */
+  :root {
+    --color-fc: #2563eb;
+    --color-lr: #7c3aed;
+    --color-gr: #0891b2;
+    --color-p:  #dc6803;
+  }
+
+  /* Hero */
+  .bd-hero-copy { max-width: 64ch; }
+
+  /* ---- Criteria overview ---- */
+  .criteria-overview { padding: var(--s-5); }
+
+  .criteria-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+    gap: var(--s-3);
+    margin-top: var(--s-4);
+  }
+
+  .criterion-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--s-3);
+    padding: var(--s-3) var(--s-4);
+    border: 2px solid var(--card-accent);
+    border-radius: var(--radius, 10px);
+    background: color-mix(in srgb, var(--card-accent) 6%, var(--bg));
+    text-decoration: none;
+    color: var(--text);
+    transition: background 140ms ease, transform 140ms ease;
+  }
+
+  .criterion-card:hover {
+    background: color-mix(in srgb, var(--card-accent) 12%, var(--bg));
+    transform: translateY(-2px);
+    text-decoration: none;
+    color: var(--text);
+  }
+
+  .criterion-card__icon { font-size: 1.6rem; flex-shrink: 0; }
+
+  .criterion-card__label { font-weight: 700; font-size: var(--step-0); margin-bottom: 0.2rem; }
+
+  .criterion-card__desc { font-size: var(--step--1); color: var(--muted); }
+
+  .criterion-card__pct {
+    margin-left: auto;
+    font-size: var(--step--1);
+    font-weight: 700;
+    color: var(--card-accent);
+    flex-shrink: 0;
+    align-self: center;
+  }
+
+  /* ---- Band overview table ---- */
+  .band-overview { padding: var(--s-5); }
+
+  .band-table-wrap { overflow-x: auto; margin-top: var(--s-4); }
+
+  .band-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--step--1);
+  }
+
+  .band-table th {
+    text-align: left;
+    padding: var(--s-2) var(--s-3);
+    border-bottom: 2px solid var(--border);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .band-table td {
+    padding: var(--s-2) var(--s-3);
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.55;
+  }
+
+  .band-table tr:last-child td { border-bottom: none; }
+
+  .band-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  /* ---- Criterion sections (deep dive) ---- */
+  .criteria-section-title { margin-bottom: var(--s-1); }
+
+  .criteria-section-sub {
+    margin-top: 0;
+    margin-bottom: var(--s-4);
+  }
+
+  .criterion-section {
+    margin-bottom: var(--s-5);
+    border: 2px solid var(--crit-color);
+    border-radius: var(--radius, 12px);
+    overflow: hidden;
+  }
+
+  .criterion-section__header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--s-3);
+    padding: var(--s-4) var(--s-5);
+    background: color-mix(in srgb, var(--crit-color) 8%, var(--bg));
+    border-bottom: 1px solid var(--crit-color);
+  }
+
+  .criterion-section__icon { font-size: 2rem; flex-shrink: 0; }
+
+  .criterion-section__title {
+    margin: 0 0 0.25rem 0;
+    font-size: var(--step-1);
+    color: var(--crit-color);
+  }
+
+  .criterion-section__desc { margin: 0; color: var(--muted); font-size: var(--step--1); }
+
+  .criterion-badge {
+    margin-left: auto;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    background: var(--crit-color);
+    color: #fff;
+    border-radius: 999px;
+    padding: 0.3rem 0.8rem;
+    flex-shrink: 0;
+    align-self: center;
+  }
+
+  .band-list { padding: var(--s-2); }
+
+  /* <details> accordion for each band */
+  .band-item {
+    margin: var(--s-1) 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .band-item[open] { border-color: var(--crit-color); }
+
+  .band-item__summary {
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    padding: var(--s-3) var(--s-4);
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    transition: background 140ms ease;
+  }
+
+  .band-item__summary::-webkit-details-marker { display: none; }
+
+  .band-item__summary:hover { background: var(--bg-2); }
+
+  .band-item[open] .band-item__summary { background: color-mix(in srgb, var(--crit-color) 7%, var(--bg)); }
+
+  .band-item__number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 800;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .band-item__headline {
+    font-weight: 600;
+    font-size: var(--step-0);
+    flex: 1;
+  }
+
+  .band-item__chevron {
+    font-size: 1.2rem;
+    color: var(--muted);
+    transition: transform 200ms ease;
+    display: inline-block;
+  }
+
+  .band-item[open] .band-item__chevron { transform: rotate(90deg); }
+
+  .band-item__body {
+    padding: 0 var(--s-4) var(--s-4) calc(var(--s-4) + 2.2rem + var(--s-3));
+    font-size: var(--step--1);
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  .band-item__body p { margin: 0; }
+
+  /* ---- Myths ---- */
+  .myths-section { padding: var(--s-5); }
+
+  .myths-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+    margin-top: var(--s-4);
+  }
+
+  .myth-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius, 10px);
+    padding: var(--s-4);
+    background: var(--bg);
+  }
+
+  .myth-card__header { display: flex; gap: var(--s-3); align-items: flex-start; }
+
+  .myth-card__num {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--border);
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .myth-card__myth {
+    margin: 0 0 var(--s-2) 0;
+    font-size: var(--step--1);
+    line-height: 1.6;
+  }
+
+  .myth-card__truth {
+    margin: 0;
+    font-size: var(--step--1);
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  .myth-label {
+    font-weight: 700;
+    color: #e53e3e;
+  }
+
+  .truth-label {
+    font-weight: 700;
+    color: #276749;
+  }
+
+  /* ---- Quick fixes ---- */
+  .quick-fixes-section { padding: var(--s-5); }
+
+  .quick-fixes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+    gap: var(--s-3);
+    margin-top: var(--s-4);
+  }
+
+  .quick-fix {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--s-3);
+    padding: var(--s-3);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--fix-color);
+    border-radius: var(--radius, 8px);
+    background: var(--bg);
+  }
+
+  .quick-fix__tag {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    color: #fff;
+    border-radius: 999px;
+    padding: 0.2rem 0.55rem;
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: 0.1rem;
+  }
+
+  .quick-fix__text {
+    margin: 0;
+    font-size: var(--step--1);
+    line-height: 1.55;
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 720px) {
+    .criteria-overview,
+    .band-overview,
+    .myths-section,
+    .quick-fixes-section { padding: var(--s-4); }
+
+    .criterion-section__header { flex-wrap: wrap; }
+
+    .criterion-badge { order: -1; }
+
+    .band-item__body {
+      padding-left: var(--s-4);
+    }
+  }
+</style>

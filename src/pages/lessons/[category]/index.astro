@@ -103,6 +103,7 @@ const meta = metaMap[category];
         <a class="btn" href="/ielts">IELTS hub</a>
         <a class="btn" href="/lessons">All lessons</a>
       </div>
+      <p id="exam-filter-notice" class="muted" style="display:none; margin-top: var(--s-2); font-size: var(--step--1);"></p>
     </div>
   </section>
 
@@ -155,6 +156,7 @@ const meta = metaMap[category];
                   <a
                     class="card lesson-search-item"
                     data-search={searchText}
+                    data-exams={(lesson.data.exam ?? []).map((v: string) => String(v).toUpperCase()).join(",")}
                     href={`/lessons/${lesson.data.category}/${lesson.slug}/`}
                     style="display:block;"
                   >
@@ -189,10 +191,23 @@ const meta = metaMap[category];
       const clearBtn = document.getElementById("lesson-search-clear");
       const summary = document.getElementById("lesson-search-summary");
       const empty = document.getElementById("lesson-search-empty");
+      const notice = document.getElementById("exam-filter-notice");
       const cards = Array.from(document.querySelectorAll(".lesson-search-item"));
 
       if (!(input instanceof HTMLInputElement) || !summary || !empty || cards.length === 0) {
         return;
+      }
+
+      // Read ?exam= from the URL (set by SkillFreeLessons links)
+      const urlExam = new URLSearchParams(window.location.search).get("exam")?.toUpperCase() || "";
+      const validExams = ["IELTS", "CELPIP"];
+      const activeExam = validExams.includes(urlExam) ? urlExam : "";
+
+      // Show a notice when pre-filtered
+      if (activeExam && notice instanceof HTMLElement) {
+        notice.style.display = "block";
+        const other = activeExam === "IELTS" ? "CELPIP" : "IELTS";
+        notice.innerHTML = `Showing <strong>${activeExam}</strong> lessons only. <a href="?">Show all exams</a>`;
       }
 
       const total = cards.length;
@@ -204,7 +219,22 @@ const meta = metaMap[category];
 
         cards.forEach((card) => {
           const text = (card.getAttribute("data-search") || "").toLowerCase();
-          const matches = terms.every((term) => text.includes(term));
+          const cardExams = (card.getAttribute("data-exams") || "").toUpperCase();
+
+          const keywordMatch = terms.every((term) => text.includes(term));
+
+          // When pre-filtered by exam: hide lessons that belong exclusively to the other exam.
+          // Lessons with no exam tag (generic) remain visible for both.
+          let examMatch = true;
+          if (activeExam) {
+            const other = activeExam === "IELTS" ? "CELPIP" : "IELTS";
+            // Hide only if the card is tagged exclusively for the other exam
+            if (cardExams && cardExams.includes(other) && !cardExams.includes(activeExam)) {
+              examMatch = false;
+            }
+          }
+
+          const matches = keywordMatch && examMatch;
           card.style.display = matches ? "block" : "none";
           if (matches) visible += 1;
         });
@@ -213,6 +243,7 @@ const meta = metaMap[category];
         empty.style.display = visible === 0 ? "block" : "none";
       };
 
+      applyFilter();
       input.addEventListener("input", applyFilter);
 
       if (clearBtn instanceof HTMLButtonElement) {

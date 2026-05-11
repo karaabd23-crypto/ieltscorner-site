@@ -1,0 +1,1471 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import Breadcrumbs from "../../../../components/Breadcrumbs.astro";
+import SkillSubNav from "../../../../components/SkillSubNav.astro";
+import { buildBreadcrumbSchema } from "../../../../lib/seo";
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "IELTS", path: "/ielts/" },
+    { name: "Speaking", path: "/ielts/speaking/" },
+    { name: "Part 2 & 3 Questions", path: "/ielts/speaking/questions/" },
+  ]),
+];
+
+// 100 IELTS Speaking Part 2 cue cards + Part 3 follow-up questions
+// Grouped into 10 topic areas (10 cards each, each card has 4–5 Part 3 questions)
+const topics = [
+  {
+    id: "people",
+    label: "People & Relationships",
+    icon: "👥",
+    cards: [
+      {
+        id: "p1",
+        part2: {
+          prompt: "Describe a person who has had a significant influence on your life.",
+          bullets: [
+            "Who this person is",
+            "How you know them",
+            "What they did that influenced you",
+            "And explain why their influence has been so important to you",
+          ],
+        },
+        part3: [
+          "Do you think family members or friends have a greater influence on young people?",
+          "In what ways do celebrities influence teenagers in your country?",
+          "Should schools teach children about role models? Why or why not?",
+          "Do you think people are more influenced by those they know personally or by public figures?",
+          "How has the influence of traditional role models changed in the age of social media?",
+        ],
+      },
+      {
+        id: "p2",
+        part2: {
+          prompt: "Describe an interesting person you met recently.",
+          bullets: [
+            "Who this person is",
+            "Where and when you met them",
+            "What you talked about",
+            "And explain what made this person interesting to you",
+          ],
+        },
+        part3: [
+          "What qualities make a person interesting?",
+          "Is it easy to make friends with strangers in your country?",
+          "Do people in cities find it harder to connect with new people than those in small towns?",
+          "How important is it to have a wide social network?",
+          "Do you think technology has made it easier or harder to form genuine relationships?",
+        ],
+      },
+      {
+        id: "p3",
+        part2: {
+          prompt: "Describe an elderly person you admire.",
+          bullets: [
+            "Who this person is",
+            "What this person does or has done in their life",
+            "What kind of relationship you have with them",
+            "And explain why you admire them",
+          ],
+        },
+        part3: [
+          "How are the elderly treated in your country compared to other countries?",
+          "What can younger generations learn from older people?",
+          "Do you think modern societies do enough to support senior citizens?",
+          "How has the role of elderly people in the family changed over recent decades?",
+          "Should governments spend more money on services for the elderly?",
+        ],
+      },
+      {
+        id: "p4",
+        part2: {
+          prompt: "Describe a friend who is very different from you.",
+          bullets: [
+            "Who this friend is",
+            "How you became friends",
+            "In what ways they are different from you",
+            "And explain how you feel about having such a friend",
+          ],
+        },
+        part3: [
+          "Is it better to have friends who are similar to you or different from you?",
+          "How do friendships between people of different backgrounds benefit society?",
+          "Do you think friendships today are as strong as they were in the past?",
+          "How does friendship change as people get older?",
+          "What role do common interests play in maintaining friendships?",
+        ],
+      },
+      {
+        id: "p5",
+        part2: {
+          prompt: "Describe a well-known person in your country who you find inspiring.",
+          bullets: [
+            "Who this person is",
+            "What they are known for",
+            "What they have achieved",
+            "And explain why you find them inspiring",
+          ],
+        },
+        part3: [
+          "Do you think it is important to have national heroes?",
+          "How do the media shape people's opinions of public figures?",
+          "Should children be taught to question famous people's actions rather than idolise them?",
+          "In what ways can a famous person use their influence for social good?",
+          "Are people in your country more interested in local celebrities or international ones?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "places",
+    label: "Places & Travel",
+    icon: "✈️",
+    cards: [
+      {
+        id: "pl1",
+        part2: {
+          prompt: "Describe a place you have visited that you particularly enjoyed.",
+          bullets: [
+            "Where this place is",
+            "When and why you went there",
+            "What you did there",
+            "And explain why you enjoyed it so much",
+          ],
+        },
+        part3: [
+          "Why do people enjoy travelling to new places?",
+          "How has tourism changed in your country over the past twenty years?",
+          "Do you think mass tourism has a negative effect on popular destinations?",
+          "What can governments do to manage overtourism?",
+          "Is it better to travel abroad or explore your own country?",
+        ],
+      },
+      {
+        id: "pl2",
+        part2: {
+          prompt: "Describe a city you would like to live in.",
+          bullets: [
+            "Which city it is and where it is located",
+            "Why you would choose this city",
+            "What aspects of life there appeal to you",
+            "And explain whether you think you will ever live there",
+          ],
+        },
+        part3: [
+          "What are the advantages and disadvantages of living in a large city?",
+          "Why do so many people move from rural areas to cities?",
+          "How can city planners make urban areas more liveable?",
+          "Do you think cities in your country offer a good quality of life?",
+          "What problems do rapidly growing cities face?",
+        ],
+      },
+      {
+        id: "pl3",
+        part2: {
+          prompt: "Describe a place in your hometown that you find interesting.",
+          bullets: [
+            "What this place is and where it is",
+            "What people do there",
+            "How often you go there",
+            "And explain why you find it interesting",
+          ],
+        },
+        part3: [
+          "How important is it for towns to have public spaces?",
+          "Have the public spaces in your hometown changed in recent years?",
+          "How do local communities benefit from having cultural centres or parks?",
+          "Do young people and older people use public spaces differently?",
+          "Should governments invest more in maintaining historic public areas?",
+        ],
+      },
+      {
+        id: "pl4",
+        part2: {
+          prompt: "Describe a foreign country you would like to visit.",
+          bullets: [
+            "Which country it is",
+            "Why you want to visit",
+            "What you would do there",
+            "And explain how you would prepare for the trip",
+          ],
+        },
+        part3: [
+          "How do people usually research a country before visiting it?",
+          "What cultural differences can make travel challenging?",
+          "Do you think it is important to learn some of the local language before visiting a foreign country?",
+          "How has air travel affected cultural exchange between countries?",
+          "Do you think virtual tourism will ever replace actual travel?",
+        ],
+      },
+      {
+        id: "pl5",
+        part2: {
+          prompt: "Describe a natural environment you have visited or would like to visit.",
+          bullets: [
+            "Where this place is",
+            "What the environment is like",
+            "What activities people can do there",
+            "And explain why this type of environment appeals to you",
+          ],
+        },
+        part3: [
+          "Why do some people prefer natural environments to cities?",
+          "How does spending time in nature affect people's wellbeing?",
+          "What threats do natural environments face today?",
+          "What responsibilities do tourists have when visiting natural areas?",
+          "Should access to some natural sites be restricted to protect them?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "objects",
+    label: "Objects & Possessions",
+    icon: "🎁",
+    cards: [
+      {
+        id: "o1",
+        part2: {
+          prompt: "Describe a gift you gave to someone that they particularly liked.",
+          bullets: [
+            "What the gift was",
+            "Who you gave it to and why",
+            "How you chose the gift",
+            "And explain how the person reacted to it",
+          ],
+        },
+        part3: [
+          "Do you think people give gifts for the right reasons in your country?",
+          "Has the tradition of gift-giving changed with the rise of online shopping?",
+          "Is it more meaningful to give a handmade gift or a purchased one?",
+          "Why do some cultures attach great importance to the way a gift is presented?",
+          "Should gift-giving be encouraged in schools?",
+        ],
+      },
+      {
+        id: "o2",
+        part2: {
+          prompt: "Describe an object that has been in your family for a long time.",
+          bullets: [
+            "What the object is",
+            "How long it has been in your family",
+            "What you know about its history",
+            "And explain why this object is important to your family",
+          ],
+        },
+        part3: [
+          "Why do people keep objects that have sentimental value?",
+          "How are attitudes towards material possessions different across generations?",
+          "Do you think people today own too many things?",
+          "How does the culture of a country affect what people consider valuable objects?",
+          "Will future generations value physical objects less because of digitalisation?",
+        ],
+      },
+      {
+        id: "o3",
+        part2: {
+          prompt: "Describe something you recently bought that you are pleased with.",
+          bullets: [
+            "What the item is",
+            "Where and when you bought it",
+            "Why you decided to buy it",
+            "And explain why you are happy with this purchase",
+          ],
+        },
+        part3: [
+          "Do you think consumers today make more impulse purchases than in the past?",
+          "How has online shopping changed consumer habits?",
+          "What are the environmental consequences of consumerism?",
+          "Should governments regulate advertising to reduce excessive consumption?",
+          "How do people decide whether something is worth buying?",
+        ],
+      },
+      {
+        id: "o4",
+        part2: {
+          prompt: "Describe a piece of technology you use regularly.",
+          bullets: [
+            "What it is",
+            "How often and how you use it",
+            "What you would do without it",
+            "And explain why it has become important in your daily life",
+          ],
+        },
+        part3: [
+          "How has technology changed everyday life in your country?",
+          "Are older people disadvantaged by the rapid development of technology?",
+          "Do you think people are too dependent on their smartphones?",
+          "What are the risks of relying heavily on technology?",
+          "Should children be given limits on how much technology they use?",
+        ],
+      },
+      {
+        id: "o5",
+        part2: {
+          prompt: "Describe a book or piece of writing that has influenced you.",
+          bullets: [
+            "What it is and who wrote it",
+            "When and why you read it",
+            "What it is about",
+            "And explain how it has influenced your thoughts or actions",
+          ],
+        },
+        part3: [
+          "Do people in your country read as much as they did in the past?",
+          "What are the benefits of reading for children?",
+          "How has the internet affected reading habits?",
+          "Do you think physical books will disappear in the future?",
+          "Should governments do more to promote reading among adults?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "events",
+    label: "Events & Experiences",
+    icon: "🎉",
+    cards: [
+      {
+        id: "e1",
+        part2: {
+          prompt: "Describe a memorable event from your childhood.",
+          bullets: [
+            "What the event was",
+            "When and where it took place",
+            "Who was involved",
+            "And explain why it has stayed in your memory",
+          ],
+        },
+        part3: [
+          "Why are childhood memories often so vivid?",
+          "How do shared family events help to build relationships?",
+          "Do you think children today have richer or poorer experiences than children in the past?",
+          "How have family celebrations changed over recent decades in your country?",
+          "What role do cultural festivals play in shaping a child's identity?",
+        ],
+      },
+      {
+        id: "e2",
+        part2: {
+          prompt: "Describe a celebration or festival you enjoy.",
+          bullets: [
+            "What the celebration or festival is",
+            "When and where it takes place",
+            "What people do during this event",
+            "And explain why you enjoy it",
+          ],
+        },
+        part3: [
+          "How important are festivals in preserving a country's cultural identity?",
+          "Are traditional festivals becoming less popular among young people?",
+          "How does celebrating festivals together benefit communities?",
+          "Do you think international holidays are replacing local ones?",
+          "Should governments provide more funding for cultural festivals?",
+        ],
+      },
+      {
+        id: "e3",
+        part2: {
+          prompt: "Describe a difficult situation you dealt with successfully.",
+          bullets: [
+            "What the situation was",
+            "When it happened",
+            "What you did to deal with it",
+            "And explain how you felt after resolving it",
+          ],
+        },
+        part3: [
+          "Do you think people today face more pressure than people did fifty years ago?",
+          "How can individuals develop resilience?",
+          "What role should schools play in teaching children how to handle failure?",
+          "Do you think stress at work is avoidable?",
+          "Are people in cities more stressed than those in rural areas?",
+        ],
+      },
+      {
+        id: "e4",
+        part2: {
+          prompt: "Describe a time when you helped someone.",
+          bullets: [
+            "Who you helped and in what situation",
+            "When and where this happened",
+            "What you did to help",
+            "And explain how helping this person made you feel",
+          ],
+        },
+        part3: [
+          "Why do some people volunteer to help others?",
+          "Do you think modern society is becoming less community-oriented?",
+          "How can governments encourage citizens to help each other?",
+          "Is it more effective to donate money or time to charitable causes?",
+          "Should volunteering be made compulsory for students?",
+        ],
+      },
+      {
+        id: "e5",
+        part2: {
+          prompt: "Describe a sporting or outdoor activity you have participated in.",
+          bullets: [
+            "What the activity was",
+            "When and where you did it",
+            "Who you did it with",
+            "And explain how the experience affected you",
+          ],
+        },
+        part3: [
+          "Why is physical activity important for a healthy lifestyle?",
+          "Do schools in your country provide enough opportunities for sport?",
+          "How has professional sport changed in recent years?",
+          "Should governments do more to encourage physical activity among adults?",
+          "What are the benefits and risks of extreme sports?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "work-education",
+    label: "Work & Education",
+    icon: "🎓",
+    cards: [
+      {
+        id: "w1",
+        part2: {
+          prompt: "Describe a job that you think would be interesting to do.",
+          bullets: [
+            "What the job is",
+            "What skills and qualifications it requires",
+            "What the job involves",
+            "And explain why you think it would be interesting",
+          ],
+        },
+        part3: [
+          "What makes a job satisfying?",
+          "Do young people choose careers based on salary or passion?",
+          "How has the concept of a 'career for life' changed?",
+          "Is it important for governments to protect workers' rights?",
+          "How will automation affect employment in the future?",
+        ],
+      },
+      {
+        id: "w2",
+        part2: {
+          prompt: "Describe a teacher who had a positive impact on your education.",
+          bullets: [
+            "Who this teacher is",
+            "What subject they taught",
+            "What made them an effective teacher",
+            "And explain how they positively affected your education",
+          ],
+        },
+        part3: [
+          "What qualities are most important in a good teacher?",
+          "How has the role of the teacher changed with the growth of the internet?",
+          "Should teachers be paid more than they currently are?",
+          "How important is it for students to respect their teachers?",
+          "Do you think online education will ever fully replace classroom learning?",
+        ],
+      },
+      {
+        id: "w3",
+        part2: {
+          prompt: "Describe a skill you have learned outside of school.",
+          bullets: [
+            "What the skill is",
+            "How and when you learned it",
+            "Who taught you or how you taught yourself",
+            "And explain why this skill has been useful to you",
+          ],
+        },
+        part3: [
+          "Why is it important to continue learning throughout your life?",
+          "How can employers encourage lifelong learning among employees?",
+          "Is informal learning as valuable as formal education?",
+          "How has the internet changed the way people acquire new skills?",
+          "Should universities make continuing education programmes more affordable?",
+        ],
+      },
+      {
+        id: "w4",
+        part2: {
+          prompt: "Describe a time when you worked as part of a team.",
+          bullets: [
+            "What the task or project was",
+            "Who was in the team",
+            "What your role was",
+            "And explain what you learned from working in that team",
+          ],
+        },
+        part3: [
+          "What are the advantages and disadvantages of working in a team?",
+          "Do you think teamwork is an important skill for the modern workplace?",
+          "How can managers help teams to work more effectively together?",
+          "Do schools in your country teach children how to collaborate?",
+          "Is individual competition or team cooperation more valued in your culture?",
+        ],
+      },
+      {
+        id: "w5",
+        part2: {
+          prompt: "Describe a course or subject you studied that you found particularly useful.",
+          bullets: [
+            "What the course or subject was",
+            "When and where you studied it",
+            "What it involved",
+            "And explain why it has been so useful to you",
+          ],
+        },
+        part3: [
+          "Should university education be free for all students?",
+          "How do you think the subjects taught in schools should change to prepare students for the future?",
+          "Do parents have too much or too little influence over what their children study?",
+          "How important is it for students to gain work experience alongside their studies?",
+          "Is academic education more or less important than vocational training?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "society-community",
+    label: "Society & Community",
+    icon: "🏙️",
+    cards: [
+      {
+        id: "s1",
+        part2: {
+          prompt: "Describe a local project or initiative that has benefited your community.",
+          bullets: [
+            "What the project or initiative is",
+            "When it was started and by whom",
+            "What it involves",
+            "And explain how it has benefited the community",
+          ],
+        },
+        part3: [
+          "How important is it for people to be involved in local community projects?",
+          "Do you think governments or communities are more effective at solving local problems?",
+          "How has the sense of community changed in your country in recent years?",
+          "What are the benefits of living in a close-knit community?",
+          "Should citizens be given more power to make decisions about their local areas?",
+        ],
+      },
+      {
+        id: "s2",
+        part2: {
+          prompt: "Describe a rule or law in your country that you think is important.",
+          bullets: [
+            "What the rule or law is",
+            "Why it was introduced",
+            "How it affects people",
+            "And explain why you think it is important",
+          ],
+        },
+        part3: [
+          "Why is it important to have laws in society?",
+          "Do you think people generally obey laws because they want to or because they are afraid of punishment?",
+          "How should societies deal with people who break the law?",
+          "Are there any laws you think should be changed in your country?",
+          "How do cultural values influence the laws a country creates?",
+        ],
+      },
+      {
+        id: "s3",
+        part2: {
+          prompt: "Describe a social problem in your country that you think needs more attention.",
+          bullets: [
+            "What the problem is",
+            "Who is most affected by it",
+            "What is currently being done about it",
+            "And explain what you think should be done to solve it",
+          ],
+        },
+        part3: [
+          "What are the most pressing social problems in your country today?",
+          "Do you think poverty is inevitable in all societies?",
+          "What responsibility do wealthy individuals have to help tackle social problems?",
+          "How effective is the media in raising awareness of social issues?",
+          "Should young people be more involved in solving social problems?",
+        ],
+      },
+      {
+        id: "s4",
+        part2: {
+          prompt: "Describe a time when you helped someone from a different background to your own.",
+          bullets: [
+            "Who the person was",
+            "What kind of help you provided",
+            "Why they needed your help",
+            "And explain what you learned from the experience",
+          ],
+        },
+        part3: [
+          "How can societies become more inclusive?",
+          "What challenges do immigrants face when settling in a new country?",
+          "How can schools help children from different backgrounds integrate?",
+          "Do you think cultural diversity makes a country stronger?",
+          "What role should governments play in managing immigration?",
+        ],
+      },
+      {
+        id: "s5",
+        part2: {
+          prompt: "Describe a piece of news that has recently had an impact on you.",
+          bullets: [
+            "What the news story was about",
+            "When and where you heard or read it",
+            "What happened as a result of this event",
+            "And explain why this news had an impact on you",
+          ],
+        },
+        part3: [
+          "How do people in your country usually get their news?",
+          "Do you think the media presents a fair and balanced view of events?",
+          "How has social media changed the way news is reported?",
+          "Should there be stricter regulations on what news outlets can publish?",
+          "How can people tell the difference between reliable and unreliable news sources?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "environment",
+    label: "Environment & Nature",
+    icon: "🌿",
+    cards: [
+      {
+        id: "en1",
+        part2: {
+          prompt: "Describe an environmental problem that concerns you.",
+          bullets: [
+            "What the problem is",
+            "What is causing it",
+            "What effect it has or may have",
+            "And explain what you think should be done about it",
+          ],
+        },
+        part3: [
+          "Do you think individuals or governments are more responsible for protecting the environment?",
+          "How can businesses be encouraged to adopt more sustainable practices?",
+          "Is it realistic to expect people to change their lifestyles significantly for environmental reasons?",
+          "How has awareness of environmental issues changed in your country in recent years?",
+          "What environmental measures do you think will be most effective in the long term?",
+        ],
+      },
+      {
+        id: "en2",
+        part2: {
+          prompt: "Describe a time when you did something to help the environment.",
+          bullets: [
+            "What you did",
+            "When and why you decided to do it",
+            "How it was received by people around you",
+            "And explain whether you think individual actions can make a difference",
+          ],
+        },
+        part3: [
+          "Why do some people find it difficult to change habits that harm the environment?",
+          "How can governments make eco-friendly choices more affordable?",
+          "Do you think environmental education in schools is effective?",
+          "Should people who damage the environment be legally punished?",
+          "How do cultural attitudes towards nature differ around the world?",
+        ],
+      },
+      {
+        id: "en3",
+        part2: {
+          prompt: "Describe an animal or plant that is important in your country's culture or history.",
+          bullets: [
+            "What the animal or plant is",
+            "Why it is significant",
+            "How it features in your culture or history",
+            "And explain how you personally feel about it",
+          ],
+        },
+        part3: [
+          "Why is it important to protect endangered species?",
+          "How do humans' relationships with animals differ across cultures?",
+          "Should governments prioritise economic development or environmental protection?",
+          "Do you think zoos contribute to animal conservation?",
+          "How does biodiversity loss affect human societies?",
+        ],
+      },
+      {
+        id: "en4",
+        part2: {
+          prompt: "Describe a form of transport you use regularly.",
+          bullets: [
+            "What it is",
+            "How often you use it",
+            "What the experience of using it is like",
+            "And explain whether you are satisfied with this form of transport",
+          ],
+        },
+        part3: [
+          "How has public transport in your country changed in recent years?",
+          "What can governments do to reduce the number of private cars on the road?",
+          "Do you think electric vehicles will solve the environmental problems caused by transport?",
+          "How does poor public transport affect the quality of life in a city?",
+          "Should the government subsidise public transport to make it cheaper?",
+        ],
+      },
+      {
+        id: "en5",
+        part2: {
+          prompt: "Describe a building or structure you find impressive.",
+          bullets: [
+            "What it is and where it is",
+            "What it looks like",
+            "When and why it was built",
+            "And explain why you find it impressive",
+          ],
+        },
+        part3: [
+          "What makes a building worth preserving?",
+          "How should cities balance modern development with the preservation of historic buildings?",
+          "Do you think architecture reflects the values of a society?",
+          "How are the architectural styles in your country changing?",
+          "Should cities invest more in green architecture?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "arts-culture",
+    label: "Arts, Media & Culture",
+    icon: "🎨",
+    cards: [
+      {
+        id: "a1",
+        part2: {
+          prompt: "Describe a film or TV programme that made a strong impression on you.",
+          bullets: [
+            "What it is and what it is about",
+            "When and why you watched it",
+            "What you found most memorable",
+            "And explain why it made such a strong impression on you",
+          ],
+        },
+        part3: [
+          "Do films and TV have too much influence over how people think?",
+          "How has streaming changed the entertainment industry?",
+          "Should governments fund domestic film industries?",
+          "Is it important for children to watch educational programmes?",
+          "How do films help people understand different cultures?",
+        ],
+      },
+      {
+        id: "a2",
+        part2: {
+          prompt: "Describe a piece of music that you enjoy listening to.",
+          bullets: [
+            "What the piece of music is",
+            "When you first heard it",
+            "What the music sounds like",
+            "And explain why you enjoy it so much",
+          ],
+        },
+        part3: [
+          "How important is music in your culture?",
+          "Has global music reduced the popularity of traditional local music?",
+          "Should music education be compulsory in schools?",
+          "How does music affect people's emotions and behaviour?",
+          "Do you think live music experiences are becoming more or less popular?",
+        ],
+      },
+      {
+        id: "a3",
+        part2: {
+          prompt: "Describe an exhibition, museum, or gallery you have visited.",
+          bullets: [
+            "What it was and where it was located",
+            "When and why you visited",
+            "What you saw or experienced there",
+            "And explain what you liked or disliked about it",
+          ],
+        },
+        part3: [
+          "What is the role of museums in preserving a country's heritage?",
+          "Should museums be free of charge?",
+          "How can museums attract younger visitors?",
+          "How has technology changed the way people experience art?",
+          "Should countries return cultural artefacts taken by colonial powers?",
+        ],
+      },
+      {
+        id: "a4",
+        part2: {
+          prompt: "Describe a traditional custom or practice from your country.",
+          bullets: [
+            "What the custom or practice is",
+            "When and how it is observed",
+            "Who participates in it",
+            "And explain why you think this custom is worth preserving",
+          ],
+        },
+        part3: [
+          "How do traditional customs contribute to a sense of national identity?",
+          "Are young people in your country losing interest in traditional practices?",
+          "How does globalisation threaten local cultures?",
+          "Should governments actively promote cultural traditions?",
+          "Is it possible to preserve culture while still embracing change?",
+        ],
+      },
+      {
+        id: "a5",
+        part2: {
+          prompt: "Describe a time when you created something with your hands.",
+          bullets: [
+            "What you made",
+            "When and why you made it",
+            "How you went about making it",
+            "And explain how you felt about the result",
+          ],
+        },
+        part3: [
+          "Why is creativity important in everyday life?",
+          "How can workplaces encourage creative thinking?",
+          "Do you think art and design subjects receive enough emphasis in schools?",
+          "How has digital technology changed the way people create things?",
+          "Is handmade craftsmanship becoming more or less valued in modern society?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "health-lifestyle",
+    label: "Health & Lifestyle",
+    icon: "💪",
+    cards: [
+      {
+        id: "h1",
+        part2: {
+          prompt: "Describe a healthy habit you have developed.",
+          bullets: [
+            "What the habit is",
+            "When and why you started it",
+            "How you maintain it",
+            "And explain what effect it has had on your life",
+          ],
+        },
+        part3: [
+          "Why do many people find it difficult to maintain healthy habits?",
+          "What responsibility do governments have for improving public health?",
+          "How has modern life affected people's health in your country?",
+          "Do you think employers should encourage healthy habits among employees?",
+          "How effective are public health campaigns in changing people's behaviour?",
+        ],
+      },
+      {
+        id: "h2",
+        part2: {
+          prompt: "Describe a time when you had to look after yourself or someone else who was ill.",
+          bullets: [
+            "What happened",
+            "What you did to help",
+            "How the person felt",
+            "And explain what you learned from the experience",
+          ],
+        },
+        part3: [
+          "How well does the healthcare system in your country look after people?",
+          "Should healthcare be fully funded by the government?",
+          "How has the COVID-19 pandemic changed attitudes towards public health?",
+          "What can individuals do to reduce the burden on the healthcare system?",
+          "Do you think alternative medicine should be more widely available?",
+        ],
+      },
+      {
+        id: "h3",
+        part2: {
+          prompt: "Describe a type of food that is popular in your country.",
+          bullets: [
+            "What the food is",
+            "When and how it is typically eaten",
+            "How it is prepared",
+            "And explain why it is so popular",
+          ],
+        },
+        part3: [
+          "How has the diet of people in your country changed in recent decades?",
+          "Do you think fast food is a serious health problem?",
+          "How can governments encourage people to eat more healthily?",
+          "Is it important to preserve traditional cuisines?",
+          "How does food reflect the culture and values of a country?",
+        ],
+      },
+      {
+        id: "h4",
+        part2: {
+          prompt: "Describe a leisure activity you enjoy doing to relax.",
+          bullets: [
+            "What the activity is",
+            "How often you do it",
+            "Where and when you do it",
+            "And explain why it helps you to relax",
+          ],
+        },
+        part3: [
+          "Do people in your country have enough leisure time?",
+          "Has the way people spend their free time changed significantly in recent years?",
+          "Is it important to have hobbies outside of work?",
+          "How can people balance work and leisure more effectively?",
+          "Do you think modern technology makes it harder for people to truly relax?",
+        ],
+      },
+      {
+        id: "h5",
+        part2: {
+          prompt: "Describe a time when you made an important decision about your health or lifestyle.",
+          bullets: [
+            "What the decision was",
+            "Why you needed to make it",
+            "How you reached the decision",
+            "And explain what effect it has had on your life",
+          ],
+        },
+        part3: [
+          "How much do people in your country think about their long-term health?",
+          "Should governments have the right to restrict unhealthy behaviours?",
+          "How does socioeconomic status affect people's ability to make healthy choices?",
+          "Do you think people rely too heavily on doctors rather than taking responsibility for their own health?",
+          "What role should schools play in promoting a healthy lifestyle?",
+        ],
+      },
+    ],
+  },
+  {
+    id: "future-technology",
+    label: "Future & Technology",
+    icon: "🚀",
+    cards: [
+      {
+        id: "f1",
+        part2: {
+          prompt: "Describe a new technology that you think will have a major impact on society.",
+          bullets: [
+            "What the technology is",
+            "How it works in general terms",
+            "How it is already being used",
+            "And explain what impact you think it will have",
+          ],
+        },
+        part3: [
+          "How has technology already transformed the way we live and work?",
+          "Do you think the benefits of new technologies outweigh the risks?",
+          "How can governments ensure technology is used ethically?",
+          "Will artificial intelligence create more jobs than it destroys?",
+          "How can societies prepare for the rapid pace of technological change?",
+        ],
+      },
+      {
+        id: "f2",
+        part2: {
+          prompt: "Describe a goal you would like to achieve in the next few years.",
+          bullets: [
+            "What the goal is",
+            "Why you have set this goal",
+            "What steps you plan to take",
+            "And explain how you will feel if you achieve it",
+          ],
+        },
+        part3: [
+          "How important is it to set goals in life?",
+          "Do you think people in your country are generally optimistic or pessimistic about the future?",
+          "How have expectations about the future changed for young people?",
+          "What role do parents and schools play in helping young people set realistic goals?",
+          "Do you think long-term planning is valued less in today's fast-moving world?",
+        ],
+      },
+      {
+        id: "f3",
+        part2: {
+          prompt: "Describe a change you would make to improve your neighbourhood or city.",
+          bullets: [
+            "What the change would be",
+            "Why it is needed",
+            "How it could be implemented",
+            "And explain how it would improve life for people there",
+          ],
+        },
+        part3: [
+          "How can local communities get involved in improving their area?",
+          "What challenges do urban planners face in improving cities?",
+          "Is gentrification always a negative process?",
+          "How should governments prioritise spending on infrastructure?",
+          "Do you think smart city technology will improve urban living?",
+        ],
+      },
+      {
+        id: "f4",
+        part2: {
+          prompt: "Describe a time when you used the internet to solve a problem or learn something new.",
+          bullets: [
+            "What the problem or topic was",
+            "How you used the internet to help",
+            "What you found or learned",
+            "And explain how useful the experience was",
+          ],
+        },
+        part3: [
+          "What are the main benefits and dangers of the internet?",
+          "Do you think internet access should be considered a basic human right?",
+          "How can people develop critical thinking skills to evaluate online information?",
+          "What responsibility do technology companies have for the content on their platforms?",
+          "How has social media changed political debate and participation?",
+        ],
+      },
+      {
+        id: "f5",
+        part2: {
+          prompt: "Describe a skill or subject you think will be essential for young people in the future.",
+          bullets: [
+            "What the skill or subject is",
+            "Why you think it will be important",
+            "How young people could develop this skill",
+            "And explain whether you think schools currently prepare students for the future",
+          ],
+        },
+        part3: [
+          "How should education systems change to better prepare students for the future?",
+          "Which skills do employers value most in today's job market?",
+          "Do you think schools give enough emphasis to creativity and problem-solving?",
+          "How can young people in your country better prepare themselves for future careers?",
+          "Should there be more collaboration between schools and businesses in designing curricula?",
+        ],
+      },
+    ],
+  },
+];
+
+const allCards = topics.flatMap((t) => t.cards.map((c) => ({ ...c, topicId: t.id })));
+const totalPart2 = allCards.length;
+const totalPart3 = allCards.reduce((sum, c) => sum + c.part3.length, 0);
+---
+
+<Layout
+  title="100 IELTS Speaking Part 2 & 3 Questions | Free Practice Bank"
+  description="Practice with 100 authentic IELTS Speaking Part 2 cue cards and Part 3 follow-up questions. Grouped by topic with instant filtering. Free, no sign-up required."
+  keywords="IELTS speaking questions, IELTS speaking part 2, IELTS speaking part 3, IELTS cue card, IELTS speaking practice, IELTS Band 7 speaking"
+  structuredData={pageStructuredData}
+>
+  <Breadcrumbs items={[
+    { label: "Home", href: "/" },
+    { label: "IELTS", href: "/ielts" },
+    { label: "Speaking", href: "/ielts/speaking" },
+    { label: "Part 2 & 3 Questions" },
+  ]} />
+  <SkillSubNav exam="IELTS" currentSkill="speaking" />
+
+  <!-- Hero -->
+  <section class="section">
+    <div class="hero funnel-hero" style={`--hero-bg: url('/heroes/speaking.png');`}>
+      <div class="hero-content funnel-hero__content">
+        <span class="pill">Free IELTS speaking bank</span>
+        <h1>100 IELTS Speaking Part 2 &amp; 3 questions</h1>
+        <p class="muted qb-hero-copy">
+          Authentic cue cards and examiner follow-up questions across 10 real exam topics.
+          Filter by topic, read the cue card, then practise answering the Part 3 discussion
+          questions out loud.
+        </p>
+        <div class="cluster qb-stats">
+          <span class="qb-stat">{totalPart2} Part 2 cue cards</span>
+          <span class="qb-stat">{totalPart3} Part 3 questions</span>
+          <span class="qb-stat">10 topics</span>
+        </div>
+        <div class="funnel-hero__actions">
+          <a class="btn btn-primary" href="#speaking-bank">Browse questions</a>
+          <a class="btn btn-ghost" href="/ielts/speaking/band-descriptors">Understand band scores</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to use this page -->
+  <section class="section-sm" style="padding-top: 0;">
+    <div class="surface how-to-use">
+      <h2 style="margin-top: 0;">How to use this question bank</h2>
+      <ol class="how-to-list">
+        <li><strong>Pick a topic</strong> that interests you or that you find challenging.</li>
+        <li><strong>Read the cue card</strong> and give yourself exactly 1 minute to prepare notes.</li>
+        <li><strong>Speak for 2 minutes</strong> on the Part 2 topic, covering all the bullet points.</li>
+        <li><strong>Answer the Part 3 questions</strong> as if speaking to a real examiner — aim for 3–5 sentences per answer.</li>
+        <li><strong>Repeat with a new topic</strong> to build fluency across question types.</li>
+      </ol>
+      <div class="how-to-links">
+        <a href="/ielts/speaking/band-descriptors" class="btn btn-ghost btn-sm">What do band scores mean?</a>
+        <a href="/tutoring#book-private-class" class="btn btn-ghost btn-sm">Get live speaking feedback</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Topic filter tabs + question bank -->
+  <section class="section-sm" id="speaking-bank" style="padding-top: 0;">
+    <div class="container">
+
+      <!-- Topic filter -->
+      <div class="topic-filter" role="tablist" aria-label="Filter by topic">
+        <button
+          class="topic-btn is-active"
+          data-topic="all"
+          role="tab"
+          aria-selected="true"
+        >All topics</button>
+        {topics.map((t) => (
+          <button
+            class="topic-btn"
+            data-topic={t.id}
+            role="tab"
+            aria-selected="false"
+          >
+            <span aria-hidden="true">{t.icon}</span> {t.label}
+          </button>
+        ))}
+      </div>
+
+      <!-- Cards grid -->
+      <div class="cards-grid" id="cards-grid">
+        {topics.map((topic) =>
+          topic.cards.map((card, cardIdx) => (
+            <article
+              class="qb-card surface"
+              data-topic={topic.id}
+              id={card.id}
+            >
+              <!-- Card header -->
+              <div class="qb-card__header">
+                <div class="qb-card__meta">
+                  <span class="pill pill-sm">{topic.icon} {topic.label}</span>
+                  <span class="qb-card__num">Card {cardIdx + 1}</span>
+                </div>
+                <span class="qb-card__part-badge">Part 2</span>
+              </div>
+
+              <!-- Cue card -->
+              <div class="cue-card">
+                <p class="cue-card__prompt">{card.part2.prompt}</p>
+                <p class="cue-card__instruction">You should say:</p>
+                <ul class="cue-card__bullets">
+                  {card.part2.bullets.map((b) => <li>{b}</li>)}
+                </ul>
+                <p class="cue-card__time-note">You have 1 minute to prepare. Speak for 1–2 minutes.</p>
+              </div>
+
+              <!-- Part 3 toggle -->
+              <button class="part3-toggle" aria-expanded="false" aria-controls={`part3-${card.id}`}>
+                <span class="part3-toggle__label">Part 3 discussion questions</span>
+                <span class="part3-toggle__count">{card.part3.length} questions</span>
+                <span class="part3-toggle__icon" aria-hidden="true">▼</span>
+              </button>
+              <div class="part3-panel" id={`part3-${card.id}`} hidden>
+                <ol class="part3-list">
+                  {card.part3.map((q) => <li>{q}</li>)}
+                </ol>
+                <p class="part3-hint">Aim for extended answers. Use examples, compare viewpoints, and justify your opinions.</p>
+              </div>
+            </article>
+          ))
+        )}
+      </div>
+
+      <div class="no-results" hidden aria-live="polite">
+        <p>No cards for this topic yet. Try "All topics" to see everything.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next step CTA -->
+  <section class="section-sm">
+    <div class="surface funnel-final-cta">
+      <h2 style="margin-top: 0;">Ready to go beyond self-study?</h2>
+      <p>Book one private speaking class and get direct examiner-style feedback on your fluency, vocabulary, and structure.</p>
+      <div class="funnel-final-cta__actions">
+        <a class="btn btn-primary" href="/tutoring#book-private-class">Book a Private Class</a>
+        <a class="btn btn-ghost" href="/ielts/speaking/band-descriptors">Read the Band Descriptor Guide</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Topic filter
+  const btns = document.querySelectorAll<HTMLButtonElement>(".topic-btn");
+  const cards = document.querySelectorAll<HTMLElement>(".qb-card");
+  const noResults = document.querySelector<HTMLElement>(".no-results");
+
+  btns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btns.forEach((b) => { b.classList.remove("is-active"); b.setAttribute("aria-selected", "false"); });
+      btn.classList.add("is-active");
+      btn.setAttribute("aria-selected", "true");
+
+      const topic = btn.dataset.topic!;
+      let visible = 0;
+      cards.forEach((card) => {
+        const show = topic === "all" || card.dataset.topic === topic;
+        card.hidden = !show;
+        if (show) visible++;
+      });
+      if (noResults) noResults.hidden = visible > 0;
+    });
+  });
+
+  // Part 3 accordion toggle
+  const toggles = document.querySelectorAll<HTMLButtonElement>(".part3-toggle");
+  toggles.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!expanded));
+      const panelId = btn.getAttribute("aria-controls");
+      const panel = panelId ? document.getElementById(panelId) : null;
+      if (panel) panel.hidden = expanded;
+      btn.querySelector(".part3-toggle__icon")!.textContent = expanded ? "▼" : "▲";
+    });
+  });
+</script>
+
+<style>
+  /* Hero */
+  .qb-hero-copy { max-width: 64ch; }
+
+  .qb-stats { margin-top: var(--s-3); gap: var(--s-2); }
+
+  .qb-stat {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.45rem 0.8rem;
+    background: rgba(255, 255, 255, 0.82);
+    font-size: 0.92rem;
+    font-weight: 700;
+  }
+
+  /* How to use */
+  .how-to-use { padding: var(--s-5); }
+
+  .how-to-list {
+    margin: 0 0 var(--s-4) 0;
+    padding-left: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+  }
+
+  .how-to-list li { line-height: 1.6; }
+
+  .how-to-links { display: flex; gap: var(--s-3); flex-wrap: wrap; }
+
+  .btn-sm { font-size: var(--step--1); padding: 0.4rem 0.9rem; }
+
+  /* Topic filter */
+  .topic-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2);
+    margin-bottom: var(--s-4);
+  }
+
+  .topic-btn {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+    background: var(--bg);
+    color: var(--muted);
+    font-size: var(--step--1);
+    cursor: pointer;
+    transition: background 140ms ease, color 140ms ease, border-color 140ms ease;
+  }
+
+  .topic-btn:hover {
+    background: var(--bg-2);
+    color: var(--text);
+  }
+
+  .topic-btn.is-active {
+    background: var(--accent);
+    color: var(--accent-ink);
+    border-color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* Cards grid */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 480px), 1fr));
+    gap: var(--s-4);
+  }
+
+  /* Individual card */
+  .qb-card {
+    padding: var(--s-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+  }
+
+  .qb-card__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--s-2);
+    flex-wrap: wrap;
+  }
+
+  .qb-card__meta {
+    display: flex;
+    align-items: center;
+    gap: var(--s-2);
+    flex-wrap: wrap;
+  }
+
+  .pill-sm {
+    font-size: 0.78rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .qb-card__num {
+    font-size: var(--step--1);
+    color: var(--muted);
+  }
+
+  .qb-card__part-badge {
+    font-size: 0.78rem;
+    font-weight: 700;
+    background: var(--accent);
+    color: var(--accent-ink);
+    border-radius: 999px;
+    padding: 0.2rem 0.7rem;
+    white-space: nowrap;
+  }
+
+  /* Cue card mimics the real exam card look */
+  .cue-card {
+    border: 2px solid var(--border);
+    border-radius: var(--radius, 8px);
+    padding: var(--s-4);
+    background: var(--bg-2);
+    position: relative;
+  }
+
+  .cue-card::before {
+    content: "Cue Card";
+    position: absolute;
+    top: -0.65rem;
+    left: var(--s-3);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--bg-2);
+    padding: 0 0.4rem;
+    color: var(--muted);
+  }
+
+  .cue-card__prompt {
+    font-size: var(--step-0);
+    font-weight: 700;
+    margin: 0 0 var(--s-3) 0;
+    line-height: 1.45;
+  }
+
+  .cue-card__instruction {
+    font-size: var(--step--1);
+    color: var(--muted);
+    margin: 0 0 var(--s-1) 0;
+  }
+
+  .cue-card__bullets {
+    margin: 0 0 var(--s-3) 0;
+    padding-left: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-1);
+  }
+
+  .cue-card__bullets li { font-size: var(--step--1); line-height: 1.5; }
+
+  .cue-card__time-note {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: 0;
+    border-top: 1px solid var(--border);
+    padding-top: var(--s-2);
+  }
+
+  /* Part 3 toggle */
+  .part3-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--s-2);
+    width: 100%;
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius, 8px);
+    padding: var(--s-2) var(--s-3);
+    cursor: pointer;
+    text-align: left;
+    transition: background 140ms ease;
+  }
+
+  .part3-toggle:hover { background: var(--bg-3, var(--bg-2)); }
+
+  .part3-toggle__label {
+    font-size: var(--step--1);
+    font-weight: 600;
+    flex: 1;
+  }
+
+  .part3-toggle__count {
+    font-size: var(--step--1);
+    color: var(--muted);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.1rem 0.5rem;
+  }
+
+  .part3-toggle__icon {
+    font-size: 0.75rem;
+    color: var(--muted);
+    transition: transform 140ms ease;
+  }
+
+  /* Part 3 panel */
+  .part3-panel {
+    border: 1px solid var(--border);
+    border-radius: var(--radius, 8px);
+    padding: var(--s-3) var(--s-4);
+    background: var(--bg);
+  }
+
+  .part3-list {
+    margin: 0;
+    padding-left: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+  }
+
+  .part3-list li { font-size: var(--step--1); line-height: 1.6; }
+
+  .part3-hint {
+    margin: var(--s-3) 0 0 0;
+    font-size: 0.78rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    padding-top: var(--s-2);
+  }
+
+  /* No results */
+  .no-results {
+    text-align: center;
+    padding: var(--s-5);
+    color: var(--muted);
+  }
+
+  /* Responsive */
+  @media (max-width: 720px) {
+    .how-to-use { padding: var(--s-4); }
+    .qb-card { padding: var(--s-3); }
+    .cue-card { padding: var(--s-3); }
+  }
+</style>

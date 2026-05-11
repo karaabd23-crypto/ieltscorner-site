@@ -113,6 +113,7 @@ const trackingIntentLevel = highIntentTrackingPaths.has(normalizedPath)
 const trackingTest = inferTrackingTest(normalizedPath);
 const trackingSkill = inferTrackingSkill(normalizedPath);
 const blogPromoConfig = isBlogArticle ? getBlogPromoConfig(normalizedPath) : null;
+const newsletterTurnstileSiteKey = String(import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '').trim();
 
 const generalNavGroups = [
   {
@@ -123,6 +124,8 @@ const generalNavGroups = [
       { label: 'Reading', href: '/ielts/reading' },
       { label: 'Writing', href: '/ielts/writing' },
       { label: 'Speaking', href: '/ielts/speaking' },
+      { label: 'Speaking Questions', href: '/ielts/speaking/questions' },
+      { label: 'Band Descriptors', href: '/ielts/speaking/band-descriptors' },
     ],
   },
   {
@@ -437,6 +440,7 @@ const serializeJsonForScript = (value: unknown) =>
     data-page-type={trackingPageType}
     data-test={trackingTest}
     data-skill={trackingSkill}
+    data-turnstile-site-key={newsletterTurnstileSiteKey}
   >
     <a class="skip-link" href="#main-content">Skip to content</a>
 
@@ -751,6 +755,8 @@ const serializeJsonForScript = (value: unknown) =>
                 <div class="footer-links">
                   <a href="/celpip">CELPIP</a>
                   <a href="/ielts">IELTS</a>
+                  <a href="/ielts/speaking/questions">IELTS Speaking Questions</a>
+                  <a href="/ielts/speaking/band-descriptors">IELTS Band Descriptors</a>
                   <a href="/lessons">Lessons</a>
                   <a href="/blog">Blog</a>
                   <a href="/tutoring">Tutoring</a>
@@ -789,6 +795,187 @@ const serializeJsonForScript = (value: unknown) =>
         <span class="floating-ebook-btn__text">Speaking eBook <strong>CA$49.50</strong></span>
       </a>
     )}
+
+    <script is:inline>
+      (() => {
+        const globalName = '__ieltscornerNewsletterGuard';
+        if (window[globalName]) return;
+
+        const siteKey = String(document.body?.dataset.turnstileSiteKey || '').trim();
+        const turnstileScriptSrc = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+        let turnstileScriptPromise = null;
+
+        const ensureHiddenInput = (form, name, value = '') => {
+          const existing = form.elements.namedItem(name);
+          if (existing instanceof HTMLInputElement) {
+            if (!existing.value) {
+              existing.value = value;
+            }
+            return existing;
+          }
+
+          const input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = name;
+          input.value = value;
+          form.appendChild(input);
+          return input;
+        };
+
+        const ensureSignals = (form) => {
+          if (!(form instanceof HTMLFormElement)) return;
+          if (!form.dataset.newsletterRenderedAt) {
+            form.dataset.newsletterRenderedAt = String(Date.now());
+          }
+
+          const renderedAtInput = ensureHiddenInput(form, 'form_rendered_at', form.dataset.newsletterRenderedAt);
+          renderedAtInput.value = form.dataset.newsletterRenderedAt;
+          ensureHiddenInput(form, 'bot-field', '');
+        };
+
+        const ensureTurnstileScript = () => {
+          if (!siteKey) return Promise.resolve(false);
+          if (window.turnstile?.render) return Promise.resolve(true);
+          if (turnstileScriptPromise) return turnstileScriptPromise;
+
+          turnstileScriptPromise = new Promise((resolve) => {
+            const existing = document.querySelector('script[data-newsletter-turnstile="1"]');
+            if (existing) {
+              existing.addEventListener('load', () => resolve(Boolean(window.turnstile?.render)), { once: true });
+              existing.addEventListener('error', () => resolve(false), { once: true });
+              window.setTimeout(() => resolve(Boolean(window.turnstile?.render)), 900);
+              return;
+            }
+
+            const script = document.createElement('script');
+            script.src = turnstileScriptSrc;
+            script.async = true;
+            script.defer = true;
+            script.dataset.newsletterTurnstile = '1';
+            script.onload = () => resolve(Boolean(window.turnstile?.render));
+            script.onerror = () => resolve(false);
+            document.head.appendChild(script);
+          });
+
+          return turnstileScriptPromise;
+        };
+
+        const ensureTurnstileContainer = (form) => {
+          if (!siteKey) return null;
+          let container = form.querySelector('[data-turnstile-container]');
+          if (container instanceof HTMLElement) return container;
+
+          container = document.createElement('div');
+          container.setAttribute('data-turnstile-container', '1');
+          container.style.marginTop = '0.5rem';
+          container.style.marginBottom = '0.5rem';
+          form.appendChild(container);
+          return container;
+        };
+
+        const ensureTurnstileWidget = async (form) => {
+          if (!siteKey || !(form instanceof HTMLFormElement)) {
+            return null;
+          }
+
+          const loaded = await ensureTurnstileScript();
+          if (!loaded || !window.turnstile?.render) {
+            return null;
+          }
+
+          if (form.dataset.turnstileWidgetId) {
+            return form.dataset.turnstileWidgetId;
+          }
+
+          const container = ensureTurnstileContainer(form);
+          if (!(container instanceof HTMLElement)) {
+            return null;
+          }
+
+          const widgetId = window.turnstile.render(container, {
+            sitekey: siteKey,
+            theme: 'auto',
+          });
+          form.dataset.turnstileWidgetId = String(widgetId);
+          return form.dataset.turnstileWidgetId;
+        };
+
+        const getTurnstileToken = (form) => {
+          if (!(form instanceof HTMLFormElement)) return '';
+          const tokenFromInput = form.querySelector('input[name="cf-turnstile-response"]');
+          if (tokenFromInput instanceof HTMLInputElement && tokenFromInput.value) {
+            return tokenFromInput.value.trim();
+          }
+
+          const widgetId = form.dataset.turnstileWidgetId;
+          if (!widgetId || !window.turnstile?.getResponse) {
+            return '';
+          }
+
+          try {
+            return String(window.turnstile.getResponse(widgetId) || '').trim();
+          } catch {
+            return '';
+          }
+        };
+
+        const buildAntiBotPayload = (form) => {
+          if (!(form instanceof HTMLFormElement)) {
+            return {
+              formRenderedAt: null,
+              botField: '',
+              turnstileToken: '',
+            };
+          }
+
+          ensureSignals(form);
+          const botFieldInput = form.elements.namedItem('bot-field');
+          const botField = botFieldInput instanceof HTMLInputElement ? String(botFieldInput.value || '') : '';
+
+          return {
+            formRenderedAt: form.dataset.newsletterRenderedAt || null,
+            botField,
+            turnstileToken: getTurnstileToken(form),
+          };
+        };
+
+        const prepareForm = async (form) => {
+          if (!(form instanceof HTMLFormElement)) return;
+          ensureSignals(form);
+          await ensureTurnstileWidget(form);
+        };
+
+        const validateFormBeforeSubmit = async (form) => {
+          await prepareForm(form);
+          const antiBot = buildAntiBotPayload(form);
+          if (siteKey && !antiBot.turnstileToken) {
+            return {
+              ok: false,
+              error: 'Please complete the verification step before submitting.',
+              antiBot,
+            };
+          }
+          return { ok: true, antiBot };
+        };
+
+        const resetTurnstile = (form) => {
+          const widgetId = form?.dataset?.turnstileWidgetId;
+          if (!widgetId || !window.turnstile?.reset) return;
+          try {
+            window.turnstile.reset(widgetId);
+          } catch {
+          }
+        };
+
+        window[globalName] = {
+          siteKey,
+          prepareForm,
+          buildAntiBotPayload,
+          validateFormBeforeSubmit,
+          resetTurnstile,
+        };
+      })();
+    </script>
 
     {showLessonEmailGate && (
       <script is:inline>
@@ -845,8 +1032,10 @@ const serializeJsonForScript = (value: unknown) =>
           document.body.classList.add('lessons-locked');
 
           if (!(form instanceof HTMLFormElement)) return;
+          const newsletterGuard = window.__ieltscornerNewsletterGuard || null;
+          newsletterGuard?.prepareForm?.(form).catch(() => {});
 
-          const submitWithFunction = async (email) => {
+          const submitWithFunction = async ({ email, antiBot }) => {
             const response = await fetch('/.netlify/functions/subscribe-newsletter', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
@@ -854,6 +1043,9 @@ const serializeJsonForScript = (value: unknown) =>
                 email,
                 source: 'lesson-email-gate',
                 audience: 'digest',
+                formRenderedAt: antiBot?.formRenderedAt || null,
+                'bot-field': antiBot?.botField || '',
+                'cf-turnstile-response': antiBot?.turnstileToken || '',
               }),
             });
 
@@ -892,7 +1084,18 @@ const serializeJsonForScript = (value: unknown) =>
             }
 
             try {
-              const data = await submitWithFunction(email);
+              const verification = await newsletterGuard?.validateFormBeforeSubmit?.(form);
+              if (verification && !verification.ok) {
+                if (status instanceof HTMLElement) {
+                  status.textContent = verification.error || 'Please complete the verification step and try again.';
+                }
+                return;
+              }
+
+              const data = await submitWithFunction({
+                email,
+                antiBot: verification?.antiBot || newsletterGuard?.buildAntiBotPayload?.(form),
+              });
 
               saveSignup(email);
               if (status instanceof HTMLElement) {
@@ -902,6 +1105,7 @@ const serializeJsonForScript = (value: unknown) =>
               }
               unlockGate();
             } catch {
+              newsletterGuard?.resetTurnstile?.(form);
               if (savedSignup?.email === email) {
                 saveSignup(email);
                 if (status instanceof HTMLElement) {
@@ -922,6 +1126,7 @@ const serializeJsonForScript = (value: unknown) =>
 
     <script is:inline>
       (() => {
+        const newsletterGuard = window.__ieltscornerNewsletterGuard || null;
         const forms = Array.from(document.querySelectorAll('form[data-newsletter-capture="kit"]'));
         if (!forms.length) return;
 
@@ -932,6 +1137,7 @@ const serializeJsonForScript = (value: unknown) =>
           if (!(candidate instanceof HTMLFormElement)) return;
           if (candidate.dataset.newsletterBound === '1') return;
           candidate.dataset.newsletterBound = '1';
+          newsletterGuard?.prepareForm?.(candidate).catch(() => {});
 
           candidate.addEventListener('submit', async (event) => {
             event.preventDefault();
@@ -972,6 +1178,15 @@ const serializeJsonForScript = (value: unknown) =>
             }
 
             try {
+              const verification = await newsletterGuard?.validateFormBeforeSubmit?.(candidate);
+              if (verification && !verification.ok) {
+                if (status instanceof HTMLElement) {
+                  status.textContent = verification.error || 'Please complete the verification step and try again.';
+                }
+                return;
+              }
+
+              const antiBotPayload = verification?.antiBot || newsletterGuard?.buildAntiBotPayload?.(candidate) || {};
               const response = await fetch('/.netlify/functions/subscribe-newsletter', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -980,6 +1195,9 @@ const serializeJsonForScript = (value: unknown) =>
                   firstName,
                   source,
                   audience,
+                  formRenderedAt: antiBotPayload.formRenderedAt || null,
+                  'bot-field': antiBotPayload.botField || '',
+                  'cf-turnstile-response': antiBotPayload.turnstileToken || '',
                 }),
               });
 
@@ -995,6 +1213,7 @@ const serializeJsonForScript = (value: unknown) =>
               }
               window.location.href = successPath || '/thank-you/';
             } catch {
+              newsletterGuard?.resetTurnstile?.(candidate);
               if (status instanceof HTMLElement) {
                 status.textContent = 'We could not save your email right now. Please try again.';
               }

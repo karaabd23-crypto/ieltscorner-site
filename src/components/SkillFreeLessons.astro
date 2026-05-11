@@ -13,9 +13,11 @@ const examUpper = exam.toUpperCase() as "IELTS" | "CELPIP";
 const oppositeExam = examUpper === "IELTS" ? "CELPIP" : "IELTS";
 const skillLabel = `${skill.charAt(0).toUpperCase()}${skill.slice(1)}`;
 const sectionHeading = `Free ${examUpper} ${skillLabel} lessons`;
-const grammarLessonsPath = "/lessons/grammar";
-const vocabularyLessonsPath = "/lessons/vocabulary";
-const allLessonsPath = "/lessons";
+const examParam = `?exam=${examUpper}`;
+const skillLessonsPath = `/lessons/${skill}${examParam}`;
+const grammarLessonsPath = `/lessons/grammar${examParam}`;
+const vocabularyLessonsPath = `/lessons/vocabulary${examParam}`;
+const allLessonsPath = `/lessons`;
 
 const parseDate = (value: string | undefined) => {
   const parsed = Date.parse(value ?? "");
@@ -84,14 +86,14 @@ const displayLessons = relatedLessons.length > 0 ? relatedLessons : fallbackLess
       </p>
     )}
     <div class="lesson-related-quick-links" aria-label="Free lesson quick links">
-      <a class="lesson-related-quick-link" href={`/lessons/${skill}`}>
-        Open all free {skill} lessons
+      <a class="lesson-related-quick-link" href={skillLessonsPath}>
+        Open all free {examUpper} {skill} lessons
       </a>
       <a class="lesson-related-quick-link" href={grammarLessonsPath}>
-        Open free grammar lessons
+        Open free {examUpper} grammar lessons
       </a>
       <a class="lesson-related-quick-link" href={vocabularyLessonsPath}>
-        Open free vocabulary lessons
+        Open free {examUpper} vocabulary lessons
       </a>
       <a class="lesson-related-quick-link" href={allLessonsPath}>
         Open the full free lesson library

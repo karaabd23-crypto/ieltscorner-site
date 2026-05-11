@@ -12,12 +12,42 @@ const pageStructuredData = [
     { name: "Speaking", path: "/ielts/speaking/" },
   ]),
 ];
+
+const resources = [
+  {
+    href: "/ielts/speaking/questions",
+    icon: "📋",
+    pill: "Free practice bank",
+    title: "100 Part 2 & 3 questions",
+    desc: "Authentic cue cards and examiner follow-up questions grouped by topic. Filter by theme and practise out loud.",
+    cta: "Browse questions",
+    accent: "#2563eb",
+  },
+  {
+    href: "/ielts/speaking/band-descriptors",
+    icon: "🎯",
+    pill: "Score guide",
+    title: "Band descriptors explained",
+    desc: "Understand exactly what your examiner is listening for — Fluency, Vocabulary, Grammar, and Pronunciation — in plain English from Band 4 to 9.",
+    cta: "Read the guide",
+    accent: "#7c3aed",
+  },
+  {
+    href: "/tutoring#book-private-class",
+    icon: "🎙️",
+    pill: "Live coaching",
+    title: "Book a private speaking class",
+    desc: "Get real-time examiner-style feedback on your fluency, idea development, and response structure.",
+    cta: "Book a class",
+    accent: "#0891b2",
+  },
+];
 ---
 
 <Layout
-  title="IELTS Speaking Help | Book Private Class"
-  description="Stuck in IELTS speaking? Book one private class and fix fluency, structure, and score-lowering habits."
-  keywords="IELTS speaking help, IELTS speaking coaching, IELTS private class"
+  title="IELTS Speaking | Practice Questions, Band Scores & Coaching"
+  description="Everything you need for IELTS Speaking in one place: 100 free Part 2 and 3 questions, a plain-English band descriptor guide, and one-to-one coaching."
+  keywords="IELTS speaking help, IELTS speaking questions, IELTS speaking band descriptors, IELTS speaking coaching, IELTS part 2, IELTS part 3"
   structuredData={pageStructuredData}
 >
   <Breadcrumbs items={[
@@ -30,15 +60,36 @@ const pageStructuredData = [
   <section class="section">
     <div class="hero funnel-hero" style={`--hero-bg: url('/heroes/speaking.png');`}>
       <div class="hero-content funnel-hero__content">
-        <span class="pill">IELTS speaking support</span>
+        <span class="pill">IELTS speaking</span>
         <h1>Stuck below Band 7 in IELTS Speaking?</h1>
         <p class="muted">
-          Get one-to-one speaking support to improve fluency, idea development,
-          and response structure for Parts 1, 2, and 3.
+          Practice with authentic questions, understand exactly what examiners are listening for,
+          and get direct feedback from a speaking coach.
         </p>
         <div class="funnel-hero__actions">
-          <a class="btn btn-primary" href="/tutoring#book-private-class">Book Private Class</a>
+          <a class="btn btn-primary" href="/ielts/speaking/questions">Browse free questions</a>
+          <a class="btn btn-ghost" href="/ielts/speaking/band-descriptors">Understand band scores</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resource cards -->
+  <section class="section-sm" style="padding-top: 0;">
+    <div class="container">
+      <h2 class="resources-heading">Where do you want to start?</h2>
+      <div class="resources-grid">
+        {resources.map((r) => (
+          <a href={r.href} class="resource-card surface" style={`--card-accent: ${r.accent};`}>
+            <div class="resource-card__top">
+              <span class="resource-card__icon" aria-hidden="true">{r.icon}</span>
+              <span class="pill resource-card__pill">{r.pill}</span>
+            </div>
+            <h3 class="resource-card__title">{r.title}</h3>
+            <p class="resource-card__desc muted">{r.desc}</p>
+            <span class="resource-card__cta">{r.cta} &rarr;</span>
+          </a>
+        ))}
       </div>
     </div>
   </section>
@@ -51,8 +102,73 @@ const pageStructuredData = [
       <p>Book one focused private class and get direct speaking feedback in real time.</p>
       <div class="funnel-final-cta__actions">
         <a class="btn btn-primary" href="/tutoring#book-private-class">Book Private Class</a>
+        <a class="btn btn-ghost" href="/ielts/speaking/questions">Practice questions</a>
       </div>
     </div>
   </section>
 </Layout>
 
+<style>
+  .resources-heading {
+    margin-bottom: var(--s-4);
+  }
+
+  .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+    gap: var(--s-4);
+  }
+
+  .resource-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+    padding: var(--s-4);
+    text-decoration: none;
+    color: var(--text);
+    border-top: 3px solid var(--card-accent);
+    transition: transform 140ms ease, box-shadow 140ms ease;
+  }
+
+  .resource-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    color: var(--text);
+  }
+
+  .resource-card__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-2);
+  }
+
+  .resource-card__icon { font-size: 1.5rem; }
+
+  .resource-card__pill { font-size: 0.78rem; padding: 0.2rem 0.6rem; }
+
+  .resource-card__title {
+    font-size: var(--step-0);
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .resource-card__desc {
+    font-size: var(--step--1);
+    margin: 0;
+    flex: 1;
+    line-height: 1.6;
+  }
+
+  .resource-card__cta {
+    font-size: var(--step--1);
+    font-weight: 700;
+    color: var(--card-accent);
+    margin-top: var(--s-1);
+  }
+
+  @media (max-width: 680px) {
+    .resources-grid { grid-template-columns: 1fr; }
+  }
+</style>
