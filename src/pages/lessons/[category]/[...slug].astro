@@ -7,6 +7,11 @@ import ContextualNextStepPromo from "../../../components/ContextualNextStepPromo
 import Layout from "../../../layouts/Layout.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { getLessonTier, getPublicLessonTitle } from "../../../lib/lessonLevel";
+import {
+  getExamHubPath,
+  getExamSkillPath,
+  type ExamKey,
+} from "../../../lib/examConfig";
 import { getLessonPromoConfig } from "../../../lib/promotionTools";
 
 type LessonEntry = CollectionEntry<"lessons">;
@@ -56,9 +61,9 @@ const cleanHeadingText = (text: string) =>
     .replace(/\s{2,}/g, " ")
     .trim();
 
-const getLessonTests = (lesson: LessonEntry): ("IELTS" | "CELPIP")[] => {
+const getLessonTests = (lesson: LessonEntry): ExamKey[] => {
   if (lesson.data.test) return [lesson.data.test];
-  return lesson.data.exam;
+  return lesson.data.exam as ExamKey[];
 };
 
 const getLessonSkill = (lesson: LessonEntry) => lesson.data.skill ?? lesson.data.category;
@@ -100,6 +105,13 @@ const olderLesson =
 
 const currentTests = getLessonTests(item);
 const currentSkill = getLessonSkill(item);
+const primaryExam = ((): ExamKey => {
+  if (currentTests.length === 1) return currentTests[0];
+  if (slugText.includes("pte")) return "PTE_CORE";
+  if (slugText.includes("celpip")) return "CELPIP";
+  if (slugText.includes("ielts")) return "IELTS";
+  return currentTests[0] || "IELTS";
+})();
 const currentTestSet = new Set(currentTests);
 const skillHubCategories = new Set<LessonEntry["data"]["category"]>([
   "writing",
@@ -108,17 +120,18 @@ const skillHubCategories = new Set<LessonEntry["data"]["category"]>([
   "listening",
 ]);
 
-const buildTestHubLink = (test: "IELTS" | "CELPIP"): HubLink => {
-  const base = `/${test.toLowerCase()}`;
+const buildTestHubLink = (test: ExamKey): HubLink => {
+  const base = getExamHubPath(test);
+  const examLabel = test === "PTE_CORE" ? "PTE Core" : test;
   if (skillHubCategories.has(currentCategory)) {
     return {
-      label: `${test} ${categoryLabel(currentCategory)} hub`,
-      href: `${base}/${currentCategory}`,
+      label: `${examLabel} ${categoryLabel(currentCategory)} hub`,
+      href: getExamSkillPath(test, currentCategory as "listening" | "reading" | "writing" | "speaking"),
     };
   }
 
   return {
-    label: `${test} hub`,
+    label: `${examLabel} hub`,
     href: base,
   };
 };
@@ -162,33 +175,47 @@ if (relatedLessons.length < 2) {
   }
 }
 
-const currentPathHint = `${currentCategory}-${slugText}`;
-const likelyCelpip =
-  currentTests.includes("CELPIP") &&
-  (!currentTests.includes("IELTS") || currentPathHint.includes("celpip"));
+const likelyCelpip = primaryExam === "CELPIP";
 
-const serviceLink: ServiceLink = likelyCelpip
-  ? {
-      title: "CELPIP Writing Help",
-      href: "/celpip-writing-help",
-      description: "Reach CLB 9 faster with AI writing feedback and targeted tutoring.",
-    }
-  : {
-      title: "IELTS Writing Help",
-      href: "/ielts-writing-help",
-      description: "Get Band 7+ faster with structured feedback and targeted writing support.",
-    };
+const serviceLink: ServiceLink =
+  primaryExam === "PTE_CORE"
+    ? {
+        title: "PTE Core Simulator",
+        href: "/pte-core/simulator",
+        description: "Use the full PTE Core simulator path to practice under exam-like conditions.",
+      }
+    : likelyCelpip
+      ? {
+          title: "CELPIP Writing Help",
+          href: "/celpip-writing-help",
+          description: "Reach CLB 9 faster with AI writing feedback and targeted tutoring.",
+        }
+      : {
+          title: "IELTS Writing Help",
+          href: "/ielts-writing-help",
+          description: "Get Band 7+ faster with structured feedback and targeted writing support.",
+        };
 
 const isWritingLesson = currentSkill === "writing" || currentCategory === "writing";
-const trackTest = likelyCelpip ? "celpip" : currentTests.includes("IELTS") ? "ielts" : "general";
+const trackTest =
+  primaryExam === "PTE_CORE"
+    ? "pte_core"
+    : likelyCelpip
+      ? "celpip"
+      : currentTests.includes("IELTS")
+        ? "ielts"
+        : "general";
 const readingRescueLesson = likelyCelpip && currentSkill === "reading";
 const showIntentStack = isWritingLesson || readingRescueLesson;
 const ladderSkill = readingRescueLesson ? "reading" : "writing";
-const lessonPromoConfig = getLessonPromoConfig({
-  exam: likelyCelpip ? "CELPIP" : "IELTS",
-  skill: currentSkill,
-  category: currentCategory,
-});
+const lessonPromoConfig =
+  primaryExam === "PTE_CORE"
+    ? null
+    : getLessonPromoConfig({
+        exam: likelyCelpip ? "CELPIP" : "IELTS",
+        skill: currentSkill,
+        category: currentCategory,
+      });
 const leadMagnetBlock: LeadMagnetBlock | null = readingRescueLesson
   ? {
       headline: "Subscribe for Weekly CELPIP Reading Emails",
@@ -425,7 +452,7 @@ const breadcrumbSchema = {
 };
 
 // Enhanced meta keywords for SEO
-const seoKeywords = `${publicTitle}, ${item.data.category}, ${item.data.level}, ${item.data.exam.join(", ")}, IELTS lessons, CELPIP lessons, English test preparation`;
+const seoKeywords = `${publicTitle}, ${item.data.category}, ${item.data.level}, ${item.data.exam.join(", ")}, IELTS lessons, CELPIP lessons, PTE Core lessons, English test preparation`;
 ---
 
 <Layout

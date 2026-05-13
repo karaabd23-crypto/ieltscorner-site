@@ -4,9 +4,9 @@ const lessons = defineCollection({
   type: "content",
   schema: z.object({
     test: z
-      .enum(["IELTS", "CELPIP", "ielts", "celpip"])
+      .enum(["IELTS", "CELPIP", "PTE_CORE", "ielts", "celpip", "pte_core"])
       .optional()
-      .transform((value) => (value ? (value.toUpperCase() as "IELTS" | "CELPIP") : value)),
+      .transform((value) => (value ? (value.toUpperCase() as "IELTS" | "CELPIP" | "PTE_CORE") : value)),
     skill: z.enum(["grammar", "vocabulary", "writing", "speaking", "listening", "reading"]).optional(),
     title: z.string(),
     description: z.string().optional(),
@@ -14,7 +14,7 @@ const lessons = defineCollection({
     level: z.enum(["A1", "A2", "B1", "B2", "C1", "C2"]).default("C1"),
     ieltsBand: z.string().default("6.0-6.5"),
     clb: z.string().default("7-8"),
-    exam: z.array(z.enum(["IELTS", "CELPIP"])).default(["IELTS", "CELPIP"]),
+    exam: z.array(z.enum(["IELTS", "CELPIP", "PTE_CORE"])).default(["IELTS", "CELPIP"]),
     excerpt: z.string(),
     date: z.string(),
     tags: z.array(z.string()).default([]),

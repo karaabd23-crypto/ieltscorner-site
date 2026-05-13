@@ -1,0 +1,119 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { buildBreadcrumbSchema } from "../../lib/seo";
+import {
+  PTE_CORE_PAGE_KEYWORDS,
+  PTE_CORE_ROUTE_MAP,
+  PTE_CORE_SKILLS,
+} from "../../lib/pteCoreConfig.mjs";
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "PTE Core", path: "/pte-core/" },
+  ]),
+];
+
+const supportCards = [
+  {
+    title: "Question Type Guides",
+    description: "Review all 19 PTE Core question types before you start timed simulation work.",
+    href: PTE_CORE_ROUTE_MAP.questionTypes,
+    cta: "Open question types",
+  },
+  {
+    title: "PTE Core Simulator",
+    description: "Enter the exam-style simulator shell and follow the full section workflow.",
+    href: PTE_CORE_ROUTE_MAP.simulator,
+    cta: "Open simulator",
+  },
+  {
+    title: "Simulator Practice Mode",
+    description: "Open the task-focused simulator practice shell for targeted repetition.",
+    href: PTE_CORE_ROUTE_MAP.simulatorPractice,
+    cta: "Open practice mode",
+  },
+  {
+    title: "Free Lessons Library",
+    description: "Browse all published grammar, vocabulary, listening, reading, speaking, and writing lessons.",
+    href: "/lessons",
+    cta: "Browse free lessons",
+  },
+];
+---
+
+<Layout
+  title="PTE Core Hub | Skills and Practice Paths"
+  description="PTE Core hub with direct links to Listening, Reading, Writing, Speaking, question-type guides, and simulator shells."
+  keywords={PTE_CORE_PAGE_KEYWORDS}
+  structuredData={pageStructuredData}
+>
+  <Breadcrumbs items={[
+    { label: "Home", href: "/" },
+    { label: "PTE Core" },
+  ]} />
+
+  <section class="section pte-core-hub">
+    <div class="pte-core-hub-hero">
+      <div class="pte-core-hub-hero__copy">
+        <span class="pte-core-kicker">PTE Core hub</span>
+        <h1>Choose your PTE Core skill, then choose your practice path</h1>
+        <p>
+          Start with Listening, Reading, Writing, or Speaking. Then open question-type guides or simulator shells from one place.
+        </p>
+        <div class="pte-core-hero__actions">
+          <a class="btn btn-primary" href={PTE_CORE_ROUTE_MAP.questionTypes}>Question Types</a>
+          <a class="btn btn-ghost" href={PTE_CORE_ROUTE_MAP.simulator}>Simulator</a>
+          <a class="btn btn-ghost" href={PTE_CORE_ROUTE_MAP.simulatorPractice}>Practice Mode</a>
+        </div>
+      </div>
+      <div class="pte-core-hub-hero__visual" aria-label="PTE Core learning map">
+        <span>Listening</span>
+        <span>Reading</span>
+        <span>Writing</span>
+        <span>Speaking</span>
+        <strong>19 task types</strong>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm pte-core-hub">
+    <div class="pte-core-feature-card">
+      <span class="pte-core-kicker">Explore by skill</span>
+      <h2>Pick the score area that needs the most attention.</h2>
+      <p class="muted">
+        Each skill page gives you a clear next step and links into guides and simulator shells.
+      </p>
+      <div class="pte-core-path-grid">
+        {PTE_CORE_SKILLS.map((skill) => (
+          <a class={`pte-core-path-card pte-core-path-card--${skill.accent}`} href={skill.path}>
+            <span>{skill.eyebrow}</span>
+            <h3>{skill.label}</h3>
+            <p class="muted">{skill.description}</p>
+            <strong>Open {skill.label} path</strong>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm pte-core-hub">
+    <div class="pte-core-feature-card pte-core-feature-card--soft">
+      <span class="pte-core-kicker">Practice support</span>
+      <h2>Move from guide to simulator without losing momentum.</h2>
+      <p class="muted">
+        Use these pages to move directly into structured practice.
+      </p>
+      <div class="pte-core-support-grid">
+        {supportCards.map((card) => (
+          <a class="pte-core-support-card" href={card.href}>
+            <h3>{card.title}</h3>
+            <p class="muted">{card.description}</p>
+            <strong>{card.cta}</strong>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

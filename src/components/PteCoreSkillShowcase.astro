@@ -1,0 +1,100 @@
+---
+import {
+  PTE_CORE_QUESTION_TYPES,
+  PTE_CORE_ROUTE_MAP,
+  PTE_CORE_SKILLS,
+} from "../lib/pteCoreConfig.mjs";
+
+const { skillSlug } = Astro.props;
+const skill = PTE_CORE_SKILLS.find((entry) => entry.slug === skillSlug);
+
+if (!skill) {
+  throw new Error(`Unknown PTE Core skill: ${skillSlug}`);
+}
+
+const questionTypes = skill.featuredQuestionSlugs
+  .map((slug) => PTE_CORE_QUESTION_TYPES.find((entry) => entry.slug === slug))
+  .filter(Boolean);
+---
+
+<section class={`pte-core-page pte-core-page--${skill.accent}`}>
+  <section class="pte-core-hero" style={`--pte-core-hero-image: url('${skill.heroImage}');`}>
+    <div class="pte-core-hero__copy">
+      <span class="pte-core-kicker">{skill.eyebrow}</span>
+      <h1>{skill.heroTitle}</h1>
+      <p>{skill.promise}</p>
+      <div class="pte-core-hero__actions">
+        <a class="btn btn-primary" href={PTE_CORE_ROUTE_MAP.simulatorPractice}>Start practice mode</a>
+        <a class="btn btn-ghost" href={PTE_CORE_ROUTE_MAP.questionTypes}>Explore question types</a>
+      </div>
+    </div>
+
+    <div class="pte-core-hero__panel" aria-label={`${skill.label} training snapshot`}>
+      <div class="pte-core-orbit">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <p class="pte-core-panel-label">Training snapshot</p>
+      <h2>{skill.label}</h2>
+      <div class="pte-core-metrics">
+        {skill.metrics.map((metric) => (
+          <span>{metric}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="pte-core-strip" aria-label={`${skill.label} focus points`}>
+    {skill.focusPoints.map((point, index) => (
+      <article>
+        <span>{String(index + 1).padStart(2, "0")}</span>
+        <p>{point}</p>
+      </article>
+    ))}
+  </section>
+
+  <section class="pte-core-section-grid">
+    <div class="pte-core-feature-card">
+      <span class="pte-core-kicker">Study path</span>
+      <h2>What to master first</h2>
+      <p class="muted">{skill.description}</p>
+      <div class="pte-core-timeline">
+        <div>
+          <strong>Learn the task shape</strong>
+          <span>Know what the computer expects before you start practising speed.</span>
+        </div>
+        <div>
+          <strong>Use a repeatable routine</strong>
+          <span>Build one process for planning, answering, and checking under pressure.</span>
+        </div>
+        <div>
+          <strong>Simulate the interface</strong>
+          <span>Move into timed practice once the response pattern feels familiar.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pte-core-task-stack">
+      <div class="pte-core-task-stack__header">
+        <span class="pte-core-kicker">Featured tasks</span>
+        <a href={PTE_CORE_ROUTE_MAP.questionTypes}>All 19 tasks</a>
+      </div>
+      {questionTypes.map((questionType) => (
+        <a class="pte-core-task-card" href={`${PTE_CORE_ROUTE_MAP.questionTypes}/${questionType.slug}`}>
+          <span>{questionType.label}</span>
+          <p>{questionType.summary}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="pte-core-cta-band">
+    <div>
+      <span class="pte-core-kicker">Next step</span>
+      <h2>Practice {skill.label.toLowerCase()} inside the PTE Core interface.</h2>
+      <p>Slice 2 tracks navigation, timing, answers, flags, and completion. AI grading comes later.</p>
+    </div>
+    <a class="btn btn-primary" href={PTE_CORE_ROUTE_MAP.simulator}>Open simulator</a>
+  </section>
+</section>

@@ -16,11 +16,11 @@ declare global {
 
 const {
   title = "IELTS Corner",
-  description = "High-level IELTS & CELPIP prep for serious learners.",
+  description = "High-level IELTS, CELPIP, and PTE Core prep for serious learners.",
   ogImage = "/heroes/lesson.png",
   canonical = Astro.url.pathname,
   type = "website",
-  keywords = "IELTS, CELPIP, English test preparation, Band 7+, CLB 9+, English lessons Canada",
+  keywords = "IELTS, CELPIP, PTE Core, English test preparation, Band 7+, CLB 9+, English lessons Canada",
   noindex = false,
   structuredData = [],
 } = Astro.props;
@@ -42,9 +42,10 @@ const isPrePaymentPath =
   normalizedPath.startsWith("/ai-feedback");
 const isExamSkillPath =
   ((normalizedPath.startsWith("/celpip/") && normalizedPath !== "/celpip") ||
-    (normalizedPath.startsWith("/ielts/") && normalizedPath !== "/ielts")) &&
+    (normalizedPath.startsWith("/ielts/") && normalizedPath !== "/ielts") ||
+    (normalizedPath.startsWith("/pte-core/") && normalizedPath !== "/pte-core")) &&
   !isPrePaymentPath;
-const isExamHubPath = normalizedPath === "/celpip" || normalizedPath === "/ielts";
+const isExamHubPath = normalizedPath === "/celpip" || normalizedPath === "/ielts" || normalizedPath === "/pte-core";
 const isSupportLandingPath =
   normalizedPath === "/celpip-writing-help" ||
   normalizedPath === "/ielts-writing-help";
@@ -52,6 +53,8 @@ const isGuidedPath =
   normalizedPath === "/ai-feedback" ||
   normalizedPath === "/celpip" ||
   normalizedPath.startsWith("/celpip/") ||
+  normalizedPath === "/pte-core" ||
+  normalizedPath.startsWith("/pte-core/") ||
   normalizedPath === "/ielts" ||
   normalizedPath.startsWith("/ielts/") ||
   normalizedPath === "/tutoring" ||
@@ -78,19 +81,22 @@ const highIntentTrackingPaths = new Set([
   "/celpip-writing-help",
   "/ielts-writing-help",
   "/ai-feedback",
+  "/pte-core/simulator",
+  "/pte-core/simulator/practice",
 ]);
 
 const inferTrackingPageType = (path: string) => {
   if (path.startsWith("/lessons/")) return "lesson";
   if (path.startsWith("/blog/")) return "blog";
   if (path.includes("-help") || path.startsWith("/tutoring")) return "landing";
-  if (path.startsWith("/celpip/") || path.startsWith("/ielts/")) return "hub";
+  if (path.startsWith("/celpip/") || path.startsWith("/ielts/") || path.startsWith("/pte-core/")) return "hub";
   return "site";
 };
 
 const inferTrackingTest = (path: string) => {
   if (path.includes("/celpip")) return "celpip";
   if (path.includes("/ielts")) return "ielts";
+  if (path.includes("/pte-core")) return "pte_core";
   return "general";
 };
 
@@ -139,6 +145,18 @@ const generalNavGroups = [
     ],
   },
   {
+    label: 'PTE Core',
+    href: '/pte-core',
+    items: [
+      { label: 'Listening', href: '/pte-core/listening' },
+      { label: 'Reading', href: '/pte-core/reading' },
+      { label: 'Writing', href: '/pte-core/writing' },
+      { label: 'Speaking', href: '/pte-core/speaking' },
+      { label: 'Question Types', href: '/pte-core/question-types' },
+      { label: 'Simulator', href: '/pte-core/simulator' },
+    ],
+  },
+  {
     label: 'Services',
     href: '/tutoring',
     items: [
@@ -167,18 +185,19 @@ const practiceNavGroup = {
   items: [
     { label: 'CELPIP Reading Practice', href: '/celpip/reading' },
     { label: 'CELPIP Writing Practice', href: '/ai-feedback' },
+    { label: 'PTE Core Simulator', href: '/pte-core/simulator' },
     { label: 'Free Lessons', href: '/lessons' },
   ],
 };
 
-const activeNavGroups = [generalNavGroups[0], generalNavGroups[1], practiceNavGroup, generalNavGroups[2], generalNavGroups[3]];
+const activeNavGroups = [generalNavGroups[0], generalNavGroups[1], generalNavGroups[2], practiceNavGroup, generalNavGroups[3], generalNavGroups[4]];
 
 // Structured data for Organization
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
   "name": "IELTS Corner",
-  "description": "Professional IELTS and CELPIP test preparation with expert tutoring and free lessons",
+  "description": "Professional IELTS, CELPIP, and PTE Core test preparation with expert tutoring and free lessons",
   "url": Astro.site,
   "logo": new URL("/logo.gif", Astro.site),
   "sameAs": [
@@ -217,7 +236,7 @@ const webPageSchema = {
     "name": "IELTS Corner",
     "url": Astro.site,
   },
-  "about": ["IELTS", "CELPIP", "English test preparation"],
+  "about": ["IELTS", "CELPIP", "PTE Core", "English test preparation"],
 };
 
 const extraStructuredData = Array.isArray(structuredData) ? structuredData : [structuredData];

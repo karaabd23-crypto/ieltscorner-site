@@ -1,0 +1,51 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import Breadcrumbs from "../../../../components/Breadcrumbs.astro";
+import PteCoreSimulator from "../../../../components/PteCoreSimulator.astro";
+import { buildBreadcrumbSchema } from "../../../../lib/seo";
+import { PTE_CORE_ROUTE_MAP } from "../../../../lib/pteCoreConfig.mjs";
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "PTE Core", path: "/pte-core/" },
+    { name: "Simulator", path: "/pte-core/simulator/" },
+    { name: "Practice Mode", path: "/pte-core/simulator/practice/" },
+  ]),
+];
+---
+
+<Layout
+  title="PTE Core Simulator Practice Mode | Task Practice"
+  description="Practice PTE Core tasks in the same simulator UI engine used by the mock test, with local answer capture and completion tracking."
+  keywords="PTE Core practice mode, PTE Core task practice, PTE Core simulator practice"
+  structuredData={pageStructuredData}
+>
+  <Breadcrumbs items={[
+    { label: "Home", href: "/" },
+    { label: "PTE Core", href: "/pte-core" },
+    { label: "Simulator", href: "/pte-core/simulator" },
+    { label: "Practice Mode" },
+  ]} />
+
+  <section class="section">
+    <div class="hero" style={`--hero-bg: url('/heroes/lesson.png');`}>
+      <div class="hero-content">
+        <span class="pill">Practice mode shell</span>
+        <h1>Task-focused PTE Core practice mode</h1>
+        <p class="muted" style="max-width: 64ch;">
+          Use the same Slice 2 task renderer without graded AI feedback yet. The goal here is interface familiarity, response capture, and task-by-task pacing.
+        </p>
+        <div class="cluster">
+          <a class="btn btn-primary" href="#pte-core-practice">Start practice</a>
+          <a class="btn btn-ghost" href={PTE_CORE_ROUTE_MAP.questionTypes}>Browse question types</a>
+          <a class="btn btn-ghost" href={PTE_CORE_ROUTE_MAP.simulator}>Back to simulator</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pte-core-practice" class="section-sm">
+    <PteCoreSimulator mode="practice" />
+  </section>
+</Layout>

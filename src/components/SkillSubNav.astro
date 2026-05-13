@@ -3,16 +3,21 @@
  * Renders a horizontal sub-navigation bar for exam skill pages.
  * Shows "← Back to hub" + sibling skill links.
  */
+import {
+  formatExamLabel,
+  getExamHubPath,
+  type ExamKey,
+} from "../lib/examConfig";
 
 type Props = {
-  exam: "IELTS" | "CELPIP";
+  exam: ExamKey;
   currentSkill: "listening" | "reading" | "writing" | "speaking";
 };
 
 const { exam, currentSkill } = Astro.props as Props;
 
-const hub = exam === "IELTS" ? "/ielts" : "/celpip";
-const hubLabel = exam === "IELTS" ? "IELTS Hub" : "CELPIP Hub";
+const hub = getExamHubPath(exam);
+const hubLabel = `${formatExamLabel(exam)} Hub`;
 
 const skills = [
   { slug: "listening", label: "Listening" },

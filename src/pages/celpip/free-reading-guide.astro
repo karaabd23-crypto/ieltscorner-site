@@ -143,6 +143,7 @@ const successPath = "/celpip/free-reading-guide/thanks/";
     const submitButton = document.getElementById("instagram-reading-guide-submit");
     const status = document.getElementById("instagram-reading-guide-status");
     const ctaButtons = Array.from(document.querySelectorAll("[data-lead-magnet-cta]"));
+    const getNewsletterGuard = () => window.__ieltscornerNewsletterGuard || null;
 
     const pushTrackingEvent = (eventName, payload = {}) => {
       window.dataLayer = window.dataLayer || [];
@@ -183,7 +184,7 @@ const successPath = "/celpip/free-reading-guide/thanks/";
       if (type === "error") status.classList.add("is-error");
     };
 
-    const submitWithFunction = async ({ email, firstName }) => {
+    const submitWithFunction = async ({ email, firstName, antiBot }) => {
       const response = await fetch("/.netlify/functions/subscribe-newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -192,6 +193,9 @@ const successPath = "/celpip/free-reading-guide/thanks/";
           firstName,
           source: leadMagnetSource,
           audience: "reading-guide",
+          formRenderedAt: antiBot?.formRenderedAt || null,
+          "bot-field": antiBot?.botField || "",
+          "cf-turnstile-response": antiBot?.turnstileToken || "",
         }),
       });
 
@@ -217,6 +221,7 @@ const successPath = "/celpip/free-reading-guide/thanks/";
     });
 
     if (!(form instanceof HTMLFormElement)) return;
+    getNewsletterGuard()?.prepareForm?.(form).catch(() => {});
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
@@ -241,7 +246,18 @@ const successPath = "/celpip/free-reading-guide/thanks/";
       setStatus("Submitting your guide request...");
 
       try {
-        const result = await submitWithFunction({ email, firstName });
+        const newsletterGuard = getNewsletterGuard();
+        const verification = await newsletterGuard?.validateFormBeforeSubmit?.(form);
+        if (verification && !verification.ok) {
+          setStatus(verification.error || "Please complete the verification step before submitting.", "error");
+          return;
+        }
+
+        const result = await submitWithFunction({
+          email,
+          firstName,
+          antiBot: verification?.antiBot || newsletterGuard?.buildAntiBotPayload?.(form),
+        });
 
         saveSignup({ email, firstName });
         setStatus("Success. Redirecting you to the guide access page...", "success");
@@ -251,6 +267,7 @@ const successPath = "/celpip/free-reading-guide/thanks/";
         });
         window.location.href = successPath;
       } catch {
+        getNewsletterGuard()?.resetTurnstile?.(form);
         setStatus("We could not save your request right now. Please try again in a moment.", "error");
       } finally {
         if (submitButton instanceof HTMLButtonElement) {

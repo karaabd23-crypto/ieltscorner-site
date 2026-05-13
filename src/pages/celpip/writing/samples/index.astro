@@ -234,6 +234,7 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
       const freeSampleLevel = document.getElementById('free-sample-level');
       const freeSampleWhy = document.getElementById('free-sample-why');
       const freeSampleText = document.getElementById('free-sample-text');
+      const getNewsletterGuard = () => window.__ieltscornerNewsletterGuard || null;
 
       let sessionId = '';
       let customerId = '';
@@ -349,7 +350,7 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
         }
       };
 
-      const submitNewsletterSignup = async (email) => {
+      const submitNewsletterSignup = async (email, antiBot = {}) => {
         try {
           await fetch('/.netlify/functions/subscribe-newsletter', {
             method: 'POST',
@@ -358,6 +359,9 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
               email,
               source: 'celpip-writing-samples',
               audience: 'digest',
+              formRenderedAt: antiBot?.formRenderedAt || null,
+              'bot-field': antiBot?.botField || '',
+              'cf-turnstile-response': antiBot?.turnstileToken || '',
             }),
           });
         } catch {
@@ -697,6 +701,7 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
       };
 
       if (freeSampleForm instanceof HTMLFormElement) {
+        getNewsletterGuard()?.prepareForm?.(freeSampleForm).catch(() => {});
         freeSampleForm.addEventListener('submit', async (event) => {
           event.preventDefault();
           const email = freeSampleEmailInput instanceof HTMLInputElement
@@ -712,8 +717,19 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
             freeSampleSubmit.disabled = true;
           }
 
+          const newsletterGuard = getNewsletterGuard();
+          const verification = await newsletterGuard?.validateFormBeforeSubmit?.(freeSampleForm);
+          if (verification && !verification.ok) {
+            setFreeSampleStatus(verification.error || 'Please complete the verification step before submitting.', true);
+            if (freeSampleSubmit instanceof HTMLButtonElement) {
+              freeSampleSubmit.disabled = false;
+            }
+            return;
+          }
+
+          const antiBotPayload = verification?.antiBot || newsletterGuard?.buildAntiBotPayload?.(freeSampleForm) || {};
           setFreeSampleStatus('Saving your email and unlocking your free sample essay...');
-          const newsletterPromise = submitNewsletterSignup(email);
+          const newsletterPromise = submitNewsletterSignup(email, antiBotPayload);
 
           try {
             const result = await claimFreeEssay(email);
@@ -724,6 +740,7 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
               : 'Your free sample essay is unlocked. This email has also been added to the newsletter list.';
             setFreeSampleStatus(message);
           } catch (error) {
+            getNewsletterGuard()?.resetTurnstile?.(freeSampleForm);
             await newsletterPromise;
             const message = error instanceof Error ? error.message : 'Unable to unlock your free sample essay right now.';
             setFreeSampleStatus(`${message} Your email was still saved to the newsletter list.`, true);

@@ -1,0 +1,49 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import PteCoreSimulator from "../../../components/PteCoreSimulator.astro";
+import { buildBreadcrumbSchema } from "../../../lib/seo";
+import { PTE_CORE_ROUTE_MAP } from "../../../lib/pteCoreConfig.mjs";
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "PTE Core", path: "/pte-core/" },
+    { name: "Simulator", path: "/pte-core/simulator/" },
+  ]),
+];
+---
+
+<Layout
+  title="PTE Core Simulator | Practice the Exam Interface"
+  description="Practice all 19 PTE Core question types in an exam-style simulator interface. Slice 2 includes navigation, timers, answer capture, and completion review."
+  keywords="PTE Core simulator, PTE Core mock test, PTE Core exam interface"
+  structuredData={pageStructuredData}
+>
+  <Breadcrumbs items={[
+    { label: "Home", href: "/" },
+    { label: "PTE Core", href: "/pte-core" },
+    { label: "Simulator" },
+  ]} />
+
+  <section class="section">
+    <div class="hero funnel-hero" style={`--hero-bg: url('/heroes/home.png');`}>
+      <div class="hero-content funnel-hero__content">
+        <span class="pill">PTE Core simulator</span>
+        <h1>Practice inside a PTE Core exam-style interface</h1>
+        <p class="muted">
+          Move through speaking, writing, reading, and listening tasks with timed navigation and local answer capture. AI scoring and saved account history are still reserved for later slices.
+        </p>
+        <div class="funnel-hero__actions">
+          <a class="btn btn-primary" href="#pte-core-simulator">Start simulator</a>
+          <a class="btn btn-ghost" href={PTE_CORE_ROUTE_MAP.simulatorPractice}>Open practice mode</a>
+          <a class="btn btn-ghost" href={PTE_CORE_ROUTE_MAP.questionTypes}>Review question types</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pte-core-simulator" class="section-sm">
+    <PteCoreSimulator mode="full" />
+  </section>
+</Layout>

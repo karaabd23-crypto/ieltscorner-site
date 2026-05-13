@@ -1,0 +1,415 @@
+---
+import {
+  PTE_CORE_ROUTE_MAP,
+  PTE_CORE_SIMULATOR_SAMPLE_ITEMS,
+  PTE_CORE_SIMULATOR_SECTIONS,
+  PTE_CORE_SIMULATOR_TOTAL_MINUTES,
+  getPteQuestionTypeBySlug,
+} from "../lib/pteCoreConfig.mjs";
+
+const {
+  mode = "full",
+} = Astro.props;
+
+const isPracticeMode = mode === "practice";
+const simulatorItems = PTE_CORE_SIMULATOR_SAMPLE_ITEMS.map((item) => ({
+  ...item,
+  task: getPteQuestionTypeBySlug(item.taskSlug),
+}));
+
+const simulatorPayload = {
+  mode,
+  sections: PTE_CORE_SIMULATOR_SECTIONS,
+  items: simulatorItems,
+  totalMinutes: PTE_CORE_SIMULATOR_TOTAL_MINUTES,
+};
+---
+
+<section
+  class="pte-sim"
+  data-pte-simulator
+  data-mode={mode}
+  aria-label={isPracticeMode ? "PTE Core practice simulator" : "PTE Core full simulator"}
+>
+  <script type="application/json" data-pte-simulator-data set:html={JSON.stringify(simulatorPayload)}></script>
+
+  <div class="pte-sim__chrome">
+    <div>
+      <p class="pte-sim__eyebrow">{isPracticeMode ? "Task practice" : "Mock test interface"}</p>
+      <h2>{isPracticeMode ? "PTE Core practice engine" : "PTE Core simulator"}</h2>
+      <p class="muted">
+        {isPracticeMode
+          ? "Practice with the same task renderer used by the simulator. Scoring and saved history arrive in later slices."
+          : "Move through all 19 PTE Core task types in one exam-style workspace. This slice tracks answers and completion only."}
+      </p>
+    </div>
+    <div class="pte-sim__status" aria-live="polite">
+      <span class="pte-sim__timer" data-pte-timer>{PTE_CORE_SIMULATOR_TOTAL_MINUTES}:00</span>
+      <span class="pte-sim__progress" data-pte-progress>0 of {simulatorItems.length} answered</span>
+    </div>
+  </div>
+
+  <div class="pte-sim__sections" aria-label="PTE Core simulator sections">
+    {PTE_CORE_SIMULATOR_SECTIONS.map((section, index) => (
+      <button class="pte-sim__section-tab" type="button" data-pte-section={section.id} aria-pressed={index === 0 ? "true" : "false"}>
+        <span>{section.label}</span>
+        <strong>{section.title}</strong>
+        <small>{section.durationMinutes} min</small>
+      </button>
+    ))}
+  </div>
+
+  <div class="pte-sim__body">
+    <aside class="pte-sim__palette" aria-label="Question navigator">
+      <div class="pte-sim__palette-head">
+        <strong>Questions</strong>
+        <span data-pte-flag-count>0 flagged</span>
+      </div>
+      <div class="pte-sim__question-grid">
+        {simulatorItems.map((item, index) => (
+          <button
+            type="button"
+            class="pte-sim__question-dot"
+            data-pte-jump={index}
+            aria-label={`Go to question ${item.number}`}
+          >
+            {item.number}
+          </button>
+        ))}
+      </div>
+      <div class="pte-sim__legend">
+        <span><i class="pte-sim__key pte-sim__key--current"></i>Current</span>
+        <span><i class="pte-sim__key pte-sim__key--answered"></i>Answered</span>
+        <span><i class="pte-sim__key pte-sim__key--flagged"></i>Flagged</span>
+      </div>
+    </aside>
+
+    <div class="pte-sim__workspace">
+      <div class="pte-sim__taskbar">
+        <div>
+          <p class="pte-sim__task-label" data-pte-task-label>Question type</p>
+          <h3 data-pte-task-title>Loading task</h3>
+        </div>
+        <div class="pte-sim__task-meta">
+          <span data-pte-section-title>Section</span>
+          <span data-pte-timing></span>
+        </div>
+      </div>
+
+      <div class="pte-sim__panels">
+        <article class="pte-sim__prompt-panel">
+          <p class="pte-sim__panel-label">Prompt</p>
+          <div class="pte-sim__prompt" data-pte-prompt></div>
+          <div class="pte-sim__instructions" data-pte-instructions></div>
+        </article>
+
+        <article class="pte-sim__answer-panel">
+          <p class="pte-sim__panel-label">Response</p>
+          <form class="pte-sim__answer-form" data-pte-answer-form></form>
+          <p class="pte-sim__save-state" data-pte-save-state>Responses save in this browser for this slice.</p>
+        </article>
+      </div>
+
+      <div class="pte-sim__controls">
+        <button class="btn btn-ghost" type="button" data-pte-prev>Previous</button>
+        <button class="btn btn-ghost" type="button" data-pte-flag>Flag for review</button>
+        <button class="btn btn-primary" type="button" data-pte-next>Next</button>
+        <button class="btn btn-primary" type="button" data-pte-finish>Finish attempt</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="pte-sim__results" data-pte-results hidden>
+    <div>
+      <p class="pte-sim__eyebrow">Completion report</p>
+      <h2 data-pte-results-title>Attempt complete</h2>
+      <p class="muted" data-pte-results-copy>
+        AI scoring, speaking analysis, and account-backed history are intentionally reserved for later slices.
+      </p>
+    </div>
+    <div class="pte-sim__result-grid" data-pte-result-grid></div>
+    <div class="pte-sim__review-list" data-pte-review-list></div>
+    <div class="cluster">
+      <button class="btn btn-primary" type="button" data-pte-restart>Restart simulator</button>
+      <a class="btn btn-ghost" href={PTE_CORE_ROUTE_MAP.questionTypes}>Review question types</a>
+    </div>
+  </section>
+</section>
+
+<script>
+  const roots = document.querySelectorAll("[data-pte-simulator]");
+
+  roots.forEach((root) => {
+    const dataNode = root.querySelector("[data-pte-simulator-data]");
+    if (!dataNode?.textContent) return;
+
+    const data = JSON.parse(dataNode.textContent);
+    const storageKey = `pte-core-simulator:${data.mode}`;
+    const itemById = new Map(data.items.map((item) => [item.id, item]));
+    const sectionById = new Map(data.sections.map((section) => [section.id, section]));
+    const initialState = {
+      currentIndex: 0,
+      answers: {},
+      flagged: {},
+      startedAt: Date.now(),
+      remainingSeconds: data.totalMinutes * 60,
+      finished: false,
+    };
+
+    let state = loadState();
+    let timerId;
+
+    const timerNode = root.querySelector("[data-pte-timer]");
+    const progressNode = root.querySelector("[data-pte-progress]");
+    const flagCountNode = root.querySelector("[data-pte-flag-count]");
+    const sectionTabs = Array.from(root.querySelectorAll("[data-pte-section]"));
+    const questionDots = Array.from(root.querySelectorAll("[data-pte-jump]"));
+    const taskLabelNode = root.querySelector("[data-pte-task-label]");
+    const taskTitleNode = root.querySelector("[data-pte-task-title]");
+    const sectionTitleNode = root.querySelector("[data-pte-section-title]");
+    const timingNode = root.querySelector("[data-pte-timing]");
+    const promptNode = root.querySelector("[data-pte-prompt]");
+    const instructionsNode = root.querySelector("[data-pte-instructions]");
+    const formNode = root.querySelector("[data-pte-answer-form]");
+    const resultsNode = root.querySelector("[data-pte-results]");
+    const resultGridNode = root.querySelector("[data-pte-result-grid]");
+    const reviewListNode = root.querySelector("[data-pte-review-list]");
+
+    function loadState() {
+      try {
+        const saved = JSON.parse(window.localStorage.getItem(storageKey) || "null");
+        if (saved && typeof saved.currentIndex === "number") {
+          return { ...initialState, ...saved };
+        }
+      } catch {
+        window.localStorage.removeItem(storageKey);
+      }
+
+      return { ...initialState };
+    }
+
+    function saveState() {
+      window.localStorage.setItem(storageKey, JSON.stringify(state));
+    }
+
+    function getCurrentItem() {
+      return data.items[state.currentIndex] || data.items[0];
+    }
+
+    function getAnswer(item) {
+      return state.answers[item.id] ?? (item.responseType === "multiple" ? [] : "");
+    }
+
+    function setAnswer(item, value) {
+      state.answers[item.id] = value;
+      saveState();
+      renderProgress();
+    }
+
+    function isAnswered(item) {
+      const answer = getAnswer(item);
+      if (Array.isArray(answer)) return answer.length > 0;
+      return String(answer).trim().length > 0;
+    }
+
+    function formatTime(seconds) {
+      const safeSeconds = Math.max(0, seconds);
+      const minutes = Math.floor(safeSeconds / 60);
+      const remainder = safeSeconds % 60;
+      return `${minutes}:${String(remainder).padStart(2, "0")}`;
+    }
+
+    function renderProgress() {
+      const answeredCount = data.items.filter(isAnswered).length;
+      const flaggedCount = Object.values(state.flagged).filter(Boolean).length;
+      progressNode.textContent = `${answeredCount} of ${data.items.length} answered`;
+      flagCountNode.textContent = `${flaggedCount} flagged`;
+
+      questionDots.forEach((dot, index) => {
+        const item = data.items[index];
+        dot.classList.toggle("is-current", index === state.currentIndex);
+        dot.classList.toggle("is-answered", isAnswered(item));
+        dot.classList.toggle("is-flagged", Boolean(state.flagged[item.id]));
+      });
+    }
+
+    function renderSections() {
+      const item = getCurrentItem();
+      sectionTabs.forEach((tab) => {
+        const isActive = tab.dataset.pteSection === item.sectionId;
+        tab.classList.toggle("is-active", isActive);
+        tab.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+    }
+
+    function renderAnswerInput(item) {
+      const answer = getAnswer(item);
+      const label = `<label class="pte-sim__field-label" for="pte-answer-${item.id}">Your response</label>`;
+
+      if (item.responseType === "textarea" || item.responseType === "speaking-note") {
+        const note = item.responseType === "speaking-note"
+          ? "<p class=\"pte-sim__field-hint\">Speaking capture and AI pronunciation scoring arrive in later slices. Use this box for delivery notes for now.</p>"
+          : "";
+        const bounds = item.minWords || item.maxWords
+          ? `<p class="pte-sim__field-hint">${item.minWords || 0}-${item.maxWords || "open"} words recommended</p>`
+          : "";
+
+        formNode.innerHTML = `${label}<textarea id="pte-answer-${item.id}" rows="8" data-pte-answer>${escapeHtml(answer)}</textarea>${note}${bounds}`;
+        formNode.querySelector("[data-pte-answer]").addEventListener("input", (event) => {
+          setAnswer(item, event.target.value);
+        });
+        return;
+      }
+
+      if (item.responseType === "single") {
+        formNode.innerHTML = item.options.map((option, index) => `
+          <label class="pte-sim__choice">
+            <input type="radio" name="pte-answer-${item.id}" value="${escapeAttribute(option)}" ${answer === option ? "checked" : ""}>
+            <span>${escapeHtml(option)}</span>
+          </label>
+        `).join("");
+        formNode.querySelectorAll("input").forEach((input) => {
+          input.addEventListener("change", () => setAnswer(item, input.value));
+        });
+        return;
+      }
+
+      if (item.responseType === "multiple") {
+        const selected = Array.isArray(answer) ? answer : [];
+        formNode.innerHTML = item.options.map((option) => `
+          <label class="pte-sim__choice">
+            <input type="checkbox" value="${escapeAttribute(option)}" ${selected.includes(option) ? "checked" : ""}>
+            <span>${escapeHtml(option)}</span>
+          </label>
+        `).join("");
+        formNode.querySelectorAll("input").forEach((input) => {
+          input.addEventListener("change", () => {
+            const values = Array.from(formNode.querySelectorAll("input:checked")).map((checked) => checked.value);
+            setAnswer(item, values);
+          });
+        });
+        return;
+      }
+
+      formNode.innerHTML = `${label}<input id="pte-answer-${item.id}" type="text" data-pte-answer value="${escapeAttribute(answer)}">`;
+      formNode.querySelector("[data-pte-answer]").addEventListener("input", (event) => {
+        setAnswer(item, event.target.value);
+      });
+    }
+
+    function renderQuestion() {
+      const item = getCurrentItem();
+      const section = sectionById.get(item.sectionId);
+      const taskLabel = item.task?.label || item.taskSlug;
+      const timing = [item.prepSeconds ? `${item.prepSeconds}s prep` : "", item.responseSeconds ? `${item.responseSeconds}s response` : ""]
+        .filter(Boolean)
+        .join(" / ");
+
+      taskLabelNode.textContent = `Question ${item.number} of ${data.items.length}`;
+      taskTitleNode.textContent = taskLabel;
+      sectionTitleNode.textContent = section ? `${section.label}: ${section.title}` : item.sectionId;
+      timingNode.textContent = timing;
+      promptNode.textContent = item.prompt;
+      instructionsNode.textContent = item.instructions;
+      renderAnswerInput(item);
+      renderSections();
+      renderProgress();
+      saveState();
+    }
+
+    function jumpTo(index) {
+      state.currentIndex = Math.min(Math.max(index, 0), data.items.length - 1);
+      renderQuestion();
+    }
+
+    function toggleFlag() {
+      const item = getCurrentItem();
+      state.flagged[item.id] = !state.flagged[item.id];
+      saveState();
+      renderProgress();
+    }
+
+    function renderResults() {
+      state.finished = true;
+      saveState();
+      const answeredItems = data.items.filter(isAnswered);
+
+      resultGridNode.innerHTML = data.sections.map((section) => {
+        const sectionItems = data.items.filter((item) => item.sectionId === section.id);
+        const sectionAnswered = sectionItems.filter(isAnswered);
+        return `
+          <article class="pte-sim__result-card">
+            <span>${escapeHtml(section.label)}</span>
+            <strong>${escapeHtml(section.title)}</strong>
+            <p>${sectionAnswered.length} of ${sectionItems.length} answered</p>
+          </article>
+        `;
+      }).join("");
+
+      reviewListNode.innerHTML = `
+        <h3>Review queue</h3>
+        <p>${answeredItems.length} of ${data.items.length} tasks have a saved response. ${Object.values(state.flagged).filter(Boolean).length} task(s) are flagged.</p>
+        <p>Writing and speaking quality scores are not calculated in Slice 2.</p>
+      `;
+
+      resultsNode.hidden = false;
+      resultsNode.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function restart() {
+      state = { ...initialState, startedAt: Date.now() };
+      window.localStorage.removeItem(storageKey);
+      resultsNode.hidden = true;
+      startTimer();
+      renderQuestion();
+    }
+
+    function startTimer() {
+      window.clearInterval(timerId);
+      timerNode.textContent = formatTime(state.remainingSeconds);
+      timerId = window.setInterval(() => {
+        if (state.finished) return;
+        state.remainingSeconds = Math.max(0, state.remainingSeconds - 1);
+        timerNode.textContent = formatTime(state.remainingSeconds);
+        saveState();
+        if (state.remainingSeconds === 0) {
+          window.clearInterval(timerId);
+          renderResults();
+        }
+      }, 1000);
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function escapeAttribute(value) {
+      return escapeHtml(value).replace(/`/g, "&#096;");
+    }
+
+    root.querySelector("[data-pte-prev]").addEventListener("click", () => jumpTo(state.currentIndex - 1));
+    root.querySelector("[data-pte-next]").addEventListener("click", () => jumpTo(state.currentIndex + 1));
+    root.querySelector("[data-pte-flag]").addEventListener("click", toggleFlag);
+    root.querySelector("[data-pte-finish]").addEventListener("click", renderResults);
+    root.querySelector("[data-pte-restart]").addEventListener("click", restart);
+
+    questionDots.forEach((dot) => {
+      dot.addEventListener("click", () => jumpTo(Number(dot.dataset.pteJump)));
+    });
+
+    sectionTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const index = data.items.findIndex((item) => item.sectionId === tab.dataset.pteSection);
+        if (index >= 0) jumpTo(index);
+      });
+    });
+
+    renderQuestion();
+    startTimer();
+  });
+</script>

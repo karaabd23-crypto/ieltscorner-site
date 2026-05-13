@@ -1,0 +1,109 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import Breadcrumbs from "../../../../components/Breadcrumbs.astro";
+import { buildBreadcrumbSchema } from "../../../../lib/seo";
+import {
+  PTE_CORE_QUESTION_TYPES,
+  PTE_CORE_ROUTE_MAP,
+} from "../../../../lib/pteCoreConfig.mjs";
+
+export function getStaticPaths() {
+  return PTE_CORE_QUESTION_TYPES.map((questionType) => ({
+    params: { task: questionType.slug },
+    props: { questionType },
+  }));
+}
+
+const { questionType } = Astro.props;
+
+const sectionLabel = {
+  "speaking-writing": "Speaking & Writing",
+  reading: "Reading",
+  listening: "Listening",
+};
+
+const sectionSkillPath = {
+  "speaking-writing": PTE_CORE_ROUTE_MAP.speaking,
+  reading: PTE_CORE_ROUTE_MAP.reading,
+  listening: PTE_CORE_ROUTE_MAP.listening,
+};
+
+const sectionPath = sectionSkillPath[questionType.section] || PTE_CORE_ROUTE_MAP.hub;
+const sectionName = sectionLabel[questionType.section] || "PTE Core";
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "PTE Core", path: "/pte-core/" },
+    { name: "Question Types", path: "/pte-core/question-types/" },
+    { name: questionType.label, path: `/pte-core/question-types/${questionType.slug}/` },
+  ]),
+];
+
+const taskIndex = PTE_CORE_QUESTION_TYPES.findIndex((entry) => entry.slug === questionType.slug);
+const previousTask = taskIndex > 0 ? PTE_CORE_QUESTION_TYPES[taskIndex - 1] : null;
+const nextTask = taskIndex >= 0 && taskIndex < PTE_CORE_QUESTION_TYPES.length - 1
+  ? PTE_CORE_QUESTION_TYPES[taskIndex + 1]
+  : null;
+---
+
+<Layout
+  title={`PTE Core ${questionType.label} Guide`}
+  description={`PTE Core ${questionType.label} guide with task overview, section context, and simulator practice links.`}
+  keywords={`PTE Core ${questionType.label}, PTE Core question types, PTE Core practice`}
+  structuredData={pageStructuredData}
+>
+  <Breadcrumbs items={[
+    { label: "Home", href: "/" },
+    { label: "PTE Core", href: "/pte-core" },
+    { label: "Question Types", href: "/pte-core/question-types" },
+    { label: questionType.label },
+  ]} />
+
+  <section class="section pte-core-task-page">
+    <div class="pte-core-hub-hero pte-core-hub-hero--task">
+      <div class="pte-core-hub-hero__copy">
+        <span class="pte-core-kicker">{sectionName}</span>
+        <h1>{questionType.label}</h1>
+        <p>
+          {questionType.summary}
+        </p>
+        <div class="pte-core-hero__actions">
+          <a class="btn btn-primary" href={PTE_CORE_ROUTE_MAP.simulatorPractice}>Open practice mode</a>
+          <a class="btn btn-ghost" href={sectionPath}>Back to {sectionName} path</a>
+        </div>
+      </div>
+      <div class="pte-core-task-badge">
+        <span>Task</span>
+        <strong>{String(taskIndex + 1).padStart(2, "0")}</strong>
+        <small>of {PTE_CORE_QUESTION_TYPES.length}</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm pte-core-task-page">
+    <div class="pte-core-feature-card">
+      <span class="pte-core-kicker">How this task fits</span>
+      <h2>Use this page as the entry point for focused practice.</h2>
+      <p class="muted">
+        Strategy examples and scoring guidance can be expanded here later. For now, this page connects the task to the section path and simulator flow.
+      </p>
+      <div class="pte-core-neighbor-nav">
+        {previousTask ? (
+          <a class="btn" href={`${PTE_CORE_ROUTE_MAP.questionTypes}/${previousTask.slug}`}>
+            &lt;- {previousTask.label}
+          </a>
+        ) : (
+          <a class="btn" href={PTE_CORE_ROUTE_MAP.questionTypes}>
+            &lt;- Back to catalog
+          </a>
+        )}
+        {nextTask ? (
+          <a class="btn" href={`${PTE_CORE_ROUTE_MAP.questionTypes}/${nextTask.slug}`}>
+            {nextTask.label} -&gt;
+          </a>
+        ) : null}
+      </div>
+    </div>
+  </section>
+</Layout>

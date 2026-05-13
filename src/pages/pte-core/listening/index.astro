@@ -1,0 +1,34 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import SkillFreeLessons from "../../../components/SkillFreeLessons.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import SkillSubNav from "../../../components/SkillSubNav.astro";
+import PteCoreSkillShowcase from "../../../components/PteCoreSkillShowcase.astro";
+import { buildBreadcrumbSchema } from "../../../lib/seo";
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "PTE Core", path: "/pte-core/" },
+    { name: "Listening", path: "/pte-core/listening/" },
+  ]),
+];
+---
+
+<Layout
+  title="PTE Core Listening | Strategy and Practice"
+  description="Build PTE Core listening accuracy with focused strategy and guided next steps."
+  keywords="PTE Core listening, PTE Core listening practice, PTE Core listening strategy"
+  structuredData={pageStructuredData}
+>
+  <Breadcrumbs items={[
+    { label: "Home", href: "/" },
+    { label: "PTE Core", href: "/pte-core" },
+    { label: "Listening" },
+  ]} />
+  <SkillSubNav exam="PTE_CORE" currentSkill="listening" />
+
+  <PteCoreSkillShowcase skillSlug="listening" />
+
+  <SkillFreeLessons exam="PTE_CORE" skill="listening" />
+</Layout>

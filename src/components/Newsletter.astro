@@ -65,6 +65,7 @@ const {
   const readingGuideSource = "instagram-celpip-reading-guide";
   const form = document.getElementById("newsletter-form");
   const status = document.getElementById("newsletter-status");
+  const getNewsletterGuard = () => (window as any).__ieltscornerNewsletterGuard || null;
   const normalizeEmail = (value: string) => String(value || "").trim().toLowerCase();
   const readSignup = () => {
     try {
@@ -94,6 +95,7 @@ const {
   };
 
   if (form instanceof HTMLFormElement && status instanceof HTMLElement) {
+    getNewsletterGuard()?.prepareForm?.(form).catch(() => {});
     const savedSignup = readSignup();
     if (savedSignup?.email) {
       status.textContent = `You are already subscribed as ${savedSignup.email}.`;
@@ -116,6 +118,15 @@ const {
       status.style.color = "var(--text-muted)";
 
       try {
+        const newsletterGuard = getNewsletterGuard();
+        const verification = await newsletterGuard?.validateFormBeforeSubmit?.(form);
+        if (verification && !verification.ok) {
+          status.textContent = verification.error || "Please complete the verification step before submitting.";
+          status.style.color = "var(--text-muted)";
+          return;
+        }
+
+        const antiBotPayload = verification?.antiBot || newsletterGuard?.buildAntiBotPayload?.(form) || {};
         const response = await fetch("/.netlify/functions/subscribe-newsletter", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -123,6 +134,9 @@ const {
             email,
             source: "newsletter-component",
             audience: "digest",
+            formRenderedAt: antiBotPayload.formRenderedAt || null,
+            "bot-field": antiBotPayload.botField || "",
+            "cf-turnstile-response": antiBotPayload.turnstileToken || "",
           }),
         });
 
@@ -140,6 +154,7 @@ const {
         form.reset();
         window.location.href = "/newsletter/thanks/";
       } catch {
+        getNewsletterGuard()?.resetTurnstile?.(form);
         status.textContent = "We could not save your signup right now. Please try again in a moment.";
         status.style.color = "var(--text-muted)";
       }

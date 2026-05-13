@@ -38,49 +38,49 @@ const metaMap: Record<Category, { pill: string; h1: string; blurb: string; keywo
     pill: "Grammar | Band 7+ focus",
     h1: "Learn grammar that helps you get a higher score.",
     blurb:
-      "Learn the grammar you need for IELTS Band 7+ and CELPIP CLB 9+. These lessons explain conditionals, articles, passive voice, sentence patterns, and other high-impact structures with clear examples.",
+      "Learn the grammar you need for IELTS, CELPIP, and PTE Core. These lessons explain conditionals, articles, passive voice, sentence patterns, and other high-impact structures with clear examples.",
     keywords:
-      "IELTS grammar, CELPIP grammar, Band 7 grammar, advanced English grammar, grammar for IELTS writing, grammar for IELTS speaking, C1 grammar lessons",
+      "IELTS grammar, CELPIP grammar, PTE Core grammar, Band 7 grammar, advanced English grammar, grammar for IELTS writing, grammar for IELTS speaking, C1 grammar lessons",
   },
   vocabulary: {
     pill: "Vocabulary | Band 7+ focus",
     h1: "Learn the words you need for Band 7+ and CLB 9+.",
     blurb:
-      "Build vocabulary for IELTS Band 7+ and CELPIP CLB 9+. These lessons teach useful word groups, collocations, and expressions that help you sound more natural and precise.",
+      "Build vocabulary for IELTS, CELPIP, and PTE Core targets. These lessons teach useful word groups, collocations, and expressions that help you sound more natural and precise.",
     keywords:
-      "IELTS vocabulary, CELPIP vocabulary, Band 7 vocabulary, academic vocabulary, IELTS word list, advanced English words, vocabulary for IELTS",
+      "IELTS vocabulary, CELPIP vocabulary, PTE Core vocabulary, Band 7 vocabulary, academic vocabulary, IELTS word list, advanced English words, vocabulary for IELTS",
   },
   writing: {
     pill: "Writing | Band 7+ / CLB 9+",
     h1: "Learn how to write better and get higher scores.",
     blurb:
-      "Improve IELTS and CELPIP writing with clearer structure, stronger task response, better paragraph flow, and more accurate grammar.",
+      "Improve IELTS, CELPIP, and PTE Core writing with clearer structure, stronger task response, better paragraph flow, and more accurate grammar.",
     keywords:
-      "IELTS writing, CELPIP writing, Band 7 writing, IELTS essay, CELPIP email, task 2 writing, writing samples, IELTS writing tips",
+      "IELTS writing, CELPIP writing, PTE Core writing, Band 7 writing, IELTS essay, CELPIP email, PTE email writing, writing samples, IELTS writing tips",
   },
   speaking: {
     pill: "Speaking | Band 7+ / CLB 9+",
     h1: "Learn how to speak clearly and naturally in your test.",
     blurb:
-      "Improve IELTS and CELPIP speaking with lessons on fluency, idea development, pronunciation, structure, and natural delivery.",
+      "Improve IELTS, CELPIP, and PTE Core speaking with lessons on fluency, idea development, pronunciation, structure, and natural delivery.",
     keywords:
-      "IELTS speaking, CELPIP speaking, Band 7 speaking, speaking test tips, IELTS speaking part 2, CELPIP speaking practice, improve speaking scores",
+      "IELTS speaking, CELPIP speaking, PTE Core speaking, Band 7 speaking, speaking test tips, IELTS speaking part 2, CELPIP speaking practice, improve speaking scores",
   },
   listening: {
     pill: "Listening | Band 7+ / CLB 9+",
     h1: "Train your ear for faster, more accurate answers.",
     blurb:
-      "Improve IELTS and CELPIP listening with targeted practice in prediction, note-taking, signposts, and detail recognition.",
+      "Improve IELTS, CELPIP, and PTE Core listening with targeted practice in prediction, note-taking, signposts, and detail recognition.",
     keywords:
-      "IELTS listening, CELPIP listening, listening strategies, note-taking for listening, listening practice, Band 7 listening, CLB 9 listening",
+      "IELTS listening, CELPIP listening, PTE Core listening, listening strategies, note-taking for listening, listening practice, Band 7 listening, CLB 9 listening",
   },
   reading: {
     pill: "Reading | Band 7+ / CLB 9+",
     h1: "Read with precision and choose evidence-based answers.",
     blurb:
-      "Build stronger IELTS and CELPIP reading skills with scanning, inference, timing control, and text-based answer selection.",
+      "Build stronger IELTS, CELPIP, and PTE Core reading skills with scanning, inference, timing control, and text-based answer selection.",
     keywords:
-      "IELTS reading, CELPIP reading, reading strategies, scanning and skimming, inference questions, Band 7 reading, CLB 9 reading",
+      "IELTS reading, CELPIP reading, PTE Core reading, reading strategies, scanning and skimming, inference questions, Band 7 reading, CLB 9 reading",
   },
 };
 
@@ -88,7 +88,7 @@ const meta = metaMap[category];
 ---
 
 <Layout
-  title={`${category[0].toUpperCase() + category.slice(1)} Lessons for IELTS & CELPIP | Band 7+ / CLB 9+`}
+  title={`${category[0].toUpperCase() + category.slice(1)} Lessons for IELTS, CELPIP & PTE Core`}
   description={meta.blurb}
   keywords={meta.keywords}
 >
@@ -101,6 +101,7 @@ const meta = metaMap[category];
       <div class="cluster">
         <a class="btn btn-primary" href="/celpip">CELPIP hub</a>
         <a class="btn" href="/ielts">IELTS hub</a>
+        <a class="btn" href="/pte-core">PTE Core hub</a>
         <a class="btn" href="/lessons">All lessons</a>
       </div>
       <p id="exam-filter-notice" class="muted" style="display:none; margin-top: var(--s-2); font-size: var(--step--1);"></p>
@@ -200,14 +201,14 @@ const meta = metaMap[category];
 
       // Read ?exam= from the URL (set by SkillFreeLessons links)
       const urlExam = new URLSearchParams(window.location.search).get("exam")?.toUpperCase() || "";
-      const validExams = ["IELTS", "CELPIP"];
+      const validExams = ["IELTS", "CELPIP", "PTE_CORE"];
       const activeExam = validExams.includes(urlExam) ? urlExam : "";
 
       // Show a notice when pre-filtered
       if (activeExam && notice instanceof HTMLElement) {
+        const displayLabel = activeExam === "PTE_CORE" ? "PTE Core" : activeExam;
         notice.style.display = "block";
-        const other = activeExam === "IELTS" ? "CELPIP" : "IELTS";
-        notice.innerHTML = `Showing <strong>${activeExam}</strong> lessons only. <a href="?">Show all exams</a>`;
+        notice.innerHTML = `Showing <strong>${displayLabel}</strong> lessons only. <a href="?">Show all exams</a>`;
       }
 
       const total = cards.length;
@@ -224,12 +225,15 @@ const meta = metaMap[category];
           const keywordMatch = terms.every((term) => text.includes(term));
 
           // When pre-filtered by exam: hide lessons that belong exclusively to the other exam.
-          // Lessons with no exam tag (generic) remain visible for both.
+          // Lessons with no exam tag (generic) remain visible for all.
           let examMatch = true;
           if (activeExam) {
-            const other = activeExam === "IELTS" ? "CELPIP" : "IELTS";
-            // Hide only if the card is tagged exclusively for the other exam
-            if (cardExams && cardExams.includes(other) && !cardExams.includes(activeExam)) {
+            const examList = cardExams
+              .split(",")
+              .map((value) => value.trim())
+              .filter(Boolean);
+
+            if (examList.length > 0 && !examList.includes(activeExam)) {
               examMatch = false;
             }
           }

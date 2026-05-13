@@ -1,0 +1,93 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import { buildBreadcrumbSchema } from "../../../lib/seo";
+import {
+  PTE_CORE_PAGE_KEYWORDS,
+  PTE_CORE_QUESTION_TYPES,
+  PTE_CORE_ROUTE_MAP,
+} from "../../../lib/pteCoreConfig.mjs";
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "PTE Core", path: "/pte-core/" },
+    { name: "Question Types", path: "/pte-core/question-types/" },
+  ]),
+];
+
+type QuestionType = (typeof PTE_CORE_QUESTION_TYPES)[number];
+
+const sectionLabel: Record<string, string> = {
+  "speaking-writing": "Speaking & Writing",
+  reading: "Reading",
+  listening: "Listening",
+};
+
+const grouped = PTE_CORE_QUESTION_TYPES.reduce<Record<string, QuestionType[]>>((acc, questionType) => {
+  if (!acc[questionType.section]) {
+    acc[questionType.section] = [];
+  }
+  acc[questionType.section].push(questionType);
+  return acc;
+}, {});
+---
+
+<Layout
+  title="PTE Core Question Types | All 19 Task Guides"
+  description="Browse all 19 PTE Core question types with direct task guide shells and simulator entry points."
+  keywords={PTE_CORE_PAGE_KEYWORDS}
+  structuredData={pageStructuredData}
+>
+  <Breadcrumbs items={[
+    { label: "Home", href: "/" },
+    { label: "PTE Core", href: "/pte-core" },
+    { label: "Question Types" },
+  ]} />
+
+  <section class="section pte-core-catalog">
+    <div class="pte-core-hub-hero pte-core-hub-hero--catalog">
+      <div class="pte-core-hub-hero__copy">
+        <span class="pte-core-kicker">PTE Core question types</span>
+        <h1>All 19 PTE Core question-type guide shells</h1>
+        <p>
+          Use this catalog to jump into the exact task you need, then connect it back to the simulator when you are ready for timed practice.
+        </p>
+        <div class="pte-core-hero__actions">
+          <a class="btn btn-primary" href={PTE_CORE_ROUTE_MAP.simulator}>Open simulator</a>
+          <a class="btn btn-ghost" href={PTE_CORE_ROUTE_MAP.simulatorPractice}>Open practice mode</a>
+        </div>
+      </div>
+      <div class="pte-core-catalog-count" aria-label="PTE Core task count">
+        <strong>19</strong>
+        <span>question types across speaking, writing, reading, and listening</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm pte-core-catalog">
+    <div class="pte-core-feature-card">
+      <span class="pte-core-kicker">Catalog</span>
+      <h2>Question-type map</h2>
+      <p class="muted">
+        Task pages are grouped by exam section. Open any one to continue.
+      </p>
+
+      <div class="pte-core-catalog-groups">
+        {Object.entries(grouped).map(([section, rows]) => (
+          <section class="pte-core-catalog-group">
+            <h3>{sectionLabel[section] || section}</h3>
+            <div class="pte-core-catalog-grid">
+              {rows.map((row) => (
+                <a class="pte-core-task-card" href={`${PTE_CORE_ROUTE_MAP.questionTypes}/${row.slug}`}>
+                  <span>{row.label}</span>
+                  <p>{row.summary}</p>
+                </a>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

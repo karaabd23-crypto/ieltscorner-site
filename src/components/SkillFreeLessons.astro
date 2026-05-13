@@ -1,18 +1,20 @@
 ---
 import { getCollection } from "astro:content";
 import { getPublicLessonTitle } from "../lib/lessonLevel";
+import { EXAM_KEYS, type ExamKey } from "../lib/examConfig";
 
 interface Props {
-  exam: "IELTS" | "CELPIP";
+  exam: ExamKey;
   skill: "listening" | "reading" | "writing" | "speaking";
   limit?: number;
 }
 
 const { exam, skill, limit = 4 } = Astro.props as Props;
-const examUpper = exam.toUpperCase() as "IELTS" | "CELPIP";
-const oppositeExam = examUpper === "IELTS" ? "CELPIP" : "IELTS";
+const examUpper = exam.toUpperCase() as ExamKey;
+const oppositeExams = EXAM_KEYS.filter((key) => key !== examUpper);
 const skillLabel = `${skill.charAt(0).toUpperCase()}${skill.slice(1)}`;
-const sectionHeading = `Free ${examUpper} ${skillLabel} lessons`;
+const examLabel = examUpper === "PTE_CORE" ? "PTE Core" : examUpper;
+const sectionHeading = `Free ${examLabel} ${skillLabel} lessons`;
 const examParam = `?exam=${examUpper}`;
 const skillLessonsPath = `/lessons/${skill}${examParam}`;
 const grammarLessonsPath = `/lessons/grammar${examParam}`;
@@ -29,28 +31,36 @@ const allSkillLessons = await getCollection(
   ({ data }) => !data.draft && data.category === skill
 );
 
+const isEligibleForExam = (lesson: (typeof allSkillLessons)[number]) => {
+  const lessonTest = String(lesson.data.test ?? "").toUpperCase();
+  if (lessonTest && lessonTest !== examUpper) return false;
+
+  const lessonExams = (lesson.data.exam ?? []).map((value) => String(value).toUpperCase());
+  if (lessonExams.length > 0 && !lessonExams.includes(examUpper)) return false;
+
+  const searchable = `${lesson.slug} ${lesson.data.title} ${lesson.data.description ?? ""} ${lesson.data.excerpt} ${lesson.data.tags.join(" ")}`.toUpperCase();
+  if (oppositeExams.some((otherExam) => searchable.includes(otherExam))) return false;
+
+  return true;
+};
+
 const examSignalScore = (lesson: (typeof allSkillLessons)[number]) => {
   const lessonTest = String(lesson.data.test ?? "").toUpperCase();
   const searchable = `${lesson.slug} ${lesson.data.title} ${lesson.data.description ?? ""} ${lesson.data.excerpt}`.toUpperCase();
 
-  if (lessonTest === examUpper) return 2;
-  if (searchable.includes(examUpper) && !searchable.includes(oppositeExam)) return 1;
+  if (lessonTest === examUpper) return 3;
+
+  const includesTarget = searchable.includes(examUpper);
+  const includesOther = oppositeExams.some((otherExam) => searchable.includes(otherExam));
+
+  if (includesTarget && !includesOther) return 2;
+  if (includesTarget) return 1;
   return 0;
 };
 
-const relatedLessons = allSkillLessons
-  .filter((lesson) => {
-    const lessonTest = String(lesson.data.test ?? "").toUpperCase();
-    if (lessonTest && lessonTest !== examUpper) return false;
+const eligibleLessons = allSkillLessons.filter((lesson) => isEligibleForExam(lesson));
 
-    const lessonExams = (lesson.data.exam ?? []).map((value) => String(value).toUpperCase());
-    if (lessonExams.length > 0 && !lessonExams.includes(examUpper)) return false;
-
-    const searchable = `${lesson.slug} ${lesson.data.title} ${lesson.data.description ?? ""} ${lesson.data.excerpt} ${lesson.data.tags.join(" ")}`.toUpperCase();
-    if (searchable.includes(oppositeExam)) return false;
-
-    return true;
-  })
+const relatedLessons = eligibleLessons
   .sort((a, b) => {
     const scoreDifference = examSignalScore(b) - examSignalScore(a);
     if (scoreDifference !== 0) return scoreDifference;
@@ -58,7 +68,7 @@ const relatedLessons = allSkillLessons
   })
   .slice(0, limit);
 
-const fallbackLessons = [...allSkillLessons]
+const fallbackLessons = [...eligibleLessons]
   .sort((a, b) => parseDate(b.data.date) - parseDate(a.data.date))
   .slice(0, limit);
 
@@ -87,13 +97,13 @@ const displayLessons = relatedLessons.length > 0 ? relatedLessons : fallbackLess
     )}
     <div class="lesson-related-quick-links" aria-label="Free lesson quick links">
       <a class="lesson-related-quick-link" href={skillLessonsPath}>
-        Open all free {examUpper} {skill} lessons
+        Open all free {examLabel} {skill} lessons
       </a>
       <a class="lesson-related-quick-link" href={grammarLessonsPath}>
-        Open free {examUpper} grammar lessons
+        Open free {examLabel} grammar lessons
       </a>
       <a class="lesson-related-quick-link" href={vocabularyLessonsPath}>
-        Open free {examUpper} vocabulary lessons
+        Open free {examLabel} vocabulary lessons
       </a>
       <a class="lesson-related-quick-link" href={allLessonsPath}>
         Open the full free lesson library

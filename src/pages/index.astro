@@ -4,26 +4,27 @@ import FeaturedToolsSection from "../components/FeaturedToolsSection.astro";
 import { homeFeaturedToolCards } from "../lib/promotionTools";
 
 const homeKeywords =
-  "IELTS preparation, CELPIP preparation, IELTS lessons, CELPIP lessons, IELTS tutor, CELPIP tutor, IELTS writing feedback, CELPIP writing feedback";
+  "IELTS preparation, CELPIP preparation, PTE Core preparation, IELTS lessons, CELPIP lessons, PTE Core lessons, IELTS tutor, CELPIP tutor, IELTS writing feedback, CELPIP writing feedback, PTE Core simulator";
 ---
 
 <Layout
-  title="IELTS and CELPIP Preparation | Choose Your Path"
-  description="Pick IELTS or CELPIP, choose the support you need, and follow one clear next step."
+  title="IELTS, CELPIP, and PTE Core Preparation | Choose Your Path"
+  description="Pick IELTS, CELPIP, or PTE Core, choose the support you need, and follow one clear next step."
   keywords={homeKeywords}
   type="website"
 >
   <section class="section home-funnel" style="padding-top: var(--s-6);">
     <div class="hero" style={`--hero-bg: url('/heroes/home.png');`}>
       <div class="hero-content">
-        <span class="pill">IELTS + CELPIP prep</span>
+        <span class="pill">IELTS + CELPIP + PTE Core prep</span>
         <h1>Pick your exam. Pick your support. Start now.</h1>
         <p class="muted" style="max-width: 58ch;">
-          Use one clear path: choose IELTS or CELPIP first, then choose the support option that fits your goal.
+          Use one clear path: choose IELTS, CELPIP, or PTE Core first, then choose the support option that fits your goal.
         </p>
 
         <div class="cluster" style="margin-top: var(--s-2);">
           <a class="btn btn-primary" href="/celpip">Go to CELPIP Hub</a>
+          <a class="btn btn-ghost" href="/pte-core">Go to PTE Core Hub</a>
           <a class="btn btn-ghost" href="/ielts">Go to IELTS Hub</a>
         </div>
       </div>
@@ -32,14 +33,21 @@ const homeKeywords =
     <section class="surface home-step">
       <p class="home-step__label">Step 1</p>
       <h2>Choose your exam</h2>
-      <p class="muted home-step__intro">Both hubs include all four skills: listening, reading, writing, and speaking.</p>
+      <p class="muted home-step__intro">Each exam hub includes all four skills: listening, reading, writing, and speaking.</p>
 
-      <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-3);">
+      <div class="grid grid-3" style="gap: var(--s-4); margin-top: var(--s-3);">
         <a class="card home-option-card" href="/celpip" aria-label="Go to CELPIP Hub">
           <p class="home-option-card__kicker">CELPIP</p>
           <h3>CELPIP Hub</h3>
           <p class="muted">Follow CELPIP skill paths and go directly to writing feedback when ready.</p>
           <span class="home-option-card__cta">Go to CELPIP Hub</span>
+        </a>
+
+        <a class="card home-option-card" href="/pte-core" aria-label="Go to PTE Core Hub">
+          <p class="home-option-card__kicker">PTE Core</p>
+          <h3>PTE Core Hub</h3>
+          <p class="muted">Follow PTE Core skill paths and open question-type guides or simulator practice.</p>
+          <span class="home-option-card__cta">Go to PTE Core Hub</span>
         </a>
 
         <a class="card home-option-card" href="/ielts" aria-label="Go to IELTS Hub">

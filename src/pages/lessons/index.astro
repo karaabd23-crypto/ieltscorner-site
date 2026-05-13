@@ -73,7 +73,7 @@ const categoryCounts = lessons.reduce(
 );
 
 const pageKeywords =
-  "free IELTS lessons, free CELPIP lessons, grammar lessons, vocabulary lessons, reading lessons, listening lessons, speaking lessons, writing lessons";
+  "free IELTS lessons, free CELPIP lessons, free PTE Core lessons, grammar lessons, vocabulary lessons, reading lessons, listening lessons, speaking lessons, writing lessons";
 
 const pageStructuredData = [
   buildBreadcrumbSchema(Astro.site, [
@@ -84,8 +84,8 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title={`Free Lesson Library | ${totalLessons} IELTS and CELPIP Lessons`}
-  description="All free IELTS and CELPIP lessons in one place. Open grammar, vocabulary, writing, speaking, listening, and reading lessons from this hub."
+  title={`Free Lesson Library | ${totalLessons} IELTS, CELPIP, and PTE Core Lessons`}
+  description="All free IELTS, CELPIP, and PTE Core lessons in one place. Open grammar, vocabulary, writing, speaking, listening, and reading lessons from this hub."
   keywords={pageKeywords}
   structuredData={pageStructuredData}
 >
@@ -93,7 +93,7 @@ const pageStructuredData = [
     <div class="hero" style={`--hero-bg: url('/heroes/lesson.png');`}>
       <div class="hero-content">
         <span class="pill">Free lesson library</span>
-        <h1>All {totalLessons} free IELTS and CELPIP lessons in one place</h1>
+        <h1>All {totalLessons} free IELTS, CELPIP, and PTE Core lessons in one place</h1>
         <p class="muted" style="max-width: 62ch;">
           Choose a category below and open every published lesson. This is the main hub for free study content.
         </p>
@@ -127,9 +127,10 @@ const pageStructuredData = [
           ))}
         </select>
         <select id="all-lessons-exam" class="lessons-hub-search__select">
-          <option value="all">IELTS + CELPIP</option>
+          <option value="all">IELTS + CELPIP + PTE Core</option>
           <option value="IELTS">IELTS only</option>
           <option value="CELPIP">CELPIP only</option>
+          <option value="PTE_CORE">PTE Core only</option>
         </select>
         <button id="all-lessons-clear" class="btn" type="button">Clear</button>
       </div>
@@ -240,6 +241,11 @@ const pageStructuredData = [
           <h3>CELPIP hub</h3>
           <p class="muted">Open CELPIP Listening, Reading, Writing, and Speaking paths.</p>
           <span class="btn btn-ghost">Open CELPIP Hub</span>
+        </a>
+        <a class="card" href="/pte-core" style="text-decoration: none; color: inherit;">
+          <h3>PTE Core hub</h3>
+          <p class="muted">Open PTE Core Listening, Reading, Writing, and Speaking paths.</p>
+          <span class="btn btn-ghost">Open PTE Core Hub</span>
         </a>
       </div>
     </div>
