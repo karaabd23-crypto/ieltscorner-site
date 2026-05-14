@@ -273,7 +273,7 @@ export const PTE_CORE_SIMULATOR_SECTIONS = [
     label: 'Part 3',
     title: 'Listening',
     durationMinutes: 30,
-    description: 'Listening tasks that use transcript-style placeholders until audio and microphone slices are added.',
+    description: 'Listening tasks with text-based audio prompts, answer capture, and review support.',
     questionTypeSlugs: [
       'summarize-spoken-text',
       'multiple-choice-multiple-answers-listening',
@@ -299,7 +299,7 @@ export const PTE_CORE_SIMULATOR_SAMPLE_ITEMS = [
     taskSlug: 'read-aloud',
     prompt:
       'Community libraries are changing quickly. Many now provide language workshops, digital learning spaces, and settlement resources for newcomers.',
-    instructions: 'Read the text aloud. In this slice, use the response box to note whether your delivery felt clear and complete.',
+    instructions: 'Read the text aloud and record your response. You can also type quick notes before grading.',
     responseType: 'speaking-note',
     prepSeconds: 30,
     responseSeconds: 40,
@@ -309,8 +309,8 @@ export const PTE_CORE_SIMULATOR_SAMPLE_ITEMS = [
     number: 2,
     sectionId: 'speaking-writing',
     taskSlug: 'repeat-sentence',
-    prompt: 'Audio placeholder: The registration deadline has been extended until Friday afternoon.',
-    instructions: 'Listen once and repeat the sentence. Audio playback is added in a later slice.',
+    prompt: 'The registration deadline has been extended until Friday afternoon.',
+    instructions: 'Listen once and repeat the sentence. Record your response after reading the source sentence.',
     responseType: 'speaking-note',
     prepSeconds: 0,
     responseSeconds: 15,
@@ -321,7 +321,7 @@ export const PTE_CORE_SIMULATOR_SAMPLE_ITEMS = [
     sectionId: 'speaking-writing',
     taskSlug: 'describe-image',
     prompt:
-      'Image placeholder: A line chart shows steady growth in online course enrolment from 2020 to 2024, with the sharpest increase after 2022.',
+      'A line chart shows steady growth in online course enrolment from 2020 to 2024, with the sharpest increase after 2022.',
     instructions: 'Plan a short description with an introduction, key trend, and closing comparison.',
     responseType: 'speaking-note',
     prepSeconds: 25,
@@ -441,7 +441,7 @@ export const PTE_CORE_SIMULATOR_SAMPLE_ITEMS = [
     sectionId: 'listening',
     taskSlug: 'summarize-spoken-text',
     prompt:
-      'Audio placeholder: A speaker explains that neighbourhood gardens help residents access fresh food, meet neighbours, and learn practical growing skills.',
+      'A speaker explains that neighbourhood gardens help residents access fresh food, meet neighbours, and learn practical growing skills.',
     instructions: 'Write a concise summary of the audio.',
     responseType: 'textarea',
     minWords: 20,
@@ -453,7 +453,7 @@ export const PTE_CORE_SIMULATOR_SAMPLE_ITEMS = [
     sectionId: 'listening',
     taskSlug: 'multiple-choice-multiple-answers-listening',
     prompt:
-      'Audio placeholder: The speaker says the workshop includes resume feedback, interview practice, and a short networking session.',
+      'The speaker says the workshop includes resume feedback, interview practice, and a short networking session.',
     instructions: 'Select all activities mentioned.',
     responseType: 'multiple',
     options: ['Resume feedback', 'Interview practice', 'Networking session', 'A written grammar exam'],
@@ -463,7 +463,7 @@ export const PTE_CORE_SIMULATOR_SAMPLE_ITEMS = [
     number: 15,
     sectionId: 'listening',
     taskSlug: 'fill-in-the-blanks-listening',
-    prompt: 'Audio placeholder transcript: The next train to downtown will arrive on platform ___.',
+    prompt: 'The next train to downtown will arrive on platform ___.',
     instructions: 'Type the missing word or number.',
     responseType: 'text',
   },
@@ -472,7 +472,7 @@ export const PTE_CORE_SIMULATOR_SAMPLE_ITEMS = [
     number: 16,
     sectionId: 'listening',
     taskSlug: 'multiple-choice-single-answer-listening',
-    prompt: 'Audio placeholder: A caller asks to change an appointment because of a work conflict.',
+    prompt: 'A caller asks to change an appointment because of a work conflict.',
     instructions: 'Choose the main reason for the call.',
     responseType: 'single',
     options: [
@@ -488,7 +488,7 @@ export const PTE_CORE_SIMULATOR_SAMPLE_ITEMS = [
     sectionId: 'listening',
     taskSlug: 'select-missing-word',
     prompt:
-      'Audio placeholder: The speaker says the new community centre will open next month, but membership registration begins ___.',
+      'The speaker says the new community centre will open next month, but membership registration begins ___.',
     instructions: 'Choose the most logical ending.',
     responseType: 'single',
     options: ['tomorrow', 'last year', 'after midnight in 2035', 'never'],
@@ -499,8 +499,8 @@ export const PTE_CORE_SIMULATOR_SAMPLE_ITEMS = [
     sectionId: 'listening',
     taskSlug: 'highlight-incorrect-words',
     prompt:
-      'Transcript placeholder: The manager confirmed that the safety training will happen on Tuesday morning in room fourteen.',
-    instructions: 'Type any words that sound different from the audio when audio is added in a later slice.',
+      'The manager confirmed that the safety training will happen on Tuesday morning in room fourteen.',
+    instructions: 'Type any words that differ from the spoken version.',
     responseType: 'text',
   },
   {
@@ -508,7 +508,7 @@ export const PTE_CORE_SIMULATOR_SAMPLE_ITEMS = [
     number: 19,
     sectionId: 'listening',
     taskSlug: 'write-from-dictation',
-    prompt: 'Audio placeholder: The final report must be submitted before the end of the week.',
+    prompt: 'The final report must be submitted before the end of the week.',
     instructions: 'Write the sentence exactly as heard.',
     responseType: 'text',
   },

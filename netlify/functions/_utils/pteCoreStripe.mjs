@@ -1,9 +1,6 @@
-import { PTE_CORE_PREMIUM_PRICE_ID } from '../../../src/lib/pteCoreBilling.mjs';
-
 const CONFIGURED_PRICE_ID = String(
   process.env.PTE_CORE_PREMIUM_PRICE_ID
     || process.env.CELPIP_READING_PRICE_ID
-    || PTE_CORE_PREMIUM_PRICE_ID
     || '',
 ).trim();
 

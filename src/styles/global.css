@@ -6076,6 +6076,50 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
   --pte-core-c: #f5e6d7;
 }
 
+.pte-core-hub-hero--compact {
+  grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.72fr);
+  gap: clamp(18px, 3.2vw, 36px);
+  min-height: clamp(330px, 36vw, 430px);
+}
+
+.pte-core-hub-hero--compact .pte-core-hub-hero__copy {
+  max-width: 680px;
+  padding: clamp(24px, 4.2vw, 48px);
+}
+
+.pte-core-hub-hero--compact .pte-core-hub-hero__copy h1 {
+  max-width: 17ch;
+  font-size: clamp(2.45rem, 5vw, 4.75rem);
+  line-height: 0.96;
+}
+
+.pte-core-hub-hero--compact .pte-core-hub-hero__copy p {
+  max-width: 54ch;
+  font-size: clamp(1rem, 1.6vw, 1.16rem);
+}
+
+.pte-core-hub-hero--compact::after {
+  display: none;
+}
+
+.pte-core-hub-hero--compact .pte-core-hero__actions {
+  margin-top: var(--s-4);
+}
+
+.pte-core-hub-hero--compact .pte-core-hub-hero__visual {
+  margin: clamp(16px, 2.8vw, 30px);
+  padding: clamp(16px, 2.4vw, 26px);
+}
+
+.pte-core-hub-hero--compact .pte-core-hub-hero__visual span {
+  min-height: 64px;
+}
+
+.pte-core-hub-hero--compact .pte-core-hub-hero__visual strong {
+  min-height: 82px;
+  font-size: clamp(1.7rem, 3.4vw, 2.9rem);
+}
+
 .pte-core-hub-hero--catalog {
   --pte-core-a: #23758a;
   --pte-core-b: var(--sky);
@@ -6245,6 +6289,10 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
   .pte-core-task-badge {
     margin-top: 0;
   }
+
+  .pte-core-hub-hero--compact {
+    min-height: 0;
+  }
 }
 
 @media (max-width: 560px) {
@@ -6267,6 +6315,14 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
   .pte-core-hero__copy h1,
   .pte-core-hub-hero__copy h1 {
     font-size: clamp(2.4rem, 15vw, 4rem);
+  }
+
+  .pte-core-hub-hero--compact .pte-core-hub-hero__copy {
+    padding: var(--s-4);
+  }
+
+  .pte-core-hub-hero--compact .pte-core-hub-hero__copy h1 {
+    font-size: clamp(2.2rem, 12vw, 3.35rem);
   }
 
   .pte-core-hero__panel,
@@ -6608,7 +6664,8 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
 }
 
 .pte-sim__grade-head,
-.pte-sim__grade-actions {
+.pte-sim__grade-actions,
+.pte-sim__recording {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -6623,6 +6680,7 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
 
 .pte-sim__grade-head span,
 .pte-sim__grade-actions span,
+.pte-sim__recording span,
 .pte-sim__grade-note,
 .pte-sim__grade-status {
   color: var(--muted);
@@ -6738,6 +6796,43 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
   display: block;
   color: var(--ink);
   margin-bottom: 4px;
+}
+
+.pte-sim__history {
+  display: grid;
+  gap: var(--s-3);
+}
+
+.pte-sim__history-card,
+.pte-sim__history-list {
+  padding: var(--s-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.pte-sim__history-card strong,
+.pte-sim__history-list h3 {
+  color: var(--ink);
+}
+
+.pte-sim__history-card p,
+.pte-sim__history-list span {
+  margin: var(--s-2) 0 0;
+  color: var(--muted);
+}
+
+.pte-sim__history-list {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.pte-sim__history-list article {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding-top: var(--s-2);
+  border-top: 1px solid var(--border);
 }
 
 .pte-sim__controls {

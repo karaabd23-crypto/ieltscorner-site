@@ -310,15 +310,15 @@ function buildMockGrade({ taskSlug, responseText, wordCount }) {
   const overallScore = clampScore(Math.min(82, structureScore));
 
   return {
-    evaluationSource: 'mock',
+    evaluationSource: 'rule-based',
     cached: false,
     taskSlug,
     wordCount,
     overallScore,
     readiness: overallScore >= 70 ? 'Developing well' : 'Needs focused practice',
     summary: isEmail
-      ? 'This draft is checked with local rules because real AI grading is disabled. The review focuses on visible email structure, task tone, and coverage signals.'
-      : 'This draft is checked with local rules because real AI grading is disabled. The review focuses on one-sentence control, length, and summary structure.',
+      ? 'This draft is checked with local rules when real AI grading is not active. The review focuses on visible email structure, task tone, and coverage signals.'
+      : 'This draft is checked with local rules when real AI grading is not active. The review focuses on one-sentence control, length, and summary structure.',
     scores: {
       content: clampScore(overallScore + (isEmail && hasRequest ? 4 : 0)),
       form: clampScore(structureScore),
@@ -535,7 +535,7 @@ export async function handler(event) {
   const sessionId = normalizeText(body.sessionId, 160);
 
   if (!VALID_TASKS.has(taskSlug) || !prompt || !responseText) {
-    return jsonResponse(400, { error: 'Only PTE Core writing tasks can be graded in this slice.' });
+    return jsonResponse(400, { error: 'Only PTE Core writing tasks can be graded here.' });
   }
 
   const wordCount = getWordCount(responseText);
@@ -596,7 +596,7 @@ export async function handler(event) {
   let payload = {
     ...fallback,
     aiEnabled: REAL_AI_ENABLED,
-    model: REAL_AI_ENABLED ? OPENAI_MODEL : 'mock-rules',
+    model: REAL_AI_ENABLED ? OPENAI_MODEL : 'rule-based',
     plan,
   };
 
@@ -621,10 +621,10 @@ export async function handler(event) {
         plan,
       };
     } catch (error) {
-      console.warn('[pte-core-grade] OpenAI grading failed; returning mock fallback:', error?.message || error);
+      console.warn('[pte-core-grade] OpenAI grading failed; returning rule-based fallback:', error?.message || error);
       payload = {
         ...payload,
-        evaluationSource: 'mock-fallback',
+        evaluationSource: 'rule-based-fallback',
         summary: `${payload.summary} Real AI grading was attempted but could not complete, so this fallback did not spend another request.`,
       };
     }

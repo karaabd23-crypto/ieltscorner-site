@@ -24,13 +24,13 @@ const supportCards = [
   },
   {
     title: "PTE Core Simulator",
-    description: "Enter the exam-style simulator shell and follow the full section workflow.",
+    description: "Enter the exam-style simulator and follow the full section workflow.",
     href: PTE_CORE_ROUTE_MAP.simulator,
     cta: "Open simulator",
   },
   {
     title: "Simulator Practice Mode",
-    description: "Open the task-focused simulator practice shell for targeted repetition.",
+    description: "Open the task-focused simulator practice for targeted repetition.",
     href: PTE_CORE_ROUTE_MAP.simulatorPractice,
     cta: "Open practice mode",
   },
@@ -45,7 +45,7 @@ const supportCards = [
 
 <Layout
   title="PTE Core Hub | Skills and Practice Paths"
-  description="PTE Core hub with direct links to Listening, Reading, Writing, Speaking, question-type guides, and simulator shells."
+  description="PTE Core hub with direct links to Listening, Reading, Writing, Speaking, question-type guides, and simulators."
   keywords={PTE_CORE_PAGE_KEYWORDS}
   structuredData={pageStructuredData}
 >
@@ -55,12 +55,12 @@ const supportCards = [
   ]} />
 
   <section class="section pte-core-hub">
-    <div class="pte-core-hub-hero">
+    <div class="pte-core-hub-hero pte-core-hub-hero--compact">
       <div class="pte-core-hub-hero__copy">
         <span class="pte-core-kicker">PTE Core hub</span>
         <h1>Choose your PTE Core skill, then choose your practice path</h1>
         <p>
-          Start with Listening, Reading, Writing, or Speaking. Then open question-type guides or simulator shells from one place.
+          Start with Listening, Reading, Writing, or Speaking. Then open question-type guides or simulators from one place.
         </p>
         <div class="pte-core-hero__actions">
           <a class="btn btn-primary" href={PTE_CORE_ROUTE_MAP.questionTypes}>Question Types</a>
@@ -83,7 +83,7 @@ const supportCards = [
       <span class="pte-core-kicker">Explore by skill</span>
       <h2>Pick the score area that needs the most attention.</h2>
       <p class="muted">
-        Each skill page gives you a clear next step and links into guides and simulator shells.
+        Each skill page gives you a clear next step and links into guides and simulators.
       </p>
       <div class="pte-core-path-grid">
         {PTE_CORE_SKILLS.map((skill) => (

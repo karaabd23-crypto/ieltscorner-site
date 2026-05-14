@@ -39,8 +39,8 @@ const simulatorPayload = {
       <h2>{isPracticeMode ? "PTE Core practice engine" : "PTE Core simulator"}</h2>
       <p class="muted">
         {isPracticeMode
-          ? "Practice with the same task renderer used by the simulator. Writing feedback is manual and env-gated; saved history arrives in later slices."
-          : "Move through all 19 PTE Core task types in one exam-style workspace. Writing tasks can be graded manually when your answer is ready."}
+          ? "Practice with the same task renderer used by the simulator, including browser recording, AI-assisted writing and speaking feedback, and account history when signed in."
+          : "Move through all 19 PTE Core task types in one exam-style workspace with answer capture, writing feedback, speaking recording, and attempt history."}
       </p>
     </div>
     <div class="pte-sim__status" aria-live="polite">
@@ -107,7 +107,7 @@ const simulatorPayload = {
           <p class="pte-sim__panel-label">Response</p>
           <form class="pte-sim__answer-form" data-pte-answer-form></form>
           <div class="pte-sim__grading" data-pte-grading hidden></div>
-          <p class="pte-sim__save-state" data-pte-save-state>Responses save in this browser for this slice.</p>
+          <p class="pte-sim__save-state" data-pte-save-state>Responses save in this browser. Signed-in users also get account-backed attempt history when they finish.</p>
         </article>
       </div>
 
@@ -125,11 +125,12 @@ const simulatorPayload = {
       <p class="pte-sim__eyebrow">Completion report</p>
       <h2 data-pte-results-title>Attempt complete</h2>
       <p class="muted" data-pte-results-copy>
-        AI scoring, speaking analysis, and account-backed history are intentionally reserved for later slices.
+        Your completion report includes answer progress, AI feedback completed during the attempt, and account-backed history when you are signed in.
       </p>
     </div>
     <div class="pte-sim__result-grid" data-pte-result-grid></div>
     <div class="pte-sim__review-list" data-pte-review-list></div>
+    <div class="pte-sim__history" data-pte-history></div>
     <div class="cluster">
       <button class="btn btn-primary" type="button" data-pte-restart>Restart simulator</button>
       <a class="btn btn-ghost" href={PTE_CORE_ROUTE_MAP.questionTypes}>Review question types</a>
@@ -149,9 +150,11 @@ const simulatorPayload = {
     const itemById = new Map(data.items.map((item) => [item.id, item]));
     const sectionById = new Map(data.sections.map((section) => [section.id, section]));
     const initialState = {
+      attemptId: `pte_attempt_${Date.now()}_${Math.random().toString(36).slice(2)}`,
       currentIndex: 0,
       answers: {},
       grades: {},
+      speakingGrades: {},
       flagged: {},
       startedAt: Date.now(),
       remainingSeconds: data.totalMinutes * 60,
@@ -160,6 +163,10 @@ const simulatorPayload = {
 
     let state = loadState();
     let timerId;
+    let activeRecorder = null;
+    let activeRecorderChunks = [];
+    let activeRecorderItemId = "";
+    const recordings = new Map();
     const premiumSessionKey = "pte-core-premium-session-id";
     const urlParams = new URLSearchParams(window.location.search);
     const checkoutSessionId = urlParams.get("session_id");
@@ -183,6 +190,7 @@ const simulatorPayload = {
     const resultsNode = root.querySelector("[data-pte-results]");
     const resultGridNode = root.querySelector("[data-pte-result-grid]");
     const reviewListNode = root.querySelector("[data-pte-review-list]");
+    const historyNode = root.querySelector("[data-pte-history]");
 
     function loadState() {
       try {
@@ -264,15 +272,34 @@ const simulatorPayload = {
       const answer = getAnswer(item);
       const label = `<label class="pte-sim__field-label" for="pte-answer-${item.id}">Your response</label>`;
 
-      if (item.responseType === "textarea" || item.responseType === "speaking-note") {
-        const note = item.responseType === "speaking-note"
-          ? "<p class=\"pte-sim__field-hint\">Speaking capture and AI pronunciation scoring arrive in later slices. Use this box for delivery notes for now.</p>"
-          : "";
+      if (item.responseType === "speaking-note") {
+        const speakingGrade = state.speakingGrades?.[item.id];
+        formNode.innerHTML = `
+          ${label}
+          <textarea id="pte-answer-${item.id}" rows="6" data-pte-answer aria-label="Optional typed speaking response notes">${escapeHtml(answer)}</textarea>
+          <div class="pte-sim__recording">
+            <button class="btn btn-primary" type="button" data-pte-record>${recordings.has(item.id) ? "Record again" : "Start recording"}</button>
+            <button class="btn btn-ghost" type="button" data-pte-grade-speaking ${String(answer || "").trim() || recordings.has(item.id) ? "" : "disabled"}>Grade speaking</button>
+            <span data-pte-record-status>${recordings.has(item.id) ? "Recording captured for this task." : "Use your microphone to capture the spoken response."}</span>
+          </div>
+          ${speakingGrade ? renderSpeakingGradeResult(speakingGrade.payload, speakingGrade.answerSnapshot === String(answer || "")) : ""}
+        `;
+        formNode.querySelector("[data-pte-answer]").addEventListener("input", (event) => {
+          setAnswer(item, event.target.value);
+          const gradeButton = formNode.querySelector("[data-pte-grade-speaking]");
+          if (gradeButton) gradeButton.disabled = !String(event.target.value || "").trim() && !recordings.has(item.id);
+        });
+        formNode.querySelector("[data-pte-record]")?.addEventListener("click", () => toggleRecording(item));
+        formNode.querySelector("[data-pte-grade-speaking]")?.addEventListener("click", () => submitSpeakingGrade(item));
+        return;
+      }
+
+      if (item.responseType === "textarea") {
         const bounds = item.minWords || item.maxWords
           ? `<p class="pte-sim__field-hint">${item.minWords || 0}-${item.maxWords || "open"} words recommended</p>`
           : "";
 
-        formNode.innerHTML = `${label}<textarea id="pte-answer-${item.id}" rows="8" data-pte-answer>${escapeHtml(answer)}</textarea>${note}${bounds}`;
+        formNode.innerHTML = `${label}<textarea id="pte-answer-${item.id}" rows="8" data-pte-answer>${escapeHtml(answer)}</textarea>${bounds}`;
         formNode.querySelector("[data-pte-answer]").addEventListener("input", (event) => {
           setAnswer(item, event.target.value);
         });
@@ -319,6 +346,10 @@ const simulatorPayload = {
       return item.taskSlug === "summarize-written-text" || item.taskSlug === "write-email";
     }
 
+    function isSpeakingGradeTask(item) {
+      return item.responseType === "speaking-note";
+    }
+
     function getWordCount(value) {
       return String(value || "").trim().split(/\s+/).filter(Boolean).length;
     }
@@ -362,7 +393,7 @@ const simulatorPayload = {
       const plan = grade?.payload?.plan;
       const planNote = plan?.freeDailyLimit
         ? `Free AI tier: ${plan.freeDailyLimit} writing grade${Number(plan.freeDailyLimit) === 1 ? "" : "s"} per day when real AI grading is enabled.`
-        : "Free mock feedback is available now; real AI grading is limited by the server.";
+        : "Free rule-based feedback is available; real AI grading is controlled by the server plan.";
       const billingNote = hasPremiumSession()
         ? "Premium session saved for this browser. Paid AI grades bypass the free daily caps."
         : "Need more than the free daily cap? Unlock PTE Core Premium with the same monthly plan used for CELPIP Reading.";
@@ -409,6 +440,9 @@ const simulatorPayload = {
       const strengths = Array.isArray(payload?.strengths) ? payload.strengths : [];
       const priorities = Array.isArray(payload?.priorities) ? payload.priorities : [];
       const fadedClass = isCurrentGrade ? "" : " is-stale";
+      const scoreKeys = Object.keys(scores).length
+        ? Object.keys(scores)
+        : ["content", "form", "grammar", "vocabulary", "coherence"];
 
       return `
         <article class="pte-sim__grade-result${fadedClass}">
@@ -417,8 +451,9 @@ const simulatorPayload = {
             <span>${escapeHtml(payload?.readiness || "Practice feedback")}</span>
           </div>
           <p>${escapeHtml(payload?.summary || "Feedback is ready.")}</p>
+          ${payload?.transcript ? `<p class="pte-sim__grade-note"><strong>Transcript:</strong> ${escapeHtml(payload.transcript)}</p>` : ""}
           <div class="pte-sim__grade-score-grid">
-            ${["content", "form", "grammar", "vocabulary", "coherence"].map((key) => `
+            ${scoreKeys.map((key) => `
               <span><strong>${escapeHtml(key)}</strong>${escapeHtml(scores[key] ?? "N/A")}</span>
             `).join("")}
           </div>
@@ -449,6 +484,106 @@ const simulatorPayload = {
           ` : ""}
         </article>
       `;
+    }
+
+    function renderSpeakingGradeResult(payload, isCurrentGrade) {
+      return renderGradeResult(payload, isCurrentGrade);
+    }
+
+    function updateRecordStatus(message) {
+      const status = formNode.querySelector("[data-pte-record-status]");
+      if (status) status.textContent = message;
+    }
+
+    async function toggleRecording(item) {
+      if (!navigator.mediaDevices?.getUserMedia || typeof MediaRecorder === "undefined") {
+        updateRecordStatus("Microphone recording is not supported in this browser. Type your response notes and grade from text.");
+        return;
+      }
+
+      if (activeRecorder && activeRecorder.state === "recording") {
+        activeRecorder.stop();
+        return;
+      }
+
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        activeRecorderChunks = [];
+        activeRecorderItemId = item.id;
+        activeRecorder = new MediaRecorder(stream);
+        activeRecorder.addEventListener("dataavailable", (event) => {
+          if (event.data?.size) activeRecorderChunks.push(event.data);
+        });
+        activeRecorder.addEventListener("stop", () => {
+          const blob = new Blob(activeRecorderChunks, { type: activeRecorder.mimeType || "audio/webm" });
+          recordings.set(activeRecorderItemId, blob);
+          stream.getTracks().forEach((track) => track.stop());
+          updateRecordStatus("Recording captured. You can grade speaking now or record again.");
+          renderAnswerInput(item);
+        });
+        activeRecorder.start();
+        updateRecordStatus("Recording... click Stop recording when finished.");
+        const button = formNode.querySelector("[data-pte-record]");
+        if (button) button.textContent = "Stop recording";
+      } catch (error) {
+        updateRecordStatus(error?.message || "Unable to access the microphone.");
+      }
+    }
+
+    function blobToBase64(blob) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(String(reader.result || "").split(",")[1] || "");
+        reader.onerror = () => reject(new Error("Unable to read the recording."));
+        reader.readAsDataURL(blob);
+      });
+    }
+
+    async function submitSpeakingGrade(item) {
+      const notes = String(getAnswer(item) || "").trim();
+      const recording = recordings.get(item.id);
+      if (!notes && !recording) {
+        updateRecordStatus("Record your response or type what you said before grading.");
+        return;
+      }
+
+      updateRecordStatus("Grading speaking...");
+
+      try {
+        const audioBase64 = recording ? await blobToBase64(recording) : "";
+        const response = await fetch("/.netlify/functions/pte-core-grade-speaking", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            taskSlug: item.taskSlug,
+            taskLabel: item.task?.label || item.taskSlug,
+            prompt: item.prompt,
+            instructions: item.instructions,
+            notes,
+            audioBase64,
+            mimeType: recording?.type || "audio/webm",
+            sessionId: getPremiumSessionId(),
+          }),
+        });
+
+        const payload = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          throw new Error(payload.error || "Unable to grade this speaking response right now.");
+        }
+
+        state.speakingGrades = {
+          ...(state.speakingGrades || {}),
+          [item.id]: {
+            answerSnapshot: notes,
+            gradedAt: new Date().toISOString(),
+            payload,
+          },
+        };
+        saveState();
+        renderAnswerInput(item);
+      } catch (error) {
+        updateRecordStatus(error?.message || "Unable to grade this speaking response right now.");
+      }
     }
 
     async function startPteCheckout(item) {
@@ -559,6 +694,8 @@ const simulatorPayload = {
       state.finished = true;
       saveState();
       const answeredItems = data.items.filter(isAnswered);
+      const writingGradeCount = Object.keys(state.grades || {}).length;
+      const speakingGradeCount = Object.keys(state.speakingGrades || {}).length;
 
       resultGridNode.innerHTML = data.sections.map((section) => {
         const sectionItems = data.items.filter((item) => item.sectionId === section.id);
@@ -575,16 +712,88 @@ const simulatorPayload = {
       reviewListNode.innerHTML = `
         <h3>Review queue</h3>
         <p>${answeredItems.length} of ${data.items.length} tasks have a saved response. ${Object.values(state.flagged).filter(Boolean).length} task(s) are flagged.</p>
-        <p>PTE writing tasks can now be graded manually. Speaking analysis, microphone recording, and account-backed history are still reserved for later slices.</p>
+        <p>${writingGradeCount} writing response(s) and ${speakingGradeCount} speaking response(s) include feedback in this attempt.</p>
       `;
 
+      saveAttemptHistory();
       resultsNode.hidden = false;
       resultsNode.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
+    async function saveAttemptHistory() {
+      if (!historyNode) return;
+      historyNode.innerHTML = "<p class=\"pte-sim__grade-status\">Saving attempt history...</p>";
+
+      try {
+        const response = await fetch("/.netlify/functions/account-save-pte-attempt", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            attemptId: state.attemptId,
+            mode: data.mode,
+            startedAt: new Date(state.startedAt).toISOString(),
+            submittedAt: new Date().toISOString(),
+            answers: state.answers,
+            flagged: state.flagged,
+            grades: state.grades,
+            speakingGrades: state.speakingGrades,
+            total: data.items.length,
+          }),
+        });
+
+        const payload = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          throw new Error(payload.error || "Sign in to save this attempt to your account.");
+        }
+
+        historyNode.innerHTML = `
+          <article class="pte-sim__history-card">
+            <strong>Saved to account history</strong>
+            <p>${escapeHtml(payload.attempt?.answered ?? 0)} of ${escapeHtml(payload.attempt?.total ?? data.items.length)} tasks answered. ${escapeHtml(payload.attempt?.writingGrades ?? 0)} writing grade(s), ${escapeHtml(payload.attempt?.speakingGrades ?? 0)} speaking grade(s).</p>
+          </article>
+        `;
+        loadAttemptHistory();
+      } catch (error) {
+        historyNode.innerHTML = `
+          <article class="pte-sim__history-card">
+            <strong>Browser attempt saved</strong>
+            <p>${escapeHtml(error?.message || "Sign in to save PTE Core attempts to account history.")}</p>
+          </article>
+        `;
+      }
+    }
+
+    async function loadAttemptHistory() {
+      if (!historyNode) return;
+      try {
+        const response = await fetch("/.netlify/functions/account-list-pte-attempts?limit=5");
+        const payload = await response.json().catch(() => ({}));
+        if (!response.ok || !Array.isArray(payload.attempts) || !payload.attempts.length) return;
+
+        historyNode.insertAdjacentHTML("beforeend", `
+          <div class="pte-sim__history-list">
+            <h3>Recent PTE Core attempts</h3>
+            ${payload.attempts.map((attempt) => `
+              <article>
+                <strong>${escapeHtml(new Date(attempt.submittedAt || attempt.updatedAt).toLocaleDateString())}</strong>
+                <span>${escapeHtml(attempt.answered)} / ${escapeHtml(attempt.total)} answered · ${escapeHtml(attempt.writingGrades)} writing · ${escapeHtml(attempt.speakingGrades)} speaking</span>
+              </article>
+            `).join("")}
+          </div>
+        `);
+      } catch {
+        // History is optional for signed-out visitors.
+      }
+    }
+
     function restart() {
-      state = { ...initialState, startedAt: Date.now() };
+      state = {
+        ...initialState,
+        attemptId: `pte_attempt_${Date.now()}_${Math.random().toString(36).slice(2)}`,
+        startedAt: Date.now(),
+      };
       window.localStorage.removeItem(storageKey);
+      recordings.clear();
       resultsNode.hidden = true;
       startTimer();
       renderQuestion();
