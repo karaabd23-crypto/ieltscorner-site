@@ -351,6 +351,25 @@ button{
   letter-spacing: 0.01em;
 }
 
+.header-right .cta-signin{
+  min-height: 36px;
+  padding-inline: 14px;
+  border-color: rgba(25,35,55,0.16);
+  background: rgba(255,255,255,0.82);
+  color: var(--text);
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.header-right .cta-signin:hover{
+  border-color: rgba(217,72,72,0.38);
+  background: rgba(217,72,72,0.08);
+  color: #d94848;
+  text-decoration: none;
+}
+
 @media (max-width: 1400px) {
   .header-inner {
     gap: 10px;
@@ -1016,12 +1035,14 @@ textarea {
 
   .nav > a,
   .nav-item-row .nav-trigger,
-  .header-right .cta-book {
+  .header-right .cta-book,
+  .header-right .cta-signin {
     width: 100%;
     justify-content: space-between;
   }
 
-  .header-right .cta-book {
+  .header-right .cta-book,
+  .header-right .cta-signin {
     justify-content: center;
   }
 
@@ -1030,7 +1051,8 @@ textarea {
     align-items: stretch;
   }
 
-  .header-right .cta-book {
+  .header-right .cta-book,
+  .header-right .cta-signin {
     min-height: 44px;
   }
 
@@ -5722,10 +5744,10 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
 .pte-core-hub-hero {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
-  gap: clamp(24px, 5vw, 58px);
+  grid-template-columns: minmax(0, 1.15fr) minmax(250px, 0.7fr);
+  gap: clamp(16px, 3vw, 32px);
   align-items: stretch;
-  min-height: clamp(460px, 58vw, 640px);
+  min-height: clamp(250px, 30vw, 340px);
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--pte-core-a) 20%, var(--border-strong) 80%);
   border-radius: clamp(26px, 4vw, 44px);
@@ -5756,17 +5778,7 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
 
 .pte-core-hero::after,
 .pte-core-hub-hero::after {
-  content: "";
-  position: absolute;
-  right: clamp(22px, 5vw, 70px);
-  top: clamp(22px, 4vw, 52px);
-  width: clamp(88px, 15vw, 160px);
-  height: clamp(88px, 15vw, 160px);
-  border: 1px solid color-mix(in srgb, var(--pte-core-a) 24%, transparent 76%);
-  border-radius: 38% 62% 55% 45%;
-  background: color-mix(in srgb, #fff 72%, var(--pte-core-c) 28%);
-  opacity: 0.66;
-  z-index: -1;
+  display: none;
 }
 
 .pte-core-hero__copy,
@@ -5774,17 +5786,17 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 760px;
-  padding: clamp(28px, 6vw, 72px);
+  max-width: 680px;
+  padding: clamp(22px, 3.8vw, 44px);
 }
 
 .pte-core-hero__copy h1,
 .pte-core-hub-hero__copy h1 {
-  max-width: 12ch;
+  max-width: 18ch;
   margin: var(--s-3) 0;
-  font-size: clamp(2.7rem, 7vw, 6.6rem);
-  line-height: 0.9;
-  letter-spacing: -0.06em;
+  font-size: clamp(2.1rem, 4.2vw, 3.8rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
 }
 
 .pte-core-hub-hero__copy h1 {
@@ -5793,18 +5805,18 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
 
 .pte-core-hero__copy p,
 .pte-core-hub-hero__copy p {
-  max-width: 62ch;
+  max-width: 58ch;
   margin: 0;
   color: #394248;
-  font-size: clamp(1.05rem, 2.2vw, 1.28rem);
-  line-height: 1.62;
+  font-size: clamp(0.98rem, 1.5vw, 1.1rem);
+  line-height: 1.55;
 }
 
 .pte-core-hero__actions {
   display: flex;
   flex-wrap: wrap;
   gap: var(--s-2);
-  margin-top: var(--s-5);
+  margin-top: var(--s-3);
 }
 
 .pte-core-hero__panel,
@@ -5814,8 +5826,8 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
   position: relative;
   align-self: center;
   justify-self: stretch;
-  margin: clamp(20px, 4vw, 46px);
-  padding: clamp(22px, 4vw, 38px);
+  margin: clamp(14px, 2.4vw, 24px);
+  padding: clamp(16px, 2.4vw, 24px);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.74);
   border-radius: clamp(24px, 4vw, 34px);
@@ -5836,7 +5848,7 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
 
 .pte-core-hero__panel h2 {
   margin: var(--s-2) 0 var(--s-4);
-  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
 }
 
 .pte-core-metrics {
@@ -6078,19 +6090,19 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
 
 .pte-core-hub-hero--compact {
   grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.72fr);
-  gap: clamp(18px, 3.2vw, 36px);
-  min-height: clamp(330px, 36vw, 430px);
+  gap: clamp(16px, 3vw, 30px);
+  min-height: clamp(250px, 30vw, 340px);
 }
 
 .pte-core-hub-hero--compact .pte-core-hub-hero__copy {
   max-width: 680px;
-  padding: clamp(24px, 4.2vw, 48px);
+  padding: clamp(22px, 3.8vw, 44px);
 }
 
 .pte-core-hub-hero--compact .pte-core-hub-hero__copy h1 {
-  max-width: 17ch;
-  font-size: clamp(2.45rem, 5vw, 4.75rem);
-  line-height: 0.96;
+  max-width: 18ch;
+  font-size: clamp(2.1rem, 4.2vw, 3.8rem);
+  line-height: 1;
 }
 
 .pte-core-hub-hero--compact .pte-core-hub-hero__copy p {
@@ -6112,12 +6124,12 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
 }
 
 .pte-core-hub-hero--compact .pte-core-hub-hero__visual span {
-  min-height: 64px;
+  min-height: 46px;
 }
 
 .pte-core-hub-hero--compact .pte-core-hub-hero__visual strong {
-  min-height: 82px;
-  font-size: clamp(1.7rem, 3.4vw, 2.9rem);
+  min-height: 60px;
+  font-size: clamp(1.45rem, 2.6vw, 2.2rem);
 }
 
 .pte-core-hub-hero--catalog {
@@ -6144,7 +6156,7 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 92px;
+  min-height: 54px;
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.72);
   color: var(--ink);
@@ -6153,12 +6165,12 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
 
 .pte-core-hub-hero__visual strong {
   grid-column: 1 / -1;
-  min-height: 118px;
+  min-height: 68px;
   background:
     linear-gradient(135deg, rgba(217, 72, 72, 0.12), rgba(123, 183, 199, 0.16)),
     #fff;
   font-family: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-size: clamp(1.55rem, 3vw, 2.6rem);
   letter-spacing: -0.04em;
 }
 
@@ -6222,7 +6234,7 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
 .pte-core-task-badge {
   display: grid;
   place-items: center;
-  min-height: 320px;
+  min-height: 190px;
   text-align: center;
 }
 
@@ -6230,9 +6242,18 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
 .pte-core-task-badge strong {
   color: var(--ink);
   font-family: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
-  font-size: clamp(6rem, 16vw, 12rem);
+  font-size: clamp(4rem, 9vw, 7rem);
   line-height: 0.82;
   letter-spacing: -0.08em;
+}
+
+.pte-core-standard-hero {
+  --hero-min-h: 180px;
+  --hero-min-h-md: 140px;
+  --hero-min-h-sm: 120px;
+  --hero-pad: var(--s-6);
+  --hero-pad-md: var(--s-5);
+  --hero-pad-sm: var(--s-4);
 }
 
 .pte-core-catalog-count span,
@@ -6396,6 +6417,37 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
   text-align: right;
 }
 
+.pte-sim__freemium {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-4);
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--border) 78%);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(217, 72, 72, 0.08), rgba(255, 255, 255, 0.92)),
+    #fff;
+  box-shadow: var(--shadow-soft);
+}
+
+.pte-sim__freemium[hidden] {
+  display: none;
+}
+
+.pte-sim__freemium strong {
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.pte-sim__freemium span {
+  color: var(--muted);
+}
+
+.pte-sim__freemium .btn {
+  white-space: nowrap;
+}
+
 .pte-sim__timer {
   color: var(--ink);
   font-size: clamp(1.8rem, 4vw, 2.6rem);
@@ -6492,6 +6544,27 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
   color: var(--text);
   cursor: pointer;
   font-weight: 800;
+}
+
+.pte-sim__section-tab:disabled,
+.pte-sim__question-dot:disabled,
+.pte-sim button:disabled {
+  cursor: not-allowed;
+  opacity: 0.62;
+}
+
+.pte-sim__locked-panel {
+  display: grid;
+  gap: var(--s-2);
+  padding: var(--s-4);
+  border: 1px solid color-mix(in srgb, var(--accent) 24%, var(--border) 76%);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.pte-sim__locked-panel h3,
+.pte-sim__locked-panel p {
+  margin: 0;
 }
 
 .pte-sim__question-dot.is-current {

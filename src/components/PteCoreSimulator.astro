@@ -6,6 +6,12 @@ import {
   PTE_CORE_SIMULATOR_TOTAL_MINUTES,
   getPteQuestionTypeBySlug,
 } from "../lib/pteCoreConfig.mjs";
+import {
+  PTE_CORE_FREE_ATTEMPTS_PER_MODE,
+  PTE_CORE_PREMIUM_BILLING_INTERVAL,
+  PTE_CORE_PREMIUM_PRICE_CAD,
+  PTE_CORE_PREMIUM_PRODUCT_NAME,
+} from "../lib/pteCoreBilling.mjs";
 
 const {
   mode = "full",
@@ -22,6 +28,10 @@ const simulatorPayload = {
   sections: PTE_CORE_SIMULATOR_SECTIONS,
   items: simulatorItems,
   totalMinutes: PTE_CORE_SIMULATOR_TOTAL_MINUTES,
+  freeAttemptLimit: PTE_CORE_FREE_ATTEMPTS_PER_MODE,
+  premiumProductName: PTE_CORE_PREMIUM_PRODUCT_NAME,
+  premiumPriceCAD: PTE_CORE_PREMIUM_PRICE_CAD,
+  premiumBillingInterval: PTE_CORE_PREMIUM_BILLING_INTERVAL,
 };
 ---
 
@@ -44,10 +54,13 @@ const simulatorPayload = {
       </p>
     </div>
     <div class="pte-sim__status" aria-live="polite">
+      <span class="pte-sim__progress" data-pte-attempt-status>{PTE_CORE_FREE_ATTEMPTS_PER_MODE} free attempt available</span>
       <span class="pte-sim__timer" data-pte-timer>{PTE_CORE_SIMULATOR_TOTAL_MINUTES}:00</span>
       <span class="pte-sim__progress" data-pte-progress>0 of {simulatorItems.length} answered</span>
     </div>
   </div>
+
+  <div class="pte-sim__freemium" data-pte-attempt-gate hidden></div>
 
   <div class="pte-sim__sections" aria-label="PTE Core simulator sections">
     {PTE_CORE_SIMULATOR_SECTIONS.map((section, index) => (
@@ -147,6 +160,7 @@ const simulatorPayload = {
 
     const data = JSON.parse(dataNode.textContent);
     const storageKey = `pte-core-simulator:${data.mode}`;
+    const attemptCountStorageKey = `pte-core-simulator-attempts:${data.mode}`;
     const itemById = new Map(data.items.map((item) => [item.id, item]));
     const sectionById = new Map(data.sections.map((section) => [section.id, section]));
     const initialState = {
@@ -176,6 +190,8 @@ const simulatorPayload = {
 
     const timerNode = root.querySelector("[data-pte-timer]");
     const progressNode = root.querySelector("[data-pte-progress]");
+    const attemptStatusNode = root.querySelector("[data-pte-attempt-status]");
+    const attemptGateNode = root.querySelector("[data-pte-attempt-gate]");
     const flagCountNode = root.querySelector("[data-pte-flag-count]");
     const sectionTabs = Array.from(root.querySelectorAll("[data-pte-section]"));
     const questionDots = Array.from(root.querySelectorAll("[data-pte-jump]"));
@@ -215,6 +231,96 @@ const simulatorPayload = {
 
     function hasPremiumSession() {
       return Boolean(getPremiumSessionId());
+    }
+
+    function getCompletedAttemptCount() {
+      return Math.max(0, Number(window.localStorage.getItem(attemptCountStorageKey) || 0) || 0);
+    }
+
+    function markAttemptUsed() {
+      if (hasPremiumSession() || state.attemptCounted) return;
+      window.localStorage.setItem(attemptCountStorageKey, String(getCompletedAttemptCount() + 1));
+      state.attemptCounted = true;
+      saveState();
+    }
+
+    function isAttemptLocked() {
+      return !hasPremiumSession() && getCompletedAttemptCount() >= Number(data.freeAttemptLimit || 1);
+    }
+
+    function formatMoney(value) {
+      return Number(value || 0).toFixed(0);
+    }
+
+    function updateAttemptGate() {
+      const used = getCompletedAttemptCount();
+      const limit = Number(data.freeAttemptLimit || 1);
+      const remaining = Math.max(0, limit - used);
+      const premiumLabel = `${data.premiumProductName || "PTE Core Premium"} - CA$${formatMoney(data.premiumPriceCAD)}/${data.premiumBillingInterval || "month"}`;
+
+      if (attemptStatusNode) {
+        attemptStatusNode.textContent = hasPremiumSession()
+          ? "Premium attempts unlocked"
+          : `${remaining} of ${limit} free ${limit === 1 ? "attempt" : "attempts"} left`;
+      }
+
+      if (!(attemptGateNode instanceof HTMLElement)) return;
+
+      if (!isAttemptLocked()) {
+        attemptGateNode.hidden = false;
+        attemptGateNode.innerHTML = `
+          <strong>Freemium access</strong>
+          <span>${hasPremiumSession() ? "Premium is active in this browser." : `You get ${limit} free completed ${limit === 1 ? "attempt" : "attempts"} in each mode. Upgrade for more attempts and higher AI grading limits.`}</span>
+          ${hasPremiumSession() ? "" : `<button class="btn btn-ghost" type="button" data-pte-upgrade-attempts>Unlock ${escapeHtml(premiumLabel)}</button>`}
+        `;
+      } else {
+        attemptGateNode.hidden = false;
+        attemptGateNode.innerHTML = `
+          <strong>Free attempt used</strong>
+          <span>You have used your free ${data.mode === "practice" ? "practice mode" : "simulator"} attempt. Upgrade to keep using this mode and continue AI-assisted grading.</span>
+          <button class="btn btn-primary" type="button" data-pte-upgrade-attempts>Unlock ${escapeHtml(premiumLabel)}</button>
+        `;
+      }
+
+      attemptGateNode.querySelector("[data-pte-upgrade-attempts]")?.addEventListener("click", () => startPteCheckout(getCurrentItem()));
+    }
+
+    function renderLockedAttempt() {
+      updateAttemptGate();
+      root.classList.add("is-attempt-locked");
+      window.clearInterval(timerId);
+      timerNode.textContent = "Locked";
+      progressNode.textContent = "Upgrade to continue";
+      taskLabelNode.textContent = "PTE Core Premium";
+      taskTitleNode.textContent = "Unlock more attempts";
+      sectionTitleNode.textContent = data.mode === "practice" ? "Practice mode" : "Simulator";
+      timingNode.textContent = "";
+      promptNode.textContent = `Your free ${data.mode === "practice" ? "practice mode" : "simulator"} attempt has been used.`;
+      instructionsNode.textContent = "Upgrade to continue using this mode, save more attempts, and bypass free AI grading caps.";
+      formNode.innerHTML = `
+        <div class="pte-sim__locked-panel">
+          <h3>Continue with PTE Core Premium</h3>
+          <p>Premium unlocks more simulator and practice attempts plus higher AI writing and speaking grading limits.</p>
+          <button class="btn btn-primary" type="button" data-pte-upgrade-locked>Unlock premium</button>
+        </div>
+      `;
+      gradingNode.hidden = true;
+      gradingNode.innerHTML = "";
+      root.querySelector("[data-pte-upgrade-locked]")?.addEventListener("click", () => startPteCheckout(getCurrentItem()));
+      sectionTabs.forEach((tab) => tab.setAttribute("disabled", ""));
+      questionDots.forEach((dot) => dot.setAttribute("disabled", ""));
+      root.querySelectorAll("[data-pte-prev], [data-pte-next], [data-pte-flag], [data-pte-finish], [data-pte-restart]").forEach((button) => {
+        button.setAttribute("disabled", "");
+      });
+    }
+
+    function unlockAttemptControls() {
+      root.classList.remove("is-attempt-locked");
+      sectionTabs.forEach((tab) => tab.removeAttribute("disabled"));
+      questionDots.forEach((dot) => dot.removeAttribute("disabled"));
+      root.querySelectorAll("[data-pte-prev], [data-pte-next], [data-pte-flag], [data-pte-finish], [data-pte-restart]").forEach((button) => {
+        button.removeAttribute("disabled");
+      });
     }
 
     function getCurrentItem() {
@@ -658,6 +764,13 @@ const simulatorPayload = {
     }
 
     function renderQuestion() {
+      if (isAttemptLocked()) {
+        renderLockedAttempt();
+        return;
+      }
+
+      unlockAttemptControls();
+      updateAttemptGate();
       const item = getCurrentItem();
       const section = sectionById.get(item.sectionId);
       const taskLabel = item.task?.label || item.taskSlug;
@@ -679,11 +792,13 @@ const simulatorPayload = {
     }
 
     function jumpTo(index) {
+      if (isAttemptLocked()) return;
       state.currentIndex = Math.min(Math.max(index, 0), data.items.length - 1);
       renderQuestion();
     }
 
     function toggleFlag() {
+      if (isAttemptLocked()) return;
       const item = getCurrentItem();
       state.flagged[item.id] = !state.flagged[item.id];
       saveState();
@@ -691,7 +806,13 @@ const simulatorPayload = {
     }
 
     function renderResults() {
+      if (isAttemptLocked()) {
+        renderLockedAttempt();
+        return;
+      }
+
       state.finished = true;
+      markAttemptUsed();
       saveState();
       const answeredItems = data.items.filter(isAnswered);
       const writingGradeCount = Object.keys(state.grades || {}).length;
@@ -787,6 +908,11 @@ const simulatorPayload = {
     }
 
     function restart() {
+      if (isAttemptLocked()) {
+        renderLockedAttempt();
+        return;
+      }
+
       state = {
         ...initialState,
         attemptId: `pte_attempt_${Date.now()}_${Math.random().toString(36).slice(2)}`,
@@ -800,6 +926,11 @@ const simulatorPayload = {
     }
 
     function startTimer() {
+      if (isAttemptLocked()) {
+        renderLockedAttempt();
+        return;
+      }
+
       window.clearInterval(timerId);
       timerNode.textContent = formatTime(state.remainingSeconds);
       timerId = window.setInterval(() => {

@@ -133,6 +133,17 @@ const meta = metaMap[category];
                 autocomplete="off"
                 style="flex: 1 1 320px; min-width: 220px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 10px; font: inherit;"
               />
+              <select
+                id="lesson-exam-filter"
+                aria-label="Filter lessons by test type"
+                class="lessons-hub-search__select"
+                style="flex: 0 1 230px;"
+              >
+                <option value="all">IELTS + CELPIP + PTE Core</option>
+                <option value="IELTS">IELTS only</option>
+                <option value="CELPIP">CELPIP only</option>
+                <option value="PTE_CORE">PTE Core only</option>
+              </select>
               <button id="lesson-search-clear" class="btn" type="button">Clear</button>
             </div>
             <p id="lesson-search-summary" class="muted" style="margin: var(--s-2) 0 0;">
@@ -189,34 +200,53 @@ const meta = metaMap[category];
   <script is:inline>
     (() => {
       const input = document.getElementById("lesson-search");
+      const examSelect = document.getElementById("lesson-exam-filter");
       const clearBtn = document.getElementById("lesson-search-clear");
       const summary = document.getElementById("lesson-search-summary");
       const empty = document.getElementById("lesson-search-empty");
       const notice = document.getElementById("exam-filter-notice");
       const cards = Array.from(document.querySelectorAll(".lesson-search-item"));
 
-      if (!(input instanceof HTMLInputElement) || !summary || !empty || cards.length === 0) {
+      if (
+        !(input instanceof HTMLInputElement) ||
+        !(examSelect instanceof HTMLSelectElement) ||
+        !summary ||
+        !empty ||
+        cards.length === 0
+      ) {
         return;
       }
 
       // Read ?exam= from the URL (set by SkillFreeLessons links)
       const urlExam = new URLSearchParams(window.location.search).get("exam")?.toUpperCase() || "";
       const validExams = ["IELTS", "CELPIP", "PTE_CORE"];
-      const activeExam = validExams.includes(urlExam) ? urlExam : "";
-
-      // Show a notice when pre-filtered
-      if (activeExam && notice instanceof HTMLElement) {
-        const displayLabel = activeExam === "PTE_CORE" ? "PTE Core" : activeExam;
-        notice.style.display = "block";
-        notice.innerHTML = `Showing <strong>${displayLabel}</strong> lessons only. <a href="?">Show all exams</a>`;
+      if (validExams.includes(urlExam)) {
+        examSelect.value = urlExam;
       }
 
       const total = cards.length;
 
+      const updateNotice = () => {
+        if (!(notice instanceof HTMLElement)) return;
+
+        if (examSelect.value === "all") {
+          notice.style.display = "none";
+          notice.textContent = "";
+          return;
+        }
+
+        const displayLabel = examSelect.value === "PTE_CORE" ? "PTE Core" : examSelect.value;
+        notice.style.display = "block";
+        notice.innerHTML = `Showing <strong>${displayLabel}</strong> lessons only. <a href="?">Show all exams</a>`;
+      };
+
       const applyFilter = () => {
         const query = input.value.trim().toLowerCase();
         const terms = query.split(/\s+/).filter(Boolean);
+        const selectedExam = examSelect.value;
         let visible = 0;
+
+        updateNotice();
 
         cards.forEach((card) => {
           const text = (card.getAttribute("data-search") || "").toLowerCase();
@@ -224,19 +254,11 @@ const meta = metaMap[category];
 
           const keywordMatch = terms.every((term) => text.includes(term));
 
-          // When pre-filtered by exam: hide lessons that belong exclusively to the other exam.
-          // Lessons with no exam tag (generic) remain visible for all.
-          let examMatch = true;
-          if (activeExam) {
-            const examList = cardExams
-              .split(",")
-              .map((value) => value.trim())
-              .filter(Boolean);
-
-            if (examList.length > 0 && !examList.includes(activeExam)) {
-              examMatch = false;
-            }
-          }
+          const examList = cardExams
+            .split(",")
+            .map((value) => value.trim())
+            .filter(Boolean);
+          const examMatch = selectedExam === "all" || examList.includes(selectedExam);
 
           const matches = keywordMatch && examMatch;
           card.style.display = matches ? "block" : "none";
@@ -249,10 +271,12 @@ const meta = metaMap[category];
 
       applyFilter();
       input.addEventListener("input", applyFilter);
+      examSelect.addEventListener("change", applyFilter);
 
       if (clearBtn instanceof HTMLButtonElement) {
         clearBtn.addEventListener("click", () => {
           input.value = "";
+          examSelect.value = "all";
           applyFilter();
           input.focus();
         });
