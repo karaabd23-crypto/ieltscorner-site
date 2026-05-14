@@ -1,6 +1,6 @@
 ﻿# Access Runbook (GitHub + Kit + Netlify)
 
-Last updated: 2026-04-04
+Last updated: 2026-05-14
 Project: IELTS Corner (`karaabd23-crypto/ieltscorner-site`)
 
 ## Important
@@ -22,6 +22,8 @@ Project: IELTS Corner (`karaabd23-crypto/ieltscorner-site`)
 - `KIT_DIGEST_TEMPLATE_ID`
 - `KIT_BROADCAST_EMAIL_ADDRESS`
 - Optional: `KIT_READING_GUIDE_FORM_ID` (funnel support)
+- `TURNSTILE_SECRET_KEY` (required for production newsletter signup protection)
+- `PUBLIC_TURNSTILE_SITE_KEY` (required on frontend for newsletter forms)
 
 ## Kit (ConvertKit)
 Known IDs (as of 2026-04-04):

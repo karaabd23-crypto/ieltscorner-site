@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import { promises as dns } from 'node:dns';
 import { normalizeSubscriberEmail } from '../../scripts/lib/newsletter-audience.mjs';
 import { getHeader, isSameOriginRequest } from './_utils/requestSecurity.mjs';
 
@@ -36,11 +37,71 @@ const MAX_SIGNUPS_PER_EMAIL_PER_WINDOW = parsePositiveInteger(
   process.env.NEWSLETTER_MAX_SIGNUPS_PER_EMAIL_PER_WINDOW,
   5,
 );
+const MAX_SIGNUPS_PER_DOMAIN_PER_WINDOW = parsePositiveInteger(
+  process.env.NEWSLETTER_MAX_SIGNUPS_PER_DOMAIN_PER_WINDOW,
+  30,
+);
 const MIN_FORM_FILL_MS = parsePositiveInteger(process.env.NEWSLETTER_MIN_FORM_FILL_MS, 1500);
 const MAX_FORM_AGE_MS = parsePositiveInteger(process.env.NEWSLETTER_MAX_FORM_AGE_MS, 6 * 60 * 60 * 1000);
+const EMAIL_DOMAIN_CACHE_TTL_MS = parsePositiveInteger(
+  process.env.NEWSLETTER_EMAIL_DOMAIN_CACHE_TTL_MS,
+  6 * 60 * 60 * 1000,
+);
+const REQUIRE_TURNSTILE = parseBoolean(process.env.NEWSLETTER_REQUIRE_TURNSTILE, true);
+const BLOCK_DISPOSABLE_EMAILS = parseBoolean(process.env.NEWSLETTER_BLOCK_DISPOSABLE_EMAILS, true);
+const VALIDATE_EMAIL_DOMAIN_DNS = parseBoolean(process.env.NEWSLETTER_VALIDATE_EMAIL_DOMAIN_DNS, true);
 
 const ipRateMap = new Map();
 const emailRateMap = new Map();
+const domainRateMap = new Map();
+const emailDomainCache = new Map();
+
+const DISPOSABLE_EMAIL_DOMAINS = new Set([
+  '0-mail.com',
+  '0815.ru',
+  '10minutemail.com',
+  '20minutemail.com',
+  '2prong.com',
+  '33mail.com',
+  'anonbox.net',
+  'bccto.me',
+  'chacuo.net',
+  'dispostable.com',
+  'dispostable.net',
+  'emailondeck.com',
+  'fakeinbox.com',
+  'fakemailgenerator.com',
+  'getairmail.com',
+  'getnada.com',
+  'guerrillamail.com',
+  'guerrillamail.biz',
+  'guerrillamail.de',
+  'guerrillamail.net',
+  'guerrillamail.org',
+  'inboxbear.com',
+  'mail-temporaire.fr',
+  'mail7.io',
+  'maildrop.cc',
+  'mailforspam.com',
+  'mailinator.com',
+  'mailnesia.com',
+  'mailnull.com',
+  'mintemail.com',
+  'my10minutemail.com',
+  'mytemp.email',
+  'nada.email',
+  'sharklasers.com',
+  'spambog.com',
+  'temp-mail.org',
+  'tempail.com',
+  'tempmail.dev',
+  'tempmailo.com',
+  'tempr.email',
+  'throwawaymail.com',
+  'tmpmail.org',
+  'trashmail.com',
+  'yopmail.com',
+]);
 
 function parsePositiveInteger(value, fallbackValue) {
   const parsed = Number.parseInt(String(value || '').trim(), 10);
@@ -48,6 +109,14 @@ function parsePositiveInteger(value, fallbackValue) {
     return fallbackValue;
   }
   return parsed;
+}
+
+function parseBoolean(value, fallbackValue) {
+  const normalized = String(value ?? '').trim().toLowerCase();
+  if (!normalized) return fallbackValue;
+  if (['1', 'true', 'yes', 'on'].includes(normalized)) return true;
+  if (['0', 'false', 'no', 'off'].includes(normalized)) return false;
+  return fallbackValue;
 }
 
 function json(statusCode, payload, extraHeaders = {}) {
@@ -132,6 +201,18 @@ function parseOptionalTimestamp(value) {
   return null;
 }
 
+function isLocalRuntime(event) {
+  const context = safeString(process.env.CONTEXT).toLowerCase();
+  if (context === 'dev') return true;
+
+  const host = safeString(getHeader(event, 'x-forwarded-host') || getHeader(event, 'host'))
+    .split(',')[0]
+    .trim()
+    .toLowerCase();
+  if (!host) return false;
+  return host.startsWith('localhost') || host.startsWith('127.0.0.1') || host.startsWith('[::1]');
+}
+
 function isLikelyValidEmail(value) {
   const email = safeString(value).toLowerCase();
   if (!email || email.length > 320) {
@@ -155,6 +236,99 @@ function isLikelyValidEmail(value) {
   }
 
   return true;
+}
+
+function getEmailDomain(email) {
+  const normalized = safeString(email).toLowerCase();
+  const atIndex = normalized.lastIndexOf('@');
+  if (atIndex <= 0) return '';
+  return normalized.slice(atIndex + 1).trim();
+}
+
+function isDisposableEmailDomain(domain) {
+  const normalized = safeString(domain).toLowerCase();
+  if (!normalized) return false;
+  if (DISPOSABLE_EMAIL_DOMAINS.has(normalized)) return true;
+  for (const blockedDomain of DISPOSABLE_EMAIL_DOMAINS) {
+    if (normalized.endsWith(`.${blockedDomain}`)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+async function hasAnyDnsRecord(domain) {
+  try {
+    const v4 = await dns.resolve4(domain);
+    if (Array.isArray(v4) && v4.length > 0) {
+      return true;
+    }
+  } catch {
+  }
+
+  try {
+    const v6 = await dns.resolve6(domain);
+    if (Array.isArray(v6) && v6.length > 0) {
+      return true;
+    }
+  } catch {
+  }
+
+  return false;
+}
+
+async function validateEmailDomain(domain) {
+  if (!VALIDATE_EMAIL_DOMAIN_DNS) {
+    return { valid: true, reason: 'dns-check-disabled' };
+  }
+
+  const normalized = safeString(domain).toLowerCase();
+  if (!normalized) {
+    return { valid: false, reason: 'missing-domain' };
+  }
+
+  const cached = emailDomainCache.get(normalized);
+  const now = Date.now();
+  if (cached && now < cached.expiresAt) {
+    return { valid: cached.valid, reason: cached.reason, cached: true };
+  }
+
+  let result = { valid: false, reason: 'missing-mx' };
+
+  try {
+    const mxRecords = await dns.resolveMx(normalized);
+    const usableMx = Array.isArray(mxRecords)
+      ? mxRecords.filter((record) => safeString(record?.exchange) && safeString(record?.exchange) !== '.')
+      : [];
+    if (usableMx.length > 0) {
+      result = { valid: true, reason: 'mx' };
+    } else {
+      const hasDnsA = await hasAnyDnsRecord(normalized);
+      result = hasDnsA
+        ? { valid: true, reason: 'a-record-fallback' }
+        : { valid: false, reason: 'missing-mx-and-a' };
+    }
+  } catch (error) {
+    const code = safeString(error?.code).toUpperCase();
+    if (['ENOTFOUND', 'ENODATA', 'NXDOMAIN', 'SERVFAIL', 'REFUSED', 'NOTFOUND'].includes(code)) {
+      const hasDnsA = await hasAnyDnsRecord(normalized);
+      result = hasDnsA
+        ? { valid: true, reason: 'a-record-fallback' }
+        : { valid: false, reason: 'domain-not-resolvable' };
+    } else {
+      // Resolver/network issues should not block legitimate signups.
+      result = { valid: true, reason: 'dns-soft-fail' };
+    }
+  }
+
+  emailDomainCache.set(normalized, {
+    valid: result.valid,
+    reason: result.reason,
+    expiresAt: now + EMAIL_DOMAIN_CACHE_TTL_MS,
+  });
+  pruneCacheMap(emailDomainCache, 3000);
+
+  return result;
 }
 
 function normalizeOptionalFirstName(value) {
@@ -231,6 +405,29 @@ function pruneRateMap(map, windowMs, maxSize = 2000) {
   }
 }
 
+function pruneCacheMap(map, maxSize = 3000) {
+  if (map.size <= maxSize) {
+    return;
+  }
+
+  for (const [key, entry] of map) {
+    if (!entry || Date.now() >= Number(entry.expiresAt || 0)) {
+      map.delete(key);
+    }
+  }
+
+  if (map.size <= maxSize) {
+    return;
+  }
+
+  for (const [key] of map) {
+    map.delete(key);
+    if (map.size <= maxSize) {
+      break;
+    }
+  }
+}
+
 function registerRateAttempt({ map, key, maxPerWindow }) {
   const now = Date.now();
   const current = map.get(key);
@@ -278,9 +475,9 @@ async function verifyTurnstileToken({ token, ip }) {
   if (!TURNSTILE_SECRET_KEY) {
     return {
       enabled: false,
-      valid: true,
+      valid: false,
       skipped: true,
-      errors: [],
+      errors: ['missing-turnstile-secret'],
     };
   }
 
@@ -525,6 +722,11 @@ export async function handler(event) {
     return json(403, { error: 'Invalid request origin' });
   }
 
+  const turnstileRequiredForRequest = REQUIRE_TURNSTILE && !isLocalRuntime(event);
+  if (turnstileRequiredForRequest && !TURNSTILE_SECRET_KEY) {
+    return json(503, { error: 'Signup protection is not configured. Please try again later.' });
+  }
+
   try {
     const body = parseBody(event);
     const email = normalizeSubscriberEmail(body?.email);
@@ -552,6 +754,15 @@ export async function handler(event) {
 
     if (!isLikelyValidEmail(email)) {
       return json(400, { error: 'Valid email required' });
+    }
+
+    const emailDomain = getEmailDomain(email);
+    if (!emailDomain) {
+      return json(400, { error: 'Valid email required' });
+    }
+
+    if (BLOCK_DISPOSABLE_EMAILS && isDisposableEmailDomain(emailDomain)) {
+      return json(400, { error: 'Please use a real email provider.' });
     }
 
     const timingSignal = evaluateTimingSignal(body);
@@ -587,9 +798,27 @@ export async function handler(event) {
       );
     }
 
+    const domainRateCheck = registerRateAttempt({
+      map: domainRateMap,
+      key: emailDomain,
+      maxPerWindow: MAX_SIGNUPS_PER_DOMAIN_PER_WINDOW,
+    });
+    if (!domainRateCheck.allowed) {
+      return json(
+        429,
+        { error: 'Too many signups from this email provider right now. Please try again later.' },
+        { 'Retry-After': String(domainRateCheck.retryAfterSec || 60) },
+      );
+    }
+
+    const domainValidation = await validateEmailDomain(emailDomain);
+    if (!domainValidation.valid) {
+      return json(400, { error: 'Please enter a valid email address from a reachable domain.' });
+    }
+
     const turnstileToken = getTurnstileToken(body);
     const turnstileCheck = await verifyTurnstileToken({ token: turnstileToken, ip: clientIp });
-    if (!turnstileCheck.valid) {
+    if (turnstileRequiredForRequest && !turnstileCheck.valid) {
       return json(400, { error: 'Captcha verification failed. Please try again.' });
     }
 
