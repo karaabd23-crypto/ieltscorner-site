@@ -39,8 +39,8 @@ const simulatorPayload = {
       <h2>{isPracticeMode ? "PTE Core practice engine" : "PTE Core simulator"}</h2>
       <p class="muted">
         {isPracticeMode
-          ? "Practice with the same task renderer used by the simulator. Scoring and saved history arrive in later slices."
-          : "Move through all 19 PTE Core task types in one exam-style workspace. This slice tracks answers and completion only."}
+          ? "Practice with the same task renderer used by the simulator. Writing feedback is manual and env-gated; saved history arrives in later slices."
+          : "Move through all 19 PTE Core task types in one exam-style workspace. Writing tasks can be graded manually when your answer is ready."}
       </p>
     </div>
     <div class="pte-sim__status" aria-live="polite">
@@ -106,6 +106,7 @@ const simulatorPayload = {
         <article class="pte-sim__answer-panel">
           <p class="pte-sim__panel-label">Response</p>
           <form class="pte-sim__answer-form" data-pte-answer-form></form>
+          <div class="pte-sim__grading" data-pte-grading hidden></div>
           <p class="pte-sim__save-state" data-pte-save-state>Responses save in this browser for this slice.</p>
         </article>
       </div>
@@ -150,6 +151,7 @@ const simulatorPayload = {
     const initialState = {
       currentIndex: 0,
       answers: {},
+      grades: {},
       flagged: {},
       startedAt: Date.now(),
       remainingSeconds: data.totalMinutes * 60,
@@ -158,6 +160,12 @@ const simulatorPayload = {
 
     let state = loadState();
     let timerId;
+    const premiumSessionKey = "pte-core-premium-session-id";
+    const urlParams = new URLSearchParams(window.location.search);
+    const checkoutSessionId = urlParams.get("session_id");
+    if (urlParams.get("checkout") === "success" && checkoutSessionId) {
+      window.localStorage.setItem(premiumSessionKey, checkoutSessionId);
+    }
 
     const timerNode = root.querySelector("[data-pte-timer]");
     const progressNode = root.querySelector("[data-pte-progress]");
@@ -171,6 +179,7 @@ const simulatorPayload = {
     const promptNode = root.querySelector("[data-pte-prompt]");
     const instructionsNode = root.querySelector("[data-pte-instructions]");
     const formNode = root.querySelector("[data-pte-answer-form]");
+    const gradingNode = root.querySelector("[data-pte-grading]");
     const resultsNode = root.querySelector("[data-pte-results]");
     const resultGridNode = root.querySelector("[data-pte-result-grid]");
     const reviewListNode = root.querySelector("[data-pte-review-list]");
@@ -192,6 +201,14 @@ const simulatorPayload = {
       window.localStorage.setItem(storageKey, JSON.stringify(state));
     }
 
+    function getPremiumSessionId() {
+      return window.localStorage.getItem(premiumSessionKey) || "";
+    }
+
+    function hasPremiumSession() {
+      return Boolean(getPremiumSessionId());
+    }
+
     function getCurrentItem() {
       return data.items[state.currentIndex] || data.items[0];
     }
@@ -204,6 +221,7 @@ const simulatorPayload = {
       state.answers[item.id] = value;
       saveState();
       renderProgress();
+      renderGradingPanel(item);
     }
 
     function isAnswered(item) {
@@ -297,6 +315,213 @@ const simulatorPayload = {
       });
     }
 
+    function isWritingGradeTask(item) {
+      return item.taskSlug === "summarize-written-text" || item.taskSlug === "write-email";
+    }
+
+    function getWordCount(value) {
+      return String(value || "").trim().split(/\s+/).filter(Boolean).length;
+    }
+
+    function getGradeMinimumWords(item) {
+      return item.taskSlug === "write-email" ? 40 : 5;
+    }
+
+    function getLocalGradeCount() {
+      const today = new Date().toISOString().slice(0, 10);
+      const key = `pte-core-grade-count:${today}`;
+      const count = Number(window.sessionStorage.getItem(key) || 0) || 0;
+      return { key, count };
+    }
+
+    function incrementLocalGradeCount() {
+      const { key, count } = getLocalGradeCount();
+      window.sessionStorage.setItem(key, String(count + 1));
+    }
+
+    function renderGradingPanel(item, statusMessage = "") {
+      if (!gradingNode) return;
+      if (!isWritingGradeTask(item)) {
+        gradingNode.hidden = true;
+        gradingNode.innerHTML = "";
+        return;
+      }
+
+      const answer = String(getAnswer(item) || "");
+      const wordCount = getWordCount(answer);
+      const minimumWords = getGradeMinimumWords(item);
+      const grade = state.grades?.[item.id];
+      const isCurrentGrade = grade?.answerSnapshot === answer;
+      const staleNotice = grade && !isCurrentGrade
+        ? "<p class=\"pte-sim__grade-note\">Your response changed after this grade. Grade again when you are ready.</p>"
+        : "";
+      const gradeButtonDisabled = wordCount < minimumWords ? "disabled" : "";
+      const sourceLabel = grade?.payload?.evaluationSource
+        ? `<span>${escapeHtml(grade.payload.evaluationSource)} feedback</span>`
+        : `<span>${hasPremiumSession() ? "Premium writing feedback" : "Freemium writing feedback"}</span>`;
+      const plan = grade?.payload?.plan;
+      const planNote = plan?.freeDailyLimit
+        ? `Free AI tier: ${plan.freeDailyLimit} writing grade${Number(plan.freeDailyLimit) === 1 ? "" : "s"} per day when real AI grading is enabled.`
+        : "Free mock feedback is available now; real AI grading is limited by the server.";
+      const billingNote = hasPremiumSession()
+        ? "Premium session saved for this browser. Paid AI grades bypass the free daily caps."
+        : "Need more than the free daily cap? Unlock PTE Core Premium with the same monthly plan used for CELPIP Reading.";
+      const upgradeButton = hasPremiumSession()
+        ? ""
+        : "<button class=\"btn btn-ghost\" type=\"button\" data-pte-upgrade>Unlock premium</button>";
+
+      gradingNode.hidden = false;
+      gradingNode.innerHTML = `
+        <div class="pte-sim__grade-head">
+          <div>
+            <p class="pte-sim__panel-label">AI writing feedback</p>
+            <h4>${escapeHtml(item.task?.label || "Writing task")}</h4>
+          </div>
+          ${sourceLabel}
+        </div>
+        <p class="pte-sim__grade-note">
+          Click once when your answer is ready. ${escapeHtml(planNote)} ${escapeHtml(billingNote)}
+        </p>
+        <div class="pte-sim__grade-actions">
+          <button class="btn btn-primary" type="button" data-pte-grade ${gradeButtonDisabled}>Grade writing</button>
+          ${upgradeButton}
+          <span>${wordCount} words / minimum ${minimumWords}</span>
+        </div>
+        ${statusMessage ? `<p class="pte-sim__grade-status" data-pte-grade-status>${escapeHtml(statusMessage)}</p>` : ""}
+        ${staleNotice}
+        ${grade ? renderGradeResult(grade.payload, isCurrentGrade) : ""}
+      `;
+
+      const gradeButton = gradingNode.querySelector("[data-pte-grade]");
+      if (gradeButton) {
+        gradeButton.addEventListener("click", () => submitWritingGrade(item));
+      }
+
+      const upgradeButtonNode = gradingNode.querySelector("[data-pte-upgrade]");
+      if (upgradeButtonNode) {
+        upgradeButtonNode.addEventListener("click", () => startPteCheckout(item));
+      }
+    }
+
+    function renderGradeResult(payload, isCurrentGrade) {
+      const scores = payload?.scores || {};
+      const criteria = Array.isArray(payload?.criteria) ? payload.criteria : [];
+      const strengths = Array.isArray(payload?.strengths) ? payload.strengths : [];
+      const priorities = Array.isArray(payload?.priorities) ? payload.priorities : [];
+      const fadedClass = isCurrentGrade ? "" : " is-stale";
+
+      return `
+        <article class="pte-sim__grade-result${fadedClass}">
+          <div class="pte-sim__grade-score">
+            <strong>${escapeHtml(payload?.overallScore ?? "N/A")}</strong>
+            <span>${escapeHtml(payload?.readiness || "Practice feedback")}</span>
+          </div>
+          <p>${escapeHtml(payload?.summary || "Feedback is ready.")}</p>
+          <div class="pte-sim__grade-score-grid">
+            ${["content", "form", "grammar", "vocabulary", "coherence"].map((key) => `
+              <span><strong>${escapeHtml(key)}</strong>${escapeHtml(scores[key] ?? "N/A")}</span>
+            `).join("")}
+          </div>
+          <div class="pte-sim__grade-columns">
+            <div>
+              <h5>Strengths</h5>
+              <ul>${strengths.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+            </div>
+            <div>
+              <h5>Priorities</h5>
+              <ul>${priorities.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+            </div>
+          </div>
+        ${criteria.length ? `
+            <div class="pte-sim__grade-criteria">
+              ${criteria.map((item) => `
+                <section>
+                  <strong>${escapeHtml(item.label)}</strong>
+                  <p>${escapeHtml(item.comment)}</p>
+                </section>
+              `).join("")}
+            </div>
+          ` : ""}
+          ${payload?.plan ? `
+            <p class="pte-sim__grade-note">
+              Plan: ${escapeHtml(payload.plan.tier || "free")} / free daily limit ${escapeHtml(payload.plan.freeDailyLimit ?? "limited")} / site cap ${escapeHtml(payload.plan.globalDailyLimit ?? "limited")}.
+            </p>
+          ` : ""}
+        </article>
+      `;
+    }
+
+    async function startPteCheckout(item) {
+      renderGradingPanel(item, "Opening secure PTE Core checkout...");
+
+      try {
+        const response = await fetch("/.netlify/functions/create-pte-core-checkout", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({}),
+        });
+        const payload = await response.json().catch(() => ({}));
+        if (!response.ok || !payload.checkoutUrl) {
+          throw new Error(payload.error || "Unable to start checkout.");
+        }
+        window.location.href = payload.checkoutUrl;
+      } catch (error) {
+        renderGradingPanel(item, error?.message || "Unable to start checkout.");
+      }
+    }
+
+    async function submitWritingGrade(item) {
+      const answer = String(getAnswer(item) || "").trim();
+      const minimumWords = getGradeMinimumWords(item);
+
+      if (getWordCount(answer) < minimumWords) {
+        renderGradingPanel(item, `Add more detail first. Minimum: ${minimumWords} words.`);
+        return;
+      }
+
+      const { count } = getLocalGradeCount();
+      if (!hasPremiumSession() && count >= 8) {
+        renderGradingPanel(item, "Session grading limit reached. Refresh tomorrow or continue practising without grading.");
+        return;
+      }
+
+      renderGradingPanel(item, "Grading writing...");
+
+      try {
+        const response = await fetch("/.netlify/functions/pte-core-grade-writing", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            taskSlug: item.taskSlug,
+            taskLabel: item.task?.label || item.taskSlug,
+            prompt: item.prompt,
+            instructions: item.instructions,
+            responseText: answer,
+            sessionId: getPremiumSessionId(),
+          }),
+        });
+
+        const payload = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          throw new Error(payload.error || "Unable to grade this response right now.");
+        }
+
+        incrementLocalGradeCount();
+        state.grades = {
+          ...(state.grades || {}),
+          [item.id]: {
+            answerSnapshot: answer,
+            gradedAt: new Date().toISOString(),
+            payload,
+          },
+        };
+        saveState();
+        renderGradingPanel(item, payload.cached ? "Showing cached feedback for this response." : "Feedback ready.");
+      } catch (error) {
+        renderGradingPanel(item, error?.message || "Unable to grade this response right now.");
+      }
+    }
+
     function renderQuestion() {
       const item = getCurrentItem();
       const section = sectionById.get(item.sectionId);
@@ -312,6 +537,7 @@ const simulatorPayload = {
       promptNode.textContent = item.prompt;
       instructionsNode.textContent = item.instructions;
       renderAnswerInput(item);
+      renderGradingPanel(item);
       renderSections();
       renderProgress();
       saveState();
@@ -349,7 +575,7 @@ const simulatorPayload = {
       reviewListNode.innerHTML = `
         <h3>Review queue</h3>
         <p>${answeredItems.length} of ${data.items.length} tasks have a saved response. ${Object.values(state.flagged).filter(Boolean).length} task(s) are flagged.</p>
-        <p>Writing and speaking quality scores are not calculated in Slice 2.</p>
+        <p>PTE writing tasks can now be graded manually. Speaking analysis, microphone recording, and account-backed history are still reserved for later slices.</p>
       `;
 
       resultsNode.hidden = false;

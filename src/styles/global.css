@@ -6599,6 +6599,147 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
   box-shadow: var(--shadow-soft);
 }
 
+.pte-sim__grading {
+  display: grid;
+  gap: var(--s-3);
+  margin-top: var(--s-4);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--border);
+}
+
+.pte-sim__grade-head,
+.pte-sim__grade-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  flex-wrap: wrap;
+}
+
+.pte-sim__grade-head h4 {
+  margin: 4px 0 0;
+  color: var(--ink);
+}
+
+.pte-sim__grade-head span,
+.pte-sim__grade-actions span,
+.pte-sim__grade-note,
+.pte-sim__grade-status {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.pte-sim__grade-note,
+.pte-sim__grade-status {
+  margin: 0;
+}
+
+.pte-sim__grade-status {
+  padding: var(--s-2) var(--s-3);
+  border: 1px solid color-mix(in srgb, var(--sky) 40%, var(--border) 60%);
+  border-radius: var(--radius-sm);
+  background: rgba(123, 183, 199, 0.12);
+  color: color-mix(in srgb, var(--ink) 70%, var(--sky) 30%);
+  font-weight: 800;
+}
+
+.pte-sim__grade-result {
+  display: grid;
+  gap: var(--s-3);
+  padding: var(--s-4);
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--border) 82%);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(circle at top right, rgba(217, 72, 72, 0.08), transparent 34%),
+    rgba(255, 255, 255, 0.92);
+}
+
+.pte-sim__grade-result.is-stale {
+  opacity: 0.62;
+}
+
+.pte-sim__grade-score {
+  display: flex;
+  align-items: end;
+  gap: var(--s-3);
+}
+
+.pte-sim__grade-score strong {
+  color: var(--ink);
+  font-family: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  line-height: 0.9;
+}
+
+.pte-sim__grade-score span {
+  color: var(--muted);
+  font-weight: 900;
+}
+
+.pte-sim__grade-result p {
+  margin: 0;
+}
+
+.pte-sim__grade-score-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.pte-sim__grade-score-grid span {
+  display: grid;
+  gap: 2px;
+  padding: var(--s-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--ink);
+  font-weight: 900;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.pte-sim__grade-score-grid strong {
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.pte-sim__grade-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-3);
+}
+
+.pte-sim__grade-columns h5 {
+  margin: 0 0 var(--s-2);
+  color: var(--ink);
+}
+
+.pte-sim__grade-columns ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.pte-sim__grade-criteria {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.pte-sim__grade-criteria section {
+  padding: var(--s-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(251, 248, 244, 0.72);
+}
+
+.pte-sim__grade-criteria strong {
+  display: block;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
 .pte-sim__controls {
   border-top: 1px solid var(--border);
   padding-top: var(--s-4);
@@ -6659,7 +6800,9 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
   }
 
   .pte-sim__sections,
-  .pte-sim__result-grid {
+  .pte-sim__result-grid,
+  .pte-sim__grade-score-grid,
+  .pte-sim__grade-columns {
     grid-template-columns: 1fr;
   }
 }
