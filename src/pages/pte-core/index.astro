@@ -57,13 +57,13 @@ const supportCards = [
   <section class="section pte-core-hub">
     <div class="pte-core-hub-hero pte-core-hub-hero--compact">
       <div class="pte-core-hub-hero__copy">
-        <span class="pte-core-kicker">PTE Core hub</span>
-        <h1>Choose your PTE Core skill, then choose your practice path</h1>
+        <span class="pte-core-kicker ic-eyebrow">PTE Core hub</span>
+        <h1 class="ic-display">Choose your PTE Core skill, then choose your practice path</h1>
         <p>
           Start with Listening, Reading, Writing, or Speaking. Then open question-type guides or simulators from one place.
         </p>
         <div class="pte-core-hero__actions">
-          <a class="btn btn-primary" href={PTE_CORE_ROUTE_MAP.questionTypes}>Question Types</a>
+          <a class="btn btn-primary ic-btn" href={PTE_CORE_ROUTE_MAP.questionTypes}>Question Types</a>
           <a class="btn btn-ghost" href={PTE_CORE_ROUTE_MAP.simulator}>Simulator</a>
           <a class="btn btn-ghost" href={PTE_CORE_ROUTE_MAP.simulatorPractice}>Practice Mode</a>
         </div>
@@ -80,15 +80,15 @@ const supportCards = [
 
   <section class="section-sm pte-core-hub">
     <div class="pte-core-feature-card">
-      <span class="pte-core-kicker">Explore by skill</span>
-      <h2>Pick the score area that needs the most attention.</h2>
+      <span class="pte-core-kicker ic-eyebrow">Explore by skill</span>
+      <h2 class="ic-display">Pick the score area that needs the most attention.</h2>
       <p class="muted">
         Each skill page gives you a clear next step and links into guides and simulators.
       </p>
       <div class="pte-core-path-grid">
         {PTE_CORE_SKILLS.map((skill) => (
-          <a class={`pte-core-path-card pte-core-path-card--${skill.accent}`} href={skill.path}>
-            <span>{skill.eyebrow}</span>
+          <a class={`pte-core-path-card pte-core-path-card--${skill.accent} ic-card`} href={skill.path}>
+            <span class="ic-eyebrow">{skill.eyebrow}</span>
             <h3>{skill.label}</h3>
             <p class="muted">{skill.description}</p>
             <strong>Open {skill.label} path</strong>
@@ -100,14 +100,14 @@ const supportCards = [
 
   <section class="section-sm pte-core-hub">
     <div class="pte-core-feature-card pte-core-feature-card--soft">
-      <span class="pte-core-kicker">Practice support</span>
-      <h2>Move from guide to simulator without losing momentum.</h2>
+      <span class="pte-core-kicker ic-eyebrow">Practice support</span>
+      <h2 class="ic-display">Move from guide to simulator without losing momentum.</h2>
       <p class="muted">
         Use these pages to move directly into structured practice.
       </p>
       <div class="pte-core-support-grid">
         {supportCards.map((card) => (
-          <a class="pte-core-support-card" href={card.href}>
+          <a class="pte-core-support-card ic-card" href={card.href}>
             <h3>{card.title}</h3>
             <p class="muted">{card.description}</p>
             <strong>{card.cta}</strong>

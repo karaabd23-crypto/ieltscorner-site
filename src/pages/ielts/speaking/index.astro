@@ -60,14 +60,14 @@ const resources = [
   <section class="section">
     <div class="hero funnel-hero" style={`--hero-bg: url('/heroes/speaking.png');`}>
       <div class="hero-content funnel-hero__content">
-        <span class="pill">IELTS speaking</span>
-        <h1>Stuck below Band 7 in IELTS Speaking?</h1>
+        <span class="pill ic-eyebrow">IELTS speaking</span>
+        <h1 class="ic-display">Stuck below Band 7 in IELTS Speaking?</h1>
         <p class="muted">
           Practice with authentic questions, understand exactly what examiners are listening for,
           and get direct feedback from a speaking coach.
         </p>
         <div class="funnel-hero__actions">
-          <a class="btn btn-primary" href="/ielts/speaking/questions">Browse free questions</a>
+          <a class="btn btn-primary ic-btn" href="/ielts/speaking/questions">Browse free questions</a>
           <a class="btn btn-ghost" href="/ielts/speaking/band-descriptors">Understand band scores</a>
         </div>
       </div>
@@ -77,13 +77,13 @@ const resources = [
   <!-- Resource cards -->
   <section class="section-sm" style="padding-top: 0;">
     <div class="container">
-      <h2 class="resources-heading">Where do you want to start?</h2>
+      <h2 class="resources-heading ic-display">Where do you want to start?</h2>
       <div class="resources-grid">
         {resources.map((r) => (
           <a href={r.href} class="resource-card surface" style={`--card-accent: ${r.accent};`}>
             <div class="resource-card__top">
               <span class="resource-card__icon" aria-hidden="true">{r.icon}</span>
-              <span class="pill resource-card__pill">{r.pill}</span>
+              <span class="pill resource-card__pill ic-eyebrow">{r.pill}</span>
             </div>
             <h3 class="resource-card__title">{r.title}</h3>
             <p class="resource-card__desc muted">{r.desc}</p>
@@ -98,7 +98,7 @@ const resources = [
 
   <section class="section-sm">
     <div class="surface funnel-final-cta">
-      <h2 style="margin-top: 0;">Your next step</h2>
+      <h2 class="ic-display" style="margin-top: 0;">Your next step</h2>
       <p>Book one focused private class and get direct speaking feedback in real time.</p>
       <div class="funnel-final-cta__actions">
         <a class="btn btn-primary" href="/tutoring#book-private-class">Book Private Class</a>

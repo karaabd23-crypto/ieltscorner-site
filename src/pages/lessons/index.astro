@@ -92,13 +92,13 @@ const pageStructuredData = [
   <section class="section">
     <div class="hero" style={`--hero-bg: url('/heroes/lesson.png');`}>
       <div class="hero-content">
-        <span class="pill">Free lesson library</span>
-        <h1>All {totalLessons} free IELTS, CELPIP, and PTE Core lessons in one place</h1>
+        <span class="pill ic-eyebrow">Free lesson library</span>
+        <h1 class="ic-display">All {totalLessons} free IELTS, CELPIP, and PTE Core lessons in one place</h1>
         <p class="muted" style="max-width: 62ch;">
           Choose a category below and open every published lesson. This is the main hub for free study content.
         </p>
         <div class="cluster">
-          <a class="btn btn-primary" href="/lessons/grammar">Open Grammar Lessons</a>
+          <a class="btn btn-primary ic-btn" href="/lessons/grammar">Open Grammar Lessons</a>
           <a class="btn btn-ghost" href="/lessons/vocabulary">Open Vocabulary Lessons</a>
         </div>
       </div>
@@ -107,7 +107,7 @@ const pageStructuredData = [
 
   <section class="section-sm">
     <div class="surface funnel-section">
-      <h2 style="margin-top: 0;">Search all free lessons</h2>
+      <h2 class="ic-display" style="margin-top: 0;">Search all free lessons</h2>
       <p class="muted funnel-section__intro">
         Use keywords, category, or exam filters to find the exact lesson faster.
       </p>
@@ -194,15 +194,15 @@ const pageStructuredData = [
 
   <section class="section-sm">
     <div class="surface funnel-section">
-      <h2 style="margin-top: 0;">Choose a free lesson category</h2>
+      <h2 class="ic-display" style="margin-top: 0;">Choose a free lesson category</h2>
       <p class="muted funnel-section__intro">
         Every category page includes search plus full lesson lists.
       </p>
 
       <div class="offer-grid" style="margin-top: var(--s-3);">
         {categoryCards.map((card) => (
-          <a class="offer-card" href={`/lessons/${card.category}`} style="text-decoration: none; color: inherit;">
-            <p class="offer-card__label">{categoryCounts[card.category]} lessons</p>
+          <a class="offer-card ic-card" href={`/lessons/${card.category}`} style="text-decoration: none; color: inherit;">
+            <p class="offer-card__label ic-eyebrow">{categoryCounts[card.category]} lessons</p>
             <h3 class="offer-card__name">{card.title}</h3>
             <p class="offer-card__line">{card.description}</p>
             <span class="btn btn-ghost">Open {card.title} Lessons</span>
@@ -214,7 +214,7 @@ const pageStructuredData = [
 
   <section class="section-sm">
     <div class="surface funnel-section">
-      <h2 style="margin-top: 0;">Quick links to key pages</h2>
+      <h2 class="ic-display" style="margin-top: 0;">Quick links to key pages</h2>
       <div class="grid grid-4" style="gap: var(--s-4); margin-top: var(--s-3);">
         <a class="card" href="/ai-feedback" style="text-decoration: none; color: inherit;">
           <h3>AI Feedback</h3>
@@ -230,7 +230,7 @@ const pageStructuredData = [
 
   <section class="section-sm">
     <div class="surface funnel-section">
-      <h2 style="margin-top: 0;">Need exam-specific paths?</h2>
+      <h2 class="ic-display" style="margin-top: 0;">Need exam-specific paths?</h2>
       <div class="grid grid-2" style="gap: var(--s-4); margin-top: var(--s-3);">
         <a class="card" href="/ielts" style="text-decoration: none; color: inherit;">
           <h3>IELTS hub</h3>

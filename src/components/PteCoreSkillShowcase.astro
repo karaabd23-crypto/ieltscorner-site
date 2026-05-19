@@ -20,11 +20,11 @@ const questionTypes = skill.featuredQuestionSlugs
 <section class={`pte-core-page pte-core-page--${skill.accent}`}>
   <section class="pte-core-hero" style={`--pte-core-hero-image: url('${skill.heroImage}');`}>
     <div class="pte-core-hero__copy">
-      <span class="pte-core-kicker">{skill.eyebrow}</span>
-      <h1>{skill.heroTitle}</h1>
+      <span class="pte-core-kicker ic-eyebrow">{skill.eyebrow}</span>
+      <h1 class="ic-display">{skill.heroTitle}</h1>
       <p>{skill.promise}</p>
       <div class="pte-core-hero__actions">
-        <a class="btn btn-primary" href={PTE_CORE_ROUTE_MAP.simulatorPractice}>Start practice mode</a>
+        <a class="btn btn-primary ic-btn" href={PTE_CORE_ROUTE_MAP.simulatorPractice}>Start practice mode</a>
         <a class="btn btn-ghost" href={PTE_CORE_ROUTE_MAP.questionTypes}>Explore question types</a>
       </div>
     </div>
@@ -56,8 +56,8 @@ const questionTypes = skill.featuredQuestionSlugs
 
   <section class="pte-core-section-grid">
     <div class="pte-core-feature-card">
-      <span class="pte-core-kicker">Study path</span>
-      <h2>What to master first</h2>
+      <span class="pte-core-kicker ic-eyebrow">Study path</span>
+      <h2 class="ic-display">What to master first</h2>
       <p class="muted">{skill.description}</p>
       <div class="pte-core-timeline">
         <div>
@@ -77,7 +77,7 @@ const questionTypes = skill.featuredQuestionSlugs
 
     <div class="pte-core-task-stack">
       <div class="pte-core-task-stack__header">
-        <span class="pte-core-kicker">Featured tasks</span>
+        <span class="pte-core-kicker ic-eyebrow">Featured tasks</span>
         <a href={PTE_CORE_ROUTE_MAP.questionTypes}>All 19 tasks</a>
       </div>
       {questionTypes.map((questionType) => (
@@ -91,10 +91,10 @@ const questionTypes = skill.featuredQuestionSlugs
 
   <section class="pte-core-cta-band">
     <div>
-      <span class="pte-core-kicker">Next step</span>
-      <h2>Practice {skill.label.toLowerCase()} inside the PTE Core interface.</h2>
+      <span class="pte-core-kicker ic-eyebrow">Next step</span>
+      <h2 class="ic-display">Practice {skill.label.toLowerCase()} inside the PTE Core interface.</h2>
       <p>Use timed navigation, answer capture, microphone recording, AI-assisted feedback, and attempt history as you practise.</p>
     </div>
-    <a class="btn btn-primary" href={PTE_CORE_ROUTE_MAP.simulator}>Open simulator</a>
+    <a class="btn btn-primary ic-btn" href={PTE_CORE_ROUTE_MAP.simulator}>Open simulator</a>
   </section>
 </section>

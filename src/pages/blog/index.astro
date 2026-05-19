@@ -154,7 +154,7 @@ const taskGroups = [
   <section class="section" style="padding-top: var(--s-6);">
     <div class="hero" style={`--hero-bg: url('/heroes/blog.png');`}>
       <div class="hero-content">
-        <h1>IELTS and CELPIP articles</h1>
+        <h1 class="ic-display">IELTS and CELPIP articles</h1>
         <p>
           Use the blog when you need one strong explanation of one task, one mistake pattern,
           or one study decision. The goal is not to read everything. The goal is to read the
@@ -168,7 +168,7 @@ const taskGroups = [
     <div class="grid grid-3 blog-start-grid">
       {startCards.map((card) => (
         <article class="surface blog-start-card">
-          <h2 style="margin-top: 0;">{card.title}</h2>
+          <h2 class="ic-display" style="margin-top: 0;">{card.title}</h2>
           <p>{card.text}</p>
           <a href={card.href} class="btn btn-ghost">{card.label}</a>
         </article>
@@ -180,13 +180,13 @@ const taskGroups = [
     <div class="surface feature blog-featured">
       <div class="grid grid-2" style="align-items: center; gap: var(--s-4);">
         <div>
-          <div class="blog-card-tag">Featured</div>
-          <h2 style="margin-top: 0;">{featuredArticle.title}</h2>
+          <div class="blog-card-tag ic-eyebrow">Featured</div>
+          <h2 class="ic-display" style="margin-top: 0;">{featuredArticle.title}</h2>
           <p style="color: var(--text-muted);">{featuredArticle.description}</p>
           <div class="blog-card-meta">
             <span>{featuredArticle.meta}</span>
           </div>
-          <a href={featuredArticle.href} class="btn btn-primary">Read article</a>
+          <a href={featuredArticle.href} class="btn btn-primary ic-btn">Read article</a>
         </div>
 
         <div class="blog-featured-note">
@@ -200,7 +200,7 @@ const taskGroups = [
     <div style="height: var(--s-6);"></div>
 
     <div class="surface" style="padding: var(--s-5); margin-bottom: var(--s-6);">
-      <h2 style="margin-top: 0;">How to use this blog well</h2>
+      <h2 class="ic-display" style="margin-top: 0;">How to use this blog well</h2>
       <div class="grid grid-3 blog-start-grid" style="margin-top: var(--s-3);">
         <article class="card">
           <h3 style="margin-top: 0;">1. Pick one score problem</h3>
@@ -217,11 +217,11 @@ const taskGroups = [
       </div>
     </div>
 
-    <h2>Recent articles</h2>
+    <h2 class="ic-display">Recent articles</h2>
     <div class="grid grid-3 blog-article-grid" style="gap: var(--s-3); margin-bottom: var(--s-6);">
       {recentArticles.map((article) => (
         <article class="card blog-card">
-          <div class="blog-card-tag">{article.tag}</div>
+          <div class="blog-card-tag ic-eyebrow">{article.tag}</div>
           <h3 style="margin-top: 0;">{article.title}</h3>
           <p style="color: var(--text-muted); flex: 1;">{article.description}</p>
           <div class="blog-card-meta">
@@ -236,7 +236,7 @@ const taskGroups = [
     <div class="grid grid-2 blog-task-groups" style="gap: var(--s-4);">
       {taskGroups.map((group) => (
         <section class="surface blog-task-group">
-          <h2 style="margin-top: 0;">{group.title}</h2>
+          <h2 class="ic-display" style="margin-top: 0;">{group.title}</h2>
           <div class="stack" style="gap: var(--s-2);">
             {group.links.map((link) => (
               <a href={link.href} class="blog-task-link">{link.label}</a>
@@ -249,7 +249,7 @@ const taskGroups = [
     <div style="height: var(--s-6);"></div>
 
     <div class="surface blog-cta">
-      <h2 style="margin-top: 0;">Want the new articles without checking the site every day?</h2>
+      <h2 class="ic-display" style="margin-top: 0;">Want the new articles without checking the site every day?</h2>
       <p style="max-width: 72ch; margin: 0 auto;">
         The newsletter pulls together the newest lessons, social posts, and study suggestions in one weekly digest.
       </p>

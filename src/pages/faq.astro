@@ -155,7 +155,7 @@ const quickRoutes = [
   <section class="section" style="padding-top: var(--s-6);">
     <div class="hero" style={`--hero-bg: url('/heroes/faq.png');`}>
       <div class="hero-content">
-        <h1>Frequently asked questions</h1>
+        <h1 class="ic-display">Frequently asked questions</h1>
         <p>
           Use this page when you want the short answer first. If your question is more specific,
           the <a href="/contact">contact page</a> is the better next step.
@@ -168,7 +168,7 @@ const quickRoutes = [
     <div class="grid grid-3 faq-routes">
       {quickRoutes.map((route) => (
         <article class="surface faq-route-card">
-          <h2 style="margin-top: 0;">{route.title}</h2>
+          <h2 class="ic-display" style="margin-top: 0;">{route.title}</h2>
           <p>{route.text}</p>
           <a href={route.href} class="btn btn-ghost">{route.label}</a>
         </article>
