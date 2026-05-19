@@ -94,12 +94,12 @@ const meta = metaMap[category];
 >
   <section class="section">
     <div class="stack">
-      <span class="pill">{meta.pill}</span>
-      <h1>{meta.h1}</h1>
+      <span class="pill ic-eyebrow">{meta.pill}</span>
+      <h1 class="ic-display">{meta.h1}</h1>
       <p class="muted" style="max-width: 75ch;">{meta.blurb}</p>
 
       <div class="cluster">
-        <a class="btn btn-primary" href="/celpip">CELPIP hub</a>
+        <a class="btn btn-primary ic-btn" href="/celpip">CELPIP hub</a>
         <a class="btn" href="/ielts">IELTS hub</a>
         <a class="btn" href="/pte-core">PTE Core hub</a>
         <a class="btn" href="/lessons">All lessons</a>
@@ -110,7 +110,7 @@ const meta = metaMap[category];
 
   <section class="section-sm">
     <div class="stack">
-      <h2>Available lessons</h2>
+      <h2 class="ic-display">Available lessons</h2>
 
       {lessons.length === 0 ? (
         <div class="surface" style="padding: var(--s-6);">

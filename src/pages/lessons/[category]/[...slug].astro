@@ -481,12 +481,12 @@ const seoKeywords = `${publicTitle}, ${item.data.category}, ${item.data.level}, 
         </ol>
       </nav>
 
-      <span class="pill">{getLessonTier(item.data.level)} | {item.data.exam.join(" & ")}</span>
-      <h1>{publicTitle}</h1>
+      <span class="pill ic-eyebrow">{getLessonTier(item.data.level)} | {item.data.exam.join(" & ")}</span>
+      <h1 class="ic-display">{publicTitle}</h1>
       <p class="muted" style="max-width: 75ch;">{item.data.excerpt}</p>
 
       <div class="cluster">
-        <a class="btn btn-primary" href={`/lessons/${currentCategory}`}>
+        <a class="btn btn-primary ic-btn" href={`/lessons/${currentCategory}`}>
           &lt;- Back to {categoryLabel(currentCategory)} lessons
         </a>
         <a class="btn" href="/lessons">All lessons</a>
