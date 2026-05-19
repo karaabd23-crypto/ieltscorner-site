@@ -1,5 +1,7 @@
 ---
+import "../styles/theme-tokens.css";
 import "../styles/global.css";
+import TrustStrip from "../components/TrustStrip.astro";
 import ConversionTrackingScript from "../components/ConversionTrackingScript.astro";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 import ContentAd from "../components/ContentAd.astro";
@@ -258,6 +260,8 @@ const serializeJsonForScript = (value: unknown) =>
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <GoogleAnalytics measurementId="G-G0WCV3WJ44" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -454,6 +458,7 @@ const serializeJsonForScript = (value: unknown) =>
   </head>
 
   <body
+    class="ic-page"
     data-main-page={showFloatingWebinarCta ? "1" : "0"}
     data-intent-level={trackingIntentLevel}
     data-page-type={trackingPageType}
@@ -560,6 +565,8 @@ const serializeJsonForScript = (value: unknown) =>
         )}
       </div>
     </header>
+
+    <TrustStrip />
 
     <script is:inline>
       // Dropdown persistence: keep open for 2s after mouse leaves, close on click elsewhere

@@ -36,14 +36,14 @@ const pageStructuredData = [
   <section class="section">
     <div class="hero funnel-hero" style={`--hero-bg: url('/heroes/reading.png');`}>
       <div class="hero-content funnel-hero__content reading-catalog-hero">
-        <span class="pill">CELPIP reading tests</span>
-        <h1>Choose your reading test first. The exam screen opens separately.</h1>
+        <span class="pill ic-eyebrow">CELPIP reading tests</span>
+        <h1 class="ic-display">Choose your reading test first. The exam screen opens separately.</h1>
         <p class="muted">
           Start with one full free reading test, or unlock premium now if you already know you want the full reading pack.
           The premium subscription gives you the detailed review layer and the remaining premium tests without making you buy only after the free diagnostic.
         </p>
         <div class="funnel-hero__actions">
-          <a class="btn btn-primary" href="/celpip/reading/free-test">Start Free Test</a>
+          <a class="btn btn-primary ic-btn" href="/celpip/reading/free-test">Start Free Test</a>
           <button class="btn btn-ghost" id="reading-hub-start-checkout" type="button">Unlock premium now</button>
           <a class="btn btn-ghost" href="/tutoring#book-private-class">Book private reading coaching</a>
         </div>
@@ -56,8 +56,8 @@ const pageStructuredData = [
     <div class="surface reading-catalog">
       <div class="reading-catalog__head">
         <div>
-          <p class="reading-catalog__label">Available tests</p>
-          <h2>Test list</h2>
+          <p class="reading-catalog__label ic-eyebrow">Available tests</p>
+          <h2 class="ic-display">Test list</h2>
         </div>
         <p class="muted reading-catalog__copy">
           The free test opens in a dedicated test environment. You can also unlock Reading Premium directly from this page before taking the test.
@@ -65,8 +65,8 @@ const pageStructuredData = [
       </div>
 
       <div class="reading-catalog__grid">
-        <article class="reading-test-card reading-test-card--free">
-          <p class="reading-test-card__badge">Free</p>
+        <article class="reading-test-card reading-test-card--free ic-card">
+          <p class="reading-test-card__badge ic-eyebrow">Free</p>
           <h3>{CELPIP_READING_FREE_TEST.title}</h3>
           <p class="muted">{CELPIP_READING_FREE_TEST.estimatedDifficulty}</p>
           <ul class="reading-test-card__list">
@@ -74,7 +74,7 @@ const pageStructuredData = [
             <li>{CELPIP_READING_FREE_TEST.durationMinutes}-minute timed test</li>
             <li>Instant score plus lesson recommendations</li>
           </ul>
-          <a class="btn btn-primary" href="/celpip/reading/free-test">Start Free Test</a>
+          <a class="btn btn-primary ic-btn" href="/celpip/reading/free-test">Start Free Test</a>
           <p class="muted" style="margin: 0;">Use this first if you want a diagnostic before deciding on premium.</p>
         </article>
 

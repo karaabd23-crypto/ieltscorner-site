@@ -129,13 +129,13 @@ const pageStructuredData = [
   <section class="section">
     <div class="hero funnel-hero" style={`--hero-bg: url('/heroes/celpip.png');`}>
       <div class="hero-content funnel-hero__content">
-        <span class="pill">CELPIP hub</span>
-        <h1>Choose your skill, then choose your service</h1>
+        <span class="pill ic-eyebrow">CELPIP hub</span>
+        <h1 class="ic-display">Choose your skill, then choose your service</h1>
         <p class="muted">
           Start with Listening, Reading, Writing, or Speaking. Then use the quick links and service cards below to go directly to the exact CELPIP support you need.
         </p>
         <div class="funnel-hero__actions">
-          <a class="btn btn-primary" href="/celpip/writing/questions">Question bank</a>
+          <a class="btn btn-primary ic-btn" href="/celpip/writing/questions">Question bank</a>
           <a class="btn btn-ghost" href="/lessons">Free lessons</a>
           <a class="btn btn-ghost" href="/celpip/reading/free-test">Reading practice</a>
           <a class="btn btn-ghost" href="/ai-feedback">Writing practice</a>
@@ -161,15 +161,15 @@ const pageStructuredData = [
 
   <section class="section-sm">
     <div class="surface celpip-section">
-      <h2 style="margin-top: 0;">1) Explore by skill</h2>
+      <h2 class="ic-display" style="margin-top: 0;">1) Explore by skill</h2>
       <p class="muted" style="margin-top: 0;">
         Pick the skill page first. Each page is focused and links to the right support options for that skill.
       </p>
       <div class="grid grid-2 celpip-grid">
         {skillCards.map((skill) => (
-          <a class="card celpip-link-card" href={skill.href}>
-            <span class="pill celpip-pill">{skill.badge}</span>
-            <h3>{skill.title}</h3>
+          <a class="card celpip-link-card ic-card" href={skill.href}>
+            <span class="pill celpip-pill ic-eyebrow">{skill.badge}</span>
+            <h3 class="ic-display">{skill.title}</h3>
             <p class="muted">{skill.description}</p>
             <span class="celpip-link-card__cta">{skill.cta}</span>
           </a>
@@ -180,14 +180,14 @@ const pageStructuredData = [
 
   <section class="section-sm">
     <div class="surface celpip-section">
-      <h2 style="margin-top: 0;">2) More CELPIP support</h2>
+      <h2 class="ic-display" style="margin-top: 0;">2) More CELPIP support</h2>
       <p class="muted" style="margin-top: 0;">
         Every active CELPIP-related service is listed here for one-click access.
       </p>
       <div class="grid grid-3 celpip-grid celpip-grid-services">
         {celpipServices.map((service) => (
-          <a class="card celpip-link-card" href={service.href}>
-            <h3>{service.title}</h3>
+          <a class="card celpip-link-card ic-card" href={service.href}>
+            <h3 class="ic-display">{service.title}</h3>
             <p class="muted">{service.description}</p>
             <span class="celpip-link-card__cta">{service.cta}</span>
           </a>
@@ -198,10 +198,10 @@ const pageStructuredData = [
 
   <section class="section-sm">
     <div class="surface funnel-final-cta">
-      <p class="offer-card__label">Fast path</p>
-      <h2 style="margin-top: 0;">Need writing support first?</h2>
+      <p class="offer-card__label ic-eyebrow">Fast path</p>
+      <h2 class="ic-display" style="margin-top: 0;">Need writing support first?</h2>
       <p>Use the writing hub to see all writing services on one page.</p>
-      <a class="btn btn-primary" href="/celpip/writing">Open CELPIP writing services</a>
+      <a class="btn btn-primary ic-btn" href="/celpip/writing">Open CELPIP writing services</a>
     </div>
   </section>
 </Layout>
