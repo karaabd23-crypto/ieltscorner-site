@@ -6,17 +6,37 @@ const pageFaqs = [
   {
     question: "What are the main IELTS Reading question types?",
     answer:
-      "The main IELTS Reading question types include True/False/Not Given, matching headings, summary completion, sentence completion, multiple choice, and matching information.",
+      "The main IELTS Reading question types are: True/False/Not Given (Academic) or Yes/No/Not Given (GT), Matching Headings, Matching Information, Summary Completion, Sentence Completion, Multiple Choice, Short-Answer Questions, and Matching Sentence Endings. Each one needs a different approach -- using the same method for all of them is one of the most common causes of dropped scores.",
   },
   {
     question: "Should I use the same method for every question type?",
     answer:
-      "No. Different question types need different reading behavior. Matching headings needs paragraph-level reading, while completion tasks need more exact detail checking.",
+      "No. Matching headings needs paragraph-level reading to identify the main idea of each section. True/False/Not Given needs line-by-line comparison of specific claims. Summary completion needs paraphrase detection within a defined section of text. Applying a heading-matching mindset to TFNG questions -- or vice versa -- is a reliable way to lose marks on questions you understood correctly.",
   },
   {
     question: "Why do students lose marks in IELTS Reading?",
     answer:
-      "Students often lose marks when they trust keywords too quickly, miss instruction limits, or spend too long on one hard question.",
+      "The top causes are: (1) keyword matching without paraphrase awareness -- the passage never repeats the question words; (2) choosing 'Not Given' when the answer requires reading one more sentence; (3) writing too many words in completion answers; (4) spending 4+ minutes on one hard question while easier ones are skipped; and (5) confusing Yes/No/Not Given with True/False/Not Given -- they have different logic.",
+  },
+  {
+    question: "What is the difference between True/False/Not Given and Yes/No/Not Given?",
+    answer:
+      "True/False/Not Given tests factual claims about the passage. True = the passage confirms it; False = the passage contradicts it; Not Given = the passage neither confirms nor contradicts it. Yes/No/Not Given tests opinions or views. Yes = the writer agrees with the statement; No = the writer disagrees; Not Given = the writer does not address it. The distinction matters because TFNG appears in Academic passages, YNGNG in General Training passages, and the reasoning is slightly different.",
+  },
+  {
+    question: "How do I find answers faster in IELTS Reading?",
+    answer:
+      "Skim the passage in 3-4 minutes to map where topics appear (not to read every word). Then scan for your keywords when answering each question. The key skill is paraphrase recognition: the passage will express the same idea with different vocabulary. Practising paraphrase pairs (increase = grow = rise; significant = major = considerable) is more valuable than practising reading speed.",
+  },
+  {
+    question: "How do I choose between True, False, and Not Given?",
+    answer:
+      "Use this rule: True = the passage says the same thing. False = the passage says the opposite or contradicts the statement. Not Given = the passage does not mention this point at all, or addresses the topic without confirming or denying this specific claim. The most common error is choosing False when the answer is Not Given. Ask yourself: does the passage contradict this, or just not mention it? If it just does not mention it, the answer is Not Given.",
+  },
+  {
+    question: "How much time should I spend per IELTS Reading question?",
+    answer:
+      "You have 60 minutes for three passages and 40 questions (Academic) -- roughly 90 seconds per question on average. Allocate about 17-20 minutes per passage. Move on from any question you cannot answer in 2 minutes and mark it for review. Never sacrifice questions 20-40 by spending 5 minutes on question 4.",
   },
 ];
 
@@ -31,10 +51,10 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="IELTS Reading Question Types | Use the Right Method for Each One"
-  description="A practical IELTS Reading guide explaining the main question types and the reading behavior each one needs."
+  title="IELTS Reading Question Types | Complete Strategy Guide for Every Type"
+  description="Complete IELTS Reading question type guide covering True/False/Not Given, Matching Headings, Summary Completion, Multiple Choice, and more -- with the right strategy for each type."
   type="article"
-  keywords="IELTS Reading question types, IELTS True False Not Given, IELTS matching headings, IELTS reading strategy"
+  keywords="IELTS Reading question types, IELTS True False Not Given, IELTS matching headings, IELTS reading strategy, IELTS reading tips Band 7"
   structuredData={pageStructuredData}
 >
   <article class="section guide-article">
@@ -45,126 +65,264 @@ const pageStructuredData = [
       <h1 class="ic-display" style="margin: 0;">IELTS Reading question types</h1>
       <div class="guide-meta">
         <span>March 17, 2026</span>
-        <span>7 min read</span>
+        <span>14 min read</span>
       </div>
     </header>
 
     <div class="guide-lead">
       <p>
-        IELTS Reading is not one single skill. Different question types reward different
-        habits. Students often struggle because they try to use one method for every task.
+        IELTS Reading has eight question types, and each one rewards a different strategy.
+        Students who use one approach for all of them consistently lose marks on question types
+        they could have answered correctly.
       </p>
       <p>
-        The safest approach is proof first. Find the evidence in the passage before you
-        decide on the answer.
+        This guide gives you the correct method for each question type, the most common traps
+        in each, and the habit of proof-first answering that connects them all.
       </p>
     </div>
 
     <div class="guide-grid guide-grid-2">
       <section class="guide-card">
-        <h2 class="ic-display">Question types that need big-picture reading</h2>
+        <h2 class="ic-display">Big-picture question types</h2>
+        <p class="muted" style="margin-top: 0;">These need paragraph-level understanding, not line-by-line detail.</p>
         <ul class="guide-list">
-          <li>Matching headings</li>
-          <li>Matching information to paragraphs</li>
-          <li>Choosing the best summary idea</li>
+          <li>Matching Headings</li>
+          <li>Matching Information to Paragraphs</li>
+          <li>Matching Sentence Endings</li>
         </ul>
       </section>
 
       <section class="guide-card">
-        <h2 class="ic-display">Question types that need detail checking</h2>
+        <h2 class="ic-display">Detail-checking question types</h2>
+        <p class="muted" style="margin-top: 0;">These need precise comparison with a specific part of the passage.</p>
         <ul class="guide-list">
-          <li>True/False/Not Given</li>
-          <li>Sentence or summary completion</li>
-          <li>Multiple choice with close options</li>
+          <li>True / False / Not Given</li>
+          <li>Yes / No / Not Given</li>
+          <li>Sentence and Summary Completion</li>
+          <li>Multiple Choice</li>
+          <li>Short-Answer Questions</li>
         </ul>
       </section>
     </div>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">How to handle the main question types</h2>
-      <div class="guide-steps">
-        <div class="guide-step">
-          <span class="guide-step__number">1</span>
-          <div>
-            <h3>True/False/Not Given</h3>
-            <p>Compare the statement with the passage carefully. One changed detail can change the answer.</p>
-          </div>
-        </div>
-        <div class="guide-step">
-          <span class="guide-step__number">2</span>
-          <div>
-            <h3>Matching headings</h3>
-            <p>Read for the main idea of the whole paragraph, not one interesting sentence.</p>
-          </div>
-        </div>
-        <div class="guide-step">
-          <span class="guide-step__number">3</span>
-          <div>
-            <h3>Completion tasks</h3>
-            <p>Respect word limits and check grammar so the answer fits the sentence.</p>
-          </div>
-        </div>
-        <div class="guide-step">
-          <span class="guide-step__number">4</span>
-          <div>
-            <h3>Multiple choice</h3>
-            <p>Do not choose the first familiar idea. Check which option matches the passage most exactly.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">The proof-first method</h2>
+      <h2 class="ic-display">The proof-first rule</h2>
       <div class="guide-note">
         <p>
-          A good reading answer is based on evidence, not feeling. Mark the key words in the
-          question, find the paraphrase in the text, and confirm the exact line before you
-          commit to the answer.
+          For every question type, find the evidence in the passage before you commit to an
+          answer. Do not choose an option because it sounds familiar or uses words from the
+          question. Find the sentence that proves or disproves the claim, then decide. This
+          one habit prevents the majority of wrong answers in IELTS Reading.
         </p>
       </div>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">What usually goes wrong</h2>
+      <h2 class="ic-display">True / False / Not Given</h2>
+      <p class="muted" style="margin-top: 0;">The most common source of score drops. The logic is strict: you are comparing a specific written claim against what the passage says.</p>
       <table class="guide-mistake-table">
-        <tr>
-          <th>Problem</th>
-          <th>Better move</th>
-        </tr>
-        <tr>
-          <td>Keyword matching only</td>
-          <td>Look for meaning and paraphrase, not only repeated words.</td>
-        </tr>
-        <tr>
-          <td>Ignoring instruction limits</td>
-          <td>Check "NO MORE THAN..." before you write the answer.</td>
-        </tr>
-        <tr>
-          <td>Too much time on one item</td>
-          <td>Move on and return later if needed.</td>
-        </tr>
-        <tr>
-          <td>Choosing before checking proof</td>
-          <td>Find the evidence line first.</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>Answer</th>
+            <th>When to choose it</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>True</strong></td>
+            <td>The passage says the same thing as the statement, possibly with different vocabulary.</td>
+          </tr>
+          <tr>
+            <td><strong>False</strong></td>
+            <td>The passage says the opposite of, or directly contradicts, the statement.</td>
+          </tr>
+          <tr>
+            <td><strong>Not Given</strong></td>
+            <td>The passage does not address this specific claim at all -- neither confirming nor contradicting it.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="guide-note" style="margin-top: var(--s-3);">
+        <p><strong>Key trap:</strong> The passage mentions the topic, but not this specific claim. That is Not Given, not False. False requires the passage to contradict the statement -- not just avoid it.</p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Matching Headings</h2>
+      <p class="muted" style="margin-top: 0;">You match a list of headings to paragraphs. The heading must describe the main idea of the whole paragraph, not just one sentence in it.</p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Read the headings list first</h3>
+            <p>Notice the themes. Do not try to match yet.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Read each paragraph for its main point</h3>
+            <p>Focus on the topic sentence (usually first) and the final sentence. The middle sentences support the main idea.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Match the topic, not a keyword</h3>
+            <p>Headings rarely use the same words as the paragraph. They paraphrase the overall idea. Matching a heading because it shares one word with the paragraph is the leading cause of wrong answers here.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Use elimination</h3>
+            <p>Start with paragraphs whose main ideas are clearest. Cross off used headings. Return to difficult paragraphs after easier ones are resolved.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Summary and Sentence Completion</h2>
+      <p class="muted" style="margin-top: 0;">You complete gaps in a summary or sentences using words from the passage. These tasks test paraphrase recognition more than any other type.</p>
+      <ul class="guide-list">
+        <li>Always check the word limit: "NO MORE THAN TWO WORDS" means one or two words -- never three.</li>
+        <li>The answer words usually come from a defined section of the passage. Use the summary as a map: the gaps appear in passage order.</li>
+        <li>The gap is always grammatically consistent with the surrounding words. Check that your answer fits grammatically before writing it.</li>
+        <li>Do not paraphrase -- use words from the passage exactly as written. Changing a word to its synonym costs you the mark.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Multiple Choice</h2>
+      <p class="muted" style="margin-top: 0;">IELTS multiple choice questions often have distractors that are partially true but not the best answer. The most common error is choosing the first option that seems related to the passage.</p>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Trap</th>
+            <th>How to beat it</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>"This word appeared in the passage" (but in a different context)</td>
+            <td>Read the surrounding sentences, not just the keyword match.</td>
+          </tr>
+          <tr>
+            <td>An option that is partially correct but overstates the claim</td>
+            <td>The passage uses "some researchers" -- the option says "all researchers." Check scope words.</td>
+          </tr>
+          <tr>
+            <td>An option that is true but not what the question asked</td>
+            <td>Re-read the question stem carefully before checking options.</td>
+          </tr>
+          <tr>
+            <td>Two options that both seem correct</td>
+            <td>Find the passage sentence that answers the question, then check which option matches it most precisely -- not most broadly.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Matching Information to Paragraphs</h2>
+      <p class="muted" style="margin-top: 0;">You match a list of specific facts, descriptions, or claims to the paragraph where they appear. Unlike Matching Headings, the information is specific -- not a summary of the whole paragraph.</p>
+      <ul class="guide-list">
+        <li>This task does not follow passage order. The same paragraph can be used more than once, and some paragraphs may not be used at all.</li>
+        <li>Identify the most specific keyword in each statement (a name, number, or technical term) and scan for it in the passage.</li>
+        <li>If the statement has no specific keyword, look for the conceptual idea using paraphrase awareness.</li>
+        <li>Start with statements that have the most specific, unusual vocabulary -- these are easiest to locate quickly.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Paraphrase vocabulary</h2>
+      <p class="muted" style="margin-top: 0;">The passage will never repeat question words exactly. These are the most common paraphrase pairs in IELTS Reading.</p>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Question word</th>
+            <th>Possible passage equivalents</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>increase / rise</td>
+            <td>grow, expand, surge, climb, escalate, gain, go up</td>
+          </tr>
+          <tr>
+            <td>decrease / fall</td>
+            <td>drop, decline, shrink, reduce, diminish, plunge</td>
+          </tr>
+          <tr>
+            <td>important / significant</td>
+            <td>crucial, vital, key, major, substantial, considerable</td>
+          </tr>
+          <tr>
+            <td>cause / reason</td>
+            <td>factor, driver, source, trigger, lead to, result in</td>
+          </tr>
+          <tr>
+            <td>show / prove</td>
+            <td>demonstrate, suggest, indicate, reveal, confirm, establish</td>
+          </tr>
+          <tr>
+            <td>difficult / challenging</td>
+            <td>demanding, problematic, complex, taxing, arduous</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Time allocation</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Passage</th>
+            <th>Recommended time</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Passage 1 (easiest)</td>
+            <td>17 minutes</td>
+            <td>Finish quickly to give extra time to Passage 3.</td>
+          </tr>
+          <tr>
+            <td>Passage 2 (medium)</td>
+            <td>20 minutes</td>
+            <td>Includes Matching Headings or TFNG in most tests.</td>
+          </tr>
+          <tr>
+            <td>Passage 3 (hardest)</td>
+            <td>23 minutes</td>
+            <td>More abstract language; allow more time for paraphrase scanning.</td>
+          </tr>
+          <tr>
+            <td>Hard questions within passages</td>
+            <td>Max 2 minutes, then move on</td>
+            <td>Mark for review and return at the end if time allows.</td>
+          </tr>
+        </tbody>
       </table>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
       <h2 class="ic-display">Next step</h2>
       <div class="guide-links">
+        <a href="/blog/ielts-listening-question-types">
+          <strong>Read the listening question types guide</strong>
+          <span>Compare reading strategies with the different challenges in listening tasks.</span>
+        </a>
         <a href="/ielts/reading">
           <strong>Go to the IELTS reading hub</strong>
-          <span>Open more reading strategy and timing resources.</span>
+          <span>Access reading practice, lessons, and timing drills.</span>
         </a>
-        <a href="/ielts/reading">
-          <strong>Browse IELTS reading lessons</strong>
-          <span>Practice reading skills in lesson format.</span>
-        </a>
-        <a href="/blog/ielts-listening-question-types">
-          <strong>Read the listening question-types guide</strong>
-          <span>Compare how proof-first thinking changes between reading and listening.</span>
+        <a href="/ai-feedback">
+          <strong>Practice writing based on reading</strong>
+          <span>Use what you learn from reading passages in your IELTS writing practice.</span>
         </a>
       </div>
     </section>
@@ -184,7 +342,7 @@ const pageStructuredData = [
 
   <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
     <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
-    <p class="muted">Want a CLB 9 writing system you can actually follow?</p>
-    <a class="btn" href="/celpip/writing">Get the system</a>
+    <p class="muted">Need a private session to work on your IELTS reading strategy?</p>
+    <a class="btn btn-primary ic-btn" href="/tutoring">Book a private class</a>
   </section>
 </Layout>
