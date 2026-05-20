@@ -1,0 +1,234 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "How is PTE Core Re-order Paragraphs scored?",
+    answer:
+      "Re-order Paragraphs uses partial credit scoring. Points are awarded for each pair of adjacent paragraphs that are in the correct order -- specifically, for each correctly ordered adjacent pair (where paragraph A should immediately precede paragraph B, and they do). This means a partially correct answer still earns points. For a 5-paragraph item, there are 4 possible adjacent pairs, and each correct pair earns a point.",
+  },
+  {
+    question: "How many text boxes are in a Re-order Paragraphs item?",
+    answer:
+      "PTE Core Re-order Paragraphs items typically have 4-6 text boxes. A 4-box item has 3 possible adjacent pairs; a 6-box item has 5. Because partial credit applies, even placing 3 out of 5 pairs correctly earns points. Never leave an item completely unordered -- any partial sequence earns more than a random arrangement.",
+  },
+  {
+    question: "What is the most reliable way to find the first paragraph?",
+    answer:
+      "The opening paragraph almost always: (1) introduces the topic without referring back to anything ('it,' 'they,' 'this,' 'the results') that was mentioned elsewhere, (2) does not start with a discourse connector like 'however,' 'furthermore,' 'therefore,' or 'as a result,' and (3) provides general background or a thesis statement that frames the paragraphs that follow. The opening paragraph is the only one that can stand alone without a preceding context.",
+  },
+  {
+    question: "Does Re-order Paragraphs test reading comprehension or grammar?",
+    answer:
+      "Primarily reading comprehension and discourse structure awareness. You need to understand how ideas connect across paragraphs -- how a conclusion follows an argument, how an example follows a claim, how a counter-argument follows an initial position. Grammar knowledge helps identify pronoun references (which noun 'they' refers to), but the primary skill is understanding argumentative and informational text structure.",
+  },
+  {
+    question: "How much time should I spend on one Re-order Paragraphs item?",
+    answer:
+      "Allocate 2-3 minutes per item. If after 3 minutes you cannot confidently place all paragraphs, place what you are sure of and guess the remaining order. Spending 6-7 minutes on one Re-order item costs you time from the higher-value Reading and Writing Fill in the Blanks tasks. Partial credit means your best guess earns something -- an empty item earns nothing.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "PTE Core Re-order Paragraphs Guide", path: "/blog/pte-core-re-order-paragraphs/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="PTE Core Re-order Paragraphs | The Chain Method and Scoring Explained"
+  description="Complete guide to PTE Core Re-order Paragraphs -- how partial credit scoring works, how to identify the opening paragraph, the pronoun chain method, discourse marker signals, and time management."
+  type="article"
+  keywords="PTE Core re-order paragraphs, PTE Core reorder paragraphs strategy, PTE Core reading tips, PTE Core reading task types, PTE Core re-order paragraphs practice"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">PTE Core reading guide</span>
+      <h1 class="ic-display" style="margin: 0;">PTE Core Re-order Paragraphs: the chain method</h1>
+      <div class="guide-meta">
+        <span>May 20, 2026</span>
+        <span>10 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        Re-order Paragraphs rewards test takers who understand how ideas connect across
+        paragraphs -- not just what each paragraph says individually. The chain method
+        treats each paragraph as a link: every paragraph (except the first) points back
+        to the one before it, and every paragraph (except the last) points forward to
+        the one after it.
+      </p>
+      <p>
+        This guide covers how to use reference chains and discourse markers to sequence
+        paragraphs confidently, how partial credit scoring works, and how to manage your
+        time on this task without losing points elsewhere.
+      </p>
+    </div>
+
+    <section class="guide-card" style="margin-top: 0;">
+      <h2 class="ic-display">How partial credit scoring works</h2>
+      <p class="muted" style="margin-top: 0;">Understanding this changes how you approach an item you are unsure about.</p>
+      <ul class="guide-list">
+        <li>Points are awarded for each correctly ordered adjacent pair.</li>
+        <li>In a 5-paragraph item, there are 4 adjacent pairs: (A-B), (B-C), (C-D), (D-E). Each correct pair earns 1 point.</li>
+        <li>You can earn 3 out of 4 possible points even with one paragraph out of place.</li>
+        <li>A completely random ordering earns approximately 1 point (by chance). A thoughtful partial answer earns 2-3 points.</li>
+        <li>Practical rule: always place the paragraphs you are confident about first. Then guess the remaining order rather than leaving them randomly distributed.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Step 1: Find the opening paragraph</h2>
+      <p class="muted" style="margin-top: 0;">The opening paragraph is the only one that can stand alone without requiring a prior context. Identify it first -- it anchors everything else.</p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">A</span>
+          <div>
+            <h3>No backward reference</h3>
+            <p>The opening paragraph does not use pronouns or demonstratives that refer to a noun introduced in a previous paragraph. It will not start with "They," "It," "This finding," or "These results." It introduces the subject for the first time.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">B</span>
+          <div>
+            <h3>No leading discourse connector</h3>
+            <p>The opening paragraph does not begin with "However," "Therefore," "As a result," "In addition," or similar connectors that assume something has already been stated. These words signal a mid-sequence position, not an opening one.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">C</span>
+          <div>
+            <h3>Introduces the topic or thesis</h3>
+            <p>The opening paragraph typically provides context, background, or a central claim. It frames the discussion that follows rather than contributing a specific argument or example that would require context to understand.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Step 2: Follow the reference chain</h2>
+      <p class="muted" style="margin-top: 0;">After placing the opening paragraph, use pronoun references and noun repetition to link paragraphs into a chain.</p>
+      <ul class="guide-list">
+        <li>If paragraph B uses "this approach," find the paragraph where "the approach" was first introduced -- that paragraph comes immediately before B.</li>
+        <li>If paragraph C says "These results suggest," find the paragraph that contains "the results" or "the study found" -- that paragraph comes immediately before C.</li>
+        <li>Definite articles ("the") before a noun signal that the noun was already introduced. Indefinite articles ("a") signal a first mention.</li>
+        <li>Watch for noun repetition with different vocabulary: "urban development" in one paragraph may be followed by "city growth" or "metropolitan expansion" in the next -- these are the same concept.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Discourse markers that signal sequence position</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Discourse markers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Opening (first or second paragraph)</td>
+            <td>"Historically," "In recent years," "Background to this issue," "A growing concern," "One of the most significant developments"</td>
+          </tr>
+          <tr>
+            <td>Middle -- adding information</td>
+            <td>"Furthermore," "In addition," "Moreover," "Another key factor," "Building on this"</td>
+          </tr>
+          <tr>
+            <td>Middle -- contrasting</td>
+            <td>"However," "Despite this," "On the other hand," "While this may be true," "Critics argue"</td>
+          </tr>
+          <tr>
+            <td>Middle -- cause/effect</td>
+            <td>"As a result," "This led to," "Consequently," "The outcome of this was"</td>
+          </tr>
+          <tr>
+            <td>Closing (final paragraph)</td>
+            <td>"In conclusion," "Overall," "Ultimately," "To summarize," "These findings suggest that"</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Step 3: Verify by reading the sequence aloud mentally</h2>
+      <ul class="guide-list">
+        <li>After placing all paragraphs, read the assembled sequence from top to bottom in your mind.</li>
+        <li>Ask: Does the logic flow? Does each paragraph follow naturally from the one before?</li>
+        <li>If a paragraph feels out of place -- if there is a sudden shift in topic or an unresolved reference -- it is likely misplaced. Check what comes before and after it.</li>
+        <li>If the sequence reads naturally and each transition makes sense, you are done. Do not second-guess a sequence that reads well.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Common Re-order mistakes</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Mistake</th>
+            <th>Fix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Placing a paragraph that starts with "This" or "They" in first position</td>
+            <td>These pronouns require a prior referent. The opening paragraph must introduce the subject for the first time -- it will not start with a backward reference.</td>
+          </tr>
+          <tr>
+            <td>Spending 5+ minutes on one item</td>
+            <td>Place what you are confident about, then guess the remaining order. Partial credit makes guessing worth more than leaving items unordered.</td>
+          </tr>
+          <tr>
+            <td>Treating "However" as a signal that a paragraph comes second</td>
+            <td>"However" signals contrast -- it can appear second, third, or fourth depending on the text structure. Use it alongside reference chain analysis, not in isolation.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Next step</h2>
+      <div class="guide-links">
+        <a href="/blog/pte-core-reading-guide">
+          <strong>Read the full PTE Core Reading guide</strong>
+          <span>Strategy for all five reading task types including Re-order Paragraphs, Fill in the Blanks, and Multiple Choice.</span>
+        </a>
+        <a href="/pte-core/simulator">
+          <strong>Practice Re-order Paragraphs in the simulator</strong>
+          <span>Complete timed Re-order tasks under exam conditions.</span>
+        </a>
+        <a href="/pte-core/reading">
+          <strong>Open the PTE Core Reading hub</strong>
+          <span>Access reading task guides, lessons, and practice resources.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </article>
+
+  <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
+    <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
+    <p class="muted">Practice all PTE Core Reading tasks under timed exam conditions.</p>
+    <a class="btn btn-primary ic-btn" href="/pte-core/simulator">Open the PTE Core simulator</a>
+  </section>
+</Layout>

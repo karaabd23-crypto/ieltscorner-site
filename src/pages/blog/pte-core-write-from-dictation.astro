@@ -1,0 +1,236 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "How many Write from Dictation items are in PTE Core?",
+    answer:
+      "PTE Core typically includes 3-4 Write from Dictation items per test. Because the task appears multiple times and contributes to both Listening and Writing scores, small improvements in accuracy have a significant effect on both section scores. It is widely considered the most efficient single task to practice intensively.",
+  },
+  {
+    question: "How is Write from Dictation scored?",
+    answer:
+      "Each word in the sentence is scored individually. You receive one point for each correctly spelled word that matches the spoken sentence. A word is only credited if it is spelled exactly correctly -- 'goverment' instead of 'government' = zero for that word. There is no partial credit for a misspelled word, and missing words score zero. There is no penalty for extra words.",
+  },
+  {
+    question: "What is the most common source of errors in Write from Dictation?",
+    answer:
+      "Spelling errors account for the majority of lost points. The most frequently misspelled words in test conditions are: 'government,' 'environment,' 'necessary,' 'occurred,' 'beginning,' 'accommodation,' 'successful,' 'committee,' 'independent,' and words with double letters (parallel, recommend, professional). Building a personal spelling list from practice errors and reviewing it daily is the highest-return preparation activity for this task.",
+  },
+  {
+    question: "What should I do if I miss the beginning of the sentence?",
+    answer:
+      "Type what you heard from the point where you started following. Partial scoring means any correctly spelled word earns a point -- even if you missed the first two words, you can still earn most of the available points for the sentence. Do not leave the box empty because you missed the start. Never pause for longer than necessary -- type as soon as the audio finishes.",
+  },
+  {
+    question: "Should I type during the audio or after it finishes?",
+    answer:
+      "After. Typing during the audio splits your attention between listening and typing, reducing recall of the full sentence. Listen to the complete sentence, then type immediately from memory. For sentences of 9-12 words, most test takers can hold the full sentence in working memory for 10-15 seconds -- enough to type it completely before memory degrades.",
+  },
+  {
+    question: "What sentence topics appear in PTE Core Write from Dictation?",
+    answer:
+      "Sentences typically cover academic and professional topics: university policies, scientific findings, workplace guidelines, environmental issues, technology developments, health and wellness, community events. Content comprehension is less important than phonological processing -- even if you do not know what a word means, hearing it clearly enough to spell it correctly earns the point.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "PTE Core Write from Dictation Guide", path: "/blog/pte-core-write-from-dictation/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="PTE Core Write from Dictation | Strategy, Spelling List, and Scoring Rules"
+  description="Complete guide to PTE Core Write from Dictation -- how scoring works, the listen-then-type method, the most commonly misspelled words in test conditions, and how this task affects both Listening and Writing scores."
+  type="article"
+  keywords="PTE Core write from dictation, PTE Core dictation strategy, PTE Core write from dictation spelling, PTE Core listening tips, PTE Core write from dictation practice"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">PTE Core listening guide</span>
+      <h1 class="ic-display" style="margin: 0;">PTE Core Write from Dictation</h1>
+      <div class="guide-meta">
+        <span>May 20, 2026</span>
+        <span>11 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        Write from Dictation appears 3-4 times per PTE Core test and contributes to both your
+        Listening and Writing scores. It is the single highest-return task to practice because
+        it is entirely accuracy-based -- there is no interpretation or structure judgment
+        required. Hear the sentence correctly and spell every word right: maximum score.
+      </p>
+      <p>
+        This guide covers how the task is scored, the listen-then-type method, and the most
+        common spelling errors that cost points in test conditions.
+      </p>
+    </div>
+
+    <section class="guide-card" style="margin-top: 0;">
+      <h2 class="ic-display">How scoring works</h2>
+      <ul class="guide-list">
+        <li>Each correctly spelled word in the correct position earns one point.</li>
+        <li>A misspelled word earns zero -- there is no partial credit for near-misses.</li>
+        <li>Missing a word earns zero for that word.</li>
+        <li>An extra word (that was not in the sentence) earns zero but does not subtract points.</li>
+        <li>The task contributes to both your Listening AND Writing communicative skill scores.</li>
+        <li>A sentence of 10 words has 10 possible points -- earning 9/10 consistently across all WfD items is a strong target.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">The listen-then-type method</h2>
+      <p class="muted" style="margin-top: 0;">The most effective approach is to listen to the full sentence first, then type from memory immediately after.</p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Listen for meaning, not individual words</h3>
+            <p>Your working memory holds meaning better than a string of disconnected sounds. "The committee will announce the results on Friday" -- the meaning is 'committee announces results, timing is Friday.' Meaning-based memory retains all key words more reliably than word-by-word recall.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Begin typing the moment the audio finishes</h3>
+            <p>Do not pause to think or organize. Type immediately -- your short-term memory of the spoken sentence degrades rapidly, within 5-10 seconds. The first words you type should be the first words of the sentence.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Type at normal speed and spell each word carefully</h3>
+            <p>Do not type so fast that you introduce errors. One spelling error = one lost point. If you are not sure of a spelling, type the most likely version rather than leaving a blank -- a wrong word that was in the sentence but spelled wrong earns zero, but a blank also earns zero.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Read back once quickly before moving on</h3>
+            <p>A single left-to-right read catches: missing articles ("the," "a"), wrong endings ("-ed" vs "-ing"), and obvious spelling errors. Do not revise content -- only fix clear errors. Move on and do not second-guess.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Commonly misspelled words in PTE Core</h2>
+      <p class="muted" style="margin-top: 0;">These words appear frequently in Write from Dictation items and are commonly misspelled under test pressure. Review this list regularly.</p>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Words to learn</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Double letters</td>
+            <td>committee, recommend, professional, accommodation, beginning, occurring, parallel, successfully</td>
+          </tr>
+          <tr>
+            <td>Silent letters / tricky patterns</td>
+            <td>government, environment, necessary, independent, parliament, particularly, specifically</td>
+          </tr>
+          <tr>
+            <td>-ance vs -ence</td>
+            <td>performance, significance, evidence, reference, experience, influence, guidance</td>
+          </tr>
+          <tr>
+            <td>-ible vs -able</td>
+            <td>responsible, accessible, available, considerable, capable, sustainable, inevitable</td>
+          </tr>
+          <tr>
+            <td>Commonly confused pairs</td>
+            <td>effect/affect, principal/principle, complement/compliment, their/there/they're, its/it's</td>
+          </tr>
+          <tr>
+            <td>Academic vocabulary</td>
+            <td>analysis, hypothesis, assessment, significant, consequences, appropriate, contribute</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Scored example</h2>
+      <p class="muted" style="margin-top: 0;">Spoken sentence: "The results of the assessment will be published in the following week."</p>
+      <div class="guide-scored-pair">
+        <div class="guide-scored guide-scored--weak">
+          <span class="guide-scored__label">Weak response (6/9 points)</span>
+          <p>"The results of the assesment will be published in the following week."</p>
+          <ul class="guide-scored__notes">
+            <li>"assesment" -- misspelled (missing one 's'). Correct spelling: "assessment." Zero for this word.</li>
+            <li>All other words correct and in order.</li>
+            <li>8 words correct out of 9 total words, but only 6 match exactly due to the misspelling.</li>
+          </ul>
+        </div>
+        <div class="guide-scored guide-scored--strong">
+          <span class="guide-scored__label">Strong response (9/9 points)</span>
+          <p>"The results of the assessment will be published in the following week."</p>
+          <ul class="guide-scored__notes">
+            <li>All words correctly spelled and in order.</li>
+            <li>Articles ("the") included -- these are commonly omitted by test takers whose first language does not use articles.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">How to build a spelling practice routine</h2>
+      <ul class="guide-list">
+        <li><strong>Daily dictation practice:</strong> Practice 15-20 sentences per day from PTE Core-style materials. Use the listen-then-type method for every sentence.</li>
+        <li><strong>Error log:</strong> After each practice session, write down every word you misspelled. Review this list the following day before your next session.</li>
+        <li><strong>Spelling test on your error log:</strong> Once per week, have someone (or an app) test you specifically on the words in your error log. Only remove a word from the list after spelling it correctly five times in a row.</li>
+        <li><strong>Focus on articles and prepositions:</strong> Many test takers from certain first-language backgrounds consistently omit "the," "a," and prepositions (of, in, at, on). These small words are each worth one point -- omitting them costs just as much as misspelling a long word.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Next step</h2>
+      <div class="guide-links">
+        <a href="/blog/pte-core-listening-guide">
+          <strong>Read the full PTE Core Listening guide</strong>
+          <span>Strategy for all eight listening tasks including Write from Dictation, Summarize Spoken Text, and Highlight Incorrect Words.</span>
+        </a>
+        <a href="/pte-core/simulator">
+          <strong>Practice Write from Dictation in the simulator</strong>
+          <span>Complete timed dictation tasks under exam conditions.</span>
+        </a>
+        <a href="/blog/pte-core-scores-explained">
+          <strong>Understand your PTE Core score</strong>
+          <span>How Write from Dictation performance affects both your Listening and Writing scores.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </article>
+
+  <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
+    <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
+    <p class="muted">Practice Write from Dictation under timed exam conditions.</p>
+    <a class="btn btn-primary ic-btn" href="/pte-core/simulator">Open the PTE Core simulator</a>
+  </section>
+</Layout>

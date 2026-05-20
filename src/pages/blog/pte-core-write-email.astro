@@ -1,0 +1,228 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "What are the three bullet points in PTE Core Write Email?",
+    answer:
+      "Each Write Email prompt includes exactly three bullet points that define what your email must cover. These vary by prompt but typically follow a pattern such as: state why you are writing, describe the problem or context, make a request or suggest an action. All three must be addressed in your response to earn full Content marks. The bullet points appear on screen alongside the prompt text.",
+  },
+  {
+    question: "How formal should a PTE Core Write Email response be?",
+    answer:
+      "Match the register to the recipient described in the prompt. A letter to a building manager, a customer service department, or a university admissions office requires formal register. A message to a work colleague, a neighbour, or a community group leader may use semi-formal register. When in doubt, use formal -- the AI scoring system does not penalize over-formality, but informal language in a formal context does reduce the overall score.",
+  },
+  {
+    question: "Do I need to include a subject line in PTE Core Write Email?",
+    answer:
+      "The test interface provides a subject line field. Fill it in with a concise, relevant subject (e.g., 'Request for Maintenance -- Unit 4B' or 'Inquiry Regarding Course Registration'). A clear subject line contributes to Form and demonstrates register awareness. Leave it blank only if the interface does not provide a field -- in most PTE Core test forms, the field is provided.",
+  },
+  {
+    question: "What closing phrases are appropriate in PTE Core Write Email?",
+    answer:
+      "Formal closing: 'I look forward to hearing from you at your earliest convenience. Yours sincerely, [Name].' Semi-formal closing: 'Please let me know if you have any questions. Best regards, [Name].' Informal (avoid for most PTE Core prompts): 'Thanks, [Name].' Always include a closing -- ending the email abruptly after the body paragraphs without a sign-off reduces register consistency.",
+  },
+  {
+    question: "What if my email is too short (under 50 words)?",
+    answer:
+      "Add specific detail to each bullet point. A response that covers all three bullet points but with only one sentence per point is often under 50 words. Expand each point: add a reason (why the problem matters), a specific detail (how long, when, which unit), or a specific request (by when, through which channel). One sentence per bullet point is usually not enough to reach 50 words.",
+  },
+  {
+    question: "Can I use contractions in PTE Core Write Email?",
+    answer:
+      "In formal register, avoid contractions: 'I am' not 'I'm,' 'I would' not 'I'd,' 'it is' not 'it's.' In semi-formal register, occasional contractions are acceptable: 'I've been experiencing,' 'I'd appreciate your help.' The test prompt typically signals the expected register through the nature of the recipient. A letter to a formal organization should have no contractions.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "PTE Core Write Email Guide", path: "/blog/pte-core-write-email/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="PTE Core Write Email | Register, Structure, and Bullet Point Coverage"
+  description="Complete guide to PTE Core Write Email -- how to cover all three bullet points, match formal and semi-formal register, use the 9-minute window effectively, and the phrases that signal appropriate professional tone."
+  type="article"
+  keywords="PTE Core write email, PTE Core write email strategy, PTE Core writing tasks, PTE Core email format, PTE Core write email tips, PTE Core formal email"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">PTE Core writing guide</span>
+      <h1 class="ic-display" style="margin: 0;">PTE Core Write Email: register and structure</h1>
+      <div class="guide-meta">
+        <span>May 20, 2026</span>
+        <span>11 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        Write Email requires covering three specific bullet points in a professional email
+        within 50-120 words and 9 minutes. The two most common score-reducing errors are:
+        missing one bullet point (drops the Content score immediately), and using informal
+        language in a formal-register prompt (reduces both the Vocabulary and overall
+        impression scores).
+      </p>
+      <p>
+        This guide gives you a reliable structure for every email prompt, the phrases
+        that signal appropriate register, and the steps to verify your response before
+        submitting.
+      </p>
+    </div>
+
+    <section class="guide-card" style="margin-top: 0;">
+      <h2 class="ic-display">The three-part email structure</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Greeting + opening purpose sentence</h3>
+            <p>Formal: "Dear [Title/Name]," then new line: "I am writing to [state purpose]." The opening sentence must state why you are writing before anything else. Do not begin with pleasantries ("I hope this email finds you well") -- go directly to the purpose.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>One paragraph per bullet point</h3>
+            <p>Address each bullet point in its own short paragraph (1-3 sentences). Never combine all three bullet points in one paragraph -- this makes it harder for the AI to verify that each point was covered, and reduces your Content score reliability.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Closing sentence + sign-off</h3>
+            <p>One closing sentence acknowledging the recipient's time or inviting a response: "Please do not hesitate to contact me if you require any further information." Then: "Yours sincerely / Best regards, [Name]."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Register: formal vs semi-formal</h2>
+      <p class="muted" style="margin-top: 0;">The register determines which vocabulary and grammatical structures are appropriate. Identify the recipient before writing a single word.</p>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Recipient type</th>
+            <th>Register</th>
+            <th>Signal phrases</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Building manager, landlord</td>
+            <td>Formal</td>
+            <td>"I am writing to report," "I would appreciate your prompt attention," "I look forward to your response"</td>
+          </tr>
+          <tr>
+            <td>University department, government office</td>
+            <td>Formal</td>
+            <td>"I am contacting you regarding," "I would be grateful if you could," "Please find my details enclosed"</td>
+          </tr>
+          <tr>
+            <td>HR department, customer service</td>
+            <td>Formal</td>
+            <td>"I am writing to enquire," "I would like to request," "I would appreciate clarification"</td>
+          </tr>
+          <tr>
+            <td>Work colleague, team member</td>
+            <td>Semi-formal</td>
+            <td>"I wanted to let you know," "Could you please," "I'd appreciate your help with," "Feel free to reach out"</td>
+          </tr>
+          <tr>
+            <td>Neighbour, community group</td>
+            <td>Semi-formal</td>
+            <td>"I'm writing about," "Could you let me know," "I'd be happy to discuss," "Looking forward to hearing from you"</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Checklist before submitting</h2>
+      <ul class="guide-list">
+        <li><strong>Bullet point 1 covered?</strong> Find it in your email. Highlight it mentally. If not, add a sentence.</li>
+        <li><strong>Bullet point 2 covered?</strong> Same check. A paragraph that mentions the topic without directly addressing the bullet point does not earn Content marks.</li>
+        <li><strong>Bullet point 3 covered?</strong> This is the most commonly missed point, especially when it involves a request or action, which test takers sometimes forget under time pressure.</li>
+        <li><strong>Word count: 50-120?</strong> A rough estimate -- count the lines. Each line is approximately 10-12 words. Less than 5 lines is usually under 50 words; more than 12 lines is usually over 120 words.</li>
+        <li><strong>Register consistent?</strong> No informal language if the prompt is formal. No contractions if formal.</li>
+        <li><strong>Sign-off present?</strong> Every email needs a closing and a name.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">9-minute time plan</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Activity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0:00 - 1:00</td>
+            <td>Read the prompt. Identify recipient type (formal or semi-formal). Note all three bullet points. Plan one sentence for each.</td>
+          </tr>
+          <tr>
+            <td>1:00 - 6:30</td>
+            <td>Write the email: greeting, opening, three body paragraphs, closing, sign-off. Do not stop to perfect sentences -- write the full draft first.</td>
+          </tr>
+          <tr>
+            <td>6:30 - 8:30</td>
+            <td>Check: all three bullet points covered? Word count roughly 50-120? Register consistent? Obvious grammar errors?</td>
+          </tr>
+          <tr>
+            <td>8:30 - 9:00</td>
+            <td>Final read. Fix any clear errors. Do not rewrite sections.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Next step</h2>
+      <div class="guide-links">
+        <a href="/blog/pte-core-writing-guide">
+          <strong>Read the full PTE Core Writing guide</strong>
+          <span>Strategy for both writing tasks -- Write Email and Summarize Written Text -- with scored examples.</span>
+        </a>
+        <a href="/pte-core/simulator">
+          <strong>Practice Write Email in the simulator</strong>
+          <span>Complete timed Write Email tasks under exam conditions with the 9-minute timer.</span>
+        </a>
+        <a href="/pte-core/writing">
+          <strong>Open the PTE Core Writing hub</strong>
+          <span>Access all writing task guides, lessons, and practice resources.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </article>
+
+  <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
+    <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
+    <p class="muted">Practice PTE Core Write Email under timed conditions.</p>
+    <a class="btn btn-primary ic-btn" href="/pte-core/simulator">Open the PTE Core simulator</a>
+  </section>
+</Layout>

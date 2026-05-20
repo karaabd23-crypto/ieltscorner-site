@@ -1,0 +1,265 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "What is the difference between the two Fill in the Blanks tasks in PTE Core?",
+    answer:
+      "PTE Core has two different fill-in-the-blanks tasks. Reading and Writing Fill in the Blanks presents a passage with dropdown menus -- you select the correct word from 4-6 options for each gap. This task contributes to both Reading and Writing scores. Reading Fill in the Blanks presents a passage with gaps and a word bank -- you drag words to fill the gaps. This task contributes to your Reading score only. The strategies overlap but the Reading and Writing version is higher-value because it affects two section scores.",
+  },
+  {
+    question: "How is Reading and Writing Fill in the Blanks scored?",
+    answer:
+      "Each correctly filled blank earns one point toward both Reading and Writing scores. There is no negative marking -- a wrong selection earns zero but does not subtract. A passage with 6 blanks has 6 available points, each contributing to both section scores. This dual-scoring makes it the highest-value task in the Reading section in terms of score impact per item.",
+  },
+  {
+    question: "What knowledge is tested by Fill in the Blanks?",
+    answer:
+      "Primarily collocations (words that naturally co-occur in English), grammar (correct word form, part of speech), and vocabulary range (distinguishing between near-synonyms in academic register). Unlike vocabulary tests that ask for definitions, Fill in the Blanks tests whether you can identify the word that fits both the grammar of the sentence AND the semantic context of the passage.",
+  },
+  {
+    question: "Can I study collocations to improve my Fill in the Blanks score?",
+    answer:
+      "Yes -- collocations are the most directly testable component of this task type. High-frequency academic collocations tested include: 'significant increase/decrease,' 'raise concerns,' 'make a contribution,' 'draw a conclusion,' 'strong evidence,' 'take measures,' 'increasing demand,' 'pose a risk,' 'meet requirements.' Building a collocation bank from academic reading materials improves performance on this task more directly than general vocabulary study.",
+  },
+  {
+    question: "What should I do when two options seem equally correct?",
+    answer:
+      "Read the full sentence again with both options inserted. One will form a more natural collocation with the surrounding words. If still unsure, check the broader paragraph context -- the correct word will be consistent with the academic register and specific argument of the passage. If you genuinely cannot decide, make a selection and move on. Spending more than 45 seconds on one blank is rarely productive.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "PTE Core Fill in the Blanks Guide", path: "/blog/pte-core-fill-in-the-blanks/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="PTE Core Fill in the Blanks | Collocation Strategy and Grammar-First Method"
+  description="Complete guide to both PTE Core Fill in the Blanks tasks -- how scoring works, the grammar-then-collocation selection method, key academic collocations to learn, and how R/W Fill in the Blanks affects two section scores."
+  type="article"
+  keywords="PTE Core fill in the blanks, PTE Core reading and writing fill in the blanks, PTE Core collocation, PTE Core reading strategy, PTE Core fill in the blanks tips"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">PTE Core reading guide</span>
+      <h1 class="ic-display" style="margin: 0;">PTE Core Fill in the Blanks: collocation strategy</h1>
+      <div class="guide-meta">
+        <span>May 20, 2026</span>
+        <span>10 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        PTE Core has two fill-in-the-blanks task types, and the Reading and Writing version
+        is the highest-value single task in the Reading section because each correct answer
+        contributes to both your Reading and Writing scores simultaneously.
+      </p>
+      <p>
+        This guide covers the grammar-first selection method, the collocations most frequently
+        tested, and how to handle the two task formats efficiently.
+      </p>
+    </div>
+
+    <section class="guide-card" style="margin-top: 0;">
+      <h2 class="ic-display">The two Fill in the Blanks tasks compared</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>R/W Fill in the Blanks</th>
+            <th>Reading Fill in the Blanks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Format</td>
+            <td>Dropdown menus in the passage</td>
+            <td>Word bank -- drag words to fill gaps</td>
+          </tr>
+          <tr>
+            <td>Scores affected</td>
+            <td>Reading AND Writing</td>
+            <td>Reading only</td>
+          </tr>
+          <tr>
+            <td>Options per blank</td>
+            <td>4-6 options in the dropdown</td>
+            <td>Word bank has extra words not needed</td>
+          </tr>
+          <tr>
+            <td>Negative marking</td>
+            <td>No</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Preparation priority</td>
+            <td>Higher (dual-scored)</td>
+            <td>Standard</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">The grammar-first selection method</h2>
+      <p class="muted" style="margin-top: 0;">Apply this three-step sequence for every blank. Do not start with meaning -- start with grammar.</p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Identify the required part of speech</h3>
+            <p>Read the sentence around the blank. Is a noun, verb, adjective, or adverb needed? Eliminate all options that are the wrong part of speech immediately. For example, if the blank follows "a significant" and precedes "in productivity," only a noun fits (increase, decrease, improvement, decline). Any adjective or verb option is eliminated without reading further.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Check the correct word form</h3>
+            <p>After identifying the part of speech, check that the form is correct: singular or plural noun? Past tense or present participle verb? Comparative or superlative adjective? "Increasing" and "increase" are different forms of the same word -- only one will fit the grammatical structure of the sentence.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Select the best collocation among the remaining options</h3>
+            <p>With grammatically impossible options eliminated, compare the remaining options as collocations. "Strong evidence" is a standard academic collocation; "powerful evidence" is less natural. "Raise awareness" is natural; "lift awareness" is not. The correct option will be the one that creates a natural word pairing with its neighbours in the sentence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">High-frequency academic collocations in PTE Core</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Pattern</th>
+            <th>Natural collocations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Noun + "increase/decrease"</td>
+            <td>significant increase, sharp decrease, steady growth, rapid decline, marginal improvement</td>
+          </tr>
+          <tr>
+            <td>Verb + "evidence"</td>
+            <td>strong evidence, compelling evidence, limited evidence, provide evidence, present evidence</td>
+          </tr>
+          <tr>
+            <td>Verb + "conclusion"</td>
+            <td>draw a conclusion, reach a conclusion, support a conclusion, challenge a conclusion</td>
+          </tr>
+          <tr>
+            <td>Verb + "concern"</td>
+            <td>raise concerns, express concerns, address concerns, growing concern</td>
+          </tr>
+          <tr>
+            <td>Verb + "measures"</td>
+            <td>take measures, implement measures, introduce measures, adopt measures</td>
+          </tr>
+          <tr>
+            <td>Adjective + "impact"</td>
+            <td>significant impact, substantial impact, minimal impact, positive impact, direct impact</td>
+          </tr>
+          <tr>
+            <td>Verb + "requirements"</td>
+            <td>meet requirements, fulfil requirements, exceed requirements, satisfy requirements</td>
+          </tr>
+          <tr>
+            <td>Noun + "role"</td>
+            <td>play a key role, central role, crucial role, significant role, active role</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Reading Fill in the Blanks: word bank strategy</h2>
+      <p class="muted" style="margin-top: 0;">The word bank contains more words than there are gaps. Not all words will be used. This is different from the dropdown format.</p>
+      <ul class="guide-list">
+        <li>Start with the blanks you are most confident about. Fill these first -- it reduces the word bank and makes remaining choices clearer.</li>
+        <li>Apply the grammar-first method to each blank before looking at the word bank. Knowing you need a noun before you look at the options prevents distraction by plausible-sounding but grammatically wrong options.</li>
+        <li>Some words in the bank may look correct for a blank but belong to a different blank in the passage. Read the full passage context, not just the immediate sentence, before committing.</li>
+        <li>There is no negative marking -- if uncertain between two options, place one. You can change it if you later realize the other blank needs it.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Common Fill in the Blanks mistakes</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Mistake</th>
+            <th>Fix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Selecting a word based on meaning alone without checking grammar</td>
+            <td>Always check part of speech and word form first. A semantically correct word in the wrong form scores zero.</td>
+          </tr>
+          <tr>
+            <td>Selecting the most impressive-sounding word from the dropdown</td>
+            <td>The correct word is the one that collocates naturally -- not the most sophisticated-sounding option. Overly formal or unusual options are often distractors.</td>
+          </tr>
+          <tr>
+            <td>Spending 2+ minutes on one blank</td>
+            <td>Apply the three-step method and select within 45 seconds. Remaining time on one blank takes away from subsequent blanks worth equal points.</td>
+          </tr>
+          <tr>
+            <td>In Reading FitB: leaving a blank empty because no option seems perfect</td>
+            <td>There is no negative marking. Place your best guess. An empty blank is guaranteed zero; a guess has a chance of being correct.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Next step</h2>
+      <div class="guide-links">
+        <a href="/blog/pte-core-reading-guide">
+          <strong>Read the full PTE Core Reading guide</strong>
+          <span>Strategy for all five reading task types including Fill in the Blanks, Multiple Choice, and Re-order Paragraphs.</span>
+        </a>
+        <a href="/pte-core/simulator">
+          <strong>Practice Fill in the Blanks in the simulator</strong>
+          <span>Complete timed Fill in the Blanks tasks under exam conditions.</span>
+        </a>
+        <a href="/pte-core/reading">
+          <strong>Open the PTE Core Reading hub</strong>
+          <span>Access all reading task guides and lessons.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </article>
+
+  <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
+    <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
+    <p class="muted">Practice PTE Core Fill in the Blanks under timed conditions.</p>
+    <a class="btn btn-primary ic-btn" href="/pte-core/simulator">Open the PTE Core simulator</a>
+  </section>
+</Layout>

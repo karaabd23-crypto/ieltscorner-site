@@ -1,0 +1,276 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "What PTE Core score do I need for Canadian permanent residency?",
+    answer:
+      "For Express Entry (Federal Skilled Worker, Canadian Experience Class), the minimum is CLB 7 in all four skills. In PTE Core score terms: Listening 60, Reading 60, Writing 60, Speaking 68. Note that Speaking requires a higher raw score to reach CLB 7 than the other skills. Higher scores earn more Comprehensive Ranking System (CRS) points -- CLB 9 in all four skills (score of 79 each) earns significantly more CRS points than CLB 7.",
+  },
+  {
+    question: "Is PTE Core accepted for Express Entry?",
+    answer:
+      "Yes. IRCC designated PTE Core as an approved language test for Express Entry in 2023. It is accepted for the Federal Skilled Worker Program, the Canadian Experience Class, and the Federal Skilled Trades Program. PTE Core (not PTE Academic) is the specific test accepted by IRCC -- PTE Academic scores are not interchangeable with PTE Core scores for immigration purposes.",
+  },
+  {
+    question: "How do PTE Core scores convert to CRS points?",
+    answer:
+      "CRS points are assigned based on your CLB level in each skill. For a single applicant, first language at CLB 7 in all four skills earns 68 points; CLB 9 in all four skills earns 110 points. The 42-point difference is equivalent to approximately one year of skilled Canadian work experience. Improving from CLB 7 to CLB 9 is among the highest-return investments available to Express Entry candidates.",
+  },
+  {
+    question: "Can I combine PTE Core scores from different test dates for immigration?",
+    answer:
+      "IRCC allows you to use your best scores across multiple test attempts as long as all scores used are from the same test (PTE Core) and are within two years of the application date. You do not need to achieve your target CLB in all four skills on the same test date -- different skill results from different attempts can be combined.",
+  },
+  {
+    question: "Is PTE Core valid for Provincial Nominee Programs (PNPs)?",
+    answer:
+      "Many PNPs accept PTE Core, but requirements vary by province and stream. British Columbia, Ontario, Alberta, and other provinces are expanding acceptance of PTE Core alongside CELPIP and IELTS. Always verify directly with the specific PNP you are applying to, as language test acceptance can change and some streams specify different minimums or accepted tests.",
+  },
+  {
+    question: "How long is a PTE Core score valid for immigration?",
+    answer:
+      "PTE Core scores are valid for two years from the test date for IRCC applications. Plan your test date accordingly -- ideally within six months of creating your Express Entry profile or submitting a PNP application. Scores that expire before your application is finalized will require a retake.",
+  },
+  {
+    question: "PTE Core versus CELPIP: which is better for Canadian immigration?",
+    answer:
+      "Both are accepted by IRCC and produce CLB scores that are directly comparable for CRS points. The key differences: PTE Core has no minimum wait between retakes; CELPIP has a 7-day minimum. PTE Core has 6 dual-scored tasks that let one focused practice area improve two section scores; CELPIP does not. PTE Core Speaking requires a higher raw score (68) than other skills to reach CLB 7; CELPIP Speaking does not have this asymmetry. The best choice is whichever test format better matches your strengths.",
+  },
+];
+
+const clbTable = [
+  { clb: "CLB 10", listening: "82", reading: "82", writing: "82", speaking: "82", crs: "~34 CRS pts", use: "Exceeds Express Entry minimum" },
+  { clb: "CLB 9", listening: "79", reading: "79", writing: "79", speaking: "79", crs: "~32 CRS pts", use: "Target for max CRS points" },
+  { clb: "CLB 8", listening: "71", reading: "69", writing: "69", speaking: "73", crs: "~22 CRS pts", use: "Exceeds minimum; strong CRS" },
+  { clb: "CLB 7", listening: "60", reading: "60", writing: "60", speaking: "68", crs: "Minimum eligible", use: "Minimum for FSW and CEC" },
+  { clb: "CLB 6", listening: "47", reading: "54", writing: "56", speaking: "59", crs: "Below minimum", use: "Below Express Entry minimum" },
+  { clb: "CLB 4", listening: "18", reading: "33", writing: "41", speaking: "42", crs: "Below minimum", use: "Meets citizenship requirement only" },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "PTE Core for Canadian Immigration", path: "/pte-core-for-canadian-immigration/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="PTE Core for Canadian Immigration | Scores, CLB Levels, and Express Entry Requirements"
+  description="Complete guide to PTE Core scores for Canadian immigration -- CLB conversion table, Express Entry minimums, CRS points by CLB level, how to combine scores from multiple test dates, and PTE Core vs CELPIP for immigration."
+  type="page"
+  keywords="PTE Core Canadian immigration, PTE Core Express Entry, PTE Core CLB requirements, PTE Core CRS points, PTE Core PR Canada, PTE Core immigration score"
+  structuredData={pageStructuredData}
+>
+  <section class="section" style="padding-top: var(--s-6);">
+    <div class="hero">
+      <div class="hero-content">
+        <p class="ic-eyebrow">PTE Core for Canadian Immigration</p>
+        <h1 class="ic-display">What PTE Core score do you actually need?</h1>
+        <p>Express Entry, citizenship, and PNP requirements explained clearly, with CLB equivalents and CRS point values for every score level.</p>
+      </div>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+
+    <div class="surface imm-intro">
+      <p>
+        PTE Core is one of three language tests accepted by IRCC for Canadian immigration.
+        It produces CLB-level scores that map directly to the Comprehensive Ranking System (CRS)
+        points used in Express Entry. The test is entirely computer-based, results are typically
+        available within 5 business days, and there is no minimum wait between retake attempts.
+      </p>
+      <p>
+        This page explains exactly which scores you need for Express Entry, how those scores
+        translate to CRS points, and how PTE Core compares to CELPIP for immigration purposes.
+      </p>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+
+    <section class="surface" style="padding: var(--s-6);">
+      <h2 class="ic-display" style="margin-top: 0;">PTE Core scores to CLB levels: the full table</h2>
+      <p class="muted">Each PTE Core section score converts to a CLB level. The minimum raw score required differs across skills -- Speaking requires a higher raw score than the other three skills to reach CLB 7.</p>
+      <div style="overflow-x: auto; margin-top: var(--s-4);">
+        <table class="guide-mistake-table">
+          <thead>
+            <tr>
+              <th>CLB Level</th>
+              <th>Listening</th>
+              <th>Reading</th>
+              <th>Writing</th>
+              <th>Speaking</th>
+              <th>CRS Points (1st lang., single)</th>
+              <th>Immigration use</th>
+            </tr>
+          </thead>
+          <tbody>
+            {clbTable.map((row) => (
+              <tr>
+                <td><strong>{row.clb}</strong></td>
+                <td>{row.listening}</td>
+                <td>{row.reading}</td>
+                <td>{row.writing}</td>
+                <td>{row.speaking}</td>
+                <td>{row.crs}</td>
+                <td>{row.use}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="muted" style="margin-top: var(--s-3);">Scores shown are minimum PTE Core raw scores (10-90 scale) for each CLB level. CRS points are approximate and subject to IRCC updates. Always verify current requirements at ircc.canada.ca.</p>
+    </section>
+
+    <div style="height: var(--s-6);"></div>
+
+    <div class="guide-grid guide-grid-2">
+      <section class="guide-card">
+        <h2 class="ic-display">CLB 7: the Express Entry minimum</h2>
+        <p class="muted" style="margin-top: 0;">The minimum to enter the Express Entry pool for most programs. Required scores:</p>
+        <ul class="guide-list">
+          <li>Listening: 60</li>
+          <li>Reading: 60</li>
+          <li>Writing: 60</li>
+          <li>Speaking: 68 (higher than other skills -- this surprises many test takers)</li>
+        </ul>
+        <p class="muted">Meeting CLB 7 qualifies you for Express Entry but does not guarantee a Comprehensive Ranking System score high enough to receive an Invitation to Apply. Most recent draws have cut-off scores well above the minimum CRS required by language alone.</p>
+      </section>
+
+      <section class="guide-card">
+        <h2 class="ic-display">CLB 9: the CRS points target</h2>
+        <p class="muted" style="margin-top: 0;">CLB 9 in all four skills earns approximately 110 CRS language points for a single applicant, compared to approximately 68 points at CLB 7. Required scores:</p>
+        <ul class="guide-list">
+          <li>Listening: 79</li>
+          <li>Reading: 79</li>
+          <li>Writing: 79</li>
+          <li>Speaking: 79</li>
+        </ul>
+        <p class="muted">The 42-point difference between CLB 7 and CLB 9 is equivalent to approximately one year of skilled Canadian work experience in CRS terms. For most applicants, reaching CLB 9 is the highest-return preparation target.</p>
+      </section>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+
+    <section class="surface" style="padding: var(--s-6);">
+      <h2 class="ic-display" style="margin-top: 0;">Why Speaking requires a higher score for CLB 7</h2>
+      <p>
+        The PTE Core CLB concordance for Speaking is asymmetric at lower CLB levels. To reach
+        CLB 7 in Speaking, you need a raw score of 68 on the 10-90 scale -- while the other
+        three skills only require 60. This is a structural feature of the PTE Core scoring
+        system, not a difficulty difference in the task itself.
+      </p>
+      <p>
+        Practical implication: if you are targeting CLB 7 across all four skills, your Speaking
+        preparation needs to be more intensive than your Reading or Listening preparation. A
+        score of 60 in Speaking gives you CLB 6, not CLB 7 -- this gap consistently surprises
+        test takers who assume all skills have the same CLB 7 threshold.
+      </p>
+      <p>
+        At CLB 9, all four skills converge at a score of 79. The asymmetry only exists at lower
+        CLB levels.
+      </p>
+    </section>
+
+    <div style="height: var(--s-6);"></div>
+
+    <section class="surface" style="padding: var(--s-6);">
+      <h2 class="ic-display" style="margin-top: 0;">PTE Core vs CELPIP for Canadian immigration</h2>
+      <div style="overflow-x: auto; margin-top: var(--s-4);">
+        <table class="guide-mistake-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>PTE Core</th>
+              <th>CELPIP</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Accepted by IRCC</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Score validity</td>
+              <td>2 years</td>
+              <td>2 years</td>
+            </tr>
+            <tr>
+              <td>CLB 7 Speaking threshold</td>
+              <td>68 (higher than other skills)</td>
+              <td>Same scale as other skills</td>
+            </tr>
+            <tr>
+              <td>Minimum wait between retakes</td>
+              <td>None</td>
+              <td>7 days</td>
+            </tr>
+            <tr>
+              <td>Dual-scored tasks</td>
+              <td>6 tasks affect 2 section scores each</td>
+              <td>None</td>
+            </tr>
+            <tr>
+              <td>Results availability</td>
+              <td>Within 5 business days</td>
+              <td>Within 5-8 business days</td>
+            </tr>
+            <tr>
+              <td>Test duration</td>
+              <td>~2 hours</td>
+              <td>~3 hours</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div style="height: var(--s-6);"></div>
+
+    <section class="surface" style="padding: var(--s-6);">
+      <h2 class="ic-display" style="margin-top: 0;">Start your PTE Core preparation</h2>
+      <div class="guide-links">
+        <a href="/pte-core">
+          <strong>Open the PTE Core hub</strong>
+          <span>Access all task guides, the simulator, and skill-specific preparation resources.</span>
+        </a>
+        <a href="/blog/pte-core-scores-explained">
+          <strong>Full CLB score guide</strong>
+          <span>Detailed breakdown of how PTE Core scores convert to CLB levels and CRS points.</span>
+        </a>
+        <a href="/blog/pte-core-study-plan">
+          <strong>4-week and 8-week study plans</strong>
+          <span>Week-by-week preparation schedules for CLB 7 and CLB 9 targets.</span>
+        </a>
+        <a href="/blog/pte-core-vs-celpip">
+          <strong>PTE Core vs CELPIP in detail</strong>
+          <span>Full comparison of both tests for Canadian immigration applicants.</span>
+        </a>
+      </div>
+    </section>
+
+    <div style="height: var(--s-6);"></div>
+
+    <section class="surface" style="padding: var(--s-6);">
+      <h2 class="ic-display" style="margin-top: 0;">Frequently asked questions</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </section>
+
+  <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
+    <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
+    <p class="muted">Ready to start your PTE Core preparation for Canadian immigration?</p>
+    <a class="btn btn-primary ic-btn" href="/pte-core">Open the PTE Core hub</a>
+  </section>
+</Layout>

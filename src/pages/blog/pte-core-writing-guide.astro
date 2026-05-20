@@ -1,0 +1,359 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "What are the two PTE Core writing tasks?",
+    answer:
+      "PTE Core Writing has two tasks: Summarize Written Text (read a passage and write a one-sentence summary of 5-75 words) and Write Email (write a professional email of 50-120 words responding to a prompt with 3 bullet points to cover). Both tasks are timed separately and assessed on content, form, grammar, vocabulary, and spelling.",
+  },
+  {
+    question: "How long do I have for each PTE Core writing task?",
+    answer:
+      "Summarize Written Text allows 10 minutes per item. Write Email allows 9 minutes per item. PTE Core typically includes 1-2 Summarize Written Text items and 1-2 Write Email items per test. Time management within each task is critical -- the timer runs continuously and does not pause.",
+  },
+  {
+    question: "What makes a PTE Core Summarize Written Text response strong?",
+    answer:
+      "A strong summary uses one grammatically complete sentence that captures the main idea and one key supporting detail from the passage. It avoids copying phrases verbatim (paraphrase), stays within 5-75 words, and uses a complex sentence structure such as a main clause plus a relative or subordinate clause. The most common error is writing two sentences -- this fails the Form criterion immediately.",
+  },
+  {
+    question: "What tone should I use in PTE Core Write Email?",
+    answer:
+      "Match the tone to the relationship implied by the prompt. If the recipient is a manager, landlord, or unfamiliar organization, use formal language: 'I am writing to...', 'I would be grateful if...', 'Please do not hesitate to contact me.' If the recipient is a colleague or neighbour, semi-formal is appropriate. Contractions ('I'm', 'I've') are acceptable in semi-formal but should be avoided in formal register.",
+  },
+  {
+    question: "How is PTE Core Writing scored?",
+    answer:
+      "Summarize Written Text is scored on Content (main idea captured), Form (one sentence, within word limit), Grammar (sentence-level accuracy), Vocabulary (appropriate word choices), and Spelling. Write Email is scored on Content (all 3 bullet points addressed), Form (within 50-120 words), Grammar, Vocabulary, and Spelling. Content and Form are the highest-stakes criteria -- a formal error on either drops the score significantly.",
+  },
+  {
+    question: "Should I cover all three bullet points in Write Email?",
+    answer:
+      "Yes -- covering all three bullet points is a Content requirement. Missing even one bullet point drops the Content score and can reduce the overall Write Email score by 2-3 points. Allocate roughly one paragraph to each bullet point. If the prompt says 'explain why you are writing, describe the problem, and suggest a solution,' all three must appear clearly in your email.",
+  },
+  {
+    question: "Can I use templates for PTE Core Write Email?",
+    answer:
+      "A structural template is useful -- opening line (state purpose), body (cover each bullet point), closing (polite sign-off). However, do not memorize fixed sentences wholesale. The AI scoring system detects unnatural phrasing and rewards natural, varied language. Use a template as scaffolding for structure, then fill each section with content specific to the actual prompt.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "PTE Core Writing Guide", path: "/blog/pte-core-writing-guide/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="PTE Core Writing Guide | Summarize Written Text and Write Email Strategy"
+  description="Complete PTE Core Writing guide covering both tasks: how to write a one-sentence summary, how to structure a professional email covering all bullet points, scoring criteria, and common mistakes."
+  type="article"
+  keywords="PTE Core writing, PTE Core summarize written text, PTE Core write email, PTE Core writing score, PTE Core writing tips"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">PTE Core writing guide</span>
+      <h1 class="ic-display" style="margin: 0;">PTE Core Writing guide</h1>
+      <div class="guide-meta">
+        <span>May 20, 2026</span>
+        <span>14 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        PTE Core Writing has two tasks -- Summarize Written Text and Write Email -- and each
+        one tests a different type of writing control. The Summarize task rewards precision in
+        a single sentence; the Email task rewards completeness and appropriate register across
+        a short professional message.
+      </p>
+      <p>
+        This guide covers what each task actually rewards, how the AI scoring system evaluates
+        your response, and the most common errors that drop scores without test takers
+        realizing why.
+      </p>
+    </div>
+
+    <div class="guide-grid guide-grid-2">
+      <section class="guide-card">
+        <h2 class="ic-display">Task 1: Summarize Written Text</h2>
+        <ul class="guide-list">
+          <li><strong>Format:</strong> Read a passage (up to 300 words), write one sentence</li>
+          <li><strong>Word limit:</strong> 5-75 words</li>
+          <li><strong>Time:</strong> 10 minutes per item</li>
+          <li><strong>Scored on:</strong> Content, Form, Grammar, Vocabulary, Spelling</li>
+          <li><strong>Critical rule:</strong> One sentence only -- two sentences = zero on Form</li>
+        </ul>
+      </section>
+
+      <section class="guide-card">
+        <h2 class="ic-display">Task 2: Write Email</h2>
+        <ul class="guide-list">
+          <li><strong>Format:</strong> Read a prompt with 3 bullet points, write a professional email</li>
+          <li><strong>Word limit:</strong> 50-120 words</li>
+          <li><strong>Time:</strong> 9 minutes per item</li>
+          <li><strong>Scored on:</strong> Content, Form, Grammar, Vocabulary, Spelling</li>
+          <li><strong>Critical rule:</strong> Cover all 3 bullet points -- missing one drops Content score</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Summarize Written Text: how to build one sentence</h2>
+      <p class="muted" style="margin-top: 0;">The challenge is compressing a multi-paragraph passage into a single grammatically complete sentence. Use this two-part structure.</p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Identify the main idea (30 seconds)</h3>
+            <p>Read the first sentence and last sentence of the passage. In most PTE Core texts, the main idea is stated in one of these two locations. Write it down in your own words before you construct your sentence.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Add one supporting detail with a clause</h3>
+            <p>Attach the most important supporting point using a clause: "which," "because," "although," "where," or "while." This produces a complex sentence that demonstrates grammatical range.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Check the word count and form</h3>
+            <p>Count your words. Must be 5-75. Must end with one full stop. If you have two sentences, merge them with a conjunction or subordinate clause. Never submit two separate sentences.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Paraphrase, do not copy</h3>
+            <p>Change key vocabulary from the passage. If the passage says "urban development," your summary might say "city expansion." Exact copying is not penalized directly, but paraphrasing demonstrates vocabulary range and contributes to a higher score.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Summarize Written Text: scored example</h2>
+      <p class="muted" style="margin-top: 0;">Passage topic: Remote work adoption increased significantly after 2020, driven by technology and changing employee expectations. Many companies reported productivity gains, though collaboration challenges emerged.</p>
+      <div class="guide-scored-pair">
+        <div class="guide-scored guide-scored--weak">
+          <span class="guide-scored__label">Weak response</span>
+          <p>
+            "Remote work became more common after 2020. Many companies said workers were more
+            productive but it was hard to collaborate."
+          </p>
+          <ul class="guide-scored__notes">
+            <li>Two sentences -- automatic zero on Form criterion.</li>
+            <li>Even if the content is accurate, Form failure makes this response score 0-1 points.</li>
+          </ul>
+        </div>
+        <div class="guide-scored guide-scored--strong">
+          <span class="guide-scored__label">Strong response</span>
+          <p>
+            "Although remote work expanded substantially after 2020 due to improved technology
+            and shifting employee expectations, organizations that reported productivity
+            improvements also encountered new challenges in maintaining effective team
+            collaboration."
+          </p>
+          <ul class="guide-scored__notes">
+            <li>One sentence -- Form criterion satisfied.</li>
+            <li>Main idea (expansion of remote work) is captured with the cause (technology, expectations).</li>
+            <li>Supporting detail (productivity vs collaboration tension) added with a subordinate clause.</li>
+            <li>Key vocabulary paraphrased: "expanded substantially" instead of "increased significantly."</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Write Email: structure and register</h2>
+      <p class="muted" style="margin-top: 0;">Every Write Email response should follow a three-part structure that maps directly to the three bullet points in the prompt.</p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Opening line: state your purpose</h3>
+            <p>One sentence that tells the reader why you are writing. Formal: "I am writing to inform you that..." Semi-formal: "I wanted to let you know that..." Do not begin with "Dear" alone or "Hello" -- include a purpose sentence immediately after the greeting.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Body: one short paragraph per bullet point</h3>
+            <p>Address each bullet point in the same order they appear in the prompt. 1-2 sentences per point is sufficient. Do not combine all three bullet points into one long paragraph -- the AI evaluates coverage of each point separately.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Closing: polite sign-off</h3>
+            <p>Formal: "Please do not hesitate to contact me if you require further information. Yours sincerely, [Name]" Semi-formal: "Feel free to reach out if you have any questions. Best regards, [Name]" The closing line contributes to register consistency.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Write Email: scored example</h2>
+      <p class="muted" style="margin-top: 0;">Prompt: Write an email to your building manager. In your email: explain that your heating is not working, describe how long this has been the problem, and request urgent repair.</p>
+      <div class="guide-scored-pair">
+        <div class="guide-scored guide-scored--weak">
+          <span class="guide-scored__label">Weak response</span>
+          <p>
+            "Dear Manager,<br/><br/>
+            My heating is broken. I have been cold for a long time. Please fix it soon because
+            it is very uncomfortable.<br/><br/>
+            Regards, [Name]"
+          </p>
+          <ul class="guide-scored__notes">
+            <li>All three bullet points technically touched, but "a long time" is vague -- no specific duration.</li>
+            <li>Register is inconsistent: "I have been cold" is informal and personal, not professional.</li>
+            <li>No specific request for urgency with a deadline or escalation.</li>
+            <li>Word count: approximately 42 words -- below the 50-word minimum. Form penalty.</li>
+          </ul>
+        </div>
+        <div class="guide-scored guide-scored--strong">
+          <span class="guide-scored__label">Strong response</span>
+          <p>
+            "Dear Building Manager,<br/><br/>
+            I am writing to report that the heating system in my unit has not been functioning
+            for the past five days.<br/><br/>
+            Since the issue began last Monday, the indoor temperature has been consistently
+            below a comfortable level, which is affecting both my daily routine and sleep.<br/><br/>
+            I would appreciate it if this matter could be treated as a priority and addressed
+            within the next 48 hours. Please let me know what arrangements have been made.<br/><br/>
+            Yours sincerely,<br/>
+            [Name]"
+          </p>
+          <ul class="guide-scored__notes">
+            <li>Opening states purpose clearly and professionally.</li>
+            <li>Duration is specific: "past five days," "last Monday" -- addresses the second bullet point precisely.</li>
+            <li>Request is specific: "within the next 48 hours" -- addresses the third bullet point with urgency.</li>
+            <li>Register is consistently formal throughout.</li>
+            <li>Word count approximately 95 words -- within the 50-120 range.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Register vocabulary by formality level</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Function</th>
+            <th>Informal (avoid)</th>
+            <th>Semi-formal</th>
+            <th>Formal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>State purpose</td>
+            <td>"I'm emailing about..."</td>
+            <td>"I wanted to get in touch about..."</td>
+            <td>"I am writing to enquire about..."</td>
+          </tr>
+          <tr>
+            <td>Make a request</td>
+            <td>"Can you fix it?"</td>
+            <td>"Could you please look into this?"</td>
+            <td>"I would be grateful if you could address this matter."</td>
+          </tr>
+          <tr>
+            <td>Express concern</td>
+            <td>"This is really annoying."</td>
+            <td>"This has caused some inconvenience."</td>
+            <td>"This has had a considerable impact on my daily activities."</td>
+          </tr>
+          <tr>
+            <td>Close the email</td>
+            <td>"Thanks."</td>
+            <td>"Looking forward to hearing from you."</td>
+            <td>"I look forward to your prompt response."</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Common mistakes and fixes</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Mistake</th>
+            <th>Fix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Two sentences in Summarize Written Text</td>
+            <td>Join them with a subordinating conjunction or relative clause. One full stop only.</td>
+          </tr>
+          <tr>
+            <td>Summary goes over 75 words</td>
+            <td>Count carefully. Remove adjectives and adverbs that do not change the meaning.</td>
+          </tr>
+          <tr>
+            <td>Missing one of the three bullet points in Write Email</td>
+            <td>Number the bullet points mentally as you plan: 1, 2, 3. Check all three are in your draft before submitting.</td>
+          </tr>
+          <tr>
+            <td>Email under 50 words</td>
+            <td>Expand each bullet point with a reason or specific detail. One sentence per point is usually not enough.</td>
+          </tr>
+          <tr>
+            <td>Register mismatch (formal prompt, informal language)</td>
+            <td>Identify the recipient before writing. Manager or unknown organization = formal. Colleague = semi-formal.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Next step</h2>
+      <div class="guide-links">
+        <a href="/pte-core/writing">
+          <strong>Open the PTE Core Writing hub</strong>
+          <span>Access writing lessons, task guides, and practice tools.</span>
+        </a>
+        <a href="/pte-core/simulator">
+          <strong>Try the PTE Core simulator</strong>
+          <span>Practice Writing tasks in an exam-style timed environment.</span>
+        </a>
+        <a href="/ai-feedback">
+          <strong>Get AI feedback on your writing</strong>
+          <span>Submit a response for scored feedback on content, form, grammar, and vocabulary.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </article>
+
+  <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
+    <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
+    <p class="muted">Ready to practice PTE Core Writing under timed conditions?</p>
+    <a class="btn btn-primary ic-btn" href="/pte-core/simulator">Open the PTE Core simulator</a>
+  </section>
+</Layout>

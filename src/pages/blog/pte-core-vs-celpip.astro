@@ -1,0 +1,300 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "Which test is easier for Canadian immigration, PTE Core or CELPIP?",
+    answer:
+      "Neither test is objectively easier -- both map to the same CLB scale, and the difficulty depends heavily on your individual strengths. Test takers who are stronger in listening and reading tend to prefer PTE Core because it offers dual-scored tasks where one strong performance improves two section scores. Test takers who prefer human-like interaction and are more comfortable with conversational audio tend to find CELPIP's format more intuitive. The best choice is the one that better suits your specific language profile.",
+  },
+  {
+    question: "Does IRCC accept both PTE Core and CELPIP for immigration?",
+    answer:
+      "Yes. Both PTE Core and CELPIP are designated by IRCC for Express Entry and most other permanent residence programs. Both produce CLB scores that are directly comparable for CRS points calculations. You can submit either test, and IRCC accepts the best scores across attempts as long as all scores are within two years of the application date.",
+  },
+  {
+    question: "Is PTE Core all computer-based while CELPIP uses human examiners?",
+    answer:
+      "Both tests are entirely computer-based with AI scoring -- neither uses human examiners to score individual responses. PTE Core is delivered on a Pearson testing platform; CELPIP is delivered on a Paragon Testing platform. In both tests, your speaking and writing responses are evaluated by automated AI systems, not by humans reviewing your specific test.",
+  },
+  {
+    question: "How do PTE Core and CELPIP speaking tasks compare?",
+    answer:
+      "PTE Core Speaking includes 5 task types (Read Aloud, Repeat Sentence, Describe Image, Re-tell Lecture, Answer Short Question) spread across approximately 20-30 items. CELPIP Speaking has 8 tasks that mirror real-world speaking situations (giving advice, describing an image, making predictions, expressing opinions). PTE Core speaking is generally considered more structured and predictable; CELPIP speaking requires more spontaneous communication in realistic scenarios.",
+  },
+  {
+    question: "Which test has more predictable task formats?",
+    answer:
+      "PTE Core has more predictable task formats because the 19 task types are fixed and well-documented. Each task follows a consistent structure -- you always know what type of response is expected. CELPIP task formats are also predictable in structure, but the speaking tasks require more varied real-world language (advice, descriptions, opinions, complaints) that some test takers find harder to prepare for systematically.",
+  },
+  {
+    question: "How quickly are PTE Core and CELPIP results available?",
+    answer:
+      "PTE Core results are typically available within 5 business days. CELPIP results are typically available within 5-8 business days online. Both tests offer expedited results for an additional fee. Neither test produces results faster than the standard stated timelines in a consistent way, so plan your application timeline accordingly.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "PTE Core vs CELPIP Comparison", path: "/blog/pte-core-vs-celpip/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="PTE Core vs CELPIP | Which Test is Better for Canadian Immigration?"
+  description="Detailed comparison of PTE Core and CELPIP for Canadian immigration -- test format, speaking tasks, dual-scored items, score availability, and which test suits which type of language learner."
+  type="article"
+  keywords="PTE Core vs CELPIP, PTE Core or CELPIP for immigration, CELPIP vs PTE Core, which test for Express Entry, PTE Core CELPIP comparison"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">PTE Core comparison guide</span>
+      <h1 class="ic-display" style="margin: 0;">PTE Core vs CELPIP: which test for Canadian immigration?</h1>
+      <div class="guide-meta">
+        <span>May 20, 2026</span>
+        <span>12 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        Both PTE Core and CELPIP are accepted by IRCC for Canadian immigration and produce
+        scores on the same CLB scale. The question is not which test IRCC prefers -- both
+        are treated equally -- but which test format better suits your individual language
+        strengths and preparation style.
+      </p>
+      <p>
+        This guide gives you a direct comparison across every major dimension: format,
+        speaking tasks, scoring structure, dual-scored opportunities, and the profile of
+        test takers who typically prefer each exam.
+      </p>
+    </div>
+
+    <section class="guide-card" style="margin-top: 0;">
+      <h2 class="ic-display">Side-by-side overview</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>PTE Core</th>
+            <th>CELPIP</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Test developer</td>
+            <td>Pearson</td>
+            <td>Paragon Testing Enterprises</td>
+          </tr>
+          <tr>
+            <td>Accepted by IRCC</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Score scale</td>
+            <td>10-90 per section, mapped to CLB</td>
+            <td>CLB 1-12 directly</td>
+          </tr>
+          <tr>
+            <td>Total test duration</td>
+            <td>Approximately 2 hours</td>
+            <td>Approximately 3 hours</td>
+          </tr>
+          <tr>
+            <td>Human examiner involved</td>
+            <td>No -- fully AI scored</td>
+            <td>No -- fully AI scored</td>
+          </tr>
+          <tr>
+            <td>Results available</td>
+            <td>Within 5 business days</td>
+            <td>Within 5-8 business days</td>
+          </tr>
+          <tr>
+            <td>Retake policy</td>
+            <td>No minimum wait between attempts</td>
+            <td>Minimum 7 days between attempts</td>
+          </tr>
+          <tr>
+            <td>Score validity (for IRCC)</td>
+            <td>2 years</td>
+            <td>2 years</td>
+          </tr>
+          <tr>
+            <td>Number of task types</td>
+            <td>19 task types</td>
+            <td>10 tasks (Speaking) + section-based Reading/Listening</td>
+          </tr>
+          <tr>
+            <td>Dual-scored tasks</td>
+            <td>6 tasks affect 2 sections each</td>
+            <td>No dual-scored tasks</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Speaking comparison</h2>
+      <p class="muted" style="margin-top: 0;">Speaking is where the tests differ most noticeably for test takers during preparation.</p>
+      <div class="guide-scored-pair">
+        <div class="guide-scored guide-scored--weak" style="border-color: var(--blue-500);">
+          <span class="guide-scored__label">PTE Core Speaking</span>
+          <ul class="guide-scored__notes" style="margin-top: 0;">
+            <li>5 task types: Read Aloud, Repeat Sentence, Describe Image, Re-tell Lecture, Answer Short Question</li>
+            <li>Tasks are structured and predictable -- you always know exactly what the task format will be</li>
+            <li>Read Aloud and Repeat Sentence reward verbatim accuracy and fluency -- no spontaneous generation required</li>
+            <li>Describe Image and Re-tell Lecture require organized production, but the prompts are visual or audio-based</li>
+            <li>No role-play, phone call simulation, or advice-giving tasks</li>
+          </ul>
+        </div>
+        <div class="guide-scored guide-scored--strong" style="border-color: var(--blue-500);">
+          <span class="guide-scored__label">CELPIP Speaking</span>
+          <ul class="guide-scored__notes" style="margin-top: 0;">
+            <li>8 tasks: giving advice, describing a scene, expressing opinion, dealing with a difficult situation, describing an image comparing, giving a personal experience, making proposals, supporting decisions</li>
+            <li>Tasks simulate real conversations and practical English use</li>
+            <li>Requires natural conversational language, spontaneous argument construction, and role-appropriate tone</li>
+            <li>More preparation required for the variety of speaking contexts</li>
+            <li>Test takers comfortable with conversational English often find the format more natural</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Writing comparison</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>PTE Core Writing</th>
+            <th>CELPIP Writing</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Task types</td>
+            <td>Summarize Written Text (1 sentence) + Write Email (50-120 words)</td>
+            <td>Task 1: Email (75-100 words) + Task 2: Survey Response (150-200 words)</td>
+          </tr>
+          <tr>
+            <td>Essay/opinion task</td>
+            <td>No long essay required</td>
+            <td>Yes -- Task 2 survey response is opinion-based</td>
+          </tr>
+          <tr>
+            <td>Word limit challenge</td>
+            <td>Summarize Written Text is extremely constrained (5-75 words, 1 sentence)</td>
+            <td>Both tasks have minimum word counts that require sufficient development</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Who typically prefers PTE Core</h2>
+      <ul class="guide-list">
+        <li>Test takers who prefer clearly structured, predictable task formats with less spontaneous production required</li>
+        <li>Test takers with strong listening recall who benefit from dual-scored tasks (Repeat Sentence, Write from Dictation)</li>
+        <li>Test takers who want no minimum wait between retake attempts</li>
+        <li>Test takers who find structured reading tasks (Re-order Paragraphs, Fill in the Blanks) more manageable than CELPIP's longer passage-based reading</li>
+        <li>Test takers who want results in 5 days and have a tight immigration timeline</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Who typically prefers CELPIP</h2>
+      <ul class="guide-list">
+        <li>Test takers comfortable with natural Canadian English conversation and real-world speaking scenarios</li>
+        <li>Test takers who find IELTS or PTE task formats too technical and prefer straightforward task descriptions</li>
+        <li>Test takers who are stronger at extended writing (opinion essays, longer emails) than single-sentence summaries</li>
+        <li>Test takers who have been living and working in Canada and whose English is shaped by daily Canadian use</li>
+        <li>Test takers who want a shorter overall test duration relative to similar tests</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">The dual-scored advantage of PTE Core</h2>
+      <p class="muted" style="margin-top: 0;">PTE Core has six tasks that contribute to two section scores simultaneously. CELPIP has no equivalent dual-scored tasks. This structural difference is significant for preparation efficiency.</p>
+      <ul class="guide-list">
+        <li>In PTE Core, strong performance on Write from Dictation improves both Listening and Writing.</li>
+        <li>Strong performance on Read Aloud improves both Speaking and Reading.</li>
+        <li>Strong performance on R/W Fill in the Blanks improves both Reading and Writing.</li>
+        <li>If your two weakest sections are Listening and Writing, intensive Write from Dictation and Summarize Spoken Text practice addresses both simultaneously.</li>
+        <li>There is no equivalent efficiency mechanism in CELPIP -- each task affects only one section score.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Recommendation: how to choose</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Take a free practice test for each (if time allows)</h3>
+            <p>Both Pearson and Paragon offer sample tests or scored practice tests. Complete one of each and compare: which format felt more natural? Which section scores are higher? Choose the test where your scores are more evenly balanced across all four skills.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>If your weakest skill is Speaking, consider CELPIP</h3>
+            <p>CELPIP Speaking CLB 7 requires a lower raw score threshold than PTE Core Speaking CLB 7 (68 on the 10-90 scale). If Speaking is your most challenging skill, this difference matters.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>If you want to maximize preparation efficiency, consider PTE Core</h3>
+            <p>The dual-scored tasks make it possible to improve two section scores with one focused practice area. For test takers with limited preparation time, this structural advantage is significant.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Next step</h2>
+      <div class="guide-links">
+        <a href="/pte-core">
+          <strong>Open the PTE Core hub</strong>
+          <span>Access all PTE Core guides, the simulator, and skill-specific resources.</span>
+        </a>
+        <a href="/celpip">
+          <strong>Open the CELPIP hub</strong>
+          <span>Access all CELPIP guides and preparation resources.</span>
+        </a>
+        <a href="/blog/pte-core-scores-explained">
+          <strong>Understand PTE Core CLB scores</strong>
+          <span>Full CLB conversion table and what scores you need for Express Entry.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </article>
+
+  <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
+    <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
+    <p class="muted">Ready to start preparing for PTE Core?</p>
+    <a class="btn btn-primary ic-btn" href="/pte-core">Open the PTE Core hub</a>
+  </section>
+</Layout>

@@ -419,6 +419,32 @@ const lessonSchema = {
   "isAccessibleForFree": true,
 };
 
+// SEO: Course Schema (signals structured educational content to Google)
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": publicTitle,
+  "description": item.data.excerpt,
+  "educationalLevel": item.data.level,
+  "teaches": item.data.category,
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "IELTS Corner",
+    "url": Astro.site,
+  },
+  "inLanguage": "en-CA",
+  "isAccessibleForFree": true,
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "courseWorkload": "PT10M",
+  },
+  "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": "student",
+  },
+};
+
 // SEO: Breadcrumb Schema
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -464,6 +490,7 @@ const seoKeywords = `${publicTitle}, ${item.data.category}, ${item.data.level}, 
 >
   <!-- Structured Data Scripts -->
   <script type="application/ld+json" set:html={JSON.stringify(lessonSchema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(courseSchema)} slot="head" />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
 
   <section class="section">

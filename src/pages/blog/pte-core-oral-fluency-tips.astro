@@ -1,0 +1,230 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "What does PTE Core Oral Fluency measure?",
+    answer:
+      "Oral Fluency measures the smoothness, rhythm, and natural flow of your speech. The AI assesses: whether pauses occur at natural phrase boundaries (after clauses and at punctuation) rather than mid-phrase; whether your speech maintains a consistent pace; whether you use natural English rhythm (stress on content words, reduced stress on function words); and whether you avoid filler sounds (um, uh, er) and false starts. Oral Fluency is scored on a 10-90 scale across all Speaking tasks.",
+  },
+  {
+    question: "Does my accent affect my Oral Fluency score?",
+    answer:
+      "No. Oral Fluency is separate from Pronunciation. Accent (the phonological features of your first language in your English speech) affects your Pronunciation score, not your Oral Fluency score. A speaker with a strong accent can score highly on Oral Fluency by maintaining consistent rhythm and natural pausing patterns. The two scores are independent of each other.",
+  },
+  {
+    question: "What is the single most effective way to improve Oral Fluency?",
+    answer:
+      "Daily self-recording practice with playback and analysis. Record yourself doing a Read Aloud or Describe Image task. Listen back and mark every pause that occurs mid-phrase rather than at a phrase boundary. Count the mid-phrase pauses. Repeat with a target of reducing that number to zero. This targeted feedback loop is more efficient than any general speaking practice because it makes fluency errors visible and quantifiable.",
+  },
+  {
+    question: "How do I avoid mid-phrase pauses in Read Aloud?",
+    answer:
+      "During the preparation time, chunk the passage: mark where each phrase ends (after noun phrases, at punctuation, before and after conjunctions). Practice reading each chunk as a continuous flow, only pausing at the marked boundaries. The goal is to read 4-6 words at natural speed before the next pause, not 1-2 words with constant pauses between them.",
+  },
+  {
+    question: "Do filler sounds (um, uh, er) affect the Oral Fluency score?",
+    answer:
+      "Yes. Repeated filler sounds between phrases are scored as disfluencies and reduce the Oral Fluency score. A brief silent pause is scored better than 'um' or 'uh' -- silence does not actively signal disfluency the way vocalised fillers do. If you need time to formulate a sentence in Describe Image, a 0.5-1 second silent pause is preferable to saying 'uh... so...'",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "PTE Core Oral Fluency Tips", path: "/blog/pte-core-oral-fluency-tips/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="PTE Core Oral Fluency Tips | What the AI Measures and How to Improve"
+  description="Complete guide to improving PTE Core Oral Fluency -- what the AI actually scores, the difference between fluency and pronunciation, the self-recording method, chunking for natural rhythm, and how to eliminate filler sounds."
+  type="article"
+  keywords="PTE Core oral fluency, PTE Core fluency score, PTE Core speaking fluency tips, PTE Core pronunciation vs fluency, PTE Core speaking improvement"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">PTE Core speaking guide</span>
+      <h1 class="ic-display" style="margin: 0;">PTE Core Oral Fluency: what the AI scores and how to improve</h1>
+      <div class="guide-meta">
+        <span>May 20, 2026</span>
+        <span>10 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        Oral Fluency is one of the most misunderstood PTE Core sub-scores. Many test takers
+        believe it measures accuracy or vocabulary -- it does not. It measures the naturalness
+        and rhythm of speech delivery, assessed entirely independent of pronunciation and
+        content.
+      </p>
+      <p>
+        Understanding exactly what the AI measures -- and what specific behaviors reduce it --
+        is the most direct path to improving the Speaking section score.
+      </p>
+    </div>
+
+    <section class="guide-card" style="margin-top: 0;">
+      <h2 class="ic-display">What the AI actually measures</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Behavior</th>
+            <th>Effect on Oral Fluency</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pausing at phrase boundaries (after clauses, at punctuation)</td>
+            <td>Expected and positive -- natural speech has pauses at boundaries</td>
+          </tr>
+          <tr>
+            <td>Pausing mid-phrase or mid-word for 2+ seconds</td>
+            <td>Major negative impact</td>
+          </tr>
+          <tr>
+            <td>Consistent pace throughout the response</td>
+            <td>Positive</td>
+          </tr>
+          <tr>
+            <td>Speeding up and slowing down unevenly</td>
+            <td>Moderate negative impact</td>
+          </tr>
+          <tr>
+            <td>Stopping and restarting a sentence</td>
+            <td>Significant negative impact</td>
+          </tr>
+          <tr>
+            <td>Repeated filler sounds ("um," "uh," "er") between phrases</td>
+            <td>Moderate negative impact</td>
+          </tr>
+          <tr>
+            <td>Natural word stress (content words stressed, function words reduced)</td>
+            <td>Positive</td>
+          </tr>
+          <tr>
+            <td>Flat, equal stress on every word</td>
+            <td>Moderate negative impact</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Fluency vs Pronunciation: the important distinction</h2>
+      <p class="muted" style="margin-top: 0;">These are two separate sub-scores. Improving one does not automatically improve the other.</p>
+      <div class="guide-grid guide-grid-2">
+        <section class="guide-card">
+          <h3>Oral Fluency</h3>
+          <ul class="guide-list">
+            <li>How smoothly and continuously you speak</li>
+            <li>Whether pauses occur at natural boundaries</li>
+            <li>Whether your pace is consistent</li>
+            <li>Affected by: pauses, restarts, fillers</li>
+            <li>NOT affected by: accent or individual sound accuracy</li>
+          </ul>
+        </section>
+        <section class="guide-card">
+          <h3>Pronunciation</h3>
+          <ul class="guide-list">
+            <li>How clearly a native speaker would understand you</li>
+            <li>Whether individual sounds are produced clearly</li>
+            <li>Whether stress falls on the right syllable</li>
+            <li>Affected by: first-language phonology, accent</li>
+            <li>NOT affected by: pausing patterns or speech rate</li>
+          </ul>
+        </section>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">The self-recording improvement method</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Record a full Read Aloud or Describe Image response</h3>
+            <p>Use any recording app. Complete the task exactly as you would in the exam -- no stopping or editing.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Listen back and mark mid-phrase pauses</h3>
+            <p>Follow the transcript (for Read Aloud) or your mental notes (for Describe Image) while listening. Mark every pause that occurs in the middle of a phrase -- between adjacent words that belong together as a meaning unit. Count them.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Record again with explicit chunking</h3>
+            <p>Before re-recording, mark phrase boundaries on the text. Practice reading each chunk as a continuous flow. Record again and count mid-phrase pauses. The number should decrease on the second recording.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Do this daily with new texts</h3>
+            <p>Fluency is a habit, not a skill that is learned once. Daily 15-minute sessions of record-review-re-record produce visible improvement within 7-10 days. Compare your Week 1 recording to your Week 3 recording -- the difference is audible.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Chunking practice</h2>
+      <p class="muted" style="margin-top: 0;">Practice reading these sentences as chunked units. The slashes indicate natural pause points.</p>
+      <ul class="guide-list">
+        <li>"The government / has announced / new funding / for renewable energy / projects."</li>
+        <li>"Researchers at the university / have identified / a potential treatment / which could reduce / recovery time / by up to 40 percent."</li>
+        <li>"Despite the challenges / faced by small businesses / during the pandemic, / many have adapted / by expanding their online presence."</li>
+        <li>"The report concludes / that without significant investment / in public transport infrastructure, / urban congestion / will continue to worsen."</li>
+      </ul>
+      <p class="muted">Practice each sentence at normal reading speed. No pause within a chunk -- only at the slash marks.</p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Next step</h2>
+      <div class="guide-links">
+        <a href="/blog/pte-core-speaking-guide">
+          <strong>Read the full PTE Core Speaking guide</strong>
+          <span>Task-by-task strategies for all five PTE Core speaking tasks.</span>
+        </a>
+        <a href="/blog/pte-core-read-aloud">
+          <strong>Read the PTE Core Read Aloud guide</strong>
+          <span>The chunking method applied specifically to the Read Aloud task.</span>
+        </a>
+        <a href="/tutoring">
+          <strong>Book a private PTE Core speaking session</strong>
+          <span>Get targeted coaching on oral fluency and pronunciation with a specialist tutor.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </article>
+
+  <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
+    <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
+    <p class="muted">Want expert coaching on PTE Core oral fluency?</p>
+    <a class="btn btn-primary ic-btn" href="/tutoring">Book a private class</a>
+  </section>
+</Layout>

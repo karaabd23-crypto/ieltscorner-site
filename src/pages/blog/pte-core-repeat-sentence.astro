@@ -1,0 +1,191 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "How is PTE Core Repeat Sentence scored?",
+    answer:
+      "Repeat Sentence contributes to both Speaking and Listening scores. It is scored on three criteria: Content (how many words from the original sentence appeared in your response), Oral Fluency (natural rhythm and absence of long pauses), and Pronunciation (intelligibility). Each correctly reproduced word contributes to the Content score. Oral Fluency and Pronunciation are scored holistically across the full response.",
+  },
+  {
+    question: "What happens if I miss a word in the middle of a Repeat Sentence item?",
+    answer:
+      "Keep going. Do not stop, back up, or pause to think of the missing word. Skipping a word and continuing fluently is scored better than stopping mid-sentence. The Content score takes a small penalty for the missing word, but Oral Fluency is not penalized by a missing word -- only by the pause or restart you might add while trying to recall it.",
+  },
+  {
+    question: "How long are Repeat Sentence items in PTE Core?",
+    answer:
+      "Sentences are typically 9-15 words long, delivered at natural speaking speed. Longer sentences (13-15 words) are the most challenging for working memory. For these longer items, focus on capturing the sentence's meaning as a chunk rather than memorizing word-by-word -- meaning-based recall retains longer sequences more reliably under pressure.",
+  },
+  {
+    question: "Should I repeat the sentence at the same speed as the recording?",
+    answer:
+      "Match the pacing and rhythm as closely as possible, but do not slow down to 'check' individual words. The Oral Fluency score rewards natural speech rhythm -- the same stress and intonation patterns as the original. Repeating at a significantly slower speed than the original sounds unnatural and reduces the Oral Fluency score even if all words are correct.",
+  },
+  {
+    question: "How many Repeat Sentence items are in PTE Core?",
+    answer:
+      "Repeat Sentence typically appears 10-12 times per test, making it the most frequently occurring Speaking task. Because it contributes to both Speaking and Listening scores and appears so frequently, consistent performance on this task has a significant effect on both section scores.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "PTE Core Repeat Sentence Guide", path: "/blog/pte-core-repeat-sentence/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="PTE Core Repeat Sentence | Memory Strategy and Scoring Rules"
+  description="Complete guide to PTE Core Repeat Sentence -- how dual scoring works, the meaning-based memory technique, what to do when you miss a word, and why fluency matters more than word-perfect recall."
+  type="article"
+  keywords="PTE Core repeat sentence, PTE Core repeat sentence strategy, PTE Core speaking tips, PTE Core repeat sentence scoring, PTE Core listening speaking"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">PTE Core speaking guide</span>
+      <h1 class="ic-display" style="margin: 0;">PTE Core Repeat Sentence: memory and fluency</h1>
+      <div class="guide-meta">
+        <span>May 20, 2026</span>
+        <span>9 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        Repeat Sentence is the most frequently occurring PTE Core Speaking task -- typically
+        10-12 items per test -- and it contributes to both Speaking and Listening scores.
+        Consistent performance on this task alone meaningfully improves two section scores.
+      </p>
+      <p>
+        The key technique is meaning-based memory: listen for the overall meaning of the
+        sentence, not each individual word. This approach retains longer sentences more
+        reliably than word-by-word recall under exam pressure.
+      </p>
+    </div>
+
+    <section class="guide-card" style="margin-top: 0;">
+      <h2 class="ic-display">Why meaning-based memory works better</h2>
+      <p class="muted" style="margin-top: 0;">Working memory holds approximately 7 items (words) at a time. A 12-word sentence exceeds this limit if each word is treated as a separate item. Meaning-based memory groups words into chunks.</p>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Approach</th>
+            <th>How it processes the sentence</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Word-by-word memory</td>
+            <td>"The" + "committee" + "will" + "announce" + "the" + "results" + "on" + "Friday"</td>
+            <td>8 separate memory items -- likely to lose one or two in recall</td>
+          </tr>
+          <tr>
+            <td>Meaning-based memory</td>
+            <td>"committee announces results" + "timing: Friday"</td>
+            <td>2 meaningful chunks -- easier to hold and expand back into words</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">The listen-chunk-speak method</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Listen for the topic (subject) of the sentence</h3>
+            <p>What is the sentence about? "The new government policy..." -- the topic is government policy. This is your anchor word. Everything else in the sentence connects to it.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Identify the main action or claim</h3>
+            <p>What does the sentence say about the topic? "...will require all employees to complete..." -- the action is 'require + complete.' Hold the topic and the action as a connected pair.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Note any time, condition, or object</h3>
+            <p>Modifiers and qualifiers: "by the end of the month," "in urban areas," "for all participants." These are the most commonly forgotten parts of longer sentences. Note them as a third chunk.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Reproduce from meaning, at natural speed</h3>
+            <p>Begin speaking immediately when the audio finishes. Expand your chunks back into full words at the same pace as the original sentence. Do not slow down to check individual words.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">What to do when you miss a word</h2>
+      <ul class="guide-list">
+        <li><strong>In the middle of the sentence:</strong> Skip it and keep going. Say the next word you remember at natural pace. A gap in content is less damaging than a pause in fluency.</li>
+        <li><strong>At the start of the sentence:</strong> Begin from the first word you heard clearly. "...will require all employees to complete annual training" is better than a 3-second pause trying to recall "The new policy."</li>
+        <li><strong>The whole sentence was unclear:</strong> Reproduce what you heard, even if partial. Any correct word earns a Content point. Do not leave the microphone open in silence -- silence scores zero on all criteria.</li>
+        <li><strong>Never go back and restart.</strong> "Sorry, let me try again -- The new policy will..." resets your Oral Fluency score. The correction attempt is treated as a disfluency, not as a fresh start.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Matching stress and intonation</h2>
+      <p class="muted" style="margin-top: 0;">The Oral Fluency score rewards natural rhythm -- not just word accuracy. Matching the stress pattern of the original improves the Oral Fluency score even when your reproduction is not word-perfect.</p>
+      <ul class="guide-list">
+        <li>Listen for which words the speaker stresses (makes longer, louder, or higher in pitch). These are usually nouns, verbs, and key adjectives.</li>
+        <li>Reproduce those stress patterns even if you are uncertain of some surrounding words. "The DEADLINE for submission has been EXTENDED to the end of MARCH" -- stress DEADLINE, EXTENDED, MARCH. Even if you say "The deadline for the submission has been pushed to the end of March," the stress pattern keeps the Oral Fluency score stable.</li>
+        <li>Natural sentence intonation typically falls at the end of a statement. Rising intonation mid-sentence, falling intonation at the final word.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Next step</h2>
+      <div class="guide-links">
+        <a href="/blog/pte-core-speaking-guide">
+          <strong>Read the full PTE Core Speaking guide</strong>
+          <span>Strategy for all five speaking tasks including Repeat Sentence, Read Aloud, and Describe Image.</span>
+        </a>
+        <a href="/pte-core/simulator">
+          <strong>Practice Repeat Sentence in the simulator</strong>
+          <span>Complete timed Repeat Sentence tasks under exam conditions.</span>
+        </a>
+        <a href="/blog/pte-core-scores-explained">
+          <strong>Understand how Repeat Sentence affects your scores</strong>
+          <span>How dual-scored tasks impact both Speaking and Listening section scores.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </article>
+
+  <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
+    <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
+    <p class="muted">Practice Repeat Sentence and all PTE Core speaking tasks.</p>
+    <a class="btn btn-primary ic-btn" href="/pte-core/simulator">Open the PTE Core simulator</a>
+  </section>
+</Layout>

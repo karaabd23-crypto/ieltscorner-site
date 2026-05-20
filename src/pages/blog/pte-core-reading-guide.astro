@@ -1,0 +1,278 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "What reading tasks are in PTE Core?",
+    answer:
+      "PTE Core Reading includes: Reading and Writing Fill in the Blanks (a passage with missing words -- select from a dropdown for each blank), Multiple Choice Multiple Answer (a passage followed by a question with multiple correct answers), Re-order Paragraphs (arrange scrambled text boxes into the correct order), Fill in the Blanks (a passage with missing words -- drag words from a word bank), and Multiple Choice Single Answer (a passage with one correct answer). The section is approximately 29-30 minutes.",
+  },
+  {
+    question: "Which PTE Core reading task is worth the most points?",
+    answer:
+      "Reading and Writing Fill in the Blanks contributes to both your Reading and Writing scores simultaneously, making it the highest-stakes reading task. Each correct blank contributes to both section scores. Errors here have a double impact. Multiple Choice Multiple Answer uses negative marking -- a wrong selection subtracts points -- making it the highest-risk task if you guess carelessly.",
+  },
+  {
+    question: "How does negative marking work in Multiple Choice Multiple Answer?",
+    answer:
+      "In Multiple Choice Multiple Answer, each correct option selected earns a point, but each incorrect option selected subtracts a point. If a question has three correct answers and you select all three plus one wrong answer, you lose one point from your score for that item. This means it is better to select only the options you are confident about than to select every option that seems possibly correct.",
+  },
+  {
+    question: "What is the best strategy for Re-order Paragraphs?",
+    answer:
+      "Start by finding the topic sentence -- the one that introduces the subject without referring to anything mentioned previously. This is almost always the first paragraph. Then look for pronouns (it, they, this, these) that reference a noun introduced in a previous paragraph. Follow the logical chain: introduction, context, main point, elaboration or example, conclusion. Linking words like 'however,' 'furthermore,' and 'as a result' also signal position in the sequence.",
+  },
+  {
+    question: "How should I approach Fill in the Blanks in PTE Core Reading?",
+    answer:
+      "Read the sentence around each blank to identify the grammatical function required (noun, verb, adjective, adverb) and the semantic context (what meaning fits). In the word bank, eliminate words that are grammatically impossible first. Then select the word that best fits the meaning of the sentence. If two words are grammatically possible, read both options in context -- one will create a natural collocation and one will sound slightly off.",
+  },
+  {
+    question: "How much time should I spend on each PTE Core Reading task?",
+    answer:
+      "A rough allocation for a 29-minute Reading section: Multiple Choice Single Answer -- 2 minutes each; Re-order Paragraphs -- 2-3 minutes each; Fill in the Blanks -- 2 minutes each; Reading and Writing Fill in the Blanks -- 2-3 minutes each; Multiple Choice Multiple Answer -- 2-3 minutes each. Never leave a blank unmarked -- there is no penalty for leaving a blank unanswered in most task types, but the score is zero for that item.",
+  },
+  {
+    question: "Does PTE Core Reading test grammar knowledge?",
+    answer:
+      "Yes -- particularly in Fill in the Blanks and Reading and Writing Fill in the Blanks tasks. Many of the missing words require recognizing the correct part of speech, correct verb form (past participle vs present participle), or correct word form (noun vs adjective). A strong grammar foundation improves accuracy on these tasks directly.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "PTE Core Reading Guide", path: "/blog/pte-core-reading-guide/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="PTE Core Reading Guide | Strategy for All 5 Reading Task Types"
+  description="Complete PTE Core Reading guide covering all five task types: fill in the blanks, multiple choice, re-order paragraphs -- with scoring rules, negative marking explained, and task-specific strategies."
+  type="article"
+  keywords="PTE Core reading, PTE Core reading task types, PTE Core fill in the blanks, PTE Core re-order paragraphs, PTE Core reading strategy, PTE Core reading tips"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">PTE Core reading guide</span>
+      <h1 class="ic-display" style="margin: 0;">PTE Core Reading guide</h1>
+      <div class="guide-meta">
+        <span>May 20, 2026</span>
+        <span>13 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        PTE Core Reading tests five distinct task types, and each one requires a different
+        strategy. The most important thing to understand before test day is that one task --
+        Multiple Choice Multiple Answer -- uses negative marking, where wrong selections
+        subtract points from your score.
+      </p>
+      <p>
+        This guide gives you the right approach for each task type, how scoring works, and
+        the most common traps that reduce accuracy.
+      </p>
+    </div>
+
+    <section class="guide-card" style="margin-top: 0;">
+      <h2 class="ic-display">Overview of PTE Core Reading tasks</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Format</th>
+            <th>Scoring note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Reading and Writing Fill in the Blanks</strong></td>
+            <td>Passage with dropdown menus at gaps</td>
+            <td>Contributes to both Reading AND Writing scores</td>
+          </tr>
+          <tr>
+            <td><strong>Multiple Choice Multiple Answer</strong></td>
+            <td>Passage + question with 1-5 correct options</td>
+            <td>Negative marking: wrong selections subtract points</td>
+          </tr>
+          <tr>
+            <td><strong>Re-order Paragraphs</strong></td>
+            <td>Scrambled text boxes to be ordered</td>
+            <td>Partial credit for adjacent correct pairs</td>
+          </tr>
+          <tr>
+            <td><strong>Fill in the Blanks</strong></td>
+            <td>Passage with gaps + word bank</td>
+            <td>No negative marking -- each correct blank earns points</td>
+          </tr>
+          <tr>
+            <td><strong>Multiple Choice Single Answer</strong></td>
+            <td>Passage + question with one correct option</td>
+            <td>No negative marking</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Reading and Writing Fill in the Blanks</h2>
+      <p class="muted" style="margin-top: 0;">This task is the most valuable in the Reading section because correct answers contribute to both your Reading and Writing section scores.</p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Read the sentence around the blank first</h3>
+            <p>Before looking at the dropdown options, read the full sentence containing the blank. Determine what part of speech is needed and what the sentence context suggests about meaning.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Check for grammatical constraints</h3>
+            <p>Does the blank need a verb, noun, adjective, or adverb? If the preceding word is "a" or "an," the blank must be a noun or adjective. If the blank follows "is" or "was," it may need a past participle or adjective.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Test the remaining options for collocation</h3>
+            <p>After eliminating grammatically impossible options, read each remaining option in the sentence. The correct option will form a natural collocation: "growing concern," "significant increase," "raise awareness" -- these word pairings are what the task tests.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Multiple Choice Multiple Answer: the negative marking trap</h2>
+      <p class="muted" style="margin-top: 0;">This is the only PTE Core Reading task with negative marking. Strategy matters more here than in any other reading task.</p>
+      <ul class="guide-list">
+        <li>Read the question before you read the passage. Know exactly what you are looking for before you start reading.</li>
+        <li>Identify options you are confident about and select only those. Do not select an option because it "might" be correct.</li>
+        <li>Eliminate options that are directly contradicted by the passage, or that use absolute language ("always," "never," "all") when the passage uses qualified language ("often," "most," "many").</li>
+        <li>If you are unsure about an option after reading the passage twice, leave it unselected. The risk of a wrong selection is greater than the potential gain.</li>
+        <li>Return to this task if time allows. A fresh read sometimes reveals why a borderline option is wrong.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Re-order Paragraphs: the chain method</h2>
+      <p class="muted" style="margin-top: 0;">Four to six text boxes are scrambled. You drag them into the correct order. Partial credit is available for each correctly adjacent pair.</p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Find the opening paragraph</h3>
+            <p>The opening paragraph introduces the subject without referring to anything "it," "this," or "they" that was mentioned earlier. It rarely begins with a linking word ("however," "therefore"). Start here.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Follow reference chains</h3>
+            <p>Look for pronouns and demonstratives that point back to the previous paragraph. If paragraph B says "This growth was driven by..." it must follow a paragraph that mentions something growing. Match the reference to its antecedent.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Use discourse markers for position</h3>
+            <p>"First," "initially," and "to begin with" signal early position. "Furthermore," "in addition," "moreover" signal middle position. "Finally," "in conclusion," "overall" signal the end. These words narrow down where each paragraph belongs.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Read the assembled sequence aloud mentally</h3>
+            <p>After placing all paragraphs, read the assembled text from top to bottom. The flow should feel natural -- no sudden jumps in topic, no unresolved references.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Fill in the Blanks: word bank selection</h2>
+      <p class="muted" style="margin-top: 0;">A passage has up to 7 blanks. A word bank of extra words (usually 6-8 options for 4-5 blanks) is provided. Not all words in the bank will be used.</p>
+      <ul class="guide-list">
+        <li>Start with the blanks you are most confident about. Placing those first reduces the word bank and makes remaining choices clearer.</li>
+        <li>For each blank, eliminate grammatically impossible words first (wrong part of speech, wrong word form).</li>
+        <li>Consider collocations: "strong" and "powerful" may both be adjectives, but "strong evidence" is natural while "powerful evidence" is less common in formal text.</li>
+        <li>If two words seem equally possible, read both in context and check the broader paragraph meaning -- one option will fit the argument of the paragraph better than the other.</li>
+        <li>There is no penalty for wrong answers here. If unsure, place your best guess rather than leaving a blank empty.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Common reading mistakes and fixes</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Mistake</th>
+            <th>Fix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Selecting every "possible" option in Multiple Choice Multiple Answer</td>
+            <td>Select only confirmed-correct options. Wrong selections lose points. If uncertain, leave it out.</td>
+          </tr>
+          <tr>
+            <td>Placing the paragraph that starts with "This..." first in Re-order</td>
+            <td>"This" refers back to something -- it cannot open the text. Find what "this" refers to and place that paragraph first.</td>
+          </tr>
+          <tr>
+            <td>Choosing a word based on meaning alone without checking grammar form</td>
+            <td>Check part of speech first. Then check collocation. Then meaning. In that order.</td>
+          </tr>
+          <tr>
+            <td>Spending 5+ minutes on one Re-order task</td>
+            <td>Place what you are sure of, guess the remaining order, and move on. Time spent here delays the higher-value Fill in the Blanks tasks.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Next step</h2>
+      <div class="guide-links">
+        <a href="/pte-core/reading">
+          <strong>Open the PTE Core Reading hub</strong>
+          <span>Access reading task guides, lessons, and practice tools.</span>
+        </a>
+        <a href="/pte-core/simulator">
+          <strong>Practice in the PTE Core simulator</strong>
+          <span>Complete Reading tasks under timed exam conditions.</span>
+        </a>
+        <a href="/pte-core/question-types">
+          <strong>Review all 19 PTE Core question types</strong>
+          <span>See every task format across all four sections before your exam.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </article>
+
+  <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
+    <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
+    <p class="muted">Ready to practice PTE Core Reading with full scoring and review?</p>
+    <a class="btn btn-primary ic-btn" href="/pte-core/simulator">Start the PTE Core simulator</a>
+  </section>
+</Layout>

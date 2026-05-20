@@ -1,0 +1,290 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "How long does it take to prepare for PTE Core?",
+    answer:
+      "Preparation time depends on your current level and target CLB. From a B2 base (roughly CLB 7 proficiency in everyday English), 4-6 weeks of focused preparation is typically enough to reach CLB 7 in all four skills. From a B1 base, 8-12 weeks is more realistic. The key variable is not total hours but how well your practice matches the actual scoring criteria -- task-specific practice outperforms general English study by a significant margin.",
+  },
+  {
+    question: "Should I do a practice test before I start studying?",
+    answer:
+      "Yes. A diagnostic test at the start tells you which CLB level you are currently at in each skill, which skills need the most work, and which specific task types are costing you the most points. Without a baseline, you have no way to know whether to prioritize Speaking fluency or Reading fill-in-the-blanks. Take a full timed practice test under exam conditions, score it, and use the results to set your study priorities.",
+  },
+  {
+    question: "How many practice tests should I take before the real exam?",
+    answer:
+      "Two to three full practice tests are typically sufficient: one at the start (diagnostic), one at the midpoint (check for improvement and adjust plan), and one in the final week (simulate real conditions). More than three tests without studying between them provides diminishing returns. The study between tests is more important than the tests themselves.",
+  },
+  {
+    question: "What should I do in the final week before PTE Core?",
+    answer:
+      "The final week should focus on consolidation and confidence, not new material. Do a full practice test three to four days before the real exam. Review your Write from Dictation spelling list and common word forms. Do short daily Read Aloud practice (10-15 minutes) to keep fluency sharp. The night before: prepare your ID, know the test centre location and time, get a normal night of sleep. Do not try to learn new grammar rules or vocabulary in the last 48 hours.",
+  },
+  {
+    question: "What is the most efficient use of 1 hour of daily PTE Core study time?",
+    answer:
+      "Split each session into three parts: 20 minutes on your weakest dual-scored task (e.g., Write from Dictation or Read Aloud), 20 minutes on your weakest section (the one farthest from your target CLB), and 20 minutes on a timed practice item from any section. This combination ensures consistent improvement in the highest-value areas while maintaining familiarity across all task types.",
+  },
+  {
+    question: "Should I study IELTS materials for PTE Core preparation?",
+    answer:
+      "Avoid using IELTS-specific materials for task practice. PTE Core task types, scoring criteria, and time constraints are different from IELTS. Using IELTS writing templates for PTE Core emails, or practicing IELTS listening strategies for PTE Core dictation, builds habits that do not transfer and can actively hurt your performance. Use PTE Core-specific practice materials and the IELTS Corner PTE Core hub for task-specific preparation.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "PTE Core Study Plan", path: "/blog/pte-core-study-plan/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="PTE Core Study Plan | 4-Week and 8-Week Preparation Schedules"
+  description="A structured PTE Core study plan for test takers targeting CLB 7 or CLB 9 -- covering week-by-week priorities, daily session structure, dual-scored task focus, and final week preparation."
+  type="article"
+  keywords="PTE Core study plan, PTE Core preparation schedule, how to prepare for PTE Core, PTE Core study guide, PTE Core 4 week plan, PTE Core 8 week plan"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">PTE Core preparation guide</span>
+      <h1 class="ic-display" style="margin: 0;">PTE Core study plan</h1>
+      <div class="guide-meta">
+        <span>May 20, 2026</span>
+        <span>13 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        PTE Core rewards preparation that is targeted to the specific task types and scoring
+        criteria of the exam -- not general English improvement. A test taker who spends
+        four weeks studying the right things consistently outperforms someone who spends
+        ten weeks on general practice without matching the exam format.
+      </p>
+      <p>
+        This guide gives you a 4-week plan for CLB 7 targets and an 8-week plan for CLB 9,
+        with daily session structure and week-by-week priorities.
+      </p>
+    </div>
+
+    <div class="guide-grid guide-grid-2">
+      <section class="guide-card">
+        <h2 class="ic-display">4-week plan (CLB 7 target)</h2>
+        <ul class="guide-list">
+          <li>Starting level: CLB 5-6 in most skills</li>
+          <li>Daily study: 60-90 minutes</li>
+          <li>Focus: task familiarity + dual-scored tasks + Speaking fluency</li>
+          <li>1 diagnostic test + 1 mid-point test + 1 pre-exam test</li>
+        </ul>
+      </section>
+
+      <section class="guide-card">
+        <h2 class="ic-display">8-week plan (CLB 9 target)</h2>
+        <ul class="guide-list">
+          <li>Starting level: CLB 7 in most skills, CLB 7-8 in weakest</li>
+          <li>Daily study: 60-90 minutes</li>
+          <li>Focus: precision on dual-scored tasks + Speaking score uplift to 79</li>
+          <li>1 diagnostic + 2 mid-point tests + 1 pre-exam test</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Week 1: Diagnostic and task orientation</h2>
+      <p class="muted" style="margin-top: 0;">Do not start studying until you know your baseline. A diagnostic test is the most efficient first step.</p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Day 1-2: Take a full diagnostic test</h3>
+            <p>Complete a full timed PTE Core practice test under real conditions: no breaks except the official optional break, headset on, no pausing. Score each section and identify your CLB level per skill.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Day 3-4: Review the diagnostic in detail</h3>
+            <p>For each wrong answer or low-scoring task, identify why: Was it a task-format issue (you didn't know the rules)? A language skill issue (vocabulary, grammar)? Or a strategy issue (time management, task approach)? Keep a list of your three biggest problem areas.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Day 5-7: Learn the rules of every task type</h3>
+            <p>Read the task-specific guide for every task type you will face. Understand scoring criteria before you practice. Practicing Write from Dictation without knowing that spelling is fully scored leads to weeks of mis-targeted practice.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Week 2: Dual-scored task focus</h2>
+      <p class="muted" style="margin-top: 0;">These six tasks affect two section scores each. Every improvement here has double impact.</p>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Task focus</th>
+            <th>Practice target</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Day 8-9</td>
+            <td>Write from Dictation</td>
+            <td>20 sentences per day. Focus on spelling. Build a spelling error list.</td>
+          </tr>
+          <tr>
+            <td>Day 10-11</td>
+            <td>Read Aloud</td>
+            <td>10 passages per day. Record yourself and listen back. Mark unnatural pauses.</td>
+          </tr>
+          <tr>
+            <td>Day 12</td>
+            <td>Repeat Sentence</td>
+            <td>20 sentences. Listen for meaning, not individual words. Do not stop mid-sentence.</td>
+          </tr>
+          <tr>
+            <td>Day 13-14</td>
+            <td>R/W Fill in the Blanks + Summarize Written Text</td>
+            <td>5 FitB passages and 3 SWT summaries. Check grammar and word form on each answer.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Week 3: Weakest section deep dive</h2>
+      <p class="muted" style="margin-top: 0;">Use your diagnostic results to identify which section is farthest from your target CLB. Spend Week 3 focused on that section.</p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Speaking weak (CLB 6 in Speaking, 7+ elsewhere)</h3>
+            <p>Focus on Read Aloud fluency -- 15 minutes daily. Record and listen. Identify pause patterns. Work on Describe Image structure: type + main trend + one detail + overall observation. Practice Re-tell Lecture with note-taking technique.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Reading weak (CLB 6 in Reading)</h3>
+            <p>Focus on R/W Fill in the Blanks (dual-scored priority), then Re-order Paragraphs. Practice the chain method for Re-order: find the opening, follow pronoun references, use discourse markers. Do 3-5 Multiple Choice Multiple Answer items per session with strict negative marking discipline.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Listening or Writing weak</h3>
+            <p>Write from Dictation: 20 sentences daily. Summarize Spoken Text: take notes on 3 lectures per session. Write Email: practice covering all 3 bullet points in a formal register within 9 minutes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Week 4 (CLB 7 plan): Consolidation and full test</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Activity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Day 22-23</td>
+            <td>Full timed practice test. Score and compare to Week 1 diagnostic.</td>
+          </tr>
+          <tr>
+            <td>Day 24-25</td>
+            <td>Review the practice test. Fix the remaining errors. Focus on any skill still below target.</td>
+          </tr>
+          <tr>
+            <td>Day 26-27</td>
+            <td>Daily maintenance: 20 Write from Dictation sentences, 5 Read Aloud passages. No new task types.</td>
+          </tr>
+          <tr>
+            <td>Day 28 (exam eve)</td>
+            <td>Light review only. Check spelling list. Prepare ID and logistics. Rest.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Daily session structure (60 minutes)</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Block</th>
+            <th>Duration</th>
+            <th>Content</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Warm-up</td>
+            <td>10 min</td>
+            <td>Read Aloud (2-3 passages) or Write from Dictation (5 sentences). Activates language recall.</td>
+          </tr>
+          <tr>
+            <td>Deep work</td>
+            <td>30 min</td>
+            <td>The week's focus task type. Full task practice, review, and error analysis.</td>
+          </tr>
+          <tr>
+            <td>Mixed practice</td>
+            <td>20 min</td>
+            <td>1-2 items from a different task type. Maintains breadth across all sections.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Next step</h2>
+      <div class="guide-links">
+        <a href="/pte-core">
+          <strong>Open the PTE Core hub</strong>
+          <span>Access all task-specific guides, the simulator, and the full lesson library.</span>
+        </a>
+        <a href="/blog/pte-core-question-types">
+          <strong>Review all 19 PTE Core question types</strong>
+          <span>Understand every task format before you start your Week 1 diagnostic.</span>
+        </a>
+        <a href="/pte-core/simulator">
+          <strong>Take your diagnostic test now</strong>
+          <span>Open the PTE Core simulator for a timed, exam-style practice session.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </article>
+
+  <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
+    <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
+    <p class="muted">Start your preparation with a timed diagnostic test.</p>
+    <a class="btn btn-primary ic-btn" href="/pte-core/simulator">Open the PTE Core simulator</a>
+  </section>
+</Layout>

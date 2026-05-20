@@ -1,0 +1,284 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "What are the speaking tasks in PTE Core?",
+    answer:
+      "PTE Core Speaking includes: Read Aloud (read a passage of up to 60 words within 40 seconds), Repeat Sentence (hear a sentence and repeat it verbatim), Describe Image (look at an image for 25 seconds, speak for up to 40 seconds), Re-tell Lecture (hear a short lecture with an optional image, speak for up to 40 seconds), and Answer Short Question (hear a question, give a one-to-two word answer). These tasks are delivered via headset with automatic microphone activation.",
+  },
+  {
+    question: "How is PTE Core Speaking scored?",
+    answer:
+      "Speaking is scored on Oral Fluency, Pronunciation, and Content (for describe/re-tell tasks). Oral Fluency measures the smoothness and natural rhythm of your speech -- long pauses, repetition, and false starts reduce this score. Pronunciation measures whether native English speakers would understand your speech -- accent does not need to be British or North American, but clarity matters. Content measures whether you covered the key points in the image or lecture.",
+  },
+  {
+    question: "What is the biggest mistake in PTE Core Read Aloud?",
+    answer:
+      "Reading too slowly or pausing between individual words to pronounce carefully. Read Aloud rewards natural reading rhythm -- the AI scores your phrasing, not just individual word pronunciation. Reading at conversational speed with natural groupings of words (chunking) scores higher than slow, careful reading with long inter-word pauses. Aim for the speed of an English news broadcast.",
+  },
+  {
+    question: "How should I approach PTE Core Describe Image?",
+    answer:
+      "Use the 25-second preparation time to identify: (1) the type of image (graph, chart, diagram, map, photo), (2) the main trend or message, and (3) one notable detail. Your 40-second response should follow this structure: state what the image shows, describe the main trend or dominant feature, mention one specific data point or detail, and close with an overall observation. You do not need to describe every element -- covering the key message scores higher than listing every detail.",
+  },
+  {
+    question: "Why do people score low on PTE Core Repeat Sentence?",
+    answer:
+      "Because they focus too hard on individual words rather than the rhythm and meaning of the whole sentence. When you catch the meaning of the sentence, your working memory retains it more easily than if you try to remember it as a string of separate words. Listen for the sentence meaning first. If you miss a word in the middle, keep going -- stopping and restarting resets the fluency score to near-zero.",
+  },
+  {
+    question: "What if I make a mistake in Read Aloud or Repeat Sentence?",
+    answer:
+      "Keep going. Stopping, correcting, and restarting hurts Oral Fluency more than a single mispronounced word. If you mispronounce a word, move past it at normal speed. The scoring system averages across the entire response -- one error in a fluent 40-second response has minimal impact. One stop-restart sequence can reduce the Oral Fluency score significantly.",
+  },
+  {
+    question: "How do I score well on Re-tell Lecture?",
+    answer:
+      "The lecture plays once with no replay. During playback, note three things: the topic, one main point, and one supporting example or statistic. Spend your 40 seconds covering these three elements. Start with the topic: 'The lecture discussed...' Then the main point: 'The speaker explained that...' Then the supporting detail: 'For example, ...' You do not need to reproduce the lecture accurately word for word -- capturing the structure scores well on Content.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "PTE Core Speaking Guide", path: "/blog/pte-core-speaking-guide/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="PTE Core Speaking Guide | Strategy for All 5 Speaking Tasks"
+  description="Complete PTE Core Speaking guide covering Read Aloud, Repeat Sentence, Describe Image, Re-tell Lecture, and Answer Short Question -- with scoring criteria, task-specific strategies, and common errors."
+  type="article"
+  keywords="PTE Core speaking, PTE Core read aloud, PTE Core describe image, PTE Core repeat sentence, PTE Core speaking score, PTE Core speaking tips"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">PTE Core speaking guide</span>
+      <h1 class="ic-display" style="margin: 0;">PTE Core Speaking guide</h1>
+      <div class="guide-meta">
+        <span>May 20, 2026</span>
+        <span>13 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        PTE Core Speaking is scored entirely by AI -- there is no human examiner listening.
+        The AI measures oral fluency (rhythm, pacing, absence of long pauses) and pronunciation
+        (clarity to a native listener), not accent. Understanding exactly what the algorithm
+        rewards changes how you prepare.
+      </p>
+      <p>
+        This guide covers all five PTE Core speaking tasks with the strategies that directly
+        improve the scored criteria.
+      </p>
+    </div>
+
+    <section class="guide-card" style="margin-top: 0;">
+      <h2 class="ic-display">Overview of the 5 speaking tasks</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Format</th>
+            <th>Time to speak</th>
+            <th>Primary scoring focus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Read Aloud</strong></td>
+            <td>Read a text passage aloud</td>
+            <td>Up to 40 seconds</td>
+            <td>Oral Fluency, Pronunciation</td>
+          </tr>
+          <tr>
+            <td><strong>Repeat Sentence</strong></td>
+            <td>Hear and repeat a sentence verbatim</td>
+            <td>Up to 15 seconds</td>
+            <td>Oral Fluency, Pronunciation, Content</td>
+          </tr>
+          <tr>
+            <td><strong>Describe Image</strong></td>
+            <td>Describe an image (25 sec prep)</td>
+            <td>Up to 40 seconds</td>
+            <td>Oral Fluency, Pronunciation, Content</td>
+          </tr>
+          <tr>
+            <td><strong>Re-tell Lecture</strong></td>
+            <td>Hear a lecture, then summarize it</td>
+            <td>Up to 40 seconds</td>
+            <td>Oral Fluency, Pronunciation, Content</td>
+          </tr>
+          <tr>
+            <td><strong>Answer Short Question</strong></td>
+            <td>Hear a factual question, give a short answer</td>
+            <td>Up to 10 seconds</td>
+            <td>Content (correct word)</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Read Aloud: fluency over accuracy</h2>
+      <p class="muted" style="margin-top: 0;">The 30-40 second preparation time before Read Aloud starts is critical. Use it to preview the text and identify where natural pauses fall.</p>
+      <ul class="guide-list">
+        <li>Read at conversational speed -- the rhythm of a news broadcast, not a dictionary recording.</li>
+        <li>Group words into meaning units: "The company / announced new policies / regarding remote work / on Friday." Pauses come at phrase boundaries, not between every word.</li>
+        <li>Do not stop and restart after a mispronunciation. Keep moving at the same pace.</li>
+        <li>Stress content words (nouns, verbs, adjectives), not function words (the, a, of, to). Natural stress patterns are scored as part of Oral Fluency.</li>
+        <li>The microphone closes automatically -- do not rush the last words or trail off.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Repeat Sentence: memory strategy</h2>
+      <p class="muted" style="margin-top: 0;">The sentence plays once. You have no control over playback speed. Your score depends on how accurately and fluently you reproduce it.</p>
+      <ul class="guide-list">
+        <li>Listen for the meaning, not individual words. "The conference was postponed due to unexpected travel restrictions" -- the meaning is 'conference postponed, reason was travel restrictions.' Meaning-based memory retains this better than word-by-word memorization.</li>
+        <li>If you miss the beginning, continue from where you caught it. A partial sentence delivered fluently scores better than stopping at the missed word.</li>
+        <li>Match the sentence's stress and rhythm, not just its words. "The students WERE expected to submit their assignments on TIME" -- if you flatten all words to equal stress, the fluency score drops.</li>
+        <li>Sentences are typically 9-14 words. If a sentence is longer than you can hold, reproduce the beginning and ending reliably -- the AI weights these positions.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Describe Image: the 4-point response structure</h2>
+      <p class="muted" style="margin-top: 0;">Use the 25 seconds of preparation time to identify the four points you will cover. Do not spend preparation time trying to understand every detail.</p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Identify the image type and topic (5 sec)</h3>
+            <p>"This is a bar chart showing..." / "This diagram illustrates..." / "The image shows a photograph of..." Starting with the image type frames everything that follows.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>State the main trend or dominant feature (10 sec)</h3>
+            <p>The single most important thing the image communicates. For a graph: the highest or lowest point, the overall direction. For a diagram: the main process or relationship. For a photograph: the central subject and setting.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Add one specific detail (10 sec)</h3>
+            <p>One data point, label, or notable exception to the main trend. "Notably, sales in the third quarter were significantly lower than the annual average." This contributes to the Content score.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Close with an overall observation (5 sec)</h3>
+            <p>"Overall, the data suggests..." / "In summary, this image highlights..." Closing with a summary sentence helps fill time and ends the response naturally rather than trailing off.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Re-tell Lecture: what to capture</h2>
+      <p class="muted" style="margin-top: 0;">You hear the lecture once. An image may appear alongside it as a visual support. Your goal is not to reproduce the lecture -- it is to demonstrate you understood its structure.</p>
+      <ul class="guide-list">
+        <li>During the lecture, note three things only: the topic (what the lecture is about), the main point (the central argument or finding), and one example or statistic.</li>
+        <li>Start your response with the topic: "The lecture discussed the relationship between sleep and academic performance."</li>
+        <li>State the main point: "The speaker argued that students who sleep fewer than seven hours consistently perform below their potential."</li>
+        <li>Add the detail: "Research cited in the lecture showed a 20% reduction in test scores for sleep-deprived students."</li>
+        <li>Close: "Overall, the lecture emphasized the importance of sleep as a foundational factor in learning."</li>
+        <li>If you missed a section, keep speaking. Silence harms Oral Fluency more than an inaccurate sentence.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Answer Short Question: strategy</h2>
+      <p class="muted" style="margin-top: 0;">These are factual general knowledge questions. You have up to 10 seconds to answer with one or two words.</p>
+      <ul class="guide-list">
+        <li>Answer with a noun or short noun phrase. The question "What do you call the doctor who performs surgery?" -- answer: "surgeon" or "a surgeon."</li>
+        <li>Do not explain or elaborate. A complete sentence is not required and does not improve the score.</li>
+        <li>If you are unsure, say the closest term you know. Silence scores zero. A nearby answer may score partial credit.</li>
+        <li>Questions are typically drawn from: professions, objects and tools, science and nature, daily life. Reviewing common one-word answers for these categories is efficient preparation.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Oral Fluency: what actually hurts your score</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Behaviour</th>
+            <th>Impact on Oral Fluency</th>
+            <th>What to do instead</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pausing mid-word or mid-phrase for 2+ seconds</td>
+            <td>Major reduction</td>
+            <td>Keep moving at your current pace. A wrong word said fluently scores higher than a correct word after a long pause.</td>
+          </tr>
+          <tr>
+            <td>Stopping and restarting a sentence</td>
+            <td>Significant reduction</td>
+            <td>Continue from where you are. Never back up.</td>
+          </tr>
+          <tr>
+            <td>Filler sounds between every phrase ("um," "uh," "er")</td>
+            <td>Moderate reduction</td>
+            <td>Replace fillers with a slightly longer pause. Silence is scored better than repeated filler sounds.</td>
+          </tr>
+          <tr>
+            <td>Reading each word at identical speed with no prosody</td>
+            <td>Moderate reduction</td>
+            <td>Stress content words, lengthen sentence-final words slightly, pause at punctuation.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Next step</h2>
+      <div class="guide-links">
+        <a href="/pte-core/speaking">
+          <strong>Open the PTE Core Speaking hub</strong>
+          <span>Access task guides, lessons, and the full speaking section overview.</span>
+        </a>
+        <a href="/pte-core/simulator">
+          <strong>Practice in the PTE Core simulator</strong>
+          <span>Complete speaking tasks in an exam-style timed environment.</span>
+        </a>
+        <a href="/tutoring">
+          <strong>Book a private PTE Core speaking session</strong>
+          <span>Get targeted coaching on fluency and pronunciation with a specialist tutor.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </article>
+
+  <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
+    <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
+    <p class="muted">Want expert feedback on your PTE Core speaking responses?</p>
+    <a class="btn btn-primary ic-btn" href="/tutoring">Book a private class</a>
+  </section>
+</Layout>

@@ -1,0 +1,276 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "What are the listening tasks in PTE Core?",
+    answer:
+      "PTE Core Listening includes: Summarize Spoken Text (hear a lecture and write a 50-70 word summary), Multiple Choice Multiple Answer (hear audio and select multiple correct answers), Fill in the Blanks (hear audio and type the missing words into a transcript), Highlight Correct Summary (select the best summary of what you heard), Multiple Choice Single Answer (hear audio and select one correct answer), Select Missing Word (hear audio with a beep replacing the final word, select the correct word), Highlight Incorrect Words (hear audio and identify words in the transcript that differ), and Write from Dictation (hear a sentence and type it exactly). The section is approximately 30-43 minutes.",
+  },
+  {
+    question: "Which PTE Core listening task is most important to score well on?",
+    answer:
+      "Write from Dictation is typically the most important task because it contributes to both Listening and Writing scores, appears multiple times per test, and is purely accuracy-based -- there is no interpretation required. A strong performance on Write from Dictation can significantly improve both section scores. Summarize Spoken Text also contributes to both sections and is high-value but requires more skill to do well.",
+  },
+  {
+    question: "What is the strategy for PTE Core Write from Dictation?",
+    answer:
+      "Listen to the sentence once, hold the meaning in working memory, then type it. Focus on the meaning rather than word-by-word recall. Sentences are typically 9-12 words. Common errors: spelling mistakes, wrong word form (e.g., 'increasing' instead of 'increased'), omitted articles ('the' and 'a' are frequently tested). Type quickly and check your spelling before moving on -- the timer still runs during typing.",
+  },
+  {
+    question: "How should I approach Highlight Incorrect Words?",
+    answer:
+      "In Highlight Incorrect Words, you listen to audio while following a transcript on screen. One or more words in the transcript differ from what is spoken. Click each word in the transcript that differs from the audio. Listen and read simultaneously -- this is a dual-channel task. Move your eyes along the transcript as the audio plays. The differences are usually single words (different noun, different verb form, different adjective). There is no negative marking -- when unsure, highlight your best guess.",
+  },
+  {
+    question: "Can I take notes during PTE Core Listening?",
+    answer:
+      "Yes -- an erasable noteboard is provided at the test centre. Use it for Summarize Spoken Text and Re-tell Lecture (in the Speaking section). For shorter tasks like Fill in the Blanks and Write from Dictation, type directly into the response box while the audio plays rather than writing notes first. The audio plays once for most tasks -- notes are most valuable for the longer lecture-based items.",
+  },
+  {
+    question: "What makes Summarize Spoken Text different from Summarize Written Text?",
+    answer:
+      "Summarize Spoken Text requires you to write a 50-70 word paragraph (not a single sentence) summarizing a spoken lecture. Unlike the Written Text summary, this task allows multiple sentences. The challenge is capturing the main point and 1-2 supporting details from a 60-90 second lecture you hear once, then organizing them into a coherent paragraph with correct grammar and spelling.",
+  },
+  {
+    question: "What is the most common error in PTE Core Fill in the Blanks (Listening)?",
+    answer:
+      "Spelling errors. The blank must be filled with the exact word spoken and correctly spelled. Phonetically similar words are frequently confused: 'effect' vs 'affect,' 'principal' vs 'principle,' 'complement' vs 'compliment.' For each blank, listen for the exact word, type it, and read it back once to check spelling before the audio advances.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "PTE Core Listening Guide", path: "/blog/pte-core-listening-guide/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="PTE Core Listening Guide | Strategy for All 8 Listening Task Types"
+  description="Complete PTE Core Listening guide covering all eight task types: Write from Dictation, Summarize Spoken Text, Fill in the Blanks, Highlight Incorrect Words, and more -- with scoring rules and task-specific strategies."
+  type="article"
+  keywords="PTE Core listening, PTE Core write from dictation, PTE Core summarize spoken text, PTE Core listening tips, PTE Core listening strategy, PTE Core listening score"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">PTE Core listening guide</span>
+      <h1 class="ic-display" style="margin: 0;">PTE Core Listening guide</h1>
+      <div class="guide-meta">
+        <span>May 20, 2026</span>
+        <span>14 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        PTE Core Listening has eight task types, and each one tests a different aspect of
+        listening comprehension -- from verbatim recall in Write from Dictation to lecture
+        summary in Summarize Spoken Text. Two of the tasks contribute to your Writing score
+        as well as Listening, making strategy in those items especially valuable.
+      </p>
+      <p>
+        This guide covers what each task actually measures, what the most efficient approach
+        is, and the specific errors that drop scores most reliably.
+      </p>
+    </div>
+
+    <section class="guide-card" style="margin-top: 0;">
+      <h2 class="ic-display">Overview of PTE Core Listening tasks</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Format</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Summarize Spoken Text</strong></td>
+            <td>Hear lecture, write 50-70 word summary</td>
+            <td>Contributes to Listening AND Writing scores</td>
+          </tr>
+          <tr>
+            <td><strong>Multiple Choice Multiple Answer</strong></td>
+            <td>Hear audio, select multiple correct options</td>
+            <td>Negative marking: wrong selections subtract points</td>
+          </tr>
+          <tr>
+            <td><strong>Fill in the Blanks</strong></td>
+            <td>Hear audio, type missing words into transcript</td>
+            <td>Spelling must be exact to earn the point</td>
+          </tr>
+          <tr>
+            <td><strong>Highlight Correct Summary</strong></td>
+            <td>Hear audio, select the best written summary</td>
+            <td>No negative marking</td>
+          </tr>
+          <tr>
+            <td><strong>Multiple Choice Single Answer</strong></td>
+            <td>Hear audio, select one correct option</td>
+            <td>No negative marking</td>
+          </tr>
+          <tr>
+            <td><strong>Select Missing Word</strong></td>
+            <td>Hear audio with final word replaced by beep, select the word</td>
+            <td>Requires prediction based on context</td>
+          </tr>
+          <tr>
+            <td><strong>Highlight Incorrect Words</strong></td>
+            <td>Hear audio, click words in transcript that differ</td>
+            <td>No negative marking</td>
+          </tr>
+          <tr>
+            <td><strong>Write from Dictation</strong></td>
+            <td>Hear a sentence, type it exactly</td>
+            <td>Contributes to Listening AND Writing scores</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Write from Dictation: the highest-return task</h2>
+      <p class="muted" style="margin-top: 0;">Write from Dictation appears 3-4 times per test. Each correct word earns a point toward both Listening and Writing. Spelling and articles ("the," "a") matter.</p>
+      <ul class="guide-list">
+        <li>Listen for the meaning of the sentence as a unit, not word by word. Working memory holds meaning better than strings of unrelated sounds.</li>
+        <li>Start typing immediately when the audio finishes -- do not wait. Your memory of the sentence degrades within seconds.</li>
+        <li>Type at your normal speed. Do not try to write during the audio -- this splits your attention and reduces recall.</li>
+        <li>Common spelling failures: "government" (not "goverment"), "occurred" (double r, double c), "necessary" (one c, two s's), "their/there/they're" distinctions. Build a personal list of words you misspell.</li>
+        <li>After typing, re-read once from left to right. Catch missing articles ("the beginning" not "beginning") and wrong word endings ("-ed" vs "-ing").</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Summarize Spoken Text: structure your paragraph</h2>
+      <p class="muted" style="margin-top: 0;">You hear a 60-90 second lecture once. You have 10 minutes to write a 50-70 word summary. Use the noteboard to take notes during the audio.</p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Take 3 notes during the audio</h3>
+            <p>Topic (what the lecture is about), main argument or finding, and one supporting example or statistic. Do not try to capture everything -- capture the three-tier structure.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Open with the topic in one sentence</h3>
+            <p>"The lecture discussed the impact of urban green spaces on mental health outcomes." One sentence, paraphrased from your notes, not copied from the audio.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>State the main argument in one to two sentences</h3>
+            <p>The central claim or finding. "The speaker argued that access to parks and natural environments significantly reduces stress and anxiety in urban populations."</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Add the supporting detail and close</h3>
+            <p>"A study cited in the lecture found that residents living near green spaces reported 25% lower rates of stress-related conditions." Then count your words: must be 50-70.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Highlight Incorrect Words: the simultaneous reading-listening task</h2>
+      <p class="muted" style="margin-top: 0;">The audio plays while you follow a transcript. Words in the transcript that differ from the spoken audio must be clicked. This task requires simultaneous listening and reading.</p>
+      <ul class="guide-list">
+        <li>Position your cursor at the start of the transcript before the audio begins. Move it along the text as the audio plays.</li>
+        <li>The differences are always single words -- the surrounding sentence structure remains the same. Listen for a word that sounds different from what you read.</li>
+        <li>Do not try to predict ahead. Follow the audio in real time -- looking too far ahead causes you to miss the current word.</li>
+        <li>If you missed a difference, do not go back and re-read -- the audio has moved on. Continue forward and catch what you can.</li>
+        <li>There is no negative marking -- click any word you suspect is wrong. The worst outcome is a missed point, not a deduction.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Multiple Choice Multiple Answer (Listening): negative marking</h2>
+      <p class="muted" style="margin-top: 0;">Same principle as in Reading: wrong selections subtract points. This is the highest-risk task if you guess carelessly.</p>
+      <ul class="guide-list">
+        <li>Read all options before the audio plays. Know what you are listening for.</li>
+        <li>During the audio, mark options that are clearly confirmed by what you hear.</li>
+        <li>After the audio, review options you are uncertain about. Select only those you heard supported in the audio.</li>
+        <li>Do not select an option just because the speaker mentioned the topic. The option must accurately reflect what the speaker said about that topic.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Common listening mistakes and fixes</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Mistake</th>
+            <th>Fix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Spelling the correct word incorrectly in Write from Dictation</td>
+            <td>Build a personal list of frequently misspelled words. Practice typing them. One wrong letter = zero for that word.</td>
+          </tr>
+          <tr>
+            <td>Writing fewer than 50 words in Summarize Spoken Text</td>
+            <td>Add the supporting detail step. A topic sentence + main argument + one example reliably reaches 50-65 words.</td>
+          </tr>
+          <tr>
+            <td>Selecting too many options in Multiple Choice Multiple Answer</td>
+            <td>Only select what you heard clearly supported. The negative marking penalty makes over-selection costly.</td>
+          </tr>
+          <tr>
+            <td>Falling behind in Highlight Incorrect Words</td>
+            <td>Keep your cursor moving with the audio. If you fall behind, skip ahead -- do not try to read and catch up while the audio plays ahead.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Next step</h2>
+      <div class="guide-links">
+        <a href="/pte-core/listening">
+          <strong>Open the PTE Core Listening hub</strong>
+          <span>Access listening task guides, lessons, and practice resources.</span>
+        </a>
+        <a href="/pte-core/simulator">
+          <strong>Practice in the PTE Core simulator</strong>
+          <span>Complete Listening tasks under timed exam conditions.</span>
+        </a>
+        <a href="/pte-core/question-types">
+          <strong>Review all PTE Core question types</strong>
+          <span>See every task format across Listening, Reading, Writing, and Speaking.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </article>
+
+  <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
+    <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
+    <p class="muted">Ready to practice PTE Core Listening under exam conditions?</p>
+    <a class="btn btn-primary ic-btn" href="/pte-core/simulator">Open the PTE Core simulator</a>
+  </section>
+</Layout>

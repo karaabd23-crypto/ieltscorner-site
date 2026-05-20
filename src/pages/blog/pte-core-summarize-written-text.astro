@@ -1,0 +1,293 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "What is the most common error in PTE Core Summarize Written Text?",
+    answer:
+      "Writing two sentences instead of one. The task requires a single grammatically complete sentence of 5-75 words. Two sentences means the Form criterion scores zero, which can reduce the overall item score to 1 point regardless of how accurate the content is. This is the most reliably avoidable error in the entire PTE Core test.",
+  },
+  {
+    question: "How do I turn two ideas into one sentence?",
+    answer:
+      "Use a subordinating conjunction or relative clause to connect two clauses into one sentence. 'Urban populations are growing rapidly. This creates pressure on housing infrastructure.' becomes 'Urban populations are growing rapidly, which creates significant pressure on housing infrastructure.' Alternatively: 'Although urban populations are growing rapidly, housing infrastructure in many cities has not expanded to meet this demand.' Both are one grammatically complete sentence.",
+  },
+  {
+    question: "Can I use more than one clause in Summarize Written Text?",
+    answer:
+      "Yes -- one sentence can contain multiple clauses as long as it forms a single grammatical unit ending with one full stop. A sentence with a main clause, a relative clause, and a result clause is still one sentence. The test is whether there is one sentence-ending punctuation mark (full stop, question mark) -- not how many clauses are present.",
+  },
+  {
+    question: "Should I include supporting details or only the main idea?",
+    answer:
+      "Include the main idea plus one supporting detail. A summary that captures only the main idea with no supporting context typically scores lower on Content than one that also captures the mechanism, cause, effect, or example that makes the main idea meaningful. 'The lecture discussed climate change' is too vague; 'The lecture argued that rising temperatures driven by carbon emissions are accelerating ice melt at rates that threaten coastal cities' is specific enough to demonstrate comprehension.",
+  },
+  {
+    question: "Does paraphrasing increase my score in Summarize Written Text?",
+    answer:
+      "Paraphrasing demonstrates vocabulary range and contributes positively to the Vocabulary criterion. Copying exact phrases from the passage is not explicitly penalized, but it does not earn vocabulary range credit. For a task that contributes to both Reading and Writing scores, using your own vocabulary where possible is worth the small extra effort during the 10-minute window.",
+  },
+  {
+    question: "How should I use the 10-minute time limit?",
+    answer:
+      "Read the passage (2-3 minutes), identify the main idea and one supporting detail (1 minute), draft your sentence (3-4 minutes), and review for form (one full stop only), word count (5-75), and obvious grammar errors (1-2 minutes). Most test takers have 3-4 minutes of unused time at the end of this task -- the risk is spending time trying to make the sentence perfect when reviewing for the basic form requirements first is more valuable.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "PTE Core Summarize Written Text Guide", path: "/blog/pte-core-summarize-written-text/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="PTE Core Summarize Written Text | One-Sentence Summary Strategy and Examples"
+  description="Complete guide to PTE Core Summarize Written Text -- how to write a complex one-sentence summary, avoid the two-sentence error, connect ideas with subordinate clauses, and score full marks on Content and Form."
+  type="article"
+  keywords="PTE Core summarize written text, PTE Core summarize written text strategy, PTE Core writing tasks, PTE Core one sentence summary, PTE Core summarize written text tips"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">PTE Core writing guide</span>
+      <h1 class="ic-display" style="margin: 0;">PTE Core Summarize Written Text</h1>
+      <div class="guide-meta">
+        <span>May 20, 2026</span>
+        <span>10 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        Summarize Written Text is the PTE Core task with the most reliably avoidable high-cost
+        error: writing two sentences instead of one. The form requirement is absolute -- one
+        sentence, one full stop. Violating it drops the Form score to zero regardless of
+        content quality.
+      </p>
+      <p>
+        This guide shows you how to build a complex single sentence that captures the main
+        idea and one supporting detail, and how to avoid the errors that consistently drop
+        scores on this task.
+      </p>
+    </div>
+
+    <section class="guide-card" style="margin-top: 0;">
+      <h2 class="ic-display">Scoring criteria</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Criterion</th>
+            <th>What it measures</th>
+            <th>Score impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Content</strong></td>
+            <td>Is the main idea of the passage accurately captured?</td>
+            <td>Up to 2 points</td>
+          </tr>
+          <tr>
+            <td><strong>Form</strong></td>
+            <td>Is the response exactly one sentence within 5-75 words?</td>
+            <td>1 point -- zero if violated</td>
+          </tr>
+          <tr>
+            <td><strong>Grammar</strong></td>
+            <td>Is the sentence grammatically complete and accurate?</td>
+            <td>Up to 2 points</td>
+          </tr>
+          <tr>
+            <td><strong>Vocabulary</strong></td>
+            <td>Are the word choices appropriate and varied?</td>
+            <td>Up to 2 points</td>
+          </tr>
+          <tr>
+            <td><strong>Spelling</strong></td>
+            <td>Are all words spelled correctly?</td>
+            <td>Up to 2 points</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">The clause-connector approach</h2>
+      <p class="muted" style="margin-top: 0;">Every strong Summarize Written Text response is built the same way: main idea + connector + supporting detail = one sentence.</p>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Connector type</th>
+            <th>Connector words</th>
+            <th>When to use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Relative clause</td>
+            <td>which, who, that, where</td>
+            <td>Adding information about a noun: "...urban growth, which has accelerated since..."</td>
+          </tr>
+          <tr>
+            <td>Result clause</td>
+            <td>which resulted in, which led to, thereby</td>
+            <td>Showing cause and effect: "...increased temperatures, which have resulted in..."</td>
+          </tr>
+          <tr>
+            <td>Concession clause</td>
+            <td>although, while, despite, even though</td>
+            <td>Acknowledging tension: "Although X has benefits, it also..."</td>
+          </tr>
+          <tr>
+            <td>Reason clause</td>
+            <td>because, since, as, given that</td>
+            <td>Explaining mechanism: "...more effective because it directly addresses..."</td>
+          </tr>
+          <tr>
+            <td>Participial phrase</td>
+            <td>providing, resulting in, enabling, leading to</td>
+            <td>Compact addition of a result or detail without a new clause marker</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">How to read the passage in 3 minutes</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Read the first sentence and the last paragraph first</h3>
+            <p>The main idea of most academic passages is introduced in the first sentence (the thesis) and summarized in the final paragraph (the conclusion). These two locations give you the main idea in 30 seconds without reading the whole passage.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Read each paragraph's first sentence only</h3>
+            <p>Topic sentences introduce each paragraph's main contribution. Reading only the first sentence of each body paragraph gives you the supporting points without reading the evidence and examples in full.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Identify the single most important supporting point</h3>
+            <p>From the topic sentences you read, select the one that best explains why the main idea matters or how it works. This is what you will attach to the main idea using a clause connector.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Scored examples</h2>
+      <p class="muted" style="margin-top: 0;">Passage main idea: Research shows that mindfulness practices reduce stress in workplace environments by improving employees' ability to regulate emotional responses.</p>
+      <div class="guide-scored-pair">
+        <div class="guide-scored guide-scored--weak">
+          <span class="guide-scored__label">Weak response (Form fail)</span>
+          <p>
+            "Mindfulness practices can reduce stress in the workplace. They help employees
+            control their emotions better."
+          </p>
+          <ul class="guide-scored__notes">
+            <li>Two sentences -- Form criterion scores zero immediately.</li>
+            <li>Even though the content is accurate, Form failure limits this response to approximately 1 point total.</li>
+            <li>Fix: "Mindfulness practices can reduce workplace stress by helping employees manage their emotional responses more effectively." -- one sentence, same information.</li>
+          </ul>
+        </div>
+        <div class="guide-scored guide-scored--strong">
+          <span class="guide-scored__label">Strong response</span>
+          <p>
+            "Research indicates that incorporating mindfulness practices into workplace
+            environments significantly reduces employee stress levels by enhancing their
+            capacity to regulate emotional responses to challenging situations."
+          </p>
+          <ul class="guide-scored__notes">
+            <li>One sentence -- Form criterion satisfied.</li>
+            <li>Main idea captured: mindfulness reduces workplace stress.</li>
+            <li>Supporting detail attached via "by enhancing": the mechanism (emotional regulation) is included.</li>
+            <li>Key vocabulary paraphrased: "incorporating" instead of "doing," "enhancing" instead of "improving," "capacity" instead of "ability."</li>
+            <li>Word count: approximately 35 words -- well within 5-75.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Common mistakes</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Mistake</th>
+            <th>Fix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Two separate sentences</td>
+            <td>Join with "which," "because," "although," or a participial phrase. One full stop only.</td>
+          </tr>
+          <tr>
+            <td>Summary exceeds 75 words</td>
+            <td>Remove adjectives and adverbs that add emphasis without changing meaning. Remove examples -- keep only the main idea and one supporting point.</td>
+          </tr>
+          <tr>
+            <td>Summary is under 5 words</td>
+            <td>Very unlikely in practice, but ensure you have a complete subject, verb, and object/complement.</td>
+          </tr>
+          <tr>
+            <td>Copying exact phrases from the passage without paraphrasing</td>
+            <td>Replace key nouns and verbs with synonyms. This improves the Vocabulary criterion without risk.</td>
+          </tr>
+          <tr>
+            <td>Misspelling a word in the summary</td>
+            <td>Review before submitting. One spelling error per 35-word sentence is common under time pressure -- check the most complex words you used.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Next step</h2>
+      <div class="guide-links">
+        <a href="/blog/pte-core-writing-guide">
+          <strong>Read the full PTE Core Writing guide</strong>
+          <span>Strategy for both PTE Core writing tasks -- Summarize Written Text and Write Email.</span>
+        </a>
+        <a href="/pte-core/simulator">
+          <strong>Practice Summarize Written Text in the simulator</strong>
+          <span>Complete timed SWT tasks under exam conditions.</span>
+        </a>
+        <a href="/pte-core/writing">
+          <strong>Open the PTE Core Writing hub</strong>
+          <span>Access all writing task guides, lessons, and practice resources.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </article>
+
+  <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
+    <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
+    <p class="muted">Practice PTE Core Summarize Written Text under timed conditions.</p>
+    <a class="btn btn-primary ic-btn" href="/pte-core/simulator">Open the PTE Core simulator</a>
+  </section>
+</Layout>

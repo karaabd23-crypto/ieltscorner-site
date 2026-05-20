@@ -1,0 +1,243 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "What ID do I need for PTE Core?",
+    answer:
+      "You must present a valid, government-issued photo ID exactly matching the name on your test registration. Accepted documents are: passport, national identity card, or driver's license (check the Pearson PTE Core ID requirements page for your country of registration). No expired documents are accepted, and the name must match exactly -- including middle names if they were included in registration. If your name on the ID differs from your registration name in any way, you may be turned away.",
+  },
+  {
+    question: "Can I bring notes or scratch paper into the PTE Core exam?",
+    answer:
+      "No outside materials are permitted -- no notes, no books, no papers. The test centre provides an erasable noteboard (similar to a whiteboard with a marker) for use during the exam. You can take notes on this for Summarize Spoken Text, Re-tell Lecture, and any other task that benefits from note-taking. The noteboard is wiped and cannot be taken out of the room.",
+  },
+  {
+    question: "Is there a break during PTE Core?",
+    answer:
+      "There is one optional 10-minute break between Part 2 (Reading) and Part 3 (Listening). The break is optional -- if you decline it, you move directly to Part 3. Using the break is recommended: it provides a mental reset, especially after the intensive Reading section, and ensures you start the Listening section with full concentration rather than fatigue from a continuous 90-minute session.",
+  },
+  {
+    question: "What happens if the audio quality is poor or the microphone doesn't work?",
+    answer:
+      "Raise your hand immediately to alert the test centre staff. Do not attempt to continue the test with equipment you believe is faulty -- if you continue and score poorly, it is difficult to claim a technical problem after the fact. Pearson test centres are required to provide working equipment; technical issues can be grounds for a test cancellation and full refund if documented at the time of the test.",
+  },
+  {
+    question: "What if I run out of time on a task?",
+    answer:
+      "The timer advances automatically when each item's time expires. You cannot go back. For tasks where you have not finished typing (Write from Dictation, Summarize Written Text, Write Email), whatever you have typed at the point the timer expires is submitted as your response. This is why typing quickly and efficiently matters -- a partial but mostly-complete response scores significantly higher than an empty box.",
+  },
+  {
+    question: "How early should I arrive at the PTE Core test centre?",
+    answer:
+      "Arrive at least 30 minutes before your scheduled test time. The check-in process includes ID verification, security screening (emptying pockets, removing watches and jewelry), biometric check-in (fingerprints and photograph), and seating assignment. Arriving late can result in being denied entry -- Pearson test centres typically do not allow late arrivals once the session has begun.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "PTE Core Exam Day Tips", path: "/blog/pte-core-exam-day-tips/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="PTE Core Exam Day Tips | What to Expect and How to Perform at Your Best"
+  description="Complete PTE Core exam day guide: what to bring, the check-in process, the optional break, how to handle technical issues, time management per section, and what to do in the final 48 hours before the test."
+  type="article"
+  keywords="PTE Core exam day tips, PTE Core test day advice, PTE Core what to bring, PTE Core test centre, PTE Core exam preparation day of"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">PTE Core preparation guide</span>
+      <h1 class="ic-display" style="margin: 0;">PTE Core exam day tips</h1>
+      <div class="guide-meta">
+        <span>May 20, 2026</span>
+        <span>10 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        Many test takers are well-prepared in terms of English skills but underperform because
+        of avoidable exam-day issues -- arriving late, not knowing the check-in process,
+        or spending too long on one task and running out of time. Knowing what to expect
+        on test day removes these variables entirely.
+      </p>
+      <p>
+        This guide covers the complete exam day process from the night before to the moment
+        your score is submitted.
+      </p>
+    </div>
+
+    <section class="guide-card" style="margin-top: 0;">
+      <h2 class="ic-display">The night before the test</h2>
+      <ul class="guide-list">
+        <li><strong>Do not study new material.</strong> Trying to learn new grammar rules or vocabulary in the final 24 hours creates anxiety without meaningful skill improvement. Your proficiency is set -- the goal now is to perform at your current level under pressure.</li>
+        <li><strong>Review your spelling list.</strong> A 15-minute review of your personal Write from Dictation spelling error list is the only test-specific preparation worth doing the night before.</li>
+        <li><strong>Read your confirmation email.</strong> Confirm your test start time, test centre address, and the name on your registration matches your ID exactly.</li>
+        <li><strong>Plan your route.</strong> Know how you are getting to the test centre and how long it takes. Add 15-20 minutes buffer. Public transit delays and parking issues on test day are common reasons for late arrivals.</li>
+        <li><strong>Get 7-8 hours of sleep.</strong> Cognitive performance drops significantly with less than 6 hours of sleep. Speaking fluency, working memory (critical for Repeat Sentence and Write from Dictation), and reading accuracy are all affected by fatigue.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">What to bring</h2>
+      <div class="guide-grid guide-grid-2">
+        <div>
+          <h3>Required</h3>
+          <ul class="guide-list">
+            <li>Valid photo ID (passport, national ID, or driver's license)</li>
+            <li>Your registration confirmation (email or printed)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Do not bring</h3>
+          <ul class="guide-list">
+            <li>Mobile phone (must be switched off and stored)</li>
+            <li>Watches, jewellery, or accessories (security screening)</li>
+            <li>Notes, books, or any study materials</li>
+            <li>Food or drinks (not permitted in the test room)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">The check-in process</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Arrive 30 minutes early</h3>
+            <p>Check-in begins approximately 30 minutes before the session. Arriving on time for your scheduled start is not the same as arriving 30 minutes before -- the check-in process takes time.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>ID verification and biometric check-in</h3>
+            <p>Staff verify your ID against your registration. Fingerprints and a photograph are taken. This is standard for all Pearson VUE test centres and is the same process used for professional certification exams.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Security screening</h3>
+            <p>You will be asked to empty your pockets, remove your watch, and leave all personal items in a locker outside the test room. You are given the erasable noteboard and a marker before entering.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Headset and seat assignment</h3>
+            <p>You are seated at a computer station with a headset. Take 1-2 minutes to adjust the headset volume before the test begins -- a quiet headset on Read Aloud or a headset that is too loud on Listening can affect performance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Time management during the test</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Part</th>
+            <th>Section</th>
+            <th>Time allocation</th>
+            <th>Key rule</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Part 1</td>
+            <td>Speaking and Writing</td>
+            <td>~54-67 minutes</td>
+            <td>Each item is individually timed -- you cannot run over</td>
+          </tr>
+          <tr>
+            <td>Part 2</td>
+            <td>Reading</td>
+            <td>~29-30 minutes</td>
+            <td>Allocate 2-3 minutes per task. Never spend 5+ minutes on one Re-order item.</td>
+          </tr>
+          <tr>
+            <td>Optional break</td>
+            <td>--</td>
+            <td>10 minutes</td>
+            <td>Take it. A full mental reset before Listening is worth more than the time cost.</td>
+          </tr>
+          <tr>
+            <td>Part 3</td>
+            <td>Listening</td>
+            <td>~30-43 minutes</td>
+            <td>Audio plays once -- no replay. Write from Dictation: type immediately after audio ends.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">During the Speaking section</h2>
+      <ul class="guide-list">
+        <li>Use the full preparation time for Read Aloud and Describe Image. Do not start speaking before the microphone opens -- only what you say after the tone is recorded and scored.</li>
+        <li>Begin speaking within 1-2 seconds of the microphone-open tone. A long pause at the start of Read Aloud or Describe Image reduces Oral Fluency immediately.</li>
+        <li>If you lose your train of thought mid-response, do not stop. Continue speaking at a slower pace -- silence is more damaging to Oral Fluency than a less-organized sentence.</li>
+        <li>For Repeat Sentence: listen to the full sentence before attempting to repeat. Starting to speak during the audio (shadow-speaking) splits your attention and reduces recall.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">If something goes wrong</h2>
+      <ul class="guide-list">
+        <li><strong>Technical issue (audio, microphone, screen):</strong> Raise your hand immediately. Do not continue with faulty equipment. Document the problem by telling staff verbally.</li>
+        <li><strong>You did not hear the audio clearly:</strong> For tasks where the audio plays once, raise your hand if the issue was technical (low volume, interruption). If you simply did not concentrate, continue as best you can.</li>
+        <li><strong>You ran out of time on a task:</strong> Whatever was typed or selected at the timer expiry is your response. This cannot be changed. Move forward -- do not let a missed task affect your focus on the remaining items.</li>
+        <li><strong>You feel sick or need to leave:</strong> Alert staff. You can cancel the test and receive a full refund if the cancellation occurs before scoring begins.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Next step</h2>
+      <div class="guide-links">
+        <a href="/blog/pte-core-study-plan">
+          <strong>Read the PTE Core study plan</strong>
+          <span>A week-by-week preparation schedule for CLB 7 and CLB 9 targets.</span>
+        </a>
+        <a href="/pte-core/simulator">
+          <strong>Simulate the exam in the PTE Core simulator</strong>
+          <span>Practise all four sections under timed, exam-like conditions before test day.</span>
+        </a>
+        <a href="/pte-core">
+          <strong>Open the PTE Core hub</strong>
+          <span>Access all task guides, lessons, and preparation resources.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </article>
+
+  <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
+    <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
+    <p class="muted">Simulate the full PTE Core exam before test day.</p>
+    <a class="btn btn-primary ic-btn" href="/pte-core/simulator">Open the PTE Core simulator</a>
+  </section>
+</Layout>

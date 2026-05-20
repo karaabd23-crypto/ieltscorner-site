@@ -1,0 +1,365 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "How many question types are in PTE Core?",
+    answer:
+      "PTE Core has 19 distinct task types across four sections: 5 in Speaking, 2 in Writing, 5 in Reading, and 8 in Listening (some sources group slightly differently). Several tasks contribute to multiple skill scores simultaneously -- for example, Read Aloud contributes to both Speaking and Reading scores, and Write from Dictation contributes to both Listening and Writing scores.",
+  },
+  {
+    question: "Which PTE Core tasks contribute to more than one skill score?",
+    answer:
+      "Several tasks have dual scoring: Read Aloud (Speaking and Reading), Write from Dictation (Listening and Writing), Summarize Spoken Text (Listening and Writing), Summarize Written Text (Reading and Writing), Reading and Writing Fill in the Blanks (Reading and Writing), and Repeat Sentence (Listening and Speaking). Performing well on dual-scored tasks is among the highest-efficiency study strategies because improvement affects two section scores simultaneously.",
+  },
+  {
+    question: "What is the total duration of PTE Core?",
+    answer:
+      "PTE Core is approximately 2 hours long, broken into three timed parts: Part 1 -- Speaking and Writing (approximately 54-67 minutes), Part 2 -- Reading (approximately 29-30 minutes), and Part 3 -- Listening (approximately 30-43 minutes). A 10-minute optional break is available between Part 2 and Part 3. The exact timing varies slightly because PTE Core uses variable test forms.",
+  },
+  {
+    question: "Are all PTE Core test forms the same difficulty?",
+    answer:
+      "PTE Core uses adaptive features in some sections, meaning different test takers may see different items from the same item bank. Scores are equated statistically to account for difficulty variations between test forms, so the CLB level attached to your score reflects your proficiency relative to the full scale, not just performance on one specific set of items.",
+  },
+  {
+    question: "Can I skip a question in PTE Core and come back to it?",
+    answer:
+      "No -- PTE Core is delivered sequentially and does not allow navigation back to previous questions. Each item is presented, you respond (or the time expires), and you move to the next. This makes time management critical -- spending too long on one item reduces time for subsequent items in the same section.",
+  },
+  {
+    question: "What is the difference between PTE Core and PTE Academic question types?",
+    answer:
+      "PTE Core and PTE Academic share similar task types (Read Aloud, Describe Image, Fill in the Blanks) but the tests are structured differently, contain different content, and are scored on different scales with different concordance tables. PTE Academic uses an Academic module aligned with IELTS academic content; PTE Core uses real-world Canadian context and maps to CLB levels for IRCC. Do not prepare using PTE Academic-specific materials if you are taking PTE Core.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "PTE Core Question Types", path: "/blog/pte-core-question-types/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="PTE Core Question Types | All 19 Tasks Explained Across 4 Sections"
+  description="Complete guide to all PTE Core question types across Speaking, Writing, Reading, and Listening -- which tasks are dual-scored, how each section is structured, and what to prepare for first."
+  type="article"
+  keywords="PTE Core question types, PTE Core tasks, PTE Core test format, PTE Core sections, PTE Core task types explained"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">PTE Core exam guide</span>
+      <h1 class="ic-display" style="margin: 0;">PTE Core question types: all 19 tasks explained</h1>
+      <div class="guide-meta">
+        <span>May 20, 2026</span>
+        <span>12 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        PTE Core has 19 task types across four sections. Several tasks contribute to two
+        section scores simultaneously -- knowing which ones these are lets you prioritize your
+        preparation for the highest return. A strong performance on a dual-scored task
+        improves two sections at once.
+      </p>
+      <p>
+        This guide covers every task type, what it tests, how long you have, and which section
+        score it affects.
+      </p>
+    </div>
+
+    <section class="guide-card" style="margin-top: 0;">
+      <h2 class="ic-display">Dual-scored tasks: the highest preparation priority</h2>
+      <p class="muted" style="margin-top: 0;">These tasks contribute points to two section scores. Improving on any of these has double the effect on your overall score report.</p>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Section scores affected</th>
+            <th>Why it matters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Read Aloud</strong></td>
+            <td>Speaking + Reading</td>
+            <td>Fluent reading directly improves two of your four communicative skill scores</td>
+          </tr>
+          <tr>
+            <td><strong>Repeat Sentence</strong></td>
+            <td>Speaking + Listening</td>
+            <td>Memory and fluency both scored; appears multiple times per test</td>
+          </tr>
+          <tr>
+            <td><strong>Summarize Written Text</strong></td>
+            <td>Writing + Reading</td>
+            <td>Single-sentence summary requires both comprehension and writing control</td>
+          </tr>
+          <tr>
+            <td><strong>R/W Fill in the Blanks</strong></td>
+            <td>Reading + Writing</td>
+            <td>Grammar and vocabulary accuracy scored in both sections</td>
+          </tr>
+          <tr>
+            <td><strong>Summarize Spoken Text</strong></td>
+            <td>Listening + Writing</td>
+            <td>Paragraph summary requires both listening comprehension and writing quality</td>
+          </tr>
+          <tr>
+            <td><strong>Write from Dictation</strong></td>
+            <td>Listening + Writing</td>
+            <td>Appears 3-4 times per test; spelling accuracy critical</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Speaking section: all 5 tasks</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>What you do</th>
+            <th>Time to speak</th>
+            <th>Dual-scored?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Read Aloud</strong></td>
+            <td>Read a text passage aloud after a 30-40 sec preparation</td>
+            <td>Up to 40 seconds</td>
+            <td>Yes (Reading)</td>
+          </tr>
+          <tr>
+            <td><strong>Repeat Sentence</strong></td>
+            <td>Hear a sentence once, reproduce it verbatim</td>
+            <td>Up to 15 seconds</td>
+            <td>Yes (Listening)</td>
+          </tr>
+          <tr>
+            <td><strong>Describe Image</strong></td>
+            <td>Look at an image for 25 seconds, speak about it</td>
+            <td>Up to 40 seconds</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td><strong>Re-tell Lecture</strong></td>
+            <td>Hear a lecture (with optional image), then summarize it</td>
+            <td>Up to 40 seconds</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td><strong>Answer Short Question</strong></td>
+            <td>Hear a factual question, give a one-to-two word answer</td>
+            <td>Up to 10 seconds</td>
+            <td>No</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Writing section: both tasks</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>What you do</th>
+            <th>Time allowed</th>
+            <th>Word limit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Summarize Written Text</strong></td>
+            <td>Read a passage, write a 1-sentence summary</td>
+            <td>10 minutes</td>
+            <td>5-75 words</td>
+          </tr>
+          <tr>
+            <td><strong>Write Email</strong></td>
+            <td>Read a prompt with 3 bullet points, write a professional email</td>
+            <td>9 minutes</td>
+            <td>50-120 words</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Reading section: all 5 tasks</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>What you do</th>
+            <th>Negative marking?</th>
+            <th>Dual-scored?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>R/W Fill in the Blanks</strong></td>
+            <td>Passage with dropdown menus at gaps -- choose the correct word</td>
+            <td>No</td>
+            <td>Yes (Writing)</td>
+          </tr>
+          <tr>
+            <td><strong>MC Multiple Answer</strong></td>
+            <td>Passage + question with multiple correct answers</td>
+            <td>Yes</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td><strong>Re-order Paragraphs</strong></td>
+            <td>Arrange scrambled text boxes into correct order</td>
+            <td>No (partial credit)</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td><strong>Fill in the Blanks</strong></td>
+            <td>Passage with gaps + word bank -- drag words to fill gaps</td>
+            <td>No</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td><strong>MC Single Answer</strong></td>
+            <td>Passage + question with one correct answer</td>
+            <td>No</td>
+            <td>No</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Listening section: all 8 tasks</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>What you do</th>
+            <th>Dual-scored?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Summarize Spoken Text</strong></td>
+            <td>Hear lecture, write 50-70 word summary paragraph</td>
+            <td>Yes (Writing)</td>
+          </tr>
+          <tr>
+            <td><strong>MC Multiple Answer</strong></td>
+            <td>Hear audio, select multiple correct options (negative marking)</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td><strong>Fill in the Blanks</strong></td>
+            <td>Hear audio, type the exact missing word in each blank</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td><strong>Highlight Correct Summary</strong></td>
+            <td>Hear audio, select the most accurate written summary</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td><strong>MC Single Answer</strong></td>
+            <td>Hear audio, select one correct answer</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td><strong>Select Missing Word</strong></td>
+            <td>Hear audio with final word as a beep, select the missing word</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td><strong>Highlight Incorrect Words</strong></td>
+            <td>Hear audio while reading transcript, click words that differ</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td><strong>Write from Dictation</strong></td>
+            <td>Hear a sentence, type it exactly (spelling must be correct)</td>
+            <td>Yes (Writing)</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Where to start your preparation</h2>
+      <p class="muted" style="margin-top: 0;">Prioritize tasks in this order for the most efficient score improvement.</p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Dual-scored tasks first</h3>
+            <p>Write from Dictation, Read Aloud, Repeat Sentence, R/W Fill in the Blanks, Summarize Written Text, Summarize Spoken Text. Improvement here has double the impact.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Negative marking tasks second</h3>
+            <p>Multiple Choice Multiple Answer (Reading and Listening). Understanding the negative marking rules and practicing selection discipline prevents score losses.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Your weakest section third</h3>
+            <p>Check your enabling skill sub-scores from any practice test. If Oral Fluency is your weakest sub-score, prioritize Read Aloud and Repeat Sentence. If Spelling is weak, prioritize Write from Dictation and Fill in the Blanks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Next step</h2>
+      <div class="guide-links">
+        <a href="/pte-core/question-types">
+          <strong>Open the question type guides on IELTS Corner</strong>
+          <span>Task-specific guides with strategies, examples, and practice tools for each of the 19 task types.</span>
+        </a>
+        <a href="/blog/pte-core-writing-guide">
+          <strong>Read the PTE Core Writing guide</strong>
+          <span>In-depth strategy for Summarize Written Text and Write Email.</span>
+        </a>
+        <a href="/blog/pte-core-speaking-guide">
+          <strong>Read the PTE Core Speaking guide</strong>
+          <span>Task-by-task strategies for all five speaking tasks.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </article>
+
+  <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
+    <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
+    <p class="muted">Ready to start practicing all 19 PTE Core task types?</p>
+    <a class="btn btn-primary ic-btn" href="/pte-core/simulator">Open the PTE Core simulator</a>
+  </section>
+</Layout>

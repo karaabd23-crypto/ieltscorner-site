@@ -1,0 +1,300 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "What types of images appear in PTE Core Describe Image?",
+    answer:
+      "PTE Core Describe Image items include: bar charts, line graphs, pie charts, tables, process diagrams (flowcharts), maps, and photographs. Bar charts and graphs are the most common. Each image type requires a slightly different vocabulary and structure, but the overall framework -- identify type, state main trend, add one detail, close with summary -- applies to all types.",
+  },
+  {
+    question: "How long is the preparation time for Describe Image?",
+    answer:
+      "You have 25 seconds to study the image before the microphone opens automatically. Use this time to identify: what type of image it is, what the main trend or message is, and one specific detail you will mention. Do not try to memorize every data point -- identify the three things you will say before you start speaking.",
+  },
+  {
+    question: "What happens if I run out of things to say in Describe Image?",
+    answer:
+      "If you finish your prepared content before the 40-second limit, you can add a closing observation: 'Overall, this suggests...' or 'This data indicates that...' followed by a general statement about what the image implies. If you genuinely have nothing more to add and have already covered the main points, it is better to close confidently at 30 seconds than to repeat yourself or trail off -- a clean ending is scored better than a stammering finish.",
+  },
+  {
+    question: "How is Describe Image scored?",
+    answer:
+      "Describe Image is scored on Oral Fluency (smooth, connected speech), Pronunciation (clarity), and Content (coverage of key elements in the image). The Content score requires you to correctly identify the image type, state the main trend, and include at least one supporting detail. Speaking for the full 40 seconds without meaningful content does not improve your Content score -- accuracy and relevance matter more than duration.",
+  },
+  {
+    question: "What vocabulary do I need for PTE Core graphs and charts?",
+    answer:
+      "For trends: 'increased significantly,' 'declined steadily,' 'remained relatively stable,' 'peaked at,' 'reached its lowest point at,' 'fluctuated between.' For comparisons: 'higher than,' 'more than double,' 'approximately twice as high,' 'the largest share was held by.' For location in a pie chart: 'accounting for X percent,' 'comprising the largest segment.' Building a set of 20-25 graph description phrases removes hesitation during the 40-second response.",
+  },
+  {
+    question: "Should I describe every element in the image?",
+    answer:
+      "No. The Content scoring does not require you to mention every element -- it rewards accurate coverage of the main trends and one or two supporting details. Trying to describe every bar, every line, or every slice of a pie chart usually produces a rushed, disorganized response that hurts Oral Fluency. Select the most important elements and describe them clearly and specifically.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "PTE Core Describe Image Guide", path: "/blog/pte-core-describe-image/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="PTE Core Describe Image | Strategy, Vocabulary, and Scored Examples"
+  description="Complete guide to PTE Core Describe Image -- the 4-point response structure, vocabulary for every image type (graphs, charts, diagrams, photos), scored examples, and what the AI actually scores."
+  type="article"
+  keywords="PTE Core describe image, PTE Core describe image strategy, PTE Core describe image vocabulary, PTE Core describe image tips, PTE Core speaking"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">PTE Core speaking guide</span>
+      <h1 class="ic-display" style="margin: 0;">PTE Core Describe Image: strategy and vocabulary</h1>
+      <div class="guide-meta">
+        <span>May 20, 2026</span>
+        <span>12 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        Describe Image is one of the most practised PTE Core speaking tasks because it appears
+        multiple times per exam and covers a wide range of image types -- from simple bar charts
+        to complex process diagrams. The key insight is that you do not need to describe
+        everything -- you need to describe the most important things fluently and accurately.
+      </p>
+      <p>
+        This guide gives you the response structure, the vocabulary for each image type, and
+        a framework for using the 25-second preparation time effectively.
+      </p>
+    </div>
+
+    <section class="guide-card" style="margin-top: 0;">
+      <h2 class="ic-display">The 4-point response framework</h2>
+      <p class="muted" style="margin-top: 0;">Use this structure for every image type. Each point maps to approximately 10 seconds of speaking time.</p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Identify the image type and subject (8 seconds)</h3>
+            <p>"This bar chart shows..." / "This is a pie chart illustrating..." / "This diagram presents the process of..." / "The photograph shows..." State what you are looking at before describing it. This is not optional -- the AI needs the opening to contextualize the content score.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>State the main trend or message (12 seconds)</h3>
+            <p>The single most important thing the image communicates. For a graph: the dominant direction, the highest or lowest value, the largest segment. For a diagram: the central process. For a photo: the main subject and action. Be specific -- name actual values or proportions when possible.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Add one supporting detail (12 seconds)</h3>
+            <p>One notable comparison, exception, or secondary trend. "By contrast, Group B showed significantly lower values, reaching only 20%." or "Notably, the process involves three separate stages before the final product is complete." This is the difference between a CLB 7 and CLB 9 response on Content.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Close with an overall observation (8 seconds)</h3>
+            <p>"Overall, the data suggests a clear upward trend over the period." / "In summary, the chart highlights significant variation between the two groups." / "This process demonstrates how raw materials are transformed through multiple stages into a finished product." A closing sentence ends the response cleanly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Vocabulary for graphs and charts</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Function</th>
+            <th>Phrases to use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Describe upward trend</td>
+            <td>"increased significantly," "rose steadily," "grew by approximately," "reached a peak of"</td>
+          </tr>
+          <tr>
+            <td>Describe downward trend</td>
+            <td>"decreased sharply," "declined steadily," "fell by," "dropped to its lowest point of"</td>
+          </tr>
+          <tr>
+            <td>Describe stability</td>
+            <td>"remained relatively stable at," "fluctuated slightly around," "stayed consistent at approximately"</td>
+          </tr>
+          <tr>
+            <td>Make comparisons</td>
+            <td>"significantly higher than," "approximately twice as large as," "the largest category was," "in contrast to"</td>
+          </tr>
+          <tr>
+            <td>Describe proportions (pie chart)</td>
+            <td>"accounting for X percent of the total," "comprising the largest share," "representing approximately one third"</td>
+          </tr>
+          <tr>
+            <td>Reference time periods</td>
+            <td>"between [year] and [year]," "over the period shown," "in the final year," "at the start of the period"</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Vocabulary for diagrams and processes</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Function</th>
+            <th>Phrases to use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Introduce a process</td>
+            <td>"The diagram illustrates the process by which..." / "This flowchart shows the stages involved in..."</td>
+          </tr>
+          <tr>
+            <td>Describe sequence</td>
+            <td>"In the first stage," "Following this," "The next step involves," "This then leads to," "The final stage is"</td>
+          </tr>
+          <tr>
+            <td>Describe a cycle</td>
+            <td>"The process begins with," "which then feeds back into," "completing the cycle," "this continuous loop"</td>
+          </tr>
+          <tr>
+            <td>Describe a hierarchy or structure</td>
+            <td>"At the top level," "reporting directly to," "divided into three branches," "connected to"</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Using the 25-second preparation time</h2>
+      <p class="muted" style="margin-top: 0;">Twenty-five seconds is more time than most test takers use effectively. Use every second.</p>
+      <ul class="guide-list">
+        <li><strong>Seconds 1-5:</strong> Identify the image type. Say silently: "This is a bar chart." This tells you which vocabulary set to use.</li>
+        <li><strong>Seconds 6-15:</strong> Identify the main trend. What is the most important thing this image shows? Where is the highest value? What is the dominant pattern?</li>
+        <li><strong>Seconds 16-22:</strong> Identify your supporting detail. One comparison, exception, or notable secondary fact.</li>
+        <li><strong>Seconds 23-25:</strong> Plan your opening sentence. Do not wait until the microphone opens to decide how to begin -- a prepared first sentence eliminates the hesitation pause that hurts Oral Fluency.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Scored example: bar chart description</h2>
+      <p class="muted" style="margin-top: 0;">Image: A bar chart showing annual sales figures for three product categories (Electronics, Clothing, Food) across four years (2020-2023).</p>
+      <div class="guide-scored-pair">
+        <div class="guide-scored guide-scored--weak">
+          <span class="guide-scored__label">Weak response</span>
+          <p>
+            "This is a bar chart. It shows sales. Electronics is the biggest. Food is small.
+            Clothing is in the middle. The years go from 2020 to 2023. That's all."
+          </p>
+          <ul class="guide-scored__notes">
+            <li>Image type identified -- correct.</li>
+            <li>No trends stated: we learn that Electronics is largest, but not whether it grew, fell, or stayed stable.</li>
+            <li>No specific values mentioned. Content score remains low.</li>
+            <li>Short sentences with pauses create a fragmented fluency pattern.</li>
+            <li>"That's all" is an inappropriate closing and hurts the overall impression.</li>
+          </ul>
+        </div>
+        <div class="guide-scored guide-scored--strong">
+          <span class="guide-scored__label">Strong response</span>
+          <p>
+            "This bar chart shows annual sales figures for three product categories -- Electronics,
+            Clothing, and Food -- from 2020 to 2023. The most notable trend is the consistent
+            growth in Electronics sales, which increased from approximately 40 million in 2020
+            to nearly 65 million by 2023, representing the dominant category throughout the
+            period. Food sales, by contrast, remained relatively stable at around 20 million
+            annually, while Clothing showed moderate growth with a slight decline in 2022.
+            Overall, the chart highlights Electronics as the strongest-growing category over
+            this four-year period."
+          </p>
+          <ul class="guide-scored__notes">
+            <li>Image type and subject stated clearly in opening.</li>
+            <li>Main trend identified with specific values (40 million to 65 million).</li>
+            <li>Supporting detail adds a comparison (Food stable, Clothing mixed) -- two contrasts in one sentence.</li>
+            <li>Closing restates the key finding. Response fills approximately 40 seconds.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Common Describe Image mistakes</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Mistake</th>
+            <th>Fix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Starting with a long pause before the first sentence</td>
+            <td>Prepare your opening sentence in the 25-second prep time. Begin speaking within 1 second of the tone.</td>
+          </tr>
+          <tr>
+            <td>Listing every data point without structure</td>
+            <td>Follow the 4-point framework. Main trend first, then one detail, then a summary. Structure outperforms comprehensiveness.</td>
+          </tr>
+          <tr>
+            <td>Stopping before the 40-second limit with nothing more to say</td>
+            <td>Prepare a closing sentence in advance: "Overall, this image suggests..." This can always be added to any description.</td>
+          </tr>
+          <tr>
+            <td>Using vague language: "it goes up," "it is big," "it changes"</td>
+            <td>Replace with specific language: "increased by approximately 30%," "reached the highest value," "fluctuated between."</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Next step</h2>
+      <div class="guide-links">
+        <a href="/blog/pte-core-speaking-guide">
+          <strong>Read the full PTE Core Speaking guide</strong>
+          <span>Strategy for all five speaking tasks: Read Aloud, Repeat Sentence, Describe Image, Re-tell Lecture, and Answer Short Question.</span>
+        </a>
+        <a href="/pte-core/simulator">
+          <strong>Practice Describe Image in the simulator</strong>
+          <span>Complete timed Describe Image tasks in an exam-style environment.</span>
+        </a>
+        <a href="/pte-core/speaking">
+          <strong>Open the PTE Core Speaking hub</strong>
+          <span>Access all speaking task guides and lessons.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </article>
+
+  <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
+    <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
+    <p class="muted">Ready to practice PTE Core Describe Image under timed conditions?</p>
+    <a class="btn btn-primary ic-btn" href="/pte-core/simulator">Open the PTE Core simulator</a>
+  </section>
+</Layout>

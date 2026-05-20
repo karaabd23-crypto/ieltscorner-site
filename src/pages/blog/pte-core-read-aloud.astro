@@ -1,0 +1,234 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "Is Read Aloud scored on Speaking and Reading?",
+    answer:
+      "Yes. PTE Core Read Aloud contributes to both your Speaking score (Oral Fluency and Pronunciation) and your Reading score (through the reading comprehension required to read the passage correctly). It is one of six dual-scored tasks in PTE Core, making it among the highest-value tasks to practice efficiently.",
+  },
+  {
+    question: "How long is the preparation time for Read Aloud?",
+    answer:
+      "You have 30-40 seconds to read the passage silently before the microphone opens automatically. Use this time to preview the passage, identify difficult or unusual words, and decide where you will pause. If you see a word you are not confident pronouncing, read it silently a few times during preparation so you have a pronunciation plan ready.",
+  },
+  {
+    question: "What if I mispronounce a word in Read Aloud?",
+    answer:
+      "Keep reading at normal speed. Do not stop, correct yourself, or re-read the word. A single mispronunciation in an otherwise fluent 40-second response has minimal impact on the Pronunciation score. Stopping and restarting, however, significantly reduces the Oral Fluency score, which is more heavily weighted. Fluency is more important than perfection.",
+  },
+  {
+    question: "Should I read slowly and carefully to avoid mispronunciation?",
+    answer:
+      "No. Reading slowly with deliberate pauses between words creates a choppy, word-by-word rhythm that scores poorly on Oral Fluency. The AI measures natural speech patterns -- stress, rhythm, and phrasing -- not just individual word pronunciation. Read at the pace you would use to read aloud to a colleague. Natural speed with a few imperfect words scores higher than slow-and-careful reading.",
+  },
+  {
+    question: "How should I handle punctuation in Read Aloud?",
+    answer:
+      "Pause slightly at commas (0.5-1 second) and longer at full stops and semicolons (1-1.5 seconds). Question marks and exclamation marks should be reflected in intonation -- rising pitch for questions, stronger stress for exclamations. These natural pauses at punctuation improve both the Oral Fluency score (speech sounds organized and natural) and listener comprehension.",
+  },
+  {
+    question: "What topics do PTE Core Read Aloud passages cover?",
+    answer:
+      "Passages typically cover academic and professional topics: scientific discoveries, social policies, workplace practices, environmental issues, technology trends, educational research, and community development. The content is formal and factual. Unfamiliar vocabulary may appear, but the scoring does not penalize you for not knowing a word's meaning -- only for failing to read it with natural rhythm and clear pronunciation.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "PTE Core Read Aloud Guide", path: "/blog/pte-core-read-aloud/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="PTE Core Read Aloud | Fluency Strategy, Scoring Rules, and Practice Method"
+  description="Complete guide to PTE Core Read Aloud -- how oral fluency and pronunciation are scored, the chunking method for natural rhythm, how to use preparation time, and why speed matters more than perfection."
+  type="article"
+  keywords="PTE Core read aloud, PTE Core read aloud strategy, PTE Core oral fluency, PTE Core pronunciation, PTE Core speaking tips, PTE Core read aloud tips"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">PTE Core speaking guide</span>
+      <h1 class="ic-display" style="margin: 0;">PTE Core Read Aloud: fluency strategy</h1>
+      <div class="guide-meta">
+        <span>May 20, 2026</span>
+        <span>11 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        Read Aloud is one of the most important tasks in PTE Core because it contributes to
+        both Speaking and Reading scores simultaneously. The task sounds simple -- read a
+        passage out loud -- but the AI scoring rewards a specific type of reading that most
+        test takers do not naturally produce in exam conditions.
+      </p>
+      <p>
+        The key insight: the AI measures fluency (connected, natural reading rhythm) more
+        than pronunciation accuracy. Reading slowly and carefully to avoid mistakes is the
+        most common mistake in this task.
+      </p>
+    </div>
+
+    <section class="guide-card" style="margin-top: 0;">
+      <h2 class="ic-display">What Read Aloud actually measures</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Criterion</th>
+            <th>What the AI measures</th>
+            <th>What drops the score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Oral Fluency</strong></td>
+            <td>Natural rhythm, phrasing, and connected speech</td>
+            <td>Long pauses mid-phrase, word-by-word reading, hesitations, restarts</td>
+          </tr>
+          <tr>
+            <td><strong>Pronunciation</strong></td>
+            <td>Intelligibility to a native speaker</td>
+            <td>Consistent substitution of sounds, heavy first-language phonology</td>
+          </tr>
+          <tr>
+            <td><strong>Reading (sub-score)</strong></td>
+            <td>Correctly reading the words on screen</td>
+            <td>Skipping words, substituting wrong words, adding words not in text</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">The chunking method for natural rhythm</h2>
+      <p class="muted" style="margin-top: 0;">English naturally groups words into meaning units (chunks). Reading chunk-by-chunk sounds natural; reading word-by-word sounds robotic.</p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Identify natural phrase boundaries during preparation</h3>
+            <p>During the 30-40 second preparation time, mark where phrases end: after noun phrases ("the new policy"), before conjunctions ("and," "but," "which"), and at all punctuation marks. These are your natural pause points.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Read each chunk as a unit, not word-by-word</h3>
+            <p>Example: "The committee / announced / new regulations / regarding workplace safety / on Thursday." Each chunk flows continuously -- the pause comes at the slash, not between individual words. Eye ahead: while saying one chunk, your eyes are already reading the next one.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Stress content words, not function words</h3>
+            <p>"The COMMITTEE announced NEW REGULATIONS regarding WORKPLACE SAFETY on THURSDAY." Nouns, verbs, adjectives, and adverbs carry stress. Articles, prepositions, and conjunctions are typically unstressed and read more quickly. Natural stress patterns are a key component of the Oral Fluency score.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Keep a consistent pace -- do not speed up or slow down</h3>
+            <p>A consistent pace throughout the passage sounds natural. Speeding up in familiar sections and slowing down at unfamiliar words creates uneven rhythm that reduces the Oral Fluency score. Set your pace at the first sentence and maintain it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">How to use the preparation time</h2>
+      <ul class="guide-list">
+        <li><strong>First 10 seconds:</strong> Scan the full passage. Identify its topic and general structure. This prevents comprehension surprises mid-reading.</li>
+        <li><strong>Next 15 seconds:</strong> Mark potential phrase boundaries mentally. Identify any unusually long noun phrases or technical terms you will need to say at natural speed.</li>
+        <li><strong>Final 10 seconds:</strong> Prepare your opening. The first sentence of the passage sets your pace. Plan to begin at your target speed from the first word.</li>
+        <li>The microphone opens automatically at the end of the preparation timer -- a tone signals this. Begin speaking within 1-2 seconds of the tone. A long initial pause reduces the Oral Fluency score even before you start reading.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Self-recording practice method</h2>
+      <p class="muted" style="margin-top: 0;">Self-recording is the most effective Read Aloud practice method because it makes fluency patterns visible to you.</p>
+      <ul class="guide-list">
+        <li>Record yourself reading a passage aloud. Use any recording app on your phone.</li>
+        <li>Listen back with the transcript in front of you. Mark every pause that falls mid-phrase rather than at a phrase boundary.</li>
+        <li>Count how many mid-phrase pauses occurred. A target reading of the same passage should have zero mid-phrase pauses.</li>
+        <li>Re-read the passage with your phrase boundary marks clearly visible. Record again. Compare the two recordings.</li>
+        <li>Do this daily with new passages. Progress is visible within one to two weeks when you compare early recordings to recent ones.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Common Read Aloud mistakes</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Mistake</th>
+            <th>Fix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pausing at every word</td>
+            <td>Practice chunking. Read groups of 3-5 words as a continuous unit with no internal pauses.</td>
+          </tr>
+          <tr>
+            <td>Stopping and correcting a mispronounced word</td>
+            <td>Keep reading at normal pace. A correction attempt creates a disfluency that scores worse than the original error.</td>
+          </tr>
+          <tr>
+            <td>Slowing down significantly at longer or technical words</td>
+            <td>Maintain consistent pace. If a word is difficult, say the closest pronunciation you can at normal speed.</td>
+          </tr>
+          <tr>
+            <td>Reading the last word and then trailing off before the audio window closes</td>
+            <td>Read the final sentence cleanly to its full stop. The microphone closes after a pause -- end confidently.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Next step</h2>
+      <div class="guide-links">
+        <a href="/blog/pte-core-speaking-guide">
+          <strong>Read the full PTE Core Speaking guide</strong>
+          <span>Strategy for all five speaking tasks including Read Aloud, Describe Image, and Repeat Sentence.</span>
+        </a>
+        <a href="/pte-core/simulator">
+          <strong>Practice Read Aloud in the simulator</strong>
+          <span>Complete timed Read Aloud tasks in an exam-style environment.</span>
+        </a>
+        <a href="/pte-core/speaking">
+          <strong>Open the PTE Core Speaking hub</strong>
+          <span>Access all speaking task guides and lessons.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">FAQ</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </article>
+
+  <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
+    <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
+    <p class="muted">Practice Read Aloud and all PTE Core speaking tasks in one place.</p>
+    <a class="btn btn-primary ic-btn" href="/pte-core/simulator">Open the PTE Core simulator</a>
+  </section>
+</Layout>
