@@ -4,19 +4,39 @@ import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
 
 const pageFaqs = [
   {
-    question: "What are the most common IELTS Listening question types?",
+    question: "What are the question types in IELTS Listening?",
     answer:
-      "Common IELTS Listening question types include form completion, note completion, multiple choice, matching, map or plan labelling, and sentence or summary completion.",
+      "IELTS Listening includes these question types: form/note/table/summary completion, sentence completion, multiple choice (single and multiple answers), matching, map or plan labelling, and diagram labelling. The test has four sections and 40 questions. Not every question type appears in every test, but completion tasks are the most frequent.",
   },
   {
     question: "Should I use the same strategy for every IELTS Listening question type?",
     answer:
-      "No. You should keep the same core habits, but different task types need different attention. For example, map questions need direction language, while completion tasks need grammar and spelling control.",
+      "The core habits are consistent: read instructions carefully, predict the answer type before listening, underline key words, and move forward even after missing an answer. But each question type has a specific reading and listening approach. Completion tasks require grammar prediction. Multiple choice requires spotting the difference between options. Map tasks require direction language awareness. Knowing the specific focus for each task type makes preparation more efficient.",
   },
   {
     question: "What improves IELTS Listening scores fastest?",
     answer:
-      "The fastest improvements usually come from better prediction, cleaner note focus, and stronger checking of word limits, spelling, numbers, and plurals.",
+      "The fastest improvements come from: (1) prediction -- knowing what type of word or information fills each blank before the audio starts, (2) distractor awareness -- recognizing when IELTS gives a plausible wrong answer first, then corrects it, and (3) transfer accuracy -- checking spelling, plurals, numbers, and word limits in the answer transfer time. Most marks lost in Listening are not from failing to hear the correct answer but from writing it incorrectly.",
+  },
+  {
+    question: "How many sections are in IELTS Listening and how hard are they?",
+    answer:
+      "There are four sections, each progressively harder. Section 1 is a conversation in an everyday social context (usually easiest). Section 2 is a monologue in a social or semi-formal context. Section 3 is a conversation in an educational or training context (multiple speakers, harder to track). Section 4 is an academic monologue -- a university lecture -- which is the most challenging because the vocabulary is more specialized and the speaker does not pause between ideas.",
+  },
+  {
+    question: "What is the word limit rule in IELTS Listening completion tasks?",
+    answer:
+      "Each completion task specifies a word limit, typically 'no more than one word,' 'no more than two words,' or 'no more than three words and/or a number.' If you write more words than allowed, the answer is marked wrong even if the information is correct. Always underline the word limit before listening begins. Numbers written as numerals (e.g., 25) do not count as words.",
+  },
+  {
+    question: "Is the IELTS Listening test the same for Academic and General Training?",
+    answer:
+      "Yes. The IELTS Listening test is identical for both Academic and General Training versions. Both take approximately 30 minutes (plus 10 minutes transfer time for paper-based tests). The same four sections, the same question types, and the same scoring apply.",
+  },
+  {
+    question: "What is the difference between form completion and note completion in IELTS?",
+    answer:
+      "Form completion usually involves filling in a structured form (name, address, booking details, contact information) from a Section 1 conversation. The information is factual and concrete -- names, numbers, dates, places. Note completion appears more often in Sections 2 to 4 and involves filling gaps in bullet-point notes or outlines. The key difference is that note completion may require predicting more abstract nouns or adjectives, while form completion is almost always a noun, number, or proper name.",
   },
 ];
 
@@ -31,10 +51,10 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="IELTS Listening Question Types Guide | Simple Strategies for Each Task"
-  description="A clear IELTS Listening question type guide with practical strategies for completion, matching, map, and multiple-choice tasks."
+  title="IELTS Listening Question Types | Complete Strategy Guide for Every Task"
+  description="Full guide to all IELTS Listening question types: completion, multiple choice, matching, maps, and diagrams. Strategies, common mistakes, and scoring tips."
   type="article"
-  keywords="IELTS listening question types, IELTS listening strategy, IELTS listening tips"
+  keywords="IELTS listening question types, IELTS listening strategy, IELTS listening tips, IELTS listening completion tasks, IELTS listening multiple choice"
   structuredData={pageStructuredData}
 >
   <article class="section guide-article">
@@ -45,124 +65,323 @@ const pageStructuredData = [
       <h1 class="ic-display" style="margin: 0;">IELTS Listening question types</h1>
       <div class="guide-meta">
         <span>March 17, 2026</span>
-        <span>7 min read</span>
+        <span>13 min read</span>
       </div>
     </header>
 
     <div class="guide-lead">
       <p>
-        IELTS Listening does not become easier just because you listen more. Scores improve
-        faster when you recognize the task type and know what to watch for before the audio
-        starts.
+        IELTS Listening scores improve faster when you know what each question type demands
+        before the recording starts. Each task type has a specific habit that separates students
+        who pick up the answer from students who miss it by half a second.
       </p>
       <p>
-        The recording only plays once, so you need a simple habit for each type of question.
-        That is what this guide is for.
+        This guide covers every question type in the IELTS Listening test, with a strategy
+        for each, the most common mistake, and a scored comparison where relevant.
       </p>
     </div>
 
-    <div class="guide-grid guide-grid-2">
-      <section class="guide-card">
-        <h2 class="ic-display">Core habits for every task</h2>
-        <ul class="guide-list">
-          <li>Read the instructions carefully.</li>
-          <li>Underline the word limit.</li>
-          <li>Predict the type of answer before listening.</li>
-          <li>Keep following the audio even if you miss one answer.</li>
-        </ul>
-      </section>
-
-      <section class="guide-card">
-        <h2 class="ic-display">What often goes wrong</h2>
-        <ul class="guide-list">
-          <li>Students notice the answer too late because they were not ready for it.</li>
-          <li>They hear the right idea but write the wrong form of the word.</li>
-          <li>They keep thinking about one missed answer and lose the next two.</li>
-          <li>They ignore spelling, plurals, or number format.</li>
-        </ul>
-      </section>
-    </div>
-
-    <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">Completion tasks</h2>
-      <p>
-        This includes form completion, note completion, table completion, and summary
-        completion. These questions reward good prediction.
-      </p>
-      <ul class="guide-list">
-        <li>Check whether the blank needs a noun, number, date, or adjective.</li>
-        <li>Watch singular and plural carefully.</li>
-        <li>Listen for paraphrase, not only the exact same word from the paper.</li>
-      </ul>
-      <div class="guide-note">
-        <p>
-          If the line says <strong>three ___</strong>, the answer should probably be a
-          plural noun. That kind of small grammar clue saves marks.
-        </p>
+    <section class="guide-card">
+      <h2 class="ic-display">The four sections: what changes as you progress</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">S1</span>
+          <div>
+            <h3>Section 1 (easiest)</h3>
+            <p>A conversation between two people in an everyday social or transactional context: booking a hotel, registering for a class, reporting a problem. The vocabulary is concrete. The answers are usually numbers, names, addresses, or simple nouns. Very low risk of confusing language.</p>
+            <p><strong>Typical task types:</strong> Form completion, note completion</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">S2</span>
+          <div>
+            <h3>Section 2 (moderate)</h3>
+            <p>A monologue in a social or semi-formal context: a guided tour, a community announcement, a radio broadcast. One speaker. The information is organized but may include directions, lists, or descriptions that require spatial or sequential tracking.</p>
+            <p><strong>Typical task types:</strong> Map labelling, note completion, multiple choice</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">S3</span>
+          <div>
+            <h3>Section 3 (harder)</h3>
+            <p>A conversation between two or more people in an educational or training context: students discussing an assignment, a tutor giving feedback, a group planning a project. Multiple speakers make tracking more difficult. Ideas are sometimes expressed indirectly or through negotiation.</p>
+            <p><strong>Typical task types:</strong> Multiple choice, matching, sentence completion</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">S4</span>
+          <div>
+            <h3>Section 4 (hardest)</h3>
+            <p>An academic monologue: a university lecture on a specific topic. No pauses between ideas. Academic vocabulary. The speaker may use hedging language (might, could, tends to) that changes the meaning of answers. This section requires the most prediction and the fastest note-taking.</p>
+            <p><strong>Typical task types:</strong> Note completion, sentence completion, summary completion</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">Multiple choice</h2>
-      <p>
-        Multiple choice is dangerous because all the options can sound possible for a few
-        seconds. IELTS often gives a wrong answer first, then corrects it later.
-      </p>
-      <ul class="guide-list">
-        <li>Read all options before the audio starts.</li>
-        <li>Notice the key difference between the options.</li>
-        <li>Do not choose too early. Wait until the speaker finishes the idea.</li>
-      </ul>
+      <h2 class="ic-display">Core habits that apply to every question type</h2>
+      <div class="guide-grid guide-grid-2">
+        <div>
+          <h3 style="margin-top: 0;">Before the audio starts</h3>
+          <ul class="guide-list">
+            <li>Read the instructions and underline the word limit.</li>
+            <li>Read the questions and underline key words -- these predict when in the recording your answer will appear.</li>
+            <li>Predict the type of word each blank needs: noun, number, adjective, verb, or proper name.</li>
+            <li>Identify whether the text around a blank constrains the grammar (e.g., "the ___ lasted three hours" means the blank needs a noun).</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="margin-top: 0;">During the audio</h3>
+          <ul class="guide-list">
+            <li>Listen for paraphrase. IELTS rarely uses the exact words from the question paper in the recording.</li>
+            <li>If you miss an answer, leave a blank and move to the next question immediately.</li>
+            <li>Do not write while speaking -- write during the natural pauses or when the speaker shifts topic.</li>
+            <li>Watch for distractors: a plausible answer mentioned first, then corrected. Only record the final confirmed answer.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Completion tasks (form, note, table, summary, sentence)</h2>
+      <p>Completion tasks are the most common type across all four sections. The strategy is consistent regardless of the visual format (form, notes, table, or summary).</p>
+
+      <div class="listen-type-grid">
+        <div class="listen-type-card">
+          <h3>What the task measures</h3>
+          <p>Your ability to identify specific information from the recording and transfer it accurately within a word limit.</p>
+        </div>
+        <div class="listen-type-card">
+          <h3>Core strategy</h3>
+          <ul style="margin: 0; padding-left: var(--s-3); font-size: 0.92rem;">
+            <li>Underline the word limit before listening.</li>
+            <li>Predict the word type for each blank (noun, adjective, number).</li>
+            <li>Use grammar context to confirm: if the blank follows "the," it is a noun or adjective.</li>
+            <li>Write the exact words you hear -- do not paraphrase.</li>
+          </ul>
+        </div>
+        <div class="listen-type-card">
+          <h3>Most common mistake</h3>
+          <p>Writing more words than the limit allows. If the limit is "one word" and you write "a large garden," the answer is wrong even if "garden" is correct. Treat the word limit as a strict constraint, not a guideline.</p>
+        </div>
+        <div class="listen-type-card">
+          <h3>Paraphrase examples</h3>
+          <p>The question might say "the ___ was cancelled" and the recording might say "the session was called off." You must hear "called off" and write "session" -- recognizing that "called off" is a paraphrase of "cancelled."</p>
+        </div>
+      </div>
+
+      <div class="guide-note" style="margin-top: var(--s-3);">
+        <p><strong>Transfer time note (paper test):</strong> At the end of the recording, you have 10 minutes to transfer answers to the answer sheet. Use this time to check spelling, plurals, and word limits -- not to change answers you were confident about.</p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Multiple choice (single answer)</h2>
+      <p>Multiple choice with one correct answer is used mainly in Sections 2 and 3. These are more difficult than completion tasks because IELTS deliberately mentions distractors -- things that sound like the right answer but are rejected or corrected in the recording.</p>
+
+      <div class="listen-type-grid">
+        <div class="listen-type-card">
+          <h3>Core strategy</h3>
+          <ul style="margin: 0; padding-left: var(--s-3); font-size: 0.92rem;">
+            <li>Read all three options before the audio starts.</li>
+            <li>Identify the key difference between the options -- this tells you exactly what to listen for.</li>
+            <li>Do not choose when you first hear a plausible option. Wait for the speaker to finish the idea.</li>
+            <li>Eliminate options that are explicitly rejected in the recording.</li>
+          </ul>
+        </div>
+        <div class="listen-type-card">
+          <h3>How IELTS creates distractors</h3>
+          <ul style="margin: 0; padding-left: var(--s-3); font-size: 0.92rem;">
+            <li>The speaker mentions option A, then says "but actually..." and chooses option B.</li>
+            <li>Option C is mentioned in a different context that does not answer the question.</li>
+            <li>The speaker uses a word from option A but in a negative: "it was not the cost that..."</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="guide-example" style="margin-top: var(--s-3);">
+        <p><strong>Example:</strong> Question asks "Why did the student choose the project topic?"</p>
+        <p>Options: A) it was recommended by a tutor, B) she had personal experience of it, C) it was new research</p>
+        <p>Recording: "My tutor did mention it, but I actually chose it because I spent a year working in that field, so I already knew the basics."</p>
+        <p><strong>Answer: B.</strong> Option A was mentioned and rejected. Option C was not discussed. A student who chose too early would have selected A.</p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Multiple choice (multiple answers)</h2>
+      <p>This variant asks you to select two or three answers from a list of five or six options. It is one of the most difficult task types because you need to hold multiple possibilities in mind while listening.</p>
+
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Strategy</th>
+          <th>Why it helps</th>
+        </tr>
+        <tr>
+          <td>Read all options before the audio and group them mentally: which seem similar, which seem opposite</td>
+          <td>Reduces cognitive load during listening -- you have fewer categories to track</td>
+        </tr>
+        <tr>
+          <td>Mark tentative selections with a light tick, not a firm circle</td>
+          <td>Allows you to change your selection when later information contradicts an earlier choice</td>
+        </tr>
+        <tr>
+          <td>Count your selections as you go -- if the question asks for two answers and you have three ticked, one must be wrong</td>
+          <td>Prevents accidentally leaving a correct answer out or adding an extra wrong one</td>
+        </tr>
+      </table>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
       <h2 class="ic-display">Matching tasks</h2>
-      <p>
-        Matching questions usually test your ability to track several speakers or several
-        ideas at the same time.
-      </p>
-      <ul class="guide-list">
-        <li>Mark short keywords next to each option.</li>
-        <li>Focus on differences between the choices.</li>
-        <li>Cross out options once you are sure they are wrong.</li>
-      </ul>
+      <p>Matching tasks ask you to connect items from a list (people, features, places, times) to descriptions or categories. They most commonly appear in Section 3 where multiple speakers discuss different views or options.</p>
+
+      <div class="listen-type-grid">
+        <div class="listen-type-card">
+          <h3>Core strategy</h3>
+          <ul style="margin: 0; padding-left: var(--s-3); font-size: 0.92rem;">
+            <li>Read the matching list and the descriptions before the audio.</li>
+            <li>Write a keyword for each option on your question paper.</li>
+            <li>The answers are usually given in order in the recording -- but not always in Section 3.</li>
+            <li>Cross out options once you have used them, unless you can use them again.</li>
+          </ul>
+        </div>
+        <div class="listen-type-card">
+          <h3>Common mistake</h3>
+          <p>Matching based on a single word rather than the full meaning. IELTS may mention a keyword from an option in the recording while actually pointing to a different answer. Listen for the meaning, not just keyword similarity.</p>
+        </div>
+      </div>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">Map and plan questions</h2>
-      <p>
-        These questions are easier when you treat them like direction language, not only
-        listening comprehension.
-      </p>
-      <ul class="guide-list">
-        <li>Find the starting point before the recording begins.</li>
-        <li>Watch direction words like left, opposite, next to, and at the end of.</li>
-        <li>Move your eyes with the speaker as the route changes.</li>
-      </ul>
+      <h2 class="ic-display">Map and plan labelling</h2>
+      <p>Map questions appear most often in Section 2. You see a map or floor plan with labeled positions (letters or numbers) and must match locations to the names the speaker gives.</p>
+
+      <div class="listen-type-grid">
+        <div class="listen-type-card">
+          <h3>Before listening</h3>
+          <ul style="margin: 0; padding-left: var(--s-3); font-size: 0.92rem;">
+            <li>Find the starting point on the map -- usually labeled "entrance" or "you are here."</li>
+            <li>Identify the direction system: is north at the top? Are letters assigned to locations or to paths?</li>
+            <li>Predict the route the speaker will take.</li>
+          </ul>
+        </div>
+        <div class="listen-type-card">
+          <h3>Direction language to recognize</h3>
+          <ul style="margin: 0; padding-left: var(--s-3); font-size: 0.92rem;">
+            <li>Turn left / right / straight on</li>
+            <li>On your left / right as you enter</li>
+            <li>Opposite the / next to the / adjacent to</li>
+            <li>At the end of the corridor / at the junction of</li>
+            <li>In the corner / in the centre / along the north wall</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="guide-note" style="margin-top: var(--s-3);">
+        <p>Move your pencil or finger along the map as the speaker describes the route. Physical tracking reduces the chance of getting lost and misattributing a location.</p>
+      </div>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">Quick check at the end</h2>
+      <h2 class="ic-display">Diagram and process labelling</h2>
+      <p>Diagram labelling involves labelling a technical or scientific diagram -- a machine, an object, or a natural process. It is less common than other types but appears in Section 4 for some tests.</p>
+
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Before listening</th>
+          <th>During listening</th>
+        </tr>
+        <tr>
+          <td>Identify what the diagram shows and which parts need labels</td>
+          <td>Listen for position language: the outer layer, the upper section, at the base, connected to</td>
+        </tr>
+        <tr>
+          <td>Predict whether answers will be technical nouns, verbs, or adjectives</td>
+          <td>Track the speaker's direction through the diagram -- answers are usually given in a logical order (inside to outside, top to bottom, or left to right)</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Transfer time: what to check</h2>
+      <p>On the paper-based test, you have 10 minutes at the end to transfer answers to the answer sheet. On the computer-based test, you review and submit during the test. Either way, the final check matters.</p>
       <table class="guide-mistake-table">
         <tr>
           <th>Check</th>
-          <th>Why it matters</th>
+          <th>What to look for</th>
         </tr>
         <tr>
-          <td>Word limit</td>
-          <td>Too many words means the answer is wrong even if the idea is correct.</td>
+          <td>Word limit compliance</td>
+          <td>Count words in each completion answer. Any response over the limit is automatically wrong.</td>
         </tr>
         <tr>
           <td>Spelling</td>
-          <td>IELTS Listening marks exact written answers.</td>
+          <td>IELTS marks exact answers. A misspelled word earns zero even if the idea is correct. Check names, places, and technical terms especially.</td>
         </tr>
         <tr>
-          <td>Singular or plural</td>
-          <td>A missing <strong>s</strong> can cost a mark.</td>
+          <td>Plurals</td>
+          <td>If you wrote "appointment" but the context clearly needs "appointments," fix it.</td>
         </tr>
         <tr>
-          <td>Numbers and dates</td>
-          <td>Write them in a clear and accepted format.</td>
+          <td>Number format</td>
+          <td>Numerals (25) and written numbers (twenty-five) are both acceptable unless the word limit would be exceeded by writing the number in full.</td>
+        </tr>
+        <tr>
+          <td>Unanswered questions</td>
+          <td>Never leave a blank. A guess has a 25% to 33% chance of being correct. A blank has 0% chance.</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">The distractor pattern: IELTS's most common trap</h2>
+      <p>
+        Across all question types, IELTS consistently uses the same trap: mention a plausible
+        answer, then correct or qualify it. This tests whether you wait for confirmation before
+        committing to an answer.
+      </p>
+      <div class="guide-example">
+        <p><strong>Recording:</strong> "We were going to hold the event on Saturday, but because of the venue booking, we moved it to Sunday -- actually, no, it ended up being Monday."</p>
+        <p><strong>The answer is Monday.</strong> A student who wrote Saturday or Sunday too early would be wrong. IELTS regularly adds one or even two corrections before the final answer.</p>
+      </div>
+      <div class="guide-note" style="margin-top: var(--s-2);">
+        <p><strong>Rule:</strong> Do not commit to an answer until the speaker has moved past the topic of that question. If the speaker comes back to correct an earlier statement, that correction is the answer.</p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Common mistakes across all question types</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Mistake</th>
+          <th>Score impact</th>
+          <th>Fix</th>
+        </tr>
+        <tr>
+          <td>Writing more words than the word limit</td>
+          <td>Answer marked wrong</td>
+          <td>Underline the word limit before every completion task and count words before transferring.</td>
+        </tr>
+        <tr>
+          <td>Choosing a multiple-choice option too early before the speaker finishes</td>
+          <td>Wrong answer -- distractor selected</td>
+          <td>Write tentative letters lightly. Only confirm when the speaker has moved on from that question's topic.</td>
+        </tr>
+        <tr>
+          <td>Stopping after missing one answer</td>
+          <td>Lose two or three marks instead of one</td>
+          <td>Leave a blank immediately and move to the next question. Never stay on a missed answer during the recording.</td>
+        </tr>
+        <tr>
+          <td>Writing a paraphrase instead of the exact words from the recording</td>
+          <td>Wrong answer in completion tasks</td>
+          <td>Completion tasks require exact transfer. Write what you hear, not your interpretation of it.</td>
+        </tr>
+        <tr>
+          <td>Ignoring capitalization for proper nouns and names</td>
+          <td>Minor penalty in some marking conventions</td>
+          <td>Write proper names with capitals. Place names, people's names, and company names are capitalized.</td>
         </tr>
       </table>
     </section>
@@ -171,16 +390,16 @@ const pageStructuredData = [
       <h2 class="ic-display">Next step</h2>
       <div class="guide-links">
         <a href="/blog/ielts-listening-common-traps">
-          <strong>Read the common traps guide</strong>
-          <span>Learn how IELTS hides wrong answers inside the recording.</span>
+          <strong>IELTS Listening common traps guide</strong>
+          <span>The specific patterns IELTS uses to mislead listeners, with examples and fixes.</span>
         </a>
         <a href="/ielts/listening">
-          <strong>Go to the IELTS listening hub</strong>
-          <span>Open the main listening page for more strategy and practice links.</span>
+          <strong>IELTS Listening hub</strong>
+          <span>Lessons on note-taking symbols, distractor detection, section-specific strategies, and more.</span>
         </a>
-        <a href="/ielts/listening">
-          <strong>Study IELTS listening lessons</strong>
-          <span>Work on the vocabulary and listening skills behind these task types.</span>
+        <a href="/blog/ielts-writing-task-2-structure">
+          <strong>IELTS Writing Task 2 structure guide</strong>
+          <span>Once you have the Listening strategy covered, move to the writing task that carries the most marks.</span>
         </a>
       </div>
     </section>
@@ -200,7 +419,35 @@ const pageStructuredData = [
 
   <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
     <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
-    <p class="muted">Want a CLB 9 writing system you can actually follow?</p>
-    <a class="btn" href="/celpip/writing">Get the system</a>
+    <p class="muted">Preparing for IELTS? Get feedback on your writing too.</p>
+    <a class="btn btn-primary" href="/ai-feedback">Get AI writing feedback</a>
   </section>
 </Layout>
+
+<style>
+  .listen-type-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--s-3);
+    margin-top: var(--s-3);
+  }
+
+  .listen-type-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: var(--s-3);
+    font-size: 0.92rem;
+  }
+
+  .listen-type-card h3 {
+    margin-top: 0;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .listen-type-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
