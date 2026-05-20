@@ -35,7 +35,7 @@ const { caption = "", rows = [] } = Astro.props as Props;
       <tbody>
         {rows.map((r) => (
           <tr>
-            <td><code>{r.pattern}</code></td>
+            <td class="pattern__pattern-cell">{r.pattern}</td>
             <td>{r.meaning}</td>
             <td>{r.example}</td>
           </tr>

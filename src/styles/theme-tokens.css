@@ -63,9 +63,11 @@
 
 .ic-prose {
   font-family: var(--ic-font-read);
-  max-width: var(--ic-measure);
   line-height: var(--ic-leading-body);
   color: var(--ic-ink);
+}
+.ic-prose > p, .ic-prose > ul, .ic-prose > ol, .ic-prose > blockquote {
+  max-width: var(--ic-measure);
 }
 .ic-prose h1, .ic-prose h2, .ic-prose h3 {
   font-family: var(--ic-font-display);
