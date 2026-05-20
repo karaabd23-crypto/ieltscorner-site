@@ -6,17 +6,42 @@ const pageFaqs = [
   {
     question: "What is the key to a strong IELTS opinion essay?",
     answer:
-      "The key is to make your opinion clear early, keep it consistent, and support it with well-developed reasons instead of short, general points.",
+      "The key is to state your opinion clearly in the introduction, then defend it in every paragraph. The examiner should never have to guess where you stand. Use one reason per body paragraph and develop each one fully with an explanation and a concrete example.",
   },
   {
     question: "Should I discuss both sides in an opinion essay?",
     answer:
-      "Only if the question asks you to. In a standard opinion essay, your main job is to defend your own position clearly and directly.",
+      "Only if the question says 'discuss both views AND give your own opinion.' In a standard 'to what extent do you agree or disagree' question, your main job is to defend your own position. Spending too much space on the opposing side dilutes your argument and drops your Task Response score.",
   },
   {
     question: "How many reasons should I give in an opinion essay?",
     answer:
-      "Two strong reasons are usually enough, it is better to develop two ideas well than to mention four ideas briefly.",
+      "Two strong reasons are almost always better than three or four thin ones. Give each body paragraph one clear reason, a full explanation of why it matters, and one specific example. This depth is what separates Band 7 responses from Band 6 responses.",
+  },
+  {
+    question: "Can I write a partial agreement opinion essay?",
+    answer:
+      "Yes. A partial agreement ('I partially agree because...') is fully valid. The key is that your position must still be clear and consistent. State the limits of your agreement in the introduction and make sure your body paragraphs match it.",
+  },
+  {
+    question: "What does 'to what extent do you agree' actually mean?",
+    answer:
+      "It means you can fully agree, partially agree, or fully disagree -- as long as you state a clear position and defend it. The question is inviting you to decide your stance, not forcing a compromise. A strong full agreement backed by two developed reasons scores better than a vague partial agreement.",
+  },
+  {
+    question: "How long should an IELTS opinion essay be?",
+    answer:
+      "Aim for 260-290 words. The minimum is 250. Going over 300 words rarely helps your score and risks introducing more errors. Focus on depth over length: one well-developed example beats three shallow mentions.",
+  },
+  {
+    question: "What makes an example strong in an opinion essay?",
+    answer:
+      "A strong example shows a specific effect or situation, not just a general statement. Instead of 'many people benefit from remote work,' write 'a software developer who switches to remote work saves 90 minutes of commuting daily, gaining time for family, exercise, and deeper focus.' The more vivid and specific, the more convincing.",
+  },
+  {
+    question: "How do I avoid repeating myself across two body paragraphs?",
+    answer:
+      "Give each paragraph a genuinely different angle. If paragraph 1 covers a personal benefit (e.g. flexibility), paragraph 2 should cover a different dimension (e.g. economic, social, environmental, or long-term impact). Before you write, ask yourself: if I removed the topic sentence from each paragraph, would a reader know these are different ideas? If yes, you have two distinct reasons.",
   },
 ];
 
@@ -31,10 +56,10 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="IELTS Writing Task 2 Opinion Essay | Clear Position and Strong Support"
-  description="IELTS opinion essay guidance with a clear structure, stronger support, and practical advice for writing a direct Band 7 style response."
+  title="IELTS Writing Task 2 Opinion Essay | Band 7 Structure and Scored Samples"
+  description="Complete IELTS opinion essay guide covering structure, strong thesis writing, the TEXL body paragraph system, scored Band 6 vs Band 7 samples, vocabulary, and common mistakes."
   type="article"
-  keywords="IELTS opinion essay, IELTS Task 2 opinion essay, IELTS writing opinion structure"
+  keywords="IELTS opinion essay, IELTS Task 2 opinion essay, IELTS writing opinion structure, to what extent do you agree IELTS, Band 7 opinion essay IELTS"
   structuredData={pageStructuredData}
 >
   <article class="section guide-article">
@@ -45,143 +70,322 @@ const pageStructuredData = [
       <h1 class="ic-display" style="margin: 0;">IELTS Writing Task 2 opinion essay</h1>
       <div class="guide-meta">
         <span>March 17, 2026</span>
-        <span>7 min read</span>
+        <span>14 min read</span>
       </div>
     </header>
 
     <div class="guide-lead">
       <p>
-        An opinion essay looks simple, but many students lose marks because the opinion is
-        not strong enough. The introduction sounds neutral, the body paragraphs drift into
-        different directions, or the essay repeats the same point with different words.
+        The opinion essay is the most common IELTS Task 2 question type. The prompt usually says
+        "to what extent do you agree or disagree?" or "do you agree or disagree?" Your job is
+        simple in theory: pick a position and defend it for 250+ words.
       </p>
       <p>
-        A strong opinion essay is direct. The reader should know what you believe within
-        the first few lines.
+        In practice, most Band 6 responses fail at the same point: they sound unsure. The writer
+        hedges, repeats the same idea twice, or builds an argument on examples that are too vague
+        to be convincing. This guide shows you the exact structure and habits that push responses
+        into the Band 7 range.
       </p>
     </div>
 
     <div class="guide-grid guide-grid-2">
       <section class="guide-card">
-        <h2 class="ic-display">What this question is really testing</h2>
+        <h2 class="ic-display">What the examiner is testing</h2>
         <ul class="guide-list">
-          <li>Can you take a clear position?</li>
-          <li>Can you support that position with useful reasons?</li>
-          <li>Can you keep the whole essay moving in one direction?</li>
+          <li><strong>Task Response</strong> -- Did you state and defend one clear position?</li>
+          <li><strong>Coherence and Cohesion</strong> -- Does each paragraph do one job and connect logically to the next?</li>
+          <li><strong>Lexical Resource</strong> -- Did you use topic vocabulary precisely, not just frequently?</li>
+          <li><strong>Grammatical Range</strong> -- Did you mix simple and complex structures correctly?</li>
         </ul>
       </section>
 
       <section class="guide-card">
-        <h2 class="ic-display">What usually goes wrong</h2>
+        <h2 class="ic-display">The fastest route to Band 7</h2>
         <ul class="guide-list">
-          <li>The writer sounds unsure in the introduction.</li>
-          <li>The two body paragraphs repeat the same idea.</li>
-          <li>The examples are too general to be convincing.</li>
+          <li>State your position in the introduction -- do not bury it.</li>
+          <li>Give each body paragraph exactly one reason.</li>
+          <li>Use the TEXL system (below) to develop each reason fully.</li>
+          <li>Pick a specific example over a general claim every time.</li>
+          <li>Match your conclusion exactly to what you said in the introduction.</li>
         </ul>
       </section>
     </div>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">A simple opinion essay plan</h2>
+      <h2 class="ic-display">The 4-paragraph structure</h2>
       <div class="guide-steps">
         <div class="guide-step">
           <span class="guide-step__number">1</span>
           <div>
-            <h3>Introduction</h3>
-            <p>Paraphrase the topic and state your opinion clearly. Do not wait until the conclusion.</p>
+            <h3>Introduction (2-3 sentences)</h3>
+            <p>Sentence 1: paraphrase the question topic. Sentence 2: state your position clearly and preview your two main reasons. Do not copy the question word for word.</p>
           </div>
         </div>
         <div class="guide-step">
           <span class="guide-step__number">2</span>
           <div>
-            <h3>Body paragraph 1</h3>
-            <p>Give your strongest reason first. Explain it and support it with one relevant example.</p>
+            <h3>Body paragraph 1 -- first reason</h3>
+            <p>Topic sentence states the reason. Then use TEXL: explain the logic, give a specific example, link back to your position. Aim for 90-110 words.</p>
           </div>
         </div>
         <div class="guide-step">
           <span class="guide-step__number">3</span>
           <div>
-            <h3>Body paragraph 2</h3>
-            <p>Give a different reason. Avoid repeating the same idea with slightly different words.</p>
+            <h3>Body paragraph 2 -- second reason</h3>
+            <p>Same TEXL structure, but a genuinely different reason from a different angle. Personal, social, economic, environmental, or long-term impacts all work as variation.</p>
           </div>
         </div>
         <div class="guide-step">
           <span class="guide-step__number">4</span>
           <div>
-            <h3>Conclusion</h3>
-            <p>Restate your opinion briefly. Keep it short and confident.</p>
+            <h3>Conclusion (2 sentences)</h3>
+            <p>Restate your position using different words. Briefly echo your two reasons. Do not introduce any new ideas here.</p>
           </div>
         </div>
       </div>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">Example of a clear position</h2>
-      <div class="guide-example">
-        <p><strong>Question:</strong> Do the advantages of remote work outweigh the disadvantages?</p>
-        <p>
-          <strong>Clear opinion:</strong> In my view, the advantages of remote work do
-          outweigh the disadvantages because it gives workers more flexibility and reduces
-          wasted commuting time.
-        </p>
-      </div>
-      <div class="guide-note" style="margin-top: var(--s-3);">
-        <p>
-          This works because the writer chooses a side and previews the two body ideas at
-          the same time.
-        </p>
+      <h2 class="ic-display">Writing a strong thesis</h2>
+      <p class="muted" style="margin-top: 0;">A thesis statement is the sentence in your introduction that states your position. Here is how Band 6 and Band 7 theses compare on the same question.</p>
+      <div class="op-thesis-grid">
+        <div class="op-thesis-card op-thesis-weak">
+          <span class="op-thesis-label">Band 6 thesis</span>
+          <p class="op-thesis-prompt">Question: "Remote work has more advantages than disadvantages. To what extent do you agree?"</p>
+          <p><em>"There are many advantages and disadvantages to remote work and I think it depends on the job."</em></p>
+          <p class="op-thesis-note">Problem: no clear position. "It depends" is not a thesis. Task Response score drops immediately.</p>
+        </div>
+        <div class="op-thesis-card op-thesis-strong">
+          <span class="op-thesis-label">Band 7 thesis</span>
+          <p class="op-thesis-prompt">Same question</p>
+          <p><em>"I fully agree that remote work offers greater benefits than drawbacks, primarily because it gives employees significant scheduling flexibility and reduces the financial burden of daily commuting."</em></p>
+          <p class="op-thesis-note">Strength: position is immediate, two body ideas are previewed, examiner knows where the essay is going.</p>
+        </div>
       </div>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">How to choose better reasons</h2>
-      <ul class="guide-list">
-        <li>Choose reasons that are easy to explain, not reasons that only sound impressive.</li>
-        <li>Make sure the two body ideas are different from each other.</li>
-        <li>Use examples that show a real effect, not just a vague opinion.</li>
-      </ul>
+      <h2 class="ic-display">The TEXL body paragraph system</h2>
+      <p class="muted" style="margin-top: 0;">TEXL stands for Topic, Explanation, Example, Link. Apply it to every body paragraph to guarantee full development.</p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">T</span>
+          <div>
+            <h3>Topic sentence</h3>
+            <p>State the one reason this paragraph defends. Keep it to one sentence and make sure it directly supports your overall position.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">E</span>
+          <div>
+            <h3>Explanation</h3>
+            <p>Explain <em>why</em> this reason is valid. Do not just restate the topic sentence with different words. Show the logic: because X happens, Y results.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">X</span>
+          <div>
+            <h3>Example</h3>
+            <p>Give one specific example that proves the explanation. Use a realistic scenario, a named type of person, or a field (technology, healthcare, education). Avoid vague phrases like "many people" without showing what happens to them.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">L</span>
+          <div>
+            <h3>Link</h3>
+            <p>Connect this paragraph back to your thesis with one closing sentence. This prevents the paragraph from ending abruptly and reminds the examiner of your position.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">Common mistakes</h2>
+      <h2 class="ic-display">Scored sample: Band 6 vs Band 7</h2>
+      <p class="muted" style="margin-top: 0;">Question: "Governments should spend more money on public transport rather than building new roads. To what extent do you agree?"</p>
+      <div class="guide-scored-pair">
+        <div class="guide-scored guide-scored--weak">
+          <span class="guide-scored__label">Band 6 body paragraph</span>
+          <p>
+            "I agree that public transport is important. Many people use buses and trains to get
+            to work. It is cheaper than driving a car. The government should invest more in public
+            transport because it helps people. Road building costs a lot of money and does not
+            always solve the traffic problem. Therefore, public transport is a better option."
+          </p>
+          <ul class="guide-scored__notes">
+            <li>Topic sentence is weak -- "is important" does not give a clear reason.</li>
+            <li>No explanation of mechanism -- why does it help? How exactly?</li>
+            <li>Example is vague -- "many people" with no specific effect shown.</li>
+            <li>Two separate ideas (cost + congestion) crammed into one paragraph.</li>
+          </ul>
+        </div>
+        <div class="guide-scored guide-scored--strong">
+          <span class="guide-scored__label">Band 7 body paragraph</span>
+          <p>
+            "Investing in public transport is more effective than road expansion because it
+            reduces congestion at its source rather than accommodating more vehicles. When
+            governments fund frequent, reliable bus and rail networks, commuters are incentivised
+            to leave their cars at home, which directly lowers the number of vehicles entering
+            city centres. In cities such as Singapore, extensive metro investment has reduced
+            private car use to below 15% of daily journeys, demonstrating a measurable impact on
+            traffic flow. Prioritising public transport infrastructure therefore addresses the root
+            cause of congestion, not merely its symptoms, which is precisely why government
+            spending should shift in this direction."
+          </p>
+          <ul class="guide-scored__notes">
+            <li>Clear TEXL structure: reason stated, mechanism explained, specific example, link to thesis.</li>
+            <li>One focused idea developed across 90+ words.</li>
+            <li>Precise vocabulary: "incentivised," "demonstrating a measurable impact."</li>
+            <li>Closes with a direct link back to the original position.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Opinion vocabulary: beyond "I think"</h2>
+      <p class="muted" style="margin-top: 0;">Using varied opinion language signals lexical resource. These are appropriate for formal academic writing.</p>
       <table class="guide-mistake-table">
-        <tr>
-          <th>Mistake</th>
-          <th>Better move</th>
-        </tr>
-        <tr>
-          <td>The essay gives an opinion, then sounds neutral later.</td>
-          <td>Keep the same position all the way through the essay.</td>
-        </tr>
-        <tr>
-          <td>Both body paragraphs support almost the same reason.</td>
-          <td>Choose two clearly different arguments.</td>
-        </tr>
-        <tr>
-          <td>The example is too general.</td>
-          <td>Show a clear real-world effect or realistic situation.</td>
-        </tr>
-        <tr>
-          <td>The conclusion introduces a new idea.</td>
-          <td>Only restate the opinion and the logic already used.</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>Function</th>
+            <th>Band 6 phrasing</th>
+            <th>Band 7+ alternatives</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>State your position</td>
+            <td>I think / I believe</td>
+            <td>In my view, / I would argue that / It is my contention that</td>
+          </tr>
+          <tr>
+            <td>Strong agreement</td>
+            <td>I fully agree</td>
+            <td>I strongly agree / I am firmly convinced that / I wholeheartedly support the view that</td>
+          </tr>
+          <tr>
+            <td>Partial agreement</td>
+            <td>I partly agree</td>
+            <td>While I acknowledge that... / Although there is merit in the claim that... / I agree to a certain extent</td>
+          </tr>
+          <tr>
+            <td>Introduce a reason</td>
+            <td>One reason is / Also</td>
+            <td>A primary reason for this is / Furthermore, / A further consideration is</td>
+          </tr>
+          <tr>
+            <td>Introduce an example</td>
+            <td>For example</td>
+            <td>This is evident in / A clear illustration is / Consider the case of</td>
+          </tr>
+          <tr>
+            <td>Conclude position</td>
+            <td>In conclusion I think</td>
+            <td>In conclusion, I maintain that / For the reasons outlined above, / On balance, I firmly believe</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Common mistakes and fixes</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Mistake</th>
+            <th>Why it hurts your score</th>
+            <th>Fix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Essay sounds neutral or undecided</td>
+            <td>Immediate Task Response penalty -- examiner cannot identify a position</td>
+            <td>State your view in the first two sentences. Never use "it depends" as a thesis.</td>
+          </tr>
+          <tr>
+            <td>Both body paragraphs support the same reason</td>
+            <td>Low Task Response and Coherence scores -- only one idea was developed</td>
+            <td>Use one personal angle and one social/economic/environmental angle so they are clearly different.</td>
+          </tr>
+          <tr>
+            <td>Example is vague ("many people," "some countries")</td>
+            <td>Fails to prove the explanation -- examiner cannot verify the logic</td>
+            <td>Name a type of person, profession, city, or sector and show a specific outcome.</td>
+          </tr>
+          <tr>
+            <td>Position changes between introduction and conclusion</td>
+            <td>Task Response and Coherence both drop -- essay appears inconsistent</td>
+            <td>Write your thesis first, then write your conclusion. Check they say the same thing.</td>
+          </tr>
+          <tr>
+            <td>New idea appears in the conclusion</td>
+            <td>Coherence penalty -- conclusions must only summarise</td>
+            <td>The conclusion has two sentences: restate position, echo body reasons. Nothing else.</td>
+          </tr>
+          <tr>
+            <td>Opinion language only appears in the introduction</td>
+            <td>Lexical range appears narrow -- missed chance to reinforce position</td>
+            <td>Use linking phrases that signal your stance in body paragraphs too: "This is precisely why," "This further supports the view that."</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Timing plan for 40 minutes</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Stage</th>
+            <th>Time</th>
+            <th>What to do</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Read and plan</td>
+            <td>4 minutes</td>
+            <td>Identify the question type, decide your position, pick two reasons, choose one example each.</td>
+          </tr>
+          <tr>
+            <td>Introduction</td>
+            <td>5 minutes</td>
+            <td>Paraphrase the topic. Write your thesis. Two to three sentences maximum.</td>
+          </tr>
+          <tr>
+            <td>Body paragraph 1</td>
+            <td>10 minutes</td>
+            <td>TEXL: topic sentence, explanation, specific example, link back to thesis.</td>
+          </tr>
+          <tr>
+            <td>Body paragraph 2</td>
+            <td>10 minutes</td>
+            <td>Same TEXL system, different reason and different angle from paragraph 1.</td>
+          </tr>
+          <tr>
+            <td>Conclusion + review</td>
+            <td>11 minutes</td>
+            <td>Write two-sentence conclusion, then scan for spelling, subject-verb agreement, and missing articles.</td>
+          </tr>
+        </tbody>
       </table>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
       <h2 class="ic-display">Next step</h2>
       <div class="guide-links">
-        <a href="/blog/ielts-writing-task-2-discussion-essay">
-          <strong>Read the discussion essay guide</strong>
-          <span>See how the structure changes when you need to show both views.</span>
+        <a href="/blog/ielts-writing-task-2-structure">
+          <strong>Read the full Task 2 structure guide</strong>
+          <span>See how the four IELTS essay types compare and when to use each structure.</span>
+        </a>
+        <a href="/blog/band-7-writing-strategy">
+          <strong>Band 7 writing strategy</strong>
+          <span>Read the full strategy guide covering all four marking criteria for Band 7.</span>
         </a>
         <a href="/ai-feedback">
-          <strong>Try AI writing feedback</strong>
-          <span>Get feedback on whether your position stays clear and well supported.</span>
-        </a>
-        <a href="/ielts/writing">
-          <strong>Go to the IELTS writing hub</strong>
-          <span>Move to the next writing task or supporting lesson.</span>
+          <strong>Get AI feedback on your opinion essay</strong>
+          <span>Submit your response and get scored feedback on Task Response, Coherence, Lexical Resource, and Grammar.</span>
         </a>
       </div>
     </section>
@@ -201,7 +405,62 @@ const pageStructuredData = [
 
   <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
     <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
-    <p class="muted">Want a CLB 9 writing system you can actually follow?</p>
-    <a class="btn" href="/celpip/writing">Get the system</a>
+    <p class="muted">Want detailed feedback on your IELTS essay before exam day?</p>
+    <a class="btn btn-primary ic-btn" href="/ai-feedback">Try AI writing feedback</a>
   </section>
 </Layout>
+
+<style>
+  .op-thesis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-3);
+    margin-top: var(--s-3);
+  }
+
+  .op-thesis-card {
+    padding: var(--s-3);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+  }
+
+  .op-thesis-weak {
+    border-left: 4px solid var(--ic-red, #D45A5A);
+    background: color-mix(in srgb, var(--ic-red, #D45A5A) 6%, var(--surface));
+  }
+
+  .op-thesis-strong {
+    border-left: 4px solid #2a8a4e;
+    background: color-mix(in srgb, #2a8a4e 6%, var(--surface));
+  }
+
+  .op-thesis-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: var(--s-2);
+    color: var(--text-muted);
+  }
+
+  .op-thesis-prompt {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: var(--s-2);
+  }
+
+  .op-thesis-note {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: var(--s-2);
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 680px) {
+    .op-thesis-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

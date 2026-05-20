@@ -6,17 +6,42 @@ const pageFaqs = [
   {
     question: "How do I answer IELTS Speaking Part 2 better?",
     answer:
-      "Use the one-minute preparation time to choose one clear story, note a simple beginning, two main points, and a short ending.",
+      "Use the one-minute preparation time deliberately: pick one real experience, note a starting point, two main details, and a closing reflection. Speak in a clear chronological or logical order. The examiner is not judging the story -- they are judging how fluently and accurately you tell it.",
   },
   {
     question: "How long should I speak in IELTS Speaking Part 2?",
     answer:
-      "You should try to speak close to the full two minutes. Very short answers limit your chance to show fluency and range.",
+      "Aim for the full two minutes. The examiner will stop you at two minutes if you are still speaking. Stopping at 40-60 seconds significantly limits your Fluency and Coherence score because you have not had time to demonstrate a sustained, connected response.",
   },
   {
     question: "What should I do if I finish early in IELTS Part 2?",
     answer:
-      "Add what happened before, what happened after, how you felt, or why the topic is still important. These extensions usually sound natural.",
+      "Use extension moves: explain what happened before the main event, describe what you felt or noticed in more detail, compare it to another experience, or reflect on why this memory is still important to you. Sensory details ('the heat of the afternoon sun') and emotional details ('I remember feeling unexpectedly nervous') are easy to add and sound natural.",
+  },
+  {
+    question: "Do I have to follow the bullet points on the cue card?",
+    answer:
+      "Yes -- the bullet points are the examiner's checklist. If you skip one, your Task Response (relevance to the task) can drop. The good news is that the bullets are usually broad enough that one or two sentences per bullet is all you need before moving on.",
+  },
+  {
+    question: "Can I use a made-up story for the cue card?",
+    answer:
+      "You can, and many test takers do, but a real or semi-real experience is usually easier to speak about naturally. If you invent a story, you still need to deliver it fluently, with consistent detail. The examiner does not fact-check your answer -- they are assessing your English, not your truthfulness.",
+  },
+  {
+    question: "Should I memorize answers for common cue card topics?",
+    answer:
+      "Memorizing full answers usually backfires. Memorized speech sounds unnatural and is harder to adjust when the actual topic is slightly different from what you practiced. Instead, memorize the structure (Opening, Detail 1, Detail 2, Reflection) and practice applying it to 8-10 topic categories like travel, people you admire, food, books, and important events.",
+  },
+  {
+    question: "What vocabulary impresses the examiner most in Part 2?",
+    answer:
+      "Specific vocabulary used accurately impresses more than rare words used incorrectly. Descriptive adjectives ('a bustling, narrow street'), precise time phrases ('roughly six years ago, when I was still in secondary school'), and natural discourse markers ('what made it particularly memorable was...') all demonstrate Lexical Resource without the risk of misusing advanced terms.",
+  },
+  {
+    question: "How do I avoid pausing too much or going silent in Part 2?",
+    answer:
+      "Pauses during speaking are normal and expected -- even native speakers pause. The problem is silence of more than two to three seconds. To avoid long silences, use fillers strategically: 'Let me think for a moment...' or 'What I remember most clearly is...' These give your brain a brief reset without stopping the flow. Planning during the preparation minute is the real prevention tool.",
   },
 ];
 
@@ -31,10 +56,10 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="IELTS Speaking Part 2 Cue Card | Speak for Two Minutes with More Control"
-  description="A practical IELTS cue card guide with one-minute prep strategy, answer structure, and natural ways to extend your Part 2 response."
+  title="IELTS Speaking Part 2 Cue Card | Full 2-Minute Answer Guide with Samples"
+  description="Complete IELTS Speaking Part 2 guide covering the one-minute prep strategy, STAR structure, scored sample answer, extension moves, vocabulary, and Band 6 vs Band 7 habits."
   type="article"
-  keywords="IELTS Speaking Part 2, IELTS cue card, IELTS speaking cue card tips"
+  keywords="IELTS Speaking Part 2, IELTS cue card, IELTS speaking cue card tips, IELTS Part 2 structure, IELTS speaking Band 7"
   structuredData={pageStructuredData}
 >
   <article class="section guide-article">
@@ -45,92 +70,263 @@ const pageStructuredData = [
       <h1 class="ic-display" style="margin: 0;">IELTS Speaking Part 2 cue card</h1>
       <div class="guide-meta">
         <span>March 17, 2026</span>
-        <span>7 min read</span>
+        <span>14 min read</span>
       </div>
     </header>
 
     <div class="guide-lead">
       <p>
-        IELTS Speaking Part 2 becomes easier when you stop treating it like a memory test.
-        The cue card is there to guide you. Your real job is to organize one simple story
-        and keep speaking in a clear order.
+        IELTS Speaking Part 2 is the long-turn section. The examiner gives you a topic card with
+        a main topic and three or four bullet points. You get one minute to prepare, then speak
+        for up to two minutes.
       </p>
       <p>
-        Students often struggle because their notes are too short or too random. A better
-        note plan makes the whole answer smoother.
+        Most test takers stop too early, repeat themselves, or run out of things to say after
+        60 seconds. The fix is not more vocabulary -- it is a clearer structure and a set of
+        deliberate moves you can deploy when the response starts to thin out.
       </p>
     </div>
 
-    <section class="guide-card">
-      <h2 class="ic-display">How to use the one-minute preparation time</h2>
+    <div class="guide-grid guide-grid-2">
+      <section class="guide-card">
+        <h2 class="ic-display">What the examiner scores in Part 2</h2>
+        <ul class="guide-list">
+          <li><strong>Fluency and Coherence</strong> -- Do you speak continuously with a logical flow? Pauses are fine; long silences are not.</li>
+          <li><strong>Lexical Resource</strong> -- Do you use specific, varied vocabulary -- not just repeat the same words?</li>
+          <li><strong>Grammatical Range</strong> -- Do you mix simple and complex structures?</li>
+          <li><strong>Pronunciation</strong> -- Is your speech clear and consistently understandable?</li>
+        </ul>
+      </section>
+
+      <section class="guide-card">
+        <h2 class="ic-display">The most common Part 2 mistakes</h2>
+        <ul class="guide-list">
+          <li>Stopping at 60-80 seconds and saying "That is all."</li>
+          <li>Memorized introduction that does not match the actual topic.</li>
+          <li>Skipping one or more bullet points on the card.</li>
+          <li>Repeating the same three words ("it was very good, very nice, very important").</li>
+          <li>Rushing through all content in the first minute with no depth.</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">The one-minute preparation plan</h2>
+      <p class="muted" style="margin-top: 0;">One minute is enough to plan a two-minute answer if you use it correctly. Here is the exact sequence.</p>
       <div class="guide-steps">
         <div class="guide-step">
           <span class="guide-step__number">1</span>
           <div>
-            <h3>Choose one situation fast</h3>
-            <p>Do not search for the perfect idea. Choose the easiest real example you can talk about.</p>
+            <h3>Choose fast (5 seconds)</h3>
+            <p>Pick the first real experience that comes to mind. Do not search for the ideal story. The easiest story to talk about is the best one to use.</p>
           </div>
         </div>
         <div class="guide-step">
           <span class="guide-step__number">2</span>
           <div>
-            <h3>Write keywords only</h3>
-            <p>Do not write full sentences, just note the main points you want to mention.</p>
+            <h3>Write keywords only (30 seconds)</h3>
+            <p>Write 3-5 single words or short phrases, one per bullet point on the card. Do not write sentences. Keywords keep you flexible -- full sentences keep your eyes on the paper.</p>
           </div>
         </div>
         <div class="guide-step">
           <span class="guide-step__number">3</span>
           <div>
-            <h3>Plan an ending</h3>
-            <p>Add one final comment about why the topic was important, memorable, or enjoyable.</p>
+            <h3>Plan your ending (15 seconds)</h3>
+            <p>Note one reflection: why was this memorable, important, or different from other experiences? A planned ending means you never trail off -- you arrive at a deliberate close.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Identify one extension move (10 seconds)</h3>
+            <p>Think of one detail you can add if you finish early: a before/after detail, a sensory detail, an emotional response, or a comparison. Having this ready prevents panic if you finish quickly.</p>
           </div>
         </div>
       </div>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">A simple cue card structure</h2>
-      <ul class="guide-list">
-        <li><strong>Opening:</strong> say what the topic is and when or where it happened.</li>
-        <li><strong>Middle:</strong> explain two or three clear details in order.</li>
-        <li><strong>Ending:</strong> explain why it mattered to you.</li>
-      </ul>
+      <h2 class="ic-display">The STAR structure for cue cards</h2>
+      <p class="muted" style="margin-top: 0;">STAR stands for Situation, Task/Tell, Action/About, Reflection. It maps naturally onto the cue card format and ensures you cover all bullet points without running out of content.</p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">S</span>
+          <div>
+            <h3>Situation (15-20 seconds)</h3>
+            <p>Set the scene: when and where did this happen, and who was involved? Cover the cue card's "what" and "when" bullets here. One or two sentences is enough.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">T</span>
+          <div>
+            <h3>Tell the main story (40-50 seconds)</h3>
+            <p>Cover the middle bullet points in order. Give each one a sentence or two. Use sequencing language ("first," "then," "after that") to signal structure to the examiner.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">A</span>
+          <div>
+            <h3>Add detail (30-40 seconds)</h3>
+            <p>Expand on the most interesting or memorable part. A specific sensory detail ("the smell of street food from the nearby stalls"), an unexpected turn, or an emotional response all add depth here.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">R</span>
+          <div>
+            <h3>Reflection (15-20 seconds)</h3>
+            <p>Answer the "why" bullet: why was this significant, memorable, or important? This gives your answer a clear ending point and demonstrates the ability to express personal perspective -- a higher-band marker.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">How to keep speaking if you feel stuck</h2>
+      <h2 class="ic-display">Scored sample answer</h2>
+      <p class="muted" style="margin-top: 0;">Cue card: "Describe a memorable journey you have taken. You should say: where you went, how you travelled, what you did there, and why the journey was memorable."</p>
+      <div class="guide-scored guide-scored--strong" style="margin-top: var(--s-3);">
+        <span class="guide-scored__label">Band 7 sample response</span>
+        <p>
+          "I would like to talk about a trip I took to the coastal city of Essaouira in Morocco,
+          roughly four years ago, when I was visiting the country with two close friends from university.
+        </p>
+        <p>
+          We travelled there by a shared minibus from Marrakech -- a three-hour journey that wound
+          through dry, dusty hills before the ocean finally appeared on the horizon. What made the
+          journey itself memorable was that the road was not well-maintained in sections, so the
+          bus lurched and swayed for most of the route, which was both exhausting and somehow
+          exciting at the same time.
+        </p>
+        <p>
+          Once we arrived, we spent most of our time walking along the old city walls that overlook
+          the Atlantic. The wind was incredibly strong -- Essaouira is known for it -- and I remember
+          struggling to hold a conversation because the sound of the waves was so loud. We also
+          spent an afternoon exploring the medina, where we found small shops selling carved
+          wooden instruments and spiced oils.
+        </p>
+        <p>
+          What made this journey particularly memorable, I think, was the contrast with
+          Marrakech, which had been loud and fast-moving. Essaouira felt almost like stepping
+          into a different century. I came away with a much deeper appreciation of how much
+          variety there is within a single country, and that is something that has stayed with
+          me ever since."
+        </p>
+        <ul class="guide-scored__notes">
+          <li>All four bullet points addressed: where, how, what, why.</li>
+          <li>STAR structure followed: scene set in sentence 1, main events described, sensory detail added, reflective close delivered.</li>
+          <li>Natural sequencing: "roughly four years ago," "once we arrived," "most of our time," "an afternoon."</li>
+          <li>Strong lexical choices: "lurched and swayed," "stepping into a different century," "deeper appreciation."</li>
+          <li>Personal voice maintained throughout -- sounds natural, not memorized.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Extension moves: what to add when you finish early</h2>
       <table class="guide-mistake-table">
-        <tr>
-          <th>If you are stuck</th>
-          <th>Add this</th>
-        </tr>
-        <tr>
-          <td>You already described the event</td>
-          <td>Say why it was memorable.</td>
-        </tr>
-        <tr>
-          <td>You finished the bullet points</td>
-          <td>Explain what happened next.</td>
-        </tr>
-        <tr>
-          <td>You are repeating yourself</td>
-          <td>Add one sensory detail or one feeling.</td>
-        </tr>
-        <tr>
-          <td>You feel your answer is too short</td>
-          <td>Compare it with another experience or with the present.</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>Situation</th>
+            <th>Extension move</th>
+            <th>Example opener</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>You have covered all bullet points</td>
+            <td>Add a before detail</td>
+            <td>"What I remember from the journey there was..."</td>
+          </tr>
+          <tr>
+            <td>You described an event but not the feeling</td>
+            <td>Add emotional detail</td>
+            <td>"I think what surprised me most was how nervous I felt..."</td>
+          </tr>
+          <tr>
+            <td>You said it was good without explaining why</td>
+            <td>Add sensory detail</td>
+            <td>"What I still remember clearly is the sound / smell / feeling of..."</td>
+          </tr>
+          <tr>
+            <td>You are at about 90 seconds</td>
+            <td>Compare to another experience</td>
+            <td>"It was quite different from a similar experience I had when..."</td>
+          </tr>
+          <tr>
+            <td>You have covered the memory but not the impact</td>
+            <td>Add long-term reflection</td>
+            <td>"Looking back, I think this experience changed the way I..."</td>
+          </tr>
+        </tbody>
       </table>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">What usually sounds weak</h2>
-      <ul class="guide-list">
-        <li>Memorized introductions that do not match the topic well.</li>
-        <li>Stopping after 40 or 50 seconds.</li>
-        <li>Repeating the bullet points without real development.</li>
-        <li>Using advanced words you cannot control naturally.</li>
-      </ul>
+      <h2 class="ic-display">Vocabulary habits: Band 6 vs Band 7</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Band 6 habit</th>
+            <th>Band 7 habit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>"It was very nice / very good / very interesting"</td>
+            <td>"It was genuinely captivating / unexpectedly moving / surprisingly refreshing"</td>
+          </tr>
+          <tr>
+            <td>"I went with my friends"</td>
+            <td>"I travelled with two close friends from university" (adds specificity)</td>
+          </tr>
+          <tr>
+            <td>"I felt happy"</td>
+            <td>"I felt a mixture of relief and excitement" (adds precision)</td>
+          </tr>
+          <tr>
+            <td>"There were many people"</td>
+            <td>"The place was crowded with tourists and local vendors" (adds observation)</td>
+          </tr>
+          <tr>
+            <td>"And then we did this, and then we did that" (list style)</td>
+            <td>"What made this particularly striking was..." / "Looking back, I realise..." (narrative voice)</td>
+          </tr>
+          <tr>
+            <td>Same filler words repeated: "basically, basically, basically"</td>
+            <td>Varied discourse markers: "what I found interesting was," "to give you some context," "the most significant part was"</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Common cue card topic categories</h2>
+      <p class="muted" style="margin-top: 0;">Most Part 2 topics fall into one of these categories. Practise applying STAR to one topic per category before your exam so the structure feels automatic.</p>
+      <div class="sp2-topic-grid">
+        <div class="sp2-topic-card">
+          <span class="pill ic-eyebrow">People</span>
+          <p>Someone who influenced you, a person you admire, a friend you have known for a long time.</p>
+        </div>
+        <div class="sp2-topic-card">
+          <span class="pill ic-eyebrow">Places</span>
+          <p>A city you have visited, a favourite place in your country, a place that surprised you.</p>
+        </div>
+        <div class="sp2-topic-card">
+          <span class="pill ic-eyebrow">Events</span>
+          <p>A celebration or festival, a difficult experience you overcame, a time you helped someone.</p>
+        </div>
+        <div class="sp2-topic-card">
+          <span class="pill ic-eyebrow">Objects</span>
+          <p>A gift you received, something you own that is important to you, a piece of technology you find useful.</p>
+        </div>
+        <div class="sp2-topic-card">
+          <span class="pill ic-eyebrow">Activities</span>
+          <p>A sport or hobby, a skill you have learned, an activity you would like to try in the future.</p>
+        </div>
+        <div class="sp2-topic-card">
+          <span class="pill ic-eyebrow">Media / ideas</span>
+          <p>A book or film that affected you, a piece of advice you received, a topic you enjoy reading about.</p>
+        </div>
+      </div>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
@@ -138,15 +334,15 @@ const pageStructuredData = [
       <div class="guide-links">
         <a href="/blog/ielts-speaking-part-3-questions-guide">
           <strong>Read the Part 3 guide</strong>
-          <span>Move from personal stories to abstract discussion questions.</span>
+          <span>Move from personal stories to abstract discussion questions -- a different skill set.</span>
+        </a>
+        <a href="/blog/ielts-speaking-part-1-topics">
+          <strong>Read the Part 1 guide</strong>
+          <span>Review how short-answer fluency in Part 1 sets up your whole speaking score.</span>
         </a>
         <a href="/ielts/speaking">
           <strong>Go to the IELTS speaking hub</strong>
-          <span>Open more speaking guides, practice pages, and lessons.</span>
-        </a>
-        <a href="/lessons/speaking/ielts-part2-cuecard/">
-          <strong>Open the related lesson</strong>
-          <span>Practice cue-card structure in a focused lesson format.</span>
+          <span>Access practice pages, lessons, and speaking correction services.</span>
         </a>
       </div>
     </section>
@@ -166,7 +362,43 @@ const pageStructuredData = [
 
   <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
     <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
-    <p class="muted">Want a CLB 9 writing system you can actually follow?</p>
-    <a class="btn" href="/celpip/writing">Get the system</a>
+    <p class="muted">Want a private speaking session to practice Part 2 before exam day?</p>
+    <a class="btn btn-primary ic-btn" href="/tutoring">Book a private class</a>
   </section>
 </Layout>
+
+<style>
+  .sp2-topic-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--s-3);
+    margin-top: var(--s-3);
+  }
+
+  .sp2-topic-card {
+    padding: var(--s-3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+  }
+
+  .sp2-topic-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 768px) {
+    .sp2-topic-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 500px) {
+    .sp2-topic-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
