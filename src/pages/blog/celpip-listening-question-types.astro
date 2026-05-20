@@ -6,17 +6,37 @@ const pageFaqs = [
   {
     question: "What are the main parts of CELPIP Listening?",
     answer:
-      "The CELPIP Listening test includes problem solving, daily life conversation, information, news, discussion, and viewpoints sections.",
+      "CELPIP Listening has six parts: Problem Solving (practical decisions in a conversation), Daily Life Conversations (two speakers discussing an everyday situation), Information (monologue describing how to do or use something), News Item (formal news broadcast), Discussion (multiple speakers with different opinions), and Viewpoints (a formal opinion piece). Each part tests a different listening focus: practical detail, opinion tracking, or main-idea comprehension.",
   },
   {
     question: "Should I listen the same way in every CELPIP Listening part?",
     answer:
-      "No. Some parts reward fast practical listening, while others need stronger attention to opinion, attitude, or speaker purpose.",
+      "No. Parts 1 and 2 reward attention to specific decisions and practical details. Parts 3 and 4 need fast comprehension of factual sequences. Parts 5 and 6 require you to track opinions, identify who says what, and notice when a speaker changes or qualifies their view. Applying a single 'just understand everything' strategy to all six parts is why many test takers plateau at CLB 7.",
   },
   {
     question: "What helps CELPIP Listening scores improve fastest?",
     answer:
-      "Scores usually improve faster when students learn the section patterns, predict what kind of answer they need, and stop leaving questions blank.",
+      "The most effective improvements come from: (1) reading all answer choices before the audio begins so you know what to listen for, (2) predicting the answer type for each question (a name? a reason? an opinion?), and (3) practising distractor recognition -- learning to notice when the first answer mentioned is later corrected or rejected. These three habits alone can raise scores by 1-2 CLB levels.",
+  },
+  {
+    question: "How do I handle Parts 5 and 6 where multiple opinions are discussed?",
+    answer:
+      "Before the audio starts, note how many speakers there are and assign them labels (Speaker A, Speaker B). During the audio, track changes in opinion rather than just recording initial statements. Speakers in Part 5 often start with one view and modify it after hearing the other speaker -- the final, confirmed position is usually the answer. In Part 6, the speaker's attitude toward the topic is more important than the factual content.",
+  },
+  {
+    question: "What is the most common reason for wrong answers in CELPIP Listening?",
+    answer:
+      "The distractor -- the speaker mentions one option first, then corrects or replaces it. Test takers who stop listening after the first mention commit to the wrong answer. The correct answer is almost always the last confirmed piece of information. Listen for correction signals: 'actually,' 'I mean,' 'wait,' 'no, it was,' 'we changed it to,' 'let me correct that.'",
+  },
+  {
+    question: "Can I go back and change answers in CELPIP Listening?",
+    answer:
+      "CELPIP is computer-delivered and the audio is played once with no replay. Questions are answered as the audio plays -- you cannot return to previous questions after moving forward. This makes pre-audio preparation (reading questions and predicting answer types) even more critical than in tests that allow transfer time.",
+  },
+  {
+    question: "How much time is available between CELPIP Listening questions?",
+    answer:
+      "You have a few seconds between questions within each part to read the next question and predict the answer type. The time is limited -- typically 5-8 seconds before the audio continues. This is why you should read ahead during any pause or when a question is easy to answer quickly. Never linger on a question you cannot answer -- write your best guess and look ahead.",
   },
 ];
 
@@ -31,10 +51,10 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="CELPIP Listening Question Types Guide | Strategies for Every Part"
-  description="A practical CELPIP Listening guide with section-by-section strategy for problem solving, conversation, information, news, discussion, and viewpoints."
+  title="CELPIP Listening Question Types Guide | Strategy for All 6 Parts"
+  description="Complete CELPIP Listening guide covering all six parts: problem solving, daily life, information, news, discussion, and viewpoints -- with section-specific strategies and distractor patterns."
   type="article"
-  keywords="CELPIP listening question types, CELPIP listening strategy, CELPIP listening tips"
+  keywords="CELPIP listening question types, CELPIP listening strategy, CELPIP listening tips, CELPIP listening parts, CELPIP CLB 9 listening"
   structuredData={pageStructuredData}
 >
   <article class="section guide-article">
@@ -45,84 +65,204 @@ const pageStructuredData = [
       <h1 class="ic-display" style="margin: 0;">CELPIP Listening question types</h1>
       <div class="guide-meta">
         <span>March 17, 2026</span>
-        <span>7 min read</span>
+        <span>13 min read</span>
       </div>
     </header>
 
     <div class="guide-lead">
       <p>
-        CELPIP Listening rewards pattern recognition. Each section sounds different and asks
-        you to notice different things, so one general listening strategy is not enough.
+        CELPIP Listening has six parts, and each one tests a different kind of listening.
+        Part 1 rewards attention to practical decisions; Part 5 rewards opinion tracking;
+        Part 6 rewards understanding of attitude and tone. Using the same strategy for all
+        six parts is the most predictable route to a score plateau.
       </p>
       <p>
-        Once you know what each part is testing, the questions feel much more predictable.
+        This guide gives you the correct focus for each part, the distractor patterns that
+        cause wrong answers, and the before-audio habits that prevent the most common mistakes.
       </p>
     </div>
 
-    <section class="guide-card">
-      <h2 class="ic-display">The six listening parts</h2>
-      <div class="guide-grid guide-grid-2">
-        <div class="guide-card">
-          <h3>Part 1: Problem solving</h3>
-          <p class="muted">Listen for the practical decision, not only for background details.</p>
-        </div>
-        <div class="guide-card">
-          <h3>Part 2: Daily life conversation</h3>
-          <p class="muted">Track who says what and why the conversation is happening.</p>
-        </div>
-        <div class="guide-card">
-          <h3>Part 3: Information</h3>
-          <p class="muted">Notice key facts, sequence, and instructions.</p>
-        </div>
-        <div class="guide-card">
-          <h3>Part 4: News item</h3>
-          <p class="muted">Focus on the main event, cause, and result.</p>
-        </div>
-        <div class="guide-card">
-          <h3>Part 5: Discussion</h3>
-          <p class="muted">Watch each speaker's opinion and how it changes during the talk.</p>
-        </div>
-        <div class="guide-card">
-          <h3>Part 6: Viewpoints</h3>
-          <p class="muted">Separate the writer's or speaker's attitude from supporting details.</p>
-        </div>
-      </div>
+    <section class="guide-card" style="margin-top: 0;">
+      <h2 class="ic-display">Overview of the 6 listening parts</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Part</th>
+            <th>Audio type</th>
+            <th>Primary focus</th>
+            <th>Key challenge</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1</strong></td>
+            <td>Conversation -- problem or task</td>
+            <td>What is the decision or solution?</td>
+            <td>Distractor: first option mentioned, then rejected</td>
+          </tr>
+          <tr>
+            <td><strong>2</strong></td>
+            <td>Everyday conversation (2 speakers)</td>
+            <td>Who wants what, and why?</td>
+            <td>Confusing speaker A's goal with speaker B's</td>
+          </tr>
+          <tr>
+            <td><strong>3</strong></td>
+            <td>Informational monologue</td>
+            <td>Sequence, steps, and specific details</td>
+            <td>Missing a qualifying detail ("only on weekdays," "except for...")</td>
+          </tr>
+          <tr>
+            <td><strong>4</strong></td>
+            <td>News broadcast</td>
+            <td>Main event, cause, and outcome</td>
+            <td>Confusing cause and effect in fast formal speech</td>
+          </tr>
+          <tr>
+            <td><strong>5</strong></td>
+            <td>Discussion (2+ speakers)</td>
+            <td>Each speaker's view and any opinion change</td>
+            <td>Speaker changes position -- first statement was the distractor</td>
+          </tr>
+          <tr>
+            <td><strong>6</strong></td>
+            <td>Formal opinion monologue</td>
+            <td>Speaker's attitude and main argument</td>
+            <td>Factual details distract from the speaker's actual stance</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">Best habits for every section</h2>
+      <h2 class="ic-display">Part 1: Problem solving</h2>
+      <p class="muted" style="margin-top: 0;">Two speakers discuss a practical problem: a scheduling conflict, a complaint, a decision about what to buy or do. The questions ask what was decided, what was the problem, or what the speaker will do next.</p>
       <ul class="guide-list">
-        <li>Read the choices quickly before the audio begins.</li>
-        <li>Predict what kind of information you need.</li>
-        <li>Keep moving forward because you cannot go back later.</li>
-        <li>Never leave a question blank.</li>
+        <li>Listen for the final decision, not the first suggestion. Part 1 consistently introduces one option and then rejects or revises it.</li>
+        <li>Decision signal words: "let's go with," "I think we should," "that sounds better," "actually, let's..."</li>
+        <li>Read the answer choices before audio starts to know whether you are listening for a name, a day, an action, or an opinion.</li>
       </ul>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">Where students often lose marks</h2>
+      <h2 class="ic-display">Part 2: Daily life conversation</h2>
+      <p class="muted" style="margin-top: 0;">A casual conversation between two speakers -- neighbours, friends, family members, coworkers. One or both speakers have a goal, a problem, or an opinion to express.</p>
+      <ul class="guide-list">
+        <li>Track both speakers separately. Questions may ask about one speaker's belief, the other speaker's reaction, or the overall situation.</li>
+        <li>Note the emotional tone: is the speaker surprised, frustrated, happy, uncertain? Attitude questions appear frequently in Part 2.</li>
+        <li>Watch for indirect statements: "I'm not sure that's a great idea" = polite disagreement. CELPIP tests inference as much as literal comprehension.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Part 3: Information</h2>
+      <p class="muted" style="margin-top: 0;">A monologue describing how to use a product, how a process works, or what a service offers -- similar to a recorded voicemail message, an announcement, or a how-to guide.</p>
+      <ul class="guide-list">
+        <li>Questions follow the order of the audio. The answer to question 2 comes after the answer to question 1.</li>
+        <li>Qualifying details are frequently tested: "this only applies to new members," "except on public holidays," "you must call at least 24 hours in advance."</li>
+        <li>Numbers, times, costs, and deadlines are high-frequency question targets. Write them down as you hear them.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Part 4: News item</h2>
+      <p class="muted" style="margin-top: 0;">A formal news broadcast, typically 60-90 seconds, covering a community event, policy change, or local issue. Speech is faster and more formal than Parts 1-3.</p>
+      <ul class="guide-list">
+        <li>Listen for the main event first (what happened?), then cause (why?), then outcome or response (what will happen next?).</li>
+        <li>Names, organizations, and locations are frequently tested. Note them quickly -- a wrong name is a wrong answer even if everything else is correct.</li>
+        <li>Broadcast language uses passive constructions: "residents have been advised to," "officials have announced." Listen for who is doing what, not just what happened.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Part 5: Discussion</h2>
+      <p class="muted" style="margin-top: 0;">Two or three speakers discuss a topic and express opinions. The discussion format is closest to a panel or group conversation.</p>
+      <ul class="guide-list">
+        <li>Assign each speaker a label (A, B, C) before the audio starts using the question text as a guide.</li>
+        <li>Track changes of opinion. A speaker who starts by supporting an idea may qualify or reverse their view after hearing the other speaker. The final, confirmed view is the answer.</li>
+        <li>Agreement and disagreement markers: "That's a good point, but..." / "I completely agree with that." / "While I understand your view, I think..."</li>
+        <li>Do not mix up which speaker holds which position. This is the most common error in Part 5.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Part 6: Viewpoints</h2>
+      <p class="muted" style="margin-top: 0;">A single speaker delivers a short formal opinion piece -- similar to a recorded editorial or a brief talk. The speaker's attitude toward the topic is the most important thing to understand.</p>
+      <ul class="guide-list">
+        <li>Focus on the speaker's overall stance (positive, critical, cautious, neutral) as the first priority. Factual details support this, but the stance itself is most frequently tested.</li>
+        <li>Hedging language signals limited support: "to some extent," "in certain circumstances," "while this has merit" -- these suggest the speaker is not fully convinced.</li>
+        <li>The main argument is usually stated in the first 30 seconds. Everything after is elaboration. If you miss the opening, the rest is harder to interpret.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Distractor patterns in CELPIP Listening</h2>
       <table class="guide-mistake-table">
-        <tr>
-          <th>Problem</th>
-          <th>Better move</th>
-        </tr>
-        <tr>
-          <td>They focus on one detail and miss the main point.</td>
-          <td>Ask what the speaker is trying to decide, explain, or recommend.</td>
-        </tr>
-        <tr>
-          <td>They do not notice changes in opinion.</td>
-          <td>Listen for contrast words like but, however, actually, and instead.</td>
-        </tr>
-        <tr>
-          <td>They leave blanks and plan to return later.</td>
-          <td>Choose the best answer before time moves you forward.</td>
-        </tr>
-        <tr>
-          <td>They treat every section like the same kind of task.</td>
-          <td>Adjust your focus based on whether the part is factual, practical, or opinion-based.</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>Pattern</th>
+            <th>Audio example</th>
+            <th>Which part</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mention then reject</td>
+            <td>"We could take the 8am train... actually, the 9am works better for everyone."</td>
+            <td>Parts 1, 2</td>
+          </tr>
+          <tr>
+            <td>Qualification trap</td>
+            <td>"The service is free... unless you need expedited processing."</td>
+            <td>Parts 3, 4</td>
+          </tr>
+          <tr>
+            <td>Opinion reversal</td>
+            <td>"I thought it was a good idea at first, but now I'm not so sure."</td>
+            <td>Parts 5, 6</td>
+          </tr>
+          <tr>
+            <td>Speaker attribution error</td>
+            <td>Speaker A says X; Speaker B says Y -- question asks who said X.</td>
+            <td>Part 5</td>
+          </tr>
+        </tbody>
       </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Before-audio preparation checklist</h2>
+      <p class="muted" style="margin-top: 0;">Use every second of reading time before each part starts. This is not optional -- it is the primary source of accuracy improvement.</p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Read all questions for the section</h3>
+            <p>Understand the topic before the audio begins. Surprises drop accuracy.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Predict the answer type</h3>
+            <p>Is the question asking for a name, a reason, an opinion, an action, or a number? Knowing this filters everything else out.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Mark distractor-risk questions</h3>
+            <p>Questions that say "finally decides," "changes her mind," "no longer believes," or "suggests instead" are flagging a distractor. Keep listening after the first answer.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Never leave a blank</h3>
+            <p>There is no penalty for a wrong answer. Always choose your best option before time moves you forward.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
@@ -130,15 +270,15 @@ const pageStructuredData = [
       <div class="guide-links">
         <a href="/blog/celpip-reading-question-types">
           <strong>Read the CELPIP reading guide</strong>
-          <span>Study the reading patterns that often match the same practical skills.</span>
+          <span>Apply the same section-by-section strategy to all four CELPIP Reading parts.</span>
         </a>
         <a href="/celpip/listening">
           <strong>Go to the CELPIP listening hub</strong>
-          <span>Open the main listening page for lessons and more strategy.</span>
+          <span>Access listening lessons, strategy resources, and practice tools.</span>
         </a>
-        <a href="/celpip/listening">
-          <strong>Study CELPIP listening lessons</strong>
-          <span>Practice the language and skills behind each listening part.</span>
+        <a href="/tutoring">
+          <strong>Book a private listening session</strong>
+          <span>Get coaching on Parts 5 and 6 distractor patterns with a specialist tutor.</span>
         </a>
       </div>
     </section>
@@ -158,7 +298,7 @@ const pageStructuredData = [
 
   <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
     <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
-    <p class="muted">Want a CLB 9 writing system you can actually follow?</p>
-    <a class="btn" href="/celpip/writing">Get the system</a>
+    <p class="muted">Need targeted listening coaching before your CELPIP exam?</p>
+    <a class="btn btn-primary ic-btn" href="/tutoring">Book a private class</a>
   </section>
 </Layout>

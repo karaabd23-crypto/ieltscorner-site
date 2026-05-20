@@ -6,17 +6,37 @@ const pageFaqs = [
   {
     question: "What are the main parts of CELPIP Reading?",
     answer:
-      "CELPIP Reading includes correspondence, diagram-based reading, information reading, and viewpoints reading.",
+      "CELPIP Reading has four parts: Reading Correspondence (emails, letters, memos), Reading to Apply a Diagram (matching text to a visual), Reading for Information (detailed comprehension of a factual or informational passage), and Reading for Viewpoints (comparing multiple opinions or perspectives from different sources). Each part tests a different reading skill and rewards a slightly different approach.",
   },
   {
     question: "Do I need to read every CELPIP passage slowly from beginning to end?",
     answer:
-      "No. Some questions reward quick scanning, while others need slower reading to compare ideas and viewpoints carefully.",
+      "No -- and doing so is one of the most common causes of timing problems. In Part 1 (correspondence), skim the message for its purpose, then scan for specific details when answering each question. In Parts 3 and 4, read the question first so you know what to look for before you read the passage. Save close, careful reading for Part 4 (viewpoints), where the differences between perspectives are subtle.",
   },
   {
     question: "What is the biggest reading mistake in CELPIP?",
     answer:
-      "A common mistake is choosing an answer that sounds reasonable but is not fully supported by the passage.",
+      "Choosing an answer that sounds reasonable but is not fully supported by the passage. This usually happens when a student relies on general knowledge or background assumption instead of evidence in the text. CELPIP answers must be provable from what is written -- not from what is generally true or seems logical. If you cannot point to the exact sentence that supports your answer, reconsider.",
+  },
+  {
+    question: "How much time do I have for each CELPIP Reading part?",
+    answer:
+      "The CELPIP Reading test is 55 minutes for all four parts. A rough allocation is: Part 1 (10-12 minutes), Part 2 (11-13 minutes), Part 3 (13-15 minutes), Part 4 (15-17 minutes). Part 4 is the most time-intensive because it requires comparing multiple sources. Do not over-invest time in Parts 1 or 2 at the expense of Part 4.",
+  },
+  {
+    question: "How do I handle diagram questions in CELPIP Reading Part 2?",
+    answer:
+      "Diagram questions require you to cross-reference the text with the visual. Read the question first, identify what the diagram is showing (a process, a layout, a hierarchy, a timeline), then locate the relevant section of the passage that describes or explains that element. The answer is in the text -- the diagram just shows you where to look. Never choose an answer based on the diagram alone without text confirmation.",
+  },
+  {
+    question: "How do I distinguish between two similar answer options in CELPIP Reading?",
+    answer:
+      "When two options both seem correct, find the passage sentence that most directly answers the question, then check which option is a closer paraphrase of that sentence. The wrong option usually adds a detail the passage does not mention, overstates a claim the passage makes cautiously ('some' vs 'all,' 'may' vs 'will'), or reverses the direction of a comparison.",
+  },
+  {
+    question: "What makes Part 4 (viewpoints) harder than the other parts?",
+    answer:
+      "Part 4 presents two or more texts expressing different opinions on the same topic. The questions ask you to identify what each writer believes, where they agree or disagree, and what the basis of a particular argument is. The difficulty is that all the texts use similar vocabulary and discuss the same topic, so mixing up whose view is whose is easy. Labelling each source (Writer A, Writer B) before answering helps significantly.",
   },
 ];
 
@@ -31,10 +51,10 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="CELPIP Reading Question Types Guide | Read Faster and Choose Better"
-  description="A practical CELPIP Reading guide with section-by-section strategy for correspondence, diagrams, information passages, and viewpoints."
+  title="CELPIP Reading Question Types Guide | Strategy for All 4 Parts"
+  description="Complete CELPIP Reading guide covering all four parts: correspondence, diagram, information, and viewpoints -- with section-specific strategy, answer traps, and timing advice."
   type="article"
-  keywords="CELPIP reading question types, CELPIP reading strategy, CELPIP reading tips"
+  keywords="CELPIP reading question types, CELPIP reading strategy, CELPIP reading tips, CELPIP reading parts, CELPIP CLB 9 reading"
   structuredData={pageStructuredData}
 >
   <article class="section guide-article">
@@ -45,88 +65,186 @@ const pageStructuredData = [
       <h1 class="ic-display" style="margin: 0;">CELPIP Reading question types</h1>
       <div class="guide-meta">
         <span>March 17, 2026</span>
-        <span>7 min read</span>
+        <span>13 min read</span>
       </div>
     </header>
 
     <div class="guide-lead">
       <p>
-        CELPIP Reading is not only about speed, it is also about reading with the right
-        purpose. Some parts want quick practical information, while others test whether you
-        can compare opinions carefully.
+        CELPIP Reading tests four distinct skills across four parts. Each part has a different
+        text type, a different task format, and a different reading approach that produces the
+        most accurate answers.
       </p>
       <p>
-        Once you know what each reading part is really testing, your choices become much
-        more accurate.
+        Test takers who treat all four parts the same way consistently run out of time in Part 4
+        and miss points in Part 2. This guide gives you the exact strategy for each part and the
+        common traps that drop scores without the student realizing why.
       </p>
     </div>
 
-    <section class="guide-card">
-      <h2 class="ic-display">The main reading parts</h2>
-      <div class="guide-grid guide-grid-2">
-        <div class="guide-card">
-          <h3>Reading correspondence</h3>
-          <p class="muted">Focus on purpose, request, reply, and practical details.</p>
-        </div>
-        <div class="guide-card">
-          <h3>Reading to apply a diagram</h3>
-          <p class="muted">Match the text to a visual plan or process carefully.</p>
-        </div>
-        <div class="guide-card">
-          <h3>Reading for information</h3>
-          <p class="muted">Track facts, sequence, and the meaning of specific details.</p>
-        </div>
-        <div class="guide-card">
-          <h3>Reading for viewpoints</h3>
-          <p class="muted">Compare attitudes, arguments, and points of disagreement.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">How to read each type better</h2>
-      <ul class="guide-list">
-        <li><strong>Correspondence:</strong> find who wants what, and why.</li>
-        <li><strong>Diagram tasks:</strong> move between the text and the visual, not only the passage.</li>
-        <li><strong>Information passages:</strong> scan first, then read the key area more closely.</li>
-        <li><strong>Viewpoints:</strong> separate each person's opinion before choosing an answer.</li>
-      </ul>
-    </section>
-
-    <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">What usually causes wrong answers</h2>
+    <section class="guide-card" style="margin-top: 0;">
+      <h2 class="ic-display">Overview of the 4 reading parts</h2>
       <table class="guide-mistake-table">
-        <tr>
-          <th>Problem</th>
-          <th>Better move</th>
-        </tr>
-        <tr>
-          <td>The answer sounds possible, but the passage does not fully support it.</td>
-          <td>Choose only what the text really says or clearly implies.</td>
-        </tr>
-        <tr>
-          <td>Students read too slowly in the early questions.</td>
-          <td>Scan first, then slow down only where the answer is likely to be.</td>
-        </tr>
-        <tr>
-          <td>Different viewpoints get mixed together.</td>
-          <td>Mark each speaker's or writer's opinion clearly.</td>
-        </tr>
-        <tr>
-          <td>The visual part of a diagram task is ignored.</td>
-          <td>Use the text and the diagram together.</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>Part</th>
+            <th>Text type</th>
+            <th>What it tests</th>
+            <th>Recommended time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1</strong></td>
+            <td>Email, letter, or memo</td>
+            <td>Purpose, request, practical details, tone</td>
+            <td>10-12 minutes</td>
+          </tr>
+          <tr>
+            <td><strong>2</strong></td>
+            <td>Text + visual diagram</td>
+            <td>Cross-referencing text with a process, layout, or hierarchy</td>
+            <td>11-13 minutes</td>
+          </tr>
+          <tr>
+            <td><strong>3</strong></td>
+            <td>Informational passage</td>
+            <td>Factual comprehension, sequence, specific detail</td>
+            <td>13-15 minutes</td>
+          </tr>
+          <tr>
+            <td><strong>4</strong></td>
+            <td>Multiple viewpoints texts</td>
+            <td>Comparing opinions, identifying agreement/disagreement</td>
+            <td>15-17 minutes</td>
+          </tr>
+        </tbody>
       </table>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">A simple reading habit that helps</h2>
-      <div class="guide-note">
-        <p>
-          Before choosing an answer, ask: <strong>Where is the proof?</strong> This one
-          question improves reading accuracy more than guessing from general meaning.
-        </p>
+      <h2 class="ic-display">Part 1: Reading correspondence</h2>
+      <p class="muted" style="margin-top: 0;">Part 1 presents a realistic email, letter, or memo -- typically workplace or community-based.</p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Skim for purpose first</h3>
+            <p>Read the subject line and the first sentence only to identify: why was this written? Is it a request, complaint, invitation, update, or instruction?</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Read questions before the passage</h3>
+            <p>Knowing what the questions ask before reading lets you scan for the right details rather than reading everything.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Watch for conditional or qualifying language</h3>
+            <p>"Unless you respond by Friday..." / "Please note that this only applies to..." -- CELPIP frequently tests whether you caught the condition.</p>
+          </div>
+        </div>
       </div>
+      <div class="guide-note" style="margin-top: var(--s-3);">
+        <p><strong>Key trap:</strong> An answer that describes what the writer might do in general -- not what they specifically said in the message. Always find the exact sentence before committing.</p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Part 2: Reading to apply a diagram</h2>
+      <p class="muted" style="margin-top: 0;">Part 2 pairs a reading passage with a visual (a floor plan, a process diagram, an org chart, a timeline, or a table). Questions ask you to match, complete, or identify information from both.</p>
+      <ul class="guide-list">
+        <li>Look at the diagram first to understand what type of visual it is and what it represents.</li>
+        <li>Read each question, then find the relevant section of the passage that describes the element the question references.</li>
+        <li>The passage and the diagram use different vocabulary for the same concept -- this is deliberate. Paraphrase awareness applies here.</li>
+        <li>Never choose an answer based on the diagram alone without text confirmation. The correct answer is always in the text.</li>
+      </ul>
+      <div class="guide-note" style="margin-top: var(--s-3);">
+        <p><strong>Key trap:</strong> The diagram shows a direction or position (e.g., "the meeting room is next to the kitchen") but the passage says something slightly different. The passage is always the authority -- not the diagram's implicit layout.</p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Part 3: Reading for information</h2>
+      <p class="muted" style="margin-top: 0;">Part 3 is a longer informational or factual passage -- typically 400-600 words -- on a community, workplace, science, or current events topic.</p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Read all questions before the passage</h3>
+            <p>Mark the keyword in each question. These are your scan targets when you read the passage.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Skim paragraph by paragraph</h3>
+            <p>Read the first sentence of each paragraph to build a mental map of where each topic appears.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Slow down only at the target section</h3>
+            <p>Once you find the section relevant to your question, read it carefully and find the proof sentence before answering.</p>
+          </div>
+        </div>
+      </div>
+      <div class="guide-note" style="margin-top: var(--s-3);">
+        <p><strong>Key traps in Part 3:</strong> (1) An answer that is generally true about the topic but not stated in this passage. (2) An answer that uses the same words as the question but reverses the meaning. Always verify against the text.</p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Part 4: Reading for viewpoints</h2>
+      <p class="muted" style="margin-top: 0;">Part 4 presents two or three short texts from different writers expressing views on the same topic. Questions ask you to identify what each writer believes, where they agree or disagree, and what evidence or reasoning each uses.</p>
+      <ul class="guide-list">
+        <li>Label each writer (A, B, C) before you answer any questions. Keep their views separate in your notes.</li>
+        <li>Look for agreement and disagreement markers in the text: "similarly," "likewise" (agreement) vs "however," "in contrast," "while X argues that" (disagreement).</li>
+        <li>Read questions about specific writers by filtering only for that writer's sentences. Ignore the other texts for that question.</li>
+        <li>Watch for nuance: two writers may agree on the conclusion but disagree on the reason. CELPIP frequently asks about the reason, not the conclusion.</li>
+      </ul>
+      <div class="guide-note" style="margin-top: var(--s-3);">
+        <p><strong>Key trap:</strong> An answer that correctly describes Writer A's view but attributes it to Writer B. If you have not clearly separated whose view is whose, this error is almost guaranteed.</p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Distractor patterns across all parts</h2>
+      <table class="guide-mistake-table">
+        <thead>
+          <tr>
+            <th>Distractor type</th>
+            <th>How it appears</th>
+            <th>How to catch it</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>True but not stated</td>
+            <td>The option is generally correct but not mentioned in this passage</td>
+            <td>Find the specific sentence. If no sentence supports it, eliminate.</td>
+          </tr>
+          <tr>
+            <td>Overstated claim</td>
+            <td>Passage says "some people prefer X" -- option says "everyone prefers X"</td>
+            <td>Check scope words: some/all/most/few. The option often inflates them.</td>
+          </tr>
+          <tr>
+            <td>Reversed detail</td>
+            <td>Passage says "A is faster than B" -- option says "B is faster than A"</td>
+            <td>Re-read comparative sentences slowly before confirming direction.</td>
+          </tr>
+          <tr>
+            <td>Attributed to wrong writer</td>
+            <td>Option correctly describes Writer A's view but says it is Writer B's</td>
+            <td>Underline which writer made each claim before answering Part 4 questions.</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
@@ -134,15 +252,15 @@ const pageStructuredData = [
       <div class="guide-links">
         <a href="/blog/celpip-listening-question-types">
           <strong>Read the CELPIP listening guide</strong>
-          <span>Pair your reading strategy with the same section-by-section approach in listening.</span>
+          <span>Apply the same section-by-section approach to CELPIP Listening.</span>
+        </a>
+        <a href="/celpip/reading/free-test">
+          <strong>Take the free CELPIP reading test</strong>
+          <span>Diagnose your current level across all four reading parts.</span>
         </a>
         <a href="/celpip/reading">
           <strong>Go to the CELPIP reading hub</strong>
-          <span>Open the main reading page for more strategy and resources.</span>
-        </a>
-        <a href="/celpip/reading">
-          <strong>Study CELPIP reading lessons</strong>
-          <span>Practice the vocabulary and reading habits behind these question types.</span>
+          <span>Access premium review, progress tracking, and reading strategy lessons.</span>
         </a>
       </div>
     </section>
@@ -162,7 +280,7 @@ const pageStructuredData = [
 
   <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
     <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
-    <p class="muted">Want a CLB 9 writing system you can actually follow?</p>
-    <a class="btn" href="/celpip/writing">Get the system</a>
+    <p class="muted">Ready to practice CELPIP Reading with full scoring and review?</p>
+    <a class="btn btn-primary ic-btn" href="/celpip/reading/free-test">Start the free reading test</a>
   </section>
 </Layout>
