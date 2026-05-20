@@ -62,7 +62,7 @@
 html,body{
   margin:0;
   padding:0;
-  background: var(--bg);
+  background: var(--ic-bg);
   color: var(--text);
   font-size: var(--step-0);
   line-height: 1.7;
@@ -72,7 +72,6 @@ html,body{
 
 html {
   scroll-behavior: smooth;
-  background: var(--ic-bg, var(--bg));
 }
 
 /* Skip-to-content accessibility link */
@@ -531,7 +530,7 @@ button{
 
 /* ---- Main band ---- */
 .site-main{
-  background: var(--band);
+  background: var(--ic-bg);
   padding: var(--s-2) 0 var(--s-7);
 }
 
@@ -573,12 +572,12 @@ button{
    ========================= */
 .hero{
   position: relative;
-  padding: var(--hero-pad, var(--s-6));
+  padding: var(--hero-pad, var(--s-5));
   border: 1px solid var(--border-strong);
   border-radius: calc(var(--radius) + 10px);
   box-shadow: var(--shadow);
   overflow: hidden;
-  background: var(--hero);
+  background: #F0ECE6;
 }
 
 /* This layer holds the image — full card coverage */
@@ -607,7 +606,7 @@ button{
   position:relative;
   z-index:2;
   max-width: 52ch;
-  min-height: var(--hero-min-h, 180px);
+  min-height: var(--hero-min-h, 120px);
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -621,7 +620,7 @@ button{
 
   .hero-content {
     max-width: 100%;
-    min-height: var(--hero-min-h-md, 140px);
+    min-height: var(--hero-min-h-md, 100px);
   }
 }
 
@@ -631,7 +630,7 @@ button{
   }
 
   .hero-content {
-    min-height: var(--hero-min-h-sm, 120px);
+    min-height: var(--hero-min-h-sm, 80px);
     gap: var(--s-2);
   }
 }
@@ -933,7 +932,7 @@ textarea {
 /* ---- Footer ---- */
 .site-footer{
   border-top:1px solid var(--border);
-  background: color-mix(in srgb, var(--band) 85%, var(--bg) 15%);
+  background: var(--ic-bg);
   padding: var(--s-8) 0 var(--s-6);
 }
 .footer-inner{
@@ -1101,7 +1100,7 @@ textarea {
   }
   .hero-content{
     max-width: 100%;
-    min-height: 110px;
+    min-height: 80px;
   }
   .grid-4{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .feature-grid{ grid-template-columns: 1fr; }
@@ -1122,7 +1121,7 @@ textarea {
   }
 
   .hero-content{
-    min-height: 90px;
+    min-height: 60px;
     gap: var(--s-1);
   }
 }
@@ -1213,7 +1212,7 @@ textarea {
    ============================ */
 
 .lesson-shell {
-  background: var(--bg, #fbf8f4);
+  background: var(--ic-bg);
   border: 1px solid rgba(20, 20, 20, 0.08);
   border-radius: 24px;
   overflow: hidden;
@@ -1224,7 +1223,7 @@ textarea {
 .lesson-hero {
   position: relative;
   padding: 28px 22px;
-  background: linear-gradient(180deg, var(--bg-2, #f2ede6), var(--bg, #fbf8f4));
+  background: linear-gradient(180deg, #EEEEEE, var(--ic-bg));
   border-bottom: 1px solid rgba(20, 20, 20, 0.08);
 }
 
@@ -2149,8 +2148,8 @@ hr {
 
 /* Final enforcement: no small hero text + guaranteed capsule hover state */
 .hero h1 {
-  font-size: clamp(30px, 3.2vw, 44px) !important;
-  line-height: 1.1 !important;
+  font-size: clamp(24px, 2.6vw, 36px) !important;
+  line-height: 1.15 !important;
 }
 
 .hero p,
@@ -2158,7 +2157,7 @@ hr {
 .hero li,
 .hero small,
 .hero span:not(.btn):not(.btn-primary):not(.btn-ghost):not(.btn-payment) {
-  font-size: clamp(17px, 1.5vw, 20px) !important;
+  font-size: clamp(15px, 1.2vw, 17px) !important;
   line-height: 1.5 !important;
 }
 
@@ -2210,7 +2209,7 @@ hr {
 
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: clamp(25px, 7.3vw, 34px) !important;
+    font-size: clamp(20px, 5.8vw, 28px) !important;
   }
 
   .hero p,
@@ -2218,17 +2217,17 @@ hr {
   .hero li,
   .hero small,
   .hero span:not(.btn):not(.btn-primary):not(.btn-ghost):not(.btn-payment) {
-    font-size: 16px !important;
+    font-size: 15px !important;
   }
 
   .hero .pill {
-    font-size: 14px !important;
+    font-size: 13px !important;
   }
 }
 
 @media (max-width: 560px) {
   .hero h1 {
-    font-size: clamp(24px, 8.6vw, 32px) !important;
+    font-size: clamp(18px, 6.5vw, 24px) !important;
   }
 
   .hero p,
@@ -2236,11 +2235,11 @@ hr {
   .hero li,
   .hero small,
   .hero span:not(.btn):not(.btn-primary):not(.btn-ghost):not(.btn-payment) {
-    font-size: 17px !important;
+    font-size: 14px !important;
   }
 
   .hero .pill {
-    font-size: 15px !important;
+    font-size: 13px !important;
   }
 }
 

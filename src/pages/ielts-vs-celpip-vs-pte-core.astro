@@ -1,0 +1,430 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "Which English test should I take for Canadian immigration?",
+    answer:
+      "All three tests -- IELTS General Training, CELPIP General, and PTE Core -- are accepted by IRCC for most immigration programs including Express Entry. CELPIP and PTE Core are entirely computer-based and designed with Canadian residency and citizenship in mind. IELTS is the most globally recognized and has the most available study resources. Choose based on your test location, preferred format (paper vs computer), and which type of speaking test you feel more comfortable with.",
+  },
+  {
+    question: "Is CELPIP easier than IELTS?",
+    answer:
+      "Neither is objectively easier. CELPIP uses North American English and is entirely computer-based, which some applicants find more natural if they already live in Canada. IELTS uses British English and offers a face-to-face speaking test, which some find easier to perform in. The difficulty depends on your individual strengths -- candidates who are stronger in writing often prefer CELPIP's structured tasks, while those who are confident in conversation may prefer IELTS's free-form speaking interview.",
+  },
+  {
+    question: "Is PTE Core accepted for Express Entry?",
+    answer:
+      "Yes. PTE Core (Pearson Test of English Core) was accepted by IRCC for Express Entry and most immigration programs in 2024. It is fully computer-based, AI-scored, and has fast result turnaround (typically one to five business days). PTE Core is a newer option with fewer available study materials than IELTS, but the format is straightforward and growing in availability.",
+  },
+  {
+    question: "Which test gives the most CRS points?",
+    answer:
+      "The test itself does not affect the number of CRS points -- the CLB level you achieve does. All three tests convert to CLB levels when submitted to IRCC. The same CLB level earns the same CRS points regardless of which test produced it. Focus on achieving the highest CLB level you can in each skill, using whichever test you are best prepared for.",
+  },
+  {
+    question: "How long are IELTS, CELPIP, and PTE Core scores valid for immigration?",
+    answer:
+      "All three test scores are valid for two years from the test date for IRCC immigration applications. If your Express Entry profile or application extends beyond two years from your test date, you will need to retake the test. Plan test timing accordingly to ensure validity covers your expected application window.",
+  },
+  {
+    question: "Can I use IELTS Academic for Canadian immigration?",
+    answer:
+      "IELTS Academic is not accepted for most Canadian immigration programs including Express Entry. You must use IELTS General Training. IELTS Academic is accepted for student visa applications and some professional licensing bodies, but not for IRCC permanent residency or citizenship pathways.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "IELTS vs CELPIP vs PTE Core", path: "/ielts-vs-celpip-vs-pte-core/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="IELTS vs CELPIP vs PTE Core for Canadian Immigration | Full Comparison"
+  description="Compare IELTS, CELPIP, and PTE Core for Canadian PR and immigration. Format, cost, CLB equivalents, Express Entry acceptance, and how to choose."
+  type="page"
+  keywords="IELTS vs CELPIP, CELPIP vs PTE Core, IELTS vs CELPIP vs PTE Core, best English test Canadian immigration, IELTS vs CELPIP Canada, CELPIP Express Entry"
+  structuredData={pageStructuredData}
+>
+  <section class="section" style="padding-top: var(--s-6);">
+    <div class="hero" style={`--hero-bg: url('/heroes/ielts.png');`}>
+      <div class="hero-content">
+        <p class="ic-eyebrow">Test comparison guide</p>
+        <h1 class="ic-display">IELTS vs CELPIP vs PTE Core</h1>
+        <p>Which English test is right for Canadian immigration? A clear comparison to help you choose and prepare.</p>
+      </div>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+
+    <div class="surface cmp-intro">
+      <p>
+        IRCC accepts three English language tests for most Canadian immigration programs:
+        IELTS General Training, CELPIP General, and PTE Core. All three convert to Canadian
+        Language Benchmark (CLB) levels, and the same CLB level earns the same Comprehensive
+        Ranking System (CRS) points regardless of which test produced it.
+      </p>
+      <p>
+        The decision is not about which test is easier. It is about which format suits your
+        situation, which type of speaking test you perform better in, and which test gives
+        you access to the preparation resources you need.
+      </p>
+    </div>
+
+    <div style="height: var(--s-5);"></div>
+
+    <section>
+      <h2 class="ic-display">Side-by-side comparison</h2>
+      <div style="overflow-x: auto; margin-top: var(--s-3);">
+        <table class="cmp-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>IELTS General Training</th>
+              <th>CELPIP General</th>
+              <th>PTE Core</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Developer</strong></td>
+              <td>British Council / IDP / Cambridge</td>
+              <td>Paragon Testing Enterprises (UBC)</td>
+              <td>Pearson</td>
+            </tr>
+            <tr>
+              <td><strong>Accepted for Express Entry</strong></td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes (since 2024)</td>
+            </tr>
+            <tr>
+              <td><strong>Accepted for citizenship</strong></td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td><strong>Format</strong></td>
+              <td>Paper or computer</td>
+              <td>Fully computer-based</td>
+              <td>Fully computer-based</td>
+            </tr>
+            <tr>
+              <td><strong>Speaking test</strong></td>
+              <td>Face-to-face interview with an examiner (~11 to 14 min)</td>
+              <td>Computer-delivered, no examiner (8 tasks, ~15 to 20 min)</td>
+              <td>Computer-delivered, AI-scored (multiple task types)</td>
+            </tr>
+            <tr>
+              <td><strong>Score validity (IRCC)</strong></td>
+              <td>2 years</td>
+              <td>2 years</td>
+              <td>2 years</td>
+            </tr>
+            <tr>
+              <td><strong>Results turnaround</strong></td>
+              <td>3 to 5 business days</td>
+              <td>4 to 5 business days</td>
+              <td>1 to 5 business days</td>
+            </tr>
+            <tr>
+              <td><strong>English variety</strong></td>
+              <td>British English</td>
+              <td>North American English</td>
+              <td>International English</td>
+            </tr>
+            <tr>
+              <td><strong>Test centres</strong></td>
+              <td>140+ countries, widespread</td>
+              <td>Canada-focused; limited internationally</td>
+              <td>Growing globally</td>
+            </tr>
+            <tr>
+              <td><strong>Approximate cost (Canada)</strong></td>
+              <td>CA$310 to $360</td>
+              <td>CA$280 to $310</td>
+              <td>CA$300 to $350</td>
+            </tr>
+            <tr>
+              <td><strong>Study resources available</strong></td>
+              <td>Extensive (Cambridge books, IELTS.org, many online courses)</td>
+              <td>Moderate (official practice tests, CELPIP online resources)</td>
+              <td>Limited but growing (Pearson practice materials)</td>
+            </tr>
+            <tr>
+              <td><strong>Score scale</strong></td>
+              <td>1 to 9 band score</td>
+              <td>1 to 12 (maps 1:1 to CLB)</td>
+              <td>10 to 90 (converted to CLB for IRCC)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div style="height: var(--s-5);"></div>
+
+    <section>
+      <h2 class="ic-display">Test structure: what each exam looks like</h2>
+      <div class="grid grid-3 cmp-structure-cards">
+        <article class="surface cmp-structure-card">
+          <h3 class="ic-eyebrow" style="color: var(--text);">IELTS General Training</h3>
+          <ul class="cmp-task-list">
+            <li><strong>Listening</strong> (30 min): 4 sections, 40 questions. Includes conversations and monologues on everyday and workplace topics.</li>
+            <li><strong>Reading</strong> (60 min): 3 sections, 40 questions. General interest and workplace texts.</li>
+            <li><strong>Writing</strong> (60 min): Task 1 is a letter (150+ words). Task 2 is an essay (250+ words).</li>
+            <li><strong>Speaking</strong> (11 to 14 min): Live interview. Part 1 (personal questions), Part 2 (cue card monologue), Part 3 (abstract discussion).</li>
+          </ul>
+        </article>
+
+        <article class="surface cmp-structure-card">
+          <h3 class="ic-eyebrow" style="color: var(--text);">CELPIP General</h3>
+          <ul class="cmp-task-list">
+            <li><strong>Listening</strong> (47 to 55 min): 6 parts covering conversations, news items, and discussions. Computer-delivered audio.</li>
+            <li><strong>Reading</strong> (55 to 60 min): 4 parts including correspondence, diagrams, and viewpoint identification.</li>
+            <li><strong>Writing</strong> (53 to 60 min): Task 1 is an email (150 to 200 words). Task 2 is a survey response (150 to 200 words).</li>
+            <li><strong>Speaking</strong> (15 to 20 min): 8 computer-delivered tasks including advice, comparison, storytelling, and opinion tasks.</li>
+          </ul>
+        </article>
+
+        <article class="surface cmp-structure-card">
+          <h3 class="ic-eyebrow" style="color: var(--text);">PTE Core</h3>
+          <ul class="cmp-task-list">
+            <li><strong>Speaking and Writing</strong> (77 to 93 min): Combined section. Tasks include read aloud, repeat sentence, describe image, re-tell lecture, answer short questions, summarize written text, and write email.</li>
+            <li><strong>Reading</strong> (29 to 30 min): Fill in blanks, re-order paragraphs, multiple-choice.</li>
+            <li><strong>Listening</strong> (30 to 43 min): Summarize spoken text, multiple-choice, fill in blanks, highlight correct summary, write from dictation.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <div style="height: var(--s-5);"></div>
+
+    <section class="surface cmp-who-section">
+      <h2 class="ic-display" style="margin-top: 0;">Which test is right for you?</h2>
+      <div class="grid grid-3 cmp-who-cards">
+        <div class="cmp-who-card">
+          <h3>Choose IELTS if:</h3>
+          <ul class="cmp-check-list">
+            <li>You are taking the test outside Canada where CELPIP centres are limited</li>
+            <li>You prefer a live speaking interview over computer-delivered tasks</li>
+            <li>You have already invested in IELTS preparation materials</li>
+            <li>You also need IELTS for university admission or professional licensing</li>
+            <li>You prefer the extensive global network of preparation resources</li>
+          </ul>
+        </div>
+
+        <div class="cmp-who-card">
+          <h3>Choose CELPIP if:</h3>
+          <ul class="cmp-check-list">
+            <li>You live in Canada and are comfortable with North American English and accents</li>
+            <li>You prefer computer-based speaking over face-to-face interviews</li>
+            <li>You want a test specifically designed for Canadian immigration contexts</li>
+            <li>You scored lower than expected on IELTS speaking and want a different format</li>
+            <li>You prefer structured speaking tasks over open-ended conversation</li>
+          </ul>
+        </div>
+
+        <div class="cmp-who-card">
+          <h3>Choose PTE Core if:</h3>
+          <ul class="cmp-check-list">
+            <li>You want the fastest possible results (often 24 to 48 hours)</li>
+            <li>You prefer AI scoring over human examiner assessment</li>
+            <li>You have already studied PTE Academic and are familiar with the Pearson format</li>
+            <li>You want fully computer-based testing from a global provider</li>
+            <li>You are an early adopter willing to work with fewer preparation materials</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div style="height: var(--s-5);"></div>
+
+    <section>
+      <h2 class="ic-display">CLB equivalency: how all three tests map to Express Entry</h2>
+      <p class="muted" style="max-width: 68ch; margin-bottom: var(--s-3);">
+        When you submit a language test to IRCC, your scores are converted to CLB levels.
+        The same CLB earns the same CRS points no matter which test produced it.
+      </p>
+      <div style="overflow-x: auto;">
+        <table class="cmp-table">
+          <thead>
+            <tr>
+              <th>CLB Level</th>
+              <th>IELTS Score (each skill)</th>
+              <th>CELPIP Score (each skill)</th>
+              <th>Express Entry impact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>CLB 10</strong></td>
+              <td>8.5 to 9.0</td>
+              <td>10</td>
+              <td>Maximum points range</td>
+            </tr>
+            <tr>
+              <td><strong>CLB 9</strong></td>
+              <td>7.5 to 8.0 (skill dependent)</td>
+              <td>9</td>
+              <td>High CRS, commonly targeted</td>
+            </tr>
+            <tr>
+              <td><strong>CLB 8</strong></td>
+              <td>6.5 to 7.0 (skill dependent)</td>
+              <td>8</td>
+              <td>Moderate CRS points</td>
+            </tr>
+            <tr>
+              <td><strong>CLB 7</strong></td>
+              <td>6.0 (skill dependent)</td>
+              <td>7</td>
+              <td>Minimum for most programs</td>
+            </tr>
+            <tr>
+              <td><strong>CLB 6</strong></td>
+              <td>5.5 (skill dependent)</td>
+              <td>6</td>
+              <td>Below minimum for FSWP/CEC</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted" style="font-size: 0.85rem; margin-top: var(--s-2);">IELTS-to-CLB conversions vary by skill. For example, Listening CLB 9 = IELTS 8.0, but Writing CLB 9 = IELTS 7.0. PTE Core has its own conversion table. Always check current official IRCC CLB conversion charts before submitting an application.</p>
+    </section>
+
+    <div style="height: var(--s-5);"></div>
+
+    <section>
+      <h2 class="ic-display">Frequently asked questions</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <div style="height: var(--s-5);"></div>
+
+    <div class="surface cmp-cta">
+      <h2 class="ic-display" style="margin-top: 0;">Start preparing for the test you have chosen</h2>
+      <p style="max-width: 60ch; margin: 0 auto var(--s-3);">
+        Each test has its own hub on this site with task guides, free lessons, and practice
+        resources tailored to that exam's specific format.
+      </p>
+      <div class="cluster" style="justify-content: center;">
+        <a class="btn btn-primary" href="/ielts">IELTS hub</a>
+        <a class="btn" href="/celpip">CELPIP hub</a>
+        <a class="btn" href="/pte-core">PTE Core hub</a>
+        <a class="btn" href="/celpip-for-canadian-immigration">CELPIP score requirements</a>
+      </div>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+  </section>
+</Layout>
+
+<style>
+  .cmp-intro {
+    padding: var(--s-4);
+    border-radius: 14px;
+    max-width: 72ch;
+  }
+
+  .cmp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    min-width: 600px;
+  }
+
+  .cmp-table th {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 0.7rem 1rem;
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+  }
+
+  .cmp-table td {
+    border: 1px solid var(--border);
+    padding: 0.7rem 1rem;
+    vertical-align: top;
+  }
+
+  .cmp-table tr:nth-child(even) td {
+    background: rgba(0,0,0,0.015);
+  }
+
+  .cmp-structure-cards {
+    gap: var(--s-3);
+    margin-top: var(--s-3);
+  }
+
+  .cmp-structure-card {
+    padding: var(--s-3);
+    border-radius: 14px;
+  }
+
+  .cmp-task-list {
+    padding-left: var(--s-3);
+    margin: var(--s-2) 0 0;
+    font-size: 0.9rem;
+  }
+
+  .cmp-task-list li {
+    margin-bottom: var(--s-2);
+  }
+
+  .cmp-who-section {
+    padding: var(--s-5);
+    border-radius: 16px;
+  }
+
+  .cmp-who-cards {
+    gap: var(--s-4);
+    margin-top: var(--s-3);
+  }
+
+  .cmp-who-card h3 {
+    margin-top: 0;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .cmp-check-list {
+    padding-left: var(--s-3);
+    margin: var(--s-2) 0 0;
+    font-size: 0.9rem;
+  }
+
+  .cmp-check-list li {
+    margin-bottom: var(--s-1);
+  }
+
+  .cmp-cta {
+    padding: var(--s-5);
+    text-align: center;
+    background: var(--accent-light);
+    border-radius: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .cmp-structure-cards,
+    .cmp-who-cards {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

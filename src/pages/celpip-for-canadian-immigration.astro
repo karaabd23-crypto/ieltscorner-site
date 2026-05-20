@@ -1,0 +1,472 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "What CELPIP score do I need for Canadian permanent residency?",
+    answer:
+      "For Express Entry (Federal Skilled Worker, Federal Skilled Trades, and Canadian Experience Class), the minimum CELPIP score is CLB 7 in all four skills (Listening, Reading, Writing, Speaking), which corresponds to CELPIP scores of 7 or higher in each. However, higher scores earn more Comprehensive Ranking System (CRS) points. Scores of 9 or 10 in each skill give maximum CRS language points and can significantly increase your Invitation to Apply chances.",
+  },
+  {
+    question: "What CELPIP score do I need for Canadian citizenship?",
+    answer:
+      "For Canadian citizenship, you need to demonstrate CLB 4 in either English or French. In CELPIP terms, CLB 4 corresponds to a score of 4 in each of the four skills. This is a much lower threshold than what Express Entry requires. Most applicants who are applying for citizenship after completing the residency requirement have already demonstrated higher language proficiency.",
+  },
+  {
+    question: "Is CELPIP accepted for all Express Entry programs?",
+    answer:
+      "CELPIP General is accepted for the Federal Skilled Worker Program, the Federal Skilled Trades Program, and the Canadian Experience Class -- the three programs that draw from the Express Entry pool. CELPIP General-LS (Listening and Speaking only) is accepted for the Federal Skilled Trades Program. Always confirm with IRCC that you are submitting the correct test type for your program.",
+  },
+  {
+    question: "How are CELPIP scores converted to CRS points?",
+    answer:
+      "CRS points for language are calculated based on your CLB level in each of the four skills. For first official language in Express Entry, CLB 9 in all four skills earns the maximum 32 CRS points for a single applicant (higher with a French bonus). Each CLB level below 9 reduces the point total. Even one skill at CLB 7 instead of CLB 9 can cost 10 to 20 CRS points, which is significant in competitive draw rounds.",
+  },
+  {
+    question: "Can I use CELPIP for Provincial Nominee Programs?",
+    answer:
+      "Many Provincial Nominee Programs (PNPs) accept CELPIP for language requirements, but requirements vary by province and stream. British Columbia, Ontario, Alberta, and Saskatchewan all accept CELPIP for most of their streams. Always verify directly with the PNP you are applying to, as language test requirements can change and some streams specify different CLB minimums.",
+  },
+  {
+    question: "How long is a CELPIP score valid for immigration purposes?",
+    answer:
+      "CELPIP scores are valid for two years from the test date for IRCC immigration applications. If your Express Entry profile expires or your application is delayed past two years, you will need to retake the test. Plan your test date accordingly -- ideally within six months of submitting your profile or application.",
+  },
+  {
+    question: "CELPIP versus IELTS General: which should I choose for Canadian PR?",
+    answer:
+      "Both are accepted by IRCC. CELPIP is developed in Canada and tests North American English, which many Canadian residents find more familiar than IELTS. CELPIP is entirely computer-based and results are available within five business days. IELTS is available in more locations and has more practice resources available globally. If you live in Canada and are comfortable with Canadian English, CELPIP may feel more natural. If you have studied with IELTS materials and already have a strong score, use IELTS.",
+  },
+];
+
+const clbTable = [
+  { clb: "CLB 10", celpip: "10", expressEntry: "34 CRS pts (1st lang.)", citizenship: "Exceeds requirement" },
+  { clb: "CLB 9", celpip: "9", expressEntry: "32 CRS pts (1st lang.)", citizenship: "Exceeds requirement" },
+  { clb: "CLB 8", celpip: "8", expressEntry: "22 CRS pts (1st lang.)", citizenship: "Exceeds requirement" },
+  { clb: "CLB 7", celpip: "7", expressEntry: "Minimum for FSW/CEC", citizenship: "Exceeds requirement" },
+  { clb: "CLB 6", celpip: "6", expressEntry: "Below minimum for most programs", citizenship: "Exceeds requirement" },
+  { clb: "CLB 4", celpip: "4", expressEntry: "Below minimum", citizenship: "Meets minimum" },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "CELPIP for Canadian Immigration", path: "/celpip-for-canadian-immigration/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="CELPIP Scores for Canadian PR and Citizenship | What You Actually Need"
+  description="Complete guide to CELPIP scores for Canadian permanent residency and citizenship. CLB requirements, CRS points, Express Entry thresholds, and test strategy."
+  type="page"
+  keywords="CELPIP score Canadian PR, CELPIP Express Entry, CELPIP CLB requirements, CELPIP for Canadian citizenship, CELPIP CRS points, CELPIP immigration"
+  structuredData={pageStructuredData}
+>
+  <section class="section" style="padding-top: var(--s-6);">
+    <div class="hero" style={`--hero-bg: url('/heroes/celpip.png');`}>
+      <div class="hero-content">
+        <p class="ic-eyebrow">CELPIP for Canadian Immigration</p>
+        <h1 class="ic-display">What CELPIP score do you actually need?</h1>
+        <p>Express Entry, citizenship, and PNP requirements explained clearly, with CLB equivalents and CRS point values.</p>
+      </div>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+
+    <div class="surface imm-intro">
+      <p>
+        CELPIP is one of two English language tests accepted by Immigration, Refugees and
+        Citizenship Canada (IRCC) for most immigration programs. Understanding exactly what
+        score you need -- and how your score translates into CRS points for Express Entry --
+        is the first step in deciding when and how hard to prepare.
+      </p>
+      <p>
+        This page covers the official requirements for the most common immigration pathways,
+        how to convert CELPIP scores to CLB levels, and what a higher score is actually worth
+        in CRS points.
+      </p>
+    </div>
+
+    <div style="height: var(--s-5);"></div>
+
+    <section>
+      <h2 class="ic-display">CELPIP score to CLB conversion</h2>
+      <p class="muted" style="max-width: 68ch;">
+        CELPIP scores run from 1 to 12. IRCC uses Canadian Language Benchmarks (CLB) as the
+        standard for measuring language proficiency. Every CELPIP score maps directly to a CLB
+        level at a 1:1 ratio: a CELPIP score of 7 equals CLB 7, a score of 9 equals CLB 9.
+      </p>
+      <div style="overflow-x: auto; margin-top: var(--s-3);">
+        <table class="imm-table">
+          <thead>
+            <tr>
+              <th>CLB Level</th>
+              <th>CELPIP Score</th>
+              <th>Express Entry Impact</th>
+              <th>Citizenship</th>
+            </tr>
+          </thead>
+          <tbody>
+            {clbTable.map((row) => (
+              <tr>
+                <td><strong>{row.clb}</strong></td>
+                <td>{row.celpip}</td>
+                <td>{row.expressEntry}</td>
+                <td>{row.citizenship}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="muted" style="font-size: 0.85rem; margin-top: var(--s-2);">
+        CRS points shown are approximate and for a single applicant without a spouse. Points vary based on whether the language is first or second official language and whether a French bonus applies. Verify current CRS point values at the IRCC website.
+      </p>
+    </section>
+
+    <div style="height: var(--s-5);"></div>
+
+    <section>
+      <h2 class="ic-display">Express Entry: the minimum and the competitive score</h2>
+      <p class="muted" style="max-width: 68ch; margin-bottom: var(--s-3);">
+        Express Entry manages the Federal Skilled Worker Program (FSWP), the Federal Skilled
+        Trades Program (FSTP), and the Canadian Experience Class (CEC). Each has different
+        minimum language requirements.
+      </p>
+
+      <div class="grid grid-3 imm-req-cards">
+        <article class="surface imm-req-card">
+          <p class="ic-eyebrow">Federal Skilled Worker</p>
+          <h3 style="margin-top: var(--s-1);">CLB 7 minimum</h3>
+          <p class="muted">All four skills (Listening, Reading, Writing, Speaking) must be at CELPIP 7 or higher. This is the entry floor -- most competitive candidates score CLB 9 or above.</p>
+          <div class="imm-req-card__score">CELPIP 7 per skill</div>
+        </article>
+
+        <article class="surface imm-req-card">
+          <p class="ic-eyebrow">Canadian Experience Class</p>
+          <h3 style="margin-top: var(--s-1);">CLB 7 or CLB 5</h3>
+          <p class="muted">NOC TEER 0 or 1 positions require CLB 7. NOC TEER 2 or 3 positions require CLB 5. Check your NOC code before assuming your minimum requirement.</p>
+          <div class="imm-req-card__score">CELPIP 7 or 5</div>
+        </article>
+
+        <article class="surface imm-req-card">
+          <p class="ic-eyebrow">Federal Skilled Trades</p>
+          <h3 style="margin-top: var(--s-1);">CLB 5 Speaking/Listening, CLB 4 Reading/Writing</h3>
+          <p class="muted">CELPIP General-LS (Listening and Speaking only) is accepted for this stream. Reading and Writing minimums are lower than for other streams.</p>
+          <div class="imm-req-card__score">CELPIP 5 / 4</div>
+        </article>
+      </div>
+    </section>
+
+    <div style="height: var(--s-5);"></div>
+
+    <section class="surface imm-crs-section">
+      <h2 class="ic-display" style="margin-top: 0;">How CELPIP scores translate to CRS points</h2>
+      <p style="max-width: 68ch;">
+        In Express Entry, every point matters. The Comprehensive Ranking System (CRS) cut-off
+        for Invitations to Apply (ITAs) in all-program draws typically ranges from 470 to 520+.
+        Language points can make a difference of 50 to 80 CRS points depending on your scores.
+      </p>
+
+      <div class="grid grid-2 imm-crs-cards">
+        <div class="imm-crs-card">
+          <h3>First official language (English or French)</h3>
+          <p>For a single applicant without a spouse, maximum points from the first official language in Express Entry are 136 points. Of these, up to 34 come from each of the four skills at CLB 10. Here is how the points change by CLB for each skill:</p>
+          <ul class="imm-crs-list">
+            <li>CLB 10+: 6 points per skill (24 total, but additional points apply in the core/human capital section)</li>
+            <li>CLB 9: 6 points per skill in the language-only calculation</li>
+            <li>CLB 8: 3 points per skill</li>
+            <li>CLB 7: 1 point per skill</li>
+            <li>Below CLB 7: 0 points, and may disqualify from FSWP</li>
+          </ul>
+          <p class="muted" style="font-size: 0.87rem;">The total CRS impact is larger than these numbers suggest because language also contributes to the education and employment CRS sections. Verify exact point values using the IRCC CRS calculator.</p>
+        </div>
+
+        <div class="imm-crs-card">
+          <h3>What a one-CLB-level improvement is worth</h3>
+          <p>Moving from CLB 7 to CLB 9 in all four skills typically adds 15 to 25 CRS points for a single applicant. In competitive draw rounds, this can be the difference between receiving an ITA and waiting several more months.</p>
+          <p>The best return on preparation time is usually in the skills where you are closest to the next CLB threshold. If three skills are at CLB 9 and one is at CLB 7, improving that one skill to CLB 9 adds more points than improving any of the others to CLB 10.</p>
+          <div class="imm-crs-highlight">
+            <strong>Priority: close the gap on your weakest skill first.</strong>
+            <p>One skill at CLB 7 while others are at CLB 9 costs more CRS points than it should.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="height: var(--s-5);"></div>
+
+    <section>
+      <h2 class="ic-display">Canadian citizenship language requirement</h2>
+      <p class="muted" style="max-width: 68ch; margin-bottom: var(--s-3);">
+        Citizenship requirements are substantially lower than Express Entry. Most applicants
+        who have been living and working in Canada for several years already exceed the minimum.
+      </p>
+      <div class="surface imm-citizenship">
+        <div class="grid grid-2">
+          <div>
+            <h3 style="margin-top: 0;">Minimum requirement</h3>
+            <p>CLB 4 in English or French. In CELPIP terms, this means a score of 4 in each of the four skills. CELPIP is accepted as proof of language ability for citizenship applications.</p>
+            <p>If you have already completed Express Entry and received PR, your CELPIP scores from that application may be sufficient to meet the citizenship language requirement, though the test must still be within the validity period or you may need to retake it.</p>
+          </div>
+          <div>
+            <h3 style="margin-top: 0;">Who needs to prove language for citizenship</h3>
+            <p>Adults between the ages of 18 and 54 at the time of signing the application must provide language proof. Applicants under 18 or 55 and older do not need to submit a language test result.</p>
+            <p>IRCC may waive the language requirement for applicants with certain disabilities. Check current IRCC guidelines for the most recent policy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="height: var(--s-5);"></div>
+
+    <section>
+      <h2 class="ic-display">CELPIP versus IELTS General for Canadian immigration</h2>
+      <p class="muted" style="max-width: 68ch; margin-bottom: var(--s-3);">
+        Both CELPIP General and IELTS General Training are accepted by IRCC for the same
+        programs. The choice depends on your situation, not on which test is easier.
+      </p>
+      <div style="overflow-x: auto;">
+        <table class="imm-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>CELPIP General</th>
+              <th>IELTS General Training</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Format</strong></td>
+              <td>Fully computer-based</td>
+              <td>Computer or paper-based</td>
+            </tr>
+            <tr>
+              <td><strong>Test length</strong></td>
+              <td>Approximately 3 hours</td>
+              <td>Approximately 2 hours 45 minutes</td>
+            </tr>
+            <tr>
+              <td><strong>Results turnaround</strong></td>
+              <td>4 to 5 business days</td>
+              <td>3 to 5 business days (IELTS Online: 3 to 5 days)</td>
+            </tr>
+            <tr>
+              <td><strong>Test centres</strong></td>
+              <td>Canada-focused; limited international centres</td>
+              <td>Available in 140+ countries</td>
+            </tr>
+            <tr>
+              <td><strong>English variety</strong></td>
+              <td>North American English</td>
+              <td>British English</td>
+            </tr>
+            <tr>
+              <td><strong>Score validity</strong></td>
+              <td>2 years for IRCC applications</td>
+              <td>2 years for IRCC applications</td>
+            </tr>
+            <tr>
+              <td><strong>Speaking test</strong></td>
+              <td>Computer-delivered, no interviewer</td>
+              <td>Face-to-face interview with an examiner</td>
+            </tr>
+            <tr>
+              <td><strong>Best for</strong></td>
+              <td>Applicants in Canada familiar with Canadian English; those who prefer computer-based speaking</td>
+              <td>Applicants outside Canada; those who already have IELTS study materials; those who prefer speaking to a person</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div style="height: var(--s-5);"></div>
+
+    <section>
+      <h2 class="ic-display">How to prepare for CELPIP with immigration in mind</h2>
+      <p class="muted" style="max-width: 68ch; margin-bottom: var(--s-3);">
+        The preparation strategy changes depending on whether you need to meet the minimum or
+        maximize your CRS score.
+      </p>
+      <div class="grid grid-2 imm-prep-cards">
+        <article class="surface imm-prep-card">
+          <h3 style="margin-top: 0;">If you need to meet the minimum (CLB 7)</h3>
+          <ul class="guide-list">
+            <li>Take a full diagnostic test first to identify which skills are below CLB 7.</li>
+            <li>Focus preparation entirely on the below-minimum skills. Do not spend time on skills already above the threshold.</li>
+            <li>Use task-specific practice: know what each CELPIP task requires before practicing it.</li>
+            <li>CLB 7 corresponds to clear, organized communication -- not perfection. Aim for completeness and clarity over advanced language.</li>
+          </ul>
+          <a class="btn" href="/celpip">Open CELPIP study hub</a>
+        </article>
+
+        <article class="surface imm-prep-card">
+          <h3 style="margin-top: 0;">If you need to maximize your CRS score (CLB 9+)</h3>
+          <ul class="guide-list">
+            <li>Identify your weakest skill and close the gap first before trying to improve already-strong skills.</li>
+            <li>CLB 9 in CELPIP requires precise task completion, strong grammar range, and consistent vocabulary accuracy.</li>
+            <li>Practice under timed conditions. Speed and accuracy under time pressure is the main difference between CLB 7 and CLB 9.</li>
+            <li>Review your errors systematically. Patterns of error are what hold scores below CLB 9.</li>
+          </ul>
+          <a class="btn" href="/ai-feedback">Start AI writing feedback</a>
+        </article>
+      </div>
+    </section>
+
+    <div style="height: var(--s-5);"></div>
+
+    <section>
+      <h2 class="ic-display">Frequently asked questions</h2>
+      <div class="guide-faq">
+        {pageFaqs.map((item) => (
+          <details class="card">
+            <summary>{item.question}</summary>
+            <p class="muted" style="margin-top: var(--s-2); margin-bottom: 0;">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <div style="height: var(--s-5);"></div>
+
+    <div class="surface imm-cta">
+      <h2 class="ic-display" style="margin-top: 0;">Ready to build your score?</h2>
+      <p style="max-width: 60ch; margin: 0 auto var(--s-3);">
+        Use the free lessons to build task knowledge, then add writing feedback or tutoring
+        when you need direct correction on what is holding your score below CLB 9.
+      </p>
+      <div class="cluster" style="justify-content: center;">
+        <a class="btn btn-primary" href="/celpip">Open CELPIP hub</a>
+        <a class="btn" href="/lessons">Free lessons</a>
+        <a class="btn" href="/ai-feedback">AI writing feedback</a>
+        <a class="btn" href="/tutoring">Book tutoring</a>
+      </div>
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+  </section>
+</Layout>
+
+<style>
+  .imm-intro {
+    padding: var(--s-4);
+    border-radius: 14px;
+    max-width: 72ch;
+  }
+
+  .imm-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+
+  .imm-table th {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 0.7rem 1rem;
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+  }
+
+  .imm-table td {
+    border: 1px solid var(--border);
+    padding: 0.7rem 1rem;
+    vertical-align: top;
+  }
+
+  .imm-table tr:nth-child(even) td {
+    background: rgba(0,0,0,0.015);
+  }
+
+  .imm-req-cards {
+    gap: var(--s-3);
+    margin-top: var(--s-3);
+  }
+
+  .imm-req-card {
+    padding: var(--s-3);
+    border-radius: 14px;
+  }
+
+  .imm-req-card__score {
+    display: inline-block;
+    margin-top: var(--s-2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(217, 72, 72, 0.08);
+    color: #8f3434;
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+
+  .imm-crs-section {
+    padding: var(--s-5);
+    border-radius: 16px;
+  }
+
+  .imm-crs-cards {
+    gap: var(--s-4);
+    margin-top: var(--s-3);
+  }
+
+  .imm-crs-card h3 {
+    margin-top: 0;
+  }
+
+  .imm-crs-list {
+    padding-left: var(--s-3);
+    margin: var(--s-2) 0;
+  }
+
+  .imm-crs-highlight {
+    margin-top: var(--s-3);
+    padding: var(--s-3);
+    border-left: 3px solid var(--accent);
+    background: rgba(217, 72, 72, 0.04);
+    border-radius: 0 8px 8px 0;
+    font-size: 0.92rem;
+  }
+
+  .imm-crs-highlight p {
+    margin: var(--s-1) 0 0;
+    color: var(--text-muted);
+  }
+
+  .imm-citizenship {
+    padding: var(--s-4);
+    border-radius: 14px;
+  }
+
+  .imm-prep-cards {
+    gap: var(--s-3);
+  }
+
+  .imm-prep-card {
+    padding: var(--s-4);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+  }
+
+  .imm-cta {
+    padding: var(--s-5);
+    text-align: center;
+    background: var(--accent-light);
+    border-radius: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .imm-req-cards,
+    .imm-crs-cards,
+    .imm-prep-cards {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

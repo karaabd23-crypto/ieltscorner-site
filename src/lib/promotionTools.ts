@@ -72,11 +72,11 @@ const promoActions = {
   },
   ebookSpeaking: {
     offer: "ebook_speaking",
-    title: "CELPIP Speaking eBook",
+    title: "CELPIP Speaking Guide",
     description:
       "109 pages covering all 8 speaking tasks. Scored samples, response frames, grammar drills, and a 4-week plan. CA$49.50, instant PDF download.",
     href: "/ebook",
-    cta: "Get the eBook",
+    cta: "Get the speaking guide",
   },
   ieltsWritingHub: {
     offer: "ielts_writing_hub",

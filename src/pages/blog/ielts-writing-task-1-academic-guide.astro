@@ -6,17 +6,42 @@ const pageFaqs = [
   {
     question: "What is the main goal in IELTS Academic Task 1?",
     answer:
-      "The main goal is to describe the key features of the chart, table, map, or process clearly. You do not need to include every detail.",
+      "The main goal is to identify and describe the key features of the visual -- chart, graph, table, map, or process diagram -- in a logical, organized way. You are not asked to explain why something happened or give your opinion. You are asked to report what the data shows, focusing on the most significant trends, comparisons, or stages.",
   },
   {
     question: "Do I need to give my opinion in IELTS Academic Task 1?",
     answer:
-      "No. Academic Task 1 is an objective report. You should describe the information, not give personal views about it.",
+      "No. Academic Task 1 is a factual report. You should describe the information objectively. Phrases like 'I think,' 'It is interesting that,' or 'This shows that society is...' are inappropriate and lower the Task Achievement score. Use neutral, factual reporting language throughout.",
   },
   {
-    question: "What is the most common mistake in IELTS Academic Task 1?",
+    question: "What is an overview and why is it important?",
     answer:
-      "A very common mistake is listing numbers without showing the main trends or comparisons. The examiner wants a clear overview, not a data dump.",
+      "The overview is a 1 to 2 sentence summary of the most significant feature or trend in the visual, written without many specific numbers. It is usually placed after the introduction as a separate short paragraph. Examiners look for an overview because it shows you can identify what matters in the data, not just describe every number. Missing an overview is one of the most penalized omissions in Academic Task 1.",
+  },
+  {
+    question: "How many words should IELTS Academic Task 1 be?",
+    answer:
+      "The minimum is 150 words, but most high-scoring responses are between 170 and 200 words. Writing significantly over 200 words wastes time that should be spent on Task 2. Writing under 150 words is penalized. Aim for 170 to 185 words as a target range.",
+  },
+  {
+    question: "How should I describe a line graph versus a bar chart?",
+    answer:
+      "For a line graph, focus on trends over time: increase, decrease, fluctuate, peak, plateau, level off. Use time references throughout. For a bar chart, focus on comparisons between categories: higher than, significantly more, roughly equal. For both, identify the highest and lowest values and any notable patterns before writing. The paragraph structure is the same -- introduction, overview, two body paragraphs -- but the language you use for change over time differs from language for static comparison.",
+  },
+  {
+    question: "How do I write about a process diagram in IELTS Task 1?",
+    answer:
+      "For a process diagram, describe the stages in order using sequencing language: first, then, after this, subsequently, finally. Identify how many stages there are and write this in the overview. Use passive voice for manufacturing or natural processes where the agent is not specified (e.g., 'the material is heated'). Do not group stages randomly -- follow the sequence shown in the diagram.",
+  },
+  {
+    question: "What is the difference between IELTS Academic Task 1 and General Training Task 1?",
+    answer:
+      "Academic Task 1 requires you to describe a visual: a graph, chart, table, map, or process diagram. General Training Task 1 requires you to write a letter -- formal, semi-formal, or informal -- responding to a situation. The structure, language, and purpose are completely different. Make sure you are preparing for the correct test type.",
+  },
+  {
+    question: "Can I use the same vocabulary in every Task 1 response?",
+    answer:
+      "For describing change over time, yes -- you can build a core vocabulary set (rise, fall, peak, fluctuate, plateau, surge, decline, remain stable) and use it consistently. For comparisons, precision matters more than variety. What examiners penalize is inaccurate vocabulary -- saying 'dramatically' when the change was small, or 'stable' when there was a slight variation. Accuracy is more important than variety in Task 1.",
   },
 ];
 
@@ -31,10 +56,10 @@ const pageStructuredData = [
 ---
 
 <Layout
-  title="IELTS Writing Task 1 Academic Guide | Charts, Tables, Maps and Processes"
-  description="A clear IELTS Academic Task 1 guide with overview writing, paragraph structure, and practical advice for describing visuals more effectively."
+  title="IELTS Writing Task 1 Academic Guide | Charts, Tables, Maps, Processes"
+  description="Complete IELTS Academic Task 1 guide covering charts, graphs, tables, maps, and process diagrams. Structure, overview writing, vocabulary, and scored samples."
   type="article"
-  keywords="IELTS Writing Task 1 Academic, IELTS chart report, IELTS Task 1 structure, Band 7 IELTS writing"
+  keywords="IELTS Writing Task 1 Academic, IELTS chart description, IELTS Task 1 overview, IELTS Academic writing, IELTS Task 1 structure Band 7"
   structuredData={pageStructuredData}
 >
   <article class="section guide-article">
@@ -45,145 +70,299 @@ const pageStructuredData = [
       <h1 class="ic-display" style="margin: 0;">IELTS Writing Task 1 Academic guide</h1>
       <div class="guide-meta">
         <span>March 17, 2026</span>
-        <span>7 min read</span>
+        <span>14 min read</span>
       </div>
     </header>
 
     <div class="guide-lead">
       <p>
         IELTS Academic Task 1 is a report, not an essay. Your job is to identify the key
-        features of the visual and describe them clearly. Many students lose marks because
-        they try to mention every number instead of showing the main picture.
+        features of the visual -- a graph, chart, table, map, or process diagram -- and
+        describe them clearly in about 170 words.
       </p>
       <p>
-        The best reports are selective. They show the important trends, comparisons, and
-        stages, then support them with useful details.
+        Most students lose marks on this task not because their vocabulary is weak, but because
+        they try to describe every number instead of showing the examiner that they can
+        identify what matters. This guide covers structure, the overview paragraph, visual-type
+        strategies, language, and the most common mistakes with fixes.
       </p>
     </div>
 
-    <div class="guide-grid guide-grid-2">
-      <section class="guide-card">
-        <h2 class="ic-display">What this task wants</h2>
-        <ul class="guide-list">
-          <li>A clear overview of the main trends or features.</li>
-          <li>Logical grouping of details.</li>
-          <li>Accurate comparisons.</li>
-          <li>Objective language with no personal opinion.</li>
-        </ul>
-      </section>
-
-      <section class="guide-card">
-        <h2 class="ic-display">What often lowers the score</h2>
-        <ul class="guide-list">
-          <li>Too many numbers with no overview.</li>
-          <li>The report is organized like a list, not a paragraph plan.</li>
-          <li>The writer uses inaccurate comparisons.</li>
-          <li>Opinion language appears in the report.</li>
-        </ul>
-      </section>
-    </div>
-
-    <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">A simple Task 1 Academic structure</h2>
+    <section class="guide-card">
+      <h2 class="ic-display">The four-paragraph structure</h2>
+      <p>
+        Academic Task 1 uses the same four-paragraph frame regardless of the visual type.
+        The content changes depending on what you are describing, but the structure is
+        consistent.
+      </p>
       <div class="guide-steps">
         <div class="guide-step">
           <span class="guide-step__number">1</span>
           <div>
-            <h3>Introduction</h3>
-            <p>Paraphrase the task in one sentence. Say what the visual shows.</p>
+            <h3>Introduction (1 to 2 sentences)</h3>
+            <p>Paraphrase the task description. Say what the visual shows, what it measures, and the time period or categories involved. Do not copy the wording from the question. Do not include data or numbers here.</p>
+            <div class="guide-example" style="margin-top: var(--s-2);">
+              <p><strong>Task prompt:</strong> "The graph below shows the percentage of households in a European country with different kinds of technology from 1999 to 2009."</p>
+              <p><strong>Introduction:</strong> "The line graph illustrates the proportion of homes in a European nation that owned various types of technology over a ten-year period from 1999 to 2009."</p>
+            </div>
           </div>
         </div>
         <div class="guide-step">
           <span class="guide-step__number">2</span>
           <div>
-            <h3>Overview</h3>
-            <p>Write the main trend, highest and lowest points, or biggest change without many numbers.</p>
+            <h3>Overview (2 sentences)</h3>
+            <p>Write the most significant feature of the data without many specific numbers. This is the most important paragraph for Task Achievement. State the overall trend, the highest item, the most notable change, or the dominant pattern. Think of the overview as the answer to: "What is the most important thing this visual shows?"</p>
+            <div class="guide-example" style="margin-top: var(--s-2);">
+              <p><strong>Example overview:</strong> "Overall, mobile phone ownership experienced the most dramatic rise over the period, while ownership of other technologies also increased but at a slower rate. Internet access, though the lowest throughout, grew substantially by the end of the decade."</p>
+            </div>
           </div>
         </div>
         <div class="guide-step">
           <span class="guide-step__number">3</span>
           <div>
-            <h3>Body paragraph 1</h3>
-            <p>Group the first set of key details together and compare them clearly.</p>
+            <h3>Body paragraph 1 (4 to 6 sentences)</h3>
+            <p>Group the most notable data and describe it with specific figures. Focus on one clear theme within the data -- for example, the two items that grew the most, or the period of the sharpest change. Use comparison and change language accurately.</p>
           </div>
         </div>
         <div class="guide-step">
           <span class="guide-step__number">4</span>
           <div>
-            <h3>Body paragraph 2</h3>
-            <p>Group the remaining important details in a logical way.</p>
+            <h3>Body paragraph 2 (3 to 5 sentences)</h3>
+            <p>Describe the remaining significant data. This paragraph is often shorter than the first. End by referring back to the final data point or the end of the period shown.</p>
           </div>
         </div>
       </div>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">What to notice before you write</h2>
-      <ul class="guide-list">
-        <li>Which item is highest? Which is lowest?</li>
-        <li>What changes the most over time?</li>
-        <li>Which items are similar enough to group together?</li>
-        <li>What should go in the overview instead of the body?</li>
-      </ul>
+      <h2 class="ic-display">The overview: the most important paragraph</h2>
+      <p>
+        Many students either skip the overview or bury it inside a body paragraph. Both
+        approaches cost marks. The overview should be a standalone paragraph between the
+        introduction and the first body paragraph.
+      </p>
+      <p>
+        A good overview does two things: identifies the dominant feature of the data, and
+        signals whether the main movement is upward, downward, stable, or mixed. It does
+        not need specific numbers.
+      </p>
+
+      <div class="guide-scored-pair">
+        <div class="guide-scored guide-scored--weak">
+          <div class="guide-scored__label">Weak overview (lists data, no insight)</div>
+          <div class="guide-scored__text">
+            <p>In 1999, mobile phone ownership was at 15%, internet access was at 10%, and digital TV was at 25%. All three increased over the period and by 2009 they were higher than before.</p>
+          </div>
+          <div class="guide-scored__notes">
+            <p><strong>Problems:</strong> This is not an overview. It starts describing data immediately and does not identify what is most significant. The examiner cannot tell from this what the chart "shows" in general terms.</p>
+          </div>
+        </div>
+
+        <div class="guide-scored guide-scored--strong">
+          <div class="guide-scored__label">Strong overview (trend, not numbers)</div>
+          <div class="guide-scored__text">
+            <p>Overall, all three technologies saw growth over the decade, but mobile phone ownership recorded by far the largest increase, rising from a minority to the majority of households. Digital TV remained the most widely owned technology throughout the period.</p>
+          </div>
+          <div class="guide-scored__notes">
+            <p><strong>Strengths:</strong> Identifies the biggest trend (mobile phone growth). Notes a comparison (digital TV consistently highest). Uses no specific numbers. Two sentences. The examiner immediately knows what the chart shows.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">Overview example</h2>
-      <div class="guide-example">
-        <p>
-          <strong>Example overview:</strong> Overall, car ownership increased steadily in
-          all three countries, although Canada remained the highest throughout the period
-          while Japan had the lowest figures.
-        </p>
-      </div>
-      <div class="guide-note" style="margin-top: var(--s-3);">
-        <p>
-          This overview works because it highlights the biggest pattern without filling the
-          sentence with exact numbers.
-        </p>
+      <h2 class="ic-display">Strategies by visual type</h2>
+      <p>The same four-paragraph structure applies to every visual, but what to focus on differs.</p>
+
+      <div class="t1-visual-grid">
+        <div class="t1-visual-card">
+          <h3>Line graph</h3>
+          <p><strong>Focus on:</strong> Trends over time. What rose, fell, peaked, fluctuated, or remained stable. Which item had the sharpest or most consistent change.</p>
+          <p><strong>Key vocabulary:</strong> rose sharply, declined gradually, peaked at, levelled off, fluctuated between, remained relatively stable, surged, dropped significantly</p>
+          <p><strong>Common mistake:</strong> Describing every data point in chronological order instead of identifying the pattern.</p>
+        </div>
+
+        <div class="t1-visual-card">
+          <h3>Bar chart</h3>
+          <p><strong>Focus on:</strong> Comparisons between categories. Which is highest, lowest, most similar, or most different. If there is a time element, note the biggest change.</p>
+          <p><strong>Key vocabulary:</strong> significantly more than, slightly higher than, roughly equal to, considerably lower than, the largest proportion, the smallest share</p>
+          <p><strong>Common mistake:</strong> Describing bars in left-to-right order rather than grouping by pattern or significance.</p>
+        </div>
+
+        <div class="t1-visual-card">
+          <h3>Pie chart</h3>
+          <p><strong>Focus on:</strong> The largest and smallest segments. Whether any segment dominates. If two pie charts are shown (different years or groups), the most significant differences between them.</p>
+          <p><strong>Key vocabulary:</strong> accounted for, represented, comprised, made up, the largest share, a minority, just over half, approximately a quarter</p>
+          <p><strong>Common mistake:</strong> Mentioning every segment with its percentage, in order, without identifying which comparisons matter.</p>
+        </div>
+
+        <div class="t1-visual-card">
+          <h3>Table</h3>
+          <p><strong>Focus on:</strong> The highest and lowest values, the most significant differences between rows or columns, and any clear pattern across the data.</p>
+          <p><strong>Key vocabulary:</strong> the highest figure was recorded in, the lowest value appeared, there was a notable difference between, figures were broadly similar across</p>
+          <p><strong>Common mistake:</strong> Reading the table row by row and describing every cell. This produces a list, not a report.</p>
+        </div>
+
+        <div class="t1-visual-card">
+          <h3>Map (two versions)</h3>
+          <p><strong>Focus on:</strong> What changed between the two time periods. What was added, removed, relocated, or renamed. What stayed the same.</p>
+          <p><strong>Key vocabulary:</strong> was replaced by, was converted to, a new [building] was constructed, the area to the north of, was relocated, remained unchanged, no longer existed in</p>
+          <p><strong>Common mistake:</strong> Describing the first map fully, then describing the second map fully, without comparing or connecting changes.</p>
+        </div>
+
+        <div class="t1-visual-card">
+          <h3>Process diagram</h3>
+          <p><strong>Focus on:</strong> The stages in sequence. The input, the transformations, and the output. The passive voice is appropriate because the diagram usually does not show who performs the actions.</p>
+          <p><strong>Key vocabulary:</strong> first, initially, following this, subsequently, at this stage, after being [processed], the final stage involves, is then transferred to</p>
+          <p><strong>Common mistake:</strong> Writing in active voice ("they heat the material") when the agent is not shown in the diagram.</p>
+        </div>
       </div>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">Common mistakes</h2>
+      <h2 class="ic-display">Language for describing change and comparison</h2>
       <table class="guide-mistake-table">
         <tr>
-          <th>Mistake</th>
-          <th>Better move</th>
+          <th>Function</th>
+          <th>Vocabulary options</th>
+          <th>Example in context</th>
         </tr>
         <tr>
-          <td>Writing only data and no overview.</td>
-          <td>State the main trend before you describe the details.</td>
+          <td>Sharp increase</td>
+          <td>rose sharply, surged, jumped, increased dramatically, soared</td>
+          <td>"Mobile phone ownership rose sharply from 15% to 62% over the decade."</td>
         </tr>
         <tr>
-          <td>Explaining every number in order.</td>
-          <td>Group similar information together instead.</td>
+          <td>Gradual increase</td>
+          <td>grew steadily, climbed gradually, increased slowly, edged upward</td>
+          <td>"Internet access grew steadily throughout the period, reaching 35% by 2009."</td>
         </tr>
         <tr>
-          <td>Using opinion phrases like "I think".</td>
-          <td>Keep the report factual and objective.</td>
+          <td>Decrease</td>
+          <td>fell, declined, dropped, decreased, decreased significantly, plummeted</td>
+          <td>"Car use declined gradually from 2003 onwards."</td>
         </tr>
         <tr>
-          <td>Making inaccurate comparisons.</td>
-          <td>Check whether the chart really shows more, less, higher, lower, or a change.</td>
+          <td>Stable</td>
+          <td>remained stable, levelled off, plateaued, showed little change, was relatively constant</td>
+          <td>"Digital TV ownership levelled off at around 45% from 2006 onwards."</td>
+        </tr>
+        <tr>
+          <td>Peak</td>
+          <td>reached a peak of, peaked at, hit a high of, was at its highest in</td>
+          <td>"Sales peaked at 800,000 units in 2007 before declining."</td>
+        </tr>
+        <tr>
+          <td>Fluctuation</td>
+          <td>fluctuated between, varied, was volatile, rose and fell, showed no consistent trend</td>
+          <td>"Visitor numbers fluctuated between 20,000 and 35,000 throughout the period."</td>
+        </tr>
+        <tr>
+          <td>Comparison (higher)</td>
+          <td>significantly higher than, more than double, roughly twice as high, considerably greater than</td>
+          <td>"Mobile usage was more than double that of internet access in 2004."</td>
+        </tr>
+        <tr>
+          <td>Comparison (similar)</td>
+          <td>broadly comparable to, roughly equal to, approximately the same as, at a similar level</td>
+          <td>"Figures for Canada and Australia were broadly comparable throughout the period."</td>
         </tr>
       </table>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Common mistakes and how to fix them</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Mistake</th>
+          <th>Score impact</th>
+          <th>Fix</th>
+        </tr>
+        <tr>
+          <td>No overview paragraph</td>
+          <td>Task Achievement drops below 7</td>
+          <td>Write a 2-sentence overview after the introduction every time. Practise identifying "what is the one most important thing this visual shows?" before you write.</td>
+        </tr>
+        <tr>
+          <td>Describing every number in order</td>
+          <td>Coherence and Task Achievement both affected</td>
+          <td>Group data by pattern, not by order. Ask: "Which items behaved similarly? Which item was most different?"</td>
+        </tr>
+        <tr>
+          <td>Using opinion language</td>
+          <td>Task Achievement lowered</td>
+          <td>Remove "I think," "It is surprising," "This is clearly important." Replace with neutral observation language.</td>
+        </tr>
+        <tr>
+          <td>Inaccurate comparison language</td>
+          <td>Lexical Resource penalized</td>
+          <td>Check the chart before writing comparisons. If the difference is 2%, do not write "significantly higher." Use "slightly higher" or "marginally more."</td>
+        </tr>
+        <tr>
+          <td>Under 150 words</td>
+          <td>Automatic penalty to Task Achievement</td>
+          <td>Count your words in practice. 170 to 185 words is a safe target. If you are under 150, expand one body paragraph with more specific data.</td>
+        </tr>
+        <tr>
+          <td>Copying the task description word-for-word as the introduction</td>
+          <td>Lexical Resource penalized; these words are not counted by examiners</td>
+          <td>Paraphrase using synonyms: "shows" can become "illustrates" or "presents"; "percentage" can become "proportion"; "households" can become "homes."</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">How the 20 minutes should be used</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Minutes 1 to 2: Analyse the visual</h3>
+            <p>Identify the visual type. Find the highest and lowest values. Identify the main trend or pattern. Find what you will write in the overview before you start.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Minutes 3 to 4: Write the introduction and overview</h3>
+            <p>Introduction: paraphrase the task. Overview: 2 sentences, main trend, no detailed numbers.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Minutes 5 to 14: Write both body paragraphs</h3>
+            <p>Body 1: group the most significant data with specific figures. Body 2: remaining notable data. Use accurate comparison and change language.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Minutes 15 to 20: Check</h3>
+            <p>Check that no opinion language appeared. Check that comparisons are accurate. Check word count. Fix grammar errors in the most visible positions (introduction, overview).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
       <h2 class="ic-display">Next step</h2>
       <div class="guide-links">
+        <a href="/blog/ielts-writing-task-2-structure">
+          <strong>Task 2 structure guide</strong>
+          <span>Move to the essay task once you have the report format under control.</span>
+        </a>
         <a href="/blog/ielts-writing-task-1-general-training-letter">
-          <strong>Read the General Training letter guide</strong>
-          <span>Compare Academic Task 1 report writing with the letter format in GT.</span>
+          <strong>General Training Task 1 letter guide</strong>
+          <span>If you are taking IELTS General Training, read the letter-writing guide instead.</span>
         </a>
         <a href="/ai-feedback">
           <strong>Try AI writing feedback</strong>
-          <span>Find out whether your overview and comparisons are clear enough.</span>
+          <span>Submit a Task 1 response and check whether your overview and comparisons score well.</span>
         </a>
         <a href="/ielts/writing">
-          <strong>Go to the IELTS writing hub</strong>
-          <span>Move to another writing task or a supporting lesson.</span>
+          <strong>IELTS writing hub</strong>
+          <span>Grammar lessons and vocabulary tools organized for IELTS writing improvement.</span>
         </a>
       </div>
     </section>
@@ -203,7 +382,80 @@ const pageStructuredData = [
 
   <section class="section-sm" style="max-width: 640px; margin: 0 auto; text-align: center;">
     <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: var(--s-5);" />
-    <p class="muted">Want a CLB 9 writing system you can actually follow?</p>
-    <a class="btn" href="/celpip/writing">Get the system</a>
+    <p class="muted">Want feedback on your Task 1 overview and comparisons?</p>
+    <a class="btn btn-primary" href="/ai-feedback">Get AI writing feedback</a>
   </section>
 </Layout>
+
+<style>
+  .guide-scored-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-3);
+    margin-top: var(--s-3);
+  }
+
+  .guide-scored {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .guide-scored__label {
+    padding: var(--s-2) var(--s-3);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .guide-scored--weak .guide-scored__label {
+    background: rgba(217, 72, 72, 0.08);
+    color: #8f3434;
+  }
+
+  .guide-scored--strong .guide-scored__label {
+    background: rgba(33, 138, 77, 0.08);
+    color: #246c41;
+  }
+
+  .guide-scored__text {
+    padding: var(--s-3);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .guide-scored__notes {
+    padding: var(--s-2) var(--s-3);
+    font-size: 0.88rem;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+  }
+
+  .t1-visual-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--s-3);
+    margin-top: var(--s-3);
+  }
+
+  .t1-visual-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: var(--s-3);
+  }
+
+  .t1-visual-card h3 {
+    margin-top: 0;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .guide-scored-pair,
+    .t1-visual-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
