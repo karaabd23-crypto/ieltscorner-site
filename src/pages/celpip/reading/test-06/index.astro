@@ -1,0 +1,37 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import CelpipReadingSimulator from "../../../../components/CelpipReadingSimulator.astro";
+import { buildBreadcrumbSchema } from "../../../../lib/seo";
+import { CELPIP_READING_PREMIUM_TEST_06 } from "../../../../lib/celpipReadingData.mjs";
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "CELPIP", path: "/celpip/" },
+    { name: "Reading", path: "/celpip/reading/" },
+    { name: "Test 06", path: "/celpip/reading/test-06/" },
+  ]),
+];
+---
+
+<Layout
+  title="CELPIP Reading Test 06 — Premium"
+  description="Full CELPIP reading simulation: building access card policy, park event permit guide, rewilding debate, and ranked-choice voting debate. 38 questions, 60 minutes."
+  keywords="CELPIP reading practice test, CELPIP reading premium, CELPIP reading test 06"
+  structuredData={pageStructuredData}
+>
+  <section class="section-sm reading-test-route">
+    <CelpipReadingSimulator test={CELPIP_READING_PREMIUM_TEST_06} isPremiumTest={true} />
+  </section>
+</Layout>
+
+<style>
+  .reading-test-route { padding-top: 10px; padding-bottom: 18px; }
+  :global(.site-main > .container) { width: min(1680px, calc(100vw - 56px)); max-width: min(1680px, calc(100vw - 56px)); }
+  :global(.site-main) { padding-top: 0; min-height: 100vh; }
+  :global(.site-header), :global(.site-footer), :global(.top-drawer-banner), :global(.page-bottom-ad-band) { display: none; }
+  @media (max-width: 760px) {
+    .reading-test-route { padding-top: 8px; }
+    :global(.site-main > .container) { width: min(1680px, calc(100vw - 24px)); max-width: min(1680px, calc(100vw - 24px)); }
+  }
+</style>

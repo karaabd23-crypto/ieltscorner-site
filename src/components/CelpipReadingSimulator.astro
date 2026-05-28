@@ -10,8 +10,11 @@ import {
   flattenReadingQuestions,
 } from "../lib/celpipReadingData.mjs";
 
-const freeQuestions = flattenReadingQuestions(CELPIP_READING_FREE_TEST);
-const initialSection = CELPIP_READING_FREE_TEST.sections[0];
+const { test: propTest, isPremiumTest = false } = Astro.props;
+const activeTest = propTest || CELPIP_READING_FREE_TEST;
+
+const freeQuestions = flattenReadingQuestions(activeTest);
+const initialSection = activeTest.sections[0];
 
 const blankTokenPattern = /({{BLANK:[^}]+}})/;
 
@@ -44,10 +47,10 @@ const serializeInlineJSON = (value: unknown) =>
         class="reading-test__heading-topline"
         style="display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:10px;"
       >
-        <p class="reading-test__eyebrow">Free full test</p>
+        <p class="reading-test__eyebrow">{isPremiumTest ? 'Premium full test' : 'Free full test'}</p>
         <a class="btn reading-test__back-btn" href="/celpip">Exit test</a>
       </div>
-      <h2>{CELPIP_READING_FREE_TEST.title}</h2>
+      <h2>{activeTest.title}</h2>
       <p class="muted reading-test__intro">
         Auto-timed. Instant score and lesson plan when you finish.
       </p>
@@ -57,7 +60,7 @@ const serializeInlineJSON = (value: unknown) =>
       <div class="reading-test__status-head">
         <div class="reading-test__timer">
           <span>Time remaining</span>
-          <strong id="reading-timer">{CELPIP_READING_FREE_TEST.durationMinutes}:00</strong>
+          <strong id="reading-timer">{activeTest.durationMinutes}:00</strong>
         </div>
         <button class="btn btn-primary" id="reading-submit-test" type="button">Finish and score</button>
       </div>
@@ -77,7 +80,7 @@ const serializeInlineJSON = (value: unknown) =>
       <div class="reading-test__navcard-head">
         <p class="reading-test__subhead">Navigator</p>
         <div class="reading-test__sections reading-test__sections--compact">
-          {CELPIP_READING_FREE_TEST.sections.map((section, index) => (
+          {activeTest.sections.map((section, index) => (
             <button
               class={`reading-section-btn${index === 0 ? " is-active" : ""}`}
               type="button"
@@ -278,7 +281,7 @@ const serializeInlineJSON = (value: unknown) =>
   </div>
 </div>
 
-<script id="reading-test-data" type="application/json" is:inline set:html={serializeInlineJSON(CELPIP_READING_FREE_TEST)}></script>
+<script id="reading-test-data" type="application/json" is:inline set:html={serializeInlineJSON(activeTest)}></script>
 <script id="reading-workarea-data" type="application/json" is:inline set:html={serializeInlineJSON(CELPIP_READING_WORK_AREAS)}></script>
 
 <script>
@@ -704,7 +707,9 @@ const serializeInlineJSON = (value: unknown) =>
         const answeredNow = Array.isArray(value) ? value.length > 0 : Boolean(value);
         button.classList.toggle('is-answered', answeredNow);
         button.classList.toggle('is-flagged', Boolean(flagged[question.id]));
-        button.classList.toggle('is-active', question.id === getCurrentQuestion().id);
+        const curQ = getCurrentQuestion();
+        const isP3Active = curQ?.sectionId === 'part-3' && question.sectionId === 'part-3';
+        button.classList.toggle('is-active', isP3Active || question.id === curQ?.id);
       });
     };
 
@@ -872,33 +877,111 @@ const serializeInlineJSON = (value: unknown) =>
       });
     };
 
+    const renderPart3Panel = (sectionQuestions) => {
+      if (!(questionForm instanceof HTMLElement)) return;
+      questionForm.innerHTML = '';
+
+      const list = document.createElement('div');
+      list.className = 'reading-p3-list';
+
+      sectionQuestions.forEach((q) => {
+        const row = document.createElement('div');
+        row.className = 'reading-p3-row';
+
+        const label = document.createElement('label');
+        label.className = 'reading-p3-label';
+
+        const num = document.createElement('span');
+        num.className = 'reading-p3-num';
+        num.textContent = `${q.number}.`;
+
+        const stmt = document.createElement('span');
+        stmt.className = 'reading-p3-stmt';
+        stmt.textContent = q.prompt;
+
+        const select = document.createElement('select');
+        select.className = 'reading-p3-select';
+        select.setAttribute('aria-label', `Question ${q.number}`);
+
+        const placeholder = document.createElement('option');
+        placeholder.value = '';
+        placeholder.textContent = 'Select';
+        select.appendChild(placeholder);
+
+        q.options.forEach((opt) => {
+          const optEl = document.createElement('option');
+          optEl.value = opt.id;
+          optEl.textContent = opt.text;
+          if (answers[q.id] === opt.id) optEl.selected = true;
+          select.appendChild(optEl);
+        });
+
+        select.addEventListener('change', () => {
+          answers[q.id] = select.value || undefined;
+          if (!select.value) delete answers[q.id];
+          row.classList.toggle('reading-p3-row--answered', Boolean(select.value));
+          updateProgress();
+          scheduleAccountSave();
+        });
+
+        row.classList.toggle('reading-p3-row--answered', Boolean(answers[q.id]));
+
+        label.append(num, stmt);
+        row.append(label, select);
+        list.appendChild(row);
+      });
+
+      questionForm.appendChild(list);
+    };
+
     const renderQuestion = () => {
       const question = getCurrentQuestion();
       if (!question) return;
 
       renderPassage(question.sectionId);
 
-      if (questionKickerEl instanceof HTMLElement) {
-        questionKickerEl.textContent = `Question ${question.number}`;
-      }
-      if (questionPromptEl instanceof HTMLElement) {
-        questionPromptEl.textContent = question.prompt;
-      }
-      if (questionTypeEl instanceof HTMLElement) {
-        questionTypeEl.textContent = question.type === 'multi'
-          ? `Choose ${question.selectCount || 2} answers`
-          : question.type === 'select'
-            ? 'Fill in the blank'
-            : question.type === 'matching'
-              ? 'Match to the correct paragraph'
-            : 'Choose one answer';
-      }
-      if (flagButton instanceof HTMLButtonElement) {
-        flagButton.classList.toggle('is-flagged', Boolean(flagged[question.id]));
-        flagButton.textContent = flagged[question.id] ? 'Flagged' : 'Flag for review';
+      const isPart3 = question.sectionId === 'part-3';
+      const questionCardHead = questionKickerEl?.closest('.reading-question-card__head');
+
+      if (isPart3) {
+        const sectionQuestions = flatQuestions.filter((q) => q.sectionId === 'part-3');
+        if (questionKickerEl instanceof HTMLElement) {
+          questionKickerEl.textContent = `Questions ${sectionQuestions[0].number}–${sectionQuestions[sectionQuestions.length - 1].number}`;
+        }
+        if (questionPromptEl instanceof HTMLElement) {
+          questionPromptEl.textContent = 'For each statement, choose the paragraph (A, B, C, or D) that contains the information. Choose E if the information is not given.';
+        }
+        if (questionTypeEl instanceof HTMLElement) {
+          questionTypeEl.textContent = 'Match to paragraph';
+        }
+        if (flagButton instanceof HTMLButtonElement) {
+          flagButton.style.display = 'none';
+        }
+        renderPart3Panel(sectionQuestions);
+      } else {
+        if (questionKickerEl instanceof HTMLElement) {
+          questionKickerEl.textContent = `Question ${question.number}`;
+        }
+        if (questionPromptEl instanceof HTMLElement) {
+          questionPromptEl.textContent = question.prompt;
+        }
+        if (questionTypeEl instanceof HTMLElement) {
+          questionTypeEl.textContent = question.type === 'multi'
+            ? `Choose ${question.selectCount || 2} answers`
+            : question.type === 'select'
+              ? 'Fill in the blank'
+              : question.type === 'matching'
+                ? 'Match to the correct paragraph'
+              : 'Choose one answer';
+        }
+        if (flagButton instanceof HTMLButtonElement) {
+          flagButton.style.display = '';
+          flagButton.classList.toggle('is-flagged', Boolean(flagged[question.id]));
+          flagButton.textContent = flagged[question.id] ? 'Flagged' : 'Flag for review';
+        }
+        renderOptions(question);
       }
 
-      renderOptions(question);
       updateProgress();
     };
 
@@ -1229,8 +1312,24 @@ const serializeInlineJSON = (value: unknown) =>
     };
 
     document.getElementById('reading-submit-test')?.addEventListener('click', () => finalizeTest());
-    document.getElementById('reading-prev-question')?.addEventListener('click', () => moveToQuestion(currentIndex - 1));
-    document.getElementById('reading-next-question')?.addEventListener('click', () => moveToQuestion(currentIndex + 1));
+    document.getElementById('reading-prev-question')?.addEventListener('click', () => {
+      const cur = getCurrentQuestion();
+      if (cur?.sectionId === 'part-3') {
+        const idx = flatQuestions.findIndex((q) => q.sectionId === 'part-3');
+        moveToQuestion(idx - 1);
+      } else {
+        moveToQuestion(currentIndex - 1);
+      }
+    });
+    document.getElementById('reading-next-question')?.addEventListener('click', () => {
+      const cur = getCurrentQuestion();
+      if (cur?.sectionId === 'part-3') {
+        const idx = flatQuestions.findLastIndex((q) => q.sectionId === 'part-3');
+        moveToQuestion(idx + 1);
+      } else {
+        moveToQuestion(currentIndex + 1);
+      }
+    });
     document.getElementById('reading-open-upgrade')?.addEventListener('click', openModal);
     document.getElementById('reading-retake-test')?.addEventListener('click', () => {
       clearAttemptSnapshot();
@@ -1920,6 +2019,68 @@ const serializeInlineJSON = (value: unknown) =>
   .reading-question-form {
     display: grid;
     gap: 6px;
+  }
+
+  .reading-p3-list {
+    display: grid;
+    gap: 8px;
+  }
+
+  .reading-p3-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 80px;
+    gap: 10px;
+    align-items: center;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(20, 22, 23, 0.10);
+    background: #fff;
+    transition: background 0.15s;
+  }
+
+  .reading-p3-row--answered {
+    background: rgba(230, 244, 236, 0.55);
+    border-color: rgba(30, 140, 80, 0.22);
+  }
+
+  .reading-p3-label {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    cursor: default;
+    font-size: 0.82rem;
+    color: #243341;
+    line-height: 1.35;
+  }
+
+  .reading-p3-num {
+    flex: 0 0 auto;
+    font-weight: 700;
+    color: #8f3434;
+    font-size: 0.78rem;
+    min-width: 22px;
+  }
+
+  .reading-p3-stmt {
+    flex: 1 1 auto;
+  }
+
+  .reading-p3-select {
+    width: 100%;
+    min-height: 32px;
+    border-radius: 8px;
+    border: 1px solid rgba(20, 22, 23, 0.16);
+    padding: 0 6px;
+    background: #fff;
+    font: inherit;
+    font-size: 0.82rem;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .reading-p3-select:focus {
+    outline: 2px solid #1a6fb5;
+    outline-offset: 1px;
   }
 
   .reading-option {
