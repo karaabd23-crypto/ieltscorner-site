@@ -139,12 +139,11 @@ const {
             "cf-turnstile-response": antiBotPayload.turnstileToken || "",
           }),
         });
+        const data = await response.json().catch(() => null);
 
         if (!response.ok) {
-          throw new Error("Request failed");
+          throw new Error(data?.error || "Request failed");
         }
-
-        const data = await response.json().catch(() => null);
 
         saveSignup(email);
         status.textContent = data?.duplicate
@@ -153,9 +152,11 @@ const {
         status.style.color = "var(--accent)";
         form.reset();
         window.location.href = "/newsletter/thanks/";
-      } catch {
+      } catch (error) {
         getNewsletterGuard()?.resetTurnstile?.(form);
-        status.textContent = "We could not save your signup right now. Please try again in a moment.";
+        status.textContent = error instanceof Error && error.message
+          ? error.message
+          : "We could not save your signup right now. Please try again in a moment.";
         status.style.color = "var(--text-muted)";
       }
     });

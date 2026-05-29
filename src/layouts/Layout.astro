@@ -1077,12 +1077,13 @@ const serializeJsonForScript = (value: unknown) =>
                 'cf-turnstile-response': antiBot?.turnstileToken || '',
               }),
             });
+            const data = await response.json().catch(() => null);
 
             if (!response.ok) {
-              throw new Error('Function request failed');
+              throw new Error(data?.error || 'Function request failed');
             }
 
-            return response.json().catch(() => null);
+            return data;
           };
 
           form.addEventListener('submit', async (event) => {
@@ -1133,7 +1134,7 @@ const serializeJsonForScript = (value: unknown) =>
                   : 'Success! Your lessons are unlocked.';
               }
               unlockGate();
-            } catch {
+            } catch (error) {
               newsletterGuard?.resetTurnstile?.(form);
               if (savedSignup?.email === email) {
                 saveSignup(email);
@@ -1145,7 +1146,9 @@ const serializeJsonForScript = (value: unknown) =>
               }
 
               if (status instanceof HTMLElement) {
-                status.textContent = 'We had trouble submitting your email. Please try again.';
+                status.textContent = error instanceof Error && error.message
+                  ? error.message
+                  : 'We had trouble submitting your email. Please try again.';
               }
             }
           });
@@ -1229,22 +1232,24 @@ const serializeJsonForScript = (value: unknown) =>
                   'cf-turnstile-response': antiBotPayload.turnstileToken || '',
                 }),
               });
+              const data = await response.json().catch(() => null);
 
               if (!response.ok) {
-                throw new Error('Subscribe request failed');
+                throw new Error(data?.error || 'Subscribe request failed');
               }
 
-              const data = await response.json().catch(() => null);
               if (status instanceof HTMLElement) {
                 status.textContent = data?.duplicate
                   ? 'You are already subscribed. Redirecting...'
                   : 'Success. Redirecting...';
               }
               window.location.href = successPath || '/thank-you/';
-            } catch {
+            } catch (error) {
               newsletterGuard?.resetTurnstile?.(candidate);
               if (status instanceof HTMLElement) {
-                status.textContent = 'We could not save your email right now. Please try again.';
+                status.textContent = error instanceof Error && error.message
+                  ? error.message
+                  : 'We could not save your email right now. Please try again.';
               }
             } finally {
               if (submitButton instanceof HTMLButtonElement) {

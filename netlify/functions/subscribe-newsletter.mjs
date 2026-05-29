@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 import { promises as dns } from 'node:dns';
-import { normalizeSubscriberEmail } from '../../scripts/lib/newsletter-audience.mjs';
+import { normalizeSubscriberEmail } from '../../scripts/lib/kit-newsletter-audience.mjs';
 import { getHeader, isSameOriginRequest } from './_utils/requestSecurity.mjs';
 
 const KIT_API_KEY = (process.env.KIT_API_KEY || '').trim();
@@ -47,7 +47,7 @@ const EMAIL_DOMAIN_CACHE_TTL_MS = parsePositiveInteger(
   process.env.NEWSLETTER_EMAIL_DOMAIN_CACHE_TTL_MS,
   6 * 60 * 60 * 1000,
 );
-const REQUIRE_TURNSTILE = parseBoolean(process.env.NEWSLETTER_REQUIRE_TURNSTILE, true);
+const REQUIRE_TURNSTILE = parseBoolean(process.env.NEWSLETTER_REQUIRE_TURNSTILE, false);
 const BLOCK_DISPOSABLE_EMAILS = parseBoolean(process.env.NEWSLETTER_BLOCK_DISPOSABLE_EMAILS, true);
 const VALIDATE_EMAIL_DOMAIN_DNS = parseBoolean(process.env.NEWSLETTER_VALIDATE_EMAIL_DOMAIN_DNS, true);
 

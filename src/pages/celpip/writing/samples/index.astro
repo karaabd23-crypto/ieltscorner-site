@@ -351,21 +351,23 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
       };
 
       const submitNewsletterSignup = async (email, antiBot = {}) => {
-        try {
-          await fetch('/.netlify/functions/subscribe-newsletter', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              email,
-              source: 'celpip-writing-samples',
-              audience: 'digest',
-              formRenderedAt: antiBot?.formRenderedAt || null,
-              'bot-field': antiBot?.botField || '',
-              'cf-turnstile-response': antiBot?.turnstileToken || '',
-            }),
-          });
-        } catch {
+        const response = await fetch('/.netlify/functions/subscribe-newsletter', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email,
+            source: 'celpip-writing-samples',
+            audience: 'digest',
+            formRenderedAt: antiBot?.formRenderedAt || null,
+            'bot-field': antiBot?.botField || '',
+            'cf-turnstile-response': antiBot?.turnstileToken || '',
+          }),
+        });
+        const data = await readApiResponse(response);
+        if (!response.ok) {
+          throw new Error(data.error || 'Unable to save newsletter signup.');
         }
+        return data;
       };
 
       const claimFreeEssay = async (email) => {
@@ -734,16 +736,38 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
           try {
             const result = await claimFreeEssay(email);
             renderFreeSample(result.prompt);
-            await newsletterPromise;
+            let newsletterSaved = false;
+            let newsletterError = null;
+            try {
+              await newsletterPromise;
+              newsletterSaved = true;
+            } catch (error) {
+              newsletterError = error;
+            }
             const message = result.alreadyClaimed
               ? 'You already unlocked your one free sample. Showing your previously unlocked essay.'
               : 'Your free sample essay is unlocked. This email has also been added to the newsletter list.';
-            setFreeSampleStatus(message);
+            setFreeSampleStatus(
+              newsletterSaved
+                ? message
+                : `${message} However, your email could not be saved to Kit: ${newsletterError instanceof Error ? newsletterError.message : 'unknown error'}`,
+              !newsletterSaved,
+            );
           } catch (error) {
             getNewsletterGuard()?.resetTurnstile?.(freeSampleForm);
-            await newsletterPromise;
+            let newsletterSaved = false;
+            try {
+              await newsletterPromise;
+              newsletterSaved = true;
+            } catch {
+            }
             const message = error instanceof Error ? error.message : 'Unable to unlock your free sample essay right now.';
-            setFreeSampleStatus(`${message} Your email was still saved to the newsletter list.`, true);
+            setFreeSampleStatus(
+              newsletterSaved
+                ? `${message} Your email was still saved to the newsletter list.`
+                : `${message} Your email was not saved to Kit.`,
+              true,
+            );
           } finally {
             if (freeSampleSubmit instanceof HTMLButtonElement) {
               freeSampleSubmit.disabled = false;

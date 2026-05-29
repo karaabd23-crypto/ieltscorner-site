@@ -198,12 +198,13 @@ const successPath = "/celpip/free-reading-guide/thanks/";
           "cf-turnstile-response": antiBot?.turnstileToken || "",
         }),
       });
+      const data = await response.json().catch(() => null);
 
       if (!response.ok) {
-        throw new Error("Function request failed");
+        throw new Error(data?.error || "Function request failed");
       }
 
-      return response.json().catch(() => null);
+      return data;
     };
 
     pushTrackingEvent("lead_magnet_view");
@@ -266,9 +267,14 @@ const successPath = "/celpip/free-reading-guide/thanks/";
           cta_label: "hero-form-submit",
         });
         window.location.href = successPath;
-      } catch {
+      } catch (error) {
         getNewsletterGuard()?.resetTurnstile?.(form);
-        setStatus("We could not save your request right now. Please try again in a moment.", "error");
+        setStatus(
+          error instanceof Error && error.message
+            ? error.message
+            : "We could not save your request right now. Please try again in a moment.",
+          "error"
+        );
       } finally {
         if (submitButton instanceof HTMLButtonElement) {
           submitButton.disabled = false;
