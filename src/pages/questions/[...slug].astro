@@ -1,0 +1,58 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, getEntry } from "astro:content";
+import { buildBreadcrumbSchema } from "../../lib/seo";
+
+export async function getStaticPaths() {
+  const questions = await getCollection("questions");
+  return questions.map((q) => ({
+    params: { slug: q.slug },
+    props: { question: q },
+  }));
+}
+
+const { question } = Astro.props;
+const { Content } = await question.render();
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Practice Questions", path: "/questions/" },
+    { name: question.data.title, path: `/questions/${question.slug}/` },
+  ]),
+];
+---
+
+<Layout
+  title={`${question.data.title} | CELPIP Practice | IELTS Corner`}
+  description={question.data.prompt.slice(0, 155)}
+  keywords={question.data.tags.join(", ")}
+  structuredData={pageStructuredData}
+>
+  <section class="section-sm">
+    <div class="surface" style="max-width: 720px; margin: 0 auto;">
+      <div class="cluster" style="gap: var(--s-2); margin-bottom: var(--s-3);">
+        <span class="pill">{question.data.taskType === "email" ? "Email task" : "Survey task"}</span>
+        <span class="pill">CLB {question.data.targetCLB}</span>
+        {question.data.tags.map((tag) => (
+          <span class="pill">{tag}</span>
+        ))}
+      </div>
+
+      <h1 style="margin-top: 0;">{question.data.title}</h1>
+
+      <div class="surface" style="background: var(--surface-raised, var(--surface)); border-left: 3px solid var(--accent); padding: var(--s-3) var(--s-4); margin-bottom: var(--s-4);">
+        <p class="muted" style="font-size: 0.85rem; margin-bottom: var(--s-1);">Task prompt</p>
+        <p style="margin: 0;">{question.data.prompt}</p>
+      </div>
+
+      <div class="prose">
+        <Content />
+      </div>
+
+      <div style="margin-top: var(--s-5);">
+        <a href="/questions/" class="btn btn-ghost">&larr; Back to all questions</a>
+      </div>
+    </div>
+  </section>
+</Layout>

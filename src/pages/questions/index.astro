@@ -1,0 +1,175 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { buildBreadcrumbSchema } from "../../lib/seo";
+
+const questions = await getCollection("questions");
+const sorted = [...questions].sort(
+  (a, b) =>
+    new Date(b.data.publishedAt).getTime() -
+    new Date(a.data.publishedAt).getTime()
+);
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Practice Questions", path: "/questions/" },
+  ]),
+];
+---
+
+<Layout
+  title="Free CELPIP Practice Questions | IELTS Corner"
+  description="Unlock free CELPIP email and survey writing practice questions. Enter your email to access the full question bank — no credit card required."
+  keywords="CELPIP practice questions, CELPIP writing tasks, CLB practice, email writing CELPIP, survey writing CELPIP"
+  structuredData={pageStructuredData}
+>
+  <section class="section">
+    <div class="hero" style="--hero-bg: url('/heroes/lesson.png');">
+      <div class="hero-content">
+        <span class="pill ic-eyebrow">Free question bank</span>
+        <h1 class="ic-display">Free CELPIP Writing Practice Questions</h1>
+        <p class="muted" style="max-width: 60ch;">
+          Realistic email and survey writing tasks matched to CLB levels 6-10.
+          Enter your email below to unlock the full list instantly.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Email gate (Phase 2) -->
+  <section class="section-sm" id="questions-gate-section">
+    <div class="surface funnel-section" id="questions-gate" style="max-width: 540px; margin: 0 auto;">
+      <h2 style="margin-top: 0;">Unlock the question bank</h2>
+      <p class="muted">Enter your email and we will also send you weekly CELPIP tips.</p>
+
+      <form id="questions-gate-form" novalidate>
+        <input type="hidden" name="bot-field" value="" />
+
+        <label class="lead-capture__field" style="display: flex; flex-direction: column; gap: var(--s-2); margin-bottom: var(--s-3);">
+          <span>Email address</span>
+          <input
+            id="questions-gate-email"
+            type="email"
+            name="email"
+            required
+            autocomplete="email"
+            placeholder="your@email.com"
+            style="padding: var(--s-2) var(--s-3); border: 1px solid var(--border); border-radius: var(--radius); font-size: 1rem; width: 100%;"
+          />
+        </label>
+
+        <button
+          id="questions-gate-submit"
+          type="submit"
+          class="btn btn-primary ic-btn"
+          style="width: 100%;"
+        >
+          Unlock free questions
+        </button>
+
+        <p
+          id="questions-gate-status"
+          style="margin-top: var(--s-3); min-height: 1.4em; font-size: 0.9rem;"
+          aria-live="polite"
+        ></p>
+      </form>
+    </div>
+
+    <!-- Question list (hidden until gate is passed) -->
+    <div id="questions-list" style="display: none; margin-top: var(--s-5);">
+      <h2 style="margin-bottom: var(--s-3);">
+        {sorted.length} practice question{sorted.length !== 1 ? "s" : ""}
+      </h2>
+      <div class="grid grid-2">
+        {sorted.map((q) => (
+          <a class="card" href={`/questions/${q.slug}/`}>
+            <div class="cluster" style="justify-content: space-between; margin-bottom: var(--s-2);">
+              <span class="pill">{q.data.taskType === "email" ? "Email" : "Survey"}</span>
+              <span class="pill">CLB {q.data.targetCLB}</span>
+            </div>
+            <h3 style="margin-top: 0;">{q.data.title}</h3>
+            <p class="muted" style="font-size: 0.9rem; margin-bottom: 0;">
+              {q.data.prompt.length > 120
+                ? q.data.prompt.slice(0, 120) + "…"
+                : q.data.prompt}
+            </p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const STORAGE_KEY = "qbank_unlocked";
+
+  const form = document.getElementById("questions-gate-form") as HTMLFormElement | null;
+  const gate = document.getElementById("questions-gate") as HTMLElement | null;
+  const list = document.getElementById("questions-list") as HTMLElement | null;
+  const status = document.getElementById("questions-gate-status") as HTMLElement | null;
+  const submitBtn = document.getElementById("questions-gate-submit") as HTMLButtonElement | null;
+  const emailInput = document.getElementById("questions-gate-email") as HTMLInputElement | null;
+
+  function unlockQuestions() {
+    if (gate) gate.style.display = "none";
+    if (list) list.style.display = "block";
+  }
+
+  // Already unlocked in a previous visit
+  if (localStorage.getItem(STORAGE_KEY) === "1") {
+    unlockQuestions();
+  }
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const email = emailInput?.value.trim() ?? "";
+    if (!email) {
+      if (status) status.textContent = "Please enter your email address.";
+      return;
+    }
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Saving...";
+    }
+    if (status) status.textContent = "";
+
+    try {
+      const response = await fetch("/.netlify/functions/subscribe-newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          source: "question-bank",
+          audience: "digest",
+          formRenderedAt: Date.now(),
+          "bot-field": "",
+          "cf-turnstile-response": "",
+        }),
+      });
+
+      const data = await response.json().catch(() => null);
+
+      if (!response.ok) {
+        throw new Error(data?.error || "Could not save your email right now.");
+      }
+
+      localStorage.setItem(STORAGE_KEY, "1");
+      unlockQuestions();
+    } catch (error) {
+      if (status) {
+        status.textContent =
+          error instanceof Error && error.message
+            ? error.message
+            : "We could not save your email right now. Please try again.";
+        status.style.color = "var(--text-muted)";
+      }
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Unlock free questions";
+      }
+    }
+  });
+</script>
