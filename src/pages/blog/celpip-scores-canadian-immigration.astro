@@ -1,0 +1,469 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "What CELPIP score do I need for Express Entry?",
+    answer:
+      "For Federal Skilled Worker (FSW) and Federal Skilled Trades (FST) programs, you need a minimum CLB 7 in all four skills (reading, writing, listening, speaking). For Canadian Experience Class (CEC), the minimum is CLB 7 for NOC TEER 0 and 1 jobs, and CLB 5 for NOC TEER 2 and 3 jobs. However, minimum scores only make you eligible -- higher scores significantly increase your Comprehensive Ranking System (CRS) points and your chances of receiving an invitation to apply (ITA).",
+  },
+  {
+    question: "How many CRS points does a high CELPIP score add?",
+    answer:
+      "A CLB 9 across all four skills adds 136 CRS points for a single applicant or 128 points with a spouse. Achieving CLB 10+ can add up to 160 points for a single applicant. This is one of the highest-impact levers available in Express Entry -- language scores contribute more CRS points than most other factors short of a provincial nomination.",
+  },
+  {
+    question: "What CELPIP score do I need for Canadian citizenship?",
+    answer:
+      "The citizenship test requires a minimum CLB 4, which is a relatively low bar. Most applicants who have been living and working in Canada for years comfortably exceed this. However, citizenship is assessed through an in-person or written test, not a formal CELPIP exam -- the requirement is about demonstrating language ability during the process, not submitting a test score.",
+  },
+  {
+    question: "Is CELPIP accepted for all Canadian immigration programs?",
+    answer:
+      "CELPIP is accepted for all IRCC (Immigration, Refugees and Citizenship Canada) programs, including Express Entry (FSW, FST, CEC), Atlantic Immigration Program, Rural and Northern Immigration Pilot, and most Provincial Nominee Programs (PNPs). Some PNPs and employer-sponsored programs may have their own requirements -- always verify with the specific program. CELPIP is not accepted for study permit applications, which typically require IELTS Academic.",
+  },
+  {
+    question: "How does the CLB scale relate to CELPIP scores?",
+    answer:
+      "CELPIP uses a 12-point scale. The CLB (Canadian Language Benchmarks) is the official framework used by IRCC. Each CELPIP level corresponds directly to a CLB level: CELPIP 4 = CLB 4, CELPIP 5 = CLB 5, and so on up to CELPIP 12 = CLB 12. When IRCC says 'CLB 7', they mean a CELPIP score of 7 or higher in that skill. There is no conversion needed -- CELPIP levels and CLB levels are the same number.",
+  },
+  {
+    question: "Can I use CELPIP instead of IELTS for Canadian immigration?",
+    answer:
+      "Yes. For all IRCC immigration programs, CELPIP General is fully equivalent to IELTS General Training. Both are accepted and neither is given preference. The choice is entirely yours. CELPIP is computer-based and entirely in Canadian English; IELTS includes a face-to-face speaking component and is marked by trained examiners. Some test-takers find CELPIP faster and more modern; others prefer IELTS for its international recognition and face-to-face speaking format.",
+  },
+  {
+    question: "How long is CELPIP valid for immigration purposes?",
+    answer:
+      "CELPIP scores are valid for two years from the test date for most immigration programs. If your score expires before your application is processed, you will need to retake the test. Plan your test date carefully -- if you are entering an Express Entry pool, your score must remain valid until you receive a final decision on your application.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "CELPIP Scores for Canadian Immigration", path: "/blog/celpip-scores-canadian-immigration/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="CELPIP Scores for Canadian Immigration: Express Entry, PR, and Citizenship (2026)"
+  description="Exact CELPIP scores needed for Express Entry, Canadian PR, and citizenship. CLB requirements by program, CRS points breakdown, and strategies to maximize your immigration score."
+  type="article"
+  keywords="CELPIP score for Express Entry, CELPIP Canadian immigration, CLB 9 immigration, CELPIP PR requirements, CELPIP Express Entry points, Canadian immigration English test"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">CELPIP and Canadian immigration</span>
+      <h1 class="ic-display" style="margin: 0;">CELPIP scores for Canadian immigration: what you actually need in 2026</h1>
+      <div class="guide-meta">
+        <span>May 28, 2026</span>
+        <span>16 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        Most people preparing for CELPIP know they need "a good score." But what does that mean
+        in practice? If your goal is Express Entry, exactly which CLB level do you need for
+        each program? How many extra CRS points do you gain by moving from CLB 7 to CLB 9?
+        And what is the fastest way to push your score higher before your application deadline?
+      </p>
+      <p>
+        This guide answers every immigration-specific CELPIP question with exact numbers,
+        program-by-program requirements, and a clear improvement strategy for each CLB band.
+      </p>
+    </div>
+
+    <section class="guide-card">
+      <h2 class="ic-display">The CLB scale: what the numbers actually mean</h2>
+      <p>
+        CELPIP uses a 12-point scale that maps directly to the Canadian Language Benchmarks (CLB).
+        A CELPIP score of 7 equals CLB 7. There is no conversion formula. When IRCC says
+        "minimum CLB 7," they mean a CELPIP score of 7 or above in that skill.
+      </p>
+      <p>
+        The scale is divided into rough proficiency bands that matter practically:
+      </p>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>CELPIP / CLB</th>
+          <th>Approximate level</th>
+          <th>Real-world meaning</th>
+        </tr>
+        <tr>
+          <td><strong>4–5</strong></td>
+          <td>Basic</td>
+          <td>Can handle simple, familiar topics with effort. Errors frequent.</td>
+        </tr>
+        <tr>
+          <td><strong>6–7</strong></td>
+          <td>Intermediate</td>
+          <td>Can manage most daily and workplace situations. Some gaps under pressure.</td>
+        </tr>
+        <tr>
+          <td><strong>8–9</strong></td>
+          <td>Advanced</td>
+          <td>Clear, fluent, and accurate across most contexts. Occasional complex errors.</td>
+        </tr>
+        <tr>
+          <td><strong>10–12</strong></td>
+          <td>Highly proficient</td>
+          <td>Near-native command of Canadian English in professional and academic contexts.</td>
+        </tr>
+      </table>
+      <div class="guide-note">
+        <p>For immigration purposes, CLB 7 is the minimum; CLB 9 is the strategic target; CLB 10+ is the competitive advantage.</p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Express Entry: minimum requirements by program</h2>
+      <p>
+        Express Entry is the federal points-based system that manages applications for three
+        immigration programs. Each has different language minimums.
+      </p>
+
+      <h3>Federal Skilled Worker (FSW)</h3>
+      <p>
+        Minimum CLB 7 in all four skills (reading, writing, listening, speaking). This is a hard floor —
+        a CLB 6 in even one skill makes you ineligible for FSW, regardless of how high your other
+        scores are.
+      </p>
+      <p>
+        FSW also requires a minimum of 67 points on its own points grid, where language can contribute
+        up to 28 points (24 for first language, 4 for second). Reaching CLB 9+ in your first
+        language earns the full 24-point allocation.
+      </p>
+
+      <h3>Canadian Experience Class (CEC)</h3>
+      <p>
+        The CEC minimum depends on your NOC TEER category:
+      </p>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>NOC TEER category</th>
+          <th>Minimum CLB (all 4 skills)</th>
+        </tr>
+        <tr>
+          <td>TEER 0 and 1 (managers, professionals)</td>
+          <td>CLB 7</td>
+        </tr>
+        <tr>
+          <td>TEER 2 and 3 (technical, trades)</td>
+          <td>CLB 5</td>
+        </tr>
+      </table>
+      <p>
+        CEC applicants often have strong language scores because they have been living and working
+        in Canada. If you are in this stream, aim for CLB 9+ to maximize CRS points.
+      </p>
+
+      <h3>Federal Skilled Trades (FST)</h3>
+      <p>
+        FST has an asymmetric requirement: CLB 5 in speaking and listening, CLB 4 in reading and writing.
+        This reflects that trades work is more oral and listening-based than writing-intensive.
+        However, higher scores still earn more CRS points — do not stop at the minimum.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">CRS points: the exact numbers by CLB level</h2>
+      <p>
+        This is the section most guides skip. Language proficiency is one of the largest CRS
+        contributors available — bigger than age (max 110 points), and far more controllable.
+      </p>
+      <p>
+        The CRS language points are awarded for your first official language (English or French)
+        and your second official language separately. Here are the first-language points for a
+        single applicant:
+      </p>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>CLB Level (per skill)</th>
+          <th>Points per skill</th>
+          <th>Total (all 4 skills)</th>
+        </tr>
+        <tr>
+          <td>CLB 4</td>
+          <td>6</td>
+          <td>24</td>
+        </tr>
+        <tr>
+          <td>CLB 5–6</td>
+          <td>6</td>
+          <td>24</td>
+        </tr>
+        <tr>
+          <td>CLB 7</td>
+          <td>17</td>
+          <td>68</td>
+        </tr>
+        <tr>
+          <td>CLB 8</td>
+          <td>23</td>
+          <td>92</td>
+        </tr>
+        <tr>
+          <td>CLB 9+</td>
+          <td>34</td>
+          <td>136</td>
+        </tr>
+      </table>
+      <div class="guide-note">
+        <p>
+          The jump from CLB 7 (68 points) to CLB 9 (136 points) is <strong>68 additional CRS points</strong>.
+          In recent Express Entry draws, the difference between receiving an invitation and not receiving
+          one has often been fewer than 20 points. This single improvement — moving from CLB 7 to CLB 9 —
+          can be the difference between waiting years and getting your ITA within months.
+        </p>
+      </div>
+
+      <h3>What CLB 9 looks like in writing and speaking</h3>
+      <p>
+        Many candidates reach CLB 7–8 with standard preparation, then plateau. Here is what
+        the examiner is specifically looking for at CLB 9 vs CLB 7 in the two most improvable skills:
+      </p>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Skill</th>
+          <th>CLB 7</th>
+          <th>CLB 9</th>
+        </tr>
+        <tr>
+          <td><strong>Writing Task 1</strong></td>
+          <td>All points addressed. Some vocabulary repetition. Purpose mostly clear.</td>
+          <td>All points addressed with depth. Varied vocabulary. Register perfectly calibrated. No errors.</td>
+        </tr>
+        <tr>
+          <td><strong>Writing Task 2</strong></td>
+          <td>Opinion stated. Some supporting detail. Organization present but uneven.</td>
+          <td>Clear position. Two well-developed arguments with examples. Logical paragraph structure. Conclusion restates meaningfully.</td>
+        </tr>
+        <tr>
+          <td><strong>Speaking Task 7</strong></td>
+          <td>Opinion given with basic reasons. Hesitations present but manageable.</td>
+          <td>Structured argument. Nuanced vocabulary. Smooth delivery with minimal hesitation.</td>
+        </tr>
+        <tr>
+          <td><strong>Listening</strong></td>
+          <td>Main ideas captured. Some detail missed.</td>
+          <td>Main ideas and key details captured accurately. Inferences drawn correctly.</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Provincial Nominee Programs (PNPs): what you need to know</h2>
+      <p>
+        Each province sets its own language requirements for its nomination streams. These vary
+        significantly. Below are the most common patterns:
+      </p>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Province / Stream type</th>
+          <th>Typical minimum</th>
+          <th>Notes</th>
+        </tr>
+        <tr>
+          <td>Ontario (Express Entry Aligned)</td>
+          <td>CLB 7</td>
+          <td>Minimum to be considered; competitive candidates often score CLB 9+</td>
+        </tr>
+        <tr>
+          <td>British Columbia (Skilled Worker)</td>
+          <td>CLB 4–7 depending on NOC</td>
+          <td>Higher-skilled occupations require CLB 7</td>
+        </tr>
+        <tr>
+          <td>Alberta Advantage Immigration Program</td>
+          <td>CLB 5 (general) / CLB 7 (professionals)</td>
+          <td>CELPIP accepted; IELTS also accepted</td>
+        </tr>
+        <tr>
+          <td>Saskatchewan (SINP)</td>
+          <td>CLB 4 (general) / CLB 7 (professional streams)</td>
+          <td>Healthcare stream often requires CLB 7–8</td>
+        </tr>
+        <tr>
+          <td>Manitoba (MPNP)</td>
+          <td>CLB 5 (skilled workers) / CLB 7 (business)</td>
+          <td>Community support stream may accept CLB 4</td>
+        </tr>
+      </table>
+      <p>
+        Always verify requirements directly with the province. PNP requirements change more
+        frequently than federal program requirements.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Strategic improvement: how to move from CLB 7 to CLB 9</h2>
+      <p>
+        Moving two CLB levels may sound like a large jump, but writing and speaking are the
+        most directly improvable skills in CELPIP. Most candidates who prepare strategically
+        can move from CLB 7 to CLB 9 in writing within 6–10 weeks of targeted practice.
+      </p>
+
+      <h3>Writing: the four most common CLB 7 ceiling problems</h3>
+      <ul class="guide-list">
+        <li>
+          <strong>Prompt coverage that is present but shallow:</strong> You mention all three
+          Task 1 points but only one sentence each. At CLB 9, each point needs 2–3 sentences
+          of development. See our <a href="/blog/celpip-writing-task-1-email/">complete Task 1 email guide</a>.
+        </li>
+        <li>
+          <strong>Tone mismatch:</strong> Using casual language in a semi-formal email or
+          sounding stiff in an informal one. Tone errors directly affect the Content criterion.
+        </li>
+        <li>
+          <strong>Repeated vocabulary:</strong> Using "problem" four times in one email or
+          "important" three times in a Task 2 response. At CLB 9, one varied synonym per
+          concept is the baseline expectation.
+        </li>
+        <li>
+          <strong>Task 2 structure:</strong> Opinion essays that state a position but do not
+          develop two distinct arguments with supporting evidence. See our
+          <a href="/blog/celpip-writing-task-2-survey-response/">Task 2 survey guide</a>.
+        </li>
+      </ul>
+
+      <h3>Speaking: the fastest CLB 7 to CLB 9 strategies</h3>
+      <ul class="guide-list">
+        <li>
+          <strong>Structure before fluency:</strong> A hesitant answer with a clear structure
+          (point → reason → example) scores higher than a fluent answer that rambles.
+        </li>
+        <li>
+          <strong>Task 7 and 8 are the highest-weight tasks:</strong> Focused preparation on
+          the opinion and comparison tasks gives the best return on time invested.
+        </li>
+        <li>
+          <strong>Record and review:</strong> Most CLB 7 speakers cannot hear their own
+          vocabulary repetition or organizational gaps until they listen back.
+        </li>
+      </ul>
+
+      <div class="guide-note">
+        <p>
+          Our <a href="/celpip/">CELPIP preparation hub</a> has dedicated skill pages for
+          writing, speaking, reading, and listening, each with strategies targeted at the
+          CLB 7 to CLB 9 jump specifically.
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">CELPIP vs IELTS for Canadian immigration: which should you choose?</h2>
+      <p>
+        Both tests are fully accepted by IRCC. Neither is given preferential weight. The right
+        choice depends on your personal strengths and circumstances.
+      </p>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Factor</th>
+          <th>CELPIP</th>
+          <th>IELTS General</th>
+        </tr>
+        <tr>
+          <td><strong>Format</strong></td>
+          <td>Fully computer-based</td>
+          <td>Speaking is face-to-face; rest is paper or computer</td>
+        </tr>
+        <tr>
+          <td><strong>Speaking</strong></td>
+          <td>Recorded responses on computer</td>
+          <td>Live interview with trained examiner</td>
+        </tr>
+        <tr>
+          <td><strong>Accent</strong></td>
+          <td>Canadian English only</td>
+          <td>Various English accents</td>
+        </tr>
+        <tr>
+          <td><strong>Results</strong></td>
+          <td>4–5 business days</td>
+          <td>3–5 business days (online) / 13 days (paper)</td>
+        </tr>
+        <tr>
+          <td><strong>Test availability</strong></td>
+          <td>Available at most major Canadian cities</td>
+          <td>Available worldwide at thousands of centres</td>
+        </tr>
+        <tr>
+          <td><strong>Retake policy</strong></td>
+          <td>No minimum waiting period</td>
+          <td>No minimum waiting period</td>
+        </tr>
+      </table>
+      <p>
+        Choose CELPIP if: you are already in Canada and accustomed to Canadian English, you
+        prefer a computer-based format, or you find face-to-face speaking exams more stressful.
+        Choose IELTS if: you are preparing from outside Canada, you prefer the speaking
+        interaction with a human examiner, or you may also need the score for purposes beyond
+        immigration (IELTS Academic is required for most universities).
+      </p>
+      <p>
+        For a full side-by-side comparison, see our
+        <a href="/ielts-vs-celpip-vs-pte-core/">IELTS vs CELPIP vs PTE Core comparison guide</a>.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Score validity, retakes, and application timing</h2>
+      <p>
+        CELPIP scores are valid for <strong>two years</strong> from the test date for IRCC
+        immigration purposes. Plan your timeline carefully:
+      </p>
+      <ul class="guide-list">
+        <li>
+          If you enter the Express Entry pool and sit in the pool for 18+ months, your score
+          may expire before you receive an ITA. Consider retaking close to when you expect
+          a draw.
+        </li>
+        <li>
+          If your score expires before you submit a complete application, your Express Entry
+          profile becomes invalid and must be updated with a new score.
+        </li>
+        <li>
+          There is no waiting period between CELPIP attempts. If your first score is lower
+          than expected, you can retake immediately.
+        </li>
+        <li>
+          IRCC uses the scores from your most recently submitted test. If you retake and score
+          lower, you must update your profile — there is no option to keep an older higher score
+          if you submit a new one.
+        </li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+    </section>
+
+    <section class="guide-card guide-cta" style="margin-top: var(--s-4);">
+      <h2 style="margin-top: 0;">Ready to improve your CELPIP score?</h2>
+      <p>
+        Use the free practice question bank to build the writing skills that move you from
+        CLB 7 to CLB 9 — the jump that adds 68 CRS points to your Express Entry profile.
+      </p>
+      <div class="cluster" style="gap: var(--s-3); margin-top: var(--s-3);">
+        <a href="/questions/" class="btn btn-primary ic-btn">Practice free questions</a>
+        <a href="/celpip/writing/" class="btn btn-ghost">CELPIP writing strategies</a>
+      </div>
+    </section>
+  </article>
+</Layout>

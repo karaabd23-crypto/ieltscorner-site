@@ -1,0 +1,314 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "What does CELPIP Writing Task 2 ask you to do?",
+    answer:
+      "Task 2 presents a situation or issue and asks you to respond in an email or letter format, expressing your opinion, agreeing or disagreeing with a proposal, or recommending a course of action. You must write 150 to 200 words in approximately 27 minutes. The prompt includes a situation, a relationship (who you are writing to), and specific points you must address, including stating and supporting your position.",
+  },
+  {
+    question: "How is CELPIP Writing Task 2 different from Task 1?",
+    answer:
+      "Task 1 is purely communicative — you are conveying information, making requests, or describing a situation. Task 2 requires you to take a position and argue for it. The difference in scoring is in the Content criterion: Task 2 penalizes vague opinions and rewards well-developed, clearly supported arguments. Task 1 is about completeness and clarity; Task 2 is about completeness, clarity, AND persuasive development.",
+  },
+  {
+    question: "Do I need to write a formal essay for CELPIP Task 2?",
+    answer:
+      "No. Task 2 is written in email or letter format, not as a formal academic essay. You still need an opening that states your purpose, a body that develops your arguments, and a closing. But the format is conversational and purposeful, not an academic thesis. The audience is a specific person or organization named in the prompt — not a faceless examiner.",
+  },
+  {
+    question: "What is the biggest mistake candidates make in Task 2?",
+    answer:
+      "The most common high-impact mistake is stating an opinion without developing it. Writing 'I believe this is a good idea because it helps people' is a CLB 6 response. A CLB 9 response names a specific type of person it helps, explains the specific mechanism, and acknowledges a limitation or provides a second reason. Each claim needs at least one sentence of development to reach CLB 8+.",
+  },
+  {
+    question: "Should I agree or disagree in Task 2?",
+    answer:
+      "Choose whichever position you can argue most convincingly in 27 minutes — not the position you personally believe. The examiner does not care which side you take. A well-argued 'agree' and a well-argued 'disagree' score equally. Choose the side where you can generate two strong, specific reasons quickly and stick to it throughout.",
+  },
+  {
+    question: "How many arguments should I include in Task 2?",
+    answer:
+      "Two well-developed arguments are the target. Three underdeveloped arguments score lower than two fully developed ones. Each argument should have: a clear topic sentence stating the reason, a supporting example or explanation, and optionally a one-sentence acknowledgment of a counterpoint. Quality of development beats quantity of claims every time.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "CELPIP Writing Task 2 Opinion Guide", path: "/blog/celpip-writing-task-2-opinion-guide/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="CELPIP Writing Task 2 Opinion Guide | Structure, Scored Samples, CLB 9 Strategies"
+  description="Complete CELPIP Writing Task 2 guide. How to structure your opinion, develop two strong arguments, avoid the most common mistakes, and score CLB 9. With full scored samples."
+  type="article"
+  keywords="CELPIP Writing Task 2, CELPIP opinion writing, CELPIP Task 2 structure, CELPIP CLB 9 writing, CELPIP writing guide, CELPIP Task 2 sample"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">CELPIP writing guide</span>
+      <h1 class="ic-display" style="margin: 0;">CELPIP Writing Task 2 complete guide: opinion, structure, and CLB 9</h1>
+      <div class="guide-meta">
+        <span>May 28, 2026</span>
+        <span>14 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        Task 2 is where CELPIP writing scores stall. Most candidates can write a clear, complete
+        Task 1 email. Task 2 is harder because it requires something different: not just
+        communicating facts, but constructing and defending a position in writing, within a
+        tight word count, in the format of a professional letter.
+      </p>
+      <p>
+        This guide explains exactly what examiners look for at CLB 8 and CLB 9, gives you a
+        reusable structure that works for any Task 2 prompt, shows you two complete scored
+        samples, and identifies the specific habits that cap candidates at CLB 7.
+      </p>
+    </div>
+
+    <section class="guide-card">
+      <h2 class="ic-display">What Task 2 asks you to do</h2>
+      <p>
+        Task 2 presents a scenario: a community issue, a workplace proposal, a neighbourhood
+        decision, or a policy question. You must respond in writing to a specific person or
+        organization, stating your opinion and supporting it.
+      </p>
+      <p>The prompt always includes:</p>
+      <ul class="guide-list">
+        <li>A situation (a proposed change, a decision, a plan, a problem)</li>
+        <li>A relationship (who you are writing to: a city councillor, a manager, a community newsletter)</li>
+        <li>Specific things your response must address (typically: state your opinion, give reasons, make a recommendation)</li>
+      </ul>
+      <p>
+        You have <strong>27 minutes</strong> and must write <strong>150–200 words</strong>.
+        Writing under 150 is penalized. Writing over 200 wastes time you need for Task 1.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Scoring: what examiners look for at CLB 9</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Criterion</th>
+          <th>CLB 7</th>
+          <th>CLB 9</th>
+        </tr>
+        <tr>
+          <td><strong>Content</strong></td>
+          <td>Opinion stated. Reasons present but vague. One prompt point may be thin.</td>
+          <td>Clear position. Two developed reasons with specific details. All prompt points fully addressed.</td>
+        </tr>
+        <tr>
+          <td><strong>Coherence</strong></td>
+          <td>Ideas mostly follow each other. Some repetition or unclear transitions.</td>
+          <td>Logical flow throughout. Each paragraph has one job. Transitions natural and varied.</td>
+        </tr>
+        <tr>
+          <td><strong>Vocabulary</strong></td>
+          <td>Adequate range. Some repetition. Mostly accurate.</td>
+          <td>Varied range. Precise word choices. Register appropriate throughout. No noticeable errors.</td>
+        </tr>
+        <tr>
+          <td><strong>Sentence Structure</strong></td>
+          <td>Some variety. Minor errors that do not impede meaning.</td>
+          <td>Consistent variety (simple, compound, complex). Few or no errors. Conditional and passive voice used accurately.</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">The CLB 9 Task 2 structure</h2>
+      <p>
+        This structure works for virtually every Task 2 prompt. Learn it, then adapt it to
+        whatever scenario appears on test day.
+      </p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Opening (2 sentences)</h3>
+            <p>State who you are writing to and why. Then state your position clearly in the second sentence. Do not hedge. Do not say "I think maybe..." Say "I strongly support..." or "I am writing to express my opposition to..."</p>
+            <div class="guide-example" style="margin-top: var(--s-2);">
+              <p><strong>Weak:</strong> "I am writing about the new park proposal. I think it might be a good idea."</p>
+              <p><strong>Strong:</strong> "I am writing in response to the proposed development of a community green space on Lot 14. I strongly support this initiative and believe it would benefit our neighbourhood in several important ways."</p>
+            </div>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>First argument (3–4 sentences)</h3>
+            <p>State your first reason clearly. Then develop it: who specifically benefits? What is the mechanism? Add one concrete detail or example. This paragraph should feel complete — the reader should understand the full logic of your first point.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Second argument (3–4 sentences)</h3>
+            <p>State a different, distinct second reason. Avoid repeating the same idea in different words. The strongest Task 2 responses address two genuinely separate aspects of the issue — for example, one economic argument and one social argument.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Closing (1–2 sentences)</h3>
+            <p>Restate your position briefly and make a recommendation. Do not introduce new arguments. The closing should feel like a resolution, not a continuation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Scored sample: CLB 9 response</h2>
+      <p><strong>Prompt:</strong> Your city is considering closing the downtown library on Sundays to reduce operating costs. As a community member, write a letter to your city councillor expressing your opinion on this proposal.</p>
+
+      <div class="guide-example" style="font-style: normal; padding: var(--s-4);">
+        <p>Dear Councillor Bateman,</p>
+        <p>I am writing to express my strong opposition to the proposal to close the downtown library on Sundays. As a resident who relies on the library regularly, I believe this decision would disproportionately harm the most vulnerable members of our community.</p>
+        <p>Sunday is the busiest day at the library for working families and students. Many parents bring children for reading programs and homework support on Sunday afternoons precisely because they are unavailable on weekdays due to work commitments. Removing Sunday access would eliminate the only day these families can consistently use the service.</p>
+        <p>Furthermore, the downtown library serves a significant population of newcomers and people experiencing housing instability, many of whom rely on Sunday access for computer use, job searching, and language resources. For these individuals, the library is not a convenience — it is essential infrastructure. The cost savings from a single closure day do not justify reducing access for the city's most dependent users.</p>
+        <p>I urge you to explore alternative cost-reduction measures, such as extended hours on weekdays rather than weekend closures, before proceeding with this proposal.</p>
+        <p>Respectfully,<br/>A concerned resident</p>
+      </div>
+
+      <h3 style="margin-top: var(--s-3);">Why this scores CLB 9</h3>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Criterion</th>
+          <th>Evidence in this response</th>
+        </tr>
+        <tr>
+          <td><strong>Content</strong></td>
+          <td>Clear opposition stated immediately. Two distinct, developed arguments (families + vulnerable populations). Recommendation in closing.</td>
+        </tr>
+        <tr>
+          <td><strong>Coherence</strong></td>
+          <td>Each paragraph has exactly one argument. Transition between body paragraphs is natural ("Furthermore"). Closing does not repeat the body.</td>
+        </tr>
+        <tr>
+          <td><strong>Vocabulary</strong></td>
+          <td>"disproportionately harm," "housing instability," "essential infrastructure," "alternative cost-reduction measures"</td>
+        </tr>
+        <tr>
+          <td><strong>Sentence Structure</strong></td>
+          <td>Mix of simple, compound, and complex sentences. Relative clause ("who relies"), gerund phrase ("Removing Sunday access"), conditional ("before proceeding").</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Scored sample: CLB 7 response (same prompt)</h2>
+      <div class="guide-example" style="font-style: normal; padding: var(--s-4); border-left-color: var(--text-muted);">
+        <p>Dear Councillor,</p>
+        <p>I am writing about the library closure on Sundays. I think it is a bad idea and the city should not do it.</p>
+        <p>Many people use the library on Sundays. Families with children go there for programs. Students also go to study. If the library is closed, they will not have a place to go.</p>
+        <p>Also, some people do not have internet at home. They need to use the computers at the library. This is very important for them.</p>
+        <p>I hope you will change this decision. Thank you for reading my letter.</p>
+        <p>Sincerely,<br/>A resident</p>
+      </div>
+
+      <h3 style="margin-top: var(--s-3);">Why this scores CLB 7 (not CLB 9)</h3>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Problem</th>
+          <th>Specific evidence</th>
+        </tr>
+        <tr>
+          <td>Vague arguments</td>
+          <td>"Many people use the library" — which people? How? Why Sunday specifically?</td>
+        </tr>
+        <tr>
+          <td>Underdeveloped points</td>
+          <td>Each argument gets 1–2 sentences. CLB 9 requires 3–4 per argument.</td>
+        </tr>
+        <tr>
+          <td>Repetitive vocabulary</td>
+          <td>"library" appears 5 times. "people" appears 3 times.</td>
+        </tr>
+        <tr>
+          <td>Weak closing</td>
+          <td>"I hope you will change this decision" — no specific recommendation.</td>
+        </tr>
+        <tr>
+          <td>Basic sentence structure</td>
+          <td>Almost entirely simple sentences. No complex constructions attempted.</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">The five habits that cap Task 2 at CLB 7</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Stating without developing</h3>
+            <p>Naming a reason without explaining it. "It is important for families" is a label, not an argument. "It is important for working families who cannot access weekday services due to employment commitments" is a developed claim.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Two arguments that are really one</h3>
+            <p>"People need the library for studying" and "Students use the library for homework" are the same point. CLB 9 requires two genuinely distinct angles — social, economic, health, environmental, practical, community, individual.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Hedging the opening position</h3>
+            <p>"I think maybe this is not a great idea" is a CLB 6 opener. State your position in the first or second sentence with confidence: "I strongly oppose..." or "I am writing to support..."</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Forgetting the closing recommendation</h3>
+            <p>Many Task 2 prompts ask for a recommendation or request an action. "I urge you to reconsider" is CLB 7. "I urge you to explore cost-reduction alternatives such as reduced weekday hours before closing on weekends" is CLB 9.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">5</span>
+          <div>
+            <h3>Vocabulary repetition</h3>
+            <p>Track how many times you use "important," "people," "library" (or the key noun from your prompt). If the answer is more than twice, find a synonym or restructure the sentence to avoid the repeat.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+    </section>
+
+    <section class="guide-card guide-cta" style="margin-top: var(--s-4);">
+      <h2 style="margin-top: 0;">Practice Task 2 with real prompts</h2>
+      <p>
+        The free question bank includes opinion and survey writing tasks at CLB 6–10 with
+        full model answers and scoring breakdowns. Use them to practice the structure above.
+      </p>
+      <div class="cluster" style="gap: var(--s-3); margin-top: var(--s-3);">
+        <a href="/questions/" class="btn btn-primary ic-btn">Open free question bank</a>
+        <a href="/blog/celpip-writing-task-1-email/" class="btn btn-ghost">Task 1 email guide</a>
+      </div>
+    </section>
+  </article>
+</Layout>

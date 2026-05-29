@@ -1,0 +1,247 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "How long should an IELTS Writing Task 2 essay be?",
+    answer:
+      "The minimum is 250 words. Writing fewer than 250 words results in an automatic penalty on the Task Achievement criterion. Most Band 7+ responses are 280 to 320 words. Going significantly over 300 words is not penalized, but it increases the risk of grammar errors and eats into your Task 1 time. Aim for a focused 280 to 310 words rather than padding to 350+.",
+  },
+  {
+    question: "How much time should I spend on Task 2?",
+    answer:
+      "Task 2 is worth more marks than Task 1 — it counts for approximately two-thirds of your total Writing score. Spend approximately 40 minutes on Task 2 and 20 minutes on Task 1. Many students do Task 1 first and run over time, leaving only 30 minutes for the higher-value Task 2. Consider doing Task 2 first if you find it easier, or at minimum practice strict time management.",
+  },
+  {
+    question: "What are the four IELTS Writing Task 2 question types?",
+    answer:
+      "The four main types are: (1) Opinion essays — 'Do you agree or disagree?' Requires a clear position. (2) Discussion essays — 'Discuss both views and give your opinion.' Requires presenting both sides and adding your own view. (3) Advantages and Disadvantages essays — 'What are the advantages and disadvantages?' May or may not ask for your opinion. (4) Problem and Solution essays — 'What are the causes/problems and what are the solutions/recommendations?' Each type has a distinct structure that should be learned separately.",
+  },
+  {
+    question: "Should I give my opinion in every IELTS Task 2 essay?",
+    answer:
+      "Only if the question asks for it. Opinion essays and discussion essays explicitly ask for your view. Advantages/disadvantages essays sometimes ask for your opinion and sometimes do not — read the question carefully. Problem/solution essays rarely ask for a personal opinion. Giving an unsolicited personal opinion in a problem/solution essay does not help your score and can hurt coherence.",
+  },
+  {
+    question: "What is the most common mistake in IELTS Task 2?",
+    answer:
+      "The most common and most damaging mistake is not answering the specific question asked. Candidates write a generally relevant essay about the topic but do not address the specific angle: they discuss advantages and disadvantages when asked to agree or disagree, or they write general paragraphs when asked for specific causes and solutions. Read the question three times before you start writing and underline exactly what is being asked.",
+  },
+  {
+    question: "Can I use a template for IELTS Writing Task 2?",
+    answer:
+      "You can use a structural template (paragraph plan), but not a memorized phrases template. Examiners are trained to identify memorized phrases and penalize them under Lexical Resource. A structural template means: you always write an introduction with a thesis statement, two body paragraphs each with a topic sentence, development, and example, and a conclusion. That is a useful framework. Memorizing 'It is a widely discussed topic that...' and 'In conclusion, having considered both sides...' will hurt your score.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "IELTS Writing Task 2 Complete Guide", path: "/blog/ielts-writing-task-2-complete-guide/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="IELTS Writing Task 2 Complete Guide | Band 7+ Structure, Samples, and Strategies"
+  description="Complete IELTS Writing Task 2 guide for Band 7 and above. All four question types, proven paragraph structures, two scored sample essays, and the five mistakes that block Band 7."
+  type="article"
+  keywords="IELTS Writing Task 2, IELTS Task 2 structure, IELTS essay Band 7, IELTS opinion essay, IELTS Task 2 sample answer, IELTS writing guide"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">IELTS writing guide</span>
+      <h1 class="ic-display" style="margin: 0;">IELTS Writing Task 2 complete guide: Band 7+ structure, samples, and strategies</h1>
+      <div class="guide-meta">
+        <span>May 28, 2026</span>
+        <span>15 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        Task 2 is the most important part of the IELTS Writing test. It carries more marks than
+        Task 1, requires a different skill set, and is where most candidates either secure or lose
+        their target band. A Band 6 Task 2 essay is structurally recognizable but underdeveloped.
+        A Band 7+ essay takes a specific question and answers it with developed, coherent arguments
+        supported by concrete examples.
+      </p>
+      <p>
+        This guide covers all four Task 2 question types, gives you a reusable paragraph structure
+        for each, shows two scored essays side by side, and identifies the specific habits that
+        limit most candidates to Band 6.
+      </p>
+    </div>
+
+    <section class="guide-card">
+      <h2 class="ic-display">The four Task 2 question types</h2>
+      <p>IELTS Task 2 uses four prompt structures. Recognizing which type you have determines your structure before you write a single sentence.</p>
+
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Opinion essay</h3>
+            <p><em>Signal phrase:</em> "Do you agree or disagree?" / "To what extent do you agree?"</p>
+            <p>Structure: Introduction with clear thesis → Body 1: first reason supporting your position → Body 2: second reason → Conclusion restating position. You must take a clear side. Saying "there are arguments on both sides" without committing to a position caps you at Band 6.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Discussion essay</h3>
+            <p><em>Signal phrase:</em> "Discuss both views and give your own opinion."</p>
+            <p>Structure: Introduction → Body 1: one view → Body 2: opposing view → Conclusion: your opinion clearly stated. Many candidates write a balanced discussion but forget to state their own position in the conclusion, which directly penalizes Task Achievement.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Advantages and disadvantages essay</h3>
+            <p><em>Signal phrase:</em> "What are the advantages and disadvantages?" / "Do the advantages outweigh the disadvantages?"</p>
+            <p>Structure varies by whether an opinion is requested. If the question asks "Do the advantages outweigh...?" you must give your verdict in the conclusion. If it simply asks to discuss, present both objectively.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Problem and solution essay</h3>
+            <p><em>Signal phrase:</em> "What are the causes of this problem and what solutions can you suggest?" / "Why is this happening and what can be done?"</p>
+            <p>Structure: Introduction → Body 1: causes → Body 2: solutions → Conclusion. Match the number of solutions to the number of causes. Do not propose a solution that does not address one of your stated causes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">The Band 7+ paragraph structure</h2>
+      <p>Every body paragraph in a Band 7+ essay follows this pattern. It is sometimes called PEEL (Point, Explain, Evidence, Link).</p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">P</span>
+          <div>
+            <h3>Point (topic sentence)</h3>
+            <p>One clear sentence stating the argument of the paragraph. The examiner should be able to understand your point by reading only this sentence.</p>
+            <div class="guide-example" style="margin-top: var(--s-2);">
+              <p><strong>Weak:</strong> "There are many reasons why this is a problem."</p>
+              <p><strong>Strong:</strong> "The primary cause of urban air pollution in developing countries is the rapid growth of unregulated industrial activity."</p>
+            </div>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">E</span>
+          <div>
+            <h3>Explain</h3>
+            <p>2–3 sentences expanding the point. Answer: why is this true? How does it work? What is the mechanism or consequence?</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">E</span>
+          <div>
+            <h3>Evidence or example</h3>
+            <p>One concrete example. It does not need to be a real statistic — a hypothetical example clearly flagged as such ("For example, in a city where...") is acceptable and equally valid for Band 7+. What matters is specificity.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">L</span>
+          <div>
+            <h3>Link (optional)</h3>
+            <p>One sentence connecting back to the thesis or forward to the next point. Useful for longer essays; often omitted in 280-word responses where word economy matters.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Scored sample: Band 7 essay</h2>
+      <p><strong>Prompt:</strong> Some people believe that the best way to improve public health is to increase the number of sports facilities. Others argue that this would have little effect and that other measures are required. Discuss both views and give your own opinion.</p>
+
+      <div class="guide-example" style="font-style: normal; padding: var(--s-4);">
+        <p>
+          Public health has become a major concern in many countries, and there is debate about the most effective ways to address it. While some argue that building more sports facilities is the key solution, others believe that different approaches are needed.
+        </p>
+        <p>
+          Those who support expanding sports facilities argue that access to exercise opportunities directly improves physical health. When people have convenient access to gyms, swimming pools, and sports courts, they are more likely to exercise regularly. Regular physical activity is known to reduce the risk of conditions such as obesity, heart disease, and diabetes, which are major burdens on public health systems.
+        </p>
+        <p>
+          However, critics of this view point out that many public health problems have social and economic causes that sports facilities cannot address. Poor nutrition, for example, is a leading cause of poor health, and it is driven by low income and lack of food education rather than lack of exercise space. Similarly, mental health conditions require counselling and medical intervention, not better gym facilities. Preventive healthcare programs, nutritional education, and affordable medical care may therefore have a broader and more equitable impact.
+        </p>
+        <p>
+          In my opinion, sports facilities play a useful role but cannot be the primary strategy. A comprehensive approach that addresses diet, access to healthcare, and mental wellbeing alongside exercise infrastructure is more likely to produce lasting improvements in public health.
+        </p>
+      </div>
+
+      <table class="guide-mistake-table" style="margin-top: var(--s-3);">
+        <tr><th>Band criterion</th><th>Score and reason</th></tr>
+        <tr><td>Task Achievement</td><td>Band 7 — Both views discussed. Own opinion given. Could be more specific in the final view.</td></tr>
+        <tr><td>Coherence and Cohesion</td><td>Band 7 — Clear paragraph structure. Transitions present ("However," "Similarly"). Minor cohesion gaps.</td></tr>
+        <tr><td>Lexical Resource</td><td>Band 7 — "burdens on public health systems," "equitable impact," "comprehensive approach." Some repetition of "health."</td></tr>
+        <tr><td>Grammatical Range</td><td>Band 7 — Complex sentences throughout. Relative clause, conditional, passive voice all present. No significant errors.</td></tr>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Five habits that block Band 7</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Habit</th>
+          <th>What it looks like</th>
+          <th>How to fix it</th>
+        </tr>
+        <tr>
+          <td>Wrong question type structure</td>
+          <td>Writing a discussion essay when the question asks "Do you agree or disagree?"</td>
+          <td>Underline the exact question type before planning. Check: am I being asked to argue one side, discuss both, weigh outcomes, or solve a problem?</td>
+        </tr>
+        <tr>
+          <td>Thesis-free introduction</td>
+          <td>"This is an important topic that affects many people today."</td>
+          <td>Every introduction must end with a thesis — your specific answer to the question.</td>
+        </tr>
+        <tr>
+          <td>Body paragraphs with no topic sentence</td>
+          <td>Jumping straight into an example without stating the point the example illustrates.</td>
+          <td>Write the topic sentence first. Check that it would make sense if the examiner read it in isolation.</td>
+        </tr>
+        <tr>
+          <td>Repeating memorized phrases</td>
+          <td>"In today's fast-paced world..." / "It goes without saying that..."</td>
+          <td>Write naturally. Memorized openers are flagged by examiners and reduce Lexical Resource scores.</td>
+        </tr>
+        <tr>
+          <td>Weak or missing conclusion</td>
+          <td>"In conclusion, both views are valid."</td>
+          <td>Restate your thesis in different words. Confirm which side you support and why, in one sentence.</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+    </section>
+
+    <section class="guide-card guide-cta" style="margin-top: var(--s-4);">
+      <h2 style="margin-top: 0;">Build your writing skills with free lessons</h2>
+      <p>
+        The IELTS Corner lesson library has grammar and writing lessons targeted at the
+        Band 6 to Band 7 jump — the most common score ceiling for IELTS candidates.
+      </p>
+      <div class="cluster" style="gap: var(--s-3); margin-top: var(--s-3);">
+        <a href="/lessons/writing/" class="btn btn-primary ic-btn">Open writing lessons</a>
+        <a href="/ielts/writing/" class="btn btn-ghost">IELTS writing hub</a>
+      </div>
+    </section>
+  </article>
+</Layout>

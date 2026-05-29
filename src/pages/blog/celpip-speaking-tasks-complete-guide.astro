@@ -1,0 +1,277 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "How many tasks are in CELPIP Speaking?",
+    answer:
+      "CELPIP Speaking has eight tasks. Tasks 1 and 2 are personal experience and advice tasks. Tasks 3 and 4 involve describing a scene from an image. Tasks 5 and 6 ask you to compare information and make a recommendation. Tasks 7 and 8 are opinion and argument tasks — these are the highest-weight tasks and have the most direct impact on your final score.",
+  },
+  {
+    question: "How long do I have to prepare and speak in each CELPIP speaking task?",
+    answer:
+      "Preparation and response times vary by task. Most tasks give 30 seconds of preparation time and 60 to 90 seconds to respond. Tasks 7 and 8 give 60 seconds of preparation and 90 seconds to respond. Use every second of preparation time — having a plan before you speak is what separates CLB 8 from CLB 9 responses.",
+  },
+  {
+    question: "What does a CLB 9 CELPIP speaking response sound like?",
+    answer:
+      "A CLB 9 speaking response has three clear characteristics: a structured argument (not rambling), varied vocabulary with no noticeable repetition, and smooth delivery with minimal hesitation. You do not need a perfect accent or native-like speed. The examiner is listening for clarity of thought, range of expression, and grammatical accuracy under real-time conditions.",
+  },
+  {
+    question: "Can I use notes or a template during CELPIP Speaking?",
+    answer:
+      "You cannot bring notes into the test. However, during your preparation time you will have a whiteboard or scratch paper available in some test centres. Use preparation time to quickly jot the structure: your position, first reason, second reason, and closing. Having this visual anchor prevents the 'blank mind' effect that derails many otherwise prepared candidates.",
+  },
+  {
+    question: "What is the most important CELPIP Speaking task to prepare for?",
+    answer:
+      "Tasks 7 and 8 have the highest impact on your final score. Task 7 asks for your opinion on a community or social issue. Task 8 asks you to argue against a position or advocate for a cause. Both require structured, developed responses — not just fluent speech. Candidates who prepare specifically for Tasks 7 and 8 typically see the largest score improvements.",
+  },
+  {
+    question: "How do I improve CELPIP Speaking fluency quickly?",
+    answer:
+      "The fastest improvement comes from practicing structured responses aloud, not just thinking through answers in your head. Record yourself on a phone, then listen back for: vocabulary repetition (do you say 'I think' or 'good' multiple times?), filler overuse ('um', 'like', 'you know'), and organizational gaps (does your answer have a clear beginning, middle, and end?). Examiners can hear structure even if they cannot see it written down.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "CELPIP Speaking Complete Guide", path: "/blog/celpip-speaking-tasks-complete-guide/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="CELPIP Speaking Complete Guide | All 8 Tasks, CLB 9 Strategies, and Sample Answers"
+  description="Master all 8 CELPIP Speaking tasks. Preparation strategies, scored sample responses, and the specific CLB 9 differences for every task type. Improve speaking from CLB 7 to CLB 9."
+  type="article"
+  keywords="CELPIP Speaking tasks, CELPIP Speaking CLB 9, CELPIP Speaking guide, CELPIP Speaking tips, CELPIP Task 7, CELPIP Task 8, CELPIP Speaking sample answer"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">CELPIP speaking guide</span>
+      <h1 class="ic-display" style="margin: 0;">CELPIP Speaking complete guide: all 8 tasks, strategies, and CLB 9 samples</h1>
+      <div class="guide-meta">
+        <span>May 28, 2026</span>
+        <span>17 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        CELPIP Speaking is the most stressful part of the test for most candidates. You have
+        seconds to prepare, minutes to deliver, and no opportunity to revise. The good news is
+        that speaking scores are highly improvable with the right preparation — not accent
+        reduction or pronunciation drilling, but structural preparation and vocabulary building.
+      </p>
+      <p>
+        This guide walks through all eight tasks, gives specific strategies for the highest-impact
+        tasks (7 and 8), and shows you exactly what the difference looks like between a CLB 7
+        and a CLB 9 response on the same prompt.
+      </p>
+    </div>
+
+    <section class="guide-card">
+      <h2 class="ic-display">How CELPIP Speaking works</h2>
+      <p>
+        CELPIP Speaking is delivered entirely on a computer. You listen to instructions, see
+        a prompt on screen, use preparation time to organize your thoughts, and then speak
+        aloud into a microphone. There is no live examiner. Your responses are recorded and
+        scored by trained CELPIP raters.
+      </p>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Task</th>
+          <th>Type</th>
+          <th>Prep time</th>
+          <th>Response time</th>
+        </tr>
+        <tr><td>Task 1</td><td>Talking about a personal experience</td><td>30 sec</td><td>60 sec</td></tr>
+        <tr><td>Task 2</td><td>Giving advice to a friend</td><td>30 sec</td><td>60 sec</td></tr>
+        <tr><td>Task 3</td><td>Describing a scene (image)</td><td>30 sec</td><td>60 sec</td></tr>
+        <tr><td>Task 4</td><td>Making predictions from an image</td><td>30 sec</td><td>60 sec</td></tr>
+        <tr><td>Task 5</td><td>Comparing and persuading</td><td>60 sec</td><td>60 sec</td></tr>
+        <tr><td>Task 6</td><td>Dealing with a difficult situation</td><td>60 sec</td><td>60 sec</td></tr>
+        <tr><td>Task 7</td><td>Expressing opinions on a community/social issue</td><td>60 sec</td><td>90 sec</td></tr>
+        <tr><td>Task 8</td><td>Describing an unlikely scenario / arguing a position</td><td>60 sec</td><td>90 sec</td></tr>
+      </table>
+      <div class="guide-note">
+        <p>Tasks 7 and 8 give the longest response time and have the most direct impact on your final CLB score. Prioritize preparing for these two tasks above all others.</p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Task 1 and 2: personal experience and advice</h2>
+      <p>
+        Task 1 asks you to describe a personal memory or experience. Task 2 asks you to give
+        advice to a friend in a specific situation. Both feel conversational and low-stakes.
+        Most candidates score adequately here — the challenge is using the full 60 seconds
+        with structured content.
+      </p>
+      <h3>CLB 9 strategy</h3>
+      <ul class="guide-list">
+        <li>Use your 30 seconds of prep to choose a specific memory or situation — not a vague general one. "A time I had to make a difficult decision at work" is better than "a good memory from my life."</li>
+        <li>Structure: <strong>Context (10 sec) → What happened (30 sec) → What you felt or learned (20 sec)</strong>. Fill the time with detail, not filler sounds.</li>
+        <li>For Task 2 (advice), give <strong>two specific pieces of advice</strong> with brief reasons. Do not repeat the same advice in different words.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Tasks 3 and 4: image description and prediction</h2>
+      <p>
+        Task 3 shows an image of a scene — usually a social setting like a park, office, or
+        street — and asks you to describe what you see. Task 4 shows a related or different
+        image and asks what might happen next.
+      </p>
+      <h3>CLB 9 strategy</h3>
+      <ul class="guide-list">
+        <li>Use a spatial approach: describe the <strong>foreground, background, and people in order</strong>. This prevents the rambling and omissions that limit most Task 3 responses to CLB 6–7.</li>
+        <li>Use vocabulary beyond basic adjectives: "a middle-aged man in business casual attire" beats "a man in nice clothes." "A crowded outdoor market" beats "a busy place."</li>
+        <li>For Task 4, speculate with structured hedging: "It appears that..." / "This suggests that the people in the image might be about to..." — these phrases show range and prevent overconfident errors.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Tasks 5 and 6: comparing options and handling situations</h2>
+      <p>
+        Task 5 shows two options — often two places, products, or plans — and asks you to compare
+        them and recommend one for a specific person. Task 6 presents a difficult interpersonal
+        situation and asks how you would handle it.
+      </p>
+      <h3>CLB 9 strategy for Task 5</h3>
+      <ul class="guide-list">
+        <li>During prep time, identify <strong>two specific differences</strong> between the options — price, convenience, suitability for the stated person's needs, quality.</li>
+        <li>Make your recommendation explicit: "Based on these factors, I would recommend Option A for [person] because..." — a clear recommendation is required for CLB 8+.</li>
+      </ul>
+      <h3>CLB 9 strategy for Task 6</h3>
+      <ul class="guide-list">
+        <li>Structure your response as: <strong>Acknowledge the problem → Describe your first action → Describe the outcome you expect</strong>.</li>
+        <li>Avoid vague responses ("I would talk to them and solve it"). Name specific steps: "I would first..." / "Then I would..." / "If that did not work, I would..."</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Tasks 7 and 8: opinion and argument — where CLB 9 is won or lost</h2>
+      <p>
+        These two tasks are the highest-impact part of the CELPIP Speaking test. Task 7 asks
+        for your opinion on a community or social issue with supporting reasons. Task 8 presents
+        an unusual or challenging scenario and asks you to argue a position or describe how you
+        would handle it.
+      </p>
+
+      <h3>The CLB 9 structure for Task 7</h3>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>State your position (5 seconds)</h3>
+            <p>"In my opinion..." / "I strongly believe that..." — commit immediately. Do not spend the first 20 seconds introducing the topic.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>First reason with brief development (30 seconds)</h3>
+            <p>State the reason, then expand it with one example or explanation. "One reason I support this is... For example, in my experience..."</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Second reason with brief development (30 seconds)</h3>
+            <p>A genuinely different reason — not a restatement of the first. "Additionally..." / "Another important factor is..."</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Brief conclusion (10 seconds)</h3>
+            <p>"For these reasons, I believe..." — restate your position in different words. This signals a complete, structured response.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-top: var(--s-3);">CLB 7 vs CLB 9: same Task 7 prompt</h3>
+      <p><strong>Prompt:</strong> "Some people think that public transportation should be free for all residents. Do you agree or disagree? Why?"</p>
+
+      <table class="guide-mistake-table">
+        <tr>
+          <th></th>
+          <th>CLB 7 response</th>
+          <th>CLB 9 response</th>
+        </tr>
+        <tr>
+          <td><strong>Opening</strong></td>
+          <td>"Um, well, I think free public transportation is a good idea because many people need to travel."</td>
+          <td>"I strongly agree that public transit should be free. The potential benefits for low-income residents and the environment outweigh the financial challenges of implementation."</td>
+        </tr>
+        <tr>
+          <td><strong>First reason</strong></td>
+          <td>"Many people don't have money to pay for buses and trains. If it was free, more people would use it."</td>
+          <td>"For residents on fixed incomes or minimum wage, transit costs represent a significant household expense. Free transit would remove a financial barrier that currently prevents some people from accessing employment, healthcare, and education."</td>
+        </tr>
+        <tr>
+          <td><strong>Second reason</strong></td>
+          <td>"Also it is good for the environment because less cars would be on the road."</td>
+          <td>"From an environmental perspective, reduced fares have already demonstrated in several European cities that ridership increases substantially when cost is eliminated, leading to measurable reductions in vehicle emissions and traffic congestion."</td>
+        </tr>
+        <tr>
+          <td><strong>Closing</strong></td>
+          <td>"So I think it's a good idea."</td>
+          <td>"For these social and environmental reasons, I believe free public transit represents a worthwhile public investment."</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Three vocabulary habits that separate CLB 7 from CLB 9 in speaking</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>CLB 7 habit</th>
+          <th>CLB 9 replacement</th>
+        </tr>
+        <tr>
+          <td>"I think" (used 4+ times per response)</td>
+          <td>"In my view," "I would argue," "It seems to me that," "I am convinced that"</td>
+        </tr>
+        <tr>
+          <td>"Good / bad / important" (vague evaluation)</td>
+          <td>"beneficial," "detrimental," "critical," "significant," "valuable," "counterproductive"</td>
+        </tr>
+        <tr>
+          <td>"Also / and also" (transition overuse)</td>
+          <td>"Furthermore," "In addition," "Another key point is," "Equally important"</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+    </section>
+
+    <section class="guide-card guide-cta" style="margin-top: var(--s-4);">
+      <h2 style="margin-top: 0;">Build the writing skills that support speaking</h2>
+      <p>
+        Strong Task 7 and 8 responses start with structured thinking. Practice the same
+        argument structure in writing first — then transfer it to speech.
+      </p>
+      <div class="cluster" style="gap: var(--s-3); margin-top: var(--s-3);">
+        <a href="/questions/" class="btn btn-primary ic-btn">Practice free writing questions</a>
+        <a href="/celpip/speaking/" class="btn btn-ghost">CELPIP speaking hub</a>
+      </div>
+    </section>
+  </article>
+</Layout>
