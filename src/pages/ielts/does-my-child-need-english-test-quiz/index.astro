@@ -1,0 +1,716 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { buildBreadcrumbSchema } from "../../../lib/seo";
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "IELTS", path: "/ielts/" },
+    {
+      name: "Does My Child Need an English Test?",
+      path: "/ielts/does-my-child-need-english-test-quiz/",
+    },
+  ]),
+];
+
+// KIT TODO: Kay needs to create a parent-segment tag in Kit and set KIT_PARENT_TAG_ID in Netlify env vars.
+// Until then, signups go to the main digest audience.
+---
+
+<Layout
+  title="Does My Child Need an English Test for Canadian University? | Free Quiz"
+  description="Answer 6 quick questions and find out whether your child needs an English proficiency test for Canadian university admission, which test to choose, and how much time they have to prepare."
+  type="website"
+  keywords="does my child need English test Canadian university, IELTS for teen Canada, parent English test quiz, university English requirement Canada"
+  structuredData={pageStructuredData}
+>
+  <div class="section quiz-shell">
+    <div class="surface quiz-container">
+      <header class="quiz-header">
+        <span class="ic-eyebrow">Free parent quiz</span>
+        <h1 class="ic-display" style="margin: 0.5rem 0;">Does my child need an English test for a Canadian university?</h1>
+        <p class="muted" style="margin-top: var(--s-2); max-width: 60ch;">
+          Answer 6 quick questions about your child's schooling, timeline, and English level. You will get a
+          personalised recommendation in under two minutes.
+        </p>
+      </header>
+
+      <!-- Progress bar -->
+      <div class="quiz-progress" aria-label="Quiz progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="6">
+        <div class="quiz-progress__bar" id="quiz-progress-bar" style="width: 0%;"></div>
+      </div>
+      <p class="quiz-progress__label" id="quiz-progress-label">Question 1 of 6</p>
+
+      <!-- Quiz form -->
+      <form id="quiz-form" novalidate>
+
+        <!-- Q1 -->
+        <fieldset class="quiz-step" id="step-1" data-step="1">
+          <legend class="quiz-question">
+            <span class="quiz-question__number">1</span>
+            Where has your child been studying for the past three or more years?
+          </legend>
+          <div class="quiz-options">
+            <label class="quiz-option">
+              <input type="radio" name="q1" value="full-english" required />
+              <span class="quiz-option__label">In a school where all classes are taught in English</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="q1" value="partial-english" />
+              <span class="quiz-option__label">In a school where some classes are in English</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="q1" value="non-english" />
+              <span class="quiz-option__label">Outside Canada, in a non-English school</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="q1" value="not-sure" />
+              <span class="quiz-option__label">I am not sure</span>
+            </label>
+          </div>
+          <div class="quiz-nav">
+            <button type="button" class="btn btn-primary quiz-next" data-next="2">Next</button>
+          </div>
+        </fieldset>
+
+        <!-- Q2 -->
+        <fieldset class="quiz-step quiz-step--hidden" id="step-2" data-step="2">
+          <legend class="quiz-question">
+            <span class="quiz-question__number">2</span>
+            Which province is the university your child is applying to in?
+          </legend>
+          <div class="quiz-options">
+            <label class="quiz-option">
+              <input type="radio" name="q2" value="bc" required />
+              <span class="quiz-option__label">British Columbia (UBC, SFU, etc.)</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="q2" value="ontario" />
+              <span class="quiz-option__label">Ontario (U of T, Waterloo, York, etc.)</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="q2" value="quebec" />
+              <span class="quiz-option__label">Quebec (McGill, Concordia, etc.)</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="q2" value="other" />
+              <span class="quiz-option__label">Other province or not yet decided</span>
+            </label>
+          </div>
+          <div class="quiz-nav">
+            <button type="button" class="btn btn-ghost quiz-back" data-back="1">Back</button>
+            <button type="button" class="btn btn-primary quiz-next" data-next="3">Next</button>
+          </div>
+        </fieldset>
+
+        <!-- Q3 -->
+        <fieldset class="quiz-step quiz-step--hidden" id="step-3" data-step="3">
+          <legend class="quiz-question">
+            <span class="quiz-question__number">3</span>
+            What is your child's current English level in writing?
+          </legend>
+          <div class="quiz-options">
+            <label class="quiz-option">
+              <input type="radio" name="q3" value="strong" required />
+              <span class="quiz-option__label">Strong — essays and reports feel natural</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="q3" value="moderate" />
+              <span class="quiz-option__label">Moderate — can write clearly but makes errors under pressure</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="q3" value="developing" />
+              <span class="quiz-option__label">Developing — writing is a challenge</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="q3" value="not-sure" />
+              <span class="quiz-option__label">Not sure</span>
+            </label>
+          </div>
+          <div class="quiz-nav">
+            <button type="button" class="btn btn-ghost quiz-back" data-back="2">Back</button>
+            <button type="button" class="btn btn-primary quiz-next" data-next="4">Next</button>
+          </div>
+        </fieldset>
+
+        <!-- Q4 -->
+        <fieldset class="quiz-step quiz-step--hidden" id="step-4" data-step="4">
+          <legend class="quiz-question">
+            <span class="quiz-question__number">4</span>
+            How much time does your child have before their application deadline?
+          </legend>
+          <div class="quiz-options">
+            <label class="quiz-option">
+              <input type="radio" name="q4" value="six-plus" required />
+              <span class="quiz-option__label">More than 6 months</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="q4" value="three-to-six" />
+              <span class="quiz-option__label">3 to 6 months</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="q4" value="under-three" />
+              <span class="quiz-option__label">Less than 3 months</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="q4" value="submitted" />
+              <span class="quiz-option__label">Application is already submitted</span>
+            </label>
+          </div>
+          <div class="quiz-nav">
+            <button type="button" class="btn btn-ghost quiz-back" data-back="3">Back</button>
+            <button type="button" class="btn btn-primary quiz-next" data-next="5">Next</button>
+          </div>
+        </fieldset>
+
+        <!-- Q5 -->
+        <fieldset class="quiz-step quiz-step--hidden" id="step-5" data-step="5">
+          <legend class="quiz-question">
+            <span class="quiz-question__number">5</span>
+            Has your child taken an English proficiency test before?
+          </legend>
+          <div class="quiz-options">
+            <label class="quiz-option">
+              <input type="radio" name="q5" value="yes-passed" required />
+              <span class="quiz-option__label">Yes, and scored what they needed</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="q5" value="yes-failed" />
+              <span class="quiz-option__label">Yes, but the score was not high enough</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="q5" value="no-planning" />
+              <span class="quiz-option__label">No, but they are planning to</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="q5" value="no-unsure" />
+              <span class="quiz-option__label">No, and we are not sure if they need to</span>
+            </label>
+          </div>
+          <div class="quiz-nav">
+            <button type="button" class="btn btn-ghost quiz-back" data-back="4">Back</button>
+            <button type="button" class="btn btn-primary quiz-next" data-next="6">Next</button>
+          </div>
+        </fieldset>
+
+        <!-- Q6 -->
+        <fieldset class="quiz-step quiz-step--hidden" id="step-6" data-step="6">
+          <legend class="quiz-question">
+            <span class="quiz-question__number">6</span>
+            What is your main concern right now?
+          </legend>
+          <div class="quiz-options">
+            <label class="quiz-option">
+              <input type="radio" name="q6" value="need-test" required />
+              <span class="quiz-option__label">Whether they need a test at all</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="q6" value="which-test" />
+              <span class="quiz-option__label">Which test to choose</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="q6" value="how-prepare" />
+              <span class="quiz-option__label">How to prepare efficiently</span>
+            </label>
+            <label class="quiz-option">
+              <input type="radio" name="q6" value="cost" />
+              <span class="quiz-option__label">The cost of testing and preparation</span>
+            </label>
+          </div>
+          <div class="quiz-nav">
+            <button type="button" class="btn btn-ghost quiz-back" data-back="5">Back</button>
+            <button type="button" class="btn btn-primary" id="quiz-submit">See my recommendation</button>
+          </div>
+        </fieldset>
+
+      </form>
+
+      <!-- Result panel (hidden until quiz complete) -->
+      <div id="quiz-result" class="quiz-result quiz-step--hidden" aria-live="polite">
+        <div class="quiz-result__icon" aria-hidden="true">&#10003;</div>
+        <h2 class="ic-display" style="margin: var(--s-3) 0 var(--s-2) 0;">Your recommendation</h2>
+        <p id="quiz-result-text" class="quiz-result__text"></p>
+
+        <!-- CTAs -->
+        <div class="quiz-result__ctas" style="margin-top: var(--s-4);">
+          <a href="/tutoring/" class="btn btn-primary ic-btn">Book a private IELTS session</a>
+          <a href="/ai-feedback" class="btn btn-ghost">Try the free AI writing feedback</a>
+        </div>
+
+        <!-- Email capture -->
+        <div class="quiz-email-capture surface" style="margin-top: var(--s-5);">
+          <h3 style="margin-top: 0;">Get a free IELTS preparation checklist for your teen</h3>
+          <p class="muted">
+            We will send you a printable week-by-week preparation checklist for IELTS Academic. No spam.
+          </p>
+          <!-- KIT TODO: Kay needs to create a parent-segment tag in Kit and set KIT_PARENT_TAG_ID in Netlify env vars. Until then, signups go to the main digest audience. -->
+          <form id="quiz-email-form" class="quiz-email-form" novalidate>
+            <input type="hidden" name="source" value="parent-quiz" />
+            <input type="hidden" name="audience" value="digest" />
+            <input type="hidden" name="bot-field" value="" id="quiz-bot-field" />
+            <input type="hidden" name="formRenderedAt" id="quiz-form-rendered-at" />
+
+            <div class="quiz-email-form__row">
+              <label for="quiz-email-input" class="quiz-email-form__label">Your email address</label>
+              <input
+                type="email"
+                id="quiz-email-input"
+                name="email"
+                required
+                autocomplete="email"
+                placeholder="you@example.com"
+                class="quiz-email-form__input"
+              />
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="quiz-email-submit">
+              Send me the checklist
+            </button>
+          </form>
+          <p id="quiz-email-status" class="quiz-email-status" role="status" aria-live="polite"></p>
+          <p class="muted" style="font-size: var(--step--2); margin-top: var(--s-2); margin-bottom: 0;">
+            No spam. We respect your inbox.
+            <a href="/privacy/">Privacy policy</a>
+          </p>
+        </div>
+
+        <!-- Back to pillar -->
+        <div style="margin-top: var(--s-4); text-align: center;">
+          <a href="/blog/canadian-parent-guide-english-tests-university/" class="btn btn-ghost">
+            Read the full parent guide
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</Layout>
+
+<script>
+  // ---- Helpers ----
+  function getEl<T extends HTMLElement>(id: string): T | null {
+    return document.getElementById(id) as T | null;
+  }
+
+  // ---- Progress ----
+  const TOTAL_STEPS = 6;
+
+  function setProgress(currentStep: number) {
+    const bar = getEl<HTMLElement>("quiz-progress-bar");
+    const label = getEl<HTMLElement>("quiz-progress-label");
+    if (bar) bar.style.width = `${Math.round((currentStep / TOTAL_STEPS) * 100)}%`;
+    if (label) label.textContent = `Question ${currentStep} of ${TOTAL_STEPS}`;
+    const progressEl = document.querySelector(".quiz-progress");
+    if (progressEl) progressEl.setAttribute("aria-valuenow", String(currentStep));
+  }
+
+  // ---- Step navigation ----
+  function showStep(stepNumber: number) {
+    document.querySelectorAll<HTMLElement>(".quiz-step").forEach((el) => {
+      el.classList.add("quiz-step--hidden");
+    });
+    const target = getEl<HTMLElement>(`step-${stepNumber}`);
+    if (target) {
+      target.classList.remove("quiz-step--hidden");
+      setProgress(stepNumber);
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  function getSelectedValue(name: string): string {
+    const checked = document.querySelector<HTMLInputElement>(`input[name="${name}"]:checked`);
+    return checked ? checked.value : "";
+  }
+
+  function validateStep(stepNumber: number): boolean {
+    const step = getEl<HTMLFieldSetElement>(`step-${stepNumber}`);
+    if (!step) return true;
+    const radios = step.querySelectorAll<HTMLInputElement>("input[type=radio]");
+    if (!radios.length) return true;
+    return Array.from(radios).some((r) => r.checked);
+  }
+
+  // Attach next/back handlers
+  document.querySelectorAll<HTMLButtonElement>(".quiz-next").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const nextStep = Number(btn.dataset.next);
+      const currentStep = nextStep - 1;
+      if (!validateStep(currentStep)) {
+        const step = getEl<HTMLFieldSetElement>(`step-${currentStep}`);
+        const firstRadio = step?.querySelector<HTMLInputElement>("input[type=radio]");
+        if (firstRadio) {
+          firstRadio.focus();
+          firstRadio.closest(".quiz-options")?.classList.add("quiz-options--error");
+          setTimeout(() => {
+            firstRadio.closest(".quiz-options")?.classList.remove("quiz-options--error");
+          }, 1200);
+        }
+        return;
+      }
+      showStep(nextStep);
+    });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>(".quiz-back").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const backStep = Number(btn.dataset.back);
+      showStep(backStep);
+    });
+  });
+
+  // ---- Result logic ----
+  function computeResult(): string {
+    const q1 = getSelectedValue("q1");
+    const q3 = getSelectedValue("q3");
+
+    if (q1 === "full-english") {
+      return "Your child may qualify for an exemption — but verify with each university before skipping the test. Most Canadian universities require 3 to 4 years of English-medium secondary study including the final year. Check the admissions page for every institution on your child's list, because exemption criteria differ by university and sometimes by faculty.";
+    }
+
+    if ((q1 === "non-english" || q1 === "not-sure") && (q3 === "strong" || q3 === "moderate")) {
+      return "Your child likely needs IELTS Academic. The good news: with 3 to 4 months of structured preparation, most teens reach the required band score. The minimum at most universities is 6.5 overall, with Waterloo requiring 7.0. Focus preparation on writing first — it is the skill that most reliably moves the total band score upward.";
+    }
+
+    return "Based on your answers, we recommend verifying the specific requirement with each university your child is applying to, and preparing for IELTS Academic as a safe default. IELTS Academic is accepted at every major Canadian university. It is the one test you can register for without worrying about whether it will be accepted.";
+  }
+
+  // ---- Submit quiz ----
+  const submitBtn = getEl<HTMLButtonElement>("quiz-submit");
+  if (submitBtn) {
+    submitBtn.addEventListener("click", () => {
+      if (!validateStep(6)) {
+        const step = getEl<HTMLFieldSetElement>("step-6");
+        const firstRadio = step?.querySelector<HTMLInputElement>("input[type=radio]");
+        firstRadio?.focus();
+        return;
+      }
+
+      const form = getEl<HTMLElement>("quiz-form");
+      const result = getEl<HTMLElement>("quiz-result");
+      const resultText = getEl<HTMLElement>("quiz-result-text");
+
+      if (form) form.classList.add("quiz-step--hidden");
+      const progressLabel = getEl<HTMLElement>("quiz-progress-label");
+      if (progressLabel) progressLabel.textContent = "Complete";
+      const bar = getEl<HTMLElement>("quiz-progress-bar");
+      if (bar) bar.style.width = "100%";
+
+      if (resultText) resultText.textContent = computeResult();
+      if (result) {
+        result.classList.remove("quiz-step--hidden");
+        result.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  }
+
+  // ---- Email capture ----
+  const formRenderedAtInput = getEl<HTMLInputElement>("quiz-form-rendered-at");
+  if (formRenderedAtInput) {
+    formRenderedAtInput.value = String(Date.now());
+  }
+
+  const emailForm = getEl<HTMLFormElement>("quiz-email-form");
+  const emailStatus = getEl<HTMLElement>("quiz-email-status");
+  const emailSubmitBtn = getEl<HTMLButtonElement>("quiz-email-submit");
+
+  if (emailForm && emailStatus) {
+    emailForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const emailInput = emailForm.querySelector<HTMLInputElement>("#quiz-email-input");
+      const email = emailInput ? emailInput.value.trim().toLowerCase() : "";
+
+      if (!email) {
+        emailStatus.textContent = "Please enter your email address.";
+        emailStatus.style.color = "var(--text-muted)";
+        return;
+      }
+
+      emailStatus.textContent = "Submitting...";
+      emailStatus.style.color = "var(--text-muted)";
+      if (emailSubmitBtn) emailSubmitBtn.disabled = true;
+
+      try {
+        const renderedAt = formRenderedAtInput ? formRenderedAtInput.value : "";
+        const response = await fetch("/.netlify/functions/subscribe-newsletter", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email,
+            source: "parent-quiz",
+            audience: "digest",
+            formRenderedAt: renderedAt ? Number(renderedAt) : null,
+            "bot-field": "",
+            "cf-turnstile-response": "",
+          }),
+        });
+
+        const data = await response.json().catch(() => null);
+
+        if (!response.ok) {
+          throw new Error(data?.error || "Request failed");
+        }
+
+        emailStatus.textContent = data?.duplicate
+          ? "You are already subscribed. We will send the checklist to your inbox."
+          : "Done! Check your inbox for the preparation checklist.";
+        emailStatus.style.color = "var(--accent, #2563eb)";
+        emailForm.reset();
+      } catch (err) {
+        emailStatus.textContent =
+          err instanceof Error && err.message
+            ? err.message
+            : "We could not save your signup right now. Please try again in a moment.";
+        emailStatus.style.color = "var(--text-muted)";
+        if (emailSubmitBtn) emailSubmitBtn.disabled = false;
+      }
+    });
+  }
+</script>
+
+<style>
+  /* ---- Shell ---- */
+  .quiz-shell {
+    display: flex;
+    justify-content: center;
+    padding-top: var(--s-5);
+    padding-bottom: var(--s-6);
+  }
+
+  .quiz-container {
+    width: 100%;
+    max-width: 680px;
+    padding: var(--s-5);
+  }
+
+  /* ---- Header ---- */
+  .quiz-header {
+    margin-bottom: var(--s-4);
+  }
+
+  /* ---- Progress bar ---- */
+  .quiz-progress {
+    height: 6px;
+    background: var(--border, #e5e7eb);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: var(--s-1);
+  }
+
+  .quiz-progress__bar {
+    height: 100%;
+    background: var(--accent, #2563eb);
+    border-radius: 999px;
+    transition: width 300ms ease;
+  }
+
+  .quiz-progress__label {
+    font-size: var(--step--2);
+    color: var(--muted, #6b7280);
+    margin: 0 0 var(--s-4) 0;
+  }
+
+  /* ---- Steps ---- */
+  .quiz-step {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .quiz-step--hidden {
+    display: none;
+  }
+
+  /* ---- Question ---- */
+  .quiz-question {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--s-3);
+    font-size: var(--step-1);
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: var(--s-4);
+    color: var(--text);
+  }
+
+  .quiz-question__number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--accent, #2563eb);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 800;
+  }
+
+  /* ---- Options ---- */
+  .quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+    margin-bottom: var(--s-4);
+  }
+
+  .quiz-options--error .quiz-option {
+    animation: quiz-shake 300ms ease;
+  }
+
+  @keyframes quiz-shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+  }
+
+  .quiz-option {
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    padding: var(--s-3) var(--s-4);
+    border: 2px solid var(--border, #e5e7eb);
+    border-radius: var(--radius, 10px);
+    cursor: pointer;
+    transition: border-color 150ms ease, background 150ms ease;
+    user-select: none;
+  }
+
+  .quiz-option:hover {
+    border-color: var(--accent, #2563eb);
+    background: color-mix(in srgb, var(--accent, #2563eb) 5%, var(--bg));
+  }
+
+  .quiz-option input[type="radio"] {
+    flex-shrink: 0;
+    width: 1.15rem;
+    height: 1.15rem;
+    accent-color: var(--accent, #2563eb);
+    cursor: pointer;
+  }
+
+  .quiz-option:has(input:checked) {
+    border-color: var(--accent, #2563eb);
+    background: color-mix(in srgb, var(--accent, #2563eb) 8%, var(--bg));
+  }
+
+  .quiz-option__label {
+    font-size: var(--step-0);
+    line-height: 1.5;
+    cursor: pointer;
+  }
+
+  /* ---- Navigation ---- */
+  .quiz-nav {
+    display: flex;
+    gap: var(--s-3);
+    margin-top: var(--s-2);
+  }
+
+  /* ---- Result ---- */
+  .quiz-result {
+    text-align: center;
+  }
+
+  .quiz-result__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background: var(--accent, #2563eb);
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 900;
+    margin-bottom: var(--s-1);
+  }
+
+  .quiz-result__text {
+    font-size: var(--step-0);
+    line-height: 1.75;
+    color: var(--text);
+    max-width: 56ch;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .quiz-result__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-3);
+    justify-content: center;
+  }
+
+  /* ---- Email capture ---- */
+  .quiz-email-capture {
+    border-radius: var(--radius, 12px);
+    padding: var(--s-4) var(--s-5);
+    text-align: left;
+    margin-top: var(--s-5);
+  }
+
+  .quiz-email-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+    margin-top: var(--s-3);
+  }
+
+  .quiz-email-form__row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-1);
+  }
+
+  .quiz-email-form__label {
+    font-size: var(--step--1);
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .quiz-email-form__input {
+    padding: var(--s-2) var(--s-3);
+    border: 1px solid var(--border, #e5e7eb);
+    border-radius: var(--radius, 8px);
+    font-size: var(--step-0);
+    background: var(--bg);
+    color: var(--text);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .quiz-email-form__input:focus {
+    outline: 2px solid var(--accent, #2563eb);
+    outline-offset: 1px;
+    border-color: var(--accent, #2563eb);
+  }
+
+  .quiz-email-status {
+    font-size: var(--step--1);
+    min-height: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 600px) {
+    .quiz-container {
+      padding: var(--s-4) var(--s-3);
+    }
+
+    .quiz-question {
+      font-size: var(--step-0);
+    }
+
+    .quiz-result__ctas {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .quiz-result__ctas .btn {
+      text-align: center;
+    }
+  }
+</style>

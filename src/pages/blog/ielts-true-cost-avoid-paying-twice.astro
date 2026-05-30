@@ -1,0 +1,425 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "How much does IELTS Academic cost in Canada in 2026?",
+    answer:
+      "The IELTS Academic registration fee in Canada is approximately CAD $350 to $380, but fees are updated periodically. Verify the current fee directly at idpcanada.ca or britishcouncil.ca/exam/ielts before budgeting. The fee is the same for paper-based and computer-based formats. There are no discounts for retakes.",
+  },
+  {
+    question: "Is there a fee to send IELTS scores to universities?",
+    answer:
+      "The initial registration fee typically includes a fixed number of score reports sent to institutions you name at the time of registration. Additional score reports sent after the test -- for example, to universities added to your list later -- may incur a fee per institution. Check the current score report policy on the IDP or British Council website when registering, and name all universities your child is applying to at the time of booking where possible.",
+  },
+  {
+    question: "How long are IELTS scores valid for university admission?",
+    answer:
+      "IELTS scores are valid for two years from the test date. A score taken in October 2024 expires in October 2026. If your child sat IELTS early -- for example, in Grade 10 or 11 -- and the score expires before the university's admissions decision is final, a retake will be required even if the original score was above the minimum requirement. This is one of several reasons timing the test correctly matters.",
+  },
+  {
+    question: "Is it worth paying for IELTS tutoring, or can my teen self-study?",
+    answer:
+      "It depends on the gap between your teen's current level and the required score, and on how strong their academic writing is. Students who are already near the target score and have good writing habits can often close the gap with self-study using official Cambridge practice materials. Students who are further from the target, or who have limited experience with formal academic essay writing, tend to see significantly better returns from structured tutoring. The financial case for tutoring is also a risk-reduction case: if tutoring reduces the probability of needing a retake, the expected total cost is lower than the alternative.",
+  },
+  {
+    question: "What happens if my teen sits the wrong version of IELTS?",
+    answer:
+      "If your teen sits IELTS General Training instead of IELTS Academic, the score cannot be used for university admission. A full retake at the standard fee is required, and the time spent preparing for General Training is wasted because the reading and writing tasks differ significantly between versions. Always confirm at the time of booking that the registration is for IELTS Academic, not IELTS General Training.",
+  },
+  {
+    question: "What is the difference between computer-based and paper-based IELTS, and does it affect cost?",
+    answer:
+      "The registration fee is the same for both formats. The difference that matters most for planning purposes is the result turnaround: computer-based results are typically available within three to five business days, while paper-based results can take up to 13 days. If your teen is sitting the test close to an application deadline, choosing the computer-based format ensures the score is available in time. There is no quality or score difference between the two formats.",
+  },
+  {
+    question: "Can we get a refund if my teen needs to cancel the IELTS test?",
+    answer:
+      "Refund and transfer policies vary by test centre and the amount of notice given. Cancellations made well in advance (typically five weeks or more before the test date) may receive a partial refund. Cancellations made close to the test date generally forfeit the full fee. Check the specific refund policy on the IDP or British Council website when booking. This is another reason to book early: it gives you more flexibility to reschedule if circumstances change.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    {
+      name: "What IELTS Actually Costs -- and How to Avoid Paying Twice",
+      path: "/blog/ielts-true-cost-avoid-paying-twice/",
+    },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="What IELTS Actually Costs -- and How to Avoid Paying Twice | IELTS Corner"
+  description="The real total cost of IELTS preparation and testing in Canada, why most families underestimate it, and the specific decisions that determine whether you pay once or twice."
+  type="article"
+  keywords="IELTS cost Canada, how much does IELTS cost, IELTS retake cost, IELTS preparation cost Canada, is IELTS expensive Canada, IELTS fee 2026"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">Cost and planning</span>
+      <h1 class="ic-display" style="margin: 0;">
+        What IELTS actually costs -- and how to avoid paying twice
+      </h1>
+      <div class="guide-meta">
+        <span>May 29, 2026</span>
+        <span>By Dr. Kara Abdolmaleki</span>
+        <span>12 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        The first IELTS test fee is visible and predictable. You can find it on the IDP or British Council
+        website, it comes in a single line item, and it is roughly what you expect. The hidden cost is
+        paying that fee twice -- or three times -- because of avoidable preparation mistakes or planning
+        decisions that seemed reasonable at the time but turned out to be expensive.
+      </p>
+      <p>
+        Most families who prepare strategically pay once. Most families who prepare reactively -- who book
+        late, prepare inadequately, or discover mid-process that they registered for the wrong version --
+        pay twice and wait several additional months in the process. The difference between the two paths
+        is almost always decisions made in the planning phase, not the preparation phase.
+      </p>
+      <p>
+        This guide makes the full cost structure visible, names the specific decisions that determine
+        whether you pay once or twice, and makes the case for why preparation investment -- properly
+        framed -- reduces total cost rather than adding to it.
+      </p>
+      <div class="guide-note">
+        <p>
+          <strong>A note on prices:</strong> All figures in this guide are approximate. IELTS registration
+          fees are set by IDP and the British Council and are updated periodically. Always verify the current
+          registration fee at <a href="https://www.idpcanada.ca" target="_blank" rel="noopener">idpcanada.ca</a> or
+          the British Council Canada website before budgeting. Tutoring rates vary by provider and region.
+          The figures here are representative ranges as of 2026, not contractual quotes.
+        </p>
+      </div>
+    </div>
+
+    <section class="guide-card">
+      <h2 class="ic-display">The visible cost: IELTS Academic registration</h2>
+      <p>
+        The IELTS Academic registration fee in Canada is approximately CAD $350 to $380. The fee is the
+        same whether you choose the paper-based or computer-based format, and the same whether you sit
+        the test for the first time or the fourth. There are no early-bird discounts, no student rates,
+        and no price reduction for registering with a particular institution.
+      </p>
+      <p>
+        What that fee covers: the test itself, the scoring and marking process, and a set number of score
+        reports sent to institutions you name at registration. Additional score reports sent to institutions
+        after the initial registration -- for example, universities added to your child's list after the
+        test -- may incur a per-institution fee. Naming all target universities at the time of registration
+        is the most cost-efficient approach.
+      </p>
+      <p>
+        This is the cost that families plan for. It is not the cost that surprises them.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">The hidden costs that multiply the total</h2>
+      <p>
+        The decision to retake -- which typically costs another $350 to $380, delays the application
+        timeline by weeks or months, and sometimes means missing an application cycle entirely -- is almost
+        always the result of one or more of the following avoidable situations.
+      </p>
+
+      <h3 style="margin-top: var(--s-3);">1. Sitting the wrong test version</h3>
+      <p>
+        IELTS comes in two versions: Academic and General Training. They have different reading and writing
+        tasks and are scored against different rubrics. <strong>Canadian universities accept only IELTS Academic.</strong>
+        IELTS General Training is the immigration version and is not valid for undergraduate admission.
+      </p>
+      <p>
+        This mistake happens more often than you would expect. A parent googles "IELTS Canada," finds the
+        registration page, and books the first available date without confirming the version. Or the student
+        selects the wrong option in the registration process. The result is a wasted registration fee, a
+        wasted preparation period, and a full retake at the standard rate.
+      </p>
+      <p>
+        The fix is simple: at the point of registration, confirm explicitly that the booking is for
+        <em>IELTS Academic</em>. Check the confirmation email. If the word "Academic" does not appear, call
+        the test centre before the test date.
+      </p>
+
+      <h3 style="margin-top: var(--s-3);">2. Under-preparing and scoring below target</h3>
+      <p>
+        The most common path to paying twice. A student sits the test without adequate preparation, scores
+        below the required band (typically 6.5 to 7.0 for Canadian universities), and needs to sit again.
+        Each retake costs the full registration fee. The preparation time required after a failed attempt
+        is also longer than it would have been before the first attempt, because the student has learned
+        specific weaknesses and now needs targeted work on those areas.
+      </p>
+      <p>
+        Under-preparation is often the result of underestimating the writing section. Students who are
+        strong English speakers and confident in their reading and listening ability frequently
+        discover that IELTS Academic writing -- which requires formal academic argumentation structured
+        according to specific conventions -- is more demanding than anticipated. A Band 5.5 in writing
+        drags down an otherwise competitive score.
+      </p>
+
+      <h3 style="margin-top: var(--s-3);">3. Score expiry</h3>
+      <p>
+        IELTS scores are valid for two years from the test date. A student who sits IELTS Academic in
+        Grade 10 or early Grade 11, hoping to get it out of the way, may find that the score has expired
+        by the time the university application is submitted or decided. Universities typically require
+        that scores be valid at the time the application is reviewed, not just at the time it is submitted.
+      </p>
+      <p>
+        This creates a situation where the student achieved a perfectly adequate score and still needs to
+        retake. The cost is the full registration fee and preparation time, even though the underlying
+        language ability has not changed. Timing the test correctly -- close enough to the application
+        deadline that the score is still valid when needed -- prevents this entirely. For a detailed
+        breakdown of optimal timing, see
+        <a href="/blog/when-should-teen-take-ielts-canada-timeline/">When should your teen take IELTS? A timeline for Canadian university applicants</a>.
+      </p>
+
+      <h3 style="margin-top: var(--s-3);">4. Choosing paper-based close to a deadline</h3>
+      <p>
+        Paper-based IELTS results take up to 13 days to be released. Computer-based results are typically
+        available in three to five business days. The registration fee is identical for both formats. If
+        a student sits the test within two weeks of an application deadline and chooses the paper-based
+        format, the score may not arrive before the deadline, even if it is above the required band.
+      </p>
+      <p>
+        The fix is to default to the computer-based format whenever timing is close, and to build sufficient
+        buffer into the test schedule regardless. The content and scoring of both formats are identical;
+        the only practical difference is the result turnaround.
+      </p>
+
+      <h3 style="margin-top: var(--s-3);">5. Missing the score submission deadline</h3>
+      <p>
+        Some universities have a specific deadline for receiving English proficiency test scores as part
+        of the application. A student who sits the test after the score submission deadline -- even if
+        the score itself is above the minimum requirement -- may have the score rejected for that application
+        cycle, requiring reapplication in the next intake.
+      </p>
+      <p>
+        This is not a retake scenario in the technical sense, but the outcome is the same: the cost and
+        time of the test are wasted, and the student is back to the beginning of the application cycle.
+        Score submission deadlines are listed on each university's admissions page and should be factored
+        into the test date selection.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">What strategic preparation actually costs</h2>
+      <p>
+        Once you understand the hidden costs of going through the process twice, the cost of preparation
+        looks different. It is not an addition to the total cost of IELTS -- it is a reduction.
+      </p>
+
+      <h3 style="margin-top: var(--s-3);">Private IELTS Academic tutoring</h3>
+      <p>
+        Private IELTS tutoring in Canada ranges from approximately CAD $60 to $120 per hour, depending on
+        the tutor's qualifications and whether sessions are in-person or online. A 10-to-12-week structured
+        programme at one session per week costs approximately CAD $600 to $1,200.
+      </p>
+      <p>
+        For a student starting from a solid English foundation and targeting Band 6.5, 10 sessions over
+        10 weeks is typically sufficient to address writing structure, vocabulary precision, and the
+        test-strategy habits that determine results in the reading and listening sections. For students
+        targeting Band 7.0 or higher -- required by programmes at Waterloo and some faculties at other
+        universities -- a longer programme or more intensive schedule may be appropriate.
+      </p>
+      <p>
+        A tutor also handles the accountability structure that keeps preparation consistent through a busy
+        Grade 12 schedule. Students who know they have a weekly session tend to practise more consistently
+        between sessions. For more on how tutoring fits into the broader preparation dynamic, see
+        <a href="/blog/how-parents-support-teen-ielts-preparation/">how to support (not pressure) your teen through IELTS preparation</a>.
+      </p>
+
+      <h3 style="margin-top: var(--s-3);">AI writing feedback</h3>
+      <p>
+        The <a href="/ai-feedback">AI Writing Lab</a> provides instant scored feedback on IELTS Academic
+        Task 2 practice essays at a fraction of the cost of tutoring. It is most effective as a supplement
+        to tutoring rather than a replacement: students can submit multiple practice essays per week,
+        receive immediate feedback on specific weaknesses, and enter tutoring sessions with a clear picture
+        of what to work on. Volume practice with quality feedback is what moves writing scores.
+      </p>
+
+      <h3 style="margin-top: var(--s-3);">Official practice materials</h3>
+      <p>
+        The Cambridge IELTS series (available in print and digital formats) provides authentic IELTS Academic
+        tests with official marking. The current volumes (Cambridge IELTS 17, 18, and newer) each contain
+        four complete tests. A set of three volumes costs approximately CAD $40 to $60 and provides 12 full
+        timed practice sittings. This is among the highest-value preparation investments available, because
+        the materials are produced by the same organisation that creates the actual test.
+      </p>
+      <p>
+        The official IELTS website also provides free sample tasks and practice materials, including writing
+        samples with examiner commentary that illustrate the difference between Band 5, 6, 7, and 8 responses.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">A realistic total-cost comparison</h2>
+      <p>
+        Families sometimes evaluate tutoring as an optional extra cost on top of the registration fee.
+        A more accurate frame is to compare the expected total cost of two different preparation approaches.
+      </p>
+      <div style="overflow-x: auto; margin-top: var(--s-3);">
+        <table class="guide-mistake-table">
+          <thead>
+            <tr>
+              <th>Cost item</th>
+              <th>Well-prepared candidate (one attempt)</th>
+              <th>Under-prepared candidate (two attempts)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>IELTS Academic registration(s)</td>
+              <td>~$370</td>
+              <td>~$740</td>
+            </tr>
+            <tr>
+              <td>Tutoring (10 weeks at $80/session)</td>
+              <td>~$800</td>
+              <td>~$400 (less, started late or skipped)</td>
+            </tr>
+            <tr>
+              <td>Practice materials</td>
+              <td>~$50</td>
+              <td>~$50</td>
+            </tr>
+            <tr>
+              <td>Additional preparation after first attempt</td>
+              <td>$0</td>
+              <td>~$400-600 (targeted remediation)</td>
+            </tr>
+            <tr>
+              <td>Opportunity cost: delayed application cycle</td>
+              <td>None</td>
+              <td>Potentially one full academic year</td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold;">Approximate total cash outlay</td>
+              <td style="font-weight: bold;">~$1,220</td>
+              <td style="font-weight: bold;">~$1,590 to $1,790</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="guide-note" style="margin-top: var(--s-3);">
+        <p>
+          These figures are illustrative approximations. Actual costs depend on the tutor's rate, the
+          number of preparation weeks, and whether the second attempt is successful. The point of the
+          comparison is directional: adequate upfront preparation is typically less expensive in total
+          than inadequate preparation followed by one or more retakes. And this comparison does not
+          include the opportunity cost of a delayed application cycle, which for some students means
+          an additional year before university begins.
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">The ROI frame: tutoring as insurance, not luxury</h2>
+      <p>
+        Parents sometimes describe tutoring as a luxury or an extra. This framing makes it feel discretionary
+        -- something to consider if finances allow, but not essential. A more accurate framing is to think
+        of tutoring as risk reduction.
+      </p>
+      <p>
+        Suppose a student has a 50% chance of reaching Band 6.5 without tutoring and an 85% chance with
+        tutoring. The expected cost calculation changes significantly:
+      </p>
+      <ul class="guide-list">
+        <li>Without tutoring: 50% chance of one registration fee, 50% chance of two. Expected registration cost: ~$555 (0.5 x $370 + 0.5 x $740), plus the time cost of a delayed retake.</li>
+        <li>With tutoring: 85% chance of one registration fee, 15% chance of two. Expected registration cost: ~$426 (0.85 x $370 + 0.15 x $740), plus the tutoring cost of ~$800.</li>
+      </ul>
+      <p>
+        Add the tutoring cost to the expected registration cost in both scenarios, and the total expected
+        cost with tutoring (~$1,226) is lower than the total expected cost without it (~$1,155 + the risk
+        of additional remediation and delay). The exact probabilities will differ by student; the principle
+        is the same. For students who are significantly below the target score, the insurance value of
+        tutoring is higher, not lower.
+      </p>
+      <p>
+        The other dimension that this calculation does not capture is the time cost. A below-target first
+        result typically means 8 to 16 additional weeks of preparation before the retake, plus the waiting
+        period for results, plus potentially a full application cycle delay. For a Grade 12 student applying
+        for September entry, a missed deadline means waiting an additional year. No amount of saved tutoring
+        fees offsets the opportunity cost of an extra year.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">A planning checklist: decisions that determine whether you pay once or twice</h2>
+      <ul class="guide-list">
+        <li>
+          <strong>Register for IELTS Academic, not IELTS General Training.</strong> Check the booking
+          confirmation email explicitly. If the version is not stated, call the test centre.
+        </li>
+        <li>
+          <strong>Time the test correctly.</strong> Do not sit so early that the score expires before
+          the application is decided. Do not sit so late that there is no time for a retake if needed.
+          The typical recommendation is to sit at least four to five months before the application
+          deadline for the first attempt. See the
+          <a href="/blog/when-should-teen-take-ielts-canada-timeline/">full timing guide</a> for specific
+          timeline recommendations by grade and application cycle.
+        </li>
+        <li>
+          <strong>Choose computer-based if the test date is close to any deadline.</strong> The turnaround
+          is three to five days versus up to 13 days. There is no other relevant difference between the two formats.
+        </li>
+        <li>
+          <strong>Name all target universities at the time of registration.</strong> Additional score
+          reports requested after the test may incur extra fees. Naming institutions upfront avoids this.
+        </li>
+        <li>
+          <strong>Invest in preparation before the first attempt, not between attempts.</strong> The return
+          on preparation time is highest before any official sitting, when the student can apply what they
+          learn to a fresh test experience. Post-attempt preparation is necessarily narrower (it targets
+          specific weaknesses from the previous result) and more time-pressured.
+        </li>
+        <li>
+          <strong>Take at least two to three full timed practice tests before the official date.</strong>
+          Test-day conditions -- timing pressure, the sustained concentration required for a three-hour
+          exam -- are genuinely different from practising individual sections. Students who have never
+          sat a full timed practice test before the official date are not fully prepared, regardless
+          of how much individual skill work they have done.
+        </li>
+        <li>
+          <strong>Verify the score submission deadline at each university, not just the application
+          deadline.</strong> Some universities require scores to be received before the application
+          itself is due. Others allow scores to follow the application. Check each university individually.
+        </li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+    </section>
+
+    <section class="guide-card guide-cta" style="margin-top: var(--s-4);">
+      <h2 style="margin-top: 0;">Prepare thoroughly and pay once</h2>
+      <p>
+        Private IELTS Academic tutoring with Dr. Kara Abdolmaleki gives your teen the structured
+        preparation that makes a second registration unnecessary for most students. Sessions are online,
+        focused on the writing and speaking skills that determine results, and built around your teen's
+        actual gap between current level and target score. The AI Writing Lab provides instant scored
+        feedback on practice essays -- useful for high-volume practice between sessions and a lower-cost
+        starting point if you want to assess current level before committing to a full programme.
+      </p>
+      <div class="cluster" style="gap: var(--s-3); margin-top: var(--s-3);">
+        <a href="/tutoring/" class="btn btn-primary ic-btn">Book a private IELTS Academic session</a>
+        <a href="/ai-feedback" class="btn btn-ghost">Try the AI Writing Lab</a>
+      </div>
+    </section>
+  </article>
+</Layout>

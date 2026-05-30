@@ -1,0 +1,394 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "If my child meets the minimum score, is admission guaranteed?",
+    answer:
+      "No. Meeting the English language minimum makes your child's application eligible for consideration. It does not guarantee admission. Canadian universities are selective institutions with limited seats. Admission decisions weigh academic grades, prerequisite subjects, reference letters, personal statements, and in some programmes, supplementary applications or auditions. Language proficiency is a floor, not a deciding factor. Strong applicants typically aim above the minimum to reduce risk.",
+  },
+  {
+    question: "Do all faculties at these universities have the same English requirements?",
+    answer:
+      "Not always. Many universities set a general minimum and then allow individual faculties or programmes to set higher thresholds. Nursing, pharmacy, education, and some business programmes at UBC, U of T, and McGill all have elevated requirements. Always check both the university-wide minimum and the programme-specific requirements on the faculty's own admissions page.",
+  },
+  {
+    question: "My child has a TOEFL score from 2025 on the old 0-120 scale. Is it still valid?",
+    answer:
+      "IELTS and TOEFL scores are valid for two years from the test date. A score from 2025 remains valid through 2027. The old scale (0-120) was retired on January 21, 2026, but scores issued under the old scale remain valid and on file with ETS. When submitting an older score, universities and ETS can verify it regardless of scale. If your child retests under the new 0-6 scale, the new score will apply.",
+  },
+  {
+    question: "CELPIP is not in the table. Can my child use it for any of these universities?",
+    answer:
+      "No. CELPIP is not accepted for undergraduate admission at any of the six universities in this table, or at any other major Canadian research university. CELPIP was designed and is accepted for Canadian immigration purposes. If you see CELPIP mentioned in any university context, it is either a misunderstanding or refers to a different type of programme. For university admission, only IELTS Academic, TOEFL iBT, PTE Academic, Duolingo English Test, and CAEL are relevant options (and acceptance varies by institution).",
+  },
+  {
+    question: "What does 'exemption: 4 years' mean in the table?",
+    answer:
+      "It means that a student who has completed four years of full-time study at an English-medium school (where English is the language of instruction for core subjects) is typically exempt from submitting any English proficiency test. The four years are the minimum required to qualify. SFU is the exception at three years. Check each university's admissions page for the exact wording, as some require the final year of secondary school to be among the qualifying years.",
+  },
+  {
+    question: "McGill requires scores sent directly from the test provider. How does that work?",
+    answer:
+      "When your child takes IELTS, they can request that their score report be sent directly to institutions at the time of registration or after receiving results. For IELTS, this is done through the British Council or IDP candidate account using the institution's IELTS receiving code. For TOEFL, scores are sent through the ETS My TOEFL account. McGill does not accept self-reported or self-uploaded score PDFs. Check McGill's admissions page for their receiving codes and any applicable fees for score reporting.",
+  },
+  {
+    question: "York's requirements look lower than the other universities. Is York less rigorous?",
+    answer:
+      "York University's English requirements for general undergraduate programmes are somewhat lower than the other five universities listed. This reflects institutional policy, not an assessment of academic quality. York's PTE Academic minimum of 60 and CAEL minimum of 60 are lower than the 65 and 70 found at most of the other institutions. Some faculties at York do set higher requirements. A student who meets York's minimum but misses the target at another university may still apply to York as part of a broader list of applications.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "English Score Requirements at Top Canadian Universities: The 2026 Reference Table", path: "/blog/english-score-requirements-canadian-universities/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="English Score Requirements at Top Canadian Universities: The 2026 Reference Table"
+  description="Official IELTS Academic, TOEFL, PTE Academic, and Duolingo minimum scores for UBC, U of T, McGill, Waterloo, SFU, and York. Verified from official admissions pages. Updated May 2026."
+  type="article"
+  keywords="English test requirements Canadian universities, IELTS score for UBC, IELTS score University of Toronto, TOEFL Canadian university requirements, PTE Academic Canadian university, Duolingo Canadian university"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">Reference</span>
+      <h1 class="ic-display" style="margin: 0;">English score requirements at top Canadian universities: the 2026 reference table</h1>
+      <div class="guide-meta">
+        <span>May 29, 2026</span>
+        <span>14 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        This page consolidates verified English language proficiency minimums for six major Canadian
+        universities: UBC, University of Toronto, McGill, University of Waterloo, Simon Fraser
+        University, and York University. All figures were verified from official university admissions
+        pages on May 29, 2026. Where a requirement has been updated by the university since that
+        date, the figure shown may differ from the current official requirement -- always confirm
+        directly with the university before relying on any number here.
+      </p>
+      <p>
+        A note on what these numbers mean: these are minimum requirements. Meeting the minimum makes
+        an application eligible for review. It does not guarantee admission. Canadian research
+        universities receive many more applications than they can admit. At competitive institutions
+        like UBC, U of T, and McGill, the realistic target score for a comfortable buffer is
+        6.5 to 7.0 IELTS Academic overall, with no section below 6.5 where possible. Aiming for the
+        minimum in a competitive admissions cycle is a risk.
+      </p>
+      <div class="guide-note">
+        <p>
+          <strong>TOEFL scale note:</strong> ETS changed the TOEFL iBT scoring scale from 0-120 to
+          0-6 on January 21, 2026. This table shows both scales where applicable. Scores from before
+          January 21, 2026 remain valid for two years from the test date. Scores from January 21, 2026
+          onwards are reported on the new 0-6 scale.
+        </p>
+      </div>
+      <div class="guide-note">
+        <p>
+          <strong>CELPIP note:</strong> CELPIP is not listed in this table and is not mentioned on
+          any of these universities' English proficiency requirements pages. CELPIP is accepted for
+          Canadian immigration purposes only. It is not an accepted test for undergraduate admission
+          at any of the six universities in this table, or at any other major Canadian research
+          university.
+        </p>
+      </div>
+    </div>
+
+    <section class="guide-card">
+      <h2 class="ic-display">The reference table: all six universities</h2>
+      <p>
+        Scores shown are overall minimums. Per-band or per-skill minimums are noted below the table
+        and in the per-university notes. "N/A" indicates the test is not listed as accepted by that
+        university.
+      </p>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>University</th>
+          <th>IELTS Academic (overall / per band)</th>
+          <th>TOEFL iBT (old 0-120 / new 0-6)</th>
+          <th>PTE Academic</th>
+          <th>Duolingo</th>
+          <th>CAEL</th>
+          <th>Exemption (English-medium school)</th>
+        </tr>
+        <tr>
+          <td><strong>UBC</strong></td>
+          <td>6.5 overall / 6.0 each band</td>
+          <td>90 (old) / 4.5 (new)</td>
+          <td>65 overall / 60 each skill</td>
+          <td>125</td>
+          <td>N/A</td>
+          <td>4 years</td>
+        </tr>
+        <tr>
+          <td><strong>University of Toronto</strong></td>
+          <td>6.5 overall / 6.0 each band</td>
+          <td>89 (old) / 4.5 (new)</td>
+          <td>65 overall</td>
+          <td>120</td>
+          <td>70</td>
+          <td>4 years</td>
+        </tr>
+        <tr>
+          <td><strong>McGill</strong></td>
+          <td>6.5 overall / 6.0 each band</td>
+          <td>90 (old) / 4.5 (new)</td>
+          <td>65 overall</td>
+          <td>125</td>
+          <td>70</td>
+          <td>4 years</td>
+        </tr>
+        <tr>
+          <td><strong>University of Waterloo</strong></td>
+          <td>6.5 overall / Writing 6.5, Speaking 6.5, Reading 6.0, Listening 6.0</td>
+          <td>90 (old) / not separately published for new scale</td>
+          <td>63 overall / Writing 65, Speaking 65</td>
+          <td>120</td>
+          <td>N/A</td>
+          <td>4 years</td>
+        </tr>
+        <tr>
+          <td><strong>SFU</strong></td>
+          <td>6.5 overall / 6.0 each band</td>
+          <td>88 (old) / not separately published for new scale</td>
+          <td>65 overall</td>
+          <td>125</td>
+          <td>70</td>
+          <td>3 years</td>
+        </tr>
+        <tr>
+          <td><strong>York University</strong></td>
+          <td>6.5 overall (no per-skill minimum for general programmes)</td>
+          <td>88 (old) / not separately published for new scale</td>
+          <td>60 overall</td>
+          <td>120</td>
+          <td>60</td>
+          <td>4 years</td>
+        </tr>
+      </table>
+      <p style="margin-top: var(--s-3); font-size: 0.9em; color: var(--color-text-muted, #666);">
+        Last verified: May 29, 2026. This table will be updated when universities publish revised requirements. Always confirm with official university admissions pages before applying.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Important notes on reading the table</h2>
+
+      <h3 style="margin-top: var(--s-4);">1. Waterloo imposes elevated Writing and Speaking minimums</h3>
+      <p>
+        University of Waterloo's IELTS requirement is 6.5 overall, but the overall score is not the
+        only constraint. Waterloo requires a minimum of 6.5 specifically in Writing and Speaking, even
+        though the overall minimum is also 6.5. For Reading and Listening, the per-band minimum drops
+        to 6.0. This is important for students whose profile is Reading/Listening-dominant: a student
+        who scores 7.5 Reading, 7.0 Listening, 6.5 overall, but 6.0 Writing does not meet Waterloo's
+        requirement despite meeting the overall threshold. Plan specifically for Writing at Waterloo.
+      </p>
+      <p>
+        Waterloo's PTE Academic requirement mirrors this structure: 63 overall, but Writing and
+        Speaking must each reach 65.
+      </p>
+
+      <h3 style="margin-top: var(--s-4);">2. SFU's exemption requires only three years</h3>
+      <p>
+        Simon Fraser University grants the English-medium instruction exemption after three years of
+        full-time study at an English-medium school. All five other universities in this table require
+        four years. This means a student who has three years of English-medium schooling but not four
+        may be exempt at SFU while still needing a test at UBC, U of T, McGill, Waterloo, and York.
+        If SFU is on your child's application list, confirm their exemption status at SFU independently
+        from the other institutions.
+      </p>
+
+      <h3 style="margin-top: var(--s-4);">3. York's minimums are lower than the other five</h3>
+      <p>
+        York University's PTE Academic minimum (60) and CAEL minimum (60) are lower than the
+        corresponding minimums at the other five universities, where PTE typically requires 65 and
+        CAEL 70. York's TOEFL minimum (88 on the old scale) is also slightly below UBC, U of T,
+        and McGill (89-90 on the old scale). York's IELTS overall minimum (6.5) matches the group,
+        but York does not publish per-skill IELTS minimums for general undergraduate programmes.
+        Students who have strong overall scores but one weaker skill may find York's requirements
+        more achievable, though faculty-specific requirements at York may be higher.
+      </p>
+
+      <h3 style="margin-top: var(--s-4);">4. McGill requires scores sent directly from the test provider</h3>
+      <p>
+        McGill University does not accept self-reported test scores or PDF uploads for English
+        proficiency tests. Scores must be sent directly from the test provider to McGill. For IELTS,
+        this means requesting an official score report to be sent to McGill's institutional receiving
+        code through the British Council or IDP candidate account. For TOEFL, scores are sent through
+        the ETS My TOEFL account. Allow time for this transmission when planning test dates. McGill
+        publishes receiving codes and instructions on its admissions requirements page.
+      </p>
+
+      <h3 style="margin-top: var(--s-4);">5. Programme-specific elevated requirements exist</h3>
+      <p>
+        The figures in the table are university-wide general minimums. Many faculties and programmes
+        set higher thresholds. Examples at the time of last verification include elevated IELTS
+        requirements at health science programmes at UBC and U of T, business programmes at Waterloo
+        and Schulich at York, and education programmes at SFU and McGill. Always check the admissions
+        requirements for the specific programme your child is applying to, not just the general
+        university minimum.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Per-university notes</h2>
+
+      <h3 style="margin-top: var(--s-4);">University of British Columbia (UBC)</h3>
+      <p>
+        UBC publishes a clear and consistent set of English proficiency requirements applicable
+        across most faculties. The 6.5 IELTS Academic overall with 6.0 per band is well established
+        and has been stable for several years. UBC's Duolingo acceptance (125) was added as the
+        Duolingo test gained wider institutional recognition. UBC accepts PTE Academic with a 65 overall
+        and 60 per skill, making PTE a genuine alternative for students who prefer a fully
+        computer-based test. UBC's exemption requires four years of full-time English-medium
+        instruction, and UBC is explicit that French immersion programmes in Canada generally do not
+        qualify.
+      </p>
+
+      <h3 style="margin-top: var(--s-4);">University of Toronto (U of T)</h3>
+      <p>
+        U of T's requirements are closely aligned with UBC's. The main notable difference is a
+        slightly lower TOEFL minimum (89 old scale vs 90 at UBC and McGill) -- a minor distinction
+        in practice. U of T accepts CAEL at 70, which is an option for students who prefer an
+        examination specifically calibrated for Canadian academic contexts. U of T also accepts
+        Duolingo at 120, slightly below UBC and McGill's 125. U of T's per-programme requirements
+        vary significantly, particularly for the Faculty of Applied Science and Engineering and
+        several health professional pathways.
+      </p>
+
+      <h3 style="margin-top: var(--s-4);">McGill University</h3>
+      <p>
+        McGill's requirements match UBC and the upper tier of the group. The institution is notable
+        for requiring official score submission directly from the test provider -- self-reported scores
+        are not accepted. McGill is a bilingual institution (English and French) but does not grant
+        special exemptions to Francophone students beyond its standard English-medium instruction
+        policy. Students from Quebec who attended English-medium schools should verify their exemption
+        eligibility. McGill's Duolingo minimum (125) is among the higher in this group.
+      </p>
+
+      <h3 style="margin-top: var(--s-4);">University of Waterloo</h3>
+      <p>
+        Waterloo's requirements are distinctive for their elevated Writing and Speaking minimums.
+        This reflects Waterloo's emphasis on these productive skills in its co-op and professionally
+        oriented programmes. Students who are strong in receptive English skills (reading and
+        listening) but less confident in productive skills (writing and speaking) will need specific
+        preparation targeting the Writing and Speaking components. Waterloo does not list CAEL as
+        an accepted test. The new TOEFL 0-6 scale minimum for Waterloo had not been published
+        separately as of May 2026; confirm with Waterloo's admissions office for TOEFL iBT new-scale
+        applicants.
+      </p>
+
+      <h3 style="margin-top: var(--s-4);">Simon Fraser University (SFU)</h3>
+      <p>
+        SFU's requirements align with UBC and the upper tier of this group across test types. Its
+        distinctive feature is the three-year English-medium exemption, the shortest in this group.
+        SFU accepts CAEL at 70 and TOEFL at 88 (old scale), slightly below UBC and McGill. For
+        families in British Columbia specifically, SFU and UBC represent two strong options with
+        comparable requirements, and the three-year exemption at SFU makes a meaningful difference
+        for students with shorter English-medium schooling histories.
+      </p>
+
+      <h3 style="margin-top: var(--s-4);">York University</h3>
+      <p>
+        York's overall profile has lower requirements than the other five universities, particularly
+        for PTE Academic (60 vs 65 at most others) and CAEL (60 vs 70). The absence of per-skill
+        IELTS minimums for general programmes means that a student with an uneven IELTS profile --
+        high in some skills, lower in others -- may still meet York's requirements where they would
+        fall short at Waterloo or UBC. York's Glendon campus (bilingual French-English) and its
+        Schulich School of Business have their own requirements. Check the specific York faculty.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Which test to choose</h2>
+      <p>
+        Every test in this table is a legitimate path to meeting English proficiency requirements at
+        these universities. The practical question is which test best suits your child's strengths,
+        test-taking preferences, and timeline.
+      </p>
+      <ul class="guide-list">
+        <li>
+          <strong>IELTS Academic</strong> is the universally accepted choice and the one with the
+          broadest preparation ecosystem -- official materials, practice tests, tutors, and test
+          centres are widely available. If your family has no strong preference, IELTS Academic is
+          the safest default.
+        </li>
+        <li>
+          <strong>TOEFL iBT</strong> is fully computer-based and particularly strong for students
+          who are comfortable with integrated tasks (reading and listening together). It is widely
+          accepted and well understood by admissions offices.
+        </li>
+        <li>
+          <strong>PTE Academic</strong> (not PTE Core, which is the immigration version) is accepted
+          at all six universities. It is fully automated scoring, which some candidates prefer for
+          its consistency. Note the difference in requirements between overall and per-skill minimums,
+          particularly at Waterloo.
+        </li>
+        <li>
+          <strong>Duolingo English Test</strong> is the most accessible in terms of logistics (taken
+          at home on a computer), but its acceptance is narrower and some faculties may not accept
+          it. Confirm programme-level acceptance before relying on Duolingo.
+        </li>
+        <li>
+          <strong>CAEL</strong> (Canadian Academic English Language Assessment) is accepted at U of T,
+          McGill, SFU, and York. It is specifically designed for Canadian academic contexts. It is not
+          accepted at UBC or Waterloo.
+        </li>
+      </ul>
+      <p>
+        For a detailed side-by-side comparison of all four tests including format differences, cost,
+        and preparation approach, see
+        <a href="/blog/ielts-toefl-pte-duolingo-canadian-university-comparison/">IELTS Academic vs TOEFL vs PTE Academic vs Duolingo for Canadian university admission</a>.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Related guides in this series</h2>
+      <ul class="guide-list">
+        <li>
+          <a href="/blog/canadian-parent-guide-english-tests-university/">The complete Canadian parent guide to English tests for university admission</a> -- full overview of the topic
+        </li>
+        <li>
+          <a href="/blog/ielts-academic-vs-general-training-university/">IELTS Academic vs General Training: do not sit the wrong one for university</a>
+        </li>
+        <li>
+          <a href="/blog/when-should-teen-take-ielts-canada-timeline/">When should my teen take the IELTS? A fall-intake application timeline</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+    </section>
+
+    <section class="guide-card guide-cta" style="margin-top: var(--s-4);">
+      <h2 style="margin-top: 0;">Not sure if your child's current level meets these requirements?</h2>
+      <p>
+        The five-minute quiz gives a quick read on whether a test is needed and which test to target.
+        If your child is preparing for IELTS Academic, our tutors work specifically with secondary
+        students targeting 6.5+ for Canadian university admission.
+      </p>
+      <div class="cluster" style="gap: var(--s-3); margin-top: var(--s-3);">
+        <a href="/tutoring/" class="btn btn-primary ic-btn">Book an IELTS Academic tutoring session</a>
+        <a href="/ielts/does-my-child-need-english-test-quiz/" class="btn btn-ghost">Take the quiz: does my child need a test?</a>
+      </div>
+    </section>
+  </article>
+</Layout>

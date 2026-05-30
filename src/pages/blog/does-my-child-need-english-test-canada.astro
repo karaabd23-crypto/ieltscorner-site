@@ -1,0 +1,333 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "My child has studied in Canada since Grade 6. Do they still need an English test?",
+    answer:
+      "Most likely not. Canadian universities generally waive the English proficiency requirement for students who have completed three or more years of full-time study at an English-medium school in Canada. Exact policies vary: some universities require four years, others accept three years if the final year of secondary school is included. Check the specific language policy on each university's admissions page rather than assuming the waiver applies automatically.",
+  },
+  {
+    question: "What counts as an English-medium school for the exemption?",
+    answer:
+      "An English-medium school is one where English is the official language of instruction — meaning core subjects such as math, science, and social studies are taught in English, not just English class itself. A bilingual school where half the instruction is in another language generally does not qualify. International schools that use English as the language of instruction (even if located outside Canada) often do qualify, but you must verify this with the specific university.",
+  },
+  {
+    question: "My child attended an international school in a non-English-speaking country. Does that count?",
+    answer:
+      "It can, yes. The country of the school matters less than the language of instruction. Many Canadian universities accept English-medium instruction from accredited international schools. However, universities typically want official documentation confirming the language of instruction — usually a letter from the school or a note on official transcripts. Check each university's exemption documentation requirements.",
+  },
+  {
+    question: "My child is not sure if they qualify. What is the safest option?",
+    answer:
+      "The safest option is to contact the admissions office of each university on your child's list and ask directly. Provide details about the school, the years attended, and the language of instruction. Do this well in advance — ideally 12 months before the application deadline. If the answer is uncertain, beginning IELTS Academic preparation while you wait for clarification costs you nothing except time, and it keeps all options open.",
+  },
+  {
+    question: "Which English test is the best choice if my child does need one?",
+    answer:
+      "IELTS Academic is the universally accepted choice for Canadian university admission. It is accepted by every major Canadian university and well-understood by admissions staff. TOEFL iBT is equally accepted at most institutions and is a strong alternative, particularly for students who prefer a fully computer-based test. PTE Academic and Duolingo English Test are accepted at many but not all universities — always check the specific list for each school your child is applying to. Duolingo in particular requires verification because acceptance is still expanding.",
+  },
+  {
+    question: "Can CELPIP be used for university admission?",
+    answer:
+      "No. CELPIP is accepted for Canadian immigration purposes only. It is not on the English language proficiency requirements list for undergraduate admission at any major Canadian university. If your family is also pursuing immigration to Canada, your child may need CELPIP for that process separately — but it will not satisfy university admission requirements.",
+  },
+  {
+    question: "How early should we start preparing if a test is needed?",
+    answer:
+      "Give yourself at least four to six months before the application deadline. That allows time for preparation, one or two practice tests, one official sitting, and a potential retest if the score is below the requirement. Rushing this process causes unnecessary stress. If your child is in Grade 10 or 11, checking the requirement now — even if the application is two years away — is the right move.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "Does My Child Need an English Test for a Canadian University?", path: "/blog/does-my-child-need-english-test-canada/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="Does My Child Actually Need an English Test for a Canadian University? (2026)"
+  description="Most families assume every international student needs an English test. Many don't. Here's how to find out in 5 minutes — and what to do if your teen does need one."
+  type="article"
+  keywords="does my child need English test Canadian university, university English test exemption Canada, IELTS waiver Canadian university, international student English requirement Canada"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">Parent guide</span>
+      <h1 class="ic-display" style="margin: 0;">Does my child actually need an English test for a Canadian university?</h1>
+      <div class="guide-meta">
+        <span>May 29, 2026</span>
+        <span>10 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        Every year, families spend months preparing for an English test their child never needed in
+        the first place. They research test formats, compare tutoring options, buy preparation books,
+        and schedule practice sittings. Then, late in the process, they discover the exemption clause
+        buried in the admissions policy: their child's years at an English-medium school qualified
+        them for a waiver. The test was optional.
+      </p>
+      <p>
+        This guide is designed to answer the question quickly and clearly. You will learn how the
+        exemption works, how to check whether your child qualifies, and exactly what to do if a test
+        is actually required. Reading this first will save you significant time and money.
+      </p>
+    </div>
+
+    <section class="guide-card">
+      <h2 class="ic-display">The exemption rule most families miss</h2>
+      <p>
+        Canadian universities do not require English proficiency tests from all international
+        applicants. They require them from applicants whose English language background is uncertain.
+        The underlying assumption is straightforward: if your child has spent several years being
+        educated in English, the university already has strong evidence of English proficiency from
+        their transcripts and grades.
+      </p>
+      <p>
+        The standard exemption rule across most Canadian universities is:
+      </p>
+      <div class="guide-example">
+        <p>
+          <strong>Three to four years of full-time study at an English-medium school</strong> typically
+          waives the English language proficiency requirement entirely.
+        </p>
+      </div>
+      <p>
+        The exact number of years varies. Some universities require three years; others require four.
+        Some specify that the final year of secondary school must be included. A handful of universities
+        include additional conditions around the type of school or the country of study. This is why
+        you must check each university individually rather than assuming a uniform rule applies.
+      </p>
+      <p>
+        What this exemption does is remove the requirement to submit an IELTS Academic, TOEFL iBT,
+        or any other standardised English test score. Your child's academic record serves as the
+        evidence of language proficiency instead.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">What "English-medium school" actually means</h2>
+      <p>
+        This phrase does a lot of work in the exemption clause, and misunderstanding it causes most
+        of the confusion families experience.
+      </p>
+      <p>
+        An English-medium school is one where <strong>English is the language of instruction</strong>
+        for core academic subjects. That means science, mathematics, history, and literature are
+        taught in English. The test is not whether the school is located in an English-speaking country
+        -- it is whether the day-to-day academic work is conducted in English.
+      </p>
+      <ul class="guide-list">
+        <li><strong>Qualifies in most cases:</strong> A Canadian public school teaching all subjects in English. An accredited international school in South Korea, India, or Brazil where all instruction is in English. A British curriculum school in the UAE teaching in English.</li>
+        <li><strong>Usually does not qualify:</strong> A bilingual school where half the instruction is in French, Mandarin, or another language. A school in an English-speaking country that uses the local language for most instruction with English as a second subject. A school where English is taught as a class but other subjects are in another language.</li>
+        <li><strong>Requires verification:</strong> French immersion schools in Canada (instruction is partly in French). International schools with mixed-language programmes. Schools that use English for some subjects but not others.</li>
+      </ul>
+      <p>
+        If there is any ambiguity about your child's school, contact the university's admissions office
+        directly. Give them the school name, its official language of instruction policy, and the years
+        your child attended. Ask whether this satisfies the English-medium exemption. Getting a written
+        confirmation protects you if any question arises during the application process.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">How to check in five minutes</h2>
+      <p>
+        Every major Canadian university publishes its English language proficiency requirements on its
+        admissions website. Here is the process:
+      </p>
+      <ol class="guide-list">
+        <li>Go to the university's official admissions page (not a third-party site).</li>
+        <li>Search for "English language proficiency" or "English language requirements" in the admissions section.</li>
+        <li>Look for a heading like "Exemptions," "Waivers," or "English-medium instruction."</li>
+        <li>Read the exemption criteria carefully and check whether your child's schooling history meets them.</li>
+        <li>If the language is unclear, call or email the admissions office. Ask specifically: "My child attended [school name], where instruction was in English, for [X] years including [final year of secondary school]. Does this satisfy the English proficiency requirement?"</li>
+      </ol>
+      <p>
+        Do this for every university on your child's list. Policies differ. A student who is exempt at
+        one university may still need a test at another.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Quick reference: your child's likely situation</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Scenario</th>
+          <th>Likely outcome</th>
+          <th>Recommended action</th>
+        </tr>
+        <tr>
+          <td>3 or more years in a Canadian English-medium school, including final year of secondary school</td>
+          <td>Almost certainly exempt</td>
+          <td>Verify on each university's admissions page; no test preparation needed unless exemption is denied</td>
+        </tr>
+        <tr>
+          <td>3 or more years in an accredited international English-medium school (outside Canada)</td>
+          <td>Likely exempt at most universities; some may ask for documentation</td>
+          <td>Contact admissions offices early; obtain a letter from the school confirming language of instruction</td>
+        </tr>
+        <tr>
+          <td>Fewer than 3 years of English-medium schooling</td>
+          <td>Test very likely required</td>
+          <td>Begin IELTS Academic preparation; target 6 months of preparation before application deadlines</td>
+        </tr>
+        <tr>
+          <td>Mixed language schooling (some English, some another language)</td>
+          <td>Likely required; exemption depends on exact circumstances</td>
+          <td>Contact admissions directly with full schooling history; prepare for a test in parallel while waiting</td>
+        </tr>
+        <tr>
+          <td>French immersion school in Canada</td>
+          <td>Varies significantly by university; some count it, some do not</td>
+          <td>Verify with each university; French immersion graduates often do need a test at some schools</td>
+        </tr>
+        <tr>
+          <td>Not sure of the language of instruction at your child's school</td>
+          <td>Cannot determine without more information</td>
+          <td>Check with the school; obtain official documentation; contact university admissions for guidance</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">When a test is needed: choosing the right one</h2>
+      <p>
+        If your child does need an English proficiency test, the decision about which test to take
+        matters. There are four tests accepted by most Canadian universities for undergraduate admission:
+        IELTS Academic, TOEFL iBT, PTE Academic, and Duolingo English Test. There is also CAEL for
+        some Canadian academic contexts.
+      </p>
+      <div class="guide-note">
+        <p>
+          <strong>Important:</strong> CELPIP is accepted for Canadian immigration only. It is not on
+          the English proficiency requirements list for undergraduate admission at any major Canadian
+          university. PTE Core is the immigration version of the PTE test -- only PTE Academic is
+          accepted for university admission. IELTS General Training is for immigration; only IELTS
+          Academic counts for university admission.
+        </p>
+      </div>
+      <p>
+        For most families starting from scratch, <strong>IELTS Academic</strong> is the safe universal
+        choice. It is accepted everywhere, the preparation ecosystem is extensive, and admissions staff
+        are very familiar with it. You cannot go wrong with IELTS Academic.
+      </p>
+      <p>
+        For a complete side-by-side comparison of all four accepted tests including format, cost, and
+        which universities accept which, see
+        <a href="/blog/ielts-toefl-pte-duolingo-canadian-university-comparison/">IELTS Academic vs TOEFL vs PTE Academic vs Duolingo for Canadian university admission</a>.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Understanding IELTS Academic vs IELTS General Training</h2>
+      <p>
+        One of the most common mistakes parents make when booking the IELTS is choosing the wrong
+        version. IELTS comes in two versions: Academic and General Training. They are <strong>not
+        interchangeable</strong> for university admission.
+      </p>
+      <ul class="guide-list">
+        <li><strong>IELTS Academic</strong> is the version required for university undergraduate and postgraduate admission. It tests the reading, writing, listening, and speaking skills needed for academic study.</li>
+        <li><strong>IELTS General Training</strong> is designed for immigration, work experience, and non-academic training programmes. Canadian universities do not accept IELTS General Training for undergraduate admission.</li>
+      </ul>
+      <p>
+        When your child registers, they must select "Academic" not "General Training." This applies
+        whether they book through the British Council, IDP, or the IELTS computer-based test platform.
+        For a full explanation of the differences, see
+        <a href="/blog/ielts-academic-vs-general-training-university/">IELTS Academic vs General Training: which version does your teen need?</a>
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">A practical timeline for families who need a test</h2>
+      <p>
+        If your child is in Grade 10, 11, or 12 and a test is required, here is a sensible timeline:
+      </p>
+      <ul class="guide-list">
+        <li><strong>12 months before application deadline:</strong> Confirm the requirement and check exemption status with each target university. Choose the test (IELTS Academic for most families).</li>
+        <li><strong>10 months before:</strong> Take a diagnostic practice test to assess starting point. Identify gaps in reading, writing, listening, and speaking.</li>
+        <li><strong>8 to 10 months before:</strong> Begin focused preparation. Use official preparation materials. Practice under timed conditions regularly.</li>
+        <li><strong>6 months before:</strong> Sit the official test for the first time. Review results.</li>
+        <li><strong>4 to 5 months before:</strong> Retake if needed. Most candidates who prepare seriously need one or two sittings to reach their target score.</li>
+        <li><strong>Scores valid:</strong> IELTS scores are valid for two years. Plan accordingly if applications are spread across multiple years.</li>
+      </ul>
+      <p>
+        For personalised IELTS Academic preparation, our tutors work with secondary students specifically
+        preparing for Canadian university admission. See
+        <a href="/tutoring/">IELTS Academic tutoring</a> for details on how sessions work.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">The bigger picture: what universities are actually checking</h2>
+      <p>
+        It is worth understanding why the English proficiency requirement exists at all. Canadian
+        universities are not asking for this test to be bureaucratic. They are trying to ensure that
+        students admitted to their programmes can succeed academically once they arrive. A student
+        who struggles significantly with English will find university-level reading, essay writing,
+        seminars, and labs much harder than the subject content itself.
+      </p>
+      <p>
+        The exemption for English-medium schooling exists because years of academic study in English
+        provides better evidence of academic English proficiency than a single test day. The test is
+        a proxy. If the real thing is already demonstrated, the proxy is not needed.
+      </p>
+      <p>
+        This also means that if your child is borderline on the exemption, and the university decides
+        a test is needed, that is useful information. It suggests there may be genuine gaps worth
+        addressing before university begins -- not to satisfy a bureaucratic requirement, but to set
+        your child up for success in their first year.
+      </p>
+      <p>
+        For the full parent guide to English tests for Canadian university admission, including
+        information on all accepted tests, score requirements, and preparation strategies, visit the
+        <a href="/blog/canadian-parent-guide-english-tests-university/">Canadian parent guide to English tests for university</a>.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Not sure whether your child needs a test? Take the quiz</h2>
+      <p>
+        The five-minute quiz at the link below walks through your child's specific situation and gives
+        you a clear answer about whether a test is likely required, which test to take, and what
+        the next step is.
+      </p>
+      <div style="margin-top: var(--s-3);">
+        <a href="/ielts/does-my-child-need-english-test-quiz/" class="btn btn-primary ic-btn">Take the quiz: does my child need an English test?</a>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+    </section>
+
+    <section class="guide-card guide-cta" style="margin-top: var(--s-4);">
+      <h2 style="margin-top: 0;">IELTS Academic tutoring for secondary students</h2>
+      <p>
+        If your child does need IELTS Academic, our tutors specialise in preparing secondary students
+        for Canadian university admission. Sessions are online, flexible around school schedules, and
+        focused on exactly what admissions offices are looking for.
+      </p>
+      <div class="cluster" style="gap: var(--s-3); margin-top: var(--s-3);">
+        <a href="/tutoring/" class="btn btn-primary ic-btn">Learn about IELTS Academic tutoring</a>
+        <a href="/ielts/does-my-child-need-english-test-quiz/" class="btn btn-ghost">Take the exemption quiz</a>
+      </div>
+    </section>
+  </article>
+</Layout>

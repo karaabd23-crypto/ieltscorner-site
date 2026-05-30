@@ -1,0 +1,485 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "Does my child need an English test for a Canadian university?",
+    answer:
+      "Probably not if your child has completed three or more years of full-time study at an English-medium secondary school that includes Grade 12. Most Canadian universities offer an exemption for students who meet this criterion. However, the exemption rules differ between institutions and sometimes between faculties at the same university. Always verify directly with each university your child is applying to before assuming the test is not required.",
+  },
+  {
+    question: "Which English test is best for Canadian university admission?",
+    answer:
+      "IELTS Academic is the most universally accepted English proficiency test at Canadian universities and is a safe choice for any institution. TOEFL iBT is equally valid and accepted by virtually all Canadian universities. Both are strong options. PTE Academic is accepted at some universities but not all, and availability of preparation materials is more limited. The most important thing is to confirm acceptance with each specific university before registering for any test.",
+  },
+  {
+    question: "Will CELPIP get my child into a Canadian university?",
+    answer:
+      "No. CELPIP (the Canadian English Language Proficiency Index Program) is designed for Canadian immigration and is accepted by Immigration, Refugees and Citizenship Canada (IRCC). It is not accepted by Canadian universities for undergraduate admission. Do not register your child for CELPIP expecting it to satisfy university English language requirements. Sitting the wrong test means wasted money and a delay to your child's application.",
+  },
+  {
+    question: "What is the difference between IELTS Academic and IELTS General Training?",
+    answer:
+      "IELTS Academic is for university admission. IELTS General Training is for Canadian immigration (Express Entry, provincial nominee programs) and is not accepted for university admission. The two versions have different reading and writing tasks and are scored against different rubrics. If your child sits IELTS General Training by mistake, that score cannot be used for university admission. Make sure your child registers specifically for IELTS Academic.",
+  },
+  {
+    question: "How long does it take to prepare for IELTS Academic?",
+    answer:
+      "Most teenagers need eight to sixteen weeks of structured preparation to move from their current English level to the band score that universities require, which is typically 6.5 to 7.0 overall. Students who are already strong writers may need less time; students who have been studying in a non-English environment may need more. The writing component is usually the skill that requires the most targeted practice because it involves academic essay conventions that are different from everyday English writing.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    {
+      name: "Canadian Parent Guide: English Tests for University",
+      path: "/blog/canadian-parent-guide-english-tests-university/",
+    },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+
+const clusterPosts = [
+  {
+    href: "/blog/does-my-child-need-english-test-canada/",
+    title: "Does my child need an English test for a Canadian university?",
+    summary:
+      "The exemption rules explained clearly. Find out whether your child qualifies before registering for any test.",
+  },
+  {
+    href: "/blog/ielts-toefl-pte-duolingo-canadian-university-comparison/",
+    title: "IELTS vs TOEFL vs PTE vs Duolingo: which test for Canadian university?",
+    summary:
+      "A side-by-side comparison of every accepted test across Canadian universities so you can make the right choice.",
+  },
+  {
+    href: "/blog/why-celpip-pte-core-wont-get-into-canadian-university/",
+    title: "Why CELPIP and PTE Core will not get your child into a Canadian university",
+    summary:
+      "These tests are for immigration, not university. Understand why before your child wastes money on the wrong test.",
+  },
+  {
+    href: "/blog/ielts-academic-vs-general-training-university/",
+    title: "IELTS Academic vs General Training: which version for university admission?",
+    summary:
+      "Sitting the wrong IELTS version is a costly mistake. Here is exactly which version to register for and why.",
+  },
+  {
+    href: "/blog/english-score-requirements-canadian-universities/",
+    title: "English score requirements at major Canadian universities",
+    summary:
+      "A reference guide to minimum IELTS and TOEFL scores at UBC, U of T, McGill, Waterloo, SFU, and York.",
+  },
+  {
+    href: "/blog/when-should-teen-take-ielts-canada-timeline/",
+    title: "When should your teen take IELTS? A timeline for Canadian university applicants",
+    summary:
+      "The right timing depends on application deadlines, preparation time, and retake windows. Plan it out here.",
+  },
+  {
+    href: "/blog/how-parents-support-teen-ielts-preparation/",
+    title: "How parents can support their teen's IELTS preparation",
+    summary:
+      "Practical guidance for parents who want to help without taking over. What works, what does not.",
+  },
+  {
+    href: "/blog/ielts-true-cost-avoid-paying-twice/",
+    title: "The true cost of IELTS and how to avoid paying twice",
+    summary:
+      "Registration fees, retake costs, and preparation investment. How to plan your budget and pass first time.",
+  },
+];
+---
+
+<Layout
+  title="Canadian Parent Guide: English Tests for University Admission | IELTS Corner"
+  description="Everything Canadian parents need to know about English language tests for university admission: which tests are accepted, which are not, minimum scores, and how to prepare your teen."
+  type="article"
+  keywords="English test Canadian university, IELTS for university Canada, does my child need English test Canada, TOEFL Canadian university admission, IELTS Academic undergraduate Canada, parent guide university English requirement"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">Parent guide</span>
+      <h1 class="ic-display" style="margin: 0;">
+        Canadian parent's guide to English language tests for university admission
+      </h1>
+      <div class="guide-meta">
+        <span>May 29, 2026</span>
+        <span>By Dr. Kara Abdolmaleki</span>
+        <span>20 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        If your child is applying to a Canadian university and English is not their first language, you are probably
+        asking one of these questions: Does my child actually need to write an English proficiency test? Which test
+        should they choose? How hard is it to reach the required score? And what happens if they do not make it
+        the first time?
+      </p>
+      <p>
+        These are reasonable questions and the answers matter. Choosing the wrong test, sitting the wrong version of a
+        test, or registering too late can delay admission or cost hundreds of dollars unnecessarily. This guide gives
+        you a clear, honest picture of how English language testing works for undergraduate admission at Canadian
+        universities, what the common traps are, and how to help your child prepare efficiently.
+      </p>
+    </div>
+
+    <!-- Quick check quiz CTA -->
+    <section class="guide-card" style="background: var(--accent-light, #f0f7ff); border: 2px solid var(--accent, #2563eb);">
+      <h2 class="ic-display" style="margin-top: 0;">Not sure if your child needs a test?</h2>
+      <p>
+        Take our free 6-question quiz. It looks at your child's schooling background, the province they are applying
+        to, and their current English level, then gives you a clear recommendation in under two minutes.
+      </p>
+      <div class="cluster" style="gap: var(--s-3); margin-top: var(--s-3);">
+        <a href="/ielts/does-my-child-need-english-test-quiz/" class="btn btn-primary ic-btn">
+          Take the free quiz
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 1: Does my child need a test -->
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Does your child actually need an English test?</h2>
+      <p>
+        Most Canadian universities require international students whose first language is not English to demonstrate
+        English proficiency as part of their application. However, every major Canadian university also offers an
+        <strong>exemption</strong> for students who have completed a sufficient amount of schooling in English.
+      </p>
+      <p>
+        The exemption typically applies when a student has completed three or more consecutive years of full-time
+        study at a secondary school where English was the sole or primary language of instruction, and that study
+        included the final year (Grade 12 or equivalent). Some universities extend this to post-secondary study.
+      </p>
+      <p>
+        The critical word here is <em>verify</em>. Exemption rules are institution-specific, sometimes
+        faculty-specific, and they are updated periodically. A student who qualifies for an exemption at the
+        University of Toronto may not automatically qualify at McGill. Before your child invests any time or money
+        in test preparation, look up the specific exemption criteria on each university's admissions page and confirm
+        with the admissions office if you are uncertain.
+      </p>
+      <div class="guide-note">
+        <p>
+          <strong>Practical tip:</strong> If your child's schooling history is straightforward (for example, they
+          attended an English-medium school in Canada for all of secondary school), the exemption almost certainly
+          applies. If any part of their secondary education was at a school where English was not the language of
+          instruction, they likely need a test.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2: Which tests are accepted -->
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Which English tests do Canadian universities accept?</h2>
+      <p>
+        Canadian universities accept a narrow set of English proficiency tests for undergraduate admission. The two
+        tests accepted at virtually every Canadian university are:
+      </p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>IELTS Academic</h3>
+            <p>
+              The International English Language Testing System Academic version is accepted at every major Canadian
+              university. The typical minimum score for admission is an overall band of 6.5, with some universities
+              (notably Waterloo) requiring 7.0 overall. Many universities also set a minimum score per skill band,
+              commonly 6.0, to prevent a strong performance in one skill from masking a weak performance in another.
+            </p>
+            <p>
+              IELTS Academic is offered in a computer-delivered and a paper-based format. Results are usually
+              available within three to five business days for the computer format.
+            </p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>TOEFL iBT</h3>
+            <p>
+              The Test of English as a Foreign Language Internet-Based Test is the main alternative to IELTS
+              Academic and is accepted at all major Canadian universities. Minimum scores vary but are commonly
+              in the range of 88 to 100 out of 120. TOEFL iBT is entirely computer-based, including the speaking
+              section, which some students find less stressful than the face-to-face IELTS speaking interview.
+            </p>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top: var(--s-3);">
+        A smaller number of universities also accept PTE Academic, Duolingo English Test, and CAEL (the Canadian
+        Academic English Language Assessment). Acceptance for these tests varies significantly by institution.
+        PTE Academic is growing in acceptance, but Duolingo is still rejected by some faculties. Always verify
+        acceptance for the specific university and program your child is applying to.
+      </p>
+    </section>
+
+    <!-- Section 3: Tests that will NOT work -->
+    <section class="guide-card" style="margin-top: var(--s-4); border-left: 4px solid #dc2626;">
+      <h2 class="ic-display">Tests that will NOT satisfy university requirements</h2>
+      <p>
+        This is the section that saves parents the most money and frustration. Two tests that are widely used in
+        Canada are <strong>not accepted</strong> by Canadian universities for undergraduate admission:
+      </p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number" style="background: #dc2626;">!</span>
+          <div>
+            <h3>CELPIP (Canadian English Language Proficiency Index Program)</h3>
+            <p>
+              CELPIP is a test designed specifically for Canadian immigration. It is accepted by IRCC for Express
+              Entry, provincial nominee programs, and Canadian citizenship applications. It is not accepted by
+              Canadian universities as evidence of English proficiency for admission. If your child is applying to
+              university, a CELPIP score is worthless for that purpose.
+            </p>
+            <p>
+              Why is this a common mistake? Because CELPIP is prominently advertised in Canada and parents
+              sometimes assume that a test accepted by the Canadian government must be accepted by Canadian
+              universities. It is not.
+            </p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number" style="background: #dc2626;">!</span>
+          <div>
+            <h3>PTE Core</h3>
+            <p>
+              PTE Core is a newer Pearson test also designed for Canadian immigration. Like CELPIP, it maps to
+              the Canadian Language Benchmarks (CLB) and is accepted by IRCC. Also like CELPIP, it is not
+              accepted by Canadian universities. Do not confuse PTE Core with PTE Academic, which is the
+              university-admission version of the Pearson test.
+            </p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number" style="background: #dc2626;">!</span>
+          <div>
+            <h3>IELTS General Training</h3>
+            <p>
+              IELTS offers two versions of its test: Academic and General Training. The General Training version
+              is for immigration, not university admission. Universities accept IELTS Academic only. If your child
+              registers for IELTS General Training by mistake, that score cannot be used for university admission
+              and the registration fee is forfeited. When registering, confirm that your child is booking
+              <em>IELTS Academic</em>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Score comparison table -->
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Minimum score requirements at major Canadian universities</h2>
+      <p>
+        The figures below are for reference only. Score requirements can differ by faculty and are updated by
+        universities without notice. Verify the current requirement directly with each university before
+        your child registers for a test.
+      </p>
+      <div style="overflow-x: auto; margin-top: var(--s-3);">
+        <table class="guide-mistake-table">
+          <thead>
+            <tr>
+              <th>University</th>
+              <th>IELTS Academic (overall / per band)</th>
+              <th>TOEFL iBT</th>
+              <th>Official requirements page</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>UBC</strong></td>
+              <td>6.5 / 6.0</td>
+              <td>90</td>
+              <td><a href="https://you.ubc.ca/applying-ubc/requirements/english-language-requirement/" target="_blank" rel="noopener">UBC admissions</a></td>
+            </tr>
+            <tr>
+              <td><strong>University of Toronto</strong></td>
+              <td>6.5 / 6.0</td>
+              <td>100</td>
+              <td><a href="https://future.utoronto.ca/apply/requirements/english-language-proficiency/" target="_blank" rel="noopener">U of T admissions</a></td>
+            </tr>
+            <tr>
+              <td><strong>McGill</strong></td>
+              <td>6.5 / 5.5</td>
+              <td>90</td>
+              <td><a href="https://www.mcgill.ca/undergraduate-admissions/apply/requirements/language" target="_blank" rel="noopener">McGill admissions</a></td>
+            </tr>
+            <tr>
+              <td><strong>University of Waterloo</strong></td>
+              <td>7.0 / 6.5</td>
+              <td>100</td>
+              <td><a href="https://uwaterloo.ca/future-students/admissions/english-language-requirements" target="_blank" rel="noopener">Waterloo admissions</a></td>
+            </tr>
+            <tr>
+              <td><strong>SFU</strong></td>
+              <td>6.5 / 6.0</td>
+              <td>88</td>
+              <td><a href="https://www.sfu.ca/students/admission/requirements/english-language-requirement.html" target="_blank" rel="noopener">SFU admissions</a></td>
+            </tr>
+            <tr>
+              <td><strong>York</strong></td>
+              <td>6.5 / 6.0</td>
+              <td>88</td>
+              <td><a href="https://futurestudents.yorku.ca/requirements/english-language-proficiency" target="_blank" rel="noopener">York admissions</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="guide-note" style="margin-top: var(--s-3);">
+        <p>
+          All scores are approximate and must be verified. Some programs within a university require higher scores
+          than the general minimum. Engineering, nursing, and education programs at several universities set higher
+          per-band minimums than the general arts or science requirements.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 5: How hard is it -->
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">How realistic is a Band 6.5 or 7.0 score for a teenager?</h2>
+      <p>
+        For a teenager who has been studying in an English-medium environment for several years, a Band 6.5 is
+        achievable with structured preparation. It is not a trivially easy score, but it is a realistic target
+        for students who are already communicating comfortably in English in their daily academic lives.
+      </p>
+      <p>
+        Band 7.0, which is required by Waterloo and some faculties at other universities, represents a higher
+        standard. At Band 7.0, a student is expected to produce complex, coherent writing with minimal errors,
+        understand a wide range of spoken accents and complex recordings, and use a broad vocabulary accurately.
+        For students at this level, preparation is about test strategy as much as raw language ability.
+      </p>
+      <p>
+        The writing section is usually the most challenging component for teenagers. Academic essay conventions
+        are different from the writing most students do in school, and the Task 2 essay in IELTS Academic requires
+        structured argumentation that many students have not formally practised. Eight to twelve weeks of focused
+        writing practice with feedback makes a significant difference.
+      </p>
+      <div class="guide-steps" style="margin-top: var(--s-3);">
+        <div class="guide-step">
+          <span class="guide-step__number">8</span>
+          <div>
+            <h3>to</h3>
+          </div>
+          <span class="guide-step__number">16</span>
+          <div>
+            <h3>weeks is the typical preparation window</h3>
+            <p>
+              Students who start preparing 3 to 4 months before their application deadline have enough time to
+              take the test, review the result, and retake if needed before the deadline.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: The plan for parents -->
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">A practical action plan for parents</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Check the exemption criteria at every university on your child's list</h3>
+            <p>
+              Do not assume the exemption applies. Go to each university's admissions page and read the specific
+              English language requirement. Note whether the exemption applies to the specific faculty or
+              program your child is applying to.
+            </p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>If a test is needed, choose IELTS Academic or TOEFL iBT</h3>
+            <p>
+              Either of these two tests is a safe choice for all major Canadian universities. Do not register
+              for CELPIP, PTE Core, or IELTS General Training for university admission purposes. Confirm you are
+              booking the correct version when registering.
+            </p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Work backwards from the application deadline</h3>
+            <p>
+              Most Canadian university undergraduate applications are due in November or January for September
+              entry. Results take 3 to 5 days. Build in time for a retake if the first attempt falls short.
+              This means starting preparation at least four to five months before the application deadline.
+            </p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Get a scored writing practice before the test date</h3>
+            <p>
+              The writing component carries significant weight and is the most improvable skill with targeted
+              practice. Getting feedback on actual IELTS Academic Task 2 essays before the test date reveals the
+              specific errors and structural habits that are limiting the score.
+            </p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">5</span>
+          <div>
+            <h3>Consider a private tutoring session to identify weak points</h3>
+            <p>
+              A one-hour private session with an experienced IELTS instructor can identify which skills need
+              the most work and provide a focused study plan. This is especially valuable for students who have
+              been self-studying and are stuck at a plateau.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cluster posts hub -->
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">All guides in this series</h2>
+      <p>
+        The following guides go deeper on each part of the decision and preparation process. Read the ones
+        that are most relevant to where you are right now.
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: var(--s-3); margin-top: var(--s-4);">
+        {clusterPosts.map((post) => (
+          <a href={post.href} class="ic-card" style="display: block; padding: var(--s-4); text-decoration: none; color: inherit; border: 1px solid var(--border); border-radius: var(--radius, 10px);">
+            <h3 style="margin: 0 0 var(--s-2) 0; font-size: var(--step-0); line-height: 1.4;">{post.title}</h3>
+            <p class="muted" style="margin: 0; font-size: var(--step--1); line-height: 1.6;">{post.summary}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+    </section>
+
+    <!-- CTA -->
+    <section class="guide-card guide-cta" style="margin-top: var(--s-4);">
+      <h2 style="margin-top: 0;">Help your child reach the score they need</h2>
+      <p>
+        Private IELTS Academic tutoring with Dr. Kara Abdolmaleki focuses on the skills that universities
+        actually test. Sessions cover writing, speaking, and the strategy habits that separate Band 6 from
+        Band 7. The AI Writing Lab gives instant scored feedback on Task 2 practice essays at any time.
+      </p>
+      <div class="cluster" style="gap: var(--s-3); margin-top: var(--s-3);">
+        <a href="/tutoring/" class="btn btn-primary ic-btn">Book a private IELTS session</a>
+        <a href="/ai-feedback" class="btn btn-ghost">Try the free AI writing feedback</a>
+      </div>
+    </section>
+  </article>
+</Layout>

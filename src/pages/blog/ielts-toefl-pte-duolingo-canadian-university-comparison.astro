@@ -1,0 +1,396 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "Which English test is accepted by all Canadian universities?",
+    answer:
+      "IELTS Academic and TOEFL iBT are the two tests accepted by essentially every Canadian university that requires an English proficiency test. PTE Academic has broad but not universal acceptance. Duolingo English Test is accepted at a growing number of Canadian universities but is still not universally accepted — you must verify for each specific school on your child's list.",
+  },
+  {
+    question: "Is IELTS Academic harder than TOEFL iBT?",
+    answer:
+      "Neither is objectively harder. They test the same core academic English skills but in different formats. IELTS Academic includes a face-to-face speaking component with a live examiner and uses a mix of British, Australian, and North American accents. TOEFL iBT is entirely computer-based including speaking, and uses primarily North American English. Some students find the IELTS speaking interview more natural; others prefer the structured, recorded format of TOEFL. The best test is the one your child can prepare for most effectively.",
+  },
+  {
+    question: "How long does it take to get IELTS results?",
+    answer:
+      "IELTS results are typically available within three to five business days for the computer-delivered test. Paper-based IELTS results take up to 13 days. Given that most families will want to apply to multiple universities with firm deadlines, the computer-delivered IELTS is strongly recommended for the faster turnaround.",
+  },
+  {
+    question: "Is Duolingo English Test accepted at the University of Toronto, UBC, or McGill?",
+    answer:
+      "Acceptance policies for Duolingo change frequently as universities review their policies. The correct approach is to check directly on each university's admissions page rather than relying on any list that may be out of date. Do not assume Duolingo is accepted at any specific institution without checking the official policy for the current admission cycle.",
+  },
+  {
+    question: "What is PTE Academic and how is it different from PTE Core?",
+    answer:
+      "PTE Academic (Pearson Test of English Academic) is a computer-based test designed for university admission and international study. It is accepted by many Canadian universities for undergraduate and postgraduate admission. PTE Core is an entirely different test created for Canadian immigration purposes (it replaced CELPIP for some immigration streams and was introduced for IRCC acceptance in 2024). PTE Core is not accepted for Canadian university admission. When applying to a university, only PTE Academic is relevant.",
+  },
+  {
+    question: "Can my child use the same test for both their study permit and university admission?",
+    answer:
+      "It depends on which test they take. IELTS Academic is accepted for university admission. For the Student Direct Stream (SDS) study permit, IRCC accepts a different set of tests including CELPIP. This means your child may potentially take IELTS Academic for the university application and separately consider their study permit requirements. Check the current IRCC SDS requirements and the university's requirements independently -- they are separate processes with separate accepted tests.",
+  },
+  {
+    question: "What is CAEL and should my child consider it?",
+    answer:
+      "CAEL (Canadian Academic English Language Assessment) is a Canadian test specifically designed to assess academic English for study in Canada. It is accepted by a number of Canadian universities, particularly some colleges and universities in Ontario. It is less commonly required than IELTS Academic or TOEFL iBT and has a more limited preparation ecosystem. Unless a specific university on your child's list requires or recommends CAEL, IELTS Academic or TOEFL iBT is a more practical choice for broad coverage.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "IELTS Academic vs TOEFL vs PTE Academic vs Duolingo for Canadian University", path: "/blog/ielts-toefl-pte-duolingo-canadian-university-comparison/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="IELTS Academic vs TOEFL vs PTE Academic vs Duolingo: Which Test for Canadian University? (2026)"
+  description="Four tests accepted by most Canadian universities. Here's how they compare on format, cost, availability, and which to choose based on your teen's strengths."
+  type="article"
+  keywords="IELTS vs TOEFL Canadian university, IELTS Academic vs Duolingo Canada, which English test Canadian university admission, PTE Academic Canadian university, best English test Canada university"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">Test comparison</span>
+      <h1 class="ic-display" style="margin: 0;">IELTS Academic vs TOEFL vs PTE Academic vs Duolingo: which test for Canadian university admission?</h1>
+      <div class="guide-meta">
+        <span>May 29, 2026</span>
+        <span>12 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        If your child needs an English proficiency test for a Canadian university application, you
+        have four main options: IELTS Academic, TOEFL iBT, PTE Academic, and Duolingo English Test.
+        Each is accepted by most Canadian universities, each has a different format, and each suits
+        a different type of student.
+      </p>
+      <p>
+        This guide is specifically about <strong>university admission</strong>. Two tests that appear
+        frequently in conversations about English and Canada -- CELPIP and PTE Core -- are immigration
+        tests. They are not accepted for undergraduate admission at Canadian universities. This
+        distinction matters and is covered in detail in the
+        <a href="/blog/why-celpip-pte-core-wont-get-into-canadian-university/">dedicated post on this common mistake</a>.
+      </p>
+      <p>
+        Before comparing tests, it is also worth checking whether your child needs a test at all.
+        Many students with three or more years of English-medium schooling are exempt from the
+        requirement entirely. See
+        <a href="/blog/does-my-child-need-english-test-canada/">Does my child actually need an English test for a Canadian university?</a>
+        to check first.
+      </p>
+    </div>
+
+    <section class="guide-card">
+      <h2 class="ic-display">Side-by-side comparison</h2>
+      <div class="guide-note">
+        <p>
+          Costs shown are approximate and in Canadian dollars. Fees change periodically -- verify
+          current pricing at each test's official website before booking. Score requirements vary by
+          university and programme: always confirm at each institution's admissions page.
+        </p>
+      </div>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Factor</th>
+          <th>IELTS Academic</th>
+          <th>TOEFL iBT</th>
+          <th>PTE Academic</th>
+          <th>Duolingo English Test</th>
+        </tr>
+        <tr>
+          <td><strong>Format</strong></td>
+          <td>Paper or computer (Reading, Listening, Writing); face-to-face Speaking</td>
+          <td>Fully computer-based (all four skills in one session)</td>
+          <td>Fully computer-based (all four skills in one session)</td>
+          <td>Fully online (taken at home on a computer with webcam)</td>
+        </tr>
+        <tr>
+          <td><strong>Speaking</strong></td>
+          <td>Live one-on-one interview with trained examiner (11-14 minutes)</td>
+          <td>Recorded spoken responses to computer prompts; no live examiner</td>
+          <td>Recorded spoken responses (AI-scored); no live examiner</td>
+          <td>Short recorded responses; AI-scored</td>
+        </tr>
+        <tr>
+          <td><strong>Scoring</strong></td>
+          <td>AI-scored; human examiners score Speaking</td>
+          <td>AI-scored with human oversight</td>
+          <td>Fully AI-scored (no human examiners)</td>
+          <td>Fully AI-scored</td>
+        </tr>
+        <tr>
+          <td><strong>Results turnaround</strong></td>
+          <td>3-5 business days (computer); up to 13 days (paper)</td>
+          <td>4-8 business days</td>
+          <td>Within 48 hours</td>
+          <td>Within 2 days</td>
+        </tr>
+        <tr>
+          <td><strong>Approximate cost (CAD)</strong></td>
+          <td>$340-$380</td>
+          <td>$280-$330</td>
+          <td>$260-$300</td>
+          <td>$75-$80</td>
+        </tr>
+        <tr>
+          <td><strong>Test duration</strong></td>
+          <td>Approximately 2 hours 45 minutes (plus speaking appointment which may be on a different day)</td>
+          <td>Approximately 3 hours</td>
+          <td>Approximately 2 hours</td>
+          <td>Approximately 1 hour</td>
+        </tr>
+        <tr>
+          <td><strong>Available in Canada</strong></td>
+          <td>Yes, at many test centres across Canada</td>
+          <td>Yes, at many test centres; also available online with remote proctoring</td>
+          <td>Yes, at Pearson VUE centres across Canada</td>
+          <td>Yes, taken at home from anywhere with a computer and webcam</td>
+        </tr>
+        <tr>
+          <td><strong>Score scale</strong></td>
+          <td>0-9 (band scores, 0.5 increments)</td>
+          <td>0-120 (total); each section 0-30</td>
+          <td>10-90 (per skill and overall)</td>
+          <td>10-160 (Literacy, Comprehension, Conversation, Production subscores)</td>
+        </tr>
+        <tr>
+          <td><strong>Score validity</strong></td>
+          <td>2 years</td>
+          <td>2 years</td>
+          <td>2 years</td>
+          <td>2 years</td>
+        </tr>
+        <tr>
+          <td><strong>Accepted at most Canadian universities</strong></td>
+          <td>Yes (universal acceptance)</td>
+          <td>Yes (universal acceptance)</td>
+          <td>Yes (broad but not universal acceptance)</td>
+          <td>Growing -- not yet universally accepted; check each school</td>
+        </tr>
+        <tr>
+          <td><strong>English variety</strong></td>
+          <td>Multiple accents (British, Australian, North American)</td>
+          <td>Primarily North American English</td>
+          <td>Multiple accents</td>
+          <td>Primarily North American English</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Tests that are NOT for university admission</h2>
+      <div class="guide-note">
+        <p>
+          <strong>Do not use these tests for Canadian university admission:</strong>
+        </p>
+        <ul class="guide-list">
+          <li><strong>CELPIP</strong> (Canadian English Language Proficiency Index Program) -- accepted for Canadian immigration (Express Entry, PR, professional licensing) only. No major Canadian university accepts CELPIP for undergraduate admission.</li>
+          <li><strong>PTE Core</strong> -- the immigration version of PTE, introduced for IRCC acceptance in 2024. It is not PTE Academic. Not accepted for university admission.</li>
+          <li><strong>IELTS General Training</strong> -- designed for immigration and non-academic training. Universities require IELTS Academic, not General Training. The two versions are not interchangeable.</li>
+        </ul>
+        <p>
+          Families who are <em>also</em> pursuing Canadian immigration may find themselves researching CELPIP and PTE Core for that process. These tests serve a legitimate purpose -- but only for immigration, not for university. See
+          <a href="/blog/why-celpip-pte-core-wont-get-into-canadian-university/">Why CELPIP and PTE Core will not get your child into a Canadian university</a> for the full explanation.
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">When to choose IELTS Academic</h2>
+      <p>
+        IELTS Academic is the safest, most universally accepted choice for Canadian university
+        admission. It has been the standard for decades. Every major Canadian university accepts it,
+        and admissions staff are deeply familiar with interpreting and contextualising IELTS Academic
+        scores.
+      </p>
+      <p>Choose IELTS Academic when:</p>
+      <ul class="guide-list">
+        <li>Your child is applying to multiple universities and you want guaranteed acceptance everywhere without checking each school individually.</li>
+        <li>Your child has access to strong IELTS preparation resources or tutoring (the preparation ecosystem for IELTS Academic is larger than for any other test).</li>
+        <li>Your child performs well in conversational speaking situations with a real person -- the live examiner speaking component plays to this strength.</li>
+        <li>Your child may later use the score for other purposes (scholarship applications, some professional licensing), where IELTS is the most broadly recognised test.</li>
+        <li>You want a test with well-established score meaning and a long track record of research on validity and reliability.</li>
+      </ul>
+      <p>
+        The main consideration against IELTS Academic is cost -- it is typically the most expensive of
+        the four options. For families with a clear budget constraint, TOEFL iBT or PTE Academic are
+        legitimate alternatives.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">When to choose TOEFL iBT</h2>
+      <p>
+        TOEFL iBT is equally accepted at essentially every Canadian university and is a strong
+        alternative to IELTS Academic in all respects. It is the preferred test at many US universities,
+        which makes it a particularly good choice for students who may also apply to American schools
+        and want one test to cover both.
+      </p>
+      <p>Choose TOEFL iBT when:</p>
+      <ul class="guide-list">
+        <li>Your child is applying to both Canadian and American universities and wants one test result that satisfies both.</li>
+        <li>Your child is more comfortable with a fully computer-based format (including speaking into a microphone rather than to a live examiner).</li>
+        <li>Your child is stronger in North American English contexts -- the test uses primarily North American English throughout.</li>
+        <li>Test centres are more conveniently located or scheduled near you for TOEFL than for IELTS.</li>
+      </ul>
+      <p>
+        TOEFL iBT is also available with remote online proctoring, which adds flexibility for families
+        in locations without a convenient test centre.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">When to choose PTE Academic</h2>
+      <p>
+        PTE Academic has a distinctive advantage: fully AI scoring delivers results within 48 hours.
+        For families managing tight timelines before application deadlines, this speed is a real
+        practical benefit.
+      </p>
+      <p>Choose PTE Academic when:</p>
+      <ul class="guide-list">
+        <li>You need results quickly -- 48-hour turnaround is the fastest of all four tests.</li>
+        <li>Your child prefers a fully structured, computer-based format where there is no live examiner interaction at all.</li>
+        <li>Your child finds the PTE Academic question types (which include tasks like "summarise written text" and "read aloud") more manageable than IELTS or TOEFL question formats.</li>
+        <li>The test is accepted at all universities on your child's shortlist (verify this -- PTE Academic has broad but not universal acceptance in Canada).</li>
+      </ul>
+      <p>
+        Note: confirm that each specific university and programme on your child's application list accepts
+        PTE Academic. While acceptance is broad, it is not universal. Do not assume -- check the
+        admissions policy page.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">When to choose Duolingo English Test</h2>
+      <p>
+        Duolingo's main advantage is cost and convenience. At roughly $75-$80 CAD, it costs a
+        fraction of IELTS or TOEFL. It is taken entirely online from home with no test centre
+        requirement.
+      </p>
+      <p>Choose Duolingo English Test only when:</p>
+      <ul class="guide-list">
+        <li>Cost is a genuine constraint AND all universities on your child's list explicitly accept Duolingo for the current application cycle.</li>
+        <li>Your child is applying to a small number of schools that you have verified accept Duolingo.</li>
+      </ul>
+      <div class="guide-note">
+        <p>
+          <strong>Important caveat on Duolingo:</strong> Do not rely on Duolingo English Test without
+          first checking each specific university's current admissions policy. Not all Canadian
+          universities accept Duolingo, and the list of accepting institutions changes as universities
+          review their policies annually. A student who submits only a Duolingo score to a university
+          that does not accept it will have their application stalled or rejected for the language
+          requirement.
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">A note on CAEL</h2>
+      <p>
+        CAEL (Canadian Academic English Language Assessment) is a test specifically designed for
+        academic English proficiency in Canadian contexts. It is accepted by a number of Canadian
+        universities, particularly some colleges and universities in Ontario and other Canadian
+        provinces.
+      </p>
+      <p>
+        CAEL is a legitimate test, but it has a much smaller preparation ecosystem than IELTS Academic
+        or TOEFL iBT, and its acceptance is less widespread. Unless a specific university on your
+        child's list recommends or requires CAEL, or unless your child has a particular reason to
+        prefer it, IELTS Academic or TOEFL iBT offers broader coverage and better preparation support.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Decision guide: which test is right for your child?</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Your child's situation</th>
+          <th>Best test choice</th>
+        </tr>
+        <tr>
+          <td>Applying to 3+ Canadian universities, want guaranteed acceptance everywhere</td>
+          <td>IELTS Academic</td>
+        </tr>
+        <tr>
+          <td>Applying to both Canadian and American universities</td>
+          <td>TOEFL iBT</td>
+        </tr>
+        <tr>
+          <td>Needs results within 48 hours; verified PTE acceptance at all target schools</td>
+          <td>PTE Academic</td>
+        </tr>
+        <tr>
+          <td>Budget is the primary constraint; all target schools verified to accept Duolingo</td>
+          <td>Duolingo English Test</td>
+        </tr>
+        <tr>
+          <td>Prefers speaking to a live person over computer-based speaking</td>
+          <td>IELTS Academic</td>
+        </tr>
+        <tr>
+          <td>Prefers fully computer-based format with no live examiner</td>
+          <td>TOEFL iBT or PTE Academic</td>
+        </tr>
+        <tr>
+          <td>Not sure where to start; wants the most widely understood test</td>
+          <td>IELTS Academic</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">The IELTS Academic vs General Training distinction</h2>
+      <p>
+        One final point that affects every family choosing IELTS: there are two versions of the
+        test, and only one of them is correct for university admission.
+      </p>
+      <p>
+        IELTS Academic is the version for university admission. IELTS General Training is for
+        immigration. When your child books the IELTS, they must select the Academic version. Booking
+        the General Training version by mistake is a costly error that requires rebooking and delays
+        the application. For a full explanation of the difference, see
+        <a href="/blog/ielts-academic-vs-general-training-university/">IELTS Academic vs General Training: which version does your teen need?</a>
+      </p>
+      <p>
+        For the complete parent guide to navigating English tests for Canadian university admission,
+        visit the
+        <a href="/blog/canadian-parent-guide-english-tests-university/">Canadian parent guide to English tests for university</a>.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+    </section>
+
+    <section class="guide-card guide-cta" style="margin-top: var(--s-4);">
+      <h2 style="margin-top: 0;">IELTS Academic preparation for Canadian university admission</h2>
+      <p>
+        Our tutors work specifically with secondary students preparing IELTS Academic for Canadian
+        university applications. Sessions focus on the academic reading, writing, listening, and
+        speaking tasks that Canadian admissions offices actually see.
+      </p>
+      <div class="cluster" style="gap: var(--s-3); margin-top: var(--s-3);">
+        <a href="/tutoring/" class="btn btn-primary ic-btn">IELTS Academic tutoring</a>
+        <a href="/ielts/does-my-child-need-english-test-quiz/" class="btn btn-ghost">Does my child need a test? Take the quiz</a>
+      </div>
+    </section>
+  </article>
+</Layout>

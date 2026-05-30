@@ -1,0 +1,109 @@
+{
+  "lastUpdated": "2026-05-29",
+  "note": "Scores verified from official university admissions pages on 2026-05-29. TODOs marked where a figure could not be confirmed. Kay must verify all TODOs before publishing.",
+  "toeflNote": "ETS changed the TOEFL iBT scale from 0-120 to 0-6 on January 21 2026. Both scales shown where universities publish both. The new 4.5 on the 6-point scale is roughly equivalent to 88-90 on the old 120-point scale.",
+  "universities": [
+    {
+      "name": "University of British Columbia",
+      "shortName": "UBC",
+      "officialUrl": "https://you.ubc.ca/applying-ubc/requirements/english-language-competency/",
+      "acceptedTests": {
+        "ieltsAcademic": { "overall": 6.5, "minPerBand": 6.0, "notes": "No part below 6.0" },
+        "toeflIbt": { "overall": 90, "overallNew6pt": 4.5, "perSkill": { "reading": 22, "listening": 22, "writing": 21, "speaking": 21 }, "perSkillNew6pt": { "reading": 4.5, "listening": 5.0, "writing": 4.5, "speaking": 4.0 } },
+        "pteAcademic": { "overall": 65, "minPerSkill": 60 },
+        "duolingo": { "overall": 125, "perSkill": { "reading": 115, "listening": 115, "writing": 120, "speaking": 120 } },
+        "cael": { "overall": 70 }
+      },
+      "exemption": "Four or more consecutive years of full-time education in English, in a country where English is the principal language, or at a recognized international school with English as the language of instruction. Must include BC Grade 12 English or equivalent.",
+      "exemptionYears": 4,
+      "celpipAccepted": false,
+      "pteCoreAccepted": false
+    },
+    {
+      "name": "University of Toronto",
+      "shortName": "U of T",
+      "officialUrl": "https://future.utoronto.ca/english-language-requirements",
+      "acceptedTests": {
+        "ieltsAcademic": { "overall": 6.5, "minPerBand": 6.0, "notes": "IELTS Online and Academic for UKVI accepted. Indicator and One Skill Retake not accepted." },
+        "toeflIbt": { "overall": 89, "overallNew6pt": 4.5, "perSkill": { "writing": 22, "speaking": 22 }, "perSkillNew6pt": { "writing": 4.5, "speaking": 4.0 }, "notes": "MyBest (super-scored) results not accepted." },
+        "pteAcademic": { "overall": 65, "minPerSkill": 60 },
+        "duolingo": { "overall": 120, "perSkill": { "production": 120 }, "notes": "Accepted from July 1 2024." },
+        "cael": { "overall": 70, "minPerSkill": 60 }
+      },
+      "exemption": "Four or more years of full-time study at a recognized Canadian school, or at an English-medium school in a country where English is the dominant language.",
+      "exemptionYears": 4,
+      "celpipAccepted": false,
+      "pteCoreAccepted": false
+    },
+    {
+      "name": "McGill University",
+      "shortName": "McGill",
+      "officialUrl": "https://www.mcgill.ca/undergraduate-admissions/apply/english-proficiency",
+      "acceptedTests": {
+        "ieltsAcademic": { "overall": 6.5, "minPerBand": 6.0 },
+        "toeflIbt": { "overall": 90, "overallNew6pt": 4.5, "perSkill": { "reading": 21, "listening": 21, "writing": 21 }, "perSkillNew6ptNote": "TODO: verify per-skill minimums on 6-pt scale at source URL", "programNotes": "Education TESL and Management require 100 (120-pt) / 5.0 (6-pt). Music requires 79-80 (120-pt) / 4.0 (6-pt)." },
+        "pteAcademic": { "overall": 65, "minPerSkill": 60 },
+        "duolingo": { "overall": 125, "programNotes": "B.Ed. TESL and B.Com. require 130" },
+        "cael": { "overall": 70, "minPerSkill": 60 }
+      },
+      "exemption": "Four consecutive years of attendance at high school and/or university in a country where English is the acknowledged primary language.",
+      "exemptionYears": 4,
+      "celpipAccepted": false,
+      "pteCoreAccepted": false,
+      "additionalNote": "Test results must be sent directly from the issuing organization. TOEFL institutional code: 0935-00."
+    },
+    {
+      "name": "University of Waterloo",
+      "shortName": "Waterloo",
+      "officialUrl": "https://uwaterloo.ca/future-students/admissions/english-language-requirements",
+      "acceptedTests": {
+        "ieltsAcademic": { "overall": 6.5, "perSkill": { "writing": 6.5, "speaking": 6.5, "reading": 6.0, "listening": 6.0 }, "alternativeOverall": 7.0, "alternativeNote": "7.0 overall with no band below 6.0 also accepted" },
+        "toeflIbt": { "overall": 90, "overallNew6pt": 4.5, "perSkill": { "writing": 25, "speaking": 25 }, "perSkillNew6pt": { "writing": 5.0, "speaking": 5.0 } },
+        "pteAcademic": { "overall": 63, "perSkill": { "writing": 65, "speaking": 65 } },
+        "duolingo": { "overall": 120, "perSkill": { "literacy": 125, "production": 125 } },
+        "cael": { "overall": null, "notes": "TODO: verify whether CAEL is currently accepted at source URL" },
+        "cambridge": { "overall": 180, "minPerComponent": 176, "notes": "C1 Advanced or C2 Proficiency" }
+      },
+      "exemption": "The four most recent years of full-time education must have been in an English-language school system. Official transcripts or a letter from the school principal required.",
+      "exemptionYears": 4,
+      "celpipAccepted": false,
+      "pteCoreAccepted": false
+    },
+    {
+      "name": "Simon Fraser University",
+      "shortName": "SFU",
+      "officialUrl": "https://www.sfu.ca/students/admission/admission-requirements/english-language-requirement.html",
+      "acceptedTests": {
+        "ieltsAcademic": { "overall": 6.5, "minPerBand": 6.0 },
+        "toeflIbt": { "overall": 88, "overallNew6pt": 4.5, "perSkill": { "min": 20 }, "perSkillNew6pt": { "min": 4.0 } },
+        "pteAcademic": { "overall": 65, "minPerSkill": 60 },
+        "duolingo": { "overall": 125, "perSkillNote": "TODO: verify per-subscore minimums at source URL" },
+        "cael": { "overall": 70, "minPerSkill": 60 },
+        "cambridge": { "overall": 176, "minPerComponent": 169, "notes": "B2 First, C1 Advanced, or C2 Proficiency" }
+      },
+      "exemption": "Last three years of full-time secondary school in English in Canada (minimum 70% in senior-level English), or three years in an English-speaking country. International schools in non-English-speaking countries require four years.",
+      "exemptionYears": 3,
+      "exemptionNote": "SFU is the only university in this list requiring only three years. Significant for teens who arrived in Canada in Grade 10.",
+      "celpipAccepted": false,
+      "pteCoreAccepted": false
+    },
+    {
+      "name": "York University",
+      "shortName": "York",
+      "officialUrl": "https://futurestudents.yorku.ca/requirements/language-tests",
+      "acceptedTests": {
+        "ieltsAcademic": { "overall": 6.5, "minPerBand": null, "programNotes": "TODO: verify elevated thresholds for Nursing, Schulich, Engineering, Glendon at source URL (e.g., IELTS 7.0 for some programs)" },
+        "toeflIbt": { "overall": 88, "overallNew6pt": 4.5, "programNotes": "Engineering: 20 per section (old scale) / 4.0 (new scale)" },
+        "pteAcademic": { "overall": 60, "notes": "Lower than most universities (65). No per-skill minimum stated." },
+        "duolingo": { "overall": 120 },
+        "cael": { "overall": 60, "notes": "Lower than most universities (70). No per-skill minimum stated." },
+        "cambridge": { "overall": 180, "notes": "C1 Advanced or C2 Proficiency" }
+      },
+      "exemption": "Four full years at an accredited English high school in Canada or in an English-primary country. Alternative: one full year of university, or two years of college/applied degree, in English in an English-primary country.",
+      "exemptionYears": 4,
+      "programSpecificNote": "TODO: verify elevated thresholds for Nursing, Schulich, Engineering, Glendon at source URL",
+      "celpipAccepted": false,
+      "pteCoreAccepted": false
+    }
+  ]
+}
