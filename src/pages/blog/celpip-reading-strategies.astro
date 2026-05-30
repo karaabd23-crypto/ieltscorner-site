@@ -1,0 +1,296 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "How long is the CELPIP Reading section?",
+    answer:
+      "The CELPIP Reading section is 55 minutes long and contains four parts. Part 1 is a short email or notice with four multiple-choice questions. Part 2 is a correspondence (email exchange) with four questions. Part 3 is a long prose passage with four questions. Part 4 is a long informational text with eight questions. Total: 38 questions in 55 minutes — approximately 87 seconds per question on average.",
+  },
+  {
+    question: "What is the best CELPIP reading strategy for Part 4?",
+    answer:
+      "Part 4 is the longest and hardest section — 8 questions on a dense informational text. The most effective strategy is to read the questions first before reading the text. Underline the key noun or concept in each question, then scan the text for that concept. This targeted approach is faster than reading the whole passage and then going back to answer questions. Budget at least 18–20 minutes for Part 4.",
+  },
+  {
+    question: "How do I improve my CELPIP Reading score from CLB 7 to CLB 9?",
+    answer:
+      "The CLB 7 to CLB 9 jump in CELPIP Reading requires three specific improvements: (1) eliminating paraphrase confusion — CLB 9 questions often use different words from the text, and you must recognize synonyms and sentence restatements; (2) accurately answering inference questions where the answer is not directly stated; and (3) managing time so you have enough time for Part 4, which carries the most questions. Targeted paraphrase practice and timed Part 4 drills are the most effective preparation methods.",
+  },
+  {
+    question: "What makes CELPIP Reading questions hard?",
+    answer:
+      "CELPIP Reading questions are designed to test comprehension accuracy, not just vocabulary recognition. The three main difficulty types are: (1) Paraphrase traps — the correct answer uses different words from the text and wrong answers use words directly from the passage. (2) Inference questions — the answer requires drawing a logical conclusion that is not stated explicitly. (3) Not Given questions in Part 3 — you must determine whether information is absent from the passage, which requires actively scanning for its absence rather than confirming its presence.",
+  },
+  {
+    question: "Can I skip questions and come back in CELPIP Reading?",
+    answer:
+      "Yes. The CELPIP Reading test is computer-based and allows you to navigate between questions and flag questions for review. Use this strategically: if a question is taking more than 90 seconds, mark it and move on. Return to flagged questions after completing the rest of the section. Never leave a question unanswered — there is no penalty for guessing.",
+  },
+  {
+    question: "What vocabulary do I need for CELPIP Reading CLB 9?",
+    answer:
+      "CELPIP Reading CLB 9 texts use mid-level academic and professional vocabulary — the kind found in newspaper editorials, government reports, and business communications. You do not need highly specialized academic vocabulary (that is IELTS Academic territory). Focus on: paraphrase vocabulary (synonyms for common verbs and nouns), discourse markers (however, consequently, despite, whereas), and evaluative language (advantageous, detrimental, insignificant, comprehensive). Reading one Canadian newspaper article per day in the month before your test is one of the most effective vocabulary preparation strategies.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "CELPIP Reading Strategies", path: "/blog/celpip-reading-strategies/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="CELPIP Reading Strategies: CLB 9 Guide to All 4 Parts, Timing, and Paraphrase Traps"
+  description="Complete CELPIP Reading guide for CLB 9. Part-by-part strategies, timing plan, paraphrase trap avoidance, and the specific habits that block CLB 7 readers from reaching CLB 9."
+  type="article"
+  keywords="CELPIP Reading strategies, CELPIP Reading CLB 9, CELPIP Reading tips, CELPIP Reading Part 4, CELPIP Reading paraphrase, CELPIP Reading guide"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">CELPIP reading guide</span>
+      <h1 class="ic-display" style="margin: 0;">CELPIP Reading complete guide: strategies for all 4 parts and CLB 9</h1>
+      <div class="guide-meta">
+        <span>May 28, 2026</span>
+        <span>14 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        CELPIP Reading is 55 minutes, 38 questions, four different text types, and a set of
+        trap answer patterns designed to catch candidates who read carelessly or rush through
+        the longer passages. Most candidates at CLB 7 can find the right area of a text — the
+        gap to CLB 9 is in how accurately they read the question and how reliably they recognize
+        paraphrased answers.
+      </p>
+      <p>
+        This guide covers every part, gives you a timing plan, explains the three trap answer
+        types in detail, and shows you the specific improvement moves that push Reading from
+        CLB 7 to CLB 9.
+      </p>
+    </div>
+
+    <section class="guide-card">
+      <h2 class="ic-display">The four parts: what each one tests</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Part</th>
+          <th>Text type</th>
+          <th>Questions</th>
+          <th>Recommended time</th>
+          <th>What it tests</th>
+        </tr>
+        <tr>
+          <td><strong>Part 1</strong></td>
+          <td>Short notice, poster, or sign</td>
+          <td>4</td>
+          <td>6–7 min</td>
+          <td>Direct comprehension of brief, functional text</td>
+        </tr>
+        <tr>
+          <td><strong>Part 2</strong></td>
+          <td>Email or letter exchange (correspondence)</td>
+          <td>4</td>
+          <td>8–9 min</td>
+          <td>Inferring intent, tone, and meaning between two writers</td>
+        </tr>
+        <tr>
+          <td><strong>Part 3</strong></td>
+          <td>Longer prose or informational passage</td>
+          <td>4</td>
+          <td>10–12 min</td>
+          <td>Main idea, detail, inference, and Not Given discrimination</td>
+        </tr>
+        <tr>
+          <td><strong>Part 4</strong></td>
+          <td>Long informational or argumentative text</td>
+          <td>8</td>
+          <td>18–20 min</td>
+          <td>Paraphrase recognition, inference, vocabulary in context</td>
+        </tr>
+      </table>
+      <div class="guide-note">
+        <p>Part 4 carries 8 questions — more than any other part. Never spend so long on Parts 1–3 that you rush Part 4. The optimal strategy is to finish Parts 1–3 in 25–28 minutes, leaving at least 27 minutes for Part 4.</p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">The three trap answer types</h2>
+      <p>
+        CELPIP Reading questions are engineered with specific wrong-answer traps. Knowing
+        these by name lets you spot them before choosing the wrong option.
+      </p>
+
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>The paraphrase trap</h3>
+            <p>The correct answer uses different words from the text. Wrong answers copy words directly from the passage, making them feel more "familiar" and thus more tempting. At CLB 7, candidates choose words they recognize. At CLB 9, candidates match meaning, not wording.</p>
+            <div class="guide-example" style="margin-top: var(--s-2);">
+              <p><strong>Text:</strong> "The renovation was completed ahead of the projected timeline."</p>
+              <p><strong>Question:</strong> What does the text say about the renovation?</p>
+              <p><strong>Wrong (trap):</strong> "The renovation took a long time." (uses familiar renovation/time concept)</p>
+              <p><strong>Correct:</strong> "The work was finished earlier than expected." (paraphrase — "projected timeline" = "expected")</p>
+            </div>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>The half-true trap</h3>
+            <p>The wrong answer is partly accurate — it includes information from the text but adds one word or phrase that makes it wrong. These answers are the most dangerous because they feel correct on a fast read.</p>
+            <div class="guide-example" style="margin-top: var(--s-2);">
+              <p><strong>Text:</strong> "The program is available to full-time students aged 18 and over."</p>
+              <p><strong>Wrong (trap):</strong> "Any student aged 18 or over may apply." (missing "full-time" — the half-true error)</p>
+              <p><strong>Correct:</strong> "Full-time students who are at least 18 can access the program."</p>
+            </div>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>The Not Given trap</h3>
+            <p>Some Part 3 and Part 4 questions ask what the text does NOT mention. Wrong answers include information that sounds plausible but genuinely does not appear anywhere in the text. The trap is choosing an answer that seems related to the topic rather than confirming it is actually absent.</p>
+            <p>Strategy: for potential Not Given answers, scan the entire relevant section of the text before selecting. If you genuinely cannot find the information after scanning, select Not Given. Do not infer — the absence must be confirmed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Part-by-part strategies</h2>
+
+      <h3>Part 1: Short notice or sign</h3>
+      <ul class="guide-list">
+        <li>Read the full text first (it is short — under 150 words). Understand the context before looking at questions.</li>
+        <li>All four answers are usually answerable by specific lines in the text. Locate the exact sentence, then check which answer matches its meaning — not its wording.</li>
+        <li>Common question types: What is the purpose of this notice? Who is this intended for? What must readers do?</li>
+      </ul>
+
+      <h3>Part 2: Email exchange</h3>
+      <ul class="guide-list">
+        <li>There are two writers. Keep track of who is saying what — do not attribute statements from Writer A to Writer B.</li>
+        <li>Questions often test tone and intent: "Why did [Writer A] send this email?" Answers require inference from word choice and context, not just content.</li>
+        <li>Watch for questions about what one writer assumes, implies, or wants — these require reading beyond the literal meaning.</li>
+      </ul>
+
+      <h3>Part 3: Longer passage</h3>
+      <ul class="guide-list">
+        <li>Read the four questions before reading the text. Underline the key noun or concept in each question.</li>
+        <li>Scan for each underlined concept in the text. Read two sentences before and after the match to understand context.</li>
+        <li>For Not Given questions: if you scanned and cannot find the concept, that is likely the Not Given answer. Trust your scan.</li>
+      </ul>
+
+      <h3>Part 4: Long informational text (most important)</h3>
+      <ul class="guide-list">
+        <li>Read all 8 questions before reading the text. Group them by which part of the text they seem to target.</li>
+        <li>The questions usually follow the text in order. Q1 is likely answered in the first third; Q8 in the last third. Use this to navigate.</li>
+        <li>For vocabulary-in-context questions ("The word X in paragraph 3 most likely means..."): replace X with each answer option in the sentence and choose the one that makes the most logical sense in context.</li>
+        <li>Budget at least 2 minutes per question in Part 4. If you are spending more than 2.5 minutes on one question, mark it and move on.</li>
+      </ul>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">What separates CLB 7 from CLB 9 in Reading</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Habit</th>
+          <th>CLB 7 approach</th>
+          <th>CLB 9 approach</th>
+        </tr>
+        <tr>
+          <td>Answer selection</td>
+          <td>Chooses the answer with the most familiar words from the text</td>
+          <td>Identifies which answer has the same meaning as the text, regardless of different wording</td>
+        </tr>
+        <tr>
+          <td>Inference questions</td>
+          <td>Confused when the answer is not stated explicitly — skips or guesses</td>
+          <td>Follows the logical chain: what does this statement imply? What must be true if this is true?</td>
+        </tr>
+        <tr>
+          <td>Part 4 timing</td>
+          <td>Spends too long on Parts 1–3; rushes Part 4 in 10–12 minutes</td>
+          <td>Finishes Parts 1–3 in 25–27 minutes; protects 27–30 minutes for Part 4</td>
+        </tr>
+        <tr>
+          <td>Not Given questions</td>
+          <td>Guesses or chooses based on what "sounds right" about the topic</td>
+          <td>Actively scans and confirms absence before selecting Not Given</td>
+        </tr>
+        <tr>
+          <td>Half-true traps</td>
+          <td>Selects the first option that feels partially correct</td>
+          <td>Reads every word of the answer and verifies each element against the text</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">A practical 4-week improvement plan</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Week 1: Paraphrase training</h3>
+            <p>Take any short paragraph from a Canadian newspaper and rewrite every sentence using different words without changing the meaning. Then reverse: read a sentence, cover it, and write a paraphrase from memory. This builds the core skill underlying CLB 9 reading accuracy.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Week 2: Inference practice</h3>
+            <p>Read short paragraphs and write two "implied but not stated" conclusions for each. Then check whether those conclusions are logically supported. This trains the inference judgment that Part 2 and Part 4 questions test.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Week 3: Full Part 4 timed drills</h3>
+            <p>Practice Part 4 sections under strict time pressure (20 minutes maximum). After each drill, review every wrong answer and identify which trap type it was. Most candidates make the same trap-type error repeatedly — knowing your pattern is the fastest way to fix it.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">4</span>
+          <div>
+            <h3>Week 4: Full test simulations</h3>
+            <p>Take full 55-minute Reading sections under test conditions. Track your time at each section boundary. If you are consistently going over 27 minutes for Parts 1–3, practice faster scanning on Part 1 — it is the shortest and should take no more than 6 minutes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+    </section>
+
+    <section class="guide-card guide-cta" style="margin-top: var(--s-4);">
+      <h2 style="margin-top: 0;">Build your reading and writing skills together</h2>
+      <p>
+        Strong reading comprehension supports stronger writing — understanding how well-structured
+        texts work is the foundation of producing them. Use the free question bank to practise
+        the writing skills that reinforce reading accuracy.
+      </p>
+      <div class="cluster" style="gap: var(--s-3); margin-top: var(--s-3);">
+        <a href="/questions/" class="btn btn-primary ic-btn">Practice free writing questions</a>
+        <a href="/celpip/reading/" class="btn btn-ghost">CELPIP reading hub</a>
+      </div>
+    </section>
+  </article>
+</Layout>

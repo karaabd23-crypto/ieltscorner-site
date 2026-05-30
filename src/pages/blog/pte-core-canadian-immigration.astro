@@ -1,0 +1,260 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "Is PTE Core accepted for Canadian immigration?",
+    answer:
+      "Yes. PTE Core (formerly PTE Academic UKVI — the Canadian version) was approved by Immigration, Refugees and Citizenship Canada (IRCC) for all federal immigration programs in 2024. It is accepted for Express Entry (FSW, FST, CEC), Atlantic Immigration Program, Rural and Northern Immigration Pilot, and most Provincial Nominee Programs. It is not accepted for Canadian study permits, which require IELTS Academic or equivalent.",
+  },
+  {
+    question: "What PTE Core score do I need for Express Entry?",
+    answer:
+      "The minimum for Federal Skilled Worker and Canadian Experience Class (NOC TEER 0 and 1) is a score that maps to CLB 7 in all four skills. PTE Core uses a 10–90 point scale. A score of approximately 50 maps to CLB 7. However, higher scores earn significantly more CRS points — a CLB 9 equivalent (approximately 61+) adds up to 136 CRS points for a single applicant, which is the same benefit available through CELPIP or IELTS.",
+  },
+  {
+    question: "How does PTE Core compare to CELPIP for Canadian immigration?",
+    answer:
+      "Both are fully accepted by IRCC and earn the same CRS points for equivalent CLB levels. The key differences are format and feedback: PTE Core is entirely computer-based and AI-scored, results arrive in about 48 hours, and the test is more widely available internationally. CELPIP is also computer-based but uses human raters for writing and speaking. PTE Core is generally preferred by candidates preparing from outside Canada or those who want very fast results.",
+  },
+  {
+    question: "How long is PTE Core valid for IRCC immigration?",
+    answer:
+      "PTE Core scores are valid for two years from the test date for IRCC immigration purposes. Plan your test date so your score remains valid through the expected completion of your application. If your score expires while your application is still being processed, you will need to retake the test and update your profile.",
+  },
+  {
+    question: "What is the PTE Core CLB equivalency chart?",
+    answer:
+      "PTE Core uses a 10–90 scale. Approximate CLB equivalencies set by IRCC: CLB 4 = 28–34 (Listening), 29–37 (Reading), 32–41 (Speaking), 41–49 (Writing). CLB 7 = 50–57 (Listening), 51–59 (Reading), 59–68 (Speaking), 65–72 (Writing). CLB 9 = 61–75 (Listening), 60–73 (Reading), 79–88 (Speaking), 79–87 (Writing). Always verify current equivalencies at the IRCC website as these charts are periodically updated.",
+  },
+  {
+    question: "Should I choose PTE Core or CELPIP for Canadian PR?",
+    answer:
+      "Choose based on which test format you can achieve a higher CLB level on — both earn identical CRS points. PTE Core advantages: AI scoring (no human rater variation), results in 48 hours, available at more test centres internationally. CELPIP advantages: human-scored writing and speaking (some candidates prefer this), Canadian English focus, well-established preparation resources in Canada. If you are preparing from outside Canada, PTE Core's global availability and fast results are significant advantages.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "PTE Core for Canadian Immigration", path: "/blog/pte-core-canadian-immigration/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="PTE Core for Canadian Immigration: Express Entry, CLB Requirements, and CRS Points (2026)"
+  description="Complete guide to PTE Core for Canadian immigration in 2026. Accepted programs, CLB equivalency chart, CRS points by score, and PTE Core vs CELPIP comparison."
+  type="article"
+  keywords="PTE Core Canadian immigration, PTE Core Express Entry, PTE Core CLB equivalency, PTE Core CRS points, PTE Core for Canada PR, PTE Core accepted IRCC"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">PTE Core and Canadian immigration</span>
+      <h1 class="ic-display" style="margin: 0;">PTE Core for Canadian immigration: what you need to know in 2026</h1>
+      <div class="guide-meta">
+        <span>May 28, 2026</span>
+        <span>13 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        PTE Core became an accepted English test for Canadian immigration in 2024, making it
+        the newest and fastest-growing option alongside CELPIP and IELTS General. If you are
+        applying for Express Entry or a Provincial Nominee Program, this guide covers everything
+        you need: accepted programs, CLB equivalencies, CRS point calculations, and a direct
+        comparison to CELPIP and IELTS.
+      </p>
+    </div>
+
+    <section class="guide-card">
+      <h2 class="ic-display">Which Canadian immigration programs accept PTE Core?</h2>
+      <p>PTE Core is accepted by IRCC for the following programs:</p>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Program</th>
+          <th>Accepted?</th>
+          <th>Notes</th>
+        </tr>
+        <tr><td>Federal Skilled Worker (FSW)</td><td>Yes</td><td>Minimum CLB 7 all skills</td></tr>
+        <tr><td>Federal Skilled Trades (FST)</td><td>Yes</td><td>CLB 5 speaking/listening, CLB 4 reading/writing</td></tr>
+        <tr><td>Canadian Experience Class (CEC)</td><td>Yes</td><td>CLB 7 (TEER 0/1) or CLB 5 (TEER 2/3)</td></tr>
+        <tr><td>Atlantic Immigration Program</td><td>Yes</td><td>Varies by employer and province</td></tr>
+        <tr><td>Rural and Northern Immigration Pilot</td><td>Yes</td><td>Community-specific requirements apply</td></tr>
+        <tr><td>Most Provincial Nominee Programs</td><td>Yes</td><td>Verify with each province directly</td></tr>
+        <tr><td>Canadian study permit</td><td>No</td><td>IELTS Academic or Duolingo required</td></tr>
+        <tr><td>Canadian citizenship test</td><td>No</td><td>Assessed through citizenship process, not a test score</td></tr>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">PTE Core CLB equivalency chart</h2>
+      <p>
+        PTE Core uses a 10–90 point scale. IRCC maps these scores to CLB levels differently
+        for each skill. The table below shows approximate equivalencies — always verify current
+        figures at the IRCC website.
+      </p>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>CLB Level</th>
+          <th>Listening</th>
+          <th>Reading</th>
+          <th>Speaking</th>
+          <th>Writing</th>
+        </tr>
+        <tr><td><strong>CLB 4</strong></td><td>28–34</td><td>29–37</td><td>32–41</td><td>41–49</td></tr>
+        <tr><td><strong>CLB 5</strong></td><td>35–39</td><td>38–43</td><td>42–51</td><td>50–57</td></tr>
+        <tr><td><strong>CLB 6</strong></td><td>40–49</td><td>44–50</td><td>52–58</td><td>58–64</td></tr>
+        <tr><td><strong>CLB 7</strong></td><td>50–57</td><td>51–59</td><td>59–68</td><td>65–72</td></tr>
+        <tr><td><strong>CLB 8</strong></td><td>58–66</td><td>60–67</td><td>69–78</td><td>73–78</td></tr>
+        <tr><td><strong>CLB 9</strong></td><td>67–75</td><td>68–75</td><td>79–88</td><td>79–87</td></tr>
+        <tr><td><strong>CLB 10</strong></td><td>76–83</td><td>76–82</td><td>89–90</td><td>88–90</td></tr>
+      </table>
+      <div class="guide-note">
+        <p>
+          Note that Speaking and Writing have higher score thresholds for CLB 9+ than
+          Listening and Reading. This is consistent across all accepted English tests —
+          productive skills (speaking, writing) are benchmarked more strictly than
+          receptive skills (listening, reading).
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">CRS points: what PTE Core scores earn in Express Entry</h2>
+      <p>
+        CRS language points are identical regardless of which test you use — PTE Core, CELPIP,
+        or IELTS all earn the same points for the same CLB level. The table below shows
+        first-language points for a single applicant:
+      </p>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>CLB level (all 4 skills)</th>
+          <th>Points per skill</th>
+          <th>Total (4 skills)</th>
+        </tr>
+        <tr><td>CLB 7</td><td>17</td><td>68</td></tr>
+        <tr><td>CLB 8</td><td>23</td><td>92</td></tr>
+        <tr><td>CLB 9+</td><td>34</td><td>136</td></tr>
+      </table>
+      <p>
+        Moving from CLB 7 (68 points) to CLB 9 (136 points) adds <strong>68 CRS points</strong> —
+        one of the largest single improvements available in Express Entry. For many candidates,
+        this single jump is the difference between receiving an ITA within 6 months or waiting
+        years.
+      </p>
+      <p>
+        For a full breakdown of how CLB levels affect your immigration timeline, see the
+        <a href="/blog/celpip-scores-canadian-immigration/">CELPIP scores for Canadian immigration guide</a>.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">PTE Core vs CELPIP vs IELTS: which to choose for Canadian PR</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Factor</th>
+          <th>PTE Core</th>
+          <th>CELPIP</th>
+          <th>IELTS General</th>
+        </tr>
+        <tr>
+          <td><strong>Scoring</strong></td>
+          <td>AI-scored (all skills)</td>
+          <td>Human-scored (writing + speaking)</td>
+          <td>Human-scored (all skills)</td>
+        </tr>
+        <tr>
+          <td><strong>Results turnaround</strong></td>
+          <td>~48 hours</td>
+          <td>4–5 business days</td>
+          <td>3–5 days (computer) / 13 days (paper)</td>
+        </tr>
+        <tr>
+          <td><strong>Speaking format</strong></td>
+          <td>Computer microphone (AI-scored)</td>
+          <td>Computer microphone (human-scored)</td>
+          <td>Face-to-face examiner</td>
+        </tr>
+        <tr>
+          <td><strong>Test availability</strong></td>
+          <td>Pearson Vue centres globally</td>
+          <td>Paragon/IDP centres in Canada</td>
+          <td>IDP/BC centres globally</td>
+        </tr>
+        <tr>
+          <td><strong>Best for</strong></td>
+          <td>International candidates; fast turnaround needed; AI-scoring preferred</td>
+          <td>Canada-based candidates; Canadian English environment</td>
+          <td>International candidates; human examiner preferred; non-Canada uses also needed</td>
+        </tr>
+        <tr>
+          <td><strong>CRS points equivalent</strong></td>
+          <td>Identical to CELPIP and IELTS at same CLB</td>
+          <td>Identical to PTE and IELTS at same CLB</td>
+          <td>Identical to PTE and CELPIP at same CLB</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Why PTE Core is a first-mover opportunity</h2>
+      <p>
+        PTE Core is the newest of the three accepted tests, which means:
+      </p>
+      <ul class="guide-list">
+        <li>
+          <strong>Less competition for preparation resources:</strong> Most tutors, courses, and
+          coaching programs focus on IELTS or CELPIP. Candidates who prepare specifically for
+          PTE Core's unique task formats (Read Aloud, Describe Image, Write from Dictation, etc.)
+          have a preparation advantage.
+        </li>
+        <li>
+          <strong>AI scoring is predictable:</strong> PTE Core's AI scoring engine rewards specific
+          behaviors — correct pronunciation patterns, complete sentence structures, specific grammar
+          forms in writing. These are highly trainable. Human-scored tests have more subjective
+          variability.
+        </li>
+        <li>
+          <strong>Fast results support tight application timelines:</strong> If your Express Entry
+          profile is close to the CRS cutoff and a draw is expected soon, getting results in 48
+          hours (PTE Core) vs 4–5 days (CELPIP) can matter.
+        </li>
+      </ul>
+      <p>
+        Our <a href="/pte-core/">PTE Core preparation hub</a> covers all task types in detail,
+        including the specific AI scoring behaviors for Read Aloud and Write Email — the two
+        tasks with the most impact on PTE Core scores.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+    </section>
+
+    <section class="guide-card guide-cta" style="margin-top: var(--s-4);">
+      <h2 style="margin-top: 0;">Prepare for PTE Core with free resources</h2>
+      <p>
+        The IELTS Corner PTE Core hub covers every task type with strategies, scored samples,
+        and the specific AI scoring behaviors you need to understand.
+      </p>
+      <div class="cluster" style="gap: var(--s-3); margin-top: var(--s-3);">
+        <a href="/pte-core/" class="btn btn-primary ic-btn">Open PTE Core hub</a>
+        <a href="/blog/pte-core-question-types/" class="btn btn-ghost">All PTE Core question types</a>
+      </div>
+    </section>
+  </article>
+</Layout>
