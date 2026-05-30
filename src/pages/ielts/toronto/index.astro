@@ -1,0 +1,170 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "Where can I take the IELTS test in Toronto?",
+    answer:
+      "IELTS tests in the Greater Toronto Area are offered at IDP Canada and British Council centres in Toronto, Mississauga, Brampton, Scarborough, North York, Markham, and other GTA communities. IELTS is one of the most widely available tests in Canada. Book through the official IELTS website at ielts.org or idpcanada.ca. Computer-delivered IELTS is available at most centres and produces results in 3–5 business days.",
+  },
+  {
+    question: "What IELTS score do I need for Ontario immigration?",
+    answer:
+      "For the Ontario Immigrant Nominee Program (OINP) and most Express Entry streams, the minimum is IELTS General Training Band 6.0 in all four skills (equivalent to CLB 7). Competitive candidates typically score Band 7.0+ (CLB 9 equivalent). IELTS Academic is required for university admissions and some professional licensing pathways but is NOT accepted for immigration applications — always use IELTS General Training for immigration.",
+  },
+  {
+    question: "What is the difference between IELTS Academic and IELTS General Training?",
+    answer:
+      "IELTS Academic tests the advanced English required for university and professional registration. IELTS General Training tests the practical English used in everyday life, work, and social contexts. For all Canadian immigration programs including Express Entry, Ontario PNP, and most employer-sponsored programs, you must take IELTS General Training. Using an IELTS Academic score for immigration is not accepted by IRCC.",
+  },
+  {
+    question: "How do I improve my IELTS score from Band 6 to Band 7 in Toronto?",
+    answer:
+      "The Band 6 to Band 7 jump requires improving in two areas: Task Achievement (answering the specific question asked) and Lexical Resource (reducing vocabulary repetition and using more precise words). Toronto has many IELTS coaching programs, but you can also prepare independently using the free resources at IELTS Corner — Writing Task 2 guides, grammar lessons, and vocabulary practice all target the Band 6 to Band 7 improvement specifically.",
+  },
+  {
+    question: "How long is IELTS valid for Canadian immigration?",
+    answer:
+      "IELTS scores are valid for two years from the test date for IRCC immigration purposes. The same two-year validity applies to CELPIP and PTE Core. If your score is approaching expiry and your application has not been decided, you will need to retake the test and update your Express Entry profile.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "IELTS", path: "/ielts/" },
+    { name: "IELTS in Toronto", path: "/ielts/toronto/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="IELTS in Toronto: Test Centres, Ontario Immigration Requirements, and Band 7+ Strategies"
+  description="Complete guide to IELTS in Toronto and the GTA. Test centre locations, Ontario immigration requirements, IELTS General Training vs Academic, and Band 7 preparation strategies."
+  keywords="IELTS Toronto, IELTS test centre Toronto, IELTS GTA, IELTS Ontario immigration, IELTS preparation Toronto, IELTS Band 7 Toronto"
+  structuredData={pageStructuredData}
+>
+  <section class="section">
+    <div class="hero" style="--hero-bg: url('/heroes/lesson.png');">
+      <div class="hero-content">
+        <span class="pill ic-eyebrow">IELTS in Toronto</span>
+        <h1 class="ic-display">IELTS preparation for Toronto and GTA candidates</h1>
+        <p class="muted" style="max-width: 62ch;">
+          The GTA has one of the highest concentrations of IELTS test-takers in Canada.
+          This guide covers everything specific to preparing and testing in Toronto.
+        </p>
+        <div class="cluster">
+          <a class="btn btn-primary ic-btn" href="/lessons/writing/">Writing lessons</a>
+          <a class="btn btn-ghost" href="/ielts/">IELTS hub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface funnel-section" style="max-width: 860px; margin: 0 auto;">
+
+      <h2 class="ic-display" style="margin-top: 0;">Why Toronto IELTS candidates target Band 7+</h2>
+      <p>
+        Band 6.0 (IELTS General Training) is the IRCC minimum for most Express Entry streams,
+        equivalent to CLB 7. But Band 6.0 earns 68 CRS points while Band 7.0 (CLB 9 equivalent)
+        earns 136 CRS points. For Toronto candidates applying through Express Entry or the OINP,
+        this 68-point gap is one of the most significant and controllable factors in the application.
+      </p>
+      <p>
+        Toronto is also one of Canada's most competitive job markets for regulated professionals —
+        nurses, engineers, pharmacists, and teachers often need Band 7.0+ for Ontario licensing
+        bodies, in addition to immigration requirements.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">IELTS General Training vs Academic: which do you need?</h2>
+      <p>
+        This is the most common mistake Toronto IELTS candidates make. The wrong test version
+        means your score is not accepted by IRCC:
+      </p>
+      <table style="width: 100%; border-collapse: collapse; margin-bottom: var(--s-3);">
+        <tr style="border-bottom: 1px solid var(--border);">
+          <th style="text-align: left; padding: var(--s-2);">Use case</th>
+          <th style="text-align: left; padding: var(--s-2);">IELTS version needed</th>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: var(--s-2);">Canadian immigration (Express Entry, PNP)</td>
+          <td style="padding: var(--s-2);"><strong>General Training only</strong></td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: var(--s-2);">Canadian university admissions</td>
+          <td style="padding: var(--s-2);">Academic only</td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: var(--s-2);">Ontario nursing (CNO registration)</td>
+          <td style="padding: var(--s-2);">Academic (check CNO directly)</td>
+        </tr>
+        <tr>
+          <td style="padding: var(--s-2);">Ontario engineering (PEO registration)</td>
+          <td style="padding: var(--s-2);">Academic or General Training (verify with PEO)</td>
+        </tr>
+      </table>
+      <p>
+        When in doubt: for Canadian immigration — always General Training. For anything related
+        to universities or professional licensing — verify with the institution.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Band 7 strategies for Toronto candidates</h2>
+
+      <h3>Writing Task 2 (highest impact)</h3>
+      <p>
+        Writing Task 2 carries more marks than Task 1. The Band 6 to Band 7 jump in Task 2
+        requires one specific change: moving from vague development ("it helps people") to
+        specific development ("it helps working parents in dense urban centres who cannot
+        access daytime services"). See the complete
+        <a href="/blog/ielts-writing-task-2-complete-guide/">IELTS Writing Task 2 guide</a>.
+      </p>
+
+      <h3>Writing Task 1 (Academic or General)</h3>
+      <p>
+        For General Training Task 1 (letter writing), the Band 7 requirement is correct tone
+        and complete coverage of all three bullet points. See the
+        <a href="/blog/ielts-writing-task-1-general-training-letter/">Task 1 General Training letter guide</a>.
+      </p>
+
+      <h3>Speaking</h3>
+      <p>
+        Toronto candidates often have diverse English exposure but may use informal registers
+        in IELTS speaking contexts where a more structured response is expected. See the
+        <a href="/blog/ielts-speaking-part-3-questions-guide/">IELTS Speaking Part 3 guide</a> for
+        the academic-register vocabulary and argumentation structure that Part 3 rewards.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Free preparation resources for Toronto candidates</h2>
+      <div class="grid grid-2" style="margin-top: var(--s-3); gap: var(--s-3);">
+        <a class="card" href="/blog/ielts-writing-task-2-complete-guide/">
+          <h3 style="margin-top: 0;">Writing Task 2 guide</h3>
+          <p class="muted">All 4 question types, Band 7 sample essay, and 5 blocking habits.</p>
+        </a>
+        <a class="card" href="/lessons/writing/">
+          <h3 style="margin-top: 0;">Free writing lessons</h3>
+          <p class="muted">Grammar and writing lessons targeting the Band 6 to Band 7 jump.</p>
+        </a>
+        <a class="card" href="/blog/ielts-speaking-part-2-cue-card/">
+          <h3 style="margin-top: 0;">Speaking Part 2 guide</h3>
+          <p class="muted">How to use prep time and speak for the full 2 minutes without sounding rehearsed.</p>
+        </a>
+        <a class="card" href="/ielts/writing/">
+          <h3 style="margin-top: 0;">IELTS writing hub</h3>
+          <p class="muted">All IELTS writing guides in one place — Task 1 and Task 2.</p>
+        </a>
+      </div>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+
+    </div>
+  </section>
+</Layout>

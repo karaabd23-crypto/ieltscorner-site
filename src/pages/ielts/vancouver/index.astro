@@ -1,0 +1,156 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "Where can I take the IELTS test in Vancouver?",
+    answer:
+      "IELTS test centres in the Greater Vancouver Area are operated by IDP Canada and British Council, with locations in Vancouver, Burnaby, Surrey, Richmond, Coquitlam, and Langley. Computer-delivered IELTS is widely available in the GVA and results arrive within 3–5 business days. Book through idpcanada.ca or the British Council website. Demand is high in Metro Vancouver — book 4–6 weeks in advance if possible.",
+  },
+  {
+    question: "What IELTS score do I need for BC PNP?",
+    answer:
+      "The British Columbia Provincial Nominee Program (BC PNP) Skilled Worker stream requires a minimum IELTS General Training Band 6.0 (CLB 7 equivalent) for NOC TEER 0 and 1 occupations. The BC Tech Pilot and Express Entry BC streams are competitive, and most successful candidates score Band 7.0+ (CLB 9 equivalent). The IELTS score required may differ by stream and changes with each intake — always verify at the BC PNP website.",
+  },
+  {
+    question: "Should I take IELTS or CELPIP in Vancouver?",
+    answer:
+      "Both are fully accepted by IRCC and the BC PNP. Vancouver has strong infrastructure for both tests. CELPIP's developer, Paragon Testing Enterprises, is based in Vancouver (a UBC spin-off), so CELPIP test availability in the GVA is excellent. If you prefer a face-to-face speaking interview, choose IELTS. If you prefer a fully computer-based format, choose CELPIP. Neither test is scored more favourably by IRCC.",
+  },
+  {
+    question: "Does UBC accept IELTS for admission?",
+    answer:
+      "Yes, the University of British Columbia (UBC) requires IELTS Academic (not General Training) for most undergraduate and graduate admissions. The typical minimum is Band 6.5 overall with no skill below 6.0 for undergraduate admission; graduate programs vary by department and can require Band 7.0 or higher. If you are applying for both immigration and UBC admission, note that you need two different test versions — General Training for immigration and Academic for UBC.",
+  },
+  {
+    question: "What is the fastest way to improve my IELTS score in Vancouver?",
+    answer:
+      "The fastest improvements in IELTS come from targeted writing practice, specifically Writing Task 2. Most candidates who are stuck at Band 6 are making one of three systematic errors: not answering the specific question type correctly, developing arguments without specific examples, or using memorized phrases that examiners recognize and penalize. One to two hours per week of structured Task 2 practice with feedback typically produces measurable improvement within 4–6 weeks.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "IELTS", path: "/ielts/" },
+    { name: "IELTS in Vancouver", path: "/ielts/vancouver/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="IELTS in Vancouver: Test Centres, BC PNP Requirements, and Band 7 Strategies (2026)"
+  description="Complete guide to IELTS in Vancouver and the GVA. Test centre locations, BC PNP score requirements, IELTS vs CELPIP in Vancouver, and Band 7 preparation resources."
+  keywords="IELTS Vancouver, IELTS test centre Vancouver, IELTS BC PNP, IELTS Lower Mainland, IELTS preparation Vancouver, IELTS Band 7 Vancouver"
+  structuredData={pageStructuredData}
+>
+  <section class="section">
+    <div class="hero" style="--hero-bg: url('/heroes/lesson.png');">
+      <div class="hero-content">
+        <span class="pill ic-eyebrow">IELTS in Vancouver</span>
+        <h1 class="ic-display">IELTS preparation for Vancouver and Lower Mainland candidates</h1>
+        <p class="muted" style="max-width: 62ch;">
+          Metro Vancouver is home to one of the most diverse and highest-volume IELTS candidate
+          populations in Canada. This guide covers what is specific to preparing and testing in the GVA.
+        </p>
+        <div class="cluster">
+          <a class="btn btn-primary ic-btn" href="/lessons/writing/">Writing lessons</a>
+          <a class="btn btn-ghost" href="/ielts/">IELTS hub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface funnel-section" style="max-width: 860px; margin: 0 auto;">
+
+      <h2 class="ic-display" style="margin-top: 0;">IELTS in Metro Vancouver: what you need to know</h2>
+      <p>
+        Vancouver is one of Canada's largest immigration gateways. The GVA's tech industry, film
+        sector, health system, and construction sector all attract large numbers of skilled workers
+        who need IELTS scores for BC PNP, Express Entry, or professional licensing. IELTS General
+        Training Band 6.0 (CLB 7) is the immigration minimum; Band 7.0 (CLB 9) is the competitive target.
+      </p>
+      <p>
+        For the full CRS points breakdown and why Band 7.0 matters so much more than Band 6.0,
+        see the <a href="/blog/celpip-scores-canadian-immigration/">immigration language scores guide</a>.
+        For a direct comparison of IELTS and CELPIP for Vancouver candidates, see the
+        <a href="/blog/celpip-vs-ielts-which-is-easier/">IELTS vs CELPIP comparison</a>.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">BC PNP IELTS requirements by stream</h2>
+      <table style="width: 100%; border-collapse: collapse; margin-bottom: var(--s-3);">
+        <tr style="border-bottom: 1px solid var(--border);">
+          <th style="text-align: left; padding: var(--s-2);">BC PNP stream</th>
+          <th style="text-align: left; padding: var(--s-2);">Min IELTS (General Training)</th>
+          <th style="text-align: left; padding: var(--s-2);">CLB equivalent</th>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: var(--s-2);">Skilled Worker (TEER 0–1)</td>
+          <td style="padding: var(--s-2);">Band 6.0</td>
+          <td style="padding: var(--s-2);">CLB 7</td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: var(--s-2);">Skilled Worker (TEER 2–3)</td>
+          <td style="padding: var(--s-2);">Band 4.5–5.0</td>
+          <td style="padding: var(--s-2);">CLB 4–5</td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: var(--s-2);">BC Tech Pilot</td>
+          <td style="padding: var(--s-2);">Band 6.0 (most tech NOCs)</td>
+          <td style="padding: var(--s-2);">CLB 7</td>
+        </tr>
+        <tr>
+          <td style="padding: var(--s-2);">Express Entry BC (competitive)</td>
+          <td style="padding: var(--s-2);">Band 7.0+ typical</td>
+          <td style="padding: var(--s-2);">CLB 9</td>
+        </tr>
+      </table>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Band 7 strategies for Vancouver candidates</h2>
+      <p>
+        Most Vancouver candidates have strong oral English from daily immersion. The Band 6 to
+        Band 7 gap is almost always in <strong>Writing Task 2</strong> — specifically in developing
+        arguments with sufficient specificity and structure. Vancouver's diverse workplace and
+        community English, while strong for communication, is often informal. Task 2 requires
+        a register shift toward organized, academic argument.
+      </p>
+      <ul>
+        <li><a href="/blog/ielts-writing-task-2-complete-guide/">IELTS Writing Task 2 complete guide</a> — all 4 question types, PEEL structure, scored Band 7 sample</li>
+        <li><a href="/blog/ielts-writing-task-2-opinion-essay/">Opinion essay guide</a> — the most common Task 2 format</li>
+        <li><a href="/lessons/grammar/">Grammar lessons</a> — targeting the Band 6 accuracy errors that hold candidates back</li>
+      </ul>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Free resources for Vancouver candidates</h2>
+      <div class="grid grid-2" style="margin-top: var(--s-3); gap: var(--s-3);">
+        <a class="card" href="/blog/ielts-writing-task-2-complete-guide/">
+          <h3 style="margin-top: 0;">Task 2 complete guide</h3>
+          <p class="muted">All 4 question types with scored samples and Band 7 structure breakdown.</p>
+        </a>
+        <a class="card" href="/lessons/writing/">
+          <h3 style="margin-top: 0;">Free writing lessons</h3>
+          <p class="muted">Grammar and writing lessons for the Band 6 to Band 7 gap.</p>
+        </a>
+        <a class="card" href="/blog/ielts-speaking-part-3-questions-guide/">
+          <h3 style="margin-top: 0;">Speaking Part 3 guide</h3>
+          <p class="muted">Structured argument practice for the most challenging speaking section.</p>
+        </a>
+        <a class="card" href="/ielts/">
+          <h3 style="margin-top: 0;">IELTS hub</h3>
+          <p class="muted">All IELTS skill hubs and strategy guides in one place.</p>
+        </a>
+      </div>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+
+    </div>
+  </section>
+</Layout>

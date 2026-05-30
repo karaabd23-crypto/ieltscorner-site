@@ -1,0 +1,183 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "Where can I take the CELPIP test in Toronto?",
+    answer:
+      "CELPIP test centres in the Greater Toronto Area include locations operated by IDP Canada and Paragon Testing Enterprises in downtown Toronto, North York, Mississauga, Brampton, Scarborough, and Markham. Test centre availability and scheduling change frequently — book your test at the official CELPIP website at celpip.ca and filter by Ontario to find the most current GTA locations and available dates.",
+  },
+  {
+    question: "How long does it take to get CELPIP results in Toronto?",
+    answer:
+      "CELPIP results are delivered online within 4 to 5 business days of your test date, regardless of which Toronto-area test centre you use. Results are not sent to you separately — you access them through your CELPIP account on celpip.ca. Make sure your application timeline accounts for the results window before your Express Entry profile deadline.",
+  },
+  {
+    question: "What CELPIP score do I need for Ontario immigration?",
+    answer:
+      "For the Ontario Immigrant Nominee Program (OINP) Express Entry Aligned streams, the minimum is generally CLB 7 in all four skills. However, the OINP is competitive and most invited candidates significantly exceed the minimum. For NOC TEER 0 and 1 occupations, candidates with CLB 9 have a stronger profile. Check the OINP website for current stream requirements as thresholds change with each expression of interest round.",
+  },
+  {
+    question: "Is CELPIP preparation available in Toronto?",
+    answer:
+      "Toronto has a large community of CELPIP tutors, ESL schools, and settlement agencies that offer preparation support. Settlement agencies like ACCES Employment, COSTI, and Skills for Change offer free language programs to eligible newcomers. Private CELPIP tutoring is available through tutoring platforms and independent instructors. Online preparation through sites like IELTS Corner provides free question bank practice and strategy guides available from anywhere in Toronto.",
+  },
+  {
+    question: "How does CELPIP CLB 9 help with Toronto professional licensing?",
+    answer:
+      "Many regulated professions in Ontario require demonstrated English proficiency at CLB 7 to CLB 9. Nursing (CNO registration), pharmacy (PEBC), medicine (MMC), and engineering (PEO) all have language requirements. CELPIP is accepted by most Ontario licensing bodies as evidence of language proficiency. If you are a newcomer professional in Toronto, check your specific regulatory body's requirements before booking your test.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "CELPIP", path: "/celpip/" },
+    { name: "CELPIP in Toronto", path: "/celpip/toronto/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="CELPIP in Toronto: Test Centres, Preparation, and CLB 9 Strategies (2026)"
+  description="Complete guide to CELPIP in Toronto. Test centre locations in the GTA, Ontario immigration requirements, CLB 9 strategies, and free preparation resources for Toronto candidates."
+  keywords="CELPIP Toronto, CELPIP test centre Toronto, CELPIP GTA, CELPIP Ontario immigration, CELPIP preparation Toronto, CLB 9 Toronto"
+  structuredData={pageStructuredData}
+>
+  <section class="section">
+    <div class="hero" style="--hero-bg: url('/heroes/lesson.png');">
+      <div class="hero-content">
+        <span class="pill ic-eyebrow">CELPIP in Toronto</span>
+        <h1 class="ic-display">CELPIP preparation for Toronto and GTA candidates</h1>
+        <p class="muted" style="max-width: 62ch;">
+          Toronto is Canada's largest city and home to one of the most competitive CELPIP
+          candidate pools in the country. This guide covers everything specific to preparing
+          and testing in the GTA.
+        </p>
+        <div class="cluster">
+          <a class="btn btn-primary ic-btn" href="/questions/">Practice free questions</a>
+          <a class="btn btn-ghost" href="/celpip/">CELPIP hub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface funnel-section" style="max-width: 860px; margin: 0 auto;">
+
+      <h2 class="ic-display" style="margin-top: 0;">Why Toronto CELPIP candidates need CLB 9</h2>
+      <p>
+        Toronto is the entry point for a large proportion of Canada's skilled worker and Express
+        Entry immigrants. The GTA is also home to some of the most competitive job markets for
+        regulated professionals — nursing, engineering, pharmacy, and finance all require English
+        proficiency documentation.
+      </p>
+      <p>
+        For Express Entry, CLB 9 earns 136 CRS points versus 68 for CLB 7 — a 68-point gap that
+        frequently determines whether a Toronto-based candidate receives an invitation to apply
+        in the current draw cycle. Given the high cost of living in Toronto and the importance of
+        securing permanent status quickly, reaching CLB 9 is the single most valuable preparation
+        investment most candidates can make.
+      </p>
+      <p>
+        For the full breakdown of how CLB levels affect your Express Entry score, see our
+        <a href="/blog/celpip-scores-canadian-immigration/">CELPIP scores for Canadian immigration guide</a>.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">CELPIP test structure for GTA candidates</h2>
+      <p>
+        The CELPIP test is the same regardless of which Toronto-area centre you use. It is
+        entirely computer-based, completed in one session of approximately 3 hours, and scored
+        by human raters (writing and speaking) and computer scoring (reading and listening).
+      </p>
+      <p>
+        The four skills tested — Reading, Writing, Listening, and Speaking — each produce a
+        separate CLB score. For immigration purposes, your weakest skill determines your
+        eligibility. For CRS points, each skill is counted individually, so a mixed profile
+        (CLB 9 in three skills, CLB 7 in one) still earns significantly more than CLB 7 across
+        the board.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">CLB 9 strategies for Toronto candidates</h2>
+      <p>
+        Toronto's multilingual environment is an advantage for CELPIP preparation — daily
+        exposure to English in workplaces, public transit, media, and community life builds
+        natural language skills. But natural exposure alone rarely closes the gap between
+        CLB 7 and CLB 9. The remaining improvement is technical.
+      </p>
+
+      <h3>Writing (Tasks 1 and 2)</h3>
+      <p>
+        The most common CLB 7 ceiling in writing is prompt coverage that is present but shallow.
+        At CLB 9, each prompt point needs 2–3 sentences of development — not just mention.
+        See the complete guides:
+      </p>
+      <ul>
+        <li><a href="/blog/celpip-writing-task-1-email/">CELPIP Writing Task 1 complete guide</a></li>
+        <li><a href="/blog/celpip-writing-task-2-opinion-guide/">CELPIP Writing Task 2 opinion guide</a></li>
+      </ul>
+
+      <h3>Speaking (Tasks 7 and 8)</h3>
+      <p>
+        Tasks 7 and 8 have the most impact on the speaking score. CLB 9 requires a structured
+        argument — position, two developed reasons, conclusion — not just fluent speech. See the
+        <a href="/blog/celpip-speaking-tasks-complete-guide/">CELPIP Speaking complete guide</a>.
+      </p>
+
+      <h3>Reading</h3>
+      <p>
+        Part 4 (8 questions, dense text) determines the Reading score for most candidates.
+        The core skill is paraphrase recognition — matching meaning rather than matching words.
+        See the <a href="/blog/celpip-reading-strategies/">CELPIP Reading strategies guide</a>.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Ontario immigration and CELPIP</h2>
+      <p>
+        The Ontario Immigrant Nominee Program (OINP) runs several Express Entry aligned streams
+        for skilled workers, international students, and in-demand occupations. Most streams
+        require a minimum of CLB 7, and competitive candidates typically score CLB 9.
+      </p>
+      <p>
+        Toronto-area employers in regulated health professions (nurses, pharmacists, physicians,
+        dentists) must meet the College of Nurses of Ontario, PEBC, or College of Physicians and
+        Surgeons registration language requirements — most require CLB 7 to CLB 9. CELPIP is
+        accepted as evidence by most Ontario regulatory colleges.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Free preparation resources</h2>
+      <p>
+        Whether you are preparing from a downtown Toronto apartment or a Mississauga suburb,
+        IELTS Corner's free resources are available online:
+      </p>
+      <div class="grid grid-2" style="margin-top: var(--s-3); gap: var(--s-3);">
+        <a class="card" href="/questions/">
+          <h3 style="margin-top: 0;">Free question bank</h3>
+          <p class="muted">23 email and survey writing tasks at CLB 6–10 with full model answers and scoring breakdowns.</p>
+        </a>
+        <a class="card" href="/celpip/writing/">
+          <h3 style="margin-top: 0;">CELPIP writing hub</h3>
+          <p class="muted">Task 1 and Task 2 strategy guides, templates, and common mistake tables.</p>
+        </a>
+        <a class="card" href="/celpip/speaking/">
+          <h3 style="margin-top: 0;">CELPIP speaking hub</h3>
+          <p class="muted">All 8 tasks with preparation strategies and CLB 9 sample responses.</p>
+        </a>
+        <a class="card" href="/celpip/reading/">
+          <h3 style="margin-top: 0;">CELPIP reading hub</h3>
+          <p class="muted">Part-by-part strategies, paraphrase trap guide, and timing plans.</p>
+        </a>
+      </div>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+
+    </div>
+  </section>
+</Layout>

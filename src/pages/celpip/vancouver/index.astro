@@ -1,0 +1,158 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "Where can I take the CELPIP test in Vancouver?",
+    answer:
+      "CELPIP test centres in the Greater Vancouver Area are operated by Paragon Testing Enterprises (CELPIP's developer) and IDP Canada, with locations in Vancouver, Burnaby, Surrey, Richmond, and Coquitlam. Paragon is headquartered in Vancouver, which means the GVA generally has among the most frequent test date availability in Canada. Book at celpip.ca and filter by British Columbia for current locations and dates.",
+  },
+  {
+    question: "What CELPIP score do I need for BC PNP?",
+    answer:
+      "The British Columbia Provincial Nominee Program (BC PNP) Skilled Worker stream generally requires a minimum of CLB 4 for NOC TEER 2–3 occupations and CLB 7 for NOC TEER 0–1 occupations. The Tech Pilot and Express Entry BC streams are competitive, and most invited candidates score CLB 7 to CLB 9 depending on their occupation category. Always verify current requirements directly with the BC PNP, as thresholds change with each intake draw.",
+  },
+  {
+    question: "Is CELPIP more popular than IELTS in Vancouver?",
+    answer:
+      "CELPIP has a strong presence in Vancouver partly because Paragon Testing Enterprises is based in the city and partly because Vancouver's large immigrant population has had longer exposure to CELPIP. Both tests are equally accepted for Canadian immigration. Vancouver also has many IELTS test centres through IDP and British Council. The choice depends on individual preference and which format suits the candidate better.",
+  },
+  {
+    question: "What professional licensing bodies in BC accept CELPIP?",
+    answer:
+      "Most regulated professional bodies in British Columbia accept CELPIP as evidence of English proficiency, including: BCCNM (nursing), BCPHP (pharmacy), CPSBC (physicians and surgeons), APEGBC (engineers and geoscientists), and BCCA (architects). The required CLB level varies by profession — nursing typically requires CLB 7, while some physician registration pathways require CLB 9. Check with your specific regulatory body before booking.",
+  },
+  {
+    question: "How should I prepare for CELPIP if I live in Vancouver?",
+    answer:
+      "Vancouver offers excellent preparation resources for CELPIP candidates: settlement agencies like S.U.C.C.E.S.S. and DIVERSEcity offer free language programs, and Vancouver Community College (VCC) and Langara College offer ESL and test preparation programs. Online resources at IELTS Corner provide free practice question banks and strategy guides for Writing, Speaking, and Reading — accessible from anywhere in the Lower Mainland.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "CELPIP", path: "/celpip/" },
+    { name: "CELPIP in Vancouver", path: "/celpip/vancouver/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="CELPIP in Vancouver: Test Centres, BC PNP Requirements, and CLB 9 Strategies (2026)"
+  description="Complete guide to CELPIP in Vancouver and the GVA. Test centre locations, BC PNP requirements, CLB 9 strategies, and free preparation resources for Vancouver candidates."
+  keywords="CELPIP Vancouver, CELPIP test centre Vancouver, CELPIP BC PNP, CELPIP Lower Mainland, CELPIP preparation Vancouver, CLB 9 Vancouver"
+  structuredData={pageStructuredData}
+>
+  <section class="section">
+    <div class="hero" style="--hero-bg: url('/heroes/lesson.png');">
+      <div class="hero-content">
+        <span class="pill ic-eyebrow">CELPIP in Vancouver</span>
+        <h1 class="ic-display">CELPIP preparation for Vancouver and Lower Mainland candidates</h1>
+        <p class="muted" style="max-width: 62ch;">
+          Vancouver is home to Paragon Testing Enterprises — the organization that develops and
+          delivers CELPIP. For GVA candidates, test access is excellent and the preparation
+          ecosystem is strong.
+        </p>
+        <div class="cluster">
+          <a class="btn btn-primary ic-btn" href="/questions/">Practice free questions</a>
+          <a class="btn btn-ghost" href="/celpip/">CELPIP hub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface funnel-section" style="max-width: 860px; margin: 0 auto;">
+
+      <h2 class="ic-display" style="margin-top: 0;">CELPIP in Vancouver: the local context</h2>
+      <p>
+        Vancouver has one of the highest per-capita immigration rates in Canada and is a primary
+        destination for skilled workers from the Philippines, India, China, South Korea, and
+        across Latin America. CELPIP is deeply embedded in the local immigration landscape,
+        partly because its developer, Paragon Testing Enterprises, is a UBC spin-off headquartered
+        in the city.
+      </p>
+      <p>
+        For Express Entry candidates in Vancouver, CLB 9 adds 136 CRS points versus 68 for CLB 7.
+        Given Metro Vancouver's highly competitive immigration draw environment — and the city's
+        high cost of living, which makes PR timeline critical — reaching CLB 9 is the highest-ROI
+        preparation investment available.
+      </p>
+      <p>
+        See the full CRS points breakdown: <a href="/blog/celpip-scores-canadian-immigration/">CELPIP scores for Canadian immigration</a>.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">BC PNP and CELPIP requirements</h2>
+      <p>
+        The BC Provincial Nominee Program runs several streams relevant to Vancouver-area
+        skilled workers:
+      </p>
+      <table style="width: 100%; border-collapse: collapse; margin-bottom: var(--s-3);">
+        <tr style="border-bottom: 1px solid var(--border);">
+          <th style="text-align: left; padding: var(--s-2);">BC PNP Stream</th>
+          <th style="text-align: left; padding: var(--s-2);">Min CLB</th>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: var(--s-2);">Skilled Worker (TEER 0–1)</td>
+          <td style="padding: var(--s-2);">CLB 7</td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: var(--s-2);">Skilled Worker (TEER 2–3)</td>
+          <td style="padding: var(--s-2);">CLB 4</td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: var(--s-2);">Tech Pilot</td>
+          <td style="padding: var(--s-2);">CLB 7 (most tech NOCs)</td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: var(--s-2);">Express Entry BC</td>
+          <td style="padding: var(--s-2);">CLB 7–9 (competitive pool)</td>
+        </tr>
+        <tr>
+          <td style="padding: var(--s-2);">International Graduate</td>
+          <td style="padding: var(--s-2);">CLB 7</td>
+        </tr>
+      </table>
+      <p>
+        The BC PNP is score-based — candidates with higher CLB levels rank higher within each
+        stream. Reaching CLB 9 does not just add CRS points for federal Express Entry; it also
+        improves your BC PNP ranking score directly.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Free preparation resources</h2>
+      <p>
+        Available online for all GVA candidates from Burnaby to Surrey to North Vancouver:
+      </p>
+      <div class="grid grid-2" style="margin-top: var(--s-3); gap: var(--s-3);">
+        <a class="card" href="/questions/">
+          <h3 style="margin-top: 0;">Free question bank</h3>
+          <p class="muted">23 email and survey writing tasks at CLB 6–10 with full model answers.</p>
+        </a>
+        <a class="card" href="/blog/celpip-writing-task-2-opinion-guide/">
+          <h3 style="margin-top: 0;">Task 2 opinion guide</h3>
+          <p class="muted">CLB 9 structure with two scored samples and CLB 7 vs CLB 9 comparison.</p>
+        </a>
+        <a class="card" href="/blog/celpip-speaking-tasks-complete-guide/">
+          <h3 style="margin-top: 0;">Speaking complete guide</h3>
+          <p class="muted">All 8 tasks with CLB 9 sample responses and Task 7/8 deep dive.</p>
+        </a>
+        <a class="card" href="/blog/celpip-reading-strategies/">
+          <h3 style="margin-top: 0;">Reading strategies</h3>
+          <p class="muted">Part-by-part strategies, paraphrase trap guide, and 4-week plan.</p>
+        </a>
+      </div>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+
+    </div>
+  </section>
+</Layout>
