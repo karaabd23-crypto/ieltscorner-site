@@ -1,0 +1,170 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "Where can I take the IELTS test in Edmonton?",
+    answer:
+      "IELTS tests in Edmonton are offered at IDP Canada and British Council centres. Both computer-delivered and paper-based IELTS are available. Computer-delivered IELTS produces results in 3 to 5 business days. Book your test through the official IELTS website at ielts.org or idpcanada.ca and filter by Alberta to see current Edmonton test centre locations and available dates.",
+  },
+  {
+    question: "What IELTS score do I need for AAIP in Edmonton?",
+    answer:
+      "For AAIP streams, IELTS General Training score requirements align with CLB thresholds. The Alberta Express Entry Stream typically requires CLB 7, equivalent to IELTS General Training Band 6.0 across all four skills. The Rural Renewal Stream typically requires CLB 5 (approximately Band 5.0). Competitive Express Entry candidates targeting a strong CRS score should aim for Band 7.0 (CLB 9). Always verify current AAIP requirements at the official Alberta Immigration website (alberta.ca).",
+  },
+  {
+    question: "Do I need IELTS Academic for the University of Alberta?",
+    answer:
+      "Yes. The University of Alberta requires IELTS Academic for undergraduate and graduate admissions. IELTS General Training is not accepted for university admission. If you are applying to both the University of Alberta and a Canadian immigration program, you will need to take two different tests: IELTS Academic for the university application and either IELTS General Training or CELPIP for your immigration application. Confirm current score requirements with the U of A admissions office.",
+  },
+  {
+    question: "How long are IELTS scores valid for immigration to Canada?",
+    answer:
+      "IELTS scores are valid for two years from the test date for IRCC immigration purposes, including Express Entry and AAIP applications. The same two-year validity applies to CELPIP and PTE Core. If your score is approaching expiry and your application is still in progress, you will need to retake the test and update your Express Entry profile with the new result.",
+  },
+  {
+    question: "How can I improve my IELTS score from Band 6 to Band 7 for Edmonton immigration?",
+    answer:
+      "The Band 6 to Band 7 jump requires targeted improvements in Task Achievement and Lexical Resource in Writing, and in Fluency and Coherence in Speaking. The most efficient approach is to identify your weakest skill and work through structured strategy guides rather than general English practice. Writing Task 2 is the highest-impact area because it carries the most marks and has the clearest structural improvements available. See the IELTS Writing Task 2 complete guide on IELTS Corner for the specific changes that move candidates from Band 6 to Band 7.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "IELTS", path: "/ielts/" },
+    { name: "IELTS in Edmonton", path: "/ielts/edmonton/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="IELTS in Edmonton: Test Centres, Alberta Immigration, and Band 7 Strategies (2026)"
+  description="Complete guide to IELTS in Edmonton. Test centre locations, AAIP and Express Entry requirements, University of Alberta admission context, and Band 7 preparation resources."
+  keywords="IELTS Edmonton, IELTS test centre Edmonton, IELTS Alberta immigration, IELTS Band 7 Edmonton, IELTS University of Alberta"
+  structuredData={pageStructuredData}
+>
+  <section class="section">
+    <div class="hero" style="--hero-bg: url('/heroes/lesson.png');">
+      <div class="hero-content">
+        <span class="pill ic-eyebrow">IELTS in Edmonton</span>
+        <h1 class="ic-display">IELTS preparation for Edmonton and Northern Alberta candidates</h1>
+        <p class="muted" style="max-width: 62ch;">
+          Edmonton attracts skilled workers in energy, healthcare, engineering, and technology.
+          This guide covers everything specific to IELTS preparation and testing in Edmonton,
+          including immigration and university admission pathways.
+        </p>
+        <div class="cluster">
+          <a class="btn btn-primary ic-btn" href="/ielts/writing/">IELTS writing hub</a>
+          <a class="btn btn-ghost" href="/ielts/">IELTS hub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface funnel-section" style="max-width: 860px; margin: 0 auto;">
+
+      <h2 class="ic-display" style="margin-top: 0;">IELTS in Edmonton: who is preparing</h2>
+      <p>
+        Edmonton attracts Federal Skilled Worker applicants in energy, healthcare, engineering,
+        and technology sectors. The city is also home to a growing population of international
+        students applying to the University of Alberta and NorQuest College, as well as internationally
+        trained professionals seeking licensing in Alberta.
+      </p>
+      <p>
+        For immigration purposes, IELTS General Training Band 6.0 across all four skills is the
+        IRCC minimum for Express Entry, equivalent to CLB 7. But Band 6.0 earns 68 CRS points
+        while Band 7.0 earns 136 CRS points. For Edmonton candidates in competitive occupations,
+        the Band 7.0 target (CLB 9 equivalent) is worth significant preparation investment.
+      </p>
+      <p>
+        University of Alberta applicants need IELTS Academic, which is a separate version of the
+        test with different writing tasks and different score requirements.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">IELTS Academic vs General Training for Edmonton candidates</h2>
+      <p>
+        The most important distinction for Edmonton candidates is which version of IELTS they need.
+        Using the wrong version means your score will not be accepted:
+      </p>
+      <table style="width: 100%; border-collapse: collapse; margin-bottom: var(--s-3);">
+        <tr style="border-bottom: 1px solid var(--border);">
+          <th style="text-align: left; padding: var(--s-2);">Use case</th>
+          <th style="text-align: left; padding: var(--s-2);">IELTS version needed</th>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: var(--s-2);">Canadian immigration (Express Entry, AAIP)</td>
+          <td style="padding: var(--s-2);"><strong>General Training only</strong></td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: var(--s-2);">University of Alberta admission</td>
+          <td style="padding: var(--s-2);">Academic only</td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: var(--s-2);">NorQuest College admission</td>
+          <td style="padding: var(--s-2);">Academic (verify with NorQuest)</td>
+        </tr>
+        <tr>
+          <td style="padding: var(--s-2);">Alberta professional licensing</td>
+          <td style="padding: var(--s-2);">Varies by regulatory body. Verify directly.</td>
+        </tr>
+      </table>
+      <p>
+        Never use IELTS General Training for university admission. It will not be accepted,
+        regardless of how high your score is. For Writing Task 2 strategies applicable to both
+        versions, see our <a href="/blog/ielts-writing-task-2-complete-guide/">IELTS Writing Task 2 complete guide</a>.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Band 7 strategies for Edmonton candidates</h2>
+
+      <h3>Writing Task 2 (highest impact)</h3>
+      <p>
+        Writing Task 2 carries more marks than Task 1 and is the skill where most Band 6 candidates
+        have the clearest room to improve. The Band 7 requirement is moving from surface-level
+        development to specific, well-supported arguments. See the full strategies at the
+        <a href="/ielts/writing/">IELTS Writing hub</a>.
+      </p>
+
+      <h3>Speaking Part 3</h3>
+      <p>
+        Part 3 of the IELTS Speaking test requires structured argumentation and precise vocabulary.
+        Edmonton candidates who use English in technical or professional workplaces often find Part 3
+        particularly manageable with preparation. See the
+        <a href="/blog/ielts-speaking-part-3-questions-guide/">IELTS Speaking Part 3 guide</a>
+        for the vocabulary and structure that Band 7 responses use.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Free preparation resources for Edmonton candidates</h2>
+      <div class="grid grid-2" style="margin-top: var(--s-3); gap: var(--s-3);">
+        <a class="card" href="/blog/ielts-writing-task-2-complete-guide/">
+          <h3 style="margin-top: 0;">Writing Task 2 guide</h3>
+          <p class="muted">All 4 question types, Band 7 sample essay, and 5 blocking habits to fix.</p>
+        </a>
+        <a class="card" href="/ielts/writing/">
+          <h3 style="margin-top: 0;">IELTS writing hub</h3>
+          <p class="muted">All IELTS writing guides in one place: Task 1 and Task 2 strategies.</p>
+        </a>
+        <a class="card" href="/blog/ielts-speaking-part-3-questions-guide/">
+          <h3 style="margin-top: 0;">Speaking Part 3 guide</h3>
+          <p class="muted">Academic register, argument structure, and vocabulary for Band 7 responses.</p>
+        </a>
+        <a class="card" href="/ielts/">
+          <h3 style="margin-top: 0;">IELTS hub</h3>
+          <p class="muted">All IELTS preparation guides, strategies, and resources in one place.</p>
+        </a>
+      </div>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+
+    </div>
+  </section>
+</Layout>

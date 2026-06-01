@@ -1,0 +1,244 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "Which grammar mistakes matter most in IELTS and CELPIP writing?",
+    answer:
+      "The impact depends on your current band or CLB level. For Band 6 and CLB 6-7 candidates, the highest-impact errors are subject-verb agreement with collective nouns, article errors, tense inconsistency, and double negatives. For Band 7 and CLB 8 candidates, the ceiling-breakers are run-on sentences, sentence fragments, incorrect 'however,' and dangling modifiers. At Band 8 and CLB 9+, parallel structure errors and preposition collocations separate good from excellent.",
+  },
+  {
+    question: "Is it better to fix grammar or expand vocabulary first?",
+    answer:
+      "Fix systematic grammar errors first. A response with varied vocabulary but repeated run-on sentences scores lower on grammatical range and accuracy than a response with simpler vocabulary and clean structure. Examiners notice structural errors immediately. Grammar errors actively pull down a criterion that would otherwise be strong. Vocabulary improvement is valuable in parallel but should not come at the expense of accuracy.",
+  },
+  {
+    question: "How do I find my own systematic grammar errors?",
+    answer:
+      "Write a timed practice response, then read it aloud slowly. Errors you would catch in speech but not in silent reading often reveal themselves when you hear your own writing. Alternatively, submit practice responses to the AI Writing Lab and look for recurring error types, not just individual mistakes. Most candidates make the same two or three errors repeatedly. Fixing those specific patterns has far more impact than general grammar study.",
+  },
+  {
+    question: "Does the examiner penalise every grammar error?",
+    answer:
+      "Examiners assess grammatical range and accuracy holistically, not by counting individual errors. A few minor errors do not prevent a high score if the overall range is strong. What lowers the score is a pattern of the same error type recurring, or errors that make meaning unclear. The goal is consistency: show a range of sentence structures and use them accurately most of the time.",
+  },
+  {
+    question: "How long does it take to fix a systematic grammar error?",
+    answer:
+      "Most systematic errors take two to four weeks of targeted practice to correct consistently under timed conditions. Knowing the rule is not the same as applying it automatically under pressure. The correction needs to become automatic, which requires repeated practice in real timed writing, not grammar exercises in isolation. One focused week of practicing one specific error pattern in timed writing produces faster improvement than a month of general grammar review.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    { name: "12 Grammar Mistakes That Cost Marks", path: "/blog/common-grammar-mistakes-ielts-celpip/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="12 Grammar Mistakes That Cost Marks in IELTS and CELPIP Writing (With Fixes)"
+  description="The 12 most common systematic grammar errors in IELTS and CELPIP writing, why each one loses marks, and the exact fix. For Band 6-7 and CLB 7-9 candidates."
+  type="article"
+  keywords="IELTS grammar mistakes, CELPIP grammar errors, grammar for IELTS writing, common grammar mistakes English test, IELTS writing grammar Band 7"
+  structuredData={pageStructuredData}
+>
+  <article class="section guide-article">
+    <a class="guide-back-link" href="/blog">Back to blog</a>
+
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">Grammar guide</span>
+      <h1 class="ic-display" style="margin: 0;">12 grammar mistakes that cost marks in IELTS and CELPIP writing (with fixes)</h1>
+      <div class="guide-meta">
+        <span>June 1, 2026</span>
+        <span>12 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        Grammar errors in exam writing are mostly systematic. Most candidates make the same dozen
+        errors repeatedly across every practice response and every real test. These errors are
+        fixable faster than learning new rules, because the underlying rule is usually already
+        known. The problem is applying it consistently under time pressure.
+      </p>
+      <p>
+        Each entry below gives the wrong version, the correct version, why it loses marks, and
+        a one-sentence fix. At the end, there is a breakdown of which errors matter most at each level.
+      </p>
+    </div>
+
+    <section class="guide-card">
+      <h2 class="ic-display">The 12 errors</h2>
+
+      <h3>1. Subject-verb agreement with collective nouns</h3>
+      <table class="guide-mistake-table">
+        <tr><th>Wrong</th><th>Correct</th></tr>
+        <tr><td>"The government have decided to reduce taxes."</td><td>"The government has decided to reduce taxes."</td></tr>
+        <tr><td>"The committee are meeting tomorrow."</td><td>"The committee is meeting tomorrow."</td></tr>
+      </table>
+      <p><strong>Why it loses marks:</strong> In formal academic writing, collective nouns (government, team, committee, society, public) take singular verbs. Appears multiple times per response in CLB 6-7 writing.</p>
+      <p><strong>Fix:</strong> Treat any single organisation or group as singular in formal writing. "The government has." "Society needs." "The public is."</p>
+
+      <h3 style="margin-top: var(--s-3);">2. Article errors</h3>
+      <table class="guide-mistake-table">
+        <tr><th>Wrong</th><th>Correct</th></tr>
+        <tr><td>"Problem is serious and needs attention."</td><td>"The problem is serious and needs attention."</td></tr>
+        <tr><td>"She is best student in class."</td><td>"She is the best student in the class."</td></tr>
+      </table>
+      <p><strong>Why it loses marks:</strong> Article errors are among the most visible accuracy errors and affect both grammatical accuracy and reading fluency.</p>
+      <p><strong>Fix:</strong> Use "the" when both you and the reader know which specific thing is meant. Use "a/an" when introducing something for the first time. Omit articles before uncountable nouns used generally ("Water is essential," not "The water is essential").</p>
+
+      <h3 style="margin-top: var(--s-3);">3. Run-on sentences</h3>
+      <table class="guide-mistake-table">
+        <tr><th>Wrong</th><th>Correct</th></tr>
+        <tr><td>"The economy grew rapidly, many new jobs were created."</td><td>"The economy grew rapidly, and many new jobs were created."</td></tr>
+      </table>
+      <p><strong>Why it loses marks:</strong> A comma between two independent clauses (without a coordinating conjunction) is a structural error that directly affects sentence structure scores.</p>
+      <p><strong>Fix:</strong> Two independent clauses need a coordinating conjunction after the comma (and, but, so, yet) or a semicolon. A comma alone is not enough.</p>
+
+      <h3 style="margin-top: var(--s-3);">4. Sentence fragments</h3>
+      <table class="guide-mistake-table">
+        <tr><th>Wrong</th><th>Correct</th></tr>
+        <tr><td>"Because the population is growing rapidly."</td><td>"Cities face challenges because the population is growing rapidly."</td></tr>
+      </table>
+      <p><strong>Why it loses marks:</strong> A dependent clause (starting with because, which, although, since, when) cannot stand alone as a sentence.</p>
+      <p><strong>Fix:</strong> If a clause starts with a subordinating conjunction, connect it to a main clause. It cannot stand alone.</p>
+
+      <h3 style="margin-top: var(--s-3);">5. Incorrect use of "however"</h3>
+      <table class="guide-mistake-table">
+        <tr><th>Wrong</th><th>Correct</th></tr>
+        <tr><td>"I studied hard, however I did not pass."</td><td>"I studied hard; however, I did not pass."</td></tr>
+      </table>
+      <p><strong>Why it loses marks:</strong> "However" is a conjunctive adverb, not a coordinating conjunction. The rule: semicolon before "however," comma after it when it connects two clauses.</p>
+      <p><strong>Fix:</strong> Use a semicolon before "however" when joining two independent clauses. Alternatively, start a new sentence: "I studied hard. However, I did not pass."</p>
+
+      <h3 style="margin-top: var(--s-3);">6. Its vs it's</h3>
+      <table class="guide-mistake-table">
+        <tr><th>Wrong</th><th>Correct</th></tr>
+        <tr><td>"The policy has it's advantages."</td><td>"The policy has its advantages."</td></tr>
+        <tr><td>"Its a complex issue."</td><td>"It's a complex issue."</td></tr>
+      </table>
+      <p><strong>Why it loses marks:</strong> This error is extremely visible and signals inconsistent proofreading. "It's" always means "it is." "Its" is possessive.</p>
+      <p><strong>Fix:</strong> Every time you write "it's," read it as "it is." If that does not make sense, remove the apostrophe.</p>
+
+      <h3 style="margin-top: var(--s-3);">7. Tense inconsistency</h3>
+      <table class="guide-mistake-table">
+        <tr><th>Wrong</th><th>Correct</th></tr>
+        <tr><td>"The government introduced the policy and many businesses benefit from it."</td><td>"The government introduced the policy and many businesses benefited from it."</td></tr>
+      </table>
+      <p><strong>Why it loses marks:</strong> Shifting between past and present tense within a paragraph without a clear reason confuses the reader and reduces grammatical accuracy scores.</p>
+      <p><strong>Fix:</strong> Choose one tense per paragraph and maintain it. Switch tense only when the time reference genuinely changes.</p>
+
+      <h3 style="margin-top: var(--s-3);">8. Parallel structure errors in lists</h3>
+      <table class="guide-mistake-table">
+        <tr><th>Wrong</th><th>Correct</th></tr>
+        <tr><td>"The programme aims to reduce poverty, creating jobs, and education improvement."</td><td>"The programme aims to reduce poverty, create jobs, and improve education."</td></tr>
+      </table>
+      <p><strong>Why it loses marks:</strong> Items in a list must use the same grammatical form. Mixing infinitives, gerunds, and nouns breaks parallel structure and disrupts sentence flow.</p>
+      <p><strong>Fix:</strong> Before writing a list, decide the form (all infinitives, all gerunds, all nouns) and apply it consistently to every item.</p>
+
+      <h3 style="margin-top: var(--s-3);">9. Double negatives</h3>
+      <table class="guide-mistake-table">
+        <tr><th>Wrong</th><th>Correct</th></tr>
+        <tr><td>"I don't have no time for this."</td><td>"I don't have any time." / "I have no time."</td></tr>
+      </table>
+      <p><strong>Why it loses marks:</strong> Double negatives are non-standard in formal academic English and signal lower register and lower grammatical accuracy.</p>
+      <p><strong>Fix:</strong> One negative word per clause. Use "any" (not "no") after "don't/doesn't/didn't."</p>
+
+      <h3 style="margin-top: var(--s-3);">10. Preposition collocation errors</h3>
+      <table class="guide-mistake-table">
+        <tr><th>Wrong</th><th>Correct</th></tr>
+        <tr><td>"This depends of the circumstances."</td><td>"This depends on the circumstances."</td></tr>
+        <tr><td>"I am interested about this topic."</td><td>"I am interested in this topic."</td></tr>
+        <tr><td>"The report consists from three sections."</td><td>"The report consists of three sections."</td></tr>
+      </table>
+      <p><strong>Why it loses marks:</strong> Preposition collocations are fixed phrases. The correct preposition is determined by the verb or adjective, not by logic. These errors reduce lexical resource scores.</p>
+      <p><strong>Fix:</strong> Learn as fixed phrases: depend on, consist of, interested in, result in, capable of, aware of, responsible for, benefit from.</p>
+
+      <h3 style="margin-top: var(--s-3);">11. Dangling modifiers</h3>
+      <table class="guide-mistake-table">
+        <tr><th>Wrong</th><th>Correct</th></tr>
+        <tr><td>"Having studied all night, the exam seemed easier."</td><td>"Having studied all night, I found the exam easier."</td></tr>
+      </table>
+      <p><strong>Why it loses marks:</strong> A participial phrase must logically connect to the subject of the main clause. The exam cannot "study all night." This is a structural error that blocks Band 7+ scores.</p>
+      <p><strong>Fix:</strong> After an opening participial phrase, ask: who is doing the action in the phrase? That person must be the subject of the main clause.</p>
+
+      <h3 style="margin-top: var(--s-3);">12. Overuse of passive voice</h3>
+      <table class="guide-mistake-table">
+        <tr><th>Overused passive</th><th>Clearer active</th></tr>
+        <tr><td>"It is believed by many experts that the policy is ineffective."</td><td>"Many experts believe the policy is ineffective."</td></tr>
+        <tr><td>"The decision was made by the government to reduce funding."</td><td>"The government decided to reduce funding."</td></tr>
+      </table>
+      <p><strong>Why it loses marks:</strong> Passive voice is not wrong. Overuse makes writing feel evasive and unnecessarily complex. At Band 8+ and CLB 9+, the balance between active and passive is part of grammatical range assessment.</p>
+      <p><strong>Fix:</strong> Use passive when you do not know or do not want to name the agent. Use active when making a clear argument claim.</p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Which errors matter most at each level</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Level</th>
+          <th>Most damaging errors</th>
+          <th>Why</th>
+        </tr>
+        <tr>
+          <td><strong>Band 6 / CLB 6-7</strong></td>
+          <td>Errors 1, 2, 7, 9</td>
+          <td>High-frequency, highly visible, signal low accuracy. Appear multiple times per response.</td>
+        </tr>
+        <tr>
+          <td><strong>Band 7 / CLB 8</strong></td>
+          <td>Errors 3, 4, 5, 11</td>
+          <td>Structural errors that block sentence-level accuracy. These are the ceiling-breakers at this level.</td>
+        </tr>
+        <tr>
+          <td><strong>Band 8+ / CLB 9+</strong></td>
+          <td>Errors 8, 10, 12</td>
+          <td>Precision errors. The response is mostly accurate but these patterns show where range and control are not yet at the highest level.</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">How to find your own systematic errors</h2>
+      <p>The most efficient approach is not to study all 12 errors equally. It is to identify which two or three you make most often and fix those specifically.</p>
+      <ul class="guide-list">
+        <li><strong>Read your writing aloud slowly.</strong> Errors that you would catch in speech often slip past in silent reading. Hearing "The government have decided" immediately sounds wrong; reading it quickly does not.</li>
+        <li><strong>Submit practice responses to the AI Writing Lab and look for patterns.</strong> One error in one response is random. The same error in three responses is a systematic habit worth fixing.</li>
+        <li><strong>Keep a personal error log.</strong> After each timed writing practice, write down every error you find. After two weeks, you will clearly see your two or three specific patterns.</li>
+      </ul>
+      <div class="guide-note">
+        <p>
+          Fixing one systematic error takes two to four weeks of targeted practice under timed
+          conditions. Knowing the rule and applying it automatically when you are under time pressure
+          are different skills. Focus on one error at a time, practice it in timed writing, and move
+          to the next only when the first one feels automatic.
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+    </section>
+
+    <section class="guide-card guide-cta" style="margin-top: var(--s-4);">
+      <h2 style="margin-top: 0;">Find your specific grammar errors with AI feedback</h2>
+      <p>Submit a practice writing response and get feedback that identifies which error patterns are appearing in your writing specifically. One specific pattern fixed is worth more than weeks of general grammar review.</p>
+      <div class="cluster" style="gap: var(--s-3); margin-top: var(--s-3);">
+        <a href="/ai-feedback" class="btn btn-primary ic-btn">Try the AI Writing Lab</a>
+        <a href="/lessons/grammar/" class="btn btn-ghost">Free grammar lessons</a>
+      </div>
+    </section>
+  </article>
+</Layout>

@@ -1,0 +1,183 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "Where can I take the CELPIP test in Calgary?",
+    answer:
+      "CELPIP test centres in Calgary are operated by IDP Canada and Paragon Testing Enterprises. Test centre availability and scheduling change frequently, so book your test at the official CELPIP website at celpip.ca and filter by Alberta to find the most current Calgary locations and available dates.",
+  },
+  {
+    question: "What CELPIP score do I need for the Alberta Advantage Immigration Program?",
+    answer:
+      "CELPIP requirements for AAIP streams vary by stream. The Alberta Express Entry Stream generally requires a minimum of CLB 7 for TEER 0 and TEER 1 occupations. The Rural Renewal Stream has a lower minimum of CLB 5. Healthcare streams typically require CLB 7 to CLB 8 depending on the occupation. Always verify current requirements directly at alberta.ca, as AAIP stream thresholds change with each intake.",
+  },
+  {
+    question: "Should I take CELPIP or IELTS for Alberta immigration?",
+    answer:
+      "Both CELPIP and IELTS are accepted for AAIP and federal Express Entry applications. CELPIP is fully computer-based and Canadian-developed, which some candidates find more relevant to their daily English environment. IELTS has more test centres and is more widely recognised globally. The best choice is the test format you perform better on. Consider a practice test for each before committing.",
+  },
+  {
+    question: "How long do CELPIP results take?",
+    answer:
+      "CELPIP results are delivered online within 4 to 5 business days of your test date. Results are accessed through your CELPIP account on celpip.ca and are not sent by email. Make sure your application timeline allows for the results window before your Express Entry or AAIP deadline.",
+  },
+  {
+    question: "What CLB level is required for Alberta healthcare jobs?",
+    answer:
+      "Language requirements for Alberta healthcare jobs depend on the specific regulatory body. The College of Registered Nurses of Alberta (CRNA) and other regulated health colleges typically require CLB 7 to CLB 9 for registration. CELPIP is accepted as evidence of English proficiency by most Alberta healthcare licensing bodies. Always verify the specific CLB requirement with your regulatory college before booking.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "CELPIP", path: "/celpip/" },
+    { name: "CELPIP in Calgary", path: "/celpip/calgary/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="CELPIP in Calgary: Test Centres, Alberta Immigration, and CLB 9 Strategies (2026)"
+  description="Complete guide to CELPIP in Calgary. Test centre locations, Alberta Advantage Immigration Program requirements, CLB 9 strategies, and free preparation resources."
+  keywords="CELPIP Calgary, CELPIP test centre Calgary, CELPIP Alberta immigration, CELPIP AAIP, CLB 9 Calgary"
+  structuredData={pageStructuredData}
+>
+  <section class="section">
+    <div class="hero" style="--hero-bg: url('/heroes/lesson.png');">
+      <div class="hero-content">
+        <span class="pill ic-eyebrow">CELPIP in Calgary</span>
+        <h1 class="ic-display">CELPIP preparation for Calgary and Alberta candidates</h1>
+        <p class="muted" style="max-width: 62ch;">
+          Calgary's energy, tech, and healthcare sectors attract skilled workers from across
+          the world. This guide covers everything specific to preparing and testing for CELPIP
+          in Calgary and Alberta.
+        </p>
+        <div class="cluster">
+          <a class="btn btn-primary ic-btn" href="/questions/">Practice free questions</a>
+          <a class="btn btn-ghost" href="/celpip/">CELPIP hub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface funnel-section" style="max-width: 860px; margin: 0 auto;">
+
+      <h2 class="ic-display" style="margin-top: 0;">Why Calgary CELPIP candidates target CLB 9</h2>
+      <p>
+        Calgary is Canada's energy capital and home to fast-growing technology and healthcare
+        sectors. The city consistently attracts skilled worker immigration applicants who compete
+        in some of the most active Express Entry draw pools in the country.
+      </p>
+      <p>
+        For Express Entry, CLB 9 earns 136 CRS points compared to 68 points for CLB 7, a
+        68-point gap that regularly determines whether a Calgary-based candidate receives an
+        invitation to apply in a given draw cycle. Alberta's strong economy and high average
+        wages mean that PR applicants in Calgary often have competitive profiles in every
+        factor except language, making CLB 9 the single most impactful improvement available.
+      </p>
+      <p>
+        For the full breakdown of how CLB levels affect your Express Entry CRS score, see our
+        <a href="/blog/celpip-scores-canadian-immigration/">CELPIP scores for Canadian immigration guide</a>.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">CELPIP test structure</h2>
+      <p>
+        The CELPIP test is entirely computer-based and completed in a single session of
+        approximately 3 hours. It tests four skills: Reading, Writing, Listening, and Speaking.
+        Writing and Speaking responses are scored by trained human raters; Reading and Listening
+        are computer-scored.
+      </p>
+      <p>
+        Each skill produces a separate CLB score. For immigration programs with a minimum CLB
+        requirement, your weakest skill score determines eligibility. For Express Entry CRS
+        points, each skill is counted individually, so improving a single weak skill can
+        meaningfully increase your total score.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Alberta Advantage Immigration Program (AAIP) and CELPIP</h2>
+      <p>
+        The Alberta Advantage Immigration Program (AAIP) runs several streams for skilled workers,
+        rural communities, and specific occupation categories. CELPIP is accepted for all AAIP
+        streams as evidence of language proficiency.
+      </p>
+      <p>
+        Current stream language minimums as a general guide:
+      </p>
+      <ul>
+        <li><strong>Alberta Express Entry Stream:</strong> minimum CLB 7 for TEER 0 and TEER 1 occupations</li>
+        <li><strong>Rural Renewal Stream:</strong> minimum CLB 5</li>
+        <li><strong>Healthcare streams:</strong> typically CLB 7 to CLB 8 depending on the occupation</li>
+      </ul>
+      <p>
+        AAIP stream requirements change with each intake. Always verify current thresholds
+        directly at alberta.ca before preparing your application.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">CLB 9 strategies for Calgary candidates</h2>
+      <p>
+        The skills with the most room for targeted improvement are Writing and Speaking, since
+        both are scored by human raters against clear rubric criteria that can be studied and
+        applied deliberately.
+      </p>
+
+      <h3>Writing</h3>
+      <p>
+        CLB 9 writing requires full development of each prompt point across both Task 1 (email)
+        and Task 2 (survey response). The most common reason candidates plateau at CLB 7 is
+        prompt coverage that is present but underdeveloped. See the full strategies in the
+        <a href="/celpip/writing/">CELPIP Writing hub</a>.
+      </p>
+
+      <h3>Speaking</h3>
+      <p>
+        Tasks 7 and 8 carry the most weight in the speaking score. CLB 9 requires a structured
+        argument with a clear position, two developed supporting points, and a conclusion. See
+        the <a href="/celpip/speaking/">CELPIP Speaking hub</a> for task-by-task strategies.
+      </p>
+
+      <h3>Reading</h3>
+      <p>
+        Part 4 of the reading test (dense text, 8 questions) is where most candidates' scores are
+        determined. The core skill is paraphrase recognition. See the
+        <a href="/celpip/reading/">CELPIP Reading hub</a> for part-by-part strategies.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Free preparation resources</h2>
+      <p>
+        IELTS Corner's free resources are available online to all Calgary and Alberta candidates:
+      </p>
+      <div class="grid grid-2" style="margin-top: var(--s-3); gap: var(--s-3);">
+        <a class="card" href="/questions/">
+          <h3 style="margin-top: 0;">Free question bank</h3>
+          <p class="muted">23 email and survey writing tasks at CLB 6 to CLB 10 with full model answers and scoring breakdowns.</p>
+        </a>
+        <a class="card" href="/celpip/writing/">
+          <h3 style="margin-top: 0;">CELPIP writing hub</h3>
+          <p class="muted">Task 1 and Task 2 strategy guides, templates, and common mistake tables.</p>
+        </a>
+        <a class="card" href="/celpip/speaking/">
+          <h3 style="margin-top: 0;">CELPIP speaking hub</h3>
+          <p class="muted">All 8 tasks with preparation strategies and CLB 9 sample responses.</p>
+        </a>
+        <a class="card" href="/celpip/reading/">
+          <h3 style="margin-top: 0;">CELPIP reading hub</h3>
+          <p class="muted">Part-by-part strategies, paraphrase trap guide, and timing plans.</p>
+        </a>
+      </div>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+
+    </div>
+  </section>
+</Layout>

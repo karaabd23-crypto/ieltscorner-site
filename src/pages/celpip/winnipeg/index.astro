@@ -1,0 +1,173 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "Where can I take the CELPIP test in Winnipeg?",
+    answer:
+      "CELPIP test centres in Winnipeg are operated by IDP Canada and Paragon Testing Enterprises. Test centre availability and scheduling change frequently. Book your test at the official CELPIP website at celpip.ca and filter by Manitoba to find current Winnipeg locations and available dates. CELPIP is computer-based and results are delivered within 4 to 5 business days of your test.",
+  },
+  {
+    question: "What CELPIP score do I need for the Manitoba PNP?",
+    answer:
+      "MPNP stream requirements vary. The Skilled Worker in Manitoba stream typically requires CLB 5 for TEER 2 and 3 occupations and CLB 7 for TEER 0 and 1. The Skilled Worker Overseas stream generally requires CLB 7 for professional streams. Requirements can change between draw rounds, so always verify current thresholds directly at immigratemanitoba.com before booking your test or submitting an Expression of Interest.",
+  },
+  {
+    question: "Should I choose CELPIP or IELTS in Winnipeg?",
+    answer:
+      "Both CELPIP and IELTS General Training are accepted by IRCC for Express Entry and all MPNP streams. CELPIP is a fully Canadian test completed on a computer in a single session, with Canadian accents, contexts, and references throughout. Many Winnipeg candidates find the Canadian-specific content of CELPIP more approachable than IELTS. If you are also applying to the University of Manitoba or University of Winnipeg, note that IELTS Academic is required for university admission, but for immigration only, either test is accepted. See our CELPIP vs IELTS comparison for a detailed breakdown.",
+  },
+  {
+    question: "How long are CELPIP scores valid for immigration?",
+    answer:
+      "CELPIP scores are valid for two years from the test date for IRCC immigration purposes, including Express Entry and MPNP applications. The same two-year validity applies to IELTS and PTE Core. If your score is approaching expiry and your application is still in progress, you will need to retake the test and update your Express Entry profile or MPNP Expression of Interest with the new result.",
+  },
+  {
+    question: "What CLB level do I need for healthcare jobs in Manitoba?",
+    answer:
+      "CLB requirements for healthcare jobs in Manitoba come from the specific regulatory body, not from immigration programs. Regulated nurses in Manitoba are licensed through the College of Registered Nurses of Manitoba (CRNM), which has its own language proficiency requirements. Internationally trained physicians should verify with the College of Physicians and Surgeons of Manitoba. Requirements vary by profession and role, so always contact the relevant regulatory body directly rather than relying on general estimates.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "CELPIP", path: "/celpip/" },
+    { name: "CELPIP in Winnipeg", path: "/celpip/winnipeg/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="CELPIP in Winnipeg: Test Centres, Manitoba PNP, and CLB 9 Strategies (2026)"
+  description="Complete guide to CELPIP in Winnipeg. Test centres, Manitoba Provincial Nominee Program requirements, CLB 9 strategies, and free preparation resources."
+  keywords="CELPIP Winnipeg, CELPIP Manitoba PNP, CELPIP MPNP, CLB 9 Winnipeg, CELPIP test centre Winnipeg"
+  structuredData={pageStructuredData}
+>
+  <section class="section">
+    <div class="hero" style="--hero-bg: url('/heroes/lesson.png');">
+      <div class="hero-content">
+        <span class="pill ic-eyebrow">CELPIP in Winnipeg</span>
+        <h1 class="ic-display">CELPIP preparation for Winnipeg and Manitoba candidates</h1>
+        <p class="muted" style="max-width: 62ch;">
+          Winnipeg is Manitoba's economic hub and one of Canada's most active destinations
+          for newcomers. This guide covers everything specific to preparing and testing in
+          Winnipeg, including MPNP requirements and CLB 9 strategies.
+        </p>
+        <div class="cluster">
+          <a class="btn btn-primary ic-btn" href="/questions/">Practice free questions</a>
+          <a class="btn btn-ghost" href="/celpip/">CELPIP hub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface funnel-section" style="max-width: 860px; margin: 0 auto;">
+
+      <h2 class="ic-display" style="margin-top: 0;">Winnipeg's immigration context</h2>
+      <p>
+        Winnipeg is Manitoba's economic hub and a significant newcomer destination, with one of
+        Canada's most diverse immigrant populations. The city has long-established Filipino, South
+        Asian, and African communities, and continues to attract skilled workers and family class
+        immigrants at a steady pace. Manitoba's comparatively lower cost of living compared to
+        Toronto and Vancouver makes it an attractive destination for candidates who want to build
+        permanent residency in a major Canadian city without the pressure of the highest-cost markets.
+      </p>
+      <p>
+        The Manitoba Provincial Nominee Program (MPNP) is active and draws frequently, making it
+        a viable pathway for candidates who do not have the CRS score for a direct Express Entry
+        invitation. A provincial nomination adds 600 CRS points, making MPNP eligibility extremely
+        valuable for many candidates.
+      </p>
+      <p>
+        For Express Entry, CLB 9 earns 136 CRS points versus 68 for CLB 7. For the full breakdown
+        of how CLB levels affect your CRS score, see our
+        <a href="/blog/celpip-scores-canadian-immigration/">CELPIP scores for Canadian immigration guide</a>.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Manitoba PNP and CELPIP</h2>
+      <p>
+        The MPNP has several streams, and CELPIP is accepted for all of them. Key CLB thresholds
+        for Winnipeg-based candidates:
+      </p>
+      <ul>
+        <li>
+          <strong>Skilled Worker in Manitoba stream:</strong> CLB 5 minimum for TEER 2 and 3 occupations;
+          CLB 7 for TEER 0 and 1 occupations. Candidates with Manitoba job offers or Manitoba connections
+          are prioritised in Expressions of Interest.
+        </li>
+        <li>
+          <strong>Skilled Worker Overseas stream:</strong> CLB 7 is typical for professional streams.
+          Targeted at candidates outside Canada who have a strong connection to Manitoba.
+        </li>
+        <li>
+          <strong>Business Investor Stream:</strong> CLB 5 minimum. Intended for entrepreneurs and
+          business owners intending to start or purchase a Manitoba business.
+        </li>
+      </ul>
+      <p>
+        MPNP requirements change between draw rounds. Always verify current thresholds and
+        stream criteria directly at immigratemanitoba.com before making decisions about your
+        test booking or application strategy.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">CLB 9 strategies for Winnipeg candidates</h2>
+      <p>
+        CLB 9 maximises CRS points for Express Entry and satisfies the highest MPNP professional
+        stream requirements. The most targeted preparation resources for each CELPIP skill are:
+      </p>
+      <ul>
+        <li>
+          <a href="/celpip/writing/">CELPIP Writing hub</a>: Task 1 email writing and Task 2 opinion
+          essay strategies. CLB 9 in writing requires full development of each prompt point, not just
+          surface mention.
+        </li>
+        <li>
+          <a href="/celpip/speaking/">CELPIP Speaking hub</a>: All 8 speaking tasks. Tasks 7 and 8
+          have the greatest impact on the speaking score and reward structured argument, not just
+          fluent speech.
+        </li>
+        <li>
+          <a href="/celpip/reading/">CELPIP Reading hub</a>: Part 4 strategies and paraphrase
+          recognition techniques that determine the Reading score for most candidates.
+        </li>
+      </ul>
+      <p>
+        For a full explanation of CLB level equivalencies across tests, see the
+        <a href="/blog/clb-levels-explained/">CLB levels explained guide</a>.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Free preparation resources</h2>
+      <div class="grid grid-2" style="margin-top: var(--s-3); gap: var(--s-3);">
+        <a class="card" href="/questions/">
+          <h3 style="margin-top: 0;">Free question bank</h3>
+          <p class="muted">Practice CELPIP writing tasks at CLB 6 to 10 with model answers and scoring breakdowns.</p>
+        </a>
+        <a class="card" href="/celpip/writing/">
+          <h3 style="margin-top: 0;">CELPIP writing hub</h3>
+          <p class="muted">Task 1 and Task 2 strategy guides, templates, and common mistake tables.</p>
+        </a>
+        <a class="card" href="/celpip/speaking/">
+          <h3 style="margin-top: 0;">CELPIP speaking hub</h3>
+          <p class="muted">All 8 tasks with preparation strategies and CLB 9 sample responses.</p>
+        </a>
+        <a class="card" href="/blog/clb-levels-explained/">
+          <h3 style="margin-top: 0;">CLB levels guide</h3>
+          <p class="muted">How CLB levels map to CELPIP scores, IELTS bands, and Canadian immigration thresholds.</p>
+        </a>
+      </div>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+
+    </div>
+  </section>
+</Layout>

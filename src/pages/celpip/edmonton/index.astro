@@ -1,0 +1,188 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "Where can I take the CELPIP test in Edmonton?",
+    answer:
+      "CELPIP test centres in Edmonton are operated by IDP Canada and Paragon Testing Enterprises. Test centre availability and scheduling change frequently. Book your test at the official CELPIP website at celpip.ca and filter by Alberta to find current Edmonton locations and available dates. Computer-based CELPIP results are available within 4 to 5 business days of your test.",
+  },
+  {
+    question: "What CLB score do I need for AAIP Edmonton streams?",
+    answer:
+      "AAIP stream requirements vary. The Alberta Express Entry Stream typically requires CLB 7 for TEER 0 and 1 occupations. The Rural Renewal Stream generally requires CLB 5. The Healthcare Stream requires CLB 7 to CLB 8 depending on the specific role. Requirements can change with each draw round, so always verify current thresholds at the official Alberta Immigration website (alberta.ca) before booking your test.",
+  },
+  {
+    question: "Should I take CELPIP or IELTS for Edmonton immigration?",
+    answer:
+      "Both CELPIP and IELTS General Training are accepted by IRCC for Express Entry and all AAIP streams. CELPIP is a fully Canadian test designed for the Canadian context, taken on a computer in a single session. Many Edmonton candidates find the Canadian accents and references in CELPIP more familiar. If you are also applying to university, IELTS Academic is required for university admission, but for immigration only, either test works. See our CELPIP vs IELTS comparison guide for a full breakdown.",
+  },
+  {
+    question: "How long does it take to reach CLB 9 from CLB 7?",
+    answer:
+      "The timeline varies significantly by individual. Candidates who are already strong in three skills and have one weaker skill can often close the gap in 2 to 4 months of focused practice. Candidates who are at CLB 7 across all skills typically need 4 to 8 months of consistent targeted preparation. The CLB 7 to CLB 9 jump in Writing and Speaking requires specific structural changes, not just more studying, so working through strategy guides for each task type is more efficient than general English practice.",
+  },
+  {
+    question: "Does CELPIP satisfy language requirements for Alberta healthcare workers?",
+    answer:
+      "CELPIP is accepted by many Canadian regulatory bodies, but requirements vary by profession and college. The College of Registered Nurses of Alberta (CRNA) has specific language proficiency requirements for nurse registration. Verify directly with CRNA for accepted tests and minimum scores. Internationally trained physicians working through the CPSA pathway should confirm language requirements with CPSA. Always contact your specific regulatory body rather than relying on general information.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "CELPIP", path: "/celpip/" },
+    { name: "CELPIP in Edmonton", path: "/celpip/edmonton/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="CELPIP in Edmonton: Test Centres, Alberta Immigration, and CLB 9 Strategies (2026)"
+  description="Complete guide to CELPIP in Edmonton. Test centres, AAIP requirements, healthcare and trades CLB requirements, and free preparation resources for Edmonton candidates."
+  keywords="CELPIP Edmonton, CELPIP test centre Edmonton, CELPIP Alberta immigration, CELPIP AAIP Edmonton, CLB 9 Edmonton"
+  structuredData={pageStructuredData}
+>
+  <section class="section">
+    <div class="hero" style="--hero-bg: url('/heroes/lesson.png');">
+      <div class="hero-content">
+        <span class="pill ic-eyebrow">CELPIP in Edmonton</span>
+        <h1 class="ic-display">CELPIP preparation for Edmonton and Northern Alberta candidates</h1>
+        <p class="muted" style="max-width: 62ch;">
+          Edmonton is Alberta's capital and a major destination for healthcare workers, engineers,
+          and trades professionals immigrating to Canada. This guide covers everything specific
+          to preparing and testing in Edmonton.
+        </p>
+        <div class="cluster">
+          <a class="btn btn-primary ic-btn" href="/questions/">Practice free questions</a>
+          <a class="btn btn-ghost" href="/celpip/">CELPIP hub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface funnel-section" style="max-width: 860px; margin: 0 auto;">
+
+      <h2 class="ic-display" style="margin-top: 0;">Edmonton's immigration landscape</h2>
+      <p>
+        Alberta's capital is Canada's gateway to the oil sands and one of the country's fastest-growing
+        newcomer destinations. Edmonton's economy draws skilled workers in healthcare, engineering,
+        technology, and the trades. Many Edmonton newcomers arrive through Express Entry, the Alberta
+        Advantage Immigration Program (AAIP), or as workers in regulated professions seeking permanent
+        residency after gaining Canadian work experience.
+      </p>
+      <p>
+        For Express Entry, CLB 9 earns 136 CRS points compared to 68 for CLB 7, a 68-point gap
+        that can be the difference between receiving an invitation to apply and waiting through
+        multiple draw cycles. For Edmonton candidates in competitive NOC TEER 0 and 1 occupations,
+        reaching CLB 9 is one of the highest-value preparation investments available.
+      </p>
+      <p>
+        For the full breakdown of how CLB levels affect your Express Entry score, see our
+        <a href="/blog/celpip-scores-canadian-immigration/">CELPIP scores for Canadian immigration guide</a>.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">AAIP and CELPIP in Edmonton</h2>
+      <p>
+        The Alberta Advantage Immigration Program (AAIP) has several streams relevant to Edmonton
+        candidates, and CELPIP is accepted for all of them:
+      </p>
+      <ul>
+        <li><strong>Alberta Express Entry Stream:</strong> CLB 7 required for TEER 0 and 1 occupations. Aligns with federal Express Entry selection.</li>
+        <li><strong>Rural Renewal Stream:</strong> CLB 5 minimum for eligible rural communities outside Calgary and Edmonton city proper.</li>
+        <li><strong>Healthcare Stream:</strong> CLB 7 to CLB 8 depending on the healthcare role. Targeted at in-demand positions in the provincial health system.</li>
+      </ul>
+      <p>
+        AAIP stream requirements and draw thresholds change. Always verify current requirements
+        directly at the official Alberta Immigration website (alberta.ca) before making
+        decisions about your test booking or application strategy.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Healthcare and trades: CLB requirements in Alberta</h2>
+      <p>
+        Edmonton has a large concentration of internationally trained professionals in healthcare
+        and the skilled trades. Language requirements for regulated work in Alberta come from
+        the specific regulatory body, not from immigration programs:
+      </p>
+      <ul>
+        <li>
+          <strong>Registered nurses:</strong> Regulated by the College of Registered Nurses of Alberta (CRNA).
+          CRNA typically requires CLB 7 to CLB 9 depending on the assessment pathway. Verify the current
+          accepted tests and minimum scores directly with CRNA.
+        </li>
+        <li>
+          <strong>Internationally trained physicians:</strong> Physicians going through the College of
+          Physicians and Surgeons of Alberta (CPSA) pathway need strong English proficiency.
+          Confirm requirements directly with CPSA.
+        </li>
+        <li>
+          <strong>Trades certification:</strong> Alberta trade certification through Alberta Apprenticeship
+          and Industry Training may have language requirements depending on the trade and pathway. Contact
+          the relevant trades body for current requirements.
+        </li>
+      </ul>
+      <p>
+        Always verify language requirements with the specific regulatory body rather than
+        relying on general information, as requirements can change.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">CLB 9 strategies for Edmonton candidates</h2>
+      <p>
+        CLB 9 is the score that maximises CRS points for Express Entry and satisfies most
+        AAIP professional stream requirements. The three CELPIP skill areas with the most
+        targeted preparation resources are:
+      </p>
+      <ul>
+        <li>
+          <a href="/celpip/writing/">CELPIP Writing hub</a>: Task 1 email writing and Task 2 opinion
+          essay, with CLB 9 structural requirements explained.
+        </li>
+        <li>
+          <a href="/celpip/speaking/">CELPIP Speaking hub</a>: All 8 tasks, with strategies for Tasks 7
+          and 8 where most CLB 7 candidates have room to improve.
+        </li>
+        <li>
+          <a href="/celpip/reading/">CELPIP Reading hub</a>: Part 4 strategies and paraphrase recognition
+          techniques that determine the Reading score for most candidates.
+        </li>
+      </ul>
+      <p>
+        For a full explanation of how CLB levels compare across tests, see the
+        <a href="/blog/clb-levels-explained/">CLB levels explained guide</a>.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Free preparation resources</h2>
+      <div class="grid grid-2" style="margin-top: var(--s-3); gap: var(--s-3);">
+        <a class="card" href="/questions/">
+          <h3 style="margin-top: 0;">Free question bank</h3>
+          <p class="muted">Practice CELPIP writing tasks at CLB 6 to 10 with model answers and scoring breakdowns.</p>
+        </a>
+        <a class="card" href="/celpip/writing/">
+          <h3 style="margin-top: 0;">CELPIP writing hub</h3>
+          <p class="muted">Task 1 and Task 2 strategy guides, templates, and common mistake tables.</p>
+        </a>
+        <a class="card" href="/celpip/speaking/">
+          <h3 style="margin-top: 0;">CELPIP speaking hub</h3>
+          <p class="muted">All 8 tasks with preparation strategies and CLB 9 sample responses.</p>
+        </a>
+        <a class="card" href="/blog/clb-levels-explained/">
+          <h3 style="margin-top: 0;">CLB levels guide</h3>
+          <p class="muted">How CLB levels map to CELPIP scores, IELTS bands, and Canadian immigration thresholds.</p>
+        </a>
+      </div>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+
+    </div>
+  </section>
+</Layout>

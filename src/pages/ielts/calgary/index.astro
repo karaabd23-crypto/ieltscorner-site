@@ -1,0 +1,163 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "Where can I take the IELTS test in Calgary?",
+    answer:
+      "IELTS tests in Calgary are offered through IDP Canada and British Council test centres. Computer-delivered IELTS is available at most Calgary centres and produces results within 3 to 5 business days. Book through ielts.org or idpcanada.ca and filter by Alberta to find current Calgary locations and available dates.",
+  },
+  {
+    question: "What IELTS score do I need for Alberta immigration?",
+    answer:
+      "For federal Express Entry programs, IELTS General Training Band 6.0 (CLB 7 equivalent) is the minimum for most streams. For the Alberta Advantage Immigration Program (AAIP) Express Entry Stream, the minimum is generally CLB 7 for TEER 0 and TEER 1 occupations. Competitive candidates typically score Band 7.0 or higher. Always verify current AAIP stream requirements at alberta.ca, as thresholds change with each intake.",
+  },
+  {
+    question: "Should I take IELTS Academic or General Training for the University of Calgary?",
+    answer:
+      "For admission to the University of Calgary, Mount Royal University, SAIT, or other Calgary post-secondary institutions, you need IELTS Academic. IELTS General Training is not accepted for university admissions. For Canadian immigration applications (Express Entry, Alberta PNP), you must use IELTS General Training. The Academic version is not accepted by IRCC for immigration.",
+  },
+  {
+    question: "How long is an IELTS score valid for Canadian immigration?",
+    answer:
+      "IELTS scores are valid for two years from the test date for IRCC immigration purposes, including Express Entry and provincial nominee programs. The same two-year validity applies to CELPIP and PTE Core. If your score expires before your application is decided, you will need to retake the test and update your profile.",
+  },
+  {
+    question: "How do I improve my IELTS score from Band 6 to Band 7?",
+    answer:
+      "The Band 6 to Band 7 jump is primarily a writing challenge. In Writing Task 2, the key improvement is moving from vague development to specific, extended reasoning for each point. In Speaking, the improvement is using more precise vocabulary and structuring Part 3 responses as a clear argument. Calgary has a range of IELTS coaching programs, and IELTS Corner provides free Writing Task 2 guides and strategy resources available online.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "IELTS", path: "/ielts/" },
+    { name: "IELTS in Calgary", path: "/ielts/calgary/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="IELTS in Calgary: Test Centres, Alberta Immigration Requirements, and Band 7 Strategies"
+  description="Complete guide to IELTS in Calgary. IDP/BC test centres, Alberta immigration requirements, Band 7 preparation strategies, and free resources for Calgary candidates."
+  keywords="IELTS Calgary, IELTS test centre Calgary, IELTS Alberta immigration, IELTS Band 7 Calgary, IELTS preparation Calgary"
+  structuredData={pageStructuredData}
+>
+  <section class="section">
+    <div class="hero" style="--hero-bg: url('/heroes/lesson.png');">
+      <div class="hero-content">
+        <span class="pill ic-eyebrow">IELTS in Calgary</span>
+        <h1 class="ic-display">IELTS preparation for Calgary and Southern Alberta candidates</h1>
+        <p class="muted" style="max-width: 62ch;">
+          Calgary's energy, technology, and healthcare sectors draw IELTS candidates from
+          across Alberta and beyond. This guide covers everything specific to preparing and
+          testing in Calgary.
+        </p>
+        <div class="cluster">
+          <a class="btn btn-primary ic-btn" href="/lessons/writing/">Writing lessons</a>
+          <a class="btn btn-ghost" href="/ielts/">IELTS hub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface funnel-section" style="max-width: 860px; margin: 0 auto;">
+
+      <h2 class="ic-display" style="margin-top: 0;">IELTS in Calgary: the local context</h2>
+      <p>
+        Calgary's energy sector draws Federal Skilled Worker and intracompany transfer applicants,
+        while the healthcare and technology sectors add a significant volume of Express Entry
+        candidates. IELTS General Training Band 6.0 is the IRCC minimum for most immigration
+        streams and is equivalent to CLB 7.
+      </p>
+      <p>
+        The difference between Band 6.0 and Band 7.0 in Express Entry CRS terms is 68 points
+        (68 points at CLB 7 versus 136 points at CLB 9). High-earning Calgary professionals often
+        qualify for PNP streams with lower language minimums, but a Band 7.0 (CLB 9) score
+        significantly strengthens a federal Express Entry profile in a competitive draw pool.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">IELTS Academic vs General Training in Calgary</h2>
+      <p>
+        Choosing the wrong IELTS version is the most costly mistake a Calgary candidate can make.
+        The wrong version means your score will not be accepted by IRCC or by your institution:
+      </p>
+      <table style="width: 100%; border-collapse: collapse; margin-bottom: var(--s-3);">
+        <tr style="border-bottom: 1px solid var(--border);">
+          <th style="text-align: left; padding: var(--s-2);">Use case</th>
+          <th style="text-align: left; padding: var(--s-2);">IELTS version needed</th>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: var(--s-2);">Canadian immigration (Express Entry, AAIP)</td>
+          <td style="padding: var(--s-2);"><strong>General Training only</strong></td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: var(--s-2);">University of Calgary admissions</td>
+          <td style="padding: var(--s-2);">Academic only</td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: var(--s-2);">Mount Royal University admissions</td>
+          <td style="padding: var(--s-2);">Academic only</td>
+        </tr>
+        <tr>
+          <td style="padding: var(--s-2);">SAIT admissions</td>
+          <td style="padding: var(--s-2);">Academic only (verify with SAIT)</td>
+        </tr>
+      </table>
+      <p>
+        For immigration: always General Training. For universities and colleges: always Academic.
+        When in doubt, verify directly with the institution or program.
+        See also: <a href="/blog/ielts-writing-task-2-complete-guide/">IELTS Writing Task 2 complete guide</a>.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Band 7 writing strategies for Calgary candidates</h2>
+      <p>
+        Writing Task 2 carries more marks than Task 1 and is the highest-impact section for
+        the Band 6 to Band 7 jump. The main improvement required at Band 7 is specific, extended
+        development of each supporting idea rather than a brief mention.
+      </p>
+      <p>
+        Calgary candidates who work in technical or professional fields sometimes default to
+        dense, jargon-heavy sentences in their writing. IELTS rewards clarity and logical flow
+        at the sentence level as much as vocabulary range. See the full strategy guides in the
+        <a href="/ielts/writing/">IELTS Writing hub</a>.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Free preparation resources</h2>
+      <p>
+        IELTS Corner's free resources are available online to all Calgary and Alberta candidates:
+      </p>
+      <div class="grid grid-2" style="margin-top: var(--s-3); gap: var(--s-3);">
+        <a class="card" href="/blog/ielts-writing-task-2-complete-guide/">
+          <h3 style="margin-top: 0;">Writing Task 2 guide</h3>
+          <p class="muted">All 4 question types, Band 7 sample essay, and the 5 most common blocking habits.</p>
+        </a>
+        <a class="card" href="/lessons/writing/">
+          <h3 style="margin-top: 0;">Free writing lessons</h3>
+          <p class="muted">Grammar and writing lessons targeting the Band 6 to Band 7 jump.</p>
+        </a>
+        <a class="card" href="/blog/ielts-speaking-part-3-questions-guide/">
+          <h3 style="margin-top: 0;">Speaking Part 3 guide</h3>
+          <p class="muted">Academic-register vocabulary and argumentation structure for IELTS Part 3.</p>
+        </a>
+        <a class="card" href="/ielts/">
+          <h3 style="margin-top: 0;">IELTS hub</h3>
+          <p class="muted">All IELTS guides in one place: writing, speaking, reading, and listening.</p>
+        </a>
+      </div>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+
+    </div>
+  </section>
+</Layout>

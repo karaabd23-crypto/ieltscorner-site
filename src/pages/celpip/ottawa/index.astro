@@ -1,0 +1,184 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "Where can I take the CELPIP test in Ottawa?",
+    answer:
+      "CELPIP test centres in Ottawa are operated by IDP Canada and Paragon Testing Enterprises. Book your test at celpip.ca and filter by Ontario to find current Ottawa-area locations and available dates. Test centre availability changes frequently, so check the official site for the most up-to-date scheduling information.",
+  },
+  {
+    question: "What CELPIP score do I need for Ontario PNP?",
+    answer:
+      "The Ontario Immigrant Nominee Program (OINP) Express Entry Aligned streams generally require a minimum of CLB 7 in all four skills. Ottawa-area candidates compete in the same Ontario draw pool as Toronto. Most invited OINP candidates score significantly above the minimum, and CLB 9 (136 CRS points) gives a stronger federal Express Entry profile. Verify current OINP stream requirements at ontario.ca as thresholds change with each expression of interest round.",
+  },
+  {
+    question: "Does CELPIP satisfy federal public service language requirements?",
+    answer:
+      "Government of Canada positions have designated language requirements, typically rated as A, B, or C for each skill. CELPIP CLB 9 or higher generally corresponds to the proficiency range required for most English essential and bilingual positions. However, federal public service language evaluations are conducted using the Government of Canada's own Second Language Evaluation process for internal staffing. CELPIP is relevant for externally hired positions where CLB scores are used as evidence. Always verify the specific language profile for your position.",
+  },
+  {
+    question: "Should I take CELPIP or IELTS as an Ottawa candidate?",
+    answer:
+      "Both CELPIP and IELTS are equally accepted for Canadian immigration. Ottawa has test centres for both. CELPIP is fully computer-based and Canadian-developed; IELTS is available in both paper and computer formats and is more widely recognised outside Canada. The best choice depends on which test format suits your strengths. See our comparison at the CELPIP vs IELTS guide for a detailed breakdown.",
+  },
+  {
+    question: "How long are CELPIP scores valid?",
+    answer:
+      "CELPIP scores are valid for two years from the test date for IRCC immigration purposes. The same two-year validity applies to IELTS and PTE Core. If your score expires before your application is decided, you will need to retake the test and update your Express Entry profile.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "CELPIP", path: "/celpip/" },
+    { name: "CELPIP in Ottawa", path: "/celpip/ottawa/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="CELPIP in Ottawa: Test Centres, Federal Worker Immigration, and CLB 9 Strategies (2026)"
+  description="Complete guide to CELPIP in Ottawa. Test centre locations, federal public service requirements, Ontario PNP, CLB 9 strategies for the National Capital Region."
+  keywords="CELPIP Ottawa, CELPIP test centre Ottawa, CELPIP Ontario immigration, CELPIP federal public service, CLB 9 Ottawa"
+  structuredData={pageStructuredData}
+>
+  <section class="section">
+    <div class="hero" style="--hero-bg: url('/heroes/lesson.png');">
+      <div class="hero-content">
+        <span class="pill ic-eyebrow">CELPIP in Ottawa</span>
+        <h1 class="ic-display">CELPIP preparation for Ottawa and National Capital Region candidates</h1>
+        <p class="muted" style="max-width: 62ch;">
+          Ottawa's unique mix of federal public service, technology, and newcomer communities
+          creates a distinct CELPIP candidate profile. This guide covers everything specific to
+          preparing and testing in the National Capital Region.
+        </p>
+        <div class="cluster">
+          <a class="btn btn-primary ic-btn" href="/questions/">Practice free questions</a>
+          <a class="btn btn-ghost" href="/celpip/">CELPIP hub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface funnel-section" style="max-width: 860px; margin: 0 auto;">
+
+      <h2 class="ic-display" style="margin-top: 0;">Ottawa's unique immigration landscape</h2>
+      <p>
+        Ottawa is Canada's capital and home to the federal public service, a growing technology
+        sector centred in Kanata, and a significant newcomer population. Many Ottawa CELPIP
+        candidates are federal public servants or government contractors seeking permanent
+        residence through the Canadian Experience Class, tech workers at Ottawa-area companies,
+        or family class applicants living in the National Capital Region.
+      </p>
+      <p>
+        For federal Express Entry programs, CLB 9 earns 136 CRS points compared to 68 points
+        for CLB 7. This 68-point gap is one of the most significant controllable factors for
+        Ottawa candidates whose applications are otherwise competitive.
+      </p>
+      <p>
+        For the full breakdown of how CLB levels translate to CRS points, see our
+        <a href="/blog/celpip-scores-canadian-immigration/">CELPIP scores for Canadian immigration guide</a>.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Ontario PNP and CELPIP in Ottawa</h2>
+      <p>
+        Ottawa-area candidates applying through the Ontario Immigrant Nominee Program (OINP)
+        compete in the same provincial draw pool as Toronto. The OINP Express Entry Aligned
+        streams generally require a minimum of CLB 7 in all four skills, but most invited
+        candidates score significantly above this minimum.
+      </p>
+      <p>
+        Because Ottawa and Toronto candidates draw from the same pool, the competition for
+        OINP invitations is considerable. A CLB 9 profile strengthens both the OINP selection
+        score and the underlying federal Express Entry CRS score simultaneously.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">CLB 9 strategies for Ottawa candidates</h2>
+      <p>
+        Writing and Speaking are the most improvable CELPIP skills because both follow
+        well-defined scoring rubrics that can be studied and applied with targeted practice.
+      </p>
+
+      <h3>Writing</h3>
+      <p>
+        CLB 9 writing requires full development of each prompt point in both Task 1 (email)
+        and Task 2 (survey response). The most common reason candidates plateau at CLB 7 is
+        underdeveloped prompt coverage rather than weak grammar. See the full strategy guides
+        in the <a href="/celpip/writing/">CELPIP Writing hub</a>.
+      </p>
+
+      <h3>Speaking</h3>
+      <p>
+        Tasks 7 and 8 carry the most weight in the speaking score. CLB 9 requires a structured
+        argument with a clear position, two developed supporting points, and a conclusion.
+        Ottawa candidates who regularly give formal presentations in their work often find this
+        structure already familiar. See the <a href="/celpip/speaking/">CELPIP Speaking hub</a>
+        for task-by-task preparation strategies.
+      </p>
+
+      <h3>Reading</h3>
+      <p>
+        Part 4 of the reading test determines the reading score for most candidates. The core
+        skill is paraphrase recognition. See the
+        <a href="/celpip/reading/">CELPIP Reading hub</a> for part-by-part strategies and
+        timing plans.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Federal public service and language requirements</h2>
+      <p>
+        Government of Canada positions carry designated language requirements. Many bilingual
+        and English essential positions require demonstrated English proficiency at the B or
+        C level in each skill area. CELPIP CLB 9 or higher generally aligns with the
+        proficiency range associated with these requirements for externally hired candidates.
+      </p>
+      <p>
+        Note that internal federal public service staffing uses the Government of Canada's
+        Second Language Evaluation process rather than third-party tests like CELPIP. For
+        externally posted positions that accept CLB scores, CELPIP is an accepted form of
+        evidence. Always verify the specific language profile and accepted evidence for
+        the position you are applying to.
+      </p>
+      <p>
+        To understand the CLB framework and how it relates to different proficiency levels,
+        see our <a href="/blog/clb-levels-explained/">CLB levels explained guide</a>.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Free preparation resources</h2>
+      <p>
+        IELTS Corner's free resources are available online to all Ottawa and NCR candidates:
+      </p>
+      <div class="grid grid-2" style="margin-top: var(--s-3); gap: var(--s-3);">
+        <a class="card" href="/questions/">
+          <h3 style="margin-top: 0;">Free question bank</h3>
+          <p class="muted">23 email and survey writing tasks at CLB 6 to CLB 10 with full model answers and scoring breakdowns.</p>
+        </a>
+        <a class="card" href="/celpip/writing/">
+          <h3 style="margin-top: 0;">CELPIP writing hub</h3>
+          <p class="muted">Task 1 and Task 2 strategy guides, templates, and common mistake tables.</p>
+        </a>
+        <a class="card" href="/celpip/speaking/">
+          <h3 style="margin-top: 0;">CELPIP speaking hub</h3>
+          <p class="muted">All 8 tasks with preparation strategies and CLB 9 sample responses.</p>
+        </a>
+        <a class="card" href="/blog/clb-levels-explained/">
+          <h3 style="margin-top: 0;">CLB levels guide</h3>
+          <p class="muted">What each CLB level means, how it maps to CELPIP scores, and what it means for your immigration file.</p>
+        </a>
+      </div>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+
+    </div>
+  </section>
+</Layout>

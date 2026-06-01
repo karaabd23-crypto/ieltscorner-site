@@ -1,0 +1,169 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "Where can I take the IELTS test in Winnipeg?",
+    answer:
+      "IELTS tests in Winnipeg are offered at IDP Canada centres. Both computer-delivered and paper-based IELTS are available. Computer-delivered IELTS produces results in 3 to 5 business days. Book through the official IELTS website at ielts.org or idpcanada.ca and filter by Manitoba to see current Winnipeg test centre locations and available dates.",
+  },
+  {
+    question: "What IELTS score do I need for the MPNP?",
+    answer:
+      "MPNP score requirements align with CLB thresholds. IELTS General Training Band 6.0 across all four skills is equivalent to CLB 7, which is the standard minimum for professional streams under the Skilled Worker in Manitoba and Skilled Worker Overseas categories. Competitive candidates targeting Express Entry CRS points should aim for Band 7.0 (CLB 9 equivalent), which earns 136 CRS points compared to 68 for Band 6.0. Always verify current MPNP requirements at immigratemanitoba.com.",
+  },
+  {
+    question: "Should I choose IELTS or CELPIP in Winnipeg?",
+    answer:
+      "Both IELTS General Training and CELPIP are accepted by IRCC for Express Entry and all MPNP streams. IELTS is more widely recognised internationally and is the only option if you need a test that works for both immigration and academic admission to the University of Manitoba (which requires IELTS Academic). If you are applying only for immigration, CELPIP is a valid alternative and is taken entirely on a computer. See our CELPIP vs IELTS comparison guide to decide which suits your situation.",
+  },
+  {
+    question: "Is IELTS Academic required for the University of Manitoba?",
+    answer:
+      "Yes. The University of Manitoba and the University of Winnipeg require IELTS Academic for undergraduate and graduate admissions. IELTS General Training is not accepted for university admission. If you are applying to both a university and an immigration program, you must take IELTS Academic for the university and either IELTS General Training or CELPIP for immigration. They are different tests and scores cannot be substituted. Confirm current score requirements with the university's admissions office.",
+  },
+  {
+    question: "How can I improve my IELTS score from Band 6 to Band 7 in Winnipeg?",
+    answer:
+      "The Band 6 to Band 7 jump requires specific improvements in Writing and Speaking. In Writing, Task 2 is the highest-impact area. Band 7 responses need fully developed, specific arguments rather than vague general statements. In Speaking, Part 3 requires structured argumentation at an academic register. Winnipeg candidates can access free IELTS Corner strategy guides online, including the IELTS Writing Task 2 complete guide and the Speaking Part 3 guide, to work on the targeted changes that move scores from Band 6 to Band 7.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "IELTS", path: "/ielts/" },
+    { name: "IELTS in Winnipeg", path: "/ielts/winnipeg/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="IELTS in Winnipeg: Test Centres, Manitoba PNP Requirements, and Band 7 Strategies"
+  description="Complete guide to IELTS in Winnipeg. IDP test centres, MPNP score requirements, University of Manitoba context, and Band 7 preparation resources for Manitoba candidates."
+  keywords="IELTS Winnipeg, IELTS Manitoba PNP, IELTS MPNP, IELTS Band 7 Winnipeg, IELTS University of Manitoba"
+  structuredData={pageStructuredData}
+>
+  <section class="section">
+    <div class="hero" style="--hero-bg: url('/heroes/lesson.png');">
+      <div class="hero-content">
+        <span class="pill ic-eyebrow">IELTS in Winnipeg</span>
+        <h1 class="ic-display">IELTS preparation for Winnipeg and Manitoba candidates</h1>
+        <p class="muted" style="max-width: 62ch;">
+          Winnipeg's diverse immigrant population includes candidates preparing for IELTS for
+          both immigration and university admission. This guide covers everything specific to
+          preparing and testing in Winnipeg.
+        </p>
+        <div class="cluster">
+          <a class="btn btn-primary ic-btn" href="/ielts/writing/">IELTS writing hub</a>
+          <a class="btn btn-ghost" href="/ielts/">IELTS hub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface funnel-section" style="max-width: 860px; margin: 0 auto;">
+
+      <h2 class="ic-display" style="margin-top: 0;">IELTS in Winnipeg: the context</h2>
+      <p>
+        Winnipeg's diverse immigrant population includes many candidates preparing for IELTS
+        for both immigration and academic purposes. Newcomers applying through the Manitoba
+        Provincial Nominee Program (MPNP) or Express Entry need IELTS General Training. Students
+        applying to the University of Manitoba, University of Winnipeg, or Red River College
+        Polytechnic need IELTS Academic. These are different tests and the scores are not
+        interchangeable.
+      </p>
+      <p>
+        For immigration, IELTS General Training Band 6.0 across all four skills is the IRCC
+        minimum for most Express Entry streams, equivalent to CLB 7. Band 7.0 (CLB 9 equivalent)
+        earns 136 CRS points compared to 68 for Band 6.0, a 68-point gap that is significant
+        for candidates who do not have a provincial nomination or a job offer to boost their score.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">IELTS Academic vs General Training in Winnipeg</h2>
+      <p>
+        The most important decision for Winnipeg IELTS candidates is which version of the test
+        they need. Using the wrong version means your score will not be accepted:
+      </p>
+      <table style="width: 100%; border-collapse: collapse; margin-bottom: var(--s-3);">
+        <tr style="border-bottom: 1px solid var(--border);">
+          <th style="text-align: left; padding: var(--s-2);">Use case</th>
+          <th style="text-align: left; padding: var(--s-2);">IELTS version needed</th>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: var(--s-2);">Canadian immigration (Express Entry, MPNP)</td>
+          <td style="padding: var(--s-2);"><strong>General Training only</strong></td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: var(--s-2);">University of Manitoba admission</td>
+          <td style="padding: var(--s-2);">Academic only</td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: var(--s-2);">University of Winnipeg admission</td>
+          <td style="padding: var(--s-2);">Academic only</td>
+        </tr>
+        <tr>
+          <td style="padding: var(--s-2);">Red River College Polytechnic admission</td>
+          <td style="padding: var(--s-2);">Academic (verify with Red River)</td>
+        </tr>
+      </table>
+      <p>
+        Do not mix up General Training and Academic. A General Training score cannot be used for
+        university admission, and an Academic score cannot be used for immigration. If you are
+        pursuing both pathways, you will need to take both versions. For Writing Task 2 strategies
+        that apply to IELTS Academic, see our
+        <a href="/blog/ielts-writing-task-2-complete-guide/">IELTS Writing Task 2 complete guide</a>.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Band 7 strategies for Winnipeg candidates</h2>
+
+      <h3>Writing Task 2 (highest impact)</h3>
+      <p>
+        Writing Task 2 carries more marks than Task 1 and is the most common area where Band 6
+        candidates can make rapid improvement. The Band 7 requirement is moving from general
+        statements to specific, well-developed arguments with clear examples. See the
+        <a href="/ielts/writing/">IELTS Writing hub</a> for Task 1 and Task 2 guides.
+      </p>
+
+      <h3>Speaking Part 3</h3>
+      <p>
+        Part 3 of the IELTS Speaking test requires structured argumentation and precise vocabulary
+        at an academic register. See the
+        <a href="/blog/ielts-speaking-part-3-questions-guide/">IELTS Speaking Part 3 guide</a>
+        for the structure and vocabulary patterns that Band 7 responses use.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Free preparation resources for Winnipeg candidates</h2>
+      <div class="grid grid-2" style="margin-top: var(--s-3); gap: var(--s-3);">
+        <a class="card" href="/blog/ielts-writing-task-2-complete-guide/">
+          <h3 style="margin-top: 0;">Writing Task 2 guide</h3>
+          <p class="muted">All 4 question types, Band 7 sample essay, and 5 blocking habits to fix.</p>
+        </a>
+        <a class="card" href="/ielts/writing/">
+          <h3 style="margin-top: 0;">IELTS writing hub</h3>
+          <p class="muted">All IELTS writing guides in one place: Task 1 and Task 2 strategies.</p>
+        </a>
+        <a class="card" href="/blog/ielts-speaking-part-3-questions-guide/">
+          <h3 style="margin-top: 0;">Speaking Part 3 guide</h3>
+          <p class="muted">Academic register, argument structure, and vocabulary for Band 7 responses.</p>
+        </a>
+        <a class="card" href="/ielts/">
+          <h3 style="margin-top: 0;">IELTS hub</h3>
+          <p class="muted">All IELTS preparation guides, strategies, and resources in one place.</p>
+        </a>
+      </div>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+
+    </div>
+  </section>
+</Layout>

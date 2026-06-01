@@ -1,0 +1,153 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "Where can I take the IELTS test in Ottawa or Gatineau?",
+    answer:
+      "IELTS tests in the Ottawa-Gatineau region are offered through IDP Canada and British Council test centres on the Ontario side of the border. Computer-delivered IELTS is available at most Ottawa centres and produces results within 3 to 5 business days. Book through ielts.org or idpcanada.ca and filter by Ontario to find current Ottawa locations and available dates.",
+  },
+  {
+    question: "What IELTS score do I need for Ontario PNP from Ottawa?",
+    answer:
+      "The Ontario Immigrant Nominee Program (OINP) Express Entry Aligned streams generally require a minimum of IELTS General Training Band 6.0 (CLB 7 equivalent) in all four skills. Ottawa candidates compete in the same Ontario draw pool as Toronto. Most invited OINP candidates score significantly above the minimum. Band 7.0 (CLB 9 equivalent, 136 CRS points) gives a substantially stronger federal Express Entry profile. Always verify current requirements at ontario.ca.",
+  },
+  {
+    question: "Should I take IELTS or CELPIP in Ottawa?",
+    answer:
+      "Both IELTS and CELPIP are accepted for Canadian immigration and Ontario PNP applications. Ottawa has test centres for both. IELTS is available in paper and computer formats and is more widely recognised outside Canada; CELPIP is fully computer-based and Canadian-developed. For Ottawa's bilingual context, some francophone candidates find the CELPIP computer format easier to manage. The best choice is the test you perform better on after a practice attempt for each.",
+  },
+  {
+    question: "Should I take IELTS Academic or General Training for uOttawa or Carleton?",
+    answer:
+      "For admission to the University of Ottawa or Carleton University, you need IELTS Academic. General Training is not accepted for university admissions. For Canadian immigration applications (Express Entry, OINP), you must use IELTS General Training. Academic is not accepted by IRCC for immigration. Always verify the specific English language requirement and minimum score directly on each university's official admissions page before booking.",
+  },
+  {
+    question: "How long does it take to prepare for IELTS Band 7?",
+    answer:
+      "Preparation time for Band 7 depends on your current level. Candidates already at Band 6 typically need 6 to 12 weeks of focused preparation to reach Band 7, with Writing Task 2 being the highest-impact area to improve. Candidates starting below Band 6 usually need 3 to 6 months. Consistent daily practice (particularly timed writing under test conditions) is more effective than intensive short-term cramming.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "IELTS", path: "/ielts/" },
+    { name: "IELTS in Ottawa", path: "/ielts/ottawa/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="IELTS in Ottawa: Test Centres, Ontario Immigration, and Band 7 Strategies for NCR Candidates"
+  description="Complete guide to IELTS in Ottawa and Gatineau. Test centre locations, Ontario immigration requirements, University of Ottawa and Carleton admission, and Band 7 preparation resources."
+  keywords="IELTS Ottawa, IELTS test centre Ottawa, IELTS Ontario immigration, IELTS Band 7 Ottawa, IELTS Carleton uOttawa"
+  structuredData={pageStructuredData}
+>
+  <section class="section">
+    <div class="hero" style="--hero-bg: url('/heroes/lesson.png');">
+      <div class="hero-content">
+        <span class="pill ic-eyebrow">IELTS in Ottawa</span>
+        <h1 class="ic-display">IELTS preparation for Ottawa, Gatineau, and NCR candidates</h1>
+        <p class="muted" style="max-width: 62ch;">
+          Ottawa's bilingual, federal, and tech-sector candidate base has distinct IELTS
+          preparation needs. This guide covers everything specific to testing in the
+          National Capital Region.
+        </p>
+        <div class="cluster">
+          <a class="btn btn-primary ic-btn" href="/lessons/writing/">Writing lessons</a>
+          <a class="btn btn-ghost" href="/ielts/">IELTS hub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="surface funnel-section" style="max-width: 860px; margin: 0 auto;">
+
+      <h2 class="ic-display" style="margin-top: 0;">IELTS in Ottawa: the context</h2>
+      <p>
+        Ottawa is Canada's bilingual capital city, and its IELTS candidate population is
+        diverse: francophone professionals seeking English scores for federal public service
+        positions, tech workers at companies like Shopify and Kinaxis, university applicants
+        at the University of Ottawa or Carleton, and immigration applicants through Express
+        Entry or Ontario PNP.
+      </p>
+      <p>
+        For Canadian immigration, IELTS General Training Band 6.0 (CLB 7 equivalent) is the
+        IRCC minimum for most programs. Band 7.0 (CLB 9 equivalent) earns 136 CRS points
+        compared to 68 points at CLB 7, a 68-point gap that is one of the most controllable
+        factors in a competitive Express Entry profile.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">University of Ottawa and Carleton: IELTS Academic requirements</h2>
+      <p>
+        Ottawa's two major universities both use IELTS Academic for admissions decisions.
+        IELTS General Training is not accepted for post-secondary admissions.
+      </p>
+      <p>
+        For immigration candidates who are also applying to university, note that you cannot
+        use a single IELTS result for both purposes: immigration requires General Training
+        and university admission requires Academic. These are different tests taken separately.
+      </p>
+      <p>
+        Specific minimum scores for uOttawa and Carleton vary by faculty and programme. Always
+        verify the current English language requirement directly on each university's official
+        admissions page before booking. See also the
+        <a href="/blog/ielts-writing-task-2-complete-guide/">IELTS Writing Task 2 complete guide</a>
+        for the academic writing skills both university and immigration IELTS test.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Band 7 strategies for Ottawa candidates</h2>
+      <p>
+        Writing Task 2 is the highest-impact section for reaching Band 7 and is the area
+        where most Ottawa candidates have the most room to improve.
+      </p>
+      <p>
+        Ottawa candidates who work in policy, government, or technology often write in a
+        formal but dense style. IELTS Writing Task 2 rewards clarity, logical progression,
+        and specific development of each idea over formal vocabulary alone. The Band 6 to
+        Band 7 jump most commonly requires one change: replacing vague supporting sentences
+        with specific, extended reasoning.
+      </p>
+      <p>
+        For full Task 2 strategy, sample essays, and band descriptor breakdowns, see the
+        <a href="/ielts/writing/">IELTS Writing hub</a>.
+      </p>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Free preparation resources</h2>
+      <p>
+        IELTS Corner's free resources are available online to all Ottawa, Gatineau, and NCR candidates:
+      </p>
+      <div class="grid grid-2" style="margin-top: var(--s-3); gap: var(--s-3);">
+        <a class="card" href="/blog/ielts-writing-task-2-complete-guide/">
+          <h3 style="margin-top: 0;">Writing Task 2 guide</h3>
+          <p class="muted">All 4 question types, Band 7 sample essay, and the 5 most common blocking habits.</p>
+        </a>
+        <a class="card" href="/lessons/writing/">
+          <h3 style="margin-top: 0;">Free writing lessons</h3>
+          <p class="muted">Grammar and writing lessons targeting the Band 6 to Band 7 jump.</p>
+        </a>
+        <a class="card" href="/blog/ielts-speaking-part-3-questions-guide/">
+          <h3 style="margin-top: 0;">Speaking Part 3 guide</h3>
+          <p class="muted">Academic-register vocabulary and argumentation structure for IELTS Part 3.</p>
+        </a>
+        <a class="card" href="/ielts/">
+          <h3 style="margin-top: 0;">IELTS hub</h3>
+          <p class="muted">All IELTS guides in one place: writing, speaking, reading, and listening.</p>
+        </a>
+      </div>
+
+      <h2 class="ic-display" style="margin-top: var(--s-5);">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+
+    </div>
+  </section>
+</Layout>
