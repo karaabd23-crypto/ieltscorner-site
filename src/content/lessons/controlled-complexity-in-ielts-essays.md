@@ -11,21 +11,21 @@ tags: ["grammar", "c1", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Complex Writing That Works correctly?"
+  - prompt: "Which version uses Complex Writing That Works accurately?"
     options:
       - "Because the buses were delayed. Many workers missed the meeting."
       - "Because the buses were delayed, many workers missed the meeting."
       - "The report was clear although the final paragraph was weak it still helped the reader."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Complex Writing That Works and keeps the sentence natural."
-  - prompt: "What should you check first when editing Complex Writing That Works?"
+  - prompt: "Before you fix Complex Writing That Works in your answer, what comes first?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Complex Writing That Works mistake?"
+  - prompt: "Which correction solves a common Complex Writing That Works slip?"
     options:
       - "When the route changed many residents complained because they had not been warned."
       - "When the route changed, many residents complained because they had not been warned."

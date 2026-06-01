@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Have: Main Verb and Auxiliary correctly?"
+  - prompt: "Which sentence handles Have: Main Verb and Auxiliary the right way?"
     options:
       - "She do not need extra time for this section."
       - "She does not need extra time for this section."
       - "There is many reasons to revise the final paragraph."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Have: Main Verb and Auxiliary and keeps the sentence natural."
-  - prompt: "What should you check first when editing Have: Main Verb and Auxiliary?"
+  - prompt: "Editing Have: Main Verb and Auxiliary: where should you start?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Have: Main Verb and Auxiliary mistake?"
+  - prompt: "Which change fixes a frequent Have: Main Verb and Auxiliary mistake?"
     options:
       - "He do not understand the final instruction."
       - "He does not understand the final instruction."

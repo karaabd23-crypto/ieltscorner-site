@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Timeline with tense labels", "Finished vs unfinished time markers", "Simple/perfect contrast pairs"]
 quiz:
-  - prompt: "Which sentence uses Present Perfect Continuous correctly?"
+  - prompt: "Which option shows Present Perfect Continuous used correctly?"
     options:
       - "I lived here since 2020."
       - "I have lived here since 2020."
       - "She has finished her task yesterday."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Present Perfect Continuous and keeps the sentence natural."
-  - prompt: "What should you check first when editing Present Perfect Continuous?"
+  - prompt: "What is the first thing to settle when you work on Present Perfect Continuous?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Present Perfect Continuous mistake?"
+  - prompt: "Which edit repairs a typical Present Perfect Continuous error?"
     options:
       - "We have seen that movie last week."
       - "We saw that movie last week."

@@ -11,21 +11,21 @@ tags: ["grammar", "c2", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Academic Sentence Patterns correctly?"
+  - prompt: "Which version uses Academic Sentence Patterns accurately?"
     options:
       - "Because the buses were delayed. Many workers missed the meeting."
       - "Because the buses were delayed, many workers missed the meeting."
       - "The report was clear although the final paragraph was weak it still helped the reader."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Academic Sentence Patterns and keeps the sentence natural."
-  - prompt: "What should you check first when editing Academic Sentence Patterns?"
+  - prompt: "Before you fix Academic Sentence Patterns in your answer, what comes first?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Academic Sentence Patterns mistake?"
+  - prompt: "Which correction solves a common Academic Sentence Patterns slip?"
     options:
       - "When the route changed many residents complained because they had not been warned."
       - "When the route changed, many residents complained because they had not been warned."

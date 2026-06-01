@@ -11,21 +11,21 @@ tags: ["grammar", "c2", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Changing Formality Level correctly?"
+  - prompt: "Which version uses Changing Formality Level accurately?"
     options:
       - "I think this plan is kind of bad for cities."
       - "This plan is unlikely to benefit cities in the long term."
       - "People absolutely hate the change, and it is a total disaster."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Changing Formality Level and keeps the sentence natural."
-  - prompt: "What should you check first when editing Changing Formality Level?"
+  - prompt: "Before you fix Changing Formality Level in your answer, what comes first?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Changing Formality Level mistake?"
+  - prompt: "Which correction solves a common Changing Formality Level slip?"
     options:
       - "This idea is super good because everybody will love it."
       - "This idea could be effective because it addresses a common local need."

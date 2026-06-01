@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Both, Either, Neither correctly?"
+  - prompt: "Pick the sentence that gets Both, Either, Neither right."
     options:
       - "Both the teacher and the students was ready on time."
       - "Both the teacher and the students were ready on time."
       - "Either the library or the classrooms is open this evening."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Both, Either, Neither and keeps the sentence natural."
-  - prompt: "What should you check first when editing Both, Either, Neither?"
+  - prompt: "When you review Both, Either, Neither, what should you look at before anything else?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Both, Either, Neither mistake?"
+  - prompt: "Which change fixes a frequent Both, Either, Neither mistake?"
     options:
       - "Neither the buses nor the train service were reliable today."
       - "Neither the buses nor the train service was reliable today."

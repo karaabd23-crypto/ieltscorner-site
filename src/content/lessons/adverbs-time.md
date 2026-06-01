@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Adverbs of Time and Duration correctly?"
+  - prompt: "Which sentence handles Adverbs of Time and Duration the right way?"
     options:
       - "She speaks English fluent during presentations."
       - "She speaks English fluently during presentations."
       - "I every day revise vocabulary on the bus."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Adverbs of Time and Duration and keeps the sentence natural."
-  - prompt: "What should you check first when editing Adverbs of Time and Duration?"
+  - prompt: "Editing Adverbs of Time and Duration: where should you start?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Adverbs of Time and Duration mistake?"
+  - prompt: "Which fix addresses a usual Adverbs of Time and Duration error?"
     options:
       - "The train arrived lately, so many workers were delayed."
       - "The train arrived late, so many workers were delayed."

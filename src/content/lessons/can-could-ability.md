@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Modal meaning scale", "Advice vs obligation examples", "Modal + base verb reminder"]
 quiz:
-  - prompt: "Which sentence uses Can, Could, Be Able To correctly?"
+  - prompt: "Which sentence handles Can, Could, Be Able To the right way?"
     options:
       - "Students should to check the final paragraph."
       - "Students should check the final paragraph."
       - "The delays can to continue if repairs are postponed."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Can, Could, Be Able To and keeps the sentence natural."
-  - prompt: "What should you check first when editing Can, Could, Be Able To?"
+  - prompt: "Editing Can, Could, Be Able To: where should you start?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Can, Could, Be Able To mistake?"
+  - prompt: "Which fix addresses a usual Can, Could, Be Able To error?"
     options:
       - "You must to submit the form before Friday."
       - "You must submit the form before Friday."

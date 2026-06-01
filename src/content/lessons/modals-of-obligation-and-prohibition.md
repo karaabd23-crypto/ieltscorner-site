@@ -11,21 +11,21 @@ tags: ["grammar", "b1", "exam-prep", "ielts", "celpip"]
 heroTip: "Choose the meaning first, then choose the modal. Do not start from the word."
 visualAids: ["Modal meaning scale", "Advice vs obligation examples", "Modal + base verb reminder"]
 quiz:
-  - prompt: "Which sentence uses Modals of obligation and prohibition correctly?"
+  - prompt: "Which sentence handles Modals of obligation and prohibition the right way?"
     options:
       - "Students should to check the final paragraph."
       - "Students should check the final paragraph."
       - "The delays can to continue if repairs are postponed."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Modals of obligation and prohibition and keeps the sentence natural."
-  - prompt: "What should you check first when editing Modals of obligation and prohibition?"
+  - prompt: "Editing Modals of obligation and prohibition: where should you start?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Modals of obligation and prohibition mistake?"
+  - prompt: "Which fix addresses a usual Modals of obligation and prohibition error?"
     options:
       - "You must to submit the form before Friday."
       - "You must submit the form before Friday."

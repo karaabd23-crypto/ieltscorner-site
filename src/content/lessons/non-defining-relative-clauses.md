@@ -11,21 +11,21 @@ tags: ["grammar", "b1", "exam-prep", "ielts", "celpip"]
 heroTip: "Underline the noun you are describing before you add the relative clause."
 visualAids: ["Who/which/that table", "Restrictive vs non-restrictive pairs", "Pronoun drop examples"]
 quiz:
-  - prompt: "Which sentence uses Non-defining relative clauses correctly?"
+  - prompt: "Which version uses Non-defining relative clauses accurately?"
     options:
       - "The teacher gave feedback was very specific."
       - "The teacher gave feedback that was very specific."
       - "Students who study consistently they usually improve faster."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Non-defining relative clauses and keeps the sentence natural."
-  - prompt: "What should you check first when editing Non-defining relative clauses?"
+  - prompt: "Before you fix Non-defining relative clauses in your answer, what comes first?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Non-defining relative clauses mistake?"
+  - prompt: "Which correction solves a common Non-defining relative clauses slip?"
     options:
       - "The course provides materials are easy to review at home."
       - "The course provides materials that are easy to review at home."

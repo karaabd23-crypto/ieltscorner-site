@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Who/which/that table", "Restrictive vs non-restrictive pairs", "Pronoun drop examples"]
 quiz:
-  - prompt: "Which sentence uses Who vs Whom correctly?"
+  - prompt: "Which version uses Who vs Whom accurately?"
     options:
       - "The city policy update improve commuter access, but the sentence form is unstable."
       - "The city policy update improves commuter access, and the sentence form is stable."
       - "Students in one district reported progress, but the structure of the explanation is unclear."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Who vs Whom and keeps the sentence natural."
-  - prompt: "What should you check first when editing Who vs Whom?"
+  - prompt: "What is the first thing to settle when you work on Who vs Whom?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Who vs Whom mistake?"
+  - prompt: "Which edit repairs a typical Who vs Whom error?"
     options:
       - "The council approve the plan, but the timeline details remain unclear."
       - "The council approved the plan, but the timeline details remain unclear."

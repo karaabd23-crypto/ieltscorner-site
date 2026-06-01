@@ -11,21 +11,21 @@ tags: ["grammar", "a1", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Subject Pronouns and Basic Verbs correctly?"
+  - prompt: "Which sentence handles Subject Pronouns and Basic Verbs the right way?"
     options:
       - "When Maria met Ana, she said she needed help."
       - "When Maria met Ana, Maria said she needed help."
       - "The managers told the interns that they were unprepared."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Subject Pronouns and Basic Verbs and keeps the sentence natural."
-  - prompt: "What should you check first when editing Subject Pronouns and Basic Verbs?"
+  - prompt: "Editing Subject Pronouns and Basic Verbs: where should you start?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Subject Pronouns and Basic Verbs mistake?"
+  - prompt: "Which fix addresses a usual Subject Pronouns and Basic Verbs error?"
     options:
       - "James told David that he should revise the introduction."
       - "James told David that David should revise the introduction."

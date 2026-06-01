@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Conditional pattern ladder", "Timeline arrows", "If-clause/result-clause map"]
 quiz:
-  - prompt: "Which sentence uses Conditional Sentences: Second correctly?"
+  - prompt: "Which sentence handles Conditional Sentences: Second the right way?"
     options:
       - "If I had more time, I will join the course."
       - "If I had more time, I would join the course."
       - "If I have a car, I would drive to work every day."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Conditional Sentences: Second and keeps the sentence natural."
-  - prompt: "What should you check first when editing Conditional Sentences: Second?"
+  - prompt: "Editing Conditional Sentences: Second: where should you start?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Conditional Sentences: Second mistake?"
+  - prompt: "Which change fixes a frequent Conditional Sentences: Second mistake?"
     options:
       - "If I knew the answer, I will tell you now."
       - "If I knew the answer, I would tell you now."

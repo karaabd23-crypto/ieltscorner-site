@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Prefix meaning map", "Negative prefix table", "Re-/mis-/dis- contrast examples"]
 quiz:
-  - prompt: "Which sentence uses Word Formation: Prefixes correctly?"
+  - prompt: "Pick the sentence that gets Word Formation: Prefixes right."
     options:
       - "Several passengers understood the platform announcement because of the background noise."
       - "Several passengers misunderstood the platform announcement because of the background noise."
       - "Please write the summary after the supervisor gives feedback."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Word Formation: Prefixes and keeps the sentence natural."
-  - prompt: "What should you check first when editing Word Formation: Prefixes?"
+  - prompt: "When you review Word Formation: Prefixes, what should you look at before anything else?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Word Formation: Prefixes mistake?"
+  - prompt: "Which change fixes a frequent Word Formation: Prefixes mistake?"
     options:
       - "The manager asked us to check the data again, so we had to view the file before submission."
       - "The manager asked us to check the data again, so we had to review the file before submission."

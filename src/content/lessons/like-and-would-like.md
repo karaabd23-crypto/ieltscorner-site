@@ -11,21 +11,21 @@ tags: ["grammar", "a1", "exam-prep", "ielts", "celpip"]
 heroTip: "Choose the meaning first, then choose the modal. Do not start from the word."
 visualAids: ["Modal meaning scale", "Advice vs obligation examples", "Modal + base verb reminder"]
 quiz:
-  - prompt: "Which sentence uses Like and would like correctly?"
+  - prompt: "Which sentence handles Like and would like the right way?"
     options:
       - "Students should to check the final paragraph."
       - "Students should check the final paragraph."
       - "The delays can to continue if repairs are postponed."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Like and would like and keeps the sentence natural."
-  - prompt: "What should you check first when editing Like and would like?"
+  - prompt: "When you review Like and would like, what should you look at before anything else?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Like and would like mistake?"
+  - prompt: "Which change fixes a frequent Like and would like mistake?"
     options:
       - "You must to submit the form before Friday."
       - "You must submit the form before Friday."

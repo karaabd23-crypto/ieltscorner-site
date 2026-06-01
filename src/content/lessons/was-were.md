@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Timeline with tense labels", "Finished vs unfinished time markers", "Simple/perfect contrast pairs"]
 quiz:
-  - prompt: "Which sentence uses Was and Were correctly?"
+  - prompt: "Which sentence handles Was and Were the right way?"
     options:
       - "The city policy update improve commuter access, but the sentence form is unstable."
       - "The city policy update improves commuter access, and the sentence form is stable."
       - "Students in one district reported progress, but the structure of the explanation is unclear."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Was and Were and keeps the sentence natural."
-  - prompt: "What should you check first when editing Was and Were?"
+  - prompt: "When you review Was and Were, what should you look at before anything else?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Was and Were mistake?"
+  - prompt: "Which fix addresses a usual Was and Were error?"
     options:
       - "The council approve the plan, but the timeline details remain unclear."
       - "The council approved the plan, but the timeline details remain unclear."

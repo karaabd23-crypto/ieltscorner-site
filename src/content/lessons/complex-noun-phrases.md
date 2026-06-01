@@ -11,21 +11,21 @@ tags: ["grammar", "b2", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Building Longer Noun Groups correctly?"
+  - prompt: "Which option shows Building Longer Noun Groups used correctly?"
     options:
       - "The city launched a policy transport new plan."
       - "The city launched a new public transport plan."
       - "The report discussed housing affordable long-term options."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Building Longer Noun Groups and keeps the sentence natural."
-  - prompt: "What should you check first when editing Building Longer Noun Groups?"
+  - prompt: "Before you fix Building Longer Noun Groups in your answer, what comes first?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Building Longer Noun Groups mistake?"
+  - prompt: "Which correction solves a common Building Longer Noun Groups slip?"
     options:
       - "The school announced a support reading after-class program."
       - "The school announced an after-class reading support program."

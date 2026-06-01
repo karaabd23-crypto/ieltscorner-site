@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Conditional pattern ladder", "Timeline arrows", "If-clause/result-clause map"]
 quiz:
-  - prompt: "Which sentence uses Conditional Sentences: Third correctly?"
+  - prompt: "Which option shows Conditional Sentences: Third used correctly?"
     options:
       - "If we would have checked the map, we would have avoided the traffic."
       - "If we had checked the map, we would have avoided the traffic."
       - "If she had left earlier, she will catch the train."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Conditional Sentences: Third and keeps the sentence natural."
-  - prompt: "What should you check first when editing Conditional Sentences: Third?"
+  - prompt: "What is the first thing to settle when you work on Conditional Sentences: Third?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Conditional Sentences: Third mistake?"
+  - prompt: "Which edit repairs a typical Conditional Sentences: Third error?"
     options:
       - "If they had studied earlier, they will have finished on time."
       - "If they had studied earlier, they would have finished on time."

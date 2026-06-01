@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Adjective Order correctly?"
+  - prompt: "Which version uses Adjective Order accurately?"
     options:
       - "She bought a leather red bag for work."
       - "She bought a red leather bag for work."
       - "They live in a house modern large near downtown."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Adjective Order and keeps the sentence natural."
-  - prompt: "What should you check first when editing Adjective Order?"
+  - prompt: "Before you fix Adjective Order in your answer, what comes first?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Adjective Order mistake?"
+  - prompt: "Which correction solves a common Adjective Order slip?"
     options:
       - "He wore a cotton blue shirt to the interview."
       - "He wore a blue cotton shirt to the interview."

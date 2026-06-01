@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Noun Phrases correctly?"
+  - prompt: "Pick the sentence that gets Noun Phrases right."
     options:
       - "The city launched a policy transport new plan."
       - "The city launched a new public transport plan."
       - "The report discussed housing affordable long-term options."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Noun Phrases and keeps the sentence natural."
-  - prompt: "What should you check first when editing Noun Phrases?"
+  - prompt: "Editing Noun Phrases: where should you start?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Noun Phrases mistake?"
+  - prompt: "Which fix addresses a usual Noun Phrases error?"
     options:
       - "The school announced a support reading after-class program."
       - "The school announced an after-class reading support program."

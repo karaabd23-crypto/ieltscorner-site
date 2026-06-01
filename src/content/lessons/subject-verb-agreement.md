@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Agreement of Subject and Verb correctly?"
+  - prompt: "Which sentence handles Agreement of Subject and Verb the right way?"
     options:
       - "A list of solutions are on the board."
       - "A list of solutions is on the board."
       - "The number of students have increased this year."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Agreement of Subject and Verb and keeps the sentence natural."
-  - prompt: "What should you check first when editing Agreement of Subject and Verb?"
+  - prompt: "Editing Agreement of Subject and Verb: where should you start?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Agreement of Subject and Verb mistake?"
+  - prompt: "Which change fixes a frequent Agreement of Subject and Verb mistake?"
     options:
       - "A series of workshops were added this term."
       - "A series of workshops was added this term."

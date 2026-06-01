@@ -11,21 +11,21 @@ tags: ["grammar", "b2", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Reporting What Others Wrote correctly?"
+  - prompt: "Pick the sentence that gets Reporting What Others Wrote right."
     options:
       - "The witness said me that the road was closed."
       - "The witness told me that the road was closed."
       - "She explained that why the original plan had failed."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Reporting What Others Wrote and keeps the sentence natural."
-  - prompt: "What should you check first when editing Reporting What Others Wrote?"
+  - prompt: "When you review Reporting What Others Wrote, what should you look at before anything else?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Reporting What Others Wrote mistake?"
+  - prompt: "Which fix addresses a usual Reporting What Others Wrote error?"
     options:
       - "The teacher said us that the deadline had changed."
       - "The teacher told us that the deadline had changed."

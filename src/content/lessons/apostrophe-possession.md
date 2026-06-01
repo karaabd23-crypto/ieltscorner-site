@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Apostrophe and Possession correctly?"
+  - prompt: "Which version uses Apostrophe and Possession accurately?"
     options:
       - "The students books were left on the back table."
       - "The students' books were left on the back table."
       - "The students's books were left on the back table."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Apostrophe and Possession and keeps the sentence natural."
-  - prompt: "What should you check first when editing Apostrophe and Possession?"
+  - prompt: "What is the first thing to settle when you work on Apostrophe and Possession?"
     options:
       - "Whether you are showing possession or a contraction"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Apostrophe and Possession mistake?"
+  - prompt: "Which edit repairs a typical Apostrophe and Possession error?"
     options:
       - "Its clear that the writer revised the paragraph."
       - "It's clear that the writer revised the paragraph."

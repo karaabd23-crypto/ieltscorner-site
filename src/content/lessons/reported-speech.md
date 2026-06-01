@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Direct and Indirect Speech correctly?"
+  - prompt: "Which version uses Direct and Indirect Speech accurately?"
     options:
       - "The witness said me that the road was closed."
       - "The witness told me that the road was closed."
       - "She explained that why the original plan had failed."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Direct and Indirect Speech and keeps the sentence natural."
-  - prompt: "What should you check first when editing Direct and Indirect Speech?"
+  - prompt: "What is the first thing to settle when you work on Direct and Indirect Speech?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Direct and Indirect Speech mistake?"
+  - prompt: "Which edit repairs a typical Direct and Indirect Speech error?"
     options:
       - "The teacher said us that the deadline had changed."
       - "The teacher told us that the deadline had changed."

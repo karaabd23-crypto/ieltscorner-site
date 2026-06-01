@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Conditional pattern ladder", "Timeline arrows", "If-clause/result-clause map"]
 quiz:
-  - prompt: "Which sentence uses Would: Conditional and Habitual correctly?"
+  - prompt: "Which version uses Would: Conditional and Habitual accurately?"
     options:
       - "When I was younger, I am playing outside every evening."
       - "When I was younger, I would play outside every evening."
       - "If I had more time, I go to the gym every day."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Would: Conditional and Habitual and keeps the sentence natural."
-  - prompt: "What should you check first when editing Would: Conditional and Habitual?"
+  - prompt: "What is the first thing to settle when you work on Would: Conditional and Habitual?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Would: Conditional and Habitual mistake?"
+  - prompt: "Which edit repairs a typical Would: Conditional and Habitual error?"
     options:
       - "When we were children, we would to visit our grandparents every summer."
       - "When we were children, we would visit our grandparents every summer."

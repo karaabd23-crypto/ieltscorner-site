@@ -11,21 +11,21 @@ tags: ["grammar", "c2", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Using Abstract Nouns correctly?"
+  - prompt: "Which sentence handles Using Abstract Nouns the right way?"
     options:
       - "The city launched a policy transport new plan."
       - "The city launched a new public transport plan."
       - "The report discussed housing affordable long-term options."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Using Abstract Nouns and keeps the sentence natural."
-  - prompt: "What should you check first when editing Using Abstract Nouns?"
+  - prompt: "Editing Using Abstract Nouns: where should you start?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Using Abstract Nouns mistake?"
+  - prompt: "Which change fixes a frequent Using Abstract Nouns mistake?"
     options:
       - "The school announced a support reading after-class program."
       - "The school announced an after-class reading support program."

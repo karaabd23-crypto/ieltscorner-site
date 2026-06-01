@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Adverbs of Manner correctly?"
+  - prompt: "Which sentence handles Adverbs of Manner the right way?"
     options:
       - "She speaks English fluent during presentations."
       - "She speaks English fluently during presentations."
       - "I every day revise vocabulary on the bus."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Adverbs of Manner and keeps the sentence natural."
-  - prompt: "What should you check first when editing Adverbs of Manner?"
+  - prompt: "When you review Adverbs of Manner, what should you look at before anything else?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Adverbs of Manner mistake?"
+  - prompt: "Which fix addresses a usual Adverbs of Manner error?"
     options:
       - "The train arrived lately, so many workers were delayed."
       - "The train arrived late, so many workers were delayed."

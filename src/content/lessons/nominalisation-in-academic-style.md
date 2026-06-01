@@ -11,21 +11,21 @@ tags: ["grammar", "c1", "exam-prep", "ielts", "celpip"]
 heroTip: "After articles, possessives, and many prepositions, check if English needs a noun form."
 visualAids: ["Verb-to-noun families", "Noun phrase clarity guide", "Nominalization do/don't list"]
 quiz:
-  - prompt: "Which sentence uses Turning Verbs Into Nouns correctly?"
+  - prompt: "Pick the sentence that gets Turning Verbs Into Nouns right."
     options:
       - "The committee will decide next week, and this decide may affect funding."
       - "The committee will decide next week, and this decision may affect funding."
       - "The company wants to expand, but the expand will take two years."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Turning Verbs Into Nouns and keeps the sentence natural."
-  - prompt: "What should you check first when editing Turning Verbs Into Nouns?"
+  - prompt: "Editing Turning Verbs Into Nouns: where should you start?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Turning Verbs Into Nouns mistake?"
+  - prompt: "Which fix addresses a usual Turning Verbs Into Nouns error?"
     options:
       - "Their investigate into the accident took three months."
       - "Their investigation into the accident took three months."

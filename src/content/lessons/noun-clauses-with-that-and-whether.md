@@ -11,21 +11,21 @@ tags: ["grammar", "b2", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Noun Clauses With That and Whether correctly?"
+  - prompt: "Which version uses Noun Clauses With That and Whether accurately?"
     options:
       - "I believe whether the program needs more funding."
       - "I believe that the program needs more funding."
       - "The committee has not decided if the centre should stay open."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Noun Clauses With That and Whether and keeps the sentence natural."
-  - prompt: "What should you check first when editing Noun Clauses With That and Whether?"
+  - prompt: "Before you fix Noun Clauses With That and Whether in your answer, what comes first?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Noun Clauses With That and Whether mistake?"
+  - prompt: "Which correction solves a common Noun Clauses With That and Whether slip?"
     options:
       - "The teacher explained if the deadline had changed."
       - "The teacher explained that the deadline had changed."

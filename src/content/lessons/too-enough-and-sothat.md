@@ -11,21 +11,21 @@ tags: ["grammar", "b1", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Too, enough, and so...that correctly?"
+  - prompt: "Pick the sentence that gets Too, enough, and so...that right."
     options:
       - "The room was too noisy that we left early."
       - "The room was so noisy that we left early."
       - "There was not enough chairs for everyone."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Too, enough, and so...that and keeps the sentence natural."
-  - prompt: "What should you check first when editing Too, enough, and so...that?"
+  - prompt: "Editing Too, enough, and so...that: where should you start?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Too, enough, and so...that mistake?"
+  - prompt: "Which fix addresses a usual Too, enough, and so...that error?"
     options:
       - "She was enough confident to lead the discussion."
       - "She was confident enough to lead the discussion."

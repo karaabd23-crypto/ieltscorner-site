@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Timeline with tense labels", "Finished vs unfinished time markers", "Simple/perfect contrast pairs"]
 quiz:
-  - prompt: "Which sentence uses Present Perfect Simple correctly?"
+  - prompt: "Pick the sentence that gets Present Perfect Simple right."
     options:
       - "I lived here since 2020."
       - "I have lived here since 2020."
       - "She has finished her task yesterday."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Present Perfect Simple and keeps the sentence natural."
-  - prompt: "What should you check first when editing Present Perfect Simple?"
+  - prompt: "When you review Present Perfect Simple, what should you look at before anything else?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Present Perfect Simple mistake?"
+  - prompt: "Which change fixes a frequent Present Perfect Simple mistake?"
     options:
       - "We have seen that movie last week."
       - "We saw that movie last week."

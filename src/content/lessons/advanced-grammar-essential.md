@@ -11,21 +11,21 @@ tags: ["grammar", "c1", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses How to Use Grammar in Clear Sentences correctly?"
+  - prompt: "Pick the sentence that gets How to Use Grammar in Clear Sentences right."
     options:
       - "Because the buses were delayed. Many workers missed the meeting."
       - "Because the buses were delayed, many workers missed the meeting."
       - "The report was clear although the final paragraph was weak it still helped the reader."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for How to Use Grammar in Clear Sentences and keeps the sentence natural."
-  - prompt: "What should you check first when editing How to Use Grammar in Clear Sentences?"
+  - prompt: "When you review How to Use Grammar in Clear Sentences, what should you look at before anything else?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common How to Use Grammar in Clear Sentences mistake?"
+  - prompt: "Which fix addresses a usual How to Use Grammar in Clear Sentences error?"
     options:
       - "When the route changed many residents complained because they had not been warned."
       - "When the route changed, many residents complained because they had not been warned."

@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Few, A Few, Little, A Little correctly?"
+  - prompt: "Pick the sentence that gets Few, A Few, Little, A Little right."
     options:
       - "There are much reasons to improve public transport."
       - "There are many reasons to improve public transport."
       - "The city has few money for new rail lines."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Few, A Few, Little, A Little and keeps the sentence natural."
-  - prompt: "What should you check first when editing Few, A Few, Little, A Little?"
+  - prompt: "When you review Few, A Few, Little, A Little, what should you look at before anything else?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Few, A Few, Little, A Little mistake?"
+  - prompt: "Which fix addresses a usual Few, A Few, Little, A Little error?"
     options:
       - "We have many information about this proposal."
       - "We have much information about this proposal."

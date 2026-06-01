@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Possessive Adjectives and Pronouns correctly?"
+  - prompt: "Which option shows Possessive Adjectives and Pronouns used correctly?"
     options:
       - "When Maria met Ana, she said she needed help."
       - "When Maria met Ana, Maria said she needed help."
       - "The managers told the interns that they were unprepared."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Possessive Adjectives and Pronouns and keeps the sentence natural."
-  - prompt: "What should you check first when editing Possessive Adjectives and Pronouns?"
+  - prompt: "What is the first thing to settle when you work on Possessive Adjectives and Pronouns?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Possessive Adjectives and Pronouns mistake?"
+  - prompt: "Which edit repairs a typical Possessive Adjectives and Pronouns error?"
     options:
       - "James told David that he should revise the introduction."
       - "James told David that David should revise the introduction."

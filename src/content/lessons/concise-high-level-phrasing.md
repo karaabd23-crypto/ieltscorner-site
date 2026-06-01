@@ -11,21 +11,21 @@ tags: ["grammar", "c2", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Clear, Formal Phrases correctly?"
+  - prompt: "Which sentence handles Clear, Formal Phrases the right way?"
     options:
       - "I think this plan is kind of bad for cities."
       - "This plan is unlikely to benefit cities in the long term."
       - "People absolutely hate the change, and it is a total disaster."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Clear, Formal Phrases and keeps the sentence natural."
-  - prompt: "What should you check first when editing Clear, Formal Phrases?"
+  - prompt: "Editing Clear, Formal Phrases: where should you start?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Clear, Formal Phrases mistake?"
+  - prompt: "Which change fixes a frequent Clear, Formal Phrases mistake?"
     options:
       - "This idea is super good because everybody will love it."
       - "This idea could be effective because it addresses a common local need."

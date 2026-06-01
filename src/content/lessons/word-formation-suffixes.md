@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Suffix and word-class chart", "Spelling change reminders", "Sentence-slot checklist"]
 quiz:
-  - prompt: "Which sentence uses Word Formation: Suffixes correctly?"
+  - prompt: "Which option shows Word Formation: Suffixes used correctly?"
     options:
       - "The city needs a more effect response to late buses."
       - "The city needs a more effective response to late buses."
       - "Regular speaking practice improved pronounce and confident."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Word Formation: Suffixes and keeps the sentence natural."
-  - prompt: "What should you check first when editing Word Formation: Suffixes?"
+  - prompt: "Before you fix Word Formation: Suffixes in your answer, what comes first?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Word Formation: Suffixes mistake?"
+  - prompt: "Which correction solves a common Word Formation: Suffixes slip?"
     options:
       - "The new policy brought stable to the bus schedule."
       - "The new policy brought stability to the bus schedule."

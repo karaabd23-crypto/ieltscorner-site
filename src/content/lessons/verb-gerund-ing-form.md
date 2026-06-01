@@ -11,21 +11,21 @@ tags: ["grammar", "a2", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Verb + gerund (ing form) correctly?"
+  - prompt: "Which sentence handles Verb + gerund (ing form) the right way?"
     options:
       - "She avoided to answer the question directly."
       - "She avoided answering the question directly."
       - "They decided expanding the program next term."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Verb + gerund (ing form) and keeps the sentence natural."
-  - prompt: "What should you check first when editing Verb + gerund (ing form)?"
+  - prompt: "When you review Verb + gerund (ing form), what should you look at before anything else?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Verb + gerund (ing form) mistake?"
+  - prompt: "Which fix addresses a usual Verb + gerund (ing form) error?"
     options:
       - "He is interested to joining the evening class."
       - "He is interested in joining the evening class."

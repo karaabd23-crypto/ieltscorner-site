@@ -11,21 +11,21 @@ tags: ["grammar", "a2", "exam-prep", "ielts", "celpip"]
 heroTip: "Circle the time marker before you choose the verb form."
 visualAids: ["Timeline with tense labels", "Finished vs unfinished time markers", "Simple/perfect contrast pairs"]
 quiz:
-  - prompt: "Which sentence uses Present perfect with ever and never correctly?"
+  - prompt: "Which option shows Present perfect with ever and never used correctly?"
     options:
       - "I lived here since 2020."
       - "I have lived here since 2020."
       - "She has finished her task yesterday."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Present perfect with ever and never and keeps the sentence natural."
-  - prompt: "What should you check first when editing Present perfect with ever and never?"
+  - prompt: "Before you fix Present perfect with ever and never in your answer, what comes first?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Present perfect with ever and never mistake?"
+  - prompt: "Which correction solves a common Present perfect with ever and never slip?"
     options:
       - "We have seen that movie last week."
       - "We saw that movie last week."

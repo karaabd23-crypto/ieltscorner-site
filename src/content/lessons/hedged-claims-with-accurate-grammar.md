@@ -11,21 +11,21 @@ tags: ["grammar", "b2", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Softening Claims Carefully correctly?"
+  - prompt: "Pick the sentence that gets Softening Claims Carefully right."
     options:
       - "I think this plan is kind of bad for cities."
       - "This plan is unlikely to benefit cities in the long term."
       - "People absolutely hate the change, and it is a total disaster."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Softening Claims Carefully and keeps the sentence natural."
-  - prompt: "What should you check first when editing Softening Claims Carefully?"
+  - prompt: "When you review Softening Claims Carefully, what should you look at before anything else?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Softening Claims Carefully mistake?"
+  - prompt: "Which change fixes a frequent Softening Claims Carefully mistake?"
     options:
       - "This idea is super good because everybody will love it."
       - "This idea could be effective because it addresses a common local need."

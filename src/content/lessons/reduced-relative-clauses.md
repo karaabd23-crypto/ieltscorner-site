@@ -11,21 +11,21 @@ tags: ["grammar", "b2", "exam-prep", "ielts", "celpip"]
 heroTip: "Underline the noun you are describing before you add the relative clause."
 visualAids: ["Who/which/that table", "Restrictive vs non-restrictive pairs", "Pronoun drop examples"]
 quiz:
-  - prompt: "Which sentence uses Short Relative Clauses correctly?"
+  - prompt: "Which version uses Short Relative Clauses accurately?"
     options:
       - "The teacher gave feedback was very specific."
       - "The teacher gave feedback that was very specific."
       - "Students who study consistently they usually improve faster."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Short Relative Clauses and keeps the sentence natural."
-  - prompt: "What should you check first when editing Short Relative Clauses?"
+  - prompt: "What is the first thing to settle when you work on Short Relative Clauses?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Short Relative Clauses mistake?"
+  - prompt: "Which edit repairs a typical Short Relative Clauses error?"
     options:
       - "The course provides materials are easy to review at home."
       - "The course provides materials that are easy to review at home."

@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Imperative Sentences correctly?"
+  - prompt: "Pick the sentence that gets Imperative Sentences right."
     options:
       - "You open the booklet and read question one."
       - "Open the booklet and read question one."
       - "Do not to forget your ID on test day."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Imperative Sentences and keeps the sentence natural."
-  - prompt: "What should you check first when editing Imperative Sentences?"
+  - prompt: "When you review Imperative Sentences, what should you look at before anything else?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Imperative Sentences mistake?"
+  - prompt: "Which change fixes a frequent Imperative Sentences mistake?"
     options:
       - "Please to check the heading before you write."
       - "Please check the heading before you write."

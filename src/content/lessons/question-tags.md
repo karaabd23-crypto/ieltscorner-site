@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Question word-order ladder", "Auxiliary swap examples", "Tag question matching chart"]
 quiz:
-  - prompt: "Which sentence uses Question Tags correctly?"
+  - prompt: "Which option shows Question Tags used correctly?"
     options:
       - "Why you are late for class today?"
       - "Why are you late for class today?"
       - "Never I have seen such a clear explanation."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Question Tags and keeps the sentence natural."
-  - prompt: "What should you check first when editing Question Tags?"
+  - prompt: "What is the first thing to settle when you work on Question Tags?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Question Tags mistake?"
+  - prompt: "Which edit repairs a typical Question Tags error?"
     options:
       - "What means this policy for low-income workers?"
       - "What does this policy mean for low-income workers?"
