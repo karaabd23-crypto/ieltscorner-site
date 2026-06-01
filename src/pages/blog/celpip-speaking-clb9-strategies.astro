@@ -4,34 +4,34 @@ import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
 
 const pageFaqs = [
   {
-    question: "How is CELPIP Speaking scored?",
+    question: "Why am I stuck at CLB 7 in CELPIP Speaking?",
     answer:
-      "CELPIP Speaking is scored on four criteria: Coherence (the logical organisation of your response), Vocabulary (range, precision, and appropriateness), Listenability (how easy it is to follow what you are saying, which includes pronunciation, pace, and fluency), and Task Fulfillment (whether you addressed all the prompt requirements within the time limit). At CLB 9, all four criteria need to be consistently strong. Most CLB 7 responses are weakest in Coherence and Vocabulary, which is why structural and lexical improvements have the highest impact.",
+      "The most common reason candidates plateau at CLB 7 in CELPIP Speaking is structural, not linguistic. CLB 7 responses typically contain correct English and real ideas, but those ideas are presented as a list rather than as developed arguments. The CELPIP Speaking rubric rewards organised, developed reasoning. Listing four undeveloped points earns lower marks than developing two points fully with specific evidence and a clear position.",
   },
   {
-    question: "How much preparation time do I get in CELPIP Speaking?",
+    question: "Does accent affect CELPIP Speaking scores?",
     answer:
-      "Each CELPIP Speaking task gives you a preparation time before you begin recording. Tasks 1 to 4 give 30 seconds of preparation. Tasks 5 and 6 give 60 seconds. Tasks 7 and 8 give 30 seconds. Use this time exclusively for planning your response structure. Write your position and 2 keywords on the scratch pad during prep time. Do not try to write full sentences, as this uses time that should be spent deciding what to say, not how to write it.",
+      "Accent is not scored directly in CELPIP Speaking. The test assesses clarity of communication, not the presence or absence of a native-Canadian accent. A non-Canadian accent that is clear and consistently intelligible does not reduce your score. What does reduce scores is mispronunciation that makes words difficult to understand, or an inconsistent rhythm that disrupts the listener's ability to follow your argument.",
   },
   {
-    question: "What is the biggest difference between CLB 7 and CLB 9 speaking responses?",
+    question: "How important is Task 7 in CELPIP Speaking?",
     answer:
-      "The most reliable indicator of CLB 9 speaking is response architecture. CLB 9 responses have a clear skeleton: a position stated in the first sentence, a reason developed over 2 to 3 sentences, a specific example or detail, and a brief conclusion. CLB 7 responses have the same ideas but no architecture. They flow from one thought to the next without signposting, and examiners cannot easily identify the structure. The ideas are present but the construction is not.",
+      "Task 7 is the highest-impact task in CELPIP Speaking for candidates targeting CLB 9. It is a free-speaking opinion task with 30 seconds of preparation and 60 seconds of response time. The rubric heavily weights structured argument development, vocabulary range, and coherence. Because the topic is open-ended, candidates have maximum control over content and vocabulary choice. This makes Task 7 the task where deliberate CLB 9 strategies produce the clearest improvements.",
   },
   {
-    question: "Should I speak quickly or slowly for a higher CELPIP Speaking score?",
+    question: "What should I do with the 30-second prep time in CELPIP Speaking?",
     answer:
-      "Neither fast nor slow is the target. The Listenability criterion rewards natural, comfortable delivery at a pace that is easy to follow. Rushing to include more content increases hesitation and errors. Speaking slowly to fill time produces unnatural delivery and can reduce your vocabulary score by limiting how much you can say in the allotted time. The target is a measured, deliberate pace: approximately the speed of someone explaining something clearly to a colleague, not the speed of casual conversation.",
+      "Use the 30 seconds to decide your position and identify your two main reasons. Spend roughly 10 seconds deciding which side you are arguing, and the remaining 20 seconds writing two keyword notes for your reasons. Do not write full sentences. Writing full sentences uses time you need for thinking, and the notes themselves become a reading script rather than a speaking framework. Two keyword anchors are enough to sustain a structured 60-second response.",
   },
   {
-    question: "How many tasks are in CELPIP Speaking and which ones matter most for the score?",
+    question: "What is the daily recording habit and how do I use it?",
     answer:
-      "CELPIP Speaking has 8 tasks. Tasks 1 through 6 cover everyday scenarios such as giving advice, describing a scene, making predictions, and discussing personal preferences. Tasks 7 and 8 are opinion and argument tasks that carry the highest CLB differentiation weight. Tasks 7 and 8 specifically separate CLB 7 from CLB 9 because they require the clearest demonstration of structured argumentation and precise vocabulary. Improving Tasks 7 and 8 specifically has the highest return on your preparation investment.",
+      "The daily recording habit means recording yourself responding to Tasks 7 and 8 prompts every day for two weeks. After each recording, listen back and check three things: how many times you used the word 'I think,' whether each argument started with a clear topic sentence, and whether you developed each point or only listed it. The purpose is not to eliminate all errors but to build awareness of your specific habits. Most candidates are surprised by how often they say 'I think' and how rarely they fully develop a single argument.",
   },
   {
-    question: "Is it better to practise all 8 tasks equally or focus on specific ones?",
+    question: "What is the difference between Task 7 and Task 8 in CELPIP Speaking?",
     answer:
-      "For candidates specifically trying to move from CLB 7 to CLB 9, focus the majority of your practice time on Tasks 7 and 8 and allocate the remaining time to your weakest of the other tasks. Tasks 1 through 6 have enough structural similarity that improving your general response architecture through Task 7 and 8 practice carries over. Tasks 7 and 8 have the highest ceiling for score differentiation, so targeted practice there produces the most efficient score improvements.",
+      "Task 7 asks you to express and support an opinion on a general topic, typically a social, civic, or lifestyle question. Task 8 presents an argument or situation and asks you to respond to a specific person or position. The key difference is that Task 8 requires you to take a clear position on an unusual or hypothetical scenario and commit to it without being evasive. Responses that hedge throughout Task 8 without committing to a position score lower than responses that take a clear stance and develop it specifically.",
   },
 ];
 
@@ -39,15 +39,15 @@ const pageStructuredData = [
   buildBreadcrumbSchema(Astro.site, [
     { name: "Home", path: "/" },
     { name: "Blog", path: "/blog/" },
-    { name: "CELPIP Speaking CLB 9 Strategies", path: "/blog/celpip-speaking-clb9-strategies/" },
+    { name: "CELPIP Speaking CLB 7 to CLB 9 Strategies", path: "/blog/celpip-speaking-clb9-strategies/" },
   ]),
   buildFAQSchema(pageFaqs),
 ];
 ---
 
 <Layout
-  title="CELPIP Speaking: The Exact Strategies That Move You From CLB 7 to CLB 9"
-  description="What specifically separates CLB 7 and CLB 9 CELPIP Speaking responses. Task-by-task improvement moves, vocabulary upgrades, and the structural habit that changes scores fastest."
+  title="CELPIP Speaking: The Exact Moves That Take You From CLB 7 to CLB 9"
+  description="What specifically separates CLB 7 and CLB 9 CELPIP Speaking responses. Task-by-task improvement moves, vocabulary upgrades, the structural habit that shifts scores fastest, and Task 7/8 transcripts compared."
   type="article"
   keywords="CELPIP Speaking CLB 9, CELPIP Speaking strategies, CELPIP Speaking improvement, CELPIP Task 7, CELPIP Speaking tips CLB 7 to CLB 9"
   structuredData={pageStructuredData}
@@ -57,267 +57,183 @@ const pageStructuredData = [
 
     <header class="guide-header">
       <span class="guide-tag ic-eyebrow">CELPIP speaking guide</span>
-      <h1 class="ic-display" style="margin: 0;">CELPIP Speaking: the exact strategies that move you from CLB 7 to CLB 9</h1>
+      <h1 class="ic-display" style="margin: 0;">CELPIP Speaking: the exact moves that take you from CLB 7 to CLB 9</h1>
       <div class="guide-meta">
+        <span>By Dr. Kara Abdolmaleki, PhD</span>
         <span>June 1, 2026</span>
-        <span>15 min read</span>
+        <span>17 min read</span>
       </div>
     </header>
 
     <div class="guide-lead">
       <p>
-        Most CELPIP candidates plateau at CLB 7 in Speaking. The skills they use in daily life,
-        at work, in conversations with colleagues and neighbours, are good enough for CLB 7.
-        They are not enough for CLB 9.
+        CELPIP Speaking scores plateau at CLB 7 for most candidates not because of accent or fluency
+        but because of structure. The examiner is not listening for perfect pronunciation. The examiner
+        is listening for organised thought: a clear position, developed reasons, and a response that
+        moves predictably from one point to the next.
       </p>
       <p>
-        The gap between CLB 7 and CLB 9 in CELPIP Speaking is not a fluency gap. Candidates
-        who plateau at CLB 7 typically speak English comfortably and are understood without
-        difficulty. The gap is structural: it is about how their responses are constructed,
-        not how fluently they are delivered. This guide explains the three structural differences
-        between CLB 7 and CLB 9 responses, gives you a task-by-task improvement plan for
-        Tasks 7 and 8, a vocabulary upgrade table, and the 30-second prep time technique that
-        changes how scores distribute.
+        Three specific habits separate CLB 7 from CLB 9. This guide identifies all three, shows
+        annotated transcripts of both score levels for the same Task 7 prompt, gives you a vocabulary
+        upgrade table with 10 CLB 7 defaults replaced, explains the 30-second prep time technique,
+        and outlines the daily recording habit that produces the fastest measurable improvement.
       </p>
     </div>
 
     <section class="guide-card">
-      <h2 class="ic-display">The 3 core differences between CLB 7 and CLB 9 speaking</h2>
+      <h2 class="ic-display">The 3 structural differences between CLB 7 and CLB 9</h2>
 
-      <div class="guide-steps">
-        <div class="guide-step">
-          <span class="guide-step__number">1</span>
-          <div>
-            <h3>Structure: architecture vs ideas</h3>
-            <p>
-              CLB 9 responses have a clear architecture. The listener can identify, at any point
-              in the response, what position is being defended, which reason is being developed,
-              and where the response is going. This does not mean a rigid formula. It means a
-              consistent logic: position, reason, example, conclusion.
-            </p>
-            <p>
-              CLB 7 responses have ideas but no architecture. The candidate knows what they
-              think and can express it. But the response moves from thought to thought without
-              clear signposting. The examiner has to reconstruct the argument. When a response
-              requires reconstruction, it loses Coherence marks even though the underlying
-              content may be entirely appropriate.
-            </p>
-            <p>
-              The most direct fix: practise beginning every Task 7 and Task 8 response with your
-              position in the first sentence. Not "I think that cities should consider..." but
-              "I believe cities should invest in public parks, for two main reasons." The second
-              version tells the examiner the structure before the content arrives.
-            </p>
-          </div>
-        </div>
+      <h3>1. Architecture: visible shape vs. list of ideas</h3>
+      <p>
+        A CLB 9 response has a clear and predictable shape. The listener can follow where the
+        response is going because each section is signalled before it begins. The structure for
+        each argument follows this pattern: position, then reason, then example, then a brief
+        mini-conclusion that ties the example back to the position. This pattern can be compressed
+        into 20 to 25 seconds per argument, which means a 60-second response can contain two fully
+        developed arguments.
+      </p>
+      <p>
+        A CLB 7 response contains real ideas, but those ideas have no visible architecture. The
+        examiner cannot predict where the response is going, which argument is primary, or when
+        it will end. The result is a response that sounds like thinking out loud rather than a
+        formed answer, even when the English itself is grammatically correct.
+      </p>
 
-        <div class="guide-step">
-          <span class="guide-step__number">2</span>
-          <div>
-            <h3>Vocabulary range: precision vs repetition</h3>
-            <p>
-              CLB 9 responses avoid high-frequency evaluative vocabulary. Words like "good,"
-              "bad," "important," "nice," and "a lot" are not penalised, but they are not rewarded.
-              CLB 9 responses use vocabulary that reflects the specific type of good or bad, the
-              particular mechanism of importance, and the degree of impact.
-            </p>
-            <p>
-              CLB 7 responses cycle through the same 10 to 15 adjectives and adverbs. The
-              examiner scoring the Vocabulary criterion listens specifically for whether the
-              candidate's word choices are varied and precise. Two minutes of speaking that uses
-              "important," "very important," and "really important" for every claim demonstrates
-              limited range regardless of how confidently it is delivered.
-            </p>
-            <p>
-              The fix is not memorising a long vocabulary list. It is identifying your personal
-              repetition words: the 5 to 10 words you use most frequently in practice responses,
-              and replacing each with at least two alternatives. This is a high-ROI exercise
-              because most candidates repeat the same small set of words rather than lacking
-              vocabulary broadly.
-            </p>
-          </div>
-        </div>
+      <h3>2. Vocabulary range: precise vs. repeated</h3>
+      <p>
+        CLB 9 responses avoid the ten most common evaluative adjectives and replace them with
+        precise alternatives. The ten to avoid are: good, bad, important, nice, interesting, big,
+        small, helpful, difficult, and easy. Using any of these words once is not a problem. Using
+        three or four of them repeatedly across a single response signals a limited vocabulary range
+        to the examiner, and vocabulary range is a direct scoring criterion.
+      </p>
+      <p>
+        CLB 7 responses typically repeat the same 3 to 5 words 4 to 6 times within one 60-second
+        response. The most common repeated word is "important." The most common repeated phrase is
+        "I think." Neither signals command of English vocabulary; both signal a narrow default range
+        under pressure.
+      </p>
 
-        <div class="guide-step">
-          <span class="guide-step__number">3</span>
-          <div>
-            <h3>Development: depth vs breadth</h3>
-            <p>
-              CLB 9 develops one point fully before moving to the next. A single reason, explored
-              with a specific example or consequence and then concluded, scores higher than three
-              reasons stated briefly without development.
-            </p>
-            <p>
-              CLB 7 candidates often list multiple points. "There are three reasons. First, it
-              helps the environment. Second, it saves money. Third, it is good for communities."
-              This is a CLB 7 response structure. It covers the question but develops nothing.
-              The examiner receives three labels but no arguments.
-            </p>
-            <p>
-              The fix: in Tasks 7 and 8, limit yourself to two reasons maximum. Spend 25 to 30
-              seconds per reason. The first sentence states the reason, the second sentence
-              explains why or how, the third gives a specific example or consequence. This is
-              more than enough content for the time available, and it scores significantly higher
-              than three underdeveloped points.
-            </p>
-          </div>
-        </div>
+      <h3>3. Development: depth vs. count</h3>
+      <p>
+        CLB 9 develops one point fully before moving to the next. Each point contains a reason, an
+        example or evidence, and a connection back to the original position. CLB 7 lists four to five
+        points without developing any of them. The implicit logic of a CLB 7 response is that more
+        points equals a higher score. The opposite is true. More undeveloped points is not a broader
+        answer. It is a shallower one. The examiner awards marks for the quality of your reasoning,
+        not the quantity of your claims.
+      </p>
+      <div class="guide-note">
+        <strong>The most important shift:</strong> Stop trying to make as many points as possible
+        in 60 seconds. Start trying to make two points as well as possible. This one change produces
+        the clearest score improvements for CLB 7 candidates preparing for CLB 9.
       </div>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">Task 7 side-by-side: CLB 7 vs CLB 9</h2>
+      <h2 class="ic-display">Task 7 deep dive: the highest-impact task</h2>
       <p>
-        <strong>Prompt:</strong> "Should cities invest in public parks or sports arenas? Give
-        your opinion and reasons."
+        Task 7 is a free-speaking opinion task with 30 seconds of preparation time and 60 seconds
+        of speaking time. It is the highest-impact task for candidates targeting CLB 9 because the
+        topic is open-ended, which gives you maximum control over content and vocabulary choice.
       </p>
 
-      <h3 style="margin-top: var(--s-3);">CLB 7 response (transcript)</h3>
-      <div class="guide-example" style="font-style: normal; padding: var(--s-4); border-left-color: var(--text-muted);">
+      <h3>The prompt</h3>
+      <p style="font-style: italic;">
+        "Some people think cities should invest in public parks rather than sports arenas. Do you agree or disagree? Why?"
+      </p>
+
+      <h3 style="margin-top: var(--s-3);">CLB 7 response (annotated)</h3>
+      <div class="guide-note">
         <p>
-          "I think cities should invest in public parks. Parks are good for people. Many people
-          like to go to the park and relax. It is also good for families with children. Children
-          can play there. Sports arenas are also good but they are expensive and not everyone
-          likes sports. So I think parks are more important for the community. Parks help people
-          stay healthy. They can walk and exercise there. That is why I think parks are better
-          for cities."
+          "I think public parks are better because many people use them. Parks are good for families
+          and children. Also parks are healthy for people. Sports arenas are expensive and not everyone
+          likes sports. So I prefer parks."
         </p>
+        <ul class="guide-list" style="margin-top: var(--s-2);">
+          <li><strong>No structure signal:</strong> The response begins with "I think" and never names its organising logic. The listener cannot tell how many arguments are coming or when the response will end.</li>
+          <li><strong>Vague adjectives repeated:</strong> "better," "good," and "healthy" appear across four short sentences. None is defined, explained, or supported with a specific reason.</li>
+          <li><strong>Five claims, zero development:</strong> "many people use them," "good for families," "good for children," "healthy," "expensive," and "not everyone likes sports" are six separate claims. Not one is developed with evidence or specifics.</li>
+          <li><strong>Conclusion restates the opening:</strong> "So I prefer parks" adds nothing to what was said in the first sentence. It does not close an argument; it repeats a preference.</li>
+        </ul>
       </div>
-      <p><strong>Why this is CLB 7:</strong> The position is clear and the response addresses the prompt. But every claim is stated without development. The same idea is repeated three times in different words. Vocabulary is entirely high-frequency. No specific example or consequence is developed.</p>
 
-      <h3 style="margin-top: var(--s-3);">CLB 9 response (transcript)</h3>
-      <div class="guide-example" style="font-style: normal; padding: var(--s-4);">
+      <h3 style="margin-top: var(--s-3);">CLB 9 response (annotated)</h3>
+      <div class="guide-note">
         <p>
-          "In my view, cities should prioritise investment in public parks over sports arenas,
-          primarily because parks serve a broader segment of the population. A sports arena
-          benefits residents who actively follow or participate in a specific sport, which
-          represents a minority of city residents. A public park, by contrast, is accessible
-          and genuinely useful to families, elderly residents, children, and people across
-          all income levels. In our neighbourhood, for example, the green space added two
-          years ago has become a daily gathering point for morning walkers, parents with
-          strollers, and students. That kind of inclusive, daily-use infrastructure offers
-          the city a stronger return on investment. Beyond access, parks also contribute
-          directly to residents' physical and mental wellbeing in ways that reduce long-term
-          demand on healthcare services. For these reasons, I believe parks represent the
-          more strategic civic investment."
+          "In my view, parks are the stronger investment for two reasons. First, parks serve the
+          broadest cross-section of the community. Families, elderly residents, and young children
+          can all use outdoor green space in ways that suit them. A sports arena primarily serves
+          spectators of one sport, which limits its benefit to a much smaller segment of the
+          population. Second, the ongoing maintenance cost of a public park is significantly lower
+          than a large indoor arena, which means the city can sustain the investment over decades
+          rather than facing a major replacement cost every generation. For these reasons, I
+          strongly support park investment as the more sustainable and equitable choice."
         </p>
-      </div>
-      <p><strong>Why this is CLB 9:</strong> Position stated immediately and precisely ("prioritise investment... over"). First reason developed fully: who benefits from each option, and why parks serve more people. Specific example given. Second point introduced briefly in closing. Vocabulary is varied and precise ("prioritise," "broader segment," "inclusive," "strategic civic investment").</p>
-    </section>
-
-    <section class="guide-card" style="margin-top: var(--s-4);">
-      <h2 class="ic-display">Task 8: structuring a confident argument</h2>
-      <p>
-        Task 8 presents a more contentious scenario: a situation where someone has made a
-        decision, and you must either support or challenge it. The challenge is producing a
-        response that sounds confident and substantive without being aggressive or dismissive.
-      </p>
-      <p>
-        The Task 8 CLB 9 structure:
-      </p>
-      <div class="guide-steps">
-        <div class="guide-step">
-          <span class="guide-step__number">1</span>
-          <div>
-            <h3>Acknowledge the situation without being neutral</h3>
-            <p>
-              "I understand why this decision was made; however, I believe it overlooks..."
-              This opening acknowledges the other position exists without conceding it is
-              correct. It sets up a confident disagreement without sounding dismissive.
-            </p>
-          </div>
-        </div>
-        <div class="guide-step">
-          <span class="guide-step__number">2</span>
-          <div>
-            <h3>State your position with a specific mechanism</h3>
-            <p>
-              Do not say "I think this is wrong." Say "I believe this decision would negatively
-              affect families in the lower-income bracket because..." The word "because"
-              commits you to development, which is where CLB 9 separates from CLB 7.
-            </p>
-          </div>
-        </div>
-        <div class="guide-step">
-          <span class="guide-step__number">3</span>
-          <div>
-            <h3>Develop one consequence with specificity</h3>
-            <p>
-              Name one specific type of person, situation, or outcome that results from your
-              reasoning. This is the example that makes the argument concrete. Without a
-              specific example, an argument is a label.
-            </p>
-          </div>
-        </div>
-        <div class="guide-step">
-          <span class="guide-step__number">4</span>
-          <div>
-            <h3>Close with a recommendation or call to action</h3>
-            <p>
-              "I would suggest that decision-makers consider..." or "A more effective approach
-              might be..." This closes the argument constructively and demonstrates the
-              higher-register vocabulary and hedging language that characterises CLB 9 spoken
-              argumentation.
-            </p>
-          </div>
-        </div>
+        <ul class="guide-list" style="margin-top: var(--s-2);">
+          <li><strong>Structure signal at the opening:</strong> "for two reasons" tells the listener exactly how many arguments are coming and creates an expectation of organised development.</li>
+          <li><strong>First argument fully developed:</strong> position (parks serve the broadest cross-section), specific beneficiaries named (families, elderly residents, young children), contrast with sports arena, and a logical conclusion (limited benefit to a smaller segment).</li>
+          <li><strong>Second argument grounded in comparison:</strong> the maintenance cost point is not stated as a feeling but as a comparative claim that links cost to time horizon. This demonstrates analytical thinking.</li>
+          <li><strong>Closing restates position in different words:</strong> "sustainable and equitable" are not the same words used at the opening, which demonstrates vocabulary range even in the final sentence.</li>
+        </ul>
       </div>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
       <h2 class="ic-display">Vocabulary upgrade table</h2>
       <p>
-        The 10 phrases below account for a large proportion of vocabulary repetition in CLB 7
-        speaking responses. Replace each one with the CLB 9 alternatives. You do not need to
-        memorise all alternatives. Choose one or two per entry that feel natural in your speech.
+        The following substitutions address the most common CLB 7 vocabulary patterns. Practise
+        these in your daily recordings until they become your first-choice options rather than
+        fallbacks. You do not need to memorise all alternatives. Choose one or two per entry that
+        feel natural in your speech.
       </p>
       <table class="guide-mistake-table">
         <thead>
           <tr>
-            <th>CLB 7 phrase</th>
+            <th>CLB 7 default</th>
             <th>CLB 9 alternatives</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>"I think"</td>
-            <td>In my view / I would argue / It seems to me / From my perspective</td>
+            <td>"I think" (repeated 4 or more times)</td>
+            <td>"In my view," / "I would argue," / "It seems to me that," / "I am convinced that"</td>
           </tr>
           <tr>
-            <td>"very important"</td>
-            <td>critical / significant / fundamental / essential / consequential</td>
-          </tr>
-          <tr>
-            <td>"good for people"</td>
-            <td>beneficial for residents / advantageous for communities / valuable for individuals</td>
+            <td>"very good / very important"</td>
+            <td>"highly beneficial" / "critical" / "significant" / "essential" / "invaluable"</td>
           </tr>
           <tr>
             <td>"bad for people"</td>
-            <td>detrimental to residents / harmful to the community / disadvantageous for families</td>
+            <td>"detrimental to residents" / "counterproductive" / "harmful to community wellbeing"</td>
           </tr>
           <tr>
-            <td>"a lot of"</td>
-            <td>a significant number of / considerable / the majority of / a substantial proportion of</td>
+            <td>"also" (used as the primary connector throughout)</td>
+            <td>"Furthermore," / "In addition," / "Equally important," / "Another key consideration is"</td>
           </tr>
           <tr>
-            <td>"helps people"</td>
-            <td>supports residents / provides access for / benefits individuals who / enables people to</td>
+            <td>"for example, like"</td>
+            <td>"For instance," / "To illustrate," / "A clear example of this is"</td>
           </tr>
           <tr>
-            <td>"because it is good"</td>
-            <td>because it directly contributes to / given that it provides / since it enables</td>
+            <td>"I agree / I disagree"</td>
+            <td>"I strongly support this view," / "I take issue with this position," / "I find this argument compelling because"</td>
           </tr>
           <tr>
-            <td>"in my opinion"</td>
-            <td>I would argue that / My position is that / I believe the evidence suggests</td>
+            <td>"this is interesting"</td>
+            <td>"this raises an important question" / "this reflects a broader pattern" / "this is worth examining closely"</td>
           </tr>
           <tr>
-            <td>"this is a problem"</td>
-            <td>this presents a significant challenge / this raises a concern / this creates a barrier</td>
+            <td>"many people"</td>
+            <td>"a significant proportion of the population" / "the majority of residents" / "individuals across different demographics"</td>
           </tr>
           <tr>
-            <td>"we should do this"</td>
-            <td>I would recommend / A more effective approach would be / Decision-makers should consider</td>
+            <td>"it is difficult"</td>
+            <td>"this presents a significant challenge" / "this is far from straightforward" / "this requires careful consideration"</td>
+          </tr>
+          <tr>
+            <td>"I think this is a big problem"</td>
+            <td>"this represents a substantial barrier" / "this is one of the most pressing issues in this context" / "the scale of this problem cannot be overstated"</td>
           </tr>
         </tbody>
       </table>
@@ -326,63 +242,112 @@ const pageStructuredData = [
     <section class="guide-card" style="margin-top: var(--s-4);">
       <h2 class="ic-display">The 30-second prep time technique</h2>
       <p>
-        For Tasks 7 and 8, you have 30 seconds before recording begins. Most candidates either
-        freeze, trying to think of what to say, or try to plan too much and run out of time.
-        The 30-second window is specifically for one thing: committing to a position and
-        identifying your first reason.
+        The 30 seconds of preparation time before Tasks 7 and 8 is not enough to plan a complete
+        response. It is enough to do two things: decide your position, and identify your two reasons.
+        Everything else is generated in real time while you speak.
+      </p>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Seconds 1 to 10: decide your position</h3>
+            <p>
+              Do not spend time trying to evaluate both sides of the question objectively. Pick the
+              side you can develop more easily and commit. There are no marks for being balanced;
+              there are marks for being clear and developed. A decisive position in 10 seconds leaves
+              20 seconds for reasons.
+            </p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>Seconds 11 to 30: write two keyword anchors</h3>
+            <p>
+              Write two keywords or short phrases, one per reason. Do not write full sentences.
+              Full sentences become a script you read from, and reading from a script flattens your
+              intonation. Keywords give you an anchor to develop from. The development itself happens
+              while you speak.
+            </p>
+            <p>
+              For the parks vs. arenas prompt, the notes might look like: "1. all residents (families,
+              elderly, kids)" and "2. cost long-term." That is enough to launch a fully developed
+              CLB 9 response.
+            </p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>Never start speaking without a plan</h3>
+            <p>
+              Candidates who begin speaking the moment the prompt ends without using preparation
+              time almost always produce CLB 7 list responses. The 30 seconds of silence may feel
+              uncomfortable, but it is the most efficient investment you can make in the 60 seconds
+              that follow. Use every second of it.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Task 8: committing to a position</h2>
+      <p>
+        Task 8 presents an argument or scenario and asks you to respond to a specific position.
+        The format rewards candidates who take a clear stance and develop it specifically. The most
+        common CLB 7 mistake in Task 8 is hedging: giving a response that acknowledges both sides
+        without committing to either.
       </p>
       <p>
-        What to write on your scratch pad in 30 seconds:
+        "It depends on the situation" is not a CLB 9 opening. It is a signal that you have not yet
+        formed a position. The examiner is not asking you to solve the problem objectively. The
+        examiner is asking you to demonstrate that you can organise and express a reasoned view in
+        English. A clear position, even on an unlikely or hypothetical scenario, is always scoreable.
+        An evasive non-position is not.
       </p>
-      <ul class="guide-list">
-        <li>Your position: one word (YES / NO / PARKS / ARENAS) or a short phrase</li>
-        <li>Your first reason: 2 to 3 key words only, not a sentence</li>
-        <li>One specific detail or example to support the first reason</li>
-        <li>Your second reason: 2 to 3 key words</li>
-      </ul>
       <p>
-        Do not write full sentences. The moment you try to compose a sentence on paper, you
-        are doing the wrong thing during prep time. You need to know where you are going, not
-        have it written. A scratch pad note like "PARKS / broader access / neighbourhood example /
-        health services" gives you enough architecture to speak confidently for 75 to 90 seconds
-        with a clear structure. That is a CLB 9 response in its skeleton form.
+        Apply the same two-argument structure to Task 8 as to Task 7. Decide your position in the
+        first 10 seconds of preparation time. Name your position in the opening sentence. Develop
+        two reasons. Close by restating your position in different words. The structure is identical
+        to Task 7; only the prompt format is different.
       </p>
       <div class="guide-note">
-        <strong>Common error:</strong> Spending 25 of the 30 seconds deciding which position to
-        take. Choose your position within 5 seconds based on which side you can develop more
-        easily, not which side you believe more strongly. The examiner does not evaluate
-        your values. They evaluate your argumentation.
+        <strong>Task 8 opening formula:</strong> "I would argue that [position], and I have two
+        reasons for this view." This single sentence names your position, signals structure, and
+        tells the examiner how many arguments to expect. All three contribute to a CLB 9 opening.
       </div>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
       <h2 class="ic-display">The daily recording habit</h2>
       <p>
-        The fastest improvement method for CELPIP Speaking is recording yourself on Tasks 7
-        and 8 daily and listening back with a specific focus.
+        Structural improvement in speaking requires feedback on your actual output, not on what
+        you believe your output sounds like. Most candidates have significant blind spots about
+        their own speaking habits. The daily recording habit is the most efficient way to close
+        that gap.
       </p>
       <p>
-        When listening back to your recordings, listen for exactly three things:
+        Record yourself responding to one Task 7 and one Task 8 prompt each day for two weeks.
+        After each recording, listen back and check three specific things:
       </p>
       <ul class="guide-list">
-        <li><strong>Vocabulary repetition:</strong> How many times did you use the same adjective or evaluative phrase? If "important" appeared more than once, which alternative could replace the second use?</li>
-        <li><strong>Structure gap:</strong> At which point in your response would the examiner lose the thread? Did you signal clearly when you moved from your first reason to your second?</li>
-        <li><strong>Development ratio:</strong> For each claim you made, count the sentences you used to develop it. A claim with one sentence of development is CLB 7. A claim with three sentences is CLB 9.</li>
+        <li><strong>How many times did you say "I think"?</strong> Count the exact number. If the answer is three or more, begin replacing instances with the alternatives in the vocabulary table above.</li>
+        <li><strong>Did each argument start with a clear topic sentence?</strong> Rewind to the moment you introduced each new argument. Is there a sentence that clearly states what the argument is before you develop it? If not, your arguments are developing without a frame.</li>
+        <li><strong>Did you develop your points or only list them?</strong> For each claim you made, ask whether you gave a specific reason, example, or comparison that supported it. If you made a claim and moved directly to the next claim, the first one was listed, not developed.</li>
       </ul>
       <p>
-        You do not need to record yourself for an extended period. One practice response on Task 7
-        and one on Task 8 each day, with a focused 5-minute review, creates the feedback loop that
-        formal classes and passive study cannot replicate. The improvement comes from hearing
-        yourself as the examiner hears you, not from studying what CLB 9 looks like in the abstract.
+        When you identify a specific gap, do not re-record the same response. Record a new response
+        on a different prompt, applying the fix you identified. This prevents over-editing a single
+        response and forces you to demonstrate that the improvement transfers to new content. The
+        transfer is what matters on test day: you will not have seen the prompt before.
       </p>
-
-      <h3 style="margin-top: var(--s-3);">What to do when a recording reveals a problem</h3>
-      <p>
-        When you identify a specific gap, do not re-record the same response. Instead, record a
-        new response on a different prompt, applying the fix you identified. This prevents over-editing
-        a single response and forces you to demonstrate that the improvement transfers to new content.
-        The transfer is what matters on test day: you will not have seen the prompt before.
-      </p>
+      <div class="guide-note">
+        <strong>Practical tip:</strong> Use any clear agree/disagree question as a Task 7 prompt
+        for daily practice: should cities ban single-use plastic? Should remote work be a permanent
+        right? Should high school be extended by one year? Any civic or social question works.
+        You do not need official CELPIP prompts to practise the structure.
+      </div>
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
@@ -396,11 +361,11 @@ const pageStructuredData = [
     </section>
 
     <section class="guide-card guide-cta" style="margin-top: var(--s-4);">
-      <h2 style="margin-top: 0;">Practice CELPIP Speaking Tasks 7 and 8</h2>
+      <h2 style="margin-top: 0;">Practice CELPIP Speaking with structured prompts</h2>
       <p>
-        The free question bank includes CELPIP Speaking prompts across CLB 6 to CLB 10, with
-        scored model responses and structural notes. Use them alongside the recording habit
-        described above.
+        The IELTSCorner CELPIP Speaking resources include Task 7 and Task 8 sample prompts with
+        annotated CLB 9 model responses. Use them alongside this guide to apply the structural
+        moves above in a realistic practice setting.
       </p>
       <div class="cluster" style="gap: var(--s-3); margin-top: var(--s-3);">
         <a href="/celpip/speaking/" class="btn btn-primary ic-btn">CELPIP Speaking resources</a>
