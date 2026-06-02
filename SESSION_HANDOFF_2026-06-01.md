@@ -4,6 +4,36 @@ Worked independently on SEO, retention, and traffic per the GA4 data (May 4-31).
 All changes build cleanly (`npm run build` -> 577 pages). Work is committed to the
 branch `seo-retention-2026-06-01` (not merged to main; review and merge when ready).
 
+Two commits on the branch:
+1. `Add lesson HowTo schema, retention tools block, and de-dupe quiz prompts`
+2. `Optimize hero images to WebP and add blog internal links`
+
+## Performance + linking (commit 2)
+
+- **Hero images: 23.6MB -> 0.5MB (-98%).** All hero background images converted
+  PNG -> WebP and references repointed (`--hero-bg` url() and
+  `pteCoreConfig.heroImage`). Big LCP / bounce win. Original PNGs kept as
+  OG/social fallback; `ogImage` still serves PNG on purpose. Scripts:
+  `scripts/optimize-hero-images.mjs`, `scripts/update-hero-refs-to-webp.mjs`.
+- **Fixed a latent casing bug:** hero file was `IELTS.png` but some refs used
+  `/heroes/ielts.png`, which is broken on case-sensitive hosting (Netlify).
+  Now lowercase `ielts.webp` with all refs lowercased.
+- **Blog internal links:** the three top blog posts by traffic/engagement
+  (CELPIP speaking complete guide [340s], IELTS writing T2 structure, IELTS
+  speaking part 3) now link to lessons + the CLB calculator + free test, so
+  engaged readers have a path deeper in. They previously had zero such links.
+
+### Action needed from you (commit 2)
+
+5 pages had **pre-existing uncommitted edits** (hero headline copy changes that
+were already in your working tree before this session) entangled in the same
+diff hunk as the hero-bg .webp change: `src/pages/index.astro`,
+`src/pages/ielts/index.astro`, `src/pages/questions/index.astro`,
+`src/pages/celpip/reading/index.astro`, `src/pages/celpip/speaking/index.astro`.
+I did NOT commit them (not my work to commit). Their .webp hero change IS in the
+working tree. Review your own edits there and commit them when ready — the WebP
+files already exist so the .webp refs will work.
+
 ## What the GA4 data told us
 
 - Lesson pages get traffic but near-zero engagement time (many at 0s, 1-2
