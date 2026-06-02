@@ -18,8 +18,11 @@ const homeKeywords =
       <div class="hero-content">
         <span class="pill">IELTS + CELPIP + PTE Core prep</span>
         <h1 class="ic-display">Pick your exam. Pick your support. Start now.</h1>
-        <div class="cluster" style="margin-top: var(--s-2);">
-          <a class="btn btn-primary ic-btn" href="/celpip">CELPIP</a>
+        <p class="muted home-hero__sub">Start free with 80 CELPIP writing tasks and model answers. No card required.</p>
+        {/* Task 3: above-the-fold primary CTA straight to the free question bank, thumb-reachable at 375px */}
+        <a class="btn btn-primary ic-btn home-hero__primary-cta" href="/questions">Start free practice &rarr;</a>
+        <div class="cluster home-hero__exam-links" style="margin-top: var(--s-2);">
+          <a class="btn btn-ghost" href="/celpip">CELPIP</a>
           <a class="btn btn-ghost" href="/pte-core">PTE Core</a>
           <a class="btn btn-ghost" href="/ielts">IELTS</a>
           <a class="btn btn-ghost" href="/lessons">Free lessons</a>
@@ -100,3 +103,32 @@ const homeKeywords =
     </section>
   </section>
 </Layout>
+
+<style>
+  /* Task 3: prominent, thumb-reachable hero CTA to the free question bank. */
+  .home-hero__sub {
+    margin-top: var(--s-2);
+    max-width: 48ch;
+  }
+
+  .home-hero__primary-cta {
+    margin-top: var(--s-3);
+    font-size: 1.05rem;
+    padding: 0.85rem 1.6rem;
+  }
+
+  @media (max-width: 480px) {
+    /* Full-width tap target, comfortably within thumb reach at 375px. */
+    .home-hero__primary-cta {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 1rem 1.25rem;
+      font-size: 1.1rem;
+    }
+
+    .home-hero__exam-links {
+      gap: var(--s-2);
+    }
+  }
+</style>

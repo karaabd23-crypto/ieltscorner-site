@@ -82,6 +82,12 @@ const pageStructuredData = [
           />
         </label>
 
+        {/* Task 6: optional daily-prompt opt-in. Tagged in Kit via dailyPrompt flag. */}
+        <label class="qbank-daily-optin" style="display: flex; align-items: flex-start; gap: var(--s-2); margin-bottom: var(--s-3); font-size: 0.92rem;">
+          <input type="checkbox" id="questions-gate-daily" name="dailyPrompt" style="margin-top: 3px;" />
+          <span>Also send me one short CELPIP practice prompt each day.</span>
+        </label>
+
         <button
           id="questions-gate-submit"
           type="submit"
@@ -101,9 +107,15 @@ const pageStructuredData = [
 
     <!-- Question list (hidden until gate is passed) -->
     <div id="questions-list" style="display: none; margin-top: var(--s-5);">
-      <h2 style="margin-bottom: var(--s-3);">
-        {sorted.length} practice question{sorted.length !== 1 ? "s" : ""}
-      </h2>
+      <div class="cluster" style="justify-content: space-between; align-items: baseline; margin-bottom: var(--s-3);">
+        <h2 style="margin: 0;">
+          {sorted.length} practice question{sorted.length !== 1 ? "s" : ""}
+        </h2>
+        {/* Quick win: progress counter from locally tracked visited questions. */}
+        <span class="pill qbank-progress" id="qbank-progress" data-total={sorted.length} hidden>
+          0 of {sorted.length} done
+        </span>
+      </div>
       <div class="grid grid-2">
         {sorted.map((q) => (
           <a class="card" href={`/questions/${q.slug}/`}>
@@ -134,9 +146,32 @@ const pageStructuredData = [
   const submitBtn = document.getElementById("questions-gate-submit") as HTMLButtonElement | null;
   const emailInput = document.getElementById("questions-gate-email") as HTMLInputElement | null;
 
+  const VISITED_KEY = "qbank_visited";
+
+  function getVisitedCount(): number {
+    try {
+      const raw = localStorage.getItem(VISITED_KEY);
+      if (!raw) return 0;
+      const arr = JSON.parse(raw);
+      return Array.isArray(arr) ? arr.length : 0;
+    } catch {
+      return 0;
+    }
+  }
+
+  function updateProgress() {
+    const el = document.getElementById("qbank-progress");
+    if (!el) return;
+    const total = Number(el.getAttribute("data-total") || "0");
+    const done = Math.min(getVisitedCount(), total);
+    el.textContent = `${done} of ${total} done`;
+    el.hidden = false;
+  }
+
   function unlockQuestions() {
     if (gate) gate.style.display = "none";
     if (list) list.style.display = "block";
+    updateProgress();
   }
 
   // Already unlocked in a previous visit
@@ -160,13 +195,17 @@ const pageStructuredData = [
     if (status) status.textContent = "";
 
     try {
+      const dailyInput = document.getElementById("questions-gate-daily") as HTMLInputElement | null;
+      const wantsDaily = Boolean(dailyInput?.checked);
+
       const response = await fetch("/.netlify/functions/subscribe-newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email,
-          source: "question-bank",
+          source: wantsDaily ? "question-bank-daily" : "question-bank",
           audience: "digest",
+          dailyPrompt: wantsDaily,
           formRenderedAt: Date.now(),
           "bot-field": "",
           "cf-turnstile-response": "",

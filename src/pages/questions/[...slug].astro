@@ -50,9 +50,37 @@ const pageStructuredData = [
         <Content />
       </div>
 
-      <div style="margin-top: var(--s-5);">
+      {/* Task 5: soft free-to-paid loop. After writing a free answer, the natural
+          next step is getting it scored in the AI Writing Lab. */}
+      <div class="surface qbank-next-step" style="margin-top: var(--s-5); border-left: 3px solid var(--accent); padding: var(--s-4);">
+        <p class="ic-eyebrow" style="margin: 0 0 var(--s-1);">Next step</p>
+        <h2 class="ic-display" style="margin: 0 0 var(--s-2); font-size: 1.2rem;">Wrote your answer? Get it scored.</h2>
+        <p class="muted" style="margin: 0 0 var(--s-3);">Paste your response into the AI Writing Lab for instant CLB-style feedback on task, coherence, vocabulary, and grammar.</p>
+        <div class="cluster" style="gap: var(--s-2);">
+          <a href="/ai-feedback" class="btn btn-primary ic-btn">Score my answer</a>
+          <a href="/questions/" class="btn btn-ghost">Try another question</a>
+        </div>
+      </div>
+
+      <div style="margin-top: var(--s-4);">
         <a href="/questions/" class="btn btn-ghost">&larr; Back to all questions</a>
       </div>
     </div>
   </section>
+
+  {/* Quick win: record this question as visited for the question-bank progress counter. */}
+  <script is:inline define:vars={{ slug: question.slug }}>
+    (() => {
+      try {
+        const KEY = "qbank_visited";
+        const raw = localStorage.getItem(KEY);
+        const arr = raw ? JSON.parse(raw) : [];
+        const list = Array.isArray(arr) ? arr : [];
+        if (!list.includes(slug)) {
+          list.push(slug);
+          localStorage.setItem(KEY, JSON.stringify(list));
+        }
+      } catch (_) { /* storage unavailable; counter just stays lower */ }
+    })();
+  </script>
 </Layout>

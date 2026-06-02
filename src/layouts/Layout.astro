@@ -125,6 +125,25 @@ const trackingIntentLevel = highIntentTrackingPaths.has(normalizedPath)
 const trackingTest = inferTrackingTest(normalizedPath);
 const trackingSkill = inferTrackingSkill(normalizedPath);
 const blogPromoConfig = isBlogArticle ? getBlogPromoConfig(normalizedPath) : null;
+
+// Quick win: context-aware sticky CTA. AI Writing Lab on writing pages,
+// CELPIP Speaking Guide (eBook) on speaking pages, eBook default elsewhere.
+const floatingCta =
+  trackingSkill === "writing"
+    ? {
+        href: "/ai-feedback",
+        icon: "✍️",
+        text: "Score your writing",
+        strong: "AI Lab",
+        aria: "Get instant AI writing feedback",
+      }
+    : {
+        href: "/ebook",
+        icon: "📖",
+        text: "CELPIP Speaking Guide",
+        strong: "CA$49.50",
+        aria: "Get the CELPIP Speaking Guide - CA$49.50",
+      };
 const newsletterTurnstileSiteKey = String(import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '').trim();
 
 const generalNavGroups = [
@@ -527,6 +546,32 @@ const serializeJsonForScript = (value: unknown) =>
 
             <div id="site-header-panel" class="header-panel">
               <div class="header-main-row">
+                {/* Task 2: condensed mobile nav (Exam / Practice / Account) with a More disclosure.
+                    Shown only <=768px; the full desktop nav below is hidden on mobile via CSS. */}
+                <nav class="nav nav-mobile" aria-label="Primary navigation (mobile)">
+                  <a id="mobile-nav-exam" class="nav-mobile__link" href="/celpip">Exam</a>
+                  <a class="nav-mobile__link" href="/celpip/reading/free-test">Practice</a>
+                  <a class="nav-mobile__link" href="/account">Account</a>
+                  <details class="nav-mobile__more">
+                    <summary>More</summary>
+                    <div class="nav-mobile__more-links">
+                      <a href="/celpip">CELPIP</a>
+                      <a href="/ielts">IELTS</a>
+                      <a href="/pte-core">PTE Core</a>
+                      <a href="/lessons">Free Lessons</a>
+                      <a href="/questions">Question Bank</a>
+                      <a href="/ai-feedback">AI Writing Lab</a>
+                      <a href="/tutoring">Tutoring</a>
+                      <a href="/ebook">eBook</a>
+                      <a href="/blog">Blog</a>
+                      <a href="/success-stories">Success Stories</a>
+                      <a href="/faq">FAQ</a>
+                      <a href="/contact">Contact</a>
+                      <a href="/account/sign-in">Sign in</a>
+                    </div>
+                  </details>
+                </nav>
+
                 <nav id="primary-navigation" class="nav nav-main" aria-label="Primary navigation">
                   {activeNavGroups.map((group) => {
                     const groupActive = currentPath === group.href || currentPath.startsWith(`${group.href}/`);
@@ -690,6 +735,26 @@ const serializeJsonForScript = (value: unknown) =>
             closeAllDropdowns();
           }
         });
+
+        // Task 2: mobile "Exam" entry points at the last exam hub the user visited
+        // (defaults to CELPIP). Remember the exam whenever a hub page is open.
+        try {
+          const path = window.location.pathname;
+          const examMap = { '/celpip': 'celpip', '/ielts': 'ielts', '/pte-core': 'pte-core' };
+          for (const base in examMap) {
+            if (path === base || path.startsWith(base + '/')) {
+              localStorage.setItem('ic_last_exam', base);
+              break;
+            }
+          }
+          const examLink = document.getElementById('mobile-nav-exam');
+          const lastExam = localStorage.getItem('ic_last_exam');
+          if (examLink instanceof HTMLAnchorElement && lastExam) {
+            examLink.setAttribute('href', lastExam);
+            examLink.textContent =
+              lastExam === '/ielts' ? 'IELTS' : lastExam === '/pte-core' ? 'PTE Core' : 'CELPIP';
+          }
+        } catch (_) { /* localStorage unavailable; keep default CELPIP */ }
       });
     </script>
 
@@ -774,7 +839,7 @@ const serializeJsonForScript = (value: unknown) =>
           <div class="footer-bottom">
             <div>&copy; {new Date().getFullYear()} IELTS Corner</div>
             <div class="muted-2">
-              <a href="/">Home</a> | <a href="/celpip">CELPIP</a> | <a href="/ielts">IELTS</a> | <a href="/lessons">Lessons</a> | <a href="/contact">Contact</a> |{" "}
+              <a href="/">Home</a> | <a href="/celpip">CELPIP</a> | <a href="/ielts">IELTS</a> | <a href="/pte-core">PTE Core</a> | <a href="/lessons">Lessons</a> | <a href="/contact">Contact</a> |{" "}
               <a href="/privacy">Privacy</a> | <a href="/terms">Terms</a>
             </div>
           </div>
@@ -783,7 +848,7 @@ const serializeJsonForScript = (value: unknown) =>
             <div class="footer-inner">
               <div>
                 <h3>IELTS Corner</h3>
-                <div class="muted">Band 7+ focused lessons for IELTS &amp; CELPIP.</div>
+                <div class="muted">Band 7+ and CLB 9+ focused prep for IELTS, CELPIP &amp; PTE Core.</div>
               </div>
 
               <div>
@@ -791,6 +856,7 @@ const serializeJsonForScript = (value: unknown) =>
                 <div class="footer-links">
                   <a href="/celpip">CELPIP</a>
                   <a href="/ielts">IELTS</a>
+                  <a href="/pte-core">PTE Core</a>
                   <a href="/ielts/speaking/questions">IELTS Speaking Questions</a>
                   <a href="/ielts/speaking/band-descriptors">IELTS Band Descriptors</a>
                   <a href="/lessons">Lessons</a>
@@ -826,9 +892,9 @@ const serializeJsonForScript = (value: unknown) =>
     </footer>
 
     {showFloatingEbookCta && (
-      <a class="floating-ebook-btn" href="/ebook" aria-label="Get the CELPIP Speaking Guide - CA$49.50">
-        <span class="floating-ebook-btn__icon" aria-hidden="true">📖</span>
-        <span class="floating-ebook-btn__text">CELPIP Speaking Guide <strong>CA$49.50</strong></span>
+      <a class="floating-ebook-btn" href={floatingCta.href} aria-label={floatingCta.aria}>
+        <span class="floating-ebook-btn__icon" aria-hidden="true">{floatingCta.icon}</span>
+        <span class="floating-ebook-btn__text">{floatingCta.text} <strong>{floatingCta.strong}</strong></span>
       </a>
     )}
 
