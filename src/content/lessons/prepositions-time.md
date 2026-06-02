@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Time and place preposition grid", "Verb + preposition pairs", "Common deletion list"]
 quiz:
-  - prompt: "Which sentence uses Prepositions of Time correctly?"
+  - prompt: "Pick the sentence that gets Prepositions of Time right."
     options:
       - "She is interested on environmental policy."
       - "She is interested in environmental policy."
       - "We discussed about the budget during class."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Prepositions of Time and keeps the sentence natural."
-  - prompt: "What should you check first when editing Prepositions of Time?"
+  - prompt: "When you review Prepositions of Time, what should you look at before anything else?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Prepositions of Time mistake?"
+  - prompt: "Which change fixes a frequent Prepositions of Time mistake?"
     options:
       - "He apologized on arriving late to class."
       - "He apologized for arriving late to class."

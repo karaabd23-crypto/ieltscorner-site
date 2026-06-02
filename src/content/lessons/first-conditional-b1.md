@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Conditional pattern ladder", "Timeline arrows", "If-clause/result-clause map"]
 quiz:
-  - prompt: "Which sentence uses Conditional Sentences: First correctly?"
+  - prompt: "Pick the sentence that gets Conditional Sentences: First right."
     options:
       - "If governments invest in transit, traffic reduced quickly."
       - "If governments invest in transit, traffic will reduce quickly."
       - "If students will review tonight, they will feel calmer tomorrow."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Conditional Sentences: First and keeps the sentence natural."
-  - prompt: "What should you check first when editing Conditional Sentences: First?"
+  - prompt: "Editing Conditional Sentences: First: where should you start?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Conditional Sentences: First mistake?"
+  - prompt: "Which fix addresses a usual Conditional Sentences: First error?"
     options:
       - "If students study consistently, they would improve their scores quickly."
       - "If students study consistently, they will improve their scores quickly."

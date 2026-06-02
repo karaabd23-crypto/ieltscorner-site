@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Active/passive transformation pairs", "Be + past participle pattern", "When to keep or drop by-phrases"]
 quiz:
-  - prompt: "Which sentence uses Passives: Formation and Use correctly?"
+  - prompt: "Which option shows Passives: Formation and Use used correctly?"
     options:
       - "People recycle more plastic in this city every year."
       - "More plastic is recycled in this city every year."
       - "The committee will announce the results tomorrow."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Passives: Formation and Use and keeps the sentence natural."
-  - prompt: "What should you check first when editing Passives: Formation and Use?"
+  - prompt: "What is the first thing to settle when you work on Passives: Formation and Use?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Passives: Formation and Use mistake?"
+  - prompt: "Which edit repairs a typical Passives: Formation and Use error?"
     options:
       - "The final report publish next Monday."
       - "The final report will be published next Monday."

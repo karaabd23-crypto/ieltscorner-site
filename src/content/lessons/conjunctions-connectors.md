@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Conjunctions and Connectors correctly?"
+  - prompt: "Which version uses Conjunctions and Connectors accurately?"
     options:
       - "The route is cheaper however it takes longer in the morning."
       - "The route is cheaper; however, it takes longer in the morning."
       - "The buses were delayed because therefore many students were late."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Conjunctions and Connectors and keeps the sentence natural."
-  - prompt: "What should you check first when editing Conjunctions and Connectors?"
+  - prompt: "Before you fix Conjunctions and Connectors in your answer, what comes first?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Conjunctions and Connectors mistake?"
+  - prompt: "Which correction solves a common Conjunctions and Connectors slip?"
     options:
       - "The library opens earlier however the study rooms still fill quickly."
       - "The library opens earlier; however, the study rooms still fill quickly."

@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Like and As correctly?"
+  - prompt: "Which version uses Like and As accurately?"
     options:
       - "She works like a teacher at the college."
       - "She works as a teacher at the college."
       - "Like the report shows, delays fell in May."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Like and As and keeps the sentence natural."
-  - prompt: "What should you check first when editing Like and As?"
+  - prompt: "What is the first thing to settle when you work on Like and As?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Like and As mistake?"
+  - prompt: "Which edit repairs a typical Like and As error?"
     options:
       - "He spoke as a local resident, not like an expert witness."
       - "He spoke as a local resident, not as an expert witness."

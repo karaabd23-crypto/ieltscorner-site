@@ -38,6 +38,10 @@ const showAds = !isLocalPreview && normalizedPath !== "/ai-feedback";
 const currentPath = Astro.url.pathname;
 const isBlogArticle = currentPath.startsWith("/blog/") && currentPath !== "/blog/" && currentPath !== "/blog";
 const robotsContent = noindex ? "noindex, nofollow" : "index, follow";
+// Google Search Console verification. Set GOOGLE_SITE_VERIFICATION in Netlify
+// env (the token from Search Console > Settings > Ownership verification >
+// HTML tag). When unset (local/dev), no tag is emitted.
+const googleSiteVerification = import.meta.env.GOOGLE_SITE_VERIFICATION || "";
 const isPrePaymentPath =
   normalizedPath === "/ai-feedback" ||
   normalizedPath.startsWith("/tutoring") ||
@@ -276,6 +280,9 @@ const serializeJsonForScript = (value: unknown) =>
     <meta name="keywords" content={keywords} />
     <meta name="author" content="IELTS Corner" />
     <meta name="robots" content={robotsContent} />
+    {googleSiteVerification && (
+      <meta name="google-site-verification" content={googleSiteVerification} />
+    )}
     <link rel="canonical" href={canonicalURL} />
     
     <!-- Open Graph / Facebook -->

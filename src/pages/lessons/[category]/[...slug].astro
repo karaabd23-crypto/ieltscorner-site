@@ -208,6 +208,53 @@ const trackTest =
 const readingRescueLesson = likelyCelpip && currentSkill === "reading";
 const showIntentStack = isWritingLesson || readingRescueLesson;
 const ladderSkill = readingRescueLesson ? "reading" : "writing";
+
+// Retention: lesson pages historically dead-end (near-zero engagement time).
+// These tool/test destinations are the site's stickiest pages by GA4
+// engagement (CLB calculator, free reading test, writing samples, PTE
+// simulator), so we surface 2-3 of them as a "keep going" step matched to the
+// lesson's exam. Goal is to turn a single-page visit into a multi-page session.
+type NextStepTool = { title: string; href: string; description: string };
+const clbCalculatorTool: NextStepTool = {
+  title: "Free CLB / Band Score Calculator",
+  href: "/clb-calculator",
+  description: "Convert your scores between IELTS, CELPIP, and CLB in seconds.",
+};
+const nextStepTools: NextStepTool[] = (() => {
+  if (primaryExam === "PTE_CORE") {
+    return [
+      {
+        title: "PTE Core Simulator",
+        href: "/pte-core/simulator",
+        description: "Practice every PTE Core task type under real exam timing.",
+      },
+      clbCalculatorTool,
+    ];
+  }
+  if (likelyCelpip) {
+    return [
+      {
+        title: "Free CELPIP Reading Test",
+        href: "/celpip/reading/free-test",
+        description: "Take a full timed CELPIP reading test and see your level.",
+      },
+      {
+        title: "CELPIP Writing Samples (CLB-rated)",
+        href: "/celpip/writing/samples",
+        description: "Study scored Task 1 and Task 2 answers across CLB bands.",
+      },
+      clbCalculatorTool,
+    ];
+  }
+  return [
+    {
+      title: "Free CELPIP Reading Test",
+      href: "/celpip/reading/free-test",
+      description: "A full timed reading test, useful for IELTS readers too.",
+    },
+    clbCalculatorTool,
+  ];
+})();
 const lessonPromoConfig =
   primaryExam === "PTE_CORE"
     ? null
@@ -445,6 +492,37 @@ const courseSchema = {
   },
 };
 
+// SEO: HowTo Schema. Lessons are step-based skill guides, so a HowTo built
+// from the lesson's own H2/H3 sections can earn HowTo rich results and lift
+// click-through at the same ranking position. Steps are derived from the
+// rendered headings (cleaned), with the excerpt as the overall description.
+const howToSteps = headings
+  .filter((heading) => heading.depth === 2)
+  .map((heading) => cleanHeadingText(heading.text))
+  .filter((text) => text.length > 0)
+  .slice(0, 8);
+
+const howToSchema =
+  howToSteps.length >= 2
+    ? {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": publicTitle,
+        "description": item.data.excerpt,
+        "inLanguage": "en-CA",
+        "totalTime": "PT10M",
+        "step": howToSteps.map((stepName, index) => ({
+          "@type": "HowToStep",
+          "position": index + 1,
+          "name": stepName,
+          "url": new URL(
+            `/lessons/${currentCategory}/${item.slug}/`,
+            Astro.site
+          ).toString(),
+        })),
+      }
+    : null;
+
 // SEO: Breadcrumb Schema
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -491,6 +569,9 @@ const seoKeywords = `${publicTitle}, ${item.data.category}, ${item.data.level}, 
   <!-- Structured Data Scripts -->
   <script type="application/ld+json" set:html={JSON.stringify(lessonSchema)} slot="head" />
   <script type="application/ld+json" set:html={JSON.stringify(courseSchema)} slot="head" />
+  {howToSchema && (
+    <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} slot="head" />
+  )}
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
 
   <section class="section">
@@ -579,6 +660,30 @@ const seoKeywords = `${publicTitle}, ${item.data.category}, ${item.data.level}, 
           </a>
         </div>
       </section>
+
+      {nextStepTools.length > 0 && (
+        <div class="surface" style="padding: var(--s-4); margin-top: var(--s-6);">
+          <h3 style="margin-top: 0;">Keep practicing: free tools and tests</h3>
+          <p class="muted" style="margin-top: 0;">Put this lesson to work right now with our most-used practice tools.</p>
+          <div class="grid grid-2" style="gap: var(--s-3);">
+            {nextStepTools.map((tool, index) => (
+              <a
+                class="card"
+                href={tool.href}
+                style="display:block; text-decoration:none;"
+                data-track-click="lesson-next-step-tool"
+                data-track-page-type="lesson"
+                data-track-test={trackTest}
+                data-track-skill={currentSkill}
+                data-track-position={`tool-${index + 1}`}
+              >
+                <h4 style="margin-top: 0; margin-bottom: var(--s-1);">{tool.title}</h4>
+                <p class="muted" style="margin: 0;">{tool.description}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
 
       {guideLinks.length > 0 && (
         <div class="surface" style="padding: var(--s-4); margin-top: var(--s-6);">

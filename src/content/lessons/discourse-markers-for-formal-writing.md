@@ -11,21 +11,21 @@ tags: ["grammar", "b2", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Connecting Words for Essays correctly?"
+  - prompt: "Which version uses Connecting Words for Essays accurately?"
     options:
       - "The route is cheaper however it takes longer in the morning."
       - "The route is cheaper; however, it takes longer in the morning."
       - "The buses were delayed because therefore many students were late."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Connecting Words for Essays and keeps the sentence natural."
-  - prompt: "What should you check first when editing Connecting Words for Essays?"
+  - prompt: "What is the first thing to settle when you work on Connecting Words for Essays?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Connecting Words for Essays mistake?"
+  - prompt: "Which edit repairs a typical Connecting Words for Essays error?"
     options:
       - "The library opens earlier however the study rooms still fill quickly."
       - "The library opens earlier; however, the study rooms still fill quickly."

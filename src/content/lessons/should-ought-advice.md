@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Modal meaning scale", "Advice vs obligation examples", "Modal + base verb reminder"]
 quiz:
-  - prompt: "Which sentence uses Should, Ought To, Must (Advice) correctly?"
+  - prompt: "Which option shows Should, Ought To, Must (Advice) used correctly?"
     options:
       - "Students should to check the final paragraph."
       - "Students should check the final paragraph."
       - "The delays can to continue if repairs are postponed."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Should, Ought To, Must (Advice) and keeps the sentence natural."
-  - prompt: "What should you check first when editing Should, Ought To, Must (Advice)?"
+  - prompt: "Before you fix Should, Ought To, Must (Advice) in your answer, what comes first?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Should, Ought To, Must (Advice) mistake?"
+  - prompt: "Which correction solves a common Should, Ought To, Must (Advice) slip?"
     options:
       - "You must to submit the form before Friday."
       - "You must submit the form before Friday."

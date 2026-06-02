@@ -11,21 +11,21 @@ tags: ["grammar", "a2", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Verb + to infinitive correctly?"
+  - prompt: "Which sentence handles Verb + to infinitive the right way?"
     options:
       - "She avoided to answer the question directly."
       - "She avoided answering the question directly."
       - "They decided expanding the program next term."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Verb + to infinitive and keeps the sentence natural."
-  - prompt: "What should you check first when editing Verb + to infinitive?"
+  - prompt: "When you review Verb + to infinitive, what should you look at before anything else?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Verb + to infinitive mistake?"
+  - prompt: "Which change fixes a frequent Verb + to infinitive mistake?"
     options:
       - "He is interested to joining the evening class."
       - "He is interested in joining the evening class."

@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses What Clauses correctly?"
+  - prompt: "Pick the sentence that gets What Clauses right."
     options:
       - "I do not understand what does the chart show."
       - "I do not understand what the chart shows."
       - "What students need are more quiet study space."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for What Clauses and keeps the sentence natural."
-  - prompt: "What should you check first when editing What Clauses?"
+  - prompt: "When you review What Clauses, what should you look at before anything else?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common What Clauses mistake?"
+  - prompt: "Which fix addresses a usual What Clauses error?"
     options:
       - "She explained what did the graph mean in the final section."
       - "She explained what the graph meant in the final section."

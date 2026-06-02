@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Conditional pattern ladder", "Timeline arrows", "If-clause/result-clause map"]
 quiz:
-  - prompt: "Which sentence uses Conditionals: Mixed Types correctly?"
+  - prompt: "Pick the sentence that gets Conditionals: Mixed Types right."
     options:
       - "If governments invest in transit, traffic reduced quickly."
       - "If governments invest in transit, traffic will reduce quickly."
       - "If I knew the answer, I will tell you now."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Conditionals: Mixed Types and keeps the sentence natural."
-  - prompt: "What should you check first when editing Conditionals: Mixed Types?"
+  - prompt: "Editing Conditionals: Mixed Types: where should you start?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Conditionals: Mixed Types mistake?"
+  - prompt: "Which fix addresses a usual Conditionals: Mixed Types error?"
     options:
       - "If students study consistently, they would improve their scores quickly."
       - "If students study consistently, they will improve their scores quickly."

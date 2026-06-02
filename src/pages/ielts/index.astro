@@ -23,13 +23,16 @@ const pageStructuredData = [
   ]} />
 
   <section class="section">
-    <div class="hero funnel-hero" style={`--hero-bg: url('/heroes/IELTS.png');`}>
+    <div class="hero funnel-hero" style={`--hero-bg: url('/heroes/ielts.webp');`}>
       <div class="hero-content funnel-hero__content">
         <span class="pill ic-eyebrow">IELTS exam hub</span>
-        <h1 class="ic-display">Choose the IELTS skill you want to improve</h1>
-        <p class="muted">
-          Select one skill below and follow one clear path for faster score improvement.
-        </p>
+        <h1 class="ic-display">IELTS preparation</h1>
+        <p class="muted">Free lessons, writing feedback, and private coaching. Pick your skill below.</p>
+        <div class="cluster" style="margin-top: var(--s-2);">
+          <a class="btn btn-primary ic-btn" href="/lessons">Free lessons</a>
+          <a class="btn btn-ghost" href="/ai-feedback">AI writing feedback</a>
+          <a class="btn btn-ghost" href="/tutoring#book-private-class">Private class</a>
+        </div>
       </div>
     </div>
   </section>
@@ -71,37 +74,34 @@ const pageStructuredData = [
 
   <section class="section-sm">
     <div class="surface funnel-section">
-      <h2 class="ic-display" style="margin-top: 0;">IELTS support services</h2>
-      <p class="muted" style="margin-top: 0;">
-        Choose the service that matches your current need.
-      </p>
+      <h2 class="ic-display" style="margin-top: 0;">IELTS tools and support</h2>
       <div class="offer-grid" style="margin-top: var(--s-3);">
+        <a class="offer-card ic-card" href="/lessons" style="text-decoration: none; color: inherit;">
+          <p class="offer-card__label ic-eyebrow">Free</p>
+          <h3 class="offer-card__name">Free Lessons</h3>
+          <p class="offer-card__line">Grammar, vocabulary, writing, and speaking lessons.</p>
+          <span class="btn btn-ghost">Browse Free Lessons</span>
+        </a>
+
         <a class="offer-card ic-card" href="/ai-feedback" style="text-decoration: none; color: inherit;">
           <p class="offer-card__label ic-eyebrow">Writing</p>
           <h3 class="offer-card__name">AI Writing Feedback</h3>
-          <p class="offer-card__line">Practice under timed conditions and get instant AI-scored feedback.</p>
+          <p class="offer-card__line">Submit a writing task and get instant AI feedback.</p>
           <span class="btn btn-ghost">Start AI Feedback</span>
+        </a>
+
+        <a class="offer-card ic-card" href="/ielts-writing-help" style="text-decoration: none; color: inherit;">
+          <p class="offer-card__label ic-eyebrow">Writing</p>
+          <h3 class="offer-card__name">IELTS Writing Help</h3>
+          <p class="offer-card__line">Focused writing improvement path with feedback.</p>
+          <span class="btn btn-ghost">Open Writing Help</span>
         </a>
 
         <a class="offer-card ic-card" href="/tutoring#book-private-class" style="text-decoration: none; color: inherit;">
           <p class="offer-card__label ic-eyebrow">Live support</p>
           <h3 class="offer-card__name">Private Class</h3>
-          <p class="offer-card__line">One-to-one support for any skill: listening, reading, writing, or speaking.</p>
+          <p class="offer-card__line">One-to-one coaching for any skill. CA$30 per session.</p>
           <span class="btn btn-ghost">Book Private Class</span>
-        </a>
-
-        <a class="offer-card ic-card" href="/ielts-writing-help" style="text-decoration: none; color: inherit;">
-          <p class="offer-card__label ic-eyebrow">Quick start</p>
-          <h3 class="offer-card__name">IELTS Writing Help</h3>
-          <p class="offer-card__line">A focused path for writing improvement with correction and feedback.</p>
-          <span class="btn btn-ghost">Open Writing Help</span>
-        </a>
-
-        <a class="offer-card ic-card" href="/lessons" style="text-decoration: none; color: inherit;">
-          <p class="offer-card__label ic-eyebrow">Free</p>
-          <h3 class="offer-card__name">Free Lessons</h3>
-          <p class="offer-card__line">Grammar, vocabulary, writing, and speaking lessons with search and filters.</p>
-          <span class="btn btn-ghost">Browse Free Lessons</span>
         </a>
       </div>
     </div>

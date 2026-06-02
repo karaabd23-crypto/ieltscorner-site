@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Capitalization Rules correctly?"
+  - prompt: "Which option shows Capitalization Rules used correctly?"
     options:
       - "The pilot reduced delays, however the old route still needs repairs."
       - "The pilot reduced delays; however, the old route still needs repairs."
       - "The council approved three changes, more buses, better lighting and longer hours."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Capitalization Rules and keeps the sentence natural."
-  - prompt: "What should you check first when editing Capitalization Rules?"
+  - prompt: "What is the first thing to settle when you work on Capitalization Rules?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Capitalization Rules mistake?"
+  - prompt: "Which edit repairs a typical Capitalization Rules error?"
     options:
       - "The report was useful however it needed clearer headings."
       - "The report was useful; however, it needed clearer headings."

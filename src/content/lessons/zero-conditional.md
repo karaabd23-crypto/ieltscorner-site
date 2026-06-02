@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Conditional pattern ladder", "Timeline arrows", "If-clause/result-clause map"]
 quiz:
-  - prompt: "Which sentence uses Conditional Sentences: Zero correctly?"
+  - prompt: "Which sentence handles Conditional Sentences: Zero the right way?"
     options:
       - "If people will drive too fast, accidents happen more often."
       - "If people drive too fast, accidents happen more often."
       - "If water reaches 100 degrees, it will boil."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Conditional Sentences: Zero and keeps the sentence natural."
-  - prompt: "What should you check first when editing Conditional Sentences: Zero?"
+  - prompt: "Editing Conditional Sentences: Zero: where should you start?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Conditional Sentences: Zero mistake?"
+  - prompt: "Which change fixes a frequent Conditional Sentences: Zero mistake?"
     options:
       - "If students revise regularly, they will remember more vocabulary."
       - "If students revise regularly, they remember more vocabulary."

@@ -11,21 +11,21 @@ tags: ["grammar", "c2", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Modal Verbs in Formal Writing correctly?"
+  - prompt: "Pick the sentence that gets Modal Verbs in Formal Writing right."
     options:
       - "I think this plan is kind of bad for cities."
       - "This plan is unlikely to benefit cities in the long term."
       - "People absolutely hate the change, and it is a total disaster."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Modal Verbs in Formal Writing and keeps the sentence natural."
-  - prompt: "What should you check first when editing Modal Verbs in Formal Writing?"
+  - prompt: "When you review Modal Verbs in Formal Writing, what should you look at before anything else?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Modal Verbs in Formal Writing mistake?"
+  - prompt: "Which fix addresses a usual Modal Verbs in Formal Writing error?"
     options:
       - "This idea is super good because everybody will love it."
       - "This idea could be effective because it addresses a common local need."

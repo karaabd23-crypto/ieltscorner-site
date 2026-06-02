@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Verb-to-noun families", "Noun phrase clarity guide", "Nominalization do/don't list"]
 quiz:
-  - prompt: "Which sentence uses Noun Formation correctly?"
+  - prompt: "Which option shows Noun Formation used correctly?"
     options:
       - "The committee will decide next week, and this decide may affect funding."
       - "The committee will decide next week, and this decision may affect funding."
       - "The company wants to expand, but the expand will take two years."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Noun Formation and keeps the sentence natural."
-  - prompt: "What should you check first when editing Noun Formation?"
+  - prompt: "Before you fix Noun Formation in your answer, what comes first?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Noun Formation mistake?"
+  - prompt: "Which correction solves a common Noun Formation slip?"
     options:
       - "Their investigate into the accident took three months."
       - "Their investigation into the accident took three months."

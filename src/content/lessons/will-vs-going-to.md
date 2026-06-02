@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Timeline with tense labels", "Finished vs unfinished time markers", "Simple/perfect contrast pairs"]
 quiz:
-  - prompt: "Which sentence uses Will vs Going To correctly?"
+  - prompt: "Pick the sentence that gets Will vs Going To right."
     options:
       - "The city policy update improve commuter access, but the sentence form is unstable."
       - "The city policy update improves commuter access, and the sentence form is stable."
       - "Students in one district reported progress, but the structure of the explanation is unclear."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Will vs Going To and keeps the sentence natural."
-  - prompt: "What should you check first when editing Will vs Going To?"
+  - prompt: "Editing Will vs Going To: where should you start?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Will vs Going To mistake?"
+  - prompt: "Which change fixes a frequent Will vs Going To mistake?"
     options:
       - "The council approve the plan, but the timeline details remain unclear."
       - "The council approved the plan, but the timeline details remain unclear."

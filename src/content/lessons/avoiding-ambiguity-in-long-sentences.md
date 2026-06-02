@@ -11,21 +11,21 @@ tags: ["grammar", "c1", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Clear Long Sentences correctly?"
+  - prompt: "Which sentence handles Clear Long Sentences the right way?"
     options:
       - "Because the buses were delayed. Many workers missed the meeting."
       - "Because the buses were delayed, many workers missed the meeting."
       - "The report was clear although the final paragraph was weak it still helped the reader."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Clear Long Sentences and keeps the sentence natural."
-  - prompt: "What should you check first when editing Clear Long Sentences?"
+  - prompt: "Editing Clear Long Sentences: where should you start?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Clear Long Sentences mistake?"
+  - prompt: "Which fix addresses a usual Clear Long Sentences error?"
     options:
       - "When the route changed many residents complained because they had not been warned."
       - "When the route changed, many residents complained because they had not been warned."

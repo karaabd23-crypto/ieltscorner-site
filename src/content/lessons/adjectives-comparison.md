@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Adjectives in Comparison correctly?"
+  - prompt: "Which version uses Adjectives in Comparison accurately?"
     options:
       - "This route is more cheap than the old one."
       - "This route is cheaper than the old one."
       - "It is the most easiest option for students."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Adjectives in Comparison and keeps the sentence natural."
-  - prompt: "What should you check first when editing Adjectives in Comparison?"
+  - prompt: "What is the first thing to settle when you work on Adjectives in Comparison?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Adjectives in Comparison mistake?"
+  - prompt: "Which edit repairs a typical Adjectives in Comparison error?"
     options:
       - "This phone is more better than my old one."
       - "This phone is better than my old one."

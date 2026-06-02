@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Time and place preposition grid", "Verb + preposition pairs", "Common deletion list"]
 quiz:
-  - prompt: "Which sentence uses Prepositions of Place correctly?"
+  - prompt: "Which sentence handles Prepositions of Place the right way?"
     options:
       - "She is interested on environmental policy."
       - "She is interested in environmental policy."
       - "We discussed about the budget during class."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Prepositions of Place and keeps the sentence natural."
-  - prompt: "What should you check first when editing Prepositions of Place?"
+  - prompt: "Editing Prepositions of Place: where should you start?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Prepositions of Place mistake?"
+  - prompt: "Which change fixes a frequent Prepositions of Place mistake?"
     options:
       - "He apologized on arriving late to class."
       - "He apologized for arriving late to class."

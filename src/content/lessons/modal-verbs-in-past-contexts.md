@@ -11,21 +11,21 @@ tags: ["grammar", "b2", "exam-prep", "ielts", "celpip"]
 heroTip: "Choose the meaning first, then choose the modal. Do not start from the word."
 visualAids: ["Modal meaning scale", "Advice vs obligation examples", "Modal + base verb reminder"]
 quiz:
-  - prompt: "Which sentence uses Modal verbs in past contexts correctly?"
+  - prompt: "Which option shows Modal verbs in past contexts used correctly?"
     options:
       - "Students should to check the final paragraph."
       - "Students should check the final paragraph."
       - "The delays can to continue if repairs are postponed."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Modal verbs in past contexts and keeps the sentence natural."
-  - prompt: "What should you check first when editing Modal verbs in past contexts?"
+  - prompt: "Before you fix Modal verbs in past contexts in your answer, what comes first?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Modal verbs in past contexts mistake?"
+  - prompt: "Which correction solves a common Modal verbs in past contexts slip?"
     options:
       - "You must to submit the form before Friday."
       - "You must submit the form before Friday."

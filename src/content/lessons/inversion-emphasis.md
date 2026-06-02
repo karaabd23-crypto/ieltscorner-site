@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Inversion for Emphasis correctly?"
+  - prompt: "Which version uses Inversion for Emphasis accurately?"
     options:
       - "Never I have seen such a confusing timetable."
       - "Never have I seen such a confusing timetable."
       - "Only after the final practice she felt ready."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Inversion for Emphasis and keeps the sentence natural."
-  - prompt: "What should you check first when editing Inversion for Emphasis?"
+  - prompt: "Before you fix Inversion for Emphasis in your answer, what comes first?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Inversion for Emphasis mistake?"
+  - prompt: "Which correction solves a common Inversion for Emphasis slip?"
     options:
       - "Rarely we find such clear instructions in practice books."
       - "Rarely do we find such clear instructions in practice books."

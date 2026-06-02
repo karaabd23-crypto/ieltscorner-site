@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Who/which/that table", "Restrictive vs non-restrictive pairs", "Pronoun drop examples"]
 quiz:
-  - prompt: "Which sentence uses Relative Clauses: Non-restrictive correctly?"
+  - prompt: "Which version uses Relative Clauses: Non-restrictive accurately?"
     options:
       - "The teacher gave feedback was very specific."
       - "The teacher gave feedback that was very specific."
       - "Students who study consistently they usually improve faster."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Relative Clauses: Non-restrictive and keeps the sentence natural."
-  - prompt: "What should you check first when editing Relative Clauses: Non-restrictive?"
+  - prompt: "Before you fix Relative Clauses: Non-restrictive in your answer, what comes first?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Relative Clauses: Non-restrictive mistake?"
+  - prompt: "Which correction solves a common Relative Clauses: Non-restrictive slip?"
     options:
       - "The course provides materials are easy to review at home."
       - "The course provides materials that are easy to review at home."

@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Timeline with tense labels", "Finished vs unfinished time markers", "Simple/perfect contrast pairs"]
 quiz:
-  - prompt: "Which sentence uses Future Perfect Simple correctly?"
+  - prompt: "Pick the sentence that gets Future Perfect Simple right."
     options:
       - "Last year, the council increases bus frequency in two districts."
       - "Last year, the council increased bus frequency in two districts."
       - "By next month, we finish the pilot stage."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Future Perfect Simple and keeps the sentence natural."
-  - prompt: "What should you check first when editing Future Perfect Simple?"
+  - prompt: "Editing Future Perfect Simple: where should you start?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Future Perfect Simple mistake?"
+  - prompt: "Which fix addresses a usual Future Perfect Simple error?"
     options:
       - "In 2024, the team launch a revised curriculum model."
       - "In 2024, the team launched a revised curriculum model."

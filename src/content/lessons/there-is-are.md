@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses There is, There are correctly?"
+  - prompt: "Which option shows There is, There are used correctly?"
     options:
       - "She do not need extra time for this section."
       - "She does not need extra time for this section."
       - "There is many reasons to revise the final paragraph."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for There is, There are and keeps the sentence natural."
-  - prompt: "What should you check first when editing There is, There are?"
+  - prompt: "Before you fix There is, There are in your answer, what comes first?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common There is, There are mistake?"
+  - prompt: "Which correction solves a common There is, There are slip?"
     options:
       - "He do not understand the final instruction."
       - "He does not understand the final instruction."

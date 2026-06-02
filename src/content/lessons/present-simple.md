@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Timeline with tense labels", "Finished vs unfinished time markers", "Simple/perfect contrast pairs"]
 quiz:
-  - prompt: "Which sentence uses Present Simple correctly?"
+  - prompt: "Which option shows Present Simple used correctly?"
     options:
       - "Last year, the council increases bus frequency in two districts."
       - "Last year, the council increased bus frequency in two districts."
       - "By next month, we finish the pilot stage."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Present Simple and keeps the sentence natural."
-  - prompt: "What should you check first when editing Present Simple?"
+  - prompt: "What is the first thing to settle when you work on Present Simple?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Present Simple mistake?"
+  - prompt: "Which edit repairs a typical Present Simple error?"
     options:
       - "In 2024, the team launch a revised curriculum model."
       - "In 2024, the team launched a revised curriculum model."

@@ -11,21 +11,21 @@ tags: ["grammar", "c1", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Moving Words for Emphasis correctly?"
+  - prompt: "Which option shows Moving Words for Emphasis used correctly?"
     options:
       - "Never I have seen such a confusing timetable."
       - "Never have I seen such a confusing timetable."
       - "Only after the final practice she felt ready."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Moving Words for Emphasis and keeps the sentence natural."
-  - prompt: "What should you check first when editing Moving Words for Emphasis?"
+  - prompt: "What is the first thing to settle when you work on Moving Words for Emphasis?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Moving Words for Emphasis mistake?"
+  - prompt: "Which edit repairs a typical Moving Words for Emphasis error?"
     options:
       - "Rarely we find such clear instructions in practice books."
       - "Rarely do we find such clear instructions in practice books."

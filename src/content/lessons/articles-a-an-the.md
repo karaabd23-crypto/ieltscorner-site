@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Article decision flowchart", "New vs known noun examples", "A/an sound check"]
 quiz:
-  - prompt: "Which sentence uses A, An, The correctly?"
+  - prompt: "Which sentence handles A, An, The the right way?"
     options:
       - "I bought book and umbrella from market."
       - "I bought a book and an umbrella from the market."
       - "Sun rises in east every day."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for A, An, The and keeps the sentence natural."
-  - prompt: "What should you check first when editing A, An, The?"
+  - prompt: "Editing A, An, The: where should you start?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common A, An, The mistake?"
+  - prompt: "Which change fixes a frequent A, An, The mistake?"
     options:
       - "She wants to become engineer in future."
       - "She wants to become an engineer in the future."

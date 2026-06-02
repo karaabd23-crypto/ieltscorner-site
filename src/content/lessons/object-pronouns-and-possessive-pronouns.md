@@ -11,21 +11,21 @@ tags: ["grammar", "a2", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Object pronouns and possessive pronouns correctly?"
+  - prompt: "Which version uses Object pronouns and possessive pronouns accurately?"
     options:
       - "When Maria met Ana, she said she needed help."
       - "When Maria met Ana, Maria said she needed help."
       - "The managers told the interns that they were unprepared."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Object pronouns and possessive pronouns and keeps the sentence natural."
-  - prompt: "What should you check first when editing Object pronouns and possessive pronouns?"
+  - prompt: "What is the first thing to settle when you work on Object pronouns and possessive pronouns?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Object pronouns and possessive pronouns mistake?"
+  - prompt: "Which edit repairs a typical Object pronouns and possessive pronouns error?"
     options:
       - "James told David that he should revise the introduction."
       - "James told David that David should revise the introduction."

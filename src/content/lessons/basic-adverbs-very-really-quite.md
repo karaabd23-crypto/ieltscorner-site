@@ -11,21 +11,21 @@ tags: ["grammar", "a1", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Basic adverbs: very, really, quite correctly?"
+  - prompt: "Which option shows Basic adverbs: very, really, quite used correctly?"
     options:
       - "She speaks English fluent during presentations."
       - "She speaks English fluently during presentations."
       - "I every day revise vocabulary on the bus."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Basic adverbs: very, really, quite and keeps the sentence natural."
-  - prompt: "What should you check first when editing Basic adverbs: very, really, quite?"
+  - prompt: "Before you fix Basic adverbs: very, really, quite in your answer, what comes first?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Basic adverbs: very, really, quite mistake?"
+  - prompt: "Which correction solves a common Basic adverbs: very, really, quite slip?"
     options:
       - "The train arrived lately, so many workers were delayed."
       - "The train arrived late, so many workers were delayed."

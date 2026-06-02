@@ -11,21 +11,21 @@ tags: ["grammar", "a1", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Adjectives in simple descriptions correctly?"
+  - prompt: "Pick the sentence that gets Adjectives in simple descriptions right."
     options:
       - "The city policy update improve commuter access, but the sentence form is unstable."
       - "The city policy update improves commuter access, and the sentence form is stable."
       - "Students in one district reported progress, but the structure of the explanation is unclear."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Adjectives in simple descriptions and keeps the sentence natural."
-  - prompt: "What should you check first when editing Adjectives in simple descriptions?"
+  - prompt: "Editing Adjectives in simple descriptions: where should you start?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Adjectives in simple descriptions mistake?"
+  - prompt: "Which fix addresses a usual Adjectives in simple descriptions error?"
     options:
       - "The council approve the plan, but the timeline details remain unclear."
       - "The council approved the plan, but the timeline details remain unclear."

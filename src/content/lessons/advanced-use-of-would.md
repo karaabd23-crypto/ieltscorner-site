@@ -11,7 +11,7 @@ tags: ["modality", "stance", "politeness"]
 heroTip: "Decide what would is doing: hypothetical result, past habit, polite tone, or reported future-in-the-past."
 visualAids: ["Would meaning map", "Hypothetical timeline", "Polite distance phrase bank"]
 quiz:
-  - prompt: "Which sentence uses would for a hypothetical present result correctly?"
+  - prompt: "Which option shows would for a hypothetical present result used correctly?"
     options:
       - "If I had more time, I would join the webinar every week."
       - "If I had more time, I will join the webinar every week."
@@ -25,7 +25,7 @@ quiz:
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Would has multiple functions; choose the function first, then the form."
-  - prompt: "Which edit fixes a common would-form mistake?"
+  - prompt: "Which correction solves a common would-form slip?"
     options:
       - "When I was a child, I would played outside after school."
       - "When I was a child, I would play outside after school."

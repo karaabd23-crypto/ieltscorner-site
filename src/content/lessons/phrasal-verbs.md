@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Phrasal Verbs: Formation correctly?"
+  - prompt: "Which version uses Phrasal Verbs: Formation accurately?"
     options:
       - "The meeting was putted off until Friday."
       - "The meeting was put off until Friday."
       - "Students need to find why the answer is wrong out."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Phrasal Verbs: Formation and keeps the sentence natural."
-  - prompt: "What should you check first when editing Phrasal Verbs: Formation?"
+  - prompt: "Before you fix Phrasal Verbs: Formation in your answer, what comes first?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Phrasal Verbs: Formation mistake?"
+  - prompt: "Which correction solves a common Phrasal Verbs: Formation slip?"
     options:
       - "Please look the word up in your notes before class."
       - "Please look up the word in your notes before class."

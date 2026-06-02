@@ -13,21 +13,21 @@ videoEmbed: ""
 draft: false
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Do: Auxiliary Verb correctly?"
+  - prompt: "Which option shows Do: Auxiliary Verb used correctly?"
     options:
       - "She do not need extra time for this section."
       - "She does not need extra time for this section."
       - "There is many reasons to revise the final paragraph."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Do: Auxiliary Verb and keeps the sentence natural."
-  - prompt: "What should you check first when editing Do: Auxiliary Verb?"
+  - prompt: "What is the first thing to settle when you work on Do: Auxiliary Verb?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Do: Auxiliary Verb mistake?"
+  - prompt: "Which edit repairs a typical Do: Auxiliary Verb error?"
     options:
       - "He do not understand the final instruction."
       - "He does not understand the final instruction."

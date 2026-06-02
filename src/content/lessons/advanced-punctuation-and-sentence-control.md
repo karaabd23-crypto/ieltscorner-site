@@ -11,21 +11,21 @@ tags: ["grammar", "c1", "exam-prep", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
 visualAids: ["Pattern map", "Worked example pair", "Final self-check list"]
 quiz:
-  - prompt: "Which sentence uses Punctuation and Sentence Control correctly?"
+  - prompt: "Which sentence handles Punctuation and Sentence Control the right way?"
     options:
       - "The pilot reduced delays, however the old route still needs repairs."
       - "The pilot reduced delays; however, the old route still needs repairs."
       - "The council approved three changes, more buses, better lighting and longer hours."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Punctuation and Sentence Control and keeps the sentence natural."
-  - prompt: "What should you check first when editing Punctuation and Sentence Control?"
+  - prompt: "When you review Punctuation and Sentence Control, what should you look at before anything else?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Punctuation and Sentence Control mistake?"
+  - prompt: "Which change fixes a frequent Punctuation and Sentence Control mistake?"
     options:
       - "The report was useful however it needed clearer headings."
       - "The report was useful; however, it needed clearer headings."

@@ -11,21 +11,21 @@ tags: ["grammar", "c1", "exam-prep", "ielts", "celpip"]
 heroTip: "Ask what should stay in the spotlight: the action, the result, or the doer."
 visualAids: ["Active/passive transformation pairs", "Be + past participle pattern", "When to keep or drop by-phrases"]
 quiz:
-  - prompt: "Which sentence uses Advanced Passive Voice correctly?"
+  - prompt: "Pick the sentence that gets Advanced Passive Voice right."
     options:
       - "People recycle more plastic in this city every year."
       - "More plastic is recycled in this city every year."
       - "The committee will announce the results tomorrow."
     correctIndex: 1
     explanation: "Option 2 matches the main rule for Advanced Passive Voice and keeps the sentence natural."
-  - prompt: "What should you check first when editing Advanced Passive Voice?"
+  - prompt: "Editing Advanced Passive Voice: where should you start?"
     options:
       - "The meaning you want and the sentence pattern you need"
       - "Only the number of long words in the sentence"
       - "Whether the sentence sounds complicated enough"
     correctIndex: 0
     explanation: "Start from meaning and pattern; complexity is never the first goal."
-  - prompt: "Which edit fixes a common Advanced Passive Voice mistake?"
+  - prompt: "Which fix addresses a usual Advanced Passive Voice error?"
     options:
       - "The final report publish next Monday."
       - "The final report will be published next Monday."

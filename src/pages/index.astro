@@ -14,18 +14,15 @@ const homeKeywords =
   type="website"
 >
   <section class="section home-funnel" style="padding-top: var(--s-6);">
-    <div class="hero" style={`--hero-bg: url('/heroes/home.png');`}>
+    <div class="hero" style={`--hero-bg: url('/heroes/home.webp');`}>
       <div class="hero-content">
         <span class="pill">IELTS + CELPIP + PTE Core prep</span>
         <h1 class="ic-display">Pick your exam. Pick your support. Start now.</h1>
-        <p class="muted" style="max-width: 58ch;">
-          Use one clear path: choose IELTS, CELPIP, or PTE Core first, then choose the support option that fits your goal.
-        </p>
-
         <div class="cluster" style="margin-top: var(--s-2);">
-          <a class="btn btn-primary ic-btn" href="/celpip">Go to CELPIP Hub</a>
-          <a class="btn btn-ghost" href="/pte-core">Go to PTE Core Hub</a>
-          <a class="btn btn-ghost" href="/ielts">Go to IELTS Hub</a>
+          <a class="btn btn-primary ic-btn" href="/celpip">CELPIP</a>
+          <a class="btn btn-ghost" href="/pte-core">PTE Core</a>
+          <a class="btn btn-ghost" href="/ielts">IELTS</a>
+          <a class="btn btn-ghost" href="/lessons">Free lessons</a>
         </div>
       </div>
     </div>
@@ -33,7 +30,7 @@ const homeKeywords =
     <section class="surface home-step">
       <p class="home-step__label ic-eyebrow">Step 1</p>
       <h2 class="ic-display">Choose your exam</h2>
-      <p class="muted home-step__intro">Each exam hub includes all four skills: listening, reading, writing, and speaking.</p>
+      <p class="muted home-step__intro">Pick your exam. Each hub has free lessons, practice tools, and paid support in one place.</p>
 
       <div class="grid grid-3" style="gap: var(--s-4); margin-top: var(--s-3);">
         <a class="card home-option-card ic-card" href="/celpip" aria-label="Go to CELPIP Hub">
@@ -75,29 +72,29 @@ const homeKeywords =
 
     <section class="surface home-step">
       <p class="home-step__label ic-eyebrow">Step 3</p>
-      <h2 class="ic-display">Extra support if you need it</h2>
-      <p class="muted home-step__intro">Use private help, the lesson library, or the speaking guide when you want more than the core tools.</p>
+      <h2 class="ic-display">More options</h2>
+      <p class="muted home-step__intro">Free lessons, practice questions, private coaching, and a speaking guide.</p>
 
       <div class="grid grid-3" style="gap: var(--s-4); margin-top: var(--s-3);">
+        <a class="card home-option-card home-option-card--free ic-card" href="/lessons" aria-label="Browse Free Lessons">
+          <p class="home-option-card__kicker ic-eyebrow">Free</p>
+          <h3>Lessons Library</h3>
+          <p class="muted">Grammar, vocabulary, writing, speaking, listening, and reading lessons.</p>
+          <span class="home-option-card__cta">Browse Free Lessons</span>
+        </a>
+
+        <a class="card home-option-card home-option-card--free ic-card" href="/questions" aria-label="Practice Questions">
+          <p class="home-option-card__kicker ic-eyebrow">Free</p>
+          <h3>Practice Questions</h3>
+          <p class="muted">CELPIP email and survey writing tasks at CLB 6 to 10, with model answers.</p>
+          <span class="home-option-card__cta">Open Practice Questions</span>
+        </a>
+
         <a class="card home-option-card ic-card" href="/tutoring#book-private-class" aria-label="Book Private Class">
           <p class="home-option-card__kicker ic-eyebrow">1:1 support</p>
           <h3>Private Class</h3>
-          <p class="muted">For direct help in listening, reading, writing, or speaking when you want a personal plan.</p>
+          <p class="muted">Direct help for any skill. CA$30 per session.</p>
           <span class="home-option-card__cta">Book Private Class</span>
-        </a>
-
-        <a class="card home-option-card ic-card" href="/ebook" aria-label="CELPIP Speaking Guide">
-          <p class="home-option-card__kicker ic-eyebrow">Speaking Guide</p>
-          <h3>CELPIP Speaking Guide</h3>
-          <p class="muted">109 pages. All 8 CELPIP speaking tasks with scored samples, response frames, and a 4-week plan.</p>
-          <span class="home-option-card__cta">Get the speaking guide - CA$49.50</span>
-        </a>
-
-        <a class="card home-option-card home-option-card--free ic-card" href="/lessons" aria-label="Browse Free Lessons">
-          <p class="home-option-card__kicker ic-eyebrow">Free lessons</p>
-          <h3>Lessons Library</h3>
-          <p class="muted">Grammar, vocabulary, writing, speaking, listening, and reading lessons with search and filters.</p>
-          <span class="home-option-card__cta">Browse Free Lessons</span>
         </a>
       </div>
     </section>
