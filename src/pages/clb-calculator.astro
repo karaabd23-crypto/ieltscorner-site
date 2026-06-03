@@ -1,12 +1,38 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { buildBreadcrumbSchema } from "../lib/seo";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../lib/seo";
+
+// FAQ targets the exact questions people search ("what CLB is IELTS 7?").
+// FAQPage schema can earn featured snippets / People-Also-Ask placements.
+const faqs = [
+  {
+    question: "What CLB level is IELTS 7?",
+    answer:
+      "On the IRCC concordance for IELTS General Training, a band of 6.0 in a skill is CLB 7 for reading, while listening 6.0 is CLB 7. For writing and speaking, 6.0 is CLB 7. Use the calculator above to convert each of your four skills exactly, since the mapping differs by skill.",
+  },
+  {
+    question: "What CELPIP score do I need for CLB 9?",
+    answer:
+      "CELPIP uses the same number as the CLB level, so CLB 9 means a CELPIP score of 9 in that skill. Reaching CLB 9 in all four skills gives the maximum language points for Express Entry.",
+  },
+  {
+    question: "What CLB do I need for Canadian PR (Express Entry)?",
+    answer:
+      "Most Express Entry programs require a minimum of CLB 7 in all four skills. CLB 9 in all four skills adds roughly 42 CRS points over CLB 7, which can be decisive in the draws.",
+  },
+  {
+    question: "Is this CLB calculator accurate?",
+    answer:
+      "It uses the official IRCC concordance tables that map IELTS, CELPIP, and PTE Core scores to CLB levels. Always confirm against the current IRCC tables before submitting an application, as thresholds can change.",
+  },
+];
 
 const pageStructuredData = [
   buildBreadcrumbSchema(Astro.site, [
     { name: "Home", path: "/" },
     { name: "CLB Calculator", path: "/clb-calculator/" },
   ]),
+  buildFAQSchema(faqs),
 ];
 ---
 
@@ -103,10 +129,37 @@ const pageStructuredData = [
         <p>For Express Entry, the minimum CLB requirement for most programs is CLB 7 in all four skills. However, reaching CLB 9 significantly increases your Comprehensive Ranking System (CRS) score, which determines who receives an Invitation to Apply.</p>
         <p class="muted" style="margin-bottom: 0;">The difference between CLB 7 and CLB 9 in all four skills is approximately 42 CRS points -- equivalent to roughly one year of skilled Canadian work experience.</p>
       </div>
+
+      <section class="surface" style="padding: var(--s-5); margin-top: var(--s-5);">
+        <h2 class="ic-display" style="margin-top: 0; font-size: 1.2rem;">CLB conversion: common questions</h2>
+        {faqs.map((faq) => (
+          <details class="clb-faq-item">
+            <summary class="clb-faq-q">{faq.question}</summary>
+            <p class="clb-faq-a">{faq.answer}</p>
+          </details>
+        ))}
+      </section>
     </div>
   </section>
 
   <style>
+    .clb-faq-item {
+      border-top: 1px solid var(--border);
+      padding: var(--s-3) 0;
+    }
+    .clb-faq-item:first-of-type {
+      border-top: none;
+    }
+    .clb-faq-q {
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .clb-faq-a {
+      margin: var(--s-2) 0 0;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
     .clb-label {
       display: block;
       font-weight: 600;
