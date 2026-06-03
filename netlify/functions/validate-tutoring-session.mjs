@@ -18,6 +18,33 @@ const TUTORING_AMOUNT_CENTS = Number.parseInt(process.env.TUTORING_AMOUNT_CENTS 
 // Session validity period (24 hours in milliseconds)
 const SESSION_VALIDITY_PERIOD = 24 * 60 * 60 * 1000;
 
+// Review-request automation: when a customer buys this many sessions or more,
+// tag them in Kit so the scheduled review-request broadcast reaches them.
+const KIT_API_BASE = process.env.KIT_API_BASE || 'https://api.kit.com/v4';
+const KIT_API_KEY = process.env.KIT_API_KEY;
+const KIT_REVIEW_REQUEST_TAG_ID = process.env.KIT_REVIEW_REQUEST_TAG_ID || '20024389';
+const REVIEW_REQUEST_MIN_SESSIONS = Number.parseInt(process.env.REVIEW_REQUEST_MIN_SESSIONS || '10', 10);
+
+/**
+ * Tag a customer in Kit for a review request. Best-effort and non-blocking:
+ * any failure is logged and swallowed so it never affects the booking flow.
+ */
+async function tagForReviewRequest(email) {
+  if (!KIT_API_KEY || !email || !KIT_REVIEW_REQUEST_TAG_ID) return;
+  try {
+    await fetch(`${KIT_API_BASE}/tags/${KIT_REVIEW_REQUEST_TAG_ID}/subscribers`, {
+      method: 'POST',
+      headers: {
+        'X-Kit-Api-Key': KIT_API_KEY,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email_address: email }),
+    });
+  } catch (error) {
+    console.error('Kit review-request tag failed (non-blocking):', error?.message || error);
+  }
+}
+
 export async function handler(event, context) {
   // Only accept POST requests
   if (event.httpMethod !== 'POST') {
@@ -81,6 +108,12 @@ export async function handler(event, context) {
     }
 
     const sessionsPurchased = Math.max(1, Math.floor(amountTotal / TUTORING_AMOUNT_CENTS));
+
+    // Tag high-commitment customers (10+ sessions) for a review request.
+    const reviewCustomerEmail = session.customer_details?.email || null;
+    if (sessionsPurchased >= REVIEW_REQUEST_MIN_SESSIONS && reviewCustomerEmail) {
+      await tagForReviewRequest(reviewCustomerEmail);
+    }
 
     // Session is valid - return booking URL
     return {

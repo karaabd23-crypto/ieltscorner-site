@@ -1,0 +1,37 @@
+name: Kit Daily Prompt
+
+on:
+  schedule:
+    # Every day at 13:00 UTC (about 8–9am Eastern).
+    - cron: '0 13 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Run without sending (dry run)'
+        required: false
+        default: 'false'
+
+jobs:
+  send-daily-prompt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Send daily prompt
+        env:
+          KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
+          KIT_DAILY_PROMPT_TAG_ID: ${{ secrets.KIT_DAILY_PROMPT_TAG_ID }}
+          KIT_BROADCAST_SEND_DELAY_MINUTES: 5
+          SITE_URL: https://ieltscorner.ca
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            node scripts/send-daily-prompt.mjs --dry-run
+          else
+            node scripts/send-daily-prompt.mjs
+          fi

@@ -37,9 +37,12 @@ Priya M., Ahmed K., etc. — were removed on purpose.)
 - `story` is optional. With it, a full case-study page is generated. Without
   it, the review shows only in the grid.
 
-## Manual Kit task (platform, not code)
+## Review-request automation (built — see KIT_AUTOMATIONS.md)
 
-Build a Kit automation: trigger when a contact is tagged as having booked
-10+ lessons -> send the review-request email -> tag responders. Collect the
-review text + explicit consent, then append an entry here. The code side is
-ready; only the Kit automation and the paste/append step are manual.
+This is now automated. When a customer buys 10+ tutoring sessions they are
+tagged `review-request` in Kit, and a weekly scheduled broadcast asks them for
+a review (then tags them `review-requested` so they are not re-asked).
+
+The only manual step left is curation: when a real review comes in with
+consent, append an entry to `reviews.json` (or wire the response form to append
+it). Everything published here must still be real and consented.

@@ -1,0 +1,39 @@
+name: Kit Review Requests
+
+on:
+  schedule:
+    # Weekly on Mondays at 14:00 UTC. Sends the review-request email to anyone
+    # tagged `review-request` (applied when a customer buys 10+ tutoring
+    # sessions). See scripts/send-review-requests.mjs.
+    - cron: '0 14 * * 1'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Run without sending (dry run)'
+        required: false
+        default: 'false'
+
+jobs:
+  send-review-requests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Send review requests
+        env:
+          KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
+          KIT_REVIEW_REQUEST_TAG_ID: ${{ secrets.KIT_REVIEW_REQUEST_TAG_ID }}
+          KIT_BROADCAST_SEND_DELAY_MINUTES: 5
+          REVIEW_FORM_URL: https://ieltscorner.ca/contact/
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            node scripts/send-review-requests.mjs --dry-run
+          else
+            node scripts/send-review-requests.mjs
+          fi
