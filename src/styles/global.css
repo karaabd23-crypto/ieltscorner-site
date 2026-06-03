@@ -2220,13 +2220,56 @@ ul li strong, ol li strong {
   .comparison-grid {
     grid-template-columns: 1fr;
   }
-  
-  table {
-    font-size: 13px;
+
+  /* Lesson markdown tables (e.g. Common Mistakes) stack into row-cards on
+     mobile so text never cuts off or scrolls sideways. Scoped to lesson bodies
+     and excludes pattern tables, which have their own labelled stacking. */
+  .lesson-content table:not(.pattern__table),
+  .lesson-body table:not(.pattern__table) {
+    font-size: 14px;
+    border: none;
+    box-shadow: none;
+    background: none;
   }
-  
-  table td, table th {
-    padding: var(--s-3) !important;
+
+  .lesson-content table:not(.pattern__table) thead,
+  .lesson-body table:not(.pattern__table) thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .lesson-content table:not(.pattern__table) tr,
+  .lesson-body table:not(.pattern__table) tr {
+    display: block;
+    margin-bottom: 12px;
+    border: 1px solid rgba(20, 20, 20, 0.12);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+
+  .lesson-content table:not(.pattern__table) td,
+  .lesson-body table:not(.pattern__table) td {
+    display: block;
+    width: auto;
+    padding: 10px 14px !important;
+    border: none;
+    border-bottom: 1px solid rgba(20, 20, 20, 0.08);
+  }
+
+  .lesson-content table:not(.pattern__table) td:last-child,
+  .lesson-body table:not(.pattern__table) td:last-child {
+    border-bottom: none;
+  }
+
+  /* The first cell of each comparison row reads as the row's heading. */
+  .lesson-content table:not(.pattern__table) td:first-child,
+  .lesson-body table:not(.pattern__table) td:first-child {
+    font-weight: 700;
+    background: rgba(20, 20, 20, 0.04);
   }
 }
 
@@ -3213,10 +3256,14 @@ hr {
   border: 1px solid #d7beab;
   background: #fff;
   color: #50321f;
-  border-radius: 999px;
-  padding: 10px 12px;
+  /* Chips hold sentence fragments, so use a rounded rectangle (not a pill)
+     that reads cleanly when the text wraps to multiple lines. */
+  border-radius: 10px;
+  padding: 8px 12px;
   font: inherit;
-  font-weight: 700;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: left;
   cursor: pointer;
 }
 
