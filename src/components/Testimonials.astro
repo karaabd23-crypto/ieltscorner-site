@@ -1,83 +1,62 @@
 ---
+// Real, consented student reviews only. Source: src/data/reviews.json
+// (starts empty; see src/data/reviews.README.md). No fabricated defaults.
+import reviewsData from "../data/reviews.json";
+
+interface Review {
+  slug?: string;
+  name: string;
+  exam?: string;
+  result?: string;
+  skillFocus?: string;
+  quote: string;
+  story?: string;
+  consent?: boolean;
+  date?: string;
+}
+
 interface Props {
-  testimonials?: Array<{
-    name: string;
-    title: string;
-    score?: string;
-    text: string;
-    image?: string;
-  }>;
   columns?: 1 | 2 | 3;
 }
 
-const defaultTestimonials = [
-  {
-    name: "Priya M.",
-    title: "Band 7.5 in IELTS",
-    score: "Improved from Band 6.5 to 7.5",
-    text: "The lessons were clear enough that I finally understood conditionals after years of confusion. The tutor used examples that actually matched the exam.",
-    image: "/testimonials/priya.jpg",
-  },
-  {
-    name: "Ahmed K.",
-    title: "CLB 9 in CELPIP",
-    score: "Improved from CLB 8 to 9",
-    text: "The speaking feedback helped me slow down, stress the right words, and organize my answers better. That made a real difference in the test.",
-    image: "/testimonials/ahmed.jpg",
-  },
-  {
-    name: "Lisa C.",
-    title: "Band 7 in IELTS (Writing 7.5)",
-    score: "Band 7 on the first attempt",
-    text: "The essay correction feedback was detailed and specific. I knew exactly what to fix instead of guessing.",
-    image: "/testimonials/lisa.jpg",
-  },
-  {
-    name: "Marco V.",
-    title: "Band 6.5 in IELTS",
-    score: "Improved from Band 5.5 to 6.5",
-    text: "Private tutoring was worth it because every mistake was explained clearly, and I always left class knowing what to practice next.",
-    image: "/testimonials/marco.jpg",
-  },
-  {
-    name: "Sarah T.",
-    title: "Band 7.5 in IELTS (Reading 8)",
-    score: "Strong vocabulary improvement",
-    text: "The vocabulary lessons taught me collocations I had never learned in school, and some of them appeared in my actual test.",
-    image: "/testimonials/sarah.jpg",
-  },
-  {
-    name: "Dev S.",
-    title: "CLB 9 in CELPIP",
-    score: "Target score achieved",
-    text: "The lessons felt closely connected to what CELPIP really tests. I studied the site and saw the same patterns on exam day.",
-    image: "/testimonials/dev.jpg",
-  },
-];
+const { columns = 3 } = Astro.props;
 
-const {
-  testimonials = defaultTestimonials,
-  columns = 3,
-} = Astro.props;
+// Only render reviews with explicit consent and a quote.
+const reviews = (reviewsData as Review[]).filter(
+  (r) => r && r.consent === true && r.quote
+);
 ---
 
-<div class="testimonials-grid" style={`grid-template-columns: repeat(${columns}, 1fr);`}>
-  {testimonials.map((testimonial) => (
-    <article class="testimonial-card">
-      <div class="testimonial-card__top">
-        <span class="testimonial-card__rating">5/5</span>
-      </div>
+{reviews.length === 0 ? (
+  <p class="testimonials-empty muted">
+    Verified student reviews will appear here. We publish reviews only from
+    real students who have completed lessons with us.
+  </p>
+) : (
+  <div class="testimonials-grid" style={`grid-template-columns: repeat(${columns}, 1fr);`}>
+    {reviews.map((review) => {
+      const title = [review.exam, review.result].filter(Boolean).join(" • ");
+      return (
+        <article class="testimonial-card">
+          <div class="testimonial-card__top">
+            <span class="testimonial-card__rating">5/5</span>
+          </div>
 
-      <p class="testimonial-card__text">"{testimonial.text}"</p>
+          <p class="testimonial-card__text">"{review.quote}"</p>
 
-      <div class="testimonial-card__meta">
-        <p class="testimonial-card__name">{testimonial.name}</p>
-        <p class="testimonial-card__title">{testimonial.title}</p>
-        {testimonial.score && <p class="testimonial-card__score">{testimonial.score}</p>}
-      </div>
-    </article>
-  ))}
-</div>
+          <div class="testimonial-card__meta">
+            <p class="testimonial-card__name">{review.name}</p>
+            {title && <p class="testimonial-card__title">{title}</p>}
+            {review.skillFocus && <p class="testimonial-card__score">{review.skillFocus} focus</p>}
+            {review.story && review.slug && (
+              <a class="testimonial-card__link" href={`/success-stories/${review.slug}/`}>Read the full story</a>
+            )}
+          </div>
+        </article>
+      );
+    })}
+  </div>
+)}
 
 <style>
   .testimonials-grid {
@@ -138,6 +117,22 @@ const {
     font-size: 0.85rem;
     color: var(--accent);
     font-weight: 600;
+  }
+
+  .testimonial-card__link {
+    display: inline-block;
+    margin-top: var(--s-2);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .testimonials-empty {
+    padding: var(--s-4);
+    border: 1px dashed var(--border-strong);
+    border-radius: 14px;
+    text-align: center;
+    max-width: 60ch;
   }
 
   @media (max-width: 768px) {

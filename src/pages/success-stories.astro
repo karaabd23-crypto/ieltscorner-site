@@ -1,53 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Testimonials from "../components/Testimonials.astro";
-
-const studyPaths = [
-  {
-    title: "A graduate-school applicant who needed stronger writing structure",
-    startingPoint: "Ideas were good, but the writing was not organized well enough for a stable higher score.",
-    actions: [
-      "Reviewed the free writing and grammar lessons first",
-      "Used tutoring to fix paragraph flow and sentence control",
-      "Submitted a few practice essays for direct feedback",
-    ],
-    outcome: "The student became much more consistent and stopped losing easy marks for organization.",
-    label: "Writing focus",
-  },
-  {
-    title: "A CELPIP student who needed clearer speaking",
-    startingPoint: "The main issue was not lack of ideas, it was pace, clarity, and how the answer was organized under time pressure.",
-    actions: [
-      "Practised task-by-task speaking structure",
-      "Did guided speaking sessions with feedback on pace and emphasis",
-      "Used mock answers to build more natural timing",
-    ],
-    outcome: "The student sounded calmer, clearer, and more controlled in the speaking tasks.",
-    label: "Speaking focus",
-  },
-  {
-    title: "A student whose writing score was lower than every other skill",
-    startingPoint: "Reading and listening were already strong, but writing was holding the overall result down.",
-    actions: [
-      "Used task-specific writing lessons to stop guessing what the examiner wanted",
-      "Got direct feedback on repeated grammar and task-response mistakes",
-      "Rewrote the same tasks after feedback instead of always starting fresh",
-    ],
-    outcome: "The score gap between writing and the other skills became much smaller.",
-    label: "Score gap",
-  },
-  {
-    title: "A self-study learner who needed a clear routine",
-    startingPoint: "The student did not need more resources. The student needed a better order for using them.",
-    actions: [
-      "Studied one lesson at a time instead of jumping between topics",
-      "Used shorter daily sessions more consistently",
-      "Saved paid support for the exact areas that still felt stuck",
-    ],
-    outcome: "Progress became steadier because the study plan finally made sense.",
-    label: "Self-study",
-  },
-];
 ---
 
 <Layout
@@ -102,40 +55,6 @@ const studyPaths = [
 
     <div style="height: var(--s-6);"></div>
 
-    <section>
-      <h2 class="ic-display">Common study paths that led to progress</h2>
-      <p class="muted" style="max-width: 72ch;">
-        The examples below are simplified composites based on repeated student patterns.
-        Personal details are reduced so the focus stays on the study choices and what changed.
-      </p>
-
-      <div class="stack" style="gap: var(--s-4); margin-top: var(--s-4);">
-        {studyPaths.map((path) => (
-          <article class="surface study-path-card">
-            <div class="study-path-card__header">
-              <span class="study-path-card__tag">{path.label}</span>
-              <h3 style="margin: 0;">{path.title}</h3>
-            </div>
-
-            <p><strong>Starting point:</strong> {path.startingPoint}</p>
-
-            <div>
-              <p style="margin-bottom: var(--s-1);"><strong>What helped:</strong></p>
-              <ul style="margin: 0; padding-left: var(--s-3);">
-                {path.actions.map((action) => (
-                  <li>{action}</li>
-                ))}
-              </ul>
-            </div>
-
-            <p style="margin-bottom: 0;"><strong>What changed:</strong> {path.outcome}</p>
-          </article>
-        ))}
-      </div>
-    </section>
-
-    <div style="height: var(--s-6);"></div>
-
     <div class="surface success-cta">
       <h2 style="margin-top: 0;">Choose the next step that matches your real problem</h2>
       <p style="max-width: 72ch;">
@@ -173,31 +92,6 @@ const studyPaths = [
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-  }
-
-  .study-path-card {
-    padding: var(--s-4);
-    border-radius: 16px;
-  }
-
-  .study-path-card__header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: var(--s-2);
-    margin-bottom: var(--s-2);
-  }
-
-  .study-path-card__tag {
-    display: inline-block;
-    padding: 0.25rem 0.6rem;
-    border-radius: 999px;
-    background: color-mix(in srgb, var(--band) 12%, white 88%);
-    color: var(--band);
-    font-size: 0.8rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
   }
 
   .success-cta {

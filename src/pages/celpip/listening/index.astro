@@ -1,6 +1,7 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import SkillFreeLessons from "../../../components/SkillFreeLessons.astro";
+import SkillQuickFacts from "../../../components/SkillQuickFacts.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import SkillSubNav from "../../../components/SkillSubNav.astro";
 import { buildBreadcrumbSchema } from "../../../lib/seo";
@@ -42,6 +43,21 @@ const pageStructuredData = [
       </div>
     </div>
   </section>
+
+  <SkillQuickFacts
+    heading="CELPIP Listening at a glance"
+    facts={[
+      { value: "6", label: "listening parts" },
+      { value: "~47–55 min", label: "total test time" },
+      { value: "38", label: "questions" },
+      { value: "CLB 9", label: "common target" },
+    ]}
+    focusPoints={[
+      "Most lost marks come from answer traps, not from missing the audio entirely.",
+      "Predict the answer type before each clip so you know what to listen for.",
+      "Build a fast note-taking shorthand so you capture detail without falling behind.",
+    ]}
+  />
 
   <SkillFreeLessons exam="CELPIP" skill="listening" />
 
