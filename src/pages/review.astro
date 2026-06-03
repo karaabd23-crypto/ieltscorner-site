@@ -1,0 +1,156 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { buildBreadcrumbSchema } from "../lib/seo";
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Leave a Review", path: "/review/" },
+  ]),
+];
+---
+
+<Layout
+  title="Leave a Review | IELTS Corner"
+  description="Share your IELTS, CELPIP, or PTE Core experience with IELTS Corner. Your review helps other learners decide and may be published with your permission."
+  noindex={true}
+  structuredData={pageStructuredData}
+>
+  <section class="section" style="padding-top: var(--s-6);">
+    <div style="max-width: 640px; margin: 0 auto;">
+      <span class="pill ic-eyebrow">Student reviews</span>
+      <h1 class="ic-display" style="margin-top: var(--s-2);">Share your experience</h1>
+      <p class="muted">
+        Thank you for studying with IELTS Corner. A short, honest review helps other
+        learners decide and takes about two minutes. With your permission we may publish
+        it on the site (first name and last initial only).
+      </p>
+
+      {/* Netlify Forms: submissions appear in the Netlify dashboard + email.
+          Approved reviews get pasted into src/data/reviews.json. */}
+      <form
+        name="review"
+        method="POST"
+        netlify
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        action="/review/thanks/"
+        class="stack review-form"
+      >
+        <input type="hidden" name="form-name" value="review" />
+        <p style="display: none;">
+          <label>Do not fill this out: <input name="bot-field" /></label>
+        </p>
+
+        <div>
+          <label for="name" class="review-label">Your name (first name + last initial is fine)</label>
+          <input type="text" id="name" name="name" required class="review-input" placeholder="e.g. Maria G." />
+        </div>
+
+        <div>
+          <label for="email" class="review-label">Email (not published, in case we need to confirm)</label>
+          <input type="email" id="email" name="email" required class="review-input" placeholder="your@email.com" />
+        </div>
+
+        <div class="review-row">
+          <div>
+            <label for="exam" class="review-label">Which exam?</label>
+            <select id="exam" name="exam" class="review-input">
+              <option value="">Choose one</option>
+              <option value="CELPIP">CELPIP</option>
+              <option value="IELTS">IELTS</option>
+              <option value="PTE Core">PTE Core</option>
+            </select>
+          </div>
+          <div>
+            <label for="skillFocus" class="review-label">Main skill you worked on</label>
+            <select id="skillFocus" name="skillFocus" class="review-input">
+              <option value="">Choose one</option>
+              <option value="Writing">Writing</option>
+              <option value="Speaking">Speaking</option>
+              <option value="Reading">Reading</option>
+              <option value="Listening">Listening</option>
+              <option value="Overall">Overall</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="result" class="review-label">Your result (optional, e.g. "CLB 7 to CLB 9" or "Band 7")</label>
+          <input type="text" id="result" name="result" class="review-input" placeholder="CLB 7 to CLB 9" />
+        </div>
+
+        <div>
+          <label for="quote" class="review-label">Your review</label>
+          <textarea
+            id="quote"
+            name="quote"
+            rows="5"
+            required
+            class="review-input review-textarea"
+            placeholder="Where did you start, what helped, and where did you end up?"
+          ></textarea>
+        </div>
+
+        <fieldset class="review-consent">
+          <legend class="review-label">Permission to publish</legend>
+          <label class="review-checkbox">
+            <input type="checkbox" name="consent" value="yes" required />
+            <span>Yes, IELTS Corner may publish my review with my first name and last initial.</span>
+          </label>
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary ic-btn">Submit review</button>
+      </form>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .review-form { gap: var(--s-3); margin-top: var(--s-4); }
+
+  .review-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--s-1);
+    font-size: 0.95rem;
+  }
+
+  .review-input {
+    width: 100%;
+    padding: 0.7rem 0.85rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    background: var(--surface);
+    color: var(--text);
+  }
+
+  .review-textarea { resize: vertical; }
+
+  .review-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-3);
+  }
+
+  .review-consent {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: var(--s-3);
+  }
+
+  .review-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--s-2);
+    font-size: 0.92rem;
+    font-weight: 400;
+  }
+
+  .review-checkbox input { margin-top: 4px; }
+
+  @media (max-width: 520px) {
+    .review-row { grid-template-columns: 1fr; }
+  }
+</style>

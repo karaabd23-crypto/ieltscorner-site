@@ -20,7 +20,7 @@ const KIT_API_BASE = process.env.KIT_API_BASE || 'https://api.kit.com/v4';
 const REVIEW_TAG_ID = process.env.KIT_REVIEW_REQUEST_TAG_ID || '20024389';
 // Subscribers already emailed are moved here so they are not re-asked weekly.
 const REVIEW_REQUESTED_TAG_ID = process.env.KIT_REVIEW_REQUESTED_TAG_ID || '20024405';
-const REVIEW_FORM_URL = process.env.REVIEW_FORM_URL || 'https://ieltscorner.ca/contact/';
+const REVIEW_FORM_URL = process.env.REVIEW_FORM_URL || 'https://ieltscorner.ca/review/';
 const SEND_DELAY_MINUTES = Number.parseInt(process.env.KIT_BROADCAST_SEND_DELAY_MINUTES || '5', 10);
 const DRY_RUN = process.argv.includes('--dry-run');
 

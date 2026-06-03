@@ -30,7 +30,7 @@ jobs:
           KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
           KIT_REVIEW_REQUEST_TAG_ID: ${{ secrets.KIT_REVIEW_REQUEST_TAG_ID }}
           KIT_BROADCAST_SEND_DELAY_MINUTES: 5
-          REVIEW_FORM_URL: https://ieltscorner.ca/contact/
+          REVIEW_FORM_URL: https://ieltscorner.ca/review/
         run: |
           if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
             node scripts/send-review-requests.mjs --dry-run
