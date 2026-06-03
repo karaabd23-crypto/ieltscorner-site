@@ -2,6 +2,7 @@
 import Layout from "../../../layouts/Layout.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import SkillSubNav from "../../../components/SkillSubNav.astro";
+import SkillQuickFacts from "../../../components/SkillQuickFacts.astro";
 import ContextualNextStepPromo from "../../../components/ContextualNextStepPromo.astro";
 import { buildBreadcrumbSchema } from "../../../lib/seo";
 import {
@@ -48,6 +49,21 @@ const pageStructuredData = [
       </div>
     </div>
   </section>
+
+  <SkillQuickFacts
+    heading="CELPIP Reading at a glance"
+    facts={[
+      { value: "4", label: "reading parts" },
+      { value: "~55–60 min", label: "total test time" },
+      { value: "38", label: "questions" },
+      { value: "CLB 9", label: "common target" },
+    ]}
+    focusPoints={[
+      "Match each answer to proof in the text — do not pick by keyword overlap alone.",
+      "Watch the clock per part; the diagram and information parts eat the most time.",
+      "Most errors are distractor traps, so eliminate before you commit to an answer.",
+    ]}
+  />
 
   <section class="section-sm">
     <div class="surface reading-catalog">

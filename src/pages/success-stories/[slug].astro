@@ -1,0 +1,78 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { buildBreadcrumbSchema } from "../../lib/seo";
+import reviewsData from "../../data/reviews.json";
+
+interface Review {
+  slug?: string;
+  name: string;
+  exam?: string;
+  result?: string;
+  skillFocus?: string;
+  quote: string;
+  story?: string;
+  consent?: boolean;
+  date?: string;
+}
+
+// Generate a case-study page only for real, consented reviews that include a
+// full story and a slug. With reviews.json empty, this produces zero pages.
+export async function getStaticPaths() {
+  const reviews = (reviewsData as Review[]).filter(
+    (r) => r && r.consent === true && r.story && r.slug
+  );
+  return reviews.map((review) => ({
+    params: { slug: review.slug },
+    props: { review },
+  }));
+}
+
+const { review } = Astro.props as { review: Review };
+const title = [review.exam, review.result].filter(Boolean).join(" • ");
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "Success Stories", path: "/success-stories/" },
+    { name: review.name, path: `/success-stories/${review.slug}/` },
+  ]),
+];
+---
+
+<Layout
+  title={`${review.name}: ${review.result || "student story"} | IELTS Corner`}
+  description={review.quote.slice(0, 155)}
+  type="article"
+  structuredData={pageStructuredData}
+>
+  <section class="section" style="padding-top: var(--s-6);">
+    <div style="max-width: 720px; margin: 0 auto;">
+      <a class="btn btn-ghost" href="/success-stories/">&larr; All student stories</a>
+
+      <div class="cluster" style="gap: var(--s-2); margin: var(--s-3) 0;">
+        {review.exam && <span class="pill">{review.exam}</span>}
+        {review.result && <span class="pill">{review.result}</span>}
+        {review.skillFocus && <span class="pill">{review.skillFocus} focus</span>}
+      </div>
+
+      <h1 class="ic-display" style="margin-top: 0;">{review.name}{title ? `: ${title}` : ""}</h1>
+
+      <blockquote class="surface" style="border-left: 3px solid var(--accent); padding: var(--s-3) var(--s-4); margin: var(--s-4) 0; font-style: italic;">
+        "{review.quote}"
+      </blockquote>
+
+      {review.story && (
+        <div class="prose" set:html={review.story.replace(/\n/g, "<br>")} />
+      )}
+
+      <div class="surface success-cta" style="margin-top: var(--s-6); text-align: center; padding: var(--s-5);">
+        <h2 style="margin-top: 0;">Want a result like this?</h2>
+        <p>Start free, then add the support that fits your weakest skill.</p>
+        <div class="cluster" style="justify-content: center; margin-top: var(--s-2);">
+          <a class="btn btn-primary" href="/lessons">Start free lessons</a>
+          <a class="btn" href="/tutoring">See tutoring</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

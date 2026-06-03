@@ -49,12 +49,12 @@ const faqs = [
         <span class="pill ic-eyebrow">CELPIP writing feedback</span>
         <h1 class="ic-display">See your CELPIP writing score in minutes</h1>
         <p class="muted" style="max-width: 60ch;">
-          Write a timed email, get an estimated CLB score, see exactly what is lowering it, and compare your writing to saved sample responses inside the task.
-          The first task is always free.
+          Write a timed email, get an estimated CLB score, and see exactly what is lowering it. The first task is always free.
         </p>
-        <p class="muted" style="max-width: 60ch; margin-top: var(--s-2);">
-          Sample essays are bundled into the same premium writing workflow, and the free question bank stays open if you want lower-pressure prompt practice first.
-        </p>
+        <div class="cluster" style="margin-top: var(--s-3);">
+          <a class="btn btn-primary ic-btn" href="#celpip-writing-lab">Score my writing free</a>
+          <a class="btn btn-ghost" href="/questions">Browse free question bank</a>
+        </div>
       </div>
     </div>
   </section>
@@ -99,7 +99,7 @@ const faqs = [
     </div>
   </section>
 
-  <section class="section-sm" style="padding-top: 0;">
+  <section class="section-sm" style="padding-top: 0;" id="celpip-writing-lab">
     <div class="container">
       <CelpipPracticeHub />
     </div>

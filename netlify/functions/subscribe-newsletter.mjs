@@ -618,6 +618,7 @@ async function syncKitSubscriber({
   referrer,
   audience,
   requestedFormId,
+  dailyPrompt = false,
 }) {
   if (!KIT_API_KEY) {
     return { enabled: false };
@@ -637,6 +638,11 @@ async function syncKitSubscriber({
   const fields = {};
   if (source) {
     fields.source = source;
+  }
+  // Task 6: store the daily-prompt preference as a Kit custom field so a Kit
+  // automation (manual, platform-side) can segment daily-prompt subscribers.
+  if (dailyPrompt) {
+    fields.daily_prompt = 'yes';
   }
 
   // Keep subscriber creation neutral; confirmation flow should be governed by the form itself.
@@ -735,6 +741,7 @@ export async function handler(event) {
     );
     const source = String(body?.source || '').trim();
     const audience = String(body?.audience || '').trim();
+    const dailyPrompt = body?.dailyPrompt === true || body?.dailyPrompt === 'true';
     const requestedFormId = body?.formId ?? body?.form_id;
     const botField = safeString(
       body?.['bot-field']
@@ -835,6 +842,7 @@ export async function handler(event) {
       referrer,
       audience,
       requestedFormId,
+      dailyPrompt,
     });
 
     const duplicate = Boolean(kitResult.duplicate);

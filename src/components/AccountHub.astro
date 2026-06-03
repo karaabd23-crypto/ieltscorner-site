@@ -48,6 +48,32 @@ const { initialTab = 'overview' } = Astro.props;
         </div>
       </div>
 
+      {/* Task 4: study dashboard snapshot, computed client-side from reading attempts. */}
+      <div class="account-dashboard" id="account-dashboard">
+        <article class="account-dash-card account-dash-card--primary">
+          <p class="account-dash-card__label">Continue where you left off</p>
+          <strong id="dash-continue-title">Free CELPIP Reading Test</strong>
+          <p class="muted" id="dash-continue-copy">Pick up your most recent practice.</p>
+          <a class="btn btn-primary ic-btn" id="dash-continue-link" href="/celpip/reading/free-test">Resume practice</a>
+        </article>
+        <article class="account-dash-card">
+          <p class="account-dash-card__label">Last score</p>
+          <strong id="dash-last-score">—</strong>
+          <p class="muted" id="dash-last-score-copy">No attempts yet.</p>
+        </article>
+        <article class="account-dash-card">
+          <p class="account-dash-card__label">Practice streak</p>
+          <strong id="dash-streak">0 days</strong>
+          <p class="muted" id="dash-streak-copy">Practice on consecutive days to build a streak.</p>
+        </article>
+        <article class="account-dash-card">
+          <p class="account-dash-card__label">Next recommended lesson</p>
+          <strong id="dash-next-lesson">CELPIP Reading strategy</strong>
+          <p class="muted">Based on your recent practice.</p>
+          <a class="btn" id="dash-next-lesson-link" href="/celpip/reading">Open lesson</a>
+        </article>
+      </div>
+
       <div class="account-grid">
         <article class="account-card">
           <p class="account-card__label">Reading access</p>
@@ -372,6 +398,70 @@ const { initialTab = 'overview' } = Astro.props;
       });
     };
 
+    // Task 4: compute a study snapshot from the reading attempts already loaded.
+    const computeStreak = (attempts) => {
+      const days = new Set();
+      attempts.forEach((a) => {
+        const iso = a.submittedAt || a.updatedAt;
+        if (!iso) return;
+        const d = new Date(iso);
+        if (!Number.isNaN(d.getTime())) days.add(d.toISOString().slice(0, 10));
+      });
+      if (!days.size) return 0;
+      let streak = 0;
+      const cursor = new Date();
+      // Allow today or yesterday to start the streak (timezone slack).
+      const todayKey = cursor.toISOString().slice(0, 10);
+      const yesterday = new Date(cursor.getTime() - 86400000).toISOString().slice(0, 10);
+      if (!days.has(todayKey) && !days.has(yesterday)) return 0;
+      if (!days.has(todayKey)) cursor.setTime(cursor.getTime() - 86400000);
+      while (days.has(cursor.toISOString().slice(0, 10))) {
+        streak += 1;
+        cursor.setTime(cursor.getTime() - 86400000);
+      }
+      return streak;
+    };
+
+    const renderDashboard = () => {
+      const dash = document.getElementById('account-dashboard');
+      if (!(dash instanceof HTMLElement)) return;
+      const attempts = Array.isArray(state.attempts) ? state.attempts : [];
+      const latest = state.latestAttempt || attempts[0] || null;
+      const set = (id, text) => {
+        const el = document.getElementById(id);
+        if (el instanceof HTMLElement && typeof text === 'string') el.textContent = text;
+      };
+
+      // Continue card
+      if (latest) {
+        set('dash-continue-copy', `You last practiced CELPIP Reading${latest.level ? ` at CLB ${latest.level.level}` : ''}.`);
+      }
+
+      // Last score
+      if (latest) {
+        set('dash-last-score', `${latest.correct}/${latest.total}`);
+        set('dash-last-score-copy', latest.level ? `Estimated CLB ${latest.level.level}` : 'Most recent reading attempt');
+      }
+
+      // Streak
+      const streak = computeStreak(attempts);
+      set('dash-streak', `${streak} day${streak === 1 ? '' : 's'}`);
+      if (streak > 0) set('dash-streak-copy', 'Keep it going. Practice again today to extend it.');
+
+      // Next recommended lesson, lightly tailored to the last score
+      if (latest && latest.total) {
+        const ratio = latest.correct / latest.total;
+        const nextLink = document.getElementById('dash-next-lesson-link');
+        if (ratio < 0.6) {
+          set('dash-next-lesson', 'CELPIP Reading: fix the timing traps');
+          if (nextLink instanceof HTMLAnchorElement) nextLink.href = '/celpip/reading/clb-6-to-8';
+        } else {
+          set('dash-next-lesson', 'CELPIP Reading: push toward CLB 9');
+          if (nextLink instanceof HTMLAnchorElement) nextLink.href = '/celpip/clb-9-strategy';
+        }
+      }
+    };
+
     const renderOverview = () => {
       const setInputValue = (name, value) => {
         if (!(profileForm instanceof HTMLFormElement)) return;
@@ -458,6 +548,7 @@ const { initialTab = 'overview' } = Astro.props;
       if (!authenticated) return;
 
       renderOverview();
+      renderDashboard();
       renderEmails();
       renderAttemptHistory();
     };
@@ -695,6 +786,63 @@ const { initialTab = 'overview' } = Astro.props;
     border-color: rgba(217, 72, 72, 0.36);
     background: rgba(217, 72, 72, 0.08);
     color: #8f3434;
+  }
+
+  /* Task 4: study dashboard snapshot */
+  .account-dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .account-dash-card {
+    border: 1px solid rgba(20, 22, 23, 0.1);
+    border-radius: 16px;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .account-dash-card--primary {
+    background: color-mix(in srgb, var(--accent) 8%, #fff);
+    border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+  }
+
+  .account-dash-card__label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .account-dash-card strong {
+    font-size: 1.15rem;
+    line-height: 1.2;
+  }
+
+  .account-dash-card .btn {
+    margin-top: auto;
+    align-self: flex-start;
+  }
+
+  @media (max-width: 860px) {
+    .account-dashboard {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 520px) {
+    .account-dashboard {
+      grid-template-columns: 1fr;
+    }
+    .account-dash-card .btn {
+      width: 100%;
+      text-align: center;
+    }
   }
 
   .account-grid {

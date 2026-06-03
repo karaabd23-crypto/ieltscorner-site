@@ -60,10 +60,11 @@ const supportCards = [
         <span class="pte-core-kicker ic-eyebrow">PTE Core hub</span>
         <h1 class="ic-display">Choose your PTE Core skill, then choose your practice path</h1>
         <p>
-          Start with Listening, Reading, Writing, or Speaking. Then open question-type guides or simulators from one place.
+          Start free with the 19 question-type guides, then move into the simulator when you want exam-timed practice.
         </p>
+        {/* Task 1: lead with the free hooking tool (question-type guides); simulator paths follow as secondary. */}
         <div class="pte-core-hero__actions">
-          <a class="btn btn-primary ic-btn" href={PTE_CORE_ROUTE_MAP.questionTypes}>Question Types</a>
+          <a class="btn btn-primary ic-btn" href={PTE_CORE_ROUTE_MAP.questionTypes}>Start free question types</a>
           <a class="btn btn-ghost" href={PTE_CORE_ROUTE_MAP.simulator}>Simulator</a>
           <a class="btn btn-ghost" href={PTE_CORE_ROUTE_MAP.simulatorPractice}>Practice Mode</a>
         </div>

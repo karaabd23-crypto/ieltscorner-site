@@ -1,6 +1,7 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import SkillFreeLessons from "../../../components/SkillFreeLessons.astro";
+import SkillQuickFacts from "../../../components/SkillQuickFacts.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import SkillSubNav from "../../../components/SkillSubNav.astro";
 import { buildBreadcrumbSchema } from "../../../lib/seo";
@@ -41,6 +42,21 @@ const pageStructuredData = [
       </div>
     </div>
   </section>
+
+  <SkillQuickFacts
+    heading="CELPIP Speaking at a glance"
+    facts={[
+      { value: "8", label: "speaking tasks" },
+      { value: "~20 min", label: "total test time" },
+      { value: "30–90s", label: "to answer each task" },
+      { value: "CLB 9", label: "common target" },
+    ]}
+    focusPoints={[
+      "Tasks 7 and 8 (opinion and difficult situation) carry the most weight, so practice them first.",
+      "You score higher for clear organization and natural pace than for rare vocabulary.",
+      "Use the short prep time to plan a position and one reason before you start speaking.",
+    ]}
+  />
 
   <SkillFreeLessons exam="CELPIP" skill="speaking" />
 

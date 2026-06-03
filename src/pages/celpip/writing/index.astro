@@ -2,6 +2,7 @@
 import Layout from "../../../layouts/Layout.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import SkillSubNav from "../../../components/SkillSubNav.astro";
+import SkillQuickFacts from "../../../components/SkillQuickFacts.astro";
 import FeaturedToolsSection from "../../../components/FeaturedToolsSection.astro";
 import { celpipWritingFeaturedToolCards } from "../../../lib/promotionTools";
 import { buildBreadcrumbSchema } from "../../../lib/seo";
@@ -119,6 +120,21 @@ const pageStructuredData = [
       </div>
     </div>
   </section>
+
+  <SkillQuickFacts
+    heading="CELPIP Writing at a glance"
+    facts={[
+      { value: "2", label: "writing tasks" },
+      { value: "~53–60 min", label: "total test time" },
+      { value: "150–200", label: "words per task" },
+      { value: "CLB 9", label: "common target" },
+    ]}
+    focusPoints={[
+      "Task 1 is an email; Task 2 is a survey response. Each needs a different tone.",
+      "Cover every bullet in the prompt fully — partial coverage caps your score.",
+      "Plan for two minutes, write, then leave time to fix grammar and word choice.",
+    ]}
+  />
 
   <section class="section-sm">
     <div class="surface writing-map">
