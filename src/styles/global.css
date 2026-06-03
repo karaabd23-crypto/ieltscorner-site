@@ -1522,33 +1522,77 @@ textarea {
 }
 
 .pattern__table-wrap {
-  overflow-x: auto;
-  border-radius: 16px;
+  border-radius: 12px;
   border: 1px solid rgba(20, 20, 20, 0.10);
-  background: rgba(255, 255, 255, 0.55);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  background: var(--surface);
+  overflow: hidden;
 }
 
 .pattern__table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 720px;
+  /* No min-width: the table must never force horizontal scrolling. */
 }
 
 .pattern__table th,
 .pattern__table td {
-  padding: 12px 12px;
+  padding: 9px 12px;
   vertical-align: top;
   border-bottom: 1px solid rgba(20, 20, 20, 0.08);
 }
 
-.pattern__table th {
+/* Readable header: light text on the dark thead from the global table rule. */
+.pattern__table thead th {
   text-align: left;
-  font-size: 13px;
-  letter-spacing: 0.03em;
+  font-size: 12px;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: rgba(20, 20, 20, 0.70);
-  background: rgba(20, 20, 20, 0.03);
+  color: #fff;
+  background: transparent;
+}
+
+/* Mobile: stack each row into a labelled card so nothing scrolls sideways. */
+@media (max-width: 640px) {
+  .pattern__table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .pattern__table,
+  .pattern__table tbody,
+  .pattern__table tr,
+  .pattern__table td {
+    display: block;
+    width: 100%;
+  }
+
+  .pattern__table tr {
+    border-bottom: 1px solid rgba(20, 20, 20, 0.12);
+    padding: 6px 0;
+  }
+
+  .pattern__table tr:last-child {
+    border-bottom: none;
+  }
+
+  .pattern__table td {
+    border-bottom: none;
+    padding: 4px 12px;
+  }
+
+  .pattern__table td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    margin-bottom: 2px;
+  }
 }
 
 .pattern__table code {
@@ -2014,7 +2058,7 @@ ins.adsbygoogle:not(.ad-unit-line):not(.ad-unit-square):not(.ad-unit-side):not(.
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: var(--s-6) 0;
+  margin: var(--s-4) 0;
   background: var(--surface);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
   border-radius: var(--radius-sm);
@@ -2027,11 +2071,12 @@ table thead {
 }
 
 table thead th {
-  padding: var(--s-4) var(--s-5);
+  padding: 10px 14px;
   text-align: left;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 14px;
   letter-spacing: 0.3px;
+  color: #fff;
   border: none;
 }
 
@@ -2049,7 +2094,7 @@ table tbody tr:nth-child(even) {
 }
 
 table tbody td {
-  padding: var(--s-4) var(--s-5);
+  padding: 10px 14px;
   vertical-align: top;
   border: none;
 }
@@ -2793,7 +2838,7 @@ hr {
     radial-gradient(circle at bottom left, rgba(47, 110, 168, 0.12), transparent 28%),
     linear-gradient(160deg, #fff8f1 0%, #ffffff 75%);
   box-shadow: 0 24px 48px rgba(71, 42, 16, 0.08);
-  padding: clamp(20px, 1.4vw + 14px, 30px);
+  padding: clamp(14px, 1vw + 10px, 20px);
 }
 
 .practice-lab-head {
