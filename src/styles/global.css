@@ -5070,40 +5070,87 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
   color: #3f5162;
 }
 
-.lesson-related-quick-links {
-  display: grid;
-  gap: 10px;
-  margin-top: var(--s-3);
-}
-
-.lesson-related-quick-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  width: fit-content;
-  max-width: 100%;
-  padding: 9px 14px;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--accent) 36%, white 64%);
-  background: color-mix(in srgb, var(--accent) 8%, white 92%);
-  color: #9a3131;
+/* Free-lesson quick links: icon + label cards. 2-up on desktop, stack on
+   mobile. Replaces the old stack of identical pink pills. */
+.quick-links-label {
+  margin: var(--s-4) 0 var(--s-2);
+  font-size: 0.78rem;
   font-weight: 700;
-  text-decoration: none;
-  line-height: 1.25;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
 }
 
-.lesson-related-quick-link::after {
-  content: "->";
-  font-size: 0.92em;
+.quick-links-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.quick-link-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius-card, 8px);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 140ms ease, transform 140ms ease, box-shadow 140ms ease;
+}
+
+.quick-link-card:hover,
+.quick-link-card:focus-visible {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--border) 45%);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+  text-decoration: none;
+}
+
+.quick-link-card__icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--accent) 12%, white 88%);
+  color: var(--accent);
   font-weight: 800;
+  font-size: 0.95rem;
 }
 
-.lesson-related-quick-link:hover,
-.lesson-related-quick-link:focus-visible {
-  border-color: color-mix(in srgb, var(--accent) 58%, white 42%);
-  background: color-mix(in srgb, var(--accent) 15%, white 85%);
-  color: #7c2828;
-  text-decoration: none;
+.quick-link-card__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+  min-width: 0;
+}
+
+.quick-link-card__text strong {
+  font-size: 0.98rem;
+}
+
+.quick-link-card__text span {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.quick-link-card--all {
+  background: color-mix(in srgb, var(--accent) 6%, var(--surface));
+  border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
+}
+
+.quick-link-card--all .quick-link-card__icon {
+  background: var(--accent);
+  color: #fff;
+}
+
+@media (max-width: 560px) {
+  .quick-links-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .lessons-hub-search__controls {

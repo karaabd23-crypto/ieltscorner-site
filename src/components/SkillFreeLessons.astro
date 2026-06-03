@@ -95,18 +95,35 @@ const displayLessons = relatedLessons.length > 0 ? relatedLessons : fallbackLess
         No new lessons yet for this skill. Use the links below.
       </p>
     )}
-    <div class="lesson-related-quick-links" aria-label="Free lesson quick links">
-      <a class="lesson-related-quick-link" href={skillLessonsPath}>
-        Open all free {examLabel} {skill} lessons
+    <p class="quick-links-label">More free lessons</p>
+    <div class="quick-links-grid" aria-label="Free lesson quick links">
+      <a class="quick-link-card" href={skillLessonsPath}>
+        <span class="quick-link-card__icon" aria-hidden="true">{skillLabel.charAt(0)}</span>
+        <span class="quick-link-card__text">
+          <strong>All {examLabel} {skill}</strong>
+          <span>Every {skill} lesson, free</span>
+        </span>
       </a>
-      <a class="lesson-related-quick-link" href={grammarLessonsPath}>
-        Open free {examLabel} grammar lessons
+      <a class="quick-link-card" href={grammarLessonsPath}>
+        <span class="quick-link-card__icon" aria-hidden="true">G</span>
+        <span class="quick-link-card__text">
+          <strong>Grammar</strong>
+          <span>{examLabel} grammar lessons</span>
+        </span>
       </a>
-      <a class="lesson-related-quick-link" href={vocabularyLessonsPath}>
-        Open free {examLabel} vocabulary lessons
+      <a class="quick-link-card" href={vocabularyLessonsPath}>
+        <span class="quick-link-card__icon" aria-hidden="true">V</span>
+        <span class="quick-link-card__text">
+          <strong>Vocabulary</strong>
+          <span>{examLabel} vocabulary lessons</span>
+        </span>
       </a>
-      <a class="lesson-related-quick-link" href={allLessonsPath}>
-        Open the full free lesson library
+      <a class="quick-link-card quick-link-card--all" href={allLessonsPath}>
+        <span class="quick-link-card__icon" aria-hidden="true">&#9733;</span>
+        <span class="quick-link-card__text">
+          <strong>Full lesson library</strong>
+          <span>Browse every free lesson</span>
+        </span>
       </a>
     </div>
   </div>
