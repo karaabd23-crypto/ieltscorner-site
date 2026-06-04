@@ -72,11 +72,11 @@ const promoActions = {
   },
   ebookSpeaking: {
     offer: "ebook_speaking",
-    title: "CELPIP Speaking Guide",
+    title: "CELPIP Speaking Preparation Guide",
     description:
       "109 pages covering all 8 speaking tasks. Scored samples, response frames, grammar drills, and a 4-week plan. CA$49.50, instant PDF download.",
     href: "/ebook",
-    cta: "Get the speaking guide",
+    cta: "Get the CELPIP Speaking Preparation Guide",
   },
   ieltsWritingHub: {
     offer: "ielts_writing_hub",
@@ -115,7 +115,7 @@ export const homeFeaturedToolCards: FeaturedToolCard[] = [
     note: "Includes timed feedback plus sample essays in the writing bundle.",
   },
   {
-    badge: "eBook",
+    badge: "Guide",
     ...cloneAction(promoActions.ebookSpeaking),
     note: "One-time purchase. No subscription.",
   },
@@ -136,7 +136,7 @@ export const celpipFeaturedToolCards: FeaturedToolCard[] = [
     note: "Sample essays are included as part of the writing value story.",
   },
   {
-    badge: "eBook",
+    badge: "Guide",
     ...cloneAction(promoActions.ebookSpeaking),
     note: "One-time purchase. No subscription.",
   },

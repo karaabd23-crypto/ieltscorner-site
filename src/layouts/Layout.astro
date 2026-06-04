@@ -127,7 +127,7 @@ const trackingSkill = inferTrackingSkill(normalizedPath);
 const blogPromoConfig = isBlogArticle ? getBlogPromoConfig(normalizedPath) : null;
 
 // Quick win: context-aware sticky CTA. AI Writing Lab on writing pages,
-// CELPIP Speaking Guide (eBook) on speaking pages, eBook default elsewhere.
+// the CELPIP Speaking Preparation Guide on other pages.
 const floatingCta =
   trackingSkill === "writing"
     ? {
@@ -140,9 +140,9 @@ const floatingCta =
     : {
         href: "/ebook",
         icon: "📖",
-        text: "CELPIP Speaking Guide",
+        text: "CELPIP Speaking Preparation Guide",
         strong: "CA$49.50",
-        aria: "Get the CELPIP Speaking Guide - CA$49.50",
+        aria: "Get the CELPIP Speaking Preparation Guide - CA$49.50",
       };
 const newsletterTurnstileSiteKey = String(import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '').trim();
 
@@ -187,7 +187,7 @@ const generalNavGroups = [
     items: [
       { label: 'Tutoring', href: '/tutoring' },
       { label: 'AI Writing Lab', href: '/ai-feedback' },
-      { label: 'eBook', href: '/ebook' },
+      { label: 'CELPIP Speaking Preparation Guide', href: '/ebook' },
     ],
   },
   {
@@ -564,7 +564,7 @@ const serializeJsonForScript = (value: unknown) =>
                       <a href="/questions">Question Bank</a>
                       <a href="/ai-feedback">AI Writing Lab</a>
                       <a href="/tutoring">Tutoring</a>
-                      <a href="/ebook">eBook</a>
+                      <a href="/ebook">CELPIP Speaking Preparation Guide</a>
                       <a href="/blog">Blog</a>
                       <a href="/success-stories">Success Stories</a>
                       <a href="/faq">FAQ</a>
@@ -612,7 +612,7 @@ const serializeJsonForScript = (value: unknown) =>
                   </div>
 
                   <a class="btn btn-primary cta-book" href="/tutoring">Book a class</a>
-                  <a class="btn cta-ebook" href="/ebook" aria-label="Get the CELPIP Speaking Guide">CELPIP Speaking Guide</a>
+                  <a class="btn cta-ebook" href="/ebook" aria-label="Get the CELPIP Speaking Preparation Guide">CELPIP Speaking Prep Guide</a>
                   <a class="btn cta-signin" href="/account/sign-in">Sign in</a>
                 </div>
               </div>
@@ -867,7 +867,7 @@ const serializeJsonForScript = (value: unknown) =>
                   <a href="/tutoring">Tutoring</a>
                   <a href="/celpip/writing/questions">Question Bank</a>
                   <a href="/ai-feedback">AI Writing Lab</a>
-                  <a href="/ebook">eBook</a>
+                  <a href="/ebook">CELPIP Speaking Preparation Guide</a>
                   <a href="/success-stories">Success Stories</a>
                   <a href="/faq">FAQ</a>
                   <a href="/contact">Contact</a>
