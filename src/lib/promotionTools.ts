@@ -1,4 +1,4 @@
-export type PromoAction = {
+﻿export type PromoAction = {
   offer: string;
   title: string;
   description: string;
@@ -24,41 +24,41 @@ export type ContextualPromoConfig = {
 const promoActions = {
   questionBank: {
     offer: "question_bank",
-    title: "Free Question Bank",
+    title: "Question Bank",
     description:
-      "Practice CELPIP writing prompts for free and build a return habit before you pay for scoring.",
+      "Free Task 1 and Task 2 prompts.",
     href: "/celpip/writing/questions",
-    cta: "Practice free",
+    cta: "Open bank",
   },
   freeReadingTest: {
     offer: "reading_test",
-    title: "Free Reading Test",
+    title: "Reading Test",
     description:
-      "Take one full CELPIP reading test free, get an instant score, and see the lessons that match your weak areas.",
+      "One full CELPIP reading test.",
     href: "/celpip/reading/free-test",
-    cta: "Take free test",
+    cta: "Start test",
   },
   aiWritingLab: {
     offer: "ai_feedback",
-    title: "AI Writing Lab",
+    title: "Writing Lab",
     description:
-      "Get timed writing practice, AI scoring, revision guidance, and sample essays inside one premium writing workflow.",
+      "Write with a timer and get AI scoring.",
     href: "/ai-feedback",
-    cta: "Get scored feedback",
+    cta: "Start writing",
   },
   sampleEssays: {
     offer: "sample_essays",
     title: "Sample Essays",
     description:
-      "Study model Task 1 and Task 2 responses as part of the writing premium bundle.",
+      "Read strong Task 1 and Task 2 sample answers.",
     href: "/celpip/writing/samples",
-    cta: "See sample essays",
+    cta: "Open samples",
   },
   celpipReadingHub: {
     offer: "reading_hub",
     title: "Reading Hub",
     description:
-      "Open the full CELPIP reading page for strategy, the free test, and the premium path.",
+      "Open the CELPIP reading page for lessons and test links.",
     href: "/celpip/reading",
     cta: "Open reading hub",
   },
@@ -66,23 +66,23 @@ const promoActions = {
     offer: "celpip_writing_hub",
     title: "CELPIP Writing Hub",
     description:
-      "See question bank, AI feedback, and sample essays on one writing page.",
+      "See CELPIP writing tools on one page.",
     href: "/celpip/writing",
     cta: "Open writing hub",
   },
   ebookSpeaking: {
     offer: "ebook_speaking",
-    title: "CELPIP Speaking Preparation Guide",
+    title: "Speaking Guide",
     description:
-      "109 pages covering all 8 speaking tasks. Scored samples, response frames, grammar drills, and a 4-week plan. CA$49.50, instant PDF download.",
+      "109-page guide for all 8 speaking tasks.",
     href: "/ebook",
-    cta: "Get the CELPIP Speaking Preparation Guide",
+    cta: "Get guide",
   },
   ieltsWritingHub: {
     offer: "ielts_writing_hub",
     title: "IELTS Writing Hub",
     description:
-      "Open IELTS writing support, lessons, and AI writing feedback in one place.",
+      "Open IELTS writing lessons and feedback tools in one place.",
     href: "/ielts/writing",
     cta: "Open IELTS writing",
   },
@@ -101,44 +101,44 @@ export const homeFeaturedToolCards: FeaturedToolCard[] = [
     badge: "Return",
     ...cloneAction(promoActions.questionBank, {
       description:
-        "Use the free CELPIP question bank for fast daily practice and a strong reason to come back.",
+        "Free daily CELPIP writing prompts.",
     }),
   },
   {
     badge: "Diagnostic",
     ...cloneAction(promoActions.freeReadingTest),
-    note: "One full test free. Premium unlocks after the score report.",
+    note: "One full test is free. Paid tests are optional.",
   },
   {
     badge: "Premium",
     ...cloneAction(promoActions.aiWritingLab),
-    note: "Includes timed feedback plus sample essays in the writing bundle.",
+    note: "Timed scoring with samples.",
   },
   {
     badge: "Guide",
     ...cloneAction(promoActions.ebookSpeaking),
-    note: "One-time purchase. No subscription.",
+    note: "Pay once.",
   },
 ];
 
 export const celpipFeaturedToolCards: FeaturedToolCard[] = [
   {
-    badge: "Habit",
+    badge: "Start",
     ...cloneAction(promoActions.questionBank),
   },
   {
-    badge: "Test",
+    badge: "Free test",
     ...cloneAction(promoActions.freeReadingTest),
   },
   {
-    badge: "Premium",
+    badge: "Feedback",
     ...cloneAction(promoActions.aiWritingLab),
-    note: "Sample essays are included as part of the writing value story.",
+    note: "Samples included.",
   },
   {
     badge: "Guide",
     ...cloneAction(promoActions.ebookSpeaking),
-    note: "One-time purchase. No subscription.",
+    note: "Pay once.",
   },
 ];
 
@@ -158,17 +158,17 @@ export const celpipWritingFeaturedToolCards: FeaturedToolCard[] = [
 ];
 
 export const readingPremiumStripPromo: ContextualPromoConfig = {
-  eyebrow: "Reading premium",
-  title: "Finish one test free, then unlock the full reading review.",
+  eyebrow: "Reading paid plan",
+  title: "Finish one free test, then choose paid review if you want.",
   intro:
-    "Your first score report is the diagnostic. Premium adds detailed answer review, explanations, and the remaining full tests.",
+    "Your first test is free. The paid plan gives more tests and full answer review.",
   primary: cloneAction(promoActions.freeReadingTest, {
     cta: "Start free test",
   }),
   secondary: cloneAction(promoActions.celpipReadingHub, {
-    title: "See the reading path",
+    title: "See reading page",
     description:
-      "Stay on the reading hub if you want the test list and premium overview first.",
+      "Open the reading page to see all tests and options.",
     cta: "Stay on reading hub",
   }),
   variant: "compact",
@@ -176,18 +176,18 @@ export const readingPremiumStripPromo: ContextualPromoConfig = {
 };
 
 export const aiFeedbackSecondaryPromo: ContextualPromoConfig = {
-  eyebrow: "Lower-pressure option",
-  title: "Not ready to submit writing yet?",
+  eyebrow: "Free option",
+  title: "Not ready to submit writing?",
   intro:
-    "Use the question bank first if you want free prompt practice, then come back when you want scored feedback.",
+    "Use the free CELPIP question bank first. Come back later for scored feedback.",
   primary: cloneAction(promoActions.questionBank, {
     description:
-      "Browse the prompt bank, save ideas, and build a writing habit before you move into scoring.",
+      "Read prompts, save ideas, and practice before paid scoring.",
     cta: "Browse free prompts",
   }),
   secondary: cloneAction(promoActions.sampleEssays, {
     description:
-      "Sample essays stay positioned as part of the premium writing bundle, not a separate flagship route.",
+      "Use sample essays to see what a strong answer looks like.",
     cta: "See the writing bundle",
   }),
   promoType: "contextual_next_step",
@@ -195,15 +195,16 @@ export const aiFeedbackSecondaryPromo: ContextualPromoConfig = {
 
 export const questionBankUpgradePromo: ContextualPromoConfig = {
   eyebrow: "Next step",
-  title: "Turn these free prompts into scored writing practice.",
+  title: "Turn free prompts into scored writing.",
   intro:
-    "The AI Writing Lab is the upgrade path. Sample essays support the same premium writing bundle rather than competing with it.",
+    "Use Writing Lab when you want scored feedback.",
   primary: cloneAction(promoActions.aiWritingLab, {
-    cta: "Go to AI Writing Lab",
+    title: "Writing Lab",
+    cta: "Open writing lab",
   }),
   secondary: cloneAction(promoActions.sampleEssays, {
     description:
-      "Use sample essays as proof of what strong responses look like inside the same premium offer.",
+      "Use sample essays to compare your answer.",
     cta: "See sample essays",
   }),
   promoType: "contextual_next_step",
@@ -225,7 +226,7 @@ export function getLessonPromoConfig({
       eyebrow: "Next step",
       title: "Use a real reading test after this lesson.",
       intro:
-        "Apply the reading skill right away under exam conditions, then use the score report to decide what to study next.",
+        "Try one full reading test now. Use your score to pick your next lesson.",
       primary: cloneAction(promoActions.freeReadingTest),
       secondary: cloneAction(promoActions.celpipReadingHub),
       promoType: "contextual_next_step",
@@ -237,8 +238,11 @@ export function getLessonPromoConfig({
       eyebrow: "Next step",
       title: "Move from strategy into scored writing practice.",
       intro:
-        "Use the AI Writing Lab when you want feedback, and use sample essays as part of the same premium writing bundle.",
-      primary: cloneAction(promoActions.aiWritingLab),
+        "Use Writing Lab for feedback. Use sample essays to compare your work.",
+      primary: cloneAction(promoActions.aiWritingLab, {
+        title: "Writing Lab",
+        cta: "Open writing lab",
+      }),
       secondary: cloneAction(promoActions.sampleEssays),
       promoType: "contextual_next_step",
     };
@@ -249,10 +253,10 @@ export function getLessonPromoConfig({
       eyebrow: "Next step",
       title: "Check your writing under score-focused conditions.",
       intro:
-        "Move from free strategy into timed writing and AI feedback when you want to test whether the lesson is actually sticking.",
+        "After the lesson, write with a timer and get AI feedback.",
       primary: cloneAction(promoActions.aiWritingLab, {
         description:
-          "Use AI writing feedback to test structure, response quality, and revision decisions on a real draft.",
+          "Use AI feedback to check your structure, grammar, and ideas.",
       }),
       secondary: cloneAction(promoActions.ieltsWritingHub),
       promoType: "contextual_next_step",
@@ -272,7 +276,7 @@ export function getBlogPromoConfig(path: string): ContextualPromoConfig | null {
       eyebrow: "Practice next",
       title: "Use one full reading test instead of staying in theory.",
       intro:
-        "The fastest next move after a CELPIP reading article is a full timed test with an instant score and lesson recommendations.",
+        "After this article, do one full reading test and check your score.",
       primary: cloneAction(promoActions.freeReadingTest),
       secondary: cloneAction(promoActions.celpipReadingHub),
       promoType: "contextual_next_step",
@@ -285,11 +289,14 @@ export function getBlogPromoConfig(path: string): ContextualPromoConfig | null {
   ) {
     return {
       eyebrow: "Practice next",
-      title: "Use the question bank first, then move into scored writing.",
+      title: "Use the CELPIP question bank first, then move into scored writing.",
       intro:
-        "For CELPIP writing strategy pages, the cleanest path is free prompt practice first and AI scoring second.",
+        "Start with free prompts. Then use AI scoring when you are ready.",
       primary: cloneAction(promoActions.questionBank),
-      secondary: cloneAction(promoActions.aiWritingLab),
+      secondary: cloneAction(promoActions.aiWritingLab, {
+        title: "Practice CELPIP writing",
+        cta: "Practice CELPIP writing",
+      }),
       promoType: "contextual_next_step",
     };
   }
@@ -299,7 +306,7 @@ export function getBlogPromoConfig(path: string): ContextualPromoConfig | null {
       eyebrow: "Practice next",
       title: "Turn this IELTS writing guide into a real draft.",
       intro:
-        "Use AI feedback when you want to see whether your structure and task response hold up under practice pressure.",
+        "Now write one draft and check it with AI feedback.",
       primary: cloneAction(promoActions.aiWritingLab),
       secondary: cloneAction(promoActions.ieltsWritingHub),
       promoType: "contextual_next_step",
@@ -308,3 +315,5 @@ export function getBlogPromoConfig(path: string): ContextualPromoConfig | null {
 
   return null;
 }
+
+

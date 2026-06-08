@@ -222,8 +222,6 @@ button{
   flex: 1 1 auto;
   min-width: 0;
 }
-/* Task 2: condensed mobile nav is hidden on desktop; full nav-main shows. */
-.nav-mobile{ display:none; }
 .nav-item{
   position: relative;
 }
@@ -353,25 +351,6 @@ button{
   letter-spacing: 0.01em;
 }
 
-.header-right .cta-signin{
-  min-height: 36px;
-  padding-inline: 14px;
-  border-color: rgba(25,35,55,0.16);
-  background: rgba(255,255,255,0.82);
-  color: var(--text);
-  border-radius: 999px;
-  font-size: 12px;
-  letter-spacing: 0.01em;
-  white-space: nowrap;
-}
-
-.header-right .cta-signin:hover{
-  border-color: rgba(217,72,72,0.38);
-  background: rgba(217,72,72,0.08);
-  color: #d94848;
-  text-decoration: none;
-}
-
 @media (max-width: 1400px) {
   .header-inner {
     gap: 10px;
@@ -394,29 +373,6 @@ button{
   .header-right .cta-book {
     font-size: 12px;
   }
-}
-
-.social{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-.social a{
-  width:34px;
-  height:34px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:999px;
-  border:1px solid var(--border);
-  background: rgba(255,255,255,0.78);
-  font-size:12px;
-  color: var(--muted);
-}
-.social a:hover{
-  color: var(--text);
-  background: rgba(255,255,255,0.96);
-  text-decoration:none;
 }
 
 /* ---- Buttons ---- */
@@ -813,6 +769,24 @@ button{
   box-shadow: var(--shadow);
   text-decoration:none;
 }
+
+.card-uniform,
+.uniform-medium-card {
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow-soft);
+  padding: 20px;
+  transition: transform 140ms ease, box-shadow 140ms ease;
+}
+
+.card-uniform:hover,
+.uniform-medium-card:hover,
+.card-uniform:focus-within,
+.uniform-medium-card:focus-within {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
 .card h3{
   margin:0 0 6px;
   font-size: 18px;
@@ -1011,72 +985,11 @@ textarea {
     gap: 8px;
   }
 
+  /* Clutter-to-zero: the three doors stack vertically inside the menu panel. */
   .nav-main {
     flex-direction: column;
     align-items: stretch;
     gap: 8px;
-  }
-
-  /* Task 2: on mobile, hide the full nav and show the condensed Exam/Practice/Account nav. */
-  .nav-main { display: none; }
-
-  .nav-mobile {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-    width: 100%;
-  }
-
-  .nav-mobile__link {
-    display: block;
-    padding: 14px 16px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--surface);
-    color: var(--text);
-    font-weight: 600;
-    text-decoration: none;
-    text-align: center;
-  }
-
-  .nav-mobile__link:hover,
-  .nav-mobile__link:focus-visible {
-    border-color: color-mix(in srgb, var(--accent) 55%, var(--border) 45%);
-  }
-
-  .nav-mobile__more {
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--surface);
-  }
-
-  .nav-mobile__more > summary {
-    padding: 14px 16px;
-    font-weight: 600;
-    cursor: pointer;
-    list-style: none;
-    text-align: center;
-  }
-
-  .nav-mobile__more[open] > summary {
-    border-bottom: 1px solid var(--border);
-  }
-
-  .nav-mobile__more-links {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .nav-mobile__more-links a {
-    padding: 12px 16px;
-    color: var(--text);
-    text-decoration: none;
-    border-top: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
-  }
-
-  .nav-mobile__more-links a:first-child {
-    border-top: none;
   }
 
   .nav-shortcuts {
@@ -1099,14 +1012,12 @@ textarea {
 
   .nav > a,
   .nav-item-row .nav-trigger,
-  .header-right .cta-book,
-  .header-right .cta-signin {
+  .header-right .cta-book {
     width: 100%;
     justify-content: space-between;
   }
 
-  .header-right .cta-book,
-  .header-right .cta-signin {
+  .header-right .cta-book {
     justify-content: center;
   }
 
@@ -1115,8 +1026,7 @@ textarea {
     align-items: stretch;
   }
 
-  .header-right .cta-book,
-  .header-right .cta-signin {
+  .header-right .cta-book {
     min-height: 44px;
   }
 
@@ -1227,17 +1137,7 @@ textarea {
     padding: 6px 8px;
     font-size: 13px;
   }
-  
-  .social {
-    gap: 6px;
-  }
-  
-  .social a {
-    width: 30px;
-    height: 30px;
-    font-size: 10px;
-  }
-  
+
   .cta {
     padding: 8px 12px;
     font-size: 13px;
@@ -2333,78 +2233,6 @@ hr {
   }
 }
 
-/* ===== Webinar Banner Styles ===== */
-.webinar-banner {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: linear-gradient(90deg, var(--accent) 0%, rgba(217, 72, 72, 0.9) 100%);
-  color: white;
-  padding: 12px 0;
-  text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.webinar-banner a {
-  color: white;
-  font-weight: 700;
-  font-size: 13px;
-  text-decoration: none;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 6px 12px;
-  border-radius: 999px;
-  transition: background 140ms ease, box-shadow 140ms ease;
-}
-
-.webinar-banner a:hover {
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  text-decoration: none;
-}
-
-.webinar-banner-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--s-2);
-  flex-wrap: wrap;
-}
-
-.webinar-banner-text {
-  font-size: 14px;
-}
-
-@media (max-width: 768px) {
-  .webinar-banner {
-    padding: 10px 0;
-  }
-  
-  .webinar-banner-text {
-    font-size: 12px;
-    font-weight: 600;
-  }
-  
-  .webinar-banner a {
-    font-size: 12px;
-    padding: 5px 10px;
-  }
-}
-
-@media (max-width: 560px) {
-  .webinar-banner-content {
-    gap: var(--s-1);
-  }
-  
-  .webinar-banner-text {
-    font-size: 11px;
-  }
-  
-  .webinar-banner a {
-    font-size: 11px;
-    padding: 4px 8px;
-  }
-}
-
 /* Final enforcement: no small hero text + guaranteed capsule hover state */
 .hero h1 {
   font-size: clamp(24px, 2.6vw, 36px) !important;
@@ -2425,45 +2253,57 @@ hr {
 }
 
 .btn,
-.btn-primary,
 .btn-ghost,
 .btn-payment,
 .hero .btn,
-.hero .btn-primary,
 .hero .btn-ghost,
 .hero .btn-payment,
 .quick-nav .btn,
 .cta {
-  background: color-mix(in srgb, var(--accent) 12%, #ffffff 88%) !important;
-  color: var(--accent) !important;
-  border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--border) 55%) !important;
-  box-shadow: 0 3px 12px rgba(217, 72, 72, 0.08) !important;
+  background: #ffffff !important;
+  color: #9f3d44 !important;
+  border: 1px solid #cf9ca1 !important;
+  box-shadow: 0 2px 8px rgba(20, 22, 23, 0.04) !important;
 }
 
 .btn:hover,
-.btn-primary:hover,
 .btn-ghost:hover,
 .btn-payment:hover,
 .hero .btn:hover,
-.hero .btn-primary:hover,
 .hero .btn-ghost:hover,
 .hero .btn-payment:hover,
 .quick-nav .btn:hover,
 .cta:hover,
 .btn:focus-visible,
-.btn-primary:focus-visible,
 .btn-ghost:focus-visible,
 .btn-payment:focus-visible,
 .hero .btn:focus-visible,
-.hero .btn-primary:focus-visible,
 .hero .btn-ghost:focus-visible,
 .hero .btn-payment:focus-visible,
 .quick-nav .btn:focus-visible,
 .cta:focus-visible {
-  background: var(--accent) !important;
+  background: #fdf3f4 !important;
+  color: #872f36 !important;
+  border-color: #b8646d !important;
+  box-shadow: 0 5px 14px rgba(159, 61, 68, 0.14) !important;
+}
+
+.btn-primary,
+.hero .btn-primary {
+  background: #1f2429 !important;
   color: #ffffff !important;
-  border-color: var(--accent) !important;
-  box-shadow: 0 8px 22px rgba(217, 72, 72, 0.24) !important;
+  border: 1px solid #1f2429 !important;
+  box-shadow: 0 6px 16px rgba(17, 20, 24, 0.22) !important;
+}
+
+.btn-primary:hover,
+.hero .btn-primary:hover,
+.btn-primary:focus-visible,
+.hero .btn-primary:focus-visible {
+  background: #151a1f !important;
+  color: #ffffff !important;
+  border-color: #151a1f !important;
+  box-shadow: 0 9px 20px rgba(17, 20, 24, 0.28) !important;
 }
 
 @media (max-width: 768px) {
@@ -5532,10 +5372,26 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
 }
 
 .funnel-hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: 10px;
   margin-top: var(--s-3);
+  align-items: stretch;
+}
+
+.funnel-hero__actions .btn,
+.funnel-hero__actions .btn-primary,
+.funnel-hero__actions .btn-ghost,
+.funnel-hero__actions .btn-payment {
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+  padding: 10px 14px;
+  font-size: 15px;
+  line-height: 1.15;
+  letter-spacing: 0;
+  white-space: nowrap;
 }
 
 .funnel-section {
@@ -7227,3 +7083,4 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
     width: 100%;
   }
 }
+

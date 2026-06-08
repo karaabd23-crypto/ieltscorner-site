@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from "../layouts/Layout.astro";
 import FeaturedToolsSection from "../components/FeaturedToolsSection.astro";
 import { homeFeaturedToolCards } from "../lib/promotionTools";
@@ -16,55 +16,35 @@ const homeKeywords =
   <section class="section home-funnel" style="padding-top: var(--s-6);">
     <div class="hero" style={`--hero-bg: url('/heroes/home.webp');`}>
       <div class="hero-content">
-        <span class="pill">IELTS + CELPIP + PTE Core prep</span>
-        <h1 class="ic-display">Pick your exam. Pick your support. Start now.</h1>
-        <p class="muted home-hero__sub">Start free with 80 CELPIP writing tasks and model answers. No card required.</p>
-        {/* Task 3: above-the-fold primary CTA straight to the free question bank, thumb-reachable at 375px */}
-        <a class="btn btn-primary ic-btn home-hero__primary-cta" href="/questions">Start free practice &rarr;</a>
-        <div class="cluster home-hero__exam-links" style="margin-top: var(--s-2);">
-          <a class="btn btn-ghost" href="/celpip">CELPIP</a>
-          <a class="btn btn-ghost" href="/pte-core">PTE Core</a>
-          <a class="btn btn-ghost" href="/ielts">IELTS</a>
-          <a class="btn btn-ghost" href="/lessons">Free lessons</a>
-        </div>
+        <h1 class="ic-display">Which test are you preparing for?</h1>
       </div>
+    </div>
+
+    <div class="home-hero-actions" aria-label="Primary study paths">
+      <a class="home-hero-action home-hero-action--ielts home-hero-action--style-b" href="/ielts">
+        <span class="home-hero-action__title">IELTS</span>
+        <span class="home-hero-action__meta">Academic and General Training</span>
+      </a>
+      <a class="home-hero-action home-hero-action--celpip home-hero-action--style-b" href="/celpip">
+        <span class="home-hero-action__title">CELPIP</span>
+        <span class="home-hero-action__meta">Canadian PR and citizenship prep</span>
+      </a>
+      <a class="home-hero-action home-hero-action--pte home-hero-action--style-b" href="/pte-core">
+        <span class="home-hero-action__title">PTE Core</span>
+        <span class="home-hero-action__meta">Pearson test paths and simulator</span>
+      </a>
+      <a class="home-hero-action home-hero-action--grammar home-hero-action--style-b" href="/lessons">
+        <span class="home-hero-action__title">Grammar + Vocabulary</span>
+        <span class="home-hero-action__meta">Lesson library for all test types</span>
+      </a>
     </div>
 
     <section class="surface home-step">
       <p class="home-step__label ic-eyebrow">Step 1</p>
-      <h2 class="ic-display">Choose your exam</h2>
-      <p class="muted home-step__intro">Pick your exam. Each hub has free lessons, practice tools, and paid support in one place.</p>
-
-      <div class="grid grid-3" style="gap: var(--s-4); margin-top: var(--s-3);">
-        <a class="card home-option-card ic-card" href="/celpip" aria-label="Go to CELPIP Hub">
-          <p class="home-option-card__kicker ic-eyebrow">CELPIP</p>
-          <h3>CELPIP Hub</h3>
-          <p class="muted">Follow CELPIP skill paths and go directly to writing feedback when ready.</p>
-          <span class="home-option-card__cta">Go to CELPIP Hub</span>
-        </a>
-
-        <a class="card home-option-card ic-card" href="/pte-core" aria-label="Go to PTE Core Hub">
-          <p class="home-option-card__kicker ic-eyebrow">PTE Core</p>
-          <h3>PTE Core Hub</h3>
-          <p class="muted">Follow PTE Core skill paths and open question-type guides or simulator practice.</p>
-          <span class="home-option-card__cta">Go to PTE Core Hub</span>
-        </a>
-
-        <a class="card home-option-card ic-card" href="/ielts" aria-label="Go to IELTS Hub">
-          <p class="home-option-card__kicker ic-eyebrow">IELTS</p>
-          <h3>IELTS Hub</h3>
-          <p class="muted">Follow IELTS skill paths and move to writing correction or private support.</p>
-          <span class="home-option-card__cta">Go to IELTS Hub</span>
-        </a>
-      </div>
-    </section>
-
-    <section class="surface home-step">
-      <p class="home-step__label ic-eyebrow">Step 2</p>
       <FeaturedToolsSection
         eyebrow="Featured CELPIP tools"
-        title="Start with the tool that fits your next move"
-        intro="Most visitors do better with one clear tool instead of digging through the menu first."
+        title="Pick one tool and start"
+        intro="Do one step first. Then go to the next step."
         cards={homeFeaturedToolCards}
         trackPageType="site"
         trackTest="celpip"
@@ -74,9 +54,9 @@ const homeKeywords =
     </section>
 
     <section class="surface home-step">
-      <p class="home-step__label ic-eyebrow">Step 3</p>
+      <p class="home-step__label ic-eyebrow">Step 2</p>
       <h2 class="ic-display">More options</h2>
-      <p class="muted home-step__intro">Free lessons, practice questions, private coaching, and a speaking guide.</p>
+      <p class="muted home-step__intro">Free lessons, CELPIP practice questions, private coaching, and a speaking guide.</p>
 
       <div class="grid grid-3" style="gap: var(--s-4); margin-top: var(--s-3);">
         <a class="card home-option-card home-option-card--free ic-card" href="/lessons" aria-label="Browse Free Lessons">
@@ -86,11 +66,11 @@ const homeKeywords =
           <span class="home-option-card__cta">Browse Free Lessons</span>
         </a>
 
-        <a class="card home-option-card home-option-card--free ic-card" href="/questions" aria-label="Practice Questions">
+        <a class="card home-option-card home-option-card--free ic-card" href="/questions" aria-label="CELPIP Practice Questions">
           <p class="home-option-card__kicker ic-eyebrow">Free</p>
-          <h3>Practice Questions</h3>
+          <h3>CELPIP Practice Questions</h3>
           <p class="muted">CELPIP email and survey writing tasks at CLB 6 to 10, with model answers.</p>
-          <span class="home-option-card__cta">Open Practice Questions</span>
+          <span class="home-option-card__cta">Open CELPIP Questions</span>
         </a>
 
         <a class="card home-option-card ic-card" href="/tutoring#book-private-class" aria-label="Book Private Class">
@@ -105,30 +85,257 @@ const homeKeywords =
 </Layout>
 
 <style>
-  /* Task 3: prominent, thumb-reachable hero CTA to the free question bank. */
-  .home-hero__sub {
-    margin-top: var(--s-2);
-    max-width: 48ch;
-  }
-
-  .home-hero__primary-cta {
+  .home-hero-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
     margin-top: var(--s-3);
-    font-size: 1.05rem;
-    padding: 0.85rem 1.6rem;
+    margin-bottom: var(--s-5);
   }
 
-  @media (max-width: 480px) {
-    /* Full-width tap target, comfortably within thumb reach at 375px. */
-    .home-hero__primary-cta {
-      display: block;
-      width: 100%;
-      text-align: center;
-      padding: 1rem 1.25rem;
-      font-size: 1.1rem;
+  .home-hero-action {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    min-height: 164px;
+    padding: 1.2rem 1.25rem 1.2rem 1.5rem;
+    border-radius: 18px;
+    border: 1px solid color-mix(in srgb, var(--btn-accent) 34%, var(--border-strong) 66%);
+    color: color-mix(in srgb, var(--btn-accent) 76%, var(--ink) 24%);
+    font-family: var(--ic-font-ui);
+    font-size: 1.14rem;
+    font-weight: 780;
+    letter-spacing: 0.015em;
+    text-align: center;
+    text-decoration: none;
+    flex-direction: column;
+    background:
+      radial-gradient(circle at 88% 12%, color-mix(in srgb, var(--btn-accent) 14%, transparent 86%), transparent 46%),
+      linear-gradient(172deg, color-mix(in srgb, var(--btn-accent) 12%, #ffffff 88%) 0%, color-mix(in srgb, var(--btn-accent-soft) 8%, #ffffff 92%) 100%);
+    box-shadow: 0 10px 22px rgba(20, 22, 23, 0.09);
+    transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
+    isolation: isolate;
+    overflow: hidden;
+  }
+
+  .home-hero-action::before {
+    content: "";
+    position: absolute;
+    inset: 9px auto 9px 9px;
+    width: 4px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, color-mix(in srgb, var(--btn-accent) 78%, #ffffff 22%), color-mix(in srgb, var(--btn-accent) 54%, #ffffff 46%));
+    opacity: 0.92;
+  }
+
+  .home-hero-action::after {
+    content: ">";
+    position: absolute;
+    right: 14px;
+    bottom: 12px;
+    font-size: 0.88rem;
+    font-weight: 800;
+    line-height: 1;
+    color: color-mix(in srgb, var(--btn-accent) 70%, var(--ink) 30%);
+    transform: translateX(0);
+    transition: transform 180ms ease;
+  }
+
+  .home-hero-action:hover,
+  .home-hero-action:focus-visible {
+    transform: translateY(-2px);
+  }
+
+  .home-hero-action__title {
+    font-family: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+    font-size: clamp(2.05rem, 1.6vw + 1.2rem, 2.9rem);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    line-height: 1.05;
+  }
+
+  .home-hero-action__meta {
+    font-size: 1.12rem;
+    font-weight: 650;
+    line-height: 1.35;
+    color: color-mix(in srgb, var(--btn-accent) 62%, var(--ink) 38%);
+    max-width: 24ch;
+  }
+
+  /* Style A: soft layered card */
+  .home-hero-action--style-a {
+    border-radius: 18px;
+    border-color: color-mix(in srgb, var(--btn-accent) 34%, var(--border-strong) 66%);
+    background:
+      radial-gradient(circle at 88% 12%, color-mix(in srgb, var(--btn-accent) 16%, transparent 84%), transparent 46%),
+      linear-gradient(172deg, color-mix(in srgb, var(--btn-accent) 12%, #ffffff 88%) 0%, color-mix(in srgb, var(--btn-accent-soft) 10%, #ffffff 90%) 100%);
+    box-shadow: 0 12px 24px rgba(20, 22, 23, 0.1);
+  }
+
+  .home-hero-action--style-a:hover,
+  .home-hero-action--style-a:focus-visible {
+    border-color: color-mix(in srgb, var(--btn-accent) 54%, var(--border-strong) 46%);
+    box-shadow: 0 16px 28px rgba(20, 22, 23, 0.12);
+  }
+
+  /* Style B: clean outline with floating rail */
+  .home-hero-action--style-b {
+    border-radius: 16px;
+    border-color: color-mix(in srgb, var(--btn-accent) 55%, var(--border-strong) 45%);
+    background: #ffffff;
+    box-shadow:
+      inset 0 0 0 1px color-mix(in srgb, var(--btn-accent-soft) 24%, transparent 76%),
+      0 9px 18px rgba(20, 22, 23, 0.08);
+  }
+
+  .home-hero-action--style-b::before {
+    inset: 10px auto 10px 10px;
+    width: 5px;
+  }
+
+  .home-hero-action--style-b:hover,
+  .home-hero-action--style-b:focus-visible {
+    background: color-mix(in srgb, var(--btn-accent-soft) 8%, #ffffff 92%);
+    box-shadow:
+      inset 0 0 0 1px color-mix(in srgb, var(--btn-accent) 18%, transparent 82%),
+      0 14px 24px rgba(20, 22, 23, 0.11);
+  }
+
+  /* Style C: split panel */
+  .home-hero-action--style-c {
+    border-radius: 20px;
+    border-color: color-mix(in srgb, var(--btn-accent) 30%, var(--border-strong) 70%);
+    background:
+      linear-gradient(90deg, color-mix(in srgb, var(--btn-accent-soft) 30%, #ffffff 70%) 0 26%, transparent 26% 100%),
+      #ffffff;
+    box-shadow: 0 8px 20px rgba(20, 22, 23, 0.08);
+  }
+
+  .home-hero-action--style-c::before {
+    inset: auto;
+    left: 26%;
+    top: 16px;
+    bottom: 16px;
+    width: 1px;
+    background: color-mix(in srgb, var(--btn-accent) 30%, transparent 70%);
+  }
+
+  .home-hero-action--style-c .home-hero-action__title,
+  .home-hero-action--style-c .home-hero-action__meta {
+    margin-left: 30%;
+    width: 70%;
+  }
+
+  .home-hero-action--style-c:hover,
+  .home-hero-action--style-c:focus-visible {
+    background:
+      linear-gradient(90deg, color-mix(in srgb, var(--btn-accent-soft) 38%, #ffffff 62%) 0 26%, transparent 26% 100%),
+      #ffffff;
+  }
+
+  /* Style D: framed card with inset panel */
+  .home-hero-action--style-d {
+    border-radius: 14px;
+    border: 2px solid color-mix(in srgb, var(--btn-accent) 38%, var(--border-strong) 62%);
+    background:
+      linear-gradient(145deg, color-mix(in srgb, var(--btn-accent-soft) 16%, #ffffff 84%), #ffffff);
+    box-shadow:
+      inset 0 0 0 4px rgba(255, 255, 255, 0.65),
+      0 10px 22px rgba(20, 22, 23, 0.09);
+  }
+
+  .home-hero-action--style-d::before {
+    inset: 11px auto 11px 11px;
+    width: 3px;
+  }
+
+  .home-hero-action--style-d:hover,
+  .home-hero-action--style-d:focus-visible {
+    border-color: color-mix(in srgb, var(--btn-accent) 58%, var(--border-strong) 42%);
+    box-shadow:
+      inset 0 0 0 4px rgba(255, 255, 255, 0.75),
+      0 14px 26px rgba(20, 22, 23, 0.11);
+  }
+
+  .home-hero-action:hover::after,
+  .home-hero-action:focus-visible::after {
+    transform: translateX(2px);
+  }
+
+  .home-hero-action:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--btn-accent) 50%, #ffffff 50%);
+    outline-offset: 2px;
+  }
+
+  .home-hero-action--ielts {
+    --btn-accent: #cf4a53;
+    --btn-accent-soft: #eec8cd;
+  }
+
+  .home-hero-action--celpip {
+    --btn-accent: #2a8fbe;
+    --btn-accent-soft: #c3deec;
+  }
+
+  .home-hero-action--pte {
+    --btn-accent: #c8872e;
+    --btn-accent-soft: #efd8b5;
+  }
+
+  .home-hero-action--grammar {
+    --btn-accent: #ad8b2d;
+    --btn-accent-soft: #e8ddb8;
+  }
+
+  @media (max-width: 900px) {
+    .home-hero-actions {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .home-hero-actions {
+      grid-template-columns: 1fr;
     }
 
-    .home-hero__exam-links {
-      gap: var(--s-2);
+    .home-hero-action {
+      width: 100%;
+      min-height: 156px;
+      padding: 1.05rem 1rem 1.05rem 1.3rem;
+    }
+
+    .home-hero-action__title {
+      font-size: clamp(1.35rem, 2vw + 1rem, 1.85rem);
+    }
+
+    .home-hero-action__meta {
+      font-size: 0.95rem;
+    }
+
+    .home-hero-action--style-c {
+      background:
+        linear-gradient(180deg, color-mix(in srgb, var(--btn-accent-soft) 34%, #ffffff 66%) 0 28%, transparent 28% 100%),
+        #ffffff;
+    }
+
+    .home-hero-action--style-c::before {
+      left: 14px;
+      right: 14px;
+      top: 28%;
+      bottom: auto;
+      height: 1px;
+      width: auto;
+    }
+
+    .home-hero-action--style-c .home-hero-action__title,
+    .home-hero-action--style-c .home-hero-action__meta {
+      margin-left: 0;
+      width: 100%;
+      margin-top: 0.1rem;
     }
   }
 </style>
+
+

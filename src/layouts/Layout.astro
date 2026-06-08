@@ -1,4 +1,4 @@
----
+﻿---
 import "../styles/theme-tokens.css";
 import "../styles/global.css";
 import TrustStrip from "../components/TrustStrip.astro";
@@ -132,93 +132,55 @@ const floatingCta =
   trackingSkill === "writing"
     ? {
         href: "/ai-feedback",
-        icon: "✍️",
+        icon: "âœï¸",
         text: "Score your writing",
         strong: "AI Lab",
         aria: "Get instant AI writing feedback",
       }
     : {
         href: "/ebook",
-        icon: "📖",
+        icon: "ðŸ“–",
         text: "CELPIP Speaking Preparation Guide",
         strong: "CA$49.50",
         aria: "Get the CELPIP Speaking Preparation Guide - CA$49.50",
       };
 const newsletterTurnstileSiteKey = String(import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '').trim();
 
-const generalNavGroups = [
+// Clutter-to-zero global frame (Phase 1):
+// One navigation, three doors. Each door is a single-column vertical
+// disclosure. The same three doors render on desktop and on mobile,
+// so the nav is identical on every page and at every width.
+type NavLink = { label: string; href: string };
+type NavDoor = { label: string; href: string; items: NavLink[] };
+const navDoors: NavDoor[] = [
   {
-    label: 'IELTS',
-    href: '/ielts',
-    items: [
-      { label: 'Listening', href: '/ielts/listening' },
-      { label: 'Reading', href: '/ielts/reading' },
-      { label: 'Writing', href: '/ielts/writing' },
-      { label: 'Speaking', href: '/ielts/speaking' },
-      { label: 'Speaking Questions', href: '/ielts/speaking/questions' },
-      { label: 'Band Descriptors', href: '/ielts/speaking/band-descriptors' },
-    ],
-  },
-  {
-    label: 'CELPIP',
+    label: 'Exams',
     href: '/celpip',
     items: [
-      { label: 'Listening', href: '/celpip/listening' },
-      { label: 'Reading', href: '/celpip/reading' },
-      { label: 'Writing', href: '/celpip/writing' },
-      { label: 'Speaking', href: '/celpip/speaking' },
+      { label: 'CELPIP', href: '/celpip' },
+      { label: 'IELTS', href: '/ielts' },
+      { label: 'PTE Core', href: '/pte-core' },
     ],
   },
   {
-    label: 'PTE Core',
-    href: '/pte-core',
-    items: [
-      { label: 'Listening', href: '/pte-core/listening' },
-      { label: 'Reading', href: '/pte-core/reading' },
-      { label: 'Writing', href: '/pte-core/writing' },
-      { label: 'Speaking', href: '/pte-core/speaking' },
-      { label: 'Question Types', href: '/pte-core/question-types' },
-      { label: 'Simulator', href: '/pte-core/simulator' },
-    ],
-  },
-  {
-    label: 'Services',
-    href: '/tutoring',
-    items: [
-      { label: 'Tutoring', href: '/tutoring' },
-      { label: 'AI Writing Lab', href: '/ai-feedback' },
-      { label: 'CELPIP Speaking Preparation Guide', href: '/ebook' },
-    ],
-  },
-  {
-    label: 'Resources',
+    label: 'Practice',
     href: '/lessons',
     items: [
-      { label: 'Free Lessons', href: '/lessons' },
-      { label: 'CLB Calculator', href: '/clb-calculator' },
-      { label: 'Blog', href: '/blog' },
-      { label: 'CELPIP for Immigration', href: '/celpip-for-canadian-immigration' },
-      { label: 'IELTS vs CELPIP vs PTE', href: '/ielts-vs-celpip-vs-pte-core' },
-      { label: 'Success stories', href: '/success-stories' },
-      { label: 'FAQ', href: '/faq' },
-      { label: 'Contact', href: '/contact' },
-      { label: 'About', href: '/about' },
+      { label: 'CELPIP Question Bank', href: '/questions' },
+      { label: 'Free CELPIP Reading Test', href: '/celpip/reading/free-test' },
+      { label: 'PTE Simulator', href: '/pte-core/simulator' },
+      { label: 'Lessons', href: '/lessons' },
+    ],
+  },
+  {
+    label: 'Account',
+    href: '/account',
+    items: [
+      { label: 'Account', href: '/account' },
+      { label: 'Sign in', href: '/account/sign-in' },
     ],
   },
 ];
-
-const practiceNavGroup = {
-  label: 'Practice',
-  href: '/celpip/reading',
-  items: [
-    { label: 'CELPIP Reading Practice', href: '/celpip/reading' },
-    { label: 'CELPIP Writing Practice', href: '/ai-feedback' },
-    { label: 'PTE Core Simulator', href: '/pte-core/simulator' },
-    { label: 'Free Lessons', href: '/lessons' },
-  ],
-};
-
-const activeNavGroups = [generalNavGroups[0], generalNavGroups[1], generalNavGroups[2], practiceNavGroup, generalNavGroups[3], generalNavGroups[4]];
 
 // Structured data for Organization
 const organizationSchema = {
@@ -392,28 +354,6 @@ const serializeJsonForScript = (value: unknown) =>
         .floating-cta-btn--right { right: 16px; }
       }
 
-      /* Header ebook pill */
-      .cta-ebook {
-        background: rgba(217,72,72,0.08);
-        color: #d94848;
-        border: 1.5px solid rgba(217,72,72,0.3);
-        font-weight: 700;
-        padding: 0 14px;
-        height: 36px;
-        display: inline-flex;
-        align-items: center;
-        border-radius: 999px;
-        text-decoration: none;
-        font-size: 0.85rem;
-        white-space: nowrap;
-        transition: background 140ms, color 140ms, border-color 140ms;
-      }
-      .cta-ebook:hover {
-        background: #d94848;
-        color: #fff;
-        border-color: #d94848;
-      }
-
       /* Floating ebook button */
       .floating-ebook-btn {
         position: fixed;
@@ -547,35 +487,10 @@ const serializeJsonForScript = (value: unknown) =>
 
             <div id="site-header-panel" class="header-panel">
               <div class="header-main-row">
-                {/* Task 2: condensed mobile nav (Exam / Practice / Account) with a More disclosure.
-                    Shown only <=768px; the full desktop nav below is hidden on mobile via CSS. */}
-                <nav class="nav nav-mobile" aria-label="Primary navigation (mobile)">
-                  <a id="mobile-nav-exam" class="nav-mobile__link" href="/celpip">Exam</a>
-                  <a class="nav-mobile__link" href="/celpip/reading/free-test">Practice</a>
-                  <a class="nav-mobile__link" href="/account">Account</a>
-                  <details class="nav-mobile__more">
-                    <summary>More</summary>
-                    <div class="nav-mobile__more-links">
-                      <a href="/celpip">CELPIP</a>
-                      <a href="/ielts">IELTS</a>
-                      <a href="/pte-core">PTE Core</a>
-                      <a href="/lessons">Free Lessons</a>
-                      <a href="/clb-calculator">CLB Calculator</a>
-                      <a href="/questions">Question Bank</a>
-                      <a href="/ai-feedback">AI Writing Lab</a>
-                      <a href="/tutoring">Tutoring</a>
-                      <a href="/ebook">CELPIP Speaking Preparation Guide</a>
-                      <a href="/blog">Blog</a>
-                      <a href="/success-stories">Success Stories</a>
-                      <a href="/faq">FAQ</a>
-                      <a href="/contact">Contact</a>
-                      <a href="/account/sign-in">Sign in</a>
-                    </div>
-                  </details>
-                </nav>
-
+                {/* One navigation, three doors. Each door is a single-column
+                    vertical disclosure, identical on desktop and mobile. */}
                 <nav id="primary-navigation" class="nav nav-main" aria-label="Primary navigation">
-                  {activeNavGroups.map((group) => {
+                  {navDoors.map((group) => {
                     const groupActive = currentPath === group.href || currentPath.startsWith(`${group.href}/`);
                     return (
                       <div class="nav-item nav-item-dropdown">
@@ -598,22 +513,10 @@ const serializeJsonForScript = (value: unknown) =>
                       </div>
                     );
                   })}
-
-                  <a class:list={["nav-trigger", isPathActive('/account') && 'is-active']} href="/account">
-                    <span>Account</span>
-                  </a>
                 </nav>
 
                 <div class="header-right">
-                  <div class="social" aria-label="Social links">
-                    <a href="https://www.instagram.com/ieltscorner.ca" target="_blank" rel="noreferrer" aria-label="Instagram">IG</a>
-                    <a href="https://www.youtube.com/@KaraAbdolmaleki" target="_blank" rel="noreferrer" aria-label="YouTube">YT</a>
-                    <a href="https://t.me/Kaysenglishcorner" target="_blank" rel="noreferrer" aria-label="Telegram">TG</a>
-                  </div>
-
-                  <a class="btn btn-primary cta-book" href="/tutoring">Book a class</a>
-                  <a class="btn cta-ebook" href="/ebook" aria-label="Get the CELPIP Speaking Preparation Guide">CELPIP Speaking Prep Guide</a>
-                  <a class="btn cta-signin" href="/account/sign-in">Sign in</a>
+                  <a class="btn btn-primary cta-book" href="/lessons">Start free</a>
                 </div>
               </div>
             </div>
@@ -737,26 +640,6 @@ const serializeJsonForScript = (value: unknown) =>
             closeAllDropdowns();
           }
         });
-
-        // Task 2: mobile "Exam" entry points at the last exam hub the user visited
-        // (defaults to CELPIP). Remember the exam whenever a hub page is open.
-        try {
-          const path = window.location.pathname;
-          const examMap = { '/celpip': 'celpip', '/ielts': 'ielts', '/pte-core': 'pte-core' };
-          for (const base in examMap) {
-            if (path === base || path.startsWith(base + '/')) {
-              localStorage.setItem('ic_last_exam', base);
-              break;
-            }
-          }
-          const examLink = document.getElementById('mobile-nav-exam');
-          const lastExam = localStorage.getItem('ic_last_exam');
-          if (examLink instanceof HTMLAnchorElement && lastExam) {
-            examLink.setAttribute('href', lastExam);
-            examLink.textContent =
-              lastExam === '/ielts' ? 'IELTS' : lastExam === '/pte-core' ? 'PTE Core' : 'CELPIP';
-          }
-        } catch (_) { /* localStorage unavailable; keep default CELPIP */ }
       });
     </script>
 
@@ -837,60 +720,40 @@ const serializeJsonForScript = (value: unknown) =>
 
     <footer class="site-footer">
       <div class="container">
-        {showFocusHeader ? (
-          <div class="footer-bottom">
-            <div>&copy; {new Date().getFullYear()} IELTS Corner</div>
-            <div class="muted-2">
-              <a href="/">Home</a> | <a href="/celpip">CELPIP</a> | <a href="/ielts">IELTS</a> | <a href="/pte-core">PTE Core</a> | <a href="/lessons">Lessons</a> | <a href="/contact">Contact</a> |{" "}
-              <a href="/privacy">Privacy</a> | <a href="/terms">Terms</a>
+        <div class="footer-inner">
+          <div>
+            <h3>IELTS Corner</h3>
+            <div class="muted">Band 7+ and CLB 9+ focused prep for IELTS, CELPIP &amp; PTE Core.</div>
+          </div>
+
+          <div>
+            <h3>Explore</h3>
+            <div class="footer-links">
+              <a href="/celpip">CELPIP</a>
+              <a href="/ielts">IELTS</a>
+              <a href="/pte-core">PTE Core</a>
+              <a href="/lessons">Lessons</a>
+              <a href="/clb-calculator">CLB Calculator</a>
+              <a href="/blog">Blog</a>
+              <a href="/faq">FAQ</a>
+              <a href="/contact">Contact</a>
             </div>
           </div>
-        ) : (
-          <>
-            <div class="footer-inner">
-              <div>
-                <h3>IELTS Corner</h3>
-                <div class="muted">Band 7+ and CLB 9+ focused prep for IELTS, CELPIP &amp; PTE Core.</div>
-              </div>
 
-              <div>
-                <h3>Explore</h3>
-                <div class="footer-links">
-                  <a href="/celpip">CELPIP</a>
-                  <a href="/ielts">IELTS</a>
-                  <a href="/pte-core">PTE Core</a>
-                  <a href="/ielts/speaking/questions">IELTS Speaking Questions</a>
-                  <a href="/ielts/speaking/band-descriptors">IELTS Band Descriptors</a>
-                  <a href="/lessons">Lessons</a>
-                  <a href="/clb-calculator">CLB Calculator</a>
-                  <a href="/blog">Blog</a>
-                  <a href="/tutoring">Tutoring</a>
-                  <a href="/celpip/writing/questions">Question Bank</a>
-                  <a href="/ai-feedback">AI Writing Lab</a>
-                  <a href="/ebook">CELPIP Speaking Preparation Guide</a>
-                  <a href="/success-stories">Success Stories</a>
-                  <a href="/faq">FAQ</a>
-                  <a href="/contact">Contact</a>
-                  <a href="/about">About</a>
-                </div>
-              </div>
-
-              <div>
-                <h3>Social</h3>
-                <div class="footer-links">
-                  <a href="https://www.instagram.com/ieltscorner.ca" target="_blank" rel="noreferrer">Instagram</a>
-                  <a href="https://www.youtube.com/@KaraAbdolmaleki" target="_blank" rel="noreferrer">YouTube</a>
-                  <a href="https://t.me/Kaysenglishcorner" target="_blank" rel="noreferrer">Telegram</a>
-                </div>
-              </div>
+          <div>
+            <h3>Social</h3>
+            <div class="footer-links">
+              <a href="https://www.instagram.com/ieltscorner.ca" target="_blank" rel="noreferrer">Instagram</a>
+              <a href="https://www.youtube.com/@KaraAbdolmaleki" target="_blank" rel="noreferrer">YouTube</a>
+              <a href="https://t.me/Kaysenglishcorner" target="_blank" rel="noreferrer">Telegram</a>
             </div>
+          </div>
+        </div>
 
-            <div class="footer-bottom">
-              <div>&copy; {new Date().getFullYear()} IELTS Corner</div>
-              <div class="muted-2">ieltscorner.com redirects to ieltscorner.ca</div>
-            </div>
-          </>
-        )}
+        <div class="footer-bottom">
+          <div>&copy; {new Date().getFullYear()} IELTS Corner</div>
+          <div class="muted-2">ieltscorner.com redirects to ieltscorner.ca</div>
+        </div>
       </div>
     </footer>
 
@@ -1377,3 +1240,5 @@ const serializeJsonForScript = (value: unknown) =>
     <ConversionTrackingScript />
   </body>
 </html>
+
+

@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from "../../../../layouts/Layout.astro";
 import Breadcrumbs from "../../../../components/Breadcrumbs.astro";
 import SkillSubNav from "../../../../components/SkillSubNav.astro";
@@ -20,7 +20,7 @@ const criteria = [
     label: "Fluency & Coherence",
     short: "FC",
     color: "var(--color-fc)",
-    icon: "💬",
+    icon: "ðŸ’¬",
     description: "How smoothly and logically you speak.",
     bands: [
       {
@@ -60,7 +60,7 @@ const criteria = [
     label: "Lexical Resource",
     short: "LR",
     color: "var(--color-lr)",
-    icon: "📖",
+    icon: "ðŸ“–",
     description: "The range and accuracy of your vocabulary.",
     bands: [
       {
@@ -100,7 +100,7 @@ const criteria = [
     label: "Grammatical Range & Accuracy",
     short: "GR",
     color: "var(--color-gr)",
-    icon: "🔧",
+    icon: "ðŸ”§",
     description: "How varied and correct your grammar is.",
     bands: [
       {
@@ -140,7 +140,7 @@ const criteria = [
     label: "Pronunciation",
     short: "PR",
     color: "var(--color-p)",
-    icon: "🎙️",
+    icon: "ðŸŽ™ï¸",
     description: "How easy you are to understand and how natural you sound.",
     bands: [
       {
@@ -190,7 +190,7 @@ const bandSummaries = [
 const myths = [
   {
     myth: "Talking fast will help my fluency score.",
-    truth: "Speed is not the goal — smoothness is. Speaking at a natural pace with good linking is far more impressive than rushing and stumbling.",
+    truth: "Speed is not the goal â€” smoothness is. Speaking at a natural pace with good linking is far more impressive than rushing and stumbling.",
   },
   {
     myth: "I need a British or American accent to score Band 7.",
@@ -201,12 +201,12 @@ const myths = [
     truth: "Accuracy matters more than rarity. A slightly unusual word used correctly scores higher than a rare word used in the wrong context.",
   },
   {
-    myth: "Short answers are safer — I can avoid making mistakes.",
+    myth: "Short answers are safer â€” I can avoid making mistakes.",
     truth: "Short answers hurt your fluency and coherence score. Examiners need to hear sustained speech to award higher bands.",
   },
   {
     myth: "Memorised answers can help me reach Band 7.",
-    truth: "Examiners are trained to spot scripted responses. If they suspect it, they can ask you follow-up questions that break the script — and your score drops.",
+    truth: "Examiners are trained to spot scripted responses. If they suspect it, they can ask you follow-up questions that break the script â€” and your score drops.",
   },
 ];
 
@@ -214,7 +214,7 @@ const quickFixes = [
   { fix: "Answer in full sentences, not single words.", impact: "FC" },
   { fix: "Use 'because', 'however', 'whereas' to connect ideas.", impact: "FC" },
   { fix: "Learn 5 topic-specific phrases before each practice session.", impact: "LR" },
-  { fix: "Practise paraphrasing — say the same idea using different words.", impact: "LR" },
+  { fix: "Practise paraphrasing â€” say the same idea using different words.", impact: "LR" },
   { fix: "Record yourself and listen back for grammar patterns.", impact: "GR" },
   { fix: "Learn one complex structure per week and practise it until it feels automatic.", impact: "GR" },
   { fix: "Slow down slightly and emphasise the most important word in each phrase.", impact: "PR" },
@@ -224,7 +224,7 @@ const quickFixes = [
 
 <Layout
   title="IELTS Speaking Band Descriptors Explained | Plain English Guide"
-  description="Understand exactly what IELTS examiners look for in each band score. Plain-English explanations of Fluency, Vocabulary, Grammar, and Pronunciation — from Band 4 to Band 9."
+  description="Understand exactly what IELTS examiners look for in each band score. Plain-English explanations of Fluency, Vocabulary, Grammar, and Pronunciation â€” from Band 4 to Band 9."
   keywords="IELTS speaking band descriptors, IELTS speaking score, IELTS band 7 speaking, IELTS speaking criteria, IELTS speaking fluency coherence"
   structuredData={pageStructuredData}
 >
@@ -329,7 +329,7 @@ const quickFixes = [
                 <summary class="band-item__summary">
                   <span class="band-item__number" style={`background: ${c.color};`}>{b.band}</span>
                   <span class="band-item__headline">{b.headline}</span>
-                  <span class="band-item__chevron" aria-hidden="true">›</span>
+                  <span class="band-item__chevron" aria-hidden="true">â€º</span>
                 </summary>
                 <div class="band-item__body">
                   <p>{b.plain}</p>
@@ -365,7 +365,7 @@ const quickFixes = [
   <!-- Quick fix tips by criterion -->
   <section class="section-sm" style="padding-top: 0;">
     <div class="surface quick-fixes-section">
-      <h2 style="margin-top: 0;">8 quick fixes — one for each criterion area</h2>
+      <h2 style="margin-top: 0;">8 quick fixes â€” one for each criterion area</h2>
       <div class="quick-fixes-grid">
         {quickFixes.map((qf) => {
           const crit = criteria.find((c) => c.short === qf.impact);
@@ -384,7 +384,7 @@ const quickFixes = [
   <section class="section-sm">
     <div class="surface funnel-final-cta">
       <h2 style="margin-top: 0;">Know the target. Now practise hitting it.</h2>
-      <p>Use our free question bank to practise authentic cue cards and Part 3 questions, or book a private class for live examiner-style feedback.</p>
+      <p>Use our free IELTS Speaking question bank to practise authentic cue cards and Part 3 questions, or book a private class for live examiner-style feedback.</p>
       <div class="funnel-final-cta__actions">
         <a class="btn btn-primary" href="/ielts/speaking/questions">Browse 100 Practice Questions</a>
         <a class="btn btn-ghost" href="/tutoring#book-private-class">Book a Private Class</a>
@@ -712,3 +712,5 @@ const quickFixes = [
     }
   }
 </style>
+
+

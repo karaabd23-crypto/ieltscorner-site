@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from '../../../../layouts/Layout.astro';
 import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs';
 ---
@@ -27,7 +27,7 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
   <section class="section-sm">
     <div class="surface" style="padding: var(--s-4); margin-bottom: var(--s-4);">
       <p class="muted" style="margin: 0; max-width: 64ch;">
-        If you want timed practice, scored feedback, and these sample essays under one subscription, start with the AI Writing Lab. If you are not ready to pay yet, use the free question bank first.
+        If you want timed practice, scored feedback, and these sample essays under one subscription, start with the AI Writing Lab. If you are not ready to pay yet, use the free CELPIP question bank first.
       </p>
       <div class="cluster" style="margin-top: var(--s-3);">
         <a class="btn btn-primary" href="/ai-feedback">Go to AI Writing Lab</a>
@@ -35,7 +35,7 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
       </div>
     </div>
     <div id="sample-library-checking" class="surface" style="padding: var(--s-5);">
-      <p class="muted" style="margin: 0;">Checking your subscription and loading sample essays…</p>
+      <p class="muted" style="margin: 0;">Checking your subscription and loading sample essaysâ€¦</p>
     </div>
 
     <div id="sample-library-locked" style="display:none;">
@@ -171,7 +171,7 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
           <input
             id="sample-library-search"
             type="search"
-            placeholder="Search by topic…"
+            placeholder="Search by topicâ€¦"
             autocomplete="off"
             style="flex: 1; min-width: 200px; padding: var(--s-2) var(--s-3); border: 1px solid #ccc; border-radius: 6px; font: inherit;"
           />
@@ -195,13 +195,13 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
 
       <div class="grid grid-2" style="align-items: start; gap: var(--s-4);">
         <div class="surface" style="padding: var(--s-5);">
-          <h3 style="margin-top: 0;">Task 1 · Email Essays</h3>
+          <h3 style="margin-top: 0;">Task 1 Â· Email Essays</h3>
           <p id="sample-library-task1-count" class="muted" style="margin-top: 0;"></p>
           <div id="sample-library-task1-list" class="stack" style="gap: var(--s-3);"></div>
         </div>
 
         <div class="surface" style="padding: var(--s-5);">
-          <h3 style="margin-top: 0;">Task 2 · Survey Essays</h3>
+          <h3 style="margin-top: 0;">Task 2 Â· Survey Essays</h3>
           <p id="sample-library-task2-count" class="muted" style="margin-top: 0;"></p>
           <div id="sample-library-task2-list" class="stack" style="gap: var(--s-3);"></div>
         </div>
@@ -336,7 +336,7 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
         if (!(freeSampleText instanceof HTMLElement)) return;
 
         freeSampleTitle.textContent = prompt?.title || 'Unlocked sample essay';
-        freeSampleTask.textContent = prompt?.taskType === 'task2' ? 'Task 2 · Survey essay' : 'Task 1 · Email essay';
+        freeSampleTask.textContent = prompt?.taskType === 'task2' ? 'Task 2 Â· Survey essay' : 'Task 1 Â· Email essay';
         freeSampleScenario.textContent = prompt?.scenario || '';
         freeSampleLevel.textContent = prompt?.sampleLevel ? `Model level: ${prompt.sampleLevel}` : '';
         freeSampleText.textContent = getPrimarySample(prompt);
@@ -542,7 +542,7 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
           return;
         }
 
-        setStatus('Opening secure Stripe billing portal…');
+        setStatus('Opening secure Stripe billing portalâ€¦');
         if (manageBillingBtn instanceof HTMLButtonElement) manageBillingBtn.disabled = true;
 
         try {
@@ -671,7 +671,7 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
         const confirmed = window.confirm('Cancel now? This will cancel your subscription immediately.');
         if (!confirmed) return;
 
-        setStatus('Canceling your subscription now…');
+        setStatus('Canceling your subscription nowâ€¦');
         if (cancelNowBtn instanceof HTMLButtonElement) cancelNowBtn.disabled = true;
 
         try {
@@ -786,3 +786,5 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
     })();
   </script>
 </Layout>
+
+

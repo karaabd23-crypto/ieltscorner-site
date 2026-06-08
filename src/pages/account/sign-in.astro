@@ -1,5 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+const googleOauthEnabled = import.meta.env.PUBLIC_GOOGLE_OAUTH_ENABLED === 'true';
 ---
 
 <Layout
@@ -11,7 +13,7 @@ import Layout from '../../layouts/Layout.astro';
       <p class="account-auth-card__eyebrow">Account</p>
       <h1>Sign in</h1>
       <p class="muted">
-        Use your main account email and password, or continue with Google.
+        Use your main account email and password.
       </p>
 
       <p id="account-auth-status" hidden></p>
@@ -29,7 +31,7 @@ import Layout from '../../layouts/Layout.astro';
       </form>
 
       <div class="account-auth-actions">
-        <button class="btn" id="account-google-login" type="button">Continue with Google</button>
+        {googleOauthEnabled && <button class="btn" id="account-google-login" type="button">Continue with Google</button>}
         <a class="btn" href="/account/forgot-password">Forgot password</a>
         <a class="btn" href="/account/sign-up">Create account</a>
       </div>

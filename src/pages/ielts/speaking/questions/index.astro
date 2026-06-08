@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from "../../../../layouts/Layout.astro";
 import Breadcrumbs from "../../../../components/Breadcrumbs.astro";
 import SkillSubNav from "../../../../components/SkillSubNav.astro";
@@ -14,12 +14,12 @@ const pageStructuredData = [
 ];
 
 // 100 IELTS Speaking Part 2 cue cards + Part 3 follow-up questions
-// Grouped into 10 topic areas (10 cards each, each card has 4–5 Part 3 questions)
+// Grouped into 10 topic areas (10 cards each, each card has 4â€“5 Part 3 questions)
 const topics = [
   {
     id: "people",
     label: "People & Relationships",
-    icon: "👥",
+    icon: "ðŸ‘¥",
     cards: [
       {
         id: "p1",
@@ -121,7 +121,7 @@ const topics = [
   {
     id: "places",
     label: "Places & Travel",
-    icon: "✈️",
+    icon: "âœˆï¸",
     cards: [
       {
         id: "pl1",
@@ -223,7 +223,7 @@ const topics = [
   {
     id: "objects",
     label: "Objects & Possessions",
-    icon: "🎁",
+    icon: "ðŸŽ",
     cards: [
       {
         id: "o1",
@@ -325,7 +325,7 @@ const topics = [
   {
     id: "events",
     label: "Events & Experiences",
-    icon: "🎉",
+    icon: "ðŸŽ‰",
     cards: [
       {
         id: "e1",
@@ -427,7 +427,7 @@ const topics = [
   {
     id: "work-education",
     label: "Work & Education",
-    icon: "🎓",
+    icon: "ðŸŽ“",
     cards: [
       {
         id: "w1",
@@ -529,7 +529,7 @@ const topics = [
   {
     id: "society-community",
     label: "Society & Community",
-    icon: "🏙️",
+    icon: "ðŸ™ï¸",
     cards: [
       {
         id: "s1",
@@ -631,7 +631,7 @@ const topics = [
   {
     id: "environment",
     label: "Environment & Nature",
-    icon: "🌿",
+    icon: "ðŸŒ¿",
     cards: [
       {
         id: "en1",
@@ -733,7 +733,7 @@ const topics = [
   {
     id: "arts-culture",
     label: "Arts, Media & Culture",
-    icon: "🎨",
+    icon: "ðŸŽ¨",
     cards: [
       {
         id: "a1",
@@ -835,7 +835,7 @@ const topics = [
   {
     id: "health-lifestyle",
     label: "Health & Lifestyle",
-    icon: "💪",
+    icon: "ðŸ’ª",
     cards: [
       {
         id: "h1",
@@ -937,7 +937,7 @@ const topics = [
   {
     id: "future-technology",
     label: "Future & Technology",
-    icon: "🚀",
+    icon: "ðŸš€",
     cards: [
       {
         id: "f1",
@@ -1084,12 +1084,12 @@ const totalPart3 = allCards.reduce((sum, c) => sum + c.part3.length, 0);
   <!-- How to use this page -->
   <section class="section-sm" style="padding-top: 0;">
     <div class="surface how-to-use">
-      <h2 style="margin-top: 0;">How to use this question bank</h2>
+      <h2 style="margin-top: 0;">How to use this IELTS Speaking question bank</h2>
       <ol class="how-to-list">
         <li><strong>Pick a topic</strong> that interests you or that you find challenging.</li>
         <li><strong>Read the cue card</strong> and give yourself exactly 1 minute to prepare notes.</li>
         <li><strong>Speak for 2 minutes</strong> on the Part 2 topic, covering all the bullet points.</li>
-        <li><strong>Answer the Part 3 questions</strong> as if speaking to a real examiner — aim for 3–5 sentences per answer.</li>
+        <li><strong>Answer the Part 3 questions</strong> as if speaking to a real examiner â€” aim for 3â€“5 sentences per answer.</li>
         <li><strong>Repeat with a new topic</strong> to build fluency across question types.</li>
       </ol>
       <div class="how-to-links">
@@ -1099,7 +1099,7 @@ const totalPart3 = allCards.reduce((sum, c) => sum + c.part3.length, 0);
     </div>
   </section>
 
-  <!-- Topic filter tabs + question bank -->
+  <!-- Topic filter tabs + IELTS Speaking question bank -->
   <section class="section-sm" id="speaking-bank" style="padding-top: 0;">
     <div class="container">
 
@@ -1148,14 +1148,14 @@ const totalPart3 = allCards.reduce((sum, c) => sum + c.part3.length, 0);
                 <ul class="cue-card__bullets">
                   {card.part2.bullets.map((b) => <li>{b}</li>)}
                 </ul>
-                <p class="cue-card__time-note">You have 1 minute to prepare. Speak for 1–2 minutes.</p>
+                <p class="cue-card__time-note">You have 1 minute to prepare. Speak for 1â€“2 minutes.</p>
               </div>
 
               <!-- Part 3 toggle -->
               <button class="part3-toggle" aria-expanded="false" aria-controls={`part3-${card.id}`}>
                 <span class="part3-toggle__label">Part 3 discussion questions</span>
                 <span class="part3-toggle__count">{card.part3.length} questions</span>
-                <span class="part3-toggle__icon" aria-hidden="true">▼</span>
+                <span class="part3-toggle__icon" aria-hidden="true">â–¼</span>
               </button>
               <div class="part3-panel" id={`part3-${card.id}`} hidden>
                 <ol class="part3-list">
@@ -1219,7 +1219,7 @@ const totalPart3 = allCards.reduce((sum, c) => sum + c.part3.length, 0);
       const panelId = btn.getAttribute("aria-controls");
       const panel = panelId ? document.getElementById(panelId) : null;
       if (panel) panel.hidden = expanded;
-      btn.querySelector(".part3-toggle__icon")!.textContent = expanded ? "▼" : "▲";
+      btn.querySelector(".part3-toggle__icon")!.textContent = expanded ? "â–¼" : "â–²";
     });
   });
 </script>
@@ -1469,3 +1469,5 @@ const totalPart3 = allCards.reduce((sum, c) => sum + c.part3.length, 0);
     .cue-card { padding: var(--s-3); }
   }
 </style>
+
+

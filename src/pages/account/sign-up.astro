@@ -1,5 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+const googleOauthEnabled = import.meta.env.PUBLIC_GOOGLE_OAUTH_ENABLED === 'true';
 ---
 
 <Layout
@@ -33,7 +35,7 @@ import Layout from '../../layouts/Layout.astro';
       </form>
 
       <div class="account-auth-actions">
-        <button class="btn" id="account-google-signup" type="button">Continue with Google</button>
+        {googleOauthEnabled && <button class="btn" id="account-google-signup" type="button">Continue with Google</button>}
         <a class="btn" href="/account/sign-in">Already have an account?</a>
       </div>
     </div>
@@ -65,11 +67,7 @@ import Layout from '../../layouts/Layout.astro';
 
       try {
         showStatus('Creating your account...', 'info');
-        const user = await signup(email, password, { full_name: name, name });
-        if (user?.emailVerified) {
-          window.location.href = '/account';
-          return;
-        }
+        await signup(email, password, { full_name: name, name });
         showStatus('Account created. Check your email to confirm the address, then sign in.', 'success');
       } catch (error) {
         if (error instanceof AuthError) {

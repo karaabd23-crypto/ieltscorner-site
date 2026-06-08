@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from "../../../layouts/Layout.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import SkillSubNav from "../../../components/SkillSubNav.astro";
@@ -16,10 +16,10 @@ const writingServices = [
     tag: "Core",
   },
   {
-    title: "Free Question Bank",
+    title: "Free CELPIP Question Bank",
     description: "Browse 100 free CELPIP writing questions before you move into scored practice.",
     href: "/celpip/writing/questions",
-    cta: "Open question bank",
+    cta: "Open CELPIP Question Bank",
     tag: "Free",
   },
   {
@@ -115,7 +115,7 @@ const pageStructuredData = [
         </p>
         <div class="funnel-hero__actions">
           <a class="btn btn-primary ic-btn" href="/ai-feedback">Start AI writing feedback</a>
-          <a class="btn btn-ghost" href="/celpip/writing/questions">Browse free question bank</a>
+          <a class="btn btn-ghost" href="/celpip/writing/questions">Browse free CELPIP question bank</a>
         </div>
       </div>
     </div>
@@ -125,13 +125,13 @@ const pageStructuredData = [
     heading="CELPIP Writing at a glance"
     facts={[
       { value: "2", label: "writing tasks" },
-      { value: "~53–60 min", label: "total test time" },
-      { value: "150–200", label: "words per task" },
+      { value: "~53â€“60 min", label: "total test time" },
+      { value: "150â€“200", label: "words per task" },
       { value: "CLB 9", label: "common target" },
     ]}
     focusPoints={[
       "Task 1 is an email; Task 2 is a survey response. Each needs a different tone.",
-      "Cover every bullet in the prompt fully — partial coverage caps your score.",
+      "Cover every bullet in the prompt fully â€” partial coverage caps your score.",
       "Plan for two minutes, write, then leave time to fix grammar and word choice.",
     ]}
   />
@@ -139,9 +139,9 @@ const pageStructuredData = [
   <section class="section-sm">
     <div class="surface writing-map">
       <FeaturedToolsSection
-        eyebrow="Start with the right writing tool"
-        title="Choose the writing path that matches your stage"
-        intro="Use the writing lab for feedback, sample essays for proof, and the question bank when you just want free repetition."
+        eyebrow="Start here"
+        title="Choose your writing tool"
+        intro="Free prompts first. Feedback second."
         cards={celpipWritingFeaturedToolCards}
         trackPageType="hub"
         trackTest="celpip"
@@ -277,3 +277,5 @@ const pageStructuredData = [
     }
   }
 </style>
+
+

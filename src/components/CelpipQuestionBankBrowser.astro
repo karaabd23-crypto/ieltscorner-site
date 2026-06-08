@@ -1,4 +1,4 @@
----
+﻿---
 import { CELPIP_PROMPT_BANK, CELPIP_PROMPT_TOTAL, CELPIP_TASK_SIDEBARS } from "../lib/celpipWritingData.mjs";
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
 };
 
 const {
-  title = "Question bank browser",
+  title = "CELPIP Question Bank Browser",
   description = "Search by topic or instruction language, or filter by task type. Every result has a direct AI Writing Lab entry point when you want feedback.",
 } = Astro.props as Props;
 
@@ -391,3 +391,5 @@ const promptCards = [...CELPIP_PROMPT_BANK.task1, ...CELPIP_PROMPT_BANK.task2].m
     }
   }
 </style>
+
+

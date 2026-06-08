@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import FeaturedToolsSection from "../../components/FeaturedToolsSection.astro";
@@ -11,28 +11,28 @@ const skillCards = [
   {
     badge: "L",
     title: "Listening",
-    description: "Improve timing, note-taking, and trap-answer accuracy with focused CELPIP listening support.",
+    description: "Practice listening. Learn timing and common trap answers.",
     href: "/celpip/listening",
     cta: "Open listening hub",
   },
   {
     badge: "R",
     title: "Reading",
-    description: "Fix distractor mistakes and pacing issues with reading-specific strategy and drills.",
+    description: "Practice reading. Learn how to avoid wrong answer traps.",
     href: "/celpip/reading",
     cta: "Open reading hub",
   },
   {
     badge: "W",
     title: "Writing",
-    description: "Access Task 1 and Task 2 writing practice, sample essays, and correction services.",
+    description: "Practice Task 1 and Task 2 writing with examples and feedback.",
     href: "/celpip/writing",
     cta: "Open writing hub",
   },
   {
     badge: "S",
     title: "Speaking",
-    description: "Build stronger speaking structure, fluency, and confidence across all speaking tasks.",
+    description: "Practice speaking for all tasks. Build clear answers and confidence.",
     href: "/celpip/speaking",
     cta: "Open speaking hub",
   },
@@ -41,73 +41,73 @@ const skillCards = [
 const celpipServices = [
   {
     title: "CELPIP Writing Practice",
-    description: "Practice Task 1 and Task 2 with timer, scoring, revision guidance, and saved premium progress.",
+    description: "Write Task 1 and Task 2 with a timer and get a score.",
     href: "/ai-feedback",
     cta: "Open writing practice",
   },
   {
     title: "CELPIP Question Bank",
-    description: "Browse 100 public Task 1 and Task 2 prompts before moving into scored writing practice.",
+    description: "Use 100 free Task 1 and Task 2 prompts.",
     href: "/celpip/writing/questions",
-    cta: "Open question bank",
+    cta: "Open CELPIP Question Bank",
   },
   {
     title: "Free Lessons",
-    description: "Open the lesson library when you want grammar, vocabulary, reading, writing, or speaking support outside the test tools.",
+    description: "Read free lessons for grammar, vocabulary, reading, writing, and speaking.",
     href: "/lessons",
     cta: "Browse free lessons",
   },
   {
     title: "CELPIP Reading Practice",
-    description: "Take the free reading test first, then unlock premium review if you want deeper explanations and progress tracking.",
+    description: "Take one free reading test. Choose paid review if you need more.",
     href: "/celpip/reading/free-test",
     cta: "Start reading practice",
   },
   {
     title: "100 Writing Sample Essays",
-    description: "Open the CELPIP sample essay library for Task 1 and Task 2 model responses.",
+    description: "Read sample answers for Task 1 and Task 2.",
     href: "/celpip/writing/samples",
     cta: "Open sample library",
   },
   {
     title: "Private CELPIP Class",
-    description: "Book a one-on-one class for listening, reading, writing, or speaking improvement.",
+    description: "Book a private class for any CELPIP skill.",
     href: "/tutoring#book-private-class",
     cta: "Book private class",
   },
   {
     title: "CELPIP Speaking Preparation Guide",
-    description: "All 8 speaking tasks in one 109-page guide. Scored samples, response frames, grammar drills, and a 4-week study plan. CA$49.50.",
+    description: "A 109-page guide for all 8 speaking tasks.",
     href: "/ebook",
     cta: "Get the CELPIP Speaking Preparation Guide",
   },
   {
     title: "CELPIP Writing Help",
-    description: "Quick-start writing support path that leads directly to correction and improvement.",
+    description: "Start here if you need writing help.",
     href: "/celpip-writing-help",
     cta: "Open writing help",
   },
   {
     title: "CLB 9 Strategy Guide",
-    description: "Review a full strategy page for reaching CLB 9 across CELPIP skills.",
+    description: "Read a simple plan to move toward CLB 9.",
     href: "/celpip/clb-9-strategy",
     cta: "Read CLB 9 strategy",
   },
   {
     title: "Reading Rescue Hub",
-    description: "Use the CLB 6 to 8 reading rescue flow for timing, inference, and trap fixes.",
+    description: "Extra reading help for CLB 6 to CLB 8.",
     href: "/celpip/reading/clb-6-to-8",
     cta: "Open reading rescue",
   },
   {
     title: "Full Reading Guide",
-    description: "Read the full long-form reading guide with drills and strategy examples.",
+    description: "Read the full reading guide with practice steps.",
     href: "/celpip/reading-guide",
     cta: "Open reading guide",
   },
   {
     title: "CELPIP for Canadian Immigration",
-    description: "CLB requirements for Express Entry, citizenship, and PNPs. Includes CRS point values by CLB level and a comparison with IELTS.",
+    description: "See CLB score needs for PR and citizenship.",
     href: "/celpip-for-canadian-immigration",
     cta: "See score requirements",
   },
@@ -138,13 +138,13 @@ const pageStructuredData = [
         <span class="pill ic-eyebrow">CELPIP hub</span>
         <h1 class="ic-display">Choose your skill, then choose your service</h1>
         <p class="muted">
-          Start with Listening, Reading, Writing, or Speaking. Then use the quick links and service cards below to go directly to the exact CELPIP support you need.
+          Choose one skill first. Then choose one tool below.
         </p>
         <div class="funnel-hero__actions">
-          <a class="btn btn-primary ic-btn" href="/celpip/writing/questions">Question bank</a>
-          <a class="btn btn-ghost" href="/lessons">Free lessons</a>
-          <a class="btn btn-ghost" href="/celpip/reading/free-test">Reading practice</a>
-          <a class="btn btn-ghost" href="/ai-feedback">Writing practice</a>
+          <a class="btn btn-primary" href="/celpip/writing/questions">Question bank</a>
+          <a class="btn btn-ghost" href="/lessons">Lessons</a>
+          <a class="btn btn-ghost" href="/celpip/reading/free-test">CELPIP reading</a>
+          <a class="btn btn-ghost" href="/ai-feedback">Writing lab</a>
         </div>
       </div>
     </div>
@@ -153,9 +153,9 @@ const pageStructuredData = [
   <section class="section-sm">
     <div class="surface celpip-section">
       <FeaturedToolsSection
-        eyebrow="Start with a tool, not the menu"
-        title="The three CELPIP tools that deserve top billing"
-        intro="These are the quickest ways to start practicing, diagnose your level, or move into premium improvement."
+        eyebrow="Start here"
+        title="Best CELPIP tools to start"
+        intro="Use one tool first. Keep it simple."
         cards={celpipFeaturedToolCards}
         trackPageType="hub"
         trackTest="celpip"
@@ -169,7 +169,7 @@ const pageStructuredData = [
     <div class="surface celpip-section">
       <h2 class="ic-display" style="margin-top: 0;">1) Explore by skill</h2>
       <p class="muted" style="margin-top: 0;">
-        Pick the skill page first. Each page is focused and links to the right support options for that skill.
+        Pick one skill. Open that page first.
       </p>
       <div class="grid grid-2 celpip-grid">
         {skillCards.map((skill) => (
@@ -188,7 +188,7 @@ const pageStructuredData = [
     <div class="surface celpip-section">
       <h2 class="ic-display" style="margin-top: 0;">2) More CELPIP support</h2>
       <p class="muted" style="margin-top: 0;">
-        Every active CELPIP-related service is listed here for one-click access.
+        All CELPIP tools are listed here.
       </p>
       <div class="grid grid-3 celpip-grid celpip-grid-services">
         {celpipServices.map((service) => (
@@ -206,7 +206,7 @@ const pageStructuredData = [
     <div class="surface funnel-final-cta">
       <p class="offer-card__label ic-eyebrow">Fast path</p>
       <h2 class="ic-display" style="margin-top: 0;">Need writing support first?</h2>
-      <p>Use the writing hub to see all writing services on one page.</p>
+      <p>Open one page to see all writing tools.</p>
       <a class="btn btn-primary ic-btn" href="/celpip/writing">Open CELPIP writing services</a>
     </div>
   </section>
@@ -231,7 +231,11 @@ const pageStructuredData = [
     flex-direction: column;
     gap: var(--s-2);
     text-decoration: none;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: var(--shadow-soft);
+    padding: 20px;
     transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
   }
 
@@ -278,3 +282,5 @@ const pageStructuredData = [
     }
   }
 </style>
+
+

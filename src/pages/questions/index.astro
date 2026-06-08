@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { buildBreadcrumbSchema } from "../../lib/seo";
@@ -13,21 +13,21 @@ const sorted = [...questions].sort(
 const pageStructuredData = [
   buildBreadcrumbSchema(Astro.site, [
     { name: "Home", path: "/" },
-    { name: "Practice Questions", path: "/questions/" },
+    { name: "CELPIP Writing Questions", path: "/questions/" },
   ]),
 ];
 ---
 
 <Layout
   title="Free CELPIP Practice Questions | IELTS Corner"
-  description="Unlock free CELPIP email and survey writing practice questions. Enter your email to access the full question bank — no credit card required."
+  description="Unlock free CELPIP email and survey writing practice questions. Enter your email to access the full CELPIP Question Bank, no credit card required."
   keywords="CELPIP practice questions, CELPIP writing tasks, CLB practice, email writing CELPIP, survey writing CELPIP"
   structuredData={pageStructuredData}
 >
   <section class="section">
     <div class="hero" style="--hero-bg: url('/heroes/lesson.webp');">
       <div class="hero-content">
-        <span class="pill ic-eyebrow">Free question bank</span>
+        <span class="pill ic-eyebrow">Free CELPIP Question Bank</span>
         <h1 class="ic-display">Free CELPIP Writing Practice Questions</h1>
         <p class="muted" style="max-width: 60ch;">
           {sorted.length} email and survey tasks at CLB 6 to 10. Each one has a model answer and scoring notes.
@@ -40,7 +40,7 @@ const pageStructuredData = [
     </div>
   </section>
 
-  <!-- Sample preview — visible before gate -->
+  <!-- Sample preview â€” visible before gate -->
   <section class="section-sm">
     <div style="max-width: 860px; margin: 0 auto;">
       <p class="ic-eyebrow" style="margin-bottom: var(--s-2);">Sample questions</p>
@@ -53,7 +53,7 @@ const pageStructuredData = [
             </div>
             <h3 style="margin-top: 0;">{q.data.title}</h3>
             <p class="muted" style="font-size: 0.9rem; margin-bottom: 0;">
-              {q.data.prompt.length > 100 ? q.data.prompt.slice(0, 100) + "…" : q.data.prompt}
+              {q.data.prompt.length > 100 ? q.data.prompt.slice(0, 100) + "â€¦" : q.data.prompt}
             </p>
           </div>
         ))}
@@ -130,7 +130,7 @@ const pageStructuredData = [
             <h3 style="margin-top: 0;">{q.data.title}</h3>
             <p class="muted" style="font-size: 0.9rem; margin-bottom: 0;">
               {q.data.prompt.length > 120
-                ? q.data.prompt.slice(0, 120) + "…"
+                ? q.data.prompt.slice(0, 120) + "â€¦"
                 : q.data.prompt}
             </p>
           </a>
@@ -239,3 +239,5 @@ const pageStructuredData = [
     }
   });
 </script>
+
+
