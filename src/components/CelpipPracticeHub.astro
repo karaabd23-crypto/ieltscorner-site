@@ -47,6 +47,11 @@ for (const taskType of taskOrder) {
   }
 }
 
+// temporary open access: unlock every writing task in the initial
+// server render too (no padlocks). Keep in sync with the OPEN_ACCESS
+// constant inside the client script below. Revert both together.
+const OPEN_ACCESS = true;
+
 const totalTasks = taskOrder.reduce((sum, taskType) => sum + (CELPIP_TASK_SIDEBARS[taskType]?.length || 0), 0);
 const totalLockedCount = taskOrder.reduce(
   (sum, taskType) => sum + (CELPIP_TASK_SIDEBARS[taskType] || []).filter((entry) => !entry.isFree).length,
@@ -105,25 +110,29 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
       <span class="sidebar-sub" id="hub-sidebar-sub">{hubTasks.task1.sidebarSub}</span>
     </div>
     <nav class="task-list" id="hub-task-list" role="list">
-      {defaultSidebar.map((task, i) => (
+      {defaultSidebar.map((task, i) => {
+        const unlocked = OPEN_ACCESS || task.isFree;
+        const showFreeBadge = task.isFree;
+        return (
         <button
-          class={`task-item${task.isFree ? ' task-item--free' : ' task-item--locked'}${task.id === CELPIP_FREE_PROMPT_IDS.task1 ? ' is-active' : ''}`}
+          class={`task-item${unlocked ? ' task-item--free' : ' task-item--locked'}${task.id === CELPIP_FREE_PROMPT_IDS.task1 ? ' is-active' : ''}`}
           data-task-id={task.id}
-          data-is-free={task.isFree ? 'true' : 'false'}
+          data-is-free={unlocked ? 'true' : 'false'}
           type="button"
         >
           <span class="task-num">{i + 1}.</span>
           <span class="task-label">{task.label}</span>
-          {task.isFree
+          {showFreeBadge
             ? <span class="free-badge">FREE</span>
-            : (
+            : (!unlocked && (
               <svg class="lock-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
                 <path fill-rule="evenodd" d="M8 1a3.5 3.5 0 0 0-3.5 3.5V6H4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-.5V4.5A3.5 3.5 0 0 0 8 1Zm2 5V4.5a2 2 0 1 0-4 0V6h4Z" clip-rule="evenodd" />
               </svg>
-            )
+            ))
           }
         </button>
-      ))}
+        );
+      })}
     </nav>
   </aside>
 
@@ -1407,6 +1416,10 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
     );
 
     // ---- State ----
+    // temporary open access: unlock every writing task (no padlocks, no
+    // paywall). Revert by setting this back to false and reverting the
+    // getSubscription() early return.
+    const OPEN_ACCESS = true;
     const ACCESS_KEY = 'ieltscorner.celpipWritingAccess';
     const FREE_EVAL_KEY = 'ieltscorner.celpipFreeEvalUsed';
     const taskOrder = hubConfig.taskOrder || ['task1', 'task2'];
@@ -1464,6 +1477,9 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
     }
 
     function getSubscription() {
+      // temporary open access: treat every visitor as subscribed so all
+      // writing tasks unlock. Revert by removing this early return.
+      return { active: true, source: 'temporary-open-access' };
       try {
         const raw = localStorage.getItem(ACCESS_KEY);
         if (!raw) return null;
@@ -1731,7 +1747,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
       items.forEach((task, i) => {
         const btn = document.createElement('button');
         const isActive = task.id === selectedTaskId;
-        const isFree = task.isFree || task.id === freeId;
+        const isFree = OPEN_ACCESS || task.isFree || task.id === freeId;
         btn.className = `task-item${isFree ? ' task-item--free' : ' task-item--locked'}${isActive ? ' is-active' : ''}`;
         btn.setAttribute('data-task-id', task.id);
         btn.setAttribute('data-is-free', isFree ? 'true' : 'false');
@@ -1750,13 +1766,17 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
         applyAstroScope(labelSpan);
         btn.appendChild(labelSpan);
 
-        if (isFree) {
+        // During open access only the genuinely-free task keeps its badge;
+        // the rest are unlocked with no badge and no padlock.
+        const showFreeBadge = task.isFree || task.id === freeId;
+        const showLock = !isFree;
+        if (showFreeBadge) {
           const badge = document.createElement('span');
           badge.className = 'free-badge';
           badge.textContent = 'FREE';
           applyAstroScope(badge);
           btn.appendChild(badge);
-        } else {
+        } else if (showLock) {
           const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
           svg.setAttribute('class', 'lock-icon');
           svg.setAttribute('viewBox', '0 0 16 16');
