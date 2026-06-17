@@ -1,11 +1,11 @@
 ---
-title: "Using 'There is' and 'There are' Correctly"
+title: "There is vs There are Rules and Examples"
 category: "grammar"
 level: "B2"
 ieltsBand: "4.5-5.5"
 clb: "5-6"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn to use 'There is' and 'There are' correctly to clearly indicate the presence or absence of items or people in your sentences."
+excerpt: "Use 'there is' for singular and 'there are' for plural. Learn the rule with clear examples, the most common mistakes, and a self-check for IELTS and CELPIP writing."
 date: "2026-03-02"
 tags: ["grammar", "b1", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."

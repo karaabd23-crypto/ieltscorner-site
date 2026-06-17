@@ -1,11 +1,11 @@
 ---
-title: "Using Gerunds After Prepositions"
+title: "Gerunds After Prepositions Explained with Examples"
 category: "grammar"
 level: "B2"
 ieltsBand: "6.0-7.0"
 clb: "7-8"
 exam: ["IELTS", "CELPIP"]
-excerpt: "Learn how to correctly use gerunds after prepositions to enhance your grammatical precision in English."
+excerpt: "After a preposition, the verb always takes the -ing (gerund) form. Learn the rule with clear examples, the mistakes to avoid, and a self-check for IELTS and CELPIP writing."
 date: "2026-03-02"
 tags: ["grammar", "b2", "cefr-differentiated", "ielts", "celpip"]
 heroTip: "Say the rule or strategy in plain English before you edit your answer."
