@@ -21,7 +21,9 @@
 
 import { fetchAccessToken, parseServiceAccount } from './google-auth.js';
 
-const SEARCH_CONSOLE_API = 'https://searchconsole.googleapis.com';
+// Search Analytics + sitemaps both live under the Webmasters v3 host. (The
+// searchconsole.googleapis.com host serves only the URL Inspection API and
+// returns a generic HTML 404 for searchAnalytics — do not use it here.)
 const WEBMASTERS_API = 'https://www.googleapis.com/webmasters/v3';
 const SCOPE = 'https://www.googleapis.com/auth/webmasters.readonly';
 
@@ -140,7 +142,7 @@ export function createSearchConsoleAdapter(config: SearchConsoleConfig) {
     nowSec: number,
     rowLimit = 100,
   ): Promise<SearchRow[]> {
-    const url = `${SEARCH_CONSOLE_API}/v1/sites/${encodedSite}/searchAnalytics/query`;
+    const url = `${WEBMASTERS_API}/sites/${encodedSite}/searchAnalytics/query`;
     const data = await api<{ rows?: SearchAnalyticsRow[] }>(url, nowSec, {
       method: 'POST',
       body: JSON.stringify({
@@ -156,7 +158,7 @@ export function createSearchConsoleAdapter(config: SearchConsoleConfig) {
 
   /** Property-wide totals (no dimension) for the range. */
   async function totals(range: DateRange, nowSec: number): Promise<SearchConsoleSnapshot['totals']> {
-    const url = `${SEARCH_CONSOLE_API}/v1/sites/${encodedSite}/searchAnalytics/query`;
+    const url = `${WEBMASTERS_API}/sites/${encodedSite}/searchAnalytics/query`;
     const data = await api<{ rows?: SearchAnalyticsRow[] }>(url, nowSec, {
       method: 'POST',
       body: JSON.stringify({ startDate: range.start, endDate: range.end, dataState: 'final' }),
