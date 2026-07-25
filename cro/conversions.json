@@ -1,0 +1,41 @@
+{
+  "description": "Revenue-route conversion goals for the CRO data spine. Each goal maps a human label to the analytics goal/event name and the primary landing path(s) whose visits feed the funnel. The weekly snapshot breaks out visits + conversion events per goal.",
+  "version": 1,
+  "goals": [
+    {
+      "id": "ebook",
+      "label": "Ebook purchase intent",
+      "eventName": "ebook_purchase_intent",
+      "paths": ["/ebook"],
+      "revenue": true
+    },
+    {
+      "id": "tutoring_private_class",
+      "label": "Private tutoring class booking",
+      "eventName": "tutoring_book_private_class",
+      "paths": ["/tutoring#book-private-class", "/tutoring"],
+      "revenue": true
+    },
+    {
+      "id": "ai_feedback",
+      "label": "AI feedback signup",
+      "eventName": "ai_feedback_start",
+      "paths": ["/ai-feedback"],
+      "revenue": true
+    },
+    {
+      "id": "webinar_signup",
+      "label": "Webinar signup",
+      "eventName": "webinar_signup",
+      "paths": ["/webinar"],
+      "revenue": true
+    },
+    {
+      "id": "subscription",
+      "label": "Subscription purchase",
+      "eventName": "subscription_purchase",
+      "paths": ["/celpip/writing/ai-feedback", "/celpip/reading"],
+      "revenue": true
+    }
+  ]
+}
