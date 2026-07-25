@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Reduce grammar errors when writing quickly in exam conditions."
 date: "2026-03-25"
 tags: ["writing", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">Grammatical Range and Accuracy is not just about knowing complex structures — it is about producing them correctly under timed conditions. The most common error pattern is not lack of knowledge but lack of a final-check system.</p></div>
 

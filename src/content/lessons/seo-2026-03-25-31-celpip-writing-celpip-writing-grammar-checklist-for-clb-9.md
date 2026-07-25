@@ -11,7 +11,7 @@ exam: ["CELPIP"]
 excerpt: "Use a practical grammar review system before final submission."
 date: "2026-03-25"
 tags: ["writing", "celpip", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">A grammar error in CELPIP Writing costs more than a vocabulary gap. This checklist targets the five error patterns that most frequently prevent candidates from reaching CLB 9 on Linguistic Range and Accuracy.</p></div>
 

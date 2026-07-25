@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Find exact words and avoid grammar mismatch errors."
 date: "2026-03-25"
 tags: ["reading", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">Sentence completion requires you to find a word or words from the passage that complete a sentence. The answer is almost always a direct lift from the text — your job is to find the right section and identify exactly which words fit grammatically and semantically.</p></div>
 

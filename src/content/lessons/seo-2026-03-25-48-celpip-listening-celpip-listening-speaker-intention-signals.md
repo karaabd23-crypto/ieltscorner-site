@@ -11,7 +11,7 @@ exam: ["CELPIP"]
 excerpt: "Recognize tone and intention clues that drive correct answers."
 date: "2026-03-25"
 tags: ["listening", "celpip", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">Several CELPIP Listening questions ask about the speaker's intention, attitude, or tone. The answer is almost never in the words alone -- it is in the stress pattern, the contrast signal, or the qualifying phrase. This lesson teaches you to hear intention, not just content.</p></div>
 

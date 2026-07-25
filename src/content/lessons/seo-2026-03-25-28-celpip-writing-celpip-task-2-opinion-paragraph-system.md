@@ -11,7 +11,7 @@ exam: ["CELPIP"]
 excerpt: "Build clear opinion responses with reasons and focused support."
 date: "2026-03-25"
 tags: ["writing", "celpip", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">CELPIP Task 2 asks you to respond to a survey question with your opinion. A high-scoring response requires a clear position, two developed reasons, and a conclusion. The "opinion paragraph system" gives each reason its own paragraph with a consistent internal structure.</p></div>
 

@@ -11,7 +11,7 @@ exam: ["CELPIP"]
 excerpt: "Deliver organized advice with clear sequencing and useful language."
 date: "2026-03-25"
 tags: ["speaking", "celpip", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">CELPIP Speaking Task 1 asks you to give advice to a friend. High-scoring responses give one clear recommendation, one concrete reason, and one practical next step. Vague advice and over-qualification drop the Coherence score.</p></div>
 

@@ -11,7 +11,7 @@ exam: ["CELPIP"]
 excerpt: "Respond calmly with empathy, structure, and actionable advice."
 date: "2026-03-25"
 tags: ["speaking", "celpip", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">CELPIP Speaking Task 6 presents a problem situation and asks how you would respond. CLB 9 responses identify the core issue, state a response strategy, and show interpersonal awareness. Vague reassurances score below CLB 8.</p></div>
 

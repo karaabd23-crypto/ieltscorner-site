@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Present problems and solutions with precise linking and relevant support."
 date: "2026-03-25"
 tags: ["writing", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">Problem-solution essays require you to identify a real problem, explain why it exists or what it causes, and then propose a concrete solution with a clear mechanism. Most writers list problems and solutions without connecting them — which costs marks for coherence.</p></div>
 

@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Build passage maps that speed up answer location and verification."
 date: "2026-03-25"
 tags: ["reading", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">Academic Reading passages are long and dense. Paragraph mapping — writing a one-word label next to each paragraph as you skim — gives you a navigable index so you can find answers in 10 seconds instead of rereading the whole passage.</p></div>
 

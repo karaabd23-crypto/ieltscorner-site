@@ -11,7 +11,7 @@ exam: ["CELPIP"]
 excerpt: "Match tone and register correctly for complaint and request emails."
 date: "2026-03-25"
 tags: ["writing", "celpip", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">Tone is the register you adopt in writing — formal, semi-formal, or informal. CELPIP Task 1 situations signal the required tone through context clues: who you are writing to and what the situation is. Mismatching tone to context is one of the most common CLB 7-8 errors.</p></div>
 

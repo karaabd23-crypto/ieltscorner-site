@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Use evidence mapping to avoid common T/F/NG traps."
 date: "2026-03-25"
 tags: ["reading", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">True/False/Not Given is the question type most candidates find hardest — not because the reading is difficult, but because the logic is strict. True means the text explicitly confirms the statement. False means the text explicitly contradicts it. Not Given means the text says nothing about it either way.</p></div>
 

@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Predict lecture flow to improve Section 4 answer accuracy."
 date: "2026-03-25"
 tags: ["listening", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">Section 4 is an academic monologue — a lecture or talk. No conversation, no turn-taking. The speaker follows a predictable structure: introduction, main points (usually 2-3), and conclusion. Predicting this structure before the recording starts helps you know when a new answer is coming.</p></div>
 

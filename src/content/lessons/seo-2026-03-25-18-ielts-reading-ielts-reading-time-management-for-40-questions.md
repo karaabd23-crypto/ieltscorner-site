@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Control pace section by section and protect final-question accuracy."
 date: "2026-03-25"
 tags: ["reading", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">IELTS Academic Reading gives you 60 minutes for 40 questions across three passages. That is 90 seconds per question — including reading time. Most candidates run out of time on passage 3. The fix is a strict time allocation and a skip-and-return rule.</p></div>
 

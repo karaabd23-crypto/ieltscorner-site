@@ -139,3 +139,73 @@ path(s) whose visits feed the funnel. Tracked routes: `/ebook`,
 - Join `conversions[].id` back to `conversions.json` for label/path/revenue flag.
 - Phase 2 remains read-only on this data; it produces its own analysis output
   separately and never rewrites snapshots.
+
+---
+
+# SEO Data Spine (Search Console)
+
+The SEO spine is the same shape as the CRO spine but sourced from **Google
+Search Console** — because the site's real bottleneck is *indexing/ranking*, not
+just on-site conversion. A second scheduled function
+[`netlify/functions/gsc-weekly-pull.ts`](../netlify/functions/gsc-weekly-pull.ts)
+runs every **Monday 06:15 UTC** (15 min after the CRO pull, to avoid racing on
+the `cro-data` branch head) and commits `cro/snapshots/gsc-YYYY-WW.json`.
+
+The Phase-2 reader is the **`seo-analyst`** agent
+([`.claude/agents/seo-analyst.md`](../.claude/agents/seo-analyst.md)): it reads
+both the `gsc-*` and the GA4 snapshots and outputs a prioritized weekly action
+report (indexing recovery, page-2 keyword wins, impressions-without-clicks,
+conversion trend). Run it with the Agent tool (`seo-analyst`) or on a schedule.
+
+## GSC snapshot schema
+
+`cro/snapshots/gsc-YYYY-WW.json`:
+
+```jsonc
+{
+  "schemaVersion": 1,
+  "week": "2026-30",
+  "range": { "start": "2026-07-20", "end": "2026-07-26" },
+  "provider": "search-console",
+  "siteUrl": "https://ieltscorner.ca/",
+  "generatedAt": "2026-07-27T06:15:00.000Z",
+  "search": {
+    "totals": { "clicks": 0, "impressions": 0, "ctr": 0, "position": 0 },
+    "topQueries": [ { "key": "celpip writing task 1", "clicks": 3, "impressions": 120, "ctr": 0.025, "position": 12.4 } ],
+    "topPages":   [ { "key": "https://ieltscorner.ca/lessons/...", "clicks": 5, "impressions": 200, "ctr": 0.025, "position": 9.1 } ],
+    "page2Queries":        [ /* position 8..20, real impressions — fastest wins */ ],
+    "impressionsNoClicks": [ /* rank but no clicks — title/meta problem */ ],
+    "sitemaps": [ { "path": "https://ieltscorner.ca/sitemap-index.xml", "submitted": 551, "indexed": 3, "errors": 0, "warnings": 0 } ]
+  }
+}
+```
+
+## Environment variables (SEO spine)
+
+| Var             | Required | Purpose                                                                 |
+| --------------- | -------- | ----------------------------------------------------------------------- |
+| `GITHUB_TOKEN`  | yes      | Reuses the CRO token; commits to `cro-data`.                            |
+| `GSC_SITE_URL`  | yes      | The Search Console property, EXACTLY as shown in GSC. URL-prefix: `https://ieltscorner.ca/` — Domain: `sc-domain:ieltscorner.ca`. |
+
+The **provider credential is shared with GA4** — the same service-account JSON
+key already stored in the `cro-config` blob store (`analytics-api-key`). No new
+credential to store; the GSC adapter reads it via the same
+`resolveAnalyticsApiKey()`.
+
+### GSC setup (one-time)
+
+1. Reuse the **existing GA4 service account** (the one already granted Viewer on
+   the GA4 property). No new key needed.
+2. **Enable the Search Console API**: Google Cloud Console → APIs & Services →
+   Enable APIs → **Google Search Console API**.
+3. **Search Console → Settings → Users and permissions → Add user** → paste the
+   service account email (`...@....iam.gserviceaccount.com`) → permission
+   **Restricted** (read is enough) or Full.
+4. In Netlify set `GSC_SITE_URL` to the exact property string (step above).
+
+Auth reuses the shared self-signed JWT in
+[`netlify/functions/lib/google-auth.ts`](../netlify/functions/lib/google-auth.ts)
+with the `webmasters.readonly` scope — no extra npm dependency.
+
+> Note: GSC finalizes data ~2–3 days late; the adapter requests `dataState:
+> 'final'`, so the freshest 2–3 days are excluded in exchange for stable numbers.

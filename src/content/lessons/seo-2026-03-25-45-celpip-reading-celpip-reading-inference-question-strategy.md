@@ -11,7 +11,7 @@ exam: ["CELPIP"]
 excerpt: "Infer meaning accurately from context and supporting details."
 date: "2026-03-25"
 tags: ["reading", "celpip", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">Inference questions are the hardest question type in CELPIP Reading because the answer is not stated directly in the passage. This lesson gives you a three-step strategy to identify implicit meaning without guessing.</p></div>
 

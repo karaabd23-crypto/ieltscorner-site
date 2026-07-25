@@ -11,7 +11,7 @@ exam: ["CELPIP"]
 excerpt: "Find proof quickly and avoid keyword-only answer mistakes."
 date: "2026-03-25"
 tags: ["reading", "celpip", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">Most CELPIP Reading errors happen because candidates match the topic of a question to a passage section but do not confirm the specific evidence. This lesson teaches exact keyword-to-evidence matching to eliminate guessing.</p></div>
 

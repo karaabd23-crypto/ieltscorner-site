@@ -11,7 +11,7 @@ exam: ["CELPIP"]
 excerpt: "Compare choices and justify recommendations with strong structure."
 date: "2026-03-25"
 tags: ["speaking", "celpip", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">CELPIP Speaking Task 5 asks you to compare two options and make a recommendation. The strongest responses give a direct comparison on two or three specific criteria, then commit to one option with a clear reason.</p></div>
 

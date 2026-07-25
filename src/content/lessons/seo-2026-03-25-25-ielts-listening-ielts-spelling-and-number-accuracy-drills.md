@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Improve detail accuracy in names, addresses, dates, and prices."
 date: "2026-03-25"
 tags: ["listening", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">In IELTS Listening, a correctly identified answer spelled incorrectly scores zero. The same applies to numbers written in the wrong format. Spelling and number accuracy are the most avoidable source of lost marks.</p></div>
 

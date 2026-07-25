@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Use precise vocabulary naturally without forcing memorized phrases."
 date: "2026-03-25"
 tags: ["writing", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">Lexical Resource rewards precision and range, not length. Using ten ordinary words is worth less than using four precise ones. The goal is to replace vague everyday words with specific academic equivalents and to use them in natural collocations — not random substitution.</p></div>
 

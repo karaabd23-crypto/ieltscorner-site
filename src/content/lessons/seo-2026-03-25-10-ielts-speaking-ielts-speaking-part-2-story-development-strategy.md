@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Plan and deliver a two-minute cue card response with confidence."
 date: "2026-03-25"
 tags: ["speaking", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">Part 2 gives you a cue card and 1 minute to prepare. You must speak for 1-2 minutes. The most common failure is running out of things to say at 40 seconds. The fix is a simple story arc: set the scene, describe the event, explain the significance.</p></div>
 

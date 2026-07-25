@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Handle both views and your position without losing coherence."
 date: "2026-03-25"
 tags: ["writing", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">A discussion essay asks you to present both views fairly and then give your own opinion. The most common mistake is treating it like two separate opinion essays — one for each side — with no personal position at the end. The examiner needs to know where you stand.</p></div>
 

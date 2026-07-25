@@ -11,7 +11,7 @@ exam: ["CELPIP"]
 excerpt: "Decode prompt requirements quickly before writing begins."
 date: "2026-03-25"
 tags: ["writing", "celpip", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">CELPIP Writing prompts contain specific requirements that are easy to miss under time pressure. Reading the prompt in 60 seconds with a structured checklist — rather than scanning it once and writing — prevents the most common error: answering a different question than the one asked.</p></div>
 

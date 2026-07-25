@@ -11,7 +11,7 @@ exam: ["CELPIP"]
 excerpt: "Tell personal experience stories with beginning-middle-end clarity."
 date: "2026-03-25"
 tags: ["speaking", "celpip", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">CELPIP Speaking Task 2 asks you to tell a story based on pictures. The key is controlling your narrative so it has a clear beginning, middle, and end within 60 seconds -- without running out of things to say or losing the thread.</p></div>
 

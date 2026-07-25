@@ -11,7 +11,7 @@ exam: ["CELPIP"]
 excerpt: "Develop opinion answers with clear reasons and balanced ideas."
 date: "2026-03-25"
 tags: ["speaking", "celpip", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">CELPIP Speaking Task 7 asks for your opinion on a topic with some personal or societal relevance. CLB 9 responses give a clear position, one developed reason, and a concrete example or evidence. Surface-level opinions with no development score below CLB 8.</p></div>
 

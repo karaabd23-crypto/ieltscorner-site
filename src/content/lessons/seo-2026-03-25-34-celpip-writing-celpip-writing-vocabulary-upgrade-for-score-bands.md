@@ -11,7 +11,7 @@ exam: ["CELPIP"]
 excerpt: "Use precise words and collocations to strengthen lexical quality."
 date: "2026-03-25"
 tags: ["writing", "celpip", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">Upgrading vocabulary in CELPIP Writing is not about using longer words. It is about replacing vague, overused words with precise, contextually accurate alternatives. This lesson targets the upgrades that most reliably move a response from CLB 8 to CLB 9.</p></div>
 
