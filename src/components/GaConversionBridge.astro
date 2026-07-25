@@ -1,0 +1,120 @@
+---
+// GA4 conversion bridge.
+//
+// The site loads gtag.js (see GoogleAnalytics.astro) but never called
+// gtag('event', ...), so no conversion events reached GA4 and the CRO weekly
+// pull reported zero events for every goal. This bridge fires clean GA4 events
+// on the real revenue moments, matching each CTA by its href/hook so no
+// per-page markup changes are needed.
+//
+// These are INTENT events (checkout started / booking made), not confirmed
+// purchases. Event names here MUST match eventName in cro/conversions.json:
+//   ebook_checkout_click          -> ebook
+//   tutoring_booking              -> tutoring_private_class (Calendly booking)
+//   ai_feedback_checkout_click    -> ai_feedback
+//   subscription_checkout_click   -> subscription
+//
+// It also mirrors the existing dataLayer intent events (booking_click,
+// checkout_click, purchase_intent_click) into GA4 so ConversionTrackingScript's
+// signals are not lost.
+---
+
+<script is:inline>
+  (() => {
+    // gtag is defined by GoogleAnalytics.astro and exposed as window.gtag.
+    const send = (name, params) => {
+      if (typeof window.gtag === "function") {
+        window.gtag("event", name, params || {});
+      }
+    };
+
+    const firedOnce = new Set();
+    const sendOnce = (key, name, params) => {
+      if (firedOnce.has(key)) return;
+      firedOnce.add(key);
+      send(name, params);
+    };
+
+    const pagePath = () => window.location.pathname;
+
+    // 1) Click-based intent for the anchor/button CTAs.
+    document.addEventListener(
+      "click",
+      (event) => {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+
+        // ebook: hosted Stripe Payment Link (buy.stripe.com).
+        const stripeLink = target.closest('a[href*="buy.stripe.com"]');
+        if (stripeLink) {
+          send("ebook_checkout_click", {
+            page_path: pagePath(),
+            offer: "ebook",
+            destination: stripeLink.getAttribute("href") || "",
+          });
+          return;
+        }
+
+        // ai_feedback: CELPIP writing hub checkout buttons.
+        if (target.closest(".hub-checkout-btn")) {
+          send("ai_feedback_checkout_click", {
+            page_path: pagePath(),
+            offer: "ai_feedback",
+          });
+          return;
+        }
+
+        // subscription: CELPIP reading checkout buttons.
+        if (
+          target.closest('[data-reading-checkout="true"], #reading-hub-start-checkout')
+        ) {
+          send("subscription_checkout_click", {
+            page_path: pagePath(),
+            offer: "subscription",
+          });
+          return;
+        }
+      },
+      { passive: true, capture: true }
+    );
+
+    // 2) Tutoring: real Calendly booking via the widget's postMessage API.
+    // Calendly posts { event: "calendly.event_scheduled", ... } to the parent
+    // window when an invitee completes a booking.
+    window.addEventListener("message", (e) => {
+      const data = e && e.data;
+      if (!data || typeof data.event !== "string") return;
+      if (!data.event.startsWith("calendly.")) return;
+      if (data.event === "calendly.event_scheduled") {
+        send("tutoring_booking", {
+          page_path: pagePath(),
+          offer: "tutoring_private_class",
+        });
+      }
+    });
+
+    // 3) Mirror the existing dataLayer intent events into GA4. These are pushed
+    // by ConversionTrackingScript in GTM object form ({ event: name, ... }),
+    // which gtag.js ignores; forward the ones that signal purchase intent.
+    const MIRROR = {
+      booking_click: "tutoring_booking_click",
+      checkout_click: "essay_checkout_click",
+      purchase_intent_click: "purchase_intent_click",
+    };
+    const dl = (window.dataLayer = window.dataLayer || []);
+    const originalPush = dl.push.bind(dl);
+    dl.push = (...args) => {
+      for (const entry of args) {
+        const name = entry && typeof entry === "object" ? entry.event : null;
+        if (name && MIRROR[name]) {
+          // De-dupe rapid repeats of the same intent on the same path.
+          sendOnce(`${name}|${pagePath()}`, MIRROR[name], {
+            page_path: pagePath(),
+            offer: entry.offer || "",
+          });
+        }
+      }
+      return originalPush(...args);
+    };
+  })();
+</script>

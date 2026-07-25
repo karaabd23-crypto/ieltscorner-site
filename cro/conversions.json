@@ -1,32 +1,32 @@
 {
-  "description": "Revenue-route conversion goals for the CRO data spine. Each goal maps a human label to the analytics goal/event name and the primary landing path(s) whose visits feed the funnel. The weekly snapshot breaks out visits + conversion events per goal.",
+  "description": "Revenue-route conversion goals for the CRO data spine. Each goal maps a human label to the analytics event name and the primary landing path(s) whose visits feed the funnel. The weekly snapshot breaks out visits + conversion events per goal. eventName values are INTENT events (checkout started / booking made) fired into GA4 by src/components/GaConversionBridge.astro, not confirmed purchases.",
   "version": 1,
   "goals": [
     {
       "id": "ebook",
-      "label": "Ebook purchase intent",
-      "eventName": "ebook_purchase_intent",
+      "label": "Ebook checkout click",
+      "eventName": "ebook_checkout_click",
       "paths": ["/ebook"],
       "revenue": true
     },
     {
       "id": "tutoring_private_class",
-      "label": "Private tutoring class booking",
-      "eventName": "tutoring_book_private_class",
+      "label": "Private tutoring booking",
+      "eventName": "tutoring_booking",
       "paths": ["/tutoring#book-private-class", "/tutoring"],
       "revenue": true
     },
     {
       "id": "ai_feedback",
-      "label": "AI feedback signup",
-      "eventName": "ai_feedback_start",
+      "label": "AI feedback checkout click",
+      "eventName": "ai_feedback_checkout_click",
       "paths": ["/ai-feedback"],
       "revenue": true
     },
     {
       "id": "subscription",
-      "label": "Subscription purchase",
-      "eventName": "subscription_purchase",
+      "label": "Subscription checkout click",
+      "eventName": "subscription_checkout_click",
       "paths": ["/celpip/writing/ai-feedback", "/celpip/reading"],
       "revenue": true
     }

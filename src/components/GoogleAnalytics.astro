@@ -7,6 +7,8 @@ const { measurementId = "G-G0WCV3WJ44" } = Astro.props;
 <script is:inline define:vars={{ measurementId }}>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  // Expose gtag globally so the conversion bridge can send GA4 events.
+  window.gtag = gtag;
   gtag('js', new Date());
   gtag('config', measurementId);
 </script>

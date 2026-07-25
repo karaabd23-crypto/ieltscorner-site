@@ -4,6 +4,7 @@ import "../styles/global.css";
 import TrustStrip from "../components/TrustStrip.astro";
 import ConversionTrackingScript from "../components/ConversionTrackingScript.astro";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
+import GaConversionBridge from "../components/GaConversionBridge.astro";
 import ContentAd from "../components/ContentAd.astro";
 import ContextualNextStepPromo from "../components/ContextualNextStepPromo.astro";
 import IdentityCallbackBridge from "../components/IdentityCallbackBridge.astro";
@@ -251,6 +252,7 @@ const serializeJsonForScript = (value: unknown) =>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <GoogleAnalytics measurementId="G-G0WCV3WJ44" />
+    <GaConversionBridge />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <IdentityCallbackBridge />
