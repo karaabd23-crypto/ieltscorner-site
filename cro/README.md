@@ -28,7 +28,7 @@ snapshots never mix with application code.
 | Provider   | Module                          | Status                    |
 | ---------- | ------------------------------- | ------------------------- |
 | `plausible`| `netlify/functions/lib/plausible.ts` | Full (Stats API v1)  |
-| `ga4`      | `netlify/functions/lib/ga4.ts`  | Stub — `TODO`, throws     |
+| `ga4`      | `netlify/functions/lib/ga4.ts`  | Full (Data API v1beta)    |
 
 Add a provider by implementing `AnalyticsAdapter` and registering it in
 `getAdapter()`. The snapshot schema is provider-independent.
@@ -39,12 +39,30 @@ Add a provider by implementing `AnalyticsAdapter` and registering it in
 | -------------------- | -------- | --------------------------------------------------- |
 | `GITHUB_TOKEN`       | yes      | Repo-scoped token allowed to commit to `cro-data`.  |
 | `ANALYTICS_PROVIDER` | yes      | `plausible` or `ga4`.                               |
-| `ANALYTICS_API_KEY`  | yes      | Provider API key / token.                           |
-| `ANALYTICS_SITE_ID`  | yes      | Provider site / property id.                        |
+| `ANALYTICS_API_KEY`  | yes      | Provider secret. Plausible: Stats API key (Bearer). GA4: the full service-account JSON key, verbatim. |
+| `ANALYTICS_SITE_ID`  | yes      | Plausible: the domain (e.g. `ieltscorner.ca`). GA4: the numeric property id (e.g. `123456789`), NOT the `G-XXXX` measurement id. |
 | `CRO_GITHUB_REPO`    | no       | `owner/name` (default `karaabd23-crypto/ieltscorner-site`). |
 | `CRO_DATA_BRANCH`    | no       | Target data branch (default `cro-data`).            |
 
 Set these in the Netlify dashboard (Site settings → Environment variables).
+
+### GA4 setup (one-time)
+
+To use `ANALYTICS_PROVIDER=ga4` with a free Google service account:
+
+1. **Google Cloud Console** → create/select a project → **APIs & Services →
+   Enable APIs** → enable **Google Analytics Data API**.
+2. **IAM & Admin → Service Accounts → Create service account** (no roles
+   needed). Open it → **Keys → Add key → Create new key → JSON** → download.
+3. **GA4 Admin → Property → Property Access Management → Add users** → paste the
+   service account's email (`...@....iam.gserviceaccount.com`) → role **Viewer**.
+4. Find the **numeric property id** in GA4 Admin → Property Settings (a number,
+   not `G-XXXX`).
+5. In Netlify set `ANALYTICS_PROVIDER=ga4`, `ANALYTICS_API_KEY` = the entire
+   downloaded JSON file contents, `ANALYTICS_SITE_ID` = the numeric property id.
+
+Auth is a self-signed OAuth2 JWT (RS256) exchanged for an access token — no extra
+npm dependency required.
 
 ## Snapshot schema
 
