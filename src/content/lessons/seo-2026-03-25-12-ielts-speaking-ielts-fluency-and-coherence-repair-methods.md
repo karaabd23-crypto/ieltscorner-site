@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Stay fluent when ideas pause by using controlled recovery language."
 date: "2026-03-25"
 tags: ["speaking", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">Fluency is not about speaking without stopping — it is about recovering smoothly when you do stop. Natural speakers pause, self-correct, and reformulate constantly. What separates Band 6 from Band 7 is whether those repairs sound deliberate and controlled or panicked and disjointed.</p></div>
 

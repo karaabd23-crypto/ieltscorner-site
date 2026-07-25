@@ -11,7 +11,7 @@ exam: ["CELPIP"]
 excerpt: "Predict likely content before each section to increase accuracy."
 date: "2026-03-25"
 tags: ["listening", "celpip", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">CELPIP Listening gives you a few seconds to read the question before the audio plays. Candidates who use this preview time to predict the answer type -- number, name, reason, or action -- find answers faster and miss fewer details.</p></div>
 

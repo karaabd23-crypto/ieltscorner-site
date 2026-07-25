@@ -11,7 +11,7 @@ exam: ["CELPIP"]
 excerpt: "Recover quickly after missing a point without losing the next answer."
 date: "2026-03-25"
 tags: ["listening", "celpip", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">In CELPIP Listening, you will miss something. The question is whether you recover or spiral. This lesson gives you a three-step recovery system that gets you back on track without losing the rest of the recording.</p></div>
 

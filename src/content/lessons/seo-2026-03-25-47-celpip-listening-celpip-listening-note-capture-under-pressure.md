@@ -11,7 +11,7 @@ exam: ["CELPIP"]
 excerpt: "Capture essential details while keeping pace with audio speed."
 date: "2026-03-25"
 tags: ["listening", "celpip", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">CELPIP Listening plays audio once. Candidates who try to write complete sentences miss the next key detail. This lesson teaches a compact note-capture system that captures what you need without sacrificing comprehension.</p></div>
 

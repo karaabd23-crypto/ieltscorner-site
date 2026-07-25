@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Capture key details quickly with a practical shorthand system."
 date: "2026-03-25"
 tags: ["listening", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">Sections 3 and 4 of IELTS Listening move fast. Writing full words misses the next piece of information. A small set of symbols and abbreviations lets you capture key data in real time without losing track.</p></div>
 

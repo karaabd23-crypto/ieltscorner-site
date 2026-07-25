@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Eliminate distractors with keyword and meaning checks."
 date: "2026-03-25"
 tags: ["reading", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">Multiple choice in IELTS Reading has one correct answer and three distractors. Distractors are carefully designed to look plausible. The most reliable approach is elimination: rule out three wrong options rather than searching for the right one.</p></div>
 

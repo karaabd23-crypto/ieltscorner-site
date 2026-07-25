@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Improve flow with references, connectors, and paragraph control."
 date: "2026-03-25"
 tags: ["writing", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">Cohesion is how sentences and paragraphs connect. Band 6 writers use connectors like "however" and "furthermore" but apply them mechanically at the start of every sentence. Band 7 writers vary their cohesive devices and embed them within sentences — which is what this lesson covers.</p></div>
 

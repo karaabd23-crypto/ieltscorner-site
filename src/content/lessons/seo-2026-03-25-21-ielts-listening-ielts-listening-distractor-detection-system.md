@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Recognize correction language and avoid first-answer traps."
 date: "2026-03-25"
 tags: ["listening", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">IELTS Listening uses distractors deliberately: a speaker mentions one answer, then corrects or contradicts it. Candidates who write the first thing they hear get it wrong. The rule is: the final, confirmed answer is the correct one.</p></div>
 

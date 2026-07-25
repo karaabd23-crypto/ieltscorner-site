@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Deliver natural Part 1 answers with clear expansion and vocabulary control."
 date: "2026-03-25"
 tags: ["speaking", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">Part 1 questions are short and personal — about daily life, habits, preferences. Most test-takers give one-sentence answers and stop, or ramble for 30 seconds without structure. The ideal Part 1 answer is 2-3 sentences: a direct answer, a reason or detail, and an optional extension.</p></div>
 

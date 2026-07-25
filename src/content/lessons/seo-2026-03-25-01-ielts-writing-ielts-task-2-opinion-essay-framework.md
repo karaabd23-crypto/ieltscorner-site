@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Build a clear opinion essay with strong paragraph control and examiner-friendly logic."
 date: "2026-03-25"
 tags: ["writing", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">An opinion essay requires one clear position stated in the introduction and defended through every paragraph. Most Band 5-6 writers drift mid-essay or present both views equally, which costs Task Achievement marks regardless of grammar quality.</p></div>
 

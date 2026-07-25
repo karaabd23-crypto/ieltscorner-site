@@ -11,7 +11,7 @@ exam: ["CELPIP"]
 excerpt: "Improve organization and transition quality for higher writing scores."
 date: "2026-03-25"
 tags: ["writing", "celpip", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">CELPIP Task 2 survey responses are scored heavily on Coherence — how clearly your ideas connect and flow. A response that states good ideas in a disjointed order scores CLB 7. The same ideas in a coherent sequence score CLB 9. Planning for coherence takes 60 seconds before writing.</p></div>
 

@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Build deeper answers with examples, contrast, and precise reasoning."
 date: "2026-03-25"
 tags: ["speaking", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">Part 3 questions ask for opinions on abstract social topics. One-sentence answers score Band 5. Band 7 requires you to develop a point — give a reason, add an example or qualification, then reflect on implications.</p></div>
 

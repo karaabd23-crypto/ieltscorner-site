@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Write accurate overview statements that capture key chart trends."
 date: "2026-03-25"
 tags: ["writing", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">The overview is the most important sentence in an IELTS Task 1 Academic response. It summarises the main trend or dominant feature of the data without quoting specific numbers. Missing or weak overviews are the leading cause of Band 5 Task Achievement scores in Task 1.</p></div>
 

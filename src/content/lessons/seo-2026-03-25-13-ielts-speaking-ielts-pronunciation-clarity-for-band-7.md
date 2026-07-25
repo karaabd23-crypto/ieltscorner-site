@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Improve intonation and stress to increase speaking clarity and confidence."
 date: "2026-03-25"
 tags: ["speaking", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">Band 7 pronunciation does not mean a native accent — it means consistent clarity. Examiners listen for word stress, sentence stress, and whether your spoken output requires effort to understand. The three highest-impact areas are word stress placement, final consonant clarity, and sentence rhythm.</p></div>
 

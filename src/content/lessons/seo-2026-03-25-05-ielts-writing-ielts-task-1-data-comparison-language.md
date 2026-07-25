@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Compare data clearly using high-scoring comparative structures."
 date: "2026-03-25"
 tags: ["writing", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">Task 1 Academic requires precise language to compare data points — not just "more" and "less." Examiners look for a range of comparison structures, accurate proportional language, and correct use of prepositions with numbers.</p></div>
 

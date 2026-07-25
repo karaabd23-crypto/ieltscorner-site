@@ -11,7 +11,7 @@ exam: ["CELPIP"]
 excerpt: "Apply a fast revision pass that catches common scoring mistakes."
 date: "2026-03-25"
 tags: ["writing", "celpip", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">A two-minute revision pass after drafting catches the surface errors that cost CLB 9 candidates accuracy marks. This lesson gives you a systematic routine that covers grammar, vocabulary, and task fulfilment in the time available.</p></div>
 

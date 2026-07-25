@@ -11,7 +11,7 @@ exam: ["CELPIP"]
 excerpt: "Write complete, organized email responses that cover every prompt point."
 date: "2026-03-25"
 tags: ["writing", "celpip", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">CELPIP Writing Task 1 asks you to write an email in response to a situation. CLB 9 requires a clearly organised, purposeful email that addresses all bullet points completely. The most common failure is covering only 2 of 3 bullet points, or writing a structure that does not match the situation type.</p></div>
 

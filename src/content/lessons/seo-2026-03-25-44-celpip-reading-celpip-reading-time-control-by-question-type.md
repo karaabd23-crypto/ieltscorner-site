@@ -11,7 +11,7 @@ exam: ["CELPIP"]
 excerpt: "Allocate reading time based on task difficulty and scoring impact."
 date: "2026-03-25"
 tags: ["reading", "celpip", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">CELPIP Reading has multiple question types with different difficulty levels and time costs. Allocating time by question type prevents over-spending on hard questions and under-spending on easy ones.</p></div>
 

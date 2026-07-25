@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Track movement language and location clues accurately."
 date: "2026-03-25"
 tags: ["listening", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">Map and diagram questions require you to match spoken directions or descriptions to a visual. They test spatial vocabulary and the ability to track movement — left, right, opposite, between, adjacent. Most errors come from losing your orientation at the start.</p></div>
 

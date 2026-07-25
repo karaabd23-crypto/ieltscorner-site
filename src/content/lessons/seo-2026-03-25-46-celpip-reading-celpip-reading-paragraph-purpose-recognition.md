@@ -11,7 +11,7 @@ exam: ["CELPIP"]
 excerpt: "Identify writer purpose to improve difficult comprehension items."
 date: "2026-03-25"
 tags: ["reading", "celpip", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">Some CELPIP Reading questions ask about the purpose of a paragraph or section rather than a specific fact. Recognising the five paragraph purposes quickly eliminates wrong answers and speeds up response time.</p></div>
 

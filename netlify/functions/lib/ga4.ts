@@ -18,8 +18,6 @@
  * The service account must be granted Viewer on the GA4 property.
  */
 
-import { createSign } from 'node:crypto';
-
 import {
   computeRate,
   type AdapterConfig,
@@ -30,80 +28,10 @@ import {
   type TopPage,
   type WeeklyMetrics,
 } from './analytics-adapter.js';
+import { fetchAccessToken, parseServiceAccount } from './google-auth.js';
 
 const DATA_API = 'https://analyticsdata.googleapis.com/v1beta';
-const TOKEN_URL = 'https://oauth2.googleapis.com/token';
 const SCOPE = 'https://www.googleapis.com/auth/analytics.readonly';
-
-interface ServiceAccountKey {
-  client_email: string;
-  private_key: string;
-  token_uri?: string;
-}
-
-/** Parse the service-account JSON credential, with a clear error. */
-function parseServiceAccount(apiKey: string): ServiceAccountKey {
-  let parsed: unknown;
-  try {
-    parsed = JSON.parse(apiKey);
-  } catch {
-    throw new Error(
-      'GA4: the credential must be the full service-account JSON key (it did not parse as JSON).',
-    );
-  }
-  const key = parsed as Partial<ServiceAccountKey>;
-  if (!key.client_email || !key.private_key) {
-    throw new Error('GA4: service-account JSON is missing client_email or private_key.');
-  }
-  return key as ServiceAccountKey;
-}
-
-/** base64url without padding, from a Buffer or string. */
-function base64url(input: Buffer | string): string {
-  const buf = typeof input === 'string' ? Buffer.from(input, 'utf8') : input;
-  return buf.toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
-}
-
-/**
- * Build and RS256-sign an OAuth2 JWT assertion, then exchange it for an access
- * token. `nowSec` is passed in (not read from the clock here) so the caller
- * controls time; iat/exp span 3600s, the max Google allows.
- */
-async function fetchAccessToken(key: ServiceAccountKey, nowSec: number): Promise<string> {
-  const header = { alg: 'RS256', typ: 'JWT' };
-  const claims = {
-    iss: key.client_email,
-    scope: SCOPE,
-    aud: key.token_uri || TOKEN_URL,
-    iat: nowSec,
-    exp: nowSec + 3600,
-  };
-  const signingInput = `${base64url(JSON.stringify(header))}.${base64url(JSON.stringify(claims))}`;
-
-  const signer = createSign('RSA-SHA256');
-  signer.update(signingInput);
-  signer.end();
-  const signature = base64url(signer.sign(key.private_key));
-  const assertion = `${signingInput}.${signature}`;
-
-  const res = await fetch(key.token_uri || TOKEN_URL, {
-    method: 'POST',
-    headers: { 'content-type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams({
-      grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
-      assertion,
-    }),
-  });
-  if (!res.ok) {
-    const body = await res.text().catch(() => '');
-    throw new Error(`GA4 token exchange failed: ${res.status} ${res.statusText} ${body}`.trim());
-  }
-  const token = (await res.json()) as { access_token?: string };
-  if (!token.access_token) {
-    throw new Error('GA4 token exchange returned no access_token.');
-  }
-  return token.access_token;
-}
 
 // --- runReport response shapes (only the fields we read) ---
 interface ReportRow {
@@ -126,14 +54,14 @@ function num(value: string | undefined): number {
 
 export function createGa4Adapter(config: AdapterConfig): AnalyticsAdapter {
   const { apiKey, siteId, goals } = config;
-  const key = parseServiceAccount(apiKey);
+  const key = parseServiceAccount(apiKey, 'GA4');
   const property = `properties/${String(siteId).replace(/^properties\//, '')}`;
 
   // One access token per adapter instance (a single weekly run), reused across
   // every runReport call in getWeeklyMetrics.
   let tokenPromise: Promise<string> | null = null;
   function accessToken(nowSec: number): Promise<string> {
-    if (!tokenPromise) tokenPromise = fetchAccessToken(key, nowSec);
+    if (!tokenPromise) tokenPromise = fetchAccessToken(key, SCOPE, nowSec);
     return tokenPromise;
   }
 

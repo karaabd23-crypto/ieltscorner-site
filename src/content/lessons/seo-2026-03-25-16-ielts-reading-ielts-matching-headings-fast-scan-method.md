@@ -11,7 +11,7 @@ exam: ["IELTS"]
 excerpt: "Identify paragraph purpose quickly to choose headings accurately."
 date: "2026-03-25"
 tags: ["reading", "ielts", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">Matching Headings asks you to choose the best heading for each paragraph from a list of options. The most common mistake is reading every paragraph fully — which wastes time. The fast scan method: read the first sentence and last sentence of each paragraph only, then match.</p></div>
 

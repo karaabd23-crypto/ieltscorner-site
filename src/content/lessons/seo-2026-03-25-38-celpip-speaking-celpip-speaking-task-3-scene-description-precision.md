@@ -11,7 +11,7 @@ exam: ["CELPIP"]
 excerpt: "Describe scenes quickly with specific details and logical order."
 date: "2026-03-25"
 tags: ["speaking", "celpip", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">CELPIP Speaking Task 3 asks you to describe a photograph in detail. Precision in vocabulary and spatial language separates CLB 8 responses from CLB 9. This lesson teaches you to move from general to specific systematically.</p></div>
 

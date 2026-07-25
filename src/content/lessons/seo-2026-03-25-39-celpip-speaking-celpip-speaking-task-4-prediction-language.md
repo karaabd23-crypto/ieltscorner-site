@@ -11,7 +11,7 @@ exam: ["CELPIP"]
 excerpt: "Make predictions with confidence and clear supporting logic."
 date: "2026-03-25"
 tags: ["speaking", "celpip", "seo", "exam-prep"]
-draft: false
+draft: true
 ---
 <div class="lesson-context"><p class="lesson-context-lead">CELPIP Speaking Task 4 asks you to make predictions about a future situation based on the information provided. Accurate modal usage and evidence-linking are the two markers of a CLB 9 response.</p></div>
 
