@@ -1,3 +1,4 @@
+import { withLambda } from '@netlify/aws-lambda-compat';
 import {
   getLatestInstagramPosts,
   getLatestYouTubeVideos,
@@ -41,7 +42,7 @@ function normalizeInstagramUsername(value) {
   return normalized || DEFAULT_INSTAGRAM_USERNAME;
 }
 
-export async function handler(event) {
+async function handler(event) {
   if (event.httpMethod !== 'GET') {
     return json(405, { error: 'Method not allowed' });
   }
@@ -73,3 +74,5 @@ export async function handler(event) {
     });
   }
 }
+
+export default withLambda(handler);

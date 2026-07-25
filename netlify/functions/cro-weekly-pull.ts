@@ -10,15 +10,19 @@
  *
  * Required env vars:
  *   GITHUB_TOKEN        - repo-scoped token that can commit to `cro-data`.
- *   ANALYTICS_PROVIDER  - "plausible" (full) or "ga4" (stub).
- *   ANALYTICS_API_KEY   - provider API key / token.
+ *   ANALYTICS_PROVIDER  - "plausible" or "ga4".
  *   ANALYTICS_SITE_ID   - provider site/property id.
  * Optional:
  *   CRO_GITHUB_REPO     - "owner/name" (default "karaabd23-crypto/ieltscorner-site").
  *   CRO_DATA_BRANCH     - target data branch (default "cro-data").
+ *
+ * The provider credential is NOT read from the function environment: a GA4
+ * service-account key is too large for the 4KB AWS Lambda environment limit.
+ * It is loaded from the `cro-config` blob store — see ./lib/analytics-credential.
  */
 
 import { getAdapter, type GoalDef } from './lib/analytics-adapter.js';
+import { resolveAnalyticsApiKey } from './lib/analytics-credential.js';
 import conversions from '../../cro/conversions.json' with { type: 'json' };
 
 const DATA_BRANCH = process.env.CRO_DATA_BRANCH || 'cro-data';
@@ -124,7 +128,7 @@ export default async (): Promise<Response> => {
     const goals = (conversions.goals as GoalDef[]) ?? [];
 
     const adapter = await getAdapter(provider, {
-      apiKey: process.env.ANALYTICS_API_KEY || '',
+      apiKey: await resolveAnalyticsApiKey(),
       siteId: process.env.ANALYTICS_SITE_ID || '',
       goals,
     });

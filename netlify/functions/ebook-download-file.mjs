@@ -1,3 +1,4 @@
+import { withLambda } from '@netlify/aws-lambda-compat';
 import crypto from 'crypto';
 
 const EBOOK_DOWNLOAD_SECRET = (process.env.EBOOK_DOWNLOAD_SECRET || '').trim();
@@ -29,7 +30,7 @@ function verifyToken(token) {
   return { sessionId, expiresAt };
 }
 
-export async function handler(event) {
+async function handler(event) {
   if (event.httpMethod !== 'GET') {
     return { statusCode: 405, body: 'Method not allowed' };
   }
@@ -64,3 +65,5 @@ export async function handler(event) {
     body: '',
   };
 }
+
+export default withLambda(handler);

@@ -1,5 +1,6 @@
+import { withLambda } from '@netlify/aws-lambda-compat';
 import Stripe from 'stripe';
-import { connectLambda, getStore } from '@netlify/blobs';
+import { getStore } from '@netlify/blobs';
 import { isSameOriginRequest } from './_utils/requestSecurity.mjs';
 
 const STRIPE_API_KEY = (process.env.STRIPE_API_KEY || '').trim();
@@ -69,7 +70,7 @@ async function getActiveSubscriberCount() {
   }
 }
 
-export async function handler(event) {
+async function handler(event) {
   if (event.httpMethod !== 'GET') {
     return { statusCode: 405, body: JSON.stringify({ error: 'Method not allowed' }) };
   }
@@ -81,14 +82,10 @@ export async function handler(event) {
     };
   }
 
-  const canUseBlobs = Boolean(event?.blobs);
-  if (canUseBlobs) {
-    connectLambda(event);
-  }
-
+  // The v2 runtime wires Blobs up automatically — no connectLambda needed.
   const [freeEvaluationUsers, essaysSubmittedToday, subscriberCount] = await Promise.all([
-    canUseBlobs ? getFreeEvaluationUserCount() : Promise.resolve(0),
-    canUseBlobs ? getEssaysSubmittedToday() : Promise.resolve(0),
+    getFreeEvaluationUserCount(),
+    getEssaysSubmittedToday(),
     getActiveSubscriberCount(),
   ]);
 
@@ -105,3 +102,5 @@ export async function handler(event) {
     }),
   };
 }
+
+export default withLambda(handler);

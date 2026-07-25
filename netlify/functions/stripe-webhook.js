@@ -1,3 +1,4 @@
+import { withLambda } from '@netlify/aws-lambda-compat';
 import Stripe from 'stripe';
 import nodemailer from 'nodemailer';
 
@@ -126,7 +127,7 @@ async function sendEmail({ gmailUser, gmailPassword, customerEmail, customerName
   });
 }
 
-export const handler = async (event) => {
+const handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
@@ -165,7 +166,12 @@ export const handler = async (event) => {
   let stripeEvent;
   try {
     const stripe = new Stripe(stripeApiKey, { apiVersion: '2020-08-27' });
-    stripeEvent = stripe.webhooks.constructEvent(event.body, signature, webhookSecret);
+    // Signature verification needs the exact bytes Stripe signed, so decode
+    // first if the runtime handed us a base64 body.
+    const rawBody = event.isBase64Encoded
+      ? Buffer.from(String(event.body || ''), 'base64').toString('utf8')
+      : String(event.body || '');
+    stripeEvent = stripe.webhooks.constructEvent(rawBody, signature, webhookSecret);
 
     if (stripeEvent.type !== 'checkout.session.completed') {
       return {
@@ -217,3 +223,5 @@ export const handler = async (event) => {
     };
   }
 };
+
+export default withLambda(handler);

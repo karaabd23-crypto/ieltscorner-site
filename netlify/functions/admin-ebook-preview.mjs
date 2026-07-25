@@ -1,3 +1,4 @@
+import { withLambda } from '@netlify/aws-lambda-compat';
 import Stripe from 'stripe';
 
 const STRIPE_API_KEY = (process.env.STRIPE_API_KEY || '').trim();
@@ -22,7 +23,7 @@ function isEbookPurchase(session) {
   return Number(session.amount_total ?? 0) === EBOOK_AMOUNT_CENTS;
 }
 
-export async function handler(event) {
+async function handler(event) {
   if (event.httpMethod !== 'GET') {
     return { statusCode: 405, body: 'Method not allowed' };
   }
@@ -69,3 +70,5 @@ export async function handler(event) {
     return { statusCode: 500, body: error?.message || 'Server error.' };
   }
 }
+
+export default withLambda(handler);

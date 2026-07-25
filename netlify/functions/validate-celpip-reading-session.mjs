@@ -1,3 +1,4 @@
+import { withLambda } from '@netlify/aws-lambda-compat';
 import Stripe from 'stripe';
 import {
   CELPIP_READING_BILLING_INTERVAL,
@@ -45,7 +46,7 @@ async function getSubscriptionDetails(stripe, subscriptionRef) {
   };
 }
 
-export async function handler(event) {
+async function handler(event) {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: JSON.stringify({ error: 'Method not allowed' }) };
   }
@@ -131,3 +132,5 @@ export async function handler(event) {
     };
   }
 }
+
+export default withLambda(handler);

@@ -1,3 +1,4 @@
+import { withLambda } from '@netlify/aws-lambda-compat';
 import Stripe from 'stripe';
 import {
   CELPIP_WRITING_BILLING_INTERVAL,
@@ -12,7 +13,7 @@ import {
 const STRIPE_API_KEY = process.env.STRIPE_API_KEY;
 const PRICE_ID = (process.env.CELPIP_WRITING_PRICE_ID || 'price_1T9z9OAfbKGrKsHyDdo8ua53').trim();
 
-export async function handler(event) {
+async function handler(event) {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: JSON.stringify({ error: 'Method not allowed' }) };
   }
@@ -70,3 +71,5 @@ export async function handler(event) {
     };
   }
 }
+
+export default withLambda(handler);

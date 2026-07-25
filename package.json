@@ -46,12 +46,15 @@
     "session:show": "node scripts/session-catalog.mjs show",
     "session:starter": "powershell -ExecutionPolicy Bypass -File scripts/copy-session-starter.ps1",
     "cancel:insights": "node scripts/monthly-cancellation-insights.mjs",
-    "cancel:insights:dry": "node scripts/monthly-cancellation-insights.mjs --dry-run"
+    "cancel:insights:dry": "node scripts/monthly-cancellation-insights.mjs --dry-run",
+    "cro:credential:set": "node scripts/set-cro-analytics-credential.mjs",
+    "cro:credential:verify": "node scripts/set-cro-analytics-credential.mjs --verify"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.7",
     "@astrojs/mdx": "^4.3.13",
     "@astrojs/sitemap": "^3.7.0",
+    "@netlify/aws-lambda-compat": "^1.0.2",
     "@netlify/blobs": "^10.7.2",
     "@netlify/identity": "^1.0.0",
     "astro": "^5.16.0",

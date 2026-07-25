@@ -1,10 +1,11 @@
 import Stripe from 'stripe';
 import { createHash } from 'crypto';
-import { connectLambda, getStore } from '@netlify/blobs';
+import { getStore } from '@netlify/blobs';
 import {
   getHeader,
   getRequestHost,
   isSameOriginRequest,
+  requestToEventLike,
 } from './_utils/requestSecurity.mjs';
 import {
   CELPIP_WRITING_BILLING_INTERVAL,
@@ -21,10 +22,19 @@ import { evaluateCelpipWriting } from '../../src/lib/celpipWritingEvaluator.mjs'
 const STRIPE_API_KEY = process.env.STRIPE_API_KEY;
 const PRICE_ID = (process.env.CELPIP_WRITING_PRICE_ID || 'price_1T9z9OAfbKGrKsHyDdo8ua53').trim();
 const ADMIN_BYPASS_TOKEN = (process.env.CELPIP_WRITING_ADMIN_BYPASS_TOKEN || '').trim();
-const OPENAI_API_KEY = (process.env.OPENAI_API_KEY || '').trim();
 const OPENAI_MODEL = (process.env.OPENAI_MODEL || 'gpt-4.1-mini').trim();
-const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions';
 const OPENAI_TIMEOUT_MS = 25000;
+
+// Netlify AI Gateway injects OPENAI_API_KEY / OPENAI_BASE_URL into the v2 runtime.
+// Read them per request so a cold-start ordering never leaves them undefined.
+function getOpenAiKey() {
+  return (process.env.OPENAI_API_KEY || '').trim();
+}
+
+function getOpenAiUrl(path) {
+  const baseUrl = (process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').trim().replace(/\/+$/, '');
+  return `${baseUrl}${path}`;
+}
 const STATS_STORE_NAME = 'celpip-writing-stats';
 const FREE_USER_PREFIX = 'free-users/';
 const DAILY_SUBMISSION_PREFIX = 'daily-submissions/';
@@ -359,7 +369,7 @@ async function requestOpenAIEvaluation({
   promptInstructions,
   responseText,
 }) {
-  if (!OPENAI_API_KEY) {
+  if (!getOpenAiKey()) {
     throw new Error('Missing OPENAI_API_KEY');
   }
 
@@ -367,12 +377,12 @@ async function requestOpenAIEvaluation({
   const timeout = setTimeout(() => controller.abort(), OPENAI_TIMEOUT_MS);
 
   try {
-    const response = await fetch(OPENAI_API_URL, {
+    const response = await fetch(getOpenAiUrl('/chat/completions'), {
       method: 'POST',
       signal: controller.signal,
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${OPENAI_API_KEY}`,
+        'Authorization': `Bearer ${getOpenAiKey()}`,
       },
       body: JSON.stringify({
         model: OPENAI_MODEL,
@@ -447,40 +457,41 @@ async function validateSession(sessionId) {
   return session;
 }
 
-export async function handler(event) {
+function jsonResponse(status, payload) {
+  return new Response(JSON.stringify(payload), {
+    status,
+    headers: {
+      'Content-Type': 'application/json',
+      'Cache-Control': 'no-store',
+    },
+  });
+}
+
+export default async (req) => {
+  const event = requestToEventLike(req);
+
   if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: JSON.stringify({ error: 'Method not allowed' }) };
+    return jsonResponse(405, { error: 'Method not allowed' });
   }
 
   if (!isSameOriginRequest(event)) {
-    return {
-      statusCode: 403,
-      body: JSON.stringify({ error: 'Cross-origin requests are not allowed.' }),
-    };
+    return jsonResponse(403, { error: 'Cross-origin requests are not allowed.' });
   }
 
   try {
-    const canUseBlobs = Boolean(event?.blobs);
-    if (canUseBlobs) {
-      connectLambda(event);
-    }
+    // The v2 runtime wires Blobs up automatically — no connectLambda needed.
+    const canUseBlobs = true;
 
-    const rawBody = String(event.body || '');
+    const rawBody = String((await req.text()) || '');
     if (rawBody.length > MAX_REQUEST_BODY_CHARS) {
-      return {
-        statusCode: 413,
-        body: JSON.stringify({ error: 'Request payload is too large.' }),
-      };
+      return jsonResponse(413, { error: 'Request payload is too large.' });
     }
 
     let body;
     try {
       body = JSON.parse(rawBody || '{}');
     } catch {
-      return {
-        statusCode: 400,
-        body: JSON.stringify({ error: 'Invalid JSON request body.' }),
-      };
+      return jsonResponse(400, { error: 'Invalid JSON request body.' });
     }
 
     const {
@@ -503,11 +514,11 @@ export async function handler(event) {
     const normalizedPromptInstructions = normalizePromptInstructions(promptInstructions);
 
     if (!VALID_TASK_TYPES.has(normalizedTaskType) || !normalizedResponseText || !normalizedPromptTitle) {
-      return { statusCode: 400, body: JSON.stringify({ error: 'Missing required fields' }) };
+      return jsonResponse(400, { error: 'Missing required fields' });
     }
 
     if (normalizedPromptId && !/^[A-Za-z0-9-]{1,80}$/.test(normalizedPromptId)) {
-      return { statusCode: 400, body: JSON.stringify({ error: 'Invalid prompt ID format.' }) };
+      return jsonResponse(400, { error: 'Invalid prompt ID format.' });
     }
 
     if (
@@ -515,37 +526,28 @@ export async function handler(event) {
       normalizedPromptText.length > MAX_PROMPT_TEXT_CHARS ||
       normalizedResponseText.length > MAX_RESPONSE_TEXT_CHARS
     ) {
-      return {
-        statusCode: 400,
-        body: JSON.stringify({ error: 'One or more fields exceed allowed length.' }),
-      };
+      return jsonResponse(400, { error: 'One or more fields exceed allowed length.' });
     }
 
     if (
       normalizedPromptInstructions.length > MAX_PROMPT_INSTRUCTIONS ||
       normalizedPromptInstructions.some((item) => item.length > MAX_PROMPT_INSTRUCTION_CHARS)
     ) {
-      return {
-        statusCode: 400,
-        body: JSON.stringify({ error: 'Prompt instructions are invalid.' }),
-      };
+      return jsonResponse(400, { error: 'Prompt instructions are invalid.' });
     }
 
     // Rate limit: one submission per IP per task
     const clientIp = getClientIp(event);
     const rateLimitKey = normalizedPromptId || `${normalizedTaskType}::${normalizedPromptTitle}`;
     if (hasAlreadySubmitted(clientIp, rateLimitKey)) {
-      return {
-        statusCode: 429,
-        body: JSON.stringify({
-          error: 'You have already submitted an essay for this task. Try a different prompt.',
-        }),
-      };
+      return jsonResponse(429, {
+        error: 'You have already submitted an essay for this task. Try a different prompt.',
+      });
     }
 
     const wordCount = normalizedResponseText.split(/\s+/).filter(Boolean).length;
     if (wordCount < 40) {
-      return { statusCode: 400, body: JSON.stringify({ error: 'Response is too short to grade meaningfully.' }) };
+      return jsonResponse(400, { error: 'Response is too short to grade meaningfully.' });
     }
 
     const bypassByToken = ADMIN_BYPASS_TOKEN && adminToken && adminToken === ADMIN_BYPASS_TOKEN;
@@ -563,26 +565,22 @@ export async function handler(event) {
     if (isFreeTaskBypass && !isAdminBypass && canUseBlobs) {
       const alreadyUsed = await hasUsedFreeEvaluation({ clientIp });
       if (alreadyUsed) {
-        return {
-          statusCode: 403,
-          body: JSON.stringify({ error: 'Your free evaluation has already been used. Please subscribe to continue.' }),
-        };
+        return jsonResponse(403, {
+          error: 'Your free evaluation has already been used. Please subscribe to continue.',
+        });
       }
     }
 
     if (!isAdminBypass && !isFreeTaskBypass) {
       if (!sessionId) {
-        return { statusCode: 400, body: JSON.stringify({ error: 'Missing sessionId' }) };
+        return jsonResponse(400, { error: 'Missing sessionId' });
       }
       await validateSession(sessionId);
     }
 
     // Daily cap: non-admin IPs limited to DAILY_EVAL_CAP evaluations per 24h
     if (!isAdminBypass && getDailyCount(clientIp) >= DAILY_EVAL_CAP) {
-      return {
-        statusCode: 429,
-        body: JSON.stringify({ error: 'Daily evaluation limit reached. Try again tomorrow.' }),
-      };
+      return jsonResponse(429, { error: 'Daily evaluation limit reached. Try again tomorrow.' });
     }
 
     // Cache: return stored result for identical task+prompt+response within 1 hour
@@ -593,13 +591,10 @@ export async function handler(event) {
     });
     const cachedPayload = getCachedEval(evalCacheKey);
     if (cachedPayload) {
-      return {
-        statusCode: 200,
-        body: JSON.stringify({
-          ...cachedPayload,
-          evaluationSource: `${cachedPayload.evaluationSource}:cached`,
-        }),
-      };
+      return jsonResponse(200, {
+        ...cachedPayload,
+        evaluationSource: `${cachedPayload.evaluationSource}:cached`,
+      });
     }
 
     let rawReport;
@@ -619,7 +614,7 @@ export async function handler(event) {
     } catch (openAiError) {
       evaluationSource = 'rules-fallback';
       const fallbackReason = openAiError?.message || String(openAiError || 'Unknown error');
-      if (OPENAI_API_KEY) {
+      if (getOpenAiKey()) {
         console.error(`[celpip-eval] Falling back to rule-based evaluator: ${fallbackReason}`);
       } else {
         console.warn('[celpip-eval] OPENAI_API_KEY missing, using rule-based evaluator.');
@@ -662,14 +657,8 @@ export async function handler(event) {
     };
     setCachedEval(evalCacheKey, responsePayload);
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify(responsePayload),
-    };
+    return jsonResponse(200, responsePayload);
   } catch (error) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: error?.message || 'Evaluation failed' }),
-    };
+    return jsonResponse(500, { error: error?.message || 'Evaluation failed' });
   }
-}
+};

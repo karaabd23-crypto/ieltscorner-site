@@ -6,10 +6,12 @@
  * self-signed OAuth2 JWT (RS256) exchanged for a short-lived access token, so
  * the CRO spine stays dependency-free (no googleapis / jsonwebtoken).
  *
- * Config mapping (set in Netlify env):
- *   ANALYTICS_PROVIDER = ga4
- *   ANALYTICS_API_KEY  = the service-account JSON key, verbatim (the whole
- *                        {"type":"service_account",...} file contents).
+ * Config mapping:
+ *   ANALYTICS_PROVIDER = ga4 (Netlify env)
+ *   credential         = the service-account JSON key, verbatim (the whole
+ *                        {"type":"service_account",...} file contents), resolved
+ *                        by ./analytics-credential — it is too large for the 4KB
+ *                        Lambda environment limit, so it lives in Netlify Blobs.
  *   ANALYTICS_SITE_ID  = the GA4 numeric property id (e.g. 123456789),
  *                        NOT the "G-XXXX" measurement id.
  *
@@ -39,14 +41,14 @@ interface ServiceAccountKey {
   token_uri?: string;
 }
 
-/** Parse the service-account JSON from ANALYTICS_API_KEY, with a clear error. */
+/** Parse the service-account JSON credential, with a clear error. */
 function parseServiceAccount(apiKey: string): ServiceAccountKey {
   let parsed: unknown;
   try {
     parsed = JSON.parse(apiKey);
   } catch {
     throw new Error(
-      'GA4: ANALYTICS_API_KEY must be the full service-account JSON key (it did not parse as JSON).',
+      'GA4: the credential must be the full service-account JSON key (it did not parse as JSON).',
     );
   }
   const key = parsed as Partial<ServiceAccountKey>;
@@ -199,9 +201,19 @@ export function createGa4Adapter(config: AdapterConfig): AnalyticsAdapter {
 
   async function getGoalVisits(range: DateRange, goal: GoalDef, nowSec: number): Promise<number> {
     // Distinct users who viewed any of the goal's tracked paths. GA4 tracks by
-    // path only, so strip #anchors and dedupe before querying.
+    // path only, so strip #anchors and dedupe before querying. inListFilter is
+    // an exact match, and the site builds to directory URLs (/ebook/) while
+    // conversions.json declares them bare (/ebook) — query both forms so the
+    // declared path matches however the page is actually served.
     const paths = Array.from(
-      new Set(goal.paths.map((p) => (p.includes('#') ? p.slice(0, p.indexOf('#')) : p))),
+      new Set(
+        goal.paths.flatMap((p) => {
+          const noAnchor = p.includes('#') ? p.slice(0, p.indexOf('#')) : p;
+          if (noAnchor === '/' || noAnchor === '') return ['/'];
+          const bare = noAnchor.endsWith('/') ? noAnchor.slice(0, -1) : noAnchor;
+          return [bare, `${bare}/`];
+        }),
+      ),
     );
     if (paths.length === 0) return 0;
     // No pagePath dimension: a single ungrouped totalUsers is deduplicated

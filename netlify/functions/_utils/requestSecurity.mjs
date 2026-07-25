@@ -6,6 +6,17 @@ function normalizeHeaderLookup(headers) {
   );
 }
 
+/**
+ * Adapts a v2 function `Request` into the `{ httpMethod, headers }` shape the
+ * helpers below expect, so the same origin/IP checks work in both runtimes.
+ */
+export function requestToEventLike(req) {
+  return {
+    httpMethod: String(req?.method || 'GET').toUpperCase(),
+    headers: req?.headers ? Object.fromEntries(req.headers) : {},
+  };
+}
+
 export function getHeader(event, name) {
   const headers = normalizeHeaderLookup(event?.headers);
   const value = headers[String(name || '').toLowerCase()];

@@ -1,3 +1,4 @@
+import { withLambda } from '@netlify/aws-lambda-compat';
 import {
   getDigestAudienceSnapshot,
   getKitFormSubscribers,
@@ -23,7 +24,7 @@ function json(statusCode, payload) {
   };
 }
 
-export async function handler(event) {
+async function handler(event) {
   if (event.httpMethod !== 'POST') {
     return json(405, { error: 'Method not allowed' });
   }
@@ -85,3 +86,5 @@ export async function handler(event) {
     return json(500, { error: error?.message || 'Unable to load newsletter stats' });
   }
 }
+
+export default withLambda(handler);

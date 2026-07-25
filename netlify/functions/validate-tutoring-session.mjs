@@ -9,6 +9,7 @@
  * - TUTORING_CALENDAR_URL (Google Calendar booking link)
  */
 
+import { withLambda } from '@netlify/aws-lambda-compat';
 import Stripe from 'stripe';
 
 const STRIPE_API_KEY = process.env.STRIPE_API_KEY;
@@ -45,7 +46,7 @@ async function tagForReviewRequest(email) {
   }
 }
 
-export async function handler(event, context) {
+async function handler(event, context) {
   // Only accept POST requests
   if (event.httpMethod !== 'POST') {
     return {
@@ -145,3 +146,5 @@ export async function handler(event, context) {
     };
   }
 }
+
+export default withLambda(handler);

@@ -1,3 +1,4 @@
+import { withLambda } from '@netlify/aws-lambda-compat';
 import { createHash } from 'node:crypto';
 import { promises as dns } from 'node:dns';
 import { normalizeSubscriberEmail } from '../../scripts/lib/kit-newsletter-audience.mjs';
@@ -713,7 +714,7 @@ async function syncKitSubscriber({
   };
 }
 
-export async function handler(event) {
+async function handler(event) {
   if (event.httpMethod !== 'POST') {
     return json(405, { error: 'Method not allowed' });
   }
@@ -860,3 +861,5 @@ export async function handler(event) {
     return json(500, { error: error?.message || 'Unable to save newsletter signup' });
   }
 }
+
+export default withLambda(handler);

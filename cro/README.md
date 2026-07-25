@@ -39,12 +39,38 @@ Add a provider by implementing `AnalyticsAdapter` and registering it in
 | -------------------- | -------- | --------------------------------------------------- |
 | `GITHUB_TOKEN`       | yes      | Repo-scoped token allowed to commit to `cro-data`.  |
 | `ANALYTICS_PROVIDER` | yes      | `plausible` or `ga4`.                               |
-| `ANALYTICS_API_KEY`  | yes      | Provider secret. Plausible: Stats API key (Bearer). GA4: the full service-account JSON key, verbatim. |
+| `ANALYTICS_API_KEY`  | see below | Provider secret. Plausible: Stats API key (Bearer). GA4: the full service-account JSON key, verbatim. |
 | `ANALYTICS_SITE_ID`  | yes      | Plausible: the domain (e.g. `ieltscorner.ca`). GA4: the numeric property id (e.g. `123456789`), NOT the `G-XXXX` measurement id. |
 | `CRO_GITHUB_REPO`    | no       | `owner/name` (default `karaabd23-crypto/ieltscorner-site`). |
 | `CRO_DATA_BRANCH`    | no       | Target data branch (default `cro-data`).            |
 
 Set these in the Netlify dashboard (Site settings → Environment variables).
+
+### Where the provider credential lives
+
+A GA4 service-account key is ~2.4KB. Netlify functions running in **Lambda
+compatibility mode** inherit AWS Lambda's 4KB cap on the *entire* environment,
+and a key that size takes up more than half of it — enough to push this site
+over the limit and make Netlify reject every function in a deploy with
+`Your environment variables exceed the 4KB limit imposed by AWS Lambda`.
+
+So the credential is not read from the function environment. `resolveAnalyticsApiKey()`
+(`netlify/functions/lib/analytics-credential.ts`) resolves it in this order:
+
+1. `ANALYTICS_API_KEY` — used by local runs and any non-Lambda runner.
+2. The `cro-config` blob store, key `analytics-api-key` — the source of truth
+   for the deployed function.
+
+Store or rotate it with:
+
+```bash
+ANALYTICS_API_KEY="$(cat sa-key.json)" npm run cro:credential:set
+npm run cro:credential:verify   # prints size + fingerprint only, never the key
+```
+
+Because the credential is in Blobs, `ANALYTICS_API_KEY` can safely be narrowed
+to the **builds** scope in Netlify (or removed entirely), which frees ~2.4KB of
+function environment headroom. The pull works either way.
 
 ### GA4 setup (one-time)
 
@@ -58,8 +84,9 @@ To use `ANALYTICS_PROVIDER=ga4` with a free Google service account:
    service account's email (`...@....iam.gserviceaccount.com`) → role **Viewer**.
 4. Find the **numeric property id** in GA4 Admin → Property Settings (a number,
    not `G-XXXX`).
-5. In Netlify set `ANALYTICS_PROVIDER=ga4`, `ANALYTICS_API_KEY` = the entire
-   downloaded JSON file contents, `ANALYTICS_SITE_ID` = the numeric property id.
+5. In Netlify set `ANALYTICS_PROVIDER=ga4` and `ANALYTICS_SITE_ID` = the numeric
+   property id, then store the downloaded JSON with
+   `npm run cro:credential:set` (see above).
 
 Auth is a self-signed OAuth2 JWT (RS256) exchanged for an access token — no extra
 npm dependency required.

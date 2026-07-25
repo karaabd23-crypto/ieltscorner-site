@@ -1,3 +1,4 @@
+import { withLambda } from '@netlify/aws-lambda-compat';
 import Stripe from 'stripe';
 import nodemailer from 'nodemailer';
 import { getStore } from '@netlify/blobs';
@@ -115,7 +116,7 @@ async function sendEmailWithAttachment({ toEmail, customerName, pdfBuffer, pdfFi
   });
 }
 
-export async function handler(event) {
+async function handler(event) {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: JSON.stringify({ error: 'Method not allowed' }) };
   }
@@ -223,3 +224,5 @@ export async function handler(event) {
     return { statusCode: 500, body: JSON.stringify({ error: error?.message || 'Failed to send email.' }) };
   }
 }
+
+export default withLambda(handler);

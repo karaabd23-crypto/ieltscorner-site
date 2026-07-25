@@ -1,3 +1,4 @@
+import { withLambda } from '@netlify/aws-lambda-compat';
 import Stripe from 'stripe';
 import crypto from 'crypto';
 import { getStore } from '@netlify/blobs';
@@ -49,7 +50,7 @@ function signToken(sessionId, expiresAt) {
   return `${payload}:${sig}`;
 }
 
-export async function handler(event) {
+async function handler(event) {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: JSON.stringify({ error: 'Method not allowed' }) };
   }
@@ -156,3 +157,5 @@ export async function handler(event) {
     return { statusCode: 500, body: JSON.stringify({ error: error?.message || 'Server error.' }) };
   }
 }
+
+export default withLambda(handler);

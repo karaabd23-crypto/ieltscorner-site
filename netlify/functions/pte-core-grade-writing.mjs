@@ -1,18 +1,28 @@
 import { createHash } from 'node:crypto';
-import { connectLambda, getStore } from '@netlify/blobs';
+import { getStore } from '@netlify/blobs';
 import Stripe from 'stripe';
 import { PTE_CORE_PREMIUM_PRODUCT_NAME } from '../../src/lib/pteCoreBilling.mjs';
 import { subscriptionHasPteCorePrice } from './_utils/pteCoreStripe.mjs';
 import {
   getHeader,
   isSameOriginRequest,
+  requestToEventLike,
 } from './_utils/requestSecurity.mjs';
 
-const OPENAI_API_KEY = (process.env.OPENAI_API_KEY || '').trim();
 const STRIPE_API_KEY = (process.env.STRIPE_API_KEY || '').trim();
 const OPENAI_MODEL = (process.env.PTE_OPENAI_MODEL || process.env.OPENAI_MODEL || 'gpt-4.1-mini').trim();
-const OPENAI_API_URL = 'https://api.openai.com/v1/responses';
 const OPENAI_TIMEOUT_MS = 25000;
+
+// Netlify AI Gateway injects OPENAI_API_KEY / OPENAI_BASE_URL into the v2 runtime.
+// Read them per request so a cold-start ordering never leaves them undefined.
+function getOpenAiKey() {
+  return (process.env.OPENAI_API_KEY || '').trim();
+}
+
+function getOpenAiUrl(path) {
+  const baseUrl = (process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').trim().replace(/\/+$/, '');
+  return `${baseUrl}${path}`;
+}
 const REAL_AI_ENABLED = (process.env.PTE_AI_GRADING_ENABLED || '').toLowerCase() === 'true';
 const FREE_DAILY_LIMIT = Math.max(0, Number(process.env.PTE_AI_FREE_DAILY_LIMIT || process.env.PTE_AI_DAILY_LIMIT || 1) || 1);
 const GLOBAL_DAILY_LIMIT = Math.max(0, Number(process.env.PTE_AI_GLOBAL_DAILY_LIMIT || 50) || 50);
@@ -35,14 +45,13 @@ const memoryGlobalDailyCounts = new Map();
 const memoryCache = new Map();
 
 function jsonResponse(statusCode, payload) {
-  return {
-    statusCode,
+  return new Response(JSON.stringify(payload), {
+    status: statusCode,
     headers: {
       'Content-Type': 'application/json',
       'Cache-Control': 'no-store',
     },
-    body: JSON.stringify(payload),
-  };
+  });
 }
 
 function normalizeText(value, maxLength = MAX_RESPONSE_CHARS) {
@@ -415,18 +424,18 @@ function buildInput({ taskSlug, taskLabel, prompt, instructions, responseText })
 }
 
 async function requestOpenAIGrade({ taskSlug, taskLabel, prompt, instructions, responseText, fallback }) {
-  if (!OPENAI_API_KEY) throw new Error('Missing OPENAI_API_KEY');
+  if (!getOpenAiKey()) throw new Error('Missing OPENAI_API_KEY');
 
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), OPENAI_TIMEOUT_MS);
 
   try {
-    const response = await fetch(OPENAI_API_URL, {
+    const response = await fetch(getOpenAiUrl('/responses'), {
       method: 'POST',
       signal: controller.signal,
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${OPENAI_API_KEY}`,
+        'Authorization': `Bearer ${getOpenAiKey()}`,
       },
       body: JSON.stringify({
         model: OPENAI_MODEL,
@@ -501,7 +510,9 @@ async function requestOpenAIGrade({ taskSlug, taskLabel, prompt, instructions, r
   }
 }
 
-export async function handler(event) {
+export default async (req) => {
+  const event = requestToEventLike(req);
+
   if (event.httpMethod !== 'POST') {
     return jsonResponse(405, { error: 'Method not allowed' });
   }
@@ -510,12 +521,10 @@ export async function handler(event) {
     return jsonResponse(403, { error: 'Cross-origin requests are not allowed.' });
   }
 
-  const canUseBlobs = Boolean(event?.blobs);
-  if (canUseBlobs) {
-    connectLambda(event);
-  }
+  // The v2 runtime wires Blobs up automatically — no connectLambda needed.
+  const canUseBlobs = true;
 
-  const rawBody = String(event.body || '');
+  const rawBody = String((await req.text()) || '');
   if (rawBody.length > MAX_REQUEST_BODY_CHARS) {
     return jsonResponse(413, { error: 'Request payload is too large.' });
   }
@@ -600,7 +609,7 @@ export async function handler(event) {
     plan,
   };
 
-  if (REAL_AI_ENABLED && OPENAI_API_KEY) {
+  if (REAL_AI_ENABLED && getOpenAiKey()) {
     if (!premiumAccess.valid) {
       await incrementDailyCount({ clientIp, canUseBlobs });
       await incrementGlobalDailyCount({ canUseBlobs });
@@ -632,4 +641,4 @@ export async function handler(event) {
 
   await setCachedGrade({ cacheKey, payload, canUseBlobs });
   return jsonResponse(200, payload);
-}
+};
