@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "week": "2026-29",
+  "range": {
+    "start": "2026-07-13",
+    "end": "2026-07-19"
+  },
+  "provider": "ga4",
+  "generatedAt": "2026-07-25T01:30:07.558Z",
+  "metrics": {
+    "pageviews": 1354,
+    "visitors": 845,
+    "bounceRate": 0.897887323943662,
+    "avgDuration": 14.68895418544601,
+    "topPages": [
+      {
+        "path": "/",
+        "pageviews": 59,
+        "visitors": 58
+      },
+      {
+        "path": "/contact/",
+        "pageviews": 42,
+        "visitors": 27
+      },
+      {
+        "path": "/account/",
+        "pageviews": 25,
+        "visitors": 25
+      },
+      {
+        "path": "/account/sign-in/",
+        "pageviews": 25,
+        "visitors": 25
+      },
+      {
+        "path": "/account/forgot-password/",
+        "pageviews": 22,
+        "visitors": 22
+      },
+      {
+        "path": "/account/profile/",
+        "pageviews": 22,
+        "visitors": 22
+      },
+      {
+        "path": "/account/sign-up/",
+        "pageviews": 22,
+        "visitors": 22
+      },
+      {
+        "path": "/lessons/reading/celpip-reading-main-idea-and-paragraph-purpose/",
+        "pageviews": 22,
+        "visitors": 18
+      },
+      {
+        "path": "/account/emails/",
+        "pageviews": 21,
+        "visitors": 21
+      },
+      {
+        "path": "/account/subscription/",
+        "pageviews": 20,
+        "visitors": 20
+      }
+    ],
+    "conversions": [
+      {
+        "id": "ebook",
+        "label": "Ebook purchase intent",
+        "visits": 12,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "tutoring_private_class",
+        "label": "Private tutoring class booking",
+        "visits": 4,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "ai_feedback",
+        "label": "AI feedback signup",
+        "visits": 10,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "webinar_signup",
+        "label": "Webinar signup",
+        "visits": 0,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "subscription",
+        "label": "Subscription purchase",
+        "visits": 1,
+        "events": 0,
+        "rate": 0
+      }
+    ]
+  }
+}
