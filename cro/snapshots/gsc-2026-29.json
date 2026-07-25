@@ -1,0 +1,303 @@
+{
+  "schemaVersion": 1,
+  "week": "2026-29",
+  "range": {
+    "start": "2026-07-13",
+    "end": "2026-07-19"
+  },
+  "provider": "search-console",
+  "siteUrl": "sc-domain:ieltscorner.ca",
+  "generatedAt": "2026-07-25T07:55:42.147Z",
+  "search": {
+    "totals": {
+      "clicks": 0,
+      "impressions": 123,
+      "ctr": 0,
+      "position": 22.4
+    },
+    "topQueries": [
+      {
+        "key": "\"complex conditional\" grammar",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 8.8
+      },
+      {
+        "key": "celpip 9",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 38
+      },
+      {
+        "key": "celpip ca login",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 31
+      },
+      {
+        "key": "celpip for spouse visa canada",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 50
+      },
+      {
+        "key": "celpip ircc",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 31
+      },
+      {
+        "key": "celpip reading test",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 31
+      },
+      {
+        "key": "celpip skilled independent visa",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 70.5
+      },
+      {
+        "key": "celpiphub",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "key": "educational consulting",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "key": "ielts corner",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "key": "ielts training brampton by preeti inc",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 60
+      },
+      {
+        "key": "kara abdolmaleki",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "key": "mosaic engage boundary road",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 40
+      },
+      {
+        "key": "pracis",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "key": "praxis",
+        "clicks": 0,
+        "impressions": 42,
+        "ctr": 0,
+        "position": 9.6
+      },
+      {
+        "key": "reading celpip",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 29
+      },
+      {
+        "key": "skyspire academy",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 66
+      }
+    ],
+    "topPages": [
+      {
+        "key": "http://ieltscorner.ca/",
+        "clicks": 0,
+        "impressions": 45,
+        "ctr": 0,
+        "position": 9.3
+      },
+      {
+        "key": "https://ieltscorner.ca/",
+        "clicks": 0,
+        "impressions": 14,
+        "ctr": 0,
+        "position": 37.8
+      },
+      {
+        "key": "https://ieltscorner.ca/about/",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "key": "https://ieltscorner.ca/account/sign-in/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 28.5
+      },
+      {
+        "key": "https://ieltscorner.ca/ai-feedback/",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 10.3
+      },
+      {
+        "key": "https://ieltscorner.ca/blog/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "key": "https://ieltscorner.ca/blog/celpip-reading-strategies",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 8.7
+      },
+      {
+        "key": "https://ieltscorner.ca/blog/ielts-writing-task-1-general-training-letter/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 23
+      },
+      {
+        "key": "https://ieltscorner.ca/blog/pte-core-listening-guide/",
+        "clicks": 0,
+        "impressions": 9,
+        "ctr": 0,
+        "position": 8.7
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip-for-canadian-immigration/",
+        "clicks": 0,
+        "impressions": 21,
+        "ctr": 0,
+        "position": 39.7
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip/reading/",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 22.2
+      },
+      {
+        "key": "https://ieltscorner.ca/contact/",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 85.7
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/complex-conditionals-with-nuance/",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 8.8
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/should-ought-advice/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/there-is-are/",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 18.7
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/word-formation-prefixes/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/listening/seo-2026-03-25-22-ielts-listening-ielts-note-taking-symbols-for-section-speed/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 28
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/speaking/seo-2026-03-25-40-celpip-speaking-celpip-speaking-task-5-comparison-framework/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 37
+      },
+      {
+        "key": "https://ieltscorner.ca/questions/email-clb10-professional-reference/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      }
+    ],
+    "page2Queries": [
+      {
+        "key": "praxis",
+        "clicks": 0,
+        "impressions": 42,
+        "ctr": 0,
+        "position": 9.6
+      }
+    ],
+    "impressionsNoClicks": [
+      {
+        "key": "praxis",
+        "clicks": 0,
+        "impressions": 42,
+        "ctr": 0,
+        "position": 9.6
+      }
+    ],
+    "sitemaps": [
+      {
+        "path": "http://www.ieltscorner.ca/sitemap-index.xml",
+        "submitted": 579,
+        "indexed": 0,
+        "errors": 0,
+        "warnings": 0,
+        "lastDownloaded": "2026-07-19T08:42:44.831Z"
+      }
+    ]
+  }
+}
