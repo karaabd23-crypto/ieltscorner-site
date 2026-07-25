@@ -20,6 +20,10 @@ const homeKeywords =
       </div>
     </div>
 
+    <p class="home-returning">
+      Returning student? <a href="/tutoring#book-private-class">Book your next private class</a>
+    </p>
+
     <div class="home-hero-actions" aria-label="Primary study paths">
       <a class="home-hero-action home-hero-action--ielts home-hero-action--style-b" href="/ielts">
         <span class="home-hero-action__title">IELTS</span>
@@ -56,7 +60,7 @@ const homeKeywords =
     <section class="surface home-step">
       <p class="home-step__label ic-eyebrow">Step 2</p>
       <h2 class="ic-display">More options</h2>
-      <p class="muted home-step__intro">Free lessons, CELPIP practice questions, private coaching, and a speaking guide.</p>
+      <p class="muted home-step__intro">Free lessons, CELPIP practice questions, a speaking guide, and private coaching.</p>
 
       <div class="grid grid-3" style="gap: var(--s-4); margin-top: var(--s-3);">
         <a class="card home-option-card home-option-card--free ic-card" href="/lessons" aria-label="Browse Free Lessons">
@@ -76,7 +80,7 @@ const homeKeywords =
         <a class="card home-option-card ic-card" href="/tutoring#book-private-class" aria-label="Book Private Class">
           <p class="home-option-card__kicker ic-eyebrow">1:1 support</p>
           <h3>Private Class</h3>
-          <p class="muted">Direct help for any skill. CA$30 per session.</p>
+          <p class="muted">Direct help for any skill. CA$55 per session.</p>
           <span class="home-option-card__cta">Book Private Class</span>
         </a>
       </div>
@@ -85,6 +89,18 @@ const homeKeywords =
 </Layout>
 
 <style>
+  .home-returning {
+    margin: var(--s-2) 0 0;
+    text-align: right;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+  }
+
+  .home-returning a {
+    font-weight: 700;
+    color: var(--accent);
+  }
+
   .home-hero-actions {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));

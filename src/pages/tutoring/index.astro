@@ -10,7 +10,7 @@ const INSTAGRAM_URL = `https://www.instagram.com/${INSTAGRAM_USERNAME}/`;
 
 <Layout
   title="Private Classes | IELTS and CELPIP"
-  description="Book one-on-one IELTS and CELPIP classes directly from the booking calendar."
+  description="One-on-one IELTS and CELPIP classes with Dr. Kara Abdolmaleki (PhD, TESL Canada, CELPIP Instructor L1). CA$55 per session."
 >
   <section class="section">
     <div class="hero" style={`--hero-bg: url('/heroes/tutoring.webp');`}>
@@ -21,6 +21,7 @@ const INSTAGRAM_URL = `https://www.instagram.com/${INSTAGRAM_USERNAME}/`;
           One-to-one support focused on your exact score target, with direct correction and
           a clear plan for what to practice next.
         </p>
+        <p class="hero-price-line">CA$55 per session</p>
 
         <div class="cluster">
           <a class="btn btn-primary ic-btn" href="#book-private-class">Book Private Class</a>
@@ -63,6 +64,28 @@ const INSTAGRAM_URL = `https://www.instagram.com/${INSTAGRAM_USERNAME}/`;
       heading="Know your instructor before booking"
       intro="If you are paying for one-to-one support, you should see the teaching background first. The About page shows score evidence, TESL certification, and CELPIP instructor training."
     />
+
+    <div style="height: var(--s-6);"></div>
+
+    <section id="pricing" class="surface funnel-section">
+      <h2 class="ic-display" style="margin-top: 0;">Simple pricing</h2>
+      <p class="muted pricing-credential">
+        Every class is taught personally by Dr. Kara Abdolmaleki: PhD, TESL Canada certified,
+        CELPIP Instructor Level 1, and 17 years of teaching experience.
+      </p>
+
+      <div class="pricing-grid">
+        <article class="price-card">
+          <h3 class="price-card__name">Private Session</h3>
+          <p class="price-card__price">CA$55</p>
+          <p class="price-card__meta">60 minutes on Google Meet. Limited spots.</p>
+          <p class="muted price-card__desc">
+            One focused hour: diagnosis, live correction, and a clear plan for what to practice next.
+          </p>
+          <a class="btn btn-primary ic-btn" href="#book-private-class">Book Your Session</a>
+        </article>
+      </div>
+    </section>
 
     <div style="height: var(--s-6);"></div>
 
@@ -295,6 +318,61 @@ const INSTAGRAM_URL = `https://www.instagram.com/${INSTAGRAM_USERNAME}/`;
 </Layout>
 
 <style>
+  .hero-price-line {
+    margin: var(--s-2) 0 0;
+    font-weight: 700;
+  }
+
+  .pricing-credential {
+    margin-top: 0;
+    max-width: 62ch;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 480px);
+    gap: var(--s-3);
+    margin-top: var(--s-4);
+  }
+
+  .price-card {
+    position: relative;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: var(--s-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+    background: color-mix(in srgb, var(--surface) 96%, white 4%);
+  }
+
+  .price-card__name {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+
+  .price-card__price {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .price-card__meta {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .price-card__desc {
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  .price-card .btn {
+    align-self: flex-start;
+  }
+
   .calendly-wrap {
     padding: var(--s-5);
     border: 2px solid color-mix(in srgb, var(--accent) 38%, var(--border) 62%);
