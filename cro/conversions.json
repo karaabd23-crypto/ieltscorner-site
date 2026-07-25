@@ -24,13 +24,6 @@
       "revenue": true
     },
     {
-      "id": "webinar_signup",
-      "label": "Webinar signup",
-      "eventName": "webinar_signup",
-      "paths": ["/webinar"],
-      "revenue": true
-    },
-    {
       "id": "subscription",
       "label": "Subscription purchase",
       "eventName": "subscription_purchase",
