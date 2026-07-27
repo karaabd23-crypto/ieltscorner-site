@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "week": "2026-30",
+  "range": {
+    "start": "2026-07-20",
+    "end": "2026-07-26"
+  },
+  "provider": "ga4",
+  "generatedAt": "2026-07-27T06:04:46.950Z",
+  "metrics": {
+    "pageviews": 1059,
+    "visitors": 344,
+    "bounceRate": 0.7142857142857143,
+    "avgDuration": 40.56555359259259,
+    "topPages": [
+      {
+        "path": "/",
+        "pageviews": 65,
+        "visitors": 58
+      },
+      {
+        "path": "/ai-feedback/",
+        "pageviews": 47,
+        "visitors": 46
+      },
+      {
+        "path": "/contact/",
+        "pageviews": 45,
+        "visitors": 26
+      },
+      {
+        "path": "/celpip/reading/",
+        "pageviews": 40,
+        "visitors": 33
+      },
+      {
+        "path": "/lessons/reading/celpip-reading-main-idea-and-paragraph-purpose/",
+        "pageviews": 34,
+        "visitors": 30
+      },
+      {
+        "path": "/lessons/writing/seo-2026-03-25-02-ielts-writing-ielts-task-2-discussion-essay-structure/",
+        "pageviews": 34,
+        "visitors": 30
+      },
+      {
+        "path": "/celpip/",
+        "pageviews": 33,
+        "visitors": 29
+      },
+      {
+        "path": "/lessons/writing/seo-2026-03-25-03-ielts-writing-ielts-task-2-problem-solution-response-blueprint/",
+        "pageviews": 32,
+        "visitors": 29
+      },
+      {
+        "path": "/lessons/writing/seo-2026-03-25-01-ielts-writing-ielts-task-2-opinion-essay-framework/",
+        "pageviews": 31,
+        "visitors": 29
+      },
+      {
+        "path": "/account/sign-in/",
+        "pageviews": 26,
+        "visitors": 26
+      }
+    ],
+    "conversions": [
+      {
+        "id": "ebook",
+        "label": "Ebook checkout click",
+        "visits": 16,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "tutoring_private_class",
+        "label": "Private tutoring booking",
+        "visits": 5,
+        "events": 1,
+        "rate": 0.2
+      },
+      {
+        "id": "ai_feedback",
+        "label": "AI feedback checkout click",
+        "visits": 46,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "subscription",
+        "label": "Subscription checkout click",
+        "visits": 33,
+        "events": 0,
+        "rate": 0
+      }
+    ]
+  }
+}
