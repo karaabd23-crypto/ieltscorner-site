@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "week": "2026-31",
+  "range": {
+    "start": "2026-07-27",
+    "end": "2026-08-02"
+  },
+  "provider": "ga4",
+  "generatedAt": "2026-08-03T06:01:15.754Z",
+  "metrics": {
+    "pageviews": 1171,
+    "visitors": 419,
+    "bounceRate": 0.7139588100686499,
+    "avgDuration": 24.75260927688787,
+    "topPages": [
+      {
+        "path": "/",
+        "pageviews": 86,
+        "visitors": 83
+      },
+      {
+        "path": "/contact/",
+        "pageviews": 71,
+        "visitors": 39
+      },
+      {
+        "path": "/ai-feedback/",
+        "pageviews": 45,
+        "visitors": 38
+      },
+      {
+        "path": "/account/",
+        "pageviews": 37,
+        "visitors": 36
+      },
+      {
+        "path": "/account/sign-in/",
+        "pageviews": 37,
+        "visitors": 36
+      },
+      {
+        "path": "/account/forgot-password/",
+        "pageviews": 35,
+        "visitors": 34
+      },
+      {
+        "path": "/lessons/grammar/adjectives-comparison/",
+        "pageviews": 34,
+        "visitors": 30
+      },
+      {
+        "path": "/lessons/speaking/seo-2026-03-25-14-ielts-speaking-ielts-speaking-grammar-range-without-risk/",
+        "pageviews": 34,
+        "visitors": 31
+      },
+      {
+        "path": "/lessons/grammar/adverbs-formation/",
+        "pageviews": 33,
+        "visitors": 30
+      },
+      {
+        "path": "/lessons/reading/celpip-reading-main-idea-and-paragraph-purpose/",
+        "pageviews": 33,
+        "visitors": 30
+      }
+    ],
+    "conversions": [
+      {
+        "id": "ebook",
+        "label": "Ebook checkout click",
+        "visits": 18,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "tutoring_private_class",
+        "label": "Private tutoring booking",
+        "visits": 19,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "ai_feedback",
+        "label": "AI feedback checkout click",
+        "visits": 38,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "subscription",
+        "label": "Subscription checkout click",
+        "visits": 29,
+        "events": 0,
+        "rate": 0
+      }
+    ]
+  }
+}
