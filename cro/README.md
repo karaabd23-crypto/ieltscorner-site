@@ -23,6 +23,27 @@ Every **Monday 06:00 UTC**, the Netlify Scheduled Function
 Data commits land **only** on `cro-data`, never on `main` or any code branch, so
 snapshots never mix with application code.
 
+### Backfilling a missed week
+
+Each stage retries 3x with backoff, but a run can still fail (week **2026-32**
+has a `gsc-` snapshot and no CRO one — the 06:00 pull failed and nothing retried
+or alerted at the time). Because the schedule only ever looks at *last* week, a
+lost week stays lost unless it is backfilled explicitly:
+
+```bash
+curl "https://ieltscorner.ca/.netlify/functions/cro-weekly-pull?week=2026-32"
+```
+
+`?week=YYYY-WW` is the ISO year-week; the function resolves it to that week's
+Mon–Sun range and commits `cro/snapshots/YYYY-WW.json` as usual. GA4 retains
+event-scoped data for a limited window (2 or 14 months, per property settings),
+so backfill soon after noticing a gap.
+
+> A snapshot showing `events: 0` for every goal is usually **not** a bug. At this
+> site's volume (2–46 visits per goal per week) zero clicks is a plausible real
+> result — week 2026-30 did record `tutoring_private_class events: 1`, which
+> confirms the browser→GA4→snapshot path works end to end.
+
 ### Analytics adapters
 
 | Provider   | Module                          | Status                    |

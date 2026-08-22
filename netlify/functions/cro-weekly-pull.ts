@@ -80,6 +80,61 @@ async function gh<T>(path: string, init?: RequestInit): Promise<T> {
   return (await res.json()) as T;
 }
 
+/**
+ * Retry a transient failure. The pull runs once a week, so a single flaky
+ * GA4/GitHub call silently loses that week forever (week 2026-32 has a GSC
+ * snapshot but no CRO one for exactly this reason — the 06:00 run failed and
+ * nothing retried or alerted). Only network/5xx-shaped errors are worth
+ * retrying; a bad credential or config fails the same way every time.
+ */
+async function withRetry<T>(label: string, fn: () => Promise<T>, attempts = 3): Promise<T> {
+  let lastError: unknown;
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    try {
+      return await fn();
+    } catch (error) {
+      lastError = error;
+      const message = error instanceof Error ? error.message : String(error);
+      // Config errors never recover; fail fast so the log points at the cause.
+      if (/Unknown ANALYTICS_PROVIDER|missing client_email|did not parse as JSON|No analytics credential/.test(message)) {
+        throw error;
+      }
+      if (attempt === attempts) break;
+      const backoffMs = 1000 * 2 ** (attempt - 1);
+      console.warn(`[cro-weekly-pull] ${label} attempt ${attempt}/${attempts} failed: ${message}; retrying in ${backoffMs}ms`);
+      await new Promise((resolve) => setTimeout(resolve, backoffMs));
+    }
+  }
+  throw lastError;
+}
+
+/** Week explicitly requested via ?week=YYYY-WW, for backfilling a lost week. */
+function requestedWeek(request?: Request): { start: string; end: string; label: string } | null {
+  if (!request) return null;
+  let week: string | null = null;
+  try {
+    week = new URL(request.url).searchParams.get('week');
+  } catch {
+    return null;
+  }
+  if (!week) return null;
+  const match = /^(\d{4})-(\d{2})$/.exec(week.trim());
+  if (!match) throw new Error(`Invalid week "${week}". Expected ISO year-week, e.g. 2026-32.`);
+  const year = Number(match[1]);
+  const weekNum = Number(match[2]);
+  if (weekNum < 1 || weekNum > 53) throw new Error(`Invalid ISO week number in "${week}".`);
+  // ISO week 1 is the week containing Jan 4; walk back to that week's Monday.
+  const jan4 = new Date(Date.UTC(year, 0, 4));
+  const jan4Day = jan4.getUTCDay() || 7;
+  const week1Monday = new Date(jan4);
+  week1Monday.setUTCDate(jan4.getUTCDate() - (jan4Day - 1));
+  const start = new Date(week1Monday);
+  start.setUTCDate(week1Monday.getUTCDate() + (weekNum - 1) * 7);
+  const end = new Date(start);
+  end.setUTCDate(start.getUTCDate() + 6);
+  return { start: isoDate(start), end: isoDate(end), label: `${year}-${String(weekNum).padStart(2, '0')}` };
+}
+
 /** Ensure `cro-data` exists; branch it from the default branch head if missing. */
 async function ensureDataBranch(): Promise<void> {
   try {
@@ -121,7 +176,7 @@ async function commitFile(filePath: string, content: string, message: string): P
   });
 }
 
-export default async (): Promise<Response> => {
+export default async (request?: Request): Promise<Response> => {
   const startedAt = new Date().toISOString();
   try {
     const provider = process.env.ANALYTICS_PROVIDER || '';
@@ -133,8 +188,12 @@ export default async (): Promise<Response> => {
       goals,
     });
 
-    const range = previousWeekRange(new Date());
-    const metrics = await adapter.getWeeklyMetrics({ start: range.start, end: range.end });
+    // ?week=YYYY-WW backfills a specific week; the scheduled run takes the
+    // previous complete week as before.
+    const range = requestedWeek(request) ?? previousWeekRange(new Date());
+    const metrics = await withRetry('getWeeklyMetrics', () =>
+      adapter.getWeeklyMetrics({ start: range.start, end: range.end }),
+    );
 
     const snapshot = {
       schemaVersion: 1,
@@ -145,12 +204,14 @@ export default async (): Promise<Response> => {
       metrics,
     };
 
-    await ensureDataBranch();
+    await withRetry('ensureDataBranch', () => ensureDataBranch());
     const filePath = `cro/snapshots/${range.label}.json`;
-    await commitFile(
-      filePath,
-      `${JSON.stringify(snapshot, null, 2)}\n`,
-      `chore(cro): weekly snapshot ${range.label}`,
+    await withRetry('commitFile', () =>
+      commitFile(
+        filePath,
+        `${JSON.stringify(snapshot, null, 2)}\n`,
+        `chore(cro): weekly snapshot ${range.label}`,
+      ),
     );
 
     console.log(`[cro-weekly-pull] wrote ${filePath} to ${DATA_BRANCH}`);
