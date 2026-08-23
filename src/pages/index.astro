@@ -20,9 +20,22 @@ const homeKeywords =
       </div>
     </div>
 
-    <p class="home-returning">
-      Returning student? <a href="/tutoring#book-private-class">Book your next private class</a>
-    </p>
+    {/*
+      Returning students arrive intending to rebook, so booking must be reachable
+      without reading the page. This was a right-aligned 0.92rem text link
+      (166x20px on a phone, under the 44px touch minimum) sitting between the
+      hero and the exam cards, and the only other route was the Private Class
+      card buried in Step 2. It is now a full CTA band directly under the hero.
+    */}
+    <aside class="home-returning" aria-label="Returning students">
+      <div class="home-returning__text">
+        <p class="home-returning__eyebrow">Returning student?</p>
+        <p class="home-returning__copy">Book your next 1:1 session with Kara. CA$55 per session.</p>
+      </div>
+      <a class="btn btn-primary home-returning__cta" href="/tutoring#book-private-class">
+        Book your next class
+      </a>
+    </aside>
 
     <div class="home-hero-actions" aria-label="Primary study paths">
       <a class="home-hero-action home-hero-action--ielts home-hero-action--style-b" href="/ielts">
@@ -90,15 +103,53 @@ const homeKeywords =
 
 <style>
   .home-returning {
-    margin: var(--s-2) 0 0;
-    text-align: right;
-    font-size: 0.92rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--s-3);
+    margin: var(--s-3) 0 0;
+    padding: var(--s-3) var(--s-4);
+    border: 1px solid var(--border-strong);
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    background: #fff;
+  }
+
+  .home-returning__eyebrow {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .home-returning__copy {
+    margin: 2px 0 0;
+    font-size: 0.95rem;
     color: var(--text-muted);
   }
 
-  .home-returning a {
-    font-weight: 700;
-    color: var(--accent);
+  .home-returning__cta {
+    flex-shrink: 0;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  @media (max-width: 560px) {
+    /* Stack so the button spans the full width and stays an easy target. */
+    .home-returning {
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--s-2);
+    }
+
+    .home-returning__cta {
+      justify-content: center;
+      width: 100%;
+    }
   }
 
   .home-hero-actions {

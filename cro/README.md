@@ -23,6 +23,27 @@ Every **Monday 06:00 UTC**, the Netlify Scheduled Function
 Data commits land **only** on `cro-data`, never on `main` or any code branch, so
 snapshots never mix with application code.
 
+### Backfilling a missed week
+
+Each stage retries 3x with backoff, but a run can still fail (week **2026-32**
+has a `gsc-` snapshot and no CRO one — the 06:00 pull failed and nothing retried
+or alerted at the time). Because the schedule only ever looks at *last* week, a
+lost week stays lost unless it is backfilled explicitly:
+
+```bash
+curl "https://ieltscorner.ca/.netlify/functions/cro-weekly-pull?week=2026-32"
+```
+
+`?week=YYYY-WW` is the ISO year-week; the function resolves it to that week's
+Mon–Sun range and commits `cro/snapshots/YYYY-WW.json` as usual. GA4 retains
+event-scoped data for a limited window (2 or 14 months, per property settings),
+so backfill soon after noticing a gap.
+
+> A snapshot showing `events: 0` for every goal is usually **not** a bug. At this
+> site's volume (2–46 visits per goal per week) zero clicks is a plausible real
+> result — week 2026-30 did record `tutoring_private_class events: 1`, which
+> confirms the browser→GA4→snapshot path works end to end.
+
 ### Analytics adapters
 
 | Provider   | Module                          | Status                    |
@@ -71,6 +92,24 @@ npm run cro:credential:verify   # prints size + fingerprint only, never the key
 Because the credential is in Blobs, `ANALYTICS_API_KEY` can safely be narrowed
 to the **builds** scope in Netlify (or removed entirely), which frees ~2.4KB of
 function environment headroom. The pull works either way.
+
+> **This is not currently done, and it is the live risk on this site.**
+> As of 2026-08-22 `ANALYTICS_API_KEY` is scoped to `builds`, `functions` and
+> `runtime`, putting the function environment at roughly **3959 of the 4096-byte
+> AWS Lambda cap — about 137 bytes of headroom**. One more function-scoped env
+> var, or a slightly longer token on rotation, makes Netlify reject *every*
+> function in the deploy. Narrow the scope to **builds** in Site settings →
+> Environment variables.
+>
+> Order does not matter: `resolveAnalyticsApiKey()` now copies the env var into
+> the blob store on any run that reads it, so the blob is seeded automatically
+> before the env var is narrowed. To confirm the blob independently:
+>
+> ```bash
+> NETLIFY_AUTH_TOKEN=... NETLIFY_SITE_ID=... npm run cro:credential:verify
+> ```
+>
+> It prints only a byte count and a truncated fingerprint, never the key.
 
 ### GA4 setup (one-time)
 

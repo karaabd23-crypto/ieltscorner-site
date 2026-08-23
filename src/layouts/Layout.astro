@@ -399,11 +399,22 @@ const serializeJsonForScript = (value: unknown) =>
         to   { opacity: 1; transform: translateY(0); }
       }
       @media (max-width: 600px) {
+        /* On phones the pill spanned most of the width and sat directly on top
+           of in-page controls (the /lessons filter row, the /pte-core CTAs) and
+           the Google ad bar. Anchor it to the left, shrink it, and lift it clear
+           of the ad strip + iOS home indicator so it never covers a tap target. */
         .floating-ebook-btn {
-          bottom: 16px;
-          right: 16px;
-          padding: 9px 14px 9px 12px;
+          left: 12px;
+          right: auto;
+          bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+          max-width: calc(100vw - 24px);
+          padding: 8px 12px;
           font-size: 0.8rem;
+          gap: 6px;
+        }
+        .floating-ebook-btn__text {
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
       }
     </style>
@@ -1222,6 +1233,12 @@ const serializeJsonForScript = (value: unknown) =>
           width: min(520px, 100%);
           padding: var(--s-5);
           border-radius: 12px;
+          /* .surface is translucent (rgba(255,255,255,0.86)), which let the
+             lesson cards behind the modal bleed through the panel and collide
+             with its text on mobile. A dialog must be fully opaque. */
+          background: #fff;
+          max-height: calc(100dvh - var(--s-6));
+          overflow-y: auto;
         }
 
         .lesson-email-gate__form {

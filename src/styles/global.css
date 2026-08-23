@@ -922,7 +922,16 @@ textarea {
   font-size:16px;
 }
 .footer-links{ display:grid; gap:8px; }
-.footer-links a{ color: var(--muted); }
+/* Footer links rendered ~27px tall, below the 44px minimum touch target, so
+   they were easy to mis-tap on a phone. Grow the row to 44px but keep the 8px
+   gap so adjacent targets stay separated (a 2px gap trades one WCAG failure
+   for another). */
+.footer-links a{
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
 .footer-links a:hover{
   color: var(--text);
   text-decoration: underline;
@@ -1120,7 +1129,8 @@ textarea {
   }
   
   .brand-title span {
-    font-size: 11px;
+    /* 11px fell below the 12px legibility floor on every page's header. */
+    font-size: 12px;
   }
   
   .nav {
@@ -1778,7 +1788,7 @@ ins.adsbygoogle:not(.ad-unit-line):not(.ad-unit-square):not(.ad-unit-side):not(.
 .content-ad__label {
   margin: 0 0 var(--s-2);
   color: var(--muted-2);
-  font-size: 11px;
+  font-size: 12px; /* 12px legibility floor */
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -3800,7 +3810,7 @@ hr {
   background: rgba(15, 69, 108, 0.08);
   border: 1px solid rgba(15, 69, 108, 0.12);
   color: #16456c;
-  font-size: 11px;
+  font-size: 12px; /* 12px legibility floor */
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -3830,7 +3840,7 @@ hr {
 
 .service-trust-card__item-label {
   margin: 0;
-  font-size: 0.75rem;
+  font-size: 12px; /* 0.75rem resolved to 11.25px here */
   font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -4155,7 +4165,7 @@ hr {
 .about-panel__label {
   margin: 0 0 10px;
   color: #8d4d21;
-  font-size: 11px;
+  font-size: 12px; /* 12px legibility floor (rem resolved small here) */
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -4224,7 +4234,7 @@ hr {
 .about-credential-card__eyebrow {
   margin: 0 0 10px;
   color: #8d4d21;
-  font-size: 11px;
+  font-size: 12px; /* 12px legibility floor (rem resolved small here) */
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -5037,7 +5047,7 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
    mobile. Replaces the old stack of identical pink pills. */
 .quick-links-label {
   margin: var(--s-4) 0 var(--s-2);
-  font-size: 0.78rem;
+  font-size: 12px; /* 12px legibility floor (rem resolved small here) */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -7084,3 +7094,28 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
   }
 }
 
+
+/* Touch-target floor for native checkboxes/radios.
+   Browsers render these at ~13x13px, well under the 44px minimum, which made
+   the CLB calculator's exam picker and the question-bank opt-in easy to
+   mis-tap on a phone. Scaling the control keeps native semantics (and the
+   focus ring) while giving the pointer a real target to land on. */
+@media (max-width: 768px) {
+  input[type="checkbox"],
+  input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    /* The visual control stays 20px; the padding-free hit area is widened by
+       the label wrapper below, so rows remain visually compact. */
+    flex-shrink: 0;
+  }
+
+  /* A label wrapping its control is the actual tap target — give it height. */
+  label:has(> input[type="checkbox"]),
+  label:has(> input[type="radio"]) {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+  }
+}

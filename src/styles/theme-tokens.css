@@ -38,7 +38,10 @@
   --ic-h3: 1.1rem;
   --ic-body: 1.0625rem;
   --ic-small: 0.8125rem;
-  --ic-eyebrow: 0.75rem;
+  /* Pinned in px, not rem: eyebrows sit inside panels that shrink the local
+     font context, so 0.75rem resolved to 11.25px and fell under the 12px
+     legibility floor on mobile. */
+  --ic-eyebrow: 12px;
 
   --ic-radius: 4px;
   --ic-radius-card: 6px;

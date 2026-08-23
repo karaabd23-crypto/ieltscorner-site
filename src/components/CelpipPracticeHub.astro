@@ -449,7 +449,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
 
   .sidebar-sub {
     display: block;
-    font-size: 0.78rem;
+    font-size: 0.8rem; /* 12px floor at the 15px root */
     color: var(--muted-2);
     margin-top: 2px;
   }
@@ -464,6 +464,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
     align-items: center;
     gap: var(--s-2);
     padding: 9px var(--s-4);
+    min-height: 44px; /* was 31px, under the touch minimum */
     background: none;
     border: none;
     border-left: 3px solid transparent;
@@ -499,7 +500,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
   .task-num {
     flex-shrink: 0;
     color: var(--muted-2);
-    font-size: 0.78rem;
+    font-size: 0.82rem; /* 12px floor */
     min-width: 18px;
   }
 
@@ -508,13 +509,18 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    /* Inherited 11.7px from .task-item (rem here resolves against a smaller
+       context than the document root). Pin in px so it cannot drift below 12. */
+    font-size: 12px;
   }
 
   .free-badge {
     flex-shrink: 0;
     background: var(--gold);
     color: #1c1c1c;
-    font-size: 0.6rem;
+    /* Was 0.6rem = 9.6px, below the 12px legibility floor. Pinned in px
+       because rem resolves against a smaller context inside this hub. */
+    font-size: 12px;
     font-weight: 800;
     padding: 2px 5px;
     border-radius: 4px;
@@ -592,7 +598,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-size: 0.75rem;
+    font-size: 12px; /* 12px legibility floor (rem resolved small here) */
     font-weight: 700;
     padding: 4px 10px;
     border-radius: 999px;
@@ -605,6 +611,8 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
 
   .prompt-kicker {
     color: var(--accent);
+    /* Inherited 11.25px from the prompt panel; pin to the 12px floor. */
+    font-size: 12px;
   }
 
   .prompt-title {
@@ -854,6 +862,13 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
     background: none;
     border: 1px solid var(--border);
     border-radius: 6px;
+    /* Rendered 28x21px — far under the 44px touch minimum, and these are the
+       start/reset controls for a timed writing task, so a mis-tap is costly. */
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 2px 8px;
     font-size: 0.75rem;
     cursor: pointer;
@@ -879,7 +894,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
   }
 
   .word-count-badge {
-    font-size: 0.78rem;
+    font-size: 12px; /* 12px legibility floor (rem resolved small here) */
     font-weight: 700;
     background: var(--bg-2);
     color: var(--muted);
@@ -1041,7 +1056,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
   }
 
   .feedback-col__title {
-    font-size: 0.78rem;
+    font-size: 12px; /* 12px legibility floor (rem resolved small here) */
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
