@@ -4165,7 +4165,7 @@ hr {
 .about-panel__label {
   margin: 0 0 10px;
   color: #8d4d21;
-  font-size: 11px;
+  font-size: 12px; /* 12px legibility floor (rem resolved small here) */
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -4234,7 +4234,7 @@ hr {
 .about-credential-card__eyebrow {
   margin: 0 0 10px;
   color: #8d4d21;
-  font-size: 11px;
+  font-size: 12px; /* 12px legibility floor (rem resolved small here) */
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -5047,7 +5047,7 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
    mobile. Replaces the old stack of identical pink pills. */
 .quick-links-label {
   margin: var(--s-4) 0 var(--s-2);
-  font-size: 0.78rem;
+  font-size: 12px; /* 12px legibility floor (rem resolved small here) */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;

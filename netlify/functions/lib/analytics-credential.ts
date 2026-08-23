@@ -31,7 +31,32 @@ export const ANALYTICS_CREDENTIAL_KEY = 'analytics-api-key';
  */
 export async function resolveAnalyticsApiKey(): Promise<string> {
   const fromEnv = (process.env.ANALYTICS_API_KEY || '').trim();
-  if (fromEnv) return fromEnv;
+  if (fromEnv) {
+    // Self-seed the blob store from the env var. Without this, narrowing
+    // ANALYTICS_API_KEY to the builds scope (which the 4KB Lambda env cap
+    // requires — see the header comment) silently breaks the next run if the
+    // blob was never seeded by hand, and the failure only shows up a week
+    // later. Seeding here makes that migration safe in either order.
+    // Best-effort: a write failure must never fail a pull that already has a
+    // usable credential.
+    try {
+      const store = getStore(CRO_CONFIG_STORE);
+      const existing = await store.get(ANALYTICS_CREDENTIAL_KEY, { type: 'text' });
+      if ((existing || '').trim() !== fromEnv) {
+        await store.set(ANALYTICS_CREDENTIAL_KEY, fromEnv);
+        console.log(
+          `[analytics-credential] seeded "${ANALYTICS_CREDENTIAL_KEY}" in "${CRO_CONFIG_STORE}" from ANALYTICS_API_KEY (${fromEnv.length} bytes)`,
+        );
+      }
+    } catch (error) {
+      console.warn(
+        `[analytics-credential] could not seed the blob store: ${
+          error instanceof Error ? error.message : String(error)
+        }`,
+      );
+    }
+    return fromEnv;
+  }
 
   let stored: string | null = null;
   try {

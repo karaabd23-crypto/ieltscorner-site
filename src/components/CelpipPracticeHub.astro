@@ -598,7 +598,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-size: 0.75rem;
+    font-size: 12px; /* 12px legibility floor (rem resolved small here) */
     font-weight: 700;
     padding: 4px 10px;
     border-radius: 999px;
@@ -611,6 +611,8 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
 
   .prompt-kicker {
     color: var(--accent);
+    /* Inherited 11.25px from the prompt panel; pin to the 12px floor. */
+    font-size: 12px;
   }
 
   .prompt-title {
@@ -892,7 +894,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
   }
 
   .word-count-badge {
-    font-size: 0.78rem;
+    font-size: 12px; /* 12px legibility floor (rem resolved small here) */
     font-weight: 700;
     background: var(--bg-2);
     color: var(--muted);
@@ -1054,7 +1056,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
   }
 
   .feedback-col__title {
-    font-size: 0.78rem;
+    font-size: 12px; /* 12px legibility floor (rem resolved small here) */
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;

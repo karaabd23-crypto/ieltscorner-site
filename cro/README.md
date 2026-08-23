@@ -93,6 +93,24 @@ Because the credential is in Blobs, `ANALYTICS_API_KEY` can safely be narrowed
 to the **builds** scope in Netlify (or removed entirely), which frees ~2.4KB of
 function environment headroom. The pull works either way.
 
+> **This is not currently done, and it is the live risk on this site.**
+> As of 2026-08-22 `ANALYTICS_API_KEY` is scoped to `builds`, `functions` and
+> `runtime`, putting the function environment at roughly **3959 of the 4096-byte
+> AWS Lambda cap — about 137 bytes of headroom**. One more function-scoped env
+> var, or a slightly longer token on rotation, makes Netlify reject *every*
+> function in the deploy. Narrow the scope to **builds** in Site settings →
+> Environment variables.
+>
+> Order does not matter: `resolveAnalyticsApiKey()` now copies the env var into
+> the blob store on any run that reads it, so the blob is seeded automatically
+> before the env var is narrowed. To confirm the blob independently:
+>
+> ```bash
+> NETLIFY_AUTH_TOKEN=... NETLIFY_SITE_ID=... npm run cro:credential:verify
+> ```
+>
+> It prints only a byte count and a truncated fingerprint, never the key.
+
 ### GA4 setup (one-time)
 
 To use `ANALYTICS_PROVIDER=ga4` with a free Google service account:
