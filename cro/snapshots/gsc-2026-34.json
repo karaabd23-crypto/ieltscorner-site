@@ -1,0 +1,500 @@
+{
+  "schemaVersion": 1,
+  "week": "2026-34",
+  "range": {
+    "start": "2026-08-17",
+    "end": "2026-08-23"
+  },
+  "provider": "search-console",
+  "siteUrl": "sc-domain:ieltscorner.ca",
+  "generatedAt": "2026-08-24T06:15:17.819Z",
+  "search": {
+    "totals": {
+      "clicks": 3,
+      "impressions": 160,
+      "ctr": 0.0188,
+      "position": 20.2
+    },
+    "topQueries": [
+      {
+        "key": "education advisor",
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": 1,
+        "position": 1
+      },
+      {
+        "key": "advantages and disadvantages writing task 2",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 51
+      },
+      {
+        "key": "celpip accepted by ircc",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 33
+      },
+      {
+        "key": "celpip clb 9 crs points",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 28
+      },
+      {
+        "key": "celpip for canada work permit",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 56
+      },
+      {
+        "key": "celpip for canadian permanent residence",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 57
+      },
+      {
+        "key": "celpip for crs score",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 34
+      },
+      {
+        "key": "celpip ircc accepted",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 40
+      },
+      {
+        "key": "celpip minimum score canada",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 37
+      },
+      {
+        "key": "celpip points based visa",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 38
+      },
+      {
+        "key": "celpip points for skilled migration",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 27
+      },
+      {
+        "key": "celpip reading",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 32.3
+      },
+      {
+        "key": "celpip reading test",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 30.2
+      },
+      {
+        "key": "celpip reading tests",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 48
+      },
+      {
+        "key": "celpip score for maximum crs",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 39
+      },
+      {
+        "key": "celpip skilled independent visa",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 55.5
+      },
+      {
+        "key": "celpip skilled nominated visa",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 55
+      },
+      {
+        "key": "celpip skilled work regional visa",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 62.7
+      },
+      {
+        "key": "celpip test edmonton",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 64
+      },
+      {
+        "key": "celpip test reading",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 41
+      },
+      {
+        "key": "celpip test taker login",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 36
+      },
+      {
+        "key": "education consultant",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "key": "ielts classes in edmonton",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 67
+      },
+      {
+        "key": "ielts corner",
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "key": "ielts writing task 2 advantages disadvantages",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 42
+      },
+      {
+        "key": "is celpip general ls accepted for canada pr",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 39
+      },
+      {
+        "key": "praxis",
+        "clicks": 0,
+        "impressions": 33,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "key": "praxis consulting",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "key": "praxus",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 6.3
+      },
+      {
+        "key": "prqxis",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "key": "reading celpip",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 35
+      },
+      {
+        "key": "reading test celpip",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 25
+      },
+      {
+        "key": "skyspire academy",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 68
+      },
+      {
+        "key": "writing task 2 dạng advantages and disadvantages",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 54
+      },
+      {
+        "key": "yukon consultants celpip",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 32
+      }
+    ],
+    "topPages": [
+      {
+        "key": "http://ieltscorner.ca/",
+        "clicks": 2,
+        "impressions": 63,
+        "ctr": 0.0317,
+        "position": 10.1
+      },
+      {
+        "key": "https://ieltscorner.ca/blog/pte-core-listening-guide/",
+        "clicks": 1,
+        "impressions": 13,
+        "ctr": 0.0769,
+        "position": 6.5
+      },
+      {
+        "key": "https://ieltscorner.ca/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 32
+      },
+      {
+        "key": "https://ieltscorner.ca/about/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "key": "https://ieltscorner.ca/account/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "key": "https://ieltscorner.ca/account/sign-in/",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 13.3
+      },
+      {
+        "key": "https://ieltscorner.ca/ai-feedback/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "key": "https://ieltscorner.ca/blog/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 77
+      },
+      {
+        "key": "https://ieltscorner.ca/blog/celpip-reading-strategies",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 12
+      },
+      {
+        "key": "https://ieltscorner.ca/blog/celpip-reading-strategies/",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 9.3
+      },
+      {
+        "key": "https://ieltscorner.ca/blog/celpip-speaking-tasks-complete-guide/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 7.5
+      },
+      {
+        "key": "https://ieltscorner.ca/blog/ielts-writing-task-1-general-training-letter/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 22
+      },
+      {
+        "key": "https://ieltscorner.ca/blog/ielts-writing-task-2-advantages-disadvantages/",
+        "clicks": 0,
+        "impressions": 12,
+        "ctr": 0,
+        "position": 47.7
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip-for-canadian-immigration/",
+        "clicks": 0,
+        "impressions": 18,
+        "ctr": 0,
+        "position": 45.1
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip/",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip/reading/",
+        "clicks": 0,
+        "impressions": 15,
+        "ctr": 0,
+        "position": 33.9
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip/writing/samples/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 19
+      },
+      {
+        "key": "https://ieltscorner.ca/contact/",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 36.8
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 22
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/can-and-cannot-for-ability/",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 9.3
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/cleft-sentences/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/was-were/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/reading/celpip/reading/03-inference-question-strategy/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/reading/seo-2026-03-25-19-ielts-reading-ielts-multiple-choice-elimination-strategy/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/reading/seo-2026-03-25-45-celpip-reading-celpip-reading-inference-question-strategy/",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/vocabulary/food-and-shopping-words/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "key": "https://ieltscorner.ca/questions/email-clb10-professional-reference/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "key": "https://ieltscorner.ca/questions/email-clb8-volunteer-inquiry/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      }
+    ],
+    "page2Queries": [
+      {
+        "key": "praxis",
+        "clicks": 0,
+        "impressions": 33,
+        "ctr": 0,
+        "position": 9
+      }
+    ],
+    "impressionsNoClicks": [
+      {
+        "key": "praxis",
+        "clicks": 0,
+        "impressions": 33,
+        "ctr": 0,
+        "position": 9
+      }
+    ],
+    "sitemaps": [
+      {
+        "path": "https://ieltscorner.ca/sitemap-index.xml",
+        "submitted": 477,
+        "indexed": 0,
+        "errors": 0,
+        "warnings": 0,
+        "lastDownloaded": "2026-08-16T19:02:37.250Z"
+      },
+      {
+        "path": "http://www.ieltscorner.ca/sitemap-index.xml",
+        "submitted": 477,
+        "indexed": 0,
+        "errors": 0,
+        "warnings": 0,
+        "lastDownloaded": "2026-08-17T23:02:35.898Z"
+      }
+    ]
+  }
+}
