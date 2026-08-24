@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "week": "2026-34",
+  "range": {
+    "start": "2026-08-17",
+    "end": "2026-08-23"
+  },
+  "provider": "ga4",
+  "generatedAt": "2026-08-24T06:00:40.383Z",
+  "metrics": {
+    "pageviews": 2782,
+    "visitors": 1528,
+    "bounceRate": 0.9133550488599349,
+    "avgDuration": 12.574525758957657,
+    "topPages": [
+      {
+        "path": "/contact/",
+        "pageviews": 144,
+        "visitors": 91
+      },
+      {
+        "path": "/",
+        "pageviews": 115,
+        "visitors": 107
+      },
+      {
+        "path": "/account/",
+        "pageviews": 94,
+        "visitors": 93
+      },
+      {
+        "path": "/celpip/",
+        "pageviews": 87,
+        "visitors": 79
+      },
+      {
+        "path": "/lessons/",
+        "pageviews": 81,
+        "visitors": 78
+      },
+      {
+        "path": "/ai-feedback/",
+        "pageviews": 78,
+        "visitors": 73
+      },
+      {
+        "path": "/ielts/",
+        "pageviews": 65,
+        "visitors": 65
+      },
+      {
+        "path": "/account/sign-in/",
+        "pageviews": 63,
+        "visitors": 62
+      },
+      {
+        "path": "/pte-core/",
+        "pageviews": 63,
+        "visitors": 61
+      },
+      {
+        "path": "/account/sign-up/",
+        "pageviews": 60,
+        "visitors": 59
+      }
+    ],
+    "conversions": [
+      {
+        "id": "ebook",
+        "label": "Ebook checkout click",
+        "visits": 51,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "tutoring_private_class",
+        "label": "Private tutoring booking",
+        "visits": 59,
+        "events": 1,
+        "rate": 0.0169
+      },
+      {
+        "id": "ai_feedback",
+        "label": "AI feedback checkout click",
+        "visits": 73,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "subscription",
+        "label": "Subscription checkout click",
+        "visits": 52,
+        "events": 0,
+        "rate": 0
+      }
+    ]
+  }
+}
