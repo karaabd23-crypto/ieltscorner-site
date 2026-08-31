@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "week": "2026-35",
+  "range": {
+    "start": "2026-08-24",
+    "end": "2026-08-30"
+  },
+  "provider": "ga4",
+  "generatedAt": "2026-08-31T06:00:25.227Z",
+  "metrics": {
+    "pageviews": 3179,
+    "visitors": 548,
+    "bounceRate": 0.5711805555555556,
+    "avgDuration": 57.07174650347223,
+    "topPages": [
+      {
+        "path": "/contact/",
+        "pageviews": 242,
+        "visitors": 126
+      },
+      {
+        "path": "/",
+        "pageviews": 136,
+        "visitors": 132
+      },
+      {
+        "path": "/account/sign-in/",
+        "pageviews": 128,
+        "visitors": 127
+      },
+      {
+        "path": "/account/",
+        "pageviews": 123,
+        "visitors": 122
+      },
+      {
+        "path": "/account/emails/",
+        "pageviews": 121,
+        "visitors": 120
+      },
+      {
+        "path": "/account/forgot-password/",
+        "pageviews": 121,
+        "visitors": 120
+      },
+      {
+        "path": "/account/profile/",
+        "pageviews": 121,
+        "visitors": 120
+      },
+      {
+        "path": "/account/sign-up/",
+        "pageviews": 120,
+        "visitors": 120
+      },
+      {
+        "path": "/account/subscription/",
+        "pageviews": 118,
+        "visitors": 117
+      },
+      {
+        "path": "/celpip/",
+        "pageviews": 107,
+        "visitors": 98
+      }
+    ],
+    "conversions": [
+      {
+        "id": "ebook",
+        "label": "Ebook checkout click",
+        "visits": 49,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "tutoring_private_class",
+        "label": "Private tutoring booking",
+        "visits": 49,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "ai_feedback",
+        "label": "AI feedback checkout click",
+        "visits": 83,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "subscription",
+        "label": "Subscription checkout click",
+        "visits": 44,
+        "events": 0,
+        "rate": 0
+      }
+    ]
+  }
+}
