@@ -1,0 +1,528 @@
+{
+  "schemaVersion": 1,
+  "week": "2026-36",
+  "range": {
+    "start": "2026-08-31",
+    "end": "2026-09-06"
+  },
+  "provider": "search-console",
+  "siteUrl": "sc-domain:ieltscorner.ca",
+  "generatedAt": "2026-09-07T06:15:08.281Z",
+  "search": {
+    "totals": {
+      "clicks": 2,
+      "impressions": 195,
+      "ctr": 0.0103,
+      "position": 12.9
+    },
+    "topQueries": [
+      {
+        "key": "ielts corner",
+        "clicks": 1,
+        "impressions": 5,
+        "ctr": 0.2,
+        "position": 5
+      },
+      {
+        "key": "advantages and disadvantages task 2",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 65
+      },
+      {
+        "key": "advantages and disadvantages writing task 2",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 56
+      },
+      {
+        "key": "celpip 8 to pte",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 37
+      },
+      {
+        "key": "celpip create account",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 26
+      },
+      {
+        "key": "celpip reading",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 38.8
+      },
+      {
+        "key": "celpip reading test",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 37
+      },
+      {
+        "key": "celpip reading tests",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 49
+      },
+      {
+        "key": "celpip survey response",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 56
+      },
+      {
+        "key": "celpip test reading",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 35
+      },
+      {
+        "key": "celpip test taker login",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 33
+      },
+      {
+        "key": "celpip tutors",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 63
+      },
+      {
+        "key": "educational consulting",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "key": "guru learning institute",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 76
+      },
+      {
+        "key": "ielts speaking",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 24.8
+      },
+      {
+        "key": "ielts speaking course",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 43
+      },
+      {
+        "key": "ielts speaking general",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 38
+      },
+      {
+        "key": "ielts speking",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 25
+      },
+      {
+        "key": "praxis",
+        "clicks": 0,
+        "impressions": 48,
+        "ctr": 0,
+        "position": 10.6
+      },
+      {
+        "key": "praxis consulting",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 4
+      },
+      {
+        "key": "prazxis",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 13
+      },
+      {
+        "key": "reading celpip",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 34
+      },
+      {
+        "key": "reading test celpip",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 26.5
+      },
+      {
+        "key": "site:ieltscorner.ca",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 7.7
+      },
+      {
+        "key": "skyspire academy",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 73
+      },
+      {
+        "key": "speaking ielts",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 34
+      }
+    ],
+    "topPages": [
+      {
+        "key": "https://ieltscorner.ca/",
+        "clicks": 1,
+        "impressions": 12,
+        "ctr": 0.0833,
+        "position": 20.8
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip/writing/questions/",
+        "clicks": 1,
+        "impressions": 11,
+        "ctr": 0.0909,
+        "position": 10.5
+      },
+      {
+        "key": "http://ieltscorner.ca/",
+        "clicks": 0,
+        "impressions": 60,
+        "ctr": 0,
+        "position": 9.2
+      },
+      {
+        "key": "https://ieltscorner.ca/about/",
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 3.7
+      },
+      {
+        "key": "https://ieltscorner.ca/account/",
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 2.8
+      },
+      {
+        "key": "https://ieltscorner.ca/account/emails/",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 2.5
+      },
+      {
+        "key": "https://ieltscorner.ca/account/forgot-password/",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 2.5
+      },
+      {
+        "key": "https://ieltscorner.ca/account/sign-in/",
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "key": "https://ieltscorner.ca/account/sign-up/",
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 8.9
+      },
+      {
+        "key": "https://ieltscorner.ca/ai-feedback/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "key": "https://ieltscorner.ca/blog/",
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 2.9
+      },
+      {
+        "key": "https://ieltscorner.ca/blog/celpip-reading-strategies/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "key": "https://ieltscorner.ca/blog/celpip-speaking-tasks-complete-guide/",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 6.8
+      },
+      {
+        "key": "https://ieltscorner.ca/blog/celpip-writing-task-1-templates/",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 2.2
+      },
+      {
+        "key": "https://ieltscorner.ca/blog/ielts-writing-task-2-advantages-disadvantages/",
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 23.7
+      },
+      {
+        "key": "https://ieltscorner.ca/blog/pte-core-listening-guide/",
+        "clicks": 0,
+        "impressions": 22,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip/reading/",
+        "clicks": 0,
+        "impressions": 21,
+        "ctr": 0,
+        "position": 31.7
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip/reading/free-test/",
+        "clicks": 0,
+        "impressions": 9,
+        "ctr": 0,
+        "position": 13.3
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip/reading/test-03/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip/speaking/task-8-unusual-situation/",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 4
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip/writing/samples/",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 4.7
+      },
+      {
+        "key": "https://ieltscorner.ca/contact/",
+        "clicks": 0,
+        "impressions": 9,
+        "ctr": 0,
+        "position": 4.1
+      },
+      {
+        "key": "https://ieltscorner.ca/ielts/speaking/",
+        "clicks": 0,
+        "impressions": 16,
+        "ctr": 0,
+        "position": 23.5
+      },
+      {
+        "key": "https://ieltscorner.ca/ielts/writing/",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 1.3
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/can-and-cannot-for-ability/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 5.5
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/mixed-conditionals/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/question-tags/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/this-that-these-and-those/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/reading/celpip-reading-clb6-bottleneck-map/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 2.5
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/reading/celpip-reading-diagram-accuracy-system/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/reading/celpip-reading-distractor-trap-elimination/",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 7.8
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/reading/celpip-reading-main-idea-and-paragraph-purpose/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 4
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/reading/seo-2026-03-25-45-celpip-reading-celpip-reading-inference-question-strategy/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/speaking/celpip/speaking/03-task-3-scene-description/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/speaking/seo-2026-03-25-10-ielts-speaking-ielts-speaking-part-2-story-development-strategy/",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 2.7
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/vocabulary/advanced-formal-expression-vocabulary/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/vocabulary/education-vocab/",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 6.2
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/vocabulary/food-and-shopping-words/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "key": "https://ieltscorner.ca/pte-core-for-canadian-immigration/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 37
+      },
+      {
+        "key": "https://ieltscorner.ca/pte-core/question-types/",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 7.3
+      },
+      {
+        "key": "https://ieltscorner.ca/success-stories/",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 4.2
+      }
+    ],
+    "page2Queries": [
+      {
+        "key": "praxis",
+        "clicks": 0,
+        "impressions": 48,
+        "ctr": 0,
+        "position": 10.6
+      }
+    ],
+    "impressionsNoClicks": [
+      {
+        "key": "praxis",
+        "clicks": 0,
+        "impressions": 48,
+        "ctr": 0,
+        "position": 10.6
+      }
+    ],
+    "sitemaps": [
+      {
+        "path": "https://ieltscorner.ca/sitemap-index.xml",
+        "submitted": 477,
+        "indexed": 0,
+        "errors": 0,
+        "warnings": 0,
+        "lastDownloaded": "2026-08-27T17:40:48.657Z"
+      },
+      {
+        "path": "http://www.ieltscorner.ca/sitemap-index.xml",
+        "submitted": 477,
+        "indexed": 0,
+        "errors": 0,
+        "warnings": 0,
+        "lastDownloaded": "2026-09-06T12:41:47.660Z"
+      }
+    ]
+  }
+}
