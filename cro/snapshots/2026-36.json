@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "week": "2026-36",
+  "range": {
+    "start": "2026-08-31",
+    "end": "2026-09-06"
+  },
+  "provider": "ga4",
+  "generatedAt": "2026-09-07T06:00:19.422Z",
+  "metrics": {
+    "pageviews": 2080,
+    "visitors": 790,
+    "bounceRate": 0.6829268292682927,
+    "avgDuration": 11.657549341463415,
+    "topPages": [
+      {
+        "path": "/celpip/reading/",
+        "pageviews": 204,
+        "visitors": 177
+      },
+      {
+        "path": "/lessons/reading/celpip-reading-clb6-bottleneck-map/",
+        "pageviews": 198,
+        "visitors": 170
+      },
+      {
+        "path": "/lessons/reading/celpip-reading-detail-location-discipline/",
+        "pageviews": 197,
+        "visitors": 175
+      },
+      {
+        "path": "/lessons/reading/celpip-reading-main-idea-and-paragraph-purpose/",
+        "pageviews": 194,
+        "visitors": 169
+      },
+      {
+        "path": "/lessons/vocabulary/business-vocab/",
+        "pageviews": 191,
+        "visitors": 165
+      },
+      {
+        "path": "/lessons/speaking/seo-2026-03-25-14-ielts-speaking-ielts-speaking-grammar-range-without-risk/",
+        "pageviews": 186,
+        "visitors": 162
+      },
+      {
+        "path": "/lessons/vocabulary/academic-verbs/",
+        "pageviews": 183,
+        "visitors": 166
+      },
+      {
+        "path": "/ai-feedback/",
+        "pageviews": 176,
+        "visitors": 153
+      },
+      {
+        "path": "/lessons/speaking/ielts-part1-techniques/",
+        "pageviews": 42,
+        "visitors": 41
+      },
+      {
+        "path": "/lessons/vocabulary/collocations-make-do/",
+        "pageviews": 41,
+        "visitors": 39
+      }
+    ],
+    "conversions": [
+      {
+        "id": "ebook",
+        "label": "Ebook checkout click",
+        "visits": 1,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "tutoring_private_class",
+        "label": "Private tutoring booking",
+        "visits": 1,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "ai_feedback",
+        "label": "AI feedback checkout click",
+        "visits": 153,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "subscription",
+        "label": "Subscription checkout click",
+        "visits": 177,
+        "events": 1,
+        "rate": 0.0056
+      }
+    ]
+  }
+}
