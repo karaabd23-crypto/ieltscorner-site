@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "week": "2026-37",
+  "range": {
+    "start": "2026-09-07",
+    "end": "2026-09-13"
+  },
+  "provider": "search-console",
+  "siteUrl": "sc-domain:ieltscorner.ca",
+  "generatedAt": "2026-09-14T06:15:06.252Z",
+  "search": {
+    "totals": {
+      "clicks": 1,
+      "impressions": 92,
+      "ctr": 0.0109,
+      "position": 13.5
+    },
+    "topQueries": [
+      {
+        "key": "celpip free reading test",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "key": "celpip reading",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 41.3
+      },
+      {
+        "key": "celpiphub",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "key": "education company",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "key": "educational consulting",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "key": "english planet ielts",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 52
+      },
+      {
+        "key": "general speaking",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 38
+      },
+      {
+        "key": "guru learning institute",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 71
+      },
+      {
+        "key": "ielts corner",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "key": "ielts speaking",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 24
+      },
+      {
+        "key": "ielts training brampton by preeti inc",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 56
+      },
+      {
+        "key": "pracis",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 8.5
+      },
+      {
+        "key": "praxis",
+        "clicks": 0,
+        "impressions": 44,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "key": "praxus",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 13
+      }
+    ],
+    "topPages": [
+      {
+        "key": "https://ieltscorner.ca/",
+        "clicks": 1,
+        "impressions": 11,
+        "ctr": 0.0909,
+        "position": 24.8
+      },
+      {
+        "key": "http://ieltscorner.ca/",
+        "clicks": 0,
+        "impressions": 54,
+        "ctr": 0,
+        "position": 9.4
+      },
+      {
+        "key": "https://ieltscorner.ca/about/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "key": "https://ieltscorner.ca/account/sign-in/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "key": "https://ieltscorner.ca/blog/celpip-speaking-tasks-complete-guide/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "key": "https://ieltscorner.ca/blog/pte-core-listening-guide/",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 7.7
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip/reading/",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 35.2
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip/reading/test-03/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip/writing/questions/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "key": "https://ieltscorner.ca/ielts/speaking/",
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 24
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/reading/celpip-reading-distractor-trap-elimination/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/vocabulary/academic-verbs/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/writing/celpip-task1-purpose-and-tone-b2/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 4
+      },
+      {
+        "key": "https://ieltscorner.ca/pte-core-for-canadian-immigration/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      }
+    ],
+    "page2Queries": [
+      {
+        "key": "praxis",
+        "clicks": 0,
+        "impressions": 44,
+        "ctr": 0,
+        "position": 10
+      }
+    ],
+    "impressionsNoClicks": [
+      {
+        "key": "praxis",
+        "clicks": 0,
+        "impressions": 44,
+        "ctr": 0,
+        "position": 10
+      }
+    ],
+    "sitemaps": [
+      {
+        "path": "https://ieltscorner.ca/sitemap-index.xml",
+        "submitted": 477,
+        "indexed": 0,
+        "errors": 0,
+        "warnings": 0,
+        "lastDownloaded": "2026-09-07T13:29:18.658Z"
+      },
+      {
+        "path": "http://www.ieltscorner.ca/sitemap-index.xml",
+        "submitted": 477,
+        "indexed": 0,
+        "errors": 0,
+        "warnings": 0,
+        "lastDownloaded": "2026-09-06T12:41:47.660Z"
+      }
+    ]
+  }
+}
