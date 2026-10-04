@@ -209,3 +209,294 @@
   force = true
 
 # Telegram webhook: Updated 2026-03-04
+
+# GSC 404 fixes — 2026-10-04. Dead seo-2026-03-25 lesson slugs, bare category paths, old dated posts.
+# Source: Search Console Pages report (24 Not found + pattern review).
+
+[[redirects]]
+  from = "/lessons/reading/seo-2026-03-25-19-ielts-reading-ielts-multiple-choice-elimination-strategy"
+  to = "/ielts/reading/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/reading/seo-2026-03-25-19-ielts-reading-ielts-multiple-choice-elimination-strategy/"
+  to = "/ielts/reading/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/reading/seo-2026-03-25-18-ielts-reading-ielts-reading-time-management-for-40-questions"
+  to = "/ielts/reading/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/reading/seo-2026-03-25-18-ielts-reading-ielts-reading-time-management-for-40-questions/"
+  to = "/ielts/reading/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/speaking/seo-2026-03-25-40-celpip-speaking-celpip-speaking-task-5-comparison-framework"
+  to = "/celpip/speaking/task-5-comparison/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/speaking/seo-2026-03-25-40-celpip-speaking-celpip-speaking-task-5-comparison-framework/"
+  to = "/celpip/speaking/task-5-comparison/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/writing/seo-2026-03-25-27-celpip-writing-celpip-task-1-tone-control-in-formal-emails"
+  to = "/celpip/writing/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/writing/seo-2026-03-25-27-celpip-writing-celpip-task-1-tone-control-in-formal-emails/"
+  to = "/celpip/writing/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/writing/seo-2026-03-25-28-celpip-writing-celpip-task-2-opinion-paragraph-system"
+  to = "/celpip/writing/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/writing/seo-2026-03-25-28-celpip-writing-celpip-task-2-opinion-paragraph-system/"
+  to = "/celpip/writing/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/listening/seo-2026-03-25-48-celpip-listening-celpip-listening-speaker-intention-signals"
+  to = "/celpip/listening/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/listening/seo-2026-03-25-48-celpip-listening-celpip-listening-speaker-intention-signals/"
+  to = "/celpip/listening/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/writing/seo-2026-03-25-07-ielts-writing-ielts-grammar-accuracy-under-time-pressure"
+  to = "/ielts/writing/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/writing/seo-2026-03-25-07-ielts-writing-ielts-grammar-accuracy-under-time-pressure/"
+  to = "/ielts/writing/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/writing/seo-2026-03-25-01-ielts-writing-ielts-task-2-opinion-essay-framework"
+  to = "/ielts/writing/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/writing/seo-2026-03-25-01-ielts-writing-ielts-task-2-opinion-essay-framework/"
+  to = "/ielts/writing/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/speaking/seo-2026-03-25-12-ielts-speaking-ielts-fluency-and-coherence-repair-methods"
+  to = "/ielts/speaking/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/speaking/seo-2026-03-25-12-ielts-speaking-ielts-fluency-and-coherence-repair-methods/"
+  to = "/ielts/speaking/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/reading/seo-2026-03-25-44-celpip-reading-celpip-reading-time-control-by-question-type"
+  to = "/celpip/reading/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/reading/seo-2026-03-25-44-celpip-reading-celpip-reading-time-control-by-question-type/"
+  to = "/celpip/reading/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/reading/celpip/reading/03-inference-question-strategy"
+  to = "/celpip/reading/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/reading/celpip/reading/03-inference-question-strategy/"
+  to = "/celpip/reading/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/speaking/seo-2026-03-25-11-ielts-speaking-ielts-speaking-part-3-argument-depth-technique"
+  to = "/ielts/speaking/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/speaking/seo-2026-03-25-11-ielts-speaking-ielts-speaking-part-3-argument-depth-technique/"
+  to = "/ielts/speaking/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/reading/seo-2026-03-25-20-ielts-reading-ielts-paragraph-mapping-for-academic-passages"
+  to = "/ielts/reading/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/reading/seo-2026-03-25-20-ielts-reading-ielts-paragraph-mapping-for-academic-passages/"
+  to = "/ielts/reading/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/home/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/vocabulary/shared/vocabulary/04-opinion-phrases-writing-speaking"
+  to = "/lessons/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lessons/vocabulary/shared/vocabulary/04-opinion-phrases-writing-speaking/"
+  to = "/lessons/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/vocabulary"
+  to = "/lessons/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/vocabulary/"
+  to = "/lessons/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/premium-ielts-celpip-library"
+  to = "/celpip/reading/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/premium-ielts-celpip-library/"
+  to = "/celpip/reading/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/2025/10/02/premium-post-ielts-reading-practice-test-1"
+  to = "/celpip/reading/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/2025/10/02/premium-post-ielts-reading-practice-test-1/"
+  to = "/celpip/reading/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/speaking"
+  to = "/celpip/speaking/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/speaking/"
+  to = "/celpip/speaking/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/2025/10/02/premium-post-ielts-writing-task-2-sample-essay-analysis"
+  to = "/ielts/writing/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/2025/10/02/premium-post-ielts-writing-task-2-sample-essay-analysis/"
+  to = "/ielts/writing/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sample-essays"
+  to = "/ai-feedback/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sample-essays/"
+  to = "/ai-feedback/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/reading"
+  to = "/celpip/reading/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/reading/"
+  to = "/celpip/reading/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/grammar"
+  to = "/lessons/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/grammar/"
+  to = "/lessons/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/2021/01/18/1425"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/2021/01/18/1425/"
+  to = "/"
+  status = 301
+  force = true

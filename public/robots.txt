@@ -15,3 +15,6 @@ Disallow: /book/paid/
 Allow: /lessons/
 Allow: /ielts/
 Allow: /celpip/
+
+# Block serverless function endpoints from crawlers (GSC 2026-10-04: 5 "other 4xx" hits on /.netlify/functions/*)
+Disallow: /.netlify/functions/
