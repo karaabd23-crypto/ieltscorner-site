@@ -1,0 +1,416 @@
+{
+  "schemaVersion": 1,
+  "week": "2026-40",
+  "range": {
+    "start": "2026-09-28",
+    "end": "2026-10-04"
+  },
+  "provider": "search-console",
+  "siteUrl": "sc-domain:ieltscorner.ca",
+  "generatedAt": "2026-10-05T06:15:22.357Z",
+  "search": {
+    "totals": {
+      "clicks": 0,
+      "impressions": 119,
+      "ctr": 0,
+      "position": 13.8
+    },
+    "topQueries": [
+      {
+        "key": "canadian education hub ielts/ celpip/ pte / celban/ nclex rn",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 37
+      },
+      {
+        "key": "celpip create account",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 28
+      },
+      {
+        "key": "celpip hub login",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 4
+      },
+      {
+        "key": "celpip kitchener",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 41
+      },
+      {
+        "key": "celpip reading",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 39
+      },
+      {
+        "key": "celpip survey response",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 52
+      },
+      {
+        "key": "celpip test reading",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 39
+      },
+      {
+        "key": "celpiphub",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "key": "education sector consultancy",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "key": "ielts corner",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "key": "ielts sign in",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "key": "ielts speaking",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 23.2
+      },
+      {
+        "key": "ielts speaking course",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 43
+      },
+      {
+        "key": "ielts speaking tutor",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 30
+      },
+      {
+        "key": "ielts tutoring",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 65
+      },
+      {
+        "key": "ielts writing low score try celpip",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 24
+      },
+      {
+        "key": "learn and talk",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 81
+      },
+      {
+        "key": "post secondary education edmonton",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 76
+      },
+      {
+        "key": "pracis",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "key": "praxis",
+        "clicks": 0,
+        "impressions": 53,
+        "ctr": 0,
+        "position": 8.5
+      },
+      {
+        "key": "praxos",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "key": "praxus",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 13
+      },
+      {
+        "key": "pte to celpip score conversion",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 33
+      },
+      {
+        "key": "reading celpip",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 37
+      },
+      {
+        "key": "speaking ielts",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 22
+      },
+      {
+        "key": "subordinate clauses",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 38
+      }
+    ],
+    "topPages": [
+      {
+        "key": "http://ieltscorner.ca/",
+        "clicks": 0,
+        "impressions": 62,
+        "ctr": 0,
+        "position": 9.6
+      },
+      {
+        "key": "https://ieltscorner.ca/",
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 30.4
+      },
+      {
+        "key": "https://ieltscorner.ca/about/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 11.5
+      },
+      {
+        "key": "https://ieltscorner.ca/account/sign-in/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "key": "https://ieltscorner.ca/account/sign-up/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 28
+      },
+      {
+        "key": "https://ieltscorner.ca/ai-feedback/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "key": "https://ieltscorner.ca/blog/ielts-writing-task-1-general-training-letter",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip-writing-help/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 24
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip/reading/",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 24.8
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip/writing/questions/",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 37.7
+      },
+      {
+        "key": "https://ieltscorner.ca/ielts/speaking/",
+        "clicks": 0,
+        "impressions": 12,
+        "ctr": 0,
+        "position": 25.3
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/adverbs-formation/",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 6.7
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/fronting-and-emphasis-patterns/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 8.5
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/may-might-permission/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/mixed-conditionals/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 2.5
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/prepositions-advanced/",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 6.5
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/shall-will/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/subordinate-clauses/",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 13.4
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/word-formation-suffixes/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/reading/celpip-reading-clb6-bottleneck-map/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/vocabulary/formal-letters/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/vocabulary/opinion-words/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/writing/celpip-task1-purpose-and-tone-b2/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "key": "https://ieltscorner.ca/pte-core-for-canadian-immigration/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 33
+      },
+      {
+        "key": "https://ieltscorner.ca/questions/email-clb8-volunteer-inquiry/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 6
+      }
+    ],
+    "page2Queries": [
+      {
+        "key": "praxis",
+        "clicks": 0,
+        "impressions": 53,
+        "ctr": 0,
+        "position": 8.5
+      }
+    ],
+    "impressionsNoClicks": [
+      {
+        "key": "praxis",
+        "clicks": 0,
+        "impressions": 53,
+        "ctr": 0,
+        "position": 8.5
+      }
+    ],
+    "sitemaps": [
+      {
+        "path": "https://ieltscorner.ca/sitemap-index.xml",
+        "submitted": 477,
+        "indexed": 0,
+        "errors": 0,
+        "warnings": 0,
+        "lastDownloaded": "2026-09-27T11:00:21.336Z"
+      },
+      {
+        "path": "http://www.ieltscorner.ca/sitemap-index.xml",
+        "submitted": 477,
+        "indexed": 0,
+        "errors": 0,
+        "warnings": 0,
+        "lastDownloaded": "2026-09-28T16:41:09.913Z"
+      }
+    ]
+  }
+}
