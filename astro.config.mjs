@@ -28,6 +28,7 @@ const SITEMAP_EXCLUDE = [
   /\/essay-correction(\/|$)/, // force-302 to / in netlify.toml
   /\/celpip\/reading-guide\//, // noindex
   /\/celpip\/free-reading-guide\/thanks\//,
+  /\/writing-guide(\/|$)/, // PRE-LAUNCH: noindex until the Stripe link is set. Remove this line at launch.
 ];
 
 // https://astro.build/config

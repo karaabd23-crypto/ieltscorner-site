@@ -1,0 +1,563 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+/* ==========================================================================
+   LAUNCH PLACEHOLDERS: fill these two values to launch the page.
+
+   1. STRIPE_PAYMENT_LINK (Muse): paste the Stripe Payment Link for the
+      CELPIP Writing Guide, e.g. "https://buy.stripe.com/xxxxxxxx".
+   2. PRICE_LABEL (Kay): the display price, e.g. "CA$49.50".
+
+   While either value is empty the page is PRE-LAUNCH: the buy buttons show
+   "Available soon", no price is shown, and the page is noindex.
+   At launch, also remove the /writing-guide/ line from SITEMAP_EXCLUDE in
+   astro.config.mjs so the page enters the sitemap.
+   ========================================================================== */
+const STRIPE_PAYMENT_LINK = ""; // TODO(Muse): Stripe buy link goes here
+const PRICE_LABEL = ""; // TODO(Kay): confirm price
+
+const isLive = Boolean(STRIPE_PAYMENT_LINK && PRICE_LABEL);
+const ctaLabel = isLive ? `Get the CELPIP Writing Guide - ${PRICE_LABEL}` : "Available soon";
+
+// Every number on this page is counted from the manuscript (v1, 2026-10-05).
+// If the manuscript changes, recount before editing these.
+const chapters = [
+  { num: "Both tasks", title: "The Frame and the Tone", desc: "How to read the prompt, choose formal, semi-formal or informal tone, and build every paragraph so nothing is missing." },
+  { num: "Task 1", title: "The Complaint", desc: "Facts and a deadline instead of anger. How to say exactly what you want and stay polite." },
+  { num: "Task 1", title: "The Request", desc: "Polite request forms, a clear reason, and a plan that makes it easy for the reader to say yes." },
+  { num: "Task 1", title: "The Apology", desc: "Explain without excuses, take responsibility in one sentence, and offer a real solution with a date." },
+  { num: "Task 1", title: "The Informal Email", desc: "A friendly voice in full sentences. Advice, invitations, thanks and news for friends and family." },
+  { num: "Task 1", title: "The Suggestion", desc: "Respectful disagreement and practical ideas for a manager, a city office or a community centre." },
+  { num: "Task 2", title: "The Survey Frame", desc: "Choose an option in one minute, then support it with two developed reasons and a fair look at the other side." },
+  { num: "Task 2", title: "Four Survey Types", desc: "Workplace, community, school and housing choices, each with its own worked prompt and sample answers." },
+];
+
+const bookSchema = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "CELPIP Writing: The Complete Preparation Guide",
+  "description": "A workbook covering both CELPIP Writing tasks with 27 sample answers at three levels, 30 sentence patterns, 60 practice prompts, grammar drills, and a 4-week study plan.",
+  "author": {
+    "@type": "Person",
+    "name": "Dr. Kara Abdolmaleki",
+    "url": "https://ieltscorner.ca/about",
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "IELTS Corner",
+    "url": "https://ieltscorner.ca",
+  },
+  "inLanguage": "en",
+};
+---
+
+<Layout
+  title="CELPIP Writing: The Complete Preparation Guide - eBook"
+  description="Both CELPIP Writing tasks in one guide: 27 sample answers at three levels, 30 sentence patterns, 60 practice prompts, and a 4-week study plan."
+  ogImage="/writing-guide/cover.jpg"
+  noindex={!isLive}
+  structuredData={isLive ? [bookSchema] : []}
+>
+  <!-- Hero -->
+  <section class="section" style="padding-bottom: var(--s-5);">
+    <div class="hero ebook-hero" style={`--hero-bg: url('/heroes/writing.webp');`}>
+      <div class="ebook-hero-layout">
+        <!-- Left: Cover -->
+        <div class="cover-wrap">
+          <img
+            src="/writing-guide/cover.jpg"
+            alt="CELPIP Writing: The Complete Preparation Guide - book cover"
+            class="book-cover"
+            width="300"
+            height="469"
+          />
+        </div>
+        <!-- Right: Hero content -->
+        <div class="hero-content ebook-hero-content">
+          <span class="pill">CELPIP Writing</span>
+          <h1>The complete preparation guide for both writing tasks</h1>
+          <p class="muted" style="max-width: 54ch;">
+            Task 1 email and Task 2 survey response, step by step. Clear frames, sample answers at three levels, grammar drills, and a 4-week study plan, all explained in simple English.
+          </p>
+          <div class="ebook-badges">
+            <span class="ebook-badge">Both tasks</span>
+            <span class="ebook-badge">27 sample answers</span>
+            <span class="ebook-badge">30 sentence patterns</span>
+            <span class="ebook-badge">60 practice prompts</span>
+          </div>
+          <div class="cluster" style="margin-top: var(--s-3);">
+            {isLive ? (
+              <a class="btn btn-primary ebook-cta-btn" href={STRIPE_PAYMENT_LINK} target="_blank" rel="noreferrer noopener">
+                {ctaLabel}
+              </a>
+            ) : (
+              <span class="btn btn-primary ebook-cta-btn guide-cta-soon" aria-disabled="true" data-stripe-placeholder="true">
+                {ctaLabel}
+              </span>
+            )}
+          </div>
+          <p class="muted" style="font-size: 0.82rem; margin-top: var(--s-2); margin-bottom: 0;">
+            {isLive ? "One-time payment. PDF download. Keep forever." : "One-time payment. PDF download. On sale soon."}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's inside strip -->
+  <section class="section-sm" style="padding-top: 0; padding-bottom: var(--s-5);">
+    <div class="surface funnel-section">
+      <h2 style="margin-top: 0; margin-bottom: var(--s-3);">What is inside</h2>
+      <div class="inside-grid">
+        <div class="inside-item">
+          <span class="inside-number">2</span>
+          <span class="inside-label">Tasks, fully covered</span>
+          <span class="inside-desc">Five kinds of email for Task 1 and four kinds of survey for Task 2, each with its own chapter</span>
+        </div>
+        <div class="inside-item">
+          <span class="inside-number">27</span>
+          <span class="inside-label">Sample answers</span>
+          <span class="inside-desc">A weak, a middle and a strong answer to the same prompt, so you can see what changes</span>
+        </div>
+        <div class="inside-item">
+          <span class="inside-number">30</span>
+          <span class="inside-label">Sentence patterns</span>
+          <span class="inside-desc">Simple, natural shapes for requests, complaints, apologies, opinions and reasons</span>
+        </div>
+        <div class="inside-item">
+          <span class="inside-number">4-week</span>
+          <span class="inside-label">Study plan</span>
+          <span class="inside-desc">30 to 45 minutes a day, with timed practice, checklists and a one-week plan if your test is close</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The score problem -->
+  <section class="section-sm" style="padding-bottom: var(--s-5);">
+    <div class="surface funnel-section problem-panel">
+      <h2 style="margin-top: 0;">Good English is not enough if the email misses the task</h2>
+      <p class="muted">
+        A CELPIP writing answer can have correct grammar and still lose points. One bullet point answered in five words. A friendly email that sounds like a letter to a bank. A survey answer that never chooses an option. A complaint with no clear request. These are problems of technique, and technique can be learned.
+      </p>
+      <p class="muted" style="margin-bottom: 0;">
+        This guide teaches test technique, not academic English. It shows you how to read the prompt, plan in four minutes, write on a simple frame, and check your work, using the four things CELPIP raters look at: Content/Coherence, Vocabulary, Readability and Task Fulfillment.
+      </p>
+    </div>
+  </section>
+
+  <!-- Chapters -->
+  <section class="section-sm" style="padding-bottom: var(--s-5);">
+    <h2 class="section-heading">Both tasks. Every common situation.</h2>
+    <p class="section-sub muted">Each task chapter includes a snapshot, a plan, a language toolkit, a grammar focus, a worked prompt with three sample answers, rater-style notes, upgrade steps, practice prompts and a self-check.</p>
+    <div class="task-grid">
+      {chapters.map((c) => (
+        <div class="surface task-card">
+          <span class="task-num">{c.num}</span>
+          <h3>{c.title}</h3>
+          <p class="muted">{c.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Sample answers callout -->
+  <section class="section-sm" style="padding-bottom: var(--s-5);">
+    <div class="surface funnel-section sample-callout">
+      <div class="sample-callout-inner">
+        <div class="sample-text">
+          <h2 style="margin-top: 0;">See the difference between a weak answer and a strong one on the same prompt</h2>
+          <p class="muted">
+            Every worked prompt in this guide comes with three answers: weak, middle and strong. Notes under each one explain what a rater would likely see in Content/Coherence, Vocabulary, Readability and Task Fulfillment.
+          </p>
+          <p class="muted">
+            Then the guide shows the exact sentences that move a middle answer up, side by side. Reading a good sample is useful. Seeing <em>why</em> it is stronger than the one before it is how your own writing changes.
+          </p>
+          <p class="muted" style="margin-bottom: 0; font-size: 0.85rem;">
+            The samples were written for teaching. Their levels are estimates, not official CELPIP scores.
+          </p>
+        </div>
+        <div class="sample-stat-block">
+          <div class="sample-stat">
+            <span class="sample-stat-num">27</span>
+            <span class="sample-stat-label">sample answers with rater-style notes</span>
+          </div>
+          <div class="sample-stat">
+            <span class="sample-stat-num">3</span>
+            <span class="sample-stat-label">levels shown for every worked prompt</span>
+          </div>
+          <div class="sample-stat">
+            <span class="sample-stat-num">12</span>
+            <span class="sample-stat-label">common errors with fixes and drills</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Author -->
+  <section class="section-sm" style="padding-bottom: var(--s-5);">
+    <div class="surface funnel-section author-panel">
+      <span class="pill" style="margin-bottom: var(--s-3);">About the author</span>
+      <h2 style="margin-top: 0;">From a certified CELPIP instructor</h2>
+      <p class="muted">
+        Dr. Kara Abdolmaleki holds a PhD, is TESL Canada certified, and completed <strong>CELPIP Instructor Training Level 1</strong>. She is the founder of IELTSCorner.ca and the author of the CELPIP Speaking Preparation Guide.
+      </p>
+      <p class="muted" style="margin-bottom: var(--s-3);">
+        The Writing Guide is the companion to that book. It follows the same approach: plain explanations, real examples at different levels, and practice you can time.
+      </p>
+      <div class="cluster">
+        <a class="btn" href="/about">See full background</a>
+        <a class="btn" href="/ebook">See the Speaking Guide</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section-sm" style="padding-bottom: var(--s-8);">
+    <div class="surface funnel-section final-cta">
+      <div class="final-cta-inner">
+        <h2 style="margin-top: 0;">Ready to write with a plan?</h2>
+        <p class="muted" style="max-width: 56ch; margin-left: auto; margin-right: auto;">
+          {isLive
+            ? `${PRICE_LABEL}. One payment. PDF download. No subscription, no expiry. This is a book you work through with a timer, not one you skim and put down.`
+            : "One payment. PDF download. No subscription, no expiry. This is a book you work through with a timer, not one you skim and put down."}
+        </p>
+        <div class="cluster" style="justify-content: center; margin-top: var(--s-4);">
+          {isLive ? (
+            <a class="btn btn-primary final-cta-btn" href={STRIPE_PAYMENT_LINK} target="_blank" rel="noreferrer noopener">
+              {ctaLabel}
+            </a>
+          ) : (
+            <span class="btn btn-primary final-cta-btn guide-cta-soon" aria-disabled="true" data-stripe-placeholder="true">
+              {ctaLabel}
+            </span>
+          )}
+        </div>
+        <div class="final-reassurance">
+          <span>PDF format</span>
+          <span class="dot">·</span>
+          <span>Works on any device</span>
+          <span class="dot">·</span>
+          <span>One-time payment</span>
+          <span class="dot">·</span>
+          <span>Keep forever</span>
+        </div>
+        {!isLive && (
+          <p class="muted" style="margin: var(--s-3) 0 0; font-size: 0.9rem;">
+            Working on speaking too? The <a href="/ebook">CELPIP Speaking Preparation Guide</a> is available now.
+          </p>
+        )}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Hero layout */
+  .ebook-hero {
+    --hero-min-h: 280px;
+    padding: var(--s-6);
+  }
+
+  .ebook-hero-layout {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: var(--s-6);
+    align-items: center;
+  }
+
+  .cover-wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  .book-cover {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(20,22,23,0.30), 0 6px 20px rgba(20,22,23,0.18);
+    display: block;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+  }
+
+  .book-cover:hover {
+    transform: translateY(-4px) rotate(-1deg);
+    box-shadow: 0 28px 70px rgba(20,22,23,0.35), 0 8px 24px rgba(20,22,23,0.20);
+  }
+
+  .ebook-hero-content {
+    max-width: none;
+  }
+
+  /* Badges */
+  .ebook-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: var(--s-3);
+  }
+
+  .ebook-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.88);
+    border: 1px solid var(--border-strong);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+  }
+
+  .ebook-cta-btn {
+    font-size: 1rem !important;
+    padding: 14px 28px !important;
+  }
+
+  /* What's inside grid */
+  .inside-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .inside-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: var(--s-3) var(--s-3) var(--s-3) 0;
+    border-right: 1px solid var(--border);
+  }
+
+  .inside-item:last-child {
+    border-right: none;
+  }
+
+  .inside-number {
+    font-family: "Fraunces", ui-serif, Georgia, serif;
+    font-size: var(--step-3);
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .inside-label {
+    font-weight: 700;
+    font-size: var(--step-0);
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  .inside-desc {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* Problem panel */
+  .problem-panel {
+    border-left: 4px solid var(--accent);
+    max-width: 780px;
+  }
+
+  /* Task grid */
+  .section-heading {
+    margin-top: 0;
+    margin-bottom: var(--s-2);
+  }
+
+  .section-sub {
+    max-width: 70ch;
+    margin-top: 0;
+    margin-bottom: var(--s-4);
+  }
+
+  .task-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .task-card {
+    padding: var(--s-4);
+  }
+
+  .task-num {
+    display: inline-block;
+    font-size: 12px; /* 12px floor */
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    margin-bottom: var(--s-1);
+  }
+
+  .task-card h3 {
+    margin-top: 0;
+    margin-bottom: var(--s-1);
+    font-size: 0.96rem;
+    line-height: 1.3;
+  }
+
+  .task-card p {
+    margin: 0;
+    font-size: 0.87rem;
+    line-height: 1.55;
+  }
+
+  /* Scored samples callout */
+  .sample-callout-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--s-6);
+    align-items: start;
+  }
+
+  .sample-stat-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+    min-width: 200px;
+  }
+
+  .sample-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-left: var(--s-3);
+    border-left: 3px solid var(--accent);
+  }
+
+  .sample-stat-num {
+    font-family: "Fraunces", ui-serif, Georgia, serif;
+    font-size: var(--step-2);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .sample-stat-label {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* Author panel */
+  .author-panel {
+    max-width: 780px;
+  }
+
+  /* Final CTA */
+  .final-cta {
+    text-align: center;
+  }
+
+  .final-cta-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .final-cta-btn {
+    font-size: 1.05rem !important;
+    padding: 16px 32px !important;
+  }
+
+  .final-reassurance {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: var(--s-3);
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  .dot {
+    color: var(--border-strong);
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .ebook-hero-layout {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .cover-wrap {
+      order: -1;
+    }
+
+    .ebook-badges {
+      justify-content: center;
+    }
+
+    .inside-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .inside-item {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: var(--s-3);
+    }
+
+    .inside-item:nth-child(3),
+    .inside-item:last-child {
+      border-bottom: none;
+    }
+
+    .task-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sample-callout-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .sample-stat-block {
+      flex-direction: row;
+      flex-wrap: wrap;
+      min-width: 0;
+    }
+
+    .sample-stat {
+      flex: 1 1 140px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .ebook-hero {
+      padding: var(--s-4);
+    }
+
+    .task-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .inside-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .inside-item {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .inside-item:last-child {
+      border-bottom: none;
+    }
+  }
+
+  /* Pre-launch buy button: same shape as the live button, clearly not clickable */
+  .guide-cta-soon {
+    opacity: 0.6;
+    cursor: default;
+    pointer-events: none;
+  }
+</style>

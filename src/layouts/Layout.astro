@@ -81,6 +81,7 @@ const floatingCtaPaths = new Set<string>();
 const showFloatingWebinarCta = floatingCtaPaths.has(normalizedPath);
 const showFloatingEbookCta =
   !normalizedPath.startsWith('/ebook') &&
+  !normalizedPath.startsWith('/writing-guide') &&
   !normalizedPath.startsWith('/ai-feedback');
 const showPageBottomAd = showAds && !isGuidedPath;
 const highIntentTrackingPaths = new Set([
