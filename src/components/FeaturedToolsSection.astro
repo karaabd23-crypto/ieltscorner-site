@@ -92,7 +92,7 @@ const sectionClass = ["featured-tools", className].filter(Boolean).join(" ");
     line-height: 1.35;
     color: #1f2a33;
     white-space: normal;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
   }
 
   .featured-tools__eyebrow {
@@ -158,7 +158,7 @@ const sectionClass = ["featured-tools", className].filter(Boolean).join(" ");
     line-height: 1.4;
     font-size: 0.9rem;
     white-space: normal;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
   }
 
   .featured-tools__note {
@@ -173,6 +173,14 @@ const sectionClass = ["featured-tools", className].filter(Boolean).join(" ");
     font-size: 14px;
     line-height: 1.1;
     white-space: normal;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
+  }
+
+  /* One column per card only fits on wide screens. Below that, step down so
+     cards never get narrow enough to clip headings or break words. */
+  @media (max-width: 1023px) {
+    .featured-tools__grid {
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    }
   }
 </style>
