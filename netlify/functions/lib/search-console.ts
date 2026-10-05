@@ -21,10 +21,12 @@
 
 import { fetchAccessToken, parseServiceAccount } from './google-auth.js';
 
-// Search Analytics + sitemaps both live under the Webmasters v3 host. (The
-// searchconsole.googleapis.com host serves only the URL Inspection API and
-// returns a generic HTML 404 for searchAnalytics — do not use it here.)
+// Search Analytics + sitemaps both live under the Webmasters v3 host. The
+// searchconsole.googleapis.com host serves only the URL Inspection API (used
+// below by inspectUrl/inspectUrls) and returns a generic HTML 404 for
+// searchAnalytics — never query it for analytics data.
 const WEBMASTERS_API = 'https://www.googleapis.com/webmasters/v3';
+const URL_INSPECTION_API = 'https://searchconsole.googleapis.com/v1';
 const SCOPE = 'https://www.googleapis.com/auth/webmasters.readonly';
 
 export interface DateRange {
@@ -56,6 +58,30 @@ export interface SitemapSummary {
   lastDownloaded?: string;
 }
 
+/**
+ * One URL's real indexing status, from the URL Inspection API — the ground
+ * truth that `sitemaps[].indexed` (above) is NOT: that field comes from the
+ * Sitemaps API's own submitted/indexed reconciliation, which can under-report
+ * (observed stuck at 0 on this property for 12+ weeks while the Index
+ * Coverage report showed 80 real indexed pages). This is real per-URL status,
+ * at the cost of only covering the handful of URLs inspected each pull.
+ */
+export interface UrlInspectionResult {
+  url: string;
+  /** PASS | FAIL | NEUTRAL | PARTIAL | VERDICT_UNSPECIFIED */
+  verdict: string;
+  /** Human-readable reason, e.g. "Submitted and indexed", "Crawled - currently not indexed", "Discovered - currently not indexed". */
+  coverageState?: string;
+  robotsTxtState?: string;
+  indexingState?: string;
+  pageFetchState?: string;
+  lastCrawlTime?: string;
+  googleCanonical?: string;
+  userCanonical?: string;
+  /** Set when the inspection call itself failed (auth, quota, bad URL) — the row is still returned so one bad URL doesn't drop the rest. */
+  error?: string;
+}
+
 export interface SearchConsoleSnapshot {
   totals: { clicks: number; impressions: number; ctr: number; position: number };
   topQueries: SearchRow[];
@@ -65,6 +91,8 @@ export interface SearchConsoleSnapshot {
   /** Pages with impressions but zero clicks — a title/meta problem. */
   impressionsNoClicks: SearchRow[];
   sitemaps: SitemapSummary[];
+  /** Real per-URL indexing status for a fixed priority list — see UrlInspectionResult. */
+  urlInspections: UrlInspectionResult[];
 }
 
 export interface SearchConsoleConfig {
@@ -198,12 +226,72 @@ export function createSearchConsoleAdapter(config: SearchConsoleConfig) {
     });
   }
 
-  async function getSnapshot(range: DateRange, nowSec: number): Promise<SearchConsoleSnapshot> {
-    const [t, topQueries, topPages, sitemapList] = await Promise.all([
+  /**
+   * One URL's real indexing status via the URL Inspection API — the same
+   * check "Inspect URL" in the GSC UI runs. Never throws: a failure (quota,
+   * auth, malformed URL) comes back as a row with `error` set, so one bad
+   * URL doesn't drop the rest of the pull.
+   */
+  async function inspectUrl(url: string, nowSec: number): Promise<UrlInspectionResult> {
+    try {
+      const data = await api<{
+        inspectionResult?: {
+          indexStatusResult?: {
+            verdict?: string;
+            coverageState?: string;
+            robotsTxtState?: string;
+            indexingState?: string;
+            pageFetchState?: string;
+            lastCrawlTime?: string;
+            googleCanonical?: string;
+            userCanonical?: string;
+          };
+        };
+      }>(`${URL_INSPECTION_API}/urlInspection/index:inspect`, nowSec, {
+        method: 'POST',
+        body: JSON.stringify({ inspectionUrl: url, siteUrl }),
+      });
+      const r = data.inspectionResult?.indexStatusResult ?? {};
+      return {
+        url,
+        verdict: r.verdict ?? 'VERDICT_UNSPECIFIED',
+        coverageState: r.coverageState,
+        robotsTxtState: r.robotsTxtState,
+        indexingState: r.indexingState,
+        pageFetchState: r.pageFetchState,
+        lastCrawlTime: r.lastCrawlTime,
+        googleCanonical: r.googleCanonical,
+        userCanonical: r.userCanonical,
+      };
+    } catch (error) {
+      return {
+        url,
+        verdict: 'VERDICT_UNSPECIFIED',
+        error: error instanceof Error ? error.message : String(error),
+      };
+    }
+  }
+
+  /** Inspect a fixed list of priority URLs, one at a time (URL Inspection is tightly rate-limited per site). */
+  async function inspectUrls(urls: string[], nowSec: number): Promise<UrlInspectionResult[]> {
+    const results: UrlInspectionResult[] = [];
+    for (const url of urls) {
+      results.push(await inspectUrl(url, nowSec));
+    }
+    return results;
+  }
+
+  async function getSnapshot(
+    range: DateRange,
+    nowSec: number,
+    priorityUrls: string[] = [],
+  ): Promise<SearchConsoleSnapshot> {
+    const [t, topQueries, topPages, sitemapList, urlInspections] = await Promise.all([
       totals(range, nowSec),
       query(range, 'query', nowSec, 250),
       query(range, 'page', nowSec, 250),
       sitemaps(nowSec).catch(() => [] as SitemapSummary[]), // sitemaps scope may lag; don't fail the pull
+      inspectUrls(priorityUrls, nowSec), // never throws — see inspectUrl
     ]);
 
     // page-2 opportunities: ranking 8..20 with real impressions, best position first.
@@ -225,6 +313,7 @@ export function createSearchConsoleAdapter(config: SearchConsoleConfig) {
       page2Queries,
       impressionsNoClicks,
       sitemaps: sitemapList,
+      urlInspections,
     };
   }
 

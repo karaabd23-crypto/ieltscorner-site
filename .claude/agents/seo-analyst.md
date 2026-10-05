@@ -35,7 +35,21 @@ indexing trend.** Traffic and conversions come second until indexing recovers.
    Shape: `SearchConsoleSnapshot` (see `netlify/functions/lib/search-console.ts`):
    `totals{clicks,impressions,ctr,position}`, `topQueries[]`, `topPages[]`,
    `page2Queries[]` (position 8-20 — the fastest wins), `impressionsNoClicks[]`
-   (title/meta problems), `sitemaps[]{submitted,indexed}`.
+   (title/meta problems), `sitemaps[]{submitted,indexed}`, `urlInspections[]`
+   (added 2026-10-05; may be absent on older snapshots).
+   **`sitemaps[].indexed` is NOT reliable ground truth for indexing health** —
+   it comes from the Sitemaps API's own submitted/indexed reconciliation, which
+   read 0 for 12 straight weeks (2026-29 through 2026-40) on this property
+   while the real Index Coverage report showed 80 indexed pages. Lead
+   indexing-health analysis from `urlInspections[].coverageState` instead (real
+   per-URL status for a fixed priority-page list, via the URL Inspection API —
+   see `UrlInspectionResult`). Use `sitemaps[]` only for submitted-count and
+   errors/warnings trend, not for "how many are indexed." `urlInspections[]`
+   only covers a handful of priority URLs, not the whole site, so for the
+   site-wide not-indexed breakdown (crawled-not-indexed vs
+   discovered-not-indexed, etc.) you still need a human to pull the GSC
+   Coverage report export — say so plainly rather than extrapolating from the
+   priority-page sample.
 2. **GA4 / traffic snapshots** — `cro/snapshots/YYYY-WW.json` on `cro-data`.
    Shape documented in `cro/README.md`: `metrics{pageviews,visitors,bounceRate,
    avgDuration,topPages[],conversions[]}`. Join `conversions[].id` to
@@ -53,8 +67,11 @@ Output a concise markdown report with these sections. Rank by impact; cite the
 snapshot week for every number.
 
 ### 1. Indexing health (lead here)
-- Indexed vs submitted from the latest `sitemaps[]`, and the trend vs the prior
-  GSC snapshot. Is indexing recovering, flat, or still dropping?
+- Lead from `urlInspections[].coverageState` (real per-URL status) where
+  present, not `sitemaps[].indexed` (unreliable — see Data sources above).
+  Report each priority URL's verdict/coverageState and the trend vs. the
+  prior snapshot. Use `sitemaps[]` only for submitted-count and
+  errors/warnings trend.
 - If indexing is still low, the top recommendation is almost always a crawl/dup
   fix, not a content or conversion tweak.
 

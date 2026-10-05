@@ -18,8 +18,18 @@
  *                    URL-prefix property:  "https://ieltscorner.ca/"
  *                    Domain property:      "sc-domain:ieltscorner.ca"
  * Optional:
- *   CRO_GITHUB_REPO - "owner/name" (default "karaabd23-crypto/ieltscorner-site").
- *   CRO_DATA_BRANCH - target data branch (default "cro-data").
+ *   CRO_GITHUB_REPO  - "owner/name" (default "karaabd23-crypto/ieltscorner-site").
+ *   CRO_DATA_BRANCH  - target data branch (default "cro-data").
+ *   GSC_INSPECT_URLS - comma-separated full URLs to run through the URL
+ *                       Inspection API each pull (default: DEFAULT_INSPECT_PATHS
+ *                       below, resolved against SITE_ORIGIN). This is real
+ *                       per-URL indexing status (ground truth), unlike
+ *                       `sitemaps[].indexed`, which the Sitemaps API itself can
+ *                       under-report — see search-console.ts's UrlInspectionResult.
+ *   SITE_ORIGIN      - origin to resolve relative paths against (default
+ *                       "https://ieltscorner.ca"). Only used to build URLs from
+ *                       DEFAULT_INSPECT_PATHS/GSC_INSPECT_URLS paths; GSC_SITE_URL
+ *                       may be a "sc-domain:" property, which isn't a fetchable URL.
  *
  * The service-account credential is NOT read from the function environment (a
  * Google key is too large for the 4KB AWS Lambda limit). It is loaded from the
@@ -33,6 +43,29 @@ import { createSearchConsoleAdapter } from './lib/search-console.js';
 const DATA_BRANCH = process.env.CRO_DATA_BRANCH || 'cro-data';
 const REPO = process.env.CRO_GITHUB_REPO || 'karaabd23-crypto/ieltscorner-site';
 const GH_API = 'https://api.github.com';
+const SITE_ORIGIN = process.env.SITE_ORIGIN || 'https://ieltscorner.ca';
+
+// Fixed, small priority list — kept short because the URL Inspection API is
+// tightly rate-limited per site. These are the site's main revenue/hub pages,
+// so trend lines are comparable week to week regardless of what's trending in
+// Search Analytics that week.
+const DEFAULT_INSPECT_PATHS = [
+  '/',
+  '/ielts/reading/',
+  '/celpip/reading/',
+  '/celpip/writing/',
+  '/ai-feedback/',
+  '/ebook/',
+];
+
+/** Resolve GSC_INSPECT_URLS (comma-separated, full URLs or paths) or fall back to DEFAULT_INSPECT_PATHS against SITE_ORIGIN. */
+function priorityInspectUrls(): string[] {
+  const raw = process.env.GSC_INSPECT_URLS;
+  const entries = raw
+    ? raw.split(',').map((s) => s.trim()).filter(Boolean)
+    : DEFAULT_INSPECT_PATHS;
+  return entries.map((entry) => new URL(entry, SITE_ORIGIN).toString());
+}
 
 /** Config export read by Netlify at deploy time to register the cron. */
 export const config = {
@@ -148,7 +181,11 @@ export default async (): Promise<Response> => {
 
     const range = previousWeekRange(new Date());
     const nowSec = Math.floor(Date.parse(startedAt) / 1000);
-    const data = await adapter.getSnapshot({ start: range.start, end: range.end }, nowSec);
+    const data = await adapter.getSnapshot(
+      { start: range.start, end: range.end },
+      nowSec,
+      priorityInspectUrls(),
+    );
 
     const snapshot = {
       schemaVersion: 1,

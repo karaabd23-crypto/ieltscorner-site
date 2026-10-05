@@ -214,7 +214,31 @@ conversion trend). Run it with the Agent tool (`seo-analyst`) or on a schedule.
     "topPages":   [ { "key": "https://ieltscorner.ca/lessons/...", "clicks": 5, "impressions": 200, "ctr": 0.025, "position": 9.1 } ],
     "page2Queries":        [ /* position 8..20, real impressions — fastest wins */ ],
     "impressionsNoClicks": [ /* rank but no clicks — title/meta problem */ ],
-    "sitemaps": [ { "path": "https://ieltscorner.ca/sitemap-index.xml", "submitted": 551, "indexed": 3, "errors": 0, "warnings": 0 } ]
+    "sitemaps": [ { "path": "https://ieltscorner.ca/sitemap-index.xml", "submitted": 551, "indexed": 3, "errors": 0, "warnings": 0 } ],
+    "urlInspections": [
+      {
+        "url": "https://ieltscorner.ca/",
+        "verdict": "PASS",
+        "coverageState": "Submitted and indexed",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "pageFetchState": "SUCCESSFUL",
+        "lastCrawlTime": "2026-10-01T12:00:00Z",
+        "googleCanonical": "https://ieltscorner.ca/",
+        "userCanonical": "https://ieltscorner.ca/"
+      }
+      /* one row per URL in GSC_INSPECT_URLS (default: a fixed list of priority
+         hub/revenue pages — see gsc-weekly-pull.ts). `coverageState` is the
+         real, per-URL ground truth (the same string the GSC UI's "Page
+         indexing" report shows, e.g. "Crawled - currently not indexed",
+         "Discovered - currently not indexed"). Trust this over
+         `sitemaps[].indexed` above: that field comes from the Sitemaps API's
+         own submitted/indexed reconciliation, which can under-report — it
+         read 0 for 12 straight weeks on this property (2026-29 through
+         2026-40) while the real Index Coverage report showed 80 indexed
+         pages. A row with an `error` field means the inspection call itself
+         failed (quota/auth/bad URL); the rest of the pull still succeeds. */
+    ]
   }
 }
 ```
@@ -225,6 +249,8 @@ conversion trend). Run it with the Agent tool (`seo-analyst`) or on a schedule.
 | --------------- | -------- | ----------------------------------------------------------------------- |
 | `GITHUB_TOKEN`  | yes      | Reuses the CRO token; commits to `cro-data`.                            |
 | `GSC_SITE_URL`  | yes      | The Search Console property, EXACTLY as shown in GSC. URL-prefix: `https://ieltscorner.ca/` — Domain: `sc-domain:ieltscorner.ca`. |
+| `GSC_INSPECT_URLS` | no    | Comma-separated full URLs (or paths, resolved against `SITE_ORIGIN`) to run through the URL Inspection API each pull. Default: a fixed list of priority hub/revenue pages (see `DEFAULT_INSPECT_PATHS` in `gsc-weekly-pull.ts`). Kept short — URL Inspection is tightly rate-limited per site. |
+| `SITE_ORIGIN`   | no       | Origin to resolve `GSC_INSPECT_URLS`/default paths against. Default `https://ieltscorner.ca`. Only needed because `GSC_SITE_URL` may be a non-fetchable `sc-domain:` property. |
 
 The **provider credential is shared with GA4** — the same service-account JSON
 key already stored in the `cro-config` blob store (`analytics-api-key`). No new
