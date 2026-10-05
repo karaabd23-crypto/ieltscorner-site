@@ -41,6 +41,28 @@
   status = 301
   force = true
 
+# Canonical host — force http:// and www. to https://ieltscorner.ca (no www).
+# GSC has been crawling/ranking http://ieltscorner.ca/ ahead of the canonical
+# https:// URL for 6+ weeks (SEO report 2026-40); every page already declares
+# rel=canonical to https://ieltscorner.ca, but there was no redirect enforcing it.
+[[redirects]]
+  from = "http://ieltscorner.ca/*"
+  to = "https://ieltscorner.ca/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.ieltscorner.ca/*"
+  to = "https://ieltscorner.ca/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.ieltscorner.ca/*"
+  to = "https://ieltscorner.ca/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/celpip/writing/ai-feedback"
   to = "/ai-feedback"
