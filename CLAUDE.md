@@ -20,7 +20,14 @@ node scripts/enforce-lesson-quality-gate.mjs --changed --base=origin/main   # sa
 npm run lesson:check:frontmatter         # frontmatter validity across all lessons
 npm run celpip:calibration:check         # CELPIP writing sample/score calibration
 npm run reading:check                    # CELPIP reading item quality
+
+# Layout/health audit (needs `npx astro preview --port 4321` running after a build)
+node scripts/audit-site-layout.mjs                  # key pages at 360/390/414/768/1280
+node scripts/audit-site-layout.mjs --all            # every page in dist/sitemap-0.xml
+node scripts/audit-site-layout.mjs --base=https://ieltscorner.ca   # against live
 ```
+
+Most visitors are on phones: every UI change must stay clean at 360, 390, 414, 768 and 1280px. Google Auto ads inject their own fixed bars and ad-intent chips at runtime; they are not in the markup and are tuned in the AdSense dashboard, not in code.
 
 Most other `package.json` scripts are ops tooling (Telegram, Kit newsletter, CRO credentials). Their `:dry` / `--dry-run` variants do not write. Run those first.
 
