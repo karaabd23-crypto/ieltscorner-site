@@ -538,19 +538,19 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 2,
       "name": "Lessons",
-      "item": new URL("/lessons", Astro.site),
+      "item": new URL("/lessons/", Astro.site),
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": categoryLabel(currentCategory),
-      "item": new URL(`/lessons/${currentCategory}`, Astro.site),
+      "item": new URL(`/lessons/${currentCategory}/`, Astro.site),
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": publicTitle,
-      "item": new URL(`/lessons/${currentCategory}/${item.slug}`, Astro.site),
+      "item": new URL(`/lessons/${currentCategory}/${item.slug}/`, Astro.site),
     },
   ],
 };
