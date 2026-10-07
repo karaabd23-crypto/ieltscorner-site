@@ -35,7 +35,7 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
       </div>
     </div>
     <div id="sample-library-checking" class="surface" style="padding: var(--s-5);">
-      <p class="muted" style="margin: 0;">Checking your subscription and loading sample essaysâ€¦</p>
+      <p class="muted" style="margin: 0;">Checking your subscription and loading sample essays…</p>
     </div>
 
     <div id="sample-library-locked" style="display:none;">
@@ -60,7 +60,7 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
           Enter your email to unlock exactly one full sample essay instantly. This email will be added to our IELTS/CELPIP newsletter.
         </p>
 
-        <form id="free-sample-form" style="display: grid; grid-template-columns: 1fr auto; gap: var(--s-2); align-items: center;">
+        <form id="free-sample-form" class="free-sample-form">
           <input
             id="free-sample-email"
             type="email"
@@ -171,7 +171,7 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
           <input
             id="sample-library-search"
             type="search"
-            placeholder="Search by topicâ€¦"
+            placeholder="Search by topic…"
             autocomplete="off"
             style="flex: 1; min-width: 200px; padding: var(--s-2) var(--s-3); border: 1px solid #ccc; border-radius: 6px; font: inherit;"
           />
@@ -195,13 +195,13 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
 
       <div class="grid grid-2" style="align-items: start; gap: var(--s-4);">
         <div class="surface" style="padding: var(--s-5);">
-          <h3 style="margin-top: 0;">Task 1 Â· Email Essays</h3>
+          <h3 style="margin-top: 0;">Task 1 · Email Essays</h3>
           <p id="sample-library-task1-count" class="muted" style="margin-top: 0;"></p>
           <div id="sample-library-task1-list" class="stack" style="gap: var(--s-3);"></div>
         </div>
 
         <div class="surface" style="padding: var(--s-5);">
-          <h3 style="margin-top: 0;">Task 2 Â· Survey Essays</h3>
+          <h3 style="margin-top: 0;">Task 2 · Survey Essays</h3>
           <p id="sample-library-task2-count" class="muted" style="margin-top: 0;"></p>
           <div id="sample-library-task2-list" class="stack" style="gap: var(--s-3);"></div>
         </div>
@@ -336,7 +336,7 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
         if (!(freeSampleText instanceof HTMLElement)) return;
 
         freeSampleTitle.textContent = prompt?.title || 'Unlocked sample essay';
-        freeSampleTask.textContent = prompt?.taskType === 'task2' ? 'Task 2 Â· Survey essay' : 'Task 1 Â· Email essay';
+        freeSampleTask.textContent = prompt?.taskType === 'task2' ? 'Task 2 · Survey essay' : 'Task 1 · Email essay';
         freeSampleScenario.textContent = prompt?.scenario || '';
         freeSampleLevel.textContent = prompt?.sampleLevel ? `Model level: ${prompt.sampleLevel}` : '';
         freeSampleText.textContent = getPrimarySample(prompt);
@@ -542,7 +542,7 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
           return;
         }
 
-        setStatus('Opening secure Stripe billing portalâ€¦');
+        setStatus('Opening secure Stripe billing portal…');
         if (manageBillingBtn instanceof HTMLButtonElement) manageBillingBtn.disabled = true;
 
         try {
@@ -671,7 +671,7 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
         const confirmed = window.confirm('Cancel now? This will cancel your subscription immediately.');
         if (!confirmed) return;
 
-        setStatus('Canceling your subscription nowâ€¦');
+        setStatus('Canceling your subscription now…');
         if (cancelNowBtn instanceof HTMLButtonElement) cancelNowBtn.disabled = true;
 
         try {
@@ -787,4 +787,18 @@ import { CELPIP_WRITING_PRICE_CAD } from '../../../../lib/celpipWritingData.mjs'
   </script>
 </Layout>
 
+<style>
+  .free-sample-form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--s-2);
+    align-items: center;
+  }
 
+  /* Side by side, the button got squeezed into a three-line pill on phones. */
+  @media (max-width: 560px) {
+    .free-sample-form {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
