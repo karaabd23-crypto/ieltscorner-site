@@ -275,7 +275,7 @@ const INSTAGRAM_URL = `https://www.instagram.com/${INSTAGRAM_USERNAME}/`;
           }
 
           appendItems(youtubeList, payload?.youtubeVideos, {
-            fallbackMessage: "Latest YouTube videos are not available right now.",
+            fallbackMessage: "Watch free lessons on the YouTube channel.",
             fallbackUrl: String(payload?.youtubeChannelUrl || youtubeChannelUrl),
             fallbackLabel: "Open YouTube channel",
             defaultTitle: "Recent YouTube lesson",
@@ -283,7 +283,7 @@ const INSTAGRAM_URL = `https://www.instagram.com/${INSTAGRAM_USERNAME}/`;
           });
 
           appendItems(instagramList, payload?.instagramPosts, {
-            fallbackMessage: "Latest Instagram posts are not available right now.",
+            fallbackMessage: "Short tips and lessons on Instagram.",
             fallbackUrl: String(payload?.instagramUrl || instagramUrl),
             fallbackLabel: "Open Instagram profile",
             defaultTitle: "Recent Instagram post",
@@ -293,7 +293,7 @@ const INSTAGRAM_URL = `https://www.instagram.com/${INSTAGRAM_USERNAME}/`;
           setStatus("");
         } catch {
           appendItems(youtubeList, [], {
-            fallbackMessage: "Latest YouTube videos are not available right now.",
+            fallbackMessage: "Watch free lessons on the YouTube channel.",
             fallbackUrl: youtubeChannelUrl,
             fallbackLabel: "Open YouTube channel",
             defaultTitle: "Recent YouTube lesson",
@@ -301,7 +301,7 @@ const INSTAGRAM_URL = `https://www.instagram.com/${INSTAGRAM_USERNAME}/`;
           });
 
           appendItems(instagramList, [], {
-            fallbackMessage: "Latest Instagram posts are not available right now.",
+            fallbackMessage: "Short tips and lessons on Instagram.",
             fallbackUrl: instagramUrl,
             fallbackLabel: "Open Instagram profile",
             defaultTitle: "Recent Instagram post",

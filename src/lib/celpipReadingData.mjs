@@ -5617,8 +5617,20 @@ export function flattenReadingQuestions(test = CELPIP_READING_FREE_TEST) {
   );
 }
 
+/** Multi-blank select questions ({ template, blanks[] }) store one option id per blank. */
+export function isAnswered(question, response) {
+  if (Array.isArray(question?.blanks)) {
+    return Array.isArray(response) && question.blanks.every((_, index) => Boolean(response[index]));
+  }
+  return Array.isArray(response) ? response.length > 0 : Boolean(response);
+}
+
 export function answersMatch(question, response) {
   if (!question) return false;
+  if (Array.isArray(question.blanks)) {
+    const received = Array.isArray(response) ? response : [];
+    return question.blanks.every((blank, index) => received[index] === blank.correctAnswer);
+  }
   if (question.type === 'multi') {
     const expected = Array.isArray(question.correctAnswer) ? [...question.correctAnswer].sort() : [];
     const received = Array.isArray(response) ? [...response].sort() : [];
@@ -5637,8 +5649,7 @@ export function gradeReadingAttempt(test = CELPIP_READING_FREE_TEST, answers = {
 
   questions.forEach((question) => {
     const response = answers[question.id];
-    const hasAnswer = Array.isArray(response) ? response.length > 0 : Boolean(response);
-    if (hasAnswer) answered += 1;
+    if (isAnswered(question, response)) answered += 1;
 
     const isCorrect = answersMatch(question, response);
     if (isCorrect) correct += 1;

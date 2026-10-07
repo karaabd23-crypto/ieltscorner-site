@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
+import trailingSlashLinks from './src/integrations/trailing-slash-links.mjs';
 
 /**
  * Routes that must NOT appear in the public sitemap. Submitting private, utility,
@@ -39,8 +40,8 @@ export default defineConfig({
     sitemap({
       changefreq: 'weekly',
       priority: 0.7,
-      lastmod: new Date(),
       filter: (page) => !SITEMAP_EXCLUDE.some((pattern) => pattern.test(page)),
     }),
+    trailingSlashLinks(),
   ],
 });

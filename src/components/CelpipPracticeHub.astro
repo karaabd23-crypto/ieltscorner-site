@@ -183,7 +183,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
         <details class="sample-accordion">
           <summary>CLB 11 Sample</summary>
           <div class="sample-content" id="hub-sample-clb11">
-            <p class="muted sample-placeholder">Sample response coming soon â€” check back or subscribe to see all samples.</p>
+            <p class="muted sample-placeholder">Sample response coming soon - check back or subscribe to see all samples.</p>
           </div>
         </details>
       </div>
@@ -828,6 +828,13 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
     font-weight: 700;
     color: var(--ink);
     padding-top: 2px;
+  }
+
+  /* At 320px the 110px timer left the title an 80px column. */
+  @media (max-width: 400px) {
+    .writing-header {
+      flex-direction: column;
+    }
   }
 
   .timer-box {

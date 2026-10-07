@@ -158,7 +158,11 @@ npm dependency required.
         "rate": 0.0593                       // events / visits, 4dp (0 if visits=0)
       }
       // ...one entry per goal in conversions.json
-    ]
+    ],
+    "segments": {                          // GA4 only, from 2026-10
+      "byDevice":  [ { "key": "mobile", "visitors": 41, "sessions": 45, "bounceRate": 0.84, "goalEvents": { "ebook": 1 } } ],
+      "byChannel": [ { "key": "Organic Search", "visitors": 26, "sessions": 33, "bounceRate": 0.55, "goalEvents": {} } ]
+    }
   }
 }
 ```
@@ -168,6 +172,18 @@ npm dependency required.
 Each goal maps a revenue route to its analytics event name and the landing
 path(s) whose visits feed the funnel. Tracked routes: `/ebook`,
 `/tutoring#book-private-class`, `/ai-feedback`, webinar signup, and subscription.
+
+### Automated traffic
+
+Most raw traffic on this site is "Direct" desktop visits with ~80% bounce, which
+look automated; Organic Search is a small minority (wk39: 359 Direct vs 26
+Organic of 425). Read `segments` before trusting totals. From 2026-10 the GA4
+tag is not loaded when `navigator.webdriver` is true, so Playwright/Selenium
+audits no longer count as visits (see `src/components/GoogleAnalytics.astro`).
+
+Conversion tracking was verified end to end on 2026-10-03 (ebook, AI feedback
+and subscription checkout clicks all reach GA4). The phase-2 reader is the
+`cro-analyst` agent (`.claude/agents/cro-analyst.md`).
 
 ## How Phase 2 (analysis agent) consumes it
 
@@ -198,50 +214,53 @@ conversion trend). Run it with the Agent tool (`seo-analyst`) or on a schedule.
 
 ## GSC snapshot schema
 
-`cro/snapshots/gsc-YYYY-WW.json`:
+`cro/snapshots/gsc-YYYY-WW.json` (schemaVersion 2 from 2026-10; weeks 29-39 are v1):
 
 ```jsonc
 {
-  "schemaVersion": 1,
-  "week": "2026-30",
-  "range": { "start": "2026-07-20", "end": "2026-07-26" },
+  "schemaVersion": 2,
+  "week": "2026-39",
+  "range": { "start": "2026-09-21", "end": "2026-09-27" },
   "provider": "search-console",
-  "siteUrl": "https://ieltscorner.ca/",
-  "generatedAt": "2026-07-27T06:15:00.000Z",
+  "siteUrl": "sc-domain:ieltscorner.ca",
+  "generatedAt": "2026-09-28T06:15:00.000Z",
+  "complete": true,                         // false = trailing day(s) not available yet
   "search": {
-    "totals": { "clicks": 0, "impressions": 0, "ctr": 0, "position": 0 },
-    "topQueries": [ { "key": "celpip writing task 1", "clicks": 3, "impressions": 120, "ctr": 0.025, "position": 12.4 } ],
-    "topPages":   [ { "key": "https://ieltscorner.ca/lessons/...", "clicks": 5, "impressions": 200, "ctr": 0.025, "position": 9.1 } ],
-    "page2Queries":        [ /* position 8..20, real impressions — fastest wins */ ],
-    "impressionsNoClicks": [ /* rank but no clicks — title/meta problem */ ],
-    "sitemaps": [ { "path": "https://ieltscorner.ca/sitemap-index.xml", "submitted": 551, "indexed": 3, "errors": 0, "warnings": 0 } ],
-    "urlInspections": [
-      {
-        "url": "https://ieltscorner.ca/",
-        "verdict": "PASS",
-        "coverageState": "Submitted and indexed",
-        "robotsTxtState": "ALLOWED",
-        "indexingState": "INDEXING_ALLOWED",
-        "pageFetchState": "SUCCESSFUL",
-        "lastCrawlTime": "2026-10-01T12:00:00Z",
-        "googleCanonical": "https://ieltscorner.ca/",
-        "userCanonical": "https://ieltscorner.ca/"
-      }
-      /* one row per URL in GSC_INSPECT_URLS (default: a fixed list of priority
-         hub/revenue pages — see gsc-weekly-pull.ts). `coverageState` is the
-         real, per-URL ground truth (the same string the GSC UI's "Page
-         indexing" report shows, e.g. "Crawled - currently not indexed",
-         "Discovered - currently not indexed"). Trust this over
-         `sitemaps[].indexed` above: that field comes from the Sitemaps API's
-         own submitted/indexed reconciliation, which can under-report — it
-         read 0 for 12 straight weeks on this property (2026-29 through
-         2026-40) while the real Index Coverage report showed 80 indexed
-         pages. A row with an `error` field means the inspection call itself
-         failed (quota/auth/bad URL); the rest of the pull still succeeds. */
-    ]
+    "totals": { "clicks": 7, "impressions": 182, "ctr": 0.0385, "position": 13.3 },
+    "daysWithData": ["2026-09-21", "..."],
+    "queryCoverage": { "clicks": 0.29, "impressions": 0.74 }, // share NOT anonymized by Google
+    "topQueries": [ /* sorted by impressions desc */ ],
+    "topPages":   [ /* sorted by impressions desc; not affected by anonymization */ ],
+    "queryPages": [ { "key": "praxis", "page": "http://ieltscorner.ca/", "impressions": 83, "...": 0 } ],
+    "page2Queries":        [ /* position 8..20, >= 3 impressions */ ],
+    "impressionsNoClicks": [ /* PAGES with >= 5 impressions and 0 clicks */ ],
+    "sitemaps": [ { "path": "https://ieltscorner.ca/sitemap-index.xml", "submitted": 477, "errors": 0, "warnings": 0, "isPending": false } ],
+    "urlInspections": [                     // the same priority pages every week (GSC_INSPECT_URLS)
+      { "url": "https://ieltscorner.ca/", "coverageState": "Submitted and indexed", "verdict": "PASS", "lastCrawlTime": "...", "googleCanonical": "...", "userCanonical": "..." }
+      // a row with "error" means that inspection call failed; the pull still succeeds
+    ],
+    "indexCoverage": {                      // URL Inspection on a rotating 40-URL slice of the sitemap
+      "sitemapUrls": 477, "offset": 82, "sampled": 40, "indexedShare": 0.1,
+      "byState": { "Submitted and indexed": 6, "Crawled - currently not indexed": 12, "Discovered - currently not indexed": 14, "URL is unknown to Google": 8 },
+      "urls": [ { "url": "...", "coverageState": "...", "verdict": "...", "lastCrawlTime": "...", "googleCanonical": "...", "userCanonical": "..." } ]
+    },
+    "errors": [ /* { source, message } for non-fatal failures */ ]
   }
 }
 ```
+
+Things that look like missing data but are not:
+
+- **`sitemaps[].indexed` is gone.** Google documents the field as "Deprecated; do
+  not use" and always returns 0. The v1 snapshots' "0 of 477 indexed" was this
+  artifact, not real coverage. Real coverage is `indexCoverage`.
+- **Weekend data.** GSC days are Pacific time and fresh data lags, so the Monday
+  run usually lacks the last day or two (`complete: false`). Every run re-pulls
+  the week before last and overwrites that snapshot with complete numbers.
+- **Anonymized queries.** Google omits rare queries from query-level rows. On this
+  site that is often more than half of clicks; `queryCoverage` records the share.
+- **"Discovered" vs "unknown".** URL Inspection flips between these two for the
+  same never-crawled URL; treat them as one "not yet crawled" bucket.
 
 ## Environment variables (SEO spine)
 

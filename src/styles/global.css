@@ -98,6 +98,8 @@ html {
 
 h1,h2,h3{
   font-family: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+  /* Without this, unclassed headings inherit the 1.7 body leading. */
+  line-height: 1.2;
   letter-spacing: -0.2px;
   color: var(--ink);
 }
@@ -4480,9 +4482,31 @@ hr {
   vertical-align: top;
 }
 
+/* The global `table thead` dark gradient sat behind this dark header text,
+ * making guide table headers unreadable. Guide tables use the light tint. */
+.guide-mistake-table thead {
+  background: none;
+}
+
 .guide-mistake-table th {
   background: rgba(29, 95, 153, 0.08);
   color: var(--text);
+}
+
+/* On phones the table is wider than its card and overflow:hidden clipped the
+ * last column. Let it scroll sideways instead, with tighter cells. */
+@media (max-width: 640px) {
+  .guide-mistake-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .guide-mistake-table th,
+  .guide-mistake-table td {
+    padding: 10px 12px;
+    min-width: 6.5rem;
+  }
 }
 
 .guide-example {
@@ -5695,6 +5719,12 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
 }
 
 @media (max-width: 760px) {
+  /* .funnel-hero__actions is a grid, so flex-direction below does not stack it. */
+  .funnel-hero__actions {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+  }
+
   .funnel-hero__actions,
   .funnel-final-cta__actions,
   .funnel-secondary-links,
@@ -7117,5 +7147,51 @@ html[data-essay-submit-access="granted"] .essay-submit-guard__open {
     align-items: center;
     gap: 8px;
     min-height: 44px;
+  }
+}
+
+/* iOS Safari zooms the page when a focused field is under 16px. Component
+ * styles set 13-15px on many fields (lead capture, lesson email gate, contact,
+ * reading test, CLB calculator, writing lab), so enforce the floor once here. */
+@media (max-width: 768px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="hidden"]),
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Phones: lessons nest surface > shell > body > lab > task > bank > chip, and the
+   desktop padding at every level left 60-100px for text at 320px, splitting words
+   mid-line. Trim each level so exercises keep most of the screen width. */
+@media (max-width: 560px) {
+  .surface.lesson-content {
+    padding-inline: 14px;
+  }
+
+  .lesson-body.ic-prose {
+    padding-inline: 12px;
+  }
+
+  .practice-lab {
+    padding-inline: 10px;
+  }
+
+  .practice-lab .practice-task {
+    padding-inline: 12px;
+  }
+
+  .practice-chip-bank,
+  .practice-chip-answer {
+    padding: 8px;
+  }
+
+  .practice-chip {
+    flex: 1 1 100%;
+  }
+
+  .practice-sort-row,
+  .practice-choice {
+    padding-inline: 10px;
   }
 }

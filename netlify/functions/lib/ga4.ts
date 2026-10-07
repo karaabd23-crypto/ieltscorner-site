@@ -25,6 +25,7 @@ import {
   type ConversionResult,
   type DateRange,
   type GoalDef,
+  type Segment,
   type TopPage,
   type WeeklyMetrics,
 } from './analytics-adapter.js';
@@ -181,6 +182,63 @@ export function createGa4Adapter(config: AdapterConfig): AnalyticsAdapter {
     return num(data.rows?.[0]?.metricValues?.[0]?.value);
   }
 
+  /**
+   * Traffic and goal events split by one dimension (deviceCategory or
+   * sessionDefaultChannelGroup), so device- or channel-specific problems and
+   * automated traffic are visible in the snapshot.
+   */
+  async function getSegments(
+    range: DateRange,
+    dimension: 'deviceCategory' | 'sessionDefaultChannelGroup',
+    nowSec: number,
+  ): Promise<Segment[]> {
+    const [traffic, events] = await Promise.all([
+      runReport(
+        {
+          dateRanges: [dateRange(range)],
+          dimensions: [{ name: dimension }],
+          metrics: [{ name: 'totalUsers' }, { name: 'sessions' }, { name: 'bounceRate' }],
+          orderBys: [{ metric: { metricName: 'totalUsers' }, desc: true }],
+          limit: 12,
+        },
+        nowSec,
+      ),
+      goals.length
+        ? runReport(
+            {
+              dateRanges: [dateRange(range)],
+              dimensions: [{ name: dimension }, { name: 'eventName' }],
+              metrics: [{ name: 'eventCount' }],
+              dimensionFilter: {
+                filter: {
+                  fieldName: 'eventName',
+                  inListFilter: { values: goals.map((g) => g.eventName) },
+                },
+              },
+            },
+            nowSec,
+          )
+        : Promise.resolve({ rows: [] } as RunReportResponse),
+    ]);
+
+    const goalByEvent = new Map(goals.map((g) => [g.eventName, g.id]));
+    const segments = (traffic.rows ?? []).map((row) => ({
+      key: row.dimensionValues?.[0]?.value ?? '(not set)',
+      visitors: num(row.metricValues?.[0]?.value),
+      sessions: num(row.metricValues?.[1]?.value),
+      bounceRate: num(row.metricValues?.[2]?.value),
+      goalEvents: {} as Record<string, number>,
+    }));
+    for (const row of events.rows ?? []) {
+      const segment = segments.find((s) => s.key === row.dimensionValues?.[0]?.value);
+      const goalId = goalByEvent.get(row.dimensionValues?.[1]?.value ?? '');
+      if (segment && goalId) {
+        segment.goalEvents[goalId] = (segment.goalEvents[goalId] ?? 0) + num(row.metricValues?.[0]?.value);
+      }
+    }
+    return segments;
+  }
+
   async function getConversions(range: DateRange, nowSec: number): Promise<ConversionResult[]> {
     const out: ConversionResult[] = [];
     for (const goal of goals) {
@@ -204,12 +262,14 @@ export function createGa4Adapter(config: AdapterConfig): AnalyticsAdapter {
     async getWeeklyMetrics(range: DateRange): Promise<WeeklyMetrics> {
       // The JWT needs a Unix second for iat/exp; taken once per run.
       const nowSec = Math.floor(Date.now() / 1000);
-      const [aggregate, topPages, conversions] = await Promise.all([
+      const [aggregate, topPages, conversions, byDevice, byChannel] = await Promise.all([
         getAggregate(range, nowSec),
         getTopPages(range, nowSec),
         getConversions(range, nowSec),
+        getSegments(range, 'deviceCategory', nowSec),
+        getSegments(range, 'sessionDefaultChannelGroup', nowSec),
       ]);
-      return { ...aggregate, topPages, conversions };
+      return { ...aggregate, topPages, conversions, segments: { byDevice, byChannel } };
     },
   };
 }

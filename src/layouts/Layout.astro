@@ -82,7 +82,8 @@ const showFloatingWebinarCta = floatingCtaPaths.has(normalizedPath);
 const showFloatingEbookCta =
   !normalizedPath.startsWith('/ebook') &&
   !normalizedPath.startsWith('/writing-guide') &&
-  !normalizedPath.startsWith('/ai-feedback');
+  !normalizedPath.startsWith('/ai-feedback') &&
+  !normalizedPath.startsWith('/tutoring');
 const showPageBottomAd = showAds && !isGuidedPath;
 const highIntentTrackingPaths = new Set([
   "/celpip/reading/clb-6-to-8",
@@ -423,7 +424,13 @@ const serializeJsonForScript = (value: unknown) =>
         /* Shorter label on phones so the price is never cut off. */
         .floating-ebook-btn__long { display: none; }
         .floating-ebook-btn__short { display: inline; }
+        /* Lessons pin the "Jump to" drawer bottom-left too; sit above it. */
+        body:has(.lesson-jump-drawer) .floating-ebook-btn {
+          bottom: calc(60px + env(safe-area-inset-bottom, 0px) + var(--ad-anchor-offset, 0px));
+        }
       }
+      /* Never float a sales pill over a timed test. */
+      body:has(.reading-test, .pte-sim) .floating-ebook-btn { display: none; }
     </style>
     <!-- Calendly widget disabled while webinar is inactive
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async is:inline></script>
