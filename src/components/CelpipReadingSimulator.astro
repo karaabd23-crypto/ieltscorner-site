@@ -286,7 +286,7 @@ const serializeInlineJSON = (value: unknown) =>
 
 <script>
   // @ts-nocheck
-  import { answersMatch, flattenReadingQuestions, gradeReadingAttempt } from "../lib/celpipReadingData.mjs";
+  import { answersMatch, flattenReadingQuestions, gradeReadingAttempt, isAnswered } from "../lib/celpipReadingData.mjs";
 
   (() => {
     const premiumStorageKey = 'ieltscorner.celpipReadingPremium';
@@ -584,10 +584,21 @@ const serializeInlineJSON = (value: unknown) =>
     };
 
     const getAnsweredCount = () =>
-      flatQuestions.filter((question) => {
-        const value = answers[question.id];
-        return Array.isArray(value) ? value.length > 0 : Boolean(value);
-      }).length;
+      flatQuestions.filter((question) => isAnswered(question, answers[question.id])).length;
+
+    /** Multi-blank questions ({ template, blanks }) have no prompt of their own. */
+    const promptFor = (question) =>
+      question.prompt || (question.template ? 'Complete the sentence using the information in the passage.' : '');
+
+    /** Option text for an answer, per blank for multi-blank questions. */
+    const answerText = (question, value) => {
+      if (Array.isArray(question.blanks)) {
+        return question.blanks
+          .map((blank, index) => blank.options.find((o) => o.id === value?.[index])?.text || '____')
+          .join(' / ');
+      }
+      return Array.isArray(value) ? value.join(', ') : value;
+    };
 
     const getCurrentQuestion = () => flatQuestions[currentIndex];
 
@@ -678,6 +689,8 @@ const serializeInlineJSON = (value: unknown) =>
       if (block.type === 'paragraph' || block.type === 'meta') {
         const paragraph = document.createElement('p');
         paragraph.className = block.type === 'meta' ? 'reading-passage__meta' : 'reading-passage__paragraph';
+        // Correspondence passages keep their line breaks (subject, greeting, signature).
+        paragraph.style.whiteSpace = 'pre-line';
         appendPassageText(paragraph, block.text || '');
         return paragraph;
       }
@@ -701,9 +714,7 @@ const serializeInlineJSON = (value: unknown) =>
         const questionId = button.dataset.readingQuestion;
         const question = flatQuestions.find((item) => item.id === questionId);
         if (!question) return;
-        const value = answers[question.id];
-        const answeredNow = Array.isArray(value) ? value.length > 0 : Boolean(value);
-        button.classList.toggle('is-answered', answeredNow);
+        button.classList.toggle('is-answered', isAnswered(question, answers[question.id]));
         button.classList.toggle('is-flagged', Boolean(flagged[question.id]));
         const curQ = getCurrentQuestion();
         const isP3Active = curQ?.sectionId === 'part-3' && question.sectionId === 'part-3';
@@ -784,6 +795,43 @@ const serializeInlineJSON = (value: unknown) =>
 
       const currentAnswer = answers[question.id];
       const inputType = question.type === 'multi' ? 'checkbox' : 'radio';
+
+      if (Array.isArray(question.blanks)) {
+        const sentence = document.createElement('p');
+        sentence.className = 'reading-blank-sentence';
+        const parts = String(question.template || '').split('[BLANK]');
+        parts.forEach((text, index) => {
+          if (text) sentence.appendChild(document.createTextNode(text));
+          const blank = question.blanks[index];
+          if (!blank) return;
+          const select = document.createElement('select');
+          select.className = 'reading-select reading-select--inline';
+          select.setAttribute('aria-label', `Blank ${index + 1}`);
+          const placeholder = document.createElement('option');
+          placeholder.value = '';
+          placeholder.textContent = 'Choose';
+          select.appendChild(placeholder);
+          blank.options.forEach((option) => {
+            const optionEl = document.createElement('option');
+            optionEl.value = option.id;
+            optionEl.textContent = option.text;
+            if (Array.isArray(currentAnswer) && currentAnswer[index] === option.id) optionEl.selected = true;
+            select.appendChild(optionEl);
+          });
+          select.addEventListener('change', () => {
+            const next = question.blanks.map((_, i) =>
+              (Array.isArray(answers[question.id]) ? answers[question.id][i] : '') || '');
+            next[index] = select.value;
+            if (next.some(Boolean)) answers[question.id] = next;
+            else delete answers[question.id];
+            updateProgress();
+            scheduleAccountSave();
+          });
+          sentence.appendChild(select);
+        });
+        questionForm.appendChild(sentence);
+        return;
+      }
 
       if (question.type === 'select') {
         const wrap = document.createElement('label');
@@ -961,7 +1009,7 @@ const serializeInlineJSON = (value: unknown) =>
           questionKickerEl.textContent = `Question ${question.number}`;
         }
         if (questionPromptEl instanceof HTMLElement) {
-          questionPromptEl.textContent = question.prompt;
+          questionPromptEl.textContent = promptFor(question);
         }
         if (questionTypeEl instanceof HTMLElement) {
           questionTypeEl.textContent = question.type === 'multi'
@@ -1166,21 +1214,24 @@ const serializeInlineJSON = (value: unknown) =>
         meta.textContent = `${question.sectionLabel} | Question ${question.number} | ${question.skillTag}`;
 
         const prompt = document.createElement('h5');
-        prompt.textContent = question.prompt;
+        prompt.textContent = question.prompt || String(question.template || '').replace(/\[BLANK\]/g, '____');
 
         const yourAnswer = document.createElement('p');
-        const normalizedResponse = Array.isArray(response) ? response.join(', ') : response || 'No answer';
+        const hasResponse = Array.isArray(response) ? response.some(Boolean) : Boolean(response);
+        const normalizedResponse = hasResponse ? answerText(question, response) : 'No answer';
         yourAnswer.innerHTML = `<strong>Your answer:</strong> ${normalizedResponse}`;
 
         const correctAnswer = document.createElement('p');
-        const normalizedCorrect = Array.isArray(question.correctAnswer)
-          ? question.correctAnswer.join(', ')
-          : question.correctAnswer;
+        const normalizedCorrect = Array.isArray(question.blanks)
+          ? answerText(question, question.blanks.map((blank) => blank.correctAnswer))
+          : Array.isArray(question.correctAnswer)
+            ? question.correctAnswer.join(', ')
+            : question.correctAnswer;
         correctAnswer.innerHTML = `<strong>Correct answer:</strong> ${normalizedCorrect}`;
 
         const explanation = document.createElement('p');
         explanation.className = 'muted';
-        explanation.textContent = question.explanation;
+        explanation.textContent = question.explanation || '';
 
         card.append(meta, prompt, yourAnswer, correctAnswer, explanation);
         reviewListEl.appendChild(card);
@@ -1250,10 +1301,7 @@ const serializeInlineJSON = (value: unknown) =>
     const finalizeTest = ({ skipConfirm = false, timeExpired = false } = {}) => {
       if (hasSubmitted) return;
 
-      const unanswered = flatQuestions.filter((question) => {
-        const value = answers[question.id];
-        return Array.isArray(value) ? value.length === 0 : !value;
-      }).length;
+      const unanswered = flatQuestions.filter((question) => !isAnswered(question, answers[question.id])).length;
 
       if (!skipConfirm) {
         const proceed = window.confirm(
@@ -1802,7 +1850,7 @@ const serializeInlineJSON = (value: unknown) =>
   }
 
   .reading-palette__item {
-    min-height: 22px;
+    min-height: 32px;
     border-radius: 7px;
     border: 1px solid rgba(20, 22, 23, 0.14);
     background: #fff;
@@ -1869,6 +1917,7 @@ const serializeInlineJSON = (value: unknown) =>
 
   .reading-passage__paragraph {
     line-height: 1.55;
+    white-space: pre-line;
   }
 
   .reading-passage__meta {
@@ -2122,6 +2171,18 @@ const serializeInlineJSON = (value: unknown) =>
     line-height: 1.2;
     font-size: 0.82rem;
     min-width: 0;
+  }
+
+  .reading-blank-sentence {
+    margin: 0;
+    line-height: 2.4;
+  }
+
+  .reading-select--inline {
+    width: auto;
+    max-width: 100%;
+    margin: 0 4px;
+    vertical-align: middle;
   }
 
   .reading-select {
@@ -2597,6 +2658,33 @@ const serializeInlineJSON = (value: unknown) =>
     .reading-results__panel--compact,
     .reading-results__review-shell {
       width: 100%;
+    }
+
+    /* Desktop labels are 8-10px and buttons 22-30px tall; too small to read or tap on a phone. */
+    .reading-test .reading-test__eyebrow,
+    .reading-test .reading-test__subhead,
+    .reading-test .reading-test__timer span,
+    .reading-test .reading-question-card__type {
+      font-size: 0.8rem;
+    }
+
+    .reading-test .reading-section-btn {
+      min-height: 36px;
+      font-size: 0.75rem;
+    }
+
+    .reading-test .reading-question-card__footer .btn,
+    .reading-test .reading-flag-btn,
+    .reading-test .reading-test__back-btn,
+    .reading-test .reading-test__status-head .btn,
+    .reading-test #reading-submit-test {
+      min-height: 40px;
+      font-size: 0.85rem;
+    }
+
+    .reading-test .reading-section-btn span,
+    .reading-test .reading-test__progress-copyline .muted {
+      font-size: 0.8rem;
     }
   }
 </style>
