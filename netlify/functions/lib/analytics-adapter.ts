@@ -40,6 +40,26 @@ export interface WeeklyMetrics {
   avgDuration: number;
   topPages: TopPage[];
   conversions: ConversionResult[];
+  /**
+   * Traffic split by device and acquisition channel. Optional: providers that
+   * cannot segment omit it. Lets the analysis tell mobile from desktop
+   * problems and real visitors from automated sweeps (e.g. wk34's 91% bounce).
+   */
+  segments?: {
+    byDevice: Segment[];
+    byChannel: Segment[];
+  };
+}
+
+export interface Segment {
+  /** Device category ("mobile", "desktop", "tablet") or channel group ("Organic Search", ...). */
+  key: string;
+  visitors: number;
+  sessions: number;
+  /** 0..1 fraction. */
+  bounceRate: number;
+  /** Conversion events per goal id within this segment (goals with 0 omitted). */
+  goalEvents: Record<string, number>;
 }
 
 /** A conversion goal as declared in cro/conversions.json. */

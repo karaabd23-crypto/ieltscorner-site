@@ -2,9 +2,16 @@
  * SEO data spine — weekly Search Console pull (Phase 1).
  *
  * Netlify Scheduled Function. Every Monday 06:15 UTC it pulls the previous 7-day
- * window of Google Search Console data (search analytics + sitemap coverage)
- * and commits a JSON snapshot to cro/snapshots/gsc-YYYY-WW.json on the `cro-data`
- * branch via the GitHub Contents API. Data commits only — it never touches code.
+ * window of Google Search Console data (search analytics, sitemap status and a
+ * rotating URL Inspection sample) and commits a JSON snapshot to
+ * cro/snapshots/gsc-YYYY-WW.json on the `cro-data` branch via the GitHub
+ * Contents API. Data commits only — it never touches code.
+ *
+ * GSC days are Pacific time and fresh data lags, so on Monday morning the last
+ * 1-2 days of the week are missing or provisional. Each run therefore also
+ * re-pulls the week BEFORE last and overwrites its snapshot with now-complete
+ * numbers (keeping that week's URL Inspection sample). `complete` and
+ * `daysWithData` in every snapshot say which state it is in.
  *
  * The `seo-analyst` agent (Phase 2) reads these snapshots and turns them into a
  * prioritized action report; see .claude/agents/seo-analyst.md.
@@ -22,10 +29,10 @@
  *   CRO_DATA_BRANCH  - target data branch (default "cro-data").
  *   GSC_INSPECT_URLS - comma-separated full URLs to run through the URL
  *                       Inspection API each pull (default: DEFAULT_INSPECT_PATHS
- *                       below, resolved against SITE_ORIGIN). This is real
- *                       per-URL indexing status (ground truth), unlike
- *                       `sitemaps[].indexed`, which the Sitemaps API itself can
- *                       under-report — see search-console.ts's UrlInspectionResult.
+ *                       below, resolved against SITE_ORIGIN). Written to
+ *                       `urlInspections`; the rotating sitemap sample goes to
+ *                       `indexCoverage`. The sitemap API's `indexed` count is
+ *                       deprecated (always 0) and is not read.
  *   SITE_ORIGIN      - origin to resolve relative paths against (default
  *                       "https://ieltscorner.ca"). Only used to build URLs from
  *                       DEFAULT_INSPECT_PATHS/GSC_INSPECT_URLS paths; GSC_SITE_URL
@@ -86,23 +93,29 @@ function isoDate(date: Date): string {
   return date.toISOString().slice(0, 10);
 }
 
+interface WeekRange {
+  start: string;
+  end: string;
+  label: string;
+  week: number;
+}
+
 /**
- * Previous complete Mon–Sun week relative to `now`. Matches cro-weekly-pull so
- * the GA4 and GSC snapshots for a given week label cover the same range. Note
- * GSC finalizes data ~2-3 days late; `dataState: 'final'` in the adapter keeps
- * the numbers stable, at the cost of the freshest 2-3 days being excluded.
+ * The Mon–Sun week `weeksBack` weeks before the current one (1 = previous
+ * week). Matches cro-weekly-pull so the GA4 and GSC snapshots for a given week
+ * label cover the same range.
  */
-function previousWeekRange(now: Date): { start: string; end: string; label: string } {
+function weekRange(now: Date, weeksBack: number): WeekRange {
   const day = now.getUTCDay() || 7; // Mon=1..Sun=7
   const thisMonday = new Date(now);
   thisMonday.setUTCDate(now.getUTCDate() - (day - 1));
   const start = new Date(thisMonday);
-  start.setUTCDate(thisMonday.getUTCDate() - 7); // previous Monday
+  start.setUTCDate(thisMonday.getUTCDate() - 7 * weeksBack);
   const end = new Date(start);
-  end.setUTCDate(start.getUTCDate() + 6); // previous Sunday
+  end.setUTCDate(start.getUTCDate() + 6); // that week's Sunday
   const { year, week } = isoWeek(start);
   const label = `${year}-${String(week).padStart(2, '0')}`;
-  return { start: isoDate(start), end: isoDate(end), label };
+  return { start: isoDate(start), end: isoDate(end), label, week };
 }
 
 async function gh<T>(path: string, init?: RequestInit): Promise<T> {
@@ -139,6 +152,18 @@ async function ensureDataBranch(): Promise<void> {
     method: 'POST',
     body: JSON.stringify({ ref: `refs/heads/${DATA_BRANCH}`, sha: base.object.sha }),
   });
+}
+
+/** Read a JSON file from the data branch, or null if it does not exist. */
+async function readJson<T>(filePath: string): Promise<T | null> {
+  try {
+    const file = await gh<{ content: string }>(
+      `/repos/${REPO}/contents/${filePath}?ref=${DATA_BRANCH}`,
+    );
+    return JSON.parse(Buffer.from(file.content, 'base64').toString('utf8')) as T;
+  } catch {
+    return null;
+  }
 }
 
 /** Commit `content` to `filePath` on the data branch (create or update). */
@@ -179,33 +204,50 @@ export default async (): Promise<Response> => {
       siteUrl,
     });
 
-    const range = previousWeekRange(new Date());
-    const nowSec = Math.floor(Date.parse(startedAt) / 1000);
-    const data = await adapter.getSnapshot(
-      { start: range.start, end: range.end },
-      nowSec,
-      priorityInspectUrls(),
-    );
+    const now = new Date(startedAt);
+    const nowSec = Math.floor(now.getTime() / 1000);
+    const range = weekRange(now, 1);
+    const revised = weekRange(now, 2);
 
-    const snapshot = {
-      schemaVersion: 1,
-      week: range.label,
-      range: { start: range.start, end: range.end },
+    const [data, revisedData, previous] = await Promise.all([
+      adapter.getSnapshot(range, nowSec, {
+        inspectionRotation: range.week,
+        priorityUrls: priorityInspectUrls(),
+      }),
+      adapter.getSnapshot(revised, nowSec),
+      readJson<{ search?: { indexCoverage?: unknown; urlInspections?: unknown } }>(`cro/snapshots/gsc-${revised.label}.json`),
+    ]);
+
+    const build = (r: WeekRange, search: typeof data) => ({
+      schemaVersion: 2,
+      week: r.label,
+      range: { start: r.start, end: r.end },
       provider: adapter.provider,
       siteUrl,
       generatedAt: startedAt,
-      search: data,
-    };
+      complete: search.daysWithData.length >= 7,
+      search,
+    });
 
     await ensureDataBranch();
     const filePath = `cro/snapshots/gsc-${range.label}.json`;
     await commitFile(
       filePath,
-      `${JSON.stringify(snapshot, null, 2)}\n`,
+      `${JSON.stringify(build(range, data), null, 2)}\n`,
       `chore(seo): weekly search console snapshot ${range.label}`,
     );
+    // Keep the revised week's inspections; they were taken when that week was pulled.
+    revisedData.indexCoverage =
+      (previous?.search?.indexCoverage as typeof revisedData.indexCoverage) ?? null;
+    revisedData.urlInspections =
+      (previous?.search?.urlInspections as typeof revisedData.urlInspections) ?? [];
+    await commitFile(
+      `cro/snapshots/gsc-${revised.label}.json`,
+      `${JSON.stringify(build(revised, revisedData), null, 2)}\n`,
+      `chore(seo): revise search console snapshot ${revised.label} with complete data`,
+    );
 
-    console.log(`[gsc-weekly-pull] wrote ${filePath} to ${DATA_BRANCH}`);
+    console.log(`[gsc-weekly-pull] wrote ${filePath} and revised gsc-${revised.label}.json on ${DATA_BRANCH}`);
     return new Response(JSON.stringify({ ok: true, file: filePath, week: range.label }), {
       status: 200,
       headers: { 'content-type': 'application/json' },

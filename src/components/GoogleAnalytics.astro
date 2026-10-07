@@ -3,12 +3,21 @@ const { measurementId = "G-G0WCV3WJ44" } = Astro.props;
 ---
 
 <!-- Google tag (gtag.js) -->
-<script async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
 <script is:inline define:vars={{ measurementId }}>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   // Expose gtag globally so the conversion bridge can send GA4 events.
   window.gtag = gtag;
+  // Automated browsers (Playwright/Selenium audits, headless checks) set
+  // navigator.webdriver. Loading the tag for them inflated GA4 with fake
+  // desktop "Direct" visits, e.g. week 2026-34 during a mobile audit, which
+  // skews every CRO number. Calls are still queued, just never sent.
+  if (!navigator.webdriver) {
+    const tag = document.createElement('script');
+    tag.async = true;
+    tag.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+    document.head.appendChild(tag);
+  }
   gtag('js', new Date());
   gtag('config', measurementId);
 </script>
