@@ -1,7 +1,7 @@
 [build]
   command = "npm ci --no-audit --no-fund && npm run build"
   publish = "dist"
-  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- src public netlify scripts astro.config.mjs package.json package-lock.json tsconfig.json"
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- src public netlify netlify.toml scripts astro.config.mjs package.json package-lock.json tsconfig.json"
 
 [build.environment]
   NODE_VERSION = "22"
@@ -45,6 +45,9 @@
 # GSC has been crawling/ranking http://ieltscorner.ca/ ahead of the canonical
 # https:// URL for 6+ weeks (SEO report 2026-40); every page already declares
 # rel=canonical to https://ieltscorner.ca, but there was no redirect enforcing it.
+# Note: Netlify upgrades http -> https on the SAME host before these rules run
+# (platform behaviour, required for HSTS), so http://www takes two hops
+# (http://www -> https://www -> apex) and the http:// rules below cannot shorten it.
 [[redirects]]
   from = "http://ieltscorner.ca/*"
   to = "https://ieltscorner.ca/:splat"
@@ -65,137 +68,137 @@
 
 [[redirects]]
   from = "/celpip/writing/ai-feedback"
-  to = "/ai-feedback"
+  to = "/ai-feedback/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/celpip/writing/ai-feedback/"
-  to = "/ai-feedback"
+  to = "/ai-feedback/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/celpip-speaking-task-2-opinion-strategy"
-  to = "/celpip/speaking/task-7-opinion"
+  to = "/celpip/speaking/task-7-opinion/"
   status = 301
   force = true
 
 # P0B — Blog-to-canonical speaking task redirects
 [[redirects]]
   from = "/blog/celpip-speaking-task-1"
-  to = "/celpip/speaking/task-1-advice"
+  to = "/celpip/speaking/task-1-advice/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/celpip-speaking-part2"
-  to = "/celpip/speaking/task-2-personal-experience"
+  to = "/celpip/speaking/task-2-personal-experience/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/celpip-speaking-task-5-comparing-options"
-  to = "/celpip/speaking/task-5-comparison"
+  to = "/celpip/speaking/task-5-comparison/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/celpip-speaking-task-7-opinion-strategy"
-  to = "/celpip/speaking/task-7-opinion"
+  to = "/celpip/speaking/task-7-opinion/"
   status = 301
   force = true
 
 # P0A — Duplicate hub redirects (IELTS uppercase from build output)
 [[redirects]]
   from = "/lessons/IELTS"
-  to = "/ielts"
+  to = "/ielts/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/lessons/IELTS/listening"
-  to = "/ielts/listening"
+  to = "/ielts/listening/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/lessons/IELTS/reading"
-  to = "/ielts/reading"
+  to = "/ielts/reading/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/lessons/IELTS/speaking"
-  to = "/ielts/speaking"
+  to = "/ielts/speaking/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/lessons/IELTS/writing"
-  to = "/ielts/writing"
+  to = "/ielts/writing/"
   status = 301
   force = true
 
 # P0A — Duplicate hub redirects (IELTS lowercase from internal links)
 [[redirects]]
   from = "/lessons/ielts"
-  to = "/ielts"
+  to = "/ielts/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/lessons/ielts/listening"
-  to = "/ielts/listening"
+  to = "/ielts/listening/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/lessons/ielts/reading"
-  to = "/ielts/reading"
+  to = "/ielts/reading/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/lessons/ielts/speaking"
-  to = "/ielts/speaking"
+  to = "/ielts/speaking/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/lessons/ielts/writing"
-  to = "/ielts/writing"
+  to = "/ielts/writing/"
   status = 301
   force = true
 
 # P0A — Duplicate hub redirects (CELPIP)
 [[redirects]]
   from = "/lessons/celpip"
-  to = "/celpip"
+  to = "/celpip/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/lessons/celpip/listening"
-  to = "/celpip/listening"
+  to = "/celpip/listening/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/lessons/celpip/reading"
-  to = "/celpip/reading"
+  to = "/celpip/reading/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/lessons/celpip/speaking"
-  to = "/celpip/speaking"
+  to = "/celpip/speaking/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/lessons/celpip/writing"
-  to = "/celpip/writing"
+  to = "/celpip/writing/"
   status = 301
   force = true
 

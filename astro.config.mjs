@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
+import sitemapXml from './src/integrations/sitemap-xml.mjs';
 import trailingSlashLinks from './src/integrations/trailing-slash-links.mjs';
 
 /**
@@ -40,8 +41,10 @@ export default defineConfig({
     sitemap({
       changefreq: 'weekly',
       priority: 0.7,
+      lastmod: new Date(), // build date on every URL
       filter: (page) => !SITEMAP_EXCLUDE.some((pattern) => pattern.test(page)),
     }),
+    sitemapXml(), // flat /sitemap.xml; must come after sitemap()
     trailingSlashLinks(),
   ],
 });
