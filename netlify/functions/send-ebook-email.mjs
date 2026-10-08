@@ -64,7 +64,7 @@ function buildEmailHtml(customerName, downloadUrl) {
           <tr>
             <td style="padding:20px 22px;">
               <p style="margin:0 0 10px;font-size:18px;font-weight:700;color:#1d1d1d;">Hi ${customerName},</p>
-              <p style="margin:0 0 14px;color:#2b2b2b;line-height:1.5;">Thank you for your purchase. Your 109-page CELPIP speaking guide is attached to this email as a PDF.</p>
+              <p style="margin:0 0 14px;color:#2b2b2b;line-height:1.5;">Thank you for your purchase. Your 144-page CELPIP speaking guide is attached to this email as a PDF.</p>
               <p style="margin:0 0 14px;color:#2b2b2b;line-height:1.5;">The guide covers all 8 CELPIP speaking tasks with scored sample responses at every CLB level, response frames, grammar drills, and a 4-week study plan.</p>
               ${downloadUrl ? `<p style="margin:0 0 8px;color:#555;font-size:14px;">You can also download the file directly: <a href="${downloadUrl}" style="color:#d94848;">${downloadUrl}</a></p>` : ''}
               <p style="margin:14px 0 0;color:#555;font-size:13px;border-top:1px solid #eee;padding-top:12px;">If you have questions or need support, reply to this email.</p>
@@ -104,7 +104,7 @@ async function sendEmailWithAttachment({ toEmail, customerName, pdfBuffer, pdfFi
     from: `IELTS Corner <${GMAIL_USER}>`,
     to: toEmail,
     subject: 'Your CELPIP Speaking eBook - IELTS Corner',
-    text: `Hi ${customerName},\n\nYour 109-page CELPIP speaking guide is attached.\n\nIELTS Corner\nieltscorner.ca`,
+    text: `Hi ${customerName},\n\nYour 144-page CELPIP speaking guide is attached.\n\nIELTS Corner\nieltscorner.ca`,
     html: buildEmailHtml(customerName, EBOOK_FILE_URL),
     attachments: [
       {
