@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 
 const STRIPE_PAYMENT_LINK = "https://buy.stripe.com/aFa14m4Kq11q3ap7nSgMw03";
+const TRIPWIRE_PAYMENT_LINK = "https://buy.stripe.com/cNi7sKgt8dOc6mBgYsgMw04";
 
 const tasks = [
   { num: "Task 1", title: "Giving Advice", desc: "Empathy-first structure, modal hierarchy, and the exact phrases that separate CLB 7 from CLB 8." },
@@ -211,6 +212,24 @@ const bookSchema = {
           <span>Keep forever</span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Tripwire: start smaller -->
+  <section class="section-sm" style="padding-bottom: var(--s-8);">
+    <div class="surface funnel-section" style="text-align: center;">
+      <h2 style="margin-top: 0;">Start smaller: 50 Phrases for CELPIP Speaking</h2>
+      <p class="muted" style="max-width: 56ch; margin-left: auto; margin-right: auto;">
+        Not ready for the full guide? Get the one page cheat sheet with 50 practice phrases for all 8 speaking tasks. Print it, pin it, and use it in every practice session.
+      </p>
+      <div class="cluster" style="justify-content: center; margin-top: var(--s-4);">
+        <a class="btn btn-primary" href={TRIPWIRE_PAYMENT_LINK} target="_blank" rel="noreferrer noopener">
+          Get the cheat sheet, CA$12.50
+        </a>
+      </div>
+      <p class="muted" style="font-size: 0.82rem; margin-top: var(--s-2); margin-bottom: 0;">
+        One-time payment. Instant download. When you are ready for the full system, the guide above is the next step.
+      </p>
     </div>
   </section>
 </Layout>
