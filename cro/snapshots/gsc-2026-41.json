@@ -7,7 +7,7 @@
   },
   "provider": "search-console",
   "siteUrl": "sc-domain:ieltscorner.ca",
-  "generatedAt": "2026-10-12T06:15:30.865Z",
+  "generatedAt": "2026-10-12T06:15:50.693Z",
   "complete": true,
   "search": {
     "totals": {
@@ -788,9 +788,11 @@
       },
       {
         "url": "https://ieltscorner.ca/ielts/reading/",
-        "coverageState": "inspection failed",
-        "verdict": "VERDICT_UNSPECIFIED",
-        "error": "GSC 500 Internal Server Error for https://searchconsole.googleapis.com/v1/urlInspection/index:inspect: {\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"Internal error encountered.\",\n    \"status\": \"INTE"
+        "coverageState": "Submitted and indexed",
+        "verdict": "PASS",
+        "lastCrawlTime": "2026-10-05T13:11:24Z",
+        "googleCanonical": "https://ieltscorner.ca/ielts/reading/",
+        "userCanonical": "https://ieltscorner.ca/ielts/reading/"
       },
       {
         "url": "https://ieltscorner.ca/celpip/reading/",
@@ -808,8 +810,11 @@
       },
       {
         "url": "https://ieltscorner.ca/ai-feedback/",
-        "coverageState": "Discovered - currently not indexed",
-        "verdict": "NEUTRAL"
+        "coverageState": "Crawled - currently not indexed",
+        "verdict": "NEUTRAL",
+        "lastCrawlTime": "2026-07-08T17:11:44Z",
+        "googleCanonical": "https://ieltscorner.ca/ai-feedback/",
+        "userCanonical": "https://ieltscorner.ca/ai-feedback/"
       },
       {
         "url": "https://ieltscorner.ca/ebook/",
@@ -825,11 +830,10 @@
       "offset": 209,
       "sampled": 40,
       "byState": {
-        "Crawled - currently not indexed": 30,
+        "Crawled - currently not indexed": 33,
         "Submitted and indexed": 4,
         "Discovered - currently not indexed": 2,
-        "inspection failed": 3,
-        "URL is unknown to Google": 1
+        "inspection failed": 1
       },
       "indexedShare": 0.1,
       "urls": [
@@ -859,8 +863,9 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/grammar/prepositions-time/",
-          "coverageState": "Discovered - currently not indexed",
-          "verdict": "NEUTRAL"
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-04-28T11:28:44Z"
         },
         {
           "url": "https://ieltscorner.ca/lessons/grammar/present-continuous/",
@@ -923,9 +928,9 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/grammar/reduced-relative-clauses/",
-          "coverageState": "inspection failed",
-          "verdict": "VERDICT_UNSPECIFIED",
-          "error": "GSC 500 Internal Server Error for https://searchconsole.googleapis.com/v1/urlInspection/index:inspect: {\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"Internal error encountered.\",\n    \"status\": \"INTE"
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-04-29T03:03:16Z"
         },
         {
           "url": "https://ieltscorner.ca/lessons/grammar/reflexive-pronouns/",
@@ -1003,7 +1008,7 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/grammar/shared/grammar/01-present-perfect-vs-past-simple/",
-          "coverageState": "URL is unknown to Google",
+          "coverageState": "Discovered - currently not indexed",
           "verdict": "NEUTRAL"
         },
         {
@@ -1070,9 +1075,9 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/grammar/subordination-for-clear-paragraph-flow/",
-          "coverageState": "inspection failed",
-          "verdict": "VERDICT_UNSPECIFIED",
-          "error": "GSC 500 Internal Server Error for https://searchconsole.googleapis.com/v1/urlInspection/index:inspect: {\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"Internal error encountered.\",\n    \"status\": \"INTE"
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-04-22T22:55:24Z"
         },
         {
           "url": "https://ieltscorner.ca/lessons/grammar/subtle-modal-meanings-in-formal-texts/",
@@ -1082,11 +1087,9 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/grammar/there-is-are/",
-          "coverageState": "Crawled - currently not indexed",
-          "verdict": "NEUTRAL",
-          "lastCrawlTime": "2026-04-11T20:02:33Z",
-          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/there-is-are/",
-          "userCanonical": "https://ieltscorner.ca/lessons/grammar/there-is-are/"
+          "coverageState": "inspection failed",
+          "verdict": "VERDICT_UNSPECIFIED",
+          "error": "GSC 500 Internal Server Error for https://searchconsole.googleapis.com/v1/urlInspection/index:inspect: {\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"Internal error encountered.\",\n    \"status\": \"INTE"
         },
         {
           "url": "https://ieltscorner.ca/lessons/grammar/third-conditional/",
@@ -1108,13 +1111,15 @@
           "url": "https://ieltscorner.ca/lessons/grammar/time-clauses/",
           "coverageState": "Crawled - currently not indexed",
           "verdict": "NEUTRAL",
-          "lastCrawlTime": "2026-10-05T20:38:24Z"
+          "lastCrawlTime": "2026-10-05T20:38:24Z",
+          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/time-clauses/",
+          "userCanonical": "https://ieltscorner.ca/lessons/grammar/time-clauses/"
         },
         {
           "url": "https://ieltscorner.ca/lessons/grammar/tone-control-in-expert-responses/",
-          "coverageState": "inspection failed",
-          "verdict": "VERDICT_UNSPECIFIED",
-          "error": "GSC 500 Internal Server Error for https://searchconsole.googleapis.com/v1/urlInspection/index:inspect: {\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"Internal error encountered.\",\n    \"status\": \"INTE"
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-04-27T23:56:57Z"
         }
       ]
     },
