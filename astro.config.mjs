@@ -15,6 +15,7 @@ import trailingSlashLinks from './src/integrations/trailing-slash-links.mjs';
  * force-302 rules in netlify.toml (/webinar, /essay-correction).
  */
 const SITEMAP_EXCLUDE = [
+  /^https?:\/\/[^/]+\/hermes(\/|$)/, // unlisted public assistant information
   /^https?:\/\/[^/]+\/account\//, // auth + private account area
   /\/book\/paid\//, // paid booking (also Disallowed in robots.txt)
   /\/owner\//, // internal owner tools

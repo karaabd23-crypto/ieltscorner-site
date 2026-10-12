@@ -15,6 +15,12 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
+# Public informational pages, unlisted from the business site.
+[[headers]]
+  for = "/hermes/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
 # Domain aliases — redirect celpipcorner.com/celpipcorner.ca to ieltscorner.ca
 # These domains must be added in Netlify dashboard + DNS pointed to Netlify
 [[redirects]]
