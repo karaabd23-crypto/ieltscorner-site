@@ -1,0 +1,1127 @@
+{
+  "schemaVersion": 2,
+  "week": "2026-41",
+  "range": {
+    "start": "2026-10-05",
+    "end": "2026-10-11"
+  },
+  "provider": "search-console",
+  "siteUrl": "sc-domain:ieltscorner.ca",
+  "generatedAt": "2026-10-12T06:15:14.246Z",
+  "complete": true,
+  "search": {
+    "totals": {
+      "clicks": 2,
+      "impressions": 147,
+      "ctr": 0.0136,
+      "position": 10.1
+    },
+    "daysWithData": [
+      "2026-10-05",
+      "2026-10-06",
+      "2026-10-07",
+      "2026-10-08",
+      "2026-10-09",
+      "2026-10-10",
+      "2026-10-11"
+    ],
+    "queryCoverage": {
+      "clicks": 0,
+      "impressions": 0.7755
+    },
+    "topQueries": [
+      {
+        "key": "praxis",
+        "clicks": 0,
+        "impressions": 71,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "key": "ielts corner",
+        "clicks": 0,
+        "impressions": 9,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "key": "ielts speaking tutor",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 27.8
+      },
+      {
+        "key": "praxi",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 6.5
+      },
+      {
+        "key": "ielts speaking",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 23.5
+      },
+      {
+        "key": "reading celpip",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 37
+      },
+      {
+        "key": "site:ieltscorner.ca",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "key": "education consultant",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "key": "pracis",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "key": "celpip reading",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 40
+      },
+      {
+        "key": "educational consulting",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "key": "praxus",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "key": "praxis school",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "key": "celpip instructor training",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "key": "isee specialist",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 13
+      },
+      {
+        "key": "ielts sp",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 26
+      },
+      {
+        "key": "ielts speaking course",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 39
+      },
+      {
+        "key": "just ace ielts",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 63
+      }
+    ],
+    "topPages": [
+      {
+        "key": "http://ieltscorner.ca/",
+        "clicks": 0,
+        "impressions": 90,
+        "ctr": 0,
+        "position": 7.3
+      },
+      {
+        "key": "https://ieltscorner.ca/ielts/speaking/",
+        "clicks": 0,
+        "impressions": 17,
+        "ctr": 0,
+        "position": 20.9
+      },
+      {
+        "key": "https://ieltscorner.ca/",
+        "clicks": 1,
+        "impressions": 16,
+        "ctr": 0.0625,
+        "position": 7.6
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip/reading/",
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 30.8
+      },
+      {
+        "key": "https://ieltscorner.ca/about/",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 5.7
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/shall-will/",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 5.4
+      },
+      {
+        "key": "https://ieltscorner.ca/account/",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 3.3
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/prepositions-advanced/",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 6.3
+      },
+      {
+        "key": "https://ieltscorner.ca/blog/ielts-writing-task-1-general-training-letter",
+        "clicks": 1,
+        "impressions": 2,
+        "ctr": 0.5,
+        "position": 5
+      },
+      {
+        "key": "https://ieltscorner.ca/contact/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 2.5
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/subordinate-clauses/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 4
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip/reading/free-test/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 4.5
+      },
+      {
+        "key": "https://ieltscorner.ca/tutoring/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 7.5
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/fronting-and-emphasis-patterns/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 20.5
+      },
+      {
+        "key": "https://ieltscorner.ca/account",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "key": "https://ieltscorner.ca/account/profile/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "key": "https://ieltscorner.ca/account/sign-up/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip-writing-help/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "key": "https://ieltscorner.ca/ielts/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "key": "https://ieltscorner.ca/blog/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/vocabulary/phrasal-verbs-emotions/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/writing/ielts/writing/10-across/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "key": "https://ieltscorner.ca/faq/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/vocabulary/academic-verbs/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "key": "https://ieltscorner.ca/success-stories/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/reading/celpip-reading-specific-vs-general-meaning/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/may-might-permission/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/vocabulary/policy-and-society/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/speaking/celpip-task1-experience/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "key": "https://ieltscorner.ca/ielts/reading/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/capitalization/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/writing/celpip-task1-purpose-and-tone-b2/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      }
+    ],
+    "queryPages": [
+      {
+        "key": "praxis",
+        "clicks": 0,
+        "impressions": 71,
+        "ctr": 0,
+        "position": 8,
+        "page": "http://ieltscorner.ca/"
+      },
+      {
+        "key": "ielts corner",
+        "clicks": 0,
+        "impressions": 9,
+        "ctr": 0,
+        "position": 5,
+        "page": "https://ieltscorner.ca/"
+      },
+      {
+        "key": "ielts speaking tutor",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 27.8,
+        "page": "https://ieltscorner.ca/ielts/speaking/"
+      },
+      {
+        "key": "praxi",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 6.5,
+        "page": "http://ieltscorner.ca/"
+      },
+      {
+        "key": "ielts speaking",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 23.5,
+        "page": "https://ieltscorner.ca/ielts/speaking/"
+      },
+      {
+        "key": "reading celpip",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 37,
+        "page": "https://ieltscorner.ca/celpip/reading/"
+      },
+      {
+        "key": "education consultant",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 5,
+        "page": "http://ieltscorner.ca/"
+      },
+      {
+        "key": "ielts corner",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 9,
+        "page": "https://ieltscorner.ca/about/"
+      },
+      {
+        "key": "pracis",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 9,
+        "page": "http://ieltscorner.ca/"
+      },
+      {
+        "key": "celpip reading",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 40,
+        "page": "https://ieltscorner.ca/celpip/reading/"
+      },
+      {
+        "key": "educational consulting",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1,
+        "page": "http://ieltscorner.ca/"
+      },
+      {
+        "key": "site:ieltscorner.ca",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1,
+        "page": "https://ieltscorner.ca/"
+      },
+      {
+        "key": "site:ieltscorner.ca",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1,
+        "page": "https://ieltscorner.ca/celpip-writing-help/"
+      },
+      {
+        "key": "site:ieltscorner.ca",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 2,
+        "page": "https://ieltscorner.ca/blog/"
+      },
+      {
+        "key": "site:ieltscorner.ca",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 2,
+        "page": "https://ieltscorner.ca/lessons/grammar/shall-will/"
+      },
+      {
+        "key": "site:ieltscorner.ca",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3,
+        "page": "https://ieltscorner.ca/faq/"
+      },
+      {
+        "key": "site:ieltscorner.ca",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3,
+        "page": "https://ieltscorner.ca/lessons/vocabulary/academic-verbs/"
+      },
+      {
+        "key": "site:ieltscorner.ca",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 4,
+        "page": "https://ieltscorner.ca/contact/"
+      },
+      {
+        "key": "site:ieltscorner.ca",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 4,
+        "page": "https://ieltscorner.ca/lessons/grammar/subordinate-clauses/"
+      },
+      {
+        "key": "praxus",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5,
+        "page": "http://ieltscorner.ca/"
+      },
+      {
+        "key": "site:ieltscorner.ca",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5,
+        "page": "https://ieltscorner.ca/about/"
+      },
+      {
+        "key": "site:ieltscorner.ca",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5,
+        "page": "https://ieltscorner.ca/celpip/reading/free-test/"
+      },
+      {
+        "key": "site:ieltscorner.ca",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 6,
+        "page": "https://ieltscorner.ca/lessons/grammar/prepositions-advanced/"
+      },
+      {
+        "key": "site:ieltscorner.ca",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 6,
+        "page": "https://ieltscorner.ca/tutoring/"
+      },
+      {
+        "key": "praxis school",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7,
+        "page": "http://ieltscorner.ca/"
+      },
+      {
+        "key": "site:ieltscorner.ca",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7,
+        "page": "https://ieltscorner.ca/account/"
+      },
+      {
+        "key": "site:ieltscorner.ca",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7,
+        "page": "https://ieltscorner.ca/lessons/vocabulary/policy-and-society/"
+      },
+      {
+        "key": "ielts corner",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8,
+        "page": "https://ieltscorner.ca/ielts/speaking/"
+      },
+      {
+        "key": "site:ieltscorner.ca",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8,
+        "page": "https://ieltscorner.ca/celpip/reading/"
+      },
+      {
+        "key": "site:ieltscorner.ca",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8,
+        "page": "https://ieltscorner.ca/lessons/speaking/celpip-task1-experience/"
+      },
+      {
+        "key": "celpip instructor training",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9,
+        "page": "https://ieltscorner.ca/tutoring/"
+      },
+      {
+        "key": "site:ieltscorner.ca",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9,
+        "page": "https://ieltscorner.ca/ielts/speaking/"
+      },
+      {
+        "key": "site:ieltscorner.ca",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9,
+        "page": "https://ieltscorner.ca/lessons/grammar/fronting-and-emphasis-patterns/"
+      },
+      {
+        "key": "site:ieltscorner.ca",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10,
+        "page": "https://ieltscorner.ca/ielts/reading/"
+      },
+      {
+        "key": "site:ieltscorner.ca",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10,
+        "page": "https://ieltscorner.ca/lessons/writing/celpip-task1-purpose-and-tone-b2/"
+      },
+      {
+        "key": "isee specialist",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 13,
+        "page": "http://ieltscorner.ca/"
+      },
+      {
+        "key": "ielts sp",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 26,
+        "page": "https://ieltscorner.ca/ielts/speaking/"
+      },
+      {
+        "key": "ielts speaking course",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 39,
+        "page": "https://ieltscorner.ca/ielts/speaking/"
+      },
+      {
+        "key": "just ace ielts",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 63,
+        "page": "https://ieltscorner.ca/"
+      }
+    ],
+    "page2Queries": [
+      {
+        "key": "praxis",
+        "clicks": 0,
+        "impressions": 71,
+        "ctr": 0,
+        "position": 8
+      }
+    ],
+    "impressionsNoClicks": [
+      {
+        "key": "http://ieltscorner.ca/",
+        "clicks": 0,
+        "impressions": 90,
+        "ctr": 0,
+        "position": 7.3
+      },
+      {
+        "key": "https://ieltscorner.ca/ielts/speaking/",
+        "clicks": 0,
+        "impressions": 17,
+        "ctr": 0,
+        "position": 20.9
+      },
+      {
+        "key": "https://ieltscorner.ca/celpip/reading/",
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 30.8
+      },
+      {
+        "key": "https://ieltscorner.ca/about/",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 5.7
+      },
+      {
+        "key": "https://ieltscorner.ca/lessons/grammar/shall-will/",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 5.4
+      }
+    ],
+    "sitemaps": [
+      {
+        "path": "https://ieltscorner.ca/sitemap-index.xml",
+        "submitted": 477,
+        "errors": 0,
+        "warnings": 0,
+        "isPending": false,
+        "lastDownloaded": "2026-10-06T23:23:44.528Z",
+        "lastSubmitted": "2026-07-25T07:57:25.096Z"
+      },
+      {
+        "path": "http://www.ieltscorner.ca/sitemap-index.xml",
+        "submitted": 477,
+        "errors": 0,
+        "warnings": 0,
+        "isPending": false,
+        "lastDownloaded": "2026-09-28T16:41:09.913Z",
+        "lastSubmitted": "2026-06-02T07:04:15.450Z"
+      }
+    ],
+    "urlInspections": [
+      {
+        "url": "https://ieltscorner.ca/",
+        "coverageState": "Submitted and indexed",
+        "verdict": "PASS",
+        "lastCrawlTime": "2026-10-09T01:18:35Z",
+        "googleCanonical": "https://ieltscorner.ca/",
+        "userCanonical": "https://ieltscorner.ca/"
+      },
+      {
+        "url": "https://ieltscorner.ca/ielts/reading/",
+        "coverageState": "Submitted and indexed",
+        "verdict": "PASS",
+        "lastCrawlTime": "2026-10-05T13:11:24Z",
+        "googleCanonical": "https://ieltscorner.ca/ielts/reading/",
+        "userCanonical": "https://ieltscorner.ca/ielts/reading/"
+      },
+      {
+        "url": "https://ieltscorner.ca/celpip/reading/",
+        "coverageState": "Submitted and indexed",
+        "verdict": "PASS",
+        "lastCrawlTime": "2026-07-09T20:03:26Z",
+        "googleCanonical": "https://ieltscorner.ca/celpip/reading/",
+        "userCanonical": "https://ieltscorner.ca/celpip/reading/"
+      },
+      {
+        "url": "https://ieltscorner.ca/celpip/writing/",
+        "coverageState": "Crawled - currently not indexed",
+        "verdict": "NEUTRAL",
+        "lastCrawlTime": "2026-04-19T13:43:37Z"
+      },
+      {
+        "url": "https://ieltscorner.ca/ai-feedback/",
+        "coverageState": "Crawled - currently not indexed",
+        "verdict": "NEUTRAL",
+        "lastCrawlTime": "2026-07-08T17:11:44Z",
+        "googleCanonical": "https://ieltscorner.ca/ai-feedback/",
+        "userCanonical": "https://ieltscorner.ca/ai-feedback/"
+      },
+      {
+        "url": "https://ieltscorner.ca/ebook/",
+        "coverageState": "Submitted and indexed",
+        "verdict": "PASS",
+        "lastCrawlTime": "2026-09-26T03:38:44Z",
+        "googleCanonical": "https://ieltscorner.ca/ebook/",
+        "userCanonical": "https://ieltscorner.ca/ebook/"
+      }
+    ],
+    "indexCoverage": {
+      "sitemapUrls": 477,
+      "offset": 209,
+      "sampled": 40,
+      "byState": {
+        "inspection failed": 2,
+        "Submitted and indexed": 4,
+        "Crawled - currently not indexed": 32,
+        "Discovered - currently not indexed": 1,
+        "URL is unknown to Google": 1
+      },
+      "indexedShare": 0.1,
+      "urls": [
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/precision-under-timed-exam-conditions/",
+          "coverageState": "inspection failed",
+          "verdict": "VERDICT_UNSPECIFIED",
+          "error": "GSC 500 Internal Server Error for https://searchconsole.googleapis.com/v1/urlInspection/index:inspect: {\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"Internal error encountered.\",\n    \"status\": \"INTE"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/prepositions-advanced/",
+          "coverageState": "Submitted and indexed",
+          "verdict": "PASS",
+          "lastCrawlTime": "2026-09-12T10:08:06Z",
+          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/prepositions-advanced/",
+          "userCanonical": "https://ieltscorner.ca/lessons/grammar/prepositions-advanced/"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/prepositions-place/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-05-01T16:04:41Z",
+          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/prepositions-place/",
+          "userCanonical": "https://ieltscorner.ca/lessons/grammar/prepositions-place/"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/prepositions-time/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-04-28T11:28:44Z"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/present-continuous/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-08-25T08:52:29Z",
+          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/present-continuous/",
+          "userCanonical": "https://ieltscorner.ca/lessons/grammar/present-continuous/"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/present-perfect-continuous-b2/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-08-30T12:44:58Z",
+          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/present-perfect-continuous-b2/",
+          "userCanonical": "https://ieltscorner.ca/lessons/grammar/present-perfect-continuous-b2/"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/present-perfect-with-ever-and-never/",
+          "coverageState": "Discovered - currently not indexed",
+          "verdict": "NEUTRAL"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/present-perfect/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-09-13T13:23:12Z",
+          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/present-perfect/",
+          "userCanonical": "https://ieltscorner.ca/lessons/grammar/present-perfect/"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/present-simple/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-04-22T02:30:24Z"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/question-formation/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-04-26T09:35:37Z",
+          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/question-formation/",
+          "userCanonical": "https://ieltscorner.ca/lessons/grammar/question-formation/"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/question-tags/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-07-18T08:27:01Z",
+          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/question-tags/",
+          "userCanonical": "https://ieltscorner.ca/lessons/grammar/question-tags/"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/question-words-who-what-where/",
+          "coverageState": "Submitted and indexed",
+          "verdict": "PASS",
+          "lastCrawlTime": "2026-09-12T02:36:47Z",
+          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/question-words-who-what-where/",
+          "userCanonical": "https://ieltscorner.ca/lessons/grammar/question-words-who-what-where/"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/reduced-relative-clauses/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-04-29T03:03:16Z"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/reflexive-pronouns/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-04-20T20:30:24Z"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/register-shifts-without-grammar-errors/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-04-24T16:35:23Z"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/relative-clauses-non-restrictive/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-04-22T18:09:16Z"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/relative-clauses-restrictive/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-04-27T16:02:30Z",
+          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/relative-clauses-restrictive/",
+          "userCanonical": "https://ieltscorner.ca/lessons/grammar/relative-clauses-restrictive/"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/relative-clauses-with-prepositions/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-09-04T04:37:29Z"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/relative-clauses-with-who-and-which/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-08-29T00:59:00Z",
+          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/relative-clauses-with-who-and-which/",
+          "userCanonical": "https://ieltscorner.ca/lessons/grammar/relative-clauses-with-who-and-which/"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/relative-pronouns/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-04-28T09:35:43Z"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/reported-speech/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-04-29T15:02:02Z"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/reporting-verbs-with-precise-grammar/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-04-26T08:48:13Z"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/second-conditional/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-06-12T09:25:15Z",
+          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/second-conditional/",
+          "userCanonical": "https://ieltscorner.ca/lessons/grammar/second-conditional/"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/shall-will/",
+          "coverageState": "Submitted and indexed",
+          "verdict": "PASS",
+          "lastCrawlTime": "2026-09-12T15:56:32Z",
+          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/shall-will/",
+          "userCanonical": "https://ieltscorner.ca/lessons/grammar/shall-will/"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/shared/grammar/01-present-perfect-vs-past-simple/",
+          "coverageState": "URL is unknown to Google",
+          "verdict": "NEUTRAL"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/should-for-advice/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-09-24T05:04:25Z",
+          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/should-for-advice/",
+          "userCanonical": "https://ieltscorner.ca/lessons/grammar/should-for-advice/"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/should-ought-advice/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-06-24T23:28:32Z",
+          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/should-ought-advice/",
+          "userCanonical": "https://ieltscorner.ca/lessons/grammar/should-ought-advice/"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/some-any/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-06-25T03:34:43Z",
+          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/some-any/",
+          "userCanonical": "https://ieltscorner.ca/lessons/grammar/some-any/"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/sophisticated-clause-architecture/",
+          "coverageState": "inspection failed",
+          "verdict": "VERDICT_UNSPECIFIED",
+          "error": "GSC 500 Internal Server Error for https://searchconsole.googleapis.com/v1/urlInspection/index:inspect: {\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"Internal error encountered.\",\n    \"status\": \"INTE"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/stance-expressions-in-formal-writing/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-09-02T13:04:31Z",
+          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/stance-expressions-in-formal-writing/",
+          "userCanonical": "https://ieltscorner.ca/lessons/grammar/stance-expressions-in-formal-writing/"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/subject-pronouns-and-basic-verbs/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-04-22T10:25:24Z"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/subject-verb-agreement/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-06-06T11:03:35Z",
+          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/subject-verb-agreement/",
+          "userCanonical": "https://ieltscorner.ca/lessons/grammar/subject-verb-agreement/"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/subordinate-clauses/",
+          "coverageState": "Submitted and indexed",
+          "verdict": "PASS",
+          "lastCrawlTime": "2026-09-13T21:42:05Z",
+          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/subordinate-clauses/",
+          "userCanonical": "https://ieltscorner.ca/lessons/grammar/subordinate-clauses/"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/subordination-for-clear-paragraph-flow/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-04-22T22:55:24Z"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/subtle-modal-meanings-in-formal-texts/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-04-26T12:10:16Z"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/there-is-are/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-04-11T20:02:33Z",
+          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/there-is-are/",
+          "userCanonical": "https://ieltscorner.ca/lessons/grammar/there-is-are/"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/third-conditional/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-04-27T17:37:20Z",
+          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/third-conditional/",
+          "userCanonical": "https://ieltscorner.ca/lessons/grammar/third-conditional/"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/this-that-these-and-those/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-08-05T10:07:22Z",
+          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/this-that-these-and-those/",
+          "userCanonical": "https://ieltscorner.ca/lessons/grammar/this-that-these-and-those/"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/time-clauses/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-10-05T20:38:24Z",
+          "googleCanonical": "https://ieltscorner.ca/lessons/grammar/time-clauses/",
+          "userCanonical": "https://ieltscorner.ca/lessons/grammar/time-clauses/"
+        },
+        {
+          "url": "https://ieltscorner.ca/lessons/grammar/tone-control-in-expert-responses/",
+          "coverageState": "Crawled - currently not indexed",
+          "verdict": "NEUTRAL",
+          "lastCrawlTime": "2026-04-27T23:56:57Z"
+        }
+      ]
+    },
+    "errors": []
+  }
+}
