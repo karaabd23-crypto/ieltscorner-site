@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "week": "2026-41",
+  "range": {
+    "start": "2026-10-05",
+    "end": "2026-10-11"
+  },
+  "provider": "ga4",
+  "generatedAt": "2026-10-12T06:00:41.148Z",
+  "metrics": {
+    "pageviews": 768,
+    "visitors": 581,
+    "bounceRate": 0.8308457711442786,
+    "avgDuration": 16.0927048026534,
+    "topPages": [
+      {
+        "path": "/ebook/",
+        "pageviews": 87,
+        "visitors": 90
+      },
+      {
+        "path": "/",
+        "pageviews": 38,
+        "visitors": 38
+      },
+      {
+        "path": "/lessons/reading/celpip-reading-detail-location-discipline/",
+        "pageviews": 35,
+        "visitors": 31
+      },
+      {
+        "path": "/lessons/grammar/adjective-order/",
+        "pageviews": 31,
+        "visitors": 25
+      },
+      {
+        "path": "/lessons/grammar/adjectives-comparison/",
+        "pageviews": 29,
+        "visitors": 24
+      },
+      {
+        "path": "/lessons/vocabulary/academic-verbs/",
+        "pageviews": 28,
+        "visitors": 25
+      },
+      {
+        "path": "/lessons/speaking/seo-2026-03-25-14-ielts-speaking-ielts-speaking-grammar-range-without-risk/",
+        "pageviews": 27,
+        "visitors": 22
+      },
+      {
+        "path": "/lessons/grammar/adverbs-formation/",
+        "pageviews": 25,
+        "visitors": 22
+      },
+      {
+        "path": "/lessons/reading/celpip-reading-main-idea-and-paragraph-purpose/",
+        "pageviews": 24,
+        "visitors": 21
+      },
+      {
+        "path": "/lessons/vocabulary/business-vocab/",
+        "pageviews": 23,
+        "visitors": 20
+      }
+    ],
+    "conversions": [
+      {
+        "id": "ebook",
+        "label": "Ebook checkout click",
+        "visits": 90,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "tutoring_private_class",
+        "label": "Private tutoring booking",
+        "visits": 8,
+        "events": 1,
+        "rate": 0.125
+      },
+      {
+        "id": "ai_feedback",
+        "label": "AI feedback checkout click",
+        "visits": 6,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "subscription",
+        "label": "Subscription checkout click",
+        "visits": 6,
+        "events": 0,
+        "rate": 0
+      }
+    ],
+    "segments": {
+      "byDevice": [
+        {
+          "key": "desktop",
+          "visitors": 510,
+          "sessions": 529,
+          "bounceRate": 0.8204158790170132,
+          "goalEvents": {
+            "tutoring_private_class": 1
+          }
+        },
+        {
+          "key": "mobile",
+          "visitors": 70,
+          "sessions": 73,
+          "bounceRate": 0.9178082191780822,
+          "goalEvents": {}
+        },
+        {
+          "key": "tablet",
+          "visitors": 1,
+          "sessions": 1,
+          "bounceRate": 0,
+          "goalEvents": {}
+        }
+      ],
+      "byChannel": [
+        {
+          "key": "Direct",
+          "visitors": 530,
+          "sessions": 542,
+          "bounceRate": 0.8450184501845018,
+          "goalEvents": {
+            "tutoring_private_class": 1
+          }
+        },
+        {
+          "key": "Unassigned",
+          "visitors": 33,
+          "sessions": 33,
+          "bounceRate": 1,
+          "goalEvents": {}
+        },
+        {
+          "key": "Organic Search",
+          "visitors": 24,
+          "sessions": 31,
+          "bounceRate": 0.5483870967741935,
+          "goalEvents": {}
+        },
+        {
+          "key": "Referral",
+          "visitors": 3,
+          "sessions": 4,
+          "bounceRate": 0.5,
+          "goalEvents": {}
+        },
+        {
+          "key": "Organic Social",
+          "visitors": 2,
+          "sessions": 2,
+          "bounceRate": 0,
+          "goalEvents": {}
+        }
+      ]
+    }
+  }
+}
