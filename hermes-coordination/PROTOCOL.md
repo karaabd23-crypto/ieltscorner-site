@@ -30,15 +30,21 @@ pushes are exactly the collision this protocol exists to prevent.
    Handoff Notes and let Kara arbitrate.
 3. Append your own claim row to the table before you start writing code.
 4. Work on your own branch (`claude/<slug>` or `hermes/<slug>`), open a PR.
-5. Mark your claim `DONE` (with the PR number or merge commit) once the PR
-   is **merged** — an open PR is still an active claim, not a finished one.
+5. Before that PR is ready to merge, edit your own claim row to `DONE`
+   (citing the PR number) **in that same PR** — don't open a second PR just
+   to flip the status. The ledger on `main` only reflects a branch once it's
+   merged, so the row reads `IN PROGRESS` on `main` for exactly as long as
+   the PR is open, and flips to `DONE` in the very commit that lands the
+   work. No post-merge follow-up PR, and no chain of claims needed to close
+   claims.
 
 ## Stale claims
 
-A claim with no update in 24h and no PR to show for it is probably
-abandoned (a crashed session, a dropped task). Don't silently overwrite the
-same files anyway — add a Handoff Notes entry saying you're treating it as
-stale and why, then proceed.
+A claim whose `last updated UTC` is more than 24h old with no PR to show
+for it is probably abandoned (a crashed session, a dropped task). Don't
+silently overwrite the same files anyway — add a Handoff Notes entry saying
+you're treating it as stale and why, then proceed. (This needs the full
+timestamp in `last updated UTC`, not just a date — see `ACTIVE_WORK.md`.)
 
 ## Handoff notes
 
