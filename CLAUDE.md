@@ -36,6 +36,7 @@ Most other `package.json` scripts are ops tooling (Telegram, Kit newsletter, CRO
 - A push to `main` runs `.github/workflows/deploy-live.yml`, which POSTs the Netlify build hook. Don't use the local Netlify CLI unless asked.
 - `netlify.toml` `ignore` skips builds when `src public netlify scripts astro.config.mjs package*.json tsconfig.json` are unchanged, so docs-only commits don't deploy.
 - Claude sessions work on a `claude/*` branch, and changes reach `main` through a PR.
+- Kara also runs Hermes (a separate personal-assistant agent) against this repo. Before touching any file, check `hermes-coordination/ACTIVE_WORK.md` for an open claim that overlaps your target files, then append your own claim. See `hermes-coordination/PROTOCOL.md` for the full rule.
 
 ## Architecture
 
