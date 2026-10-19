@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "week": "2026-42",
+  "range": {
+    "start": "2026-10-12",
+    "end": "2026-10-18"
+  },
+  "provider": "ga4",
+  "generatedAt": "2026-10-19T06:00:40.315Z",
+  "metrics": {
+    "pageviews": 701,
+    "visitors": 497,
+    "bounceRate": 0.8621359223300971,
+    "avgDuration": 26.264691926213594,
+    "topPages": [
+      {
+        "path": "/celpip/reading/",
+        "pageviews": 37,
+        "visitors": 34
+      },
+      {
+        "path": "/lessons/reading/celpip-reading-detail-location-discipline/",
+        "pageviews": 29,
+        "visitors": 28
+      },
+      {
+        "path": "/lessons/grammar/adjective-order/",
+        "pageviews": 28,
+        "visitors": 25
+      },
+      {
+        "path": "/lessons/grammar/adverbs-formation/",
+        "pageviews": 27,
+        "visitors": 24
+      },
+      {
+        "path": "/lessons/grammar/adjectives-comparison/",
+        "pageviews": 25,
+        "visitors": 23
+      },
+      {
+        "path": "/ai-feedback/",
+        "pageviews": 24,
+        "visitors": 22
+      },
+      {
+        "path": "/lessons/reading/celpip-reading-main-idea-and-paragraph-purpose/",
+        "pageviews": 24,
+        "visitors": 21
+      },
+      {
+        "path": "/",
+        "pageviews": 23,
+        "visitors": 22
+      },
+      {
+        "path": "/lessons/speaking/seo-2026-03-25-14-ielts-speaking-ielts-speaking-grammar-range-without-risk/",
+        "pageviews": 23,
+        "visitors": 22
+      },
+      {
+        "path": "/blog/ielts-writing-task-2-advantages-disadvantages/",
+        "pageviews": 20,
+        "visitors": 5
+      }
+    ],
+    "conversions": [
+      {
+        "id": "ebook",
+        "label": "Ebook checkout click",
+        "visits": 14,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "tutoring_private_class",
+        "label": "Private tutoring booking",
+        "visits": 6,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "ai_feedback",
+        "label": "AI feedback checkout click",
+        "visits": 22,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "subscription",
+        "label": "Subscription checkout click",
+        "visits": 34,
+        "events": 1,
+        "rate": 0.0294
+      }
+    ],
+    "segments": {
+      "byDevice": [
+        {
+          "key": "desktop",
+          "visitors": 458,
+          "sessions": 474,
+          "bounceRate": 0.8607594936708861,
+          "goalEvents": {}
+        },
+        {
+          "key": "mobile",
+          "visitors": 39,
+          "sessions": 41,
+          "bounceRate": 0.8780487804878049,
+          "goalEvents": {
+            "subscription": 1
+          }
+        }
+      ],
+      "byChannel": [
+        {
+          "key": "Direct",
+          "visitors": 440,
+          "sessions": 445,
+          "bounceRate": 0.8921348314606742,
+          "goalEvents": {
+            "subscription": 1
+          }
+        },
+        {
+          "key": "Unassigned",
+          "visitors": 28,
+          "sessions": 30,
+          "bounceRate": 1,
+          "goalEvents": {}
+        },
+        {
+          "key": "Organic Search",
+          "visitors": 19,
+          "sessions": 23,
+          "bounceRate": 0.30434782608695654,
+          "goalEvents": {}
+        },
+        {
+          "key": "AI Assistant",
+          "visitors": 8,
+          "sessions": 12,
+          "bounceRate": 0.6666666666666666,
+          "goalEvents": {}
+        },
+        {
+          "key": "Referral",
+          "visitors": 4,
+          "sessions": 4,
+          "bounceRate": 0.75,
+          "goalEvents": {}
+        },
+        {
+          "key": "Organic Social",
+          "visitors": 3,
+          "sessions": 3,
+          "bounceRate": 0.3333333333333333,
+          "goalEvents": {}
+        },
+        {
+          "key": "Cross-network",
+          "visitors": 2,
+          "sessions": 2,
+          "bounceRate": 1,
+          "goalEvents": {}
+        },
+        {
+          "key": "Organic Shopping",
+          "visitors": 1,
+          "sessions": 1,
+          "bounceRate": 1,
+          "goalEvents": {}
+        }
+      ]
+    }
+  }
+}
