@@ -7,14 +7,14 @@
   },
   "provider": "search-console",
   "siteUrl": "sc-domain:ieltscorner.ca",
-  "generatedAt": "2026-10-12T06:15:50.693Z",
+  "generatedAt": "2026-10-19T06:15:15.738Z",
   "complete": true,
   "search": {
     "totals": {
       "clicks": 2,
-      "impressions": 147,
-      "ctr": 0.0136,
-      "position": 10.1
+      "impressions": 152,
+      "ctr": 0.0132,
+      "position": 10
     },
     "daysWithData": [
       "2026-10-05",
@@ -27,15 +27,15 @@
     ],
     "queryCoverage": {
       "clicks": 0,
-      "impressions": 0.7755
+      "impressions": 0.7763
     },
     "topQueries": [
       {
         "key": "praxis",
         "clicks": 0,
-        "impressions": 71,
+        "impressions": 75,
         "ctr": 0,
-        "position": 8
+        "position": 7.9
       },
       {
         "key": "ielts corner",
@@ -161,7 +161,7 @@
       {
         "key": "http://ieltscorner.ca/",
         "clicks": 0,
-        "impressions": 90,
+        "impressions": 94,
         "ctr": 0,
         "position": 7.3
       },
@@ -196,9 +196,9 @@
       {
         "key": "https://ieltscorner.ca/lessons/grammar/shall-will/",
         "clicks": 0,
-        "impressions": 5,
+        "impressions": 6,
         "ctr": 0,
-        "position": 5.4
+        "position": 5.7
       },
       {
         "key": "https://ieltscorner.ca/account/",
@@ -401,9 +401,9 @@
       {
         "key": "praxis",
         "clicks": 0,
-        "impressions": 71,
+        "impressions": 75,
         "ctr": 0,
-        "position": 8,
+        "position": 7.9,
         "page": "http://ieltscorner.ca/"
       },
       {
@@ -711,20 +711,12 @@
         "page": "https://ieltscorner.ca/"
       }
     ],
-    "page2Queries": [
-      {
-        "key": "praxis",
-        "clicks": 0,
-        "impressions": 71,
-        "ctr": 0,
-        "position": 8
-      }
-    ],
+    "page2Queries": [],
     "impressionsNoClicks": [
       {
         "key": "http://ieltscorner.ca/",
         "clicks": 0,
-        "impressions": 90,
+        "impressions": 94,
         "ctr": 0,
         "position": 7.3
       },
@@ -752,9 +744,9 @@
       {
         "key": "https://ieltscorner.ca/lessons/grammar/shall-will/",
         "clicks": 0,
-        "impressions": 5,
+        "impressions": 6,
         "ctr": 0,
-        "position": 5.4
+        "position": 5.7
       }
     ],
     "sitemaps": [
@@ -764,7 +756,7 @@
         "errors": 0,
         "warnings": 0,
         "isPending": false,
-        "lastDownloaded": "2026-10-06T23:23:44.528Z",
+        "lastDownloaded": "2026-10-17T06:04:14.839Z",
         "lastSubmitted": "2026-07-25T07:57:25.096Z"
       },
       {
@@ -773,7 +765,7 @@
         "errors": 0,
         "warnings": 0,
         "isPending": false,
-        "lastDownloaded": "2026-09-28T16:41:09.913Z",
+        "lastDownloaded": "2026-10-17T12:03:01.137Z",
         "lastSubmitted": "2026-06-02T07:04:15.450Z"
       }
     ],
