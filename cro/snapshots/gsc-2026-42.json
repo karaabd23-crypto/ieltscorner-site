@@ -7,7 +7,7 @@
   },
   "provider": "search-console",
   "siteUrl": "sc-domain:ieltscorner.ca",
-  "generatedAt": "2026-10-19T06:15:31.981Z",
+  "generatedAt": "2026-10-19T06:15:54.733Z",
   "complete": true,
   "search": {
     "totals": {
@@ -568,8 +568,8 @@
       "byState": {
         "Crawled - currently not indexed": 21,
         "Submitted and indexed": 2,
-        "Discovered - currently not indexed": 11,
-        "URL is unknown to Google": 6
+        "URL is unknown to Google": 3,
+        "Discovered - currently not indexed": 14
       },
       "indexedShare": 0.05,
       "urls": [
@@ -603,7 +603,7 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/grammar/verb-gerund-ing-form/",
-          "coverageState": "Discovered - currently not indexed",
+          "coverageState": "URL is unknown to Google",
           "verdict": "NEUTRAL"
         },
         {
@@ -621,7 +621,7 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/grammar/what-clauses/",
-          "coverageState": "Discovered - currently not indexed",
+          "coverageState": "URL is unknown to Google",
           "verdict": "NEUTRAL"
         },
         {
@@ -712,17 +712,17 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/listening/ielts/listening/01-distractor-detection/",
-          "coverageState": "URL is unknown to Google",
+          "coverageState": "Discovered - currently not indexed",
           "verdict": "NEUTRAL"
         },
         {
           "url": "https://ieltscorner.ca/lessons/listening/ielts/listening/02-note-taking-symbols/",
-          "coverageState": "URL is unknown to Google",
+          "coverageState": "Discovered - currently not indexed",
           "verdict": "NEUTRAL"
         },
         {
           "url": "https://ieltscorner.ca/lessons/listening/ielts/listening/03-map-and-diagram-strategy/",
-          "coverageState": "URL is unknown to Google",
+          "coverageState": "Discovered - currently not indexed",
           "verdict": "NEUTRAL"
         },
         {
@@ -745,7 +745,7 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/listening/pte-core-summarize-spoken-text-note-taking/",
-          "coverageState": "URL is unknown to Google",
+          "coverageState": "Discovered - currently not indexed",
           "verdict": "NEUTRAL"
         },
         {
@@ -795,7 +795,7 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/reading/celpip-reading-error-review-loop/",
-          "coverageState": "URL is unknown to Google",
+          "coverageState": "Discovered - currently not indexed",
           "verdict": "NEUTRAL"
         },
         {
