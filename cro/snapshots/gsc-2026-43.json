@@ -7,7 +7,7 @@
   },
   "provider": "search-console",
   "siteUrl": "sc-domain:ieltscorner.ca",
-  "generatedAt": "2026-10-26T06:15:16.721Z",
+  "generatedAt": "2026-10-26T06:15:31.869Z",
   "complete": true,
   "search": {
     "totals": {
@@ -653,9 +653,9 @@
       "sampled": 40,
       "byState": {
         "Crawled - currently not indexed": 9,
-        "Discovered - currently not indexed": 23,
-        "URL is unknown to Google": 6,
-        "Submitted and indexed": 2
+        "Discovered - currently not indexed": 27,
+        "Submitted and indexed": 2,
+        "URL is unknown to Google": 2
       },
       "indexedShare": 0.05,
       "urls": [
@@ -682,7 +682,7 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/reading/ielts/reading/04-time-management-40-questions/",
-          "coverageState": "URL is unknown to Google",
+          "coverageState": "Discovered - currently not indexed",
           "verdict": "NEUTRAL"
         },
         {
@@ -697,7 +697,7 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/reading/pte-core-exam-format-and-study-plan/",
-          "coverageState": "URL is unknown to Google",
+          "coverageState": "Discovered - currently not indexed",
           "verdict": "NEUTRAL"
         },
         {
@@ -726,7 +726,7 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/speaking/asking-clarification/",
-          "coverageState": "URL is unknown to Google",
+          "coverageState": "Discovered - currently not indexed",
           "verdict": "NEUTRAL"
         },
         {
@@ -747,7 +747,7 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/speaking/celpip-task3-interview/",
-          "coverageState": "URL is unknown to Google",
+          "coverageState": "Discovered - currently not indexed",
           "verdict": "NEUTRAL"
         },
         {
@@ -777,7 +777,7 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/speaking/celpip/speaking/08-task-8-hypothetical-scenarios/",
-          "coverageState": "Discovered - currently not indexed",
+          "coverageState": "URL is unknown to Google",
           "verdict": "NEUTRAL"
         },
         {
@@ -829,7 +829,7 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/speaking/ielts/speaking/04-fluency-recovery-language/",
-          "coverageState": "Discovered - currently not indexed",
+          "coverageState": "URL is unknown to Google",
           "verdict": "NEUTRAL"
         },
         {
@@ -839,7 +839,7 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/speaking/pronunciation-connected/",
-          "coverageState": "URL is unknown to Google",
+          "coverageState": "Discovered - currently not indexed",
           "verdict": "NEUTRAL"
         },
         {
@@ -874,7 +874,7 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/speaking/topic-management/",
-          "coverageState": "URL is unknown to Google",
+          "coverageState": "Discovered - currently not indexed",
           "verdict": "NEUTRAL"
         },
         {
