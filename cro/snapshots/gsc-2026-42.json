@@ -7,14 +7,14 @@
   },
   "provider": "search-console",
   "siteUrl": "sc-domain:ieltscorner.ca",
-  "generatedAt": "2026-10-19T06:15:54.733Z",
+  "generatedAt": "2026-10-26T06:15:03.202Z",
   "complete": true,
   "search": {
     "totals": {
       "clicks": 1,
-      "impressions": 126,
-      "ctr": 0.0079,
-      "position": 13.5
+      "impressions": 137,
+      "ctr": 0.0073,
+      "position": 12.9
     },
     "daysWithData": [
       "2026-10-12",
@@ -27,15 +27,22 @@
     ],
     "queryCoverage": {
       "clicks": 0,
-      "impressions": 0.7619
+      "impressions": 0.7591
     },
     "topQueries": [
       {
         "key": "praxis",
         "clicks": 0,
-        "impressions": 65,
+        "impressions": 71,
         "ctr": 0,
-        "position": 8.5
+        "position": 8.4
+      },
+      {
+        "key": "ielts corner",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 3.4
       },
       {
         "key": "education strategy consulting",
@@ -43,13 +50,6 @@
         "impressions": 5,
         "ctr": 0,
         "position": 5.4
-      },
-      {
-        "key": "ielts corner",
-        "clicks": 0,
-        "impressions": 3,
-        "ctr": 0,
-        "position": 4
       },
       {
         "key": "pracis",
@@ -182,16 +182,16 @@
       {
         "key": "http://ieltscorner.ca/",
         "clicks": 0,
-        "impressions": 90,
+        "impressions": 99,
         "ctr": 0,
         "position": 7.8
       },
       {
         "key": "https://ieltscorner.ca/",
         "clicks": 0,
-        "impressions": 16,
+        "impressions": 18,
         "ctr": 0,
-        "position": 31.8
+        "position": 28.6
       },
       {
         "key": "https://ieltscorner.ca/celpip/reading/",
@@ -296,10 +296,18 @@
       {
         "key": "praxis",
         "clicks": 0,
-        "impressions": 65,
+        "impressions": 71,
         "ctr": 0,
-        "position": 8.5,
+        "position": 8.4,
         "page": "http://ieltscorner.ca/"
+      },
+      {
+        "key": "ielts corner",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 3.4,
+        "page": "https://ieltscorner.ca/"
       },
       {
         "key": "education strategy consulting",
@@ -308,14 +316,6 @@
         "ctr": 0,
         "position": 5.4,
         "page": "http://ieltscorner.ca/"
-      },
-      {
-        "key": "ielts corner",
-        "clicks": 0,
-        "impressions": 3,
-        "ctr": 0,
-        "position": 4,
-        "page": "https://ieltscorner.ca/"
       },
       {
         "key": "pracis",
@@ -466,25 +466,25 @@
       {
         "key": "praxis",
         "clicks": 0,
-        "impressions": 65,
+        "impressions": 71,
         "ctr": 0,
-        "position": 8.5
+        "position": 8.4
       }
     ],
     "impressionsNoClicks": [
       {
         "key": "http://ieltscorner.ca/",
         "clicks": 0,
-        "impressions": 90,
+        "impressions": 99,
         "ctr": 0,
         "position": 7.8
       },
       {
         "key": "https://ieltscorner.ca/",
         "clicks": 0,
-        "impressions": 16,
+        "impressions": 18,
         "ctr": 0,
-        "position": 31.8
+        "position": 28.6
       },
       {
         "key": "https://ieltscorner.ca/celpip/reading/",
@@ -501,7 +501,7 @@
         "errors": 0,
         "warnings": 0,
         "isPending": false,
-        "lastDownloaded": "2026-10-17T06:04:14.839Z",
+        "lastDownloaded": "2026-10-25T22:04:50.618Z",
         "lastSubmitted": "2026-07-25T07:57:25.096Z"
       },
       {
