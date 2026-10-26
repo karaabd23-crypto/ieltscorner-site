@@ -7,7 +7,7 @@
   },
   "provider": "search-console",
   "siteUrl": "sc-domain:ieltscorner.ca",
-  "generatedAt": "2026-10-26T06:15:03.202Z",
+  "generatedAt": "2026-10-26T06:15:16.721Z",
   "complete": true,
   "search": {
     "totals": {
@@ -687,7 +687,7 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/reading/ielts/reading/05-multiple-choice-elimination/",
-          "coverageState": "URL is unknown to Google",
+          "coverageState": "Discovered - currently not indexed",
           "verdict": "NEUTRAL"
         },
         {
@@ -726,7 +726,7 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/speaking/asking-clarification/",
-          "coverageState": "Discovered - currently not indexed",
+          "coverageState": "URL is unknown to Google",
           "verdict": "NEUTRAL"
         },
         {
@@ -747,7 +747,7 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/speaking/celpip-task3-interview/",
-          "coverageState": "Discovered - currently not indexed",
+          "coverageState": "URL is unknown to Google",
           "verdict": "NEUTRAL"
         },
         {
@@ -767,12 +767,12 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/speaking/celpip/speaking/05-task-5-comparison-framework/",
-          "coverageState": "URL is unknown to Google",
+          "coverageState": "Discovered - currently not indexed",
           "verdict": "NEUTRAL"
         },
         {
           "url": "https://ieltscorner.ca/lessons/speaking/celpip/speaking/06-task-6-difficult-situation/",
-          "coverageState": "URL is unknown to Google",
+          "coverageState": "Discovered - currently not indexed",
           "verdict": "NEUTRAL"
         },
         {
@@ -808,7 +808,7 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/speaking/ielts-part2-cuecard/",
-          "coverageState": "URL is unknown to Google",
+          "coverageState": "Discovered - currently not indexed",
           "verdict": "NEUTRAL"
         },
         {
@@ -839,7 +839,7 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/speaking/pronunciation-connected/",
-          "coverageState": "Discovered - currently not indexed",
+          "coverageState": "URL is unknown to Google",
           "verdict": "NEUTRAL"
         },
         {
@@ -874,7 +874,7 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/speaking/topic-management/",
-          "coverageState": "Discovered - currently not indexed",
+          "coverageState": "URL is unknown to Google",
           "verdict": "NEUTRAL"
         },
         {
