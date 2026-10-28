@@ -30,7 +30,11 @@ const args = Object.fromEntries(
 
 const BASE = String(args.base || 'http://localhost:4321').replace(/\/$/, '');
 const WIDTHS = String(args.widths || '360,390,414,768,1280').split(',').map(Number);
-const KEY_PAGES = ['/', '/ebook/', '/ai-feedback/', '/questions/', '/tutoring/', '/lessons/', '/celpip/', '/ielts/', '/pte-core/'];
+const KEY_PAGES = ['/', '/ebook/', '/ai-feedback/', '/questions/', '/tutoring/', '/lessons/', '/celpip/', '/ielts/', '/pte-core/',
+  '/celpip/writing/', '/celpip/speaking/', '/celpip/reading/', '/celpip/listening/',
+  '/ielts/writing/', '/ielts/speaking/', '/ielts/reading/', '/ielts/listening/',
+  '/pte-core/writing/', '/pte-core/speaking/', '/pte-core/reading/', '/pte-core/listening/', '/pte-core/question-types/',
+  '/clb-calculator/', '/faq/', '/about/', '/contact/', '/blog/', '/account/'];
 
 async function loadPlaywright() {
   for (const spec of ['playwright', '/opt/node-tools/node_modules/playwright/index.mjs']) {
@@ -66,7 +70,15 @@ function inspectPage() {
   const visible = (el) => {
     const s = getComputedStyle(el);
     const b = el.getBoundingClientRect();
-    return s.visibility !== 'hidden' && s.display !== 'none' && +s.opacity > 0.05 && b.width > 0 && b.height > 0 && !hiddenByDetails(el);
+    return s.visibility !== 'hidden' && s.display !== 'none' && +s.opacity > 0.05 && b.width > 0 && b.height > 0 && !hiddenByDetails(el) && !srOnly(el);
+  };
+  // Visually hidden (screen-reader-only) boxes, e.g. the thead of a table stacked into cards on mobile.
+  const srOnly = (el) => {
+    for (let e = el; e && e !== document.body; e = e.parentElement) {
+      const r = e.getBoundingClientRect();
+      if (r.width <= 1 && r.height <= 1) return true;
+    }
+    return false;
   };
   const fixedAncestor = (el) => {
     for (let e = el; e; e = e.parentElement) {
@@ -94,7 +106,7 @@ function inspectPage() {
     const el = n.parentElement;
     if (!el || !n.textContent.trim() || ['SCRIPT', 'STYLE', 'NOSCRIPT'].includes(el.tagName) || !visible(el)) continue;
     leaves.add(el);
-    const re = /[^\s\-–—\/]{4,}/g;
+    const re = /[^\s\-–—…\/]{4,}/g;
     let m;
     while ((m = re.exec(n.textContent))) {
       const range = document.createRange();
@@ -112,16 +124,19 @@ function inspectPage() {
     if ((b.right > vw + 1 || b.left < -1) && !scrollerAncestor(el) && out.escape.length < 10) {
       out.escape.push(`${label(el)} [${Math.round(b.left)}..${Math.round(b.right)}]`);
     }
-    blocks.push({ el, b });
+    // Per-line rects: a wrapped inline element's bounding box spans lines it does not fill.
+    const rects = [...el.getClientRects()].filter((r) => r.width > 0 && r.height > 0);
+    blocks.push({ el, b, rects });
   }
   for (let i = 0; i < blocks.length; i++) {
     for (let j = i + 1; j < blocks.length; j++) {
       const A = blocks[i];
       const B = blocks[j];
       if (A.el.contains(B.el) || B.el.contains(A.el)) continue;
-      const ox = Math.min(A.b.right, B.b.right) - Math.max(A.b.left, B.b.left);
-      const oy = Math.min(A.b.bottom, B.b.bottom) - Math.max(A.b.top, B.b.top);
-      if (ox > 4 && oy > 4 && out.overlap.length < 10) out.overlap.push(`${label(A.el)} X ${label(B.el)}`);
+      const hit = A.rects.some((ra) =>
+        B.rects.some((rb) => Math.min(ra.right, rb.right) - Math.max(ra.left, rb.left) > 4 && Math.min(ra.bottom, rb.bottom) - Math.max(ra.top, rb.top) > 4)
+      );
+      if (hit && out.overlap.length < 10) out.overlap.push(`${label(A.el)} X ${label(B.el)}`);
     }
   }
 
@@ -175,7 +190,7 @@ for (const w of WIDTHS) {
     // Ads and analytics are blocked or absent locally; ignore their noise.
     // "Failed to load resource" repeats what the response listener already logged with
     // its URL; cert/tunnel errors come from sandboxed networks, not the site.
-    const consoleList = consoleErrors.filter((e) => !/googlesyndication|google-analytics|googletagmanager|doubleclick|adsbygoogle|turnstile|cloudflare|^Failed to load resource|ERR_CERT_|ERR_TUNNEL_/i.test(e));
+    const consoleList = consoleErrors.filter((e) => !/googlesyndication|google-analytics|googletagmanager|doubleclick|adsbygoogle|turnstile|cloudflare|Framing .https:\/\/www.google.com|^Failed to load resource|ERR_CERT_|ERR_TUNNEL_/i.test(e));
     const issues = [];
     if (typeof status === 'number' ? status >= 400 : status) issues.push(`  status: ${status}`);
     if (r.hscroll > 0) issues.push(`  hscroll: page is ${r.hscroll}px wider than viewport`);
