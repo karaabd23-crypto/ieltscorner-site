@@ -167,6 +167,11 @@ async function anchorAdCheck(page) {
 for (const w of WIDTHS) {
   const ctx = await browser.newContext({ viewport: { width: w, height: 800 } });
   const page = await ctx.newPage();
+  // Locally, third-party hosts (ads, analytics) are slow or unreachable from CI sandboxes and stall
+  // networkidle, so skip them. Against a deployed site they load as a real visitor would see them.
+  if (/localhost|127\.0\.0\.1/.test(BASE)) {
+    await page.route((url) => !url.href.startsWith(BASE) && !/^(data|blob):/.test(url.href), (route) => route.abort());
+  }
   let consoleErrors = [];
   page.on('console', (msg) => msg.type() === 'error' && consoleErrors.push(msg.text().slice(0, 160)));
   page.on('pageerror', (err) => consoleErrors.push(String(err).slice(0, 160)));
@@ -190,7 +195,7 @@ for (const w of WIDTHS) {
     // Ads and analytics are blocked or absent locally; ignore their noise.
     // "Failed to load resource" repeats what the response listener already logged with
     // its URL; cert/tunnel errors come from sandboxed networks, not the site.
-    const consoleList = consoleErrors.filter((e) => !/googlesyndication|google-analytics|googletagmanager|doubleclick|adsbygoogle|turnstile|cloudflare|Framing .https:\/\/www.google.com|^Failed to load resource|ERR_CERT_|ERR_TUNNEL_/i.test(e));
+    const consoleList = consoleErrors.filter((e) => !/googlesyndication|google-analytics|googletagmanager|doubleclick|adsbygoogle|turnstile|compute-pressure|cloudflare|Framing .https:\/\/www.google.com|^Failed to load resource|ERR_CERT_|ERR_TUNNEL_/i.test(e));
     const issues = [];
     if (typeof status === 'number' ? status >= 400 : status) issues.push(`  status: ${status}`);
     if (r.hscroll > 0) issues.push(`  hscroll: page is ${r.hscroll}px wider than viewport`);
