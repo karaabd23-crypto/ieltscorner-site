@@ -4,8 +4,8 @@ import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 ---
 
 <Layout
-  title="Your CELPIP Speaking Preparation Guide is Ready - IELTS Corner"
-  description="Download your CELPIP Speaking Preparation Guide. You have 2 downloads available."
+  title="Access your CELPIP Speaking Preparation Guide - IELTS Corner"
+  description="Request access to your CELPIP Speaking Preparation Guide using your checkout link."
   keywords="CELPIP Speaking Preparation Guide download"
   noindex={true}
 >
@@ -18,8 +18,8 @@ import Breadcrumbs from "../../../components/Breadcrumbs.astro";
   <section class="section-sm" style="padding-top: var(--s-5);">
     <div class="surface thankyou-card" id="thankyou-root">
       <div class="thankyou-header">
-        <span class="pill">Purchase confirmed</span>
-        <h1>Your CELPIP Speaking Preparation Guide is ready.</h1>
+        <span class="pill">Guide access</span>
+        <h1>Access your CELPIP Speaking Preparation Guide.</h1>
         <p class="muted">
           CELPIP Speaking: The Complete Preparation Guide - 109 pages, all 8 speaking tasks.
         </p>
@@ -33,12 +33,12 @@ import Breadcrumbs from "../../../components/Breadcrumbs.astro";
       </div>
 
       <div id="thankyou-state-loading" class="thankyou-state">
-        <p class="muted">Verifying your purchase...</p>
+        <p class="muted">Payment has not been verified on this page. Use the download button to request access.</p>
       </div>
 
       <div id="thankyou-state-ready" class="thankyou-state" hidden>
-        <div class="thankyou-counter" id="download-counter-wrap">
-          <span id="downloads-used">0</span> of <span id="downloads-max">2</span> downloads used
+        <div class="thankyou-counter thankyou-state" id="download-counter-wrap" hidden>
+          <span id="downloads-used">?</span> of <span id="downloads-max">2</span> downloads used
         </div>
         <button class="btn btn-primary thankyou-download-btn" id="btn-download" type="button">
           Download Guide (PDF)
@@ -64,7 +64,7 @@ import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 
       <div class="thankyou-email-section">
         <p class="muted">
-          Enter your email address and we will send the PDF as an attachment directly from our Gmail account.
+          Use the email address you paid with to request the PDF by email.
           This is separate from the download limit.
         </p>
         <form class="thankyou-email-form" id="email-form" novalidate>
@@ -154,24 +154,32 @@ import Breadcrumbs from "../../../components/Breadcrumbs.astro";
       emailStatusMsg.dataset.tone = msg ? (tone || 'info') : '';
     }
 
+    // Server responses carry a stable code. Never render the server's error text:
+    // provider errors can contain a Stripe key fragment (sk_live_...).
+    var CUSTOMER_MESSAGES = {
+      not_a_purchase: 'We could not find a completed purchase for this link.',
+      recipient_mismatch: 'That email address does not match the one used for this purchase.',
+      send_limit: 'This purchase has already been emailed twice. Please use the download button above.',
+      file_unavailable: 'The guide file is temporarily unavailable. Please try again in a few minutes.',
+      server_error: 'Something went wrong on our side. Please try again in a few minutes.',
+    };
+
+    function customerMessage(data, fallback) {
+      var code = data && data.code;
+      if (code && CUSTOMER_MESSAGES[code]) return CUSTOMER_MESSAGES[code];
+      return fallback;
+    }
+
     if (!sessionId) {
       showState('error');
       if (errorDetailMsg) errorDetailMsg.textContent = 'No session ID found in the URL. If you just completed payment, make sure you followed the link from Stripe.';
       return;
     }
 
-    // Probe the session once on page load to show current download count (GET-like POST with no increment)
-    // We use a separate lightweight status check by calling get-ebook-download which increments only on actual request.
-    // To avoid premature incrementing, we show the state as "ready" immediately once sessionId is present,
-    // and let the actual download button trigger the real call.
+    // A query parameter is not purchase verification. Do not probe the
+    // counter-incrementing endpoint on load; usage stays unknown until requested.
     showState('ready');
     if (downloadsUsedEl) downloadsUsedEl.textContent = '?';
-    if (downloadsMaxEl) downloadsMaxEl.textContent = '2';
-
-    // Fetch current status without incrementing by calling a status endpoint
-    // Since we only have get-ebook-download (which increments), we do a preflight
-    // by keeping state unknown until the user clicks. Show counter as "0 of 2" initially.
-    if (downloadsUsedEl) downloadsUsedEl.textContent = '0';
 
     if (btnDownload) {
       btnDownload.addEventListener('click', function () {
@@ -186,11 +194,16 @@ import Breadcrumbs from "../../../components/Breadcrumbs.astro";
           .then(function (res) { return res.json(); })
           .then(function (data) {
             if (data.error && !data.allowed && data.downloadsUsed === undefined) {
-              setDownloadStatus(data.error || 'Unable to verify purchase.', 'error');
+              setDownloadStatus(
+                customerMessage(data, 'We could not verify this purchase right now. Please try again in a few minutes.'),
+                'error'
+              );
               btnDownload.disabled = false;
               return;
             }
 
+            var counterWrap = document.getElementById('download-counter-wrap');
+            if (counterWrap) counterWrap.hidden = false;
             if (downloadsUsedEl) downloadsUsedEl.textContent = String(data.downloadsUsed || 0);
             if (downloadsMaxEl) downloadsMaxEl.textContent = String(data.maxDownloads || 2);
 
@@ -208,7 +221,7 @@ import Breadcrumbs from "../../../components/Breadcrumbs.astro";
               setTimeout(function () { showState('exhausted'); }, 1200);
             } else {
               setDownloadStatus(
-                'Download started. ' + remaining + ' download' + (remaining === 1 ? '' : 's') + ' remaining for this purchase.',
+                'Download link requested. ' + remaining + ' download' + (remaining === 1 ? '' : 's') + ' remaining for this purchase.',
                 'success'
               );
               btnDownload.disabled = false;
@@ -243,7 +256,10 @@ import Breadcrumbs from "../../../components/Breadcrumbs.astro";
             if (data.sent) {
               setEmailStatus('Sent. Check your inbox (and spam folder if needed) for an email from IELTS Corner.', 'success');
             } else {
-              setEmailStatus(data.error || 'Failed to send. Try again or contact us directly.', 'error');
+              setEmailStatus(
+                customerMessage(data, 'We could not send the email. Please try again in a few minutes.'),
+                'error'
+              );
               if (btnSendEmail) btnSendEmail.disabled = false;
             }
           })

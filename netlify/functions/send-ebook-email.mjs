@@ -16,6 +16,24 @@ const GMAIL_PASSWORD = (process.env.GMAIL_PASSWORD || '').trim();
 const EBOOK_FILE_URL = (process.env.EBOOK_FILE_URL || '').trim();
 const STORE_NAME = 'ebook-downloads-v1';
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const MAX_EMAILS_PER_PURCHASE = 2;
+
+// Customer-safe copy. Provider/SDK error text (which can contain a key fragment)
+// must never reach the page: log the detail, return one of these instead.
+const CUSTOMER_MESSAGES = {
+  not_a_purchase: 'We could not find a completed purchase for this link.',
+  recipient_mismatch: 'That email address does not match the one used for this purchase.',
+  send_limit: 'This purchase has already been emailed twice. Please use the download button on the page.',
+  file_unavailable: 'The guide file is temporarily unavailable. Please try again in a few minutes.',
+  server_error: 'We could not send the email right now. Please try again in a few minutes.',
+};
+
+function customerError(code, statusCode) {
+  return {
+    statusCode,
+    body: JSON.stringify({ error: CUSTOMER_MESSAGES[code] || CUSTOMER_MESSAGES.server_error, code }),
+  };
+}
 
 function getPaymentLinkId(paymentLink) {
   if (!paymentLink) return '';
@@ -157,10 +175,15 @@ async function handler(event) {
     });
 
     if (!isEbookPurchase(session)) {
-      return {
-        statusCode: 403,
-        body: JSON.stringify({ error: 'This session does not correspond to a valid eBook purchase.' }),
-      };
+      return customerError('not_a_purchase', 403);
+    }
+
+    // Bind the recipient to the address Stripe recorded on the paid session.
+    // Without this the function is an open relay: anyone holding a thank-you URL
+    // can mail the PDF to unlimited addresses.
+    const purchaseEmail = String(session.customer_details?.email || '').trim().toLowerCase();
+    if (!purchaseEmail || purchaseEmail !== toEmail) {
+      return customerError('recipient_mismatch', 403);
     }
 
     let store = null;
@@ -174,7 +197,7 @@ async function handler(event) {
       record = await store.get(storeKey, { type: 'json' }).catch(() => null);
     } catch (storeError) {
       storeAvailable = false;
-      console.warn('[send-ebook-email] Blobs unavailable, skipping store persistence.', storeError);
+      console.warn('[send-ebook-email] Blobs unavailable, skipping store persistence.');
     }
 
     if (!record) {
@@ -187,6 +210,14 @@ async function handler(event) {
         firstDownloadAt: null,
         lastDownloadAt: null,
         emailSentAt: null,
+        emailSendCount: 0,
+      };
+    }
+
+    if (storeAvailable && (record.emailSendCount || 0) >= MAX_EMAILS_PER_PURCHASE) {
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ sent: false, code: 'send_limit', error: CUSTOMER_MESSAGES.send_limit }),
       };
     }
 
@@ -198,7 +229,7 @@ async function handler(event) {
     // Fetch the PDF from its hosted URL and attach it
     const pdfResponse = await fetch(EBOOK_FILE_URL);
     if (!pdfResponse.ok) {
-      return { statusCode: 500, body: JSON.stringify({ error: 'Unable to retrieve eBook file.' }) };
+      return customerError('file_unavailable', 500);
     }
     const pdfBuffer = Buffer.from(await pdfResponse.arrayBuffer());
 
@@ -211,6 +242,7 @@ async function handler(event) {
 
     record.emailSentAt = new Date().toISOString();
     record.emailSentTo = toEmail;
+    record.emailSendCount = (record.emailSendCount || 0) + 1;
     if (storeAvailable) {
       await store.setJSON(storeKey, record);
     }
@@ -220,8 +252,8 @@ async function handler(event) {
       body: JSON.stringify({ sent: true, to: toEmail }),
     };
   } catch (error) {
-    console.error('[send-ebook-email]', error);
-    return { statusCode: 500, body: JSON.stringify({ error: error?.message || 'Failed to send email.' }) };
+    console.error('[send-ebook-email] delivery_provider_failure');
+    return customerError('server_error', 500);
   }
 }
 
