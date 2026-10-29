@@ -103,7 +103,7 @@ async function handler(event) {
       record = await store.get(storeKey, { type: 'json' }).catch(() => null);
     } catch (storeError) {
       storeAvailable = false;
-      console.warn('[get-ebook-download] Blobs unavailable, continuing without download counter.', storeError);
+      console.warn('[get-ebook-download] Blobs unavailable, continuing without download counter.');
     }
 
     if (!record) {
@@ -153,8 +153,16 @@ async function handler(event) {
       }),
     };
   } catch (error) {
-    console.error('[get-ebook-download]', error);
-    return { statusCode: 500, body: JSON.stringify({ error: error?.message || 'Server error.' }) };
+    console.error('[get-ebook-download] delivery_provider_failure');
+    // Never return provider/SDK error text to the browser: Stripe includes the key
+    // prefix and last six characters in "Expired API Key provided: sk_live_…".
+    return {
+      statusCode: 500,
+      body: JSON.stringify({
+        error: 'We could not prepare your download right now. Please try again in a few minutes.',
+        code: 'server_error',
+      }),
+    };
   }
 }
 
