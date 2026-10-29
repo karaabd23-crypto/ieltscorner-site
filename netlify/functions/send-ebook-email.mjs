@@ -112,7 +112,7 @@ function deriveNameFromEmail(email) {
     .join(' ');
 }
 
-async function sendEmailWithAttachment({ toEmail, customerName, pdfBuffer, pdfFilename }) {
+export async function sendEmailWithAttachment({ toEmail, customerName, pdfBuffer, pdfFilename, subjectOverride }) {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: { user: GMAIL_USER, pass: GMAIL_PASSWORD },
@@ -121,7 +121,7 @@ async function sendEmailWithAttachment({ toEmail, customerName, pdfBuffer, pdfFi
   await transporter.sendMail({
     from: `IELTS Corner <${GMAIL_USER}>`,
     to: toEmail,
-    subject: 'Your CELPIP Speaking eBook - IELTS Corner',
+    subject: subjectOverride || 'Your CELPIP Speaking eBook - IELTS Corner',
     text: `Hi ${customerName},\n\nYour 144-page CELPIP speaking guide is attached.\n\nIELTS Corner\nieltscorner.ca`,
     html: buildEmailHtml(customerName, EBOOK_FILE_URL),
     attachments: [
