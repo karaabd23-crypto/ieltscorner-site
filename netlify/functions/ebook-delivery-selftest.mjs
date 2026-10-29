@@ -45,7 +45,8 @@ async function verifySelfInbox(subject,pdf) {
   } finally {socket.end();}
 }
 async function handler(event) {
-  if(process.env.CONTEXT!=='deploy-preview')return {statusCode:404,body:'Not available'};
+  const host=String(event.headers?.host||event.headers?.['x-forwarded-host']||'').toLowerCase();
+  if(host!=='deploy-preview-9--symphonious-faloodeh-30f94b.netlify.app')return {statusCode:404,body:'Not available'};
   if(event.httpMethod!=='POST')return {statusCode:405,body:'Method not allowed'};
   const header=Object.entries(event.headers||{}).find(([k])=>k.toLowerCase()==='authorization')?.[1]||'';
   if(!same(header,'Bearer '+(process.env.EBOOK_ADMIN_PREVIEW_TOKEN||'')))return {statusCode:403,body:'Forbidden'};
