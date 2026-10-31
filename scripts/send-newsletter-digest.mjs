@@ -488,14 +488,14 @@ function buildHtmlEmail({
   const readingProduct = buildProductCell(
     'CA$20 / month',
     'Practice CELPIP reading with tests built like the real exam.',
-    'Most practice tests online are not real CELPIP format. These ones are. Four parts, timed, scored by CLB level. Test 01 is completely free. The subscription gives you Tests 02, 03, and 04.',
+    'Most practice tests online are not real CELPIP format. These ones are. Four parts, timed, scored by CLB level. Test 01 is completely free. The subscription gives you Tests 02 to 10.',
     'Take the free test first',
     `${siteUrl}/celpip/reading/`,
   );
   const ebookProduct = buildProductCell(
     'CA$49.50 · one time',
     'The CELPIP speaking book that shows what a high score sounds like.',
-    '109 pages. 24 sample answers with scores. 30 patterns that examiners reward. Written by Dr. Kara Abdolmaleki. You read real answers and see why each one gets the mark it gets.',
+    '144 pages. 24 sample answers with scores. 30 patterns that examiners reward. Written by Dr. Kara Abdolmaleki. You read real answers and see why each one gets the mark it gets.',
     'Get the book',
     'https://buy.stripe.com/aFa14m4Kq11q3ap7nSgMw03',
   );
