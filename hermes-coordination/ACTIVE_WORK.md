@@ -21,6 +21,7 @@ backfilled with a time nobody recorded.
 |---|---|---|---|---|---|---|
 | muse-laptop | ebook-109-to-144 | ebook page count | — | — | — | DONE |
 | hermes | publication-google-info | `public/hermes/{index,privacy,terms}.html`, `netlify.toml`, `astro.config.mjs` | `hermes/publication-google-info` | 2026-10-12 | 2026-10-12 | DONE (merged #6) |
+| hermes | ebook-pagecount-109-remaining | `src/pages/celpip/index.astro`, `src/pages/celpip/reading/index.astro`, `src/pages/ebook/thank-you/index.astro`, `src/lib/promotionTools.ts`, `scripts/send-newsletter-digest.mjs`, `hermes-coordination/ACTIVE_WORK.md` | `hermes/ebook-pagecount-fix-20261031` | 2026-10-31T04:50Z | 2026-10-31T04:56Z | DONE (PR #10) |
 | claude | hermes-coordination-protocol | `hermes-coordination/*.md`, `CLAUDE.md` | `claude/hermes-coordination-protocol` | 2026-10-17T21:49Z | 2026-10-17T21:56Z | DONE (merged #7) |
 
 ## Handoff notes
@@ -43,3 +44,18 @@ backfilled with a time nobody recorded.
   `main`). Two revenue pages (`/ai-feedback/`, `/celpip/writing/`) are stuck
   "Crawled - not indexed" in Search Console — see that report's §1 and §5.
   Running list of open SEO items: `reports/seo/open-items.md` on `cro-data`.
+- 2026-10-31T04:56Z · hermes · Page-count cleanup (PR #10). The earlier
+  `ebook-109-to-144` claim was marked DONE but only covered the `/ebook/`
+  product page: five "109 pages" strings were still live on 2026-10-31
+  (`/celpip/` x1, `/celpip/reading/` x1, `/ebook/thank-you/` x1,
+  `promotionTools.ts` x1, digest email copy x1). Worse, the 2026-10-30
+  15:00 UTC scheduled Kit digest shipped "109 pages" to the list from
+  `861814b4b`. The delivered PDF really is 144 pages, so the fix is the
+  copy, not the file. PR #10 is string-only (5 files, +5/-5) and its merge
+  deadline is the next scheduled send, **2026-11-03 15:00 UTC**. Two
+  runnable guards live outside the repo at
+  `/data/kay-coordination/product-pages-20261027/check-ebook-claims.py`
+  (`--include-noindex`, currently 4 FAIL pages) and
+  `check-newsletter-claims.py` (exit 1 on `main` today); both should go
+  green after deploy. If you are touching any of those five files, PR #10
+  supersedes your copy - rebase rather than re-edit the strings.
