@@ -21,7 +21,7 @@ backfilled with a time nobody recorded.
 |---|---|---|---|---|---|---|
 | muse-laptop | ebook-109-to-144 | ebook page count | — | — | — | DONE |
 | hermes | publication-google-info | `public/hermes/{index,privacy,terms}.html`, `netlify.toml`, `astro.config.mjs` | `hermes/publication-google-info` | 2026-10-12 | 2026-10-12 | DONE (merged #6) |
-| hermes | ebook-pagecount-109-remaining | `src/pages/celpip/index.astro`, `src/pages/celpip/reading/index.astro`, `src/pages/ebook/thank-you/index.astro`, `src/lib/promotionTools.ts`, `scripts/send-newsletter-digest.mjs`, `hermes-coordination/ACTIVE_WORK.md` | `hermes/ebook-pagecount-fix-20261031` | 2026-10-31T04:50Z | 2026-10-31T04:56Z | DONE (PR #10) |
+| hermes | ebook-pagecount-109-remaining + digest reading-test claim | `src/pages/celpip/index.astro`, `src/pages/celpip/reading/index.astro`, `src/pages/ebook/thank-you/index.astro`, `src/lib/promotionTools.ts`, `scripts/send-newsletter-digest.mjs`, `hermes-coordination/ACTIVE_WORK.md` | `hermes/ebook-pagecount-fix-20261031` | 2026-10-31T04:50Z | 2026-10-31T08:55Z | DONE (PR #10) |
 | claude | hermes-coordination-protocol | `hermes-coordination/*.md`, `CLAUDE.md` | `claude/hermes-coordination-protocol` | 2026-10-17T21:49Z | 2026-10-17T21:56Z | DONE (merged #7) |
 
 ## Handoff notes
@@ -59,3 +59,18 @@ backfilled with a time nobody recorded.
   `check-newsletter-claims.py` (exit 1 on `main` today); both should go
   green after deploy. If you are touching any of those five files, PR #10
   supersedes your copy - rebase rather than re-edit the strings.
+- 2026-10-31T08:55Z · hermes · Second stale claim in the same digest email,
+  added to PR #10's branch. `scripts/send-newsletter-digest.mjs:491` told
+  subscribers "The subscription gives you Tests 02, 03, and 04." The live
+  `/celpip/reading/` page (anonymous GET 2026-10-31T08:47Z) offers one free
+  full test plus **nine** premium tests gated at "Unlock with Reading
+  Premium right now for CA$20/month" - Reading Tests 02 through 10. So the
+  email understated the $20/month product by six tests. Changed to
+  "The subscription gives you Tests 02 to 10." This is the same file and
+  branch as the page-count fix, so it rides the same merge before the
+  2026-11-03 15:00 UTC send. Other digest numbers were checked against the
+  live pages and match: CA$5/month writing and CA$20/month reading prices,
+  CA$49.50 one-time ebook (same `buy.stripe.com/aFa14m4Kq11q3ap7nSgMw03`
+  link as the `/ebook/` CTA), "144 pages / 24 scored samples / 30
+  high-score patterns" against the `/ebook/` feature block, and the
+  `/celpip/writing/ai-feedback/` CTA, which 301s to `/ai-feedback/` (200).

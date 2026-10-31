@@ -488,7 +488,7 @@ function buildHtmlEmail({
   const readingProduct = buildProductCell(
     'CA$20 / month',
     'Practice CELPIP reading with tests built like the real exam.',
-    'Most practice tests online are not real CELPIP format. These ones are. Four parts, timed, scored by CLB level. Test 01 is completely free. The subscription gives you Tests 02, 03, and 04.',
+    'Most practice tests online are not real CELPIP format. These ones are. Four parts, timed, scored by CLB level. Test 01 is completely free. The subscription gives you Tests 02 to 10.',
     'Take the free test first',
     `${siteUrl}/celpip/reading/`,
   );
