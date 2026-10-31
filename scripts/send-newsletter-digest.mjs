@@ -495,7 +495,7 @@ function buildHtmlEmail({
   const ebookProduct = buildProductCell(
     'CA$49.50 · one time',
     'The CELPIP speaking book that shows what a high score sounds like.',
-    '109 pages. 24 sample answers with scores. 30 patterns that examiners reward. Written by Dr. Kara Abdolmaleki. You read real answers and see why each one gets the mark it gets.',
+    '144 pages. 24 sample answers with scores. 30 patterns that examiners reward. Written by Dr. Kara Abdolmaleki. You read real answers and see why each one gets the mark it gets.',
     'Get the book',
     'https://buy.stripe.com/aFa14m4Kq11q3ap7nSgMw03',
   );
