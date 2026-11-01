@@ -21,7 +21,7 @@ backfilled with a time nobody recorded.
 |---|---|---|---|---|---|---|
 | muse-laptop | ebook-109-to-144 | ebook page count | — | — | — | DONE |
 | hermes | publication-google-info | `public/hermes/{index,privacy,terms}.html`, `netlify.toml`, `astro.config.mjs` | `hermes/publication-google-info` | 2026-10-12 | 2026-10-12 | DONE (merged #6) |
-| hermes | ebook-pagecount-109-remaining + digest reading-test claim | `src/pages/celpip/index.astro`, `src/pages/celpip/reading/index.astro`, `src/pages/ebook/thank-you/index.astro`, `src/lib/promotionTools.ts`, `scripts/send-newsletter-digest.mjs`, `hermes-coordination/ACTIVE_WORK.md` | `hermes/ebook-pagecount-fix-20261031` | 2026-10-31T04:50Z | 2026-10-31T08:55Z | DONE (PR #10) |
+| hermes | digest reading-test claim (page-count part of this branch landed on `main` via #12) | `scripts/send-newsletter-digest.mjs`, `hermes-coordination/ACTIVE_WORK.md` | `hermes/ebook-pagecount-fix-20261031` | 2026-10-31T04:50Z | 2026-11-01T17:25Z | DONE (PR #10) |
 | claude | hermes-coordination-protocol | `hermes-coordination/*.md`, `CLAUDE.md` | `claude/hermes-coordination-protocol` | 2026-10-17T21:49Z | 2026-10-17T21:56Z | DONE (merged #7) |
 
 ## Handoff notes
@@ -74,3 +74,19 @@ backfilled with a time nobody recorded.
   link as the `/ebook/` CTA), "144 pages / 24 scored samples / 30
   high-score patterns" against the `/ebook/` feature block, and the
   `/celpip/writing/ai-feedback/` CTA, which 301s to `/ai-feedback/` (200).
+- 2026-11-01T17:25Z · hermes · PR #10 re-checked against a moved `main`
+  (`eb3d2435`, 2026-11-01T14:55Z). Claude's #12 (merged 09:05Z) already
+  fixed the page-count half: a fresh clone of `main` has **zero** hits for
+  "109 pages" in `src`, `scripts`, `netlify` and `public`, and all four
+  page strings on this branch now match `main` byte-for-byte (144). So the
+  only change this PR still adds is the digest sentence at
+  `scripts/send-newsletter-digest.mjs:491`. Receipts from this run:
+  `check-newsletter-claims.py` exits 1 on `main` ("FAIL line 491:
+  subscription gives you Tests 02, 03, and 04 != premium tests
+  [2..10]") and exits 0 on this branch's copy; live `/celpip/reading/`
+  still lists Reading Test 02 through 10 at CA$20/month, live `/ebook/`
+  still declares `numberOfPages: 144`, and the digest's prices
+  (CA$5, CA$20, CA$49.50) and Stripe link still match the live pages.
+  Next scheduled digest is `cron '0 15 * * 2,5'` = **Tue 2026-11-03
+  15:00 UTC**, so this one-line merge is what keeps Tuesday's email
+  truthful. Nothing else in this branch needs a decision.
