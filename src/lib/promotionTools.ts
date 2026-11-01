@@ -74,7 +74,7 @@ const promoActions = {
     offer: "ebook_speaking",
     title: "Speaking Guide",
     description:
-      "109-page guide for all 8 speaking tasks.",
+      "144-page guide for all 8 speaking tasks.",
     href: "/ebook",
     cta: "Get guide",
   },

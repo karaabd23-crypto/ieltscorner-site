@@ -9,7 +9,7 @@ import {
 
 const DEFAULT_SITE_URL = 'https://ieltscorner.ca';
 const DEFAULT_STATE_FILE = '.cache/newsletter-state.json';
-const DEFAULT_YOUTUBE_CHANNEL_URL = 'https://www.youtube.com/@KaraAbdolmaleki';
+const DEFAULT_YOUTUBE_CHANNEL_URL = ''; // personal-name handle removed from emails; set YOUTUBE_CHANNEL_URL once the channel has a brand handle
 const DEFAULT_TELEGRAM_CHANNEL_URL = 'https://t.me/Kaysenglishcorner';
 const DEFAULT_INSTAGRAM_USERNAME = 'ieltscorner.ca';
 const DEFAULT_DIGEST_FORM_ID = 9278182;
@@ -495,7 +495,7 @@ function buildHtmlEmail({
   const ebookProduct = buildProductCell(
     'CA$49.50 · one time',
     'The CELPIP speaking book that shows what a high score sounds like.',
-    '109 pages. 24 sample answers with scores. 30 patterns that examiners reward. Written by Dr. Kara Abdolmaleki. You read real answers and see why each one gets the mark it gets.',
+    '144 pages. 24 sample answers with scores. 30 patterns that examiners reward. You read real answers and see why each one gets the mark it gets.',
     'Get the book',
     'https://buy.stripe.com/aFa14m4Kq11q3ap7nSgMw03',
   );

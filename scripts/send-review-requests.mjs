@@ -72,7 +72,7 @@ function buildHtml() {
     'With your permission we may publish it (first name and last initial only) to help other learners decide.</p>',
     `<p><a href="${REVIEW_FORM_URL}">Leave your review here</a></p>`,
     '<p>Thank you, and congratulations on the progress.</p>',
-    '<p>— Kara, IELTS Corner</p>',
+    '<p>The IELTS Corner team</p>',
   ].join('\n');
 }
 

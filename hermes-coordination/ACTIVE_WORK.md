@@ -19,6 +19,7 @@ backfilled with a time nobody recorded.
 
 | agent | task | files/areas | branch | started UTC | last updated UTC | status |
 |---|---|---|---|---|---|---|
+| claude | identity-kay-abdo | name on site pages, `ai-feedback.astro` video, ebook page count, `scripts/send-newsletter-digest.mjs`, `scripts/send-review-requests.mjs` | `claude/identity-kay-abdo` | 2026-11-01T08:45Z | 2026-11-01T08:45Z | DONE (this PR) |
 | muse-laptop | ebook-109-to-144 | ebook page count | — | — | — | DONE |
 | hermes | publication-google-info | `public/hermes/{index,privacy,terms}.html`, `netlify.toml`, `astro.config.mjs` | `hermes/publication-google-info` | 2026-10-12 | 2026-10-12 | DONE (merged #6) |
 | claude | hermes-coordination-protocol | `hermes-coordination/*.md`, `CLAUDE.md` | `claude/hermes-coordination-protocol` | 2026-10-17T21:49Z | 2026-10-17T21:56Z | DONE (merged #7) |
