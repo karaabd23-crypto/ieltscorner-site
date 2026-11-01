@@ -183,6 +183,9 @@ const pageStructuredData = [
     unlockQuestions();
   }
 
+  // Start the anti-bot timer and Turnstile widget as soon as the gate renders.
+  if (form) (window as any).__ieltscornerNewsletterGuard?.prepareForm?.(form).catch(() => {});
+
   form?.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -202,6 +205,13 @@ const pageStructuredData = [
       const dailyInput = document.getElementById("questions-gate-daily") as HTMLInputElement | null;
       const wantsDaily = Boolean(dailyInput?.checked);
 
+      const newsletterGuard = (window as any).__ieltscornerNewsletterGuard || null;
+      const verification = form ? await newsletterGuard?.validateFormBeforeSubmit?.(form) : null;
+      if (verification && !verification.ok) {
+        throw new Error(verification.error || "Please complete the verification step before submitting.");
+      }
+      const antiBot = verification?.antiBot || (form ? newsletterGuard?.buildAntiBotPayload?.(form) : null) || {};
+
       const response = await fetch("/.netlify/functions/subscribe-newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -210,9 +220,9 @@ const pageStructuredData = [
           source: wantsDaily ? "question-bank-daily" : "question-bank",
           audience: "digest",
           dailyPrompt: wantsDaily,
-          formRenderedAt: Date.now(),
-          "bot-field": "",
-          "cf-turnstile-response": "",
+          formRenderedAt: antiBot.formRenderedAt || null,
+          "bot-field": antiBot.botField || "",
+          "cf-turnstile-response": antiBot.turnstileToken || "",
         }),
       });
 
