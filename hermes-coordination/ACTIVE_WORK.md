@@ -19,9 +19,10 @@ backfilled with a time nobody recorded.
 
 | agent | task | files/areas | branch | started UTC | last updated UTC | status |
 |---|---|---|---|---|---|---|
+| claude | identity-kay-abdo | name on site pages, `ai-feedback.astro` video, ebook page count, `scripts/send-newsletter-digest.mjs`, `scripts/send-review-requests.mjs` | `claude/identity-kay-abdo` | 2026-11-01T08:45Z | 2026-11-01T08:45Z | DONE (this PR) |
 | muse-laptop | ebook-109-to-144 | ebook page count | — | — | — | DONE |
 | hermes | publication-google-info | `public/hermes/{index,privacy,terms}.html`, `netlify.toml`, `astro.config.mjs` | `hermes/publication-google-info` | 2026-10-12 | 2026-10-12 | DONE (merged #6) |
-| hermes | digest reading-test claim (page-count part of this branch landed on `main` via #12) | `scripts/send-newsletter-digest.mjs`, `hermes-coordination/ACTIVE_WORK.md` | `hermes/ebook-pagecount-fix-20261031` | 2026-10-31T04:50Z | 2026-11-01T17:25Z | DONE (PR #10) |
+| hermes | digest reading-test claim (page-count part of this branch landed on `main` via #12) | `scripts/send-newsletter-digest.mjs`, `hermes-coordination/ACTIVE_WORK.md` | `hermes/ebook-pagecount-fix-20261031` | 2026-10-31T04:50Z | 2026-11-01T21:35Z | DONE (PR #10) |
 | claude | hermes-coordination-protocol | `hermes-coordination/*.md`, `CLAUDE.md` | `claude/hermes-coordination-protocol` | 2026-10-17T21:49Z | 2026-10-17T21:56Z | DONE (merged #7) |
 
 ## Handoff notes
@@ -90,3 +91,21 @@ backfilled with a time nobody recorded.
   Next scheduled digest is `cron '0 15 * * 2,5'` = **Tue 2026-11-03
   15:00 UTC**, so this one-line merge is what keeps Tuesday's email
   truthful. Nothing else in this branch needs a decision.
+- 2026-11-01T21:35Z · hermes · PR #10 rebased onto `main` `eb3d2435` because
+  it had gone unmergeable. `main` moved twice underneath the branch after the
+  17:25Z re-check (`834a0077` Kit signup blocking, `62736bea` public name to
+  Kay Abdo with the personal YouTube handle removed from email copy), and
+  GitHub reported `mergeable_state: dirty` with a content conflict in
+  `scripts/send-newsletter-digest.mjs`. The rebase kept `main`'s newer
+  identity/YouTube wording, dropped the branch's now-superseded page-count
+  and "Written by Dr. Kara Abdolmaleki" hunks (both landed or changed on
+  `main` via #12), and left exactly one code line changed: line 491
+  "Tests 02, 03, and 04" -> "Tests 02 to 10". Guard receipts this run,
+  `/data/kay-coordination/product-pages-20261027/receipts-20261101T2130Z/`:
+  `guard-red-main.log` exits 1 (`FAIL line 491: subscription gives you Tests
+  02, 03, and 04 != premium tests [2..10]`) and `guard-green-rebased-branch.log`
+  exits 0 (`ok: newsletter copy agrees with the live pages (144 pages;
+  premium reading tests [2..10])`). Branch digest file sha256
+  `f04266a4…a373aba240db75`. Still one line, still before the Tue 2026-11-03
+  15:00 UTC send, still awaiting Kara's merge approval - no Hermes push to
+  `main`.
