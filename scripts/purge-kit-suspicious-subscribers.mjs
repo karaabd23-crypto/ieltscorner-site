@@ -416,12 +416,22 @@ async function main() {
     return;
   }
 
+  // One subscriber Kit can no longer find (already removed or merged) must not stop the rest.
   let unsubscribed = 0;
+  const failed = [];
   for (const row of suspicious) {
-    await unsubscribeSubscriber({ apiKey, id: row.id });
-    unsubscribed += 1;
+    try {
+      await unsubscribeSubscriber({ apiKey, id: row.id });
+      unsubscribed += 1;
+    } catch (error) {
+      failed.push(row);
+      console.log(`[warn] Could not unsubscribe ${row.email} (id=${row.id}): ${error.message || error}`);
+    }
   }
   console.log(`[ok] Unsubscribed ${unsubscribed} suspicious subscriber(s) in Kit.`);
+  if (failed.length > 0) {
+    console.log(`[warn] ${failed.length} subscriber(s) could not be unsubscribed (listed above).`);
+  }
 }
 
 main().catch((error) => {
