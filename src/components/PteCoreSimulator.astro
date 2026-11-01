@@ -230,7 +230,7 @@ const simulatorPayload = {
     }
 
     function hasPremiumSession() {
-      return true; // temporary open access
+      return Boolean(getPremiumSessionId());
     }
 
     function getCompletedAttemptCount() {

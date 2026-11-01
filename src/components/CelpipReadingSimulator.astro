@@ -389,10 +389,12 @@ const serializeInlineJSON = (value: unknown) =>
 
     const isSignedIn = () => Boolean(accountSession?.authenticated);
 
-    const isPremium = () => true; // temporary open access
+    const isPremium = () => {
+      return Boolean(isSignedIn() && accountEntitlement?.active);
+    };
 
     const hasPortalAccess = () => {
-      return Boolean(isSignedIn() && accountEntitlement?.active);
+      return Boolean(isSignedIn() && isPremium());
     };
 
     const setAccessBanner = (message = '', tone = 'success') => {

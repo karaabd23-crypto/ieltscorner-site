@@ -650,11 +650,7 @@ const taskConfig = CELPIP_TASK_CONFIG;
       };
 
       const validatePaidAccess = async () => {
-        // temporary open access: skip Stripe validation
-        if (validationEl) validationEl.style.display = 'none';
-        if (appEl) appEl.style.display = 'block';
-        loadSavedState();
-        return;
+        const params = new URLSearchParams(window.location.search);
         const tokenFromQuery = (params.get('admin_token') || '').trim();
         const disableAdmin = params.get('admin_mode') === 'off';
 
