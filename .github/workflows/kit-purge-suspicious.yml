@@ -1,0 +1,36 @@
+name: Kit Purge Suspicious Subscribers
+
+on:
+  schedule:
+    # Weekly on Sundays at 13:23 UTC: report-only scan for bot signups
+    # (random-string names, disposable or dead domains, malformed addresses).
+    # See scripts/purge-kit-suspicious-subscribers.mjs.
+    - cron: '23 13 * * 0'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'List suspicious subscribers without unsubscribing them (set to false to unsubscribe)'
+        required: false
+        default: 'true'
+
+jobs:
+  purge-suspicious:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Scan (and optionally unsubscribe) suspicious subscribers
+        env:
+          KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.dry_run }}" = "false" ]; then
+            node scripts/purge-kit-suspicious-subscribers.mjs --apply
+          else
+            node scripts/purge-kit-suspicious-subscribers.mjs
+          fi
