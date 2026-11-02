@@ -7,7 +7,7 @@
   },
   "provider": "search-console",
   "siteUrl": "sc-domain:ieltscorner.ca",
-  "generatedAt": "2026-11-02T06:15:40.350Z",
+  "generatedAt": "2026-11-02T06:15:55.970Z",
   "complete": true,
   "search": {
     "totals": {
@@ -605,7 +605,7 @@
       },
       {
         "url": "https://ieltscorner.ca/celpip/writing/",
-        "coverageState": "Discovered - currently not indexed",
+        "coverageState": "URL is unknown to Google",
         "verdict": "NEUTRAL"
       },
       {
@@ -632,8 +632,8 @@
       "byState": {
         "Submitted and indexed": 3,
         "Crawled - currently not indexed": 21,
-        "URL is unknown to Google": 7,
-        "Discovered - currently not indexed": 9
+        "Discovered - currently not indexed": 12,
+        "URL is unknown to Google": 4
       },
       "indexedShare": 0.075,
       "urls": [
@@ -655,22 +655,22 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/vocabulary/advanced-formal-expression/",
-          "coverageState": "URL is unknown to Google",
-          "verdict": "NEUTRAL"
-        },
-        {
-          "url": "https://ieltscorner.ca/lessons/vocabulary/advanced-stance-vocabulary/",
           "coverageState": "Discovered - currently not indexed",
           "verdict": "NEUTRAL"
         },
         {
-          "url": "https://ieltscorner.ca/lessons/vocabulary/business-vocab/",
+          "url": "https://ieltscorner.ca/lessons/vocabulary/advanced-stance-vocabulary/",
           "coverageState": "URL is unknown to Google",
           "verdict": "NEUTRAL"
         },
         {
+          "url": "https://ieltscorner.ca/lessons/vocabulary/business-vocab/",
+          "coverageState": "Discovered - currently not indexed",
+          "verdict": "NEUTRAL"
+        },
+        {
           "url": "https://ieltscorner.ca/lessons/vocabulary/collocations-make-do/",
-          "coverageState": "URL is unknown to Google",
+          "coverageState": "Discovered - currently not indexed",
           "verdict": "NEUTRAL"
         },
         {
@@ -850,7 +850,7 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/vocabulary/social-issues-b2/",
-          "coverageState": "URL is unknown to Google",
+          "coverageState": "Discovered - currently not indexed",
           "verdict": "NEUTRAL"
         },
         {
@@ -876,7 +876,7 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/vocabulary/transitions-cause-effect/",
-          "coverageState": "Discovered - currently not indexed",
+          "coverageState": "URL is unknown to Google",
           "verdict": "NEUTRAL"
         },
         {
@@ -902,7 +902,7 @@
         },
         {
           "url": "https://ieltscorner.ca/lessons/vocabulary/work-and-study-words/",
-          "coverageState": "URL is unknown to Google",
+          "coverageState": "Discovered - currently not indexed",
           "verdict": "NEUTRAL"
         }
       ]
