@@ -24,6 +24,8 @@ backfilled with a time nobody recorded.
 | hermes | publication-google-info | `public/hermes/{index,privacy,terms}.html`, `netlify.toml`, `astro.config.mjs` | `hermes/publication-google-info` | 2026-10-12 | 2026-10-12 | DONE (merged #6) |
 | claude | hermes-coordination-protocol | `hermes-coordination/*.md`, `CLAUDE.md` | `claude/hermes-coordination-protocol` | 2026-10-17T21:49Z | 2026-10-17T21:56Z | DONE (merged #7) |
 
+| hermes | digest-reading-claim | `scripts/send-newsletter-digest.mjs` | `hermes/digest-reading-claim-20261102` | 2026-11-02T13:55Z | 2026-11-02T13:55Z | DONE (this PR) |
+
 ## Handoff notes
 
 - 2026-10-17 · claude · Codex's review on #7 caught a real bug in the first
