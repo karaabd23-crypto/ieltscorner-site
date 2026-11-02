@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "week": "2026-44",
+  "range": {
+    "start": "2026-10-26",
+    "end": "2026-11-01"
+  },
+  "provider": "ga4",
+  "generatedAt": "2026-11-02T06:00:59.006Z",
+  "metrics": {
+    "pageviews": 736,
+    "visitors": 465,
+    "bounceRate": 0.8232848232848233,
+    "avgDuration": 37.959603758835755,
+    "topPages": [
+      {
+        "path": "/ai-feedback/",
+        "pageviews": 46,
+        "visitors": 34
+      },
+      {
+        "path": "/lessons/reading/celpip-reading-detail-location-discipline/",
+        "pageviews": 38,
+        "visitors": 34
+      },
+      {
+        "path": "/lessons/grammar/adverbs-formation/",
+        "pageviews": 32,
+        "visitors": 27
+      },
+      {
+        "path": "/celpip/reading/",
+        "pageviews": 31,
+        "visitors": 27
+      },
+      {
+        "path": "/lessons/speaking/seo-2026-03-25-14-ielts-speaking-ielts-speaking-grammar-range-without-risk/",
+        "pageviews": 31,
+        "visitors": 25
+      },
+      {
+        "path": "/lessons/grammar/adjective-order/",
+        "pageviews": 29,
+        "visitors": 24
+      },
+      {
+        "path": "/lessons/reading/celpip-reading-main-idea-and-paragraph-purpose/",
+        "pageviews": 28,
+        "visitors": 22
+      },
+      {
+        "path": "/lessons/grammar/adjectives-comparison/",
+        "pageviews": 27,
+        "visitors": 25
+      },
+      {
+        "path": "/",
+        "pageviews": 26,
+        "visitors": 23
+      },
+      {
+        "path": "/pte-core/simulator/",
+        "pageviews": 19,
+        "visitors": 11
+      }
+    ],
+    "conversions": [
+      {
+        "id": "ebook",
+        "label": "Ebook checkout click",
+        "visits": 5,
+        "events": 1,
+        "rate": 0.2
+      },
+      {
+        "id": "tutoring_private_class",
+        "label": "Private tutoring booking",
+        "visits": 6,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "ai_feedback",
+        "label": "AI feedback checkout click",
+        "visits": 34,
+        "events": 0,
+        "rate": 0
+      },
+      {
+        "id": "subscription",
+        "label": "Subscription checkout click",
+        "visits": 27,
+        "events": 0,
+        "rate": 0
+      }
+    ],
+    "segments": {
+      "byDevice": [
+        {
+          "key": "desktop",
+          "visitors": 429,
+          "sessions": 445,
+          "bounceRate": 0.8202247191011236,
+          "goalEvents": {
+            "ebook": 1
+          }
+        },
+        {
+          "key": "mobile",
+          "visitors": 37,
+          "sessions": 37,
+          "bounceRate": 0.8378378378378378,
+          "goalEvents": {}
+        }
+      ],
+      "byChannel": [
+        {
+          "key": "Direct",
+          "visitors": 419,
+          "sessions": 426,
+          "bounceRate": 0.8615023474178404,
+          "goalEvents": {
+            "ebook": 1
+          }
+        },
+        {
+          "key": "Organic Search",
+          "visitors": 22,
+          "sessions": 26,
+          "bounceRate": 0.4230769230769231,
+          "goalEvents": {}
+        },
+        {
+          "key": "AI Assistant",
+          "visitors": 16,
+          "sessions": 19,
+          "bounceRate": 0.5789473684210527,
+          "goalEvents": {}
+        },
+        {
+          "key": "Unassigned",
+          "visitors": 6,
+          "sessions": 6,
+          "bounceRate": 1,
+          "goalEvents": {}
+        },
+        {
+          "key": "Organic Social",
+          "visitors": 3,
+          "sessions": 3,
+          "bounceRate": 0.3333333333333333,
+          "goalEvents": {}
+        },
+        {
+          "key": "Referral",
+          "visitors": 2,
+          "sessions": 3,
+          "bounceRate": 0.6666666666666666,
+          "goalEvents": {}
+        }
+      ]
+    }
+  }
+}
