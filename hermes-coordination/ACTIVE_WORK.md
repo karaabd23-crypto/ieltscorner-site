@@ -24,8 +24,24 @@ backfilled with a time nobody recorded.
 | hermes | publication-google-info | `public/hermes/{index,privacy,terms}.html`, `netlify.toml`, `astro.config.mjs` | `hermes/publication-google-info` | 2026-10-12 | 2026-10-12 | DONE (merged #6) |
 | claude | hermes-coordination-protocol | `hermes-coordination/*.md`, `CLAUDE.md` | `claude/hermes-coordination-protocol` | 2026-10-17T21:49Z | 2026-10-17T21:56Z | DONE (merged #7) |
 | hermes | celpip-speaking-guide-task-order-timings | `src/pages/blog/celpip-speaking-tasks-complete-guide.astro`, `hermes-coordination/ACTIVE_WORK.md` | `hermes/celpip-guide-task-order-timings` | 2026-11-02T01:35Z | 2026-11-02T01:45Z | DONE (this PR) |
+| hermes | newsletter-landing-page | `src/pages/newsletter/index.astro`, `astro.config.mjs`, `hermes-coordination/ACTIVE_WORK.md` | `hermes/newsletter-landing` | 2026-11-02T18:12Z | 2026-11-02T18:12Z | DONE (this PR) |
 
 ## Handoff notes
+
+- 2026-11-02 · hermes · Kay asked for the newsletter to live on the website with its own
+  landing page ("Anything English related use the website... can have its own landing page").
+  `/newsletter/` was a 404: only `src/pages/newsletter/thanks.astro` existed, and the blog index
+  pointed its "Join the newsletter" button at `/`. Added `src/pages/newsletter/index.astro`, which
+  reuses the existing unused `Newsletter.astro` component (it posts to
+  `/.netlify/functions/subscribe-newsletter`, so signups land in the same Kit digest form, id
+  9278182, that `scripts/send-newsletter-digest.mjs` sends to). Copy states the real cadence
+  (Tuesday and Friday, from `.github/workflows/newsletter-digest.yml`), what the email actually
+  contains (CELPIP/IELTS/grammar/vocabulary lesson sections plus one line per paid tool), and the
+  unsubscribe route. `astro.config.mjs` `SITEMAP_EXCLUDE` narrowed from `/newsletter/` to
+  `/newsletter/thanks/` so the landing page can be indexed while the confirmation page stays out.
+  No layout, nav, style or function changes; no new services. `npm run build` passes.
+  Still open, not done here: nav or menu representation for the page, and the blog index line
+  "weekly digest" (it is twice weekly).
 
 - 2026-11-02 · hermes · The free blog guide
   `/blog/celpip-speaking-tasks-complete-guide/` contradicted the site's own eight
