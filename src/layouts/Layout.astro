@@ -149,7 +149,10 @@ const floatingCta =
         strong: "CA$49.50",
         aria: "Get the CELPIP Speaking Preparation Guide - CA$49.50",
       };
-const newsletterTurnstileSiteKey = String(import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '').trim();
+// Public Turnstile site key (safe to ship). The widget only accepts ieltscorner.ca,
+// so the client script below leaves it off on localhost and deploy previews.
+const DEFAULT_TURNSTILE_SITE_KEY = '0x4AAAAAAFu6zSjKKKpt1ZZ-';
+const newsletterTurnstileSiteKey = String(import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || DEFAULT_TURNSTILE_SITE_KEY).trim();
 
 // Clutter-to-zero global frame (Phase 1):
 // One navigation, three doors. Each door is a single-column vertical
@@ -710,14 +713,14 @@ const serializeJsonForScript = (value: unknown) =>
           <section class="teacher-trust-banner surface">
             <div class="teacher-trust-banner__body">
               <p class="teacher-trust-banner__label">About The Instructor</p>
-              <h2>Written by Kara Abdolmaleki.</h2>
+              <h2>Written by Kay Abdo.</h2>
               <p class="teacher-trust-banner__copy">
                 If you want to know more about the person behind these articles, the About page includes
                 exam results, training, and classroom background.
               </p>
             </div>
             <div class="teacher-trust-banner__actions">
-              <a class="btn btn-primary" href="/about">About Kara</a>
+              <a class="btn btn-primary" href="/about">About Kay</a>
               <a class="btn" href="/about#evidence-and-qualifications">See background</a>
             </div>
           </section>
@@ -835,7 +838,8 @@ const serializeJsonForScript = (value: unknown) =>
         const globalName = '__ieltscornerNewsletterGuard';
         if (window[globalName]) return;
 
-        const siteKey = String(document.body?.dataset.turnstileSiteKey || '').trim();
+        const isWidgetHost = /(^|\.)ieltscorner\.ca$/i.test(window.location.hostname);
+        const siteKey = isWidgetHost ? String(document.body?.dataset.turnstileSiteKey || '').trim() : '';
         const turnstileScriptSrc = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
         let turnstileScriptPromise = null;
 

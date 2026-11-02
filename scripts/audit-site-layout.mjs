@@ -187,7 +187,10 @@ for (const w of WIDTHS) {
 
   for (const p of pages) {
     consoleErrors = [];
-    const resp = await page.goto(BASE + p, { waitUntil: 'networkidle', timeout: 45000 }).catch((e) => ({ status: () => String(e).slice(0, 80) }));
+    // 'load' then a bounded idle wait: Cloudflare Turnstile re-polls every ~10s on pages with forms
+    // (flagged headless browsers), so strict networkidle never settles there and is not a page bug.
+    const resp = await page.goto(BASE + p, { waitUntil: 'load', timeout: 45000 }).catch((e) => ({ status: () => String(e).slice(0, 80) }));
+    await page.waitForLoadState('networkidle', { timeout: 8000 }).catch(() => {});
     await page.waitForTimeout(800);
     const status = resp?.status?.();
     const r = await page.evaluate(inspectPage);

@@ -19,13 +19,25 @@ backfilled with a time nobody recorded.
 
 | agent | task | files/areas | branch | started UTC | last updated UTC | status |
 |---|---|---|---|---|---|---|
+| hermes | digest-reading-tests-claim | `scripts/send-newsletter-digest.mjs`, `hermes-coordination/ACTIVE_WORK.md` | `hermes/ebook-pagecount-fix-20261031` | 2026-11-02T22:11Z | 2026-11-02T22:11Z | open - awaiting Kara's merge approval |
 | claude | identity-kay-abdo | name on site pages, `ai-feedback.astro` video, ebook page count, `scripts/send-newsletter-digest.mjs`, `scripts/send-review-requests.mjs` | `claude/identity-kay-abdo` | 2026-11-01T08:45Z | 2026-11-01T08:45Z | DONE (this PR) |
 | muse-laptop | ebook-109-to-144 | ebook page count | — | — | — | DONE |
 | hermes | publication-google-info | `public/hermes/{index,privacy,terms}.html`, `netlify.toml`, `astro.config.mjs` | `hermes/publication-google-info` | 2026-10-12 | 2026-10-12 | DONE (merged #6) |
-| hermes | digest reading-test claim (page-count part of this branch landed on `main` via #12) | `scripts/send-newsletter-digest.mjs`, `hermes-coordination/ACTIVE_WORK.md` | `hermes/ebook-pagecount-fix-20261031` | 2026-10-31T04:50Z | 2026-11-01T21:35Z | DONE (PR #10) |
 | claude | hermes-coordination-protocol | `hermes-coordination/*.md`, `CLAUDE.md` | `claude/hermes-coordination-protocol` | 2026-10-17T21:49Z | 2026-10-17T21:56Z | DONE (merged #7) |
+| hermes | celpip-speaking-guide-task-order-timings | `src/pages/blog/celpip-speaking-tasks-complete-guide.astro`, `hermes-coordination/ACTIVE_WORK.md` | `hermes/celpip-guide-task-order-timings` | 2026-11-02T01:35Z | 2026-11-02T01:45Z | DONE (this PR) |
 
 ## Handoff notes
+
+- 2026-11-02 · hermes · The free blog guide
+  `/blog/celpip-speaking-tasks-complete-guide/` contradicted the site's own eight
+  task pages and the official celpip.ca study packs: Task 1 and Task 2 were swapped
+  (Task 1 is Giving Advice, Task 2 is Talking about a Personal Experience), Task 7
+  prep was listed as 60 s instead of 30 s, and Task 8 was described as an
+  argument task with 60 s prep / 90 s response instead of Describing an Unusual
+  Situation with 30 s prep / 60 s response. Corrected the table, the two
+  section bodies, the Task 1/2 and Task 7/8 headings, and three FAQ answers (the
+  FAQ array also feeds the page's FAQPage JSON-LD). No layout, style or CTA
+  changes. One file changed; `npm run build` passes (506 pages).
 
 - 2026-10-17 · claude · Codex's review on #7 caught a real bug in the first
   draft of this protocol: "mark DONE only once merged" had no way to
@@ -45,67 +57,19 @@ backfilled with a time nobody recorded.
   `main`). Two revenue pages (`/ai-feedback/`, `/celpip/writing/`) are stuck
   "Crawled - not indexed" in Search Console — see that report's §1 and §5.
   Running list of open SEO items: `reports/seo/open-items.md` on `cro-data`.
-- 2026-10-31T04:56Z · hermes · Page-count cleanup (PR #10). The earlier
-  `ebook-109-to-144` claim was marked DONE but only covered the `/ebook/`
-  product page: five "109 pages" strings were still live on 2026-10-31
-  (`/celpip/` x1, `/celpip/reading/` x1, `/ebook/thank-you/` x1,
-  `promotionTools.ts` x1, digest email copy x1). Worse, the 2026-10-30
-  15:00 UTC scheduled Kit digest shipped "109 pages" to the list from
-  `861814b4b`. The delivered PDF really is 144 pages, so the fix is the
-  copy, not the file. PR #10 is string-only (5 files, +5/-5) and its merge
-  deadline is the next scheduled send, **2026-11-03 15:00 UTC**. Two
-  runnable guards live outside the repo at
-  `/data/kay-coordination/product-pages-20261027/check-ebook-claims.py`
-  (`--include-noindex`, currently 4 FAIL pages) and
-  `check-newsletter-claims.py` (exit 1 on `main` today); both should go
-  green after deploy. If you are touching any of those five files, PR #10
-  supersedes your copy - rebase rather than re-edit the strings.
-- 2026-10-31T08:55Z · hermes · Second stale claim in the same digest email,
-  added to PR #10's branch. `scripts/send-newsletter-digest.mjs:491` told
-  subscribers "The subscription gives you Tests 02, 03, and 04." The live
-  `/celpip/reading/` page (anonymous GET 2026-10-31T08:47Z) offers one free
-  full test plus **nine** premium tests gated at "Unlock with Reading
-  Premium right now for CA$20/month" - Reading Tests 02 through 10. So the
-  email understated the $20/month product by six tests. Changed to
-  "The subscription gives you Tests 02 to 10." This is the same file and
-  branch as the page-count fix, so it rides the same merge before the
-  2026-11-03 15:00 UTC send. Other digest numbers were checked against the
-  live pages and match: CA$5/month writing and CA$20/month reading prices,
-  CA$49.50 one-time ebook (same `buy.stripe.com/aFa14m4Kq11q3ap7nSgMw03`
-  link as the `/ebook/` CTA), "144 pages / 24 scored samples / 30
-  high-score patterns" against the `/ebook/` feature block, and the
-  `/celpip/writing/ai-feedback/` CTA, which 301s to `/ai-feedback/` (200).
-- 2026-11-01T17:25Z · hermes · PR #10 re-checked against a moved `main`
-  (`eb3d2435`, 2026-11-01T14:55Z). Claude's #12 (merged 09:05Z) already
-  fixed the page-count half: a fresh clone of `main` has **zero** hits for
-  "109 pages" in `src`, `scripts`, `netlify` and `public`, and all four
-  page strings on this branch now match `main` byte-for-byte (144). So the
-  only change this PR still adds is the digest sentence at
-  `scripts/send-newsletter-digest.mjs:491`. Receipts from this run:
-  `check-newsletter-claims.py` exits 1 on `main` ("FAIL line 491:
-  subscription gives you Tests 02, 03, and 04 != premium tests
-  [2..10]") and exits 0 on this branch's copy; live `/celpip/reading/`
-  still lists Reading Test 02 through 10 at CA$20/month, live `/ebook/`
-  still declares `numberOfPages: 144`, and the digest's prices
-  (CA$5, CA$20, CA$49.50) and Stripe link still match the live pages.
-  Next scheduled digest is `cron '0 15 * * 2,5'` = **Tue 2026-11-03
-  15:00 UTC**, so this one-line merge is what keeps Tuesday's email
-  truthful. Nothing else in this branch needs a decision.
-- 2026-11-01T21:35Z · hermes · PR #10 rebased onto `main` `eb3d2435` because
-  it had gone unmergeable. `main` moved twice underneath the branch after the
-  17:25Z re-check (`834a0077` Kit signup blocking, `62736bea` public name to
-  Kay Abdo with the personal YouTube handle removed from email copy), and
-  GitHub reported `mergeable_state: dirty` with a content conflict in
-  `scripts/send-newsletter-digest.mjs`. The rebase kept `main`'s newer
-  identity/YouTube wording, dropped the branch's now-superseded page-count
-  and "Written by Dr. Kara Abdolmaleki" hunks (both landed or changed on
-  `main` via #12), and left exactly one code line changed: line 491
-  "Tests 02, 03, and 04" -> "Tests 02 to 10". Guard receipts this run,
-  `/data/kay-coordination/product-pages-20261027/receipts-20261101T2130Z/`:
-  `guard-red-main.log` exits 1 (`FAIL line 491: subscription gives you Tests
-  02, 03, and 04 != premium tests [2..10]`) and `guard-green-rebased-branch.log`
-  exits 0 (`ok: newsletter copy agrees with the live pages (144 pages;
-  premium reading tests [2..10])`). Branch digest file sha256
-  `f04266a4…a373aba240db75`. Still one line, still before the Tue 2026-11-03
-  15:00 UTC send, still awaiting Kara's merge approval - no Hermes push to
-  `main`.
+
+- 2026-11-02T22:11Z · hermes · PR #10 made mergeable again after `main` moved to `caf1ea5d`
+  (#13 merged 2026-11-02T13:53Z) and GitHub reported `mergeable_state: dirty`.
+  Resolved by merging `main` into this branch, taking `main` for every
+  conflicted file and keeping exactly one change of my own:
+  `scripts/send-newsletter-digest.mjs:491` "The subscription gives you
+  Tests 02, 03, and 04." -> "Tests 02 to 10." The page-count, identity and
+  YouTube-handle hunks this branch used to carry are gone because `main`
+  already has them (#12, #13). Diff against `main` is one line. Why it
+  matters: `.github/workflows/newsletter-digest.yml` sends from `main` on
+  `cron '0 15 * * 2,5'`, so an unmergeable PR would have failed at the
+  merge tap and Tuesday 2026-11-03 15:00 UTC would still have mailed the
+  three-test claim. Receipts
+  `/data/kay-coordination/product-pages-20261027/receipts-20261102T2220Z/`:
+  `check-newsletter-claims.py` exit 1 on `main`, exit 0 on this branch.
+  Still Kara's yes to merge; no Hermes push to `main`.

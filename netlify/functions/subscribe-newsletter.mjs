@@ -2,6 +2,7 @@ import { withLambda } from '@netlify/aws-lambda-compat';
 import { createHash } from 'node:crypto';
 import { promises as dns } from 'node:dns';
 import { normalizeSubscriberEmail } from '../../scripts/lib/kit-newsletter-audience.mjs';
+import { looksLikeFragmentedLocalPart, looksLikeRandomName } from '../../scripts/lib/kit-spam-signals.mjs';
 import { getHeader, isSameOriginRequest } from './_utils/requestSecurity.mjs';
 
 const KIT_API_KEY = (process.env.KIT_API_KEY || '').trim();
@@ -48,7 +49,8 @@ const EMAIL_DOMAIN_CACHE_TTL_MS = parsePositiveInteger(
   process.env.NEWSLETTER_EMAIL_DOMAIN_CACHE_TTL_MS,
   6 * 60 * 60 * 1000,
 );
-const REQUIRE_TURNSTILE = parseBoolean(process.env.NEWSLETTER_REQUIRE_TURNSTILE, false);
+// Once Turnstile keys are configured, a valid token is required unless explicitly turned off.
+const REQUIRE_TURNSTILE = parseBoolean(process.env.NEWSLETTER_REQUIRE_TURNSTILE, Boolean(TURNSTILE_SECRET_KEY));
 const BLOCK_DISPOSABLE_EMAILS = parseBoolean(process.env.NEWSLETTER_BLOCK_DISPOSABLE_EMAILS, true);
 const VALIDATE_EMAIL_DOMAIN_DNS = parseBoolean(process.env.NEWSLETTER_VALIDATE_EMAIL_DOMAIN_DNS, true);
 
@@ -767,6 +769,17 @@ async function handler(event) {
     const emailDomain = getEmailDomain(email);
     if (!emailDomain) {
       return json(400, { error: 'Valid email required' });
+    }
+
+    // Bot-pattern names and addresses get the same silent fake success as the honeypot,
+    // so scripts get no signal to adapt to.
+    const localPart = email.slice(0, email.lastIndexOf('@'));
+    if (looksLikeRandomName(firstName).suspicious || looksLikeFragmentedLocalPart(localPart)) {
+      return json(200, {
+        ok: true,
+        duplicate: false,
+        spam: true,
+      });
     }
 
     if (BLOCK_DISPOSABLE_EMAILS && isDisposableEmailDomain(emailDomain)) {
