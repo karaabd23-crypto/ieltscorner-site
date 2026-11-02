@@ -23,8 +23,20 @@ backfilled with a time nobody recorded.
 | muse-laptop | ebook-109-to-144 | ebook page count | — | — | — | DONE |
 | hermes | publication-google-info | `public/hermes/{index,privacy,terms}.html`, `netlify.toml`, `astro.config.mjs` | `hermes/publication-google-info` | 2026-10-12 | 2026-10-12 | DONE (merged #6) |
 | claude | hermes-coordination-protocol | `hermes-coordination/*.md`, `CLAUDE.md` | `claude/hermes-coordination-protocol` | 2026-10-17T21:49Z | 2026-10-17T21:56Z | DONE (merged #7) |
+| hermes | celpip-speaking-guide-task-order-timings | `src/pages/blog/celpip-speaking-tasks-complete-guide.astro`, `hermes-coordination/ACTIVE_WORK.md` | `hermes/celpip-guide-task-order-timings` | 2026-11-02T01:35Z | 2026-11-02T01:45Z | DONE (this PR) |
 
 ## Handoff notes
+
+- 2026-11-02 · hermes · The free blog guide
+  `/blog/celpip-speaking-tasks-complete-guide/` contradicted the site's own eight
+  task pages and the official celpip.ca study packs: Task 1 and Task 2 were swapped
+  (Task 1 is Giving Advice, Task 2 is Talking about a Personal Experience), Task 7
+  prep was listed as 60 s instead of 30 s, and Task 8 was described as an
+  argument task with 60 s prep / 90 s response instead of Describing an Unusual
+  Situation with 30 s prep / 60 s response. Corrected the table, the two
+  section bodies, the Task 1/2 and Task 7/8 headings, and three FAQ answers (the
+  FAQ array also feeds the page's FAQPage JSON-LD). No layout, style or CTA
+  changes. One file changed; `npm run build` passes (506 pages).
 
 - 2026-10-17 · claude · Codex's review on #7 caught a real bug in the first
   draft of this protocol: "mark DONE only once merged" had no way to
