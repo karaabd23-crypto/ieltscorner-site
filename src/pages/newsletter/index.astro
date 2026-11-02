@@ -1,0 +1,143 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Newsletter from "../../components/Newsletter.astro";
+
+const inside = [
+  {
+    title: "New CELPIP lessons",
+    text: "The newest CELPIP reading, writing, listening and speaking lessons, with the skill and task named so you can skip the parts you do not need yet.",
+  },
+  {
+    title: "New IELTS lessons",
+    text: "The newest IELTS lessons, usually the writing task guides and the speaking part notes that answer the question students ask most that week.",
+  },
+  {
+    title: "Grammar and vocabulary notes",
+    text: "The small language points that quietly cost marks: sentence control, paraphrase, collocation, and the errors that repeat in your own writing.",
+  },
+  {
+    title: "One line each on the paid tools",
+    text: "If a paid tool fits what you are working on, it gets a single line and a link. Nothing else. The rest of the email is free teaching.",
+  },
+];
+
+const questions = [
+  {
+    q: "How often does it arrive?",
+    a: "Twice a week, on Tuesday and Friday mornings, Pacific time. Two emails a week is enough to keep you moving without filling your inbox.",
+  },
+  {
+    q: "Is it free?",
+    a: "Yes. The digest and every lesson it links to are free to read. Paid tools are mentioned in one line each and you can ignore them.",
+  },
+  {
+    q: "Is it for IELTS or CELPIP?",
+    a: "Both. Each email is split into a CELPIP part and an IELTS part, so you only read the exam you are sitting. Grammar and vocabulary apply to both.",
+  },
+  {
+    q: "How do I stop it?",
+    a: "Every email has an unsubscribe link. You can also contact us and we will remove you. No questions, no win-back sequence.",
+  },
+];
+---
+
+<Layout
+  title="The free study digest"
+  description="A free twice-weekly email with the newest IELTS and CELPIP lessons, grammar notes and one practice idea. Written by Kara Abdolmaleki, TESL Canada."
+  type="page"
+  canonical="/newsletter/"
+>
+  <section class="section" style="padding-top: var(--s-6);">
+    <div class="hero" style={`--hero-bg: url('/heroes/faq.webp');`}>
+      <div class="hero-content">
+        <h1 class="ic-display">The free study digest</h1>
+        <p>
+          Twice a week I send out the lessons that went up on the site, the grammar and vocabulary
+          points behind them, and one thing to practise before the next email lands. It is written
+          for people preparing for IELTS or CELPIP on their own, in the gaps around work.
+        </p>
+      </div>
+    </div>
+
+    <div style="height: var(--s-5);"></div>
+
+    <div class="surface" style="padding: var(--s-5);">
+      <h2 class="ic-display" style="margin-top: 0;">Join the digest</h2>
+      <p class="muted" style="margin-top: 0; max-width: 68ch;">
+        One email address, two emails a week, and an unsubscribe link in every one. No account is
+        needed and nothing is charged.
+      </p>
+      <Newsletter
+        title="Your email"
+        description="You will get the next digest, and the free lessons it links to."
+        placeholder="you@example.com"
+        buttonText="Send me the digest"
+        showBackground={false}
+      />
+    </div>
+
+    <div style="height: var(--s-6);"></div>
+
+    <section>
+      <h2>What arrives in each email</h2>
+      <p class="muted" style="margin-top: 0; max-width: 72ch;">
+        The digest is built from lessons already published on the site, so nothing in it is
+        exclusive and nothing is behind a paywall. If a week is thin, the email is short.
+      </p>
+
+      <div class="grid grid-2" style="margin-top: var(--s-4);">
+        {inside.map((item) => (
+          <article class="surface" style="padding: var(--s-4);">
+            <h3 class="ic-display" style="margin-top: 0;">{item.title}</h3>
+            <p style="margin-bottom: 0;">{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <div style="height: var(--s-6);"></div>
+
+    <section>
+      <h2>Who it suits</h2>
+      <p style="max-width: 72ch;">
+        It suits you if you are studying without a teacher and you keep wondering what to do next.
+        Each email gives you two or three named lessons to read and one task to try, so the decision
+        about what to study is made for you that week. It also suits you if you already have a test
+        date and want to keep the habit going between tutoring sessions.
+      </p>
+      <p style="max-width: 72ch;">
+        It does not suit you if you want a full course with deadlines and marking. That is what
+        <a href="/ai-feedback">AI writing feedback</a> and <a href="/tutoring">tutoring</a> are for.
+      </p>
+    </section>
+
+    <div style="height: var(--s-6);"></div>
+
+    <section>
+      <h2>Questions people ask before subscribing</h2>
+      <div class="faq-group">
+        {questions.map((item) => (
+          <details class="faq-item">
+            <summary class="faq-summary">{item.q}</summary>
+            <div class="faq-answer">
+              <p>{item.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <div style="height: var(--s-6);"></div>
+
+    <section class="surface" style="padding: var(--s-5);">
+      <h2 class="ic-display" style="margin-top: 0;">Not ready for email yet?</h2>
+      <p style="max-width: 68ch;">
+        Start with the free material instead. The <a href="/celpip/reading/free-test">full CELPIP
+        reading test</a> is free and scores itself, and the <a href="/lessons">lesson library</a>
+        is open without a signup. Come back to the digest when you want the new lessons sent to you.
+      </p>
+    </section>
+
+    <div style="height: var(--s-7);"></div>
+  </section>
+</Layout>

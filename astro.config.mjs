@@ -25,7 +25,7 @@ const SITEMAP_EXCLUDE = [
   /\/thank-you(\/|$)/, // all thank-you confirmation pages
   /\/thanks(\/|$)/,
   /\/success(\/|$)/,
-  /\/newsletter\//,
+  /\/newsletter\/thanks(\/|$)/, // signup confirmation only; the /newsletter/ landing page is indexable
   /\/review(\/|$)/,
   /\/webinar(\/|$)/, // force-302 to / in netlify.toml
   /\/essay-correction(\/|$)/, // force-302 to / in netlify.toml
