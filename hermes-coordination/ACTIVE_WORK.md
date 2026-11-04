@@ -19,6 +19,7 @@ backfilled with a time nobody recorded.
 
 | agent | task | files/areas | branch | started UTC | last updated UTC | status |
 |---|---|---|---|---|---|---|
+| hermes | digest-reading-tests-claim | `scripts/send-newsletter-digest.mjs`, `hermes-coordination/ACTIVE_WORK.md` | `hermes/ebook-pagecount-fix-20261031` | 2026-11-02T22:11Z | 2026-11-02T22:11Z | open - awaiting Kara's merge approval |
 | claude | identity-kay-abdo | name on site pages, `ai-feedback.astro` video, ebook page count, `scripts/send-newsletter-digest.mjs`, `scripts/send-review-requests.mjs` | `claude/identity-kay-abdo` | 2026-11-01T08:45Z | 2026-11-01T08:45Z | DONE (this PR) |
 | muse-laptop | ebook-109-to-144 | ebook page count | — | — | — | DONE |
 | hermes | publication-google-info | `public/hermes/{index,privacy,terms}.html`, `netlify.toml`, `astro.config.mjs` | `hermes/publication-google-info` | 2026-10-12 | 2026-10-12 | DONE (merged #6) |
@@ -56,3 +57,19 @@ backfilled with a time nobody recorded.
   `main`). Two revenue pages (`/ai-feedback/`, `/celpip/writing/`) are stuck
   "Crawled - not indexed" in Search Console — see that report's §1 and §5.
   Running list of open SEO items: `reports/seo/open-items.md` on `cro-data`.
+
+- 2026-11-02T22:11Z · hermes · PR #10 made mergeable again after `main` moved to `caf1ea5d`
+  (#13 merged 2026-11-02T13:53Z) and GitHub reported `mergeable_state: dirty`.
+  Resolved by merging `main` into this branch, taking `main` for every
+  conflicted file and keeping exactly one change of my own:
+  `scripts/send-newsletter-digest.mjs:491` "The subscription gives you
+  Tests 02, 03, and 04." -> "Tests 02 to 10." The page-count, identity and
+  YouTube-handle hunks this branch used to carry are gone because `main`
+  already has them (#12, #13). Diff against `main` is one line. Why it
+  matters: `.github/workflows/newsletter-digest.yml` sends from `main` on
+  `cron '0 15 * * 2,5'`, so an unmergeable PR would have failed at the
+  merge tap and Tuesday 2026-11-03 15:00 UTC would still have mailed the
+  three-test claim. Receipts
+  `/data/kay-coordination/product-pages-20261027/receipts-20261102T2220Z/`:
+  `check-newsletter-claims.py` exit 1 on `main`, exit 0 on this branch.
+  Still Kara's yes to merge; no Hermes push to `main`.
