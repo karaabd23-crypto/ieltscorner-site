@@ -1,6 +1,6 @@
 # Backlog (highest value first)
 
-Risk class in brackets. Updated 2026-11-04 (week 2026-45).
+Risk class in brackets. Updated 2026-11-05 (week 2026-45). Items c, d, e (partly) and f done 2026-11-05 by PRs 16 and 17 (contrast, aria, en dashes, tutoring weight, header logo).
 
 1. [allowed] **Chosen for 2026-45:** AI feedback pages: stop showing "0 essays submitted today" to visitors (see hypothesis-2026-45.md).
 2. [allowed] a) Record the loop's merge rule in `hermes-coordination/PROTOCOL.md` by PR. Role row: "IELTS Corner loop routines (scheduled): claude/loop-* branch + PR; may merge their own PR after build, layout audit and accessibility checks pass, for allowed change classes only (Kay, 2026-11-04). Prices, payments, student data, legal pages and email sends stay with Kay." Housekeeping, not an experiment; loop 2 opens this PR first because self-merging depends on it.
@@ -14,3 +14,6 @@ Risk class in brackets. Updated 2026-11-04 (week 2026-45).
 10. [allowed pages, needs-Kay to switch on payments] g) /shop and /shop/<product> for every English product: `src/content/products/`, `src/pages/shop/index.astro`, `[slug].astro`, one checkout function and one delivery function (also fixes bundle downloads being refused). Evidence: /shop returns 404 (checked live 2026-11-04), so email cannot send people there.
 11. [allowed] j) /ai-feedback/ and /celpip/writing/ stuck out of Google's index for weeks: keep technical side clean. Manual Search Console "Request indexing" is needs-Kay.
 12. [needs-Kay] New 2026-11-04: `/pte-core/simulator/` shows "Premium attempts unlocked" to every fresh visitor because `hasPremiumSession()` returns `true` with a "temporary open access" comment (`src/components/PteCoreSimulator.astro` line 232). Either the open access is intended (then relabel honestly) or the gate should be restored (payment gating is Kay's call).
+
+13. [allowed] Watch: transient 500 on /celpip/reading/ at 360 on deploy preview 2026-11-05 (live and retries 200). Re-check in next inspect.
+14. [allowed] Check / at 360: exam cards show a large empty gap under the subtitle (screenshot 2026-11-05). Judge by data before changing.
