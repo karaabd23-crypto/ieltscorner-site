@@ -148,8 +148,41 @@ const INSTAGRAM_URL = `https://www.instagram.com/${INSTAGRAM_USERNAME}/`;
     </section>
   </section>
 
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async is:inline></script>
+  <script is:inline>
+    // Calendly ships about 9 MB of CSS and JS. Load it only when the booking
+    // section is about to be seen, or when a visitor jumps to it.
+    (() => {
+      const box = document.querySelector(".calendly-inline-widget");
+      if (!box) return;
+      let started = false;
+      const load = () => {
+        if (started) return;
+        started = true;
+        const css = document.createElement("link");
+        css.rel = "stylesheet";
+        css.href = "https://assets.calendly.com/assets/external/widget.css";
+        document.head.appendChild(css);
+        const js = document.createElement("script");
+        js.src = "https://assets.calendly.com/assets/external/widget.js";
+        js.async = true;
+        js.onload = () => {
+          if (window.Calendly && !box.querySelector("iframe")) {
+            window.Calendly.initInlineWidget({ url: box.dataset.url, parentElement: box });
+          }
+        };
+        document.head.appendChild(js);
+      };
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver((entries, obs) => {
+          if (entries.some((e) => e.isIntersecting)) { obs.disconnect(); load(); }
+        }, { rootMargin: "600px 0px" }).observe(box);
+      } else {
+        window.addEventListener("load", load);
+      }
+      if (location.hash === "#book-private-class") load();
+      window.addEventListener("hashchange", () => { if (location.hash === "#book-private-class") load(); });
+    })();
+  </script>
   <script is:inline>
     (() => {
       const endpoint = "/.netlify/functions/get-social-feed?limit=5";
