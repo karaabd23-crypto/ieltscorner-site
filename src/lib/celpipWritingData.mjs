@@ -8,14 +8,14 @@ export const CELPIP_TASK_CONFIG = {
     id: 'task1',
     label: 'Task 1 · Email',
     minutes: 27,
-    targetWords: '150–200 words',
+    targetWords: '150 to 200 words',
     focus: 'purpose, tone, completeness, organization',
   },
   task2: {
     id: 'task2',
     label: 'Task 2 · Survey Response',
     minutes: 26,
-    targetWords: '150–200 words',
+    targetWords: '150 to 200 words',
     focus: 'clear opinion, support, comparison, organization',
   },
 };

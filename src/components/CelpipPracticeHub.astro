@@ -104,7 +104,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
       <span class="sidebar-title" id="hub-sidebar-title">{hubTasks.task1.sidebarTitle}</span>
       <span class="sidebar-sub" id="hub-sidebar-sub">{hubTasks.task1.sidebarSub}</span>
     </div>
-    <nav class="task-list" id="hub-task-list" role="list">
+    <nav class="task-list" id="hub-task-list">
       {defaultSidebar.map((task, i) => (
         <button
           class={`task-item${task.isFree ? ' task-item--free' : ' task-item--locked'}${task.id === CELPIP_FREE_PROMPT_IDS.task1 ? ' is-active' : ''}`}
@@ -480,11 +480,10 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
   }
 
   .task-item--locked {
-    opacity: 0.45;
+    color: var(--muted-2);
   }
 
   .task-item--locked:hover {
-    opacity: 0.7;
     background: rgba(217, 72, 72, 0.04);
   }
 
@@ -1811,7 +1810,7 @@ const defaultSidebar = CELPIP_TASK_SIDEBARS.task1 || [];
 
       // Kicker + target
       if (promptKicker) promptKicker.textContent = cfg.promptLabel || '';
-      if (promptTarget) promptTarget.textContent = `${cfg.targetWords || '150–200 words'} | ${cfg.minutes || 27} min`;
+      if (promptTarget) promptTarget.textContent = `${cfg.targetWords || '150 to 200 words'} | ${cfg.minutes || 27} min`;
 
       // Intro
       if (promptIntro) promptIntro.textContent = cfg.promptIntro || '';

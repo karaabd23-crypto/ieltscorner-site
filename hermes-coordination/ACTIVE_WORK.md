@@ -24,6 +24,7 @@ backfilled with a time nobody recorded.
 | hermes | publication-google-info | `public/hermes/{index,privacy,terms}.html`, `netlify.toml`, `astro.config.mjs` | `hermes/publication-google-info` | 2026-10-12 | 2026-10-12 | DONE (merged #6) |
 | claude | hermes-coordination-protocol | `hermes-coordination/*.md`, `CLAUDE.md` | `claude/hermes-coordination-protocol` | 2026-10-17T21:49Z | 2026-10-17T21:56Z | DONE (merged #7) |
 | hermes | celpip-speaking-guide-task-order-timings | `src/pages/blog/celpip-speaking-tasks-complete-guide.astro`, `hermes-coordination/ACTIVE_WORK.md` | `hermes/celpip-guide-task-order-timings` | 2026-11-02T01:35Z | 2026-11-02T01:45Z | DONE (this PR) |
+| claude | site-audit-2026-11-05 | `src/styles/global.css`, `src/layouts/Layout.astro`, `src/pages/index.astro`, `src/components/CelpipPracticeHub.astro`, `src/pages/ebook/index.astro`, `src/pages/celpip/reading/index.astro`, `src/pages/celpip/writing/index.astro`, `src/lib/celpipWritingData.mjs`, `public/logo-112.webp` | `claude/site-audit` | 2026-11-05T13:55Z | 2026-11-05T14:20Z | DONE (this PR) |
 
 ## Handoff notes
 
