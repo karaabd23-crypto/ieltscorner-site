@@ -17,3 +17,4 @@ Risk class in brackets. Updated 2026-11-05 (week 2026-45). Items c, d, e (partly
 
 13. [allowed] Watch: transient 500 on /celpip/reading/ at 360 on deploy preview 2026-11-05 (live and retries 200). Re-check in next inspect.
 14. [allowed] Check / at 360: exam cards show a large empty gap under the subtitle (screenshot 2026-11-05). Judge by data before changing.
+15. [allowed] Make `scripts/audit-site-layout.mjs --all` usable: it prints nothing until all 477 pages x widths finish (over 40 min). Add progress output and a --chunk option. Evidence: inspect 2026-11-05.
