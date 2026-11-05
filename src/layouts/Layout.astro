@@ -332,8 +332,8 @@ const serializeJsonForScript = (value: unknown) =>
         font-family: inherit;
         line-height: 1;
         background: transparent;
-        color: #d94848;
-        border: 2px solid #d94848;
+        color: #c53a3a;
+        border: 2px solid #c53a3a;
         border-radius: 999px;
         box-shadow: 0 2px 12px rgba(0,0,0,0.1);
         text-decoration: none;
@@ -344,7 +344,7 @@ const serializeJsonForScript = (value: unknown) =>
         transition: background 140ms ease, color 140ms ease, transform 140ms ease, box-shadow 140ms ease;
       }
       .floating-cta-btn:hover {
-        background: #d94848;
+        background: #c53a3a;
         color: #fff;
         transform: scale(1.05);
         box-shadow: 0 4px 20px rgba(0,0,0,0.25);
@@ -395,7 +395,7 @@ const serializeJsonForScript = (value: unknown) =>
         line-height: 1;
       }
       .floating-ebook-btn:hover {
-        background: #d94848;
+        background: #c53a3a;
         transform: translateY(-2px) scale(1.03);
         box-shadow: 0 6px 24px rgba(217,72,72,0.35);
       }
@@ -492,8 +492,8 @@ const serializeJsonForScript = (value: unknown) =>
 
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="/" aria-label="IELTS Corner home">
-          <img src="/logo.gif" alt="IELTS Corner" loading="eager" decoding="async" />
+        <a class="brand" href="/">
+          <img src="/logo-112.webp" alt="IELTS Corner" width="40" height="40" loading="eager" decoding="async" />
           <div class="brand-title">
             <strong>IELTS Corner</strong>
             <span>IELTS &amp; CELPIP prep</span>
@@ -510,7 +510,6 @@ const serializeJsonForScript = (value: unknown) =>
               type="button"
               aria-expanded="false"
               aria-controls="site-header-panel"
-              aria-label="Toggle primary navigation"
             >
               Menu
             </button>
@@ -788,7 +787,7 @@ const serializeJsonForScript = (value: unknown) =>
     </footer>
 
     {showFloatingEbookCta && (
-      <a class="floating-ebook-btn" href={floatingCta.href} aria-label={floatingCta.aria}>
+      <a class="floating-ebook-btn" href={floatingCta.href}>
         <span class="floating-ebook-btn__icon" aria-hidden="true">{floatingCta.icon}</span>
         <span class="floating-ebook-btn__text"><span class="floating-ebook-btn__long">{floatingCta.text}</span><span class="floating-ebook-btn__short">{floatingCta.shortText}</span> <strong>{floatingCta.strong}</strong></span>
       </a>

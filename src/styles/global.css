@@ -13,14 +13,14 @@
 
   --text: #141617;
   --muted: #4f565d;
-  --muted-2: #6a727a;
+  --muted-2: #5d656d;
 
   --border: rgba(20,22,23,0.12);
   --border-strong: rgba(20,22,23,0.18);
   --shadow: 0 14px 40px rgba(20,22,23,0.10);
   --shadow-soft: 0 10px 26px rgba(20,22,23,0.08);
 
-  --accent: #d94848;
+  --accent: #c53a3a;
   --accent-ink: #ffffff;
 
   --gold: #f2c14e;
