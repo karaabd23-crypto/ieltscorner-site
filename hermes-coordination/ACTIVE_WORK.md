@@ -26,6 +26,7 @@ backfilled with a time nobody recorded.
 | hermes | celpip-speaking-guide-task-order-timings | `src/pages/blog/celpip-speaking-tasks-complete-guide.astro`, `hermes-coordination/ACTIVE_WORK.md` | `hermes/celpip-guide-task-order-timings` | 2026-11-02T01:35Z | 2026-11-02T01:45Z | DONE (this PR) |
 | claude | site-audit-2026-11-05 | `src/styles/global.css`, `src/layouts/Layout.astro`, `src/pages/index.astro`, `src/components/CelpipPracticeHub.astro`, `src/pages/ebook/index.astro`, `src/pages/celpip/reading/index.astro`, `src/pages/celpip/writing/index.astro`, `src/lib/celpipWritingData.mjs`, `public/logo-112.webp` | `claude/site-audit` | 2026-11-05T13:55Z | 2026-11-05T14:20Z | DONE (this PR) |
 | claude | tutoring-lazy-calendly | `src/pages/tutoring/index.astro` | `claude/tutoring-lazy-calendly` | 2026-11-05T15:00Z | 2026-11-05T15:05Z | DONE (this PR) |
+| claude | loop-2026-45-hide-zero-counter | `src/components/CelpipPracticeHub.astro`, `hermes-coordination/ACTIVE_WORK.md` | `claude/loop-2026-45` | 2026-11-06T09:00Z | 2026-11-06T09:00Z | DONE (this PR) |
 
 ## Handoff notes
 
