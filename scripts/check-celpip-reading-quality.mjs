@@ -94,14 +94,14 @@ function validateCatalog() {
   const freeEntries = CELPIP_READING_TEST_CATALOG.filter((entry) => entry.access === 'free');
   const premiumEntries = CELPIP_READING_TEST_CATALOG.filter((entry) => entry.access === 'premium');
 
-  if (CELPIP_READING_TEST_CATALOG.length !== 10) {
-    fail('catalog.count', `Expected exactly 10 reading tests, found ${CELPIP_READING_TEST_CATALOG.length}.`);
+  if (CELPIP_READING_TEST_CATALOG.length !== 11) {
+    fail('catalog.count', `Expected exactly 11 reading tests, found ${CELPIP_READING_TEST_CATALOG.length}.`);
   }
   if (freeEntries.length !== 1) {
     fail('catalog.free-count', `Expected exactly 1 free reading test, found ${freeEntries.length}.`);
   }
-  if (premiumEntries.length !== 9) {
-    fail('catalog.premium-count', `Expected exactly 9 premium reading tests, found ${premiumEntries.length}.`);
+  if (premiumEntries.length !== 10) {
+    fail('catalog.premium-count', `Expected exactly 10 premium reading tests, found ${premiumEntries.length}.`);
   }
 
   for (const entry of CELPIP_READING_TEST_CATALOG) {
