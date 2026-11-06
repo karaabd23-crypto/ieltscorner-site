@@ -2,7 +2,7 @@
 
 Risk class in brackets. Updated 2026-11-05 (week 2026-45). Items c, d, e (partly) and f done 2026-11-05 by PRs 16 and 17 (contrast, aria, en dashes, tutoring weight, header logo).
 
-1. [allowed] **Chosen for 2026-45:** AI feedback pages: stop showing "0 essays submitted today" to visitors (see hypothesis-2026-45.md).
+1. [allowed] (PR 18 open, waiting for Kay to merge) **Chosen for 2026-45:** AI feedback pages: stop showing "0 essays submitted today" to visitors (see hypothesis-2026-45.md).
 2. [allowed] a) Record the loop's merge rule in `hermes-coordination/PROTOCOL.md` by PR. Role row: "IELTS Corner loop routines (scheduled): claude/loop-* branch + PR; may merge their own PR after build, layout audit and accessibility checks pass, for allowed change classes only (Kay, 2026-11-04). Prices, payments, student data, legal pages and email sends stay with Kay." Housekeeping, not an experiment; loop 2 opens this PR first because self-merging depends on it.
 3. [allowed] b) Add realVisitors to the weekly GA4 snapshot in `netlify/functions/cro-weekly-pull.ts` and the adapter, plus per-goal events from those sessions; bump schemaVersion. Evidence: 2026-44 had 419 of 465 visitors as Direct (bounce 0.86); the snapshot has no Direct x desktop cross-segment, so this loop can only use non-Direct visitors (49 in 2026-44) as a floor.
 4. [allowed] c) Fix low text contrast on revenue pages, in `src/styles/theme-tokens.css` where the colour is shared. axe color-contrast failures on 2026-11-04: / 2, /ebook/ 8, /ai-feedback/ 4 (phone) and 19 (laptop), /celpip/reading/ 4, /celpip/writing/ai-feedback/ 4 and 19, /tutoring/ 2.
