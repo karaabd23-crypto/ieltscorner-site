@@ -1,0 +1,247 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import Breadcrumbs from "../../../../components/Breadcrumbs.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "Do I need a book for IELTS Writing Task 2?",
+    answer:
+      "Not if you already write at band 6.5 and know why you are losing marks. Read the free official band descriptors and write timed essays with feedback first. A book helps when you need a structured course to follow, or when you need a large bank of examples to study.",
+  },
+  {
+    question: "How many IELTS writing books should I buy?",
+    answer:
+      "At most one. Most Task 2 books repeat the same model essays and templates. Pick the one that matches your actual problem: explanation of examiner reasoning, a step by step course, a bank of model answers, or structured practice at a lower level.",
+  },
+  {
+    question: "Are band 9 model essays enough to improve?",
+    answer:
+      "No. A perfect essay shows you the destination but not the gap. You learn more from two answers on the same task at different bands with commentary explaining what changed, plus feedback on your own writing.",
+  },
+];
+
+const bookRows = [
+  {
+    book: "The Key to IELTS Writing Task 2, Pauline Cullen",
+    approach: "Examiner style explanation of why essays score what they score",
+    bestFor: "Band 6.5 to 7.5, score stuck",
+    not: "No large drill set",
+  },
+  {
+    book: "IELTS Advantage Writing Skills, Brown and Richards",
+    approach: "Step by step skill course through each task type",
+    bestFor: "Band 6.5 to 7.5, first serious attempt",
+    not: "Few full model essays",
+  },
+  {
+    book: "IELTS Task 2 Band 9 Essays, Ryan Higgins",
+    approach: "Large bank of model essays and structural templates",
+    bestFor: "Band 7 plus, imitation and speed practice",
+    not: "Little explanation of weak answers",
+  },
+  {
+    book: "Collins Writing for IELTS",
+    approach: "Structured practice that starts at a lower band",
+    bestFor: "Band 4.5 to 6, beginner",
+    not: "Not aimed at band 8",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "IELTS", path: "/ielts/" },
+    { name: "Writing", path: "/ielts/writing/" },
+    { name: "Task 2 books", path: "/ielts/writing/books/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="IELTS Writing Task 2 Books Compared: Which Is Worth Buying?"
+  description="Four IELTS Writing Task 2 books take genuinely different approaches. Compare them by problem, see what each does not do, and decide whether you need one at all."
+  type="article"
+  keywords="IELTS writing task 2 book, best IELTS writing book, IELTS task 2 preparation, IELTS band 7 writing, IELTS writing materials"
+  structuredData={pageStructuredData}
+>
+  <Breadcrumbs items={[
+    { label: "Home", href: "/" },
+    { label: "IELTS", href: "/ielts/" },
+    { label: "Writing", href: "/ielts/writing/" },
+    { label: "Task 2 books" },
+  ]} />
+
+  <article class="section guide-article">
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">Buying guide</span>
+      <h1 class="ic-display" style="margin: 0;">Which IELTS Writing Task 2 books are actually different?</h1>
+      <div class="guide-meta">
+        <span>November 6, 2026</span>
+        <span>9 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        <strong>Short answer:</strong> most IELTS Writing Task 2 books are the same book with a
+        different cover: a pile of band 9 model essays plus a template. That is useful if you have
+        never seen a full essay. It is close to useless if your score is stuck at 6.5 and nobody has
+        told you why.
+      </p>
+      <p>
+        The four books below take genuinely different approaches. Buy at most one of them, and read
+        the free official band descriptors first.
+      </p>
+    </div>
+
+    <section class="guide-card">
+      <h2 class="ic-display">The four approaches, side by side</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Book</th>
+          <th>Approach</th>
+          <th>Best for</th>
+          <th>What it does not do</th>
+        </tr>
+        {bookRows.map((row) => (
+          <tr>
+            <td><strong>{row.book}</strong></td>
+            <td>{row.approach}</td>
+            <td>{row.bestFor}</td>
+            <td>{row.not}</td>
+          </tr>
+        ))}
+      </table>
+      <p class="muted">
+        No prices are listed here. Listings change, and a price copied today is wrong next month.
+        Check the current listing before you buy.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">1. The Key to IELTS Writing Task 2, by Pauline Cullen</h2>
+      <p>
+        This is the one to consider if your score has stopped moving and you do not know why. It is
+        built around the published band descriptors and around how the scoring criteria apply to a
+        real answer, rather than around a phrase bank or a perfect essay with no commentary.
+      </p>
+      <p>
+        It treats writing as a set of decisions about task response, not as a vocabulary display. If
+        you have been memorising phrases and still scoring 6.5, this is the book that explains what
+        the examiner is actually looking for.
+      </p>
+      <p>
+        <strong>What it is not:</strong> a big book of exercises. If you need daily drills and lots
+        of practice prompts, you will need something else as well.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">2. IELTS Advantage Writing Skills, by Richard Brown and Lewis Richards</h2>
+      <p>
+        This is a print workbook, and it is the opposite of the Cullen book in style. It walks
+        through Task 1 and Task 2 step by step, with exercises on structure and on how the band
+        descriptors work. It is aimed at candidates around band 6.5 to 7.5.
+      </p>
+      <p>
+        It is a course, not a reference book. You work through it in order. If you have never written
+        a full Task 2 essay under time and you want a path to follow, this is the most practical of
+        the four. It also covers Task 1, which the Task 2 only books do not.
+      </p>
+      <p>
+        <strong>What it is not:</strong> a large collection of full model essays. The value is in the
+        exercises. If you only want essays to study, this is not the best use of your money.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">3. IELTS Task 2 Band 9 Essays, by Ryan Higgins</h2>
+      <p>
+        This is a large bank of model essays and structural templates, aimed at candidates already
+        around band 7 who want more volume and faster imitation practice.
+      </p>
+      <p>
+        It is useful for seeing many complete answers quickly and for internalising a reliable
+        structure. It is weak on explanation: you get the finished answer, but not much analysis of
+        why a weaker answer would lose marks.
+      </p>
+      <p>
+        <strong>What it is not:</strong> a diagnostic tool. If you cannot already see what is wrong
+        with your own essay, more model essays will not tell you.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">4. Collins Writing for IELTS</h2>
+      <p>
+        This is structured practice that starts at a much lower level, roughly band 4.5 to 6. It is
+        the right choice if you are beginning, not if you are chasing band 8.
+      </p>
+      <p>
+        <strong>What it is not:</strong> a shortcut for advanced candidates. If you are already
+        writing competent essays, the early chapters will be below your level.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">How to choose without wasting money</h2>
+      <ol class="guide-list">
+        <li>
+          <strong>Read the official band descriptors first.</strong> They are free, and they tell you
+          which of the four criteria is actually costing you marks.
+        </li>
+        <li>
+          <strong>Write one timed Task 2 essay and read it against the descriptors.</strong> If the
+          problem is obvious, you may not need a book at all.
+        </li>
+        <li>
+          <strong>Match the book to the problem.</strong> Stuck and confused: explanation. Starting
+          from scratch: a course. Need volume: a model bank. Below band 6: structured practice.
+        </li>
+        <li>
+          <strong>Buy one, finish it, then decide.</strong> Buying four books is a way of postponing
+          the writing.
+        </li>
+      </ol>
+      <p>
+        For the free starting points, use our
+        <a href="/blog/ielts-writing-task-2-complete-guide">IELTS Task 2 complete guide</a>,
+        <a href="/blog/ielts-writing-task-2-structure">Task 2 structure guide</a>, and
+        <a href="/ai-feedback">AI writing feedback</a> to see which criterion is weakest.
+      </p>
+      <div class="guide-note">
+        <p>
+          <strong>Affiliate disclosure:</strong> this page has no affiliate links, and IELTS Corner
+          does not currently earn a commission on any book or link mentioned here. If that changes, a
+          paid-link note will appear above the first such link, and it will never change the advice on
+          this page. Book descriptions above are based on the publishers' own descriptions, not on
+          copies we were sent or paid to review.
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+    </section>
+
+    <section class="guide-card guide-cta" style="margin-top: var(--s-4);">
+      <h2 style="margin-top: 0;">Find your weak criterion first</h2>
+      <p>
+        A scored essay report shows which band descriptor is holding you back, so you can buy one
+        book for one problem instead of guessing.
+      </p>
+      <div class="cluster" style="gap: var(--s-3); margin-top: var(--s-3);">
+        <a href="/ai-feedback" class="btn btn-primary ic-btn">Get IELTS writing feedback</a>
+        <a href="/ielts/writing" class="btn btn-ghost">IELTS writing help</a>
+      </div>
+    </section>
+  </article>
+</Layout>
