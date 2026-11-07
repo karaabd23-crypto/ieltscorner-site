@@ -26,6 +26,7 @@ backfilled with a time nobody recorded.
 | hermes | celpip-speaking-guide-task-order-timings | `src/pages/blog/celpip-speaking-tasks-complete-guide.astro`, `hermes-coordination/ACTIVE_WORK.md` | `hermes/celpip-guide-task-order-timings` | 2026-11-02T01:35Z | 2026-11-02T01:45Z | DONE (this PR) |
 | claude | site-audit-2026-11-05 | `src/styles/global.css`, `src/layouts/Layout.astro`, `src/pages/index.astro`, `src/components/CelpipPracticeHub.astro`, `src/pages/ebook/index.astro`, `src/pages/celpip/reading/index.astro`, `src/pages/celpip/writing/index.astro`, `src/lib/celpipWritingData.mjs`, `public/logo-112.webp` | `claude/site-audit` | 2026-11-05T13:55Z | 2026-11-05T14:20Z | DONE (this PR) |
 | claude | tutoring-lazy-calendly | `src/pages/tutoring/index.astro` | `claude/tutoring-lazy-calendly` | 2026-11-05T15:00Z | 2026-11-05T15:05Z | DONE (this PR) |
+| hermes | quill-book-guides | `src/pages/celpip/writing/books/index.astro`, `src/pages/ielts/writing/books/index.astro`, `src/pages/ielts/books/cambridge-ielts-which-volume-first/index.astro`, `src/pages/celpip/index.astro`, `src/pages/blog/celpip-vs-ielts-which-is-easier.astro`, `src/pages/blog/celpip-listening-strategies.astro` | `hermes/quill-book-guides` | 2026-11-07T01:37Z | 2026-11-07T01:58Z | DONE (this PR) |
 
 ## Handoff notes
 
