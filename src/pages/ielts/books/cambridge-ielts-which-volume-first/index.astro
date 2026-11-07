@@ -1,0 +1,225 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import Breadcrumbs from "../../../../components/Breadcrumbs.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "Which Cambridge IELTS book should I buy first?",
+    answer:
+      "Buy the newest volume you can find, not the cheapest one and not the complete set. Each book contains four real past papers, so the tests inside are the product. One recent volume, done properly, is worth more than a shelf of old ones.",
+  },
+  {
+    question: "Are the Cambridge IELTS books real past papers?",
+    answer:
+      "Yes. They are published by Cambridge University Press and Assessment, the organisation that produces IELTS, and each standard volume contains four complete retired papers with an answer key, listening audio, and sample writing answers.",
+  },
+  {
+    question: "Should I buy the full Cambridge IELTS set?",
+    answer:
+      "Usually no. Old volumes reflect older versions of the test, and few people finish twenty books. Four tests per volume is about eighty full mocks in a set. Buy one recent volume, finish it, then decide whether you need another.",
+  },
+  {
+    question: "Can I get Cambridge IELTS books from a library?",
+    answer:
+      "Often yes. Many Canadian public libraries hold recent Cambridge IELTS volumes, and popular ones have waiting lists, so reserve early rather than the week before your test.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "IELTS", path: "/ielts/" },
+    { name: "Cambridge IELTS volumes", path: "/ielts/books/cambridge-ielts-which-volume-first/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="Cambridge IELTS Books: Which Volume Should You Buy First?"
+  description="Cambridge IELTS volumes contain four real past papers each. Here is why the newest volume beats a cheap set, what is inside, and the order to buy in."
+  type="article"
+  keywords="Cambridge IELTS book, which Cambridge IELTS volume, Cambridge IELTS 20, IELTS past papers, IELTS practice tests book"
+  structuredData={pageStructuredData}
+>
+  <Breadcrumbs items={[
+    { label: "Home", href: "/" },
+    { label: "IELTS", href: "/ielts/" },
+    { label: "Cambridge IELTS volumes" },
+  ]} />
+
+  <article class="section guide-article">
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">Buying guide</span>
+      <h1 class="ic-display" style="margin: 0;">Cambridge IELTS books: which volume to buy first</h1>
+      <div class="guide-meta">
+        <span>November 6, 2026</span>
+        <span>7 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        <strong>Short answer:</strong> buy the newest volume you can find, not the cheapest one and
+        not the complete set. Each Cambridge IELTS book contains four real past papers and very little
+        else, so the tests inside it are the product. A new volume appears most years, and the newest
+        one is the closest thing to the test you will sit.
+      </p>
+      <p>
+        If money is tight, get one recent volume and borrow the rest from a library. The differences
+        between two volumes published a year apart are small. The difference between a recent volume
+        and one from a decade ago is enormous.
+      </p>
+    </div>
+
+    <section class="guide-card">
+      <h2 class="ic-display">What is actually inside one of these books</h2>
+      <p>
+        Cambridge IELTS volumes are published by Cambridge University Press and Assessment, the
+        organisation that writes the IELTS papers. That is the whole reason they are worth money: the
+        reading passages, listening recordings, writing tasks, and speaking questions are real retired
+        test material, not imitations.
+      </p>
+      <p>Each standard volume gives you:</p>
+      <ul class="guide-list">
+        <li>four complete practice tests covering Listening, Reading, Writing, and Speaking</li>
+        <li>an answer key with explanations attached to the answers</li>
+        <li>audio for all the Listening sections</li>
+        <li>sample Writing answers at different band levels, so you can compare a Band 6 answer with a Band 8 answer</li>
+        <li>transcripts of the Listening recordings, which is the most underused part of the book</li>
+      </ul>
+      <div class="guide-note">
+        <p>
+          There is no teaching in it. No strategies, no vocabulary lists, no study plan. If you want
+          to be taught, this is the wrong purchase. If you want four honest measurements of where you
+          stand, nothing else is as accurate.
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">The trap in buying the set</h2>
+      <p>
+        Search any marketplace and you will find bundles of many volumes at what looks like a
+        bargain. There are two problems with that.
+      </p>
+      <p>
+        <strong>First, the old volumes are old tests.</strong> The early volumes were designed for a
+        version of the exam that has since been revised, and the writing tasks in them are not a good
+        guide to what you will be asked. Practising on them trains habits you then have to unlearn.
+      </p>
+      <p>
+        <strong>Second, nobody finishes a set of twenty.</strong> Four tests per volume is around
+        eighty full mock exams. That is not a plan, that is a shelf. The people who improve are the
+        ones who take four tests properly, mark them honestly, and fix what went wrong. That is one
+        volume's worth of material done well.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">How the options compare</h2>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Option</th>
+          <th>What you get</th>
+          <th>Who it suits</th>
+          <th>What to check before buying</th>
+        </tr>
+        <tr>
+          <td><strong>The newest Cambridge IELTS volume</strong></td>
+          <td>Four of the newest real papers, answer key, audio, sample Writing answers</td>
+          <td>Anyone sitting the test in the next six months</td>
+          <td>Buy the Academic or General Training edition that matches your test. They are separate books.</td>
+        </tr>
+        <tr>
+          <td><strong>One or two volumes older</strong></td>
+          <td>The same structure, one or two years older</td>
+          <td>Anyone who wants a second volume after finishing the newest one</td>
+          <td>Compare listings rather than trusting a bundle price. Prices vary widely by seller.</td>
+        </tr>
+        <tr>
+          <td><strong>The Official Cambridge Guide to IELTS</strong></td>
+          <td>Official tests plus actual teaching: question types, strategies, a guided first test</td>
+          <td>Someone who has not sat the test before and wants instruction as well as papers</td>
+          <td>It is a teaching book with tests in it, not a paper collection. Do not buy it expecting the same thing.</td>
+        </tr>
+        <tr>
+          <td><strong>A library copy</strong></td>
+          <td>The same book, free, on loan</td>
+          <td>Anyone in a Canadian city with a library card</td>
+          <td>Popular volumes have waiting lists, so reserve early rather than the week before your test.</td>
+        </tr>
+      </table>
+      <p class="muted">
+        Prices are not quoted here on purpose. Book prices move weekly and differ by country, so check
+        the live listing and treat any price in a review, including this one, as out of date.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">What to do, in order</h2>
+      <ol class="guide-list">
+        <li>
+          Reserve the newest Cambridge IELTS volume at your local library first. It costs nothing and
+          it tells you whether you need the book at all.
+        </li>
+        <li>
+          Sit one full test under exam conditions, timing included, before buying anything else.
+        </li>
+        <li>
+          Mark it properly using the answer key, and read the sample Writing answers for the same
+          tasks you wrote.
+        </li>
+        <li>
+          Only then decide. If your problem is that you do not know how to answer the question types,
+          buy the Official Guide. If your problem is that you run out of time and lose marks under
+          pressure, you need more timed papers, not more teaching.
+        </li>
+        <li>
+          Buy the newest volume rather than the set. Add volumes one at a time as you finish them.
+        </li>
+      </ol>
+      <p>
+        The book is a measuring instrument. Most people who fail to improve bought the instrument and
+        never used it, and almost nobody needs twenty of them.
+      </p>
+      <p>
+        If writing is the skill costing you marks, start with our
+        <a href="/blog/ielts-writing-task-2-complete-guide">IELTS Task 2 guide</a> and
+        <a href="/ai-feedback">scored writing feedback</a> before buying another paper collection.
+      </p>
+      <div class="guide-note">
+        <p>
+          <strong>Affiliate disclosure:</strong> this page has no affiliate links, and IELTS Corner
+          does not currently earn a commission on any book or link mentioned here. If that changes, a
+          paid-link note will appear above the first such link, and it will never change the advice on
+          this page. Nobody on this site has sat the IELTS test, and no score claims are made for any
+          book.
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+    </section>
+
+    <section class="guide-card guide-cta" style="margin-top: var(--s-4);">
+      <h2 style="margin-top: 0;">Use one paper properly</h2>
+      <p>
+        Take one timed test, mark it honestly, then work on the exact question type that cost you the
+        most marks instead of buying another book.
+      </p>
+      <div class="cluster" style="gap: var(--s-3); margin-top: var(--s-3);">
+        <a href="/ielts/reading" class="btn btn-primary ic-btn">IELTS reading practice</a>
+        <a href="/ielts" class="btn btn-ghost">IELTS preparation hub</a>
+      </div>
+    </section>
+  </article>
+</Layout>
