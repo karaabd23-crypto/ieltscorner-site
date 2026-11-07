@@ -1,0 +1,241 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import Breadcrumbs from "../../../../components/Breadcrumbs.astro";
+import { buildBreadcrumbSchema, buildFAQSchema } from "../../../../lib/seo";
+
+const pageFaqs = [
+  {
+    question: "Do I need a book to improve CELPIP Writing?",
+    answer:
+      "Most people do not. CELPIP Writing is two short tasks marked on how a reader experiences your text, and the fastest gains come from writing under time and getting one honest reader to tell you where you lost them. A book helps when you need structure, marked examples, or a fixed plan you will actually follow.",
+  },
+  {
+    question: "Which CELPIP writing book is best?",
+    answer:
+      "The most useful kind is a book of marked student answers with specific marker comments at different levels, so you can see what separates a CLB 7 answer from a CLB 9 answer. Strategy books are worth borrowing rather than buying, and large prompt workbooks are the weakest purchase because prompts are already free.",
+  },
+  {
+    question: "Are the official CELPIP materials free?",
+    answer:
+      "Paragon publishes free sample tests, format guides, and webinars on celpip.ca, and the writing performance standards that markers use are published there too. Start with those before paying for anything, because they are the only material guaranteed to match the real test.",
+  },
+];
+
+const pageStructuredData = [
+  buildBreadcrumbSchema(Astro.site, [
+    { name: "Home", path: "/" },
+    { name: "CELPIP", path: "/celpip/" },
+    { name: "Writing", path: "/celpip/writing/" },
+    { name: "Writing books", path: "/celpip/writing/books/" },
+  ]),
+  buildFAQSchema(pageFaqs),
+];
+---
+
+<Layout
+  title="CELPIP Writing Books: Which Ones Are Worth Buying?"
+  description="An honest guide to CELPIP writing books: what the test actually marks, which kind of book helps, and the free route that works better than most purchases."
+  type="article"
+  keywords="CELPIP writing book, best CELPIP writing book, CELPIP writing preparation, CELPIP writing practice, CELPIP study materials"
+  structuredData={pageStructuredData}
+>
+  <Breadcrumbs items={[
+    { label: "Home", href: "/" },
+    { label: "CELPIP", href: "/celpip/" },
+    { label: "Writing", href: "/celpip/writing/" },
+    { label: "Writing books" },
+  ]} />
+
+  <article class="section guide-article">
+    <header class="guide-header">
+      <span class="guide-tag ic-eyebrow">Buying guide</span>
+      <h1 class="ic-display" style="margin: 0;">Is a CELPIP writing book worth buying?</h1>
+      <div class="guide-meta">
+        <span>November 6, 2026</span>
+        <span>8 min read</span>
+      </div>
+    </header>
+
+    <div class="guide-lead">
+      <p>
+        <strong>Short answer: usually no.</strong> If you are aiming at CLB 7 or CLB 9 and you have
+        already sat CELPIP once, a book is the slowest way to fix your writing. The official free
+        samples show you the format, and one tutor or one honest reader shows you your own error. A
+        book earns its money when it is the only structured thing you can commit to, or when you need
+        real marked examples to compare against.
+      </p>
+      <p>
+        The rest of this page explains why, and which kind of book to buy if you decide to buy one.
+      </p>
+    </div>
+
+    <section class="guide-card">
+      <h2 class="ic-display">What CELPIP Writing actually marks</h2>
+      <p>
+        CELPIP Writing is two tasks in about 53 minutes. Task 1 is an email of roughly 150 to 200
+        words, and Task 2 is a response to a survey question of roughly the same length. Both are
+        marked against published performance standards covering content and coherence, vocabulary,
+        readability, and task fulfillment.
+      </p>
+      <p>
+        Read those standards once, properly, with a highlighter. They are free on celpip.ca, and they
+        are the only marking guide that matters. Most people never open them, then buy a book that
+        paraphrases them badly.
+      </p>
+      <div class="guide-note">
+        <p>
+          The trap is this: writing is marked on how a reader experiences your text, not on how many
+          advanced words you fit into it. A book can teach you phrases. It cannot hear that your third
+          sentence wanders off the point, which is what actually costs people their task fulfillment
+          marks.
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">The three kinds of book, ranked for this problem</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step__number">1</span>
+          <div>
+            <h3>Marked student answers with the marker's comments</h3>
+            <p>
+              This is the only kind worth paying for, and only if the comments are specific. Look for
+              answers at different levels of the same task, so you can see what separates a CLB 7
+              answer from a CLB 9 answer. If the model answers are all flawless and nobody explains
+              what was wrong with the weaker ones, put it down. You cannot learn a gap from a perfect
+              answer.
+            </p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">2</span>
+          <div>
+            <h3>A strategy book that explains the task types</h3>
+            <p>
+              Useful for about two hours. Worth borrowing, not buying. Everything it teaches about
+              how to open an email, how to answer a survey with a clear position, and how to stay
+              inside the word count, you can get from the official task descriptions plus three
+              sample answers.
+            </p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step__number">3</span>
+          <div>
+            <h3>A big workbook of practice prompts</h3>
+            <p>
+              This is where most money is wasted. Prompts are not the scarce thing. The official site
+              gives you free samples, and you can produce unlimited realistic prompts from situations
+              you actually had this week. Writing without feedback is rehearsal, not practice. Twenty
+              essays with no reader is worse than four essays that someone marked properly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">The free route that beats all three</h2>
+      <p>If you want a plan that costs nothing:</p>
+      <ol class="guide-list">
+        <li>
+          Read the official CELPIP writing performance standards once, and write down the four things
+          they mark in your own words.
+        </li>
+        <li>
+          Write one Task 1 email and one Task 2 survey response under the real time limits, on paper
+          or with spellcheck off. Do not use a dictionary app.
+        </li>
+        <li>
+          Read your own writing out loud. Every place you stumble is where the marker will stumble.
+          Fix those five sentences, nothing else.
+        </li>
+        <li>
+          Get one honest reader. A friend whose English is strong, a colleague, or a single tutoring
+          session. Ask one question: "Where did you lose me?" Not "is this good".
+        </li>
+        <li>
+          Repeat twice a week for four weeks, keeping every draft in one folder so you can see your
+          own pattern.
+        </li>
+      </ol>
+      <p>
+        People who do this for four weeks usually fix the two errors they repeat in every paragraph.
+        That is worth more than a shelf of books, because those same two errors are also costing them
+        marks in speaking.
+      </p>
+      <p>
+        You can practise the format with our
+        <a href="/celpip/writing/questions">free CELPIP question bank</a>, compare
+        <a href="/celpip/writing/samples">sample Task 1 and Task 2 answers</a>, and get
+        <a href="/ai-feedback">scored feedback on your own writing</a>.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">When buying is the right call</h2>
+      <p>Buy a book if any of these is true for you:</p>
+      <ul class="guide-list">
+        <li>
+          You have not written anything in English for years and you need a structure that tells you
+          what to do on Monday morning.
+        </li>
+        <li>
+          You have no one to read your writing and cannot pay for tutoring, and you need marked
+          examples as a substitute reader.
+        </li>
+        <li>
+          You are sitting the test in under three weeks and want one book to work through end to end
+          rather than assembling free material.
+        </li>
+      </ul>
+      <p>
+        If none of those apply, spend the money on a single marked session instead. One hour with
+        someone who marks writing for a living will move your score more than any book at the same
+        price.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">How to check a book before you pay for it</h2>
+      <ul class="guide-list">
+        <li><strong>Check the edition year.</strong> An older edition may describe a format that has since changed.</li>
+        <li><strong>Look for an answer key with explanations</strong>, not just correct letters.</li>
+        <li><strong>Look for sample answers at more than one level.</strong> One perfect answer teaches you very little.</li>
+        <li><strong>Be sceptical of score promises.</strong> No publisher can guarantee a CLB level.</li>
+        <li><strong>Check whether it covers both tasks.</strong> Some writing books only cover the essay style task.</li>
+      </ul>
+      <div class="guide-note">
+        <p>
+          <strong>Affiliate disclosure:</strong> this page has no affiliate links, and IELTS Corner
+          does not currently earn a commission on any book or link mentioned here. If that changes, a
+          paid-link note will appear above the first such link, and it will never change the advice on
+          this page. No publisher has seen or approved this page.
+        </p>
+      </div>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Frequently asked questions</h2>
+      {pageFaqs.map((faq) => (
+        <details class="guide-faq-item">
+          <summary class="guide-faq-question">{faq.question}</summary>
+          <p class="guide-faq-answer">{faq.answer}</p>
+        </details>
+      ))}
+    </section>
+
+    <section class="guide-card guide-cta" style="margin-top: var(--s-4);">
+      <h2 style="margin-top: 0;">Practise before you spend</h2>
+      <p>
+        Write one timed Task 1 email and one Task 2 response, then get a score report that shows
+        exactly which criterion cost you marks.
+      </p>
+      <div class="cluster" style="gap: var(--s-3); margin-top: var(--s-3);">
+        <a href="/ai-feedback" class="btn btn-primary ic-btn">Get writing feedback</a>
+        <a href="/celpip/writing/questions" class="btn btn-ghost">Open question bank</a>
+      </div>
+    </section>
+  </article>
+</Layout>
