@@ -1,4 +1,4 @@
-﻿---
+---
 import Layout from "../../layouts/Layout.astro";
 import { buildBreadcrumbSchema, buildFAQSchema } from "../../lib/seo";
 
@@ -219,6 +219,64 @@ const pageStructuredData = [
     </section>
 
     <section class="guide-card" style="margin-top: var(--s-4);">
+      <h2 class="ic-display">Which writing test is easier, CELPIP or IELTS?</h2>
+      <p>
+        Writing is where the two tests feel most different, and where the choice matters most for
+        people who type quickly.
+      </p>
+      <table class="guide-mistake-table">
+        <tr>
+          <th>Factor</th>
+          <th>CELPIP Writing</th>
+          <th>IELTS Writing</th>
+        </tr>
+        <tr>
+          <td><strong>Time</strong></td>
+          <td>About 53 minutes for both tasks</td>
+          <td>60 minutes for both tasks</td>
+        </tr>
+        <tr>
+          <td><strong>Tasks</strong></td>
+          <td>One email, one survey response</td>
+          <td>General Training: one letter, one essay. Academic: one chart description, one essay</td>
+        </tr>
+        <tr>
+          <td><strong>Length</strong></td>
+          <td>Roughly 150 to 200 words per task</td>
+          <td>At least 150 words for Task 1, at least 250 for Task 2</td>
+        </tr>
+        <tr>
+          <td><strong>Typing</strong></td>
+          <td>Always typed, with a word count on screen</td>
+          <td>Typed on computer-delivered IELTS, handwritten on paper IELTS</td>
+        </tr>
+        <tr>
+          <td><strong>Marking</strong></td>
+          <td>Four published criteria, including readability</td>
+          <td>Four criteria, each worth 25 percent of the Writing band</td>
+        </tr>
+      </table>
+      <p>
+        CELPIP writing is shorter, always typed, and asks for practical communication: an email that
+        gets a result, or a survey answer that takes a clear position. IELTS writing is longer and
+        more academic, especially the 250 word Task 2 essay, and Academic Task 1 adds chart
+        description.
+      </p>
+      <p>
+        The practical difference: if your grammar is decent but you write slowly by hand, CELPIP
+        removes a real obstacle. If you are strong at essay structure and already have IELTS
+        preparation, IELTS writing may be the safer route. Neither is easier in the sense of requiring
+        less English.
+      </p>
+      <p>
+        For the buying question that follows from this, see our guides to
+        <a href="/celpip/writing/books/">CELPIP writing books</a> and
+        <a href="/ielts/writing/books/">IELTS Task 2 books</a>. Both explain when a book is worth the
+        money and when it is not.
+      </p>
+    </section>
+
+    <section class="guide-card" style="margin-top: var(--s-4);">
       <h2 class="ic-display">Frequently asked questions</h2>
       {pageFaqs.map((faq) => (
         <details class="guide-faq-item">
@@ -241,5 +299,4 @@ const pageStructuredData = [
     </section>
   </article>
 </Layout>
-
 
